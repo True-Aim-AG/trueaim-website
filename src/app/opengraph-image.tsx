@@ -20,8 +20,8 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#1A1A2E",
-          backgroundImage: "linear-gradient(135deg, #1A1A2E 0%, #2a2a4e 100%)",
+          backgroundColor: "#0A1628",
+          backgroundImage: "linear-gradient(135deg, #0A1628 0%, #1e293b 100%)",
         }}
       >
         <div
@@ -55,7 +55,7 @@ export default async function Image() {
               style={{
                 fontSize: 48,
                 fontWeight: 700,
-                color: "#E91E8C",
+                color: "#2563EB",
               }}
             >
               .ai
@@ -79,7 +79,7 @@ export default async function Image() {
             style={{
               fontSize: 56,
               fontWeight: 700,
-              color: "#E91E8C",
+              color: "#2563EB",
               textAlign: "center",
             }}
           >
@@ -112,9 +112,9 @@ export default async function Image() {
                 display: "flex",
                 alignItems: "center",
                 padding: "8px 16px",
-                backgroundColor: "rgba(233, 30, 140, 0.2)",
+                backgroundColor: "rgba(37, 99, 235, 0.2)",
                 borderRadius: 8,
-                color: "#E91E8C",
+                color: "#60a5fa",
                 fontSize: 18,
               }}
             >
@@ -125,9 +125,9 @@ export default async function Image() {
                 display: "flex",
                 alignItems: "center",
                 padding: "8px 16px",
-                backgroundColor: "rgba(0, 119, 182, 0.2)",
+                backgroundColor: "rgba(20, 184, 166, 0.2)",
                 borderRadius: 8,
-                color: "#0077B6",
+                color: "#14B8A6",
                 fontSize: 18,
               }}
             >
@@ -138,9 +138,9 @@ export default async function Image() {
                 display: "flex",
                 alignItems: "center",
                 padding: "8px 16px",
-                backgroundColor: "rgba(27, 94, 32, 0.2)",
+                backgroundColor: "rgba(22, 163, 74, 0.2)",
                 borderRadius: 8,
-                color: "#4ade80",
+                color: "#22c55e",
                 fontSize: 18,
               }}
             >

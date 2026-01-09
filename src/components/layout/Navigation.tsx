@@ -92,7 +92,7 @@ export function Navigation() {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[#d01a7d] transition-colors"
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors"
             >
               Request Demo
             </Link>
@@ -151,7 +151,7 @@ export function Navigation() {
             {/* Mobile CTA */}
             <Link
               href="/contact"
-              className="mt-2 inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[#d01a7d] transition-colors"
+              className="mt-2 inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Request Demo

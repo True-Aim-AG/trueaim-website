@@ -175,7 +175,7 @@ export default function TechnologyPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-pink-50 to-white rounded-2xl border border-[var(--border)] p-8"
+              className="bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-[var(--border)] p-8"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-2xl bg-[var(--primary)] flex items-center justify-center">
@@ -192,7 +192,7 @@ export default function TechnologyPage() {
               <ul className="space-y-4">
                 {deterministicCapabilities.map((cap) => (
                   <li key={cap} className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-pink-100 flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center flex-shrink-0">
                       <Workflow className="w-4 h-4 text-[var(--primary)]" />
                     </div>
                     <span className="text-[var(--text-primary)] font-medium">{cap}</span>
@@ -200,7 +200,7 @@ export default function TechnologyPage() {
                 ))}
               </ul>
 
-              <div className="mt-6 p-4 bg-pink-100/50 rounded-xl">
+              <div className="mt-6 p-4 bg-indigo-100/50 rounded-xl">
                 <p className="text-sm text-[var(--text-secondary)]">
                   Applies encoded business rules to produce consistent, explainable decisions every time.
                 </p>
@@ -349,7 +349,7 @@ export default function TechnologyPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-[var(--text-primary)] to-[#2a2a4e]">
+      <section className="py-20 px-6 bg-gradient-to-br from-[var(--text-primary)] to-slate-900">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -365,7 +365,7 @@ export default function TechnologyPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[#d01a7d] transition-colors text-lg"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg"
             >
               Request Technical Demo
               <ArrowRight className="w-5 h-5" />

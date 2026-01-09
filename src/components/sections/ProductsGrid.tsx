@@ -11,8 +11,8 @@ const products = [
     description: "The world's first neuro-symbolic engine for claims. Transform policy T&Cs into automated, fully-deterministic decisions.",
     href: "/products/mira",
     icon: Brain,
-    color: "var(--primary)",
-    gradient: "from-pink-500/10 to-rose-500/10",
+    color: "var(--mira)",
+    gradient: "from-indigo-500/10 to-violet-500/10",
   },
   {
     name: "ContextBuilder",
@@ -20,8 +20,8 @@ const products = [
     description: "Turn messy claim documents into structured, trusted data. AI-powered ingestion with human review when needed.",
     href: "/products/contextbuilder",
     icon: FileSearch,
-    color: "var(--trust)",
-    gradient: "from-blue-500/10 to-cyan-500/10",
+    color: "var(--contextbuilder)",
+    gradient: "from-teal-500/10 to-cyan-500/10",
   },
   {
     name: "ClaimEval",
@@ -29,8 +29,8 @@ const products = [
     description: "Scale QA beyond sampling. Run consistent inspections across your entire claims portfolio.",
     href: "/products/claimeval",
     icon: ClipboardCheck,
-    color: "var(--secondary)",
-    gradient: "from-green-500/10 to-emerald-500/10",
+    color: "var(--claimeval)",
+    gradient: "from-blue-500/10 to-sky-500/10",
   },
 ];
 

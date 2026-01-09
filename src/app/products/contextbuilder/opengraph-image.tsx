@@ -20,8 +20,8 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#1A1A2E",
-          backgroundImage: "linear-gradient(135deg, #1A1A2E 0%, #1a2d3d 100%)",
+          backgroundColor: "#0A1628",
+          backgroundImage: "linear-gradient(135deg, #0A1628 0%, #0f3d3e 100%)",
         }}
       >
         <div
@@ -39,9 +39,9 @@ export default async function Image() {
               display: "flex",
               alignItems: "center",
               padding: "8px 20px",
-              backgroundColor: "rgba(0, 119, 182, 0.2)",
+              backgroundColor: "rgba(20, 184, 166, 0.2)",
               borderRadius: 50,
-              color: "#0077B6",
+              color: "#5eead4",
               fontSize: 20,
               fontWeight: 600,
             }}
@@ -54,7 +54,7 @@ export default async function Image() {
             style={{
               fontSize: 72,
               fontWeight: 700,
-              color: "#0077B6",
+              color: "#14B8A6",
               marginTop: 10,
             }}
           >
@@ -102,7 +102,7 @@ export default async function Image() {
                 alignItems: "center",
               }}
             >
-              <div style={{ fontSize: 48, fontWeight: 700, color: "#0077B6" }}>
+              <div style={{ fontSize: 48, fontWeight: 700, color: "#14B8A6" }}>
                 97%
               </div>
               <div style={{ fontSize: 16, color: "#94a3b8" }}>Doc Coverage</div>
@@ -114,7 +114,7 @@ export default async function Image() {
                 alignItems: "center",
               }}
             >
-              <div style={{ fontSize: 48, fontWeight: 700, color: "#0077B6" }}>
+              <div style={{ fontSize: 48, fontWeight: 700, color: "#14B8A6" }}>
                 97.3%
               </div>
               <div style={{ fontSize: 16, color: "#94a3b8" }}>Accuracy</div>
@@ -126,7 +126,7 @@ export default async function Image() {
                 alignItems: "center",
               }}
             >
-              <div style={{ fontSize: 48, fontWeight: 700, color: "#0077B6" }}>
+              <div style={{ fontSize: 48, fontWeight: 700, color: "#14B8A6" }}>
                 96.5%
               </div>
               <div style={{ fontSize: 16, color: "#94a3b8" }}>Evidence Rate</div>
@@ -144,7 +144,7 @@ export default async function Image() {
             }}
           >
             <div style={{ fontSize: 24, color: "white" }}>TrueAim</div>
-            <div style={{ fontSize: 24, color: "#E91E8C" }}>.ai</div>
+            <div style={{ fontSize: 24, color: "#2563EB" }}>.ai</div>
           </div>
         </div>
       </div>

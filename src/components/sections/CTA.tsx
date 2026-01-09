@@ -8,7 +8,7 @@ export function CTA() {
   return (
     <section className="py-24 px-6 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--text-primary)] to-[#2a2a4e]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary-dark)] to-slate-900" />
       
       {/* Decorative elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[var(--primary)] opacity-10 rounded-full blur-3xl" />
@@ -32,7 +32,7 @@ export function CTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[#d01a7d] transition-colors text-lg shadow-lg shadow-[var(--primary)]/25"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/25"
             >
               <Calendar className="w-5 h-5" />
               Request Demo

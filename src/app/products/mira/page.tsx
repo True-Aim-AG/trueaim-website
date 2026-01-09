@@ -86,7 +86,7 @@ export default function MiraPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-pink-50 via-white to-white" />
+        <div className="absolute inset-0 bg-gradient-to-b from-indigo-50 via-white to-white" />
         <div className="absolute top-20 right-10 w-96 h-96 bg-[var(--primary)] opacity-5 rounded-full blur-3xl" />
 
         <div className="relative max-w-7xl mx-auto">
@@ -96,7 +96,7 @@ export default function MiraPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-100 text-[var(--primary)] text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 text-[var(--primary)] text-sm font-medium mb-6">
               <Brain className="w-4 h-4" />
               Decisioning Engine
             </div>
@@ -112,7 +112,7 @@ export default function MiraPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#demo"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[#d01a7d] transition-colors text-lg"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg"
               >
                 See MIRA in Action
               </a>
@@ -210,7 +210,7 @@ export default function MiraPage() {
                       {step.step}
                     </div>
 
-                    <div className="w-14 h-14 rounded-xl bg-pink-50 flex items-center justify-center mx-auto mb-4">
+                    <div className="w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center mx-auto mb-4">
                       <step.icon className="w-7 h-7 text-[var(--primary)]" />
                     </div>
 
@@ -291,7 +291,7 @@ export default function MiraPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-2xl border border-[var(--border)] p-8 hover:shadow-lg transition-shadow"
               >
-                <div className="w-14 h-14 rounded-xl bg-pink-50 flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center mb-6">
                   <cap.icon className="w-7 h-7 text-[var(--primary)]" />
                 </div>
                 <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
@@ -329,9 +329,9 @@ export default function MiraPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center p-8 rounded-2xl bg-gradient-to-br from-pink-50 to-white border border-[var(--border)]"
+                className="text-center p-8 rounded-2xl bg-gradient-to-br from-indigo-50 to-white border border-[var(--border)]"
               >
-                <div className="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center mx-auto mb-4">
                   <metric.icon className="w-8 h-8 text-[var(--primary)]" />
                 </div>
                 {metric.prefix && (
@@ -352,7 +352,7 @@ export default function MiraPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-[var(--text-primary)] to-[#2a2a4e]">
+      <section className="py-20 px-6 bg-gradient-to-br from-[var(--text-primary)] to-slate-900">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -368,7 +368,7 @@ export default function MiraPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[#d01a7d] transition-colors text-lg"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg"
             >
               Request a Pilot
             </Link>

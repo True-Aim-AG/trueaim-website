@@ -278,7 +278,7 @@ export default function CompanyPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-[var(--text-primary)] to-[#2a2a4e]">
+      <section className="py-20 px-6 bg-gradient-to-br from-[var(--text-primary)] to-slate-900">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -295,7 +295,7 @@ export default function CompanyPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[#d01a7d] transition-colors text-lg"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg"
               >
                 Get in Touch
                 <ArrowRight className="w-5 h-5" />

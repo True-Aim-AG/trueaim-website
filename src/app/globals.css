@@ -1,35 +1,53 @@
 @import "tailwindcss";
 
-/* TrueAim.ai Design System Tokens */
+/* TrueAim.ai Design System Tokens v2 — Ocean Blue Palette */
 :root {
-  /* Primary Colors */
-  --primary: #E91E8C;
+  /* Primary Colors — Ocean Blue */
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --primary-dark: #0A1628;
+  --primary-light: #EFF6FF;
   --primary-foreground: #ffffff;
 
-  /* Secondary Colors */
-  --secondary: #1B5E20;
+  /* Secondary Colors — Forest Green (Success) */
+  --secondary: #16A34A;
+  --secondary-light: #22C55E;
+  --secondary-bg: #DCFCE7;
   --secondary-foreground: #ffffff;
 
-  /* Trust/Accent Color */
-  --trust: #0077B6;
+  /* Legacy trust color — now maps to primary */
+  --trust: #2563EB;
   --trust-foreground: #ffffff;
 
-  /* Text Colors */
-  --text-primary: #1A1A2E;
-  --text-secondary: #4B5563;
-  --text-muted: #6B7280;
+  /* Product Accent Colors */
+  --mira: #6366F1;
+  --mira-bg: #EEF2FF;
+  --mira-text: #4338CA;
+
+  --contextbuilder: #14B8A6;
+  --contextbuilder-bg: #F0FDFA;
+  --contextbuilder-text: #0F766E;
+
+  --claimeval: #2563EB;
+  --claimeval-bg: #DBEAFE;
+  --claimeval-text: #1D4ED8;
+
+  /* Text Colors — Slate */
+  --text-primary: #020617;
+  --text-secondary: #1E293B;
+  --text-muted: #475569;
 
   /* Background Colors */
   --background: #ffffff;
-  --background-secondary: #F7FAFC;
-  --foreground: #1A1A2E;
+  --background-secondary: #F1F5F9;
+  --foreground: #020617;
 
   /* Border Colors */
-  --border: #E5E7EB;
-  --border-hover: #D1D5DB;
+  --border: #E2E8F0;
+  --border-hover: #CBD5E1;
 
   /* Status Colors */
-  --success: #10B981;
+  --success: #16A34A;
   --warning: #F59E0B;
   --error: #EF4444;
 

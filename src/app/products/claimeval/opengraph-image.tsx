@@ -20,8 +20,8 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#1A1A2E",
-          backgroundImage: "linear-gradient(135deg, #1A1A2E 0%, #1a3d1a 100%)",
+          backgroundColor: "#0A1628",
+          backgroundImage: "linear-gradient(135deg, #0A1628 0%, #0c4a6e 100%)",
         }}
       >
         <div
@@ -39,9 +39,9 @@ export default async function Image() {
               display: "flex",
               alignItems: "center",
               padding: "8px 20px",
-              backgroundColor: "rgba(27, 94, 32, 0.3)",
+              backgroundColor: "rgba(37, 99, 235, 0.3)",
               borderRadius: 50,
-              color: "#4ade80",
+              color: "#93c5fd",
               fontSize: 20,
               fontWeight: 600,
             }}
@@ -54,7 +54,7 @@ export default async function Image() {
             style={{
               fontSize: 80,
               fontWeight: 700,
-              color: "#1B5E20",
+              color: "#2563EB",
               marginTop: 10,
             }}
           >
@@ -100,9 +100,9 @@ export default async function Image() {
                 display: "flex",
                 alignItems: "center",
                 padding: "12px 24px",
-                backgroundColor: "rgba(27, 94, 32, 0.2)",
+                backgroundColor: "rgba(37, 99, 235, 0.2)",
                 borderRadius: 8,
-                color: "#4ade80",
+                color: "#93c5fd",
                 fontSize: 18,
               }}
             >
@@ -113,9 +113,9 @@ export default async function Image() {
                 display: "flex",
                 alignItems: "center",
                 padding: "12px 24px",
-                backgroundColor: "rgba(27, 94, 32, 0.2)",
+                backgroundColor: "rgba(37, 99, 235, 0.2)",
                 borderRadius: 8,
-                color: "#4ade80",
+                color: "#93c5fd",
                 fontSize: 18,
               }}
             >
@@ -126,9 +126,9 @@ export default async function Image() {
                 display: "flex",
                 alignItems: "center",
                 padding: "12px 24px",
-                backgroundColor: "rgba(27, 94, 32, 0.2)",
+                backgroundColor: "rgba(37, 99, 235, 0.2)",
                 borderRadius: 8,
-                color: "#4ade80",
+                color: "#93c5fd",
                 fontSize: 18,
               }}
             >
@@ -147,7 +147,7 @@ export default async function Image() {
             }}
           >
             <div style={{ fontSize: 24, color: "white" }}>TrueAim</div>
-            <div style={{ fontSize: 24, color: "#E91E8C" }}>.ai</div>
+            <div style={{ fontSize: 24, color: "#2563EB" }}>.ai</div>
           </div>
         </div>
       </div>

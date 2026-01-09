@@ -54,7 +54,7 @@ export function Hero() {
           >
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[#d01a7d] transition-colors text-lg shadow-lg shadow-[var(--primary)]/25"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/25"
             >
               Request a Demo
             </Link>

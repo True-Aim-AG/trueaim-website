@@ -20,8 +20,8 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#1A1A2E",
-          backgroundImage: "linear-gradient(135deg, #1A1A2E 0%, #3d1a3d 100%)",
+          backgroundColor: "#0A1628",
+          backgroundImage: "linear-gradient(135deg, #0A1628 0%, #1e1b4b 100%)",
         }}
       >
         <div
@@ -39,9 +39,9 @@ export default async function Image() {
               display: "flex",
               alignItems: "center",
               padding: "8px 20px",
-              backgroundColor: "rgba(233, 30, 140, 0.2)",
+              backgroundColor: "rgba(99, 102, 241, 0.2)",
               borderRadius: 50,
-              color: "#E91E8C",
+              color: "#a5b4fc",
               fontSize: 20,
               fontWeight: 600,
             }}
@@ -54,7 +54,7 @@ export default async function Image() {
             style={{
               fontSize: 80,
               fontWeight: 700,
-              color: "#E91E8C",
+              color: "#6366F1",
               marginTop: 10,
             }}
           >
@@ -102,7 +102,7 @@ export default async function Image() {
                 alignItems: "center",
               }}
             >
-              <div style={{ fontSize: 48, fontWeight: 700, color: "#E91E8C" }}>
+              <div style={{ fontSize: 48, fontWeight: 700, color: "#6366F1" }}>
                 89%
               </div>
               <div style={{ fontSize: 16, color: "#94a3b8" }}>Faster</div>
@@ -114,7 +114,7 @@ export default async function Image() {
                 alignItems: "center",
               }}
             >
-              <div style={{ fontSize: 48, fontWeight: 700, color: "#E91E8C" }}>
+              <div style={{ fontSize: 48, fontWeight: 700, color: "#6366F1" }}>
                 68%
               </div>
               <div style={{ fontSize: 16, color: "#94a3b8" }}>Cost Reduction</div>
@@ -126,7 +126,7 @@ export default async function Image() {
                 alignItems: "center",
               }}
             >
-              <div style={{ fontSize: 48, fontWeight: 700, color: "#E91E8C" }}>
+              <div style={{ fontSize: 48, fontWeight: 700, color: "#6366F1" }}>
                 100%
               </div>
               <div style={{ fontSize: 16, color: "#94a3b8" }}>Auditable</div>
@@ -144,7 +144,7 @@ export default async function Image() {
             }}
           >
             <div style={{ fontSize: 24, color: "white" }}>TrueAim</div>
-            <div style={{ fontSize: 24, color: "#E91E8C" }}>.ai</div>
+            <div style={{ fontSize: 24, color: "#2563EB" }}>.ai</div>
           </div>
         </div>
       </div>
