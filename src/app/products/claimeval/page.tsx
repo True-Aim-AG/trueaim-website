@@ -211,6 +211,7 @@ export default function ClaimEvalPage() {
                 src="https://claimeval.vercel.app/claims"
                 className="w-full h-full"
                 title="ClaimEval Demo"
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               />
             </div>

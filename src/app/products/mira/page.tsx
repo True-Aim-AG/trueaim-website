@@ -258,6 +258,7 @@ export default function MiraPage() {
                 src="https://mira-travel-demo.vercel.app/products"
                 className="w-full h-full"
                 title="MIRA Demo"
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               />
             </div>
