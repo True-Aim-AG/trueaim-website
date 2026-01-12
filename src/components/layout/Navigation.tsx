@@ -37,6 +37,11 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
+            <img
+              src="/images/logo.png"
+              alt="TrueAim.ai Logo"
+              className="h-14 w-auto"
+            />
             <span className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">
               TrueAim<span className="text-[var(--primary)]">.ai</span>
             </span>

@@ -14,11 +14,7 @@ Building MVP corporate website for TrueAim.ai - a Swiss AI company offering neur
 ## Design System
 
 ### Colors (use CSS variables in globals.css)
-- Primary/CTA: #E91E8C (pink-500)
-- Secondary: #1B5E20 (green-800)
-- Trust: #0077B6 (blue-600)
-- Text: #1A1A2E
-- Background: #FFFFFF, #F7FAFC
+- **Color Palette: `/docs/PALETTE_OVERRIDE.md` (overrides PRD Section 7.2)**
 
 ### Typography
 - Headlines: font-bold, tracking-tight

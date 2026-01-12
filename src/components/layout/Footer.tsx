@@ -33,7 +33,12 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="inline-block mb-4">
+            <Link href="/" className="inline-flex items-center gap-2 mb-4">
+              <img
+                src="/images/logo.png"
+                alt="TrueAim.ai Logo"
+                className="h-12 w-auto"
+              />
               <span className="text-2xl font-bold tracking-tight">
                 TrueAim<span className="text-[var(--primary)]">.ai</span>
               </span>
