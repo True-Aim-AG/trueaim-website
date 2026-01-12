@@ -14,8 +14,14 @@ import {
   FileCheck,
   Scale,
   GraduationCap,
-  CheckCircle
+  CheckCircle,
+  RefreshCw,
+  GitBranch,
+  UserCheck,
+  AlertTriangle,
+  Gauge,
 } from "lucide-react";
+import { DecisionDossier } from "@/components/sections/DecisionDossier";
 
 const agenticCapabilities = [
   "Document reading",
@@ -53,6 +59,44 @@ const securityFeatures = [
     title: "Regulatory Alignment",
     items: ["EU AI Act transparency requirements", "FINMA guidelines for automated decisions", "ISO 27001 roadmap (2026)"],
     icon: FileCheck,
+  },
+];
+
+const controlFeatures = [
+  {
+    icon: RefreshCw,
+    title: "Replay Logs",
+    description: "Re-run any decision with the same inputs and get identical outputs. Every execution is deterministic and reproducible.",
+    color: "text-blue-600",
+    bgColor: "bg-blue-100",
+  },
+  {
+    icon: GitBranch,
+    title: "Rule Traceability",
+    description: "Every coverage decision is mapped to specific policy clause IDs. See exactly which rules fired and why.",
+    color: "text-indigo-600",
+    bgColor: "bg-indigo-100",
+  },
+  {
+    icon: UserCheck,
+    title: "Approval Gates",
+    description: "Configure thresholds for human review escalation. High-value or edge cases automatically route to experts.",
+    color: "text-emerald-600",
+    bgColor: "bg-emerald-100",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Exception Routing",
+    description: "Automatic routing based on claim complexity score. Unusual patterns flagged for manual inspection.",
+    color: "text-amber-600",
+    bgColor: "bg-amber-100",
+  },
+  {
+    icon: Gauge,
+    title: "Confidence Scoring",
+    description: "Field-level certainty indicators show where the system is confident and where human review adds value.",
+    color: "text-purple-600",
+    bgColor: "bg-purple-100",
   },
 ];
 
@@ -220,6 +264,65 @@ export default function TechnologyPage() {
             <h3 className="text-2xl font-bold mb-2">Complete Audit Trail</h3>
             <p className="text-white/80 max-w-2xl mx-auto">
               Every field traces to source documents. Every decision traces to policy terms. Full transparency for regulators and auditors.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Decision Dossier Section */}
+      <DecisionDossier variant="full" />
+
+      {/* Control Layer Section */}
+      <section className="py-20 px-6 bg-[var(--background-secondary)]">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
+              <Shield className="w-4 h-4" />
+              Enterprise Control
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+              The Control Layer
+            </h2>
+            <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
+              Automation with oversight. Every feature designed to keep humans in control where it matters.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {controlFeatures.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-xl border border-[var(--border)] p-6 hover:shadow-lg hover:border-emerald-200 transition-all"
+              >
+                <div className={`w-12 h-12 rounded-xl ${feature.bgColor} flex items-center justify-center mb-4`}>
+                  <feature.icon className={`w-6 h-6 ${feature.color}`} />
+                </div>
+                <h3 className="font-semibold text-[var(--text-primary)] mb-2">{feature.title}</h3>
+                <p className="text-sm text-[var(--text-muted)]">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Control philosophy callout */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-12 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100 p-8 text-center"
+          >
+            <p className="text-lg text-[var(--text-secondary)]">
+              <strong className="text-[var(--text-primary)]">Our philosophy:</strong> AI should handle the heavy lifting, but humans must always be able to understand, verify, and override. Every control exists because regulated industries demand it.
             </p>
           </motion.div>
         </div>

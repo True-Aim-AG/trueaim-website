@@ -1,4 +1,5 @@
-import { Hero, TrustBar, ValueProps, ProductsGrid, CTA } from "@/components/sections";
+import { Hero, TrustBar, ValueProps, ProductsGrid, CTA, DecisionDossier, SocialProof } from "@/components/sections";
+import { ClaimsWorkflowMap } from "@/components/workflow";
 
 export default function Home() {
   return (
@@ -6,7 +7,10 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <ValueProps />
+      <ClaimsWorkflowMap variant="compact" />
       <ProductsGrid />
+      <DecisionDossier variant="teaser" />
+      <SocialProof />
       <CTA />
     </>
   );

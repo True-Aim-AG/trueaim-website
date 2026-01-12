@@ -50,21 +50,39 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col items-center gap-4"
           >
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/25"
-            >
-              Request a Demo
-            </Link>
-            <Link
-              href="/technology"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--background-secondary)] transition-colors text-lg"
-            >
-              See How It Works
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+            {/* Primary CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/25"
+              >
+                Book a Demo
+              </Link>
+              <Link
+                href="/roi-calculator"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--background-secondary)] transition-colors text-lg"
+              >
+                Get ROI Estimate
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+            {/* Tertiary links */}
+            <div className="flex flex-wrap gap-6 justify-center text-sm">
+              <Link
+                href="/technology"
+                className="text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors underline underline-offset-4"
+              >
+                See How It Works
+              </Link>
+              <Link
+                href="/trust"
+                className="text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors underline underline-offset-4"
+              >
+                Security & Compliance
+              </Link>
+            </div>
           </motion.div>
         </div>
 

@@ -1,0 +1,311 @@
+"use client";
+
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import { motion } from "framer-motion";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Building2,
+  Clock,
+  CheckCircle,
+  Quote,
+  TrendingUp,
+} from "lucide-react";
+import { getCaseStudy, caseStudies } from "@/data/case-studies";
+
+const productColors: Record<string, string> = {
+  mira: "bg-indigo-100 text-indigo-700 border-indigo-200",
+  contextbuilder: "bg-teal-100 text-teal-700 border-teal-200",
+  claimeval: "bg-blue-100 text-blue-700 border-blue-200",
+};
+
+const productNames: Record<string, string> = {
+  mira: "MIRA",
+  contextbuilder: "ContextBuilder",
+  claimeval: "ClaimEval",
+};
+
+const productLinks: Record<string, string> = {
+  mira: "/products/mira",
+  contextbuilder: "/products/contextbuilder",
+  claimeval: "/products/claimeval",
+};
+
+export default function CaseStudyPage() {
+  const params = useParams();
+  const slug = params.slug as string;
+  const study = getCaseStudy(slug);
+
+  if (!study) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
+            Case Study Not Found
+          </h1>
+          <Link
+            href="/case-studies"
+            className="text-[var(--primary)] hover:underline"
+          >
+            View all case studies
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  // Find next and previous case studies
+  const currentIndex = caseStudies.findIndex((cs) => cs.slug === slug);
+  const prevStudy = currentIndex > 0 ? caseStudies[currentIndex - 1] : null;
+  const nextStudy =
+    currentIndex < caseStudies.length - 1 ? caseStudies[currentIndex + 1] : null;
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative py-24 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-white" />
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--primary)] opacity-5 rounded-full blur-3xl" />
+
+        <div className="relative max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Breadcrumb */}
+            <Link
+              href="/case-studies"
+              className="inline-flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors mb-8"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              All Case Studies
+            </Link>
+
+            {/* Customer Info */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-16 h-16 rounded-xl bg-slate-100 flex items-center justify-center">
+                <Building2 className="w-8 h-8 text-[var(--text-muted)]" />
+              </div>
+              <div>
+                <div className="text-lg font-medium text-[var(--text-primary)]">
+                  {study.customer.name}
+                </div>
+                <div className="text-[var(--text-muted)]">
+                  {study.customer.industry} · {study.customer.size}
+                </div>
+              </div>
+            </div>
+
+            {/* Title */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+              {study.title}
+            </h1>
+
+            {/* Products & Timeline */}
+            <div className="flex flex-wrap items-center gap-4">
+              {study.products.map((product) => (
+                <Link
+                  key={product}
+                  href={productLinks[product]}
+                  className={`text-sm px-3 py-1.5 rounded-full font-medium border ${productColors[product]} hover:opacity-80 transition-opacity`}
+                >
+                  {productNames[product]}
+                </Link>
+              ))}
+              <div className="flex items-center gap-2 text-[var(--text-muted)]">
+                <Clock className="w-4 h-4" />
+                {study.timeline}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Metrics Grid */}
+      <section className="py-12 px-6 bg-[var(--background-secondary)]">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          >
+            {study.metrics.map((metric, index) => (
+              <div
+                key={metric.label}
+                className="bg-white rounded-xl border border-[var(--border)] p-6 text-center"
+              >
+                <div className="text-3xl md:text-4xl font-bold text-[var(--primary)] mb-1">
+                  {metric.value}
+                </div>
+                <div className="text-sm text-[var(--text-muted)]">{metric.label}</div>
+                {metric.improvement && (
+                  <div className="text-xs text-[var(--secondary)] mt-1">
+                    {metric.improvement}
+                  </div>
+                )}
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Content */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Main Content */}
+            <div className="lg:col-span-2 space-y-12">
+              {/* Challenge */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
+                  The Challenge
+                </h2>
+                <p className="text-[var(--text-secondary)] leading-relaxed">
+                  {study.challenge}
+                </p>
+              </motion.div>
+
+              {/* Solution */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
+                  The Solution
+                </h2>
+                <p className="text-[var(--text-secondary)] leading-relaxed">
+                  {study.solution}
+                </p>
+              </motion.div>
+
+              {/* Quote */}
+              {study.quote && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="bg-gradient-to-br from-[var(--primary-light)] to-blue-50 rounded-2xl p-8 border border-blue-100"
+                >
+                  <Quote className="w-10 h-10 text-[var(--primary)] mb-4 opacity-50" />
+                  <blockquote className="text-lg text-[var(--text-primary)] italic mb-4">
+                    &ldquo;{study.quote.text}&rdquo;
+                  </blockquote>
+                  <div className="text-sm">
+                    <div className="font-semibold text-[var(--text-primary)]">
+                      {study.quote.author}
+                    </div>
+                    <div className="text-[var(--text-muted)]">{study.quote.role}</div>
+                  </div>
+                </motion.div>
+              )}
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:col-span-1">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-white rounded-xl border border-[var(--border)] p-6 sticky top-24"
+              >
+                <h3 className="font-semibold text-[var(--text-primary)] mb-4">
+                  Key Highlights
+                </h3>
+                <ul className="space-y-3">
+                  {study.highlights.map((highlight, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-[var(--text-secondary)]">
+                        {highlight}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-8 pt-6 border-t border-[var(--border)]">
+                  <Link
+                    href="/contact"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors"
+                  >
+                    Get Similar Results
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Navigation */}
+      <section className="py-12 px-6 bg-[var(--background-secondary)]">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex justify-between items-center">
+            {prevStudy ? (
+              <Link
+                href={`/case-studies/${prevStudy.slug}`}
+                className="flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                <span className="text-sm">Previous</span>
+              </Link>
+            ) : (
+              <div />
+            )}
+            {nextStudy ? (
+              <Link
+                href={`/case-studies/${nextStudy.slug}`}
+                className="flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors"
+              >
+                <span className="text-sm">Next</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            ) : (
+              <div />
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 px-6 bg-gradient-to-br from-[var(--text-primary)] to-slate-900">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <TrendingUp className="w-12 h-12 text-white/50 mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+              Ready to Achieve Similar Results?
+            </h2>
+            <p className="text-lg text-gray-300 mb-10">
+              Start with a pilot on your closed claims and see the impact for yourself.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg"
+            >
+              Request a Pilot
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+}

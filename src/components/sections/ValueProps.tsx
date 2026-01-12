@@ -13,6 +13,7 @@ const valueProps = [
     label: "Faster claim determinations",
     description: "Process claims in seconds, not days. Our agentic workflow handles document ingestion, comprehension, and decision—automatically.",
     color: "var(--primary)",
+    proofContext: "Pilot results: avg 2.3s decision time",
   },
   {
     icon: Target,
@@ -22,6 +23,7 @@ const valueProps = [
     label: "Reduction in handling costs",
     description: "Eliminate re-keying errors and inconsistent interpretations. Same input, same output—every time.",
     color: "var(--trust)",
+    proofContext: "Based on closed file review analysis",
   },
   {
     icon: ShieldCheck,
@@ -31,6 +33,7 @@ const valueProps = [
     label: "Auditable decisions",
     description: "Every decision links directly to policy clauses and source documents. Built for EU AI Act compliance.",
     color: "var(--secondary)",
+    proofContext: "Complete decision traceability guaranteed",
   },
 ];
 
@@ -141,9 +144,23 @@ export function ValueProps() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
                   {prop.description}
                 </p>
+
+                {/* Proof Context */}
+                <div
+                  className="text-xs font-medium px-3 py-1.5 rounded-full inline-flex items-center gap-1.5"
+                  style={{
+                    backgroundColor: `color-mix(in srgb, ${prop.color} 10%, transparent)`,
+                    color: prop.color,
+                  }}
+                >
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {prop.proofContext}
+                </div>
 
                 {/* Decorative gradient */}
                 <div 

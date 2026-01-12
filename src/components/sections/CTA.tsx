@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Calendar, Calculator, FileText } from "lucide-react";
 
 export function CTA() {
   return (
@@ -29,21 +29,41 @@ export function CTA() {
             Book a 30-minute demo to see how TrueAim.ai can transform your claims operations.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/25"
-            >
-              <Calendar className="w-5 h-5" />
-              Request Demo
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-white/20 text-white font-medium hover:bg-white/10 transition-colors text-lg"
-            >
-              Contact Sales
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+          <div className="flex flex-col items-center gap-4">
+            {/* Primary CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/25"
+              >
+                <Calendar className="w-5 h-5" />
+                Book a Demo
+              </Link>
+              <Link
+                href="/roi-calculator"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-white/20 text-white font-medium hover:bg-white/10 transition-colors text-lg"
+              >
+                <Calculator className="w-5 h-5" />
+                Get ROI Estimate
+              </Link>
+            </div>
+            {/* Tertiary links */}
+            <div className="flex flex-wrap gap-6 justify-center text-sm mt-2">
+              <Link
+                href="/trust"
+                className="text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1"
+              >
+                <FileText className="w-4 h-4" />
+                Security & Compliance
+              </Link>
+              <Link
+                href="/contact"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                Contact Sales
+                <ArrowRight className="w-4 h-4 inline ml-1" />
+              </Link>
+            </div>
           </div>
         </motion.div>
 
