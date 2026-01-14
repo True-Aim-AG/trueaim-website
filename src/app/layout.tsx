@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
+import { AuroraBackground } from "@/components/layout/AuroraBackground";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -54,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
         {/* Skip to main content link for keyboard users */}
         <a
           href="#main-content"
@@ -62,8 +69,9 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        <AuroraBackground />
         <Navigation />
-        <main id="main-content" className="pt-[73px]">{children}</main>
+        <main id="main-content" className="pt-[73px] relative z-10">{children}</main>
         <Footer />
       </body>
     </html>

@@ -1,66 +1,83 @@
 @import "tailwindcss";
 
-/* TrueAim.ai Design System Tokens v2 — Ocean Blue Palette */
+/* TrueAim.ai Design System — Dark Glassmorphism Theme */
 :root {
-  /* Primary Colors — Ocean Blue */
+  /* ===== Dark Mode Base Colors ===== */
+  --background: #0B0C15;
+  --background-secondary: #12141D;
+  --foreground: #ffffff;
+
+  /* Text Colors — Dark Mode Hierarchy */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.5);
+
+  /* ===== Primary Colors — Ocean Blue ===== */
   --primary: #2563EB;
-  --primary-hover: #1D4ED8;
+  --primary-hover: #3B82F6;
   --primary-dark: #0A1628;
-  --primary-light: #EFF6FF;
+  --primary-light: rgba(37, 99, 235, 0.15);
   --primary-foreground: #ffffff;
 
   /* Secondary Colors — Forest Green (Success) */
   --secondary: #16A34A;
   --secondary-light: #22C55E;
-  --secondary-bg: #DCFCE7;
+  --secondary-bg: rgba(22, 163, 74, 0.15);
   --secondary-foreground: #ffffff;
 
-  /* Legacy trust color — now maps to primary */
+  /* Legacy trust color — maps to primary */
   --trust: #2563EB;
   --trust-foreground: #ffffff;
 
-  /* Product Accent Colors */
+  /* ===== Aurora Accent Colors ===== */
+  --aurora-cyan: #06B6D4;
+  --aurora-teal: #14B8A6;
+  --aurora-purple: #8B5CF6;
+
+  /* ===== Product Accent Colors ===== */
   --mira: #6366F1;
-  --mira-bg: #EEF2FF;
-  --mira-text: #4338CA;
+  --mira-bg: rgba(99, 102, 241, 0.15);
+  --mira-text: #818CF8;
 
   --contextbuilder: #14B8A6;
-  --contextbuilder-bg: #F0FDFA;
-  --contextbuilder-text: #0F766E;
+  --contextbuilder-bg: rgba(20, 184, 166, 0.15);
+  --contextbuilder-text: #2DD4BF;
 
   --claimeval: #2563EB;
-  --claimeval-bg: #DBEAFE;
-  --claimeval-text: #1D4ED8;
+  --claimeval-bg: rgba(37, 99, 235, 0.15);
+  --claimeval-text: #60A5FA;
 
-  /* Text Colors — Slate */
-  --text-primary: #020617;
-  --text-secondary: #1E293B;
-  --text-muted: #475569;
+  /* ===== Border Colors — Glass Effect ===== */
+  --border: rgba(255, 255, 255, 0.12);
+  --border-hover: rgba(255, 255, 255, 0.2);
 
-  /* Background Colors */
-  --background: #ffffff;
-  --background-secondary: #F1F5F9;
-  --foreground: #020617;
-
-  /* Border Colors */
-  --border: #E2E8F0;
-  --border-hover: #CBD5E1;
-
-  /* Status Colors */
-  --success: #16A34A;
+  /* ===== Status Colors ===== */
+  --success: #22C55E;
   --warning: #F59E0B;
   --error: #EF4444;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  /* ===== Shadows — Dark Mode ===== */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
 
-  /* Radius */
+  /* ===== Glass Panel Variables ===== */
+  --glass-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  --glass-blur: 12px;
+  --glass-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.12);
+
+  /* ===== Glow Effects ===== */
+  --glow-primary: 0 0 40px rgba(37, 99, 235, 0.3);
+  --glow-cyan: 0 0 40px rgba(6, 182, 212, 0.3);
+  --glow-purple: 0 0 40px rgba(139, 92, 246, 0.3);
+
+  /* ===== Radius ===== */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
 }
 
 @theme inline {
@@ -71,11 +88,11 @@
   --color-trust: var(--trust);
 }
 
-/* Base Styles */
+/* ===== Base Styles ===== */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -102,4 +119,158 @@ html {
 ::selection {
   background-color: var(--primary);
   color: white;
+}
+
+/* ===== Monospace Font for Data ===== */
+.font-mono-data {
+  font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
+  letter-spacing: -0.01em;
+}
+
+code, .data-value, .claim-id, .metric-value {
+  font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
+}
+
+/* ===== Glass Panel Styles ===== */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-2xl);
+}
+
+/* Glass Panel with Hover Glow Effect */
+.glass-panel-hover {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.glass-panel-hover::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: calc(var(--radius-2xl) + 1px);
+  background: linear-gradient(135deg, var(--aurora-cyan), var(--aurora-teal), var(--primary));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.glass-panel-hover:hover::before {
+  opacity: 1;
+}
+
+.glass-panel-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glow-primary);
+  border-color: transparent;
+}
+
+/* Glass Panel Light Variant (for nested elements) */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+}
+
+/* ===== Aurora Background System ===== */
+.aurora-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -10;
+  background: var(--background);
+  pointer-events: none;
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+  animation: float 20s infinite ease-in-out;
+}
+
+.aurora-blob-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.4) 0%, transparent 70%);
+  top: -200px;
+  left: -100px;
+}
+
+.aurora-blob-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.35) 0%, transparent 70%);
+  top: 30%;
+  right: -150px;
+  animation-delay: -7s;
+}
+
+.aurora-blob-3 {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+  bottom: -200px;
+  left: 20%;
+  animation-delay: -14s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -30px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(20px, 10px) scale(1.02); }
+}
+
+/* ===== Performance & Accessibility ===== */
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob {
+    animation: none;
+  }
+  .glass-panel-hover:hover {
+    transform: none;
+  }
+  .glass-panel-hover::before {
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .aurora-blob {
+    filter: blur(60px);
+  }
+  .aurora-blob-1 {
+    width: 400px;
+    height: 400px;
+  }
+  .aurora-blob-2 {
+    width: 350px;
+    height: 350px;
+  }
+  .aurora-blob-3 {
+    width: 380px;
+    height: 380px;
+  }
+}
+
+/* ===== Form Input Dark Mode ===== */
+input, textarea, select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }

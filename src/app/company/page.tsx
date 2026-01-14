@@ -79,21 +79,18 @@ export default function CompanyPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-white" />
-        <div className="absolute top-20 right-10 w-96 h-96 bg-[var(--secondary)] opacity-5 rounded-full blur-3xl" />
-
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
               <Users className="w-4 h-4" />
               About Us
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
               Swiss Precision.
               <br />
               <span className="text-[var(--primary)]">Auditable AI.</span>
@@ -107,19 +104,19 @@ export default function CompanyPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 px-6 bg-[var(--background-secondary)]">
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl border border-[var(--border)] p-8 md:p-12"
+            className="glass-panel p-8 md:p-12"
           >
-            <div className="w-12 h-12 rounded-full bg-[var(--primary)]/10 flex items-center justify-center mb-6">
+            <div className="w-12 h-12 rounded-full bg-[var(--primary)]/20 flex items-center justify-center mb-6">
               <Quote className="w-6 h-6 text-[var(--primary)]" />
             </div>
-            <blockquote className="text-xl md:text-2xl text-[var(--text-primary)] leading-relaxed italic">
+            <blockquote className="text-xl md:text-2xl text-white leading-relaxed italic">
               &ldquo;Combine the power of Agentic AI with the reliability of deterministic outcomes to become the global logic layer that powers claim determinations in a legally compliant and automated way.&rdquo;
             </blockquote>
             <p className="mt-6 text-[var(--text-muted)] font-medium">Our Mission</p>
@@ -137,7 +134,7 @@ export default function CompanyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
               Leadership Team
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -153,16 +150,16 @@ export default function CompanyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl border border-[var(--border)] p-8 hover:shadow-lg transition-shadow"
+                className="glass-panel glass-panel-hover p-8"
               >
                 {/* Avatar placeholder */}
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--trust)] flex items-center justify-center mb-6">
+                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--aurora-cyan)] flex items-center justify-center mb-6">
                   <span className="text-3xl font-bold text-white">
                     {founder.name.split(' ').map(n => n[0]).join('')}
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-1">
+                <h3 className="text-2xl font-bold text-white mb-1">
                   {founder.name}
                 </h3>
                 <p className="text-[var(--primary)] font-medium mb-3">
@@ -178,7 +175,7 @@ export default function CompanyPage() {
                   href={founder.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[var(--trust)] hover:text-[#006699] transition-colors"
+                  className="inline-flex items-center gap-2 text-[var(--aurora-cyan)] hover:text-[var(--primary)] transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
                   Connect on LinkedIn
@@ -190,7 +187,7 @@ export default function CompanyPage() {
       </section>
 
       {/* Advisors Section */}
-      <section className="py-20 px-6 bg-[var(--background-secondary)]">
+      <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -199,7 +196,7 @@ export default function CompanyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
               Advisors
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -215,14 +212,14 @@ export default function CompanyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white rounded-xl border border-[var(--border)] p-6 hover:shadow-md transition-shadow"
+                className="glass-panel glass-panel-hover p-6"
               >
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center mb-4">
-                  <span className="text-lg font-bold text-slate-600">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--aurora-purple)]/30 to-[var(--aurora-cyan)]/30 flex items-center justify-center mb-4">
+                  <span className="text-lg font-bold text-white">
                     {advisor.name.split(' ').map(n => n[0]).join('')}
                   </span>
                 </div>
-                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-1">
+                <h3 className="text-lg font-semibold text-white mb-1">
                   {advisor.name}
                 </h3>
                 <p className="text-sm text-[var(--text-secondary)]">
@@ -244,7 +241,7 @@ export default function CompanyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
               Partners & Backers
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -260,12 +257,12 @@ export default function CompanyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl border border-[var(--border)] p-8 hover:shadow-lg transition-shadow"
+                className="glass-panel glass-panel-hover p-8"
               >
-                <div className="w-14 h-14 rounded-xl bg-[var(--secondary)]/10 flex items-center justify-center mb-6">
-                  <partner.icon className="w-7 h-7 text-[var(--secondary)]" />
+                <div className="w-14 h-14 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-6">
+                  <partner.icon className="w-7 h-7 text-emerald-400" />
                 </div>
-                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
+                <h3 className="text-xl font-semibold text-white mb-3">
                   {partner.name}
                 </h3>
                 <p className="text-[var(--text-secondary)] leading-relaxed">
@@ -278,24 +275,25 @@ export default function CompanyPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-[var(--text-primary)] to-slate-900">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="glass-panel p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
               Join Us in Transforming Claims
             </h2>
-            <p className="text-lg text-gray-300 mb-10">
+            <p className="text-lg text-[var(--text-secondary)] mb-10">
               Whether you&apos;re an insurer looking to automate claims or a professional interested in joining our team, we&apos;d love to hear from you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/30"
               >
                 Get in Touch
                 <ArrowRight className="w-5 h-5" />

@@ -67,36 +67,36 @@ const controlFeatures = [
     icon: RefreshCw,
     title: "Replay Logs",
     description: "Re-run any decision with the same inputs and get identical outputs. Every execution is deterministic and reproducible.",
-    color: "text-blue-600",
-    bgColor: "bg-blue-100",
+    color: "text-blue-400",
+    bgColor: "bg-blue-500/20",
   },
   {
     icon: GitBranch,
     title: "Rule Traceability",
     description: "Every coverage decision is mapped to specific policy clause IDs. See exactly which rules fired and why.",
-    color: "text-indigo-600",
-    bgColor: "bg-indigo-100",
+    color: "text-indigo-400",
+    bgColor: "bg-indigo-500/20",
   },
   {
     icon: UserCheck,
     title: "Approval Gates",
     description: "Configure thresholds for human review escalation. High-value or edge cases automatically route to experts.",
-    color: "text-emerald-600",
-    bgColor: "bg-emerald-100",
+    color: "text-emerald-400",
+    bgColor: "bg-emerald-500/20",
   },
   {
     icon: AlertTriangle,
     title: "Exception Routing",
     description: "Automatic routing based on claim complexity score. Unusual patterns flagged for manual inspection.",
-    color: "text-amber-600",
-    bgColor: "bg-amber-100",
+    color: "text-amber-400",
+    bgColor: "bg-amber-500/20",
   },
   {
     icon: Gauge,
     title: "Confidence Scoring",
     description: "Field-level certainty indicators show where the system is confident and where human review adds value.",
-    color: "text-purple-600",
-    bgColor: "bg-purple-100",
+    color: "text-purple-400",
+    bgColor: "bg-purple-500/20",
   },
 ];
 
@@ -105,22 +105,18 @@ export default function TechnologyPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-white" />
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--primary)] opacity-5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[var(--trust)] opacity-5 rounded-full blur-3xl" />
-
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-[var(--text-secondary)] text-sm font-medium mb-6">
               <Cpu className="w-4 h-4" />
               Our Technology
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
               Neuro-Symbolic AI: The Architecture
               <br />
               <span className="text-[var(--primary)]">Regulators Trust</span>
@@ -134,7 +130,7 @@ export default function TechnologyPage() {
       </section>
 
       {/* Problem Section */}
-      <section className="py-20 px-6 bg-[var(--background-secondary)]">
+      <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -143,7 +139,7 @@ export default function TechnologyPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
               The Problem with Probabilistic AI
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
@@ -166,7 +162,7 @@ export default function TechnologyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
               Separation of Concerns
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -181,32 +177,32 @@ export default function TechnologyPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-[var(--border)] p-8"
+              className="glass-panel p-8"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl bg-[var(--trust)] flex items-center justify-center">
-                  <Brain className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 rounded-2xl bg-[var(--aurora-cyan)]/30 flex items-center justify-center">
+                  <Brain className="w-8 h-8 text-[var(--aurora-cyan)]" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-[var(--text-primary)]">
+                  <h3 className="text-2xl font-bold text-white">
                     Agentic AI Layer
                   </h3>
-                  <p className="text-[var(--trust)] font-medium">Flexible and adaptive</p>
+                  <p className="text-[var(--aurora-cyan)] font-medium">Flexible and adaptive</p>
                 </div>
               </div>
 
               <ul className="space-y-4">
                 {agenticCapabilities.map((cap) => (
                   <li key={cap} className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
-                      <FileSearch className="w-4 h-4 text-[var(--trust)]" />
+                    <div className="w-8 h-8 rounded-lg bg-[var(--aurora-cyan)]/20 flex items-center justify-center flex-shrink-0">
+                      <FileSearch className="w-4 h-4 text-[var(--aurora-cyan)]" />
                     </div>
-                    <span className="text-[var(--text-primary)] font-medium">{cap}</span>
+                    <span className="text-white font-medium">{cap}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-6 p-4 bg-blue-100/50 rounded-xl">
+              <div className="mt-6 p-4 glass-panel-light">
                 <p className="text-sm text-[var(--text-secondary)]">
                   Uses machine learning to handle unstructured data, understand context, and orchestrate complex workflows.
                 </p>
@@ -219,14 +215,14 @@ export default function TechnologyPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-[var(--border)] p-8"
+              className="glass-panel p-8"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl bg-[var(--primary)] flex items-center justify-center">
-                  <Scale className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 rounded-2xl bg-[var(--primary)]/30 flex items-center justify-center">
+                  <Scale className="w-8 h-8 text-[var(--primary)]" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-[var(--text-primary)]">
+                  <h3 className="text-2xl font-bold text-white">
                     Deterministic Logic Engine
                   </h3>
                   <p className="text-[var(--primary)] font-medium">Precise and auditable</p>
@@ -236,15 +232,15 @@ export default function TechnologyPage() {
               <ul className="space-y-4">
                 {deterministicCapabilities.map((cap) => (
                   <li key={cap} className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center flex-shrink-0">
                       <Workflow className="w-4 h-4 text-[var(--primary)]" />
                     </div>
-                    <span className="text-[var(--text-primary)] font-medium">{cap}</span>
+                    <span className="text-white font-medium">{cap}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-6 p-4 bg-indigo-100/50 rounded-xl">
+              <div className="mt-6 p-4 glass-panel-light">
                 <p className="text-sm text-[var(--text-secondary)]">
                   Applies encoded business rules to produce consistent, explainable decisions every time.
                 </p>
@@ -273,7 +269,7 @@ export default function TechnologyPage() {
       <DecisionDossier variant="full" />
 
       {/* Control Layer Section */}
-      <section className="py-20 px-6 bg-[var(--background-secondary)]">
+      <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -282,11 +278,11 @@ export default function TechnologyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium mb-4">
               <Shield className="w-4 h-4" />
               Enterprise Control
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
               The Control Layer
             </h2>
             <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
@@ -302,12 +298,12 @@ export default function TechnologyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl border border-[var(--border)] p-6 hover:shadow-lg hover:border-emerald-200 transition-all"
+                className="glass-panel glass-panel-hover p-6"
               >
                 <div className={`w-12 h-12 rounded-xl ${feature.bgColor} flex items-center justify-center mb-4`}>
                   <feature.icon className={`w-6 h-6 ${feature.color}`} />
                 </div>
-                <h3 className="font-semibold text-[var(--text-primary)] mb-2">{feature.title}</h3>
+                <h3 className="font-semibold text-white mb-2">{feature.title}</h3>
                 <p className="text-sm text-[var(--text-muted)]">{feature.description}</p>
               </motion.div>
             ))}
@@ -319,17 +315,17 @@ export default function TechnologyPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-12 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100 p-8 text-center"
+            className="mt-12 glass-panel p-8 text-center"
           >
             <p className="text-lg text-[var(--text-secondary)]">
-              <strong className="text-[var(--text-primary)]">Our philosophy:</strong> AI should handle the heavy lifting, but humans must always be able to understand, verify, and override. Every control exists because regulated industries demand it.
+              <strong className="text-white">Our philosophy:</strong> AI should handle the heavy lifting, but humans must always be able to understand, verify, and override. Every control exists because regulated industries demand it.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Comparison Table */}
-      <section className="py-20 px-6 bg-[var(--background-secondary)]">
+      <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -338,7 +334,7 @@ export default function TechnologyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
               Not Another Black Box
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -351,12 +347,12 @@ export default function TechnologyPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-white rounded-2xl border border-[var(--border)] overflow-hidden"
+            className="glass-panel overflow-hidden"
           >
             <table className="w-full">
               <thead>
                 <tr className="border-b border-[var(--border)]">
-                  <th className="text-left p-6 text-[var(--text-primary)] font-semibold">Capability</th>
+                  <th className="text-left p-6 text-white font-semibold">Capability</th>
                   <th className="text-center p-6 text-[var(--text-muted)] font-semibold">Traditional AI</th>
                   <th className="text-center p-6 text-[var(--primary)] font-semibold">TrueAim.ai</th>
                 </tr>
@@ -364,7 +360,7 @@ export default function TechnologyPage() {
               <tbody>
                 {comparisonData.map((row, index) => (
                   <tr key={row.capability} className={index < comparisonData.length - 1 ? "border-b border-[var(--border)]" : ""}>
-                    <td className="p-6 text-[var(--text-primary)] font-medium">{row.capability}</td>
+                    <td className="p-6 text-white font-medium">{row.capability}</td>
                     <td className="p-6 text-center text-[var(--text-muted)]">{row.traditional}</td>
                     <td className="p-6 text-center">
                       <span className="inline-flex items-center gap-2 text-[var(--secondary)] font-medium">
@@ -390,7 +386,7 @@ export default function TechnologyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
               Security & Compliance
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -406,12 +402,12 @@ export default function TechnologyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl border border-[var(--border)] p-8 hover:shadow-lg transition-shadow"
+                className="glass-panel glass-panel-hover p-8"
               >
-                <div className="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center mb-6">
-                  <feature.icon className="w-7 h-7 text-[var(--text-primary)]" />
+                <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6">
+                  <feature.icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4">
+                <h3 className="text-xl font-semibold text-white mb-4">
                   {feature.title}
                 </h3>
                 <ul className="space-y-3">
@@ -429,31 +425,32 @@ export default function TechnologyPage() {
       </section>
 
       {/* Research Partnership */}
-      <section className="py-20 px-6 bg-[var(--background-secondary)]">
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl border border-[var(--border)] p-8 md:p-12 text-center"
+            className="glass-panel p-8 md:p-12 text-center"
           >
-            <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
-              <GraduationCap className="w-8 h-8 text-[var(--trust)]" />
+            <div className="w-16 h-16 rounded-full bg-[var(--aurora-cyan)]/20 flex items-center justify-center mx-auto mb-6">
+              <GraduationCap className="w-8 h-8 text-[var(--aurora-cyan)]" />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-4">
               Research Partnership
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Our technology was developed in collaboration with <strong>ZHAW</strong>—Zurich University of Applied Sciences. The original developer, Dr. Dandolo Flumini, leads ongoing R&D through a <strong>CHF 300,000 Innosuisse-funded</strong> research program.
+              Our technology was developed in collaboration with <strong className="text-white">ZHAW</strong>—Zurich University of Applied Sciences. The original developer, Dr. Dandolo Flumini, leads ongoing R&D through a <strong className="text-white">CHF 300,000 Innosuisse-funded</strong> research program.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-[var(--text-primary)] to-slate-900">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-20 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary-dark)]/50 to-transparent" />
+        <div className="relative max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -463,12 +460,12 @@ export default function TechnologyPage() {
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
               See the Technology in Action
             </h2>
-            <p className="text-lg text-gray-300 mb-10">
+            <p className="text-lg text-[var(--text-secondary)] mb-10">
               Book a technical deep-dive to understand how our neuro-symbolic architecture can work for your claims operations.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all text-lg shadow-lg shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/50"
             >
               Request Technical Demo
               <ArrowRight className="w-5 h-5" />

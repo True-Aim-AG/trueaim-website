@@ -100,21 +100,18 @@ export default function ContactPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-white" />
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--primary)] opacity-5 rounded-full blur-3xl" />
-
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] text-sm font-medium mb-6">
               <MessageSquare className="w-4 h-4" />
               Contact Us
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
               Let&apos;s Talk
               <br />
               <span className="text-[var(--primary)]">Claims Automation</span>
@@ -138,11 +135,11 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
             >
               {isSubmitted ? (
-                <div className="bg-white rounded-2xl border border-[var(--border)] p-12 text-center">
-                  <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle className="w-10 h-10 text-[var(--secondary)]" />
+                <div className="glass-panel p-12 text-center">
+                  <div className="w-20 h-20 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="w-10 h-10 text-emerald-400" />
                   </div>
-                  <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
+                  <h2 className="text-2xl font-bold text-white mb-4">
                     Thank You!
                   </h2>
                   <p className="text-[var(--text-secondary)] mb-6">
@@ -158,23 +155,23 @@ export default function ContactPage() {
               ) : (
                 <form
                   onSubmit={handleSubmit(onSubmit)}
-                  className="bg-white rounded-2xl border border-[var(--border)] p-8"
+                  className="glass-panel p-8"
                 >
-                  <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                  <h2 className="text-2xl font-bold text-white mb-6">
                     Request a Demo
                   </h2>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* First Name */}
                     <div>
-                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                        First Name <span className="text-red-500">*</span>
+                      <label className="block text-sm font-medium text-white mb-2">
+                        First Name <span className="text-red-400">*</span>
                       </label>
                       <input
                         {...register("firstName")}
                         type="text"
                         className={cn(
-                          "w-full px-4 py-3 rounded-lg border bg-white transition-colors",
+                          "w-full px-4 py-3 rounded-lg border bg-white/5 text-white placeholder:text-[var(--text-muted)] transition-colors",
                           errors.firstName
                             ? "border-red-500 focus:border-red-500 focus:ring-red-500"
                             : "border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]"
@@ -182,7 +179,7 @@ export default function ContactPage() {
                         placeholder="John"
                       />
                       {errors.firstName && (
-                        <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+                        <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
                           <AlertCircle className="w-4 h-4" />
                           {errors.firstName.message}
                         </p>
@@ -191,14 +188,14 @@ export default function ContactPage() {
 
                     {/* Last Name */}
                     <div>
-                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                        Last Name <span className="text-red-500">*</span>
+                      <label className="block text-sm font-medium text-white mb-2">
+                        Last Name <span className="text-red-400">*</span>
                       </label>
                       <input
                         {...register("lastName")}
                         type="text"
                         className={cn(
-                          "w-full px-4 py-3 rounded-lg border bg-white transition-colors",
+                          "w-full px-4 py-3 rounded-lg border bg-white/5 text-white placeholder:text-[var(--text-muted)] transition-colors",
                           errors.lastName
                             ? "border-red-500 focus:border-red-500"
                             : "border-[var(--border)] focus:border-[var(--primary)]"
@@ -206,7 +203,7 @@ export default function ContactPage() {
                         placeholder="Doe"
                       />
                       {errors.lastName && (
-                        <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+                        <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
                           <AlertCircle className="w-4 h-4" />
                           {errors.lastName.message}
                         </p>
@@ -215,14 +212,14 @@ export default function ContactPage() {
 
                     {/* Email */}
                     <div className="sm:col-span-2">
-                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                        Work Email <span className="text-red-500">*</span>
+                      <label className="block text-sm font-medium text-white mb-2">
+                        Work Email <span className="text-red-400">*</span>
                       </label>
                       <input
                         {...register("email")}
                         type="email"
                         className={cn(
-                          "w-full px-4 py-3 rounded-lg border bg-white transition-colors",
+                          "w-full px-4 py-3 rounded-lg border bg-white/5 text-white placeholder:text-[var(--text-muted)] transition-colors",
                           errors.email
                             ? "border-red-500 focus:border-red-500"
                             : "border-[var(--border)] focus:border-[var(--primary)]"
@@ -230,7 +227,7 @@ export default function ContactPage() {
                         placeholder="john.doe@company.com"
                       />
                       {errors.email && (
-                        <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+                        <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
                           <AlertCircle className="w-4 h-4" />
                           {errors.email.message}
                         </p>
@@ -239,14 +236,14 @@ export default function ContactPage() {
 
                     {/* Company */}
                     <div>
-                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                        Company <span className="text-red-500">*</span>
+                      <label className="block text-sm font-medium text-white mb-2">
+                        Company <span className="text-red-400">*</span>
                       </label>
                       <input
                         {...register("company")}
                         type="text"
                         className={cn(
-                          "w-full px-4 py-3 rounded-lg border bg-white transition-colors",
+                          "w-full px-4 py-3 rounded-lg border bg-white/5 text-white placeholder:text-[var(--text-muted)] transition-colors",
                           errors.company
                             ? "border-red-500 focus:border-red-500"
                             : "border-[var(--border)] focus:border-[var(--primary)]"
@@ -254,7 +251,7 @@ export default function ContactPage() {
                         placeholder="Company Name"
                       />
                       {errors.company && (
-                        <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+                        <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
                           <AlertCircle className="w-4 h-4" />
                           {errors.company.message}
                         </p>
@@ -263,14 +260,14 @@ export default function ContactPage() {
 
                     {/* Job Title */}
                     <div>
-                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                        Job Title <span className="text-red-500">*</span>
+                      <label className="block text-sm font-medium text-white mb-2">
+                        Job Title <span className="text-red-400">*</span>
                       </label>
                       <input
                         {...register("jobTitle")}
                         type="text"
                         className={cn(
-                          "w-full px-4 py-3 rounded-lg border bg-white transition-colors",
+                          "w-full px-4 py-3 rounded-lg border bg-white/5 text-white placeholder:text-[var(--text-muted)] transition-colors",
                           errors.jobTitle
                             ? "border-red-500 focus:border-red-500"
                             : "border-[var(--border)] focus:border-[var(--primary)]"
@@ -278,7 +275,7 @@ export default function ContactPage() {
                         placeholder="Claims Manager"
                       />
                       {errors.jobTitle && (
-                        <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+                        <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
                           <AlertCircle className="w-4 h-4" />
                           {errors.jobTitle.message}
                         </p>
@@ -287,22 +284,22 @@ export default function ContactPage() {
 
                     {/* Country */}
                     <div>
-                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                        Country <span className="text-red-500">*</span>
+                      <label className="block text-sm font-medium text-white mb-2">
+                        Country <span className="text-red-400">*</span>
                       </label>
                       <div className="relative">
                         <select
                           {...register("country")}
                           className={cn(
-                            "w-full px-4 py-3 rounded-lg border bg-white transition-colors appearance-none",
+                            "w-full px-4 py-3 rounded-lg border bg-white/5 text-white transition-colors appearance-none",
                             errors.country
                               ? "border-red-500 focus:border-red-500"
                               : "border-[var(--border)] focus:border-[var(--primary)]"
                           )}
                         >
-                          <option value="">Select country</option>
+                          <option value="" className="bg-[var(--background)]">Select country</option>
                           {countries.map((country) => (
-                            <option key={country} value={country}>
+                            <option key={country} value={country} className="bg-[var(--background)]">
                               {country}
                             </option>
                           ))}
@@ -310,7 +307,7 @@ export default function ContactPage() {
                         <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--text-muted)] pointer-events-none" />
                       </div>
                       {errors.country && (
-                        <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+                        <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
                           <AlertCircle className="w-4 h-4" />
                           {errors.country.message}
                         </p>
@@ -319,22 +316,22 @@ export default function ContactPage() {
 
                     {/* Interest */}
                     <div>
-                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                        What interests you? <span className="text-red-500">*</span>
+                      <label className="block text-sm font-medium text-white mb-2">
+                        What interests you? <span className="text-red-400">*</span>
                       </label>
                       <div className="relative">
                         <select
                           {...register("interest")}
                           className={cn(
-                            "w-full px-4 py-3 rounded-lg border bg-white transition-colors appearance-none",
+                            "w-full px-4 py-3 rounded-lg border bg-white/5 text-white transition-colors appearance-none",
                             errors.interest
                               ? "border-red-500 focus:border-red-500"
                               : "border-[var(--border)] focus:border-[var(--primary)]"
                           )}
                         >
-                          <option value="">Select interest</option>
+                          <option value="" className="bg-[var(--background)]">Select interest</option>
                           {interests.map((interest) => (
-                            <option key={interest.value} value={interest.value}>
+                            <option key={interest.value} value={interest.value} className="bg-[var(--background)]">
                               {interest.label}
                             </option>
                           ))}
@@ -342,7 +339,7 @@ export default function ContactPage() {
                         <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--text-muted)] pointer-events-none" />
                       </div>
                       {errors.interest && (
-                        <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+                        <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
                           <AlertCircle className="w-4 h-4" />
                           {errors.interest.message}
                         </p>
@@ -351,26 +348,26 @@ export default function ContactPage() {
 
                     {/* Claims Volume */}
                     <div className="sm:col-span-2">
-                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+                      <label className="block text-sm font-medium text-white mb-2">
                         Annual claims volume <span className="text-[var(--text-muted)]">(Optional)</span>
                       </label>
                       <input
                         {...register("claimsVolume")}
                         type="text"
-                        className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-white focus:border-[var(--primary)] transition-colors"
+                        className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-white/5 text-white placeholder:text-[var(--text-muted)] focus:border-[var(--primary)] transition-colors"
                         placeholder="e.g., 50,000 claims/year"
                       />
                     </div>
 
                     {/* Message */}
                     <div className="sm:col-span-2">
-                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+                      <label className="block text-sm font-medium text-white mb-2">
                         Tell us about your needs <span className="text-[var(--text-muted)]">(Optional)</span>
                       </label>
                       <textarea
                         {...register("message")}
                         rows={4}
-                        className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-white focus:border-[var(--primary)] transition-colors resize-none"
+                        className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-white/5 text-white placeholder:text-[var(--text-muted)] focus:border-[var(--primary)] transition-colors resize-none"
                         placeholder="What challenges are you facing with claims processing?"
                       />
                     </div>
@@ -381,14 +378,14 @@ export default function ContactPage() {
                         <input
                           {...register("consent")}
                           type="checkbox"
-                          className="mt-1 w-5 h-5 rounded border-[var(--border)] text-[var(--primary)] focus:ring-[var(--primary)]"
+                          className="mt-1 w-5 h-5 rounded border-[var(--border)] bg-white/5 text-[var(--primary)] focus:ring-[var(--primary)]"
                         />
                         <span className="text-sm text-[var(--text-secondary)]">
-                          I agree to receive communications from TrueAim.ai <span className="text-red-500">*</span>
+                          I agree to receive communications from TrueAim.ai <span className="text-red-400">*</span>
                         </span>
                       </label>
                       {errors.consent && (
-                        <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+                        <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
                           <AlertCircle className="w-4 h-4" />
                           {errors.consent.message}
                         </p>
@@ -400,7 +397,7 @@ export default function ContactPage() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                        className="w-full px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-[var(--primary)]/30"
                       >
                         {isSubmitting ? (
                           <>
@@ -425,32 +422,32 @@ export default function ContactPage() {
               className="space-y-8"
             >
               {/* Alternative Contact */}
-              <div className="bg-white rounded-2xl border border-[var(--border)] p-8">
-                <h3 className="text-xl font-bold text-[var(--text-primary)] mb-6">
+              <div className="glass-panel p-8">
+                <h3 className="text-xl font-bold text-white mb-6">
                   Alternative Contact
                 </h3>
                 <div className="space-y-4">
                   <a
                     href="mailto:hello@trueaim.ai"
-                    className="flex items-center gap-4 p-4 rounded-xl bg-[var(--background-secondary)] hover:bg-slate-100 transition-colors"
+                    className="flex items-center gap-4 p-4 rounded-xl glass-panel-light hover:bg-white/10 transition-colors"
                   >
-                    <div className="w-12 h-12 rounded-full bg-[var(--primary)]/10 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-[var(--primary)]/20 flex items-center justify-center">
                       <Mail className="w-6 h-6 text-[var(--primary)]" />
                     </div>
                     <div>
-                      <p className="font-medium text-[var(--text-primary)]">Email us</p>
+                      <p className="font-medium text-white">Email us</p>
                       <p className="text-[var(--text-secondary)]">hello@trueaim.ai</p>
                     </div>
                   </a>
                   <a
                     href="#"
-                    className="flex items-center gap-4 p-4 rounded-xl bg-[var(--background-secondary)] hover:bg-slate-100 transition-colors"
+                    className="flex items-center gap-4 p-4 rounded-xl glass-panel-light hover:bg-white/10 transition-colors"
                   >
-                    <div className="w-12 h-12 rounded-full bg-[var(--trust)]/10 flex items-center justify-center">
-                      <Calendar className="w-6 h-6 text-[var(--trust)]" />
+                    <div className="w-12 h-12 rounded-full bg-[var(--aurora-cyan)]/20 flex items-center justify-center">
+                      <Calendar className="w-6 h-6 text-[var(--aurora-cyan)]" />
                     </div>
                     <div>
-                      <p className="font-medium text-[var(--text-primary)]">Book a call</p>
+                      <p className="font-medium text-white">Book a call</p>
                       <p className="text-[var(--text-secondary)]">30-minute discovery call</p>
                     </div>
                   </a>
@@ -458,14 +455,14 @@ export default function ContactPage() {
               </div>
 
               {/* FAQs */}
-              <div className="bg-white rounded-2xl border border-[var(--border)] p-8">
-                <h3 className="text-xl font-bold text-[var(--text-primary)] mb-6">
+              <div className="glass-panel p-8">
+                <h3 className="text-xl font-bold text-white mb-6">
                   Frequently Asked Questions
                 </h3>
                 <div className="space-y-6">
                   {faqs.map((faq) => (
                     <div key={faq.question}>
-                      <h4 className="font-medium text-[var(--text-primary)] mb-2">
+                      <h4 className="font-medium text-white mb-2">
                         {faq.question}
                       </h4>
                       <p className="text-sm text-[var(--text-secondary)]">

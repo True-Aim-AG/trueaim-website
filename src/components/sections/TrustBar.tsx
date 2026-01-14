@@ -9,7 +9,7 @@ const awards = [
     title: "Innovationspreis der Schweizer Assekuranz",
   },
   {
-    country: "Germany", 
+    country: "Germany",
     title: "Digitale Leuchtturm Versicherungen — 1. Rang",
   },
   {
@@ -22,7 +22,7 @@ const partners = ["Innosuisse", "ZHAW", "Yarowa"];
 
 export function TrustBar() {
   return (
-    <section className="py-12 px-6 bg-[var(--background-secondary)] border-y border-[var(--border)]">
+    <section className="py-12 px-6 border-y border-[var(--border)]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,16 +51,16 @@ export function TrustBar() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-              className="flex items-center gap-4 bg-white rounded-xl p-4 border border-[var(--border)] shadow-sm"
+              className="flex items-center gap-4 glass-panel p-4"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center">
-                <Award className="w-6 h-6 text-amber-600" />
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-amber-500/30 to-amber-600/20 flex items-center justify-center">
+                <Award className="w-6 h-6 text-amber-400" />
               </div>
               <div>
                 <p className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wide">
                   {award.country}
                 </p>
-                <p className="text-sm font-medium text-[var(--text-primary)] leading-tight">
+                <p className="text-sm font-medium text-white leading-tight">
                   {award.title}
                 </p>
               </div>
@@ -83,7 +83,7 @@ export function TrustBar() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-              className="text-xl font-semibold text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors cursor-default"
+              className="text-xl font-semibold text-[var(--text-muted)] hover:text-white transition-colors cursor-default"
             >
               {partner}
             </motion.div>

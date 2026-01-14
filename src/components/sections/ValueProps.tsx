@@ -22,7 +22,7 @@ const valueProps = [
     suffix: "%",
     label: "Reduction in handling costs",
     description: "Eliminate re-keying errors and inconsistent interpretations. Same input, same output—every time.",
-    color: "var(--trust)",
+    color: "var(--aurora-cyan)",
     proofContext: "Based on closed file review analysis",
   },
   {
@@ -37,11 +37,11 @@ const valueProps = [
   },
 ];
 
-function AnimatedCounter({ 
-  value, 
-  duration = 2 
-}: { 
-  value: number; 
+function AnimatedCounter({
+  value,
+  duration = 2
+}: {
+  value: number;
   duration?: number;
 }) {
   const [count, setCount] = useState(0);
@@ -57,7 +57,7 @@ function AnimatedCounter({
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-      
+
       // Easing function for smooth animation
       const easeOut = 1 - Math.pow(1 - progress, 3);
       setCount(Math.floor(easeOut * value));
@@ -90,7 +90,7 @@ export function ValueProps() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
             Claims Automation That Regulators Trust
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
@@ -108,16 +108,16 @@ export function ValueProps() {
               transition={{ duration: 0.5, delay: index * 0.15 }}
               className="relative group"
             >
-              <div className="bg-white rounded-2xl border border-[var(--border)] p-8 h-full transition-all duration-300 hover:shadow-xl hover:border-transparent hover:-translate-y-1">
+              <div className="glass-panel glass-panel-hover p-8 h-full">
                 {/* Icon */}
-                <div 
+                <div
                   className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110"
-                  style={{ 
-                    backgroundColor: `color-mix(in srgb, ${prop.color} 15%, transparent)`,
+                  style={{
+                    backgroundColor: `color-mix(in srgb, ${prop.color} 25%, transparent)`,
                   }}
                 >
-                  <prop.icon 
-                    className="w-7 h-7" 
+                  <prop.icon
+                    className="w-7 h-7"
                     style={{ color: prop.color }}
                   />
                 </div>
@@ -129,8 +129,8 @@ export function ValueProps() {
                       {prop.prefix}
                     </span>
                   )}
-                  <div 
-                    className="text-5xl md:text-6xl font-bold"
+                  <div
+                    className="text-5xl md:text-6xl font-bold font-mono-data"
                     style={{ color: prop.color }}
                   >
                     <AnimatedCounter value={prop.metric} />
@@ -139,7 +139,7 @@ export function ValueProps() {
                 </div>
 
                 {/* Label */}
-                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
+                <h3 className="text-lg font-semibold text-white mb-3">
                   {prop.label}
                 </h3>
 
@@ -152,7 +152,7 @@ export function ValueProps() {
                 <div
                   className="text-xs font-medium px-3 py-1.5 rounded-full inline-flex items-center gap-1.5"
                   style={{
-                    backgroundColor: `color-mix(in srgb, ${prop.color} 10%, transparent)`,
+                    backgroundColor: `color-mix(in srgb, ${prop.color} 20%, transparent)`,
                     color: prop.color,
                   }}
                 >
@@ -161,14 +161,6 @@ export function ValueProps() {
                   </svg>
                   {prop.proofContext}
                 </div>
-
-                {/* Decorative gradient */}
-                <div 
-                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
-                  style={{
-                    background: `linear-gradient(135deg, color-mix(in srgb, ${prop.color} 5%, transparent), transparent)`,
-                  }}
-                />
               </div>
             </motion.div>
           ))}

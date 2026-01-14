@@ -27,8 +27,11 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-[var(--text-primary)] text-white">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+    <footer className="relative border-t border-[var(--border)]">
+      {/* Glass overlay */}
+      <div className="absolute inset-0 bg-[rgba(11,12,21,0.7)] backdrop-blur-sm" />
+
+      <div className="relative max-w-7xl mx-auto px-6 py-16">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Brand Column */}
@@ -39,11 +42,11 @@ export function Footer() {
                 alt="TrueAim.ai Logo"
                 className="h-12 w-auto"
               />
-              <span className="text-2xl font-bold tracking-tight">
+              <span className="text-2xl font-bold tracking-tight text-white">
                 TrueAim<span className="text-[var(--primary)]">.ai</span>
               </span>
             </Link>
-            <p className="text-gray-400 text-sm mb-4">
+            <p className="text-[var(--text-muted)] text-sm mb-4">
               Swiss Precision. Auditable AI.
             </p>
             {/* Social Links */}
@@ -52,7 +55,7 @@ export function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-[var(--text-muted)] hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
@@ -61,7 +64,7 @@ export function Footer() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-[var(--text-muted)] hover:text-white transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
@@ -71,7 +74,7 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider">
+            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">
               Company
             </h3>
             <ul className="space-y-3">
@@ -79,11 +82,11 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm inline-flex items-center gap-2"
+                    className="text-[var(--text-muted)] hover:text-white transition-colors text-sm inline-flex items-center gap-2"
                   >
                     {link.name}
                     {link.comingSoon && (
-                      <span className="text-xs text-gray-500">(Coming Soon)</span>
+                      <span className="text-xs text-[var(--text-muted)] opacity-60">(Coming Soon)</span>
                     )}
                   </Link>
                 </li>
@@ -93,7 +96,7 @@ export function Footer() {
 
           {/* Products Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider">
+            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">
               Products
             </h3>
             <ul className="space-y-3">
@@ -101,7 +104,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-[var(--text-muted)] hover:text-white transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -112,7 +115,7 @@ export function Footer() {
 
           {/* Resources Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider">
+            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">
               Resources
             </h3>
             <ul className="space-y-3">
@@ -120,11 +123,11 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm inline-flex items-center gap-2"
+                    className="text-[var(--text-muted)] hover:text-white transition-colors text-sm inline-flex items-center gap-2"
                   >
                     {link.name}
                     {link.comingSoon && (
-                      <span className="text-xs text-gray-500">(Coming Soon)</span>
+                      <span className="text-xs text-[var(--text-muted)] opacity-60">(Coming Soon)</span>
                     )}
                   </Link>
                 </li>
@@ -134,7 +137,7 @@ export function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider">
+            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">
               Legal
             </h3>
             <ul className="space-y-3">
@@ -142,7 +145,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-[var(--text-muted)] hover:text-white transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -153,8 +156,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800">
-          <p className="text-gray-500 text-sm text-center">
+        <div className="pt-8 border-t border-[var(--border)]">
+          <p className="text-[var(--text-muted)] text-sm text-center">
             © {new Date().getFullYear()} TrueAim.ai. All rights reserved.
           </p>
         </div>

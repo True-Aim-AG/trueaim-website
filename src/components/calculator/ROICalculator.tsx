@@ -114,14 +114,14 @@ export function ROICalculator() {
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="bg-white rounded-2xl border border-[var(--border)] p-8"
+        className="glass-panel p-8"
       >
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 rounded-xl bg-[var(--primary-light)] flex items-center justify-center">
+          <div className="w-12 h-12 rounded-xl bg-[var(--primary)]/20 flex items-center justify-center">
             <Calculator className="w-6 h-6 text-[var(--primary)]" />
           </div>
           <div>
-            <h3 className="font-semibold text-[var(--text-primary)]">Your Claims Operation</h3>
+            <h3 className="font-semibold text-white">Your Claims Operation</h3>
             <p className="text-sm text-[var(--text-muted)]">Adjust the values to match your situation</p>
           </div>
         </div>
@@ -129,16 +129,16 @@ export function ROICalculator() {
         <div className="space-y-6">
           {/* Claims Volume */}
           <div>
-            <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+            <label className="block text-sm font-medium text-white mb-2">
               Annual Claims Volume
             </label>
             <select
               value={inputs.claimsVolume}
               onChange={(e) => setInputs({ ...inputs, claimsVolume: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-white text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
+              className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
             >
               {volumeOptions.map((option) => (
-                <option key={option.value} value={option.value}>
+                <option key={option.value} value={option.value} className="bg-[#12141D] text-white">
                   {option.label} claims/year
                 </option>
               ))}
@@ -147,7 +147,7 @@ export function ROICalculator() {
 
           {/* Handling Time */}
           <div>
-            <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+            <label className="block text-sm font-medium text-white mb-2">
               Average Handling Time: <span className="text-[var(--primary)]">{inputs.handlingTime} minutes</span>
             </label>
             <input
@@ -157,7 +157,7 @@ export function ROICalculator() {
               step="5"
               value={inputs.handlingTime}
               onChange={(e) => setInputs({ ...inputs, handlingTime: parseInt(e.target.value) })}
-              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[var(--primary)]"
+              className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[var(--primary)]"
             />
             <div className="flex justify-between text-xs text-[var(--text-muted)] mt-1">
               <span>15 min</span>
@@ -167,7 +167,7 @@ export function ROICalculator() {
 
           {/* Hourly Rate */}
           <div>
-            <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+            <label className="block text-sm font-medium text-white mb-2">
               Average Handler Cost (CHF/hour)
             </label>
             <div className="relative">
@@ -178,14 +178,14 @@ export function ROICalculator() {
                 max="200"
                 value={inputs.hourlyRate}
                 onChange={(e) => setInputs({ ...inputs, hourlyRate: parseInt(e.target.value) || 65 })}
-                className="w-full pl-14 pr-4 py-3 rounded-lg border border-[var(--border)] bg-white text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
+                className="w-full pl-14 pr-4 py-3 rounded-lg border border-[var(--border)] bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
               />
             </div>
           </div>
 
           {/* Automation Level */}
           <div>
-            <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+            <label className="block text-sm font-medium text-white mb-2">
               Current Automation Level
             </label>
             <div className="space-y-2">
@@ -194,8 +194,8 @@ export function ROICalculator() {
                   key={option.value}
                   className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all ${
                     inputs.automationLevel === option.value
-                      ? 'border-[var(--primary)] bg-[var(--primary-light)]'
-                      : 'border-[var(--border)] hover:border-slate-300'
+                      ? 'border-[var(--primary)] bg-[var(--primary)]/20'
+                      : 'border-[var(--border)] hover:border-white/30'
                   }`}
                 >
                   <input
@@ -209,13 +209,13 @@ export function ROICalculator() {
                   <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
                     inputs.automationLevel === option.value
                       ? 'border-[var(--primary)]'
-                      : 'border-slate-300'
+                      : 'border-white/30'
                   }`}>
                     {inputs.automationLevel === option.value && (
                       <div className="w-2 h-2 rounded-full bg-[var(--primary)]" />
                     )}
                   </div>
-                  <span className="text-sm text-[var(--text-primary)]">{option.label}</span>
+                  <span className="text-sm text-white">{option.label}</span>
                 </label>
               ))}
             </div>
@@ -246,30 +246,30 @@ export function ROICalculator() {
 
         {/* Metrics Grid */}
         <div className="grid grid-cols-2 gap-4">
-          <div className="bg-white rounded-xl border border-[var(--border)] p-6">
+          <div className="glass-panel p-6">
             <Clock className="w-5 h-5 text-[var(--primary)] mb-2" />
-            <div className="text-2xl font-bold text-[var(--text-primary)]">
+            <div className="text-2xl font-bold text-white font-mono-data">
               {formatNumber(results.hoursSaved)}
             </div>
             <div className="text-sm text-[var(--text-muted)]">Hours saved/year</div>
           </div>
-          <div className="bg-white rounded-xl border border-[var(--border)] p-6">
-            <Users className="w-5 h-5 text-[var(--secondary)] mb-2" />
-            <div className="text-2xl font-bold text-[var(--text-primary)]">
+          <div className="glass-panel p-6">
+            <Users className="w-5 h-5 text-[var(--aurora-cyan)] mb-2" />
+            <div className="text-2xl font-bold text-white font-mono-data">
               {results.fteEquivalent.toFixed(1)}
             </div>
             <div className="text-sm text-[var(--text-muted)]">FTE equivalent</div>
           </div>
-          <div className="bg-white rounded-xl border border-[var(--border)] p-6">
-            <DollarSign className="w-5 h-5 text-emerald-600 mb-2" />
-            <div className="text-2xl font-bold text-[var(--text-primary)]">
+          <div className="glass-panel p-6">
+            <DollarSign className="w-5 h-5 text-emerald-400 mb-2" />
+            <div className="text-2xl font-bold text-white font-mono-data">
               {formatCurrency(results.currentAnnualCost)}
             </div>
             <div className="text-sm text-[var(--text-muted)]">Current annual cost</div>
           </div>
-          <div className="bg-white rounded-xl border border-[var(--border)] p-6">
-            <CheckCircle className="w-5 h-5 text-emerald-600 mb-2" />
-            <div className="text-2xl font-bold text-[var(--text-primary)]">
+          <div className="glass-panel p-6">
+            <CheckCircle className="w-5 h-5 text-emerald-400 mb-2" />
+            <div className="text-2xl font-bold text-white font-mono-data">
               {results.paybackMonths < 12 ? `${results.paybackMonths} mo` : '< 1 yr'}
             </div>
             <div className="text-sm text-[var(--text-muted)]">Payback period</div>
@@ -277,7 +277,7 @@ export function ROICalculator() {
         </div>
 
         {/* Disclaimer */}
-        <div className="flex items-start gap-2 p-4 bg-slate-50 rounded-lg">
+        <div className="flex items-start gap-2 p-4 bg-white/5 rounded-lg border border-[var(--border)]">
           <Info className="w-4 h-4 text-[var(--text-muted)] flex-shrink-0 mt-0.5" />
           <p className="text-xs text-[var(--text-muted)]">
             Estimates based on typical automation rates. Actual results vary based on claim complexity, policy types, and implementation scope. Contact us for a detailed assessment.
@@ -285,8 +285,8 @@ export function ROICalculator() {
         </div>
 
         {/* CTA */}
-        <div className="bg-white rounded-xl border border-[var(--border)] p-6">
-          <h4 className="font-semibold text-[var(--text-primary)] mb-2">
+        <div className="glass-panel p-6">
+          <h4 className="font-semibold text-white mb-2">
             Want a detailed analysis for your operation?
           </h4>
           <p className="text-sm text-[var(--text-muted)] mb-4">
@@ -294,7 +294,7 @@ export function ROICalculator() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-[var(--primary)]/30"
           >
             Talk to an Expert
             <ArrowRight className="w-4 h-4" />

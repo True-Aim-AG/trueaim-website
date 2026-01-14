@@ -10,7 +10,7 @@ export function SocialProof() {
   const featuredStudies = caseStudies.slice(0, 2);
 
   return (
-    <section className="py-20 px-6 bg-[var(--background-secondary)]">
+    <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -19,11 +19,11 @@ export function SocialProof() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium mb-4">
             <TrendingUp className="w-4 h-4" />
             Proven Results
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
             Trusted by Leading Insurers
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
@@ -42,15 +42,15 @@ export function SocialProof() {
             >
               <Link
                 href={`/case-studies/${study.slug}`}
-                className="block bg-white rounded-2xl border border-[var(--border)] p-8 hover:shadow-xl hover:border-[var(--primary)] transition-all group h-full"
+                className="block glass-panel glass-panel-hover p-8 h-full group"
               >
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
                     <Building2 className="w-6 h-6 text-[var(--text-muted)]" />
                   </div>
                   <div>
-                    <div className="font-medium text-[var(--text-primary)]">
+                    <div className="font-medium text-white">
                       {study.customer.name}
                     </div>
                     <div className="text-sm text-[var(--text-muted)]">
@@ -62,8 +62,8 @@ export function SocialProof() {
                 {/* Key Metrics */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   {study.metrics.slice(0, 2).map((metric) => (
-                    <div key={metric.label} className="bg-slate-50 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-[var(--primary)]">
+                    <div key={metric.label} className="glass-panel-light p-4">
+                      <div className="text-2xl font-bold font-mono-data text-[var(--primary)]">
                         {metric.value}
                       </div>
                       <div className="text-xs text-[var(--text-muted)]">
@@ -103,7 +103,7 @@ export function SocialProof() {
         >
           <Link
             href="/case-studies"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-white hover:border-[var(--primary)] transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-white font-medium hover:bg-white/10 transition-all"
           >
             View All Case Studies
             <ArrowRight className="w-4 h-4" />
