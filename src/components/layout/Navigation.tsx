@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -32,17 +33,23 @@ export function Navigation() {
   const [resourcesOpen, setResourcesOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[var(--border)]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[rgba(11,12,21,0.85)] backdrop-blur-md border-b border-[var(--border)]">
       <nav className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <img
-              src="/images/logo.png"
-              alt="TrueAim.ai Logo"
-              className="h-14 w-auto"
-            />
-            <span className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">
+          <Link href="/" className="flex items-center gap-3">
+            <div className="bg-white rounded-lg p-1 shadow-lg shadow-white/10">
+              <Image
+                src="/images/logo.png"
+                alt="TrueAim.ai Logo"
+                width={36}
+                height={36}
+                className="object-contain"
+                priority
+                unoptimized
+              />
+            </div>
+            <span className="text-2xl font-bold tracking-tight text-white">
               TrueAim<span className="text-[var(--primary)]">.ai</span>
             </span>
           </Link>
@@ -58,7 +65,7 @@ export function Navigation() {
                     onMouseLeave={() => item.dropdownType === "products" ? setProductsOpen(false) : setResourcesOpen(false)}
                   >
                     <button
-                      className="flex items-center gap-1 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors font-medium"
+                      className="flex items-center gap-1 text-[var(--text-secondary)] hover:text-white transition-colors font-medium"
                     >
                       {item.name}
                       <ChevronDown className={cn(
@@ -73,14 +80,14 @@ export function Navigation() {
                         "absolute top-full left-0 pt-2 transition-all duration-200",
                         productsOpen ? "opacity-100 visible" : "opacity-0 invisible"
                       )}>
-                        <div className="bg-white rounded-lg shadow-lg border border-[var(--border)] p-2 min-w-[220px]">
+                        <div className="bg-[rgba(18,20,29,0.98)] backdrop-blur-xl border border-[var(--border)] rounded-xl shadow-2xl p-2 min-w-[220px]">
                           {products.map((product) => (
                             <Link
                               key={product.name}
                               href={product.href}
-                              className="block px-4 py-3 rounded-md hover:bg-[var(--background-secondary)] transition-colors"
+                              className="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors"
                             >
-                              <div className="font-medium text-[var(--text-primary)]">
+                              <div className="font-medium text-white">
                                 {product.name}
                               </div>
                               <div className="text-sm text-[var(--text-muted)]">
@@ -98,22 +105,22 @@ export function Navigation() {
                         "absolute top-full left-0 pt-2 transition-all duration-200",
                         resourcesOpen ? "opacity-100 visible" : "opacity-0 invisible"
                       )}>
-                        <div className="bg-white rounded-lg shadow-lg border border-[var(--border)] p-2 min-w-[240px]">
+                        <div className="bg-[rgba(18,20,29,0.98)] backdrop-blur-xl border border-[var(--border)] rounded-xl shadow-2xl p-2 min-w-[240px]">
                           {resources.map((resource) => (
                             <Link
                               key={resource.name}
                               href={resource.href}
                               className={cn(
-                                "block px-4 py-3 rounded-md hover:bg-[var(--background-secondary)] transition-colors",
+                                "block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors",
                                 resource.comingSoon && "opacity-50 pointer-events-none"
                               )}
                             >
                               <div className="flex items-center gap-2">
-                                <span className="font-medium text-[var(--text-primary)]">
+                                <span className="font-medium text-white">
                                   {resource.name}
                                 </span>
                                 {resource.comingSoon && (
-                                  <span className="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">
+                                  <span className="text-xs px-1.5 py-0.5 rounded bg-white/10 text-[var(--text-muted)]">
                                     Soon
                                   </span>
                                 )}
@@ -130,7 +137,7 @@ export function Navigation() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors font-medium"
+                    className="text-[var(--text-secondary)] hover:text-white transition-colors font-medium"
                   >
                     {item.name}
                   </Link>
@@ -143,7 +150,7 @@ export function Navigation() {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors"
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/50"
             >
               Request Demo
             </Link>
@@ -152,7 +159,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 text-[var(--text-secondary)]"
+            className="md:hidden p-2 text-[var(--text-secondary)] hover:text-white transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -179,7 +186,7 @@ export function Navigation() {
                 <Link
                   key={product.name}
                   href={product.href}
-                  className="block px-4 py-2 rounded-md text-[var(--text-secondary)] hover:bg-[var(--background-secondary)] transition-colors"
+                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-white hover:bg-white/10 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {product.name}
@@ -196,7 +203,7 @@ export function Navigation() {
                 <Link
                   key={resource.name}
                   href={resource.href}
-                  className="block px-4 py-2 rounded-md text-[var(--text-secondary)] hover:bg-[var(--background-secondary)] transition-colors"
+                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-white hover:bg-white/10 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {resource.name}
@@ -210,7 +217,7 @@ export function Navigation() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-4 py-2 rounded-md text-[var(--text-secondary)] hover:bg-[var(--background-secondary)] transition-colors"
+                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-white hover:bg-white/10 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -221,7 +228,7 @@ export function Navigation() {
             {/* Mobile CTA */}
             <Link
               href="/contact"
-              className="mt-2 inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors"
+              className="mt-2 inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/30"
               onClick={() => setMobileMenuOpen(false)}
             >
               Request Demo

@@ -21,10 +21,9 @@ export default function CaseStudiesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-white" />
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--primary)] opacity-5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[var(--secondary)] opacity-5 rounded-full blur-3xl" />
+      <section className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-[var(--background)] to-slate-900">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--primary)] opacity-10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[var(--secondary)] opacity-10 rounded-full blur-3xl" />
 
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
@@ -32,12 +31,12 @@ export default function CaseStudiesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
               <TrendingUp className="w-4 h-4" />
               Customer Success
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
               Real Results from
               <br />
               <span className="text-[var(--primary)]">Real Insurers</span>
@@ -64,16 +63,16 @@ export default function CaseStudiesPage() {
               >
                 <Link
                   href={`/case-studies/${study.slug}`}
-                  className="block bg-white rounded-2xl border border-[var(--border)] p-8 hover:shadow-xl hover:border-[var(--primary)] transition-all group h-full"
+                  className="block glass-panel glass-panel-hover p-8 h-full group"
                 >
                   {/* Header */}
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
                         <Building2 className="w-6 h-6 text-[var(--text-muted)]" />
                       </div>
                       <div>
-                        <div className="font-medium text-[var(--text-primary)]">
+                        <div className="font-medium text-white">
                           {study.customer.name}
                         </div>
                         <div className="text-sm text-[var(--text-muted)]">
@@ -85,15 +84,15 @@ export default function CaseStudiesPage() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4 group-hover:text-[var(--primary)] transition-colors">
+                  <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-[var(--primary)] transition-colors">
                     {study.title}
                   </h3>
 
                   {/* Metrics Preview */}
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     {study.metrics.slice(0, 2).map((metric) => (
-                      <div key={metric.label} className="bg-slate-50 rounded-lg p-3">
-                        <div className="text-2xl font-bold text-[var(--primary)]">
+                      <div key={metric.label} className="glass-panel-light p-3">
+                        <div className="text-2xl font-bold font-mono-data text-[var(--primary)]">
                           {metric.value}
                         </div>
                         <div className="text-xs text-[var(--text-muted)]">
@@ -128,7 +127,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-[var(--text-primary)] to-slate-900">
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-900 to-[var(--background)]">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

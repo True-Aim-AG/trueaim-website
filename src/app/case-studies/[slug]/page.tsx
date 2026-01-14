@@ -64,9 +64,8 @@ export default function CaseStudyPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-white" />
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--primary)] opacity-5 rounded-full blur-3xl" />
+      <section className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-[var(--background)] to-slate-900">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--primary)] opacity-10 rounded-full blur-3xl" />
 
         <div className="relative max-w-4xl mx-auto">
           <motion.div
@@ -85,11 +84,11 @@ export default function CaseStudyPage() {
 
             {/* Customer Info */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-xl bg-slate-100 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-xl bg-white/10 flex items-center justify-center">
                 <Building2 className="w-8 h-8 text-[var(--text-muted)]" />
               </div>
               <div>
-                <div className="text-lg font-medium text-[var(--text-primary)]">
+                <div className="text-lg font-medium text-white">
                   {study.customer.name}
                 </div>
                 <div className="text-[var(--text-muted)]">
@@ -99,7 +98,7 @@ export default function CaseStudyPage() {
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
               {study.title}
             </h1>
 
@@ -124,7 +123,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Metrics Grid */}
-      <section className="py-12 px-6 bg-[var(--background-secondary)]">
+      <section className="py-12 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -133,12 +132,12 @@ export default function CaseStudyPage() {
             transition={{ duration: 0.6 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-4"
           >
-            {study.metrics.map((metric, index) => (
+            {study.metrics.map((metric) => (
               <div
                 key={metric.label}
-                className="bg-white rounded-xl border border-[var(--border)] p-6 text-center"
+                className="glass-panel p-6 text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold text-[var(--primary)] mb-1">
+                <div className="text-3xl md:text-4xl font-bold font-mono-data text-[var(--primary)] mb-1">
                   {metric.value}
                 </div>
                 <div className="text-sm text-[var(--text-muted)]">{metric.label}</div>
@@ -166,7 +165,7 @@ export default function CaseStudyPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
+                <h2 className="text-2xl font-bold text-white mb-4">
                   The Challenge
                 </h2>
                 <p className="text-[var(--text-secondary)] leading-relaxed">
@@ -181,7 +180,7 @@ export default function CaseStudyPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
+                <h2 className="text-2xl font-bold text-white mb-4">
                   The Solution
                 </h2>
                 <p className="text-[var(--text-secondary)] leading-relaxed">
@@ -196,14 +195,14 @@ export default function CaseStudyPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="bg-gradient-to-br from-[var(--primary-light)] to-blue-50 rounded-2xl p-8 border border-blue-100"
+                  className="glass-panel p-8 border-l-4 border-l-[var(--primary)]"
                 >
                   <Quote className="w-10 h-10 text-[var(--primary)] mb-4 opacity-50" />
-                  <blockquote className="text-lg text-[var(--text-primary)] italic mb-4">
+                  <blockquote className="text-lg text-white italic mb-4">
                     &ldquo;{study.quote.text}&rdquo;
                   </blockquote>
                   <div className="text-sm">
-                    <div className="font-semibold text-[var(--text-primary)]">
+                    <div className="font-semibold text-white">
                       {study.quote.author}
                     </div>
                     <div className="text-[var(--text-muted)]">{study.quote.role}</div>
@@ -219,9 +218,9 @@ export default function CaseStudyPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="bg-white rounded-xl border border-[var(--border)] p-6 sticky top-24"
+                className="glass-panel p-6 sticky top-24"
               >
-                <h3 className="font-semibold text-[var(--text-primary)] mb-4">
+                <h3 className="font-semibold text-white mb-4">
                   Key Highlights
                 </h3>
                 <ul className="space-y-3">
@@ -251,7 +250,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Navigation */}
-      <section className="py-12 px-6 bg-[var(--background-secondary)]">
+      <section className="py-12 px-6 border-t border-[var(--border)]">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-between items-center">
             {prevStudy ? (
@@ -281,7 +280,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-gradient-to-br from-[var(--text-primary)] to-slate-900">
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-900 to-[var(--background)]">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
