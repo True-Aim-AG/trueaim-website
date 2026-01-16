@@ -138,12 +138,12 @@ export const glowPulse: Variants = {
 // Default transition settings
 export const defaultTransition = {
   duration: 0.5,
-  ease: "easeOut",
+  ease: "easeOut" as const,
 };
 
 // Spring transition for bouncy animations
 export const springTransition = {
-  type: "spring",
+  type: "spring" as const,
   stiffness: 200,
   damping: 20,
 };
