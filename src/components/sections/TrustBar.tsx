@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 import { slideFromLeft, slideFromRight, staggerContainer } from "@/lib/animations";
+import { PartnerLogos } from "./PartnerLogos";
 
 const awards = [
   {
@@ -18,8 +19,6 @@ const awards = [
     title: "Miglior InsurTech — IKN Awards",
   },
 ];
-
-const partners = ["Innosuisse", "ZHAW", "Yarowa"];
 
 export function TrustBar() {
   return (
@@ -69,27 +68,8 @@ export function TrustBar() {
           ))}
         </motion.div>
 
-        {/* Partners */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap items-center justify-center gap-8 md:gap-12"
-        >
-          {partners.map((partner, index) => (
-            <motion.div
-              key={partner}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-              className="text-xl font-semibold text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors cursor-default"
-            >
-              {partner}
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Partner Logos - Animated Marquee */}
+        <PartnerLogos />
       </div>
     </section>
   );

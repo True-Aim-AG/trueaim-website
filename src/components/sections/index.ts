@@ -5,3 +5,4 @@ export { ProductsGrid } from "./ProductsGrid";
 export { CTA } from "./CTA";
 export { DecisionDossier } from "./DecisionDossier";
 export { SocialProof } from "./SocialProof";
+export { PartnerLogos } from "./PartnerLogos";

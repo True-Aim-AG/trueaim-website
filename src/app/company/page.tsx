@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -18,14 +19,16 @@ const founders = [
     role: "Co-Founder & CEO",
     tagline: "2x Founder | Attorney | Former MD Largest Global Withholding Tax Claim Provider",
     bio: "Reuben has led high-stakes operational and regulatory projects across Europe and Africa. He secured CHF 300,000 from Innosuisse for TrueAim.ai's advanced R&D.",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/reubenj/",
+    image: "/team/reuben-john.jpg",
   },
   {
     name: "Frederic Brunner",
     role: "Co-Founder & CTO",
     tagline: "Ex-Zurich Insurance | Ex-Guidewire | 20+ Years Enterprise Automation",
     bio: "Frederic combines deep architectural expertise with practical delivery experience. He previously led technology transformation at Guidewire and has implemented multiple AI and automation projects.",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/frdbrunner/",
+    image: "/team/frederic-brunner.jpg",
   },
 ];
 
@@ -152,11 +155,15 @@ export default function CompanyPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="glass-panel glass-panel-hover p-8"
               >
-                {/* Avatar placeholder */}
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--aurora-cyan)] flex items-center justify-center mb-6">
-                  <span className="text-3xl font-bold text-white">
-                    {founder.name.split(' ').map(n => n[0]).join('')}
-                  </span>
+                {/* Profile Photo */}
+                <div className="w-24 h-24 rounded-full overflow-hidden mb-6 ring-2 ring-[var(--border)] ring-offset-2 ring-offset-[var(--background)]">
+                  <Image
+                    src={founder.image}
+                    alt={founder.name}
+                    width={96}
+                    height={96}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-1">
