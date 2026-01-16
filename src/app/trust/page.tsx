@@ -174,7 +174,7 @@ export default function TrustPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-8">
-              Built from the ground up for regulated industries. Swiss precision meets enterprise-grade security—your data protected, your compliance assured.
+              Built from the ground up for regulated industries. Swiss precision meets enterprise-grade security. Your data protected, your compliance assured.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
@@ -443,7 +443,7 @@ export default function TrustPage() {
               Why Deterministic AI Matters for Compliance
             </h3>
             <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
-              Unlike probabilistic AI systems, our deterministic logic engine produces <strong className="text-[var(--text-primary)]">identical outputs for identical inputs</strong>—making it straightforward to demonstrate consistency, fairness, and transparency to regulators.
+              Unlike probabilistic AI systems, our deterministic logic engine produces <strong className="text-[var(--text-primary)]">identical outputs for identical inputs</strong>, making it straightforward to demonstrate consistency, fairness, and transparency to regulators.
             </p>
           </motion.div>
         </div>

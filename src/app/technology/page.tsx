@@ -123,7 +123,7 @@ export default function TechnologyPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-              Not probabilistic. Not a black box. Our hybrid approach combines agentic AI execution with deterministic decision-making—purpose-built for regulated industries.
+              Not probabilistic. Not a black box. Our hybrid approach combines agentic AI execution with deterministic decision-making, purpose-built for regulated industries.
             </p>
           </motion.div>
         </div>
@@ -441,7 +441,7 @@ export default function TechnologyPage() {
               Research Partnership
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Our technology was developed in collaboration with <strong className="text-[var(--text-primary)]">ZHAW</strong>—Zurich University of Applied Sciences. The original developer, Dr. Dandolo Flumini, leads ongoing R&D through a <strong className="text-[var(--text-primary)]">CHF 300,000 Innosuisse-funded</strong> research program.
+              Our technology was developed in collaboration with <strong className="text-[var(--text-primary)]">ZHAW</strong> (Zurich University of Applied Sciences). The original developer, Dr. Dandolo Flumini, leads ongoing R&D through a <strong className="text-[var(--text-primary)]">CHF 300,000 Innosuisse-funded</strong> research program.
             </p>
           </motion.div>
         </div>

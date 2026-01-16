@@ -106,7 +106,7 @@ export default function ClaimEvalPage() {
               The Sampling Problem
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Traditional QA relies on random sampling—checking 2-5% of claims. Patterns slip through. Leakage compounds. Training gaps persist.
+              Traditional QA relies on random sampling, checking 2-5% of claims. Patterns slip through. Leakage compounds. Training gaps persist.
             </p>
             <p className="text-xl font-semibold text-emerald-400 mt-6">
               What if you could QA every claim?
@@ -129,7 +129,7 @@ export default function ClaimEvalPage() {
               100% Coverage, Intelligent Prioritization
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              ClaimEval runs defined inspection checks across all closed claims. It scores risk, flags issues, and surfaces the claims that need human attention—without replacing human judgment.
+              ClaimEval runs defined inspection checks across all closed claims. It scores risk, flags issues, and surfaces the claims that need human attention, without replacing human judgment.
             </p>
           </motion.div>
         </div>

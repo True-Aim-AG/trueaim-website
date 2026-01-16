@@ -1,8 +1,10 @@
 "use client";
 
+import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, FileText, Cpu, CheckCircle, Zap, Shield } from "lucide-react";
+import { fadeIn, scaleIn, springTransition } from "@/lib/animations";
 
 const pipelineSteps = [
   { icon: FileText, label: "Ingest", color: "var(--trust)" },
@@ -13,15 +15,42 @@ const pipelineSteps = [
 ];
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  // Check for reduced motion preference
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
+  }, []);
+
+  // Scroll-linked parallax
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Transform values for parallax effect
+  const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
   return (
-    <section className="relative py-24 px-6 overflow-hidden">
+    <section ref={sectionRef} className="relative py-24 px-6 overflow-hidden">
       <div className="relative max-w-7xl mx-auto">
-        {/* Main content */}
-        <div className="text-center mb-16">
+        {/* Main content with parallax */}
+        <motion.div
+          style={prefersReducedMotion ? {} : { y, opacity }}
+          className="text-center mb-16"
+        >
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            variants={fadeIn}
+            initial="initial"
+            animate="animate"
+            transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6"
           >
             Neuro-Symbolic AI for
@@ -36,30 +65,35 @@ export function Hero() {
             className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-10 leading-relaxed"
           >
             Combine the adaptability of agentic AI with the precision of deterministic logic.
-            Deliver compliant, explainable decisions at scale—every outcome traceable to the source.
+            Deliver compliant, explainable decisions at scale. Every outcome traceable to the source.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            variants={scaleIn}
+            initial="initial"
+            animate="animate"
+            transition={{ ...springTransition, delay: 0.3 }}
             className="flex flex-col items-center gap-4"
           >
             {/* Primary CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all text-lg shadow-lg shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/50"
-              >
-                Book a Demo
-              </Link>
-              <Link
-                href="/roi-calculator"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-all text-lg backdrop-blur-sm"
-              >
-                Get ROI Estimate
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all text-lg shadow-lg shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/50"
+                >
+                  Book a Demo
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Link
+                  href="/roi-calculator"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-all text-lg backdrop-blur-sm"
+                >
+                  Get ROI Estimate
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </motion.div>
             </div>
             {/* Tertiary links */}
             <div className="flex flex-wrap gap-6 justify-center text-sm">
@@ -77,7 +111,7 @@ export function Hero() {
               </Link>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Animated Pipeline Visual */}
         <motion.div

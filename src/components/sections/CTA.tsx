@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Calculator, FileText } from "lucide-react";
+import { scaleIn, fadeIn, springTransition } from "@/lib/animations";
 
 export function CTA() {
   return (
@@ -12,8 +13,9 @@ export function CTA() {
 
       <div className="relative max-w-4xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={fadeIn}
+          initial="initial"
+          whileInView="animate"
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
@@ -25,23 +27,34 @@ export function CTA() {
             Book a 30-minute demo to see how TrueAim.ai can transform your claims operations.
           </p>
 
-          <div className="flex flex-col items-center gap-4">
+          <motion.div
+            variants={scaleIn}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            transition={{ ...springTransition, delay: 0.2 }}
+            className="flex flex-col items-center gap-4"
+          >
             {/* Primary CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all text-lg shadow-lg shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/50"
-              >
-                <Calendar className="w-5 h-5" />
-                Book a Demo
-              </Link>
-              <Link
-                href="/roi-calculator"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-all text-lg backdrop-blur-sm"
-              >
-                <Calculator className="w-5 h-5" />
-                Get ROI Estimate
-              </Link>
+              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all text-lg shadow-lg shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/50"
+                >
+                  <Calendar className="w-5 h-5" />
+                  Book a Demo
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+                <Link
+                  href="/roi-calculator"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-all text-lg backdrop-blur-sm"
+                >
+                  <Calculator className="w-5 h-5" />
+                  Get ROI Estimate
+                </Link>
+              </motion.div>
             </div>
             {/* Tertiary links */}
             <div className="flex flex-wrap gap-6 justify-center text-sm mt-2">
@@ -60,7 +73,7 @@ export function CTA() {
                 <ArrowRight className="w-4 h-4 inline ml-1" />
               </Link>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Trust indicators */}

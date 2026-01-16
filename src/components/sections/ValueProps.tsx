@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Zap, Target, ShieldCheck } from "lucide-react";
+import { staggerFromCenter, fadeUp } from "@/lib/animations";
 
 const valueProps = [
   {
@@ -11,9 +12,10 @@ const valueProps = [
     prefix: "UP TO",
     suffix: "%",
     label: "Faster claim determinations",
-    description: "Process claims in seconds, not days. Our agentic workflow handles document ingestion, comprehension, and decision—automatically.",
+    description: "Process claims in seconds, not days. Our agentic workflow handles document ingestion, comprehension, and decision automatically.",
     color: "var(--primary)",
     proofContext: "Pilot results: avg 2.3s decision time",
+    featured: true,
   },
   {
     icon: Target,
@@ -21,9 +23,10 @@ const valueProps = [
     prefix: "UP TO",
     suffix: "%",
     label: "Reduction in handling costs",
-    description: "Eliminate re-keying errors and inconsistent interpretations. Same input, same output—every time.",
+    description: "Eliminate re-keying errors and inconsistent interpretations. Same input, same output, every time.",
     color: "var(--aurora-cyan)",
     proofContext: "Based on closed file review analysis",
+    featured: false,
   },
   {
     icon: ShieldCheck,
@@ -34,6 +37,7 @@ const valueProps = [
     description: "Every decision links directly to policy clauses and source documents. Built for EU AI Act compliance.",
     color: "var(--secondary)",
     proofContext: "Complete decision traceability guaranteed",
+    featured: false,
   },
 ];
 
@@ -98,69 +102,134 @@ export function ValueProps() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {valueProps.map((prop, index) => (
             <motion.div
               key={prop.label}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={staggerFromCenter(index, valueProps.length)}
+              initial="initial"
+              whileInView="animate"
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="relative group"
+              className={`relative group ${prop.featured ? 'md:col-span-2' : ''}`}
             >
-              <div className="glass-panel glass-panel-hover p-8 h-full">
-                {/* Icon */}
-                <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110"
-                  style={{
-                    backgroundColor: `color-mix(in srgb, ${prop.color} 25%, transparent)`,
-                  }}
-                >
-                  <prop.icon
-                    className="w-7 h-7"
-                    style={{ color: prop.color }}
-                  />
-                </div>
+              <div className={`glass-panel glass-panel-hover h-full ${prop.featured ? 'p-10' : 'p-8'}`}>
+                {/* Layout changes for featured item */}
+                {prop.featured ? (
+                  // Featured layout - horizontal on larger screens
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:gap-10">
+                    <div className="flex-1">
+                      {/* Icon */}
+                      <div
+                        className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 lg:mb-0 transition-transform group-hover:scale-110"
+                        style={{
+                          backgroundColor: `color-mix(in srgb, ${prop.color} 25%, transparent)`,
+                        }}
+                      >
+                        <prop.icon
+                          className="w-8 h-8"
+                          style={{ color: prop.color }}
+                        />
+                      </div>
+                    </div>
+                    <div className="flex-[3]">
+                      {/* Metric - Larger for featured */}
+                      <div className="mb-4">
+                        {prop.prefix && (
+                          <span className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider block mb-1">
+                            {prop.prefix}
+                          </span>
+                        )}
+                        <div
+                          className="text-6xl lg:text-7xl font-bold font-mono-data"
+                          style={{ color: prop.color }}
+                        >
+                          <AnimatedCounter value={prop.metric} />
+                          {prop.suffix}
+                        </div>
+                      </div>
 
-                {/* Metric */}
-                <div className="mb-4">
-                  {prop.prefix && (
-                    <span className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider block mb-1">
-                      {prop.prefix}
-                    </span>
-                  )}
-                  <div
-                    className="text-5xl md:text-6xl font-bold font-mono-data"
-                    style={{ color: prop.color }}
-                  >
-                    <AnimatedCounter value={prop.metric} />
-                    {prop.suffix}
+                      {/* Label */}
+                      <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
+                        {prop.label}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+                        {prop.description}
+                      </p>
+
+                      {/* Proof Context */}
+                      <div
+                        className="text-xs font-medium px-3 py-1.5 rounded-full inline-flex items-center gap-1.5"
+                        style={{
+                          backgroundColor: `color-mix(in srgb, ${prop.color} 20%, transparent)`,
+                          color: prop.color,
+                        }}
+                      >
+                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        {prop.proofContext}
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  // Standard layout
+                  <>
+                    {/* Icon */}
+                    <div
+                      className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110"
+                      style={{
+                        backgroundColor: `color-mix(in srgb, ${prop.color} 25%, transparent)`,
+                      }}
+                    >
+                      <prop.icon
+                        className="w-7 h-7"
+                        style={{ color: prop.color }}
+                      />
+                    </div>
 
-                {/* Label */}
-                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
-                  {prop.label}
-                </h3>
+                    {/* Metric */}
+                    <div className="mb-4">
+                      {prop.prefix && (
+                        <span className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider block mb-1">
+                          {prop.prefix}
+                        </span>
+                      )}
+                      <div
+                        className="text-5xl md:text-6xl font-bold font-mono-data"
+                        style={{ color: prop.color }}
+                      >
+                        <AnimatedCounter value={prop.metric} />
+                        {prop.suffix}
+                      </div>
+                    </div>
 
-                {/* Description */}
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
-                  {prop.description}
-                </p>
+                    {/* Label */}
+                    <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
+                      {prop.label}
+                    </h3>
 
-                {/* Proof Context */}
-                <div
-                  className="text-xs font-medium px-3 py-1.5 rounded-full inline-flex items-center gap-1.5"
-                  style={{
-                    backgroundColor: `color-mix(in srgb, ${prop.color} 20%, transparent)`,
-                    color: prop.color,
-                  }}
-                >
-                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {prop.proofContext}
-                </div>
+                    {/* Description */}
+                    <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+                      {prop.description}
+                    </p>
+
+                    {/* Proof Context */}
+                    <div
+                      className="text-xs font-medium px-3 py-1.5 rounded-full inline-flex items-center gap-1.5"
+                      style={{
+                        backgroundColor: `color-mix(in srgb, ${prop.color} 20%, transparent)`,
+                        color: prop.color,
+                      }}
+                    >
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      {prop.proofContext}
+                    </div>
+                  </>
+                )}
               </div>
             </motion.div>
           ))}

@@ -102,7 +102,7 @@ export default function ContextBuilderPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-8 leading-relaxed">
-              A claims document pipeline that turns PDFs, scans, and images into structured, quality-checked claim data—with human review where it matters.
+              A claims document pipeline that turns PDFs, scans, and images into structured, quality-checked claim data, with human review where it matters.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -158,7 +158,7 @@ export default function ContextBuilderPage() {
               Purpose-Built Pipeline for Claims
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              ContextBuilder is a purpose-built pipeline for claims documents. It automatically ingests, classifies, and extracts data—then applies quality gates to surface exceptions for human review.
+              ContextBuilder is a purpose-built pipeline for claims documents. It automatically ingests, classifies, and extracts data, then applies quality gates to surface exceptions for human review.
             </p>
             <p className="text-lg text-[var(--text-primary)] font-medium mt-4">
               The result: claim-ready &quot;context packs&quot; that downstream systems can trust.

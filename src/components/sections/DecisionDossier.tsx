@@ -19,7 +19,7 @@ const dossierContents = [
   {
     icon: FileText,
     title: "Input Summary",
-    description: "Complete claim data as received—documents, parties, timeline, facts",
+    description: "Complete claim data as received: documents, parties, timeline, facts",
     color: "text-blue-400",
     bgColor: "bg-blue-500/20",
   },
@@ -54,7 +54,7 @@ const dossierContents = [
   {
     icon: RefreshCw,
     title: "Replay Capability",
-    description: "Re-run with identical inputs, get identical outputs—every time",
+    description: "Re-run with identical inputs, get identical outputs, every time",
     color: "text-orange-400",
     bgColor: "bg-orange-500/20",
   },
@@ -158,7 +158,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
             The Decision Dossier
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
-            Every claim decision produces a complete, replayable audit record—your defense in any audit or dispute.
+            Every claim decision produces a complete, replayable audit record, your defense in any audit or dispute.
           </p>
         </motion.div>
 

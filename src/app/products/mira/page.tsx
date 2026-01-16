@@ -162,7 +162,7 @@ export default function MiraPage() {
               Agentic AI Meets Deterministic Logic
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              MIRA is the world&apos;s first neuro-symbolic engine purpose-built for claims. It uses agentic AI for intelligent workflow orchestration—reading documents, extracting data, identifying parties—while relying on deterministic logic for the actual coverage decision.
+              MIRA is the world&apos;s first neuro-symbolic engine purpose-built for claims. It uses agentic AI for intelligent workflow orchestration (reading documents, extracting data, identifying parties) while relying on deterministic logic for the actual coverage decision.
             </p>
             <p className="text-lg text-[var(--text-primary)] font-medium mt-4">
               The result: decisions that are fast, consistent, and completely explainable.
