@@ -153,7 +153,7 @@ export default function ROICalculatorPage() {
               </Link>
               <Link
                 href="/products/mira"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-white font-medium hover:bg-white/10 transition-colors text-lg"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
                 See MIRA in Action
               </Link>

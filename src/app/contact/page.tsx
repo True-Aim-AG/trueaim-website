@@ -111,7 +111,7 @@ export default function ContactPage() {
               Contact Us
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Let&apos;s Talk
               <br />
               <span className="text-[var(--primary)]">Claims Automation</span>
@@ -139,7 +139,7 @@ export default function ContactPage() {
                   <div className="w-20 h-20 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-10 h-10 text-emerald-400" />
                   </div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
+                  <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
                     Thank You!
                   </h2>
                   <p className="text-[var(--text-secondary)] mb-6">
@@ -157,21 +157,21 @@ export default function ContactPage() {
                   onSubmit={handleSubmit(onSubmit)}
                   className="glass-panel p-8"
                 >
-                  <h2 className="text-2xl font-bold text-white mb-6">
+                  <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                     Request a Demo
                   </h2>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* First Name */}
                     <div>
-                      <label className="block text-sm font-medium text-white mb-2">
+                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
                         First Name <span className="text-red-400">*</span>
                       </label>
                       <input
                         {...register("firstName")}
                         type="text"
                         className={cn(
-                          "w-full px-4 py-3 rounded-lg border bg-white/5 text-white placeholder:text-[var(--text-muted)] transition-colors",
+                          "w-full px-4 py-3 rounded-lg border bg-[var(--card-bg)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] transition-colors",
                           errors.firstName
                             ? "border-red-500 focus:border-red-500 focus:ring-red-500"
                             : "border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]"
@@ -188,14 +188,14 @@ export default function ContactPage() {
 
                     {/* Last Name */}
                     <div>
-                      <label className="block text-sm font-medium text-white mb-2">
+                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
                         Last Name <span className="text-red-400">*</span>
                       </label>
                       <input
                         {...register("lastName")}
                         type="text"
                         className={cn(
-                          "w-full px-4 py-3 rounded-lg border bg-white/5 text-white placeholder:text-[var(--text-muted)] transition-colors",
+                          "w-full px-4 py-3 rounded-lg border bg-[var(--card-bg)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] transition-colors",
                           errors.lastName
                             ? "border-red-500 focus:border-red-500"
                             : "border-[var(--border)] focus:border-[var(--primary)]"
@@ -212,14 +212,14 @@ export default function ContactPage() {
 
                     {/* Email */}
                     <div className="sm:col-span-2">
-                      <label className="block text-sm font-medium text-white mb-2">
+                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
                         Work Email <span className="text-red-400">*</span>
                       </label>
                       <input
                         {...register("email")}
                         type="email"
                         className={cn(
-                          "w-full px-4 py-3 rounded-lg border bg-white/5 text-white placeholder:text-[var(--text-muted)] transition-colors",
+                          "w-full px-4 py-3 rounded-lg border bg-[var(--card-bg)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] transition-colors",
                           errors.email
                             ? "border-red-500 focus:border-red-500"
                             : "border-[var(--border)] focus:border-[var(--primary)]"
@@ -236,14 +236,14 @@ export default function ContactPage() {
 
                     {/* Company */}
                     <div>
-                      <label className="block text-sm font-medium text-white mb-2">
+                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
                         Company <span className="text-red-400">*</span>
                       </label>
                       <input
                         {...register("company")}
                         type="text"
                         className={cn(
-                          "w-full px-4 py-3 rounded-lg border bg-white/5 text-white placeholder:text-[var(--text-muted)] transition-colors",
+                          "w-full px-4 py-3 rounded-lg border bg-[var(--card-bg)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] transition-colors",
                           errors.company
                             ? "border-red-500 focus:border-red-500"
                             : "border-[var(--border)] focus:border-[var(--primary)]"
@@ -260,14 +260,14 @@ export default function ContactPage() {
 
                     {/* Job Title */}
                     <div>
-                      <label className="block text-sm font-medium text-white mb-2">
+                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
                         Job Title <span className="text-red-400">*</span>
                       </label>
                       <input
                         {...register("jobTitle")}
                         type="text"
                         className={cn(
-                          "w-full px-4 py-3 rounded-lg border bg-white/5 text-white placeholder:text-[var(--text-muted)] transition-colors",
+                          "w-full px-4 py-3 rounded-lg border bg-[var(--card-bg)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] transition-colors",
                           errors.jobTitle
                             ? "border-red-500 focus:border-red-500"
                             : "border-[var(--border)] focus:border-[var(--primary)]"
@@ -284,14 +284,14 @@ export default function ContactPage() {
 
                     {/* Country */}
                     <div>
-                      <label className="block text-sm font-medium text-white mb-2">
+                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
                         Country <span className="text-red-400">*</span>
                       </label>
                       <div className="relative">
                         <select
                           {...register("country")}
                           className={cn(
-                            "w-full px-4 py-3 rounded-lg border bg-white/5 text-white transition-colors appearance-none",
+                            "w-full px-4 py-3 rounded-lg border bg-[var(--card-bg)] text-[var(--text-primary)] transition-colors appearance-none",
                             errors.country
                               ? "border-red-500 focus:border-red-500"
                               : "border-[var(--border)] focus:border-[var(--primary)]"
@@ -316,14 +316,14 @@ export default function ContactPage() {
 
                     {/* Interest */}
                     <div>
-                      <label className="block text-sm font-medium text-white mb-2">
+                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
                         What interests you? <span className="text-red-400">*</span>
                       </label>
                       <div className="relative">
                         <select
                           {...register("interest")}
                           className={cn(
-                            "w-full px-4 py-3 rounded-lg border bg-white/5 text-white transition-colors appearance-none",
+                            "w-full px-4 py-3 rounded-lg border bg-[var(--card-bg)] text-[var(--text-primary)] transition-colors appearance-none",
                             errors.interest
                               ? "border-red-500 focus:border-red-500"
                               : "border-[var(--border)] focus:border-[var(--primary)]"
@@ -348,26 +348,26 @@ export default function ContactPage() {
 
                     {/* Claims Volume */}
                     <div className="sm:col-span-2">
-                      <label className="block text-sm font-medium text-white mb-2">
+                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
                         Annual claims volume <span className="text-[var(--text-muted)]">(Optional)</span>
                       </label>
                       <input
                         {...register("claimsVolume")}
                         type="text"
-                        className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-white/5 text-white placeholder:text-[var(--text-muted)] focus:border-[var(--primary)] transition-colors"
+                        className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-[var(--card-bg)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--primary)] transition-colors"
                         placeholder="e.g., 50,000 claims/year"
                       />
                     </div>
 
                     {/* Message */}
                     <div className="sm:col-span-2">
-                      <label className="block text-sm font-medium text-white mb-2">
+                      <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
                         Tell us about your needs <span className="text-[var(--text-muted)]">(Optional)</span>
                       </label>
                       <textarea
                         {...register("message")}
                         rows={4}
-                        className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-white/5 text-white placeholder:text-[var(--text-muted)] focus:border-[var(--primary)] transition-colors resize-none"
+                        className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-[var(--card-bg)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--primary)] transition-colors resize-none"
                         placeholder="What challenges are you facing with claims processing?"
                       />
                     </div>
@@ -423,31 +423,31 @@ export default function ContactPage() {
             >
               {/* Alternative Contact */}
               <div className="glass-panel p-8">
-                <h3 className="text-xl font-bold text-white mb-6">
+                <h3 className="text-xl font-bold text-[var(--text-primary)] mb-6">
                   Alternative Contact
                 </h3>
                 <div className="space-y-4">
                   <a
                     href="mailto:hello@trueaim.ai"
-                    className="flex items-center gap-4 p-4 rounded-xl glass-panel-light hover:bg-white/10 transition-colors"
+                    className="flex items-center gap-4 p-4 rounded-xl glass-panel-light hover:bg-[var(--subtle-bg-hover)] transition-colors"
                   >
                     <div className="w-12 h-12 rounded-full bg-[var(--primary)]/20 flex items-center justify-center">
                       <Mail className="w-6 h-6 text-[var(--primary)]" />
                     </div>
                     <div>
-                      <p className="font-medium text-white">Email us</p>
+                      <p className="font-medium text-[var(--text-primary)]">Email us</p>
                       <p className="text-[var(--text-secondary)]">hello@trueaim.ai</p>
                     </div>
                   </a>
                   <a
                     href="#"
-                    className="flex items-center gap-4 p-4 rounded-xl glass-panel-light hover:bg-white/10 transition-colors"
+                    className="flex items-center gap-4 p-4 rounded-xl glass-panel-light hover:bg-[var(--subtle-bg-hover)] transition-colors"
                   >
                     <div className="w-12 h-12 rounded-full bg-[var(--aurora-cyan)]/20 flex items-center justify-center">
                       <Calendar className="w-6 h-6 text-[var(--aurora-cyan)]" />
                     </div>
                     <div>
-                      <p className="font-medium text-white">Book a call</p>
+                      <p className="font-medium text-[var(--text-primary)]">Book a call</p>
                       <p className="text-[var(--text-secondary)]">30-minute discovery call</p>
                     </div>
                   </a>
@@ -456,13 +456,13 @@ export default function ContactPage() {
 
               {/* FAQs */}
               <div className="glass-panel p-8">
-                <h3 className="text-xl font-bold text-white mb-6">
+                <h3 className="text-xl font-bold text-[var(--text-primary)] mb-6">
                   Frequently Asked Questions
                 </h3>
                 <div className="space-y-6">
                   {faqs.map((faq) => (
                     <div key={faq.question}>
-                      <h4 className="font-medium text-white mb-2">
+                      <h4 className="font-medium text-[var(--text-primary)] mb-2">
                         {faq.question}
                       </h4>
                       <p className="text-sm text-[var(--text-secondary)]">

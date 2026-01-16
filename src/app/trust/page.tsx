@@ -167,7 +167,7 @@ export default function TrustPage() {
               Trust Center
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Enterprise Security.
               <br />
               <span className="text-[var(--primary)]">Regulatory Compliance.</span>
@@ -186,7 +186,7 @@ export default function TrustPage() {
               </Link>
               <a
                 href="#trust-pack"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-white font-medium hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors"
               >
                 <Download className="w-4 h-4" />
                 Download Trust Pack
@@ -206,7 +206,7 @@ export default function TrustPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Compliance & Certifications
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -238,7 +238,7 @@ export default function TrustPage() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-semibold text-white">{badge.name}</h3>
+                      <h3 className="font-semibold text-[var(--text-primary)]">{badge.name}</h3>
                       <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
                         badge.status === 'compliant' ? 'bg-emerald-500/20 text-emerald-400' :
                         badge.status === 'ready' ? 'bg-blue-500/20 text-blue-400' :
@@ -268,7 +268,7 @@ export default function TrustPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
                 Data Residency & Sovereignty
               </h2>
               <p className="text-lg text-[var(--text-secondary)] mb-6 leading-relaxed">
@@ -279,21 +279,21 @@ export default function TrustPage() {
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">Swiss Data Center Option</strong>
+                    <strong className="text-[var(--text-primary)]">Swiss Data Center Option</strong>
                     <p className="text-sm text-[var(--text-muted)]">Host your data within Swiss borders, protected by Swiss privacy laws</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">EU Processing Zones</strong>
+                    <strong className="text-[var(--text-primary)]">EU Processing Zones</strong>
                     <p className="text-sm text-[var(--text-muted)]">Data never leaves the European Union</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">No Third-Country Transfers</strong>
+                    <strong className="text-[var(--text-primary)]">No Third-Country Transfers</strong>
                     <p className="text-sm text-[var(--text-muted)]">Complete control over where your data is processed</p>
                   </div>
                 </li>
@@ -309,7 +309,7 @@ export default function TrustPage() {
             >
               {/* Stylized Europe map representation */}
               <div className="glass-panel p-8 aspect-square relative overflow-hidden">
-                <div className="absolute inset-4 border-2 border-dashed border-white/10 rounded-xl" />
+                <div className="absolute inset-4 border-2 border-dashed border-[var(--border)] rounded-xl" />
 
                 {/* Switzerland marker */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -318,7 +318,7 @@ export default function TrustPage() {
                       <MapPin className="w-8 h-8 text-red-400" />
                     </div>
                     <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
-                      <span className="text-sm font-semibold text-white bg-white/10 px-2 py-1 rounded backdrop-blur-sm">
+                      <span className="text-sm font-semibold text-[var(--text-primary)] bg-[var(--subtle-bg)] px-2 py-1 rounded backdrop-blur-sm">
                         Switzerland
                       </span>
                     </div>
@@ -333,8 +333,8 @@ export default function TrustPage() {
                 </div>
 
                 {/* Server icons */}
-                <Server className="absolute bottom-8 left-8 w-6 h-6 text-white/20" />
-                <Server className="absolute bottom-8 right-8 w-6 h-6 text-white/20" />
+                <Server className="absolute bottom-8 left-8 w-6 h-6 text-[var(--text-muted)]" />
+                <Server className="absolute bottom-8 right-8 w-6 h-6 text-[var(--text-muted)]" />
               </div>
             </motion.div>
           </div>
@@ -351,7 +351,7 @@ export default function TrustPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Security Architecture
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -372,13 +372,13 @@ export default function TrustPage() {
                 <div className="w-14 h-14 rounded-xl bg-[var(--primary)]/20 flex items-center justify-center mb-6">
                   <category.icon className="w-7 h-7 text-[var(--primary)]" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-6">
+                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-6">
                   {category.category}
                 </h3>
                 <ul className="space-y-4">
                   {category.features.map((feature) => (
-                    <li key={feature.name} className="border-b border-white/10 pb-4 last:border-0 last:pb-0">
-                      <div className="font-medium text-white mb-1">{feature.name}</div>
+                    <li key={feature.name} className="border-b border-[var(--border)] pb-4 last:border-0 last:pb-0">
+                      <div className="font-medium text-[var(--text-primary)] mb-1">{feature.name}</div>
                       <div className="text-sm text-[var(--text-muted)]">{feature.detail}</div>
                     </li>
                   ))}
@@ -403,7 +403,7 @@ export default function TrustPage() {
               <Eye className="w-4 h-4" />
               Regulatory Compliance
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               EU AI Act Alignment
             </h2>
             <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
@@ -423,7 +423,7 @@ export default function TrustPage() {
               >
                 <div className="flex items-start gap-3 mb-3">
                   <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <h3 className="font-semibold text-white">{feature.requirement}</h3>
+                  <h3 className="font-semibold text-[var(--text-primary)]">{feature.requirement}</h3>
                 </div>
                 <p className="text-sm text-[var(--text-muted)] ml-8">{feature.description}</p>
               </motion.div>
@@ -439,11 +439,11 @@ export default function TrustPage() {
             className="mt-12 glass-panel p-8 text-center"
           >
             <AlertCircle className="w-10 h-10 text-[var(--primary)] mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-white mb-2">
+            <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">
               Why Deterministic AI Matters for Compliance
             </h3>
             <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
-              Unlike probabilistic AI systems, our deterministic logic engine produces <strong className="text-white">identical outputs for identical inputs</strong>—making it straightforward to demonstrate consistency, fairness, and transparency to regulators.
+              Unlike probabilistic AI systems, our deterministic logic engine produces <strong className="text-[var(--text-primary)]">identical outputs for identical inputs</strong>—making it straightforward to demonstrate consistency, fairness, and transparency to regulators.
             </p>
           </motion.div>
         </div>
@@ -459,7 +459,7 @@ export default function TrustPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Download Trust Pack
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -489,9 +489,9 @@ export default function TrustPage() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-semibold text-white">{resource.title}</h3>
+                      <h3 className="font-semibold text-[var(--text-primary)]">{resource.title}</h3>
                       {!resource.available && (
-                        <span className="text-xs px-2 py-0.5 rounded-full bg-white/10 text-[var(--text-muted)]">
+                        <span className="text-xs px-2 py-0.5 rounded-full bg-[var(--subtle-bg)] text-[var(--text-muted)]">
                           Coming Soon
                         </span>
                       )}
@@ -525,7 +525,7 @@ export default function TrustPage() {
             className="glass-panel p-12 text-center"
           >
             <Shield className="w-12 h-12 text-[var(--primary)] mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Have Security Questions?
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto">
@@ -540,7 +540,7 @@ export default function TrustPage() {
               </Link>
               <a
                 href="mailto:security@trueaim.ai"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-white font-medium hover:bg-white/10 transition-colors text-lg"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
                 security@trueaim.ai
               </a>

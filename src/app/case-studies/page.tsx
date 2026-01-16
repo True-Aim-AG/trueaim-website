@@ -36,7 +36,7 @@ export default function CaseStudiesPage() {
               Customer Success
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Real Results from
               <br />
               <span className="text-[var(--primary)]">Real Insurers</span>
@@ -68,11 +68,11 @@ export default function CaseStudiesPage() {
                   {/* Header */}
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-xl bg-[var(--subtle-bg)] flex items-center justify-center">
                         <Building2 className="w-6 h-6 text-[var(--text-muted)]" />
                       </div>
                       <div>
-                        <div className="font-medium text-white">
+                        <div className="font-medium text-[var(--text-primary)]">
                           {study.customer.name}
                         </div>
                         <div className="text-sm text-[var(--text-muted)]">
@@ -84,7 +84,7 @@ export default function CaseStudiesPage() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-[var(--primary)] transition-colors">
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4 group-hover:text-[var(--primary)] transition-colors">
                     {study.title}
                   </h3>
 
@@ -135,7 +135,7 @@ export default function CaseStudiesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Ready to Write Your Success Story?
             </h2>
             <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
@@ -151,7 +151,7 @@ export default function CaseStudiesPage() {
               </Link>
               <Link
                 href="/roi-calculator"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-white/20 text-white font-medium hover:bg-white/10 transition-colors text-lg"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
                 Calculate Your ROI
               </Link>

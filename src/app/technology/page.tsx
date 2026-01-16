@@ -111,12 +111,12 @@ export default function TechnologyPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-[var(--text-secondary)] text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--subtle-bg)] text-[var(--text-secondary)] text-sm font-medium mb-6">
               <Cpu className="w-4 h-4" />
               Our Technology
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Neuro-Symbolic AI: The Architecture
               <br />
               <span className="text-[var(--primary)]">Regulators Trust</span>
@@ -139,7 +139,7 @@ export default function TechnologyPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               The Problem with Probabilistic AI
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
@@ -162,7 +162,7 @@ export default function TechnologyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Separation of Concerns
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -184,7 +184,7 @@ export default function TechnologyPage() {
                   <Brain className="w-8 h-8 text-[var(--aurora-cyan)]" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-2xl font-bold text-[var(--text-primary)]">
                     Agentic AI Layer
                   </h3>
                   <p className="text-[var(--aurora-cyan)] font-medium">Flexible and adaptive</p>
@@ -197,7 +197,7 @@ export default function TechnologyPage() {
                     <div className="w-8 h-8 rounded-lg bg-[var(--aurora-cyan)]/20 flex items-center justify-center flex-shrink-0">
                       <FileSearch className="w-4 h-4 text-[var(--aurora-cyan)]" />
                     </div>
-                    <span className="text-white font-medium">{cap}</span>
+                    <span className="text-[var(--text-primary)] font-medium">{cap}</span>
                   </li>
                 ))}
               </ul>
@@ -222,7 +222,7 @@ export default function TechnologyPage() {
                   <Scale className="w-8 h-8 text-[var(--primary)]" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-2xl font-bold text-[var(--text-primary)]">
                     Deterministic Logic Engine
                   </h3>
                   <p className="text-[var(--primary)] font-medium">Precise and auditable</p>
@@ -235,7 +235,7 @@ export default function TechnologyPage() {
                     <div className="w-8 h-8 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center flex-shrink-0">
                       <Workflow className="w-4 h-4 text-[var(--primary)]" />
                     </div>
-                    <span className="text-white font-medium">{cap}</span>
+                    <span className="text-[var(--text-primary)] font-medium">{cap}</span>
                   </li>
                 ))}
               </ul>
@@ -282,7 +282,7 @@ export default function TechnologyPage() {
               <Shield className="w-4 h-4" />
               Enterprise Control
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               The Control Layer
             </h2>
             <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
@@ -303,7 +303,7 @@ export default function TechnologyPage() {
                 <div className={`w-12 h-12 rounded-xl ${feature.bgColor} flex items-center justify-center mb-4`}>
                   <feature.icon className={`w-6 h-6 ${feature.color}`} />
                 </div>
-                <h3 className="font-semibold text-white mb-2">{feature.title}</h3>
+                <h3 className="font-semibold text-[var(--text-primary)] mb-2">{feature.title}</h3>
                 <p className="text-sm text-[var(--text-muted)]">{feature.description}</p>
               </motion.div>
             ))}
@@ -318,7 +318,7 @@ export default function TechnologyPage() {
             className="mt-12 glass-panel p-8 text-center"
           >
             <p className="text-lg text-[var(--text-secondary)]">
-              <strong className="text-white">Our philosophy:</strong> AI should handle the heavy lifting, but humans must always be able to understand, verify, and override. Every control exists because regulated industries demand it.
+              <strong className="text-[var(--text-primary)]">Our philosophy:</strong> AI should handle the heavy lifting, but humans must always be able to understand, verify, and override. Every control exists because regulated industries demand it.
             </p>
           </motion.div>
         </div>
@@ -334,7 +334,7 @@ export default function TechnologyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Not Another Black Box
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -352,7 +352,7 @@ export default function TechnologyPage() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-[var(--border)]">
-                  <th className="text-left p-6 text-white font-semibold">Capability</th>
+                  <th className="text-left p-6 text-[var(--text-primary)] font-semibold">Capability</th>
                   <th className="text-center p-6 text-[var(--text-muted)] font-semibold">Traditional AI</th>
                   <th className="text-center p-6 text-[var(--primary)] font-semibold">TrueAim.ai</th>
                 </tr>
@@ -360,7 +360,7 @@ export default function TechnologyPage() {
               <tbody>
                 {comparisonData.map((row, index) => (
                   <tr key={row.capability} className={index < comparisonData.length - 1 ? "border-b border-[var(--border)]" : ""}>
-                    <td className="p-6 text-white font-medium">{row.capability}</td>
+                    <td className="p-6 text-[var(--text-primary)] font-medium">{row.capability}</td>
                     <td className="p-6 text-center text-[var(--text-muted)]">{row.traditional}</td>
                     <td className="p-6 text-center">
                       <span className="inline-flex items-center gap-2 text-[var(--secondary)] font-medium">
@@ -386,7 +386,7 @@ export default function TechnologyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Security & Compliance
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -404,10 +404,10 @@ export default function TechnologyPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="glass-panel glass-panel-hover p-8"
               >
-                <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6">
-                  <feature.icon className="w-7 h-7 text-white" />
+                <div className="w-14 h-14 rounded-xl bg-[var(--subtle-bg)] flex items-center justify-center mb-6">
+                  <feature.icon className="w-7 h-7 text-[var(--primary)]" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4">
+                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4">
                   {feature.title}
                 </h3>
                 <ul className="space-y-3">
@@ -437,11 +437,11 @@ export default function TechnologyPage() {
             <div className="w-16 h-16 rounded-full bg-[var(--aurora-cyan)]/20 flex items-center justify-center mx-auto mb-6">
               <GraduationCap className="w-8 h-8 text-[var(--aurora-cyan)]" />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Research Partnership
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Our technology was developed in collaboration with <strong className="text-white">ZHAW</strong>—Zurich University of Applied Sciences. The original developer, Dr. Dandolo Flumini, leads ongoing R&D through a <strong className="text-white">CHF 300,000 Innosuisse-funded</strong> research program.
+              Our technology was developed in collaboration with <strong className="text-[var(--text-primary)]">ZHAW</strong>—Zurich University of Applied Sciences. The original developer, Dr. Dandolo Flumini, leads ongoing R&D through a <strong className="text-[var(--text-primary)]">CHF 300,000 Innosuisse-funded</strong> research program.
             </p>
           </motion.div>
         </div>
@@ -457,7 +457,7 @@ export default function TechnologyPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               See the Technology in Action
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">

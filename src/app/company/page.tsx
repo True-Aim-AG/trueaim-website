@@ -90,7 +90,7 @@ export default function CompanyPage() {
               About Us
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Swiss Precision.
               <br />
               <span className="text-[var(--primary)]">Auditable AI.</span>
@@ -116,7 +116,7 @@ export default function CompanyPage() {
             <div className="w-12 h-12 rounded-full bg-[var(--primary)]/20 flex items-center justify-center mb-6">
               <Quote className="w-6 h-6 text-[var(--primary)]" />
             </div>
-            <blockquote className="text-xl md:text-2xl text-white leading-relaxed italic">
+            <blockquote className="text-xl md:text-2xl text-[var(--text-primary)] leading-relaxed italic">
               &ldquo;Combine the power of Agentic AI with the reliability of deterministic outcomes to become the global logic layer that powers claim determinations in a legally compliant and automated way.&rdquo;
             </blockquote>
             <p className="mt-6 text-[var(--text-muted)] font-medium">Our Mission</p>
@@ -134,7 +134,7 @@ export default function CompanyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Leadership Team
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -159,7 +159,7 @@ export default function CompanyPage() {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-1">
+                <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-1">
                   {founder.name}
                 </h3>
                 <p className="text-[var(--primary)] font-medium mb-3">
@@ -196,7 +196,7 @@ export default function CompanyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Advisors
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -219,7 +219,7 @@ export default function CompanyPage() {
                     {advisor.name.split(' ').map(n => n[0]).join('')}
                   </span>
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-1">
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-1">
                   {advisor.name}
                 </h3>
                 <p className="text-sm text-[var(--text-secondary)]">
@@ -241,7 +241,7 @@ export default function CompanyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Partners & Backers
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -262,7 +262,7 @@ export default function CompanyPage() {
                 <div className="w-14 h-14 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-6">
                   <partner.icon className="w-7 h-7 text-emerald-400" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
                   {partner.name}
                 </h3>
                 <p className="text-[var(--text-secondary)] leading-relaxed">
@@ -284,7 +284,7 @@ export default function CompanyPage() {
             transition={{ duration: 0.6 }}
             className="glass-panel p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Join Us in Transforming Claims
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">

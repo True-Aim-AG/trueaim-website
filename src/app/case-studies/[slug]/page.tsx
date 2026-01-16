@@ -84,11 +84,11 @@ export default function CaseStudyPage() {
 
             {/* Customer Info */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-xl bg-white/10 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-xl bg-[var(--subtle-bg)] flex items-center justify-center">
                 <Building2 className="w-8 h-8 text-[var(--text-muted)]" />
               </div>
               <div>
-                <div className="text-lg font-medium text-white">
+                <div className="text-lg font-medium text-[var(--text-primary)]">
                   {study.customer.name}
                 </div>
                 <div className="text-[var(--text-muted)]">
@@ -98,7 +98,7 @@ export default function CaseStudyPage() {
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               {study.title}
             </h1>
 
@@ -165,7 +165,7 @@ export default function CaseStudyPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-2xl font-bold text-white mb-4">
+                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
                   The Challenge
                 </h2>
                 <p className="text-[var(--text-secondary)] leading-relaxed">
@@ -180,7 +180,7 @@ export default function CaseStudyPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-2xl font-bold text-white mb-4">
+                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
                   The Solution
                 </h2>
                 <p className="text-[var(--text-secondary)] leading-relaxed">
@@ -198,11 +198,11 @@ export default function CaseStudyPage() {
                   className="glass-panel p-8 border-l-4 border-l-[var(--primary)]"
                 >
                   <Quote className="w-10 h-10 text-[var(--primary)] mb-4 opacity-50" />
-                  <blockquote className="text-lg text-white italic mb-4">
+                  <blockquote className="text-lg text-[var(--text-primary)] italic mb-4">
                     &ldquo;{study.quote.text}&rdquo;
                   </blockquote>
                   <div className="text-sm">
-                    <div className="font-semibold text-white">
+                    <div className="font-semibold text-[var(--text-primary)]">
                       {study.quote.author}
                     </div>
                     <div className="text-[var(--text-muted)]">{study.quote.role}</div>
@@ -220,7 +220,7 @@ export default function CaseStudyPage() {
                 transition={{ duration: 0.6 }}
                 className="glass-panel p-6 sticky top-24"
               >
-                <h3 className="font-semibold text-white mb-4">
+                <h3 className="font-semibold text-[var(--text-primary)] mb-4">
                   Key Highlights
                 </h3>
                 <ul className="space-y-3">
@@ -288,8 +288,8 @@ export default function CaseStudyPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <TrendingUp className="w-12 h-12 text-white/50 mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <TrendingUp className="w-12 h-12 text-[var(--text-muted)] mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Ready to Achieve Similar Results?
             </h2>
             <p className="text-lg text-gray-300 mb-10">
