@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/theme";
 
 const products = [
   { name: "MIRA", href: "/products/mira", description: "Decisioning Engine" },
@@ -33,7 +34,7 @@ export function Navigation() {
   const [resourcesOpen, setResourcesOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[rgba(11,12,21,0.85)] backdrop-blur-md border-b border-[var(--border)]">
+    <header className="fixed top-0 left-0 right-0 z-50 nav-header backdrop-blur-md border-b border-[var(--border)]">
       <nav className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -80,7 +81,7 @@ export function Navigation() {
                         "absolute top-full left-0 pt-2 transition-all duration-200",
                         productsOpen ? "opacity-100 visible" : "opacity-0 invisible"
                       )}>
-                        <div className="bg-[rgba(18,20,29,0.98)] backdrop-blur-xl border border-[var(--border)] rounded-xl shadow-2xl p-2 min-w-[220px]">
+                        <div className="nav-dropdown backdrop-blur-xl border border-[var(--border)] rounded-xl shadow-2xl p-2 min-w-[220px]">
                           {products.map((product) => (
                             <Link
                               key={product.name}
@@ -105,7 +106,7 @@ export function Navigation() {
                         "absolute top-full left-0 pt-2 transition-all duration-200",
                         resourcesOpen ? "opacity-100 visible" : "opacity-0 invisible"
                       )}>
-                        <div className="bg-[rgba(18,20,29,0.98)] backdrop-blur-xl border border-[var(--border)] rounded-xl shadow-2xl p-2 min-w-[240px]">
+                        <div className="nav-dropdown backdrop-blur-xl border border-[var(--border)] rounded-xl shadow-2xl p-2 min-w-[240px]">
                           {resources.map((resource) => (
                             <Link
                               key={resource.name}
@@ -146,8 +147,9 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Button & Theme Toggle */}
+          <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/50"
@@ -225,14 +227,17 @@ export function Navigation() {
               ))}
             </div>
 
-            {/* Mobile CTA */}
-            <Link
-              href="/contact"
-              className="mt-2 inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/30"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Request Demo
-            </Link>
+            {/* Mobile Theme Toggle & CTA */}
+            <div className="flex items-center gap-3 mt-2">
+              <ThemeToggle />
+              <Link
+                href="/contact"
+                className="flex-1 inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/30"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Request Demo
+              </Link>
+            </div>
           </div>
         </div>
       </nav>

@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
-/* TrueAim.ai Design System — Dark Glassmorphism Theme */
-:root {
+/* TrueAim.ai Design System — Theme Variables */
+
+/* ===== Dark Theme (Default) ===== */
+:root,
+[data-theme="dark"] {
   /* ===== Dark Mode Base Colors ===== */
   --background: #0B0C15;
   --background-secondary: #12141D;
@@ -78,6 +81,79 @@
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
+}
+
+/* ===== Light Theme ===== */
+[data-theme="light"] {
+  /* Base Colors */
+  --background: #FFFFFF;
+  --background-secondary: #F8FAFC;
+  --foreground: #020617;
+
+  /* Text Colors — Light Mode Hierarchy */
+  --text-primary: #020617;
+  --text-secondary: #1E293B;
+  --text-muted: #64748B;
+
+  /* Primary Colors — Ocean Blue (same) */
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --primary-dark: #1E40AF;
+  --primary-light: rgba(37, 99, 235, 0.1);
+  --primary-foreground: #ffffff;
+
+  /* Secondary Colors — Forest Green (same) */
+  --secondary: #16A34A;
+  --secondary-light: #22C55E;
+  --secondary-bg: rgba(22, 163, 74, 0.1);
+  --secondary-foreground: #ffffff;
+
+  /* Legacy trust color */
+  --trust: #2563EB;
+  --trust-foreground: #ffffff;
+
+  /* Aurora Accent Colors (slightly adjusted for light) */
+  --aurora-cyan: #0891B2;
+  --aurora-teal: #0D9488;
+  --aurora-purple: #7C3AED;
+
+  /* Product Accent Colors */
+  --mira: #4F46E5;
+  --mira-bg: rgba(79, 70, 229, 0.1);
+  --mira-text: #4338CA;
+
+  --contextbuilder: #0D9488;
+  --contextbuilder-bg: rgba(13, 148, 136, 0.1);
+  --contextbuilder-text: #0F766E;
+
+  --claimeval: #2563EB;
+  --claimeval-bg: rgba(37, 99, 235, 0.1);
+  --claimeval-text: #1D4ED8;
+
+  /* Border Colors — Light Mode */
+  --border: #E2E8F0;
+  --border-hover: #CBD5E1;
+
+  /* Status Colors (same) */
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --error: #EF4444;
+
+  /* Shadows — Light Mode */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* Glass Panel Variables — Light Mode */
+  --glass-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  --glass-blur: 12px;
+  --glass-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.08);
+  --glass-border: rgba(0, 0, 0, 0.08);
+
+  /* Glow Effects — Light Mode (subtle) */
+  --glow-primary: 0 0 40px rgba(37, 99, 235, 0.15);
+  --glow-cyan: 0 0 40px rgba(6, 182, 212, 0.15);
+  --glow-purple: 0 0 40px rgba(139, 92, 246, 0.15);
 }
 
 @theme inline {
@@ -177,6 +253,11 @@ code, .data-value, .claim-id, .metric-value {
   border-radius: var(--radius-lg);
 }
 
+[data-theme="light"] .glass-panel-light {
+  background: rgba(241, 245, 249, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
 /* ===== Aurora Background System ===== */
 .aurora-bg {
   position: fixed;
@@ -221,6 +302,19 @@ code, .data-value, .claim-id, .metric-value {
   animation-delay: -14s;
 }
 
+/* Light Theme Aurora - Softer, more subtle */
+[data-theme="light"] .aurora-blob-1 {
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+}
+
+[data-theme="light"] .aurora-blob-2 {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 70%);
+}
+
+[data-theme="light"] .aurora-blob-3 {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+}
+
 @keyframes float {
   0%, 100% { transform: translate(0, 0) scale(1); }
   25% { transform: translate(30px, -30px) scale(1.05); }
@@ -259,7 +353,7 @@ code, .data-value, .claim-id, .metric-value {
   }
 }
 
-/* ===== Form Input Dark Mode ===== */
+/* ===== Form Input Styles ===== */
 input, textarea, select {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border);
@@ -273,4 +367,50 @@ input::placeholder, textarea::placeholder {
 input:focus, textarea:focus, select:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Light Mode Form Inputs */
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+}
+
+/* ===== Navigation Styles ===== */
+.nav-header {
+  background: rgba(11, 12, 21, 0.85);
+}
+
+.nav-dropdown {
+  background: rgba(18, 20, 29, 0.98);
+}
+
+[data-theme="light"] .nav-header {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="light"] .nav-dropdown {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.footer-overlay {
+  background: rgba(11, 12, 21, 0.7);
+}
+
+[data-theme="light"] .footer-overlay {
+  background: rgba(248, 250, 252, 0.9);
+}
+
+/* ===== Theme Transition ===== */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body,
+.glass-panel,
+.aurora-blob,
+.nav-header,
+.nav-dropdown {
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }

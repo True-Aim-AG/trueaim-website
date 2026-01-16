@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { AuroraBackground } from "@/components/layout/AuroraBackground";
+import { ThemeProvider } from "@/components/theme";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -60,19 +61,39 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Prevent flash of wrong theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (!theme) {
+                    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  }
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
-        {/* Skip to main content link for keyboard users */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[var(--primary)] focus:text-white focus:rounded-lg focus:outline-none"
-        >
-          Skip to main content
-        </a>
-        <AuroraBackground />
-        <Navigation />
-        <main id="main-content" className="pt-[73px] relative z-10">{children}</main>
-        <Footer />
+        <ThemeProvider>
+          {/* Skip to main content link for keyboard users */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[var(--primary)] focus:text-white focus:rounded-lg focus:outline-none"
+          >
+            Skip to main content
+          </a>
+          <AuroraBackground />
+          <Navigation />
+          <main id="main-content" className="pt-[73px] relative z-10">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -29,7 +29,7 @@ export function Footer() {
   return (
     <footer className="relative border-t border-[var(--border)]">
       {/* Glass overlay */}
-      <div className="absolute inset-0 bg-[rgba(11,12,21,0.7)] backdrop-blur-sm" />
+      <div className="absolute inset-0 footer-overlay backdrop-blur-sm" />
 
       <div className="relative max-w-7xl mx-auto px-6 py-16">
         {/* Main Footer Grid */}
