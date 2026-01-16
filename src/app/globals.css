@@ -50,6 +50,12 @@
   --claimeval-bg: rgba(37, 99, 235, 0.15);
   --claimeval-text: #60A5FA;
 
+  /* ===== Subtle Background Colors ===== */
+  --subtle-bg: rgba(255, 255, 255, 0.1);
+  --subtle-bg-hover: rgba(255, 255, 255, 0.15);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-bg-hover: rgba(255, 255, 255, 0.1);
+
   /* ===== Border Colors — Glass Effect ===== */
   --border: rgba(255, 255, 255, 0.12);
   --border-hover: rgba(255, 255, 255, 0.2);
@@ -129,6 +135,12 @@
   --claimeval: #2563EB;
   --claimeval-bg: rgba(37, 99, 235, 0.1);
   --claimeval-text: #1D4ED8;
+
+  /* Subtle Background Colors — Light Mode */
+  --subtle-bg: rgba(0, 0, 0, 0.05);
+  --subtle-bg-hover: rgba(0, 0, 0, 0.08);
+  --card-bg: rgba(0, 0, 0, 0.03);
+  --card-bg-hover: rgba(0, 0, 0, 0.06);
 
   /* Border Colors — Light Mode */
   --border: #E2E8F0;

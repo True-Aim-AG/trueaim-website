@@ -204,7 +204,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
               {/* Header */}
               <div className="bg-gradient-to-r from-[var(--primary-dark)] to-[rgba(11,12,21,0.9)] px-6 py-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-lg bg-[var(--subtle-bg)] flex items-center justify-center">
                     <FileText className="w-5 h-5 text-white" />
                   </div>
                   <div>

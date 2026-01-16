@@ -51,7 +51,7 @@ export function Navigation() {
               />
             </div>
             <span className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">
-              TrueAim<span className="text-[var(--primary)]">.ai</span>
+              True <span className="text-[var(--primary)]">AI</span>m
             </span>
           </Link>
 
@@ -121,7 +121,7 @@ export function Navigation() {
                                   {resource.name}
                                 </span>
                                 {resource.comingSoon && (
-                                  <span className="text-xs px-1.5 py-0.5 rounded bg-white/10 text-[var(--text-muted)]">
+                                  <span className="text-xs px-1.5 py-0.5 rounded bg-[var(--subtle-bg)] text-[var(--text-muted)]">
                                     Soon
                                   </span>
                                 )}

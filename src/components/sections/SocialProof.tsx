@@ -46,7 +46,7 @@ export function SocialProof() {
               >
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-[var(--subtle-bg)] flex items-center justify-center">
                     <Building2 className="w-6 h-6 text-[var(--text-muted)]" />
                   </div>
                   <div>

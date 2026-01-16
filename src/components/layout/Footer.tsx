@@ -43,7 +43,7 @@ export function Footer() {
                 className="h-12 w-auto"
               />
               <span className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">
-                TrueAim<span className="text-[var(--primary)]">.ai</span>
+                True <span className="text-[var(--primary)]">AI</span>m
               </span>
             </Link>
             <p className="text-[var(--text-muted)] text-sm mb-4">
