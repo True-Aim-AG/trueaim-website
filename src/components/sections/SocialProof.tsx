@@ -23,7 +23,7 @@ export function SocialProof() {
             <TrendingUp className="w-4 h-4" />
             Proven Results
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
             Trusted by Leading Insurers
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
@@ -50,7 +50,7 @@ export function SocialProof() {
                     <Building2 className="w-6 h-6 text-[var(--text-muted)]" />
                   </div>
                   <div>
-                    <div className="font-medium text-white">
+                    <div className="font-medium text-[var(--text-primary)]">
                       {study.customer.name}
                     </div>
                     <div className="text-sm text-[var(--text-muted)]">
@@ -103,7 +103,7 @@ export function SocialProof() {
         >
           <Link
             href="/case-studies"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-white font-medium hover:bg-white/10 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-all"
           >
             View All Case Studies
             <ArrowRight className="w-4 h-4" />

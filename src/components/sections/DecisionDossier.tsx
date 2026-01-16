@@ -82,11 +82,11 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                   <BookOpen className="w-4 h-4" />
                   Unique to TrueAim
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-4">
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
                   The Decision Dossier
                 </h2>
                 <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
-                  Every claim decision produces a complete, replayable audit record. Unlike black-box AI, every TrueAim decision can be <strong className="text-white">replayed, explained, and defended</strong> in audit or dispute.
+                  Every claim decision produces a complete, replayable audit record. Unlike black-box AI, every TrueAim decision can be <strong className="text-[var(--text-primary)]">replayed, explained, and defended</strong> in audit or dispute.
                 </p>
                 <Link
                   href="/technology#decision-dossier"
@@ -105,7 +105,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                       <FileText className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <div className="font-semibold text-white">Decision Dossier</div>
+                      <div className="font-semibold text-[var(--text-primary)]">Decision Dossier</div>
                       <div className="text-xs text-[var(--text-muted)] font-mono-data">Claim #2024-TR-4521</div>
                     </div>
                   </div>
@@ -154,7 +154,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
             <BookOpen className="w-4 h-4" />
             Unique Differentiator
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
             The Decision Dossier
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
@@ -184,7 +184,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                     <item.icon className={`w-5 h-5 ${item.color}`} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-1">{item.title}</h3>
+                    <h3 className="font-semibold text-[var(--text-primary)] mb-1">{item.title}</h3>
                     <p className="text-sm text-[var(--text-muted)]">{item.description}</p>
                   </div>
                 </motion.div>
@@ -223,7 +223,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                 <div>
                   <div className="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-2">Claim Reference</div>
                   <div className="font-mono-data text-sm glass-panel-light p-3">
-                    <span className="text-white">TRV-2024-4521</span>
+                    <span className="text-[var(--text-primary)]">TRV-2024-4521</span>
                     <span className="text-[var(--text-muted)]"> | Travel Insurance | Medical Expenses</span>
                   </div>
                 </div>
@@ -285,7 +285,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
             {/* Differentiator callout */}
             <div className="mt-6 p-4 glass-panel">
               <p className="text-sm text-[var(--text-secondary)] text-center">
-                <strong className="text-white">Unlike black-box AI:</strong> Every TrueAim decision can be replayed, explained, and defended.
+                <strong className="text-[var(--text-primary)]">Unlike black-box AI:</strong> Every TrueAim decision can be replayed, explained, and defended.
               </p>
             </div>
           </motion.div>

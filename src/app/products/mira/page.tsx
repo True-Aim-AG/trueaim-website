@@ -98,7 +98,7 @@ export default function MiraPage() {
               Decisioning Engine
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               MIRA: The Neuro-Symbolic Decisioning Engine
             </h1>
 
@@ -115,7 +115,7 @@ export default function MiraPage() {
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-white font-medium hover:bg-white/10 transition-colors text-lg"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
                 Request a Pilot
                 <ArrowRight className="w-5 h-5" />
@@ -135,7 +135,7 @@ export default function MiraPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center glass-panel p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Claims Decisions Are Still Manual, Inconsistent, and Opaque
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
@@ -158,13 +158,13 @@ export default function MiraPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Agentic AI Meets Deterministic Logic
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
               MIRA is the world&apos;s first neuro-symbolic engine purpose-built for claims. It uses agentic AI for intelligent workflow orchestration—reading documents, extracting data, identifying parties—while relying on deterministic logic for the actual coverage decision.
             </p>
-            <p className="text-lg text-white font-medium mt-4">
+            <p className="text-lg text-[var(--text-primary)] font-medium mt-4">
               The result: decisions that are fast, consistent, and completely explainable.
             </p>
           </motion.div>
@@ -181,7 +181,7 @@ export default function MiraPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               How MIRA Works
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -211,7 +211,7 @@ export default function MiraPage() {
                       <step.icon className="w-7 h-7 text-indigo-400" />
                     </div>
 
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                    <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
                       {step.title}
                     </h3>
                     <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
@@ -235,7 +235,7 @@ export default function MiraPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               See MIRA in Action
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -273,7 +273,7 @@ export default function MiraPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Capabilities
             </h2>
           </motion.div>
@@ -291,7 +291,7 @@ export default function MiraPage() {
                 <div className="w-14 h-14 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-6">
                   <cap.icon className="w-7 h-7 text-indigo-400" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
                   {cap.title}
                 </h3>
                 <p className="text-[var(--text-secondary)] leading-relaxed">
@@ -313,7 +313,7 @@ export default function MiraPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Proven Results
             </h2>
           </motion.div>
@@ -358,7 +358,7 @@ export default function MiraPage() {
             transition={{ duration: 0.6 }}
             className="glass-panel p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               See MIRA on Your Claims
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">

@@ -65,7 +65,7 @@ export default function ClaimEvalPage() {
               Quality Assurance
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               ClaimEval: Scale Quality Assurance Beyond Sampling
             </h1>
 
@@ -82,7 +82,7 @@ export default function ClaimEvalPage() {
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-white font-medium hover:bg-white/10 transition-colors text-lg"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
                 Request Analysis
                 <ArrowRight className="w-5 h-5" />
@@ -102,7 +102,7 @@ export default function ClaimEvalPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center glass-panel p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               The Sampling Problem
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
@@ -125,7 +125,7 @@ export default function ClaimEvalPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               100% Coverage, Intelligent Prioritization
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
@@ -145,7 +145,7 @@ export default function ClaimEvalPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Key Features
             </h2>
           </motion.div>
@@ -163,7 +163,7 @@ export default function ClaimEvalPage() {
                 <div className="w-14 h-14 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-6">
                   <feature.icon className="w-7 h-7 text-emerald-400" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
                   {feature.title}
                 </h3>
                 <p className="text-[var(--text-secondary)] leading-relaxed">
@@ -185,7 +185,7 @@ export default function ClaimEvalPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               See ClaimEval in Action
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -223,7 +223,7 @@ export default function ClaimEvalPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Inspection Zones
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -244,7 +244,7 @@ export default function ClaimEvalPage() {
                 <div className="w-14 h-14 rounded-xl bg-emerald-500/20 flex items-center justify-center">
                   <Car className="w-7 h-7 text-emerald-400" />
                 </div>
-                <h3 className="text-2xl font-semibold text-white">
+                <h3 className="text-2xl font-semibold text-[var(--text-primary)]">
                   Motor
                 </h3>
               </div>
@@ -270,7 +270,7 @@ export default function ClaimEvalPage() {
                 <div className="w-14 h-14 rounded-xl bg-emerald-500/20 flex items-center justify-center">
                   <Home className="w-7 h-7 text-emerald-400" />
                 </div>
-                <h3 className="text-2xl font-semibold text-white">
+                <h3 className="text-2xl font-semibold text-[var(--text-primary)]">
                   Home
                 </h3>
               </div>
@@ -297,7 +297,7 @@ export default function ClaimEvalPage() {
             transition={{ duration: 0.6 }}
             className="glass-panel p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Run ClaimEval on Your Closed Claims
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">

@@ -45,7 +45,7 @@ export function ProductsGrid() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
             Purpose-Built Products for Claims Excellence
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
@@ -93,7 +93,7 @@ export function ProductsGrid() {
                     </div>
 
                     {/* Name */}
-                    <h3 className="text-2xl font-bold text-white mb-3">
+                    <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-3">
                       {product.name}
                     </h3>
 

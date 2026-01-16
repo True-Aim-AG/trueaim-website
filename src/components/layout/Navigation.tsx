@@ -50,7 +50,7 @@ export function Navigation() {
                 unoptimized
               />
             </div>
-            <span className="text-2xl font-bold tracking-tight text-white">
+            <span className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">
               TrueAim<span className="text-[var(--primary)]">.ai</span>
             </span>
           </Link>
@@ -66,7 +66,7 @@ export function Navigation() {
                     onMouseLeave={() => item.dropdownType === "products" ? setProductsOpen(false) : setResourcesOpen(false)}
                   >
                     <button
-                      className="flex items-center gap-1 text-[var(--text-secondary)] hover:text-white transition-colors font-medium"
+                      className="flex items-center gap-1 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors font-medium"
                     >
                       {item.name}
                       <ChevronDown className={cn(
@@ -86,9 +86,9 @@ export function Navigation() {
                             <Link
                               key={product.name}
                               href={product.href}
-                              className="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors"
+                              className="block px-4 py-3 rounded-lg hover:bg-[var(--primary-light)] transition-colors"
                             >
-                              <div className="font-medium text-white">
+                              <div className="font-medium text-[var(--text-primary)]">
                                 {product.name}
                               </div>
                               <div className="text-sm text-[var(--text-muted)]">
@@ -112,12 +112,12 @@ export function Navigation() {
                               key={resource.name}
                               href={resource.href}
                               className={cn(
-                                "block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors",
+                                "block px-4 py-3 rounded-lg hover:bg-[var(--primary-light)] transition-colors",
                                 resource.comingSoon && "opacity-50 pointer-events-none"
                               )}
                             >
                               <div className="flex items-center gap-2">
-                                <span className="font-medium text-white">
+                                <span className="font-medium text-[var(--text-primary)]">
                                   {resource.name}
                                 </span>
                                 {resource.comingSoon && (
@@ -138,7 +138,7 @@ export function Navigation() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-[var(--text-secondary)] hover:text-white transition-colors font-medium"
+                    className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors font-medium"
                   >
                     {item.name}
                   </Link>
@@ -161,7 +161,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 text-[var(--text-secondary)] hover:text-white transition-colors"
+            className="md:hidden p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -188,7 +188,7 @@ export function Navigation() {
                 <Link
                   key={product.name}
                   href={product.href}
-                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-white hover:bg-white/10 transition-colors"
+                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--primary-light)] transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {product.name}
@@ -205,7 +205,7 @@ export function Navigation() {
                 <Link
                   key={resource.name}
                   href={resource.href}
-                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-white hover:bg-white/10 transition-colors"
+                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--primary-light)] transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {resource.name}
@@ -219,7 +219,7 @@ export function Navigation() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-white hover:bg-white/10 transition-colors"
+                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--primary-light)] transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}

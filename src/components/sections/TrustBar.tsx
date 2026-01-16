@@ -60,7 +60,7 @@ export function TrustBar() {
                 <p className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wide">
                   {award.country}
                 </p>
-                <p className="text-sm font-medium text-white leading-tight">
+                <p className="text-sm font-medium text-[var(--text-primary)] leading-tight">
                   {award.title}
                 </p>
               </div>
@@ -83,7 +83,7 @@ export function TrustBar() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-              className="text-xl font-semibold text-[var(--text-muted)] hover:text-white transition-colors cursor-default"
+              className="text-xl font-semibold text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors cursor-default"
             >
               {partner}
             </motion.div>

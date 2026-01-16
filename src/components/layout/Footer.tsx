@@ -42,7 +42,7 @@ export function Footer() {
                 alt="TrueAim.ai Logo"
                 className="h-12 w-auto"
               />
-              <span className="text-2xl font-bold tracking-tight text-white">
+              <span className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">
                 TrueAim<span className="text-[var(--primary)]">.ai</span>
               </span>
             </Link>
@@ -55,7 +55,7 @@ export function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--text-muted)] hover:text-white transition-colors"
+                className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
@@ -64,7 +64,7 @@ export function Footer() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--text-muted)] hover:text-white transition-colors"
+                className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
@@ -74,7 +74,7 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">
+            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-[var(--text-primary)]">
               Company
             </h3>
             <ul className="space-y-3">
@@ -82,7 +82,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-[var(--text-muted)] hover:text-white transition-colors text-sm inline-flex items-center gap-2"
+                    className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm inline-flex items-center gap-2"
                   >
                     {link.name}
                     {link.comingSoon && (
@@ -96,7 +96,7 @@ export function Footer() {
 
           {/* Products Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">
+            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-[var(--text-primary)]">
               Products
             </h3>
             <ul className="space-y-3">
@@ -104,7 +104,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-[var(--text-muted)] hover:text-white transition-colors text-sm"
+                    className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -115,7 +115,7 @@ export function Footer() {
 
           {/* Resources Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">
+            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-[var(--text-primary)]">
               Resources
             </h3>
             <ul className="space-y-3">
@@ -123,7 +123,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-[var(--text-muted)] hover:text-white transition-colors text-sm inline-flex items-center gap-2"
+                    className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm inline-flex items-center gap-2"
                   >
                     {link.name}
                     {link.comingSoon && (
@@ -137,7 +137,7 @@ export function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">
+            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-[var(--text-primary)]">
               Legal
             </h3>
             <ul className="space-y-3">
@@ -145,7 +145,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-[var(--text-muted)] hover:text-white transition-colors text-sm"
+                    className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm"
                   >
                     {link.name}
                   </Link>

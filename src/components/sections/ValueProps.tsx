@@ -90,7 +90,7 @@ export function ValueProps() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
             Claims Automation That Regulators Trust
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
@@ -139,7 +139,7 @@ export function ValueProps() {
                 </div>
 
                 {/* Label */}
-                <h3 className="text-lg font-semibold text-white mb-3">
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
                   {prop.label}
                 </h3>
 

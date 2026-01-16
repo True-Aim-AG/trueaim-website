@@ -97,7 +97,7 @@ export default function ContextBuilderPage() {
               Document Pipeline
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               ContextBuilder: From Messy Documents to Trusted Data
             </h1>
 
@@ -114,7 +114,7 @@ export default function ContextBuilderPage() {
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-white font-medium hover:bg-white/10 transition-colors text-lg"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
                 Start Free Trial
                 <ArrowRight className="w-5 h-5" />
@@ -134,7 +134,7 @@ export default function ContextBuilderPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center glass-panel p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               The Document Chaos Problem
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
@@ -154,13 +154,13 @@ export default function ContextBuilderPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Purpose-Built Pipeline for Claims
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
               ContextBuilder is a purpose-built pipeline for claims documents. It automatically ingests, classifies, and extracts data—then applies quality gates to surface exceptions for human review.
             </p>
-            <p className="text-lg text-white font-medium mt-4">
+            <p className="text-lg text-[var(--text-primary)] font-medium mt-4">
               The result: claim-ready &quot;context packs&quot; that downstream systems can trust.
             </p>
           </motion.div>
@@ -177,7 +177,7 @@ export default function ContextBuilderPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               5-Step Pipeline
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -207,7 +207,7 @@ export default function ContextBuilderPage() {
                       <step.icon className="w-7 h-7 text-[var(--aurora-cyan)]" />
                     </div>
 
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                    <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
                       {step.title}
                     </h3>
                     <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
@@ -231,7 +231,7 @@ export default function ContextBuilderPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Explore the Code
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
@@ -247,11 +247,11 @@ export default function ContextBuilderPage() {
             className="relative rounded-2xl overflow-hidden glass-panel p-12 text-center"
           >
             <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-6">
-              <svg viewBox="0 0 24 24" className="w-10 h-10 text-white" fill="currentColor">
+              <svg viewBox="0 0 24 24" className="w-10 h-10 text-[var(--text-primary)]" fill="currentColor">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
               AgenticContextBuilder
             </h3>
             <p className="text-[var(--text-secondary)] mb-8 max-w-xl mx-auto">
@@ -280,7 +280,7 @@ export default function ContextBuilderPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               What You Get: A Claim-Ready Context Pack
             </h2>
           </motion.div>
@@ -298,7 +298,7 @@ export default function ContextBuilderPage() {
                 <div className="w-12 h-12 rounded-xl bg-[var(--aurora-cyan)]/20 flex items-center justify-center mb-4">
                   <feature.icon className="w-6 h-6 text-[var(--aurora-cyan)]" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
                   {feature.title}
                 </h3>
                 <p className="text-sm text-[var(--text-secondary)]">
@@ -320,7 +320,7 @@ export default function ContextBuilderPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Performance Metrics
             </h2>
           </motion.div>
@@ -357,7 +357,7 @@ export default function ContextBuilderPage() {
             transition={{ duration: 0.6 }}
             className="glass-panel p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Process a Sample of Your Documents
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">

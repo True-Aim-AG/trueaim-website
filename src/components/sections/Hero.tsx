@@ -22,7 +22,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6"
           >
             Neuro-Symbolic AI for
             <br />
@@ -55,7 +55,7 @@ export function Hero() {
               </Link>
               <Link
                 href="/roi-calculator"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-white font-medium hover:bg-white/10 transition-all text-lg backdrop-blur-sm"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-all text-lg backdrop-blur-sm"
               >
                 Get ROI Estimate
                 <ArrowRight className="w-5 h-5" />
@@ -121,7 +121,7 @@ export function Hero() {
                         style={{ color: step.color }}
                       />
                     </div>
-                    <span className="text-sm font-medium text-white">
+                    <span className="text-sm font-medium text-[var(--text-primary)]">
                       {step.label}
                     </span>
                   </motion.div>
