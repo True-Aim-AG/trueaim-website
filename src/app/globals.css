@@ -230,6 +230,14 @@ code, .data-value, .claim-id, .metric-value {
   border-radius: var(--radius-2xl);
 }
 
+/* Cookie banner: twice as opaque as standard glass-panel */
+.cookie-banner-bg {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.06) 100%);
+}
+[data-theme="light"] .cookie-banner-bg {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+}
+
 /* Glass Panel with Hover Glow Effect */
 .glass-panel-hover {
   position: relative;
