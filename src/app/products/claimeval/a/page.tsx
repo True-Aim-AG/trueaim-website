@@ -78,7 +78,7 @@ export default function ClaimEvalPageA() {
               Move from manual, sample-based QA to consistent inspections across your entire claims portfolio. Surface exceptions. Prioritize human effort.
             </p>
             <p className="text-[var(--text-muted)] mb-8 leading-relaxed">
-              ClaimEval is a QA and governance layer &mdash; it augments your handlers, it doesn&apos;t replace them.
+              ClaimEval is a QA and governance layer - it augments your handlers, it doesn&apos;t replace them.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

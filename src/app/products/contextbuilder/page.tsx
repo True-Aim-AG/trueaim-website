@@ -221,6 +221,23 @@ export default function ContextBuilderPage() {
               ))}
             </div>
           </div>
+
+          {/* Data Sovereignty Note */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-12 glass-panel p-6 text-center max-w-3xl mx-auto"
+          >
+            <p className="text-sm text-[var(--text-secondary)]">
+              All document processing runs within your chosen data residency zone.{" "}
+              <Link href="/trust" className="text-[var(--primary)] hover:underline">
+                See our Trust Center
+              </Link>
+              .
+            </p>
+          </motion.div>
         </div>
       </section>
 

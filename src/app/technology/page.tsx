@@ -47,7 +47,7 @@ const comparisonData = [
 const securityFeatures = [
   {
     title: "Data Protection",
-    items: ["Swiss-based hosting available", "GDPR compliant architecture", "Encryption at rest and in transit"],
+    items: ["Swiss-based hosting available", "GDPR-aligned architecture", "Encryption at rest and in transit"],
     icon: Lock,
   },
   {

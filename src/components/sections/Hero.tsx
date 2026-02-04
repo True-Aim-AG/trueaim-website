@@ -64,8 +64,8 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-4 leading-relaxed"
           >
-            Turn policy terms into instant, deterministic claim decisions – fully traceable,
-            fully compliant, no black boxes.
+            Turn policy terms into instant, deterministic claim decisions - fully traceable,
+            fully aligned with EU AI Act, no black boxes.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -73,7 +73,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-base text-[var(--text-muted)] max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Built for insurers who need speed without sacrificing explainability.
+            We help insurers automate claim decisions with full audit trails and optional human oversight.
           </motion.p>
 
           <motion.div

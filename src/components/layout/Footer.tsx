@@ -55,7 +55,7 @@ export function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/Fr3nn3r"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"

@@ -151,9 +151,9 @@ const trustResources = [
   },
   {
     title: "Penetration Test Report",
-    description: "Third-party security assessment results",
+    description: "Third-party security assessment - available on request",
     icon: Shield,
-    available: false,
+    available: true,
   },
 ];
 
@@ -278,7 +278,7 @@ export default function TrustPage() {
                 Data Residency & Sovereignty
               </h2>
               <p className="text-lg text-[var(--text-secondary)] mb-6 leading-relaxed">
-                Your data stays where you need it. Choose Swiss-based hosting for maximum data sovereignty, or EU processing zones for GDPR compliance. Data processing boundaries are defined in your DPA &mdash; <Link href="/contact" className="text-[var(--primary)] hover:underline">request one here</Link>.
+                Your data stays where you need it. Choose Swiss-based hosting for maximum data sovereignty, or EU processing zones for GDPR compliance. Data processing boundaries are defined in your DPA - <Link href="/contact" className="text-[var(--primary)] hover:underline">request one here</Link>.
               </p>
 
               <ul className="space-y-4">

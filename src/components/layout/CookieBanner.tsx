@@ -30,7 +30,7 @@ export function CookieBanner() {
   const savePreferences = (prefs: CookiePreferences) => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
     setVisible(false);
-    // If analytics accepted, GA4 can be initialized here
+    window.dispatchEvent(new Event("cookie-consent-update"));
   };
 
   const handleAcceptAll = () => {

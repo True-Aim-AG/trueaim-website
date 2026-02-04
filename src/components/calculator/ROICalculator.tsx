@@ -65,7 +65,7 @@ export function ROICalculator() {
     currency: "CHF",
   });
 
-  const [showAssumptions, setShowAssumptions] = useState(false);
+  const [showAssumptions, setShowAssumptions] = useState(true);
   const [showReportForm, setShowReportForm] = useState(false);
   const [reportSubmitted, setReportSubmitted] = useState(false);
   const [reportSubmitting, setReportSubmitting] = useState(false);

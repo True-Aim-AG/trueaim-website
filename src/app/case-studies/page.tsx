@@ -189,7 +189,7 @@ export default function CaseStudiesPage() {
               <div className="flex items-center gap-3">
                 <Construction className="w-5 h-5 text-[var(--text-muted)]" />
                 <h2 className="text-xl font-semibold text-[var(--text-muted)]">
-                  More Case Studies Coming Soon
+                  Additional Case Studies In Progress
                 </h2>
               </div>
               <p className="text-sm text-[var(--text-muted)] mt-2 ml-8">
@@ -214,8 +214,8 @@ export default function CaseStudiesPage() {
                   <div className="relative">
                     {/* WIP badge */}
                     <div className="mb-4">
-                      <span className="px-2 py-1 rounded text-[10px] font-semibold uppercase tracking-wider bg-amber-500/20 text-amber-400">
-                        Coming Soon
+                      <span className="px-2 py-1 rounded text-[10px] font-medium uppercase tracking-wider bg-[var(--subtle-bg)] text-[var(--text-muted)]">
+                        In Progress
                       </span>
                     </div>
 

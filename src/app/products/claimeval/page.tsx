@@ -11,7 +11,8 @@ import {
   Heart,
   Wrench,
   BarChart3,
-  Users
+  Users,
+  AlertTriangle
 } from "lucide-react";
 
 const features = [
@@ -148,6 +149,9 @@ export default function ClaimEvalPage() {
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
               ClaimEval runs defined inspection checks across all closed claims. It scores risk, flags issues, and surfaces the claims that need human attention, without replacing human judgment.
+            </p>
+            <p className="text-base text-[var(--text-muted)] mt-4 leading-relaxed italic">
+              ClaimEval is a quality assurance layer. It augments your claims handlers, it does not replace them.
             </p>
           </motion.div>
         </div>
@@ -361,6 +365,33 @@ export default function ClaimEvalPage() {
               </Link>
             </motion.div>
           </div>
+
+          {/* Example Inspection Check */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-12 glass-panel p-8 max-w-3xl mx-auto"
+          >
+            <div className="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-4">Example Inspection Check</div>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <AlertTriangle className="w-5 h-5 text-amber-400" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-[var(--text-primary)] mb-2">Reserve Adequacy Check</h4>
+                <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-3">
+                  Compares initial reserve against final settlement amount across all closed claims. Flags cases where the reserve was more than 30% below the final payout, indicating potential under-reserving patterns.
+                </p>
+                <div className="flex items-center gap-4 text-xs">
+                  <span className="px-2 py-1 rounded bg-emerald-500/20 text-emerald-400 font-medium">Pass: within tolerance</span>
+                  <span className="px-2 py-1 rounded bg-amber-500/20 text-amber-400 font-medium">Warn: 15-30% deviation</span>
+                  <span className="px-2 py-1 rounded bg-red-500/20 text-red-400 font-medium">Fail: &gt;30% deviation</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

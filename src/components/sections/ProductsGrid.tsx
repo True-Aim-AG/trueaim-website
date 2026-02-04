@@ -9,7 +9,7 @@ const products = [
   {
     name: "ContextBuilder",
     badge: "Document Pipeline",
-    description: "Turn messy claim documents into structured, trusted data. AI-powered ingestion with human review when needed.",
+    description: "Turn fragmented, unstructured claim documents into high-quality structured data. AI-assisted extraction with human-in-the-loop review ensures clean inputs for deterministic decisioning.",
     href: "/products/contextbuilder",
     icon: FileSearch,
     color: "var(--contextbuilder)",
@@ -18,7 +18,7 @@ const products = [
   {
     name: "MIRA",
     badge: "Decisioning Engine",
-    description: "Transform policy terms and conditions into automated, fully-deterministic claim decisions.",
+    description: "The core deterministic decision engine. Transform complex policy terms and conditions into automated decisions that are consistent, reproducible and free from probabilistic inference.",
     href: "/products/mira",
     icon: Brain,
     color: "var(--mira)",
@@ -27,7 +27,7 @@ const products = [
   {
     name: "Decision Dossier",
     badge: "Audit Record",
-    description: "Every claim decision produces a complete, replayable audit record. Your defense in any audit or dispute.",
+    description: "Every case produces a fully traceable audit record linking outcomes back to source clauses, documents and decision paths \u2014 explainable, defensible and replayable.",
     href: "/technology#decision-dossier",
     icon: FileText,
     color: "var(--primary)",
@@ -36,7 +36,7 @@ const products = [
   {
     name: "ClaimEval",
     badge: "Quality Assurance",
-    description: "Scale QA beyond sampling. Run consistent inspections across your entire claims portfolio.",
+    description: "Scale quality assurance beyond sampling. Automatically inspect decisions across your full claims portfolio to detect inconsistencies, process deviation and logic gaps.",
     href: "/products/claimeval",
     icon: ClipboardCheck,
     color: "var(--claimeval)",

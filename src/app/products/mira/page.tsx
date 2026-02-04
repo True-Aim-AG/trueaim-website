@@ -47,7 +47,7 @@ const workflowSteps = [
   {
     step: 5,
     title: "Output",
-    description: "Clear, auditable deliverables: internal report, customer letter, audit logs.",
+    description: "Clear, auditable deliverables: coverage determination report, customer letter with decision rationale, structured audit log, reserve recommendation.",
     icon: FileOutput,
   },
 ];
@@ -114,7 +114,7 @@ export default function MiraPage() {
                 href="#demo"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/30"
               >
-                See MIRA in Action
+                Test MIRA on Your Claims
               </a>
               <Link
                 href="/contact"
@@ -239,7 +239,7 @@ export default function MiraPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              See MIRA in Action
+              Test MIRA on Your Claims
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
               Interactive demo of MIRA processing travel claims

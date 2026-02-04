@@ -5,13 +5,15 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import Link from "next/link";
 import {
   Mail,
   Calendar,
   MessageSquare,
   CheckCircle,
   AlertCircle,
-  ChevronDown
+  ChevronDown,
+  Shield
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -464,6 +466,23 @@ export default function ContactPage() {
                     </div>
                   </a>
                 </div>
+              </div>
+
+              {/* Security Review */}
+              <div className="glass-panel p-8">
+                <h3 className="text-xl font-bold text-[var(--text-primary)] mb-4">
+                  Security Assessment
+                </h3>
+                <p className="text-sm text-[var(--text-secondary)] mb-4">
+                  Need a security assessment? Request our Trust Pack for details on our security architecture, compliance posture, and data protection controls.
+                </p>
+                <Link
+                  href="/trust#trust-pack"
+                  className="inline-flex items-center gap-2 text-sm text-[var(--primary)] font-medium hover:underline"
+                >
+                  <Shield className="w-4 h-4" />
+                  Request Trust Pack
+                </Link>
               </div>
             </motion.div>
           </div>

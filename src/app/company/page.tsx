@@ -17,22 +17,29 @@ const founders = [
   {
     name: "Reuben John",
     role: "Co-Founder & CEO",
-    tagline: "2x Founder | Attorney | Former MD Largest Global Claims Recovery Provider",
-    bio: "Reuben drives TrueAim.ai's vision, commercial strategy and go-to-market execution. He has led high-stakes operational and regulatory projects across Europe and Africa, overseeing market expansion, complex digitization and compliance initiatives for multinational clients.",
+    tagline: "2x Founder | Attorney | Former MD Largest Global Withholding Tax Claim Company",
+    bio: "Reuben has led high-stakes operational and regulatory projects across Europe and Africa, overseeing market expansion, complex digitization and compliance initiatives for multinational clients. His background spans enterprise operations and multi-jurisdictional regulatory strategy. At TrueAim.ai he drives vision, commercial strategy and end-to-end go-to-market execution, overseeing customer engagement, early adoption and production rollout.",
     linkedin: "https://www.linkedin.com/in/reubenj/",
     image: "/team/reuben-john.jpg",
   },
   {
     name: "Frederic Brunner",
     role: "Co-Founder & CTO",
-    tagline: "Ex-Zurich Insurance | Ex-Guidewire | Automation and System Design Expert",
-    bio: "Frederic drives TrueAim.ai's technological development, ensuring the hybrid Agentic-AI engine meets the demands of regulated industries. A veteran technologist with 30+ years in software development and 20+ years in enterprise automation, he combines deep architectural expertise with practical delivery experience.",
+    tagline: "Ex-Zurich Insurance | Automation and System Design Expert",
+    bio: "A veteran technologist with 30+ years in software development and 20+ years in enterprise automation, Frederic combines deep architectural expertise with practical delivery experience. He previously led technology transformation at Guidewire. At TrueAim.ai he drives technological development, ensuring the hybrid Agentic-AI engine meets the rigorous demands of regulated industries \u2014 from pilot to production.",
     linkedin: "https://www.linkedin.com/in/frdbrunner/",
     image: "/team/frederic-brunner.jpg",
   },
 ];
 
-const advisors = [
+interface Advisor {
+  name: string;
+  title: string;
+  relevance: string;
+  image?: string;
+}
+
+const advisors: Advisor[] = [
   {
     name: "Claudio Gienal",
     title: "AXA Group Chief Transformation Officer | Former AXA CEO UK & Ireland | Ex-McKinsey | Insurance Innovator",
@@ -68,7 +75,7 @@ const advisors = [
 const partners = [
   {
     name: "Yarowa AG",
-    description: "Strategic partner. Swiss InsurTech platform with enterprise distribution and 100+ insurer relationships.",
+    description: "Lead investor and 30% shareholder. Swiss InsurTech platform with direct access to insurer distribution and 100+ enterprise relationships.",
     icon: Building2,
   },
   {
@@ -106,7 +113,7 @@ export default function CompanyPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-              TrueAim.ai pioneers neuro-symbolic AI for regulated industries. We&apos;re building the decisioning layer that powers compliant, explainable decisions at scale.
+              TrueAim.ai pioneers neuro-symbolic AI for regulated industries. We&apos;re building the decisioning layer that powers aligned, explainable decisions at scale.
             </p>
           </motion.div>
         </div>
@@ -126,7 +133,7 @@ export default function CompanyPage() {
               <Quote className="w-6 h-6 text-[var(--primary)]" />
             </div>
             <blockquote className="text-xl md:text-2xl text-[var(--text-primary)] leading-relaxed italic">
-              &ldquo;Eliminate the &apos;black box&apos; in insurance by uniting AI with deterministic decisioning to deliver fast, fair and fully auditable claim determinations.&rdquo;
+              &ldquo;Eliminate the &apos;black box&apos; in insurance by uniting agentic and generative AI with deterministic decisioning to deliver fast, fair and fully auditable claim determinations, engineered with compliance-by-design to meet the highest standards of data protection, information security, AI governance and industry oversight.&rdquo;
             </blockquote>
             <p className="mt-6 text-[var(--text-muted)] font-medium">Our Mission</p>
           </motion.div>
@@ -227,11 +234,23 @@ export default function CompanyPage() {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="glass-panel glass-panel-hover p-6"
               >
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--aurora-purple)]/30 to-[var(--aurora-cyan)]/30 flex items-center justify-center mb-4">
-                  <span className="text-lg font-bold text-white">
-                    {advisor.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
+                {advisor.image ? (
+                  <div className="w-12 h-12 rounded-full overflow-hidden mb-4 ring-1 ring-[var(--border)]">
+                    <Image
+                      src={advisor.image}
+                      alt={advisor.name}
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--aurora-purple)]/30 to-[var(--aurora-cyan)]/30 flex items-center justify-center mb-4">
+                    <span className="text-lg font-bold text-white">
+                      {advisor.name.split(' ').map(n => n[0]).join('')}
+                    </span>
+                  </div>
+                )}
                 <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-1">
                   {advisor.name}
                 </h3>
@@ -316,7 +335,7 @@ export default function CompanyPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/30"
               >
-                Get in Touch
+                Book a Demo
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>

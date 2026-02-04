@@ -148,14 +148,14 @@ export default function ROICalculatorPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/30"
               >
-                Get Custom Analysis
+                Book a Demo
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/products/mira"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                See MIRA in Action
+                Test MIRA on Your Claims
               </Link>
             </div>
           </motion.div>
