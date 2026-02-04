@@ -133,7 +133,7 @@ export default function CompanyPage() {
               <Quote className="w-6 h-6 text-[var(--primary)]" />
             </div>
             <blockquote className="text-xl md:text-2xl text-[var(--text-primary)] leading-relaxed italic">
-              &ldquo;Eliminate the &apos;black box&apos; in insurance by uniting agentic and generative AI with deterministic decisioning to deliver fast, fair and fully auditable claim determinations, engineered with compliance-by-design to meet the highest standards of data protection, information security, AI governance and industry oversight.&rdquo;
+              &ldquo;Eliminate the AI &apos;black box&apos; problem in insurance by combining deterministic decisioning with generative AI. Deliver fast, fair, integrated and auditable claim determinations — engineered to comply with the highest standards of data protection, information security, AI governance and industry oversight.&rdquo;
             </blockquote>
             <p className="mt-6 text-[var(--text-muted)] font-medium">Our Mission</p>
           </motion.div>
