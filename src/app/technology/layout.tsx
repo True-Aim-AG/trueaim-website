@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "Our hybrid approach combines agentic AI execution with deterministic decision-making, purpose-built for regulated industries.",
     url: "https://trueaim.ai/technology",
   },
+  alternates: {
+    canonical: "https://trueaim.ai/technology",
+  },
 };
 
 export default function TechnologyLayout({

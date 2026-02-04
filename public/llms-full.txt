@@ -1,0 +1,153 @@
+# TrueAim.ai — Full Documentation for LLMs
+
+> Neuro-symbolic AI for auditable insurance claims decisions. Swiss precision meets compliant automation.
+
+## Company Overview
+
+TrueAim AG is a Swiss InsurTech company headquartered in Zurich, Switzerland. We build AI-powered decisioning software for insurance claims processing. Our hybrid neuro-symbolic approach combines the adaptability of agentic AI with the precision of deterministic logic, delivering compliant, explainable decisions at scale—every outcome traceable to the source.
+
+### Awards & Recognition
+
+- Switzerland: Innovationspreis der Schweizer Assekuranz
+- Germany: Digitale Leuchtturm Versicherungen — 1. Rang
+- Italy: Miglior InsurTech — IKN Awards
+
+### Partners & Ecosystem
+
+- Innosuisse (Swiss Innovation Agency): R&D funding partner
+- ZHAW (Zurich University of Applied Sciences): Research collaboration
+- Yarowa AG: Swiss InsurTech platform with enterprise distribution and 100+ insurer relationships
+
+---
+
+## Products
+
+### MIRA — Neuro-Symbolic Decisioning Engine
+
+**URL:** https://trueaim.ai/products/mira
+**Demo:** https://mira-travel-demo.vercel.app/products
+
+MIRA is the world's first neuro-symbolic engine purpose-built for insurance claims decisioning. It transforms complex policy terms and conditions into automated, fully-deterministic claim decisions.
+
+**How MIRA works:**
+1. Policy terms and conditions are encoded into deterministic logic rules
+2. Claim data is structured and validated
+3. The deterministic engine evaluates each claim against the encoded rules
+4. Every decision is traceable to the specific policy clause that triggered it
+
+**Key capabilities:**
+- Automated claims decisioning with full auditability
+- Deterministic outcomes: same input always produces the same output
+- Direct linkage between decisions and policy clauses
+- Compliant with EU AI Act requirements for high-risk AI systems
+- Up to 89% faster claim determinations
+- Up to 68% reduction in handling costs
+
+### ContextBuilder — Claims Document Pipeline
+
+**URL:** https://trueaim.ai/products/contextbuilder
+**Source:** https://github.com/Fr3nn3r/AgenticContextBuilder
+
+ContextBuilder transforms messy, unstructured claim documents into structured, trusted data ready for automated decisioning.
+
+**How ContextBuilder works:**
+1. Documents arrive via email, portal, or system export
+2. AI extracts, classifies, and structures claim data
+3. Automated quality gates verify data integrity
+4. Human review is triggered only when needed
+5. Structured data is ready for MIRA decisioning
+
+**Key capabilities:**
+- AI-powered document ingestion and extraction
+- Automated classification and structuring
+- Quality gates with human-in-the-loop when needed
+- 97% accuracy in document processing
+- 97% document coverage
+- Supports multiple input formats and channels
+
+### ClaimEval — Claims Quality Assurance
+
+**URL:** https://trueaim.ai/products/claimeval
+
+ClaimEval scales quality assurance beyond traditional sampling methods, running consistent inspections across entire claims portfolios.
+
+**Key capabilities:**
+- Portfolio-wide QA inspections (not just sampling)
+- Consistent evaluation criteria across all claims
+- Intelligent risk scoring to prioritize human effort
+- Exception surfacing for claims requiring attention
+- Audit trail for all QA activities
+
+---
+
+## Technology
+
+**URL:** https://trueaim.ai/technology
+
+### Neuro-Symbolic Architecture
+
+TrueAim's technology is not probabilistic and not a black box. Our hybrid approach combines:
+
+- **Neural AI (Agentic Layer):** Handles document understanding, extraction, classification, and natural language processing tasks where flexibility is needed.
+- **Symbolic AI (Deterministic Layer):** Executes policy logic, computes coverage, calculates costs, and produces decisions with mathematical certainty.
+
+This combination ensures that while AI handles the messy, unstructured parts of claims processing, every actual decision is made by deterministic, auditable logic.
+
+### End-to-End Claims Workflow
+
+1. **Ingest:** Documents arrive via email, portal, or system export. AI transforms them into machine-readable data.
+2. **Process:** ContextBuilder extracts, classifies, and structures claim data with automated quality gates.
+3. **Decide:** MIRA's deterministic logic computes coverage, calculates costs, and produces a decision.
+4. **Act:** Automated outputs include reserve setting, payment drafts, and customer communications.
+5. **Audit:** Every step is logged. Every decision is traceable. Complete evidence trail.
+
+---
+
+## Compliance & Trust
+
+**URL:** https://trueaim.ai/trust
+
+TrueAim's architecture is designed for regulatory compliance:
+
+- **EU AI Act:** Deterministic decisioning aligns with requirements for high-risk AI systems in insurance
+- **GDPR:** Architecture aligned with EU data protection regulation
+- **Swiss FADP:** Compliant with Swiss Federal Act on Data Protection
+- **Auditability:** Every decision links to specific policy clauses and source documents
+- **Transparency:** Full decision trails available for regulatory inspection
+
+---
+
+## Key Metrics
+
+- Up to 89% faster claim determinations
+- Up to 68% reduction in handling costs
+- 100% auditable decisions
+- 97% document processing accuracy
+- 97% document coverage
+
+---
+
+## Contact
+
+- Website: https://trueaim.ai
+- Contact page: https://trueaim.ai/contact
+- Demo requests: https://trueaim.ai/contact
+
+---
+
+## Site Map
+
+- Home: https://trueaim.ai
+- Products:
+  - MIRA: https://trueaim.ai/products/mira
+  - ContextBuilder: https://trueaim.ai/products/contextbuilder
+  - ClaimEval: https://trueaim.ai/products/claimeval
+- Technology: https://trueaim.ai/technology
+- Company: https://trueaim.ai/company
+- Case Studies: https://trueaim.ai/case-studies
+- Trust & Compliance: https://trueaim.ai/trust
+- ROI Calculator: https://trueaim.ai/roi-calculator
+- Contact: https://trueaim.ai/contact
+- Privacy Policy: https://trueaim.ai/privacy
+- Terms of Service: https://trueaim.ai/terms
+- Cookie Policy: https://trueaim.ai/cookies

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "Request a demo of TrueAim.ai's neuro-symbolic AI for claims automation. Book a 30-minute discovery call.",
     url: "https://trueaim.ai/contact",
   },
+  alternates: {
+    canonical: "https://trueaim.ai/contact",
+  },
 };
 
 export default function ContactLayout({

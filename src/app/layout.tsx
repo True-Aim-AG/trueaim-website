@@ -4,8 +4,10 @@ import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
+import { GoogleAnalyticsWrapper } from "@/components/layout/GoogleAnalytics";
 import { AuroraBackground } from "@/components/layout/AuroraBackground";
 import { ThemeProvider } from "@/components/theme";
+import { JsonLd, organizationJsonLd, websiteJsonLd } from "@/components/seo/JsonLd";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s | TrueAim.ai",
   },
   description:
-    "Combine agentic AI with deterministic logic for claims automation. Every decision traceable, compliant with EU AI Act. Swiss precision meets auditable AI.",
+    "Combine agentic AI with deterministic logic for claims automation. Every decision traceable, aligned with EU AI Act requirements. Swiss precision meets auditable AI.",
   keywords: [
     "AI claims automation",
     "neuro-symbolic AI",
@@ -48,17 +50,20 @@ export const metadata: Metadata = {
     siteName: "TrueAim.ai",
     title: "TrueAim.ai | Neuro-Symbolic AI for Auditable Claims Decisions",
     description:
-      "Combine agentic AI with deterministic logic for claims automation. Every decision traceable, compliant with EU AI Act.",
+      "Combine agentic AI with deterministic logic for claims automation. Every decision traceable, aligned with EU AI Act requirements.",
   },
   twitter: {
     card: "summary_large_image",
     title: "TrueAim.ai | Neuro-Symbolic AI for Auditable Claims Decisions",
     description:
-      "Combine agentic AI with deterministic logic for claims automation. Every decision traceable, compliant with EU AI Act.",
+      "Combine agentic AI with deterministic logic for claims automation. Every decision traceable, aligned with EU AI Act requirements.",
   },
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: "https://trueaim.ai",
   },
 };
 
@@ -70,6 +75,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <JsonLd data={organizationJsonLd} />
+        <JsonLd data={websiteJsonLd} />
         {/* Prevent flash of wrong theme */}
         <script
           dangerouslySetInnerHTML={{
@@ -88,6 +95,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} antialiased`}>
+        <GoogleAnalyticsWrapper />
         <ThemeProvider>
           {/* Skip to main content link for keyboard users */}
           <a

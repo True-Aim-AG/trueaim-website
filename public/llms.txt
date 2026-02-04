@@ -1,0 +1,35 @@
+# TrueAim.ai
+
+> Neuro-symbolic AI for auditable insurance claims decisions. Swiss precision meets compliant automation.
+
+TrueAim.ai builds AI-powered decisioning software for insurance claims. Our hybrid neuro-symbolic approach combines the adaptability of agentic AI with the precision of deterministic logic, delivering compliant, explainable decisions at scale.
+
+## Company
+
+- Name: TrueAim AG
+- Location: Zurich, Switzerland
+- Industry: InsurTech / AI
+- Website: https://trueaim.ai
+- Contact: https://trueaim.ai/contact
+
+## Products
+
+- [MIRA](https://trueaim.ai/products/mira): Neuro-symbolic decisioning engine. Transforms policy terms and conditions into automated, fully-deterministic claim decisions. Every outcome traceable to the legal text.
+- [ContextBuilder](https://trueaim.ai/products/contextbuilder): Claims document pipeline. Turns messy claim documents into structured, trusted data with AI-powered ingestion and human review when needed.
+- [ClaimEval](https://trueaim.ai/products/claimeval): Claims quality assurance. Scales QA beyond sampling with consistent inspections across entire claims portfolios.
+
+## Key Differentiators
+
+- Neuro-symbolic architecture: Combines neural AI with deterministic logic
+- 100% auditable decisions linked to policy clauses and source documents
+- EU AI Act alignment by design
+- Swiss-based with enterprise-grade security
+
+## Links
+
+- Technology: https://trueaim.ai/technology
+- Company: https://trueaim.ai/company
+- Case Studies: https://trueaim.ai/case-studies
+- Trust & Compliance: https://trueaim.ai/trust
+- ROI Calculator: https://trueaim.ai/roi-calculator
+- Full details: https://trueaim.ai/llms-full.txt

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "Swiss precision meets auditable AI. Meet our leadership team, advisors, and partners. Backed by Switzerland's innovation ecosystem.",
     url: "https://trueaim.ai/company",
   },
+  alternates: {
+    canonical: "https://trueaim.ai/company",
+  },
 };
 
 export default function CompanyLayout({

@@ -4,3 +4,8 @@ Allow: /
 
 # Sitemap
 Sitemap: https://trueaim.ai/sitemap.xml
+
+# LLM Documentation
+# See https://llmstxt.org for the llms.txt standard
+# llms.txt: https://trueaim.ai/llms.txt
+# llms-full.txt: https://trueaim.ai/llms-full.txt
