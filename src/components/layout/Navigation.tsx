@@ -110,20 +110,12 @@ export function Navigation() {
                             <Link
                               key={resource.name}
                               href={resource.href}
-                              className={cn(
-                                "block px-4 py-3 rounded-lg hover:bg-[var(--primary-light)] transition-colors",
-                                resource.comingSoon && "opacity-50 pointer-events-none"
-                              )}
+                              className="block px-4 py-3 rounded-lg hover:bg-[var(--primary-light)] transition-colors"
                             >
                               <div className="flex items-center gap-2">
                                 <span className="font-medium text-[var(--text-primary)]">
                                   {resource.name}
                                 </span>
-                                {resource.comingSoon && (
-                                  <span className="text-xs px-1.5 py-0.5 rounded bg-[var(--subtle-bg)] text-[var(--text-muted)]">
-                                    Soon
-                                  </span>
-                                )}
                               </div>
                               <div className="text-sm text-[var(--text-muted)]">
                                 {resource.description}
