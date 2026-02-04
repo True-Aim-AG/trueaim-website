@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
+import { CookieBanner } from "@/components/layout/CookieBanner";
 import { AuroraBackground } from "@/components/layout/AuroraBackground";
 import { ThemeProvider } from "@/components/theme";
 
@@ -99,6 +100,7 @@ export default function RootLayout({
           <Navigation />
           <main id="main-content" className="pt-[73px] relative z-10">{children}</main>
           <Footer />
+          <CookieBanner />
         </ThemeProvider>
       </body>
     </html>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -9,18 +10,21 @@ const partners = [
     logo: "/partners/zhaw.jpg",
     width: 160,
     height: 120,
+    href: "/partners/zhaw",
   },
   {
     name: "Yarowa",
     logo: "/partners/yarowa.png",
     width: 200,
     height: 56,
+    href: "/partners/yarowa",
   },
   {
     name: "Innosuisse",
     logo: "/partners/innosuisse.png",
     width: 280,
     height: 80,
+    href: "/partners/innosuisse",
   },
 ];
 
@@ -46,8 +50,9 @@ export function PartnerLogos() {
 
         <div className="flex items-center justify-center gap-20 md:gap-32 lg:gap-40 flex-wrap px-8">
           {partners.map((partner) => (
-            <div
+            <Link
               key={partner.name}
+              href={partner.href}
               className="flex items-center justify-center group"
             >
               <div className="relative transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1">
@@ -63,7 +68,7 @@ export function PartnerLogos() {
                   }}
                 />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

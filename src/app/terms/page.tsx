@@ -11,20 +11,62 @@ export default function TermsPage() {
           Last updated: February 2026
         </p>
 
-        <div className="glass-panel p-8 md:p-12 space-y-6">
-          <p className="text-[var(--text-secondary)] leading-relaxed">
-            We are currently finalizing our Terms of Service. These terms will govern your use of TrueAim.ai products and services.
-          </p>
-          <p className="text-[var(--text-secondary)] leading-relaxed">
-            If you have any questions about our terms or need specific contractual information for procurement purposes, please reach out to us directly.
-          </p>
-          <div className="pt-4 border-t border-[var(--border)]">
-            <p className="text-sm text-[var(--text-muted)] mb-1">Contact us at:</p>
+        <div className="glass-panel p-8 md:p-12 space-y-8">
+          <div className="p-4 rounded-lg bg-amber-500/10 border border-amber-500/20">
+            <p className="text-sm text-amber-400">
+              This policy is being refined. Contact us for the most current version.
+            </p>
+          </div>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">1. Acceptance of Terms</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              By accessing or using the TrueAim.ai website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">2. Services</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              TrueAim.ai provides AI-powered claims decisioning software, including MIRA, ContextBuilder, and ClaimEval. Access to these services is subject to separate commercial agreements. This website provides general information about our products and company.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">3. Intellectual Property</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              All content, trademarks, and intellectual property on this website are owned by TrueAim AG or its licensors. You may not reproduce, distribute, or create derivative works from any content without our prior written consent.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">4. Acceptable Use</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              You agree to use our website and services only for lawful purposes. You may not attempt to gain unauthorised access to our systems, interfere with website functionality, or use automated tools to scrape or collect data without permission.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">5. Limitation of Liability</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              TrueAim AG provides this website and its content on an &ldquo;as is&rdquo; basis. We make no warranties regarding the accuracy, completeness, or suitability of information provided. To the maximum extent permitted by law, TrueAim AG shall not be liable for any indirect, incidental, or consequential damages arising from use of our website or services.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">6. Governing Law</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              These terms are governed by and construed in accordance with the laws of Switzerland. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts of Zurich, Switzerland.
+            </p>
+          </section>
+
+          <div className="pt-6 border-t border-[var(--border)]">
+            <p className="text-sm text-[var(--text-muted)] mb-1">Legal inquiries:</p>
             <a
-              href="mailto:privacy@trueaim.ai"
+              href="mailto:legal@trueaim.ai"
               className="text-[var(--primary)] font-medium hover:underline"
             >
-              privacy@trueaim.ai
+              legal@trueaim.ai
             </a>
           </div>
           <div className="pt-4">

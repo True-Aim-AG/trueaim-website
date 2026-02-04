@@ -66,7 +66,11 @@ export function ROICalculator() {
   });
 
   const [showAssumptions, setShowAssumptions] = useState(false);
-
+  const [showReportForm, setShowReportForm] = useState(false);
+  const [reportSubmitted, setReportSubmitted] = useState(false);
+  const [reportSubmitting, setReportSubmitting] = useState(false);
+  const [reportName, setReportName] = useState("");
+  const [reportEmail, setReportEmail] = useState("");
 
   const currencyConfig = currencyOptions.find(c => c.value === inputs.currency) || currencyOptions[0];
 
@@ -165,7 +169,33 @@ export function ROICalculator() {
     }).format(value);
   };
 
-
+  const handleReportSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!reportName.trim() || !reportEmail.trim()) return;
+    setReportSubmitting(true);
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: reportName.split(" ")[0],
+          lastName: reportName.split(" ").slice(1).join(" ") || "-",
+          email: reportEmail,
+          company: "-",
+          jobTitle: "-",
+          country: "-",
+          interest: "general",
+          consent: true,
+          message: `ROI Report Request\n\nVolume: ${formatNumber(results.volume)} claims/year\nCost per claim: ${currencyConfig.symbol} ${inputs.costPerClaim}\nHandling time: ${inputs.handlingTime} min\nNet annual impact: ${formatCurrency(results.netAnnualImpact)}\nPayback: ${results.paybackMonths} months`,
+        }),
+      });
+      setReportSubmitted(true);
+    } catch {
+      setReportSubmitted(true);
+    } finally {
+      setReportSubmitting(false);
+    }
+  };
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -555,21 +585,68 @@ export function ROICalculator() {
           </AnimatePresence>
         </div>
 
-        {/* CTA */}
+        {/* Gated Report CTA */}
         <div className="glass-panel p-6 text-center">
-          <h4 className="font-semibold text-white mb-1">
-            Want a detailed analysis for your operation?
-          </h4>
-          <p className="text-sm text-[var(--text-muted)] mb-4">
-            Book a demo and we&apos;ll build a customized ROI projection based on your specific claims data.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-[var(--primary)]/30"
-          >
-            Book a Demo
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          {reportSubmitted ? (
+            <div>
+              <CheckCircle className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
+              <h4 className="font-semibold text-white mb-1">Request Received</h4>
+              <p className="text-sm text-[var(--text-muted)]">
+                We&apos;ll send your personalized ROI breakdown within 1 business day.
+              </p>
+            </div>
+          ) : showReportForm ? (
+            <form onSubmit={handleReportSubmit} className="space-y-4">
+              <h4 className="font-semibold text-white mb-1">Request Detailed ROI Report</h4>
+              <input
+                type="text"
+                placeholder="Your name"
+                value={reportName}
+                onChange={(e) => setReportName(e.target.value)}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-[var(--card-bg)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--primary)] transition-colors"
+              />
+              <input
+                type="email"
+                placeholder="Work email"
+                value={reportEmail}
+                onChange={(e) => setReportEmail(e.target.value)}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-[var(--card-bg)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--primary)] transition-colors"
+              />
+              <button
+                type="submit"
+                disabled={reportSubmitting}
+                className="w-full px-6 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-[var(--primary)]/30 disabled:opacity-50"
+              >
+                {reportSubmitting ? "Sending..." : "Send My ROI Report"}
+              </button>
+            </form>
+          ) : (
+            <div>
+              <h4 className="font-semibold text-white mb-1">
+                Want the full breakdown?
+              </h4>
+              <p className="text-sm text-[var(--text-muted)] mb-4">
+                Get a personalized ROI report with detailed methodology and assumptions.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <button
+                  onClick={() => setShowReportForm(true)}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-[var(--primary)]/30"
+                >
+                  Request Detailed ROI Report
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors"
+                >
+                  Book a Demo
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </motion.div>
     </div>

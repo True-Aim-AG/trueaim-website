@@ -8,6 +8,8 @@ import {
   ListChecks,
   Car,
   Home,
+  Heart,
+  Wrench,
   BarChart3,
   Users
 } from "lucide-react";
@@ -20,7 +22,7 @@ const features = [
   },
   {
     title: "Inspection Catalogues",
-    description: "Pre-built checks for Motor, Home, and more. Customizable inspection definitions. Each check answers: What? Found? Why it matters? Next action?",
+    description: "Pre-built checks for Motor, Home, Life, Warranty, and more. Customizable inspection definitions. Each check answers: What? Found? Why it matters? Next action?",
     icon: ListChecks,
   },
   {
@@ -46,6 +48,22 @@ const homeZones = [
   "Repairs & Supplier Oversight",
   "Cash Settlements & Vulnerability",
   "Alternative Accommodation",
+];
+
+const lifeZones = [
+  "Policy Validity & Beneficiary Checks",
+  "Cause of Death & Exclusion Review",
+  "Medical Evidence Adequacy",
+  "Payout Calculation",
+  "Contestability Period Compliance",
+];
+
+const warrantyZones = [
+  "Coverage Scope & Component Eligibility",
+  "Repair vs Replacement Logic",
+  "Supplier & Parts Verification",
+  "Cost Position & Excess",
+  "Policy Term & Mileage Compliance",
 ];
 
 export default function ClaimEvalPage() {
@@ -227,7 +245,7 @@ export default function ClaimEvalPage() {
               Inspection Zones
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Pre-built check catalogues by line of business
+              Pre-built check catalogues for Motor, Home, Life, Warranty, and more
             </p>
           </motion.div>
 
@@ -282,6 +300,65 @@ export default function ClaimEvalPage() {
                   </li>
                 ))}
               </ul>
+            </motion.div>
+
+            {/* Life */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="glass-panel p-8"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+                  <Heart className="w-7 h-7 text-emerald-400" />
+                </div>
+                <h3 className="text-2xl font-semibold text-[var(--text-primary)]">
+                  Life
+                </h3>
+              </div>
+              <ul className="space-y-3">
+                {lifeZones.map((zone) => (
+                  <li key={zone} className="flex items-center gap-3 text-[var(--text-secondary)]">
+                    <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                    {zone}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Warranty */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="glass-panel p-8"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+                  <Wrench className="w-7 h-7 text-emerald-400" />
+                </div>
+                <h3 className="text-2xl font-semibold text-[var(--text-primary)]">
+                  Warranty
+                </h3>
+              </div>
+              <ul className="space-y-3">
+                {warrantyZones.map((zone) => (
+                  <li key={zone} className="flex items-center gap-3 text-[var(--text-secondary)]">
+                    <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                    {zone}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/case-studies/vehicle-warranty-claims"
+                className="inline-flex items-center gap-2 mt-4 text-sm text-[var(--primary)] font-medium hover:underline"
+              >
+                See warranty case study
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </motion.div>
           </div>
         </div>
