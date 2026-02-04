@@ -7,25 +7,25 @@ const partners = [
   {
     name: "ZHAW",
     logo: "/partners/zhaw.jpg",
-    width: 100,
-    height: 80,
+    width: 160,
+    height: 120,
   },
   {
     name: "Yarowa",
     logo: "/partners/yarowa.png",
-    width: 140,
-    height: 40,
+    width: 200,
+    height: 56,
   },
   {
     name: "Innosuisse",
     logo: "/partners/innosuisse.png",
-    width: 200,
-    height: 60,
+    width: 280,
+    height: 80,
   },
 ];
 
-// Duplicate for seamless infinite scroll
-const duplicatedPartners = [...partners, ...partners, ...partners, ...partners];
+// Exactly 2 copies: the -50% translateX loops the first half seamlessly
+const duplicatedPartners = [...partners, ...partners];
 
 export function PartnerLogos() {
   return (
@@ -42,7 +42,7 @@ export function PartnerLogos() {
       </p>
 
       {/* Marquee Container with Light Background */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-50 via-white to-slate-50 py-8 shadow-inner">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-50 via-white to-slate-50 py-6 shadow-inner">
         {/* Subtle top/bottom border lines */}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
@@ -54,11 +54,11 @@ export function PartnerLogos() {
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
         {/* Animated Track */}
-        <div className="flex animate-marquee">
+        <div className="flex animate-marquee w-max">
           {duplicatedPartners.map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
-              className="flex-shrink-0 mx-12 flex items-center justify-center group"
+              className="flex-shrink-0 mx-16 flex items-center justify-center group"
             >
               <div className="relative transition-transform duration-300 ease-out group-hover:scale-110">
                 <Image
@@ -68,7 +68,7 @@ export function PartnerLogos() {
                   height={partner.height}
                   className="object-contain grayscale-0 opacity-90 transition-all duration-300 group-hover:opacity-100"
                   style={{
-                    maxHeight: partner.height,
+                    height: partner.height,
                     width: 'auto',
                   }}
                 />

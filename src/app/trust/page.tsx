@@ -41,13 +41,13 @@ const complianceBadges = [
   {
     name: "ISO 27001",
     status: "roadmap",
-    description: "Certification planned for 2026",
+    description: "Current controls align to the framework. Formal certification scheduled for 2026.",
     icon: FileCheck,
   },
   {
     name: "SOC 2 Type II",
     status: "roadmap",
-    description: "Certification in progress",
+    description: "Current controls align to the framework. Formal certification scheduled for 2026.",
     icon: Lock,
   },
   {
@@ -272,7 +272,7 @@ export default function TrustPage() {
                 Data Residency & Sovereignty
               </h2>
               <p className="text-lg text-[var(--text-secondary)] mb-6 leading-relaxed">
-                Your data stays where you need it. Choose Swiss-based hosting for maximum data sovereignty, or EU processing zones for GDPR compliance.
+                Your data stays where you need it. Choose Swiss-based hosting for maximum data sovereignty, or EU processing zones for GDPR compliance. Data processing boundaries are defined in your DPA &mdash; <Link href="/contact" className="text-[var(--primary)] hover:underline">request one here</Link>.
               </p>
 
               <ul className="space-y-4">

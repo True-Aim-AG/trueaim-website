@@ -17,7 +17,7 @@ const resources = [
   { name: "Case Studies", href: "/case-studies", description: "Customer success stories" },
   { name: "ROI Calculator", href: "/roi-calculator", description: "Calculate your savings" },
   { name: "Trust Center", href: "/trust", description: "Security & compliance" },
-  { name: "Documentation", href: "#", description: "Coming soon", comingSoon: true },
+  { name: "Documentation", href: "#", description: "(Coming soon)", comingSoon: true },
 ];
 
 const navigation = [
@@ -154,7 +154,7 @@ export function Navigation() {
               href="/contact"
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/50"
             >
-              Request Demo
+              Book a Demo
             </Link>
           </div>
 
@@ -235,7 +235,7 @@ export function Navigation() {
                 className="flex-1 inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/30"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Request Demo
+                Book a Demo
               </Link>
             </div>
           </div>

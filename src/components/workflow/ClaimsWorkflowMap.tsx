@@ -21,6 +21,7 @@ const workflowSteps = [
     icon: FileText,
     label: "Intake",
     description: "Documents received via email, portal, or system export",
+    businessValue: "Eliminate manual sorting and routing of incoming documents",
     automated: true,
     automationDetail: "ContextBuilder auto-ingests and classifies documents",
     manualTime: "15-30 min",
@@ -32,6 +33,7 @@ const workflowSteps = [
     icon: Search,
     label: "Extract",
     description: "Key data pulled from claims documents",
+    businessValue: "Reduce re-keying errors and data entry cost",
     automated: true,
     automationDetail: "AI extracts fields with evidence linking",
     hitlOptional: true,
@@ -44,6 +46,7 @@ const workflowSteps = [
     icon: Scale,
     label: "Decide",
     description: "Coverage determination against policy",
+    businessValue: "Consistent, defensible decisions on every claim",
     automated: true,
     automationDetail: "MIRA applies deterministic policy logic",
     manualTime: "30-60 min",
@@ -55,6 +58,7 @@ const workflowSteps = [
     icon: Send,
     label: "Action",
     description: "Set reserves, draft payment, send comms",
+    businessValue: "Faster settlement cycles, improved customer experience",
     automated: true,
     automationDetail: "Automated task execution based on decision",
     hitlOptional: true,
@@ -67,6 +71,7 @@ const workflowSteps = [
     icon: ClipboardCheck,
     label: "Audit",
     description: "Complete decision trail logged",
+    businessValue: "Regulator-ready audit trails without manual prep",
     automated: true,
     automationDetail: "Decision Dossier generated automatically",
     manualTime: "Variable",
@@ -240,6 +245,11 @@ export function ClaimsWorkflowMap({ variant = "full" }: ClaimsWorkflowMapProps) 
                   {showBefore ? step.manualTime : step.automatedTime}
                 </div>
 
+                {/* Business value line */}
+                {step.businessValue && (
+                  <p className="text-xs text-[var(--primary)] mt-2">{step.businessValue}</p>
+                )}
+
                 {/* Automation detail (on hover or always in full mode) */}
                 {!showBefore && (
                   <div className="mt-3 pt-3 border-t border-slate-100">
@@ -284,6 +294,9 @@ export function ClaimsWorkflowMap({ variant = "full" }: ClaimsWorkflowMapProps) 
                 {showBefore ? '75-150 min' : '< 1 min'}
               </div>
               <div className="text-sm text-[var(--text-muted)]">Total processing time</div>
+              {!showBefore && (
+                <div className="text-xs text-[var(--text-muted)] mt-1">You control thresholds, exceptions, and approval gates.</div>
+              )}
             </div>
             <div>
               <div className="text-3xl font-bold text-[var(--secondary)]">

@@ -29,13 +29,13 @@ export default function ROICalculatorPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
-              Calculate Your
+              Estimate Your
               <br />
-              <span className="text-[var(--primary)]">Claims Automation Savings</span>
+              <span className="text-[var(--primary)]">Claims Automation Impact</span>
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-8">
-              See how much you could save by automating claims decisions with TrueAim.ai. Adjust the inputs to match your operation.
+              See the estimated impact of automating claims decisions with TrueAim.ai. Adjust the inputs to match your operation. All estimates are conservative.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">

@@ -36,26 +36,32 @@ const advisors = [
   {
     name: "Claudio Gienal",
     title: "AXA Group Chief Transformation Officer | Former AXA CEO UK & Ireland",
+    relevance: "Claims operations & insurance transformation",
   },
   {
     name: "Eric Zielinski",
     title: "Wharton | Ex-Bain | Tech Founder",
+    relevance: "Strategy & enterprise procurement",
   },
   {
     name: "Dr. Lukas Lichtensteiger",
     title: "Harvard | Serial Entrepreneur & CTO",
+    relevance: "Technology architecture & scaling",
   },
   {
     name: "Dave Stoll",
     title: "Ex-Zurich Insurance CFO (Spain) | Founder of doppo",
+    relevance: "Insurance finance & regulation",
   },
   {
     name: "Dr. Dandolo Flumini",
     title: "Original developer | PhD Math & CS | ZHAW Researcher",
+    relevance: "Core logic engine & research",
   },
   {
     name: "Bassil Eid",
     title: "Serial Founder & CFO | Fintech Innovator",
+    relevance: "Fintech go-to-market & finance",
   },
 ];
 
@@ -120,7 +126,7 @@ export default function CompanyPage() {
               <Quote className="w-6 h-6 text-[var(--primary)]" />
             </div>
             <blockquote className="text-xl md:text-2xl text-[var(--text-primary)] leading-relaxed italic">
-              &ldquo;Combine the power of Agentic AI with the reliability of deterministic outcomes to become the global logic layer that powers claim determinations in a legally compliant and automated way.&rdquo;
+              &ldquo;Build the global logic layer that powers compliant, automated claim decisions.&rdquo;
             </blockquote>
             <p className="mt-6 text-[var(--text-muted)] font-medium">Our Mission</p>
           </motion.div>
@@ -232,6 +238,11 @@ export default function CompanyPage() {
                 <p className="text-sm text-[var(--text-secondary)]">
                   {advisor.title}
                 </p>
+                {advisor.relevance && (
+                  <p className="text-xs text-[var(--text-muted)] mt-1 italic">
+                    {advisor.relevance}
+                  </p>
+                )}
               </motion.div>
             ))}
           </div>
@@ -252,7 +263,10 @@ export default function CompanyPage() {
               Partners & Backers
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Supported by Switzerland&apos;s innovation ecosystem
+              Supported by Switzerland&apos;s innovation ecosystem.{" "}
+              <Link href="/trust" className="text-[var(--primary)] hover:underline">
+                Visit our Trust Center
+              </Link>
             </p>
           </motion.div>
 

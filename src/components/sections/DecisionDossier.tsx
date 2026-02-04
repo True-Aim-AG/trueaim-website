@@ -234,12 +234,12 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-sm">
                       <CheckCircle className="w-4 h-4 text-emerald-400" />
-                      <code className="text-[var(--primary)] bg-[var(--primary)]/20 px-2 py-0.5 rounded font-mono-data">Art. 5.2.1</code>
+                      <span className="text-[var(--primary)] font-mono-data">Art. 5.2.1</span>
                       <span className="text-[var(--text-muted)]">Medical emergency coverage</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <CheckCircle className="w-4 h-4 text-emerald-400" />
-                      <code className="text-[var(--primary)] bg-[var(--primary)]/20 px-2 py-0.5 rounded font-mono-data">Art. 5.2.3</code>
+                      <span className="text-[var(--primary)] font-mono-data">Art. 5.2.3</span>
                       <span className="text-[var(--text-muted)]">Repatriation benefits</span>
                     </div>
                   </div>

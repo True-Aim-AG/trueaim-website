@@ -87,15 +87,15 @@ export function CTA() {
           <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-[var(--text-muted)]">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-[var(--secondary)]" />
-              Swiss-based hosting available
+              DPA available
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-[var(--secondary)]" />
-              GDPR compliant
+              Swiss hosting available
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-[var(--secondary)]" />
-              EU AI Act ready
+              Security pack available
             </div>
           </div>
         </motion.div>

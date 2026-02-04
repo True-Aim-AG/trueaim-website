@@ -130,6 +130,19 @@ export function ProductsGrid() {
             </motion.div>
           ))}
         </div>
+
+        {/* Where to start guidance */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-10 text-center"
+        >
+          <p className="text-[var(--text-muted)] text-sm max-w-2xl mx-auto">
+            Start with <Link href="/products/mira" className="text-[var(--primary)] hover:underline">MIRA</Link> for decisioning, add <Link href="/products/contextbuilder" className="text-[var(--primary)] hover:underline">ContextBuilder</Link> when document complexity is the bottleneck, add <Link href="/products/claimeval" className="text-[var(--primary)] hover:underline">ClaimEval</Link> when you need QA coverage beyond sampling.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

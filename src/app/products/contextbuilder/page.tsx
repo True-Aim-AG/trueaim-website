@@ -77,7 +77,7 @@ const metrics = [
   { value: "97%", label: "Document Coverage" },
   { value: "97.3%", label: "Accuracy" },
   { value: "96.5%", label: "Evidence Rate" },
-  { value: "0", label: "Doc Type Wrong" },
+  { value: "<1%", label: "Document Classification Error Rate", footnote: "Based on pilot data" },
 ];
 
 export default function ContextBuilderPage() {
@@ -116,7 +116,7 @@ export default function ContextBuilderPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                Start Free Trial
+                Request a Pilot
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -162,6 +162,9 @@ export default function ContextBuilderPage() {
             </p>
             <p className="text-lg text-[var(--text-primary)] font-medium mt-4">
               The result: claim-ready &quot;context packs&quot; that downstream systems can trust.
+            </p>
+            <p className="text-[var(--text-secondary)] mt-4">
+              All document processing respects your data residency requirements. <Link href="/trust" className="text-[var(--primary)] hover:underline">See our Trust Center for details</Link>.
             </p>
           </motion.div>
         </div>
@@ -341,6 +344,11 @@ export default function ContextBuilderPage() {
                 <p className="text-[var(--text-secondary)] text-sm">
                   {metric.label}
                 </p>
+                {'footnote' in metric && metric.footnote && (
+                  <p className="text-xs text-[var(--text-muted)] mt-1 italic">
+                    {metric.footnote}
+                  </p>
+                )}
               </motion.div>
             ))}
           </div>
@@ -367,7 +375,7 @@ export default function ContextBuilderPage() {
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--aurora-cyan)] text-white font-medium hover:bg-[#0891b2] transition-colors text-lg shadow-lg shadow-[var(--aurora-cyan)]/30"
             >
-              Start Free Trial
+              Request a Pilot
             </Link>
           </motion.div>
         </div>

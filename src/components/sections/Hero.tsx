@@ -62,10 +62,18 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-10 leading-relaxed"
+            className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-4 leading-relaxed"
           >
             Combine the adaptability of agentic AI with the precision of deterministic logic.
             Deliver compliant, explainable decisions at scale. Every outcome traceable to the source.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-base text-[var(--text-muted)] max-w-2xl mx-auto mb-10 leading-relaxed"
+          >
+            Automate claim decisions with full audit trails, deterministic outputs, and human oversight at every step.
           </motion.p>
 
           <motion.div

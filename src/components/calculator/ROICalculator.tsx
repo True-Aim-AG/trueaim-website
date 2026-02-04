@@ -8,12 +8,14 @@ import {
   TrendingUp,
   Clock,
   Users,
-  DollarSign,
   ArrowRight,
   CheckCircle,
   Info,
   ChevronDown,
   FileText,
+  Brain,
+  FileSearch,
+  ClipboardCheck,
 } from "lucide-react";
 
 interface ROIInputs {
@@ -21,6 +23,7 @@ interface ROIInputs {
   handlingTime: number;
   hourlyRate: number;
   automationLevel: string;
+  currency: string;
 }
 
 const volumeOptions = [
@@ -32,18 +35,31 @@ const volumeOptions = [
 ];
 
 const automationOptions = [
-  { value: "none", label: "None", factor: 0.85 },
-  { value: "some", label: "Some automation", factor: 0.70 },
-  { value: "significant", label: "Significant automation", factor: 0.50 },
+  { value: "none", label: "No current automation", factor: 0.85 },
+  { value: "some", label: "Basic rules/triage in place", factor: 0.70 },
+  { value: "significant", label: "Existing BPM/workflow automation", factor: 0.50 },
+];
+
+const currencyOptions = [
+  { value: "CHF", symbol: "CHF", locale: "de-CH" },
+  { value: "EUR", symbol: "EUR", locale: "de-DE" },
+  { value: "USD", symbol: "USD", locale: "en-US" },
+  { value: "ZAR", symbol: "ZAR", locale: "en-ZA" },
 ];
 
 // Constants for assumptions (displayed to users)
 const ASSUMPTIONS = {
-  automatedClaimReviewTime: 0.01, // hours (36 seconds) - time to review automated decision
+  automatedClaimReviewTime: 0.01, // hours (36 seconds)
   manualClaimSpeedup: 0.5, // 50% faster processing for remaining manual claims
-  platformCostPerClaim: 0.50, // CHF per claim
+  platformCostPerClaim: 0.50, // per claim
   implementationCostFactor: 0.25, // 3 months of platform fees
   workHoursPerYear: 2080, // Standard work hours per FTE
+  confidenceHaircut: 0.75, // 75% conservative factor
+  reworkReductionRate: 0.03, // 3% of claims avoid rework
+  reworkCostMultiplier: 2.5, // rework costs 2.5x original handling
+  leakageReductionRate: 0.02, // 2% leakage reduction
+  averageClaimValue: 5000, // average claim value for leakage calc
+  leakagePercentOfClaim: 0.05, // 5% of claim value as leakage
 };
 
 export function ROICalculator() {
@@ -52,9 +68,15 @@ export function ROICalculator() {
     handlingTime: 45,
     hourlyRate: 65,
     automationLevel: "none",
+    currency: "CHF",
   });
 
   const [showAssumptions, setShowAssumptions] = useState(false);
+  const [leadEmail, setLeadEmail] = useState("");
+  const [leadCompany, setLeadCompany] = useState("");
+  const [leadSubmitted, setLeadSubmitted] = useState(false);
+
+  const currencyConfig = currencyOptions.find(c => c.value === inputs.currency) || currencyOptions[0];
 
   const results = useMemo(() => {
     const volume = volumeOptions.find(v => v.value === inputs.claimsVolume)?.claims || 25000;
@@ -65,45 +87,60 @@ export function ROICalculator() {
     const totalHoursPerYear = volume * hoursPerClaim;
     const currentAnnualCost = totalHoursPerYear * inputs.hourlyRate;
 
-    // With TrueAim: automation potential depends on current automation level
-    const trueAimEfficiency = automationFactor; // Percentage of claims that can be automated
+    // === BUCKET 1: Capacity Unlocked (MIRA) ===
+    const trueAimEfficiency = automationFactor;
     const automatedClaims = volume * trueAimEfficiency;
     const manualClaims = volume - automatedClaims;
 
-    // Automated claims: require brief human review of AI decision (36 seconds average)
-    // Manual claims: still need human review but 50% faster with pre-processed data from ContextBuilder
     const automatedHours = automatedClaims * ASSUMPTIONS.automatedClaimReviewTime;
     const manualHours = manualClaims * hoursPerClaim * ASSUMPTIONS.manualClaimSpeedup;
-
     const trueAimTotalHours = automatedHours + manualHours;
     const trueAimAnnualCost = trueAimTotalHours * inputs.hourlyRate;
+    const capacitySavingsGross = currentAnnualCost - trueAimAnnualCost;
+
+    // === BUCKET 2: Rework Avoided (ClaimEval) ===
+    const reworkClaimsAvoided = volume * ASSUMPTIONS.reworkReductionRate;
+    const reworkSavingsGross = reworkClaimsAvoided * hoursPerClaim * ASSUMPTIONS.reworkCostMultiplier * inputs.hourlyRate;
+
+    // === BUCKET 3: Leakage Reduction (ClaimEval) ===
+    const leakageSavingsGross = volume * ASSUMPTIONS.leakageReductionRate * ASSUMPTIONS.averageClaimValue * ASSUMPTIONS.leakagePercentOfClaim;
+
+    // Total gross savings
+    const grossSavings = capacitySavingsGross + reworkSavingsGross + leakageSavingsGross;
+
+    // Apply confidence haircut (75%)
+    const conservativeSavings = grossSavings * ASSUMPTIONS.confidenceHaircut;
 
     // Platform cost estimate
     const platformCost = volume * ASSUMPTIONS.platformCostPerClaim;
 
-    const projectedAnnualCost = trueAimAnnualCost + platformCost;
-    const annualSavings = currentAnnualCost - projectedAnnualCost;
-    const savingsPercentage = (annualSavings / currentAnnualCost) * 100;
+    const netAnnualImpact = conservativeSavings - platformCost;
+    const savingsPercentage = currentAnnualCost > 0 ? (netAnnualImpact / currentAnnualCost) * 100 : 0;
 
     // Time savings
     const hoursSaved = totalHoursPerYear - trueAimTotalHours;
     const fteEquivalent = hoursSaved / ASSUMPTIONS.workHoursPerYear;
 
-    // Payback period (implementation cost estimated at 3 months of platform fees)
+    // Payback period
     const implementationCost = platformCost * ASSUMPTIONS.implementationCostFactor;
-    const monthlyNetSavings = annualSavings / 12;
+    const monthlyNetSavings = netAnnualImpact / 12;
     const paybackMonths = monthlyNetSavings > 0 ? Math.ceil(implementationCost / monthlyNetSavings) : 0;
 
     return {
       currentAnnualCost,
-      projectedAnnualCost,
-      annualSavings,
+      netAnnualImpact,
       savingsPercentage,
       hoursSaved,
       fteEquivalent,
       paybackMonths,
       volume,
-      // Detailed breakdown for assumptions display
+      buckets: {
+        capacityGross: capacitySavingsGross,
+        reworkGross: reworkSavingsGross,
+        leakageGross: leakageSavingsGross,
+        grossTotal: grossSavings,
+        conservativeTotal: conservativeSavings,
+      },
       details: {
         hoursPerClaim,
         totalHoursPerYear,
@@ -116,14 +153,15 @@ export function ROICalculator() {
         trueAimAnnualCost,
         platformCost,
         implementationCost,
+        reworkClaimsAvoided,
       },
     };
   }, [inputs]);
 
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat(currencyConfig.locale, {
       style: 'currency',
-      currency: 'CHF',
+      currency: currencyConfig.value,
       maximumFractionDigits: 0,
     }).format(value);
   };
@@ -132,6 +170,14 @@ export function ROICalculator() {
     return new Intl.NumberFormat('en-US', {
       maximumFractionDigits: 0,
     }).format(value);
+  };
+
+  const handleLeadSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (leadEmail && leadCompany) {
+      console.log("Lead capture:", { email: leadEmail, company: leadCompany });
+      setLeadSubmitted(true);
+    }
   };
 
   return (
@@ -192,13 +238,30 @@ export function ROICalculator() {
             </div>
           </div>
 
-          {/* Hourly Rate */}
+          {/* Hourly Rate with Currency Toggle */}
           <div>
-            <label className="block text-sm font-medium text-white mb-2">
-              Average Handler Cost (CHF/hour)
-            </label>
+            <div className="flex items-center justify-between mb-2">
+              <label className="block text-sm font-medium text-white">
+                Average handling cost (fully loaded)
+              </label>
+              <div className="flex gap-1">
+                {currencyOptions.map((curr) => (
+                  <button
+                    key={curr.value}
+                    onClick={() => setInputs({ ...inputs, currency: curr.value })}
+                    className={`px-2 py-0.5 rounded text-xs font-medium transition-colors ${
+                      inputs.currency === curr.value
+                        ? 'bg-[var(--primary)] text-white'
+                        : 'bg-white/10 text-[var(--text-muted)] hover:text-white'
+                    }`}
+                  >
+                    {curr.value}
+                  </button>
+                ))}
+              </div>
+            </div>
             <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--text-muted)]">CHF</span>
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--text-muted)]">{currencyConfig.symbol}</span>
               <input
                 type="number"
                 min="30"
@@ -213,7 +276,7 @@ export function ROICalculator() {
           {/* Automation Level */}
           <div>
             <label className="block text-sm font-medium text-white mb-2">
-              Current Automation Level
+              Eligible for straight-through or assisted processing
             </label>
             <div className="space-y-2">
               {automationOptions.map((option) => (
@@ -257,18 +320,75 @@ export function ROICalculator() {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="space-y-6"
       >
-        {/* Main Savings Card */}
+        {/* Main Impact Card */}
         <div className="bg-gradient-to-br from-[var(--primary)] to-blue-700 rounded-2xl p-8 text-white">
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-2 mb-1">
             <TrendingUp className="w-5 h-5" />
-            <span className="text-sm font-medium text-white/80">Projected Annual Savings</span>
+            <span className="text-sm font-medium text-white/80">Estimated Annual Impact (Conservative)</span>
           </div>
+          <p className="text-xs text-white/60 mb-4">Based on pilot-scale assumptions</p>
           <div className="text-4xl md:text-5xl font-bold mb-2">
-            {formatCurrency(results.annualSavings)}
+            {formatCurrency(results.netAnnualImpact)}
           </div>
-          <div className="text-white/80">
+          <div className="text-white/80 mb-4">
             {results.savingsPercentage.toFixed(0)}% reduction in claims handling costs
           </div>
+          <div className="flex items-center gap-2 px-3 py-2 bg-white/10 rounded-lg inline-flex">
+            <CheckCircle className="w-4 h-4 text-white/80" />
+            <span className="text-sm text-white/80">
+              Indicative payback: {results.paybackMonths < 12 ? `${results.paybackMonths} months` : '< 1 year'}
+            </span>
+          </div>
+        </div>
+
+        {/* 3-Bucket Breakdown */}
+        <div className="space-y-3">
+          <h4 className="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wider">Savings Breakdown</h4>
+
+          {/* Capacity unlocked */}
+          <Link href="/products/mira" className="block glass-panel p-4 hover:bg-white/5 transition-colors group">
+            <div className="flex items-center justify-between mb-1">
+              <div className="flex items-center gap-2">
+                <Brain className="w-4 h-4 text-indigo-400" />
+                <span className="text-sm font-medium text-white">Capacity unlocked</span>
+                <span className="text-xs text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity">MIRA</span>
+              </div>
+              <span className="text-sm font-semibold text-emerald-400 font-mono-data">
+                {formatCurrency(results.buckets.capacityGross * ASSUMPTIONS.confidenceHaircut)}
+              </span>
+            </div>
+            <p className="text-xs text-[var(--text-muted)]">Fewer touches per claim, shorter handling time</p>
+          </Link>
+
+          {/* Rework avoided */}
+          <Link href="/products/claimeval" className="block glass-panel p-4 hover:bg-white/5 transition-colors group">
+            <div className="flex items-center justify-between mb-1">
+              <div className="flex items-center gap-2">
+                <ClipboardCheck className="w-4 h-4 text-emerald-400" />
+                <span className="text-sm font-medium text-white">Rework avoided</span>
+                <span className="text-xs text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity">ClaimEval</span>
+              </div>
+              <span className="text-sm font-semibold text-emerald-400 font-mono-data">
+                {formatCurrency(results.buckets.reworkGross * ASSUMPTIONS.confidenceHaircut)}
+              </span>
+            </div>
+            <p className="text-xs text-[var(--text-muted)]">Fewer reopens, appeals, and corrections</p>
+          </Link>
+
+          {/* Leakage reduction */}
+          <Link href="/products/claimeval" className="block glass-panel p-4 hover:bg-white/5 transition-colors group">
+            <div className="flex items-center justify-between mb-1">
+              <div className="flex items-center gap-2">
+                <FileSearch className="w-4 h-4 text-[var(--aurora-cyan)]" />
+                <span className="text-sm font-medium text-white">Leakage reduction</span>
+                <span className="text-xs text-[var(--aurora-cyan)] opacity-0 group-hover:opacity-100 transition-opacity">ClaimEval</span>
+              </div>
+              <span className="text-sm font-semibold text-emerald-400 font-mono-data">
+                {formatCurrency(results.buckets.leakageGross * ASSUMPTIONS.confidenceHaircut)}
+              </span>
+            </div>
+            <p className="text-xs text-[var(--text-muted)]">Reduced inconsistent decisions</p>
+          </Link>
         </div>
 
         {/* Metrics Grid */}
@@ -285,21 +405,8 @@ export function ROICalculator() {
             <div className="text-2xl font-bold text-white font-mono-data">
               {results.fteEquivalent.toFixed(1)}
             </div>
-            <div className="text-sm text-[var(--text-muted)]">FTE equivalent</div>
-          </div>
-          <div className="glass-panel p-6">
-            <DollarSign className="w-5 h-5 text-emerald-400 mb-2" />
-            <div className="text-2xl font-bold text-white font-mono-data">
-              {formatCurrency(results.currentAnnualCost)}
-            </div>
-            <div className="text-sm text-[var(--text-muted)]">Current annual cost</div>
-          </div>
-          <div className="glass-panel p-6">
-            <CheckCircle className="w-5 h-5 text-emerald-400 mb-2" />
-            <div className="text-2xl font-bold text-white font-mono-data">
-              {results.paybackMonths < 12 ? `${results.paybackMonths} mo` : '< 1 yr'}
-            </div>
-            <div className="text-sm text-[var(--text-muted)]">Payback period</div>
+            <div className="text-sm text-[var(--text-muted)]">Capacity unlocked (FTE equivalent)</div>
+            <p className="text-xs text-[var(--text-muted)] mt-1">Reflects reduced handling effort, not headcount reduction</p>
           </div>
         </div>
 
@@ -307,7 +414,7 @@ export function ROICalculator() {
         <div className="flex items-start gap-2 p-4 bg-white/5 rounded-lg border border-[var(--border)]">
           <Info className="w-4 h-4 text-[var(--text-muted)] flex-shrink-0 mt-0.5" />
           <p className="text-xs text-[var(--text-muted)]">
-            Estimates based on typical automation rates. Actual results vary based on claim complexity, policy types, and implementation scope. Contact us for a detailed assessment.
+            Estimates based on pilot-scale assumptions with a 75% conservative confidence factor applied. Actual results vary based on claim complexity, policy types, and implementation scope.
           </p>
         </div>
 
@@ -340,23 +447,32 @@ export function ROICalculator() {
                 <div className="px-4 pb-4 space-y-6 border-t border-[var(--border)]">
                   {/* How We Calculate */}
                   <div className="pt-4">
-                    <h4 className="text-sm font-semibold text-white mb-3">How We Calculate Your Savings</h4>
+                    <h4 className="text-sm font-semibold text-white mb-3">How We Calculate</h4>
                     <div className="space-y-3 text-sm">
                       <div className="p-3 bg-white/5 rounded-lg">
                         <p className="text-[var(--text-muted)] mb-2">
-                          <span className="text-white font-medium">Current Annual Cost</span> = Claims Volume × Handling Time × Hourly Rate
+                          <span className="text-white font-medium">Current Annual Cost</span> = Claims Volume x Handling Time x Hourly Rate
                         </p>
                         <p className="font-mono text-xs text-[var(--primary)]">
-                          {formatNumber(results.volume)} claims × {results.details.hoursPerClaim.toFixed(2)} hrs × CHF {inputs.hourlyRate} = {formatCurrency(results.currentAnnualCost)}
+                          {formatNumber(results.volume)} x {results.details.hoursPerClaim.toFixed(2)} hrs x {currencyConfig.symbol} {inputs.hourlyRate} = {formatCurrency(results.currentAnnualCost)}
                         </p>
                       </div>
 
                       <div className="p-3 bg-white/5 rounded-lg">
                         <p className="text-[var(--text-muted)] mb-2">
-                          <span className="text-white font-medium">With TrueAim</span> = (Automated Claims × Review Time + Manual Claims × Reduced Time) × Hourly Rate + Platform Cost
+                          <span className="text-white font-medium">Gross Savings</span> = Capacity + Rework + Leakage
                         </p>
                         <p className="font-mono text-xs text-[var(--primary)]">
-                          ({formatNumber(results.details.automatedClaims)} × 0.01 hrs + {formatNumber(results.details.manualClaims)} × {(results.details.hoursPerClaim * 0.5).toFixed(2)} hrs) × CHF {inputs.hourlyRate} + {formatCurrency(results.details.platformCost)} = {formatCurrency(results.projectedAnnualCost)}
+                          {formatCurrency(results.buckets.capacityGross)} + {formatCurrency(results.buckets.reworkGross)} + {formatCurrency(results.buckets.leakageGross)} = {formatCurrency(results.buckets.grossTotal)}
+                        </p>
+                      </div>
+
+                      <div className="p-3 bg-white/5 rounded-lg">
+                        <p className="text-[var(--text-muted)] mb-2">
+                          <span className="text-white font-medium">Conservative Estimate</span> = Gross Savings x 75% - Platform Cost
+                        </p>
+                        <p className="font-mono text-xs text-[var(--primary)]">
+                          {formatCurrency(results.buckets.grossTotal)} x 0.75 - {formatCurrency(results.details.platformCost)} = {formatCurrency(results.netAnnualImpact)}
                         </p>
                       </div>
                     </div>
@@ -365,50 +481,27 @@ export function ROICalculator() {
                   {/* Key Assumptions */}
                   <div>
                     <h4 className="text-sm font-semibold text-white mb-3">Key Assumptions</h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      <div className="p-3 bg-white/5 rounded-lg">
-                        <div className="flex justify-between items-start mb-1">
-                          <span className="text-xs text-[var(--text-muted)]">Automation Rate</span>
-                          <span className="text-sm font-semibold text-white">{results.details.automationRate.toFixed(0)}%</span>
-                        </div>
-                        <p className="text-xs text-[var(--text-muted)]">
-                          Based on your current automation level. Organizations with no automation see higher potential (85%). Those with existing automation see 50-70%.
-                        </p>
-                      </div>
-
-                      <div className="p-3 bg-white/5 rounded-lg">
-                        <div className="flex justify-between items-start mb-1">
-                          <span className="text-xs text-[var(--text-muted)]">Automated Claim Review</span>
-                          <span className="text-sm font-semibold text-white">36 seconds</span>
-                        </div>
-                        <p className="text-xs text-[var(--text-muted)]">
-                          Time for a handler to review and approve an automated decision. MIRA processes in &lt;3 seconds; human review adds ~30 seconds.
-                        </p>
-                      </div>
-
-                      <div className="p-3 bg-white/5 rounded-lg">
-                        <div className="flex justify-between items-start mb-1">
-                          <span className="text-xs text-[var(--text-muted)]">Manual Claim Speedup</span>
-                          <span className="text-sm font-semibold text-white">50% faster</span>
-                        </div>
-                        <p className="text-xs text-[var(--text-muted)]">
-                          Claims that cannot be fully automated are still processed faster because ContextBuilder pre-extracts and structures all relevant data.
-                        </p>
-                      </div>
-
-                      <div className="p-3 bg-white/5 rounded-lg">
-                        <div className="flex justify-between items-start mb-1">
-                          <span className="text-xs text-[var(--text-muted)]">Platform Cost</span>
-                          <span className="text-sm font-semibold text-white">CHF 0.50/claim</span>
-                        </div>
-                        <p className="text-xs text-[var(--text-muted)]">
-                          Estimated per-claim processing fee. Actual pricing depends on volume tiers and specific requirements.
-                        </p>
-                      </div>
-                    </div>
+                    <ul className="space-y-2 text-xs text-[var(--text-muted)]">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-3 h-3 text-emerald-400 flex-shrink-0 mt-0.5" />
+                        Savings apply only to eligible claim categories
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-3 h-3 text-emerald-400 flex-shrink-0 mt-0.5" />
+                        No immediate headcount reduction assumed
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-3 h-3 text-emerald-400 flex-shrink-0 mt-0.5" />
+                        Savings reflect reduced handling effort and rework
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-3 h-3 text-emerald-400 flex-shrink-0 mt-0.5" />
+                        Conservative confidence factor (75%) applied
+                      </li>
+                    </ul>
                   </div>
 
-                  {/* Your Numbers Breakdown */}
+                  {/* Detailed breakdown table */}
                   <div>
                     <h4 className="text-sm font-semibold text-white mb-3">Your Numbers Breakdown</h4>
                     <div className="overflow-x-auto">
@@ -427,24 +520,28 @@ export function ROICalculator() {
                             <td className="py-2 text-white text-right font-mono">{formatNumber(results.details.manualClaims)} ({(100 - results.details.automationRate).toFixed(0)}%)</td>
                           </tr>
                           <tr>
-                            <td className="py-2 text-[var(--text-muted)]">Current processing hours/year</td>
-                            <td className="py-2 text-white text-right font-mono">{formatNumber(results.details.totalHoursPerYear)}</td>
+                            <td className="py-2 text-[var(--text-muted)]">Capacity savings (gross)</td>
+                            <td className="py-2 text-emerald-400 text-right font-mono">{formatCurrency(results.buckets.capacityGross)}</td>
                           </tr>
                           <tr>
-                            <td className="py-2 text-[var(--text-muted)]">Processing hours with TrueAim</td>
-                            <td className="py-2 text-white text-right font-mono">{formatNumber(results.details.trueAimTotalHours)}</td>
+                            <td className="py-2 text-[var(--text-muted)]">Rework avoided (gross)</td>
+                            <td className="py-2 text-emerald-400 text-right font-mono">{formatCurrency(results.buckets.reworkGross)}</td>
                           </tr>
                           <tr>
-                            <td className="py-2 text-[var(--text-muted)]">Labor cost savings</td>
-                            <td className="py-2 text-emerald-400 text-right font-mono">{formatCurrency(results.currentAnnualCost - results.details.trueAimAnnualCost)}</td>
+                            <td className="py-2 text-[var(--text-muted)]">Leakage reduction (gross)</td>
+                            <td className="py-2 text-emerald-400 text-right font-mono">{formatCurrency(results.buckets.leakageGross)}</td>
+                          </tr>
+                          <tr>
+                            <td className="py-2 text-[var(--text-muted)]">Confidence haircut (75%)</td>
+                            <td className="py-2 text-amber-400 text-right font-mono">-{formatCurrency(results.buckets.grossTotal * 0.25)}</td>
                           </tr>
                           <tr>
                             <td className="py-2 text-[var(--text-muted)]">Platform cost (annual)</td>
-                            <td className="py-2 text-white text-right font-mono">{formatCurrency(results.details.platformCost)}</td>
+                            <td className="py-2 text-amber-400 text-right font-mono">-{formatCurrency(results.details.platformCost)}</td>
                           </tr>
                           <tr className="font-semibold">
-                            <td className="py-2 text-white">Net annual savings</td>
-                            <td className="py-2 text-emerald-400 text-right font-mono">{formatCurrency(results.annualSavings)}</td>
+                            <td className="py-2 text-white">Net annual impact (conservative)</td>
+                            <td className="py-2 text-emerald-400 text-right font-mono">{formatCurrency(results.netAnnualImpact)}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -467,21 +564,57 @@ export function ROICalculator() {
           </AnimatePresence>
         </div>
 
-        {/* CTA */}
+        {/* CTA with lead capture */}
         <div className="glass-panel p-6">
-          <h4 className="font-semibold text-white mb-2">
-            Want a detailed analysis for your operation?
-          </h4>
-          <p className="text-sm text-[var(--text-muted)] mb-4">
-            Our team can review your specific claims data and provide a customized ROI projection.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-[var(--primary)]/30"
-          >
-            Talk to an Expert
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          {leadSubmitted ? (
+            <div className="text-center py-4">
+              <CheckCircle className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
+              <p className="text-sm text-white font-medium">We&apos;ll send the detailed breakdown to your inbox.</p>
+            </div>
+          ) : (
+            <>
+              <h4 className="font-semibold text-white mb-1">
+                Want a detailed analysis for your operation?
+              </h4>
+              <p className="text-sm text-[var(--text-muted)] mb-4">
+                Get a customized ROI projection based on your specific claims data.
+              </p>
+              <form onSubmit={handleLeadSubmit} className="flex flex-col sm:flex-row gap-3 mb-4">
+                <input
+                  type="email"
+                  required
+                  value={leadEmail}
+                  onChange={(e) => setLeadEmail(e.target.value)}
+                  placeholder="Work email"
+                  className="flex-1 px-4 py-2.5 rounded-lg border border-[var(--border)] bg-white/5 text-white placeholder:text-[var(--text-muted)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
+                />
+                <input
+                  type="text"
+                  required
+                  value={leadCompany}
+                  onChange={(e) => setLeadCompany(e.target.value)}
+                  placeholder="Company"
+                  className="flex-1 px-4 py-2.5 rounded-lg border border-[var(--border)] bg-white/5 text-white placeholder:text-[var(--text-muted)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
+                />
+                <button
+                  type="submit"
+                  className="px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-sm shadow-lg shadow-[var(--primary)]/30 whitespace-nowrap"
+                >
+                  Send Report
+                </button>
+              </form>
+              <div className="flex items-center gap-3 pt-3 border-t border-[var(--border)]">
+                <span className="text-xs text-[var(--text-muted)]">Or</span>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 text-sm text-[var(--primary)] hover:text-[var(--primary-hover)] font-medium transition-colors"
+                >
+                  Book a Demo
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </>
+          )}
         </div>
       </motion.div>
     </div>

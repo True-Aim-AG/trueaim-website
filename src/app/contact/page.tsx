@@ -78,22 +78,44 @@ const faqs = [
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
   });
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("Form data:", data);
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const result = await response.json().catch(() => null);
+        throw new Error(result?.error || "Something went wrong. Please try again.");
+      }
+
+      setIsSubmitted(true);
+      reset();
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -143,7 +165,7 @@ export default function ContactPage() {
                     Thank You!
                   </h2>
                   <p className="text-[var(--text-secondary)] mb-6">
-                    We&apos;ve received your request and will be in touch within 24 hours.
+                    We&apos;ve received your request. We typically respond within 1 business day.
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
@@ -392,6 +414,16 @@ export default function ContactPage() {
                       )}
                     </div>
 
+                    {/* Error Message */}
+                    {submitError && (
+                      <div className="sm:col-span-2">
+                        <div className="flex items-center gap-2 p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                          <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                          {submitError}
+                        </div>
+                      </div>
+                    )}
+
                     {/* Submit */}
                     <div className="sm:col-span-2">
                       <button
@@ -440,15 +472,16 @@ export default function ContactPage() {
                     </div>
                   </a>
                   <a
-                    href="#"
+                    href="https://calendar.app.google/MEVp3kcksVTVw3nf6"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-4 p-4 rounded-xl glass-panel-light hover:bg-[var(--subtle-bg-hover)] transition-colors"
                   >
                     <div className="w-12 h-12 rounded-full bg-[var(--aurora-cyan)]/20 flex items-center justify-center">
                       <Calendar className="w-6 h-6 text-[var(--aurora-cyan)]" />
                     </div>
                     <div>
-                      <p className="font-medium text-[var(--text-primary)]">Book a call</p>
-                      <p className="text-[var(--text-secondary)]">30-minute discovery call</p>
+                      <p className="font-medium text-[var(--text-primary)]">Book a 30-minute call</p>
                     </div>
                   </a>
                 </div>

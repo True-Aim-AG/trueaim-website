@@ -1,0 +1,42 @@
+import Link from "next/link";
+
+export default function TermsPage() {
+  return (
+    <div className="min-h-screen py-24 px-6">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+          Terms of Service
+        </h1>
+        <p className="text-sm text-[var(--text-muted)] mb-8">
+          Last updated: February 2026
+        </p>
+
+        <div className="glass-panel p-8 md:p-12 space-y-6">
+          <p className="text-[var(--text-secondary)] leading-relaxed">
+            We are currently finalizing our Terms of Service. These terms will govern your use of TrueAim.ai products and services.
+          </p>
+          <p className="text-[var(--text-secondary)] leading-relaxed">
+            If you have any questions about our terms or need specific contractual information for procurement purposes, please reach out to us directly.
+          </p>
+          <div className="pt-4 border-t border-[var(--border)]">
+            <p className="text-sm text-[var(--text-muted)] mb-1">Contact us at:</p>
+            <a
+              href="mailto:privacy@trueaim.ai"
+              className="text-[var(--primary)] font-medium hover:underline"
+            >
+              privacy@trueaim.ai
+            </a>
+          </div>
+          <div className="pt-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

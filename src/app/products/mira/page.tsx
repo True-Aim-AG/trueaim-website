@@ -29,7 +29,7 @@ const workflowSteps = [
   {
     step: 2,
     title: "Comprehension",
-    description: "Agentic swarm reads case file: identifies parties, creates timeline, extracts key data.",
+    description: "Agentic workflow reads case file: identifies parties, creates timeline, extracts key data.",
     icon: Search,
   },
   {
@@ -65,7 +65,7 @@ const capabilities = [
   },
   {
     title: "Integration Ready",
-    description: "API-first architecture. Compatible with Guidewire, Duck Creek, and standard ERPs. Flexible deployment: cloud or on-premise.",
+    description: "API-first architecture. Compatible with Guidewire, Duck Creek, and standard ERPs. Works alongside existing claims systems without rip-and-replace. Flexible deployment: cloud or on-premise.",
     icon: Plug,
   },
   {
