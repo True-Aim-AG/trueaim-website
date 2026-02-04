@@ -192,7 +192,7 @@ export function Navigation() {
               <div className="text-sm font-medium text-[var(--text-muted)] px-2 mb-2">
                 Resources
               </div>
-              {resources.filter(r => !r.comingSoon).map((resource) => (
+              {resources.map((resource) => (
                 <Link
                   key={resource.name}
                   href={resource.href}
