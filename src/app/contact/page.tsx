@@ -52,28 +52,6 @@ const interests = [
   { value: "partnership", label: "Partnership Opportunity" },
 ];
 
-const faqs = [
-  {
-    question: "How long does a typical pilot take?",
-    answer: "Most pilots run 6-12 weeks. We start by processing a sample of your closed claims to establish baseline accuracy, then move to live claims integration.",
-  },
-  {
-    question: "Do you integrate with Guidewire/Duck Creek?",
-    answer: "Yes. Our API-first architecture is designed for integration with standard claims systems.",
-  },
-  {
-    question: "How does pricing work?",
-    answer: "We offer per-claim processing fees plus implementation and configuration fees. Contact us for a detailed proposal.",
-  },
-  {
-    question: "Is my data secure?",
-    answer: "Yes. Swiss-based hosting, GDPR-compliant architecture, enterprise-grade encryption.",
-  },
-  {
-    question: "What about EU AI Act compliance?",
-    answer: "Our neuro-symbolic architecture is purpose-built for regulatory compliance. Every decision is deterministic and traceable.",
-  },
-];
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -180,7 +158,7 @@ export default function ContactPage() {
                   className="glass-panel p-8"
                 >
                   <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-                    Request a Demo
+                    Book a Demo
                   </h2>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -437,16 +415,17 @@ export default function ContactPage() {
                             Submitting...
                           </>
                         ) : (
-                          "Request Demo"
+                          "Book a Demo"
                         )}
                       </button>
+                      <p className="text-xs text-center text-[var(--text-muted)] mt-3">We typically respond within 1 business day.</p>
                     </div>
                   </div>
                 </form>
               )}
             </motion.div>
 
-            {/* Contact Info & FAQs */}
+            {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -484,25 +463,6 @@ export default function ContactPage() {
                       <p className="font-medium text-[var(--text-primary)]">Book a 30-minute call</p>
                     </div>
                   </a>
-                </div>
-              </div>
-
-              {/* FAQs */}
-              <div className="glass-panel p-8">
-                <h3 className="text-xl font-bold text-[var(--text-primary)] mb-6">
-                  Frequently Asked Questions
-                </h3>
-                <div className="space-y-6">
-                  {faqs.map((faq) => (
-                    <div key={faq.question}>
-                      <h4 className="font-medium text-[var(--text-primary)] mb-2">
-                        {faq.question}
-                      </h4>
-                      <p className="text-sm text-[var(--text-secondary)]">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  ))}
                 </div>
               </div>
             </motion.div>

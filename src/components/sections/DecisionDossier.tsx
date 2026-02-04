@@ -274,10 +274,10 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                     <span className="text-sm text-[var(--text-muted)]">Confidence:</span>
                     <span className="text-sm font-semibold text-emerald-400 font-mono-data">98.5%</span>
                   </div>
-                  <button className="flex items-center gap-1 text-xs text-[var(--primary)] font-medium hover:underline">
+                  <span className="flex items-center gap-1 text-xs text-[var(--primary)] font-medium">
                     <RefreshCw className="w-3 h-3" />
                     Replay Decision
-                  </button>
+                  </span>
                 </div>
               </div>
             </div>

@@ -4,7 +4,6 @@ import { Linkedin, Github } from "lucide-react";
 const footerLinks = {
   company: [
     { name: "About", href: "/company" },
-    { name: "Careers", href: "#", comingSoon: true },
     { name: "Contact", href: "/contact" },
   ],
   products: [
@@ -12,16 +11,10 @@ const footerLinks = {
     { name: "ContextBuilder", href: "/products/contextbuilder" },
     { name: "ClaimEval", href: "/products/claimeval" },
   ],
-  resources: [
-    { name: "Documentation", href: "#", comingSoon: true },
-    { name: "Blog", href: "#", comingSoon: true },
-    { name: "Whitepapers", href: "#", comingSoon: true },
-  ],
   legal: [
     { name: "Privacy Policy", href: "/privacy" },
     { name: "Terms of Service", href: "/terms" },
     { name: "Cookie Policy", href: "/cookies" },
-    { name: "PAIA Manual", href: "/contact", comingSoon: true },
   ],
 };
 
@@ -33,7 +26,7 @@ export function Footer() {
 
       <div className="relative max-w-7xl mx-auto px-6 py-16">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
@@ -80,21 +73,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  {link.comingSoon ? (
-                    <span
-                      className="text-[var(--text-muted)] text-sm inline-flex items-center gap-2 opacity-60 cursor-default"
-                    >
-                      {link.name}
-                      <span className="text-xs text-[var(--text-muted)]">(Coming Soon)</span>
-                    </span>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm"
-                    >
-                      {link.name}
-                    </Link>
-                  )}
+                  <Link
+                    href={link.href}
+                    className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm"
+                  >
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -119,34 +103,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Resources Links */}
-          <div>
-            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-[var(--text-primary)]">
-              Resources
-            </h3>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.name}>
-                  {link.comingSoon ? (
-                    <span
-                      className="text-[var(--text-muted)] text-sm inline-flex items-center gap-2 opacity-60 cursor-default"
-                    >
-                      {link.name}
-                      <span className="text-xs text-[var(--text-muted)]">(Coming Soon)</span>
-                    </span>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm"
-                    >
-                      {link.name}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Legal Links */}
           <div>
             <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-[var(--text-primary)]">
@@ -155,21 +111,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
-                  {'comingSoon' in link && link.comingSoon ? (
-                    <span
-                      className="text-[var(--text-muted)] text-sm inline-flex items-center gap-2 opacity-60 cursor-default"
-                    >
-                      {link.name}
-                      <span className="text-xs text-[var(--text-muted)]">(Coming Soon)</span>
-                    </span>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm"
-                    >
-                      {link.name}
-                    </Link>
-                  )}
+                  <Link
+                    href={link.href}
+                    className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm"
+                  >
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>

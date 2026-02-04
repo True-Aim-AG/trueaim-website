@@ -17,16 +17,16 @@ const founders = [
   {
     name: "Reuben John",
     role: "Co-Founder & CEO",
-    tagline: "2x Founder | Attorney | Former MD Largest Global Withholding Tax Claim Provider",
-    bio: "Reuben has led high-stakes operational and regulatory projects across Europe and Africa. He secured CHF 300,000 from Innosuisse for TrueAim.ai's advanced R&D.",
+    tagline: "2x Founder | Attorney | Former MD Largest Global Claims Recovery Provider",
+    bio: "Reuben drives TrueAim.ai's vision, commercial strategy and go-to-market execution. He has led high-stakes operational and regulatory projects across Europe and Africa, overseeing market expansion, complex digitization and compliance initiatives for multinational clients.",
     linkedin: "https://www.linkedin.com/in/reubenj/",
     image: "/team/reuben-john.jpg",
   },
   {
     name: "Frederic Brunner",
     role: "Co-Founder & CTO",
-    tagline: "Ex-Zurich Insurance | Ex-Guidewire | 20+ Years Enterprise Automation",
-    bio: "Frederic combines deep architectural expertise with practical delivery experience. He previously led technology transformation at Guidewire and has implemented multiple AI and automation projects.",
+    tagline: "Ex-Zurich Insurance | Ex-Guidewire | Automation and System Design Expert",
+    bio: "Frederic drives TrueAim.ai's technological development, ensuring the hybrid Agentic-AI engine meets the demands of regulated industries. A veteran technologist with 30+ years in software development and 20+ years in enterprise automation, he combines deep architectural expertise with practical delivery experience.",
     linkedin: "https://www.linkedin.com/in/frdbrunner/",
     image: "/team/frederic-brunner.jpg",
   },
@@ -35,32 +35,32 @@ const founders = [
 const advisors = [
   {
     name: "Claudio Gienal",
-    title: "AXA Group Chief Transformation Officer | Former AXA CEO UK & Ireland",
+    title: "AXA Group Chief Transformation Officer | Former AXA CEO UK & Ireland | Ex-McKinsey | Insurance Innovator",
     relevance: "Claims operations & insurance transformation",
   },
   {
     name: "Eric Zielinski",
-    title: "Wharton | Ex-Bain | Tech Founder",
+    title: "Wharton | Ex-Bain | Tech Founder | Execution & Implementation Specialist",
     relevance: "Strategy & enterprise procurement",
   },
   {
     name: "Dr. Lukas Lichtensteiger",
-    title: "Harvard | Serial Entrepreneur & CTO",
+    title: "Harvard | Serial Entrepreneur & CTO | Founder in AI & Robotics | ZHAW Researcher",
     relevance: "Technology architecture & scaling",
   },
   {
     name: "Dave Stoll",
-    title: "Ex-Zurich Insurance CFO (Spain) | Founder of doppo",
+    title: "Ex-Zurich Insurance CFO (Spain) | Founder of doppo | Fintech & Insurtech Scale-Up Specialist",
     relevance: "Insurance finance & regulation",
   },
   {
     name: "Dr. Dandolo Flumini",
-    title: "Original developer | PhD Math & CS | ZHAW Researcher",
+    title: "Original developer of Mira technology | PhD Math & Computer Science | ZHAW Researcher",
     relevance: "Core logic engine & research",
   },
   {
     name: "Bassil Eid",
-    title: "Serial Founder & CFO | Fintech Innovator",
+    title: "Serial Founder & CFO | Web3, Fintech & Accounting Innovator | Strategic Finance & Growth Specialist",
     relevance: "Fintech go-to-market & finance",
   },
 ];
@@ -68,7 +68,7 @@ const advisors = [
 const partners = [
   {
     name: "Yarowa AG",
-    description: "Lead investor (30% shareholder). Swiss InsurTech powerhouse trusted by 100+ insurers. Enterprise-grade SaaS blueprint and client network.",
+    description: "Strategic partner. Swiss InsurTech platform with enterprise distribution and 100+ insurer relationships.",
     icon: Building2,
   },
   {
@@ -78,7 +78,7 @@ const partners = [
   },
   {
     name: "Innosuisse",
-    description: "Switzerland's official innovation agency. CHF 300,000 non-dilutive grant. National-level validation.",
+    description: "Switzerland's official innovation agency. Non-dilutive grant recipient. National-level validation of our research and technology.",
     icon: Briefcase,
   },
 ];
@@ -106,7 +106,7 @@ export default function CompanyPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-              TrueAim.ai pioneers neuro-symbolic AI for regulated industries. We&apos;re building the logic layer that powers compliant, explainable decisions at scale.
+              TrueAim.ai pioneers neuro-symbolic AI for regulated industries. We&apos;re building the decisioning layer that powers compliant, explainable decisions at scale.
             </p>
           </motion.div>
         </div>
@@ -126,7 +126,7 @@ export default function CompanyPage() {
               <Quote className="w-6 h-6 text-[var(--primary)]" />
             </div>
             <blockquote className="text-xl md:text-2xl text-[var(--text-primary)] leading-relaxed italic">
-              &ldquo;Build the global logic layer that powers compliant, automated claim decisions.&rdquo;
+              &ldquo;Eliminate the &apos;black box&apos; in insurance by uniting AI with deterministic decisioning to deliver fast, fair and fully auditable claim determinations.&rdquo;
             </blockquote>
             <p className="mt-6 text-[var(--text-muted)] font-medium">Our Mission</p>
           </motion.div>
@@ -210,7 +210,7 @@ export default function CompanyPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Advisors
+              Advisory Board
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
               Guided by industry leaders

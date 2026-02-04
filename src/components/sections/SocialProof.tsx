@@ -5,9 +5,23 @@ import { motion } from "framer-motion";
 import { ArrowRight, Building2, TrendingUp, Quote } from "lucide-react";
 import { caseStudies } from "@/data/case-studies";
 
+const productColors: Record<string, string> = {
+  mira: "bg-indigo-100 text-indigo-700",
+  contextbuilder: "bg-teal-100 text-teal-700",
+  claimeval: "bg-blue-100 text-blue-700",
+};
+
+const productNames: Record<string, string> = {
+  mira: "MIRA",
+  contextbuilder: "ContextBuilder",
+  claimeval: "ClaimEval",
+};
+
 export function SocialProof() {
-  // Get the first two case studies for preview
-  const featuredStudies = caseStudies.slice(0, 2);
+  // Only show published (non-WIP) case studies on the homepage
+  const featured = caseStudies.find((cs) => !cs.wip);
+
+  if (!featured) return null;
 
   return (
     <section className="py-20 px-6">
@@ -27,23 +41,26 @@ export function SocialProof() {
             Trusted by Leading Insurers
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            See how insurers are transforming their claims operations with measurable, auditable results
+            See how insurers are transforming their claims operations with
+            measurable, auditable results
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {featuredStudies.map((study, index) => (
-            <motion.div
-              key={study.slug}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Link
-                href={`/case-studies/${study.slug}`}
-                className="block glass-panel glass-panel-hover p-8 h-full group"
-              >
+        {/* Featured case study - full width */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-12"
+        >
+          <Link
+            href={`/case-studies/${featured.slug}`}
+            className="block glass-panel glass-panel-hover p-8 group"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Left: Info */}
+              <div>
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-[var(--subtle-bg)] flex items-center justify-center">
@@ -51,34 +68,37 @@ export function SocialProof() {
                   </div>
                   <div>
                     <div className="font-medium text-[var(--text-primary)]">
-                      {study.customer.name}
+                      {featured.customer.name}
                     </div>
                     <div className="text-sm text-[var(--text-muted)]">
-                      {study.customer.industry}
+                      {featured.customer.industry} · {featured.customer.size}
                     </div>
                   </div>
                 </div>
 
-                {/* Key Metrics */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  {study.metrics.slice(0, 2).map((metric) => (
-                    <div key={metric.label} className="glass-panel-light p-4">
-                      <div className="text-2xl font-bold font-mono-data text-[var(--primary)]">
-                        {metric.value}
-                      </div>
-                      <div className="text-xs text-[var(--text-muted)]">
-                        {metric.label}
-                      </div>
-                    </div>
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-bold text-[var(--text-primary)] mb-4 group-hover:text-[var(--primary)] transition-colors">
+                  {featured.title}
+                </h3>
+
+                {/* Products */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {featured.products.map((product) => (
+                    <span
+                      key={product}
+                      className={`text-xs px-2 py-1 rounded-full font-medium ${productColors[product]}`}
+                    >
+                      {productNames[product]}
+                    </span>
                   ))}
                 </div>
 
                 {/* Quote preview */}
-                {study.quote && (
-                  <div className="mb-4">
+                {featured.quote && (
+                  <div className="mb-6">
                     <Quote className="w-6 h-6 text-[var(--primary)] opacity-30 mb-2" />
                     <p className="text-sm text-[var(--text-secondary)] italic line-clamp-2">
-                      &ldquo;{study.quote.text}&rdquo;
+                      &ldquo;{featured.quote.text}&rdquo;
                     </p>
                   </div>
                 )}
@@ -88,10 +108,32 @@ export function SocialProof() {
                   Read case study
                   <ArrowRight className="w-4 h-4" />
                 </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
+              </div>
+
+              {/* Right: Key Metrics */}
+              <div className="grid grid-cols-2 gap-4 content-center">
+                {featured.metrics.map((metric) => (
+                  <div
+                    key={metric.label}
+                    className="glass-panel-light p-4 text-center"
+                  >
+                    <div className="text-2xl md:text-3xl font-bold font-mono-data text-[var(--primary)]">
+                      {metric.value}
+                    </div>
+                    <div className="text-xs text-[var(--text-muted)]">
+                      {metric.label}
+                    </div>
+                    {metric.improvement && (
+                      <div className="text-[10px] text-[var(--secondary)] mt-1">
+                        {metric.improvement}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Link>
+        </motion.div>
 
         {/* View all link */}
         <motion.div

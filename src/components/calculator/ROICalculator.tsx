@@ -19,20 +19,13 @@ import {
 } from "lucide-react";
 
 interface ROIInputs {
-  claimsVolume: string;
+  claimsVolume: number;
   handlingTime: number;
-  hourlyRate: number;
+  costPerClaim: number;
   automationLevel: string;
   currency: string;
 }
 
-const volumeOptions = [
-  { value: "5000", label: "< 10,000", claims: 5000 },
-  { value: "25000", label: "10,000 - 50,000", claims: 25000 },
-  { value: "75000", label: "50,000 - 100,000", claims: 75000 },
-  { value: "250000", label: "100,000 - 500,000", claims: 250000 },
-  { value: "750000", label: "500,000+", claims: 750000 },
-];
 
 const automationOptions = [
   { value: "none", label: "No current automation", factor: 0.85 },
@@ -52,6 +45,7 @@ const ASSUMPTIONS = {
   automatedClaimReviewTime: 0.01, // hours (36 seconds)
   manualClaimSpeedup: 0.5, // 50% faster processing for remaining manual claims
   platformCostPerClaim: 0.50, // per claim
+  implementationBaseCost: 50000, // covers integration, setup, training
   implementationCostFactor: 0.25, // 3 months of platform fees
   workHoursPerYear: 2080, // Standard work hours per FTE
   confidenceHaircut: 0.75, // 75% conservative factor
@@ -64,28 +58,27 @@ const ASSUMPTIONS = {
 
 export function ROICalculator() {
   const [inputs, setInputs] = useState<ROIInputs>({
-    claimsVolume: "25000",
+    claimsVolume: 50000,
     handlingTime: 45,
-    hourlyRate: 65,
+    costPerClaim: 50,
     automationLevel: "none",
     currency: "CHF",
   });
 
   const [showAssumptions, setShowAssumptions] = useState(false);
-  const [leadEmail, setLeadEmail] = useState("");
-  const [leadCompany, setLeadCompany] = useState("");
-  const [leadSubmitted, setLeadSubmitted] = useState(false);
+
 
   const currencyConfig = currencyOptions.find(c => c.value === inputs.currency) || currencyOptions[0];
 
   const results = useMemo(() => {
-    const volume = volumeOptions.find(v => v.value === inputs.claimsVolume)?.claims || 25000;
+    const volume = inputs.claimsVolume;
     const automationFactor = automationOptions.find(a => a.value === inputs.automationLevel)?.factor || 0.85;
 
     // Current state calculations
     const hoursPerClaim = inputs.handlingTime / 60;
     const totalHoursPerYear = volume * hoursPerClaim;
-    const currentAnnualCost = totalHoursPerYear * inputs.hourlyRate;
+    const currentAnnualCost = volume * inputs.costPerClaim;
+    const impliedHourlyRate = inputs.costPerClaim / hoursPerClaim;
 
     // === BUCKET 1: Capacity Unlocked (MIRA) ===
     const trueAimEfficiency = automationFactor;
@@ -95,12 +88,12 @@ export function ROICalculator() {
     const automatedHours = automatedClaims * ASSUMPTIONS.automatedClaimReviewTime;
     const manualHours = manualClaims * hoursPerClaim * ASSUMPTIONS.manualClaimSpeedup;
     const trueAimTotalHours = automatedHours + manualHours;
-    const trueAimAnnualCost = trueAimTotalHours * inputs.hourlyRate;
+    const trueAimAnnualCost = trueAimTotalHours * impliedHourlyRate;
     const capacitySavingsGross = currentAnnualCost - trueAimAnnualCost;
 
     // === BUCKET 2: Rework Avoided (ClaimEval) ===
     const reworkClaimsAvoided = volume * ASSUMPTIONS.reworkReductionRate;
-    const reworkSavingsGross = reworkClaimsAvoided * hoursPerClaim * ASSUMPTIONS.reworkCostMultiplier * inputs.hourlyRate;
+    const reworkSavingsGross = reworkClaimsAvoided * hoursPerClaim * ASSUMPTIONS.reworkCostMultiplier * impliedHourlyRate;
 
     // === BUCKET 3: Leakage Reduction (ClaimEval) ===
     const leakageSavingsGross = volume * ASSUMPTIONS.leakageReductionRate * ASSUMPTIONS.averageClaimValue * ASSUMPTIONS.leakagePercentOfClaim;
@@ -115,14 +108,14 @@ export function ROICalculator() {
     const platformCost = volume * ASSUMPTIONS.platformCostPerClaim;
 
     const netAnnualImpact = conservativeSavings - platformCost;
-    const savingsPercentage = currentAnnualCost > 0 ? (netAnnualImpact / currentAnnualCost) * 100 : 0;
+    const savingsPercentage = currentAnnualCost > 0 ? Math.min((netAnnualImpact / currentAnnualCost) * 100, 99) : 0;
 
     // Time savings
     const hoursSaved = totalHoursPerYear - trueAimTotalHours;
     const fteEquivalent = hoursSaved / ASSUMPTIONS.workHoursPerYear;
 
     // Payback period
-    const implementationCost = platformCost * ASSUMPTIONS.implementationCostFactor;
+    const implementationCost = ASSUMPTIONS.implementationBaseCost + (platformCost * ASSUMPTIONS.implementationCostFactor);
     const monthlyNetSavings = netAnnualImpact / 12;
     const paybackMonths = monthlyNetSavings > 0 ? Math.ceil(implementationCost / monthlyNetSavings) : 0;
 
@@ -172,13 +165,7 @@ export function ROICalculator() {
     }).format(value);
   };
 
-  const handleLeadSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (leadEmail && leadCompany) {
-      console.log("Lead capture:", { email: leadEmail, company: leadCompany });
-      setLeadSubmitted(true);
-    }
-  };
+
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -203,19 +190,21 @@ export function ROICalculator() {
           {/* Claims Volume */}
           <div>
             <label className="block text-sm font-medium text-white mb-2">
-              Annual Claims Volume
+              Annual Claims Volume: <span className="text-[var(--primary)]">{formatNumber(inputs.claimsVolume)} claims/year</span>
             </label>
-            <select
+            <input
+              type="range"
+              min="10000"
+              max="1000000"
+              step="10000"
               value={inputs.claimsVolume}
-              onChange={(e) => setInputs({ ...inputs, claimsVolume: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
-            >
-              {volumeOptions.map((option) => (
-                <option key={option.value} value={option.value} className="bg-[#12141D] text-white">
-                  {option.label} claims/year
-                </option>
-              ))}
-            </select>
+              onChange={(e) => setInputs({ ...inputs, claimsVolume: parseInt(e.target.value) })}
+              className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[var(--primary)]"
+            />
+            <div className="flex justify-between text-xs text-[var(--text-muted)] mt-1">
+              <span>10,000</span>
+              <span>1,000,000</span>
+            </div>
           </div>
 
           {/* Handling Time */}
@@ -238,11 +227,11 @@ export function ROICalculator() {
             </div>
           </div>
 
-          {/* Hourly Rate with Currency Toggle */}
+          {/* Cost per Claim with Currency Toggle */}
           <div>
             <div className="flex items-center justify-between mb-2">
               <label className="block text-sm font-medium text-white">
-                Average handling cost (fully loaded)
+                Average cost per claim: <span className="text-[var(--primary)]">{currencyConfig.symbol} {inputs.costPerClaim}</span>
               </label>
               <div className="flex gap-1">
                 {currencyOptions.map((curr) => (
@@ -260,16 +249,18 @@ export function ROICalculator() {
                 ))}
               </div>
             </div>
-            <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--text-muted)]">{currencyConfig.symbol}</span>
-              <input
-                type="number"
-                min="30"
-                max="200"
-                value={inputs.hourlyRate}
-                onChange={(e) => setInputs({ ...inputs, hourlyRate: parseInt(e.target.value) || 65 })}
-                className="w-full pl-14 pr-4 py-3 rounded-lg border border-[var(--border)] bg-white/5 text-white focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
-              />
+            <input
+              type="range"
+              min="10"
+              max="500"
+              step="5"
+              value={inputs.costPerClaim}
+              onChange={(e) => setInputs({ ...inputs, costPerClaim: parseInt(e.target.value) })}
+              className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[var(--primary)]"
+            />
+            <div className="flex justify-between text-xs text-[var(--text-muted)] mt-1">
+              <span>{currencyConfig.symbol} 10</span>
+              <span>{currencyConfig.symbol} 500</span>
             </div>
           </div>
 
@@ -336,7 +327,7 @@ export function ROICalculator() {
           <div className="flex items-center gap-2 px-3 py-2 bg-white/10 rounded-lg inline-flex">
             <CheckCircle className="w-4 h-4 text-white/80" />
             <span className="text-sm text-white/80">
-              Indicative payback: {results.paybackMonths < 12 ? `${results.paybackMonths} months` : '< 1 year'}
+              Indicative payback: {results.paybackMonths < 12 ? `${results.paybackMonths} ${results.paybackMonths === 1 ? 'month' : 'months'}` : '< 1 year'}
             </span>
           </div>
         </div>
@@ -451,10 +442,10 @@ export function ROICalculator() {
                     <div className="space-y-3 text-sm">
                       <div className="p-3 bg-white/5 rounded-lg">
                         <p className="text-[var(--text-muted)] mb-2">
-                          <span className="text-white font-medium">Current Annual Cost</span> = Claims Volume x Handling Time x Hourly Rate
+                          <span className="text-white font-medium">Current Annual Cost</span> = Claims Volume x Cost per Claim
                         </p>
                         <p className="font-mono text-xs text-[var(--primary)]">
-                          {formatNumber(results.volume)} x {results.details.hoursPerClaim.toFixed(2)} hrs x {currencyConfig.symbol} {inputs.hourlyRate} = {formatCurrency(results.currentAnnualCost)}
+                          {formatNumber(results.volume)} x {currencyConfig.symbol} {inputs.costPerClaim} = {formatCurrency(results.currentAnnualCost)}
                         </p>
                       </div>
 
@@ -564,57 +555,21 @@ export function ROICalculator() {
           </AnimatePresence>
         </div>
 
-        {/* CTA with lead capture */}
-        <div className="glass-panel p-6">
-          {leadSubmitted ? (
-            <div className="text-center py-4">
-              <CheckCircle className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
-              <p className="text-sm text-white font-medium">We&apos;ll send the detailed breakdown to your inbox.</p>
-            </div>
-          ) : (
-            <>
-              <h4 className="font-semibold text-white mb-1">
-                Want a detailed analysis for your operation?
-              </h4>
-              <p className="text-sm text-[var(--text-muted)] mb-4">
-                Get a customized ROI projection based on your specific claims data.
-              </p>
-              <form onSubmit={handleLeadSubmit} className="flex flex-col sm:flex-row gap-3 mb-4">
-                <input
-                  type="email"
-                  required
-                  value={leadEmail}
-                  onChange={(e) => setLeadEmail(e.target.value)}
-                  placeholder="Work email"
-                  className="flex-1 px-4 py-2.5 rounded-lg border border-[var(--border)] bg-white/5 text-white placeholder:text-[var(--text-muted)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
-                />
-                <input
-                  type="text"
-                  required
-                  value={leadCompany}
-                  onChange={(e) => setLeadCompany(e.target.value)}
-                  placeholder="Company"
-                  className="flex-1 px-4 py-2.5 rounded-lg border border-[var(--border)] bg-white/5 text-white placeholder:text-[var(--text-muted)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
-                />
-                <button
-                  type="submit"
-                  className="px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-sm shadow-lg shadow-[var(--primary)]/30 whitespace-nowrap"
-                >
-                  Send Report
-                </button>
-              </form>
-              <div className="flex items-center gap-3 pt-3 border-t border-[var(--border)]">
-                <span className="text-xs text-[var(--text-muted)]">Or</span>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 text-sm text-[var(--primary)] hover:text-[var(--primary-hover)] font-medium transition-colors"
-                >
-                  Book a Demo
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </>
-          )}
+        {/* CTA */}
+        <div className="glass-panel p-6 text-center">
+          <h4 className="font-semibold text-white mb-1">
+            Want a detailed analysis for your operation?
+          </h4>
+          <p className="text-sm text-[var(--text-muted)] mb-4">
+            Book a demo and we&apos;ll build a customized ROI projection based on your specific claims data.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-[var(--primary)]/30"
+          >
+            Book a Demo
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </motion.div>
     </div>

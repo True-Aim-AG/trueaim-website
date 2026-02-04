@@ -103,7 +103,7 @@ export default async function Image() {
               }}
             >
               <div style={{ fontSize: 48, fontWeight: 700, color: "#6366F1" }}>
-                89%
+                92%
               </div>
               <div style={{ fontSize: 16, color: "#94a3b8" }}>Faster</div>
             </div>
@@ -115,7 +115,7 @@ export default async function Image() {
               }}
             >
               <div style={{ fontSize: 48, fontWeight: 700, color: "#6366F1" }}>
-                68%
+                71%
               </div>
               <div style={{ fontSize: 16, color: "#94a3b8" }}>Cost Reduction</div>
             </div>

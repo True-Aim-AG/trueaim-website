@@ -22,13 +22,13 @@ import {
 const complianceBadges = [
   {
     name: "GDPR",
-    status: "compliant",
-    description: "Full compliance with EU data protection regulation",
+    status: "aligned",
+    description: "Architecture aligned with EU data protection regulation",
     icon: Shield,
   },
   {
     name: "EU AI Act",
-    status: "ready",
+    status: "aligned",
     description: "Built for high-risk AI system requirements",
     icon: Eye,
   },
@@ -55,6 +55,12 @@ const complianceBadges = [
     status: "aligned",
     description: "Swiss financial regulator compliance",
     icon: Building2,
+  },
+  {
+    name: "DORA",
+    status: "aligned",
+    description: "Digital Operational Resilience Act alignment for financial entities",
+    icon: Shield,
   },
 ];
 
@@ -189,7 +195,7 @@ export default function TrustPage() {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors"
               >
                 <Download className="w-4 h-4" />
-                Download Trust Pack
+                Request Trust Pack
               </a>
             </div>
           </motion.div>
@@ -460,7 +466,7 @@ export default function TrustPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Download Trust Pack
+              Request Trust Pack
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
               Everything your security and procurement teams need
@@ -539,10 +545,10 @@ export default function TrustPage() {
                 Schedule Security Review
               </Link>
               <a
-                href="mailto:security@trueaim.ai"
+                href="mailto:hello@trueaim.ai"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                security@trueaim.ai
+                hello@trueaim.ai
               </a>
             </div>
           </motion.div>

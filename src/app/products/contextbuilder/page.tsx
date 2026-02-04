@@ -21,7 +21,7 @@ const pipelineSteps = [
   {
     step: 1,
     title: "Ingest",
-    description: "Transforms documents into machine-readable text/layout using Azure DI, vision models, OCR.",
+    description: "Transforms documents into machine-readable text and layout using advanced OCR and vision models.",
     icon: Upload,
   },
   {

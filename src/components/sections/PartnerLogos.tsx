@@ -24,9 +24,6 @@ const partners = [
   },
 ];
 
-// Exactly 2 copies: the -50% translateX loops the first half seamlessly
-const duplicatedPartners = [...partners, ...partners];
-
 export function PartnerLogos() {
   return (
     <motion.div
@@ -41,26 +38,19 @@ export function PartnerLogos() {
         Trusted Partners
       </p>
 
-      {/* Marquee Container with Light Background */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-50 via-white to-slate-50 py-6 shadow-inner">
+      {/* Static Logo Display */}
+      <div className="relative rounded-2xl bg-gradient-to-r from-slate-50 via-white to-slate-50 py-8 shadow-inner">
         {/* Subtle top/bottom border lines */}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
-        {/* Left Fade Gradient */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-
-        {/* Right Fade Gradient */}
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
-
-        {/* Animated Track */}
-        <div className="flex animate-marquee w-max">
-          {duplicatedPartners.map((partner, index) => (
+        <div className="flex items-center justify-center gap-20 md:gap-32 lg:gap-40 flex-wrap px-8">
+          {partners.map((partner) => (
             <div
-              key={`${partner.name}-${index}`}
-              className="flex-shrink-0 mx-16 flex items-center justify-center group"
+              key={partner.name}
+              className="flex items-center justify-center group"
             >
-              <div className="relative transition-transform duration-300 ease-out group-hover:scale-110">
+              <div className="relative transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                 <Image
                   src={partner.logo}
                   alt={`${partner.name} logo`}
@@ -78,7 +68,7 @@ export function PartnerLogos() {
         </div>
       </div>
 
-      {/* Subtle ambient glow under the marquee */}
+      {/* Subtle ambient glow */}
       <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-2/3 h-8 bg-gradient-to-t from-[var(--primary)]/5 to-transparent blur-xl rounded-full" />
     </motion.div>
   );

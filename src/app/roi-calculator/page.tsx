@@ -86,7 +86,7 @@ export default function ROICalculatorPage() {
               <div className="w-12 h-12 rounded-xl bg-[var(--primary)]/20 flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-[var(--primary)]" />
               </div>
-              <h3 className="font-semibold text-white mb-2">89% Faster Processing</h3>
+              <h3 className="font-semibold text-white mb-2">92% Faster Processing</h3>
               <p className="text-sm text-[var(--text-muted)]">
                 MIRA processes most claims in under 3 seconds. Complex cases still go to handlers, but with pre-analyzed data.
               </p>

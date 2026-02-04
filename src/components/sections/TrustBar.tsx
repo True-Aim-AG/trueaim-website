@@ -12,17 +12,17 @@ const awards = [
   },
   {
     country: "Germany",
-    title: "Digitale Leuchtturm Versicherungen — 1. Rang",
+    title: "Digitale Leuchtturm Versicherungen – 1. Rang",
   },
   {
     country: "Italy",
-    title: "Miglior InsurTech — IKN Awards",
+    title: "Miglior InsurTech – IKN Awards",
   },
 ];
 
 export function TrustBar() {
   return (
-    <section className="py-12 px-6 border-y border-[var(--border)]">
+    <section className="py-16 px-6 border-y border-[var(--border)]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,8 +31,11 @@ export function TrustBar() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider">
+          <p className="text-lg font-semibold text-[var(--text-primary)]">
             Backed by Switzerland&apos;s Innovation Ecosystem
+          </p>
+          <p className="text-sm text-[var(--text-secondary)] mt-2">
+            Award-winning technology backed by Innosuisse, ZHAW, and Yarowa AG
           </p>
         </motion.div>
 

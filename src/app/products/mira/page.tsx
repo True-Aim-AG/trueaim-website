@@ -60,24 +60,24 @@ const capabilities = [
   },
   {
     title: "Multi-Vertical Support",
-    description: "Insurance: Health, Pet, Motor, Household. Tax: Withholding claims, Relief at Source. Travel: Flight refunds, train refunds, accommodation.",
+    description: "Insurance: Health, Pet, Motor, Household, Life. Travel: Flight refunds, train refunds, accommodation. Warranty: Vehicle, electronics, extended coverage.",
     icon: Globe,
   },
   {
     title: "Integration Ready",
-    description: "API-first architecture. Compatible with Guidewire, Duck Creek, and standard ERPs. Works alongside existing claims systems without rip-and-replace. Flexible deployment: cloud or on-premise.",
+    description: "API-first architecture. Works alongside existing claims management systems without rip-and-replace. Flexible deployment: cloud or on-premise.",
     icon: Plug,
   },
   {
-    title: "Compliance Built-In",
+    title: "Compliance by Design",
     description: "Every decision linked to legal text. Complete audit logs for regulator review. Aligned with EU AI Act requirements.",
     icon: Shield,
   },
 ];
 
 const metrics = [
-  { value: "89%", label: "Faster than manual review", prefix: "UP TO", icon: Clock },
-  { value: "68%", label: "Reduction in handling costs", prefix: "UP TO", icon: DollarSign },
+  { value: "92%", label: "Faster than manual review", prefix: "UP TO", icon: Clock },
+  { value: "71%", label: "Reduction in handling costs", prefix: "UP TO", icon: DollarSign },
   { value: "2-5%", label: "Leakage reduction from closed file reviews", icon: TrendingDown },
 ];
 
@@ -102,8 +102,11 @@ export default function MiraPage() {
               MIRA: The Neuro-Symbolic Decisioning Engine
             </h1>
 
-            <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-4 leading-relaxed">
               Transform complex policy terms into automated, fully-deterministic claim decisions. Every outcome traceable to the legal text.
+            </p>
+            <p className="text-base text-[var(--text-muted)] mb-8 leading-relaxed">
+              Works alongside existing claims systems. No rip-and-replace required.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -359,7 +362,7 @@ export default function MiraPage() {
             className="glass-panel p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              See MIRA on Your Claims
+              Test MIRA on Your Claims
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">
               We&apos;ll process a sample of your closed claims and show you exactly how MIRA would have handled them.

@@ -139,7 +139,7 @@ export function ClaimsWorkflowMap({ variant = "full" }: ClaimsWorkflowMapProps) 
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-amber-400" />
-              <span className="text-[var(--text-muted)]">Human Review Optional</span>
+              <span className="text-[var(--text-muted)]">Human in the Loop</span>
             </div>
           </div>
         </div>
@@ -325,7 +325,7 @@ export function ClaimsWorkflowMap({ variant = "full" }: ClaimsWorkflowMapProps) 
             <div className="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center">
               <UserCheck className="w-3 h-3 text-amber-600" />
             </div>
-            <span className="text-[var(--text-muted)]">Human-in-the-Loop Optional</span>
+            <span className="text-[var(--text-muted)]">Human in the Loop</span>
           </div>
           <div className="flex items-center gap-2">
             <Info className="w-4 h-4 text-[var(--text-muted)]" />

@@ -53,9 +53,9 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6"
           >
-            Neuro-Symbolic AI for
+            Automate Claims Decisions.
             <br />
-            <span className="text-[var(--primary)]">Auditable Claims Decisions</span>
+            <span className="text-[var(--primary)]">Audit Every One.</span>
           </motion.h1>
 
           <motion.p
@@ -64,8 +64,8 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-4 leading-relaxed"
           >
-            Combine the adaptability of agentic AI with the precision of deterministic logic.
-            Deliver compliant, explainable decisions at scale. Every outcome traceable to the source.
+            Turn policy terms into instant, deterministic claim decisions – fully traceable,
+            fully compliant, no black boxes.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -73,7 +73,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-base text-[var(--text-muted)] max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Automate claim decisions with full audit trails, deterministic outputs, and human oversight at every step.
+            Built for insurers who need speed without sacrificing explainability.
           </motion.p>
 
           <motion.div

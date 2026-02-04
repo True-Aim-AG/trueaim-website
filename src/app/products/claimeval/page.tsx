@@ -84,7 +84,7 @@ export default function ClaimEvalPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                Request Analysis
+                Request a Pilot
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -307,7 +307,7 @@ export default function ClaimEvalPage() {
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-emerald-500 text-white font-medium hover:bg-emerald-600 transition-colors text-lg shadow-lg shadow-emerald-500/30"
             >
-              Request Analysis
+              Request a Pilot
             </Link>
           </motion.div>
         </div>
