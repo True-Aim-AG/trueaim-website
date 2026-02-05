@@ -24,7 +24,7 @@ export function CTA() {
           </h2>
 
           <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto">
-            Book a 30-minute demo to see how TrueAim.ai can transform your claims operations.
+            Book a 30-minute demo to see how True Aim can transform your claims operations.
           </p>
 
           <motion.div
@@ -55,23 +55,6 @@ export function CTA() {
                   Get ROI Estimate
                 </Link>
               </motion.div>
-            </div>
-            {/* Tertiary links */}
-            <div className="flex flex-wrap gap-6 justify-center text-sm mt-2">
-              <Link
-                href="/trust"
-                className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors inline-flex items-center gap-1"
-              >
-                <FileText className="w-4 h-4" />
-                Security & Compliance
-              </Link>
-              <Link
-                href="/contact"
-                className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
-              >
-                Contact Sales
-                <ArrowRight className="w-4 h-4 inline ml-1" />
-              </Link>
             </div>
           </motion.div>
         </motion.div>

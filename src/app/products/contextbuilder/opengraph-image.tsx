@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "ContextBuilder - Claims Document Pipeline | TrueAim.ai";
+export const alt = "ContextBuilder - Claims Document Pipeline | True Aim";
 export const size = {
   width: 1200,
   height: 630,
@@ -143,7 +143,7 @@ export default async function Image() {
               opacity: 0.7,
             }}
           >
-            <div style={{ fontSize: 24, color: "white" }}>TrueAim</div>
+            <div style={{ fontSize: 24, color: "white" }}>True Aim</div>
             <div style={{ fontSize: 24, color: "#2563EB" }}>.ai</div>
           </div>
         </div>

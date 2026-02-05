@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Cookie Policy",
   description:
-    "TrueAim AG cookie policy. Learn about the cookies we use, their purposes, and how to manage your cookie preferences.",
+    "True Aim AG cookie policy. Learn about the cookies we use, their purposes, and how to manage your cookie preferences.",
   alternates: {
     canonical: "https://trueaim.ai/cookies",
   },

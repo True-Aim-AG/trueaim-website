@@ -40,7 +40,7 @@ export const organizationJsonLd = {
 export const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "TrueAim.ai",
+  name: "True Aim",
   url: "https://trueaim.ai",
   description:
     "Neuro-symbolic AI for auditable insurance claims decisions.",

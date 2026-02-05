@@ -7,9 +7,6 @@ import {
   ArrowRight,
   Quote,
   Users,
-  Briefcase,
-  GraduationCap,
-  Building2,
   Linkedin
 } from "lucide-react";
 
@@ -18,7 +15,7 @@ const founders = [
     name: "Reuben John",
     role: "Co-Founder & CEO",
     tagline: "2x Founder | Attorney | Former MD Largest Global Withholding Tax Claim Company",
-    bio: "Reuben has led high-stakes operational and regulatory projects across Europe and Africa, overseeing market expansion, complex digitization and compliance initiatives for multinational clients. His background spans enterprise operations and multi-jurisdictional regulatory strategy. At TrueAim.ai he drives vision, commercial strategy and end-to-end go-to-market execution, overseeing customer engagement, early adoption and production rollout.",
+    bio: "Reuben has led high-stakes operational and regulatory projects across Europe and Africa, overseeing market expansion, complex digitization and compliance initiatives for multinational clients. His background spans enterprise operations and multi-jurisdictional regulatory strategy. At True Aim he drives vision, commercial strategy and end-to-end go-to-market execution.",
     linkedin: "https://www.linkedin.com/in/reubenj/",
     image: "/team/reuben-john.jpg",
   },
@@ -26,7 +23,7 @@ const founders = [
     name: "Frederic Brunner",
     role: "Co-Founder & CTO",
     tagline: "Ex-Zurich Insurance | Automation and System Design Expert",
-    bio: "A veteran technologist with 30+ years in software development and 20+ years in enterprise automation, Frederic combines deep architectural expertise with practical delivery experience. He previously led technology transformation at Guidewire. At TrueAim.ai he drives technological development, ensuring the hybrid Agentic-AI engine meets the rigorous demands of regulated industries \u2014 from pilot to production.",
+    bio: "A veteran technologist with 30+ years in software development and 20+ years in enterprise automation, Frederic combines deep architectural expertise with practical delivery experience. He previously led technology transformation at Guidewire. At True Aim he drives technological development, ensuring the hybrid Agentic-AI engine meets the rigorous demands of regulated industries.",
     linkedin: "https://www.linkedin.com/in/frdbrunner/",
     image: "/team/frederic-brunner.jpg",
   },
@@ -54,6 +51,7 @@ const advisors: Advisor[] = [
     name: "Dr. Lukas Lichtensteiger",
     title: "Harvard | Serial Entrepreneur & CTO | Founder in AI & Robotics | ZHAW Researcher",
     relevance: "Technology architecture & scaling",
+    image: "/team/lukas-lichtensteiger.jpg",
   },
   {
     name: "Dave Stoll",
@@ -64,6 +62,7 @@ const advisors: Advisor[] = [
     name: "Dr. Dandolo Flumini",
     title: "Original developer of Mira technology | PhD Math & Computer Science | ZHAW Researcher",
     relevance: "Core logic engine & research",
+    image: "/team/dandolo-flumini.jpg",
   },
   {
     name: "Bassil Eid",
@@ -75,18 +74,18 @@ const advisors: Advisor[] = [
 const partners = [
   {
     name: "Yarowa AG",
-    description: "Lead investor and 30% shareholder. Swiss InsurTech platform with direct access to insurer distribution and 100+ enterprise relationships.",
-    icon: Building2,
+    description: "Strategic investor and partner. Swiss InsurTech platform with direct access to insurer distribution and enterprise relationships.",
+    image: "/partners/yarowa.png",
   },
   {
     name: "ZHAW",
-    description: "Zurich University of Applied Sciences. Research partnership on logic extraction. Home of TrueAim.ai technology's original development.",
-    icon: GraduationCap,
+    description: "Zurich University of Applied Sciences. Research partnership on logic extraction. Home of True Aim technology's original development.",
+    image: "/partners/zhaw.jpg",
   },
   {
     name: "Innosuisse",
     description: "Switzerland's official innovation agency. Non-dilutive grant recipient. National-level validation of our research and technology.",
-    icon: Briefcase,
+    image: "/partners/innosuisse.png",
   },
 ];
 
@@ -113,7 +112,7 @@ export default function CompanyPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-              TrueAim.ai pioneers neuro-symbolic AI for regulated industries. We&apos;re building the decisioning layer that powers aligned, explainable decisions at scale.
+              True Aim pioneers neuro-symbolic AI for regulated industries. We&apos;re building the decisioning layer that powers aligned, explainable decisions at scale.
             </p>
           </motion.div>
         </div>
@@ -133,7 +132,7 @@ export default function CompanyPage() {
               <Quote className="w-6 h-6 text-[var(--primary)]" />
             </div>
             <blockquote className="text-xl md:text-2xl text-[var(--text-primary)] leading-relaxed italic">
-              &ldquo;Eliminate the AI &apos;black box&apos; problem in insurance by combining deterministic decisioning with generative AI. Deliver fast, fair, integrated and auditable claim determinations — engineered to comply with the highest standards of data protection, information security, AI governance and industry oversight.&rdquo;
+              &ldquo;Eliminate the AI &apos;black box&apos; problem in insurance by combining deterministic decisioning with generative AI. Deliver fast, fair, integrated and auditable claim determinations - engineered to comply with the highest standards of data protection, information security, AI governance and industry oversight.&rdquo;
             </blockquote>
             <p className="mt-6 text-[var(--text-muted)] font-medium">Our Mission</p>
           </motion.div>
@@ -154,7 +153,7 @@ export default function CompanyPage() {
               Leadership Team
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Deep expertise in insurance, technology, and regulation
+              Deep expertise in insurance, technology and regulation
             </p>
           </motion.div>
 
@@ -299,8 +298,14 @@ export default function CompanyPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="glass-panel glass-panel-hover p-8"
               >
-                <div className="w-14 h-14 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-6">
-                  <partner.icon className="w-7 h-7 text-emerald-400" />
+                <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center mb-6 p-2">
+                  <Image
+                    src={partner.image}
+                    alt={partner.name}
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
                   {partner.name}

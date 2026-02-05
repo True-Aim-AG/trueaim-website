@@ -21,21 +21,21 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">1. Acceptance of Terms</h2>
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              By accessing or using the TrueAim.ai website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+              By accessing or using the True Aim website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">2. Services</h2>
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              TrueAim.ai provides AI-powered claims decisioning software, including MIRA, ContextBuilder, and ClaimEval. Access to these services is subject to separate commercial agreements. This website provides general information about our products and company.
+              True Aim provides AI-powered claims decisioning software, including MIRA, ContextBuilder, and ClaimEval. Access to these services is subject to separate commercial agreements. This website provides general information about our products and company.
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">3. Intellectual Property</h2>
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              All content, trademarks, and intellectual property on this website are owned by TrueAim AG or its licensors. You may not reproduce, distribute, or create derivative works from any content without our prior written consent.
+              All content, trademarks, and intellectual property on this website are owned by True Aim AG or its licensors. You may not reproduce, distribute, or create derivative works from any content without our prior written consent.
             </p>
           </section>
 
@@ -49,7 +49,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">5. Limitation of Liability</h2>
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              TrueAim AG provides this website and its content on an &ldquo;as is&rdquo; basis. We make no warranties regarding the accuracy, completeness, or suitability of information provided. To the maximum extent permitted by law, TrueAim AG shall not be liable for any indirect, incidental, or consequential damages arising from use of our website or services.
+              True Aim AG provides this website and its content on an &ldquo;as is&rdquo; basis. We make no warranties regarding the accuracy, completeness, or suitability of information provided. To the maximum extent permitted by law, True Aim AG shall not be liable for any indirect, incidental, or consequential damages arising from use of our website or services.
             </p>
           </section>
 

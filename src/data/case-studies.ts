@@ -39,9 +39,9 @@ export const caseStudies: CaseStudy[] = [
       isAnonymized: true,
     },
     challenge:
-      "Each warranty claim required 15-30 minutes of manual cross-referencing across 5 documents in 3 languages, with 14 distinct document types per workflow. An LLM-only approach achieved just 18% accuracy due to hallucinated part names, invented coverage rules, and unreliable financial calculations.",
+      "Each warranty claim required 15-30 minutes of manual cross-referencing across 5 documents in 3 languages, with 14 distinct document types per workflow. An LLM-only approach achieved just 18% accuracy due to hallucinated part names, invented coverage rules and unreliable financial calculations.",
     solution:
-      "Deployed ContextBuilder for multilingual document ingestion, classification, and structured extraction across 14 document types. MIRA\u2019s hybrid decisioning pipeline runs 11 deterministic screening checks and a three-tier coverage matching system (rules, keywords, LLM fallback). ClaimEval provides a QA console with full provenance highlighting and three-bucket triage.",
+      "Deployed ContextBuilder for multilingual document ingestion, classification and structured extraction across 14 document types. MIRA\u2019s hybrid decisioning pipeline runs 11 deterministic screening checks and a three-tier coverage matching system (rules, keywords, LLM fallback). ClaimEval provides a QA console with full provenance highlighting and three-bucket triage.",
     products: ["mira", "contextbuilder", "claimeval"],
     metrics: [
       { label: "Decision Accuracy", value: "98%", improvement: "from 18% baseline" },
@@ -53,14 +53,14 @@ export const caseStudies: CaseStudy[] = [
     quote: {
       text: "The business logic is harder than the AI. Getting the payout formula to match the insurer\u2019s internal calculation requires working with the actual adjuster, walking through calculations claim by claim.",
       author: "Lead Engineer",
-      role: "TrueAim.ai",
+      role: "True Aim",
     },
     highlights: [
       "14 document types classified at near-100% accuracy",
       "51 fields extracted per warranty policy with confidence scoring",
       "Full provenance chain from decision back to source page and character position",
       "Three-tier coverage matching: deterministic rules, keyword synonyms, LLM fallback",
-      "Multilingual keyword matching across German, French, and Italian",
+      "Multilingual keyword matching across German, French and Italian",
       "850+ unit tests covering the full pipeline",
     ],
   },
@@ -111,7 +111,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "High volume of routine claims requiring manual review, leading to significant handling costs and delayed customer payouts.",
     solution:
-      "Implemented full TrueAim stack: ContextBuilder for medical document processing, MIRA for coverage decisions, and ClaimEval for quality assurance.",
+      "Implemented full True Aim stack: ContextBuilder for medical document processing, MIRA for coverage decisions and ClaimEval for quality assurance.",
     products: ["mira", "contextbuilder", "claimeval"],
     metrics: [
       { label: "Cost Reduction", value: "71%", improvement: "handling costs" },

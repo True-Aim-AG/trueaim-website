@@ -383,7 +383,7 @@ export default function ContactPage() {
                           className="mt-1 w-5 h-5 rounded border-[var(--border)] bg-white/5 text-[var(--primary)] focus:ring-[var(--primary)]"
                         />
                         <span className="text-sm text-[var(--text-secondary)]">
-                          I agree to receive communications from TrueAim.ai <span className="text-red-400">*</span>
+                          I agree to receive communications from True Aim <span className="text-red-400">*</span>
                         </span>
                       </label>
                       {errors.consent && (
@@ -474,7 +474,7 @@ export default function ContactPage() {
                   Security Assessment
                 </h3>
                 <p className="text-sm text-[var(--text-secondary)] mb-4">
-                  Need a security assessment? Request our Trust Pack for details on our security architecture, compliance posture, and data protection controls.
+                  Need a security assessment? Request our Trust Pack for details on our security architecture, compliance posture and data protection controls.
                 </p>
                 <Link
                   href="/trust#trust-pack"

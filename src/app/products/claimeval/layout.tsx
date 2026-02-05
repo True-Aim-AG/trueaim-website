@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Scale QA beyond sampling. Run consistent inspections across your entire claims portfolio. Surface exceptions, prioritize human effort with intelligent risk scoring.",
   openGraph: {
-    title: "ClaimEval - Claims Quality Assurance | TrueAim.ai",
+    title: "ClaimEval - Claims Quality Assurance | True Aim",
     description:
       "Scale QA beyond sampling. Run consistent inspections across your entire claims portfolio. Surface exceptions, prioritize human effort.",
     url: "https://trueaim.ai/products/claimeval",
@@ -27,7 +27,7 @@ const claimEvalJsonLd = {
   url: "https://trueaim.ai/products/claimeval",
   author: {
     "@type": "Organization",
-    name: "TrueAim AG",
+    name: "True Aim AG",
     url: "https://trueaim.ai",
   },
   offers: {

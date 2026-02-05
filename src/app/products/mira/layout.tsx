@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Transform complex policy terms into automated, fully-deterministic claim decisions. Every outcome traceable to the legal text. The world's first neuro-symbolic engine for claims.",
   openGraph: {
-    title: "MIRA - Neuro-Symbolic Decisioning Engine | TrueAim.ai",
+    title: "MIRA - Neuro-Symbolic Decisioning Engine | True Aim",
     description:
       "Transform complex policy terms into automated, fully-deterministic claim decisions. Every outcome traceable to the legal text.",
     url: "https://trueaim.ai/products/mira",

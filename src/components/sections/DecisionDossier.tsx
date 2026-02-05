@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import {
   FileText,
   Link2,
-  History,
   CheckCircle,
   ArrowRight,
   Scale,
@@ -80,13 +79,13 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-medium mb-4">
                   <BookOpen className="w-4 h-4" />
-                  Unique to TrueAim
+                  Unique to True Aim
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
                   The Decision Dossier
                 </h2>
                 <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
-                  Every claim decision produces a complete, replayable audit record. Unlike black-box AI, every TrueAim decision can be <strong className="text-[var(--text-primary)]">replayed, explained, and defended</strong> in audit or dispute.
+                  Every claim decision produces a complete, replayable audit record. Unlike black-box AI, every True Aim decision can be <strong className="text-[var(--text-primary)]">replayed, explained, defended</strong> in audit or dispute.
                 </p>
                 <Link
                   href="/technology#decision-dossier"
@@ -127,9 +126,6 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                       <span className="text-[var(--text-muted)]">Confidence: <span className="font-mono-data">98.5%</span></span>
                     </div>
                   </div>
-                </div>
-                <div className="absolute -bottom-2 -right-2 glass-panel p-3 transform -rotate-3">
-                  <History className="w-5 h-5 text-[var(--primary)]" />
                 </div>
               </div>
             </div>
@@ -285,7 +281,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
             {/* Differentiator callout */}
             <div className="mt-6 p-4 glass-panel">
               <p className="text-sm text-[var(--text-secondary)] text-center">
-                <strong className="text-[var(--text-primary)]">Unlike black-box AI:</strong> Every TrueAim decision can be replayed, explained, and defended.
+                <strong className="text-[var(--text-primary)]">Unlike black-box AI:</strong> Every True Aim decision can be replayed, explained, defended.
               </p>
             </div>
           </motion.div>

@@ -24,8 +24,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       setThemeState(stored);
       document.documentElement.setAttribute("data-theme", stored);
     } else {
+      // Default to dark mode on mobile (< 768px) or if system prefers dark
+      const isMobile = window.innerWidth < 768;
       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const initial = prefersDark ? "dark" : "light";
+      const initial = (isMobile || prefersDark) ? "dark" : "light";
       setThemeState(initial);
       document.documentElement.setAttribute("data-theme", initial);
     }

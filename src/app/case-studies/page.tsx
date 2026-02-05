@@ -53,7 +53,7 @@ export default function CaseStudiesPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-              See how insurers are using TrueAim.ai to transform their claims
+              See how insurers are using True Aim to transform their claims
               operations with measurable, auditable results.
             </p>
           </motion.div>

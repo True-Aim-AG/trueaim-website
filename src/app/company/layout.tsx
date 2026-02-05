@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Company - About TrueAim.ai",
+  title: "Company - About True Aim",
   description:
     "Swiss precision meets auditable AI. Meet our leadership team, advisors, and partners including Yarowa AG, ZHAW, and Innosuisse. Backed by Switzerland's innovation ecosystem.",
   openGraph: {
-    title: "Company - About TrueAim.ai",
+    title: "Company - About True Aim",
     description:
       "Swiss precision meets auditable AI. Meet our leadership team, advisors, and partners. Backed by Switzerland's innovation ecosystem.",
     url: "https://trueaim.ai/company",

@@ -8,22 +8,22 @@ const partners = [
   {
     name: "ZHAW",
     logo: "/partners/zhaw.jpg",
-    width: 160,
-    height: 120,
+    width: 200,
+    height: 150,
     href: "/partners/zhaw",
   },
   {
     name: "Yarowa",
     logo: "/partners/yarowa.png",
-    width: 200,
-    height: 56,
+    width: 240,
+    height: 68,
     href: "/partners/yarowa",
   },
   {
     name: "Innosuisse",
     logo: "/partners/innosuisse.png",
-    width: 280,
-    height: 80,
+    width: 340,
+    height: 96,
     href: "/partners/innosuisse",
   },
 ];
@@ -38,7 +38,7 @@ export function PartnerLogos() {
       className="relative mt-10"
     >
       {/* Section Label */}
-      <p className="text-center text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-6">
+      <p className="text-center text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-6">
         Trusted Partners
       </p>
 

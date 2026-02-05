@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* Exclude non-source directories from Tailwind's file scanner.
+   Binary files (PDFs, images, DOCX) contain byte sequences that
+   Tailwind misinterprets as CSS escape sequences, causing
+   RangeError: Invalid code point. See tailwindlabs/tailwindcss#18311 */
+@source not "../../docs";
+@source not "../../build-output.txt";
+@source not "../../nul";
+
 /* TrueAim.ai Design System — Theme Variables */
 
 /* ===== Dark Theme (Default) ===== */

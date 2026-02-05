@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Turn messy claim documents into structured, trusted data. AI-powered document ingestion with human review when needed. 97% accuracy, 97% document coverage.",
   openGraph: {
-    title: "ContextBuilder - Claims Document Pipeline | TrueAim.ai",
+    title: "ContextBuilder - Claims Document Pipeline | True Aim",
     description:
       "Turn messy claim documents into structured, trusted data. AI-powered document ingestion with human review when needed.",
     url: "https://trueaim.ai/products/contextbuilder",
@@ -27,7 +27,7 @@ const contextBuilderJsonLd = {
   url: "https://trueaim.ai/products/contextbuilder",
   author: {
     "@type": "Organization",
-    name: "TrueAim AG",
+    name: "True Aim AG",
     url: "https://trueaim.ai",
   },
   offers: {

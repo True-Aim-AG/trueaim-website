@@ -29,8 +29,8 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL("https://trueaim.ai"),
   title: {
-    default: "TrueAim.ai | Neuro-Symbolic AI for Auditable Claims Decisions",
-    template: "%s | TrueAim.ai",
+    default: "True Aim | Neuro-Symbolic AI for Auditable Claims Decisions",
+    template: "%s | True Aim",
   },
   description:
     "Combine agentic AI with deterministic logic for claims automation. Every decision traceable, aligned with EU AI Act requirements. Swiss precision meets auditable AI.",
@@ -42,19 +42,19 @@ export const metadata: Metadata = {
     "auditable AI",
     "claims decisioning",
   ],
-  authors: [{ name: "TrueAim.ai" }],
+  authors: [{ name: "True Aim" }],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://trueaim.ai",
-    siteName: "TrueAim.ai",
-    title: "TrueAim.ai | Neuro-Symbolic AI for Auditable Claims Decisions",
+    siteName: "True Aim",
+    title: "True Aim | Neuro-Symbolic AI for Auditable Claims Decisions",
     description:
       "Combine agentic AI with deterministic logic for claims automation. Every decision traceable, aligned with EU AI Act requirements.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TrueAim.ai | Neuro-Symbolic AI for Auditable Claims Decisions",
+    title: "True Aim | Neuro-Symbolic AI for Auditable Claims Decisions",
     description:
       "Combine agentic AI with deterministic logic for claims automation. Every decision traceable, aligned with EU AI Act requirements.",
   },
@@ -85,7 +85,7 @@ export default function RootLayout({
                 try {
                   var theme = localStorage.getItem('theme');
                   if (!theme) {
-                    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                    theme = (window.innerWidth < 768 || window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
                   }
                   document.documentElement.setAttribute('data-theme', theme);
                 } catch (e) {}

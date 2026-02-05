@@ -124,7 +124,7 @@ export function SocialProof() {
                       {metric.label}
                     </div>
                     {metric.improvement && (
-                      <div className="text-[10px] text-[var(--secondary)] mt-1">
+                      <div className="text-xs text-[var(--secondary)] mt-1">
                         {metric.improvement}
                       </div>
                     )}

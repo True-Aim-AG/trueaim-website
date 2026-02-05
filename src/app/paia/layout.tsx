@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "PAIA Manual",
   description:
-    "TrueAim AG PAIA manual. Promotion of Access to Information Act compliance documentation for TrueAim AG.",
+    "True Aim AG PAIA manual. Promotion of Access to Information Act compliance documentation for True Aim AG.",
   alternates: {
     canonical: "https://trueaim.ai/paia",
   },

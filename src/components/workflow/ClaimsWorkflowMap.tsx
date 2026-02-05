@@ -20,7 +20,7 @@ const workflowSteps = [
     id: "intake",
     icon: FileText,
     label: "Intake",
-    description: "Documents received via email, portal, or system export",
+    description: "Documents received via email, portal or system export",
     businessValue: "Eliminate manual sorting and routing of incoming documents",
     automated: true,
     automationDetail: "ContextBuilder auto-ingests and classifies documents",
@@ -116,13 +116,26 @@ export function ClaimsWorkflowMap({ variant = "full" }: ClaimsWorkflowMapProps) 
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex flex-col items-center"
+                  className="flex flex-col items-center max-w-[140px]"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-[var(--primary-light)] flex items-center justify-center mb-2">
-                    <step.icon className="w-8 h-8 text-[var(--primary)]" />
+                  <div className="relative">
+                    <div className="w-16 h-16 rounded-2xl bg-[var(--primary-light)] flex items-center justify-center mb-2">
+                      <step.icon className="w-8 h-8 text-[var(--primary)]" />
+                    </div>
+                    {/* Automation indicator badge */}
+                    <div className={`absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center ${
+                      step.hitlOptional ? 'bg-amber-100' : 'bg-emerald-100'
+                    }`}>
+                      {step.hitlOptional ? (
+                        <UserCheck className="w-3 h-3 text-amber-600" />
+                      ) : (
+                        <Zap className="w-3 h-3 text-emerald-600" />
+                      )}
+                    </div>
                   </div>
                   <span className="text-sm font-medium text-[var(--text-primary)]">{step.label}</span>
-                  <span className="text-xs text-[var(--secondary)] font-medium">{step.automatedTime}</span>
+                  <span className="text-xs text-[var(--text-muted)] text-center mt-0.5">{step.description}</span>
+                  <span className="text-xs text-[var(--secondary)] font-medium mt-1">{step.automatedTime}</span>
                 </motion.div>
                 {index < workflowSteps.length - 1 && (
                   <ArrowRight className="w-6 h-6 text-slate-300 mx-4 hidden md:block" />
@@ -134,11 +147,15 @@ export function ClaimsWorkflowMap({ variant = "full" }: ClaimsWorkflowMapProps) 
           {/* Legend */}
           <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-sm">
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-[var(--secondary)]" />
+              <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+                <Zap className="w-3 h-3 text-emerald-600" />
+              </div>
               <span className="text-[var(--text-muted)]">Fully Automated</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-amber-400" />
+              <div className="w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
+                <UserCheck className="w-3 h-3 text-amber-600" />
+              </div>
               <span className="text-[var(--text-muted)]">Human in the Loop</span>
             </div>
           </div>
@@ -162,7 +179,7 @@ export function ClaimsWorkflowMap({ variant = "full" }: ClaimsWorkflowMapProps) 
             Claims Workflow Automation
           </h2>
           <p className="text-lg text-[var(--text-secondary)] mb-6">
-            See how TrueAim.ai transforms each step of the claims lifecycle
+            See how True Aim transforms each step of the claims lifecycle
           </p>
 
           {/* Toggle */}
@@ -175,7 +192,7 @@ export function ClaimsWorkflowMap({ variant = "full" }: ClaimsWorkflowMapProps) 
                   : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'
               }`}
             >
-              With TrueAim
+              With True Aim
             </button>
             <button
               onClick={() => setShowBefore(true)}
@@ -295,7 +312,7 @@ export function ClaimsWorkflowMap({ variant = "full" }: ClaimsWorkflowMapProps) 
               </div>
               <div className="text-sm text-[var(--text-muted)]">Total processing time</div>
               {!showBefore && (
-                <div className="text-xs text-[var(--text-muted)] mt-1">You control thresholds, exceptions, and approval gates.</div>
+                <div className="text-xs text-[var(--text-muted)] mt-1">You control thresholds, exceptions and approval gates.</div>
               )}
             </div>
             <div>

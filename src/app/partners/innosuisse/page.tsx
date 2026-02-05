@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ExternalLink, Award, Shield, Landmark, Microscope } from "lucide-react";
 
 export default function InnosuissePage() {
@@ -12,6 +13,18 @@ export default function InnosuissePage() {
             Federal Innovation Partner
           </div>
 
+          <div className="flex justify-center mb-8">
+            <div className="bg-white p-4 rounded-xl">
+              <Image
+                src="/partners/innosuisse.png"
+                alt="Innosuisse logo"
+                width={340}
+                height={96}
+                className="object-contain"
+              />
+            </div>
+          </div>
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
             Innosuisse-Funded
             <br />
@@ -19,7 +32,7 @@ export default function InnosuissePage() {
           </h1>
 
           <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-            TrueAim.ai&apos;s core technology is backed by Innosuisse, the Swiss Innovation Agency, through a CHF 300,000 research grant &ndash; national-level validation of our approach to auditable AI.
+            True Aim&apos;s core technology is backed by Innosuisse, the Swiss Innovation Agency, through a competitive research grant - national-level validation of our approach to auditable AI.
           </p>
         </div>
       </section>
@@ -48,7 +61,7 @@ export default function InnosuissePage() {
                 Competitive Excellence
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Innosuisse grants are awarded through rigorous selection criteria. Receiving funding demonstrates the technical merit and market viability of TrueAim.ai&apos;s neuro-symbolic approach.
+                Innosuisse grants are awarded through rigorous selection criteria. Receiving funding demonstrates the technical merit and market viability of True Aim&apos;s neuro-symbolic approach.
               </p>
             </div>
 
@@ -60,7 +73,7 @@ export default function InnosuissePage() {
                 National Strategic Priority
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                The grant reflects Switzerland&apos;s national commitment to advancing trustworthy AI in regulated industries. TrueAim.ai is at the forefront of this initiative.
+                The grant reflects Switzerland&apos;s national commitment to advancing trustworthy AI in regulated industries. True Aim is at the forefront of this initiative.
               </p>
             </div>
 
@@ -72,7 +85,7 @@ export default function InnosuissePage() {
                 ZHAW Collaboration
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                The research programme is conducted in partnership with ZHAW &ndash; School of Engineering, Institute of Applied IT, Centre for AI &ndash; and is led by Dr. Dandolo Flumini.
+                The research programme is conducted in partnership with ZHAW (School of Engineering, Institute of Applied IT, Centre for AI) and is led by Dr. Dandolo Flumini.
               </p>
             </div>
           </div>
@@ -84,7 +97,7 @@ export default function InnosuissePage() {
         <div className="max-w-4xl mx-auto">
           <div className="glass-panel p-8 md:p-12 text-center">
             <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-2">Research Grant</p>
-            <p className="text-5xl font-bold text-[var(--primary)] font-mono-data mb-4">CHF 300,000</p>
+            <p className="text-3xl font-bold text-[var(--primary)] mb-4">Innosuisse Research Grant</p>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto">
               Non-dilutive funding from the Swiss Confederation to advance neuro-symbolic AI for deterministic claims decisioning in regulated industries.
             </p>

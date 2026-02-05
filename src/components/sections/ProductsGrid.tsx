@@ -27,7 +27,7 @@ const products = [
   {
     name: "Decision Dossier",
     badge: "Audit Record",
-    description: "Every case produces a fully traceable audit record linking outcomes back to source clauses, documents and decision paths \u2014 explainable, defensible and replayable.",
+    description: "Every case produces a fully traceable audit record linking outcomes back to source clauses, documents and decision paths. Explainable, defensible and replayable.",
     href: "/technology#decision-dossier",
     icon: FileText,
     color: "var(--primary)",
@@ -74,49 +74,44 @@ export function ProductsGrid() {
               transition={{ ...defaultTransition, delay: index * 0.1 }}
             >
               <Link href={product.href} className="block h-full group">
-                <div className="relative glass-panel glass-panel-hover h-full overflow-hidden p-8">
+                <div
+                  className="relative glass-panel glass-panel-hover h-full overflow-hidden p-8"
+                  style={{ '--card-color': product.color } as React.CSSProperties}
+                >
                   {/* Background gradient on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  <div className="relative h-full">
+                  <div className="relative h-full flex flex-col">
                     {/* Icon */}
                     <div
-                      className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110"
-                      style={{
-                        backgroundColor: `color-mix(in srgb, ${product.color} 25%, transparent)`,
-                      }}
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all group-hover:scale-110 bg-[color-mix(in_srgb,var(--card-color)_25%,transparent)] group-hover:bg-white/20"
                     >
                       <product.icon
-                        className="w-8 h-8"
-                        style={{ color: product.color }}
+                        className="w-8 h-8 text-[var(--card-color)] group-hover:text-white transition-colors"
                       />
                     </div>
 
                     {/* Badge */}
                     <div
-                      className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4"
-                      style={{
-                        backgroundColor: `color-mix(in srgb, ${product.color} 20%, transparent)`,
-                        color: product.color,
-                      }}
+                      className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 bg-[color-mix(in_srgb,var(--card-color)_20%,transparent)] text-[var(--card-color)] group-hover:bg-white/20 group-hover:text-white transition-colors"
                     >
                       {product.badge}
                     </div>
 
                     {/* Name */}
-                    <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-3">
+                    <h3 className="text-2xl font-bold text-[var(--text-primary)] group-hover:text-white mb-3 transition-colors">
                       {product.name}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                    <p className="text-[var(--text-secondary)] group-hover:text-white/90 leading-relaxed mb-6 flex-grow transition-colors">
                       {product.description}
                     </p>
 
                     {/* Link */}
                     <div
-                      className="inline-flex items-center gap-2 font-medium transition-all group-hover:gap-3"
-                      style={{ color: product.color }}
+                      className="inline-flex items-center gap-2 font-medium transition-all group-hover:gap-3 text-[var(--card-color)] group-hover:text-white mt-auto"
                     >
                       Explore {product.name}
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -128,18 +123,6 @@ export function ProductsGrid() {
           ))}
         </div>
 
-        {/* Where to start guidance */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-10 text-center"
-        >
-          <p className="text-[var(--text-muted)] text-sm max-w-2xl mx-auto">
-            Start with <Link href="/products/contextbuilder" className="text-[var(--primary)] hover:underline">ContextBuilder</Link> for document ingestion, add <Link href="/products/mira" className="text-[var(--primary)] hover:underline">MIRA</Link> for decisioning, review outcomes with the <Link href="/technology#decision-dossier" className="text-[var(--primary)] hover:underline">Decision Dossier</Link>, and add <Link href="/products/claimeval" className="text-[var(--primary)] hover:underline">ClaimEval</Link> when you need QA coverage beyond sampling.
-          </p>
-        </motion.div>
       </div>
     </section>
   );

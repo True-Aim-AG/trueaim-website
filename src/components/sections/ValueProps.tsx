@@ -125,17 +125,16 @@ export function ValueProps() {
               viewport={{ once: true }}
               className="relative group"
             >
-              <div className="glass-panel glass-panel-hover h-full p-8">
+              <div
+                className="glass-panel glass-panel-hover h-full p-8"
+                style={{ '--card-color': prop.color } as React.CSSProperties}
+              >
                 {/* Icon */}
                 <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110"
-                  style={{
-                    backgroundColor: `color-mix(in srgb, ${prop.color} 25%, transparent)`,
-                  }}
+                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 bg-[color-mix(in_srgb,var(--card-color)_25%,transparent)]"
                 >
                   <prop.icon
-                    className="w-7 h-7"
-                    style={{ color: prop.color }}
+                    className="w-7 h-7 text-[var(--card-color)]"
                   />
                 </div>
 
@@ -148,16 +147,14 @@ export function ValueProps() {
                   )}
                   {prop.metric > 0 ? (
                     <div
-                      className="text-5xl md:text-6xl font-bold font-mono-data"
-                      style={{ color: prop.color }}
+                      className="text-5xl md:text-6xl font-bold font-mono-data text-[var(--card-color)]"
                     >
                       <AnimatedCounter value={prop.metric} />
                       {prop.suffix}
                     </div>
                   ) : (
                     <div
-                      className="text-5xl md:text-6xl font-bold font-mono-data"
-                      style={{ color: prop.color }}
+                      className="text-5xl md:text-6xl font-bold font-mono-data text-[var(--card-color)]"
                     >
                       &lt; 60s
                     </div>
@@ -176,11 +173,7 @@ export function ValueProps() {
 
                 {/* Proof Context */}
                 <div
-                  className="text-xs font-medium px-3 py-1.5 rounded-full inline-flex items-center gap-1.5"
-                  style={{
-                    backgroundColor: `color-mix(in srgb, ${prop.color} 20%, transparent)`,
-                    color: prop.color,
-                  }}
+                  className="text-xs font-medium px-3 py-1.5 rounded-full inline-flex items-center gap-1.5 bg-[color-mix(in_srgb,var(--card-color)_20%,transparent)] text-[var(--card-color)]"
                 >
                   <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />

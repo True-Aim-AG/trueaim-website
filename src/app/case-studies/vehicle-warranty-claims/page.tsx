@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -16,11 +17,11 @@ import {
   ShieldCheck,
   BarChart3,
   AlertTriangle,
-  Zap,
   Globe,
   DollarSign,
   Lock,
   Calculator,
+  ChevronDown,
 } from "lucide-react";
 import { caseStudies } from "@/data/case-studies";
 
@@ -58,7 +59,37 @@ const fadeIn = {
   transition: { duration: 0.6 } as const,
 };
 
+function ExpandableSection({
+  title,
+  children,
+  defaultOpen = false,
+}: {
+  title: string;
+  children: React.ReactNode;
+  defaultOpen?: boolean;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <div className="glass-panel overflow-hidden">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between p-5 text-left hover:bg-[var(--subtle-bg)]/50 transition-colors"
+      >
+        <span className="font-semibold text-sm text-[var(--text-primary)]">
+          {title}
+        </span>
+        <ChevronDown
+          className={`w-4 h-4 text-[var(--text-muted)] transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+      {open && <div className="px-5 pb-5 pt-0">{children}</div>}
+    </div>
+  );
+}
+
 export default function VehicleWarrantyCaseStudy() {
+  const [showDetails, setShowDetails] = useState(false);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -161,72 +192,34 @@ export default function VehicleWarrantyCaseStudy() {
               {/* The Problem */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-                  The Problem Nobody Talks About
+                  The Problem
                 </h2>
                 <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
                   <p>
-                    A vehicle warranty claim lands on an adjuster&apos;s desk.
-                  </p>
-                  <p>
-                    Five documents. Three languages. A cost estimate with 30 line
-                    items. A policy with coverage tiers, mileage-dependent
-                    reimbursement rates, and component exclusion lists buried on
-                    page two.
-                  </p>
-                  <p>
-                    The adjuster opens each document. Cross-references part names
-                    against the coverage list. Checks the service history.
-                    Validates the policy dates. Calculates the payout using a
-                    formula involving deductibles, VAT, coverage caps, and
-                    reimbursement percentages.
+                    A vehicle warranty claim lands on an adjuster&apos;s desk:
+                    five documents, three languages, a cost estimate with 30
+                    line items, a policy with coverage tiers, mileage-dependent
+                    reimbursement rates and component exclusion lists.
                   </p>
                   <p className="font-semibold text-[var(--text-primary)]">
-                    This takes 15-30 minutes per claim. Multiply that by
+                    Processing takes 15-30 minutes per claim. Multiply that by
                     hundreds of claims per month.
                   </p>
                   <p>
                     76% of denied claims fail for a single reason:{" "}
                     <span className="font-semibold text-[var(--text-primary)]">
-                      the part is not covered by the policy.
+                      the part is not covered by the policy
                     </span>{" "}
-                    A deterministic, lookup-based check. No judgment call
-                    required.
-                  </p>
-                  <p>
-                    The industry knows this is automatable. The hard part is
-                    building a system that actually works on real documents, in
-                    production, with real accuracy.
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* The Starting Point */}
-              <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-                  The Starting Point: Manual Processing at Scale
-                </h2>
-                <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
-                  <p>
-                    Our client is a{" "}
-                    <span className="font-semibold text-[var(--text-primary)]">
-                      European vehicle warranty insurance provider
-                    </span>{" "}
-                    operating in a multilingual market (German, French, Italian).
-                    They process motor guarantee claims from a network of 79+
-                    independent garages and authorized dealers across the
-                    country.
+                    - a deterministic lookup, not a judgment call.
                   </p>
                 </div>
 
-                {/* Stats Grid */}
+                {/* Starting Point Stats */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-6">
                   {[
                     { value: "84", label: "Claims analyzed in pilot" },
                     { value: "50/50", label: "Approval-to-denial split" },
-                    {
-                      value: "CHF 1,450",
-                      label: "Avg approved payout",
-                    },
+                    { value: "CHF 1,450", label: "Avg approved payout" },
                     { value: "23", label: "Vehicle brands represented" },
                     { value: "14", label: "Distinct document types" },
                     { value: "4.9", label: "Avg documents per claim" },
@@ -244,27 +237,6 @@ export default function VehicleWarrantyCaseStudy() {
                     </div>
                   ))}
                 </div>
-
-                <div className="mt-6 space-y-3 text-[var(--text-secondary)] leading-relaxed">
-                  <p>Every claim required a human adjuster to:</p>
-                  <ol className="list-decimal list-inside space-y-2 pl-2">
-                    <li>Read and cross-reference multiple documents</li>
-                    <li>Verify policy validity and coverage terms</li>
-                    <li>Match claimed parts against coverage lists</li>
-                    <li>
-                      Calculate payouts with mileage-dependent reimbursement
-                      tiers
-                    </li>
-                    <li>Write a decision with supporting rationale</li>
-                  </ol>
-                  <p>
-                    The company needed an intelligent document processing
-                    solution that could handle the full lifecycle: ingestion,
-                    classification, extraction, screening, coverage analysis, and
-                    payout calculation. Not a proof of concept. A working system
-                    with measurable accuracy on real claims.
-                  </p>
-                </div>
               </motion.div>
 
               {/* Why Existing Approaches Fall Short */}
@@ -272,41 +244,32 @@ export default function VehicleWarrantyCaseStudy() {
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                   Why Existing Approaches Fall Short
                 </h2>
-                <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
-                  <p>
-                    Most document processing tools solve one problem: they
-                    extract text from PDFs. That gets you 10% of the way.
-                  </p>
-                  <p>
-                    The real challenge in insurance claims automation is{" "}
-                    <span className="font-semibold text-[var(--text-primary)]">
-                      cross-document reasoning.
-                    </span>{" "}
-                    A cost estimate means nothing without the policy. A service
-                    history means nothing without the manufacturer&apos;s
-                    maintenance intervals. A mileage reading means nothing
-                    without the coverage cap.
-                  </p>
-                </div>
+                <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+                  Most document processing tools extract text from PDFs - that
+                  gets you 10% of the way. The real challenge is{" "}
+                  <span className="font-semibold text-[var(--text-primary)]">
+                    cross-document reasoning
+                  </span>
+                  : a cost estimate means nothing without the policy, a mileage
+                  reading means nothing without the coverage cap.
+                </p>
 
-                <div className="space-y-4 mt-6">
+                <div className="space-y-3">
                   {[
                     {
                       icon: AlertTriangle,
-                      title:
-                        "Generic OCR pipelines can't handle domain complexity",
-                      desc: "A cost estimate from a Swiss repair garage contains line items in German with part numbers, labor codes, hourly rates, carry-forward subtotals across pages, and VAT calculations. Standard OCR tools extract text. They don't extract structured line items with part-category associations and coverage implications.",
+                      title: "Generic OCR pipelines lack domain depth",
+                      desc: "Swiss repair invoices contain line items in German with part numbers, labor codes, carry-forward subtotals across pages. Standard OCR extracts text but not structured data with coverage implications.",
                     },
                     {
                       icon: AlertTriangle,
                       title: "Single-model approaches plateau early",
-                      desc: "Sending an entire claim to an LLM and asking \"should this be approved?\" produces inconsistent results. LLMs hallucinate part names, invent coverage rules, and can't reliably perform multi-step financial calculations. Baseline accuracy with an LLM-only approach: 18%.",
+                      desc: "Sending an entire claim to an LLM produces inconsistent results - hallucinated part names, invented coverage rules, unreliable financial calculations. Baseline LLM-only accuracy: 18%.",
                     },
                     {
                       icon: AlertTriangle,
-                      title:
-                        "Rule-based systems can't scale to vocabulary",
-                      desc: "Insurance claims use thousands of part names across multiple languages. A \"Wasserpumpe\" in German is a \"pompe \u00e0 eau\" in French. An \"EGR valve\" might be called \"Abgasruckfuhrung\" on one invoice and \"vanne EGR\" on another. Pure keyword matching breaks on the first synonym it hasn't seen.",
+                      title: "Rule-based systems cannot scale to vocabulary",
+                      desc: "Thousands of part names across multiple languages. A \"Wasserpumpe\" in German is a \"pompe \u00e0 eau\" in French. Pure keyword matching breaks on the first synonym it has not seen.",
                     },
                   ].map((item) => (
                     <div
@@ -315,7 +278,7 @@ export default function VehicleWarrantyCaseStudy() {
                     >
                       <item.icon className="w-6 h-6 text-amber-400 flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-semibold text-[var(--text-primary)] mb-2">
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">
                           {item.title}
                         </h4>
                         <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
@@ -326,576 +289,242 @@ export default function VehicleWarrantyCaseStudy() {
                   ))}
                 </div>
 
-                <p className="mt-6 text-[var(--text-secondary)] leading-relaxed">
+                <p className="mt-4 text-[var(--text-secondary)] leading-relaxed">
                   The solution requires a{" "}
                   <span className="font-semibold text-[var(--text-primary)]">
                     hybrid architecture
                   </span>
                   : deterministic rules where they work, keyword matching for
-                  known vocabulary, and LLM reasoning as a calibrated fallback.
-                  Each layer with explicit confidence scoring and provenance
+                  known vocabulary and LLM reasoning as a calibrated fallback -
+                  each layer with explicit confidence scoring and provenance
                   tracking.
                 </p>
               </motion.div>
 
-              {/* The Architecture */}
+              {/* The Architecture - Summary + Expandable */}
               <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
                   The Architecture: A Multi-Stage Pipeline
                 </h2>
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-8">
-                  We built an end-to-end claims document processing pipeline
-                  that processes raw documents through five stages, each with
-                  quality gates and audit logging.
+                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                  An end-to-end claims processing pipeline moves raw documents
+                  through five stages, each with quality gates and audit
+                  logging.
                 </p>
 
-                {/* Stage 1 */}
-                <div className="space-y-10">
-                  <div className="glass-panel p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center">
-                        <FileText className="w-5 h-5 text-[var(--primary)]" />
+                {/* Pipeline Summary */}
+                <div className="grid grid-cols-1 sm:grid-cols-5 gap-2 mb-6">
+                  {[
+                    { icon: FileText, label: "Ingestion", stage: "1" },
+                    { icon: Search, label: "Classification", stage: "2" },
+                    { icon: Layers, label: "Extraction", stage: "3" },
+                    { icon: ShieldCheck, label: "Screening", stage: "4" },
+                    { icon: BarChart3, label: "QA Review", stage: "5" },
+                  ].map((s) => (
+                    <div
+                      key={s.stage}
+                      className="glass-panel-light p-3 text-center"
+                    >
+                      <s.icon className="w-5 h-5 text-[var(--primary)] mx-auto mb-1" />
+                      <div className="text-[10px] text-[var(--text-muted)] uppercase tracking-wider">
+                        Stage {s.stage}
                       </div>
-                      <div>
-                        <div className="text-xs text-[var(--text-muted)] uppercase tracking-wider">
-                          Stage 1
-                        </div>
-                        <h3 className="font-bold text-[var(--text-primary)]">
-                          Document Ingestion
-                        </h3>
+                      <div className="text-xs font-medium text-[var(--text-primary)]">
+                        {s.label}
                       </div>
                     </div>
-                    <div className="space-y-3 text-sm text-[var(--text-secondary)] leading-relaxed">
-                      <p>
-                        Raw PDFs and images enter through a pluggable ingestion
-                        layer with three supported providers:
-                      </p>
-                      <ul className="space-y-1 pl-4">
-                        <li className="flex items-start gap-2">
-                          <span className="text-[var(--primary)] mt-1">
-                            &bull;
-                          </span>
-                          <span>
-                            <span className="font-medium text-[var(--text-primary)]">
-                              Azure Document Intelligence
-                            </span>{" "}
-                            for production-grade OCR with table extraction
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-[var(--primary)] mt-1">
-                            &bull;
-                          </span>
-                          <span>
-                            <span className="font-medium text-[var(--text-primary)]">
-                              OpenAI Vision API
-                            </span>{" "}
-                            for image-heavy documents
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-[var(--primary)] mt-1">
-                            &bull;
-                          </span>
-                          <span>
-                            <span className="font-medium text-[var(--text-primary)]">
-                              Tesseract OCR
-                            </span>{" "}
-                            as a local fallback
-                          </span>
-                        </li>
-                      </ul>
-                      <p>
-                        Each page is extracted independently with character-level
-                        position tracking. This enables provenance: every
-                        extracted field links back to a specific page, character
-                        range, and cell reference.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
+                </div>
 
-                  {/* Stage 2 */}
-                  <div className="glass-panel p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center">
-                        <Search className="w-5 h-5 text-[var(--primary)]" />
-                      </div>
-                      <div>
-                        <div className="text-xs text-[var(--text-muted)] uppercase tracking-wider">
-                          Stage 2
-                        </div>
-                        <h3 className="font-bold text-[var(--text-primary)]">
-                          Document Classification
-                        </h3>
-                      </div>
-                    </div>
-                    <div className="space-y-3 text-sm text-[var(--text-secondary)] leading-relaxed">
-                      <p>
-                        Each document is classified into one of 14 types using an
-                        LLM-powered router guided by a document type catalog
-                        defined in YAML. Supported types include:
-                      </p>
-                      <div className="grid grid-cols-2 gap-2 text-xs">
-                        {[
-                          "Warranty policies",
-                          "Repair cost estimates",
-                          "Service maintenance records",
-                          "Vehicle registration certificates",
-                          "Diagnostic reports (OBD)",
-                          "Claim decision letters",
-                          "Customer communications",
-                          "Damage evidence photos",
-                          "Invoices & delivery notes",
-                        ].map((type) => (
-                          <div
-                            key={type}
-                            className="flex items-center gap-2 text-[var(--text-muted)]"
+                {/* Three-Tier Matching - Key Differentiator */}
+                <h3 className="text-lg font-bold text-[var(--text-primary)] mb-3">
+                  Coverage Analysis: Three-Tier Matching
+                </h3>
+                <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
+                  Each line item goes through a three-tier matching pipeline,
+                  from fastest/highest-confidence to slowest/lowest-confidence:
+                </p>
+                <div className="space-y-3 mb-6">
+                  {[
+                    {
+                      tier: "Tier 1",
+                      name: "Rule Engine",
+                      confidence: "1.0",
+                      color: "text-emerald-400",
+                      bg: "bg-emerald-500/10 border-emerald-500/20",
+                      desc: "Deterministic matches for fee items, known exclusions, consumables. Zero ambiguity, zero latency.",
+                      pct: "40-50%",
+                    },
+                    {
+                      tier: "Tier 2",
+                      name: "Keyword Matcher",
+                      confidence: "0.70-0.90",
+                      color: "text-blue-400",
+                      bg: "bg-blue-500/10 border-blue-500/20",
+                      desc: "Maps German/French repair terms to 30+ component categories with synonyms and umlaut normalization.",
+                      pct: "30-40%",
+                    },
+                    {
+                      tier: "Tier 3",
+                      name: "LLM Fallback",
+                      confidence: "0.60-0.85",
+                      color: "text-amber-400",
+                      bg: "bg-amber-500/10 border-amber-500/20",
+                      desc: "GPT-4o with structured prompts for genuinely ambiguous items. Concurrency-optimized with 10 parallel calls.",
+                      pct: "10-20%",
+                    },
+                  ].map((tier) => (
+                    <div
+                      key={tier.tier}
+                      className={`p-4 rounded-lg border ${tier.bg}`}
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <span
+                            className={`text-xs font-bold ${tier.color}`}
                           >
-                            <CheckCircle className="w-3 h-3 text-[var(--secondary)] flex-shrink-0" />
-                            {type}
-                          </div>
-                        ))}
+                            {tier.tier}
+                          </span>
+                          <span className="font-semibold text-sm text-[var(--text-primary)]">
+                            {tier.name}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3 text-xs">
+                          <span className="text-[var(--text-muted)]">
+                            Confidence:{" "}
+                            <span className="font-mono-data">
+                              {tier.confidence}
+                            </span>
+                          </span>
+                          <span className={`font-bold ${tier.color}`}>
+                            {tier.pct}
+                          </span>
+                        </div>
                       </div>
-                      <p>
-                        Classification includes{" "}
-                        <span className="font-medium text-[var(--text-primary)]">
-                          language-specific cues
-                        </span>{" "}
-                        in German, French, and Italian. A
-                        &quot;Fahrzeugausweis&quot; (DE), &quot;Permis de
-                        circulation&quot; (FR), and &quot;Licenza di
-                        circolazione&quot; (IT) all map to the same type.
-                        Classification runs at near-100% accuracy.
+                      <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                        {tier.desc}
                       </p>
                     </div>
-                  </div>
+                  ))}
+                </div>
 
-                  {/* Stage 3 */}
-                  <div className="glass-panel p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center">
-                        <Layers className="w-5 h-5 text-[var(--primary)]" />
+                {/* Expandable Architecture Details */}
+                <div className="space-y-3">
+                  <ExpandableSection title="Stage details: Ingestion, Classification & Extraction">
+                    <div className="space-y-4 text-sm text-[var(--text-secondary)] leading-relaxed">
+                      <div>
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">
+                          Stage 1: Document Ingestion
+                        </h4>
+                        <p>
+                          Pluggable ingestion layer with Azure Document
+                          Intelligence for production OCR, OpenAI Vision API for
+                          image-heavy documents and Tesseract as a local
+                          fallback. Each page extracted independently with
+                          character-level position tracking for full provenance.
+                        </p>
                       </div>
                       <div>
-                        <div className="text-xs text-[var(--text-muted)] uppercase tracking-wider">
-                          Stage 3
-                        </div>
-                        <h3 className="font-bold text-[var(--text-primary)]">
-                          Structured Field Extraction
-                        </h3>
-                      </div>
-                    </div>
-                    <div className="space-y-3 text-sm text-[var(--text-secondary)] leading-relaxed">
-                      <p>
-                        Domain-specific extractors do the heavy lifting. Each
-                        document type has a dedicated extraction spec defining
-                        required fields, optional fields, and field groups.
-                      </p>
-
-                      <div className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mt-4 mb-2">
-                        Warranty policy extraction: 51 fields across 4 groups
-                      </div>
-                      <div className="overflow-x-auto">
-                        <table className="w-full text-xs">
-                          <thead>
-                            <tr className="border-b border-[var(--border)]">
-                              <th className="text-left py-2 pr-4 text-[var(--text-muted)] font-medium">
-                                Group
-                              </th>
-                              <th className="text-left py-2 pr-4 text-[var(--text-muted)] font-medium">
-                                Fields
-                              </th>
-                              <th className="text-left py-2 text-[var(--text-muted)] font-medium">
-                                Examples
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody className="text-[var(--text-secondary)]">
-                            <tr className="border-b border-[var(--border)]/50">
-                              <td className="py-2 pr-4">
-                                Policy & Policyholder
-                              </td>
-                              <td className="py-2 pr-4 font-mono-data">13</td>
-                              <td className="py-2">
-                                Policy number, guarantee type, start/end dates
-                              </td>
-                            </tr>
-                            <tr className="border-b border-[var(--border)]/50">
-                              <td className="py-2 pr-4">Vehicle Details</td>
-                              <td className="py-2 pr-4 font-mono-data">11</td>
-                              <td className="py-2">
-                                VIN, make, model, fuel type, current km
-                              </td>
-                            </tr>
-                            <tr className="border-b border-[var(--border)]/50">
-                              <td className="py-2 pr-4">Coverage Options</td>
-                              <td className="py-2 pr-4 font-mono-data">15</td>
-                              <td className="py-2">
-                                Max coverage, excess, km limit, turbo/hybrid
-                                flags
-                              </td>
-                            </tr>
-                            <tr>
-                              <td className="py-2 pr-4">
-                                Assistance & Mobility
-                              </td>
-                              <td className="py-2 pr-4 font-mono-data">4</td>
-                              <td className="py-2">
-                                Towing amount, rental per day, rental max
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-
-                      <p className="mt-4">
-                        The cost estimate extractor handles multi-page documents:
-                        header extraction from page 1, line-item extraction from
-                        all pages, carry-forward subtotals
-                        (&quot;\u00dcbertrag&quot;) across pages, and total
-                        validation within CHF 5 tolerance.
-                      </p>
-                      <p>
-                        Each extracted field carries a{" "}
-                        <span className="font-medium text-[var(--text-primary)]">
-                          confidence score
-                        </span>{" "}
-                        (0.0-1.0),{" "}
-                        <span className="font-medium text-[var(--text-primary)]">
-                          provenance
-                        </span>{" "}
-                        (page, character range, method), and a{" "}
-                        <span className="font-medium text-[var(--text-primary)]">
-                          quality gate verdict
-                        </span>{" "}
-                        (pass/warn/fail). Fields that fail are routed for human
-                        review.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Stage 4 */}
-                  <div className="glass-panel p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center">
-                        <ShieldCheck className="w-5 h-5 text-[var(--primary)]" />
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">
+                          Stage 2: Document Classification
+                        </h4>
+                        <p>
+                          LLM-powered router classifies documents into 14 types
+                          with language-specific cues in German, French, and
+                          Italian. Near-100% classification accuracy.
+                        </p>
                       </div>
                       <div>
-                        <div className="text-xs text-[var(--text-muted)] uppercase tracking-wider">
-                          Stage 4
-                        </div>
-                        <h3 className="font-bold text-[var(--text-primary)]">
-                          Screening & Coverage Analysis
-                        </h3>
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">
+                          Stage 3: Structured Field Extraction
+                        </h4>
+                        <p>
+                          Domain-specific extractors handle 51 fields across 4
+                          groups for warranty policies. The cost estimate
+                          extractor handles multi-page documents with
+                          carry-forward subtotals and total validation within
+                          CHF 5 tolerance. Every field carries a confidence
+                          score, provenance and quality gate verdict.
+                        </p>
                       </div>
                     </div>
-                    <div className="space-y-3 text-sm text-[var(--text-secondary)] leading-relaxed">
-                      <p>
-                        The core innovation. A deterministic screening pipeline
-                        runs{" "}
-                        <span className="font-semibold text-[var(--text-primary)]">
-                          11 checks
-                        </span>{" "}
-                        before any LLM-based assessment:
-                      </p>
+                  </ExpandableSection>
 
-                      <div className="overflow-x-auto">
-                        <table className="w-full text-xs">
-                          <thead>
-                            <tr className="border-b border-[var(--border)]">
-                              <th className="text-left py-2 pr-3 text-[var(--text-muted)] font-medium">
-                                Check
-                              </th>
-                              <th className="text-left py-2 pr-3 text-[var(--text-muted)] font-medium">
-                                Validates
-                              </th>
-                              <th className="text-left py-2 text-[var(--text-muted)] font-medium">
-                                Verdict
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody className="text-[var(--text-secondary)]">
-                            {[
-                              [
-                                "Policy Enforcement",
-                                "Is the policy in the rejected list?",
-                                "Hard fail",
-                              ],
-                              [
-                                "Policy Validity",
-                                "Is the policy active on the damage date?",
-                                "Hard fail",
-                              ],
-                              [
-                                "Damage Date",
-                                "Is the claim date clear and valid?",
-                                "Hard fail",
-                              ],
-                              [
-                                "Service Compliance",
-                                "Did the vehicle meet service intervals?",
-                                "Soft check",
-                              ],
-                              [
-                                "Shop Authorization",
-                                "Is the repair shop authorized?",
-                                "Informational",
-                              ],
-                              [
-                                "Mileage",
-                                "Does odometer exceed coverage limit?",
-                                "Hard fail",
-                              ],
-                              [
-                                "Damage Cause",
-                                "Does the DTC code match an exclusion?",
-                                "Conditional",
-                              ],
-                              [
-                                "Component Coverage",
-                                "Is the part in the coverage list?",
-                                "Hard fail",
-                              ],
-                              [
-                                "Labor Follows Parts",
-                                "Is labor anchored to a covered part?",
-                                "Conditional",
-                              ],
-                              [
-                                "Hybrid Exclusion",
-                                "Are hybrid-specific parts excluded?",
-                                "Hard fail",
-                              ],
-                              [
-                                "Damage Cause Exclusion",
-                                "Does root cause match excluded pattern?",
-                                "Hard fail",
-                              ],
-                            ].map((row) => (
-                              <tr
-                                key={row[0]}
-                                className="border-b border-[var(--border)]/50"
-                              >
-                                <td className="py-2 pr-3 font-medium text-[var(--text-primary)]">
-                                  {row[0]}
-                                </td>
-                                <td className="py-2 pr-3">{row[1]}</td>
-                                <td className="py-2">
-                                  <span
-                                    className={`px-2 py-0.5 rounded-full text-[10px] font-medium ${
-                                      row[2] === "Hard fail"
-                                        ? "bg-red-500/20 text-red-400"
-                                        : row[2] === "Soft check"
-                                          ? "bg-amber-500/20 text-amber-400"
-                                          : row[2] === "Conditional"
-                                            ? "bg-blue-500/20 text-blue-400"
-                                            : "bg-slate-500/20 text-slate-400"
-                                    }`}
-                                  >
-                                    {row[2]}
-                                  </span>
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-
-                      <p className="mt-4">
-                        Service compliance alone required building a database of
-                        manufacturer-specific service intervals for{" "}
-                        <span className="font-medium text-[var(--text-primary)]">
-                          18 vehicle brands
-                        </span>
-                        , covering petrol, diesel, hybrid, and electric variants:
-                      </p>
-                      <ul className="space-y-1 pl-4 text-xs">
-                        <li className="flex items-start gap-2">
-                          <span className="text-[var(--primary)] mt-1">
-                            &bull;
-                          </span>
-                          <span>
-                            <span className="font-medium text-[var(--text-primary)]">
-                              VW Group:
-                            </span>{" "}
-                            Dual system (fixed + LongLife), conservative fixed
-                            interval used
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-[var(--primary)] mt-1">
-                            &bull;
-                          </span>
-                          <span>
-                            <span className="font-medium text-[var(--text-primary)]">
-                              Mercedes:
-                            </span>{" "}
-                            Service A / Service B rotation
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-[var(--primary)] mt-1">
-                            &bull;
-                          </span>
-                          <span>
-                            <span className="font-medium text-[var(--text-primary)]">
-                              Ford:
-                            </span>{" "}
-                            EcoBoost-specific petrol intervals
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-[var(--primary)] mt-1">
-                            &bull;
-                          </span>
-                          <span>
-                            <span className="font-medium text-[var(--text-primary)]">
-                              Electric vehicles:
-                            </span>{" "}
-                            30,000 km / 24 months (inspection only)
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Three-Tier Matching */}
-                  <div>
-                    <h3 className="text-xl font-bold text-[var(--text-primary)] mb-4">
-                      Coverage Analysis: Three-Tier Matching
-                    </h3>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
-                      For component coverage, each line item from the cost
-                      estimate goes through a three-tier matching pipeline,
-                      ordered from fastest/highest-confidence to
-                      slowest/lowest-confidence:
-                    </p>
-                    <div className="space-y-3">
-                      {[
-                        {
-                          tier: "Tier 1",
-                          name: "Rule Engine",
-                          confidence: "1.0",
-                          color: "text-emerald-400",
-                          bg: "bg-emerald-500/10 border-emerald-500/20",
-                          desc: "Deterministic matches for fee items, known exclusions, consumables, fasteners. Handles patterns like disposal fees, fluids, engine oil. Zero ambiguity, zero latency.",
-                          pct: "40-50%",
-                        },
-                        {
-                          tier: "Tier 2",
-                          name: "Keyword Matcher",
-                          confidence: "0.70-0.90",
-                          color: "text-blue-400",
-                          bg: "bg-blue-500/10 border-blue-500/20",
-                          desc: "Maps German/French repair terms to 30+ component categories with synonyms. Umlaut normalization for robust matching. Cross-references against the policy\u2019s covered/excluded component list.",
-                          pct: "30-40%",
-                        },
-                        {
-                          tier: "Tier 3",
-                          name: "LLM Fallback",
-                          confidence: "0.60-0.85",
-                          color: "text-amber-400",
-                          bg: "bg-amber-500/10 border-amber-500/20",
-                          desc: "GPT-4o with structured prompts for genuinely ambiguous items. Concurrency-optimized with 10 parallel calls. Maximum 35 items per claim. Every call audited with token count, cost, and reasoning.",
-                          pct: "10-20%",
-                        },
-                      ].map((tier) => (
-                        <div
-                          key={tier.tier}
-                          className={`p-4 rounded-lg border ${tier.bg}`}
-                        >
-                          <div className="flex items-center justify-between mb-2">
-                            <div className="flex items-center gap-2">
-                              <span
-                                className={`text-xs font-bold ${tier.color}`}
-                              >
-                                {tier.tier}
-                              </span>
-                              <span className="font-semibold text-sm text-[var(--text-primary)]">
-                                {tier.name}
-                              </span>
-                            </div>
-                            <div className="flex items-center gap-3 text-xs">
-                              <span className="text-[var(--text-muted)]">
-                                Confidence:{" "}
-                                <span className="font-mono-data">
-                                  {tier.confidence}
+                  <ExpandableSection title="Stage details: Screening checks (11 deterministic checks)">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-xs">
+                        <thead>
+                          <tr className="border-b border-[var(--border)]">
+                            <th className="text-left py-2 pr-3 text-[var(--text-muted)] font-medium">
+                              Check
+                            </th>
+                            <th className="text-left py-2 pr-3 text-[var(--text-muted)] font-medium">
+                              Validates
+                            </th>
+                            <th className="text-left py-2 text-[var(--text-muted)] font-medium">
+                              Verdict
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody className="text-[var(--text-secondary)]">
+                          {[
+                            ["Policy Enforcement", "Is the policy in the rejected list?", "Hard fail"],
+                            ["Policy Validity", "Is the policy active on the damage date?", "Hard fail"],
+                            ["Damage Date", "Is the claim date clear and valid?", "Hard fail"],
+                            ["Service Compliance", "Did the vehicle meet service intervals?", "Soft check"],
+                            ["Shop Authorization", "Is the repair shop authorized?", "Informational"],
+                            ["Mileage", "Does odometer exceed coverage limit?", "Hard fail"],
+                            ["Damage Cause", "Does the DTC code match an exclusion?", "Conditional"],
+                            ["Component Coverage", "Is the part in the coverage list?", "Hard fail"],
+                            ["Labor Follows Parts", "Is labor anchored to a covered part?", "Conditional"],
+                            ["Hybrid Exclusion", "Are hybrid-specific parts excluded?", "Hard fail"],
+                            ["Damage Cause Exclusion", "Does root cause match excluded pattern?", "Hard fail"],
+                          ].map((row) => (
+                            <tr
+                              key={row[0]}
+                              className="border-b border-[var(--border)]/50"
+                            >
+                              <td className="py-2 pr-3 font-medium text-[var(--text-primary)]">
+                                {row[0]}
+                              </td>
+                              <td className="py-2 pr-3">{row[1]}</td>
+                              <td className="py-2">
+                                <span
+                                  className={`px-2 py-0.5 rounded-full text-[10px] font-medium ${
+                                    row[2] === "Hard fail"
+                                      ? "bg-red-500/20 text-red-400"
+                                      : row[2] === "Soft check"
+                                        ? "bg-amber-500/20 text-amber-400"
+                                        : row[2] === "Conditional"
+                                          ? "bg-blue-500/20 text-blue-400"
+                                          : "bg-slate-500/20 text-slate-400"
+                                  }`}
+                                >
+                                  {row[2]}
                                 </span>
-                              </span>
-                              <span className={`font-bold ${tier.color}`}>
-                                {tier.pct}
-                              </span>
-                            </div>
-                          </div>
-                          <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-                            {tier.desc}
-                          </p>
-                        </div>
-                      ))}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
-                  </div>
+                  </ExpandableSection>
 
-                  {/* Payout Calculation */}
-                  <div className="glass-panel-light p-6">
-                    <h4 className="font-bold text-[var(--text-primary)] mb-3">
-                      Payout Calculation
-                    </h4>
+                  <ExpandableSection title="Payout calculation formula">
                     <ol className="list-decimal list-inside space-y-1 text-sm text-[var(--text-secondary)]">
                       <li>Sum covered items (gross)</li>
-                      <li>
-                        Apply maximum coverage cap (if policy specifies one)
-                      </li>
-                      <li>
-                        Apply mileage-dependent reimbursement rate (40%-100%)
-                      </li>
+                      <li>Apply maximum coverage cap (if policy specifies one)</li>
+                      <li>Apply mileage-dependent reimbursement rate (40%-100%)</li>
                       <li>Add VAT (8.1% in Switzerland)</li>
-                      <li>
-                        Calculate deductible (percentage with minimum floor)
-                      </li>
+                      <li>Calculate deductible (percentage with minimum floor)</li>
                       <li>Compute final payout</li>
                     </ol>
                     <p className="text-xs text-[var(--text-muted)] mt-3">
                       Standardized deductibles (CHF 150 in 49% of claims),
-                      formulaic reimbursement tiers, and verifiable parts/labor
+                      formulaic reimbursement tiers and verifiable parts/labor
                       splits (60% parts, 40% labor on average).
                     </p>
-                  </div>
-
-                  {/* Stage 5 */}
-                  <div className="glass-panel p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center">
-                        <BarChart3 className="w-5 h-5 text-[var(--primary)]" />
-                      </div>
-                      <div>
-                        <div className="text-xs text-[var(--text-muted)] uppercase tracking-wider">
-                          Stage 5
-                        </div>
-                        <h3 className="font-bold text-[var(--text-primary)]">
-                          QA Console & Human-in-the-Loop Review
-                        </h3>
-                      </div>
-                    </div>
-                    <div className="space-y-1 text-sm text-[var(--text-secondary)]">
-                      {[
-                        "Dashboard with claim-level KPIs, decision distribution, and payout summaries",
-                        "Document review with split-view: extracted fields on the left, source document on the right",
-                        "Provenance highlighting: click any extracted field to see exactly where it came from",
-                        "Three-bucket triage: Rejected / Needs Review / Approved",
-                        "Labeling interface with keyboard shortcuts for rapid QA",
-                        "Coverage reasoning view: per-line-item decision with match method, confidence, and explanation",
-                        "Assessment comparison: side-by-side system decision vs. ground truth",
-                      ].map((item) => (
-                        <div
-                          key={item}
-                          className="flex items-start gap-2 py-1"
-                        >
-                          <CheckCircle className="w-4 h-4 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  </ExpandableSection>
                 </div>
               </motion.div>
 
@@ -905,7 +534,6 @@ export default function VehicleWarrantyCaseStudy() {
                   The Implementation Journey: From 18% to 98%
                 </h2>
 
-                {/* Accuracy Timeline */}
                 <div className="space-y-6">
                   {/* Day 1-3 */}
                   <div className="relative pl-8 border-l-2 border-[var(--border)] pb-6">
@@ -922,10 +550,9 @@ export default function VehicleWarrantyCaseStudy() {
                       Baseline and Architecture
                     </h4>
                     <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                      The initial approach sent claim documents to GPT-4o and
-                      asked for a decision. The LLM produced plausible-sounding
+                      The initial LLM-only approach produced plausible-sounding
                       but unreliable results: hallucinated part names, invented
-                      coverage rules, and inconsistent financial calculations.
+                      coverage rules, inconsistent calculations.
                     </p>
                     <div className="glass-panel-light p-3 mt-3 text-xs text-[var(--text-secondary)]">
                       <span className="font-medium text-[var(--text-primary)]">
@@ -933,8 +560,7 @@ export default function VehicleWarrantyCaseStudy() {
                       </span>{" "}
                       LLMs are good at language understanding but bad at
                       deterministic business rules. The architecture had to
-                      separate what requires judgment from what requires
-                      precision.
+                      separate judgment from precision.
                     </div>
                   </div>
 
@@ -953,22 +579,13 @@ export default function VehicleWarrantyCaseStudy() {
                       Screening + Coverage Pipeline
                     </h4>
                     <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                      Implementing the 11-check screening pipeline and
-                      three-tier coverage matching drove the biggest single
-                      improvement. The deterministic checks alone caught most
-                      denials correctly, and the keyword matcher handled the
-                      majority of coverage lookups.
-                    </p>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed mt-2">
-                      German repair terminology uses compound words. A
-                      &quot;Abgasruckfuhrungsventil&quot; (exhaust gas
-                      recirculation valve) is one word. The keyword matcher
-                      needed umlaut normalization, compound word decomposition,
-                      and synonym mapping across German and French.
+                      The 11-check screening pipeline and three-tier coverage
+                      matching drove the biggest single improvement.
+                      Deterministic checks alone caught most denials correctly.
                     </p>
                   </div>
 
-                  {/* Day 5-7 */}
+                  {/* Day 5-8 */}
                   <div className="relative pl-8 border-l-2 border-[var(--border)] pb-6">
                     <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-[var(--background)]" />
                     <div className="flex items-center gap-3 mb-2">
@@ -982,52 +599,11 @@ export default function VehicleWarrantyCaseStudy() {
                     <h4 className="font-semibold text-[var(--text-primary)] mb-2">
                       Iteration and Refinement
                     </h4>
-                    <div className="text-sm text-[var(--text-secondary)] leading-relaxed space-y-3">
-                      <p>
-                        60+ evaluation iterations, each tracking decision
-                        accuracy, false reject/approve rates, amount accuracy,
-                        and top error categories. The progression from 88% to
-                        98% required solving increasingly subtle problems:
-                      </p>
-                      <div className="space-y-3">
-                        <div className="glass-panel-light p-3 text-xs">
-                          <span className="font-medium text-[var(--text-primary)]">
-                            Cross-category substring matching bug:
-                          </span>{" "}
-                          An EGR valve synonym
-                          (&quot;abgasrueckfuehrung&quot;) contained the
-                          substring &quot;asr&quot; (anti-slip regulation, a
-                          brake component). The system found &quot;asr&quot;
-                          inside &quot;abgasrueckfuehrung&quot; and declared the
-                          EGR valve covered under brakes. Fix: symmetric guard
-                          requiring exact match when either term is 3 characters
-                          or fewer.
-                        </div>
-                        <div className="glass-panel-light p-3 text-xs">
-                          <span className="font-medium text-[var(--text-primary)]">
-                            Labor demotion over-aggression:
-                          </span>{" "}
-                          When a part was covered, the associated installation
-                          labor should also be covered. The system was excluding
-                          labor items that couldn&apos;t be linked to a specific
-                          covered part number. Fix: labor promotion logic that
-                          inherits coverage from the parent repair.
-                        </div>
-                        <div className="glass-panel-light p-3 text-xs">
-                          <span className="font-medium text-[var(--text-primary)]">
-                            Part-number normalization:
-                          </span>{" "}
-                          A Mercedes roof motor part number{" "}
-                          <code className="text-[var(--primary)]">
-                            A205 906 41 04
-                          </code>{" "}
-                          existed in the parts database but wasn&apos;t matched
-                          due to spacing differences in OCR extraction. Fix:
-                          normalize all part numbers by stripping spaces and
-                          special characters before lookup.
-                        </div>
-                      </div>
-                    </div>
+                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                      60+ evaluation iterations solving increasingly subtle
+                      problems: substring matching bugs, labor demotion logic,
+                      and part-number normalization across OCR outputs.
+                    </p>
                   </div>
 
                   {/* Holdout */}
@@ -1044,204 +620,235 @@ export default function VehicleWarrantyCaseStudy() {
                     <h4 className="font-semibold text-[var(--text-primary)] mb-2">
                       Unseen Data Validation
                     </h4>
-                    <div className="text-sm text-[var(--text-secondary)] leading-relaxed space-y-3">
-                      <p>
-                        After reaching 98% on the development set (50 claims),
-                        we ran a holdout evaluation on 30 previously unseen
-                        claims. The holdout revealed failure modes the
-                        development set didn&apos;t cover:
-                      </p>
-                      <div className="space-y-2">
-                        {[
-                          {
-                            title: "Causal exclusion clauses",
-                            desc: "A turbocharger is covered, but if the turbo failed because the engine (not covered) failed first, the policy denies coverage. The system doesn\u2019t reason about failure chains.",
-                          },
-                          {
-                            title: "Missing documents",
-                            desc: "One claim was denied because the policy premium wasn\u2019t paid. This information lives in the insurer\u2019s internal system, not in any processable document.",
-                          },
-                          {
-                            title: "Sub-component interpretation gaps",
-                            desc: "A DPF sensor is functionally part of the exhaust system. The policy covers exhausts but only lists \"catalytic converter\" and \"oxygen sensor.\" The adjuster approved by interpreting the sensor as an exhaust sub-component.",
-                          },
-                          {
-                            title: "Excluded-component dominance",
-                            desc: "A claim for a hose repair (excluded) was approved because a minor bolt (CHF 3.70, covered) was also on the invoice. The system selected the bolt as the \"primary covered repair.\"",
-                          },
-                        ].map((item) => (
-                          <div
-                            key={item.title}
-                            className="glass-panel-light p-3 text-xs"
-                          >
-                            <span className="font-medium text-[var(--text-primary)]">
-                              {item.title}:
-                            </span>{" "}
-                            {item.desc}
-                          </div>
-                        ))}
-                      </div>
-                      <p className="font-medium text-[var(--text-primary)]">
-                        The holdout gap (98% vs 77%) is the honest measure of
-                        generalization. Each holdout error was analyzed and
-                        documented with root cause, fix complexity, and priority.
-                      </p>
-                    </div>
+                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                      30 previously unseen claims revealed failure modes the
+                      development set did not cover: causal exclusion clauses,
+                      missing document scenarios and sub-component
+                      interpretation gaps.
+                    </p>
+                    <p className="text-sm font-medium text-[var(--text-primary)] mt-2">
+                      The holdout gap (98% vs 77%) is the honest measure of
+                      generalization.
+                    </p>
                   </div>
+                </div>
+
+                {/* Expandable: Iteration details */}
+                <div className="mt-6 space-y-3">
+                  <ExpandableSection title="Detailed iteration fixes (88% to 98%)">
+                    <div className="space-y-3">
+                      <div className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]">
+                        <span className="font-medium text-[var(--text-primary)]">
+                          Cross-category substring matching bug:
+                        </span>{" "}
+                        An EGR valve synonym (&quot;abgasrueckfuehrung&quot;)
+                        contained the substring &quot;asr&quot; (anti-slip
+                        regulation). The system declared the EGR valve covered
+                        under brakes. Fix: symmetric guard requiring exact match
+                        when either term is 3 characters or fewer.
+                      </div>
+                      <div className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]">
+                        <span className="font-medium text-[var(--text-primary)]">
+                          Labor demotion over-aggression:
+                        </span>{" "}
+                        When a part was covered, the associated installation
+                        labor should also be covered. Fix: labor promotion logic
+                        that inherits coverage from the parent repair.
+                      </div>
+                      <div className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]">
+                        <span className="font-medium text-[var(--text-primary)]">
+                          Part-number normalization:
+                        </span>{" "}
+                        A Mercedes part number{" "}
+                        <code className="text-[var(--primary)]">
+                          A205 906 41 04
+                        </code>{" "}
+                        was not matched due to spacing differences in OCR
+                        extraction. Fix: normalize all part numbers by stripping
+                        spaces and special characters before lookup.
+                      </div>
+                    </div>
+                  </ExpandableSection>
+
+                  <ExpandableSection title="Holdout failure analysis">
+                    <div className="space-y-2">
+                      {[
+                        {
+                          title: "Causal exclusion clauses",
+                          desc: "A turbocharger is covered, but if the turbo failed because the engine (not covered) failed first, the policy denies coverage. The system does not reason about failure chains.",
+                        },
+                        {
+                          title: "Missing documents",
+                          desc: "One claim was denied because the policy premium was not paid. This information lives in the insurer's internal system, not in any processable document.",
+                        },
+                        {
+                          title: "Sub-component interpretation gaps",
+                          desc: "A DPF sensor is functionally part of the exhaust system. The policy covers exhausts but only lists specific sub-components. The adjuster approved by interpreting the sensor as an exhaust sub-component.",
+                        },
+                        {
+                          title: "Excluded-component dominance",
+                          desc: "A claim for a hose repair (excluded) was approved because a minor bolt (CHF 3.70, covered) was also on the invoice.",
+                        },
+                      ].map((item) => (
+                        <div
+                          key={item.title}
+                          className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]"
+                        >
+                          <span className="font-medium text-[var(--text-primary)]">
+                            {item.title}:
+                          </span>{" "}
+                          {item.desc}
+                        </div>
+                      ))}
+                    </div>
+                  </ExpandableSection>
                 </div>
               </motion.div>
 
+              {/* Show More Details Toggle */}
+              <div className="relative py-2">
+                <div className="absolute inset-x-0 top-1/2 h-px bg-[var(--border)]" />
+                <div className="relative flex justify-center">
+                  <button
+                    onClick={() => setShowDetails(!showDetails)}
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[var(--subtle-bg)] border border-[var(--border)] text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--primary)]/50 transition-all"
+                  >
+                    {showDetails ? "Show less" : "Show more details"}
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${showDetails ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                </div>
+              </div>
+
+              {showDetails && (
+              <>
               {/* Technical Challenges */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-                  Technical Challenges and Solutions
+                  Technical Challenges
                 </h2>
 
-                <div className="space-y-6">
+                <div className="space-y-3">
                   {[
                     {
-                      icon: Layers,
-                      title:
-                        "Customer-Agnostic Core vs. Domain-Specific Configuration",
-                      solution: "Workspace-based multi-tenant architecture",
-                      desc: "The core product contains generic pipeline stages, schemas, and interfaces. All customer-specific logic lives in workspace configuration loaded at runtime: extraction specs, keyword mappings, screening rules, and part number databases. Adding a new customer means adding a new workspace directory with configuration files. No code changes to the core product.",
-                    },
-                    {
                       icon: Globe,
-                      title: "Multi-Language Document Processing",
-                      solution: "Language-aware classification and extraction",
-                      desc: "The document type catalog includes cues in German, French, and Italian. Keyword mappings contain synonyms for every repair term category in each language. Date and number parsing handles Swiss conventions. Impact: German and French claims show comparable approval rates (49% vs 54%) with nearly identical average payouts. No measurable language bias.",
-                    },
-                    {
-                      icon: DollarSign,
-                      title: "Cost Estimation at Scale",
-                      solution: "Tiered matching with cost controls",
-                      desc: "Rule engine and keyword matcher handle 80-90% of items with zero LLM cost. LLM calls are capped at 35 items per claim with 10 parallel calls. Every call is logged with token count, model, and cost. Token usage monitoring with configurable thresholds (warn at 40K, fail at 60K tokens per claim) prevents runaway costs.",
+                      title: "Multi-Language Processing",
+                      desc: "Language-aware classification and extraction across German, French and Italian. Comparable approval rates (49% vs 54%) with no measurable language bias.",
                     },
                     {
                       icon: Lock,
                       title: "Auditability and Compliance",
-                      solution: "Full provenance chain and audit logging",
-                      desc: "Every extracted field links to its source (page, character position, method). Every coverage decision includes match method, confidence score, and explanation. Every screening check records verdict, evidence, and data sources. All LLM calls logged to an audit trail. The QA console allows adjusters to trace any decision back to the source document.",
+                      desc: "Full provenance chain: every extracted field links to its source page and character position. Every coverage decision includes match method, confidence score and explanation.",
                     },
                     {
                       icon: Calculator,
                       title: "Payout Formula Precision",
-                      solution:
-                        "Line-by-line financial reconciliation",
-                      desc: "The system was applying the mileage-dependent reimbursement rate after the deductible, while the insurer applies it before. This single formula error caused 27% overpayment on claims with degraded rates. A 5-line code fix, but finding it required walking through calculations claim by claim with the adjuster.",
+                      desc: "A single operation-order error caused 27% overpayment on claims with degraded rates. Finding it required walking through calculations claim by claim with the adjuster.",
+                    },
+                    {
+                      icon: DollarSign,
+                      title: "Cost Control",
+                      desc: "Rule engine and keyword matcher handle 80-90% of items with zero LLM cost. Token usage monitoring with configurable thresholds prevents runaway costs.",
                     },
                   ].map((challenge) => (
-                    <div key={challenge.title} className="glass-panel p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center flex-shrink-0">
-                          <challenge.icon className="w-5 h-5 text-[var(--primary)]" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-[var(--text-primary)] mb-1">
-                            {challenge.title}
-                          </h4>
-                          <div className="text-xs text-[var(--secondary)] font-medium mb-2">
-                            Solution: {challenge.solution}
-                          </div>
-                          <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                            {challenge.desc}
-                          </p>
-                        </div>
+                    <div
+                      key={challenge.title}
+                      className="glass-panel p-5 flex gap-4"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center flex-shrink-0">
+                        <challenge.icon className="w-5 h-5 text-[var(--primary)]" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">
+                          {challenge.title}
+                        </h4>
+                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                          {challenge.desc}
+                        </p>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                {/* Payout formula example */}
-                <div className="mt-6 glass-panel p-6">
-                  <h4 className="font-semibold text-[var(--text-primary)] mb-3">
-                    The order-of-operations bug (40% reimbursement rate)
-                  </h4>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="border-b border-[var(--border)]">
-                          <th className="text-left py-2 pr-4 text-[var(--text-muted)] font-medium">
-                            Step
-                          </th>
-                          <th className="text-left py-2 pr-4 text-red-400 font-medium">
-                            Wrong
-                          </th>
-                          <th className="text-left py-2 text-emerald-400 font-medium">
-                            Correct
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody className="text-[var(--text-secondary)] font-mono-data text-xs">
-                        <tr className="border-b border-[var(--border)]/50">
-                          <td className="py-2 pr-4 font-sans text-sm">
-                            Gross covered
-                          </td>
-                          <td className="py-2 pr-4">CHF 1,118.60</td>
-                          <td className="py-2">CHF 1,118.60</td>
-                        </tr>
-                        <tr className="border-b border-[var(--border)]/50">
-                          <td className="py-2 pr-4 font-sans text-sm">
-                            Apply rate
-                          </td>
-                          <td className="py-2 pr-4 text-[var(--text-muted)]">
-                            &mdash;
-                          </td>
-                          <td className="py-2">CHF 447.44</td>
-                        </tr>
-                        <tr className="border-b border-[var(--border)]/50">
-                          <td className="py-2 pr-4 font-sans text-sm">
-                            Add VAT (8.1%)
-                          </td>
-                          <td className="py-2 pr-4">CHF 1,209.21</td>
-                          <td className="py-2">CHF 483.69</td>
-                        </tr>
-                        <tr className="border-b border-[var(--border)]/50">
-                          <td className="py-2 pr-4 font-sans text-sm">
-                            Deductible
-                          </td>
-                          <td className="py-2 pr-4">CHF 150.00</td>
-                          <td className="py-2">CHF 150.00</td>
-                        </tr>
-                        <tr className="border-b border-[var(--border)]/50">
-                          <td className="py-2 pr-4 font-sans text-sm">
-                            Apply rate
-                          </td>
-                          <td className="py-2 pr-4">CHF 423.68</td>
-                          <td className="py-2 text-[var(--text-muted)]">
-                            &mdash;
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="py-2 pr-4 font-sans text-sm font-bold text-[var(--text-primary)]">
-                            Final payout
-                          </td>
-                          <td className="py-2 pr-4 font-bold text-red-400">
-                            CHF 423.68
-                          </td>
-                          <td className="py-2 font-bold text-emerald-400">
-                            CHF 333.69
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <p className="text-xs text-[var(--text-muted)] mt-3">
-                    A 27% overpayment from a single operation-order error,
-                    affecting 8 of 50 evaluation claims.
-                  </p>
+                {/* Expandable: Payout formula bug */}
+                <div className="mt-4">
+                  <ExpandableSection title="Order-of-operations bug detail (40% reimbursement rate)">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="border-b border-[var(--border)]">
+                            <th className="text-left py-2 pr-4 text-[var(--text-muted)] font-medium">
+                              Step
+                            </th>
+                            <th className="text-left py-2 pr-4 text-red-400 font-medium">
+                              Wrong
+                            </th>
+                            <th className="text-left py-2 text-emerald-400 font-medium">
+                              Correct
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody className="text-[var(--text-secondary)] font-mono-data text-xs">
+                          <tr className="border-b border-[var(--border)]/50">
+                            <td className="py-2 pr-4 font-sans text-sm">Gross covered</td>
+                            <td className="py-2 pr-4">CHF 1,118.60</td>
+                            <td className="py-2">CHF 1,118.60</td>
+                          </tr>
+                          <tr className="border-b border-[var(--border)]/50">
+                            <td className="py-2 pr-4 font-sans text-sm">Apply rate</td>
+                            <td className="py-2 pr-4 text-[var(--text-muted)]">
+                              -
+                            </td>
+                            <td className="py-2">CHF 447.44</td>
+                          </tr>
+                          <tr className="border-b border-[var(--border)]/50">
+                            <td className="py-2 pr-4 font-sans text-sm">Add VAT (8.1%)</td>
+                            <td className="py-2 pr-4">CHF 1,209.21</td>
+                            <td className="py-2">CHF 483.69</td>
+                          </tr>
+                          <tr className="border-b border-[var(--border)]/50">
+                            <td className="py-2 pr-4 font-sans text-sm">Deductible</td>
+                            <td className="py-2 pr-4">CHF 150.00</td>
+                            <td className="py-2">CHF 150.00</td>
+                          </tr>
+                          <tr className="border-b border-[var(--border)]/50">
+                            <td className="py-2 pr-4 font-sans text-sm">Apply rate</td>
+                            <td className="py-2 pr-4">CHF 423.68</td>
+                            <td className="py-2 text-[var(--text-muted)]">
+                              -
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="py-2 pr-4 font-sans text-sm font-bold text-[var(--text-primary)]">
+                              Final payout
+                            </td>
+                            <td className="py-2 pr-4 font-bold text-red-400">
+                              CHF 423.68
+                            </td>
+                            <td className="py-2 font-bold text-emerald-400">
+                              CHF 333.69
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p className="text-xs text-[var(--text-muted)] mt-3">
+                      A 27% overpayment from a single operation-order error
+                      affecting 8 of 50 evaluation claims.
+                    </p>
+                  </ExpandableSection>
                 </div>
               </motion.div>
 
               {/* Results and Metrics */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-                  Results and Metrics
+                  Results
                 </h2>
 
-                {/* Eval Set */}
                 <div className="space-y-6">
+                  {/* Eval Set */}
                   <div>
                     <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
                       Evaluation Set (50 Claims)
@@ -1251,28 +858,10 @@ export default function VehicleWarrantyCaseStudy() {
                         <tbody>
                           {[
                             ["Decision accuracy", "98% (49/50 correct)", true],
-                            [
-                              "Approved claims correctly identified",
-                              "25/25 (100%)",
-                              false,
-                            ],
-                            [
-                              "Denied claims correctly identified",
-                              "24/25 (96%)",
-                              false,
-                            ],
+                            ["Approved claims correctly identified", "25/25 (100%)", false],
+                            ["Denied claims correctly identified", "24/25 (96%)", false],
                             ["False reject rate", "0%", false],
                             ["False approve rate", "4% (1 claim)", false],
-                            [
-                              "Payout within 5% of ground truth",
-                              "28% (7/25 approved)",
-                              false,
-                            ],
-                            [
-                              "Denial reason match",
-                              "72% (18/25 denied)",
-                              false,
-                            ],
                           ].map((row) => (
                             <tr
                               key={row[0] as string}
@@ -1304,21 +893,9 @@ export default function VehicleWarrantyCaseStudy() {
                       <table className="w-full text-sm">
                         <tbody>
                           {[
-                            [
-                              "Decision accuracy",
-                              "76.7% (23/30 correct)",
-                              true,
-                            ],
-                            [
-                              "Approved claims correctly identified",
-                              "11/15",
-                              false,
-                            ],
-                            [
-                              "Denied claims correctly identified",
-                              "12/15",
-                              false,
-                            ],
+                            ["Decision accuracy", "76.7% (23/30 correct)", true],
+                            ["Approved claims correctly identified", "11/15", false],
+                            ["Denied claims correctly identified", "12/15", false],
                             ["False reject rate", "26.7%", false],
                             ["False approve rate", "20.0%", false],
                           ].map((row) => (
@@ -1343,80 +920,30 @@ export default function VehicleWarrantyCaseStudy() {
                     </div>
                   </div>
 
-                  {/* Error Distribution */}
-                  <div>
-                    <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
-                      Error Distribution
-                    </h3>
-                    <div className="glass-panel overflow-hidden">
-                      <table className="w-full text-sm">
-                        <thead>
-                          <tr className="border-b border-[var(--border)]">
-                            <th className="text-left py-3 px-4 text-[var(--text-muted)] font-medium">
-                              Error Type
-                            </th>
-                            <th className="text-right py-3 px-4 text-[var(--text-muted)] font-medium">
-                              Eval
-                            </th>
-                            <th className="text-right py-3 px-4 text-[var(--text-muted)] font-medium">
-                              Holdout
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody className="text-[var(--text-secondary)]">
-                          {[
-                            ["False approve", "1", "2"],
-                            ["False reject", "0", "3"],
-                            ["Referral errors", "0", "2"],
-                            ["Amount mismatch", "18", "8"],
-                          ].map((row) => (
-                            <tr
-                              key={row[0]}
-                              className="border-b border-[var(--border)]/50"
-                            >
-                              <td className="py-3 px-4">{row[0]}</td>
-                              <td className="py-3 px-4 text-right font-mono-data">
-                                {row[1]}
-                              </td>
-                              <td className="py-3 px-4 text-right font-mono-data">
-                                {row[2]}
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
                   {/* Processing Characteristics */}
-                  <div>
-                    <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
-                      Processing Characteristics
-                    </h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                      {[
-                        { value: "14", label: "Document types" },
-                        { value: "18", label: "Vehicle brands in DB" },
-                        { value: "11", label: "Screening checks" },
-                        { value: "3", label: "Coverage matching tiers" },
-                        { value: "30+", label: "Keyword categories" },
-                        { value: "51", label: "Extraction fields" },
-                        { value: "3", label: "Languages supported" },
-                        { value: "850+", label: "Unit tests" },
-                      ].map((item) => (
-                        <div
-                          key={item.label}
-                          className="glass-panel-light p-3 text-center"
-                        >
-                          <div className="text-lg font-bold font-mono-data text-[var(--primary)]">
-                            {item.value}
-                          </div>
-                          <div className="text-[10px] text-[var(--text-muted)]">
-                            {item.label}
-                          </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    {[
+                      { value: "14", label: "Document types" },
+                      { value: "18", label: "Vehicle brands in DB" },
+                      { value: "11", label: "Screening checks" },
+                      { value: "3", label: "Coverage matching tiers" },
+                      { value: "30+", label: "Keyword categories" },
+                      { value: "51", label: "Extraction fields" },
+                      { value: "3", label: "Languages supported" },
+                      { value: "850+", label: "Unit tests" },
+                    ].map((item) => (
+                      <div
+                        key={item.label}
+                        className="glass-panel-light p-3 text-center"
+                      >
+                        <div className="text-lg font-bold font-mono-data text-[var(--primary)]">
+                          {item.value}
                         </div>
-                      ))}
-                    </div>
+                        <div className="text-[10px] text-[var(--text-muted)]">
+                          {item.label}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </motion.div>
@@ -1430,38 +957,23 @@ export default function VehicleWarrantyCaseStudy() {
                   {[
                     {
                       num: "1",
-                      title:
-                        "Deterministic checks beat LLM judgment for structured rules.",
-                      desc: "76% of claim denials are \"part not covered.\" This is a lookup, not a judgment call. The screening pipeline handles these with 100% confidence and zero LLM cost. Reserve the LLM for genuinely ambiguous cases.",
+                      title: "Deterministic checks beat LLM judgment for structured rules.",
+                      desc: "76% of claim denials are \"part not covered\" - a lookup, not a judgment call. The screening pipeline handles these with 100% confidence and zero LLM cost.",
                     },
                     {
                       num: "2",
-                      title:
-                        "The accuracy curve has diminishing returns.",
-                      desc: "Going from 18% to 76% took 3 days. Going from 76% to 98% took 4 more days. Each subsequent percentage point required deeper investigation, subtler fixes, and more edge case handling. The holdout gap (98% vs 77%) confirmed that real-world generalization requires significantly more data and iteration.",
+                      title: "The accuracy curve has diminishing returns.",
+                      desc: "18% to 76% took 3 days. 76% to 98% took 4 more days. The holdout gap (98% vs 77%) confirmed that real-world generalization requires significantly more data.",
                     },
                     {
                       num: "3",
-                      title:
-                        "The payout formula is harder than the AI.",
-                      desc: "Getting the LLM to classify parts correctly is table stakes. Getting the financial calculation to match the insurer\u2019s exact formula requires sitting with an adjuster and walking through calculations by hand. No amount of prompt engineering solves an order-of-operations bug in business logic.",
+                      title: "The payout formula is harder than the AI.",
+                      desc: "Getting the financial calculation to match the insurer's exact formula requires sitting with an adjuster and walking through calculations by hand. No amount of prompt engineering solves a business logic bug.",
                     },
                     {
                       num: "4",
                       title: "Provenance tracking is non-negotiable.",
-                      desc: "In a regulated industry, \"the AI said so\" is not an acceptable audit trail. Every extracted value, every coverage decision, and every screening verdict must trace back to a source document, page, and character position. This adds engineering complexity but is fundamental to trust and compliance.",
-                    },
-                    {
-                      num: "5",
-                      title:
-                        "Customer-agnostic architecture pays for itself immediately.",
-                      desc: "Separating the core product from customer-specific configuration meant that adding document types, keyword mappings, and screening rules required zero code changes to the product. The entire customer integration was done through YAML configuration files and custom extractor plugins.",
-                    },
-                    {
-                      num: "6",
-                      title:
-                        "Ground truth is the foundation of everything.",
-                      desc: "Without 50 manually verified claim decisions (with itemized payouts, coverage notes, and denial reasons), there would be no way to measure progress, identify bugs, or validate fixes. Building the ground truth dataset was the single highest-ROI investment in the project.",
+                      desc: "In a regulated industry, every extracted value and coverage decision must trace back to a source document, page and character position. Fundamental to trust and compliance.",
                     },
                   ].map((lesson) => (
                     <div key={lesson.num} className="flex gap-4">
@@ -1504,47 +1016,28 @@ export default function VehicleWarrantyCaseStudy() {
                 </motion.div>
               )}
 
-              {/* Next Steps */}
+              {/* What's Next */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                   What&apos;s Next
                 </h2>
                 <div className="space-y-3 text-[var(--text-secondary)] leading-relaxed">
-                  <p>
-                    The system is in active development with a clear path
-                    forward:
-                  </p>
                   <ol className="list-decimal list-inside space-y-2 pl-2 text-sm">
-                    <li>
-                      Expand the ground truth dataset beyond 80 claims to
-                      improve generalization
-                    </li>
-                    <li>
-                      Integrate with the insurer&apos;s policy management API
-                      for real-time policy status checks
-                    </li>
-                    <li>
-                      Implement causal exclusion reasoning for
-                      cascading-damage denial patterns
-                    </li>
-                    <li>
-                      Build a self-service configuration portal for adjusters
-                      to update keyword mappings and coverage rules
-                    </li>
-                    <li>
-                      Deploy production triage workflow: auto-reject
-                      high-confidence denials, auto-approve simple approvals,
-                      route edge cases for human review
-                    </li>
+                    <li>Expand ground truth dataset beyond 80 claims</li>
+                    <li>Integrate with insurer's policy management API for real-time status checks</li>
+                    <li>Implement causal exclusion reasoning for cascading-damage denials</li>
+                    <li>Deploy production triage: auto-reject high-confidence denials, auto-approve simple approvals, route edge cases for human review</li>
                   </ol>
                   <p className="mt-4 font-medium text-[var(--text-primary)]">
-                    The goal is not to replace adjusters. The goal is to give
-                    them back their time on the 76% of denials that are
-                    straightforward lookups, so they can focus their expertise on
-                    the 24% that actually require judgment.
+                    The goal is not to replace adjusters but to give them back
+                    their time on the 76% of denials that are straightforward
+                    lookups, so they can focus their expertise on the 24% that
+                    actually require judgment.
                   </p>
                 </div>
               </motion.div>
+              </>
+              )}
             </div>
 
             {/* Sidebar */}

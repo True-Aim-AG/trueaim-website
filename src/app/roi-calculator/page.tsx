@@ -35,7 +35,7 @@ export default function ROICalculatorPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-8">
-              See the estimated impact of automating claims decisions with TrueAim.ai. Adjust the inputs to match your operation. All estimates are conservative.
+              See the estimated impact of automating claims decisions with True Aim. Adjust the inputs to match your operation. All estimates are conservative.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">

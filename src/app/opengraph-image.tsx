@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "TrueAim.ai - Neuro-Symbolic AI for Auditable Claims Decisions";
+export const alt = "True Aim - Neuro-Symbolic AI for Auditable Claims Decisions";
 export const size = {
   width: 1200,
   height: 630,
@@ -49,7 +49,7 @@ export default async function Image() {
                 color: "white",
               }}
             >
-              TrueAim
+              True Aim
             </div>
             <div
               style={{

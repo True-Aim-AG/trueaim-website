@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Building2, Network, Globe, Handshake } from "lucide-react";
 
 export default function YarowaPage() {
@@ -12,6 +13,18 @@ export default function YarowaPage() {
             Strategic Partner
           </div>
 
+          <div className="flex justify-center mb-8">
+            <div className="bg-white p-4 rounded-xl">
+              <Image
+                src="/partners/yarowa.png"
+                alt="Yarowa AG logo"
+                width={200}
+                height={56}
+                className="object-contain"
+              />
+            </div>
+          </div>
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
             Yarowa AG
             <br />
@@ -19,7 +32,7 @@ export default function YarowaPage() {
           </h1>
 
           <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-            Yarowa AG is a Swiss InsurTech platform with enterprise distribution and 100+ insurer relationships. Together, we bring auditable AI to the insurance industry at scale.
+            Yarowa AG is a Swiss InsurTech platform spun out of an established insurance group. Together, we bring auditable AI to the insurance industry at scale.
           </p>
         </div>
       </section>
@@ -40,7 +53,7 @@ export default function YarowaPage() {
                 Direct Insurer Distribution
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Access to an established network of 100+ insurer relationships across Switzerland and Europe. Not just introductions &ndash; a proven distribution channel for enterprise software.
+                Access to an established network of insurer relationships across Switzerland and Europe. A proven distribution channel for enterprise software.
               </p>
             </div>
 
@@ -49,10 +62,10 @@ export default function YarowaPage() {
                 <Building2 className="w-7 h-7 text-emerald-400" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                Enterprise Delivery Playbook
+                Enterprise Delivery Experience
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Yarowa brings a battle-tested enterprise delivery methodology. From procurement through implementation, their playbook accelerates time-to-value for insurer clients.
+                Yarowa brings deep enterprise delivery experience. From procurement through implementation, their methodology accelerates time-to-value for insurer clients.
               </p>
             </div>
 
@@ -64,7 +77,7 @@ export default function YarowaPage() {
                 Swiss InsurTech Platform
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                A Swiss-based technology platform purpose-built for the insurance industry. Yarowa&apos;s infrastructure and market knowledge complement TrueAim.ai&apos;s decisioning capabilities.
+                A Swiss-based technology platform purpose-built for the insurance industry. Yarowa&apos;s infrastructure and market knowledge complement True Aim&apos;s decisioning capabilities.
               </p>
             </div>
 
@@ -76,7 +89,7 @@ export default function YarowaPage() {
                 Aligned Vision
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Both TrueAim.ai and Yarowa share the conviction that insurance needs transparent, auditable technology. This strategic alignment drives our joint go-to-market approach.
+                Both True Aim and Yarowa share the conviction that insurance needs transparent, auditable technology. This strategic alignment drives our joint go-to-market approach.
               </p>
             </div>
           </div>
@@ -91,7 +104,7 @@ export default function YarowaPage() {
               See Our Products in Action
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">
-              Discover how the TrueAim.ai and Yarowa partnership delivers auditable claims automation to insurers.
+              Discover how the True Aim and Yarowa partnership delivers auditable claims automation to insurers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award } from "lucide-react";
+import Image from "next/image";
 import { slideFromLeft, slideFromRight, staggerContainer } from "@/lib/animations";
 import { PartnerLogos } from "./PartnerLogos";
 
@@ -9,14 +9,17 @@ const awards = [
   {
     country: "Switzerland",
     title: "Innovationspreis der Schweizer Assekuranz",
+    image: "/awards/swiss-innovation.jpg",
   },
   {
     country: "Germany",
-    title: "Digitale Leuchtturm Versicherungen – 1. Rang",
+    title: "Digitaler Leuchtturm Versicherungen - 1. Rang",
+    image: "/awards/digitaler-leuchtturm.jpg",
   },
   {
     country: "Italy",
-    title: "Miglior InsurTech – IKN Awards",
+    title: "Miglior InsurTech - IKN Awards",
+    image: "/awards/ikn-italy.jpg",
   },
 ];
 
@@ -31,15 +34,15 @@ export function TrustBar() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[var(--text-primary)]">
-            Backed by Switzerland&apos;s Innovation Ecosystem
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)]">
+            Award-Winning Technology
           </h2>
           <p className="text-base text-[var(--text-secondary)] mt-3">
-            Award-winning technology backed by Innosuisse, ZHAW, and Yarowa AG
+            Recognised across Switzerland, Germany and Italy
           </p>
         </motion.div>
 
-        {/* Awards - Horizontal scroll on mobile, flex row on desktop */}
+        {/* Awards with actual badge images */}
         <motion.div
           variants={staggerContainer}
           initial="initial"
@@ -55,8 +58,14 @@ export function TrustBar() {
               className="flex-shrink-0 md:flex-1 max-w-sm md:max-w-none"
             >
               <div className="flex items-center gap-5 glass-panel p-6 h-full">
-                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-amber-500/30 to-amber-600/20 flex items-center justify-center">
-                  <Award className="w-7 h-7 text-amber-400" />
+                <div className="flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden bg-white/10">
+                  <Image
+                    src={award.image}
+                    alt={award.title}
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wide mb-1">
@@ -71,7 +80,7 @@ export function TrustBar() {
           ))}
         </motion.div>
 
-        {/* Partner Logos - Animated Marquee */}
+        {/* Partner Logos */}
         <PartnerLogos />
       </div>
     </section>

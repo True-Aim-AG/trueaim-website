@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Trust & Compliance",
   description:
-    "TrueAim's compliance architecture. EU AI Act alignment, GDPR, Swiss FADP compliance. Every decision auditable, every outcome traceable.",
+    "True Aim's compliance architecture. EU AI Act alignment, GDPR, Swiss FADP compliance. Every decision auditable, every outcome traceable.",
   openGraph: {
-    title: "Trust & Compliance | TrueAim.ai",
+    title: "Trust & Compliance | True Aim",
     description:
       "EU AI Act alignment, GDPR, Swiss FADP compliance. Every decision auditable, every outcome traceable.",
     url: "https://trueaim.ai/trust",

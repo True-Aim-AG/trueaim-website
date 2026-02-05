@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ExternalLink, GraduationCap, Brain, Users, FlaskConical } from "lucide-react";
 
 export default function ZHAWPage() {
@@ -12,6 +13,16 @@ export default function ZHAWPage() {
             Research Partner
           </div>
 
+          <div className="flex justify-center mb-8">
+            <Image
+              src="/partners/zhaw.jpg"
+              alt="ZHAW logo"
+              width={160}
+              height={120}
+              className="object-contain"
+            />
+          </div>
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
             ZHAW Research
             <br />
@@ -19,7 +30,7 @@ export default function ZHAWPage() {
           </h1>
 
           <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-            TrueAim.ai&apos;s core technology originated at ZHAW &ndash; Zurich University of Applied Sciences. Our ongoing research partnership advances neuro-symbolic AI for regulated industries.
+            True Aim&apos;s core technology originated at ZHAW (Zurich University of Applied Sciences). Our ongoing research partnership advances neuro-symbolic AI for regulated industries.
           </p>
         </div>
       </section>
@@ -95,16 +106,34 @@ export default function ZHAWPage() {
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
-                <div className="glass-panel-light p-6">
+                <div className="glass-panel-light p-6 text-center">
+                  <div className="flex justify-center mb-3">
+                    <Image
+                      src="/team/dandolo-flumini.jpg"
+                      alt="Dr. Dandolo Flumini"
+                      width={80}
+                      height={80}
+                      className="rounded-full object-cover w-20 h-20"
+                    />
+                  </div>
                   <h3 className="font-semibold text-[var(--text-primary)] mb-2">Dr. Dandolo Flumini</h3>
                   <p className="text-sm text-[var(--text-muted)]">
                     Original developer of the MIRA technology. PhD in Mathematics and Computer Science. Leads the Innosuisse-funded research programme.
                   </p>
                 </div>
-                <div className="glass-panel-light p-6">
+                <div className="glass-panel-light p-6 text-center">
+                  <div className="flex justify-center mb-3">
+                    <Image
+                      src="/team/lukas-lichtensteiger.jpg"
+                      alt="Dr. Lukas Lichtensteiger"
+                      width={80}
+                      height={80}
+                      className="rounded-full object-cover w-20 h-20"
+                    />
+                  </div>
                   <h3 className="font-semibold text-[var(--text-primary)] mb-2">Dr. Lukas Lichtensteiger</h3>
                   <p className="text-sm text-[var(--text-muted)]">
-                    Harvard alumnus, serial entrepreneur and CTO. ZHAW researcher in AI and robotics. TrueAim.ai technical advisor.
+                    Harvard alumnus, serial entrepreneur and CTO. ZHAW researcher in AI and robotics. True Aim technical advisor.
                   </p>
                 </div>
               </div>

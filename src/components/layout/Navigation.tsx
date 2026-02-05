@@ -41,7 +41,7 @@ export function Navigation() {
             <div className="bg-white rounded-lg p-1 shadow-lg shadow-white/10">
               <Image
                 src="/images/logo.png"
-                alt="TrueAim.ai Logo"
+                alt="True Aim Logo"
                 width={36}
                 height={36}
                 className="object-contain"

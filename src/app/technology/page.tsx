@@ -338,7 +338,7 @@ export default function TechnologyPage() {
               Not Another Black Box
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              See how TrueAim.ai compares to traditional AI approaches
+              See how True Aim compares to traditional AI approaches
             </p>
           </motion.div>
 
@@ -354,7 +354,7 @@ export default function TechnologyPage() {
                 <tr className="border-b border-[var(--border)]">
                   <th className="text-left p-6 text-[var(--text-primary)] font-semibold">Capability</th>
                   <th className="text-center p-6 text-[var(--text-muted)] font-semibold">Traditional AI</th>
-                  <th className="text-center p-6 text-[var(--primary)] font-semibold">TrueAim.ai</th>
+                  <th className="text-center p-6 text-[var(--primary)] font-semibold">True Aim</th>
                 </tr>
               </thead>
               <tbody>

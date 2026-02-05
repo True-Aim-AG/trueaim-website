@@ -33,7 +33,7 @@ export function Footer() {
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
               <img
                 src="/images/logo.png"
-                alt="TrueAim.ai Logo"
+                alt="True Aim Logo"
                 className="h-12 w-auto"
               />
               <span className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">
@@ -127,7 +127,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[var(--border)]">
           <p className="text-[var(--text-muted)] text-sm text-center">
-            © {new Date().getFullYear()} TrueAim.ai. All rights reserved.
+            © {new Date().getFullYear()} True Aim. All rights reserved.
           </p>
         </div>
       </div>

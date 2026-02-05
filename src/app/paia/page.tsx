@@ -15,7 +15,7 @@ export default function PAIAPage() {
           <section>
             <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">Company Information</h2>
             <div className="space-y-2 text-[var(--text-secondary)] leading-relaxed">
-              <p><span className="font-medium text-[var(--text-primary)]">Company name:</span> TrueAim AG</p>
+              <p><span className="font-medium text-[var(--text-primary)]">Company name:</span> True Aim AG</p>
               <p><span className="font-medium text-[var(--text-primary)]">Registration:</span> Switzerland</p>
               <p><span className="font-medium text-[var(--text-primary)]">Information Officer:</span> Reuben John, CEO</p>
               <p><span className="font-medium text-[var(--text-primary)]">Email:</span>{" "}
@@ -33,9 +33,9 @@ export default function PAIAPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">Records Held by TrueAim AG</h2>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">Records Held by True Aim AG</h2>
             <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
-              The following categories of records are held by TrueAim AG:
+              The following categories of records are held by True Aim AG:
             </p>
             <ul className="space-y-2 text-[var(--text-secondary)]">
               <li className="flex items-start gap-3">
