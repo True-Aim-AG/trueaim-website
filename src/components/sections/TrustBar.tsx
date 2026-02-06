@@ -58,13 +58,13 @@ export function TrustBar() {
               className="flex-shrink-0 md:flex-1 max-w-sm md:max-w-none"
             >
               <div className="flex items-center gap-5 glass-panel p-6 h-full">
-                <div className="flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden bg-white/10">
+                <div className="flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden bg-white flex items-center justify-center">
                   <Image
                     src={award.image}
                     alt={award.title}
                     width={80}
                     height={80}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain p-0"
                   />
                 </div>
                 <div className="min-w-0">

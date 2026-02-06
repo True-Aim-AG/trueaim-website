@@ -15,7 +15,7 @@ export default function ZHAWPage() {
 
           <div className="flex justify-center mb-8">
             <Image
-              src="/partners/zhaw.jpg"
+              src="/partners/zhaw-logo.png"
               alt="ZHAW logo"
               width={160}
               height={120}
@@ -123,7 +123,7 @@ export default function ZHAWPage() {
                   </div>
                   <h3 className="font-semibold text-[var(--text-primary)] mb-2">Dr. Dandolo Flumini</h3>
                   <p className="text-sm text-[var(--text-muted)]">
-                    Original developer of the MIRA technology. PhD in Mathematics and Computer Science. Leads the Innosuisse-funded research programme.
+                    Original developer of the MIRA technology. PhD in Mathematics and Computer Science. Leads True Aim's Innosuisse-funded Innovation Project.
                   </p>
                 </div>
                 <div className="glass-panel-light p-6 text-center">

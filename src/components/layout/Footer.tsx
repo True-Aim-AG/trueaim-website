@@ -142,9 +142,14 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[var(--border)]">
-          <p className="text-[var(--text-muted)] text-sm text-center">
-            © {new Date().getFullYear()} True Aim. All rights reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+            <p className="text-[var(--text-muted)] text-sm">
+              © {new Date().getFullYear()} True Aim. All rights reserved.
+            </p>
+            <span className="text-[var(--text-muted)] text-xs opacity-50">
+              v1.0.1
+            </span>
+          </div>
         </div>
       </div>
     </footer>

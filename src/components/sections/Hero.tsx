@@ -33,7 +33,7 @@ const pipelineSteps = [
     icon: Scale,
     label: "Assess",
     color: "var(--primary)",
-    shortDescription: "Confirm outcome and routing",
+    shortDescription: "Confirm outcome & handling",
     description: "Coverage determination against policy",
     automatedTime: "< 5 sec",
     businessValue: "Consistent, defensible decisions on every claim",
@@ -115,7 +115,13 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-4 leading-relaxed"
           >
-            Apply policy terms clearly and consistently in regulated environments, without black boxes.
+            <>
+              Apply policy terms clearly and consistently.
+              <br />
+              Built for regulated insurance.
+              <br />
+              No black boxes.
+            </>
           </motion.p>
           <div className="mb-10" />
 
@@ -204,7 +210,7 @@ export function Hero() {
                         )}
                       </div>
                     </div>
-                    <span className="text-sm font-medium text-[var(--text-primary)]">
+                    <span className="text-base font-semibold text-[var(--text-primary)]">
                       {step.label}
                     </span>
                     <span className="text-xs text-[var(--text-muted)] mt-0.5">

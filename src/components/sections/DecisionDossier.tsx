@@ -81,11 +81,14 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                   <BookOpen className="w-4 h-4" />
                   Unique to True Aim
                 </div>
+                <p className="text-lg font-semibold text-[var(--primary)] mb-2">
+                  Auditable by Design.
+                </p>
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
                   The Decision Dossier
                 </h2>
                 <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
-                  Every claim decision produces a complete, reproducible audit record. Unlike black-box AI, every True Aim decision can be <strong className="text-[var(--text-primary)]">replayed, explained, defended</strong> in audit or dispute.
+                  Every claim decision produces a complete, reproducible audit record. Unlike black-box AI, every True Aim decision can be <strong className="text-[var(--text-primary)]">replayed, explained & defended</strong> in audit or dispute.
                 </p>
                 <Link
                   href="/technology#decision-dossier"
