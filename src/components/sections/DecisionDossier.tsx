@@ -85,7 +85,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                   The Decision Dossier
                 </h2>
                 <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
-                  Every claim decision produces a complete, replayable audit record. Unlike black-box AI, every True Aim decision can be <strong className="text-[var(--text-primary)]">replayed, explained, defended</strong> in audit or dispute.
+                  Every claim decision produces a complete, reproducible audit record. Unlike black-box AI, every True Aim decision can be <strong className="text-[var(--text-primary)]">replayed, explained, defended</strong> in audit or dispute.
                 </p>
                 <Link
                   href="/technology#decision-dossier"
@@ -154,7 +154,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
             The Decision Dossier
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
-            Every claim decision produces a complete, replayable audit record, your defense in any audit or dispute.
+            Every claim decision produces a complete, reproducible audit record, your defense in any audit or dispute.
           </p>
         </motion.div>
 

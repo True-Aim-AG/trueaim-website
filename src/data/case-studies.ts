@@ -31,11 +31,11 @@ export interface CaseStudy {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "vehicle-warranty-claims",
-    title: "Vehicle Warranty Insurer Goes from 18% to 98% Decision Accuracy in 7 Days",
+    title: "Vehicle Warranty Insurer Achieves 98% Decision Accuracy in 7 Days",
     customer: {
       name: "European Warranty Insurer",
       industry: "Vehicle Warranty Insurance",
-      size: "84 claims in pilot",
+      size: "",
       isAnonymized: true,
     },
     challenge:
@@ -51,7 +51,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     timeline: "7 days from baseline to 98% accuracy",
     quote: {
-      text: "The business logic is harder than the AI. Getting the payout formula to match the insurer\u2019s internal calculation requires working with the actual adjuster, walking through calculations claim by claim.",
+      text: "The business logic matters more than the AI. Matching the insurer's payout calculations requires working closely with adjusters and walking through real claims to ensure the logic reflects how decisions are actually made.",
       author: "Lead Engineer",
       role: "True Aim",
     },

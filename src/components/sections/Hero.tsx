@@ -11,8 +11,9 @@ const pipelineSteps = [
     icon: FileText,
     label: "Ingest",
     color: "var(--trust)",
+    shortDescription: "Capture & validate inputs",
     description: "Documents received via email, portal or system export",
-    automatedTime: "< 5 sec",
+    automatedTime: "< 10 sec",
     businessValue: "Eliminate manual sorting and routing",
     automationDetail: "ContextBuilder auto-ingests and classifies documents",
     hitlOptional: false,
@@ -21,28 +22,31 @@ const pipelineSteps = [
     icon: Search,
     label: "Process",
     color: "var(--secondary)",
+    shortDescription: "Apply policy logic & checks",
     description: "Key data pulled from claims documents",
-    automatedTime: "10-30 sec",
+    automatedTime: "15 – 45 sec",
     businessValue: "Reduce re-keying errors and data entry cost",
     automationDetail: "AI extracts fields with evidence linking",
     hitlOptional: true,
   },
   {
     icon: Scale,
-    label: "Decide",
+    label: "Assess",
     color: "var(--primary)",
+    shortDescription: "Confirm outcome and routing",
     description: "Coverage determination against policy",
-    automatedTime: "< 3 sec",
+    automatedTime: "< 5 sec",
     businessValue: "Consistent, defensible decisions on every claim",
     automationDetail: "MIRA applies deterministic policy logic",
     hitlOptional: false,
   },
   {
     icon: Send,
-    label: "Act",
+    label: "Execute",
     color: "var(--aurora-cyan)",
+    shortDescription: "Trigger next steps",
     description: "Set reserves, draft payment, send comms",
-    automatedTime: "< 5 sec",
+    automatedTime: "< 10 sec",
     businessValue: "Faster settlement cycles, improved CX",
     automationDetail: "Automated task execution based on decision",
     hitlOptional: true,
@@ -51,6 +55,7 @@ const pipelineSteps = [
     icon: ClipboardCheck,
     label: "Audit",
     color: "var(--secondary)",
+    shortDescription: "Full traceability",
     description: "Complete decision trail logged",
     automatedTime: "Instant",
     businessValue: "Regulator-ready audit trails without manual prep",
@@ -99,9 +104,9 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6"
           >
-            Automate Claims Decisions.
+            Automate Insurance Claim Decisions.
             <br />
-            <span className="text-[var(--primary)]">Audit Every One.</span>
+            <span className="text-[var(--primary)]">Auditable by Design.</span>
           </motion.h1>
 
           <motion.p
@@ -110,8 +115,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-4 leading-relaxed"
           >
-            Turn policy terms into instant, deterministic claim decisions - fully traceable,
-            fully aligned with EU AI Act, no black boxes.
+            Apply policy terms clearly and consistently in regulated environments, without black boxes.
           </motion.p>
           <div className="mb-10" />
 
@@ -134,10 +138,10 @@ export function Hero() {
               </motion.div>
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <Link
-                  href="/roi-calculator"
+                  href="/impact-estimator"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-all text-lg backdrop-blur-sm"
                 >
-                  Get ROI Estimate
+                  Get Impact Estimate
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </motion.div>
@@ -203,6 +207,9 @@ export function Hero() {
                     <span className="text-sm font-medium text-[var(--text-primary)]">
                       {step.label}
                     </span>
+                    <span className="text-xs text-[var(--text-muted)] mt-0.5">
+                      {step.shortDescription}
+                    </span>
                     <span className="text-xs text-[var(--secondary)] font-medium mt-0.5">
                       {step.automatedTime}
                     </span>
@@ -264,45 +271,8 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Animated data flow indicator */}
-            <div className="hidden md:block absolute left-[15%] right-[15%] h-1 overflow-hidden rounded-full" style={{ top: "55%" }}>
-              <motion.div
-                className="h-full w-1/4 bg-gradient-to-r from-transparent via-[var(--primary)] to-transparent opacity-50"
-                animate={{ x: ["-100%", "500%"] }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear",
-                  repeatDelay: 1
-                }}
-              />
-            </div>
           </div>
 
-          {/* Floating badges - Glass Panels - aligned vertically */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            className="absolute -left-4 top-1/2 -translate-y-1/2 hidden lg:block"
-          >
-            <div className="glass-panel px-4 py-3">
-              <p className="text-xs text-[var(--text-muted)]">Processing time</p>
-              <p className="text-lg font-bold font-mono-data text-[var(--secondary)]">&lt;2 seconds</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 1.4 }}
-            className="absolute -right-4 top-1/2 -translate-y-1/2 hidden lg:block"
-          >
-            <div className="glass-panel px-4 py-3">
-              <p className="text-xs text-[var(--text-muted)]">Audit trail</p>
-              <p className="text-lg font-bold font-mono-data text-[var(--primary)]">100% traceable</p>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

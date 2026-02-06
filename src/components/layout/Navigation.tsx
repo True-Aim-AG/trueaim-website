@@ -15,8 +15,9 @@ const products = [
 
 const resources = [
   { name: "Case Studies", href: "/case-studies", description: "Customer success stories" },
-  { name: "ROI Calculator", href: "/roi-calculator", description: "Calculate your savings" },
+  { name: "Impact Estimator", href: "/impact-estimator", description: "Explore potential value" },
   { name: "Trust Center", href: "/trust", description: "Security & compliance" },
+  { name: "Blog", href: "/blog", description: "Insights and updates" },
 ];
 
 const navigation = [

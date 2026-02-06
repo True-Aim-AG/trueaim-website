@@ -1,10 +1,16 @@
 import Link from "next/link";
-import { Linkedin, Github } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 const footerLinks = {
   company: [
     { name: "About", href: "/company" },
     { name: "Contact", href: "/contact" },
+  ],
+  resources: [
+    { name: "Case Studies", href: "/case-studies" },
+    { name: "Impact Estimator", href: "/impact-estimator" },
+    { name: "Trust Center", href: "/trust" },
+    { name: "Blog", href: "/blog" },
   ],
   products: [
     { name: "MIRA", href: "/products/mira" },
@@ -27,7 +33,7 @@ export function Footer() {
 
       <div className="relative max-w-7xl mx-auto px-6 py-16">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
@@ -46,22 +52,13 @@ export function Footer() {
             {/* Social Links */}
             <div className="flex gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/true-aim-ag"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="https://github.com/Fr3nn3r"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -73,6 +70,25 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources Links */}
+          <div>
+            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-[var(--text-primary)]">
+              Resources
+            </h3>
+            <ul className="space-y-3">
+              {footerLinks.resources.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}

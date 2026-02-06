@@ -9,17 +9,17 @@ const awards = [
   {
     country: "Switzerland",
     title: "Innovationspreis der Schweizer Assekuranz",
-    image: "/awards/swiss-innovation.jpg",
+    image: "/awards/swiss-innovation.png",
   },
   {
     country: "Germany",
     title: "Digitaler Leuchtturm Versicherungen - 1. Rang",
-    image: "/awards/digitaler-leuchtturm.jpg",
+    image: "/awards/digitaler-leuchtturm.png",
   },
   {
     country: "Italy",
     title: "Miglior InsurTech - IKN Awards",
-    image: "/awards/ikn-italy.jpg",
+    image: "/awards/ikn-italy.png",
   },
 ];
 

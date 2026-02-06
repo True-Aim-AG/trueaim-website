@@ -31,9 +31,14 @@ export default function YarowaPage() {
             <span className="text-[var(--primary)]">Strategic Partner</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-            Yarowa AG is a Swiss InsurTech platform spun out of an established insurance group. Together, we bring auditable AI to the insurance industry at scale.
-          </p>
+          <div className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed space-y-4">
+            <p>
+              Yarowa AG is a Swiss InsurTech platform with deep roots in the insurance industry, operating at scale across core insurance workflows in highly regulated environments. Its platform is shaped by years of close collaboration with insurers and real-world production use.
+            </p>
+            <p>
+              True Aim AG is a spinout from Yarowa, established to focus specifically on auditable, regulation-ready AI for insurance, combining proven industry expertise with purpose-built technology for transparent, enterprise deployment.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -104,7 +109,7 @@ export default function YarowaPage() {
               See Our Products in Action
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">
-              Discover how the True Aim and Yarowa partnership delivers auditable claims automation to insurers.
+              Discover how our partnership delivers auditable claims automation to insurers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

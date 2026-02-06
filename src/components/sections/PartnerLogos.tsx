@@ -22,8 +22,8 @@ const partners = [
   {
     name: "Innosuisse",
     logo: "/partners/innosuisse.png",
-    width: 340,
-    height: 96,
+    width: 200,
+    height: 150,
     href: "/partners/innosuisse",
   },
 ];
@@ -37,10 +37,10 @@ export function PartnerLogos() {
       transition={{ duration: 0.6, delay: 0.3 }}
       className="relative mt-10"
     >
-      {/* Section Label */}
-      <p className="text-center text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-6">
+      {/* Section Label - matches Award-Winning Technology heading style */}
+      <h2 className="text-center text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
         Trusted Partners
-      </p>
+      </h2>
 
       {/* Static Logo Display */}
       <div className="relative rounded-2xl bg-gradient-to-r from-slate-50 via-white to-slate-50 py-8 shadow-inner">

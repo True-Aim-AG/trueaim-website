@@ -186,7 +186,7 @@ export function ROICalculator() {
           country: "-",
           interest: "general",
           consent: true,
-          message: `ROI Report Request\n\nVolume: ${formatNumber(results.volume)} claims/year\nCost per claim: ${currencyConfig.symbol} ${inputs.costPerClaim}\nHandling time: ${inputs.handlingTime} min\nNet annual impact: ${formatCurrency(results.netAnnualImpact)}\nPayback: ${results.paybackMonths} months`,
+          message: `Impact Report Request\n\nVolume: ${formatNumber(results.volume)} claims/year\nCost per claim: ${currencyConfig.symbol} ${inputs.costPerClaim}\nHandling time: ${inputs.handlingTime} min\nNet annual impact: ${formatCurrency(results.netAnnualImpact)}\nPayback: ${results.paybackMonths} months`,
         }),
       });
       setReportSubmitted(true);
@@ -592,12 +592,12 @@ export function ROICalculator() {
               <CheckCircle className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
               <h4 className="font-semibold text-white mb-1">Request Received</h4>
               <p className="text-sm text-[var(--text-muted)]">
-                We&apos;ll send your personalized ROI breakdown within 1 business day.
+                We&apos;ll send your personalized impact breakdown within 1 business day.
               </p>
             </div>
           ) : showReportForm ? (
             <form onSubmit={handleReportSubmit} className="space-y-4">
-              <h4 className="font-semibold text-white mb-1">Request Detailed ROI Report</h4>
+              <h4 className="font-semibold text-white mb-1">Request Detailed Impact Report</h4>
               <input
                 type="text"
                 placeholder="Your name"
@@ -619,7 +619,7 @@ export function ROICalculator() {
                 disabled={reportSubmitting}
                 className="w-full px-6 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-[var(--primary)]/30 disabled:opacity-50"
               >
-                {reportSubmitting ? "Sending..." : "Send My ROI Report"}
+                {reportSubmitting ? "Sending..." : "Send My Impact Report"}
               </button>
             </form>
           ) : (
@@ -628,14 +628,14 @@ export function ROICalculator() {
                 Want the full breakdown?
               </h4>
               <p className="text-sm text-[var(--text-muted)] mb-4">
-                Get a personalized ROI report with detailed methodology and assumptions.
+                Get a personalized impact report with detailed methodology and assumptions.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <button
                   onClick={() => setShowReportForm(true)}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-[var(--primary)]/30"
                 >
-                  Request Detailed ROI Report
+                  Request Detailed Impact Report
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <Link

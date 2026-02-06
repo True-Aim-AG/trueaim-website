@@ -299,10 +299,10 @@ export default function CaseStudiesPage() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
-                href="/roi-calculator"
+                href="/impact-estimator"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                Calculate Your ROI
+                Estimate Your Impact
               </Link>
             </div>
           </motion.div>

@@ -29,9 +29,14 @@ export default function ZHAWPage() {
             <span className="text-[var(--primary)]">Partnership</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-            True Aim&apos;s core technology originated at ZHAW (Zurich University of Applied Sciences). Our ongoing research partnership advances neuro-symbolic AI for regulated industries.
-          </p>
+          <div className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed space-y-4">
+            <p>
+              Parts of True Aim&apos;s innovative technology is developed in collaboration with ZHAW Zurich University of Applied Sciences, one of Switzerland&apos;s leading applied research universities, recognised for deep-tech research in AI, data science and engineering with a strong focus on real-world deployment.
+            </p>
+            <p>
+              The work is supported through Innosuisse innovation funding, with ZHAW as the formal research partner and True Aim as the industry implementation partner, advancing transparent and regulation-ready neuro-symbolic AI for highly regulated industries.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -140,7 +145,7 @@ export default function ZHAWPage() {
 
               <div className="pt-4">
                 <a
-                  href="https://www.zhaw.ch"
+                  href="https://www.zhaw.ch/en/about-us/person/flum"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[var(--primary)] font-medium hover:underline"

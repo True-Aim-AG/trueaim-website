@@ -31,9 +31,14 @@ export default function InnosuissePage() {
             <span className="text-[var(--primary)]">Innovation Partner</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-            True Aim&apos;s core technology is backed by Innosuisse, the Swiss Innovation Agency, through a competitive research grant - national-level validation of our approach to auditable AI.
-          </p>
+          <div className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed space-y-4">
+            <p>
+              True Aim&apos;s core technology is supported through a competitive research grant awarded by Innosuisse, Switzerland&apos;s national innovation agency. The grant reflects formal, national-level validation of the technical approach and research programme behind True Aim&apos;s work in auditable AI.
+            </p>
+            <p>
+              The funding supports applied research into transparent, controllable and regulation-ready AI systems for highly regulated industries, with a clear focus on measurable outcomes and real-world deployment.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -96,8 +101,8 @@ export default function InnosuissePage() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="glass-panel p-8 md:p-12 text-center">
-            <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-2">Research Grant</p>
-            <p className="text-3xl font-bold text-[var(--primary)] mb-4">Innosuisse Research Grant</p>
+            <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-2">Innovation Funding</p>
+            <p className="text-3xl font-bold text-[var(--primary)] mb-4">Innosuisse Innovation Project Funding</p>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto">
               Non-dilutive funding from the Swiss Confederation to advance neuro-symbolic AI for deterministic claims decisioning in regulated industries.
             </p>
@@ -124,7 +129,7 @@ export default function InnosuissePage() {
               Learn More About Our Technology
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">
-              Discover how Innosuisse-backed research powers our claims decisioning engine.
+              Discover how Innosuisse-backed innovation powers our claims decisioning engine.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

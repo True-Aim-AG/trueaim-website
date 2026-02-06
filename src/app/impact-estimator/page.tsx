@@ -11,7 +11,7 @@ const benefits = [
   "Instant results",
 ];
 
-export default function ROICalculatorPage() {
+export default function ImpactEstimatorPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -25,13 +25,13 @@ export default function ROICalculatorPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] text-sm font-medium mb-6">
               <Calculator className="w-4 h-4" />
-              ROI Calculator
+              Impact Estimator
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
-              Estimate Your
+              Explore Your
               <br />
-              <span className="text-[var(--primary)]">Claims Automation Impact</span>
+              <span className="text-[var(--primary)]">Potential Value</span>
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-8">
@@ -68,7 +68,7 @@ export default function ROICalculatorPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
-              How We Calculate Your Savings
+              How We Estimate Your Impact
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
               Our estimates are based on real pilot results and industry benchmarks
@@ -141,7 +141,7 @@ export default function ROICalculatorPage() {
               Ready for a Detailed Assessment?
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto">
-              Our team can analyze your specific claims data, policy complexity, and operational constraints to provide a customized ROI projection.
+              Our team can analyze your specific claims data, policy complexity, and operational constraints to provide a customized impact projection.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

@@ -83,7 +83,7 @@ function HeroSection() {
             {/* Primary CTA */}
             <motion.div variants={fadeUp} className="mb-6">
               <Link
-                href="#roi-calculator"
+                href="#impact-calculator"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-500 transition-all text-lg shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50 group"
               >
                 Show Me My Leakage
@@ -806,7 +806,7 @@ function ROICalculatorSection() {
   };
 
   return (
-    <section id="roi-calculator" className="py-24 px-6">
+    <section id="impact-calculator" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -909,9 +909,9 @@ function FAQSection() {
         "SOC2 Type II. ISO 27001. Encrypted at rest. We never train on your data without consent.",
     },
     {
-      question: "How long until we see ROI?",
+      question: "How long until we see results?",
       answer:
-        "Most carriers are live in 3–4 weeks. Measurable ROI by month 3.",
+        "Most carriers are live in 3–4 weeks. Measurable impact by month 3.",
     },
   ];
 

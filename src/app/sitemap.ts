@@ -53,7 +53,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/roi-calculator`,
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/impact-estimator`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,

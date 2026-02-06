@@ -48,11 +48,11 @@ export function CTA() {
               </motion.div>
               <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
                 <Link
-                  href="/roi-calculator"
+                  href="/impact-estimator"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-all text-lg backdrop-blur-sm"
                 >
                   <Calculator className="w-5 h-5" />
-                  Get ROI Estimate
+                  Get Impact Estimate
                 </Link>
               </motion.div>
             </div>
@@ -70,15 +70,15 @@ export function CTA() {
           <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-[var(--text-muted)]">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-[var(--secondary)]" />
-              DPA available
+              Compliance by Design
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-[var(--secondary)]" />
-              Swiss hosting available
+              Swiss data hosting
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-[var(--secondary)]" />
-              Security pack available
+              Built to enterprise standards
             </div>
           </div>
         </motion.div>

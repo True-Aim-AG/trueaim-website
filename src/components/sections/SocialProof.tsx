@@ -71,7 +71,7 @@ export function SocialProof() {
                       {featured.customer.name}
                     </div>
                     <div className="text-sm text-[var(--text-muted)]">
-                      {featured.customer.industry} · {featured.customer.size}
+                      {featured.customer.industry}{featured.customer.size && ` · ${featured.customer.size}`}
                     </div>
                   </div>
                 </div>
