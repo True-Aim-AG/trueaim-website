@@ -147,7 +147,7 @@ export function Footer() {
               © {new Date().getFullYear()} True Aim. All rights reserved.
             </p>
             <span className="text-[var(--text-muted)] text-xs opacity-50">
-              v1.0.1
+              v1.0.2
             </span>
           </div>
         </div>
