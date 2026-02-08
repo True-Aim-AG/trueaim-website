@@ -7,7 +7,7 @@ import Image from "next/image";
 const partners = [
   {
     name: "ZHAW",
-    logo: "/partners/zhaw.jpg",
+    logo: "/partners/zhaw-logo.png",
     width: 200,
     height: 150,
     href: "/partners/zhaw",

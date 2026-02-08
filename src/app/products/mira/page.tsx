@@ -23,31 +23,31 @@ const workflowSteps = [
   {
     step: 1,
     title: "Ingestion",
-    description: "Key data placed into computable contract from emails, PDFs, photos, scanned notes.",
+    description: "Key data placed into the computable contract from emails, PDFs, photos, scanned notes etc.",
     icon: FileInput,
   },
   {
     step: 2,
     title: "Comprehension",
-    description: "Agentic workflow reads case file: identifies parties, creates timeline, extracts key data.",
+    description: "Agentic workflow reads case file: identifies parties, creates timeline, extracts key data etc.",
     icon: Search,
   },
   {
     step: 3,
     title: "Determination",
-    description: "Deterministic logic computes: Covered | Partially Covered | Not Covered | Need More Info.",
+    description: "Deterministic logic evaluates coverage status: Covered | Partially Covered | Not Covered | Additional Information Required",
     icon: Scale,
   },
   {
     step: 4,
     title: "Action",
-    description: "Tasks executed: open claim, set reserves, draft payment, draft communications.",
+    description: "Tasks executed: open claim, set reserves, draft payment, draft communications etc.",
     icon: Zap,
   },
   {
     step: 5,
     title: "Output",
-    description: "Clear, auditable deliverables: coverage determination report, customer letter with decision rationale, structured audit log, reserve recommendation.",
+    description: "Auditable outputs: coverage report, customer letter with rationale, audit log, reserve recommendation etc.",
     icon: FileOutput,
   },
 ];
@@ -60,12 +60,12 @@ const capabilities = [
   },
   {
     title: "Multi-Vertical Support",
-    description: "Insurance: Health, Pet, Motor, Household, Life. Travel: Flight refunds, train refunds, accommodation. Warranty: Vehicle, electronics, extended coverage.",
+    description: "Insurance: Health, Pet, Motor, Household, Life.\n\nTravel: Flight refunds, train refunds, accommodation.\n\nWarranty: Vehicle, electronics, extended coverage.",
     icon: Globe,
   },
   {
     title: "Integration Ready",
-    description: "API-first architecture. Works alongside existing claims management systems without rip-and-replace. Flexible deployment: cloud or on-premise.",
+    description: "API-first architecture. Works alongside existing claims management systems. No integration disruption. Flexible deployment: cloud or on-premise",
     icon: Plug,
   },
   {
@@ -106,7 +106,7 @@ export default function MiraPage() {
               Transform complex policy terms into automated, fully-deterministic claim decisions. Every outcome traceable to the legal text.
             </p>
             <p className="text-base text-[var(--text-muted)] mb-8 leading-relaxed">
-              Works alongside existing claims systems. No rip-and-replace required.
+              Works alongside existing claims systems. Integrates without disruption.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -114,13 +114,13 @@ export default function MiraPage() {
                 href="#demo"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/30"
               >
-                Test MIRA on Your Claims
+                See MIRA in Action
               </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                Request a Pilot
+                Book a Demo
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -139,10 +139,14 @@ export default function MiraPage() {
             className="max-w-3xl mx-auto text-center glass-panel p-8 md:p-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Claims Decisions Are Still Manual, Inconsistent, and Opaque
+              Claim Decisions are Still Manual, Inconsistent and Opaque
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Today&apos;s claims handlers spend hours interpreting dense policy language. Decisions vary by handler. Audit preparation consumes weeks. And probabilistic AI tools can&apos;t explain their reasoning.
+              Today&apos;s claim handlers spend hours interpreting dense policy language.
+              <br /><br />
+              Decisions vary by handler and audit preparation consumes weeks.
+              <br /><br />
+              Probabilistic AI tools can&apos;t explain their reasoning.
             </p>
             <p className="text-xl font-semibold text-[var(--primary)] mt-6">
               MIRA changes everything.
@@ -165,17 +169,17 @@ export default function MiraPage() {
               Agentic AI Meets Deterministic Logic
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              MIRA is the world&apos;s first neuro-symbolic engine purpose-built for claims. It uses agentic AI for intelligent workflow orchestration (reading documents, extracting data, identifying parties) while relying on deterministic logic for the actual coverage decision.
+              MIRA is the world&apos;s first neuro-symbolic engine purpose-built for insurance claims. It uses agentic AI for intelligent workflow orchestration (reading documents, extracting data, identifying parties etc) while relying on deterministic logic for the actual coverage decision.
             </p>
             <p className="text-lg text-[var(--text-primary)] font-medium mt-4">
-              The result: decisions that are fast, consistent, and completely explainable.
+              The result: decisions that are fast, consistent and completely explainable.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Workflow Steps */}
-      <section className="py-20 px-6">
+      <section className="pt-10 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -193,7 +197,7 @@ export default function MiraPage() {
           </motion.div>
 
           <div className="relative">
-            <div className="hidden lg:block absolute top-24 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-[var(--primary)] via-[var(--aurora-cyan)] to-emerald-500" />
+            {/* Connector line removed per V3-MIRA-012 */}
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
               {workflowSteps.map((step, index) => (
@@ -242,7 +246,7 @@ export default function MiraPage() {
               Test MIRA on Your Claims
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Interactive demo of MIRA processing travel claims
+              Interactive demo of MIRA processing travel insurance claims
             </p>
           </motion.div>
 
@@ -297,7 +301,7 @@ export default function MiraPage() {
                 <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
                   {cap.title}
                 </h3>
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-[var(--text-secondary)] leading-relaxed whitespace-pre-line">
                   {cap.description}
                 </p>
               </motion.div>
@@ -365,13 +369,13 @@ export default function MiraPage() {
               Test MIRA on Your Claims
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">
-              We&apos;ll process a sample of your closed claims and show you exactly how MIRA would have handled them.
+              Process a sample of closed claims to see exactly how MIRA would have handled them.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/30"
             >
-              Request a Pilot
+              Book a Demo
             </Link>
           </motion.div>
         </div>

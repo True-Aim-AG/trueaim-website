@@ -58,13 +58,15 @@ export function TrustBar() {
               className="flex-shrink-0 md:flex-1 max-w-sm md:max-w-none"
             >
               <div className="flex items-center gap-5 glass-panel p-6 h-full">
-                <div className="flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden bg-white flex items-center justify-center">
+                <div className={`flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden flex items-center justify-center p-2 ${
+                  index === 1 ? 'bg-slate-600' : 'bg-white'
+                }`}>
                   <Image
                     src={award.image}
                     alt={award.title}
                     width={80}
                     height={80}
-                    className="w-full h-full object-contain p-0"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <div className="min-w-0">

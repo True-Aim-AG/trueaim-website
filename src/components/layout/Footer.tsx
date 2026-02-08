@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Linkedin } from "lucide-react";
+import packageJson from "../../../package.json";
 
 const footerLinks = {
   company: [
@@ -147,7 +148,7 @@ export function Footer() {
               © {new Date().getFullYear()} True Aim. All rights reserved.
             </p>
             <span className="text-[var(--text-muted)] text-xs opacity-50">
-              v1.0.2
+              v{packageJson.version}
             </span>
           </div>
         </div>
