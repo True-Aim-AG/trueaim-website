@@ -1,8 +1,20 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, Calendar, Clock, Shield } from "lucide-react";
+import { ArrowRight, BookOpen, Calendar, Clock, Shield, Scale } from "lucide-react";
 
 // Blog post data
 const blogPosts = [
+  {
+    slug: "build-vs-buy-idp-vendors",
+    title: "Build vs Buy: What to Demand from IDP Vendors",
+    excerpt:
+      "A practical evaluation framework for insurance teams evaluating claims automation solutions. Learn when to build, when to buy, and how to evaluate vendors objectively.",
+    category: "Vendor Evaluation",
+    categoryIcon: Scale,
+    date: "February 2025",
+    readTime: "15 min read",
+    tags: ["Vendor Evaluation", "Build vs Buy", "IDP", "Claims AI"],
+    featured: true,
+  },
   {
     slug: "auditability-evidence-chains",
     title:
@@ -14,7 +26,7 @@ const blogPosts = [
     date: "February 2025",
     readTime: "12 min read",
     tags: ["Auditability", "FINMA", "EU AI Act", "Claims AI"],
-    featured: true,
+    featured: false,
   },
 ];
 
