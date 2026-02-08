@@ -255,16 +255,14 @@ export default function AuditabilityBlogPost() {
                     number, location (coordinates), and extraction confidence.
                   </p>
                   <div className="bg-slate-900/50 rounded-lg p-4 font-mono text-xs text-slate-300 overflow-x-auto">
-                    <pre>{`Field: total_approved_amount
-Value: CHF 1,506.52
-Source: Invoice_64166.pdf, Page 1, Row 15
-Coordinates: x:420, y:680, w:120, h:24
-Extracted text: "1'506,52"
-Normalized: 1506.52
-Confidence: 0.98`}</pre>
+                    <pre>{`Field: [extracted_field_name]
+Value: [extracted_value]
+Source: [document.pdf], Page X
+Location: [bounding box coordinates]
+Confidence: [high/medium/low]`}</pre>
                   </div>
                   <p className="text-xs text-[var(--text-muted)] mt-3">
-                    When an auditor asks &ldquo;where did CHF 1,506.52 come
+                    When an auditor asks &ldquo;where did this value come
                     from?&rdquo;, you click and show them the exact location in
                     the source document. No guessing, no searching.
                   </p>
@@ -290,17 +288,18 @@ Confidence: 0.98`}</pre>
                     confidence score, timestamp, and decision tier.
                   </p>
                   <div className="bg-slate-900/50 rounded-lg p-4 font-mono text-xs text-slate-300 overflow-x-auto">
-                    <pre>{`Decision: APPROVED
-Input hash: abc123def456
-Model version: v2.3.1
-Confidence: 0.87
-Tier: keyword_match
-Timestamp: 2025-10-08T14:32:15Z`}</pre>
+                    <pre>{`Decision: [APPROVED/DENIED/REVIEW]
+Input hash: [reproducibility hash]
+Model version: [version identifier]
+Confidence: [score]
+Decision method: [deterministic/AI/hybrid]
+Timestamp: [ISO timestamp]`}</pre>
                   </div>
                   <p className="text-xs text-[var(--text-muted)] mt-3">
-                    Our system uses a four-tier cascade: rules → part numbers →
-                    keywords → LLM. Each tier is logged, so you know exactly
-                    which method made the decision.
+                    Our system uses a multi-tier decision cascade, starting with
+                    deterministic rules and falling back to AI only when needed.
+                    Each tier is logged, so you know exactly which method made
+                    the decision.
                   </p>
                 </div>
 
@@ -325,11 +324,11 @@ Timestamp: 2025-10-08T14:32:15Z`}</pre>
                     identity, and timestamp.
                   </p>
                   <div className="bg-slate-900/50 rounded-lg p-4 font-mono text-xs text-slate-300 overflow-x-auto">
-                    <pre>{`Original: DENY (confidence: 0.72)
-Override: APPROVE
-Reason: "Policy amendment dated 2025-09-15 not in document set"
-Reviewer: adjuster_jm
-Timestamp: 2025-10-09T09:15:22Z`}</pre>
+                    <pre>{`Original decision: [AI decision with confidence]
+Override decision: [human decision]
+Reason: [required justification text]
+Reviewer: [authenticated user ID]
+Timestamp: [ISO timestamp]`}</pre>
                   </div>
                   <p className="text-xs text-[var(--text-muted)] mt-3">
                     This creates a feedback loop: override patterns reveal
@@ -410,21 +409,21 @@ Timestamp: 2025-10-09T09:15:22Z`}</pre>
                   <ul className="space-y-2 text-sm text-[var(--text-secondary)] mb-4">
                     <li>
                       <strong className="text-emerald-400">
-                        For approvals (COVERED):
+                        For approvals:
                       </strong>{" "}
-                      confidence ≥60% required
+                      higher confidence threshold required
                     </li>
                     <li>
                       <strong className="text-amber-400">
-                        For denials (NOT_COVERED):
+                        For denials:
                       </strong>{" "}
-                      confidence ≥40% required
+                      lower confidence threshold acceptable
                     </li>
                     <li>
                       <strong className="text-[var(--text-muted)]">
                         Below thresholds:
                       </strong>{" "}
-                      REVIEW_NEEDED
+                      routed to human review
                     </li>
                   </ul>
                   <p className="text-sm text-[var(--text-secondary)]">
@@ -455,38 +454,32 @@ Timestamp: 2025-10-09T09:15:22Z`}</pre>
                 <div className="space-y-4 mb-8">
                   {[
                     {
-                      code: "FM-002",
                       title: "Extraction Errors Without Provenance",
                       symptom:
-                        "Deductible extracted as 30,000 CHF instead of 376.65 CHF",
+                        "A value was extracted incorrectly, but there's no link back to the source",
                       impact:
                         "Without provenance, you can't explain the error",
                       fix: "Every extracted value links to source location",
                     },
                     {
-                      code: "FM-011",
                       title: "Decisions Based on Unavailable Data",
                       symptom:
-                        "System approved claim, but policy was cancelled (status not in documents)",
+                        "System made a decision, but key information wasn't in the document set",
                       impact:
                         "System was correct given available data, but auditor doesn't know that",
                       fix: "Document what information was available at decision time",
                     },
                     {
-                      code: "FM-006",
                       title: "Approve-by-Default Logic",
-                      symptom: "High accuracy (68%), but wrong for wrong reasons",
+                      symptom: "High accuracy overall, but wrong for wrong reasons",
                       impact:
                         'Can\'t explain why approved, just "no failures found"',
                       fix: "Require explicit coverage confirmation, not absence of rejection",
                     },
-                  ].map((fm) => (
-                    <div key={fm.code} className="glass-panel p-5">
+                  ].map((fm, idx) => (
+                    <div key={idx} className="glass-panel p-5">
                       <div className="flex items-center gap-3 mb-3">
                         <AlertTriangle className="w-5 h-5 text-amber-400" />
-                        <span className="font-mono text-xs text-[var(--text-muted)]">
-                          {fm.code}
-                        </span>
                         <span className="font-semibold text-[var(--text-primary)]">
                           {fm.title}
                         </span>
@@ -642,101 +635,66 @@ Timestamp: 2025-10-09T09:15:22Z`}</pre>
                 </div>
               </motion.div>
 
-              {/* Implementation Checklist */}
+              {/* Core Principles */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-                  Implementation Checklist
+                  Core Principles for Auditable AI
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="glass-panel p-6">
-                    <h3 className="font-semibold text-[var(--text-primary)] mb-4 flex items-center gap-2">
-                      <FileText className="w-5 h-5 text-[var(--primary)]" />
-                      For Extraction
-                    </h3>
-                    <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
-                      <li className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded border border-[var(--border)]" />
-                        Store source coordinates with every extracted value
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded border border-[var(--border)]" />
-                        Use OCR that provides character-level positions
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded border border-[var(--border)]" />
-                        Link multi-value fields to all sources
-                      </li>
-                    </ul>
-                  </div>
+                <div className="glass-panel-light p-6">
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
+                    Building audit-ready AI systems requires commitment to four foundational principles.
+                    The specific implementation will vary by organization, but these principles remain constant.
+                  </p>
 
-                  <div className="glass-panel p-6">
-                    <h3 className="font-semibold text-[var(--text-primary)] mb-4 flex items-center gap-2">
-                      <Database className="w-5 h-5 text-[var(--primary)]" />
-                      For Decisions
-                    </h3>
-                    <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
-                      <li className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded border border-[var(--border)]" />
-                        Hash inputs before processing (enables reproducibility)
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded border border-[var(--border)]" />
-                        Version your models (enable rollback)
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded border border-[var(--border)]" />
-                        Log tier/rule that triggered the decision
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded border border-[var(--border)]" />
-                        Store confidence at each stage
-                      </li>
-                    </ul>
-                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="flex items-start gap-3">
+                      <FileText className="w-5 h-5 text-[var(--primary)] flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h3 className="font-semibold text-[var(--text-primary)] mb-1">
+                          Complete Provenance
+                        </h3>
+                        <p className="text-sm text-[var(--text-secondary)]">
+                          Every extracted value must be traceable to its source document and location.
+                        </p>
+                      </div>
+                    </div>
 
-                  <div className="glass-panel p-6">
-                    <h3 className="font-semibold text-[var(--text-primary)] mb-4 flex items-center gap-2">
-                      <Users className="w-5 h-5 text-[var(--primary)]" />
-                      For Overrides
-                    </h3>
-                    <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
-                      <li className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded border border-[var(--border)]" />
-                        Make override reason a required field (not optional)
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded border border-[var(--border)]" />
-                        Capture both original and final decision
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded border border-[var(--border)]" />
-                        Enable reporting: &ldquo;What&apos;s our override rate?
-                        Why?&rdquo;
-                      </li>
-                    </ul>
-                  </div>
+                    <div className="flex items-start gap-3">
+                      <Database className="w-5 h-5 text-[var(--primary)] flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h3 className="font-semibold text-[var(--text-primary)] mb-1">
+                          Decision Reproducibility
+                        </h3>
+                        <p className="text-sm text-[var(--text-secondary)]">
+                          Given the same inputs and model version, you must be able to reproduce any historical decision.
+                        </p>
+                      </div>
+                    </div>
 
-                  <div className="glass-panel p-6">
-                    <h3 className="font-semibold text-[var(--text-primary)] mb-4 flex items-center gap-2">
-                      <RefreshCw className="w-5 h-5 text-[var(--primary)]" />
-                      Reproducibility Test
-                    </h3>
-                    <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
-                      <li className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded border border-[var(--border)]" />
-                        Given input hash + model version, can you reproduce the
-                        decision?
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded border border-[var(--border)]" />
-                        Test: pull a random decision from 3 months ago, re-run
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded border border-[var(--border)]" />
-                        If output differs, your audit trail has gaps
-                      </li>
-                    </ul>
+                    <div className="flex items-start gap-3">
+                      <Users className="w-5 h-5 text-[var(--primary)] flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h3 className="font-semibold text-[var(--text-primary)] mb-1">
+                          Human Accountability
+                        </h3>
+                        <p className="text-sm text-[var(--text-secondary)]">
+                          Every human override must be captured with required justification and reviewer identity.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <RefreshCw className="w-5 h-5 text-[var(--primary)] flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h3 className="font-semibold text-[var(--text-primary)] mb-1">
+                          Continuous Validation
+                        </h3>
+                        <p className="text-sm text-[var(--text-secondary)]">
+                          Regular testing of historical decisions to verify your audit trail remains intact.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.div>

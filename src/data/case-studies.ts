@@ -41,7 +41,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Each warranty claim required 15-30 minutes of manual cross-referencing across 5 documents in 3 languages, with 14 distinct document types per workflow. An LLM-only approach achieved just 18% accuracy due to hallucinated part names, invented coverage rules and unreliable financial calculations.",
     solution:
-      "Deployed ContextBuilder for multilingual document ingestion, classification and structured extraction across 14 document types. MIRA\u2019s hybrid decisioning pipeline runs 11 deterministic screening checks and a three-tier coverage matching system (rules, keywords, LLM fallback). ClaimEval provides a QA console with full provenance highlighting and three-bucket triage.",
+      "Deployed the full True Aim stack for end-to-end claims automation. ContextBuilder handles multilingual document processing and classification. MIRA's hybrid decisioning combines deterministic rules with AI fallback for accurate coverage matching. ClaimEval provides quality assurance with full provenance tracking.",
     products: ["mira", "contextbuilder", "claimeval"],
     metrics: [
       { label: "Decision Accuracy", value: "98%", improvement: "from 18% baseline" },
@@ -56,12 +56,12 @@ export const caseStudies: CaseStudy[] = [
       role: "True Aim",
     },
     highlights: [
-      "14 document types classified at near-100% accuracy",
-      "51 fields extracted per warranty policy with confidence scoring",
-      "Full provenance chain from decision back to source page and character position",
-      "Three-tier coverage matching: deterministic rules, keyword synonyms, LLM fallback",
-      "Multilingual keyword matching across German, French and Italian",
-      "850+ unit tests covering the full pipeline",
+      "Near-100% document classification accuracy",
+      "Comprehensive field extraction with confidence scoring",
+      "Full provenance chain from decision back to source document",
+      "Multi-tier coverage matching combining deterministic and AI approaches",
+      "Multilingual support across German, French, and Italian",
+      "Extensive automated test coverage",
     ],
   },
   {
