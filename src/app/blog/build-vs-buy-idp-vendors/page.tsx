@@ -154,7 +154,7 @@ export default function BuildVsBuyBlogPost() {
                       },
                       {
                         title:
-                          "You have ML engineering capacity—and retention",
+                          "You have ML engineering capacity, and retention",
                         desc: "One departing engineer shouldn't cripple your system.",
                       },
                       {
@@ -163,7 +163,7 @@ export default function BuildVsBuyBlogPost() {
                       },
                       {
                         title: "Regulatory requirements demand full control",
-                        desc: "Swiss and EU data residency, audit trails, explainability—some regulators want everything in-house.",
+                        desc: "Swiss and EU data residency, audit trails, explainability: some regulators want everything in-house.",
                       },
                       {
                         title:
@@ -226,7 +226,7 @@ export default function BuildVsBuyBlogPost() {
                           &ldquo;We don&apos;t want vendor lock-in.&rdquo;
                         </span>
                         <p className="text-sm text-[var(--text-secondary)] mt-1">
-                          You&apos;ll trade it for internal lock-in—dependency
+                          You&apos;ll trade it for internal lock-in: dependency
                           on engineers who understand your bespoke system.
                         </p>
                       </div>
@@ -288,7 +288,7 @@ export default function BuildVsBuyBlogPost() {
                       },
                       {
                         title: "Your claim types are relatively standard",
-                        desc: "Motor, property, health—vendors have seen these before.",
+                        desc: "Motor, property, health: vendors have seen these before.",
                       },
                       {
                         title:
@@ -325,7 +325,7 @@ export default function BuildVsBuyBlogPost() {
                         </span>
                         <p className="text-sm text-[var(--text-secondary)] mt-1">
                           Demo data is curated. Our system looked great on
-                          German documents until we ran French claims—all 25
+                          German documents until we ran French claims. All 25
                           approved claims were wrongly rejected.
                         </p>
                       </div>
@@ -695,14 +695,14 @@ export default function BuildVsBuyBlogPost() {
                         Buy
                       </h4>
                       <p className="text-sm text-[var(--text-secondary)]">
-                        Document extraction, OCR, classification—vendors are
+                        Document extraction, OCR, classification: vendors are
                         good at generic document understanding
                       </p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-blue-400 mb-2">Build</h4>
                       <p className="text-sm text-[var(--text-secondary)]">
-                        Policy-specific business rules, coverage logic—you&apos;re
+                        Policy-specific business rules, coverage logic: you&apos;re
                         better at your specific domain
                       </p>
                     </div>
@@ -712,7 +712,7 @@ export default function BuildVsBuyBlogPost() {
                       </h4>
                       <p className="text-sm text-[var(--text-secondary)]">
                         Evaluation framework, ground truth, quality
-                        monitoring—maintain control of the decision layer
+                        monitoring. Maintain control of the decision layer
                       </p>
                     </div>
                   </div>
@@ -786,7 +786,7 @@ export default function BuildVsBuyBlogPost() {
                 <p className="mt-6 text-sm text-[var(--text-muted)] italic">
                   True Aim AG builds auditable AI systems for Swiss and EU
                   regulated markets. We&apos;ve learned these lessons the hard
-                  way—47 iterations worth.
+                  way, 47 iterations worth.
                 </p>
               </motion.div>
             </div>

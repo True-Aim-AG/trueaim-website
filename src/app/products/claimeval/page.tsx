@@ -23,12 +23,12 @@ const features = [
   },
   {
     title: "Inspection Catalogues",
-    description: "Pre-built checks for Motor, Home, Life, Warranty, and more. Customizable inspection definitions. Each check answers: What? Found? Why it matters? Next action?",
+    description: "Pre-built checks designed for a range of insurance use cases. Configurable inspection definitions. Each check provides clear findings, context and next steps.",
     icon: ListChecks,
   },
   {
     title: "Reviewer Workflow",
-    description: "Filter by LOB, status, risk score. Track reviewed vs. not reviewed. Document reviewer findings.",
+    description: "Filter by line of business, status, risk score etc. Track reviewed vs. not reviewed. Assess document reviewer findings.",
     icon: Users,
   },
 ];
@@ -97,13 +97,13 @@ export default function ClaimEvalPage() {
                 href="#demo"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-emerald-500 text-white font-medium hover:bg-emerald-600 transition-colors text-lg shadow-lg shadow-emerald-500/30"
               >
-                See ClaimEval Demo
+                See ClaimEval In Action
               </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                Request a Pilot
+                Book a Demo
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -125,7 +125,7 @@ export default function ClaimEvalPage() {
               The Sampling Problem
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Traditional QA relies on random sampling, checking 2-5% of claims. Patterns slip through. Leakage compounds. Training gaps persist.
+              Traditional QA relies on random sampling, checking a small percentage of claims. Patterns slip through. Leakage compounds. Training gaps persist.
             </p>
             <p className="text-xl font-semibold text-emerald-400 mt-6">
               What if you could QA every claim?
@@ -148,9 +148,9 @@ export default function ClaimEvalPage() {
               100% Coverage, Intelligent Prioritization
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              ClaimEval runs defined inspection checks across all closed claims. It scores risk, flags issues, and surfaces the claims that need human attention, without replacing human judgment.
+              ClaimEval runs defined inspection checks across all closed claims. It scores risk, flags issues and surfaces the claims that need human attention.
             </p>
-            <p className="text-base text-[var(--text-muted)] mt-4 leading-relaxed italic">
+            <p className="text-base text-[var(--text-secondary)] mt-4 leading-relaxed">
               ClaimEval is a quality assurance layer. It augments your claims handlers, it does not replace them.
             </p>
           </motion.div>
@@ -246,10 +246,10 @@ export default function ClaimEvalPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Inspection Zones
+              Coverage Areas
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Pre-built check catalogues for Motor, Home, Life, Warranty, and more
+              Pre-built check catalogues for Motor, Home, Life, Warranty and more
             </p>
           </motion.div>
 
@@ -360,7 +360,7 @@ export default function ClaimEvalPage() {
                 href="/case-studies/vehicle-warranty-claims"
                 className="inline-flex items-center gap-2 mt-4 text-sm text-[var(--primary)] font-medium hover:underline"
               >
-                See warranty case study
+                See Warranty Provider case study
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
@@ -409,13 +409,13 @@ export default function ClaimEvalPage() {
               Run ClaimEval on Your Closed Claims
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">
-              We&apos;ll analyze a batch of your historical claims and show you the inspection results, risk distribution, and priority findings.
+              We&apos;ll analyze a batch of your historical claims and show you the inspection results, risk distribution and priority findings.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-emerald-500 text-white font-medium hover:bg-emerald-600 transition-colors text-lg shadow-lg shadow-emerald-500/30"
             >
-              Request a Pilot
+              Book a Demo
             </Link>
           </motion.div>
         </div>

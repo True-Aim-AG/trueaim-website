@@ -65,6 +65,9 @@ All copy is in /docs/TrueAim_Website_Copy.md
 - WCAG 2.1 AA accessible
 - No placeholder images - use gradients/illustrations
 
+## Copy Guidelines
+- **No dashes for rhythm**: Avoid using em-dashes (—), en-dashes (–), or spaced hyphens ( - ) for rhythmic pauses or clause separation in website copy. Rewrite sentences to avoid dash-based phrasing. Legitimate uses (compound words like "real-time", technical terms, URLs) are acceptable.
+
 ## Commands
 - `npm run dev` - Start dev server
 - `npm run build` - Production build

@@ -31,9 +31,9 @@ export interface CaseStudy {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "vehicle-warranty-claims",
-    title: "Vehicle Warranty Insurer Achieves 98% Decision Accuracy in 7 Days",
+    title: "Vehicle Warranty Provider Achieves 98% Decision Accuracy in 7 Days",
     customer: {
-      name: "European Warranty Insurer",
+      name: "European Warranty Provider",
       industry: "Vehicle Warranty Insurance",
       size: "",
       isAnonymized: true,

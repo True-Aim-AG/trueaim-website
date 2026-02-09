@@ -27,7 +27,7 @@ const pipelineSteps = [
   {
     step: 2,
     title: "Classify",
-    description: "Identifies document type and language to route correctly: loss notice, police report, invoice, etc.",
+    description: "Identifies document type and language to route correctly: loss notice, police report, invoice etc.",
     icon: FileType,
   },
   {
@@ -45,7 +45,7 @@ const pipelineSteps = [
   {
     step: 5,
     title: "QA Console",
-    description: "Human-in-the-loop review workspace. Quickly confirm, correct, and label documents.",
+    description: "Human-in-the-loop review workspace. Quickly confirm, correct and label documents.",
     icon: Users,
   },
 ];
@@ -74,10 +74,10 @@ const outputFeatures = [
 ];
 
 const metrics = [
-  { value: "97%", label: "Document Coverage" },
-  { value: "97.3%", label: "Accuracy" },
-  { value: "96.5%", label: "Evidence Rate" },
-  { value: "<1%", label: "Document Classification Error Rate", footnote: "Based on pilot data" },
+  { value: "95%", label: "Document Coverage" },
+  { value: "97%", label: "Accuracy" },
+  { value: "96%", label: "Evidence Rate" },
+  { value: "<1%", label: "Document Classification Error Rate", footnote: "Based on client data" },
 ];
 
 export default function ContextBuilderPage() {
@@ -98,11 +98,11 @@ export default function ContextBuilderPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              ContextBuilder: From Messy Documents to Trusted Data
+              ContextBuilder: From Unstructured Documents to Trusted Data
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-8 leading-relaxed">
-              A claims document pipeline that turns PDFs, scans, and images into structured, quality-checked claim data, with human review where it matters.
+              A claims document pipeline that turns PDFs, scans and images into structured, quality-checked claim data, with human review where it matters.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -116,7 +116,7 @@ export default function ContextBuilderPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                Request a Pilot
+                Book a Demo
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -138,7 +138,7 @@ export default function ContextBuilderPage() {
               The Document Chaos Problem
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Claims arrive as chaotic document bundles: blurry photos, multi-page PDFs, scanned forms. Extracting accurate data is slow, error-prone, and expensive.
+              Claims arrive as chaotic document bundles: blurry photos, multi-page PDFs, scanned forms. Extracting accurate data is slow, error-prone and expensive.
             </p>
           </motion.div>
         </div>
@@ -158,20 +158,17 @@ export default function ContextBuilderPage() {
               Purpose-Built Pipeline for Claims
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              ContextBuilder is a purpose-built pipeline for claims documents. It automatically ingests, classifies, and extracts data, then applies quality gates to surface exceptions for human review.
+              ContextBuilder is a purpose-built pipeline for claims documents. It automatically ingests, classifies and extracts data, then applies quality gates to surface exceptions for human review.
             </p>
             <p className="text-lg text-[var(--text-primary)] font-medium mt-4">
               The result: claim-ready &quot;context packs&quot; that downstream systems can trust.
-            </p>
-            <p className="text-[var(--text-secondary)] mt-4">
-              All document processing respects your data residency requirements. <Link href="/trust" className="text-[var(--primary)] hover:underline">See our Trust Center for details</Link>.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Pipeline Steps */}
-      <section className="py-20 px-6">
+      <section className="pt-10 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -189,8 +186,6 @@ export default function ContextBuilderPage() {
           </motion.div>
 
           <div className="relative">
-            <div className="hidden lg:block absolute top-24 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-[var(--aurora-cyan)] via-[var(--primary)] to-emerald-500" />
-
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
               {pipelineSteps.map((step, index) => (
                 <motion.div
@@ -231,11 +226,11 @@ export default function ContextBuilderPage() {
             className="mt-12 glass-panel p-6 text-center max-w-3xl mx-auto"
           >
             <p className="text-sm text-[var(--text-secondary)]">
-              All document processing runs within your chosen data residency zone.{" "}
-              <Link href="/trust" className="text-[var(--primary)] hover:underline">
-                See our Trust Center
+              All document processing is designed to meet enterprise security, privacy and regulatory requirements. Visit our{" "}
+              <Link href="/trust" className="text-[var(--primary)] underline hover:opacity-80">
+                Trust Center
               </Link>
-              .
+              {" "}for more details.
             </p>
           </motion.div>
         </div>
@@ -386,13 +381,13 @@ export default function ContextBuilderPage() {
               Process a Sample of Your Documents
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">
-              Send us 50 claim documents. We&apos;ll run them through ContextBuilder and show you the extraction quality, error analysis, and time savings.
+              Securely share a sample of claim documents. We&apos;ll run them through ContextBuilder and show you the extraction quality, error analysis and time savings.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--aurora-cyan)] text-white font-medium hover:bg-[#0891b2] transition-colors text-lg shadow-lg shadow-[var(--aurora-cyan)]/30"
             >
-              Request a Pilot
+              Book a Demo
             </Link>
           </motion.div>
         </div>

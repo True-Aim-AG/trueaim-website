@@ -8,74 +8,118 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="text-sm text-[var(--text-muted)] mb-8">
-          Last updated: February 2026
+          Last updated: 08 February 2026
         </p>
 
         <div className="glass-panel p-8 md:p-12 space-y-8">
-          <div className="p-4 rounded-lg bg-amber-500/10 border border-amber-500/20">
-            <p className="text-sm text-amber-400">
-              This policy is being refined. Contact us for the most current version.
-            </p>
-          </div>
-
           <section>
-            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">1. Data Collection</h2>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">1. Who we are</h2>
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              We collect personal data that you provide directly to us, including your name, email address, company name, job title, and any information you submit through our contact forms. We also collect technical data such as IP addresses, browser type, and device information when you visit our website.
+              This website is operated by <strong>True Aim AG</strong>, company registration number <strong>CHE-325.128.066</strong>, with its registered office in Zug, Switzerland. Registered address: c/o Yarowa AG, Metallstrasse 9, 6300 Zug, Switzerland. This Privacy Policy explains how we collect, use and protect personal data when you interact with our website.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">2. Data Processing</h2>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">2. Scope of this Privacy Policy</h2>
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              We process your data to respond to inquiries, provide our services, improve our website, and comply with legal obligations. Data processing is carried out in accordance with the Swiss Federal Act on Data Protection (FADP) and the EU General Data Protection Regulation (GDPR).
+              This Privacy Policy applies to personal data collected through our public website, including contact forms, demo booking forms and meeting scheduling links. It does not govern the processing of data under commercial agreements or customer contracts, which are subject to separate contractual terms.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">3. Legal Basis</h2>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">3. Personal data we collect</h2>
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              We process personal data based on your consent, the performance of a contract or pre-contractual measures, compliance with legal obligations, and our legitimate interests in operating and improving our services.
+              We collect personal data that you voluntarily provide when you contact us or request a demo. This may include your first and last name, work email address, company name, job title, country and any information you choose to include in free-text fields or which you may submit following a request by us from time to time. If you book a meeting using a calendar link, we may also receive scheduling-related information. We may additionally collect technical data such as IP address, browser type and usage data, amongst others, through cookies and analytics tools.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">4. Data Sharing</h2>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">4. How we use personal data</h2>
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              We do not sell your personal data. We may share data with trusted service providers who assist in operating our website and services, subject to appropriate data processing agreements. Data may be transferred outside Switzerland and the EEA only with adequate safeguards in place.
+              We use personal data to respond to enquiries, arrange demos or meetings, communicate with prospective customers and partners, improve our website and understand how it is used. Where you have consented, we may also use your details to send relevant communications about True Aim and our services. We do not sell personal data and do not use it for automated decision-making affecting individuals.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">5. Data Retention</h2>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">5. Legal basis for processing</h2>
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              We retain personal data only as long as necessary for the purposes described in this policy or as required by law. Contact form submissions are retained for the duration of any business relationship and for a reasonable period thereafter.
+              We process personal data based on your consent, our legitimate interests in operating and improving our website and responding to business enquiries, and where applicable, to comply with legal obligations. You may withdraw consent at any time.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">6. Your Rights</h2>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">6. Data hosting and international transfers</h2>
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              You have the right to access, correct, delete, or port your personal data. You may also object to or restrict certain processing activities. To exercise these rights, contact us at the address below. We will respond to your request within 30 days.
+              Our primary data hosting and security infrastructure is based in <strong>Switzerland</strong>. Personal data may be accessed or processed from other jurisdictions where necessary to operate our website or support business activities. Where international transfers occur, we take appropriate steps to ensure adequate data protection in line with Swiss and EU standards.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">7. Security</h2>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">7. Data retention</h2>
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, alteration, disclosure, or destruction. These measures are regularly reviewed and updated.
+              We retain personal data only for as long as necessary to fulfil the purposes described in this Privacy Policy, unless a longer retention period is required or permitted by law. Information submitted through contact or demo forms is typically retained for business follow-up and record-keeping purposes.
             </p>
           </section>
 
-          <div className="pt-6 border-t border-[var(--border)]">
-            <p className="text-sm text-[var(--text-muted)] mb-1">Privacy inquiries:</p>
-            <a
-              href="mailto:privacy@trueaim.ai"
-              className="text-[var(--primary)] font-medium hover:underline"
-            >
-              privacy@trueaim.ai
-            </a>
-          </div>
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">8. Data security</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              We implement appropriate technical and organisational measures to protect personal data against unauthorised access, loss or misuse. While no system can be guaranteed to be completely secure, we take data protection seriously and aim to have the appropriate safeguards in place.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">9. Your rights</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              Depending on your location and applicable law, you may have the right to request access to your personal data, request correction or deletion, object to or restrict processing or withdraw consent. Requests can be made by contacting us at{" "}
+              <a href="mailto:info@trueaim.ai" className="text-[var(--primary)] hover:underline font-medium">
+                info@trueaim.ai
+              </a>.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">10. South Africa and POPIA</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              Where personal data is processed in or from South Africa, we take steps to align with the Protection of Personal Information Act (POPIA). Our{" "}
+              <Link href="/paia" className="text-[var(--primary)] hover:underline">
+                PAIA Manual
+              </Link>{" "}
+              provides further information on access to information requests under South African law.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">11. Cookies and analytics</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              We use cookies and similar technologies as described in our{" "}
+              <Link href="/cookies" className="text-[var(--primary)] hover:underline">
+                Cookie Policy
+              </Link>. Analytics tools help us understand website usage and improve performance. You can manage cookie preferences at any time.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">12. Changes to this Privacy Policy</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              We may update this Privacy Policy from time to time to reflect changes in legal requirements, technology or our practices. The latest version will always be available on this page or upon request if a later version exists but has not been published yet.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">13. Contact</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              If you have any questions about this Privacy Policy or how we handle personal data, you can contact us at{" "}
+              <a href="mailto:info@trueaim.ai" className="text-[var(--primary)] hover:underline font-medium">
+                info@trueaim.ai
+              </a>.
+            </p>
+            <p className="text-[var(--text-secondary)] leading-relaxed mt-2">
+              Company: True Aim AG<br />
+              Registered office: Zug, Switzerland
+            </p>
+          </section>
+
           <div className="pt-4">
             <Link
               href="/contact"

@@ -238,12 +238,16 @@ code, .data-value, .claim-id, .metric-value {
   border-radius: var(--radius-2xl);
 }
 
-/* Cookie banner: twice as opaque as standard glass-panel */
+/* Cookie banner: fully opaque for readability */
 .cookie-banner-bg {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.06) 100%);
+  background: #1f2937;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 [data-theme="light"] .cookie-banner-bg {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  background: #f9fafb;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 /* Glass Panel with Hover Glow Effect */
