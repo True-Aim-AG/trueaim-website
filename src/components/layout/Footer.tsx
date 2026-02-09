@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Linkedin } from "lucide-react";
+import packageJson from "../../../package.json";
 
 const footerLinks = {
   company: [
@@ -142,9 +143,12 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[var(--border)]">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
             <p className="text-[var(--text-muted)] text-sm">
               © {new Date().getFullYear()} True Aim. All rights reserved.
+            </p>
+            <p className="text-[var(--text-muted)] text-xs opacity-50">
+              v{packageJson.version}
             </p>
           </div>
         </div>

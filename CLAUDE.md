@@ -72,16 +72,16 @@ All copy is in /docs/TrueAim_Website_Copy.md
 - `npm run dev` - Start dev server
 - `npm run build` - Production build
 - `npm run lint` - Run ESLint
-```
+- `npx playwright test` - Run E2E tests
 
-## 3. Add Reference Files
+## Deployment
+- **Platform**: Vercel
+- **Auto-deploy**: Enabled on push to `main` branch
+- **Production URL**: https://trueaim.ai
+- **Project**: trueaim (linked to Fr3nn3r/TrueAIm.ai GitHub repo)
 
-Create a `/docs` folder in your project root:
-```
-docs/
-├── TrueAim_Website_PRD.md      # Full PRD
-├── TrueAim_Website_Copy.md     # All copy
-└── assets/
-    ├── contextbuilder-infographic.png
-    ├── claimeval-infographic.png
-    └── product-screenshots/
+## Reference Files
+- `/docs/TrueAim_Website_PRD.md` - Full PRD
+- `/docs/TrueAim_Website_Copy.md` - All copy
+- `/docs/website-review-v4-requirements.md` - Latest website review requirements
+- `/tests/e2e/website-review-v4.spec.ts` - E2E test suite for website requirements
