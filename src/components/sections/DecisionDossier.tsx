@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   FileText,
   Link2,
@@ -68,7 +66,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
     return (
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -132,7 +130,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
     );
@@ -142,7 +140,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
   return (
     <section id="decision-dossier" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -159,11 +157,11 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
           <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
             Every claim decision produces a complete, reproducible audit record, your defense in any audit or dispute.
           </p>
-        </motion.div>
+        </MotionDiv>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Dossier contents list */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -171,7 +169,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
           >
             <div className="space-y-4">
               {dossierContents.map((item, index) => (
-                <motion.div
+                <MotionDiv
                   key={item.title}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -186,13 +184,13 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                     <h3 className="font-semibold text-[var(--text-primary)] mb-1">{item.title}</h3>
                     <p className="text-sm text-[var(--text-muted)]">{item.description}</p>
                   </div>
-                </motion.div>
+                </MotionDiv>
               ))}
             </div>
-          </motion.div>
+          </MotionDiv>
 
           {/* Visual dossier mockup */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -287,7 +285,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                 <strong className="text-[var(--text-primary)]">Unlike black-box AI:</strong> Every True Aim decision can be replayed, explained, defended.
               </p>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </div>
     </section>

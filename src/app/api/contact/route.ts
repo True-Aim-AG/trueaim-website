@@ -1,6 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
+import { contactRateLimiter } from "@/lib/rate-limiter";
 
 export async function POST(request: NextRequest) {
+  const forwarded = request.headers.get("x-forwarded-for");
+  const ip = forwarded?.split(",")[0]?.trim() || "unknown";
+  if (contactRateLimiter.isRateLimited(ip)) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 }
+    );
+  }
+
   const scriptUrl = process.env.GOOGLE_SCRIPT_URL;
 
   if (!scriptUrl) {

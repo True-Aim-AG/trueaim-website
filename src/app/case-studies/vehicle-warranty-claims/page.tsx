@@ -105,7 +105,7 @@ export default function VehicleWarrantyCaseStudy() {
             {/* Breadcrumb */}
             <Link
               href="/case-studies"
-              className="inline-flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors mb-8"
+              className="inline-flex items-center gap-2 py-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors mb-8"
             >
               <ArrowLeft className="w-4 h-4" />
               All Case Studies
@@ -215,27 +215,44 @@ export default function VehicleWarrantyCaseStudy() {
                 </div>
 
                 {/* Starting Point Stats */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-6">
-                  {[
-                    { value: "84", label: "Claims analyzed in pilot" },
-                    { value: "50/50", label: "Approval-to-denial split" },
-                    { value: "CHF 1,450", label: "Avg approved payout" },
-                    { value: "23", label: "Vehicle brands represented" },
-                    { value: "14", label: "Distinct document types" },
-                    { value: "4.9", label: "Avg documents per claim" },
-                  ].map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="glass-panel-light p-4 text-center"
-                    >
-                      <div className="text-lg font-bold font-mono-data text-[var(--primary)]">
-                        {stat.value}
+                <div className="mt-6">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    {[
+                      { value: "50/50", label: "Approval-to-denial split" },
+                      { value: "CHF 1,450", label: "Avg approved payout" },
+                      { value: "23", label: "Vehicle brands represented" },
+                    ].map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="glass-panel-light p-4 text-center"
+                      >
+                        <div className="text-lg font-bold font-mono-data text-[var(--primary)]">
+                          {stat.value}
+                        </div>
+                        <div className="text-xs text-[var(--text-muted)]">
+                          {stat.label}
+                        </div>
                       </div>
-                      <div className="text-xs text-[var(--text-muted)]">
-                        {stat.label}
+                    ))}
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 mt-3 sm:max-w-[66.666%] sm:mx-auto">
+                    {[
+                      { value: "14", label: "Distinct document types" },
+                      { value: "4.9", label: "Avg documents per claim" },
+                    ].map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="glass-panel-light p-4 text-center"
+                      >
+                        <div className="text-lg font-bold font-mono-data text-[var(--primary)]">
+                          {stat.value}
+                        </div>
+                        <div className="text-xs text-[var(--text-muted)]">
+                          {stat.label}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </motion.div>
 
@@ -569,7 +586,7 @@ export default function VehicleWarrantyCaseStudy() {
                         Holdout Test
                       </span>
                       <span className="text-2xl font-bold font-mono-data text-blue-400">
-                        76.7%
+                        77%
                       </span>
                     </div>
                     <h4 className="font-semibold text-[var(--text-primary)] mb-2">
@@ -762,17 +779,17 @@ export default function VehicleWarrantyCaseStudy() {
                   {/* Eval Set */}
                   <div>
                     <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
-                      Evaluation Set (50 Claims)
+                      Initial Evaluation Set
                     </h3>
-                    <div className="glass-panel overflow-hidden">
-                      <table className="w-full text-sm">
+                    <div className="glass-panel overflow-hidden overflow-x-auto">
+                      <table className="w-full text-sm min-w-[400px]">
                         <tbody>
                           {[
-                            ["Decision accuracy", "98% (49/50 correct)", true],
-                            ["Approved claims correctly identified", "25/25 (100%)", false],
-                            ["Denied claims correctly identified", "24/25 (96%)", false],
+                            ["Decision accuracy", "98%", true],
+                            ["Approved claims correctly identified", "100%", false],
+                            ["Denied claims correctly identified", "96%", false],
                             ["False reject rate", "0%", false],
-                            ["False approve rate", "4% (1 claim)", false],
+                            ["False approve rate", "4%", false],
                           ].map((row) => (
                             <tr
                               key={row[0] as string}
@@ -798,15 +815,15 @@ export default function VehicleWarrantyCaseStudy() {
                   {/* Holdout Set */}
                   <div>
                     <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
-                      Holdout Set (30 Unseen Claims)
+                      Holdout Set
                     </h3>
-                    <div className="glass-panel overflow-hidden">
-                      <table className="w-full text-sm">
+                    <div className="glass-panel overflow-hidden overflow-x-auto">
+                      <table className="w-full text-sm min-w-[400px]">
                         <tbody>
                           {[
-                            ["Decision accuracy", "76.7% (23/30 correct)", true],
-                            ["Approved claims correctly identified", "11/15", false],
-                            ["Denied claims correctly identified", "12/15", false],
+                            ["Decision accuracy", "77%", true],
+                            ["Approved claims correctly identified", "73%", false],
+                            ["Denied claims correctly identified", "80%", false],
                             ["False reject rate", "26.7%", false],
                             ["False approve rate", "20.0%", false],
                           ].map((row) => (
@@ -930,14 +947,14 @@ export default function VehicleWarrantyCaseStudy() {
               {/* What's Next */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-                  What&apos;s Next
+                  Next Steps Taken
                 </h2>
                 <div className="space-y-3 text-[var(--text-secondary)] leading-relaxed">
                   <ol className="list-decimal list-inside space-y-2 pl-2 text-sm">
-                    <li>Expand ground truth dataset beyond 80 claims</li>
-                    <li>Integrate with insurer's policy management API for real-time status checks</li>
-                    <li>Implement causal exclusion reasoning for cascading-damage denials</li>
-                    <li>Deploy production triage: auto-reject high-confidence denials, auto-approve simple approvals, route edge cases for human review</li>
+                    <li>Expanded on ground truth dataset</li>
+                    <li>Integrated with insurer's policy management API for real-time status checks</li>
+                    <li>Implemented causal exclusion reasoning for cascading-damage denials</li>
+                    <li>Deployed production triage: auto-reject high-confidence denials, auto-approve simple approvals, route edge cases for human review</li>
                   </ol>
                   <p className="mt-4 font-medium text-[var(--text-primary)]">
                     The goal is not to replace adjusters but to give them back
@@ -958,7 +975,7 @@ export default function VehicleWarrantyCaseStudy() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="glass-panel p-6 sticky top-24"
+                className="glass-panel p-6"
               >
                 <h3 className="font-semibold text-[var(--text-primary)] mb-4">
                   Key Highlights

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/theme";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 const products = [
   { name: "MIRA", href: "/products/mira", description: "Decisioning Engine" },
@@ -154,7 +154,7 @@ export function Navigation() {
           <button
             type="button"
             className="md:hidden p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => setMobileMenuOpen(prev => !prev)}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (

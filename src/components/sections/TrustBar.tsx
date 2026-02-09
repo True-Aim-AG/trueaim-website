@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/ui/MotionDiv";
 import Image from "next/image";
 import { slideFromLeft, slideFromRight, staggerContainer } from "@/lib/animations";
 import { PartnerLogos } from "./PartnerLogos";
@@ -27,7 +25,7 @@ export function TrustBar() {
   return (
     <section className="py-24 px-6 border-y border-[var(--border)]">
       <div className="max-w-7xl mx-auto">
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -40,10 +38,10 @@ export function TrustBar() {
           <p className="text-base text-[var(--text-secondary)] mt-3">
             Recognised across Switzerland, Germany and Italy
           </p>
-        </motion.div>
+        </MotionDiv>
 
         {/* Awards with actual badge images */}
-        <motion.div
+        <MotionDiv
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
@@ -51,7 +49,7 @@ export function TrustBar() {
           className="flex flex-col md:flex-row md:items-stretch md:justify-center gap-4 md:gap-6 mb-10 overflow-x-auto pb-2 md:pb-0 scrollbar-hide"
         >
           {awards.map((award, index) => (
-            <motion.div
+            <MotionDiv
               key={award.country}
               variants={index % 2 === 0 ? slideFromLeft : slideFromRight}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -78,9 +76,9 @@ export function TrustBar() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </MotionDiv>
           ))}
-        </motion.div>
+        </MotionDiv>
 
         {/* Partner Logos */}
         <PartnerLogos />

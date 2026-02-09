@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowRight,
   Brain,
@@ -87,7 +85,7 @@ export default function MiraPage() {
       {/* Hero Section */}
       <section className="relative py-24 px-6 overflow-hidden">
         <div className="relative max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -124,14 +122,14 @@ export default function MiraPage() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Problem Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -151,14 +149,14 @@ export default function MiraPage() {
             <p className="text-xl font-semibold text-[var(--primary)] mt-6">
               MIRA changes everything.
             </p>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Solution Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -174,14 +172,14 @@ export default function MiraPage() {
             <p className="text-lg text-[var(--text-primary)] font-medium mt-4">
               The result: decisions that are fast, consistent and completely explainable.
             </p>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Workflow Steps */}
       <section className="pt-10 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -194,14 +192,14 @@ export default function MiraPage() {
             <p className="text-lg text-[var(--text-secondary)]">
               Five steps from document to decision
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="relative">
             {/* Connector line removed per V3-MIRA-012 */}
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
               {workflowSteps.map((step, index) => (
-                <motion.div
+                <MotionDiv
                   key={step.step}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -225,7 +223,7 @@ export default function MiraPage() {
                       {step.description}
                     </p>
                   </div>
-                </motion.div>
+                </MotionDiv>
               ))}
             </div>
           </div>
@@ -235,7 +233,7 @@ export default function MiraPage() {
       {/* Demo Section */}
       <section id="demo" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -248,9 +246,9 @@ export default function MiraPage() {
             <p className="text-lg text-[var(--text-secondary)]">
               Interactive demo of MIRA processing travel insurance claims
             </p>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -266,14 +264,14 @@ export default function MiraPage() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               />
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Capabilities Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -283,11 +281,11 @@ export default function MiraPage() {
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Capabilities
             </h2>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {capabilities.map((cap, index) => (
-              <motion.div
+              <MotionDiv
                 key={cap.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -304,7 +302,7 @@ export default function MiraPage() {
                 <p className="text-[var(--text-secondary)] leading-relaxed whitespace-pre-line">
                   {cap.description}
                 </p>
-              </motion.div>
+              </MotionDiv>
             ))}
           </div>
         </div>
@@ -313,7 +311,7 @@ export default function MiraPage() {
       {/* Results Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -323,11 +321,11 @@ export default function MiraPage() {
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Proven Results
             </h2>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {metrics.map((metric, index) => (
-              <motion.div
+              <MotionDiv
                 key={metric.label}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -349,7 +347,7 @@ export default function MiraPage() {
                 <p className="text-[var(--text-secondary)]">
                   {metric.label}
                 </p>
-              </motion.div>
+              </MotionDiv>
             ))}
           </div>
         </div>
@@ -358,7 +356,7 @@ export default function MiraPage() {
       {/* CTA Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -377,7 +375,7 @@ export default function MiraPage() {
             >
               Book a Demo
             </Link>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
     </div>

@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowLeft,
   ArrowRight,
@@ -32,7 +30,7 @@ export default function AuditabilityBlogPost() {
         <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--primary)] opacity-10 rounded-full blur-3xl" />
 
         <div className="relative max-w-4xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -81,7 +79,7 @@ export default function AuditabilityBlogPost() {
                 Technical Deep Dive
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
@@ -92,7 +90,7 @@ export default function AuditabilityBlogPost() {
             {/* Main Content */}
             <div className="lg:col-span-3 space-y-12">
               {/* Introduction */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <div className="glass-panel p-6 border-l-4 border-l-[var(--primary)] mb-8">
                   <p className="text-lg text-[var(--text-primary)] leading-relaxed">
                     When regulators ask &ldquo;why did your system approve this
@@ -111,10 +109,10 @@ export default function AuditabilityBlogPost() {
                   Here&apos;s the architecture that makes it possible, and the
                   regulatory requirements it satisfies.
                 </p>
-              </motion.div>
+              </MotionDiv>
 
               {/* What Regulators Actually Want */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                   What Regulators Actually Want
                 </h2>
@@ -222,10 +220,10 @@ export default function AuditabilityBlogPost() {
                     architecture. They care about your evidence trail.
                   </p>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
               {/* The Evidence Chain Architecture */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                   The Evidence Chain Architecture
                 </h2>
@@ -336,10 +334,10 @@ Timestamp: [ISO timestamp]`}</pre>
                     the same reason, that&apos;s a signal to improve the system.
                   </p>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
               {/* Quality Gates */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                   Quality Gates: The Audit Checkpoint
                 </h2>
@@ -438,10 +436,10 @@ Timestamp: [ISO timestamp]`}</pre>
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
               {/* Failure Modes */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                   Failure Modes That Break Audit Trails
                 </h2>
@@ -553,10 +551,10 @@ Timestamp: [ISO timestamp]`}</pre>
                     describing your feelings about the answer.
                   </p>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
               {/* Regulatory Mapping */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                   Regulatory Mapping Quick Reference
                 </h2>
@@ -633,10 +631,10 @@ Timestamp: [ISO timestamp]`}</pre>
                     </tbody>
                   </table>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
               {/* Core Principles */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                   Core Principles for Auditable AI
                 </h2>
@@ -697,10 +695,10 @@ Timestamp: [ISO timestamp]`}</pre>
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
               {/* Next Steps */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                   Next Steps
                 </h2>
@@ -761,17 +759,17 @@ Timestamp: [ISO timestamp]`}</pre>
                   → 98% accuracy) and regulatory analysis of FINMA Guidance
                   08/2024, EU AI Act, and EIOPA governance frameworks.
                 </p>
-              </motion.div>
+              </MotionDiv>
             </div>
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="glass-panel p-6 sticky top-24"
+                className="glass-panel p-6"
               >
                 <h3 className="font-semibold text-[var(--text-primary)] mb-4">
                   Key Takeaways
@@ -826,7 +824,7 @@ Timestamp: [ISO timestamp]`}</pre>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
-              </motion.div>
+              </MotionDiv>
             </div>
           </div>
         </div>
@@ -835,7 +833,7 @@ Timestamp: [ISO timestamp]`}</pre>
       {/* CTA */}
       <section className="py-20 px-6 bg-gradient-to-br from-slate-900 to-[var(--background)]">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div {...fadeIn}>
+          <MotionDiv {...fadeIn}>
             <Shield className="w-12 h-12 text-[var(--text-muted)] mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Building Auditable AI?
@@ -859,7 +857,7 @@ Timestamp: [ISO timestamp]`}</pre>
                 See It in Action
               </Link>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
     </div>

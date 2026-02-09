@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { GoogleAnalyticsWrapper } from "@/components/layout/GoogleAnalytics";
 import { AuroraBackground } from "@/components/layout/AuroraBackground";
-import { ThemeProvider } from "@/components/theme";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { JsonLd, organizationJsonLd, websiteJsonLd } from "@/components/seo/JsonLd";
 
 const inter = Inter({
@@ -93,6 +93,9 @@ export default function RootLayout({
             `,
           }}
         />
+        <link rel="preconnect" href="https://mira-travel-demo.vercel.app" />
+        <link rel="preconnect" href="https://claimeval.vercel.app" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
       </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} antialiased`}>
         <GoogleAnalyticsWrapper />

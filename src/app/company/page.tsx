@@ -1,8 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowRight,
   Quote,
@@ -15,7 +13,7 @@ const founders = [
     name: "Reuben John",
     role: "Co-Founder & CEO",
     tagline: "2x Founder | Attorney | Former MD Largest Global Withholding Tax Claim Company",
-    bio: "Reuben has led high-stakes operational and regulatory projects across Europe and Africa, overseeing market expansion, complex digitization and compliance initiatives for multinational clients. His background spans enterprise operations and multi-jurisdictional regulatory strategy. At True Aim he drives vision, commercial strategy and end-to-end go-to-market execution.",
+    bio: "Reuben has led high-stakes operational and regulatory projects across Europe and Africa, overseeing market expansion, complex digitization and compliance initiatives for multinational clients. His background spans enterprise operations and multi-jurisdictional regulatory strategy. At True Aim, he drives vision, commercial strategy and go-to-market execution.",
     linkedin: "https://www.linkedin.com/in/reubenj/",
     image: "/team/reuben-john.jpg",
   },
@@ -56,7 +54,7 @@ const advisors: Advisor[] = [
   {
     name: "Dave Stoll",
     title: "Ex-Zurich Insurance CFO (Spain) | Founder of doppo | Fintech & Insurtech Scale-Up Specialist",
-    relevance: "Insurance finance & regulation",
+    relevance: "Insurance, fundraising & regulation",
   },
   {
     name: "Dr. Dandolo Flumini",
@@ -74,18 +72,21 @@ const advisors: Advisor[] = [
 const partners = [
   {
     name: "Yarowa AG",
-    description: "Strategic investor and partner. Swiss InsurTech platform with direct access to insurer distribution and enterprise relationships.",
+    description: "Strategic investor and partner. Swiss InsurTech provider with deep roots in the European insurance ecosystem.",
     image: "/partners/yarowa.png",
+    link: "/partners/yarowa",
   },
   {
     name: "ZHAW",
-    description: "Zurich University of Applied Sciences. Research partnership on logic extraction. Home of True Aim technology's original development.",
+    description: "Zurich University of Applied Sciences. Research partnership following the non-dilutive grant awarded by Innosuisse.",
     image: "/partners/zhaw.jpg",
+    link: "/partners/zhaw",
   },
   {
     name: "Innosuisse",
-    description: "Switzerland's official innovation agency. Non-dilutive grant recipient. National-level validation of our research and technology.",
+    description: "Switzerland's official innovation agency. Non-dilutive grant received by True Aim. National-level validation of our research and technology.",
     image: "/partners/innosuisse.png",
+    link: "/partners/innosuisse",
   },
 ];
 
@@ -95,7 +96,7 @@ export default function CompanyPage() {
       {/* Hero Section */}
       <section className="relative py-24 px-6 overflow-hidden">
         <div className="relative max-w-7xl mx-auto text-center">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -112,16 +113,16 @@ export default function CompanyPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-              True Aim pioneers neuro-symbolic AI for regulated industries. We&apos;re building the decisioning layer that powers aligned, explainable decisions at scale.
+              True Aim pioneers neuro-symbolic AI for regulated industries. We&apos;re building the decisioning engine that powers aligned, explainable decisions at scale.
             </p>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Mission Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -131,18 +132,18 @@ export default function CompanyPage() {
             <div className="w-12 h-12 rounded-full bg-[var(--primary)]/20 flex items-center justify-center mb-6">
               <Quote className="w-6 h-6 text-[var(--primary)]" />
             </div>
-            <blockquote className="text-xl md:text-2xl text-[var(--text-primary)] leading-relaxed italic">
-              &ldquo;Eliminate the AI &apos;black box&apos; problem in insurance by combining deterministic decisioning with generative AI. Deliver fast, fair, integrated and auditable claim determinations - engineered to comply with the highest standards of data protection, information security, AI governance and industry oversight.&rdquo;
+            <blockquote className="text-base text-[var(--text-primary)] leading-relaxed font-medium">
+              &ldquo;Eliminate &ldquo;black box&rdquo; AI in insurance by combining deterministic decisioning with generative AI to deliver fast, fair and auditable claim determinations that are engineered to meet the highest standards of data protection, information security and AI governance.&rdquo;
             </blockquote>
             <p className="mt-6 text-[var(--text-muted)] font-medium">Our Mission</p>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Team Section */}
       <section id="team" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -155,11 +156,11 @@ export default function CompanyPage() {
             <p className="text-lg text-[var(--text-secondary)]">
               Deep expertise in insurance, technology and regulation
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {founders.map((founder, index) => (
-              <motion.div
+              <MotionDiv
                 key={founder.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -199,7 +200,7 @@ export default function CompanyPage() {
                   <Linkedin className="w-5 h-5" />
                   Connect on LinkedIn
                 </a>
-              </motion.div>
+              </MotionDiv>
             ))}
           </div>
         </div>
@@ -208,7 +209,7 @@ export default function CompanyPage() {
       {/* Advisors Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -219,13 +220,13 @@ export default function CompanyPage() {
               Advisory Board
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Guided by industry leaders
+              Guided by industry leaders and subject matter experts
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {advisors.map((advisor, index) => (
-              <motion.div
+              <MotionDiv
                 key={advisor.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -261,7 +262,7 @@ export default function CompanyPage() {
                     {advisor.relevance}
                   </p>
                 )}
-              </motion.div>
+              </MotionDiv>
             ))}
           </div>
         </div>
@@ -270,7 +271,7 @@ export default function CompanyPage() {
       {/* Partners Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -278,42 +279,43 @@ export default function CompanyPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Partners & Backers
+              Partners & Investors
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Supported by Switzerland&apos;s innovation ecosystem.{" "}
-              <Link href="/trust" className="text-[var(--primary)] hover:underline">
-                Visit our Trust Center
-              </Link>
+              Supported by Switzerland&apos;s innovation ecosystem.
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {partners.map((partner, index) => (
-              <motion.div
+              <MotionDiv
                 key={partner.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-panel glass-panel-hover p-8"
               >
-                <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center mb-6 p-2">
-                  <Image
-                    src={partner.image}
-                    alt={partner.name}
-                    width={40}
-                    height={40}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                  {partner.name}
-                </h3>
-                <p className="text-[var(--text-secondary)] leading-relaxed">
-                  {partner.description}
-                </p>
-              </motion.div>
+                <Link
+                  href={partner.link}
+                  className="block glass-panel glass-panel-hover p-8 transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--background)]"
+                >
+                  <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center mb-6 p-2">
+                    <Image
+                      src={partner.image}
+                      alt={partner.name}
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
+                    {partner.name}
+                  </h3>
+                  <p className="text-[var(--text-secondary)] leading-relaxed">
+                    {partner.description}
+                  </p>
+                </Link>
+              </MotionDiv>
             ))}
           </div>
         </div>
@@ -322,7 +324,7 @@ export default function CompanyPage() {
       {/* CTA Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -330,21 +332,21 @@ export default function CompanyPage() {
             className="glass-panel p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Join Us in Transforming Claims
+              Join Us in Transforming Claims Automation in Regulated Environments
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">
-              Whether you&apos;re an insurer looking to automate claims or a professional interested in joining our team, we&apos;d love to hear from you.
+              Whether you&apos;re an insurer looking to automate claims processing or a professional interested in joining our team, we&apos;d love to hear from you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/30"
               >
-                Book a Demo
+                Get in Touch
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
     </div>

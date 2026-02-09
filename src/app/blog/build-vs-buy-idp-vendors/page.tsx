@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowLeft,
   ArrowRight,
@@ -33,7 +31,7 @@ export default function BuildVsBuyBlogPost() {
         <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--primary)] opacity-10 rounded-full blur-3xl" />
 
         <div className="relative max-w-4xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -81,7 +79,7 @@ export default function BuildVsBuyBlogPost() {
                 Strategic Guide
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
@@ -92,7 +90,7 @@ export default function BuildVsBuyBlogPost() {
             {/* Main Content */}
             <div className="lg:col-span-3 space-y-12">
               {/* The Wrong Question */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                   The Wrong Question
                 </h2>
@@ -124,10 +122,10 @@ export default function BuildVsBuyBlogPost() {
                   assumption, and every hard-won lesson. Here&apos;s how to
                   evaluate claims AI vendors without getting fooled by demos.
                 </p>
-              </motion.div>
+              </MotionDiv>
 
               {/* When to Build */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
                     <Wrench className="w-5 h-5 text-blue-400" />
@@ -252,10 +250,10 @@ export default function BuildVsBuyBlogPost() {
                     <li>• Opportunity cost of not shipping sooner</li>
                   </ul>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
               {/* When to Buy */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center">
                     <ShoppingCart className="w-5 h-5 text-emerald-400" />
@@ -378,10 +376,10 @@ export default function BuildVsBuyBlogPost() {
                     </li>
                   </ul>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
               {/* Vendor Evaluation Framework */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center">
                     <ClipboardList className="w-5 h-5 text-[var(--primary)]" />
@@ -608,10 +606,10 @@ export default function BuildVsBuyBlogPost() {
                     </ul>
                   </div>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
               {/* Demo Checklist */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
                     <Target className="w-5 h-5 text-amber-400" />
@@ -671,10 +669,10 @@ export default function BuildVsBuyBlogPost() {
                     accuracy&rdquo; doesn&apos;t apply to your reality.
                   </p>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
               {/* The Hybrid Path */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
                     <Building className="w-5 h-5 text-purple-400" />
@@ -726,10 +724,10 @@ export default function BuildVsBuyBlogPost() {
                     maintain audit control over final decisions.
                   </p>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
               {/* Next Steps */}
-              <motion.div {...fadeIn}>
+              <MotionDiv {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                   Next Steps
                 </h2>
@@ -788,17 +786,17 @@ export default function BuildVsBuyBlogPost() {
                   regulated markets. We&apos;ve learned these lessons the hard
                   way, 47 iterations worth.
                 </p>
-              </motion.div>
+              </MotionDiv>
             </div>
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="glass-panel p-6 sticky top-24"
+                className="glass-panel p-6"
               >
                 <h3 className="font-semibold text-[var(--text-primary)] mb-4">
                   Key Takeaways
@@ -853,7 +851,7 @@ export default function BuildVsBuyBlogPost() {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
-              </motion.div>
+              </MotionDiv>
             </div>
           </div>
         </div>
@@ -862,7 +860,7 @@ export default function BuildVsBuyBlogPost() {
       {/* CTA */}
       <section className="py-20 px-6 bg-gradient-to-br from-slate-900 to-[var(--background)]">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div {...fadeIn}>
+          <MotionDiv {...fadeIn}>
             <Scale className="w-12 h-12 text-[var(--text-muted)] mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Evaluating Claims AI Vendors?
@@ -886,7 +884,7 @@ export default function BuildVsBuyBlogPost() {
                 Read: Auditability in Claims AI
               </Link>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
     </div>

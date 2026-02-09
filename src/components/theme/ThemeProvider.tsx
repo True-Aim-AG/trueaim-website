@@ -33,19 +33,18 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  useEffect(() => {
-    if (mounted) {
-      document.documentElement.setAttribute("data-theme", theme);
-      localStorage.setItem("theme", theme);
-    }
-  }, [theme, mounted]);
+  const setThemeAndSync = (newTheme: Theme) => {
+    setThemeState(newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
 
   const toggleTheme = () => {
-    setThemeState((prev) => (prev === "dark" ? "light" : "dark"));
+    setThemeAndSync(theme === "dark" ? "light" : "dark");
   };
 
   const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme);
+    setThemeAndSync(newTheme);
   };
 
   return (

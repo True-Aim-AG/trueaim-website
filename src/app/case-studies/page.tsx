@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowRight,
   Building2,
@@ -36,7 +34,7 @@ export default function CaseStudiesPage() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[var(--secondary)] opacity-10 rounded-full blur-3xl" />
 
         <div className="relative max-w-7xl mx-auto text-center">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -56,7 +54,7 @@ export default function CaseStudiesPage() {
               See how insurers are using True Aim to transform their claims
               operations with measurable, auditable results.
             </p>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
@@ -64,7 +62,7 @@ export default function CaseStudiesPage() {
       {featured && (
         <section className="py-12 px-6">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -170,7 +168,7 @@ export default function CaseStudiesPage() {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </MotionDiv>
           </div>
         </section>
       )}
@@ -179,7 +177,7 @@ export default function CaseStudiesPage() {
       {wipStudies.length > 0 && (
         <section className="py-12 px-6">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -196,11 +194,11 @@ export default function CaseStudiesPage() {
                 These case studies are currently being documented. Check back for
                 the full write-ups.
               </p>
-            </motion.div>
+            </MotionDiv>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {wipStudies.map((study, index) => (
-                <motion.div
+                <MotionDiv
                   key={study.slug}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -268,7 +266,7 @@ export default function CaseStudiesPage() {
                       ))}
                     </div>
                   </div>
-                </motion.div>
+                </MotionDiv>
               ))}
             </div>
           </div>
@@ -278,7 +276,7 @@ export default function CaseStudiesPage() {
       {/* CTA Section */}
       <section className="py-20 px-6 bg-gradient-to-br from-slate-900 to-[var(--background)]">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -288,24 +286,24 @@ export default function CaseStudiesPage() {
               See What Auditable AI Can Do for Your Claims
             </h2>
             <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
-              Start with a pilot on your closed claims. We&apos;ll show you measurable results within weeks.
+              Let&apos;s analyse a batch of your closed claims to quantify the potential impact.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg"
               >
-                Request a Pilot
+                Book a Demo
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/impact-estimator"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                Estimate Your Impact
+                Get Impact Estimate
               </Link>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
     </div>

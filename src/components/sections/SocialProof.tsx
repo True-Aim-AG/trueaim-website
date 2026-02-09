@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/ui/MotionDiv";
 import { ArrowRight, Building2, TrendingUp, Quote } from "lucide-react";
 import { caseStudies } from "@/data/case-studies";
 
@@ -26,7 +24,7 @@ export function SocialProof() {
   return (
     <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -44,10 +42,10 @@ export function SocialProof() {
             See how insurers are transforming their claims operations with
             measurable, auditable results
           </p>
-        </motion.div>
+        </MotionDiv>
 
         {/* Featured case study - full width */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -133,10 +131,10 @@ export function SocialProof() {
               </div>
             </div>
           </Link>
-        </motion.div>
+        </MotionDiv>
 
         {/* View all link */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -150,7 +148,7 @@ export function SocialProof() {
             View All Case Studies
             <ArrowRight className="w-4 h-4" />
           </Link>
-        </motion.div>
+        </MotionDiv>
       </div>
     </section>
   );

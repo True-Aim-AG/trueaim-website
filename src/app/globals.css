@@ -474,3 +474,9 @@ body,
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Performance: content-visibility for below-fold sections */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}

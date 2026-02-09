@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/ui/MotionDiv";
 import { ArrowRight, Brain, FileSearch, ClipboardCheck, FileText } from "lucide-react";
 import { getAlternatingSlide, defaultTransition } from "@/lib/animations";
 
@@ -48,7 +46,7 @@ export function ProductsGrid() {
   return (
     <section className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -61,11 +59,11 @@ export function ProductsGrid() {
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
             A complete suite designed for the claims lifecycle
           </p>
-        </motion.div>
+        </MotionDiv>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product, index) => (
-            <motion.div
+            <MotionDiv
               key={product.name}
               variants={getAlternatingSlide(index)}
               initial="initial"
@@ -119,7 +117,7 @@ export function ProductsGrid() {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
 

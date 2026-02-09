@@ -17,21 +17,12 @@ import {
   FileSearch,
   ClipboardCheck,
 } from "lucide-react";
-
-interface ROIInputs {
-  claimsVolume: number;
-  handlingTime: number;
-  costPerClaim: number;
-  automationLevel: string;
-  currency: string;
-}
-
-
-const automationOptions = [
-  { value: "none", label: "No current automation", factor: 0.85 },
-  { value: "some", label: "Basic rules/triage in place", factor: 0.70 },
-  { value: "significant", label: "Existing BPM/workflow automation", factor: 0.50 },
-];
+import {
+  type ROIInputs,
+  calculateROI,
+  AUTOMATION_OPTIONS as automationOptions,
+  ASSUMPTIONS,
+} from "@/lib/roi-calculations";
 
 const currencyOptions = [
   { value: "CHF", symbol: "CHF", locale: "de-CH" },
@@ -40,27 +31,11 @@ const currencyOptions = [
   { value: "ZAR", symbol: "ZAR", locale: "en-ZA" },
 ];
 
-// Constants for assumptions (displayed to users)
-const ASSUMPTIONS = {
-  automatedClaimReviewTime: 0.01, // hours (36 seconds)
-  manualClaimSpeedup: 0.5, // 50% faster processing for remaining manual claims
-  platformCostPerClaim: 0.50, // per claim
-  implementationBaseCost: 50000, // covers integration, setup, training
-  implementationCostFactor: 0.25, // 3 months of platform fees
-  workHoursPerYear: 2080, // Standard work hours per FTE
-  confidenceHaircut: 0.75, // 75% conservative factor
-  reworkReductionRate: 0.03, // 3% of claims avoid rework
-  reworkCostMultiplier: 2.5, // rework costs 2.5x original handling
-  leakageReductionRate: 0.02, // 2% leakage reduction
-  averageClaimValue: 5000, // average claim value for leakage calc
-  leakagePercentOfClaim: 0.05, // 5% of claim value as leakage
-};
-
 export function ROICalculator() {
   const [inputs, setInputs] = useState<ROIInputs>({
     claimsVolume: 50000,
     handlingTime: 45,
-    costPerClaim: 50,
+    claimsHandlers: 50,
     automationLevel: "none",
     currency: "CHF",
   });
@@ -74,86 +49,7 @@ export function ROICalculator() {
 
   const currencyConfig = currencyOptions.find(c => c.value === inputs.currency) || currencyOptions[0];
 
-  const results = useMemo(() => {
-    const volume = inputs.claimsVolume;
-    const automationFactor = automationOptions.find(a => a.value === inputs.automationLevel)?.factor || 0.85;
-
-    // Current state calculations
-    const hoursPerClaim = inputs.handlingTime / 60;
-    const totalHoursPerYear = volume * hoursPerClaim;
-    const currentAnnualCost = volume * inputs.costPerClaim;
-    const impliedHourlyRate = inputs.costPerClaim / hoursPerClaim;
-
-    // === BUCKET 1: Capacity Unlocked (MIRA) ===
-    const trueAimEfficiency = automationFactor;
-    const automatedClaims = volume * trueAimEfficiency;
-    const manualClaims = volume - automatedClaims;
-
-    const automatedHours = automatedClaims * ASSUMPTIONS.automatedClaimReviewTime;
-    const manualHours = manualClaims * hoursPerClaim * ASSUMPTIONS.manualClaimSpeedup;
-    const trueAimTotalHours = automatedHours + manualHours;
-    const trueAimAnnualCost = trueAimTotalHours * impliedHourlyRate;
-    const capacitySavingsGross = currentAnnualCost - trueAimAnnualCost;
-
-    // === BUCKET 2: Rework Avoided (ClaimEval) ===
-    const reworkClaimsAvoided = volume * ASSUMPTIONS.reworkReductionRate;
-    const reworkSavingsGross = reworkClaimsAvoided * hoursPerClaim * ASSUMPTIONS.reworkCostMultiplier * impliedHourlyRate;
-
-    // === BUCKET 3: Leakage Reduction (ClaimEval) ===
-    const leakageSavingsGross = volume * ASSUMPTIONS.leakageReductionRate * ASSUMPTIONS.averageClaimValue * ASSUMPTIONS.leakagePercentOfClaim;
-
-    // Total gross savings
-    const grossSavings = capacitySavingsGross + reworkSavingsGross + leakageSavingsGross;
-
-    // Apply confidence haircut (75%)
-    const conservativeSavings = grossSavings * ASSUMPTIONS.confidenceHaircut;
-
-    // Platform cost estimate
-    const platformCost = volume * ASSUMPTIONS.platformCostPerClaim;
-
-    const netAnnualImpact = conservativeSavings - platformCost;
-    const savingsPercentage = currentAnnualCost > 0 ? Math.min((netAnnualImpact / currentAnnualCost) * 100, 99) : 0;
-
-    // Time savings
-    const hoursSaved = totalHoursPerYear - trueAimTotalHours;
-    const fteEquivalent = hoursSaved / ASSUMPTIONS.workHoursPerYear;
-
-    // Payback period
-    const implementationCost = ASSUMPTIONS.implementationBaseCost + (platformCost * ASSUMPTIONS.implementationCostFactor);
-    const monthlyNetSavings = netAnnualImpact / 12;
-    const paybackMonths = monthlyNetSavings > 0 ? Math.ceil(implementationCost / monthlyNetSavings) : 0;
-
-    return {
-      currentAnnualCost,
-      netAnnualImpact,
-      savingsPercentage,
-      hoursSaved,
-      fteEquivalent,
-      paybackMonths,
-      volume,
-      buckets: {
-        capacityGross: capacitySavingsGross,
-        reworkGross: reworkSavingsGross,
-        leakageGross: leakageSavingsGross,
-        grossTotal: grossSavings,
-        conservativeTotal: conservativeSavings,
-      },
-      details: {
-        hoursPerClaim,
-        totalHoursPerYear,
-        automationRate: trueAimEfficiency * 100,
-        automatedClaims,
-        manualClaims,
-        automatedHours,
-        manualHours,
-        trueAimTotalHours,
-        trueAimAnnualCost,
-        platformCost,
-        implementationCost,
-        reworkClaimsAvoided,
-      },
-    };
-  }, [inputs]);
+  const results = useMemo(() => calculateROI(inputs), [inputs]);
 
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat(currencyConfig.locale, {
@@ -186,7 +82,7 @@ export function ROICalculator() {
           country: "-",
           interest: "general",
           consent: true,
-          message: `Impact Report Request\n\nVolume: ${formatNumber(results.volume)} claims/year\nCost per claim: ${currencyConfig.symbol} ${inputs.costPerClaim}\nHandling time: ${inputs.handlingTime} min\nNet annual impact: ${formatCurrency(results.netAnnualImpact)}\nPayback: ${results.paybackMonths} months`,
+          message: `Impact Report Request\n\nVolume: ${formatNumber(results.volume)} claims/year\nHandlers: ${inputs.claimsHandlers}\nHandling time: ${inputs.handlingTime} min\nGross annual impact: ${formatCurrency(results.grossAnnualImpact)}`,
         }),
       });
       setReportSubmitted(true);
@@ -217,6 +113,26 @@ export function ROICalculator() {
         </div>
 
         <div className="space-y-6">
+          {/* Currency Selector */}
+          <div>
+            <label className="block text-sm font-medium text-white mb-2">Currency</label>
+            <div className="flex gap-2">
+              {currencyOptions.map((curr) => (
+                <button
+                  key={curr.value}
+                  onClick={() => setInputs(prev => ({ ...prev, currency: curr.value }))}
+                  className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                    inputs.currency === curr.value
+                      ? 'bg-[var(--primary)] text-white'
+                      : 'bg-white/10 text-[var(--text-muted)] hover:text-white'
+                  }`}
+                >
+                  {curr.value}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Claims Volume */}
           <div>
             <label className="block text-sm font-medium text-white mb-2">
@@ -228,7 +144,7 @@ export function ROICalculator() {
               max="1000000"
               step="10000"
               value={inputs.claimsVolume}
-              onChange={(e) => setInputs({ ...inputs, claimsVolume: parseInt(e.target.value) })}
+              onChange={(e) => setInputs(prev => ({ ...prev, claimsVolume: parseInt(e.target.value) }))}
               className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[var(--primary)]"
             />
             <div className="flex justify-between text-xs text-[var(--text-muted)] mt-1">
@@ -240,57 +156,41 @@ export function ROICalculator() {
           {/* Handling Time */}
           <div>
             <label className="block text-sm font-medium text-white mb-2">
-              Average Handling Time: <span className="text-[var(--primary)]">{inputs.handlingTime} minutes</span>
+              Average handling time per claim: <span className="text-[var(--primary)]">{inputs.handlingTime} minutes</span>
             </label>
             <input
               type="range"
-              min="15"
-              max="120"
+              min="5"
+              max="180"
               step="5"
               value={inputs.handlingTime}
-              onChange={(e) => setInputs({ ...inputs, handlingTime: parseInt(e.target.value) })}
+              onChange={(e) => setInputs(prev => ({ ...prev, handlingTime: parseInt(e.target.value) }))}
               className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[var(--primary)]"
             />
             <div className="flex justify-between text-xs text-[var(--text-muted)] mt-1">
-              <span>15 min</span>
-              <span>120 min</span>
+              <span>5 min</span>
+              <span>180 min</span>
             </div>
+            <p className="text-xs text-[var(--text-muted)] mt-1">Use an estimate for a typical claim without unusual complexity</p>
           </div>
 
-          {/* Cost per Claim with Currency Toggle */}
+          {/* Claims Handlers */}
           <div>
-            <div className="flex items-center justify-between mb-2">
-              <label className="block text-sm font-medium text-white">
-                Average cost per claim: <span className="text-[var(--primary)]">{currencyConfig.symbol} {inputs.costPerClaim}</span>
-              </label>
-              <div className="flex gap-1">
-                {currencyOptions.map((curr) => (
-                  <button
-                    key={curr.value}
-                    onClick={() => setInputs({ ...inputs, currency: curr.value })}
-                    className={`px-2 py-0.5 rounded text-xs font-medium transition-colors ${
-                      inputs.currency === curr.value
-                        ? 'bg-[var(--primary)] text-white'
-                        : 'bg-white/10 text-[var(--text-muted)] hover:text-white'
-                    }`}
-                  >
-                    {curr.value}
-                  </button>
-                ))}
-              </div>
-            </div>
+            <label className="block text-sm font-medium text-white mb-2">
+              Number of claims handlers or assessors: <span className="text-[var(--primary)]">{inputs.claimsHandlers}</span>
+            </label>
             <input
               type="range"
-              min="10"
+              min="1"
               max="500"
-              step="5"
-              value={inputs.costPerClaim}
-              onChange={(e) => setInputs({ ...inputs, costPerClaim: parseInt(e.target.value) })}
+              step="1"
+              value={inputs.claimsHandlers}
+              onChange={(e) => setInputs(prev => ({ ...prev, claimsHandlers: parseInt(e.target.value) }))}
               className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[var(--primary)]"
             />
             <div className="flex justify-between text-xs text-[var(--text-muted)] mt-1">
-              <span>{currencyConfig.symbol} 10</span>
-              <span>{currencyConfig.symbol} 500</span>
+              <span>1</span>
+              <span>500</span>
             </div>
           </div>
 
@@ -314,7 +214,7 @@ export function ROICalculator() {
                     name="automationLevel"
                     value={option.value}
                     checked={inputs.automationLevel === option.value}
-                    onChange={(e) => setInputs({ ...inputs, automationLevel: e.target.value })}
+                    onChange={(e) => setInputs(prev => ({ ...prev, automationLevel: e.target.value }))}
                     className="sr-only"
                   />
                   <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
@@ -345,20 +245,14 @@ export function ROICalculator() {
         <div className="bg-gradient-to-br from-[var(--primary)] to-blue-700 rounded-2xl p-8 text-white">
           <div className="flex items-center gap-2 mb-1">
             <TrendingUp className="w-5 h-5" />
-            <span className="text-sm font-medium text-white/80">Estimated Annual Impact (Conservative)</span>
+            <span className="text-sm font-medium text-white/80">Estimated Gross Operational Impact (Conservative)</span>
           </div>
           <p className="text-xs text-white/60 mb-4">Based on pilot-scale assumptions</p>
           <div className="text-4xl md:text-5xl font-bold mb-2">
-            {formatCurrency(results.netAnnualImpact)}
+            {formatCurrency(results.grossAnnualImpact)}
           </div>
-          <div className="text-white/80 mb-4">
+          <div className="text-white/80">
             {results.savingsPercentage.toFixed(0)}% reduction in claims handling costs
-          </div>
-          <div className="flex items-center gap-2 px-3 py-2 bg-white/10 rounded-lg inline-flex">
-            <CheckCircle className="w-4 h-4 text-white/80" />
-            <span className="text-sm text-white/80">
-              Indicative payback: {results.paybackMonths < 12 ? `${results.paybackMonths} ${results.paybackMonths === 1 ? 'month' : 'months'}` : '< 1 year'}
-            </span>
           </div>
         </div>
 
@@ -372,10 +266,10 @@ export function ROICalculator() {
               <div className="flex items-center gap-2">
                 <Brain className="w-4 h-4 text-indigo-400" />
                 <span className="text-sm font-medium text-white">Capacity unlocked</span>
-                <span className="text-xs text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity">MIRA</span>
+                <span className="text-xs text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity">True Aim</span>
               </div>
               <span className="text-sm font-semibold text-emerald-400 font-mono-data">
-                {formatCurrency(results.buckets.capacityGross * ASSUMPTIONS.confidenceHaircut)}
+                {formatCurrency(results.buckets.capacityGross * ASSUMPTIONS.sensitivityAdjustment)}
               </span>
             </div>
             <p className="text-xs text-[var(--text-muted)]">Fewer touches per claim, shorter handling time</p>
@@ -390,10 +284,10 @@ export function ROICalculator() {
                 <span className="text-xs text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity">ClaimEval</span>
               </div>
               <span className="text-sm font-semibold text-emerald-400 font-mono-data">
-                {formatCurrency(results.buckets.reworkGross * ASSUMPTIONS.confidenceHaircut)}
+                {formatCurrency(results.buckets.reworkGross * ASSUMPTIONS.sensitivityAdjustment)}
               </span>
             </div>
-            <p className="text-xs text-[var(--text-muted)]">Fewer reopens, appeals, and corrections</p>
+            <p className="text-xs text-[var(--text-muted)]">Fewer reopens, appeals and corrections</p>
           </Link>
 
           {/* Leakage reduction */}
@@ -405,7 +299,7 @@ export function ROICalculator() {
                 <span className="text-xs text-[var(--aurora-cyan)] opacity-0 group-hover:opacity-100 transition-opacity">ClaimEval</span>
               </div>
               <span className="text-sm font-semibold text-emerald-400 font-mono-data">
-                {formatCurrency(results.buckets.leakageGross * ASSUMPTIONS.confidenceHaircut)}
+                {formatCurrency(results.buckets.leakageGross * ASSUMPTIONS.sensitivityAdjustment)}
               </span>
             </div>
             <p className="text-xs text-[var(--text-muted)]">Reduced inconsistent decisions</p>
@@ -431,23 +325,37 @@ export function ROICalculator() {
           </div>
         </div>
 
-        {/* Disclaimer */}
-        <div className="flex items-start gap-2 p-4 bg-white/5 rounded-lg border border-[var(--border)]">
-          <Info className="w-4 h-4 text-[var(--text-muted)] flex-shrink-0 mt-0.5" />
-          <p className="text-xs text-[var(--text-muted)]">
-            Estimates based on pilot-scale assumptions with a 75% conservative confidence factor applied. Actual results vary based on claim complexity, policy types, and implementation scope.
-          </p>
+        {/* Disclaimers */}
+        <div className="space-y-2">
+          <div className="flex items-start gap-2 p-3 bg-white/5 rounded-lg border border-[var(--border)]">
+            <Info className="w-4 h-4 text-[var(--text-muted)] flex-shrink-0 mt-0.5" />
+            <p className="text-xs text-[var(--text-muted)]">
+              All figures shown represent gross operational impact and do not take into account the cost of True Aim's services.
+            </p>
+          </div>
+          <div className="flex items-start gap-2 p-3 bg-white/5 rounded-lg border border-[var(--border)]">
+            <Info className="w-4 h-4 text-[var(--text-muted)] flex-shrink-0 mt-0.5" />
+            <p className="text-xs text-[var(--text-muted)]">
+              Platform pricing is not provided. Final pricing is based on contract terms and commercial negotiations.
+            </p>
+          </div>
+          <div className="flex items-start gap-2 p-3 bg-white/5 rounded-lg border border-[var(--border)]">
+            <Info className="w-4 h-4 text-[var(--text-muted)] flex-shrink-0 mt-0.5" />
+            <p className="text-xs text-[var(--text-muted)]">
+              Based on pilot data from insurance claims.
+            </p>
+          </div>
         </div>
 
         {/* Expandable Assumptions Section */}
         <div className="glass-panel overflow-hidden">
           <button
-            onClick={() => setShowAssumptions(!showAssumptions)}
+            onClick={() => setShowAssumptions(prev => !prev)}
             className="w-full flex items-center justify-between p-4 hover:bg-white/5 transition-colors"
           >
             <div className="flex items-center gap-3">
               <FileText className="w-5 h-5 text-[var(--primary)]" />
-              <span className="font-medium text-white">Methodology & Assumptions</span>
+              <span className="font-medium text-white">Methodology and Assumptions</span>
             </div>
             <ChevronDown
               className={`w-5 h-5 text-[var(--text-muted)] transition-transform duration-300 ${
@@ -472,10 +380,10 @@ export function ROICalculator() {
                     <div className="space-y-3 text-sm">
                       <div className="p-3 bg-white/5 rounded-lg">
                         <p className="text-[var(--text-muted)] mb-2">
-                          <span className="text-white font-medium">Current Annual Cost</span> = Claims Volume x Cost per Claim
+                          <span className="text-white font-medium">Current Handling Cost</span> = Handling Time x Cost per Minute x Claims Volume
                         </p>
                         <p className="font-mono text-xs text-[var(--primary)]">
-                          {formatNumber(results.volume)} x {currencyConfig.symbol} {inputs.costPerClaim} = {formatCurrency(results.currentAnnualCost)}
+                          {inputs.handlingTime} min x {currencyConfig.symbol} {results.details.costPerMinute.toFixed(2)}/min x {formatNumber(results.volume)} = {formatCurrency(results.currentAnnualCost)}
                         </p>
                       </div>
 
@@ -490,10 +398,10 @@ export function ROICalculator() {
 
                       <div className="p-3 bg-white/5 rounded-lg">
                         <p className="text-[var(--text-muted)] mb-2">
-                          <span className="text-white font-medium">Conservative Estimate</span> = Gross Savings x 75% - Platform Cost
+                          <span className="text-white font-medium">Conservative Estimate</span> = Gross Savings x 75% Sensitivity Adjustment
                         </p>
                         <p className="font-mono text-xs text-[var(--primary)]">
-                          {formatCurrency(results.buckets.grossTotal)} x 0.75 - {formatCurrency(results.details.platformCost)} = {formatCurrency(results.netAnnualImpact)}
+                          {formatCurrency(results.buckets.grossTotal)} x 0.75 = {formatCurrency(results.grossAnnualImpact)}
                         </p>
                       </div>
                     </div>
@@ -517,7 +425,7 @@ export function ROICalculator() {
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-3 h-3 text-emerald-400 flex-shrink-0 mt-0.5" />
-                        Conservative confidence factor (75%) applied
+                        75% sensitivity adjustment applied to all projections
                       </li>
                     </ul>
                   </div>
@@ -533,7 +441,7 @@ export function ROICalculator() {
                             <td className="py-2 text-white text-right font-mono">{formatNumber(results.volume)}</td>
                           </tr>
                           <tr>
-                            <td className="py-2 text-[var(--text-muted)]">Claims automated by MIRA</td>
+                            <td className="py-2 text-[var(--text-muted)]">Claims automated by True Aim</td>
                             <td className="py-2 text-white text-right font-mono">{formatNumber(results.details.automatedClaims)} ({results.details.automationRate.toFixed(0)}%)</td>
                           </tr>
                           <tr>
@@ -553,16 +461,12 @@ export function ROICalculator() {
                             <td className="py-2 text-emerald-400 text-right font-mono">{formatCurrency(results.buckets.leakageGross)}</td>
                           </tr>
                           <tr>
-                            <td className="py-2 text-[var(--text-muted)]">Confidence haircut (75%)</td>
+                            <td className="py-2 text-[var(--text-muted)]">Sensitivity adjustment (75%)</td>
                             <td className="py-2 text-amber-400 text-right font-mono">-{formatCurrency(results.buckets.grossTotal * 0.25)}</td>
                           </tr>
-                          <tr>
-                            <td className="py-2 text-[var(--text-muted)]">Platform cost (annual)</td>
-                            <td className="py-2 text-amber-400 text-right font-mono">-{formatCurrency(results.details.platformCost)}</td>
-                          </tr>
                           <tr className="font-semibold">
-                            <td className="py-2 text-white">Net annual impact (conservative)</td>
-                            <td className="py-2 text-emerald-400 text-right font-mono">{formatCurrency(results.netAnnualImpact)}</td>
+                            <td className="py-2 text-white">Gross annual impact (conservative)</td>
+                            <td className="py-2 text-emerald-400 text-right font-mono">{formatCurrency(results.grossAnnualImpact)}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -573,10 +477,8 @@ export function ROICalculator() {
                   <div className="p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg">
                     <h4 className="text-sm font-semibold text-amber-400 mb-2">Important Notes</h4>
                     <ul className="text-xs text-[var(--text-muted)] space-y-1 list-disc list-inside">
-                      <li>These estimates are based on pilot data from travel insurance claims</li>
+                      <li>Estimates are informed by pilot data from travel insurance claims</li>
                       <li>Actual automation rates depend on policy complexity and claim types</li>
-                      <li>Implementation timeline and costs vary based on integration requirements</li>
-                      <li>Platform pricing is indicative; final pricing based on contract terms</li>
                     </ul>
                   </div>
                 </div>
@@ -592,7 +494,7 @@ export function ROICalculator() {
               <CheckCircle className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
               <h4 className="font-semibold text-white mb-1">Request Received</h4>
               <p className="text-sm text-[var(--text-muted)]">
-                We&apos;ll send your personalized impact breakdown within 1 business day.
+                We&apos;ll send your personalised impact breakdown within 1 business day.
               </p>
             </div>
           ) : showReportForm ? (
@@ -628,7 +530,7 @@ export function ROICalculator() {
                 Want the full breakdown?
               </h4>
               <p className="text-sm text-[var(--text-muted)] mb-4">
-                Get a personalized impact report with detailed methodology and assumptions.
+                Get a personalised impact report with detailed methodology and assumptions.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <button

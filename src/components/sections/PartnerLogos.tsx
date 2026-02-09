@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/ui/MotionDiv";
 import Image from "next/image";
 
 const partners = [
@@ -30,7 +28,7 @@ const partners = [
 
 export function PartnerLogos() {
   return (
-    <motion.div
+    <MotionDiv
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -75,6 +73,6 @@ export function PartnerLogos() {
 
       {/* Subtle ambient glow */}
       <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-2/3 h-8 bg-gradient-to-t from-[var(--primary)]/5 to-transparent blur-xl rounded-full" />
-    </motion.div>
+    </MotionDiv>
   );
 }

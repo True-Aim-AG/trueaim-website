@@ -218,7 +218,7 @@ export default function CaseStudyPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="glass-panel p-6 sticky top-24"
+                className="glass-panel p-6"
               >
                 <h3 className="font-semibold text-[var(--text-primary)] mb-4">
                   Key Highlights

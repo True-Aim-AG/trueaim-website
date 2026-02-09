@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowRight,
   FileSearch,
@@ -86,7 +84,7 @@ export default function ContextBuilderPage() {
       {/* Hero Section */}
       <section className="relative py-24 px-6 overflow-hidden">
         <div className="relative max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -120,14 +118,14 @@ export default function ContextBuilderPage() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Problem Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -140,14 +138,14 @@ export default function ContextBuilderPage() {
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
               Claims arrive as chaotic document bundles: blurry photos, multi-page PDFs, scanned forms. Extracting accurate data is slow, error-prone and expensive.
             </p>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Solution Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -163,14 +161,14 @@ export default function ContextBuilderPage() {
             <p className="text-lg text-[var(--text-primary)] font-medium mt-4">
               The result: claim-ready &quot;context packs&quot; that downstream systems can trust.
             </p>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Pipeline Steps */}
       <section className="pt-10 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -183,12 +181,12 @@ export default function ContextBuilderPage() {
             <p className="text-lg text-[var(--text-secondary)]">
               From raw documents to structured data
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
               {pipelineSteps.map((step, index) => (
-                <motion.div
+                <MotionDiv
                   key={step.step}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -212,13 +210,13 @@ export default function ContextBuilderPage() {
                       {step.description}
                     </p>
                   </div>
-                </motion.div>
+                </MotionDiv>
               ))}
             </div>
           </div>
 
           {/* Data Sovereignty Note */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -232,14 +230,14 @@ export default function ContextBuilderPage() {
               </Link>
               {" "}for more details.
             </p>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Demo / GitHub Section */}
       <section id="demo" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -252,9 +250,9 @@ export default function ContextBuilderPage() {
             <p className="text-lg text-[var(--text-secondary)]">
               ContextBuilder is built with transparency in mind
             </p>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -281,14 +279,14 @@ export default function ContextBuilderPage() {
               View on GitHub
               <ExternalLink className="w-5 h-5" />
             </a>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Output Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -298,11 +296,11 @@ export default function ContextBuilderPage() {
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               What You Get: A Claim-Ready Context Pack
             </h2>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {outputFeatures.map((feature, index) => (
-              <motion.div
+              <MotionDiv
                 key={feature.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -319,7 +317,7 @@ export default function ContextBuilderPage() {
                 <p className="text-sm text-[var(--text-secondary)]">
                   {feature.description}
                 </p>
-              </motion.div>
+              </MotionDiv>
             ))}
           </div>
         </div>
@@ -328,7 +326,7 @@ export default function ContextBuilderPage() {
       {/* Metrics Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -338,11 +336,11 @@ export default function ContextBuilderPage() {
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Performance Metrics
             </h2>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {metrics.map((metric, index) => (
-              <motion.div
+              <MotionDiv
                 key={metric.label}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -361,7 +359,7 @@ export default function ContextBuilderPage() {
                     {metric.footnote}
                   </p>
                 )}
-              </motion.div>
+              </MotionDiv>
             ))}
           </div>
         </div>
@@ -370,7 +368,7 @@ export default function ContextBuilderPage() {
       {/* CTA Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -389,7 +387,7 @@ export default function ContextBuilderPage() {
             >
               Book a Demo
             </Link>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
     </div>

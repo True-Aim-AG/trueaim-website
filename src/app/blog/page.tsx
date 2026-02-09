@@ -49,8 +49,7 @@ export default function BlogPage() {
           </h1>
 
           <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
-            Technical insights on auditable AI, claims automation, regulatory
-            compliance, and building AI systems for regulated industries.
+            Exploring AI, automation, regulation and the practical challenges of operating in regulated industries.
           </p>
         </div>
       </section>
@@ -162,7 +161,7 @@ export default function BlogPage() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold tracking-tight text-[var(--text-primary)] mb-8 text-center">
-            Topics We Cover
+            Topics We Cover (and more)
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -171,7 +170,7 @@ export default function BlogPage() {
                 Auditable AI
               </h3>
               <p className="text-sm text-[var(--text-muted)]">
-                How to build AI systems that can be explained, traced, and
+                How to build AI systems that can be explained, traced and
                 defended in regulated environments.
               </p>
             </div>
@@ -201,7 +200,7 @@ export default function BlogPage() {
                 Technical Architecture
               </h3>
               <p className="text-sm text-[var(--text-muted)]">
-                Deep dives into hybrid AI architectures, document processing,
+                Deep dives into hybrid AI architectures, document processing
                 and decision systems.
               </p>
             </div>

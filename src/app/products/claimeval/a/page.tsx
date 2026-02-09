@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowRight,
   ClipboardCheck,
@@ -59,7 +57,7 @@ export default function ClaimEvalPageA() {
       {/* Hero Section */}
       <section className="relative py-24 px-6 overflow-hidden">
         <div className="relative max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -96,14 +94,14 @@ export default function ClaimEvalPageA() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Problem Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -119,14 +117,14 @@ export default function ClaimEvalPageA() {
             <p className="text-xl font-semibold text-emerald-400 mt-6">
               What if you could QA every claim?
             </p>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Solution Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -139,14 +137,14 @@ export default function ClaimEvalPageA() {
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
               ClaimEval runs defined inspection checks across all closed claims. It scores risk, flags issues, and surfaces the claims that need human attention, without replacing human judgment.
             </p>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Features Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -156,11 +154,11 @@ export default function ClaimEvalPageA() {
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
               Key Features
             </h2>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <motion.div
+              <MotionDiv
                 key={feature.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -177,7 +175,7 @@ export default function ClaimEvalPageA() {
                 <p className="text-[var(--text-secondary)] leading-relaxed">
                   {feature.description}
                 </p>
-              </motion.div>
+              </MotionDiv>
             ))}
           </div>
         </div>
@@ -186,7 +184,7 @@ export default function ClaimEvalPageA() {
       {/* Demo Section */}
       <section id="demo" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -199,9 +197,9 @@ export default function ClaimEvalPageA() {
             <p className="text-lg text-[var(--text-secondary)]">
               Interactive demo of claims inspection and review
             </p>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -217,14 +215,14 @@ export default function ClaimEvalPageA() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               />
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Inspection Zones Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -237,11 +235,11 @@ export default function ClaimEvalPageA() {
             <p className="text-lg text-[var(--text-secondary)]">
               Pre-built check catalogues by line of business
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Motor */}
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -264,10 +262,10 @@ export default function ClaimEvalPageA() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </MotionDiv>
 
             {/* Home */}
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -290,7 +288,7 @@ export default function ClaimEvalPageA() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </MotionDiv>
           </div>
         </div>
       </section>
@@ -298,7 +296,7 @@ export default function ClaimEvalPageA() {
       {/* CTA Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -317,7 +315,7 @@ export default function ClaimEvalPageA() {
             >
               Request a Pilot
             </Link>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
     </div>
