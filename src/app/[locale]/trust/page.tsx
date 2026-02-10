@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   Shield,
@@ -12,119 +13,46 @@ import {
   Building2,
 } from "lucide-react";
 
-const complianceBadges = [
-  {
-    name: "GDPR",
-    status: "aligned",
-    description: "Architecture aligned with EU data protection regulation",
-    icon: Shield,
-  },
-  {
-    name: "EU AI Act",
-    status: "aligned",
-    description: "Built for high-risk AI system requirements",
-    icon: Eye,
-  },
-  {
-    name: "Swiss Hosting",
-    status: "provided",
-    description: "Data residency within Swiss borders",
-    icon: MapPin,
-  },
-  {
-    name: "ISO 27001",
-    status: "roadmap",
-    description: "Current controls align to the framework. Formal certification scheduled for 2026.",
-    icon: FileCheck,
-  },
-  {
-    name: "SOC 2 Type II",
-    status: "roadmap",
-    description: "Current controls align to the framework. Formal certification scheduled for 2026.",
-    icon: Lock,
-  },
-  {
-    name: "FINMA Guidelines",
-    status: "aligned",
-    description: "Swiss financial regulator compliance",
-    icon: Building2,
-  },
-  {
-    name: "DORA",
-    status: "aligned",
-    description: "Digital Operational Resilience Act alignment for financial entities",
-    icon: Shield,
-  },
-];
+const complianceBadgeMeta = [
+  { key: "gdpr", status: "aligned", icon: Shield },
+  { key: "euAiAct", status: "aligned", icon: Eye },
+  { key: "swissHosting", status: "provided", icon: MapPin },
+  { key: "iso27001", status: "roadmap", icon: FileCheck },
+  { key: "soc2", status: "roadmap", icon: Lock },
+  { key: "finma", status: "aligned", icon: Building2 },
+  { key: "dora", status: "aligned", icon: Shield },
+] as const;
 
-const securityFeatures = [
+const securityCategoryMeta = [
   {
-    category: "Data Protection",
+    key: "dataProtection",
     icon: Lock,
-    features: [
-      { name: "Encryption at Rest", detail: "AES-256 encryption for all stored data" },
-      { name: "Encryption in Transit", detail: "TLS 1.3 for all data transmission" },
-      { name: "Data Isolation", detail: "Tenant-specific data segregation" },
-      { name: "Secure Key Management", detail: "Hardware security module (HSM) backed" },
-    ],
+    featureKeys: ["encryptionAtRest", "encryptionInTransit", "dataIsolation", "keyManagement"],
   },
   {
-    category: "Access Control",
+    key: "accessControl",
     icon: Key,
-    features: [
-      { name: "Role-Based Access (RBAC)", detail: "Granular permission management" },
-      { name: "SSO Integration", detail: "SAML 2.0 and OIDC support" },
-      { name: "Multi-Factor Authentication", detail: "MFA enforcement available" },
-      { name: "Session Management", detail: "Configurable timeout and controls" },
-    ],
+    featureKeys: ["rbac", "sso", "mfa", "sessionManagement"],
   },
   {
-    category: "Audit & Monitoring",
+    key: "auditMonitoring",
     icon: History,
-    features: [
-      { name: "Complete Audit Logs", detail: "Every action logged with timestamps" },
-      { name: "Decision Replay", detail: "Re-run any decision with identical results" },
-      { name: "Access Logging", detail: "Full visibility into data access" },
-      { name: "Retention Policies", detail: "Configurable log retention periods" },
-    ],
+    featureKeys: ["auditLogs", "decisionReplay", "accessLogging", "retentionPolicies"],
   },
-];
+] as const;
 
-const euAiActFeatures = [
-  {
-    requirement: "Human Oversight",
-    description: "Configurable approval gates and exception routing ensure human review where required",
-    implemented: true,
-  },
-  {
-    requirement: "Transparency",
-    description: "Every decision traceable to specific policy clauses and source documents",
-    implemented: true,
-  },
-  {
-    requirement: "Technical Documentation",
-    description: "Comprehensive system documentation available for regulatory review",
-    implemented: true,
-  },
-  {
-    requirement: "Risk Management",
-    description: "Built-in confidence scoring and exception handling for edge cases",
-    implemented: true,
-  },
-  {
-    requirement: "Data Governance",
-    description: "Clear data lineage and quality controls throughout the pipeline",
-    implemented: true,
-  },
-  {
-    requirement: "Accuracy & Robustness",
-    description: "Deterministic logic ensures consistent outputs for identical inputs",
-    implemented: true,
-  },
-];
+const euAiActFeatureKeys = [
+  "humanOversight",
+  "transparency",
+  "technicalDocumentation",
+  "riskManagement",
+  "dataGovernance",
+  "accuracyRobustness",
+] as const;
 
 
-export default function TrustPage() {
+export default async function TrustPage() {
+  const t = await getTranslations("trust");
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -137,17 +65,17 @@ export default function TrustPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
               <Shield className="w-4 h-4" />
-              Trust Center
+              {t("hero.badge")}
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Enterprise Security.
+              {t("hero.titleLine1")}
               <br />
-              <span className="text-[var(--primary)]">Regulatory Compliance.</span>
+              <span className="text-[var(--primary)]">{t("hero.titleLine2")}</span>
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-              Built from the ground up for regulated industries. Swiss precision & data security.
+              {t("hero.description")}
             </p>
           </MotionDiv>
         </div>
@@ -164,17 +92,17 @@ export default function TrustPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Compliance & Certifications
+              {t("compliance.heading")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Meeting the standards that matter for regulated industries
+              {t("compliance.subtitle")}
             </p>
           </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {complianceBadges.map((badge, index) => (
+            {complianceBadgeMeta.map((badge, index) => (
               <MotionDiv
-                key={badge.name}
+                key={badge.key}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -183,30 +111,28 @@ export default function TrustPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                    badge.status === 'compliant' || badge.status === 'ready' || badge.status === 'provided' || badge.status === 'aligned'
+                    badge.status === 'provided' || badge.status === 'aligned'
                       ? 'bg-emerald-500/20'
                       : 'bg-amber-500/20'
                   }`}>
                     <badge.icon className={`w-6 h-6 ${
-                      badge.status === 'compliant' || badge.status === 'ready' || badge.status === 'provided' || badge.status === 'aligned'
+                      badge.status === 'provided' || badge.status === 'aligned'
                         ? 'text-emerald-400'
                         : 'text-amber-400'
                     }`} />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-semibold text-[var(--text-primary)]">{badge.name}</h3>
+                      <h3 className="font-semibold text-[var(--text-primary)]">{t(`compliance.badges.${badge.key}.name`)}</h3>
                       <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-                        badge.status === 'compliant' ? 'bg-emerald-500/20 text-emerald-400' :
-                        badge.status === 'ready' ? 'bg-blue-500/20 text-blue-400' :
                         badge.status === 'provided' ? 'bg-emerald-500/20 text-emerald-400' :
                         badge.status === 'aligned' ? 'bg-emerald-500/20 text-emerald-400' :
                         'bg-amber-500/20 text-amber-400'
                       }`}>
-                        {badge.status === 'roadmap' ? '2026' : badge.status}
+                        {t(`compliance.statusLabels.${badge.status}`)}
                       </span>
                     </div>
-                    <p className="text-sm text-[var(--text-muted)]">{badge.description}</p>
+                    <p className="text-sm text-[var(--text-muted)]">{t(`compliance.badges.${badge.key}.description`)}</p>
                   </div>
                 </div>
               </MotionDiv>
@@ -226,32 +152,32 @@ export default function TrustPage() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-                Data Residency & Sovereignty
+                {t("dataResidency.heading")}
               </h2>
               <p className="text-lg text-[var(--text-secondary)] mb-6 leading-relaxed">
-                Your data stays where you need it. Swiss-based hosting for maximum data sovereignty and compliance.
+                {t("dataResidency.description")}
               </p>
 
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-[var(--text-primary)]">Swiss Data Center</strong>
-                    <p className="text-sm text-[var(--text-muted)]">Host your data within Swiss borders, protected by Swiss privacy laws</p>
+                    <strong className="text-[var(--text-primary)]">{t("dataResidency.swissDataCenter.title")}</strong>
+                    <p className="text-sm text-[var(--text-muted)]">{t("dataResidency.swissDataCenter.description")}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-[var(--text-primary)]">EU Processing Zones</strong>
-                    <p className="text-sm text-[var(--text-muted)]">Data never leaves the European Union</p>
+                    <strong className="text-[var(--text-primary)]">{t("dataResidency.euProcessingZones.title")}</strong>
+                    <p className="text-sm text-[var(--text-muted)]">{t("dataResidency.euProcessingZones.description")}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-[var(--text-primary)]">No Third-Country Transfers</strong>
-                    <p className="text-sm text-[var(--text-muted)]">Complete control over where your data is processed</p>
+                    <strong className="text-[var(--text-primary)]">{t("dataResidency.noThirdCountry.title")}</strong>
+                    <p className="text-sm text-[var(--text-muted)]">{t("dataResidency.noThirdCountry.description")}</p>
                   </div>
                 </li>
               </ul>
@@ -309,7 +235,7 @@ export default function TrustPage() {
                     </div>
                     <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
                       <span className="text-sm font-semibold text-[var(--text-primary)] bg-[var(--subtle-bg)] px-2 py-1 rounded backdrop-blur-sm">
-                        Switzerland
+                        {t("dataResidency.mapLabels.switzerland")}
                       </span>
                     </div>
                   </div>
@@ -319,7 +245,7 @@ export default function TrustPage() {
                 <div className="absolute inset-8 border-2 border-blue-400/30 rounded-xl bg-blue-500/5" />
                 <div className="absolute top-4 right-4 flex items-center gap-2 glass-panel-light px-3 py-1.5 rounded-lg">
                   <Globe className="w-4 h-4 text-blue-400" />
-                  <span className="text-xs font-medium text-blue-400">EU Zone</span>
+                  <span className="text-xs font-medium text-blue-400">{t("dataResidency.mapLabels.euZone")}</span>
                 </div>
               </div>
             </MotionDiv>
@@ -338,17 +264,17 @@ export default function TrustPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Security Architecture
+              {t("security.heading")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Enterprise-grade security controls at every layer
+              {t("security.subtitle")}
             </p>
           </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {securityFeatures.map((category, index) => (
+            {securityCategoryMeta.map((category, index) => (
               <MotionDiv
-                key={category.category}
+                key={category.key}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -359,13 +285,13 @@ export default function TrustPage() {
                   <category.icon className="w-7 h-7 text-[var(--primary)]" />
                 </div>
                 <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-6">
-                  {category.category}
+                  {t(`security.categories.${category.key}.title`)}
                 </h3>
                 <ul className="space-y-4">
-                  {category.features.map((feature) => (
-                    <li key={feature.name} className="border-b border-[var(--border)] pb-4 last:border-0 last:pb-0">
-                      <div className="font-medium text-[var(--text-primary)] mb-1">{feature.name}</div>
-                      <div className="text-sm text-[var(--text-muted)]">{feature.detail}</div>
+                  {category.featureKeys.map((fKey) => (
+                    <li key={fKey} className="border-b border-[var(--border)] pb-4 last:border-0 last:pb-0">
+                      <div className="font-medium text-[var(--text-primary)] mb-1">{t(`security.categories.${category.key}.features.${fKey}.name`)}</div>
+                      <div className="text-sm text-[var(--text-muted)]">{t(`security.categories.${category.key}.features.${fKey}.detail`)}</div>
                     </li>
                   ))}
                 </ul>
@@ -387,20 +313,20 @@ export default function TrustPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/20 text-blue-400 text-sm font-medium mb-4">
               <Eye className="w-4 h-4" />
-              Regulatory Compliance
+              {t("euAiAct.badge")}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              EU AI Act Alignment
+              {t("euAiAct.heading")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
-              Our neuro-symbolic architecture is purpose-built to meet the transparency, oversight and documentation requirements of the EU AI Act for high-risk AI systems.
+              {t("euAiAct.subtitle")}
             </p>
           </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {euAiActFeatures.map((feature, index) => (
+            {euAiActFeatureKeys.map((fKey, index) => (
               <MotionDiv
-                key={feature.requirement}
+                key={fKey}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -409,9 +335,9 @@ export default function TrustPage() {
               >
                 <div className="flex items-start gap-3 mb-3">
                   <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <h3 className="font-semibold text-[var(--text-primary)]">{feature.requirement}</h3>
+                  <h3 className="font-semibold text-[var(--text-primary)]">{t(`euAiAct.features.${fKey}.requirement`)}</h3>
                 </div>
-                <p className="text-sm text-[var(--text-muted)] ml-8">{feature.description}</p>
+                <p className="text-sm text-[var(--text-muted)] ml-8">{t(`euAiAct.features.${fKey}.description`)}</p>
               </MotionDiv>
             ))}
           </div>
@@ -426,10 +352,10 @@ export default function TrustPage() {
           >
             <FileCheck className="w-10 h-10 text-[var(--primary)] mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">
-              Why Deterministic AI Matters for Compliance
+              {t("euAiAct.callout.heading")}
             </h3>
             <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
-              Unlike probabilistic AI systems, our deterministic logic engine produces <strong className="text-[var(--text-primary)]">identical outputs for identical inputs</strong>, making it straightforward to demonstrate consistency, fairness and transparency to regulators.
+              {t("euAiAct.callout.description")}
             </p>
           </MotionDiv>
         </div>

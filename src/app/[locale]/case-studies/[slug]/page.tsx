@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -33,6 +34,7 @@ const productLinks: Record<string, string> = {
 };
 
 export default function CaseStudyPage() {
+  const t = useTranslations("caseStudies");
   const params = useParams();
   const slug = params.slug as string;
   const study = getCaseStudy(slug);
@@ -42,13 +44,13 @@ export default function CaseStudyPage() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
-            Case Study Not Found
+            {t("detail.notFound")}
           </h1>
           <Link
             href="/case-studies"
             className="text-[var(--primary)] hover:underline"
           >
-            View all case studies
+            {t("detail.viewAll")}
           </Link>
         </div>
       </div>
@@ -79,7 +81,7 @@ export default function CaseStudyPage() {
               className="inline-flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors mb-8"
             >
               <ArrowLeft className="w-4 h-4" />
-              All Case Studies
+              {t("detail.allCaseStudies")}
             </Link>
 
             {/* Customer Info */}
@@ -166,7 +168,7 @@ export default function CaseStudyPage() {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
-                  The Challenge
+                  {t("detail.theChallenge")}
                 </h2>
                 <p className="text-[var(--text-secondary)] leading-relaxed">
                   {study.challenge}
@@ -181,7 +183,7 @@ export default function CaseStudyPage() {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
-                  The Solution
+                  {t("detail.theSolution")}
                 </h2>
                 <p className="text-[var(--text-secondary)] leading-relaxed">
                   {study.solution}
@@ -221,7 +223,7 @@ export default function CaseStudyPage() {
                 className="glass-panel p-6"
               >
                 <h3 className="font-semibold text-[var(--text-primary)] mb-4">
-                  Key Highlights
+                  {t("detail.keyHighlights")}
                 </h3>
                 <ul className="space-y-3">
                   {study.highlights.map((highlight, index) => (
@@ -239,7 +241,7 @@ export default function CaseStudyPage() {
                     href="/contact"
                     className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors"
                   >
-                    Get Similar Results
+                    {t("detail.getSimilarResults")}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -259,7 +261,7 @@ export default function CaseStudyPage() {
                 className="flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
-                <span className="text-sm">Previous</span>
+                <span className="text-sm">{t("detail.previous")}</span>
               </Link>
             ) : (
               <div />
@@ -269,7 +271,7 @@ export default function CaseStudyPage() {
                 href={`/case-studies/${nextStudy.slug}`}
                 className="flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors"
               >
-                <span className="text-sm">Next</span>
+                <span className="text-sm">{t("detail.next")}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             ) : (
@@ -290,16 +292,16 @@ export default function CaseStudyPage() {
           >
             <TrendingUp className="w-12 h-12 text-[var(--text-muted)] mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Ready to Achieve Similar Results?
+              {t("detail.ctaHeading")}
             </h2>
             <p className="text-lg text-gray-300 mb-10">
-              Start with a pilot on your closed claims and see the impact for yourself.
+              {t("detail.ctaDescription")}
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg"
             >
-              Request a Pilot
+              {t("detail.requestPilot")}
               <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>

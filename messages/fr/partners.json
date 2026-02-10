@@ -102,10 +102,7 @@
       },
       "researchGroup": {
         "heading": "A propos du groupe de recherche",
-        "description": "La recherche est hebergee au sein de la {schoolOfEngineering} de la ZHAW, plus precisement au sein de l'{init} et du {cai}.",
-        "schoolOfEngineering": "School of Engineering",
-        "init": "Institut d'informatique appliquee (InIT)",
-        "cai": "Centre pour l'intelligence artificielle (CAI)",
+        "description": "La recherche est hebergee au sein de la <schoolOfEngineering>School of Engineering</schoolOfEngineering> de la ZHAW, plus precisement au sein de l'<init>Institut d'informatique appliquee (InIT)</init> et du <cai>Centre pour l'intelligence artificielle (CAI)</cai>.",
         "dandolo": {
           "name": "Dr. Dandolo Flumini",
           "bio": "Developpeur originel de la technologie MIRA. PhD en mathematiques et informatique. Dirige le projet d'innovation finance par Innosuisse de True Aim."

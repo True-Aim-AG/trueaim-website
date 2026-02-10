@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowRight,
@@ -17,69 +18,18 @@ import {
   TrendingDown
 } from "lucide-react";
 
-const workflowSteps = [
-  {
-    step: 1,
-    title: "Ingestion",
-    description: "Key data placed into the computable contract from emails, PDFs, photos, scanned notes etc.",
-    icon: FileInput,
-  },
-  {
-    step: 2,
-    title: "Comprehension",
-    description: "Agentic workflow reads case file: identifies parties, creates timeline, extracts key data etc.",
-    icon: Search,
-  },
-  {
-    step: 3,
-    title: "Determination",
-    description: "Deterministic logic evaluates coverage status: Covered | Partially Covered | Not Covered | Additional Information Required",
-    icon: Scale,
-  },
-  {
-    step: 4,
-    title: "Action",
-    description: "Tasks executed: open claim, set reserves, draft payment, draft communications etc.",
-    icon: Zap,
-  },
-  {
-    step: 5,
-    title: "Output",
-    description: "Auditable outputs: coverage report, customer letter with rationale, audit log, reserve recommendation etc.",
-    icon: FileOutput,
-  },
-];
+const workflowIcons = [FileInput, Search, Scale, Zap, FileOutput];
 
-const capabilities = [
-  {
-    title: "Coverage Determination",
-    description: "Computes the entire policy against claim facts. Identifies applicable perils, exclusions, conditions. Calculates exact cost positions for each risk taker.",
-    icon: CheckCircle,
-  },
-  {
-    title: "Multi-Vertical Support",
-    description: "Insurance: Health, Pet, Motor, Household, Life.\n\nTravel: Flight refunds, train refunds, accommodation.\n\nWarranty: Vehicle, electronics, extended coverage.",
-    icon: Globe,
-  },
-  {
-    title: "Integration Ready",
-    description: "API-first architecture. Works alongside existing claims management systems. No integration disruption. Flexible deployment: cloud or on-premise",
-    icon: Plug,
-  },
-  {
-    title: "Compliance by Design",
-    description: "Every decision linked to legal text. Complete audit logs for regulator review. Aligned with EU AI Act requirements.",
-    icon: Shield,
-  },
-];
+const capabilityKeys = ["coverageDetermination", "multiVertical", "integration", "compliance"] as const;
+const capabilityIcons = [CheckCircle, Globe, Plug, Shield];
 
-const metrics = [
-  { value: "92%", label: "Faster than manual review", prefix: "UP TO", icon: Clock },
-  { value: "71%", label: "Reduction in handling costs", prefix: "UP TO", icon: DollarSign },
-  { value: "2-5%", label: "Leakage reduction from closed file reviews", icon: TrendingDown },
-];
+const metricKeys = ["speed", "cost", "leakage"] as const;
+const metricValues = ["92%", "71%", "2-5%"];
+const metricIcons = [Clock, DollarSign, TrendingDown];
 
-export default function MiraPage() {
+export default async function MiraPage() {
+  const t = await getTranslations("mira");
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -93,18 +43,18 @@ export default function MiraPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-medium mb-6">
               <Brain className="w-4 h-4" />
-              Decisioning Engine
+              {t("hero.badge")}
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              MIRA: The Neuro-Symbolic Decisioning Engine
+              {t("hero.title")}
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-4 leading-relaxed">
-              Transform complex policy terms into automated, fully-deterministic claim decisions. Every outcome traceable to the legal text.
+              {t("hero.subtitle")}
             </p>
             <p className="text-base text-[var(--text-muted)] mb-8 leading-relaxed">
-              Works alongside existing claims systems. Integrates without disruption.
+              {t("hero.description")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -112,13 +62,13 @@ export default function MiraPage() {
                 href="#demo"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/30"
               >
-                See MIRA in Action
+                {t("hero.ctaPrimary")}
               </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                Book a Demo
+                {t("hero.ctaSecondary")}
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -137,17 +87,17 @@ export default function MiraPage() {
             className="max-w-3xl mx-auto text-center glass-panel p-8 md:p-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Claim Decisions are Still Manual, Inconsistent and Opaque
+              {t("problem.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Today&apos;s claim handlers spend hours interpreting dense policy language.
+              {t("problem.paragraph1")}
               <br /><br />
-              Decisions vary by handler and audit preparation consumes weeks.
+              {t("problem.paragraph2")}
               <br /><br />
-              Probabilistic AI tools can&apos;t explain their reasoning.
+              {t("problem.paragraph3")}
             </p>
             <p className="text-xl font-semibold text-[var(--primary)] mt-6">
-              MIRA changes everything.
+              {t("problem.cta")}
             </p>
           </MotionDiv>
         </div>
@@ -164,13 +114,13 @@ export default function MiraPage() {
             className="max-w-3xl mx-auto text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Agentic AI Meets Deterministic Logic
+              {t("solution.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              MIRA is the world&apos;s first neuro-symbolic engine purpose-built for insurance claims. It uses agentic AI for intelligent workflow orchestration (reading documents, extracting data, identifying parties etc) while relying on deterministic logic for the actual coverage decision.
+              {t("solution.description")}
             </p>
             <p className="text-lg text-[var(--text-primary)] font-medium mt-4">
-              The result: decisions that are fast, consistent and completely explainable.
+              {t("solution.result")}
             </p>
           </MotionDiv>
         </div>
@@ -187,10 +137,10 @@ export default function MiraPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              How MIRA Works
+              {t("workflow.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Five steps from document to decision
+              {t("workflow.subtitle")}
             </p>
           </MotionDiv>
 
@@ -198,33 +148,36 @@ export default function MiraPage() {
             {/* Connector line removed per V3-MIRA-012 */}
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-              {workflowSteps.map((step, index) => (
-                <MotionDiv
-                  key={step.step}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative"
-                >
-                  <div className="glass-panel glass-panel-hover p-6 h-full text-center">
-                    <div className="w-12 h-12 rounded-full bg-[var(--primary)] text-white flex items-center justify-center text-lg font-bold mx-auto mb-4 relative z-10">
-                      {step.step}
-                    </div>
+              {[1, 2, 3, 4, 5].map((step, index) => {
+                const Icon = workflowIcons[index];
+                return (
+                  <MotionDiv
+                    key={step}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="relative"
+                  >
+                    <div className="glass-panel glass-panel-hover p-6 h-full text-center">
+                      <div className="w-12 h-12 rounded-full bg-[var(--primary)] text-white flex items-center justify-center text-lg font-bold mx-auto mb-4 relative z-10">
+                        {step}
+                      </div>
 
-                    <div className="w-14 h-14 rounded-xl bg-indigo-500/20 flex items-center justify-center mx-auto mb-4">
-                      <step.icon className="w-7 h-7 text-indigo-400" />
-                    </div>
+                      <div className="w-14 h-14 rounded-xl bg-indigo-500/20 flex items-center justify-center mx-auto mb-4">
+                        <Icon className="w-7 h-7 text-indigo-400" />
+                      </div>
 
-                    <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                </MotionDiv>
-              ))}
+                      <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                        {t(`workflow.steps.${step}.title`)}
+                      </h3>
+                      <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                        {t(`workflow.steps.${step}.description`)}
+                      </p>
+                    </div>
+                  </MotionDiv>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -241,10 +194,10 @@ export default function MiraPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Test MIRA on Your Claims
+              {t("demo.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Interactive demo of MIRA processing travel insurance claims
+              {t("demo.subtitle")}
             </p>
           </MotionDiv>
 
@@ -259,7 +212,7 @@ export default function MiraPage() {
               <iframe
                 src="https://mira-travel-demo.vercel.app/products"
                 className="w-full h-full"
-                title="MIRA Demo"
+                title={t("demo.iframeTitle")}
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               />
@@ -279,31 +232,34 @@ export default function MiraPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Capabilities
+              {t("capabilities.title")}
             </h2>
           </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {capabilities.map((cap, index) => (
-              <MotionDiv
-                key={cap.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-panel glass-panel-hover p-8"
-              >
-                <div className="w-14 h-14 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-6">
-                  <cap.icon className="w-7 h-7 text-indigo-400" />
-                </div>
-                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                  {cap.title}
-                </h3>
-                <p className="text-[var(--text-secondary)] leading-relaxed whitespace-pre-line">
-                  {cap.description}
-                </p>
-              </MotionDiv>
-            ))}
+            {capabilityKeys.map((key, index) => {
+              const Icon = capabilityIcons[index];
+              return (
+                <MotionDiv
+                  key={key}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="glass-panel glass-panel-hover p-8"
+                >
+                  <div className="w-14 h-14 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-6">
+                    <Icon className="w-7 h-7 text-indigo-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
+                    {t(`capabilities.items.${key}.title`)}
+                  </h3>
+                  <p className="text-[var(--text-secondary)] leading-relaxed whitespace-pre-line">
+                    {t(`capabilities.items.${key}.description`)}
+                  </p>
+                </MotionDiv>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -319,36 +275,41 @@ export default function MiraPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Proven Results
+              {t("results.title")}
             </h2>
           </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {metrics.map((metric, index) => (
-              <MotionDiv
-                key={metric.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center glass-panel p-8"
-              >
-                <div className="w-16 h-16 rounded-full bg-indigo-500/20 flex items-center justify-center mx-auto mb-4">
-                  <metric.icon className="w-8 h-8 text-indigo-400" />
-                </div>
-                {metric.prefix && (
-                  <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                    {metric.prefix}
+            {metricKeys.map((key, index) => {
+              const Icon = metricIcons[index];
+              const value = metricValues[index];
+              const hasPrefix = key !== "leakage";
+              return (
+                <MotionDiv
+                  key={key}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="text-center glass-panel p-8"
+                >
+                  <div className="w-16 h-16 rounded-full bg-indigo-500/20 flex items-center justify-center mx-auto mb-4">
+                    <Icon className="w-8 h-8 text-indigo-400" />
+                  </div>
+                  {hasPrefix && (
+                    <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
+                      {t(`results.metrics.${key}.prefix`)}
+                    </p>
+                  )}
+                  <p className="text-5xl font-bold text-[var(--primary)] font-mono-data mb-2">
+                    {value}
                   </p>
-                )}
-                <p className="text-5xl font-bold text-[var(--primary)] font-mono-data mb-2">
-                  {metric.value}
-                </p>
-                <p className="text-[var(--text-secondary)]">
-                  {metric.label}
-                </p>
-              </MotionDiv>
-            ))}
+                  <p className="text-[var(--text-secondary)]">
+                    {t(`results.metrics.${key}.label`)}
+                  </p>
+                </MotionDiv>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -364,16 +325,16 @@ export default function MiraPage() {
             className="glass-panel p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Test MIRA on Your Claims
+              {t("cta.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">
-              Process a sample of closed claims to see exactly how MIRA would have handled them.
+              {t("cta.description")}
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/30"
             >
-              Book a Demo
+              {t("cta.button")}
             </Link>
           </MotionDiv>
         </div>

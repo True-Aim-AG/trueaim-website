@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowRight,
@@ -10,48 +11,20 @@ import {
   Users
 } from "lucide-react";
 
-const features = [
-  {
-    title: "Risk Scoring",
-    description: "Every claim scored based on configurable rules. Flag counts highlight potential issues. Sort by risk to prioritize review.",
-    icon: BarChart3,
-  },
-  {
-    title: "Inspection Catalogues",
-    description: "Pre-built checks for Motor, Home, and more. Customizable inspection definitions. Each check answers: What? Found? Why it matters? Next action?",
-    icon: ListChecks,
-  },
-  {
-    title: "Reviewer Workflow",
-    description: "Filter by LOB, status, risk score. Track reviewed vs. not reviewed. Document reviewer findings.",
-    icon: Users,
-  },
-];
+const featureKeys = ["riskScoring", "inspectionCatalogues", "reviewerWorkflow"] as const;
+const featureIcons = [BarChart3, ListChecks, Users];
 
-const motorZones = [
-  "Claim Setup & File Integrity",
-  "Liability & Decision Coherence",
-  "Customer Communication",
-  "Repair & Supplier Handling",
-  "Total Loss & Valuation",
-  "Credit Hire / AMC",
-  "Financial Hygiene & Recoveries",
-];
+export default async function ClaimEvalPageA() {
+  const t = await getTranslations("claimEvalA");
 
-const homeZones = [
-  "Coverage & Causation",
-  "Investigation & Evidence Adequacy",
-  "Repairs & Supplier Oversight",
-  "Cash Settlements & Vulnerability",
-  "Alternative Accommodation",
-];
+  const motorZones = [1, 2, 3, 4, 5, 6, 7] as const;
+  const homeZones = [1, 2, 3, 4, 5] as const;
 
-export default function ClaimEvalPageA() {
   return (
     <div className="min-h-screen">
       {/* Version indicator */}
       <div className="fixed top-20 right-4 z-50 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-medium border border-emerald-500/30">
-        Version A
+        {t("versionIndicator")}
       </div>
 
       {/* Hero Section */}
@@ -65,18 +38,18 @@ export default function ClaimEvalPageA() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
               <ClipboardCheck className="w-4 h-4" />
-              Quality Assurance
+              {t("hero.badge")}
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              ClaimEval: Scale Quality Assurance Beyond Sampling
+              {t("hero.title")}
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-4 leading-relaxed">
-              Move from manual, sample-based QA to consistent inspections across your entire claims portfolio. Surface exceptions. Prioritize human effort.
+              {t("hero.subtitle")}
             </p>
             <p className="text-[var(--text-muted)] mb-8 leading-relaxed">
-              ClaimEval is a QA and governance layer - it augments your handlers, it doesn&apos;t replace them.
+              {t("hero.description")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -84,13 +57,13 @@ export default function ClaimEvalPageA() {
                 href="#demo"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-emerald-500 text-white font-medium hover:bg-emerald-600 transition-colors text-lg shadow-lg shadow-emerald-500/30"
               >
-                See ClaimEval Demo
+                {t("hero.ctaPrimary")}
               </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                Request a Pilot
+                {t("hero.ctaSecondary")}
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -109,13 +82,13 @@ export default function ClaimEvalPageA() {
             className="max-w-3xl mx-auto text-center glass-panel p-8 md:p-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              The Sampling Problem
+              {t("problem.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Traditional QA relies on random sampling, checking 2-5% of claims. Patterns slip through. Leakage compounds. Training gaps persist.
+              {t("problem.description")}
             </p>
             <p className="text-xl font-semibold text-emerald-400 mt-6">
-              What if you could QA every claim?
+              {t("problem.cta")}
             </p>
           </MotionDiv>
         </div>
@@ -132,10 +105,10 @@ export default function ClaimEvalPageA() {
             className="max-w-3xl mx-auto text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              100% Coverage, Intelligent Prioritization
+              {t("solution.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              ClaimEval runs defined inspection checks across all closed claims. It scores risk, flags issues, and surfaces the claims that need human attention, without replacing human judgment.
+              {t("solution.description")}
             </p>
           </MotionDiv>
         </div>
@@ -152,31 +125,34 @@ export default function ClaimEvalPageA() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Key Features
+              {t("features.title")}
             </h2>
           </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <MotionDiv
-                key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-panel glass-panel-hover p-8"
-              >
-                <div className="w-14 h-14 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-6">
-                  <feature.icon className="w-7 h-7 text-emerald-400" />
-                </div>
-                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-[var(--text-secondary)] leading-relaxed">
-                  {feature.description}
-                </p>
-              </MotionDiv>
-            ))}
+            {featureKeys.map((key, index) => {
+              const Icon = featureIcons[index];
+              return (
+                <MotionDiv
+                  key={key}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="glass-panel glass-panel-hover p-8"
+                >
+                  <div className="w-14 h-14 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-6">
+                    <Icon className="w-7 h-7 text-emerald-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
+                    {t(`features.items.${key}.title`)}
+                  </h3>
+                  <p className="text-[var(--text-secondary)] leading-relaxed">
+                    {t(`features.items.${key}.description`)}
+                  </p>
+                </MotionDiv>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -192,10 +168,10 @@ export default function ClaimEvalPageA() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              See ClaimEval in Action
+              {t("demo.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Interactive demo of claims inspection and review
+              {t("demo.subtitle")}
             </p>
           </MotionDiv>
 
@@ -210,7 +186,7 @@ export default function ClaimEvalPageA() {
               <iframe
                 src="https://claimeval.vercel.app/claims"
                 className="w-full h-full"
-                title="ClaimEval Demo"
+                title={t("demo.iframeTitle")}
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               />
@@ -230,10 +206,10 @@ export default function ClaimEvalPageA() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Inspection Zones
+              {t("inspectionZones.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Pre-built check catalogues by line of business
+              {t("inspectionZones.subtitle")}
             </p>
           </MotionDiv>
 
@@ -251,14 +227,14 @@ export default function ClaimEvalPageA() {
                   <Car className="w-7 h-7 text-emerald-400" />
                 </div>
                 <h3 className="text-2xl font-semibold text-[var(--text-primary)]">
-                  Motor
+                  {t("inspectionZones.motor.title")}
                 </h3>
               </div>
               <ul className="space-y-3">
                 {motorZones.map((zone) => (
                   <li key={zone} className="flex items-center gap-3 text-[var(--text-secondary)]">
                     <div className="w-2 h-2 rounded-full bg-emerald-400" />
-                    {zone}
+                    {t(`inspectionZones.motor.zones.${zone}`)}
                   </li>
                 ))}
               </ul>
@@ -277,14 +253,14 @@ export default function ClaimEvalPageA() {
                   <Home className="w-7 h-7 text-emerald-400" />
                 </div>
                 <h3 className="text-2xl font-semibold text-[var(--text-primary)]">
-                  Home
+                  {t("inspectionZones.home.title")}
                 </h3>
               </div>
               <ul className="space-y-3">
                 {homeZones.map((zone) => (
                   <li key={zone} className="flex items-center gap-3 text-[var(--text-secondary)]">
                     <div className="w-2 h-2 rounded-full bg-emerald-400" />
-                    {zone}
+                    {t(`inspectionZones.home.zones.${zone}`)}
                   </li>
                 ))}
               </ul>
@@ -304,16 +280,16 @@ export default function ClaimEvalPageA() {
             className="glass-panel p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Run ClaimEval on Your Closed Claims
+              {t("cta.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">
-              We&apos;ll analyze a batch of your historical claims and show you the inspection results, risk distribution, and priority findings.
+              {t("cta.description")}
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-emerald-500 text-white font-medium hover:bg-emerald-600 transition-colors text-lg shadow-lg shadow-emerald-500/30"
             >
-              Request a Pilot
+              {t("cta.button")}
             </Link>
           </MotionDiv>
         </div>

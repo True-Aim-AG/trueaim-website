@@ -1,8 +1,10 @@
+import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { MessageSquare } from "lucide-react";
 import { ContactForm } from "@/components/contact/ContactForm";
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const t = await getTranslations("contact");
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -15,17 +17,17 @@ export default function ContactPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] text-sm font-medium mb-6">
               <MessageSquare className="w-4 h-4" />
-              Contact Us
+              {t("hero.badge")}
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Let&apos;s Talk
+              {t("hero.titleLine1")}
               <br />
-              <span className="text-[var(--primary)]">Claims Automation</span>
+              <span className="text-[var(--primary)]">{t("hero.titleLine2")}</span>
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
-              Whether you&apos;re exploring options or ready for a pilot, we&apos;d love to show you what auditable AI can do.
+              {t("hero.description")}
             </p>
           </MotionDiv>
         </div>

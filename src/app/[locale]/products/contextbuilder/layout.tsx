@@ -94,14 +94,17 @@ const breadcrumbJsonLd = {
   ],
 };
 
-export default function ContextBuilderLayout({
+export default async function ContextBuilderLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   return (
     <>
-      <JsonLd data={contextBuilderJsonLd} />
+      <JsonLd data={{ ...contextBuilderJsonLd, inLanguage: locale }} />
       <JsonLd data={breadcrumbJsonLd} />
       {children}
     </>

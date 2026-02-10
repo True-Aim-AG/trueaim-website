@@ -1,11 +1,13 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Calculator, FileText } from "lucide-react";
 import { scaleIn, fadeIn, springTransition } from "@/lib/animations";
+import { useTranslations } from "next-intl";
 
 export function CTA() {
+  const t = useTranslations("cta");
   return (
     <section className="py-24 px-6 relative overflow-hidden">
       {/* Subtle overlay to differentiate from rest of page */}
@@ -20,11 +22,11 @@ export function CTA() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-            Ready to See Auditable AI in Action?
+            {t("title")}
           </h2>
 
           <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto">
-            Book a 30-minute demo to see how True Aim can transform your claims operations.
+            {t("subtitle")}
           </p>
 
           <motion.div
@@ -43,7 +45,7 @@ export function CTA() {
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all text-lg shadow-lg shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/50"
                 >
                   <Calendar className="w-5 h-5" />
-                  Book a Demo
+                  {t("bookDemo")}
                 </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
@@ -52,7 +54,7 @@ export function CTA() {
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-all text-lg backdrop-blur-sm"
                 >
                   <Calculator className="w-5 h-5" />
-                  Get Impact Estimate
+                  {t("getImpact")}
                 </Link>
               </motion.div>
             </div>
@@ -70,15 +72,15 @@ export function CTA() {
           <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-[var(--text-muted)]">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-[var(--secondary)]" />
-              Compliance by Design
+              {t("trustCompliance")}
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-[var(--secondary)]" />
-              Swiss data hosting
+              {t("trustSwiss")}
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-[var(--secondary)]" />
-              Built to enterprise standards
+              {t("trustEnterprise")}
             </div>
           </div>
         </motion.div>

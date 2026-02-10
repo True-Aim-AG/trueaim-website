@@ -93,14 +93,17 @@ const breadcrumbJsonLd = {
   ],
 };
 
-export default function ClaimEvalLayout({
+export default async function ClaimEvalLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   return (
     <>
-      <JsonLd data={claimEvalJsonLd} />
+      <JsonLd data={{ ...claimEvalJsonLd, inLanguage: locale }} />
       <JsonLd data={breadcrumbJsonLd} />
       {children}
     </>

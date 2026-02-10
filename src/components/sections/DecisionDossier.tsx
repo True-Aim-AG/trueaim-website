@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   FileText,
@@ -12,56 +13,29 @@ import {
   BookOpen,
 } from "lucide-react";
 
-const dossierContents = [
-  {
-    icon: FileText,
-    title: "Input Summary",
-    description: "Complete claim data as received: documents, parties, timeline, facts",
-    color: "text-blue-400",
-    bgColor: "bg-blue-500/20",
-  },
-  {
-    icon: Scale,
-    title: "Policy Match",
-    description: "Specific policy clauses applied, with clause IDs and exact text references",
-    color: "text-indigo-400",
-    bgColor: "bg-indigo-500/20",
-  },
-  {
-    icon: FileSearch,
-    title: "Logic Trace",
-    description: "Step-by-step decision path: conditions checked, rules applied, branches taken",
-    color: "text-purple-400",
-    bgColor: "bg-purple-500/20",
-  },
-  {
-    icon: Link2,
-    title: "Evidence Links",
-    description: "Every field linked back to source documents with page and location",
-    color: "text-teal-400",
-    bgColor: "bg-teal-500/20",
-  },
-  {
-    icon: Shield,
-    title: "Confidence Score",
-    description: "Automation certainty level with flagged areas requiring human review",
-    color: "text-emerald-400",
-    bgColor: "bg-emerald-500/20",
-  },
-  {
-    icon: RefreshCw,
-    title: "Replay Capability",
-    description: "Re-run with identical inputs, get identical outputs, every time",
-    color: "text-orange-400",
-    bgColor: "bg-orange-500/20",
-  },
+const dossierContentsMeta = [
+  { key: "inputSummary" as const, icon: FileText, color: "text-blue-400", bgColor: "bg-blue-500/20" },
+  { key: "policyMatch" as const, icon: Scale, color: "text-indigo-400", bgColor: "bg-indigo-500/20" },
+  { key: "logicTrace" as const, icon: FileSearch, color: "text-purple-400", bgColor: "bg-purple-500/20" },
+  { key: "evidenceLinks" as const, icon: Link2, color: "text-teal-400", bgColor: "bg-teal-500/20" },
+  { key: "confidenceScore" as const, icon: Shield, color: "text-emerald-400", bgColor: "bg-emerald-500/20" },
+  { key: "replayCapability" as const, icon: RefreshCw, color: "text-orange-400", bgColor: "bg-orange-500/20" },
 ];
 
 interface DecisionDossierProps {
   variant?: "full" | "teaser";
 }
 
-export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
+export async function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
+  const t = await getTranslations("decisionDossier");
+
+  const dossierContents = dossierContentsMeta.map((meta) => ({
+    icon: meta.icon,
+    color: meta.color,
+    bgColor: meta.bgColor,
+    title: t(`contents.${meta.key}.title`),
+    description: t(`contents.${meta.key}.description`),
+  }));
   if (variant === "teaser") {
     return (
       <section className="py-20 px-6">
@@ -77,22 +51,20 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-medium mb-4">
                   <BookOpen className="w-4 h-4" />
-                  Unique to True Aim
+                  {t("teaserBadge")}
                 </div>
                 <p className="text-lg font-semibold text-[var(--primary)] mb-2">
-                  Auditable by Design.
+                  {t("teaserTagline")}
                 </p>
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-                  The Decision Dossier
+                  {t("teaserTitle")}
                 </h2>
-                <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
-                  Every claim decision produces a complete, reproducible audit record. Unlike black-box AI, every True Aim decision can be <strong className="text-[var(--text-primary)]">replayed, explained & defended</strong> in audit or dispute.
-                </p>
+                <p className="text-[var(--text-secondary)] mb-6 leading-relaxed" dangerouslySetInnerHTML={{ __html: t.raw("teaserDescription") }} />
                 <Link
                   href="/technology#decision-dossier"
                   className="inline-flex items-center gap-2 text-[var(--primary)] font-medium hover:underline"
                 >
-                  See how it works
+                  {t("teaserLink")}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -105,26 +77,26 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                       <FileText className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <div className="font-semibold text-[var(--text-primary)]">Decision Dossier</div>
-                      <div className="text-xs text-[var(--text-muted)] font-mono-data">Claim #2024-TR-4521</div>
+                      <div className="font-semibold text-[var(--text-primary)]">{t("previewTitle")}</div>
+                      <div className="text-xs text-[var(--text-muted)] font-mono-data">{t("previewClaimId")}</div>
                     </div>
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-emerald-400" />
-                      <span className="text-[var(--text-muted)]">Decision: <strong className="text-emerald-400">Covered</strong></span>
+                      <span className="text-[var(--text-muted)]" dangerouslySetInnerHTML={{ __html: t.raw("previewDecision") }} />
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-emerald-400" />
-                      <span className="text-[var(--text-muted)]">Policy: Art. 5.2.1, 5.2.3</span>
+                      <span className="text-[var(--text-muted)]">{t("previewPolicy")}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-emerald-400" />
-                      <span className="text-[var(--text-muted)]">Evidence: 4 documents linked</span>
+                      <span className="text-[var(--text-muted)]">{t("previewEvidence")}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-emerald-400" />
-                      <span className="text-[var(--text-muted)]">Confidence: <span className="font-mono-data">98.5%</span></span>
+                      <span className="text-[var(--text-muted)]" dangerouslySetInnerHTML={{ __html: t.raw("previewConfidence") }} />
                     </div>
                   </div>
                 </div>
@@ -149,13 +121,13 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-medium mb-4">
             <BookOpen className="w-4 h-4" />
-            Unique Differentiator
+            {t("fullBadge")}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-            The Decision Dossier
+            {t("fullTitle")}
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
-            Every claim decision produces a complete, reproducible audit record, your defense in any audit or dispute.
+            {t("fullDescription")}
           </p>
         </MotionDiv>
 
@@ -205,11 +177,11 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                     <FileText className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold text-white">Decision Dossier</div>
-                    <div className="text-xs text-white/60">Generated: Jan 12, 2026 14:32:05 UTC</div>
+                    <div className="font-semibold text-white">{t("mockupTitle")}</div>
+                    <div className="text-xs text-white/60">{t("mockupGenerated")}</div>
                   </div>
                   <div className="ml-auto px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-medium">
-                    Covered
+                    {t("mockupCovered")}
                   </div>
                 </div>
               </div>
@@ -218,33 +190,33 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
               <div className="p-6 space-y-6">
                 {/* Claim Info */}
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-2">Claim Reference</div>
+                  <div className="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-2">{t("mockupClaimRef")}</div>
                   <div className="font-mono-data text-sm glass-panel-light p-3">
-                    <span className="text-[var(--text-primary)]">TRV-2024-4521</span>
-                    <span className="text-[var(--text-muted)]"> | Travel Insurance | Medical Expenses</span>
+                    <span className="text-[var(--text-primary)]">{t("mockupClaimId")}</span>
+                    <span className="text-[var(--text-muted)]">{t("mockupClaimDetails")}</span>
                   </div>
                 </div>
 
                 {/* Policy Match */}
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-2">Policy Clauses Applied</div>
+                  <div className="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-2">{t("mockupPolicyClauses")}</div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-sm">
                       <CheckCircle className="w-4 h-4 text-emerald-400" />
-                      <span className="text-[var(--primary)] font-mono-data">Art. 5.2.1</span>
-                      <span className="text-[var(--text-muted)]">Medical emergency coverage</span>
+                      <span className="text-[var(--primary)] font-mono-data">{t("mockupClause1Ref")}</span>
+                      <span className="text-[var(--text-muted)]">{t("mockupClause1Desc")}</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <CheckCircle className="w-4 h-4 text-emerald-400" />
-                      <span className="text-[var(--primary)] font-mono-data">Art. 5.2.3</span>
-                      <span className="text-[var(--text-muted)]">Repatriation benefits</span>
+                      <span className="text-[var(--primary)] font-mono-data">{t("mockupClause2Ref")}</span>
+                      <span className="text-[var(--text-muted)]">{t("mockupClause2Desc")}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Evidence */}
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-2">Evidence Trail</div>
+                  <div className="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-2">{t("mockupEvidenceTrail")}</div>
                   <div className="glass-panel-light p-3 space-y-2">
                     <div className="flex items-center gap-2 text-xs">
                       <Link2 className="w-3 h-3 text-[var(--primary)]" />
@@ -268,12 +240,12 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
                 <div className="flex items-center justify-between pt-4 border-t border-[var(--border)]">
                   <div className="flex items-center gap-2">
                     <Shield className="w-4 h-4 text-emerald-400" />
-                    <span className="text-sm text-[var(--text-muted)]">Confidence:</span>
-                    <span className="text-sm font-semibold text-emerald-400 font-mono-data">98.5%</span>
+                    <span className="text-sm text-[var(--text-muted)]">{t("mockupConfidenceLabel")}</span>
+                    <span className="text-sm font-semibold text-emerald-400 font-mono-data">{t("mockupConfidenceValue")}</span>
                   </div>
                   <span className="flex items-center gap-1 text-xs text-[var(--primary)] font-medium">
                     <RefreshCw className="w-3 h-3" />
-                    Replay Decision
+                    {t("mockupReplay")}
                   </span>
                 </div>
               </div>
@@ -281,9 +253,7 @@ export function DecisionDossier({ variant = "full" }: DecisionDossierProps) {
 
             {/* Differentiator callout */}
             <div className="mt-6 p-4 glass-panel">
-              <p className="text-sm text-[var(--text-secondary)] text-center">
-                <strong className="text-[var(--text-primary)]">Unlike black-box AI:</strong> Every True Aim decision can be replayed, explained, defended.
-              </p>
+              <p className="text-sm text-[var(--text-secondary)] text-center" dangerouslySetInnerHTML={{ __html: t.raw("mockupDifferentiator") }} />
             </div>
           </MotionDiv>
         </div>

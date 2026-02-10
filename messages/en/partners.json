@@ -102,10 +102,7 @@
       },
       "researchGroup": {
         "heading": "About the Research Group",
-        "description": "The research is hosted within ZHAW's {schoolOfEngineering}, specifically the {init} and the {cai}.",
-        "schoolOfEngineering": "School of Engineering",
-        "init": "Institute of Applied Information Technology (InIT)",
-        "cai": "Centre for Artificial Intelligence (CAI)",
+        "description": "The research is hosted within ZHAW's <schoolOfEngineering>School of Engineering</schoolOfEngineering>, specifically the <init>Institute of Applied Information Technology (InIT)</init> and the <cai>Centre for Artificial Intelligence (CAI)</cai>.",
         "dandolo": {
           "name": "Dr. Dandolo Flumini",
           "bio": "Original developer of the MIRA technology. PhD in Mathematics and Computer Science. Leads True Aim's Innosuisse-funded Innovation Project."

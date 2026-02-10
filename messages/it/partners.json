@@ -102,10 +102,7 @@
       },
       "researchGroup": {
         "heading": "Il gruppo di ricerca",
-        "description": "La ricerca e ospitata all'interno della {schoolOfEngineering} della ZHAW, in particolare presso l'{init} e il {cai}.",
-        "schoolOfEngineering": "School of Engineering",
-        "init": "Istituto di informatica applicata (InIT)",
-        "cai": "Centro per l'intelligenza artificiale (CAI)",
+        "description": "La ricerca e ospitata all'interno della <schoolOfEngineering>School of Engineering</schoolOfEngineering> della ZHAW, in particolare presso l'<init>Istituto di informatica applicata (InIT)</init> e il <cai>Centro per l'intelligenza artificiale (CAI)</cai>.",
         "dandolo": {
           "name": "Dr. Dandolo Flumini",
           "bio": "Sviluppatore originale della tecnologia MIRA. PhD in matematica e informatica. Dirige il progetto di innovazione di True Aim finanziato da Innosuisse."

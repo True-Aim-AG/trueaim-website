@@ -1,8 +1,10 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { ArrowRight, ExternalLink, Award, Shield, Landmark, Microscope } from "lucide-react";
 
-export default function InnosuissePage() {
+export default async function InnosuissePage() {
+  const t = await getTranslations("partners.innosuisse");
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -10,7 +12,7 @@ export default function InnosuissePage() {
         <div className="relative max-w-7xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] text-sm font-medium mb-6">
             <Award className="w-4 h-4" />
-            Federal Innovation Partner
+            {t("hero.badge")}
           </div>
 
           <div className="flex justify-center mb-8">
@@ -26,17 +28,17 @@ export default function InnosuissePage() {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-            Innosuisse-Funded
+            {t("hero.titleLine1")}
             <br />
-            <span className="text-[var(--primary)]">Innovation Partner</span>
+            <span className="text-[var(--primary)]">{t("hero.titleLine2")}</span>
           </h1>
 
           <div className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed space-y-4">
             <p>
-              True Aim&apos;s core technology is supported through a competitive research grant awarded by Innosuisse, Switzerland&apos;s national innovation agency. The grant reflects formal, national-level validation of the technical approach and research programme behind True Aim&apos;s work in auditable AI.
+              {t("hero.description1")}
             </p>
             <p>
-              The funding supports applied research into transparent, controllable and regulation-ready AI systems for highly regulated industries, with a clear focus on measurable outcomes and real-world deployment.
+              {t("hero.description2")}
             </p>
           </div>
         </div>
@@ -51,10 +53,10 @@ export default function InnosuissePage() {
                 <Landmark className="w-7 h-7 text-[var(--primary)]" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                Official Government Validation
+                {t("keyPoints.govValidation.title")}
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Innosuisse is the Swiss Confederation&apos;s official innovation agency, providing federal endorsement for research and development projects with commercial potential.
+                {t("keyPoints.govValidation.description")}
               </p>
             </div>
 
@@ -63,10 +65,10 @@ export default function InnosuissePage() {
                 <Shield className="w-7 h-7 text-[var(--primary)]" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                Competitive Excellence
+                {t("keyPoints.excellence.title")}
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Innosuisse grants are awarded through rigorous selection criteria. Receiving funding demonstrates the technical merit and market viability of True Aim&apos;s neuro-symbolic approach.
+                {t("keyPoints.excellence.description")}
               </p>
             </div>
 
@@ -75,10 +77,10 @@ export default function InnosuissePage() {
                 <Award className="w-7 h-7 text-[var(--primary)]" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                National Strategic Priority
+                {t("keyPoints.priority.title")}
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                The grant reflects Switzerland&apos;s national commitment to advancing trustworthy AI in regulated industries. True Aim is at the forefront of this initiative.
+                {t("keyPoints.priority.description")}
               </p>
             </div>
 
@@ -87,10 +89,10 @@ export default function InnosuissePage() {
                 <Microscope className="w-7 h-7 text-[var(--primary)]" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                ZHAW Collaboration
+                {t("keyPoints.zhawCollab.title")}
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                The research programme is conducted in partnership with ZHAW (School of Engineering, Institute of Applied IT, Centre for AI) and is led by Dr. Dandolo Flumini.
+                {t("keyPoints.zhawCollab.description")}
               </p>
             </div>
           </div>
@@ -101,10 +103,10 @@ export default function InnosuissePage() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="glass-panel p-8 md:p-12 text-center">
-            <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-2">Innovation Funding</p>
-            <p className="text-3xl font-bold text-[var(--primary)] mb-4">Innosuisse Innovation Project Funding</p>
+            <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-2">{t("grantDetails.label")}</p>
+            <p className="text-3xl font-bold text-[var(--primary)] mb-4">{t("grantDetails.title")}</p>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto">
-              Non-dilutive funding from the Swiss Confederation to advance neuro-symbolic AI for deterministic claims decisioning in regulated industries.
+              {t("grantDetails.description")}
             </p>
             <div className="mt-6">
               <a
@@ -113,7 +115,7 @@ export default function InnosuissePage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-[var(--primary)] font-medium hover:underline"
               >
-                Visit Innosuisse
+                {t("grantDetails.visitLink")}
                 <ExternalLink className="w-4 h-4" />
               </a>
             </div>
@@ -126,24 +128,24 @@ export default function InnosuissePage() {
         <div className="max-w-4xl mx-auto">
           <div className="glass-panel p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Learn More About Our Technology
+              {t("cta.heading")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">
-              Discover how Innosuisse-backed innovation powers our claims decisioning engine.
+              {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/technology"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/30"
               >
-                Explore Our Technology
+                {t("cta.exploreTech")}
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                Book a Demo
+                {t("cta.bookDemo")}
               </Link>
             </div>
           </div>

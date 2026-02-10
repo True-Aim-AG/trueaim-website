@@ -1,32 +1,34 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Linkedin } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import packageJson from "../../../package.json";
 
 const footerLinks = {
   company: [
-    { name: "About", href: "/company" },
-    { name: "Contact", href: "/contact" },
+    { nameKey: "about" as const, href: "/company" },
+    { nameKey: "contact" as const, href: "/contact" },
   ],
   resources: [
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "Impact Estimator", href: "/impact-estimator" },
-    { name: "Trust Center", href: "/trust" },
-    { name: "Blog", href: "/blog" },
+    { nameKey: "caseStudies" as const, href: "/case-studies" },
+    { nameKey: "impactEstimator" as const, href: "/impact-estimator" },
+    { nameKey: "trustCenter" as const, href: "/trust" },
+    { nameKey: "blog" as const, href: "/blog" },
   ],
   products: [
-    { name: "MIRA", href: "/products/mira" },
-    { name: "ContextBuilder", href: "/products/contextbuilder" },
-    { name: "ClaimEval", href: "/products/claimeval" },
+    { nameKey: "mira" as const, href: "/products/mira" },
+    { nameKey: "contextBuilder" as const, href: "/products/contextbuilder" },
+    { nameKey: "claimEval" as const, href: "/products/claimeval" },
   ],
   legal: [
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
-    { name: "Cookie Policy", href: "/cookies" },
-    { name: "PAIA Manual", href: "/paia" },
+    { nameKey: "privacy" as const, href: "/privacy" },
+    { nameKey: "terms" as const, href: "/terms" },
+    { nameKey: "cookies" as const, href: "/cookies" },
+    { nameKey: "paia" as const, href: "/paia" },
   ],
 };
 
-export function Footer() {
+export async function Footer() {
+  const t = await getTranslations("footer");
   return (
     <footer className="relative border-t border-[var(--border)]">
       {/* Glass overlay */}
@@ -40,7 +42,7 @@ export function Footer() {
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
               <img
                 src="/images/logo.png"
-                alt="True Aim Logo"
+                alt={t("logoAlt")}
                 className="h-12 w-auto"
               />
               <span className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">
@@ -48,7 +50,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-[var(--text-muted)] text-sm mb-4">
-              Swiss Precision. Auditable AI.
+              {t("tagline")}
             </p>
             {/* Social Links */}
             <div className="flex gap-4">
@@ -57,7 +59,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
-                aria-label="LinkedIn"
+                aria-label={t("linkedin")}
               >
                 <Linkedin className="w-5 h-5" />
               </a>
@@ -67,16 +69,16 @@ export function Footer() {
           {/* Company Links */}
           <div>
             <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-[var(--text-primary)]">
-              Company
+              {t("company")}
             </h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
-                <li key={link.name}>
+                <li key={link.nameKey}>
                   <Link
                     href={link.href}
                     className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm"
                   >
-                    {link.name}
+                    {t(link.nameKey)}
                   </Link>
                 </li>
               ))}
@@ -86,16 +88,16 @@ export function Footer() {
           {/* Resources Links */}
           <div>
             <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-[var(--text-primary)]">
-              Resources
+              {t("resources")}
             </h3>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
-                <li key={link.name}>
+                <li key={link.nameKey}>
                   <Link
                     href={link.href}
                     className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm"
                   >
-                    {link.name}
+                    {t(link.nameKey)}
                   </Link>
                 </li>
               ))}
@@ -105,16 +107,16 @@ export function Footer() {
           {/* Products Links */}
           <div>
             <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-[var(--text-primary)]">
-              Products
+              {t("products")}
             </h3>
             <ul className="space-y-3">
               {footerLinks.products.map((link) => (
-                <li key={link.name}>
+                <li key={link.nameKey}>
                   <Link
                     href={link.href}
                     className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm"
                   >
-                    {link.name}
+                    {t(link.nameKey)}
                   </Link>
                 </li>
               ))}
@@ -124,16 +126,16 @@ export function Footer() {
           {/* Legal Links */}
           <div>
             <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-[var(--text-primary)]">
-              Legal
+              {t("legal")}
             </h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
-                <li key={link.name}>
+                <li key={link.nameKey}>
                   <Link
                     href={link.href}
                     className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm"
                   >
-                    {link.name}
+                    {t(link.nameKey)}
                   </Link>
                 </li>
               ))}
@@ -145,7 +147,7 @@ export function Footer() {
         <div className="pt-8 border-t border-[var(--border)]">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
             <p className="text-[var(--text-muted)] text-sm">
-              © {new Date().getFullYear()} True Aim. All rights reserved.
+              {t("copyright", { year: new Date().getFullYear() })}
             </p>
             <p className="text-[var(--text-muted)] text-xs opacity-50">
               v{packageJson.version}

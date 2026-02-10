@@ -2,50 +2,15 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Zap, Target, ShieldCheck, Heart } from "lucide-react";
 import { staggerFromCenter } from "@/lib/animations";
 
-const valueProps = [
-  {
-    icon: Zap,
-    metric: 92,
-    prefix: "UP TO",
-    suffix: "%",
-    label: "Faster claim determinations",
-    description: "Process claims in seconds, not days. Documents are ingested, understood, and decided automatically.",
-    color: "var(--primary)",
-    proofContext: "Pilot results: avg 2.3s decision time",
-  },
-  {
-    icon: Target,
-    metric: 71,
-    prefix: "UP TO",
-    suffix: "%",
-    label: "Reduction in handling costs",
-    description: "Eliminate re-keying errors and inconsistent interpretations. Same input, same output, every time.",
-    color: "var(--aurora-cyan)",
-    proofContext: "Based on closed file review analysis",
-  },
-  {
-    icon: ShieldCheck,
-    metric: 100,
-    prefix: "",
-    suffix: "%",
-    label: "Auditable decisions",
-    description: "Every decision links directly to policy clauses and source documents. Built for EU AI Act compliance.",
-    color: "var(--secondary)",
-    proofContext: "Complete decision traceability guaranteed",
-  },
-  {
-    icon: Heart,
-    metric: 0,
-    prefix: "",
-    suffix: "",
-    label: "Superior customer experience",
-    description: "Instant acknowledgment, real-time status updates and faster payouts. Policyholders informed at every step.",
-    color: "var(--aurora-purple)",
-    proofContext: "End-to-end claim lifecycle < 60s",
-  },
+const valuePropsMeta = [
+  { key: "speed" as const, icon: Zap, metric: 92, suffix: "%", color: "var(--primary)", hasPrefix: true },
+  { key: "cost" as const, icon: Target, metric: 71, suffix: "%", color: "var(--aurora-cyan)", hasPrefix: true },
+  { key: "audit" as const, icon: ShieldCheck, metric: 100, suffix: "%", color: "var(--secondary)", hasPrefix: false },
+  { key: "cx" as const, icon: Heart, metric: 0, suffix: "", color: "var(--aurora-purple)", hasPrefix: false },
 ];
 
 function AnimatedCounter({
@@ -97,6 +62,19 @@ function AnimatedCounter({
 }
 
 export function ValueProps() {
+  const t = useTranslations("valueProps");
+
+  const valueProps = valuePropsMeta.map((meta) => ({
+    icon: meta.icon,
+    metric: meta.metric,
+    prefix: meta.hasPrefix ? t("upTo") : "",
+    suffix: meta.suffix,
+    label: t(`cards.${meta.key}.label`),
+    description: t(`cards.${meta.key}.description`),
+    color: meta.color,
+    proofContext: t(`cards.${meta.key}.proof`),
+  }));
+
   return (
     <section className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
@@ -108,10 +86,10 @@ export function ValueProps() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-            Claims Automation That Regulators Trust
+            {t("title")}
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Measurable results from day one
+            {t("subtitle")}
           </p>
         </motion.div>
 

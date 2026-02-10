@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -88,6 +89,7 @@ function ExpandableSection({
 }
 
 export default function VehicleWarrantyCaseStudy() {
+  const t = useTranslations("caseStudies");
   const [showDetails, setShowDetails] = useState(false);
 
   return (
@@ -108,7 +110,7 @@ export default function VehicleWarrantyCaseStudy() {
               className="inline-flex items-center gap-2 py-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors mb-8"
             >
               <ArrowLeft className="w-4 h-4" />
-              All Case Studies
+              {t("detail.allCaseStudies")}
             </Link>
 
             {/* Customer Info */}
@@ -685,7 +687,7 @@ export default function VehicleWarrantyCaseStudy() {
                     onClick={() => setShowDetails(!showDetails)}
                     className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[var(--subtle-bg)] border border-[var(--border)] text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--primary)]/50 transition-all"
                   >
-                    {showDetails ? "Show less" : "Show more details"}
+                    {showDetails ? t("vehicleWarranty.showLess") : t("vehicleWarranty.showMore")}
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-200 ${showDetails ? "rotate-180" : ""}`}
                     />
@@ -978,7 +980,7 @@ export default function VehicleWarrantyCaseStudy() {
                 className="glass-panel p-6"
               >
                 <h3 className="font-semibold text-[var(--text-primary)] mb-4">
-                  Key Highlights
+                  {t("detail.keyHighlights")}
                 </h3>
                 <ul className="space-y-3">
                   {study.highlights.map((highlight, index) => (
@@ -993,7 +995,7 @@ export default function VehicleWarrantyCaseStudy() {
 
                 <div className="mt-8 pt-6 border-t border-[var(--border)]">
                   <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">
-                    Products Used
+                    {t("vehicleWarranty.sidebar.productsUsed")}
                   </h4>
                   <div className="space-y-2">
                     {study.products.map((product) => (
@@ -1010,7 +1012,7 @@ export default function VehicleWarrantyCaseStudy() {
 
                 <div className="mt-8 pt-6 border-t border-[var(--border)]">
                   <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">
-                    Capabilities
+                    {t("vehicleWarranty.sidebar.capabilities")}
                   </h4>
                   <div className="flex flex-wrap gap-1.5">
                     {[
@@ -1035,7 +1037,7 @@ export default function VehicleWarrantyCaseStudy() {
                     href="/contact"
                     className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors"
                   >
-                    Get Similar Results
+                    {t("vehicleWarranty.sidebar.getSimilarResults")}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -1055,7 +1057,7 @@ export default function VehicleWarrantyCaseStudy() {
                 className="flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
-                <span className="text-sm">Previous</span>
+                <span className="text-sm">{t("detail.previous")}</span>
               </Link>
             ) : (
               <div />
@@ -1065,7 +1067,7 @@ export default function VehicleWarrantyCaseStudy() {
                 href={`/case-studies/${nextStudy.slug}`}
                 className="flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors"
               >
-                <span className="text-sm">Next</span>
+                <span className="text-sm">{t("detail.next")}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             ) : (
@@ -1086,17 +1088,16 @@ export default function VehicleWarrantyCaseStudy() {
           >
             <TrendingUp className="w-12 h-12 text-[var(--text-muted)] mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Ready to Achieve Similar Results?
+              {t("detail.ctaHeading")}
             </h2>
             <p className="text-lg text-gray-300 mb-10">
-              Start with a pilot on your closed claims and see the impact for
-              yourself.
+              {t("detail.ctaDescription")}
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg"
             >
-              Request a Pilot
+              {t("detail.requestPilot")}
               <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>

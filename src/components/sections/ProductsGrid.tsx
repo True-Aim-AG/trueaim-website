@@ -1,48 +1,29 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { ArrowRight, Brain, FileSearch, ClipboardCheck, FileText } from "lucide-react";
 import { getAlternatingSlide, defaultTransition } from "@/lib/animations";
 
-const products = [
-  {
-    name: "ContextBuilder",
-    badge: "Document Pipeline",
-    description: "Turn fragmented, unstructured claim documents into high-quality structured data. AI-assisted extraction with human-in-the-loop review ensures clean inputs for deterministic decisioning.",
-    href: "/products/contextbuilder",
-    icon: FileSearch,
-    color: "var(--contextbuilder)",
-    gradient: "from-teal-500/20 to-cyan-500/20",
-  },
-  {
-    name: "MIRA",
-    badge: "Decisioning Engine",
-    description: "The core deterministic decision engine. Transform complex policy terms and conditions into automated decisions that are consistent, reproducible and free from probabilistic inference.",
-    href: "/products/mira",
-    icon: Brain,
-    color: "var(--mira)",
-    gradient: "from-indigo-500/20 to-violet-500/20",
-  },
-  {
-    name: "Decision Dossier",
-    badge: "Audit Record",
-    description: "Every case produces a fully traceable audit record linking outcomes back to source clauses, documents and decision paths. Explainable, defensible and replayable.",
-    href: "/technology#decision-dossier",
-    icon: FileText,
-    color: "var(--primary)",
-    gradient: "from-purple-500/20 to-indigo-500/20",
-  },
-  {
-    name: "ClaimEval",
-    badge: "Quality Assurance",
-    description: "Scale quality assurance beyond sampling. Automatically inspect decisions across your full claims portfolio to detect inconsistencies, process deviation and logic gaps.",
-    href: "/products/claimeval",
-    icon: ClipboardCheck,
-    color: "var(--claimeval)",
-    gradient: "from-blue-500/20 to-sky-500/20",
-  },
+const productsMeta = [
+  { key: "contextBuilder" as const, href: "/products/contextbuilder", icon: FileSearch, color: "var(--contextbuilder)", gradient: "from-teal-500/20 to-cyan-500/20" },
+  { key: "mira" as const, href: "/products/mira", icon: Brain, color: "var(--mira)", gradient: "from-indigo-500/20 to-violet-500/20" },
+  { key: "decisionDossier" as const, href: "/technology#decision-dossier", icon: FileText, color: "var(--primary)", gradient: "from-purple-500/20 to-indigo-500/20" },
+  { key: "claimEval" as const, href: "/products/claimeval", icon: ClipboardCheck, color: "var(--claimeval)", gradient: "from-blue-500/20 to-sky-500/20" },
 ];
 
-export function ProductsGrid() {
+export async function ProductsGrid() {
+  const t = await getTranslations("productsGrid");
+
+  const products = productsMeta.map((meta) => ({
+    name: t(`products.${meta.key}.name`),
+    badge: t(`products.${meta.key}.badge`),
+    description: t(`products.${meta.key}.description`),
+    explore: t(`products.${meta.key}.explore`),
+    href: meta.href,
+    icon: meta.icon,
+    color: meta.color,
+    gradient: meta.gradient,
+  }));
   return (
     <section className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
@@ -54,10 +35,10 @@ export function ProductsGrid() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-            Purpose-Built Products for Claims Excellence
+            {t("title")}
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            A complete suite designed for the claims lifecycle
+            {t("subtitle")}
           </p>
         </MotionDiv>
 
@@ -111,7 +92,7 @@ export function ProductsGrid() {
                     <div
                       className="inline-flex items-center gap-2 font-medium transition-all group-hover:gap-3 text-[var(--card-color)] group-hover:text-white mt-auto"
                     >
-                      Explore {product.name}
+                      {product.explore}
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </div>
                   </div>

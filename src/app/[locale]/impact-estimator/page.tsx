@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import dynamic from "next/dynamic";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { Calculator, ArrowRight, CheckCircle } from "lucide-react";
@@ -7,13 +8,10 @@ const ROICalculator = dynamic(
   () => import("@/components/calculator/ROICalculator").then((m) => m.ROICalculator)
 );
 
-const benefits = [
-  "Conservative estimates",
-  "Based on real pilot data",
-  "Instant indication",
-];
+const benefitKeys = ["conservative", "pilotData", "instant"] as const;
 
-export default function ImpactEstimatorPage() {
+export default async function ImpactEstimatorPage() {
+  const t = await getTranslations("impact");
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -27,24 +25,24 @@ export default function ImpactEstimatorPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] text-sm font-medium mb-6">
               <Calculator className="w-4 h-4" />
-              Impact Estimator
+              {t("hero.badge")}
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
-              Explore Your
+              {t("hero.titleLine1")}
               <br />
-              <span className="text-[var(--primary)]">Potential Value</span>
+              <span className="text-[var(--primary)]">{t("hero.titleLine2")}</span>
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-8">
-              See the estimated impact of automating claims decisions with True Aim. Adjust the high-level inputs to match your operation.
+              {t("hero.description")}
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
-              {benefits.map((benefit) => (
-                <div key={benefit} className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
+              {benefitKeys.map((key) => (
+                <div key={key} className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
                   <CheckCircle className="w-4 h-4 text-emerald-400" />
-                  {benefit}
+                  {t(`hero.benefits.${key}`)}
                 </div>
               ))}
             </div>
@@ -70,24 +68,24 @@ export default function ImpactEstimatorPage() {
             className="glass-panel p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
-              Ready for a Detailed Assessment?
+              {t("cta.heading")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto">
-              Our team can analyse your specific claims data, policy complexity and operational constraints to provide a customized impact estimate.
+              {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/30"
               >
-                Book a Demo
+                {t("cta.bookDemo")}
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/products/mira"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                See MIRA in Action
+                {t("cta.seeMira")}
               </Link>
             </div>
           </MotionDiv>

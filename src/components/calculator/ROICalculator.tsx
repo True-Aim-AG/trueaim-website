@@ -2,7 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import {
   Calculator,
   TrendingUp,
@@ -32,6 +33,8 @@ const currencyOptions = [
 ];
 
 export function ROICalculator() {
+  const t = useTranslations("impact");
+
   const [inputs, setInputs] = useState<ROIInputs>({
     claimsVolume: 50000,
     handlingTime: 45,
@@ -107,15 +110,15 @@ export function ROICalculator() {
             <Calculator className="w-6 h-6 text-[var(--primary)]" />
           </div>
           <div>
-            <h3 className="font-semibold text-white">Your Claims Operation</h3>
-            <p className="text-sm text-[var(--text-muted)]">Adjust the values to match your situation</p>
+            <h3 className="font-semibold text-white">{t("calculator.inputPanel.title")}</h3>
+            <p className="text-sm text-[var(--text-muted)]">{t("calculator.inputPanel.subtitle")}</p>
           </div>
         </div>
 
         <div className="space-y-6">
           {/* Currency Selector */}
           <div>
-            <label className="block text-sm font-medium text-white mb-2">Currency</label>
+            <label className="block text-sm font-medium text-white mb-2">{t("calculator.inputPanel.currency")}</label>
             <div className="flex gap-2">
               {currencyOptions.map((curr) => (
                 <button
@@ -136,7 +139,7 @@ export function ROICalculator() {
           {/* Claims Volume */}
           <div>
             <label className="block text-sm font-medium text-white mb-2">
-              Annual Claims Volume: <span className="text-[var(--primary)]">{formatNumber(inputs.claimsVolume)} claims/year</span>
+              {t("calculator.inputPanel.claimsVolume")} <span className="text-[var(--primary)]">{formatNumber(inputs.claimsVolume)} {t("calculator.inputPanel.claimsVolumeUnit")}</span>
             </label>
             <input
               type="range"
@@ -156,7 +159,7 @@ export function ROICalculator() {
           {/* Handling Time */}
           <div>
             <label className="block text-sm font-medium text-white mb-2">
-              Average handling time per claim: <span className="text-[var(--primary)]">{inputs.handlingTime} minutes</span>
+              {t("calculator.inputPanel.handlingTime")} <span className="text-[var(--primary)]">{inputs.handlingTime} {t("calculator.inputPanel.handlingTimeUnit")}</span>
             </label>
             <input
               type="range"
@@ -171,13 +174,13 @@ export function ROICalculator() {
               <span>5 min</span>
               <span>180 min</span>
             </div>
-            <p className="text-xs text-[var(--text-muted)] mt-1">Use an estimate for a typical claim without unusual complexity</p>
+            <p className="text-xs text-[var(--text-muted)] mt-1">{t("calculator.inputPanel.handlingTimeHint")}</p>
           </div>
 
           {/* Claims Handlers */}
           <div>
             <label className="block text-sm font-medium text-white mb-2">
-              Number of claims handlers or assessors: <span className="text-[var(--primary)]">{inputs.claimsHandlers}</span>
+              {t("calculator.inputPanel.claimsHandlers")} <span className="text-[var(--primary)]">{inputs.claimsHandlers}</span>
             </label>
             <input
               type="range"
@@ -197,7 +200,7 @@ export function ROICalculator() {
           {/* Automation Level */}
           <div>
             <label className="block text-sm font-medium text-white mb-2">
-              Eligible for straight-through or assisted processing
+              {t("calculator.inputPanel.automationLevel")}
             </label>
             <div className="space-y-2">
               {automationOptions.map((option) => (
@@ -245,34 +248,34 @@ export function ROICalculator() {
         <div className="bg-gradient-to-br from-[var(--primary)] to-blue-700 rounded-2xl p-8 text-white">
           <div className="flex items-center gap-2 mb-1">
             <TrendingUp className="w-5 h-5" />
-            <span className="text-sm font-medium text-white/80">Estimated Gross Operational Impact (Conservative)</span>
+            <span className="text-sm font-medium text-white/80">{t("calculator.results.mainImpact.label")}</span>
           </div>
-          <p className="text-xs text-white/60 mb-4">Based on pilot-scale assumptions</p>
+          <p className="text-xs text-white/60 mb-4">{t("calculator.results.mainImpact.sublabel")}</p>
           <div className="text-4xl md:text-5xl font-bold mb-2">
             {formatCurrency(results.grossAnnualImpact)}
           </div>
           <div className="text-white/80">
-            {results.savingsPercentage.toFixed(0)}% reduction in claims handling costs
+            {results.savingsPercentage.toFixed(0)}{t("calculator.results.mainImpact.reductionSuffix")}
           </div>
         </div>
 
         {/* 3-Bucket Breakdown */}
         <div className="space-y-3">
-          <h4 className="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wider">Savings Breakdown</h4>
+          <h4 className="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wider">{t("calculator.results.breakdown.heading")}</h4>
 
           {/* Capacity unlocked */}
           <Link href="/products/mira" className="block glass-panel p-4 hover:bg-white/5 transition-colors group">
             <div className="flex items-center justify-between mb-1">
               <div className="flex items-center gap-2">
                 <Brain className="w-4 h-4 text-indigo-400" />
-                <span className="text-sm font-medium text-white">Capacity unlocked</span>
+                <span className="text-sm font-medium text-white">{t("calculator.results.breakdown.capacity.title")}</span>
                 <span className="text-xs text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity">True Aim</span>
               </div>
               <span className="text-sm font-semibold text-emerald-400 font-mono-data">
                 {formatCurrency(results.buckets.capacityGross * ASSUMPTIONS.sensitivityAdjustment)}
               </span>
             </div>
-            <p className="text-xs text-[var(--text-muted)]">Fewer touches per claim, shorter handling time</p>
+            <p className="text-xs text-[var(--text-muted)]">{t("calculator.results.breakdown.capacity.description")}</p>
           </Link>
 
           {/* Rework avoided */}
@@ -280,14 +283,14 @@ export function ROICalculator() {
             <div className="flex items-center justify-between mb-1">
               <div className="flex items-center gap-2">
                 <ClipboardCheck className="w-4 h-4 text-emerald-400" />
-                <span className="text-sm font-medium text-white">Rework avoided</span>
+                <span className="text-sm font-medium text-white">{t("calculator.results.breakdown.rework.title")}</span>
                 <span className="text-xs text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity">ClaimEval</span>
               </div>
               <span className="text-sm font-semibold text-emerald-400 font-mono-data">
                 {formatCurrency(results.buckets.reworkGross * ASSUMPTIONS.sensitivityAdjustment)}
               </span>
             </div>
-            <p className="text-xs text-[var(--text-muted)]">Fewer reopens, appeals and corrections</p>
+            <p className="text-xs text-[var(--text-muted)]">{t("calculator.results.breakdown.rework.description")}</p>
           </Link>
 
           {/* Leakage reduction */}
@@ -295,14 +298,14 @@ export function ROICalculator() {
             <div className="flex items-center justify-between mb-1">
               <div className="flex items-center gap-2">
                 <FileSearch className="w-4 h-4 text-[var(--aurora-cyan)]" />
-                <span className="text-sm font-medium text-white">Leakage reduction</span>
+                <span className="text-sm font-medium text-white">{t("calculator.results.breakdown.leakage.title")}</span>
                 <span className="text-xs text-[var(--aurora-cyan)] opacity-0 group-hover:opacity-100 transition-opacity">ClaimEval</span>
               </div>
               <span className="text-sm font-semibold text-emerald-400 font-mono-data">
                 {formatCurrency(results.buckets.leakageGross * ASSUMPTIONS.sensitivityAdjustment)}
               </span>
             </div>
-            <p className="text-xs text-[var(--text-muted)]">Reduced inconsistent decisions</p>
+            <p className="text-xs text-[var(--text-muted)]">{t("calculator.results.breakdown.leakage.description")}</p>
           </Link>
         </div>
 
@@ -313,15 +316,15 @@ export function ROICalculator() {
             <div className="text-2xl font-bold text-white font-mono-data">
               {formatNumber(results.hoursSaved)}
             </div>
-            <div className="text-sm text-[var(--text-muted)]">Hours saved/year</div>
+            <div className="text-sm text-[var(--text-muted)]">{t("calculator.results.metrics.hoursSaved")}</div>
           </div>
           <div className="glass-panel p-6">
             <Users className="w-5 h-5 text-[var(--aurora-cyan)] mb-2" />
             <div className="text-2xl font-bold text-white font-mono-data">
               {results.fteEquivalent.toFixed(1)}
             </div>
-            <div className="text-sm text-[var(--text-muted)]">Capacity unlocked (FTE equivalent)</div>
-            <p className="text-xs text-[var(--text-muted)] mt-1">Reflects reduced handling effort, not headcount reduction</p>
+            <div className="text-sm text-[var(--text-muted)]">{t("calculator.results.metrics.fteEquivalent")}</div>
+            <p className="text-xs text-[var(--text-muted)] mt-1">{t("calculator.results.metrics.fteNote")}</p>
           </div>
         </div>
 
@@ -330,19 +333,19 @@ export function ROICalculator() {
           <div className="flex items-start gap-2 p-3 bg-white/5 rounded-lg border border-[var(--border)]">
             <Info className="w-4 h-4 text-[var(--text-muted)] flex-shrink-0 mt-0.5" />
             <p className="text-xs text-[var(--text-muted)]">
-              All figures shown represent gross operational impact and do not take into account the cost of True Aim's services.
+              {t("calculator.results.disclaimers.grossImpact")}
             </p>
           </div>
           <div className="flex items-start gap-2 p-3 bg-white/5 rounded-lg border border-[var(--border)]">
             <Info className="w-4 h-4 text-[var(--text-muted)] flex-shrink-0 mt-0.5" />
             <p className="text-xs text-[var(--text-muted)]">
-              Platform pricing is not provided. Final pricing is based on contract terms and commercial negotiations.
+              {t("calculator.results.disclaimers.pricing")}
             </p>
           </div>
           <div className="flex items-start gap-2 p-3 bg-white/5 rounded-lg border border-[var(--border)]">
             <Info className="w-4 h-4 text-[var(--text-muted)] flex-shrink-0 mt-0.5" />
             <p className="text-xs text-[var(--text-muted)]">
-              Based on pilot data from insurance claims.
+              {t("calculator.results.disclaimers.pilotData")}
             </p>
           </div>
         </div>
@@ -355,7 +358,7 @@ export function ROICalculator() {
           >
             <div className="flex items-center gap-3">
               <FileText className="w-5 h-5 text-[var(--primary)]" />
-              <span className="font-medium text-white">Methodology and Assumptions</span>
+              <span className="font-medium text-white">{t("calculator.results.assumptions.toggle")}</span>
             </div>
             <ChevronDown
               className={`w-5 h-5 text-[var(--text-muted)] transition-transform duration-300 ${
@@ -376,11 +379,11 @@ export function ROICalculator() {
                 <div className="px-4 pb-4 space-y-6 border-t border-[var(--border)]">
                   {/* How We Calculate */}
                   <div className="pt-4">
-                    <h4 className="text-sm font-semibold text-white mb-3">How We Calculate</h4>
+                    <h4 className="text-sm font-semibold text-white mb-3">{t("calculator.results.assumptions.howWeCalculate")}</h4>
                     <div className="space-y-3 text-sm">
                       <div className="p-3 bg-white/5 rounded-lg">
                         <p className="text-[var(--text-muted)] mb-2">
-                          <span className="text-white font-medium">Current Handling Cost</span> = Handling Time x Cost per Minute x Claims Volume
+                          <span className="text-white font-medium">{t("calculator.results.assumptions.currentHandlingCost")}</span> {t("calculator.results.assumptions.currentHandlingCostFormula")}
                         </p>
                         <p className="font-mono text-xs text-[var(--primary)]">
                           {inputs.handlingTime} min x {currencyConfig.symbol} {results.details.costPerMinute.toFixed(2)}/min x {formatNumber(results.volume)} = {formatCurrency(results.currentAnnualCost)}
@@ -389,7 +392,7 @@ export function ROICalculator() {
 
                       <div className="p-3 bg-white/5 rounded-lg">
                         <p className="text-[var(--text-muted)] mb-2">
-                          <span className="text-white font-medium">Gross Savings</span> = Capacity + Rework + Leakage
+                          <span className="text-white font-medium">{t("calculator.results.assumptions.grossSavings")}</span> {t("calculator.results.assumptions.grossSavingsFormula")}
                         </p>
                         <p className="font-mono text-xs text-[var(--primary)]">
                           {formatCurrency(results.buckets.capacityGross)} + {formatCurrency(results.buckets.reworkGross)} + {formatCurrency(results.buckets.leakageGross)} = {formatCurrency(results.buckets.grossTotal)}
@@ -398,7 +401,7 @@ export function ROICalculator() {
 
                       <div className="p-3 bg-white/5 rounded-lg">
                         <p className="text-[var(--text-muted)] mb-2">
-                          <span className="text-white font-medium">Conservative Estimate</span> = Gross Savings x 75% Sensitivity Adjustment
+                          <span className="text-white font-medium">{t("calculator.results.assumptions.conservativeEstimate")}</span> {t("calculator.results.assumptions.conservativeEstimateFormula")}
                         </p>
                         <p className="font-mono text-xs text-[var(--primary)]">
                           {formatCurrency(results.buckets.grossTotal)} x 0.75 = {formatCurrency(results.grossAnnualImpact)}
@@ -409,63 +412,63 @@ export function ROICalculator() {
 
                   {/* Key Assumptions */}
                   <div>
-                    <h4 className="text-sm font-semibold text-white mb-3">Key Assumptions</h4>
+                    <h4 className="text-sm font-semibold text-white mb-3">{t("calculator.results.assumptions.keyAssumptions")}</h4>
                     <ul className="space-y-2 text-xs text-[var(--text-muted)]">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-3 h-3 text-emerald-400 flex-shrink-0 mt-0.5" />
-                        Savings apply only to eligible claim categories
+                        {t("calculator.results.assumptions.assumption1")}
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-3 h-3 text-emerald-400 flex-shrink-0 mt-0.5" />
-                        No immediate headcount reduction assumed
+                        {t("calculator.results.assumptions.assumption2")}
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-3 h-3 text-emerald-400 flex-shrink-0 mt-0.5" />
-                        Savings reflect reduced handling effort and rework
+                        {t("calculator.results.assumptions.assumption3")}
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-3 h-3 text-emerald-400 flex-shrink-0 mt-0.5" />
-                        75% sensitivity adjustment applied to all projections
+                        {t("calculator.results.assumptions.assumption4")}
                       </li>
                     </ul>
                   </div>
 
                   {/* Detailed breakdown table */}
                   <div>
-                    <h4 className="text-sm font-semibold text-white mb-3">Your Numbers Breakdown</h4>
+                    <h4 className="text-sm font-semibold text-white mb-3">{t("calculator.results.assumptions.breakdownTitle")}</h4>
                     <div className="overflow-x-auto">
                       <table className="w-full text-sm">
                         <tbody className="divide-y divide-[var(--border)]">
                           <tr>
-                            <td className="py-2 text-[var(--text-muted)]">Annual claims volume</td>
+                            <td className="py-2 text-[var(--text-muted)]">{t("calculator.results.assumptions.breakdownRows.annualVolume")}</td>
                             <td className="py-2 text-white text-right font-mono">{formatNumber(results.volume)}</td>
                           </tr>
                           <tr>
-                            <td className="py-2 text-[var(--text-muted)]">Claims automated by True Aim</td>
+                            <td className="py-2 text-[var(--text-muted)]">{t("calculator.results.assumptions.breakdownRows.automatedClaims")}</td>
                             <td className="py-2 text-white text-right font-mono">{formatNumber(results.details.automatedClaims)} ({results.details.automationRate.toFixed(0)}%)</td>
                           </tr>
                           <tr>
-                            <td className="py-2 text-[var(--text-muted)]">Claims requiring manual review</td>
+                            <td className="py-2 text-[var(--text-muted)]">{t("calculator.results.assumptions.breakdownRows.manualClaims")}</td>
                             <td className="py-2 text-white text-right font-mono">{formatNumber(results.details.manualClaims)} ({(100 - results.details.automationRate).toFixed(0)}%)</td>
                           </tr>
                           <tr>
-                            <td className="py-2 text-[var(--text-muted)]">Capacity savings (gross)</td>
+                            <td className="py-2 text-[var(--text-muted)]">{t("calculator.results.assumptions.breakdownRows.capacityGross")}</td>
                             <td className="py-2 text-emerald-400 text-right font-mono">{formatCurrency(results.buckets.capacityGross)}</td>
                           </tr>
                           <tr>
-                            <td className="py-2 text-[var(--text-muted)]">Rework avoided (gross)</td>
+                            <td className="py-2 text-[var(--text-muted)]">{t("calculator.results.assumptions.breakdownRows.reworkGross")}</td>
                             <td className="py-2 text-emerald-400 text-right font-mono">{formatCurrency(results.buckets.reworkGross)}</td>
                           </tr>
                           <tr>
-                            <td className="py-2 text-[var(--text-muted)]">Leakage reduction (gross)</td>
+                            <td className="py-2 text-[var(--text-muted)]">{t("calculator.results.assumptions.breakdownRows.leakageGross")}</td>
                             <td className="py-2 text-emerald-400 text-right font-mono">{formatCurrency(results.buckets.leakageGross)}</td>
                           </tr>
                           <tr>
-                            <td className="py-2 text-[var(--text-muted)]">Sensitivity adjustment (75%)</td>
+                            <td className="py-2 text-[var(--text-muted)]">{t("calculator.results.assumptions.breakdownRows.sensitivityAdjustment")}</td>
                             <td className="py-2 text-amber-400 text-right font-mono">-{formatCurrency(results.buckets.grossTotal * 0.25)}</td>
                           </tr>
                           <tr className="font-semibold">
-                            <td className="py-2 text-white">Gross annual impact (conservative)</td>
+                            <td className="py-2 text-white">{t("calculator.results.assumptions.breakdownRows.grossAnnualImpact")}</td>
                             <td className="py-2 text-emerald-400 text-right font-mono">{formatCurrency(results.grossAnnualImpact)}</td>
                           </tr>
                         </tbody>
@@ -475,10 +478,10 @@ export function ROICalculator() {
 
                   {/* Important Notes */}
                   <div className="p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg">
-                    <h4 className="text-sm font-semibold text-amber-400 mb-2">Important Notes</h4>
+                    <h4 className="text-sm font-semibold text-amber-400 mb-2">{t("calculator.results.assumptions.importantNotes")}</h4>
                     <ul className="text-xs text-[var(--text-muted)] space-y-1 list-disc list-inside">
-                      <li>Estimates are informed by pilot data from travel insurance claims</li>
-                      <li>Actual automation rates depend on policy complexity and claim types</li>
+                      <li>{t("calculator.results.assumptions.note1")}</li>
+                      <li>{t("calculator.results.assumptions.note2")}</li>
                     </ul>
                   </div>
                 </div>
@@ -492,17 +495,17 @@ export function ROICalculator() {
           {reportSubmitted ? (
             <div>
               <CheckCircle className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
-              <h4 className="font-semibold text-white mb-1">Request Received</h4>
+              <h4 className="font-semibold text-white mb-1">{t("calculator.results.report.received")}</h4>
               <p className="text-sm text-[var(--text-muted)]">
-                We&apos;ll send your personalised impact breakdown within 1 business day.
+                {t("calculator.results.report.receivedMessage")}
               </p>
             </div>
           ) : showReportForm ? (
             <form onSubmit={handleReportSubmit} className="space-y-4">
-              <h4 className="font-semibold text-white mb-1">Request Detailed Impact Report</h4>
+              <h4 className="font-semibold text-white mb-1">{t("calculator.results.report.requestTitle")}</h4>
               <input
                 type="text"
-                placeholder="Your name"
+                placeholder={t("calculator.results.report.namePlaceholder")}
                 value={reportName}
                 onChange={(e) => setReportName(e.target.value)}
                 required
@@ -510,7 +513,7 @@ export function ROICalculator() {
               />
               <input
                 type="email"
-                placeholder="Work email"
+                placeholder={t("calculator.results.report.emailPlaceholder")}
                 value={reportEmail}
                 onChange={(e) => setReportEmail(e.target.value)}
                 required
@@ -521,30 +524,30 @@ export function ROICalculator() {
                 disabled={reportSubmitting}
                 className="w-full px-6 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-[var(--primary)]/30 disabled:opacity-50"
               >
-                {reportSubmitting ? "Sending..." : "Send My Impact Report"}
+                {reportSubmitting ? t("calculator.results.report.sending") : t("calculator.results.report.sendButton")}
               </button>
             </form>
           ) : (
             <div>
               <h4 className="font-semibold text-white mb-1">
-                Want the full breakdown?
+                {t("calculator.results.report.wantFullBreakdown")}
               </h4>
               <p className="text-sm text-[var(--text-muted)] mb-4">
-                Get a personalised impact report with detailed methodology and assumptions.
+                {t("calculator.results.report.fullBreakdownDesc")}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <button
                   onClick={() => setShowReportForm(true)}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-[var(--primary)]/30"
                 >
-                  Request Detailed Impact Report
+                  {t("calculator.results.report.requestButton")}
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors"
                 >
-                  Book a Demo
+                  {t("calculator.results.report.bookDemo")}
                 </Link>
               </div>
             </div>

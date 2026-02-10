@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Cookie, ChevronDown } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface CookiePreferences {
   essential: boolean;
@@ -13,6 +14,7 @@ interface CookiePreferences {
 const STORAGE_KEY = "cookie-consent";
 
 export function CookieBanner() {
+  const t = useTranslations("cookie");
   const [visible, setVisible] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
@@ -63,11 +65,11 @@ export function CookieBanner() {
                 <Cookie className="w-5 h-5 text-[var(--primary)]" />
               </div>
               <div className="flex-1">
-                <h3 className="font-semibold text-[var(--text-primary)] mb-1">Cookie Preferences</h3>
+                <h3 className="font-semibold text-[var(--text-primary)] mb-1">{t("title")}</h3>
                 <p className="text-sm text-[var(--text-secondary)] mb-4">
-                  We use cookies to improve your experience. Essential cookies are always active. You can choose to enable analytics cookies to help us improve our website.{" "}
+                  {t("description")}{" "}
                   <Link href="/cookies" className="text-[var(--primary)] hover:underline">
-                    Learn more
+                    {t("learnMore")}
                   </Link>
                 </p>
 
@@ -84,8 +86,8 @@ export function CookieBanner() {
                       <div className="space-y-3 p-4 rounded-lg bg-[var(--subtle-bg)] border border-[var(--border)]">
                         <label className="flex items-center justify-between">
                           <div>
-                            <span className="text-sm font-medium text-[var(--text-primary)]">Essential</span>
-                            <p className="text-xs text-[var(--text-muted)]">Required for the website to function</p>
+                            <span className="text-sm font-medium text-[var(--text-primary)]">{t("essential")}</span>
+                            <p className="text-xs text-[var(--text-muted)]">{t("essentialDesc")}</p>
                           </div>
                           <div className="w-10 h-6 rounded-full bg-[var(--primary)] flex items-center justify-end px-0.5 cursor-not-allowed opacity-70">
                             <div className="w-5 h-5 rounded-full bg-white" />
@@ -93,8 +95,8 @@ export function CookieBanner() {
                         </label>
                         <label className="flex items-center justify-between cursor-pointer">
                           <div>
-                            <span className="text-sm font-medium text-[var(--text-primary)]">Analytics</span>
-                            <p className="text-xs text-[var(--text-muted)]">Help us understand how visitors use our site</p>
+                            <span className="text-sm font-medium text-[var(--text-primary)]">{t("analytics")}</span>
+                            <p className="text-xs text-[var(--text-muted)]">{t("analyticsDesc")}</p>
                           </div>
                           <button
                             type="button"
@@ -117,19 +119,19 @@ export function CookieBanner() {
                     onClick={handleAcceptAll}
                     className="px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white text-sm font-medium hover:bg-[var(--primary-hover)] transition-colors"
                   >
-                    Accept All
+                    {t("acceptAll")}
                   </button>
                   <button
                     onClick={handleDecline}
                     className="px-5 py-2.5 rounded-lg border border-[var(--border)] text-[var(--text-primary)] text-sm font-medium hover:bg-[var(--subtle-bg)] transition-colors"
                   >
-                    Decline
+                    {t("decline")}
                   </button>
                   <button
                     onClick={showPreferences ? handleSavePreferences : () => setShowPreferences(true)}
                     className="px-5 py-2.5 rounded-lg border border-[var(--border)] text-[var(--text-secondary)] text-sm font-medium hover:bg-[var(--subtle-bg)] transition-colors inline-flex items-center gap-1"
                   >
-                    {showPreferences ? "Save Preferences" : "Manage Preferences"}
+                    {showPreferences ? t("savePreferences") : t("managePreferences")}
                     {!showPreferences && <ChevronDown className="w-3 h-3" />}
                   </button>
                 </div>

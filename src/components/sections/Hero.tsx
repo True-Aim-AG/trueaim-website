@@ -1,70 +1,35 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, FileText, Search, Scale, Send, ClipboardCheck, Zap, UserCheck, CheckCircle } from "lucide-react";
 import { fadeIn, scaleIn, springTransition } from "@/lib/animations";
 
-const pipelineSteps = [
-  {
-    icon: FileText,
-    label: "Ingest",
-    color: "var(--trust)",
-    shortDescription: "Capture & validate inputs",
-    description: "Documents received via email, portal or system export",
-    automatedTime: "< 10 sec",
-    businessValue: "Eliminate manual sorting and routing",
-    automationDetail: "ContextBuilder auto-ingests and classifies documents",
-    hitlOptional: false,
-  },
-  {
-    icon: Search,
-    label: "Process",
-    color: "var(--secondary)",
-    shortDescription: "Apply policy logic & checks",
-    description: "Key data pulled from claims documents",
-    automatedTime: "15 – 45 sec",
-    businessValue: "Reduce re-keying errors and data entry cost",
-    automationDetail: "AI extracts fields with evidence linking",
-    hitlOptional: true,
-  },
-  {
-    icon: Scale,
-    label: "Assess",
-    color: "var(--primary)",
-    shortDescription: "Confirm outcome & handling",
-    description: "Coverage determination against policy",
-    automatedTime: "< 5 sec",
-    businessValue: "Consistent, defensible decisions on every claim",
-    automationDetail: "MIRA applies deterministic policy logic",
-    hitlOptional: false,
-  },
-  {
-    icon: Send,
-    label: "Execute",
-    color: "var(--aurora-cyan)",
-    shortDescription: "Trigger next steps",
-    description: "Set reserves, draft payment, send comms",
-    automatedTime: "< 10 sec",
-    businessValue: "Faster settlement cycles, improved CX",
-    automationDetail: "Automated task execution based on decision",
-    hitlOptional: true,
-  },
-  {
-    icon: ClipboardCheck,
-    label: "Audit",
-    color: "var(--secondary)",
-    shortDescription: "Full traceability",
-    description: "Complete decision trail logged",
-    automatedTime: "Instant",
-    businessValue: "Regulator-ready audit trails without manual prep",
-    automationDetail: "Decision Dossier generated automatically",
-    hitlOptional: false,
-  },
+const pipelineStepsMeta = [
+  { key: "ingest" as const, icon: FileText, color: "var(--trust)", hitlOptional: false },
+  { key: "process" as const, icon: Search, color: "var(--secondary)", hitlOptional: true },
+  { key: "assess" as const, icon: Scale, color: "var(--primary)", hitlOptional: false },
+  { key: "execute" as const, icon: Send, color: "var(--aurora-cyan)", hitlOptional: true },
+  { key: "audit" as const, icon: ClipboardCheck, color: "var(--secondary)", hitlOptional: false },
 ];
 
 export function Hero() {
+  const t = useTranslations("hero");
+
+  const pipelineSteps = pipelineStepsMeta.map((meta) => ({
+    icon: meta.icon,
+    color: meta.color,
+    hitlOptional: meta.hitlOptional,
+    label: t(`steps.${meta.key}.label`),
+    shortDescription: t(`steps.${meta.key}.shortDesc`),
+    description: t(`steps.${meta.key}.description`),
+    automatedTime: t(`steps.${meta.key}.time`),
+    businessValue: t(`steps.${meta.key}.value`),
+    automationDetail: t(`steps.${meta.key}.automation`),
+  }));
+
   const sectionRef = useRef<HTMLElement>(null);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(
     () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -106,9 +71,9 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6"
           >
-            Automate Insurance Claim Decisions.
+            {t("title")}
             <br />
-            <span className="text-[var(--primary)]">Auditable by Design.</span>
+            <span className="text-[var(--primary)]">{t("titleHighlight")}</span>
           </motion.h1>
 
           <motion.p
@@ -118,11 +83,11 @@ export function Hero() {
             className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-4 leading-relaxed"
           >
             <>
-              Apply policy terms clearly and consistently.
+              {t("subtitle1")}
               <br />
-              Built for regulated insurance.
+              {t("subtitle2")}
               <br />
-              No black boxes.
+              {t("subtitle3")}
             </>
           </motion.p>
         </motion.div>
@@ -138,7 +103,7 @@ export function Hero() {
           <div className="glass-panel p-8 md:p-12">
             <div className="text-center mb-8">
               <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider">
-                From Documents to Decisions in One Flow
+                {t("pipelineTitle")}
               </p>
             </div>
 
@@ -239,13 +204,13 @@ export function Hero() {
                 <div className="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center">
                   <Zap className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
                 </div>
-                <span className="text-[var(--text-muted)]">Fully Automated</span>
+                <span className="text-[var(--text-muted)]">{t("legendFully")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-full bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center">
                   <UserCheck className="w-3 h-3 text-amber-600 dark:text-amber-400" />
                 </div>
-                <span className="text-[var(--text-muted)]">Human in the Loop</span>
+                <span className="text-[var(--text-muted)]">{t("legendHuman")}</span>
               </div>
             </div>
 
@@ -266,7 +231,7 @@ export function Hero() {
                 href="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all text-lg shadow-lg shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/50"
               >
-                Book a Demo
+                {t("ctaDemo")}
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
@@ -274,7 +239,7 @@ export function Hero() {
                 href="/impact-estimator"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-all text-lg backdrop-blur-sm"
               >
-                Get Impact Estimate
+                {t("ctaImpact")}
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </motion.div>

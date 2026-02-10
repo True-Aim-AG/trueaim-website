@@ -94,14 +94,17 @@ const breadcrumbJsonLd = {
   ],
 };
 
-export default function MiraLayout({
+export default async function MiraLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   return (
     <>
-      <JsonLd data={miraJsonLd} />
+      <JsonLd data={{ ...miraJsonLd, inLanguage: locale }} />
       <JsonLd data={breadcrumbJsonLd} />
       {children}
     </>

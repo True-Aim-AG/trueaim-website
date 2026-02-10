@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 
 import {
@@ -19,67 +20,22 @@ import {
 } from "lucide-react";
 import { DecisionDossier } from "@/components/sections/DecisionDossier";
 
-const agenticCapabilities = [
-  "Document reading",
-  "Data extraction",
-  "Classification",
-  "Orchestration",
-];
+const agenticCapabilityKeys = ["docReading", "dataExtraction", "classification", "orchestration"] as const;
 
-const deterministicCapabilities = [
-  "Coverage rules",
-  "Policy logic",
-  "Cost calculation",
-  "Decision output",
-];
+const deterministicCapabilityKeys = ["coverageRules", "policyLogic", "costCalculation", "decisionOutput"] as const;
 
-const comparisonData = [
-  { capability: "Decision consistency", traditional: "Variable", trueaim: "Deterministic" },
-  { capability: "Audit trail", traditional: "Partial", trueaim: "Complete" },
-  { capability: "Explainability", traditional: '"Model said so"', trueaim: "Traceable to clause" },
-  { capability: "EU AI Act ready", traditional: "Unclear", trueaim: "Yes" },
-];
+const comparisonRowKeys = ["consistency", "auditTrail", "explainability", "euAiAct"] as const;
 
+const controlFeatureMeta = [
+  { key: "replayLogs", icon: RefreshCw, color: "text-blue-400", bgColor: "bg-blue-500/20" },
+  { key: "ruleTraceability", icon: GitBranch, color: "text-indigo-400", bgColor: "bg-indigo-500/20" },
+  { key: "approvalGates", icon: UserCheck, color: "text-emerald-400", bgColor: "bg-emerald-500/20" },
+  { key: "exceptionRouting", icon: AlertTriangle, color: "text-amber-400", bgColor: "bg-amber-500/20" },
+  { key: "confidenceScoring", icon: Gauge, color: "text-purple-400", bgColor: "bg-purple-500/20" },
+] as const;
 
-const controlFeatures = [
-  {
-    icon: RefreshCw,
-    title: "Replay Logs",
-    description: "Re-run any decision with the same inputs and get identical outputs. Every execution is deterministic and reproducible.",
-    color: "text-blue-400",
-    bgColor: "bg-blue-500/20",
-  },
-  {
-    icon: GitBranch,
-    title: "Rule Traceability",
-    description: "Every coverage decision is mapped to specific policy clause IDs. See exactly which rules fired and why.",
-    color: "text-indigo-400",
-    bgColor: "bg-indigo-500/20",
-  },
-  {
-    icon: UserCheck,
-    title: "Approval Gates",
-    description: "Configure thresholds for human review escalation. High-value or edge cases automatically route to experts.",
-    color: "text-emerald-400",
-    bgColor: "bg-emerald-500/20",
-  },
-  {
-    icon: AlertTriangle,
-    title: "Exception Routing",
-    description: "Automatic routing based on claim complexity score. Unusual patterns flagged for manual inspection.",
-    color: "text-amber-400",
-    bgColor: "bg-amber-500/20",
-  },
-  {
-    icon: Gauge,
-    title: "Confidence Scoring",
-    description: "Field-level certainty indicators show where the system is confident and where human review adds value.",
-    color: "text-purple-400",
-    bgColor: "bg-purple-500/20",
-  },
-];
-
-export default function TechnologyPage() {
+export default async function TechnologyPage() {
+  const t = await getTranslations("technology");
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -92,17 +48,17 @@ export default function TechnologyPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--subtle-bg)] text-[var(--text-secondary)] text-sm font-medium mb-6">
               <Cpu className="w-4 h-4" />
-              Our Technology
+              {t("hero.badge")}
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Neuro-Symbolic AI: The Architecture
+              {t("hero.titleLine1")}
               <br />
-              <span className="text-[var(--primary)]">Regulators Trust</span>
+              <span className="text-[var(--primary)]">{t("hero.titleLine2")}</span>
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-              Not probabilistic. Not a black box. Our hybrid approach combines agentic AI execution with deterministic decision-making, purpose-built for regulated industries.
+              {t("hero.description")}
             </p>
           </MotionDiv>
         </div>
@@ -119,13 +75,13 @@ export default function TechnologyPage() {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              The Problem with Probabilistic AI
+              {t("problem.heading")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Large language models are powerful, but they&apos;re probabilistic. Given the same input twice, they might produce different outputs. They can&apos;t explain their reasoning in terms regulators understand.
+              {t("problem.description")}
             </p>
             <p className="text-xl font-semibold text-[var(--primary)] mt-6">
-              For claims decisions, this is unacceptable.
+              {t("problem.emphasis")}
             </p>
           </MotionDiv>
         </div>
@@ -142,10 +98,10 @@ export default function TechnologyPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Separation of Concerns
+              {t("architecture.heading")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              Two layers, each optimized for what it does best
+              {t("architecture.subtitle")}
             </p>
           </MotionDiv>
 
@@ -164,26 +120,26 @@ export default function TechnologyPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-[var(--text-primary)]">
-                    Agentic AI
+                    {t("architecture.agentic.title")}
                   </h3>
-                  <p className="text-[var(--aurora-cyan)] font-medium">Flexible and adaptive</p>
+                  <p className="text-[var(--aurora-cyan)] font-medium">{t("architecture.agentic.subtitle")}</p>
                 </div>
               </div>
 
               <ul className="space-y-4">
-                {agenticCapabilities.map((cap) => (
-                  <li key={cap} className="flex items-center gap-3">
+                {agenticCapabilityKeys.map((capKey) => (
+                  <li key={capKey} className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-[var(--aurora-cyan)]/20 flex items-center justify-center flex-shrink-0">
                       <FileSearch className="w-4 h-4 text-[var(--aurora-cyan)]" />
                     </div>
-                    <span className="text-[var(--text-primary)] font-medium">{cap}</span>
+                    <span className="text-[var(--text-primary)] font-medium">{t(`architecture.agentic.capabilities.${capKey}`)}</span>
                   </li>
                 ))}
               </ul>
 
               <div className="mt-6 p-4 glass-panel-light">
                 <p className="text-sm text-[var(--text-secondary)]">
-                  Uses machine learning to handle unstructured data, understand context and orchestrate complex workflows.
+                  {t("architecture.agentic.description")}
                 </p>
               </div>
             </MotionDiv>
@@ -202,26 +158,26 @@ export default function TechnologyPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-[var(--text-primary)]">
-                    Deterministic Decision Engine
+                    {t("architecture.deterministic.title")}
                   </h3>
-                  <p className="text-[var(--primary)] font-medium">Precise and auditable</p>
+                  <p className="text-[var(--primary)] font-medium">{t("architecture.deterministic.subtitle")}</p>
                 </div>
               </div>
 
               <ul className="space-y-4">
-                {deterministicCapabilities.map((cap) => (
-                  <li key={cap} className="flex items-center gap-3">
+                {deterministicCapabilityKeys.map((capKey) => (
+                  <li key={capKey} className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center flex-shrink-0">
                       <Workflow className="w-4 h-4 text-[var(--primary)]" />
                     </div>
-                    <span className="text-[var(--text-primary)] font-medium">{cap}</span>
+                    <span className="text-[var(--text-primary)] font-medium">{t(`architecture.deterministic.capabilities.${capKey}`)}</span>
                   </li>
                 ))}
               </ul>
 
               <div className="mt-6 p-4 glass-panel-light">
                 <p className="text-sm text-[var(--text-secondary)]">
-                  Applies encoded rules to produce consistent, explainable decisions every time.
+                  {t("architecture.deterministic.description")}
                 </p>
               </div>
             </MotionDiv>
@@ -236,9 +192,9 @@ export default function TechnologyPage() {
             className="mt-8 glass-panel border border-emerald-500/20 bg-emerald-500/10 rounded-2xl p-8 text-center"
           >
             <Shield className="w-12 h-12 mx-auto mb-4 text-emerald-400 opacity-90" />
-            <h3 className="text-2xl font-bold mb-2 text-[var(--text-primary)]">Complete Audit Trail</h3>
+            <h3 className="text-2xl font-bold mb-2 text-[var(--text-primary)]">{t("architecture.auditTrail.title")}</h3>
             <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
-              Every field traces to source documents. Every decision traces to policy terms. Full transparency for regulators and auditors.
+              {t("architecture.auditTrail.description")}
             </p>
           </MotionDiv>
         </div>
@@ -259,20 +215,20 @@ export default function TechnologyPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium mb-4">
               <Shield className="w-4 h-4" />
-              Enterprise Control
+              {t("control.badge")}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              The Control Layer
+              {t("control.heading")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
-              Automation with oversight. Every feature designed to keep humans in control where it matters.
+              {t("control.subtitle")}
             </p>
           </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {controlFeatures.map((feature, index) => (
+            {controlFeatureMeta.map((feature, index) => (
               <MotionDiv
-                key={feature.title}
+                key={feature.key}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -282,8 +238,8 @@ export default function TechnologyPage() {
                 <div className={`w-12 h-12 rounded-xl ${feature.bgColor} flex items-center justify-center mb-4`}>
                   <feature.icon className={`w-6 h-6 ${feature.color}`} />
                 </div>
-                <h3 className="font-semibold text-[var(--text-primary)] mb-2">{feature.title}</h3>
-                <p className="text-sm text-[var(--text-muted)]">{feature.description}</p>
+                <h3 className="font-semibold text-[var(--text-primary)] mb-2">{t(`control.features.${feature.key}.title`)}</h3>
+                <p className="text-sm text-[var(--text-muted)]">{t(`control.features.${feature.key}.description`)}</p>
               </MotionDiv>
             ))}
           </div>
@@ -297,7 +253,7 @@ export default function TechnologyPage() {
             className="mt-12 glass-panel p-8 text-center"
           >
             <p className="text-lg text-[var(--text-secondary)]">
-              <strong className="text-[var(--text-primary)]">Our philosophy:</strong> AI should handle the heavy lifting, but humans must always be able to understand, verify and override. Every control exists because regulated industries demand it.
+              <strong className="text-[var(--text-primary)]">{t("control.philosophyPrefix")}</strong> {t("control.philosophy")}
             </p>
           </MotionDiv>
         </div>
@@ -314,10 +270,10 @@ export default function TechnologyPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Not Another Black Box
+              {t("comparison.heading")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              See how True Aim compares to traditional AI approaches
+              {t("comparison.subtitle")}
             </p>
           </MotionDiv>
 
@@ -331,20 +287,20 @@ export default function TechnologyPage() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-[var(--border)]">
-                  <th className="text-left p-6 text-[var(--text-primary)] font-semibold">Capability</th>
-                  <th className="text-center p-6 text-[var(--text-muted)] font-semibold">Traditional AI</th>
-                  <th className="text-center p-6 text-[var(--primary)] font-semibold">True Aim</th>
+                  <th className="text-left p-6 text-[var(--text-primary)] font-semibold">{t("comparison.columns.capability")}</th>
+                  <th className="text-center p-6 text-[var(--text-muted)] font-semibold">{t("comparison.columns.traditional")}</th>
+                  <th className="text-center p-6 text-[var(--primary)] font-semibold">{t("comparison.columns.trueaim")}</th>
                 </tr>
               </thead>
               <tbody>
-                {comparisonData.map((row, index) => (
-                  <tr key={row.capability} className={index < comparisonData.length - 1 ? "border-b border-[var(--border)]" : ""}>
-                    <td className="p-6 text-[var(--text-primary)] font-medium">{row.capability}</td>
-                    <td className="p-6 text-center text-[var(--text-muted)]">{row.traditional}</td>
+                {comparisonRowKeys.map((rowKey, index) => (
+                  <tr key={rowKey} className={index < comparisonRowKeys.length - 1 ? "border-b border-[var(--border)]" : ""}>
+                    <td className="p-6 text-[var(--text-primary)] font-medium">{t(`comparison.rows.${rowKey}.capability`)}</td>
+                    <td className="p-6 text-center text-[var(--text-muted)]">{t(`comparison.rows.${rowKey}.traditional`)}</td>
                     <td className="p-6 text-center">
                       <span className="inline-flex items-center gap-2 text-[var(--secondary)] font-medium">
                         <CheckCircle className="w-5 h-5" />
-                        {row.trueaim}
+                        {t(`comparison.rows.${rowKey}.trueaim`)}
                       </span>
                     </td>
                   </tr>
@@ -369,10 +325,10 @@ export default function TechnologyPage() {
               <GraduationCap className="w-8 h-8 text-[var(--aurora-cyan)]" />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Research Partnership
+              {t("research.heading")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Parts of our technology are being developed in collaboration with <Link href="/partners/zhaw" className="text-[var(--primary)] underline hover:text-[var(--primary-hover)]">ZHAW</Link> (Zurich University of Applied Sciences) and advanced through an <Link href="/partners/innosuisse" className="text-[var(--primary)] underline hover:text-[var(--primary-hover)]">Innosuisse</Link>-funded research programme, recognised through Switzerland&apos;s national innovation framework.
+              {t("research.descriptionStart")} <Link href="/partners/zhaw" className="text-[var(--primary)] underline hover:text-[var(--primary-hover)]">{t("research.zhawName")}</Link> {t("research.descriptionMiddle")} <Link href="/partners/innosuisse" className="text-[var(--primary)] underline hover:text-[var(--primary-hover)]">{t("research.innosuisseName")}</Link>{t("research.descriptionEnd")}
             </p>
           </MotionDiv>
         </div>
@@ -389,16 +345,16 @@ export default function TechnologyPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              See our Technology in Action
+              {t("cta.heading")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">
-              Book a demo to understand how our neuro-symbolic architecture can work for your claims operations.
+              {t("cta.description")}
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all text-lg shadow-lg shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/50"
             >
-              Book a demo
+              {t("cta.button")}
               <ArrowRight className="w-5 h-5" />
             </Link>
           </MotionDiv>

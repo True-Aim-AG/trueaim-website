@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowRight,
@@ -25,7 +26,8 @@ const productNames: Record<string, string> = {
 const featured = caseStudies.find((cs) => !cs.wip);
 const wipStudies = caseStudies.filter((cs) => cs.wip);
 
-export default function CaseStudiesPage() {
+export default async function CaseStudiesPage() {
+  const t = await getTranslations("caseStudies");
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -41,18 +43,17 @@ export default function CaseStudiesPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
               <TrendingUp className="w-4 h-4" />
-              Customer Success
+              {t("hero.badge")}
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Real Results from
+              {t("hero.titleLine1")}
               <br />
-              <span className="text-[var(--primary)]">Real Insurers</span>
+              <span className="text-[var(--primary)]">{t("hero.titleLine2")}</span>
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-              See how insurers are using True Aim to transform their claims
-              operations with measurable, auditable results.
+              {t("hero.description")}
             </p>
           </MotionDiv>
         </div>
@@ -75,7 +76,7 @@ export default function CaseStudiesPage() {
                 {/* Featured badge */}
                 <div className="absolute top-6 right-6">
                   <span className="px-3 py-1.5 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] text-xs font-semibold uppercase tracking-wider">
-                    Featured
+                    {t("featured.badge")}
                   </span>
                 </div>
 
@@ -138,7 +139,7 @@ export default function CaseStudiesPage() {
 
                     {/* Link */}
                     <div className="inline-flex items-center gap-2 text-[var(--primary)] font-semibold group-hover:gap-3 transition-all text-lg">
-                      Read full case study
+                      {t("featured.readFullStudy")}
                       <ArrowRight className="w-5 h-5" />
                     </div>
                   </div>
@@ -187,12 +188,11 @@ export default function CaseStudiesPage() {
               <div className="flex items-center gap-3">
                 <Construction className="w-5 h-5 text-[var(--text-muted)]" />
                 <h2 className="text-xl font-semibold text-[var(--text-muted)]">
-                  Additional Case Studies In Progress
+                  {t("wip.heading")}
                 </h2>
               </div>
               <p className="text-sm text-[var(--text-muted)] mt-2 ml-8">
-                These case studies are currently being documented. Check back for
-                the full write-ups.
+                {t("wip.description")}
               </p>
             </MotionDiv>
 
@@ -213,7 +213,7 @@ export default function CaseStudiesPage() {
                     {/* WIP badge */}
                     <div className="mb-4">
                       <span className="px-2 py-1 rounded text-[10px] font-medium uppercase tracking-wider bg-[var(--subtle-bg)] text-[var(--text-muted)]">
-                        In Progress
+                        {t("wip.badge")}
                       </span>
                     </div>
 
@@ -283,24 +283,24 @@ export default function CaseStudiesPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              See What Auditable AI Can Do for Your Claims
+              {t("cta.heading")}
             </h2>
             <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
-              Let&apos;s analyse a batch of your closed claims to quantify the potential impact.
+              {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg"
               >
-                Book a Demo
+                {t("cta.bookDemo")}
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/impact-estimator"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                Get Impact Estimate
+                {t("cta.getEstimate")}
               </Link>
             </div>
           </MotionDiv>

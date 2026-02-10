@@ -109,8 +109,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        <JsonLd data={organizationJsonLd} />
-        <JsonLd data={websiteJsonLd} />
+        <JsonLd data={{ ...organizationJsonLd, inLanguage: locale }} />
+        <JsonLd data={{ ...websiteJsonLd, inLanguage: locale }} />
         <script
           dangerouslySetInnerHTML={{
             __html: `

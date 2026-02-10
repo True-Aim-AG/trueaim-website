@@ -102,10 +102,7 @@
       },
       "researchGroup": {
         "heading": "Ueber die Forschungsgruppe",
-        "description": "Die Forschung ist innerhalb der ZHAW {schoolOfEngineering} angesiedelt, insbesondere am {init} und dem {cai}.",
-        "schoolOfEngineering": "School of Engineering",
-        "init": "Institut fuer Angewandte Informationstechnologie (InIT)",
-        "cai": "Zentrum fuer Kuenstliche Intelligenz (CAI)",
+        "description": "Die Forschung ist innerhalb der ZHAW <schoolOfEngineering>School of Engineering</schoolOfEngineering> angesiedelt, insbesondere am <init>Institut fuer Angewandte Informationstechnologie (InIT)</init> und dem <cai>Zentrum fuer Kuenstliche Intelligenz (CAI)</cai>.",
         "dandolo": {
           "name": "Dr. Dandolo Flumini",
           "bio": "Urspruenglicher Entwickler der MIRA-Technologie. PhD in Mathematik und Informatik. Leitet das Innosuisse-gefoerderte Innovationsprojekt von True Aim."

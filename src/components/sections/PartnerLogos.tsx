@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import Image from "next/image";
 
@@ -26,7 +27,9 @@ const partners = [
   },
 ];
 
-export function PartnerLogos() {
+export async function PartnerLogos() {
+  const t = await getTranslations("partnerLogos");
+
   return (
     <MotionDiv
       initial={{ opacity: 0, y: 20 }}
@@ -37,7 +40,7 @@ export function PartnerLogos() {
     >
       {/* Section Label - matches Award-Winning Technology heading style */}
       <h2 className="text-center text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-        Trusted Partners
+        {t("title")}
       </h2>
 
       {/* Static Logo Display */}
@@ -56,7 +59,7 @@ export function PartnerLogos() {
               <div className="relative transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                 <Image
                   src={partner.logo}
-                  alt={`${partner.name} logo`}
+                  alt={t("logoAlt", { name: partner.name })}
                   width={partner.width}
                   height={partner.height}
                   className="object-contain grayscale-0 opacity-90 transition-all duration-300 group-hover:opacity-100"

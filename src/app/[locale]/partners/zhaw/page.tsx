@@ -1,8 +1,10 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { ArrowRight, ExternalLink, GraduationCap, Brain, Users, FlaskConical } from "lucide-react";
 
-export default function ZHAWPage() {
+export default async function ZHAWPage() {
+  const t = await getTranslations("partners.zhaw");
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -10,7 +12,7 @@ export default function ZHAWPage() {
         <div className="relative max-w-7xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--aurora-cyan)]/20 text-[var(--aurora-cyan)] text-sm font-medium mb-6">
             <GraduationCap className="w-4 h-4" />
-            Research Partner
+            {t("hero.badge")}
           </div>
 
           <div className="flex justify-center mb-8">
@@ -24,17 +26,17 @@ export default function ZHAWPage() {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-            ZHAW Research
+            {t("hero.titleLine1")}
             <br />
-            <span className="text-[var(--primary)]">Partnership</span>
+            <span className="text-[var(--primary)]">{t("hero.titleLine2")}</span>
           </h1>
 
           <div className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed space-y-4">
             <p>
-              Parts of True Aim&apos;s innovative technology is developed in collaboration with ZHAW Zurich University of Applied Sciences, one of Switzerland&apos;s leading applied research universities, recognised for deep-tech research in AI, data science and engineering with a strong focus on real-world deployment.
+              {t("hero.description1")}
             </p>
             <p>
-              The work is supported through Innosuisse innovation funding, with ZHAW as the formal research partner and True Aim as the industry implementation partner, advancing transparent and regulation-ready neuro-symbolic AI for highly regulated industries.
+              {t("hero.description2")}
             </p>
           </div>
         </div>
@@ -44,7 +46,7 @@ export default function ZHAWPage() {
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] mb-12 text-center">
-            Research Focus Areas
+            {t("research.heading")}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -53,10 +55,10 @@ export default function ZHAWPage() {
                 <Brain className="w-7 h-7 text-[var(--aurora-cyan)]" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                Neuro-Symbolic AI
+                {t("research.neuroSymbolic.title")}
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Combining the flexibility of neural networks with the precision of symbolic reasoning. Our research focuses on making AI decisions deterministic and fully explainable.
+                {t("research.neuroSymbolic.description")}
               </p>
             </div>
 
@@ -65,10 +67,10 @@ export default function ZHAWPage() {
                 <FlaskConical className="w-7 h-7 text-[var(--aurora-cyan)]" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                Logic Extraction & Automation
+                {t("research.logicExtraction.title")}
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Developing methods to extract formal logic from natural-language policy documents and transform it into computable decision rules.
+                {t("research.logicExtraction.description")}
               </p>
             </div>
 
@@ -77,10 +79,10 @@ export default function ZHAWPage() {
                 <GraduationCap className="w-7 h-7 text-[var(--aurora-cyan)]" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                Deterministic Decisioning
+                {t("research.deterministic.title")}
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Ensuring that identical inputs always produce identical outputs, with complete traceability from decision to source text. Critical for regulatory compliance.
+                {t("research.deterministic.description")}
               </p>
             </div>
 
@@ -89,10 +91,10 @@ export default function ZHAWPage() {
                 <Users className="w-7 h-7 text-[var(--aurora-cyan)]" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                Applied Industry Research
+                {t("research.applied.title")}
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Bridging academic research and real-world insurance operations. Testing and validating approaches against actual claims data and policy documents.
+                {t("research.applied.description")}
               </p>
             </div>
           </div>
@@ -103,11 +105,15 @@ export default function ZHAWPage() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="glass-panel p-8 md:p-12">
-            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">About the Research Group</h2>
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">{t("researchGroup.heading")}</h2>
 
             <div className="space-y-6 text-[var(--text-secondary)] leading-relaxed">
               <p>
-                The research is hosted within ZHAW&apos;s <span className="font-medium text-[var(--text-primary)]">School of Engineering</span>, specifically the <span className="font-medium text-[var(--text-primary)]">Institute of Applied Information Technology (InIT)</span> and the <span className="font-medium text-[var(--text-primary)]">Centre for Artificial Intelligence (CAI)</span>.
+                {t.rich("researchGroup.description", {
+                  schoolOfEngineering: (chunks) => <span className="font-medium text-[var(--text-primary)]">{chunks}</span>,
+                  init: (chunks) => <span className="font-medium text-[var(--text-primary)]">{chunks}</span>,
+                  cai: (chunks) => <span className="font-medium text-[var(--text-primary)]">{chunks}</span>,
+                })}
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
@@ -115,30 +121,30 @@ export default function ZHAWPage() {
                   <div className="flex justify-center mb-3">
                     <Image
                       src="/team/dandolo-flumini.jpg"
-                      alt="Dr. Dandolo Flumini"
+                      alt={t("researchGroup.dandolo.name")}
                       width={80}
                       height={80}
                       className="rounded-full object-cover w-20 h-20"
                     />
                   </div>
-                  <h3 className="font-semibold text-[var(--text-primary)] mb-2">Dr. Dandolo Flumini</h3>
+                  <h3 className="font-semibold text-[var(--text-primary)] mb-2">{t("researchGroup.dandolo.name")}</h3>
                   <p className="text-sm text-[var(--text-muted)]">
-                    Original developer of the MIRA technology. PhD in Mathematics and Computer Science. Leads True Aim's Innosuisse-funded Innovation Project.
+                    {t("researchGroup.dandolo.bio")}
                   </p>
                 </div>
                 <div className="glass-panel-light p-6 text-center">
                   <div className="flex justify-center mb-3">
                     <Image
                       src="/team/lukas-lichtensteiger.jpg"
-                      alt="Dr. Lukas Lichtensteiger"
+                      alt={t("researchGroup.lukas.name")}
                       width={80}
                       height={80}
                       className="rounded-full object-cover w-20 h-20"
                     />
                   </div>
-                  <h3 className="font-semibold text-[var(--text-primary)] mb-2">Dr. Lukas Lichtensteiger</h3>
+                  <h3 className="font-semibold text-[var(--text-primary)] mb-2">{t("researchGroup.lukas.name")}</h3>
                   <p className="text-sm text-[var(--text-muted)]">
-                    Harvard alumnus, serial entrepreneur and CTO. ZHAW researcher in AI and robotics. True Aim technical advisor.
+                    {t("researchGroup.lukas.bio")}
                   </p>
                 </div>
               </div>
@@ -150,7 +156,7 @@ export default function ZHAWPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[var(--primary)] font-medium hover:underline"
                 >
-                  Visit ZHAW
+                  {t("researchGroup.visitLink")}
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
@@ -164,24 +170,24 @@ export default function ZHAWPage() {
         <div className="max-w-4xl mx-auto">
           <div className="glass-panel p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              See the Research in Action
+              {t("cta.heading")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">
-              Discover how our ZHAW-rooted technology delivers auditable claims decisions.
+              {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/technology"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/30"
               >
-                Explore Our Technology
+                {t("cta.exploreTech")}
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                Book a Demo
+                {t("cta.bookDemo")}
               </Link>
             </div>
           </div>

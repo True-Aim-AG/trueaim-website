@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import Image from "next/image";
 import { slideFromLeft, slideFromRight, staggerContainer } from "@/lib/animations";
@@ -21,7 +22,9 @@ const awards = [
   },
 ];
 
-export function TrustBar() {
+export async function TrustBar() {
+  const t = await getTranslations("trustBar");
+
   return (
     <section className="py-24 px-6 border-y border-[var(--border)]">
       <div className="max-w-7xl mx-auto">
@@ -33,10 +36,10 @@ export function TrustBar() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)]">
-            Award-Winning Technology
+            {t("title")}
           </h2>
           <p className="text-base text-[var(--text-secondary)] mt-3">
-            Recognised across Switzerland, Germany and Italy
+            {t("subtitle")}
           </p>
         </MotionDiv>
 

@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { ArrowRight, Building2, TrendingUp, Quote } from "lucide-react";
 import { caseStudies } from "@/data/case-studies";
@@ -15,7 +16,9 @@ const productNames: Record<string, string> = {
   claimeval: "ClaimEval",
 };
 
-export function SocialProof() {
+export async function SocialProof() {
+  const t = await getTranslations("socialProof");
+
   // Only show published (non-WIP) case studies on the homepage
   const featured = caseStudies.find((cs) => !cs.wip);
 
@@ -33,14 +36,13 @@ export function SocialProof() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium mb-4">
             <TrendingUp className="w-4 h-4" />
-            Proven Results
+            {t("badge")}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-            Trusted by Leading Insurers
+            {t("title")}
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            See how insurers are transforming their claims operations with
-            measurable, auditable results
+            {t("subtitle")}
           </p>
         </MotionDiv>
 
@@ -103,7 +105,7 @@ export function SocialProof() {
 
                 {/* Link */}
                 <div className="flex items-center gap-2 text-[var(--primary)] font-medium group-hover:gap-3 transition-all">
-                  Read case study
+                  {t("readCaseStudy")}
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
@@ -145,7 +147,7 @@ export function SocialProof() {
             href="/case-studies"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-all"
           >
-            View All Case Studies
+            {t("viewAllCaseStudies")}
             <ArrowRight className="w-4 h-4" />
           </Link>
         </MotionDiv>

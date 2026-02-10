@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -14,54 +15,69 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const contactSchema = z.object({
-  firstName: z.string().min(1, "First name is required"),
-  lastName: z.string().min(1, "Last name is required"),
-  email: z.string().email("Please enter a valid email address"),
-  company: z.string().min(1, "Company is required"),
-  jobTitle: z.string().min(1, "Job title is required"),
-  country: z.string().min(1, "Please select a country"),
-  interest: z.string().min(1, "Please select your interest"),
-  lead_source: z.string().optional(),
-  claimsVolume: z.string().optional(),
-  message: z.string().optional(),
-  consent: z.boolean().refine((val) => val === true, "You must agree to receive communications"),
-});
+type ContactFormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  company: string;
+  jobTitle: string;
+  country: string;
+  interest: string;
+  lead_source?: string;
+  claimsVolume?: string;
+  message?: string;
+  consent: boolean;
+};
 
-type ContactFormData = z.infer<typeof contactSchema>;
+const countryKeys = [
+  "switzerland", "germany", "austria", "unitedKingdom", "france",
+  "italy", "netherlands", "belgium", "spain", "unitedStates", "other",
+] as const;
 
-const countries = [
-  "Switzerland",
-  "Germany",
-  "Austria",
-  "United Kingdom",
-  "France",
-  "Italy",
-  "Netherlands",
-  "Belgium",
-  "Spain",
-  "United States",
-  "Other",
-];
+const interestKeys = [
+  "mira", "contextbuilder", "claimeval", "auditability", "earlyStage", "other",
+] as const;
 
-const interests = [
-  { value: "mira", label: "Automating claims decisions (MIRA)" },
-  { value: "contextbuilder", label: "Document processing and data extraction (ContextBuilder)" },
-  { value: "claimeval", label: "Quality assurance and leakage detection (ClaimEval)" },
-  { value: "auditability", label: "Auditability and regulatory compliance" },
-  { value: "early-stage", label: "Evaluating AI for claims (early-stage)" },
-  { value: "other", label: "Something else / Not sure yet" },
-];
+const interestValues: Record<string, string> = {
+  mira: "mira",
+  contextbuilder: "contextbuilder",
+  claimeval: "claimeval",
+  auditability: "auditability",
+  earlyStage: "early-stage",
+  other: "other",
+};
 
-const leadSources = [
-  { value: "referral", label: "Referral" },
-  { value: "industry-event", label: "Industry event" },
-  { value: "online-research", label: "Online research" },
-  { value: "linkedin", label: "LinkedIn" },
-  { value: "other", label: "Other" },
-];
+const leadSourceKeys = [
+  "referral", "industryEvent", "onlineResearch", "linkedin", "other",
+] as const;
+
+const leadSourceValues: Record<string, string> = {
+  referral: "referral",
+  industryEvent: "industry-event",
+  onlineResearch: "online-research",
+  linkedin: "linkedin",
+  other: "other",
+};
+
+function createContactSchema(t: (key: string) => string) {
+  return z.object({
+    firstName: z.string().min(1, t("form.validation.firstNameRequired")),
+    lastName: z.string().min(1, t("form.validation.lastNameRequired")),
+    email: z.string().email(t("form.validation.emailInvalid")),
+    company: z.string().min(1, t("form.validation.companyRequired")),
+    jobTitle: z.string().min(1, t("form.validation.jobTitleRequired")),
+    country: z.string().min(1, t("form.validation.countryRequired")),
+    interest: z.string().min(1, t("form.validation.interestRequired")),
+    lead_source: z.string().optional(),
+    claimsVolume: z.string().optional(),
+    message: z.string().optional(),
+    consent: z.boolean().refine((val) => val === true, t("form.validation.consentRequired")),
+  });
+}
 
 export function ContactForm() {
+  const t = useTranslations("contact");
+  const contactSchema = createContactSchema(t);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -88,7 +104,7 @@ export function ContactForm() {
 
       if (!response.ok) {
         const result = await response.json().catch(() => null);
-        throw new Error(result?.error || "Something went wrong. Please try again.");
+        throw new Error(result?.error || t("form.errorGeneric"));
       }
 
       setIsSubmitted(true);
@@ -97,7 +113,7 @@ export function ContactForm() {
       setSubmitError(
         error instanceof Error
           ? error.message
-          : "Something went wrong. Please try again."
+          : t("form.errorGeneric")
       );
     } finally {
       setIsSubmitting(false);
@@ -118,16 +134,16 @@ export function ContactForm() {
               <CheckCircle className="w-10 h-10 text-emerald-400" />
             </div>
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
-              Thank You!
+              {t("success.heading")}
             </h2>
             <p className="text-[var(--text-secondary)] mb-6">
-              We&apos;ve received your request. We typically respond within 1 business day.
+              {t("success.message")}
             </p>
             <button
               onClick={() => setIsSubmitted(false)}
               className="text-[var(--primary)] font-medium hover:underline"
             >
-              Submit another request
+              {t("success.submitAnother")}
             </button>
           </div>
         ) : (
@@ -136,14 +152,14 @@ export function ContactForm() {
             className="glass-panel p-8"
           >
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-              Book a Demo
+              {t("form.heading")}
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* First Name */}
               <div>
                 <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                  First Name <span className="text-red-400">*</span>
+                  {t("form.firstName")} <span className="text-red-400">{t("form.required")}</span>
                 </label>
                 <input
                   {...register("firstName")}
@@ -154,7 +170,7 @@ export function ContactForm() {
                       ? "border-red-500 focus:border-red-500 focus:ring-red-500"
                       : "border-[var(--border)] focus:border-[var(--primary)] focus:ring-[var(--primary)]"
                   )}
-                  placeholder="John"
+                  placeholder={t("form.placeholders.firstName")}
                 />
                 {errors.firstName && (
                   <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
@@ -167,7 +183,7 @@ export function ContactForm() {
               {/* Last Name */}
               <div>
                 <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                  Last Name <span className="text-red-400">*</span>
+                  {t("form.lastName")} <span className="text-red-400">{t("form.required")}</span>
                 </label>
                 <input
                   {...register("lastName")}
@@ -178,7 +194,7 @@ export function ContactForm() {
                       ? "border-red-500 focus:border-red-500"
                       : "border-[var(--border)] focus:border-[var(--primary)]"
                   )}
-                  placeholder="Doe"
+                  placeholder={t("form.placeholders.lastName")}
                 />
                 {errors.lastName && (
                   <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
@@ -191,7 +207,7 @@ export function ContactForm() {
               {/* Email */}
               <div className="sm:col-span-2">
                 <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                  Work Email <span className="text-red-400">*</span>
+                  {t("form.workEmail")} <span className="text-red-400">{t("form.required")}</span>
                 </label>
                 <input
                   {...register("email")}
@@ -202,7 +218,7 @@ export function ContactForm() {
                       ? "border-red-500 focus:border-red-500"
                       : "border-[var(--border)] focus:border-[var(--primary)]"
                   )}
-                  placeholder="john.doe@company.com"
+                  placeholder={t("form.placeholders.email")}
                 />
                 {errors.email && (
                   <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
@@ -215,7 +231,7 @@ export function ContactForm() {
               {/* Company */}
               <div>
                 <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                  Company <span className="text-red-400">*</span>
+                  {t("form.company")} <span className="text-red-400">{t("form.required")}</span>
                 </label>
                 <input
                   {...register("company")}
@@ -226,7 +242,7 @@ export function ContactForm() {
                       ? "border-red-500 focus:border-red-500"
                       : "border-[var(--border)] focus:border-[var(--primary)]"
                   )}
-                  placeholder="Company Name"
+                  placeholder={t("form.placeholders.company")}
                 />
                 {errors.company && (
                   <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
@@ -239,7 +255,7 @@ export function ContactForm() {
               {/* Job Title */}
               <div>
                 <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                  Job Title <span className="text-red-400">*</span>
+                  {t("form.jobTitle")} <span className="text-red-400">{t("form.required")}</span>
                 </label>
                 <input
                   {...register("jobTitle")}
@@ -250,7 +266,7 @@ export function ContactForm() {
                       ? "border-red-500 focus:border-red-500"
                       : "border-[var(--border)] focus:border-[var(--primary)]"
                   )}
-                  placeholder="Head of Claim Operations"
+                  placeholder={t("form.placeholders.jobTitle")}
                 />
                 {errors.jobTitle && (
                   <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
@@ -263,7 +279,7 @@ export function ContactForm() {
               {/* Country */}
               <div>
                 <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                  Country <span className="text-red-400">*</span>
+                  {t("form.country")} <span className="text-red-400">{t("form.required")}</span>
                 </label>
                 <div className="relative">
                   <select
@@ -275,10 +291,10 @@ export function ContactForm() {
                         : "border-[var(--border)] focus:border-[var(--primary)]"
                     )}
                   >
-                    <option value="" className="bg-[var(--background)]">Select country</option>
-                    {countries.map((country) => (
-                      <option key={country} value={country} className="bg-[var(--background)]">
-                        {country}
+                    <option value="" className="bg-[var(--background)]">{t("form.selectCountry")}</option>
+                    {countryKeys.map((key) => (
+                      <option key={key} value={t(`form.countries.${key}`)} className="bg-[var(--background)]">
+                        {t(`form.countries.${key}`)}
                       </option>
                     ))}
                   </select>
@@ -295,7 +311,7 @@ export function ContactForm() {
               {/* Interest */}
               <div>
                 <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                  What interests you? <span className="text-red-400">*</span>
+                  {t("form.interest")} <span className="text-red-400">{t("form.required")}</span>
                 </label>
                 <div className="relative">
                   <select
@@ -307,10 +323,10 @@ export function ContactForm() {
                         : "border-[var(--border)] focus:border-[var(--primary)]"
                     )}
                   >
-                    <option value="" className="bg-[var(--background)]">Select interest</option>
-                    {interests.map((interest) => (
-                      <option key={interest.value} value={interest.value} className="bg-[var(--background)]">
-                        {interest.label}
+                    <option value="" className="bg-[var(--background)]">{t("form.selectInterest")}</option>
+                    {interestKeys.map((key) => (
+                      <option key={key} value={interestValues[key]} className="bg-[var(--background)]">
+                        {t(`form.interests.${key}`)}
                       </option>
                     ))}
                   </select>
@@ -327,17 +343,17 @@ export function ContactForm() {
               {/* Lead Source */}
               <div className="sm:col-span-2">
                 <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                  How did you hear about us? <span className="text-[var(--text-muted)]">(Optional)</span>
+                  {t("form.leadSource")} <span className="text-[var(--text-muted)]">{t("form.optional")}</span>
                 </label>
                 <div className="relative">
                   <select
                     {...register("lead_source")}
                     className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-[var(--card-bg)] text-[var(--text-primary)] transition-colors appearance-none focus:border-[var(--primary)]"
                   >
-                    <option value="" className="bg-[var(--background)]">Select source</option>
-                    {leadSources.map((source) => (
-                      <option key={source.value} value={source.value} className="bg-[var(--background)]">
-                        {source.label}
+                    <option value="" className="bg-[var(--background)]">{t("form.selectSource")}</option>
+                    {leadSourceKeys.map((key) => (
+                      <option key={key} value={leadSourceValues[key]} className="bg-[var(--background)]">
+                        {t(`form.leadSources.${key}`)}
                       </option>
                     ))}
                   </select>
@@ -348,26 +364,26 @@ export function ContactForm() {
               {/* Claims Volume */}
               <div className="sm:col-span-2">
                 <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                  Annual claims volume <span className="text-[var(--text-muted)]">(Optional)</span>
+                  {t("form.claimsVolume")} <span className="text-[var(--text-muted)]">{t("form.optional")}</span>
                 </label>
                 <input
                   {...register("claimsVolume")}
                   type="text"
                   className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-[var(--card-bg)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--primary)] transition-colors"
-                  placeholder="e.g., 50,000 claims/year"
+                  placeholder={t("form.placeholders.claimsVolume")}
                 />
               </div>
 
               {/* Message */}
               <div className="sm:col-span-2">
                 <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                  Tell us about your needs <span className="text-[var(--text-muted)]">(Optional)</span>
+                  {t("form.message")} <span className="text-[var(--text-muted)]">{t("form.optional")}</span>
                 </label>
                 <textarea
                   {...register("message")}
                   rows={4}
                   className="w-full px-4 py-3 rounded-lg border border-[var(--border)] bg-[var(--card-bg)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--primary)] transition-colors resize-none"
-                  placeholder="What challenges are you facing with claims processing?"
+                  placeholder={t("form.placeholders.message")}
                 />
               </div>
 
@@ -380,7 +396,7 @@ export function ContactForm() {
                     className="mt-1 w-5 h-5 rounded border-[var(--border)] bg-white/5 text-[var(--primary)] focus:ring-[var(--primary)]"
                   />
                   <span className="text-sm text-[var(--text-secondary)]">
-                    I agree to receive communications from True Aim <span className="text-red-400">*</span>
+                    {t("form.consent")} <span className="text-red-400">{t("form.required")}</span>
                   </span>
                 </label>
                 {errors.consent && (
@@ -411,13 +427,13 @@ export function ContactForm() {
                   {isSubmitting ? (
                     <>
                       <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      Submitting...
+                      {t("form.submitting")}
                     </>
                   ) : (
-                    "Book a Demo"
+                    t("form.submit")
                   )}
                 </button>
-                <p className="text-xs text-center text-[var(--text-muted)] mt-3">We typically respond within 1 business day.</p>
+                <p className="text-xs text-center text-[var(--text-muted)] mt-3">{t("form.responseTime")}</p>
               </div>
             </div>
           </form>
@@ -434,7 +450,7 @@ export function ContactForm() {
         {/* Alternative Contact */}
         <div className="glass-panel p-8">
           <h3 className="text-xl font-bold text-[var(--text-primary)] mb-6">
-            Alternative Contact
+            {t("sidebar.alternativeContact")}
           </h3>
           <div className="space-y-4">
             <a
@@ -445,8 +461,8 @@ export function ContactForm() {
                 <Mail className="w-6 h-6 text-[var(--primary)]" />
               </div>
               <div>
-                <p className="font-medium text-[var(--text-primary)]">Email us</p>
-                <p className="text-[var(--text-secondary)]">info@trueaim.ai</p>
+                <p className="font-medium text-[var(--text-primary)]">{t("sidebar.emailUs")}</p>
+                <p className="text-[var(--text-secondary)]">{t("sidebar.emailAddress")}</p>
               </div>
             </a>
             <a
@@ -459,7 +475,7 @@ export function ContactForm() {
                 <Calendar className="w-6 h-6 text-[var(--aurora-cyan)]" />
               </div>
               <div>
-                <p className="font-medium text-[var(--text-primary)]">Book a 30-minute call</p>
+                <p className="font-medium text-[var(--text-primary)]">{t("sidebar.bookCall")}</p>
               </div>
             </a>
           </div>

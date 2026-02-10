@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowRight,
@@ -15,70 +16,17 @@ import {
   ExternalLink
 } from "lucide-react";
 
-const pipelineSteps = [
-  {
-    step: 1,
-    title: "Ingest",
-    description: "Transforms documents into machine-readable text and layout using advanced OCR and vision models.",
-    icon: Upload,
-  },
-  {
-    step: 2,
-    title: "Classify",
-    description: "Identifies document type and language to route correctly: loss notice, police report, invoice etc.",
-    icon: FileType,
-  },
-  {
-    step: 3,
-    title: "Extract",
-    description: "Pulls structured fields based on document type. Normalizes so same concept looks the same everywhere.",
-    icon: FileText,
-  },
-  {
-    step: 4,
-    title: "Quality Gates",
-    description: "Automated checks validate completeness and consistency. Pass / Warn / Fail scoring.",
-    icon: ShieldCheck,
-  },
-  {
-    step: 5,
-    title: "QA Console",
-    description: "Human-in-the-loop review workspace. Quickly confirm, correct and label documents.",
-    icon: Users,
-  },
-];
+const pipelineIcons = [Upload, FileType, FileText, ShieldCheck, Users];
 
-const outputFeatures = [
-  {
-    title: "Clean structured dataset",
-    description: "Key fields extracted and normalized",
-    icon: CheckCircle,
-  },
-  {
-    title: "Quality status",
-    description: "Pass/Warn/Fail per document and run",
-    icon: FileCheck,
-  },
-  {
-    title: "Evidence links",
-    description: "From each field back to originating document text",
-    icon: Link2,
-  },
-  {
-    title: "Human labels",
-    description: "Optional notes where review was performed",
-    icon: MessageSquare,
-  },
-];
+const outputFeatureKeys = ["cleanDataset", "qualityStatus", "evidenceLinks", "humanLabels"] as const;
+const outputFeatureIcons = [CheckCircle, FileCheck, Link2, MessageSquare];
 
-const metrics = [
-  { value: "95%", label: "Document Coverage" },
-  { value: "97%", label: "Accuracy" },
-  { value: "96%", label: "Evidence Rate" },
-  { value: "<1%", label: "Document Classification Error Rate", footnote: "Based on client data" },
-];
+const metricValues = ["95%", "97%", "96%", "<1%"];
+const metricKeys = ["coverage", "accuracy", "evidenceRate", "errorRate"] as const;
 
-export default function ContextBuilderPage() {
+export default async function ContextBuilderPage() {
+  const t = await getTranslations("contextBuilder");
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -92,15 +40,15 @@ export default function ContextBuilderPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--aurora-cyan)]/20 text-[var(--aurora-cyan)] text-sm font-medium mb-6">
               <FileSearch className="w-4 h-4" />
-              Document Pipeline
+              {t("hero.badge")}
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              ContextBuilder: From Unstructured Documents to Trusted Data
+              {t("hero.title")}
             </h1>
 
             <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-8 leading-relaxed">
-              A claims document pipeline that turns PDFs, scans and images into structured, quality-checked claim data, with human review where it matters.
+              {t("hero.subtitle")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -108,13 +56,13 @@ export default function ContextBuilderPage() {
                 href="#demo"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--aurora-cyan)] text-white font-medium hover:bg-[#0891b2] transition-colors text-lg shadow-lg shadow-[var(--aurora-cyan)]/30"
               >
-                Explore ContextBuilder
+                {t("hero.ctaPrimary")}
               </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
               >
-                Book a Demo
+                {t("hero.ctaSecondary")}
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -133,10 +81,10 @@ export default function ContextBuilderPage() {
             className="max-w-3xl mx-auto text-center glass-panel p-8 md:p-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              The Document Chaos Problem
+              {t("problem.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Claims arrive as chaotic document bundles: blurry photos, multi-page PDFs, scanned forms. Extracting accurate data is slow, error-prone and expensive.
+              {t("problem.description")}
             </p>
           </MotionDiv>
         </div>
@@ -153,13 +101,13 @@ export default function ContextBuilderPage() {
             className="max-w-3xl mx-auto text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Purpose-Built Pipeline for Claims
+              {t("solution.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              ContextBuilder is a purpose-built pipeline for claims documents. It automatically ingests, classifies and extracts data, then applies quality gates to surface exceptions for human review.
+              {t("solution.description")}
             </p>
             <p className="text-lg text-[var(--text-primary)] font-medium mt-4">
-              The result: claim-ready &quot;context packs&quot; that downstream systems can trust.
+              {t("solution.result")}
             </p>
           </MotionDiv>
         </div>
@@ -176,42 +124,45 @@ export default function ContextBuilderPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              5-Step Pipeline
+              {t("pipeline.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              From raw documents to structured data
+              {t("pipeline.subtitle")}
             </p>
           </MotionDiv>
 
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-              {pipelineSteps.map((step, index) => (
-                <MotionDiv
-                  key={step.step}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative"
-                >
-                  <div className="glass-panel glass-panel-hover p-6 h-full text-center">
-                    <div className="w-12 h-12 rounded-full bg-[var(--aurora-cyan)] text-white flex items-center justify-center text-lg font-bold mx-auto mb-4 relative z-10">
-                      {step.step}
-                    </div>
+              {[1, 2, 3, 4, 5].map((step, index) => {
+                const Icon = pipelineIcons[index];
+                return (
+                  <MotionDiv
+                    key={step}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="relative"
+                  >
+                    <div className="glass-panel glass-panel-hover p-6 h-full text-center">
+                      <div className="w-12 h-12 rounded-full bg-[var(--aurora-cyan)] text-white flex items-center justify-center text-lg font-bold mx-auto mb-4 relative z-10">
+                        {step}
+                      </div>
 
-                    <div className="w-14 h-14 rounded-xl bg-[var(--aurora-cyan)]/20 flex items-center justify-center mx-auto mb-4">
-                      <step.icon className="w-7 h-7 text-[var(--aurora-cyan)]" />
-                    </div>
+                      <div className="w-14 h-14 rounded-xl bg-[var(--aurora-cyan)]/20 flex items-center justify-center mx-auto mb-4">
+                        <Icon className="w-7 h-7 text-[var(--aurora-cyan)]" />
+                      </div>
 
-                    <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                </MotionDiv>
-              ))}
+                      <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                        {t(`pipeline.steps.${step}.title`)}
+                      </h3>
+                      <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                        {t(`pipeline.steps.${step}.description`)}
+                      </p>
+                    </div>
+                  </MotionDiv>
+                );
+              })}
             </div>
           </div>
 
@@ -224,11 +175,13 @@ export default function ContextBuilderPage() {
             className="mt-12 glass-panel p-6 text-center max-w-3xl mx-auto"
           >
             <p className="text-sm text-[var(--text-secondary)]">
-              All document processing is designed to meet enterprise security, privacy and regulatory requirements. Visit our{" "}
-              <Link href="/trust" className="text-[var(--primary)] underline hover:opacity-80">
-                Trust Center
-              </Link>
-              {" "}for more details.
+              {t.rich("pipeline.dataSovereigntyNote", {
+                trustCenterLink: (chunks) => (
+                  <Link href="/trust" className="text-[var(--primary)] underline hover:opacity-80">
+                    {chunks}
+                  </Link>
+                ),
+              })}
             </p>
           </MotionDiv>
         </div>
@@ -245,10 +198,10 @@ export default function ContextBuilderPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Explore the Code
+              {t("demo.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)]">
-              ContextBuilder is built with transparency in mind
+              {t("demo.subtitle")}
             </p>
           </MotionDiv>
 
@@ -265,10 +218,10 @@ export default function ContextBuilderPage() {
               </svg>
             </div>
             <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
-              AgenticContextBuilder
+              {t("demo.repoName")}
             </h3>
             <p className="text-[var(--text-secondary)] mb-8 max-w-xl mx-auto">
-              Explore our open-source document processing pipeline on GitHub. See how we transform unstructured claims documents into structured, trusted data.
+              {t("demo.repoDescription")}
             </p>
             <a
               href="https://github.com/Fr3nn3r/AgenticContextBuilder"
@@ -276,7 +229,7 @@ export default function ContextBuilderPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-white text-[var(--background)] font-medium hover:bg-white/90 transition-colors text-lg"
             >
-              View on GitHub
+              {t("demo.viewOnGitHub")}
               <ExternalLink className="w-5 h-5" />
             </a>
           </MotionDiv>
@@ -294,31 +247,34 @@ export default function ContextBuilderPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              What You Get: A Claim-Ready Context Pack
+              {t("output.title")}
             </h2>
           </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {outputFeatures.map((feature, index) => (
-              <MotionDiv
-                key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-panel glass-panel-hover p-6"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[var(--aurora-cyan)]/20 flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-[var(--aurora-cyan)]" />
-                </div>
-                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-[var(--text-secondary)]">
-                  {feature.description}
-                </p>
-              </MotionDiv>
-            ))}
+            {outputFeatureKeys.map((key, index) => {
+              const Icon = outputFeatureIcons[index];
+              return (
+                <MotionDiv
+                  key={key}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="glass-panel glass-panel-hover p-6"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-[var(--aurora-cyan)]/20 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-[var(--aurora-cyan)]" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                    {t(`output.features.${key}.title`)}
+                  </h3>
+                  <p className="text-sm text-[var(--text-secondary)]">
+                    {t(`output.features.${key}.description`)}
+                  </p>
+                </MotionDiv>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -334,14 +290,14 @@ export default function ContextBuilderPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Performance Metrics
+              {t("metrics.title")}
             </h2>
           </MotionDiv>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {metrics.map((metric, index) => (
+            {metricKeys.map((key, index) => (
               <MotionDiv
-                key={metric.label}
+                key={key}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -349,14 +305,14 @@ export default function ContextBuilderPage() {
                 className="text-center glass-panel p-8"
               >
                 <p className="text-5xl font-bold text-[var(--aurora-cyan)] font-mono-data mb-2">
-                  {metric.value}
+                  {metricValues[index]}
                 </p>
                 <p className="text-[var(--text-secondary)] text-sm">
-                  {metric.label}
+                  {t(`metrics.items.${key}.label`)}
                 </p>
-                {'footnote' in metric && metric.footnote && (
+                {key === "errorRate" && (
                   <p className="text-xs text-[var(--text-muted)] mt-1 italic">
-                    {metric.footnote}
+                    {t(`metrics.items.${key}.footnote`)}
                   </p>
                 )}
               </MotionDiv>
@@ -376,16 +332,16 @@ export default function ContextBuilderPage() {
             className="glass-panel p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
-              Process a Sample of Your Documents
+              {t("cta.title")}
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-10">
-              Securely share a sample of claim documents. We&apos;ll run them through ContextBuilder and show you the extraction quality, error analysis and time savings.
+              {t("cta.description")}
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--aurora-cyan)] text-white font-medium hover:bg-[#0891b2] transition-colors text-lg shadow-lg shadow-[var(--aurora-cyan)]/30"
             >
-              Book a Demo
+              {t("cta.button")}
             </Link>
           </MotionDiv>
         </div>
