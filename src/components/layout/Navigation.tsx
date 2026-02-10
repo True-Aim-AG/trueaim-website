@@ -1,34 +1,37 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { LanguageSwitcher, LanguageSwitcherMobile } from "@/components/layout/LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 const products = [
-  { name: "MIRA", href: "/products/mira", description: "Decisioning Engine" },
-  { name: "ContextBuilder", href: "/products/contextbuilder", description: "Document Pipeline" },
-  { name: "ClaimEval", href: "/products/claimeval", description: "Quality Assurance" },
+  { nameKey: "productsDropdown.mira" as const, href: "/products/mira", descKey: "productsDropdown.miraDesc" as const },
+  { nameKey: "productsDropdown.contextBuilder" as const, href: "/products/contextbuilder", descKey: "productsDropdown.contextBuilderDesc" as const },
+  { nameKey: "productsDropdown.claimEval" as const, href: "/products/claimeval", descKey: "productsDropdown.claimEvalDesc" as const },
 ];
 
 const resources = [
-  { name: "Case Studies", href: "/case-studies", description: "Customer success stories" },
-  { name: "Impact Estimator", href: "/impact-estimator", description: "Explore potential value" },
-  { name: "Trust Center", href: "/trust", description: "Security & compliance" },
-  { name: "Blog", href: "/blog", description: "Insights and updates" },
+  { nameKey: "resourcesDropdown.caseStudies" as const, href: "/case-studies", descKey: "resourcesDropdown.caseStudiesDesc" as const },
+  { nameKey: "resourcesDropdown.impactEstimator" as const, href: "/impact-estimator", descKey: "resourcesDropdown.impactEstimatorDesc" as const },
+  { nameKey: "resourcesDropdown.trustCenter" as const, href: "/trust", descKey: "resourcesDropdown.trustCenterDesc" as const },
+  { nameKey: "resourcesDropdown.blog" as const, href: "/blog", descKey: "resourcesDropdown.blogDesc" as const },
 ];
 
 const navigation = [
-  { name: "Products", href: "/products", hasDropdown: true, dropdownType: "products" },
-  { name: "Resources", href: "/resources", hasDropdown: true, dropdownType: "resources" },
-  { name: "Technology", href: "/technology" },
-  { name: "Company", href: "/company" },
-  { name: "Contact", href: "/contact" },
+  { nameKey: "products" as const, href: "/products", hasDropdown: true, dropdownType: "products" },
+  { nameKey: "resources" as const, href: "/resources", hasDropdown: true, dropdownType: "resources" },
+  { nameKey: "technology" as const, href: "/technology" },
+  { nameKey: "company" as const, href: "/company" },
+  { nameKey: "contact" as const, href: "/contact" },
 ];
 
 export function Navigation() {
+  const t = useTranslations("nav");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
@@ -42,7 +45,7 @@ export function Navigation() {
             <div className="bg-white rounded-lg p-1 shadow-lg shadow-white/10">
               <Image
                 src="/images/logo.png"
-                alt="True Aim Logo"
+                alt={t("logoAlt")}
                 width={36}
                 height={36}
                 className="object-contain"
@@ -58,7 +61,7 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navigation.map((item) => (
-              <div key={item.name} className="relative">
+              <div key={item.nameKey} className="relative">
                 {item.hasDropdown ? (
                   <div
                     className="relative"
@@ -68,7 +71,7 @@ export function Navigation() {
                     <button
                       className="flex items-center gap-1 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors font-medium"
                     >
-                      {item.name}
+                      {t(item.nameKey)}
                       <ChevronDown className={cn(
                         "w-4 h-4 transition-transform",
                         (item.dropdownType === "products" ? productsOpen : resourcesOpen) && "rotate-180"
@@ -84,15 +87,15 @@ export function Navigation() {
                         <div className="nav-dropdown backdrop-blur-xl border border-[var(--border)] rounded-xl shadow-2xl p-2 min-w-[220px]">
                           {products.map((product) => (
                             <Link
-                              key={product.name}
+                              key={product.nameKey}
                               href={product.href}
                               className="block px-4 py-3 rounded-lg hover:bg-[var(--primary-light)] transition-colors"
                             >
                               <div className="font-medium text-[var(--text-primary)]">
-                                {product.name}
+                                {t(product.nameKey)}
                               </div>
                               <div className="text-sm text-[var(--text-muted)]">
-                                {product.description}
+                                {t(product.descKey)}
                               </div>
                             </Link>
                           ))}
@@ -109,17 +112,17 @@ export function Navigation() {
                         <div className="nav-dropdown backdrop-blur-xl border border-[var(--border)] rounded-xl shadow-2xl p-2 min-w-[240px]">
                           {resources.map((resource) => (
                             <Link
-                              key={resource.name}
+                              key={resource.nameKey}
                               href={resource.href}
                               className="block px-4 py-3 rounded-lg hover:bg-[var(--primary-light)] transition-colors"
                             >
                               <div className="flex items-center gap-2">
                                 <span className="font-medium text-[var(--text-primary)]">
-                                  {resource.name}
+                                  {t(resource.nameKey)}
                                 </span>
                               </div>
                               <div className="text-sm text-[var(--text-muted)]">
-                                {resource.description}
+                                {t(resource.descKey)}
                               </div>
                             </Link>
                           ))}
@@ -132,21 +135,22 @@ export function Navigation() {
                     href={item.href}
                     className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors font-medium"
                   >
-                    {item.name}
+                    {t(item.nameKey)}
                   </Link>
                 )}
               </div>
             ))}
           </div>
 
-          {/* CTA Button & Theme Toggle */}
-          <div className="hidden md:flex items-center gap-3">
+          {/* CTA Button, Language & Theme Toggle */}
+          <div className="hidden md:flex items-center gap-2">
+            <LanguageSwitcher />
             <ThemeToggle />
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/50"
             >
-              Book a Demo
+              {t("bookDemo")}
             </Link>
           </div>
 
@@ -155,7 +159,7 @@ export function Navigation() {
             type="button"
             className="md:hidden p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
             onClick={() => setMobileMenuOpen(prev => !prev)}
-            aria-label="Toggle menu"
+            aria-label={t("toggleMenu")}
           >
             {mobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -174,16 +178,16 @@ export function Navigation() {
             {/* Products Section */}
             <div className="py-2">
               <div className="text-sm font-medium text-[var(--text-muted)] px-2 mb-2">
-                Products
+                {t("products")}
               </div>
               {products.map((product) => (
                 <Link
-                  key={product.name}
+                  key={product.nameKey}
                   href={product.href}
                   className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--primary-light)] transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {product.name}
+                  {t(product.nameKey)}
                 </Link>
               ))}
             </div>
@@ -191,16 +195,16 @@ export function Navigation() {
             {/* Resources Section */}
             <div className="py-2 border-t border-[var(--border)]">
               <div className="text-sm font-medium text-[var(--text-muted)] px-2 mb-2">
-                Resources
+                {t("resources")}
               </div>
               {resources.map((resource) => (
                 <Link
-                  key={resource.name}
+                  key={resource.nameKey}
                   href={resource.href}
                   className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--primary-light)] transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {resource.name}
+                  {t(resource.nameKey)}
                 </Link>
               ))}
             </div>
@@ -209,26 +213,29 @@ export function Navigation() {
             <div className="py-2 border-t border-[var(--border)]">
               {navigation.filter(n => !n.hasDropdown).map((item) => (
                 <Link
-                  key={item.name}
+                  key={item.nameKey}
                   href={item.href}
                   className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--primary-light)] transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {item.name}
+                  {t(item.nameKey)}
                 </Link>
               ))}
             </div>
 
-            {/* Mobile Theme Toggle & CTA */}
-            <div className="flex items-center gap-3 mt-2">
-              <ThemeToggle />
-              <Link
-                href="/contact"
-                className="flex-1 inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/30"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Book a Demo
-              </Link>
+            {/* Mobile Language, Theme Toggle & CTA */}
+            <div className="flex flex-col gap-3 mt-2">
+              <LanguageSwitcherMobile />
+              <div className="flex items-center gap-2">
+                <ThemeToggle />
+                <Link
+                  href="/contact"
+                  className="flex-1 inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/30"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t("bookDemo")}
+                </Link>
+              </div>
             </div>
           </div>
         </div>

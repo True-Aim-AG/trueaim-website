@@ -3,22 +3,16 @@
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { Globe } from "lucide-react";
+import { Globe, Check } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const localeNames: Record<string, string> = {
-  en: "English",
-  de: "Deutsch",
-  fr: "Français",
-  it: "Italiano",
-};
-
-const localeShort: Record<string, string> = {
-  en: "EN",
-  de: "DE",
-  fr: "FR",
-  it: "IT",
+const localeConfig: Record<string, { name: string; short: string }> = {
+  en: { name: "English", short: "EN" },
+  de: { name: "Deutsch", short: "DE" },
+  fr: { name: "Français", short: "FR" },
+  it: { name: "Italiano", short: "IT" },
 };
 
 export function LanguageSwitcher() {
@@ -28,10 +22,12 @@ export function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown on outside click
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     }
@@ -47,42 +43,83 @@ export function LanguageSwitcher() {
   return (
     <div ref={dropdownRef} className="relative">
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--subtle-bg)] transition-colors text-sm font-medium"
+        onClick={() => setIsOpen((prev) => !prev)}
+        className={cn(
+          "flex items-center gap-1.5 h-9 px-2.5 rounded-lg border border-[var(--border)] bg-[var(--background-secondary)] hover:bg-[var(--primary-light)] transition-all duration-200 text-[var(--text-secondary)]",
+          isOpen && "bg-[var(--primary-light)] border-[var(--border-hover)]"
+        )}
         aria-label="Switch language"
+        aria-expanded={isOpen}
+        aria-haspopup="listbox"
       >
         <Globe className="w-4 h-4" />
-        <span>{localeShort[locale]}</span>
+        <span className="text-xs font-semibold tracking-wide">
+          {localeConfig[locale]?.short}
+        </span>
       </button>
 
-      {/* Dropdown */}
-      <div
-        className={cn(
-          "absolute top-full right-0 mt-2 py-1 min-w-[160px] nav-dropdown backdrop-blur-xl border border-[var(--border)] rounded-xl shadow-2xl transition-all duration-200",
-          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        )}
-      >
-        {routing.locales.map((loc) => (
-          <button
-            key={loc}
-            onClick={() => switchLocale(loc)}
-            className={cn(
-              "w-full text-left px-4 py-2.5 text-sm transition-colors",
-              loc === locale
-                ? "text-[var(--primary)] font-medium bg-[var(--primary-light)]"
-                : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--primary-light)]"
-            )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -4, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -4, scale: 0.96 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            className="absolute top-full right-0 mt-2 py-1.5 min-w-[176px] nav-dropdown backdrop-blur-xl border border-[var(--border)] rounded-xl shadow-2xl overflow-hidden z-50"
+            role="listbox"
+            aria-label="Select language"
           >
-            <span className="font-medium">{localeShort[loc]}</span>
-            <span className="ml-2 text-[var(--text-muted)]">{localeNames[loc]}</span>
-          </button>
-        ))}
-      </div>
+            {routing.locales.map((loc) => (
+              <button
+                key={loc}
+                onClick={() => switchLocale(loc)}
+                role="option"
+                aria-selected={loc === locale}
+                className={cn(
+                  "w-full flex items-center justify-between px-3.5 py-2.5 text-sm transition-colors",
+                  loc === locale
+                    ? "text-[var(--primary)] bg-[var(--primary-light)]"
+                    : "text-[var(--text-secondary)] hover:bg-[var(--subtle-bg)]"
+                )}
+              >
+                <div className="flex items-center gap-2.5">
+                  <span
+                    className={cn(
+                      "text-xs font-bold tracking-wider w-6",
+                      loc === locale
+                        ? "text-[var(--primary)]"
+                        : "text-[var(--text-muted)]"
+                    )}
+                  >
+                    {localeConfig[loc]?.short}
+                  </span>
+                  <span
+                    className={cn(
+                      "font-medium",
+                      loc === locale && "font-semibold"
+                    )}
+                  >
+                    {localeConfig[loc]?.name}
+                  </span>
+                </div>
+                {loc === locale && (
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.15, ease: "easeOut" }}
+                  >
+                    <Check className="w-4 h-4 text-[var(--primary)]" />
+                  </motion.div>
+                )}
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
 
-// Mobile version - horizontal segmented control
 export function LanguageSwitcherMobile() {
   const locale = useLocale();
   const router = useRouter();
@@ -99,13 +136,15 @@ export function LanguageSwitcherMobile() {
           key={loc}
           onClick={() => switchLocale(loc)}
           className={cn(
-            "flex-1 px-3 py-2 text-sm font-medium transition-colors",
+            "relative flex-1 px-3 py-2 text-xs font-semibold tracking-wide transition-all duration-200",
             loc === locale
               ? "bg-[var(--primary)] text-white"
               : "text-[var(--text-secondary)] hover:bg-[var(--primary-light)]"
           )}
+          aria-label={localeConfig[loc]?.name}
+          aria-current={loc === locale ? "true" : undefined}
         >
-          {localeShort[loc]}
+          {localeConfig[loc]?.short}
         </button>
       ))}
     </div>
