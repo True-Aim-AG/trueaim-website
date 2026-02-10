@@ -1,0 +1,183 @@
+{
+  "trust": {
+    "hero": {
+      "badge": "Trust Center",
+      "titleLine1": "Sécurité d'entreprise.",
+      "titleLine2": "Conformité réglementaire.",
+      "description": "Conçu dès le départ pour les industries réglementées. Précision suisse et sécurité des données."
+    },
+    "compliance": {
+      "heading": "Conformité & Certifications",
+      "subtitle": "Respecter les normes qui comptent pour les industries réglementées",
+      "badges": {
+        "gdpr": {
+          "name": "GDPR",
+          "description": "Architecture conforme au règlement européen sur la protection des données",
+          "status": "aligned"
+        },
+        "euAiAct": {
+          "name": "Règlement sur l'IA",
+          "description": "Conçu pour les exigences des systèmes AI à haut risque",
+          "status": "aligned"
+        },
+        "swissHosting": {
+          "name": "Hébergement suisse",
+          "description": "Résidence des données sur le territoire suisse",
+          "status": "provided"
+        },
+        "iso27001": {
+          "name": "ISO 27001",
+          "description": "Les contrôles actuels s'alignent sur le cadre. Certification formelle prévue pour 2026.",
+          "status": "roadmap"
+        },
+        "soc2": {
+          "name": "SOC 2 Type II",
+          "description": "Les contrôles actuels s'alignent sur le cadre. Certification formelle prévue pour 2026.",
+          "status": "roadmap"
+        },
+        "finma": {
+          "name": "Directives FINMA",
+          "description": "Conformité avec le régulateur financier suisse",
+          "status": "aligned"
+        },
+        "dora": {
+          "name": "DORA",
+          "description": "Conformité au Digital Operational Resilience Act pour les entités financières",
+          "status": "aligned"
+        }
+      },
+      "statusLabels": {
+        "roadmap": "2026",
+        "compliant": "conforme",
+        "ready": "prêt",
+        "provided": "fourni",
+        "aligned": "conforme"
+      }
+    },
+    "dataResidency": {
+      "heading": "Résidence des données & Souveraineté",
+      "description": "Vos données restent là où vous en avez besoin. Hébergement basé en Suisse pour une souveraineté des données et une conformité maximales.",
+      "swissDataCenter": {
+        "title": "Centre de données suisse",
+        "description": "Hébergez vos données sur le territoire suisse, protégées par les lois suisses sur la vie privée"
+      },
+      "euProcessingZones": {
+        "title": "Zones de traitement UE",
+        "description": "Les données ne quittent jamais l'Union européenne"
+      },
+      "noThirdCountry": {
+        "title": "Aucun transfert vers des pays tiers",
+        "description": "Contrôle complet sur le lieu de traitement de vos données"
+      },
+      "mapLabels": {
+        "switzerland": "Suisse",
+        "euZone": "Zone UE"
+      }
+    },
+    "security": {
+      "heading": "Architecture de sécurité",
+      "subtitle": "Contrôles de sécurité de niveau entreprise à chaque couche",
+      "categories": {
+        "dataProtection": {
+          "title": "Protection des données",
+          "features": {
+            "encryptionAtRest": {
+              "name": "Chiffrement au repos",
+              "detail": "Chiffrement AES-256 pour toutes les données stockées"
+            },
+            "encryptionInTransit": {
+              "name": "Chiffrement en transit",
+              "detail": "TLS 1.3 pour toutes les transmissions de données"
+            },
+            "dataIsolation": {
+              "name": "Isolation des données",
+              "detail": "Ségrégation des données par locataire"
+            },
+            "keyManagement": {
+              "name": "Gestion sécurisée des clés",
+              "detail": "Adossé à un module de sécurité matériel (HSM)"
+            }
+          }
+        },
+        "accessControl": {
+          "title": "Contrôle d'accès",
+          "features": {
+            "rbac": {
+              "name": "Accès basé sur les rôles (RBAC)",
+              "detail": "Gestion granulaire des permissions"
+            },
+            "sso": {
+              "name": "Intégration SSO",
+              "detail": "Support SAML 2.0 et OIDC"
+            },
+            "mfa": {
+              "name": "Authentification multi-facteurs",
+              "detail": "Application MFA disponible"
+            },
+            "sessionManagement": {
+              "name": "Gestion des sessions",
+              "detail": "Délai d'expiration et contrôles configurables"
+            }
+          }
+        },
+        "auditMonitoring": {
+          "title": "Audit & Surveillance",
+          "features": {
+            "auditLogs": {
+              "name": "Journaux d'audit complets",
+              "detail": "Chaque action enregistrée avec horodatage"
+            },
+            "decisionReplay": {
+              "name": "Rejeu des décisions",
+              "detail": "Rejouez n'importe quelle décision avec des résultats identiques"
+            },
+            "accessLogging": {
+              "name": "Journalisation des accès",
+              "detail": "Visibilité complète sur l'accès aux données"
+            },
+            "retentionPolicies": {
+              "name": "Politiques de rétention",
+              "detail": "Périodes de rétention des journaux configurables"
+            }
+          }
+        }
+      }
+    },
+    "euAiAct": {
+      "badge": "Conformité réglementaire",
+      "heading": "Conformité au Règlement sur l'IA",
+      "subtitle": "Notre architecture neuro-symbolique est spécialement conçue pour répondre aux exigences de transparence, de supervision et de documentation du Règlement sur l'IA pour les systèmes AI à haut risque.",
+      "features": {
+        "humanOversight": {
+          "requirement": "Supervision humaine",
+          "description": "Des niveaux d'approbation configurables et un routage des exceptions garantissent une revue humaine là où c'est nécessaire"
+        },
+        "transparency": {
+          "requirement": "Transparence",
+          "description": "Chaque décision traçable jusqu'aux clauses de police spécifiques et aux documents sources"
+        },
+        "technicalDocumentation": {
+          "requirement": "Documentation technique",
+          "description": "Documentation système complète disponible pour l'examen réglementaire"
+        },
+        "riskManagement": {
+          "requirement": "Gestion des risques",
+          "description": "Score de confiance intégré et gestion des exceptions pour les cas limites"
+        },
+        "dataGovernance": {
+          "requirement": "Gouvernance des données",
+          "description": "Lignage des données clair et contrôles qualité tout au long du pipeline"
+        },
+        "accuracyRobustness": {
+          "requirement": "Précision & Robustesse",
+          "description": "La logique déterministe garantit des résultats cohérents pour des entrées identiques"
+        }
+      },
+      "callout": {
+        "heading": "Pourquoi l'AI déterministe est importante pour la conformité",
+        "description": "Contrairement aux systèmes AI probabilistes, notre moteur de logique déterministe produit des résultats identiques pour des entrées identiques, ce qui facilite la démonstration de la cohérence, de l'équité et de la transparence auprès des régulateurs.",
+        "emphasis": "résultats identiques pour des entrées identiques"
+      }
+    }
+  }
+}

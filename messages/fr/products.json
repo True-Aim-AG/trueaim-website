@@ -1,0 +1,524 @@
+{
+  "mira": {
+    "hero": {
+      "badge": "Moteur de Décision",
+      "title": "MIRA : Le moteur de décision neuro-symbolique",
+      "subtitle": "Transformez des conditions de police complexes en décisions de sinistres automatisées et entièrement déterministes. Chaque résultat traçable jusqu'au texte juridique.",
+      "description": "Fonctionne avec vos systèmes de gestion des sinistres existants. Intégration sans perturbation.",
+      "ctaPrimary": "Voir MIRA en action",
+      "ctaSecondary": "Réserver une démo"
+    },
+    "problem": {
+      "title": "Les décisions de sinistres sont toujours manuelles, incohérentes et opaques",
+      "paragraph1": "Les gestionnaires de sinistres d'aujourd'hui passent des heures à interpréter un langage de police dense.",
+      "paragraph2": "Les décisions varient selon le gestionnaire et la préparation des audits prend des semaines.",
+      "paragraph3": "Les outils AI probabilistes ne peuvent pas expliquer leur raisonnement.",
+      "cta": "MIRA change tout."
+    },
+    "solution": {
+      "title": "L'AI agentique rencontre la logique déterministe",
+      "description": "MIRA est le premier moteur neuro-symbolique au monde conçu spécifiquement pour les sinistres d'assurance. Il utilise l'AI agentique pour l'orchestration intelligente des workflows (lecture de documents, extraction de données, identification des parties, etc.) tout en s'appuyant sur une logique déterministe pour la décision de couverture effective.",
+      "result": "Le résultat : des décisions rapides, cohérentes et entièrement explicables."
+    },
+    "workflow": {
+      "title": "Comment fonctionne MIRA",
+      "subtitle": "Cinq étapes du document à la décision",
+      "steps": {
+        "1": {
+          "title": "Ingestion",
+          "description": "Les données clés sont intégrées au contrat calculable à partir d'e-mails, PDFs, photos, notes numérisées, etc."
+        },
+        "2": {
+          "title": "Compréhension",
+          "description": "Le workflow agentique lit le dossier : identifie les parties, crée la chronologie, extrait les données clés, etc."
+        },
+        "3": {
+          "title": "Détermination",
+          "description": "La logique déterministe évalue le statut de couverture : Couvert | Partiellement couvert | Non couvert | Informations complémentaires requises"
+        },
+        "4": {
+          "title": "Action",
+          "description": "Tâches exécutées : ouverture du sinistre, constitution des réserves, préparation du paiement, rédaction des communications, etc."
+        },
+        "5": {
+          "title": "Résultat",
+          "description": "Résultats auditables : rapport de couverture, lettre au client avec justification, journal d'audit, recommandation de réserve, etc."
+        }
+      }
+    },
+    "demo": {
+      "title": "Testez MIRA sur vos sinistres",
+      "subtitle": "Démo interactive du traitement MIRA des sinistres d'assurance voyage",
+      "iframeTitle": "Démo MIRA"
+    },
+    "capabilities": {
+      "title": "Fonctionnalités",
+      "items": {
+        "coverageDetermination": {
+          "title": "Détermination de la couverture",
+          "description": "Calcule l'intégralité de la police par rapport aux faits du sinistre. Identifie les risques applicables, les exclusions et les conditions. Calcule les positions de coût exactes pour chaque porteur de risque."
+        },
+        "multiVertical": {
+          "title": "Support multi-sectoriel",
+          "description": "Assurance : Santé, Animaux, Auto, Habitation, Vie.\n\nVoyage : Remboursements de vols, remboursements de trains, hébergement.\n\nGarantie : Véhicule, électronique, couverture étendue."
+        },
+        "integration": {
+          "title": "Prêt pour l'intégration",
+          "description": "Architecture API-first. Fonctionne avec les systèmes de gestion des sinistres existants. Aucune perturbation d'intégration. Déploiement flexible : cloud ou on-premise"
+        },
+        "compliance": {
+          "title": "Compliance by Design",
+          "description": "Chaque décision liée au texte juridique. Journaux d'audit complets pour l'examen réglementaire. Conforme aux exigences du Règlement sur l'IA."
+        }
+      }
+    },
+    "results": {
+      "title": "Résultats prouvés",
+      "metrics": {
+        "speed": {
+          "prefix": "JUSQU'À",
+          "label": "Plus rapide que l'examen manuel"
+        },
+        "cost": {
+          "prefix": "JUSQU'À",
+          "label": "Réduction des coûts de traitement"
+        },
+        "leakage": {
+          "label": "Réduction des fuites grâce aux revues de dossiers clos"
+        }
+      }
+    },
+    "cta": {
+      "title": "Testez MIRA sur vos sinistres",
+      "description": "Traitez un échantillon de sinistres clos pour voir exactement comment MIRA les aurait traités.",
+      "button": "Réserver une démo"
+    }
+  },
+  "contextBuilder": {
+    "hero": {
+      "badge": "Pipeline documentaire",
+      "title": "ContextBuilder : Des documents non structurés aux données fiables",
+      "subtitle": "Un pipeline de documents de sinistres qui transforme les PDFs, les scans et les images en données de sinistres structurées et vérifiées, avec une revue humaine là où c'est important.",
+      "ctaPrimary": "Découvrir ContextBuilder",
+      "ctaSecondary": "Réserver une démo"
+    },
+    "problem": {
+      "title": "Le problème du chaos documentaire",
+      "description": "Les sinistres arrivent sous forme de liasses de documents chaotiques : photos floues, PDFs multi-pages, formulaires numérisés. L'extraction de données précises est lente, sujette aux erreurs et coûteuse."
+    },
+    "solution": {
+      "title": "Pipeline conçu spécifiquement pour les sinistres",
+      "description": "ContextBuilder est un pipeline conçu spécifiquement pour les documents de sinistres. Il ingère, classifie et extrait automatiquement les données, puis applique des contrôles qualité pour signaler les exceptions nécessitant une revue humaine.",
+      "result": "Le résultat : des \"packs de contexte\" prêts pour le sinistre auxquels les systèmes en aval peuvent faire confiance."
+    },
+    "pipeline": {
+      "title": "Pipeline en 5 étapes",
+      "subtitle": "Des documents bruts aux données structurées",
+      "steps": {
+        "1": {
+          "title": "Ingestion",
+          "description": "Transforme les documents en texte et mise en page lisibles par machine grâce à des modèles OCR et de vision avancés."
+        },
+        "2": {
+          "title": "Classification",
+          "description": "Identifie le type de document et la langue pour un routage correct : déclaration de sinistre, rapport de police, facture, etc."
+        },
+        "3": {
+          "title": "Extraction",
+          "description": "Extrait les champs structurés en fonction du type de document. Normalise pour que le même concept soit identique partout."
+        },
+        "4": {
+          "title": "Contrôles qualité",
+          "description": "Des vérifications automatisées valident la complétude et la cohérence. Notation Pass / Alerte / Échec."
+        },
+        "5": {
+          "title": "Console QA",
+          "description": "Espace de travail de revue humaine. Confirmer, corriger et étiqueter rapidement les documents."
+        }
+      },
+      "dataSovereigntyNote": "L'ensemble du traitement documentaire est conçu pour répondre aux exigences de sécurité d'entreprise, de confidentialité et réglementaires. Visitez notre <trustCenterLink>Trust Center</trustCenterLink> pour plus de détails."
+    },
+    "demo": {
+      "title": "Explorer le code",
+      "subtitle": "ContextBuilder est conçu avec la transparence à l'esprit",
+      "repoName": "AgenticContextBuilder",
+      "repoDescription": "Explorez notre pipeline de traitement documentaire open-source sur GitHub. Découvrez comment nous transformons des documents de sinistres non structurés en données structurées et fiables.",
+      "viewOnGitHub": "Voir sur GitHub"
+    },
+    "output": {
+      "title": "Ce que vous obtenez : Un pack de contexte prêt pour le sinistre",
+      "features": {
+        "cleanDataset": {
+          "title": "Jeu de données structuré et nettoyé",
+          "description": "Champs clés extraits et normalisés"
+        },
+        "qualityStatus": {
+          "title": "Statut qualité",
+          "description": "Pass/Alerte/Échec par document et par exécution"
+        },
+        "evidenceLinks": {
+          "title": "Liens de preuve",
+          "description": "De chaque champ vers le texte du document d'origine"
+        },
+        "humanLabels": {
+          "title": "Annotations humaines",
+          "description": "Notes optionnelles là où une revue a été effectuée"
+        }
+      }
+    },
+    "metrics": {
+      "title": "Indicateurs de performance",
+      "items": {
+        "coverage": {
+          "label": "Couverture documentaire"
+        },
+        "accuracy": {
+          "label": "Précision"
+        },
+        "evidenceRate": {
+          "label": "Taux de preuve"
+        },
+        "errorRate": {
+          "label": "Taux d'erreur de classification documentaire",
+          "footnote": "Basé sur les données clients"
+        }
+      }
+    },
+    "cta": {
+      "title": "Traitez un échantillon de vos documents",
+      "description": "Partagez en toute sécurité un échantillon de documents de sinistres. Nous les traiterons avec ContextBuilder et vous montrerons la qualité d'extraction, l'analyse des erreurs et les gains de temps.",
+      "button": "Réserver une démo"
+    }
+  },
+  "claimEval": {
+    "hero": {
+      "badge": "Assurance qualité",
+      "title": "ClaimEval : Étendre l'assurance qualité au-delà de l'échantillonnage",
+      "subtitle": "Passez d'une QA manuelle basée sur l'échantillonnage à des inspections cohérentes sur l'ensemble de votre portefeuille de sinistres. Détecter les exceptions. Prioriser l'effort humain.",
+      "ctaPrimary": "Voir ClaimEval en action",
+      "ctaSecondary": "Réserver une démo"
+    },
+    "problem": {
+      "title": "Le problème de l'échantillonnage",
+      "description": "La QA traditionnelle repose sur l'échantillonnage aléatoire, ne vérifiant qu'un faible pourcentage des sinistres. Des tendances passent inaperçues. Les fuites s'accumulent. Les lacunes de formation persistent.",
+      "cta": "Et si vous pouviez contrôler chaque sinistre ?"
+    },
+    "solution": {
+      "title": "100% de couverture, priorisation intelligente",
+      "description": "ClaimEval exécute des contrôles d'inspection définis sur tous les sinistres clos. Il évalue le risque, signale les problèmes et met en évidence les sinistres nécessitant une attention humaine.",
+      "note": "ClaimEval est une couche d'assurance qualité. Il renforce vos gestionnaires de sinistres, il ne les remplace pas."
+    },
+    "features": {
+      "title": "Fonctionnalités clés",
+      "items": {
+        "riskScoring": {
+          "title": "Évaluation des risques",
+          "description": "Chaque sinistre est évalué selon des règles configurables. Les compteurs de signalement mettent en évidence les problèmes potentiels. Triez par risque pour prioriser la revue."
+        },
+        "inspectionCatalogues": {
+          "title": "Catalogues d'inspection",
+          "description": "Contrôles prédéfinis conçus pour différents cas d'usage en assurance. Définitions d'inspection configurables. Chaque contrôle fournit des conclusions claires, du contexte et les prochaines étapes."
+        },
+        "reviewerWorkflow": {
+          "title": "Workflow de révision",
+          "description": "Filtrer par branche, statut, score de risque, etc. Suivre les éléments révisés vs. non révisés. Évaluer les conclusions du réviseur documentaire."
+        }
+      }
+    },
+    "demo": {
+      "title": "Voir ClaimEval en action",
+      "subtitle": "Démo interactive d'inspection et de revue des sinistres",
+      "iframeTitle": "Démo ClaimEval"
+    },
+    "coverageAreas": {
+      "title": "Domaines de couverture",
+      "subtitle": "Catalogues de contrôles prédéfinis pour Auto, Habitation, Vie, Garantie et plus",
+      "motor": {
+        "title": "Auto",
+        "zones": {
+          "1": "Ouverture du sinistre & Intégrité du dossier",
+          "2": "Responsabilité & Cohérence de la décision",
+          "3": "Communication client",
+          "4": "Réparation & Gestion des fournisseurs",
+          "5": "Perte totale & Évaluation",
+          "6": "Véhicule de remplacement / AMC",
+          "7": "Hygiène financière & Recours"
+        }
+      },
+      "home": {
+        "title": "Habitation",
+        "zones": {
+          "1": "Couverture & Causalité",
+          "2": "Enquête & Adéquation des preuves",
+          "3": "Réparations & Supervision des fournisseurs",
+          "4": "Règlements en espèces & Vulnérabilité",
+          "5": "Hébergement alternatif"
+        }
+      },
+      "life": {
+        "title": "Vie",
+        "zones": {
+          "1": "Validité de la police & Vérification des bénéficiaires",
+          "2": "Cause du décès & Revue des exclusions",
+          "3": "Adéquation des preuves médicales",
+          "4": "Calcul du versement",
+          "5": "Conformité du délai de contestation"
+        }
+      },
+      "warranty": {
+        "title": "Garantie",
+        "zones": {
+          "1": "Périmètre de couverture & Éligibilité des composants",
+          "2": "Logique réparation vs. remplacement",
+          "3": "Vérification des fournisseurs & pièces",
+          "4": "Position de coût & Franchise",
+          "5": "Durée de la police & Conformité kilométrique"
+        },
+        "caseStudyLink": "Voir l'étude de cas fournisseur de garantie"
+      },
+      "exampleCheck": {
+        "label": "Exemple de contrôle d'inspection",
+        "title": "Contrôle d'adéquation des réserves",
+        "description": "Compare la réserve initiale au montant de règlement final sur tous les sinistres clos. Signale les cas où la réserve était inférieure de plus de 30% au versement final, indiquant des schémas potentiels de sous-provisionnement.",
+        "passLabel": "Pass : dans la tolérance",
+        "warnLabel": "Alerte : 15-30% d'écart",
+        "failLabel": "Échec : >30% d'écart"
+      }
+    },
+    "cta": {
+      "title": "Exécutez ClaimEval sur vos sinistres clos",
+      "description": "Nous analyserons un lot de vos sinistres historiques et vous montrerons les résultats d'inspection, la distribution des risques et les conclusions prioritaires.",
+      "button": "Réserver une démo"
+    }
+  },
+  "claimEvalA": {
+    "versionIndicator": "Version A",
+    "hero": {
+      "badge": "Assurance qualité",
+      "title": "ClaimEval : Étendre l'assurance qualité au-delà de l'échantillonnage",
+      "subtitle": "Passez d'une QA manuelle basée sur l'échantillonnage à des inspections cohérentes sur l'ensemble de votre portefeuille de sinistres. Détecter les exceptions. Prioriser l'effort humain.",
+      "description": "ClaimEval est une couche de QA et de gouvernance. Il renforce vos gestionnaires, il ne les remplace pas.",
+      "ctaPrimary": "Voir la démo ClaimEval",
+      "ctaSecondary": "Demander un pilote"
+    },
+    "problem": {
+      "title": "Le problème de l'échantillonnage",
+      "description": "La QA traditionnelle repose sur l'échantillonnage aléatoire, ne vérifiant que 2 à 5% des sinistres. Des tendances passent inaperçues. Les fuites s'accumulent. Les lacunes de formation persistent.",
+      "cta": "Et si vous pouviez contrôler chaque sinistre ?"
+    },
+    "solution": {
+      "title": "100% de couverture, priorisation intelligente",
+      "description": "ClaimEval exécute des contrôles d'inspection définis sur tous les sinistres clos. Il évalue le risque, signale les problèmes et met en évidence les sinistres nécessitant une attention humaine, sans remplacer le jugement humain."
+    },
+    "features": {
+      "title": "Fonctionnalités clés",
+      "items": {
+        "riskScoring": {
+          "title": "Évaluation des risques",
+          "description": "Chaque sinistre est évalué selon des règles configurables. Les compteurs de signalement mettent en évidence les problèmes potentiels. Triez par risque pour prioriser la revue."
+        },
+        "inspectionCatalogues": {
+          "title": "Catalogues d'inspection",
+          "description": "Contrôles prédéfinis pour Auto, Habitation et plus. Définitions d'inspection personnalisables. Chaque contrôle répond à : Quoi ? Trouvé ? Pourquoi c'est important ? Prochaine action ?"
+        },
+        "reviewerWorkflow": {
+          "title": "Workflow de révision",
+          "description": "Filtrer par branche, statut, score de risque. Suivre les éléments révisés vs. non révisés. Documenter les conclusions du réviseur."
+        }
+      }
+    },
+    "demo": {
+      "title": "Voir ClaimEval en action",
+      "subtitle": "Démo interactive d'inspection et de revue des sinistres",
+      "iframeTitle": "Démo ClaimEval"
+    },
+    "inspectionZones": {
+      "title": "Zones d'inspection",
+      "subtitle": "Catalogues de contrôles prédéfinis par branche",
+      "motor": {
+        "title": "Auto",
+        "zones": {
+          "1": "Ouverture du sinistre & Intégrité du dossier",
+          "2": "Responsabilité & Cohérence de la décision",
+          "3": "Communication client",
+          "4": "Réparation & Gestion des fournisseurs",
+          "5": "Perte totale & Évaluation",
+          "6": "Véhicule de remplacement / AMC",
+          "7": "Hygiène financière & Recours"
+        }
+      },
+      "home": {
+        "title": "Habitation",
+        "zones": {
+          "1": "Couverture & Causalité",
+          "2": "Enquête & Adéquation des preuves",
+          "3": "Réparations & Supervision des fournisseurs",
+          "4": "Règlements en espèces & Vulnérabilité",
+          "5": "Hébergement alternatif"
+        }
+      }
+    },
+    "cta": {
+      "title": "Exécutez ClaimEval sur vos sinistres clos",
+      "description": "Nous analyserons un lot de vos sinistres historiques et vous montrerons les résultats d'inspection, la distribution des risques et les conclusions prioritaires.",
+      "button": "Demander un pilote"
+    }
+  },
+  "claimEvalB": {
+    "versionIndicator": "Version B",
+    "hero": {
+      "eyebrow": "Pour les assureurs IARD avec >$50M de primes émises",
+      "title": "Vous perdez ",
+      "titleHighlight": "$3.2M par an",
+      "titleEnd": " sur des sinistres que vous n'avez jamais audités.",
+      "subtitle": "ClaimEval audite 100% de vos sinistres en temps réel. Pas 2%. Tous. Réduisez les dépenses d'indemnisation de 8%. Récupérez les recours manqués. Sans nouvelle embauche.",
+      "ctaPrimary": "Montrez-moi mes fuites",
+      "trustBadge": "Certifié SOC2 Type II",
+      "trustTimeline": "Opérationnel sur votre système de sinistres en 3 semaines"
+    },
+    "dashboard": {
+      "claimNumber": "Sinistre #2024-AUT-7832",
+      "policyHolder": "Assuré",
+      "policyHolderValue": "Sarah Mitchell",
+      "lob": "Branche",
+      "lobValue": "Auto - Collision",
+      "reserve": "Réserve",
+      "reserveValue": "$18 500",
+      "policeReportLabel": "Extrait du rapport de police :",
+      "policeReportText": "Le demandeur a déclaré qu'il traversait l'intersection lorsque l'autre véhicule n'a pas cédé le passage. ",
+      "policeReportHighlight": "Le conducteur a admis envoyer un SMS en tournant.",
+      "alertTitle": "Recours manqué détecté",
+      "alertValue": "$15 000"
+    },
+    "problem": {
+      "title": "Votre processus QA est un coup de dés. Votre ratio de sinistralité en paie le prix.",
+      "description": "Coûts de réparation en hausse de 20% depuis 2020. Verdicts extrêmes dépassant $10M+. Des gestionnaires juniors traitent des dossiers qui allaient autrefois à vos meilleurs éléments. Et votre défense ? Un audit manuel qui ne voit que 2% des dossiers clos.",
+      "subtitle": "Vous ne gérez pas le risque. Vous espérez.",
+      "leaks": {
+        "blindSpot": {
+          "title": "L'angle mort",
+          "description": "98% des sinistres sont clos sans un second regard. Chacun est une responsabilité que vous n'avez jamais vue."
+        },
+        "skillGap": {
+          "title": "Le déficit de compétences",
+          "description": "Les nouveaux gestionnaires ratent ce que les vétérans détectent. L'incohérence se traduit en millions."
+        },
+        "buriedRecovery": {
+          "title": "Le recouvrement enfoui",
+          "description": "Des signaux de recours enfouis dans les notes des gestionnaires. De l'argent que vous avez gagné. De l'argent que vous ne récupérerez jamais."
+        }
+      },
+      "icebergTipLabel": "2% audités",
+      "icebergMassLabel": "98% de risque non examiné"
+    },
+    "solution": {
+      "title": "Arrêtez d'auditer les sinistres. Commencez à défendre votre ratio de sinistralité.",
+      "subtitle": "ClaimEval ne remplace pas vos gestionnaires. Il fait de chacun d'entre eux votre meilleur élément.",
+      "steps": {
+        "ingest": {
+          "label": "Ingestion",
+          "title": "Nous lisons ce que les humains sautent.",
+          "description": "Données structurées. Notes non structurées. Rapports de police. Factures médicales. Abréviations des gestionnaires. Nos modèles ont été entraînés par des experts en sinistres avec plus de 20 ans d'expérience."
+        },
+        "analyze": {
+          "label": "Analyse",
+          "title": "Chaque dossier. À chaque fois. Sans exception.",
+          "description": "Chaque sinistre est analysé selon vos meilleures pratiques et plus de 500 scénarios de fuite. Nous détectons l'erreur de $12 000 à 16h47 un vendredi."
+        },
+        "alert": {
+          "label": "Alerte",
+          "title": "Des signalements, pas des annulations.",
+          "description": "Votre gestionnaire reçoit une notification en temps réel dans son workflow. L'AI montre les preuves. L'humain prend la décision. Contrôle total."
+        }
+      },
+      "smartNudgeTitle": "Notification intelligente",
+      "smartNudgeMessage": "Limite de couverture dépassée de $500. Vérifiez les limites de la police avant le paiement."
+    },
+    "microDemo": {
+      "title": "Trouvez une fuite en 30 secondes.",
+      "subtitle": "Regardez ClaimEval détecter un recouvrement manqué dans un sinistre auto standard.",
+      "ctaLink": "Voir une démo en direct",
+      "claimHeader": "Rapport de police - Sinistre #2024-7291",
+      "claimText": "Le 15/03/2024 vers 14h34, une collision entre deux véhicules s'est produite à l'intersection de la rue Principale et de l'avenue du Chêne. Le véhicule assuré, une Honda Accord 2021, circulait en direction de l'ouest. ",
+      "claimHighlight": "\"J'étais arrêté au feu rouge quand j'ai été percuté\"",
+      "claimTextEnd": ", a déclaré le demandeur. L'autre conducteur a été verbalisé pour non-respect du stop. L'expertise des dommages indique un impact arrière cohérent avec le récit du demandeur.",
+      "alertTitle": "0% de responsabilité détectée",
+      "alertAction": "Action : Ouvrir un dossier de recours",
+      "scanButton": "Scanner le sinistre",
+      "scanningButton": "Analyse en cours...",
+      "scanCompleteButton": "Analyse terminée",
+      "resetButton": "Réinitialiser"
+    },
+    "differentiation": {
+      "title": "Une AI qui s'explique. Conçue par des personnes qui ont traité des sinistres.",
+      "features": {
+        "noBlackBox": {
+          "title": "Pas de boîte noire",
+          "description": "Chaque signalement cite le langage de la police ou le point de données. Vos auditeurs peuvent vérifier en quelques secondes."
+        },
+        "guardrails": {
+          "title": "Garde-fous intégrés",
+          "description": "Les gestionnaires juniors reçoivent des conseils en temps réel. Cohérence sans micro-management."
+        },
+        "auditTrail": {
+          "title": "Piste d'audit prête",
+          "description": "Chaque décision enregistrée. Chaque raison documentée. Les régulateurs demandent ? Vous êtes prêt."
+        },
+        "noRipReplace": {
+          "title": "Pas de remplacement total",
+          "description": "Se superpose à votre plateforme de sinistres existante. Opérationnel en semaines. Pas en années."
+        }
+      }
+    },
+    "socialProof": {
+      "quote": "Nous pensions que l'AI ne pouvait pas traiter les dossiers complexes de dommages corporels. En 90 jours, ClaimEval a mis en évidence ",
+      "quoteHighlight": "$1.2M de recours manqués",
+      "quoteEnd": ". Il s'est rentabilisé au T1.",
+      "attribution": "VP Sinistres, Assureur auto régional",
+      "badges": {
+        "soc2": "SOC2 Type II",
+        "iso": "ISO 27001",
+        "api": "API-First",
+        "gdpr": "GDPR"
+      }
+    },
+    "roiCalculator": {
+      "title": "Calculez ce que vous perdez en ce moment",
+      "dwpLabel": "Primes émises annuelles",
+      "lossRatioLabel": "Ratio de sinistralité actuel",
+      "resultPrefix": "Une réduction de 1% des fuites =",
+      "resultSuffix": "de retour dans vos réserves.",
+      "ctaButton": "Obtenir mon rapport de fuite personnalisé"
+    },
+    "faq": {
+      "title": "FAQ",
+      "items": {
+        "replaceAdjusters": {
+          "question": "Est-ce que cela va remplacer mes gestionnaires ?",
+          "answer": "Non. ClaimEval gère la charge d'audit. Votre équipe gère le jugement, la négociation et la relation client."
+        },
+        "dataSecurity": {
+          "question": "Quelle est la sécurité de mes données ?",
+          "answer": "SOC2 Type II. ISO 27001. Chiffrement au repos. Nous n'entraînons jamais nos modèles sur vos données sans consentement."
+        },
+        "timeToResults": {
+          "question": "Combien de temps avant de voir des résultats ?",
+          "answer": "La plupart des assureurs sont opérationnels en 3-4 semaines. Impact mesurable dès le mois 3."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Vos données de sinistres ont des réponses. Trouvons-les.",
+      "subtitle": "Session stratégique de 30 minutes. Analyse de fuite en direct sur votre portefeuille. Pas de présentation. Uniquement des données.",
+      "lobPlaceholder": "Branche principale",
+      "lobAuto": "Auto",
+      "lobProperty": "Habitation",
+      "lobWC": "Accidents du travail",
+      "volumePlaceholder": "Volume de sinistres",
+      "volumeLt10k": "<10k",
+      "volumeGt10k": "10k+",
+      "emailPlaceholder": "E-mail professionnel",
+      "submitButton": "Analyser mes fuites"
+    }
+  }
+}

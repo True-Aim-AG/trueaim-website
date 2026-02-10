@@ -1,0 +1,183 @@
+{
+  "trust": {
+    "hero": {
+      "badge": "Trust Center",
+      "titleLine1": "Enterprise Security.",
+      "titleLine2": "Regulatory Compliance.",
+      "description": "Built from the ground up for regulated industries. Swiss precision & data security."
+    },
+    "compliance": {
+      "heading": "Compliance & Certifications",
+      "subtitle": "Meeting the standards that matter for regulated industries",
+      "badges": {
+        "gdpr": {
+          "name": "GDPR",
+          "description": "Architecture aligned with EU data protection regulation",
+          "status": "aligned"
+        },
+        "euAiAct": {
+          "name": "EU AI Act",
+          "description": "Built for high-risk AI system requirements",
+          "status": "aligned"
+        },
+        "swissHosting": {
+          "name": "Swiss Hosting",
+          "description": "Data residency within Swiss borders",
+          "status": "provided"
+        },
+        "iso27001": {
+          "name": "ISO 27001",
+          "description": "Current controls align to the framework. Formal certification scheduled for 2026.",
+          "status": "roadmap"
+        },
+        "soc2": {
+          "name": "SOC 2 Type II",
+          "description": "Current controls align to the framework. Formal certification scheduled for 2026.",
+          "status": "roadmap"
+        },
+        "finma": {
+          "name": "FINMA Guidelines",
+          "description": "Swiss financial regulator compliance",
+          "status": "aligned"
+        },
+        "dora": {
+          "name": "DORA",
+          "description": "Digital Operational Resilience Act alignment for financial entities",
+          "status": "aligned"
+        }
+      },
+      "statusLabels": {
+        "roadmap": "2026",
+        "compliant": "compliant",
+        "ready": "ready",
+        "provided": "provided",
+        "aligned": "aligned"
+      }
+    },
+    "dataResidency": {
+      "heading": "Data Residency & Sovereignty",
+      "description": "Your data stays where you need it. Swiss-based hosting for maximum data sovereignty and compliance.",
+      "swissDataCenter": {
+        "title": "Swiss Data Center",
+        "description": "Host your data within Swiss borders, protected by Swiss privacy laws"
+      },
+      "euProcessingZones": {
+        "title": "EU Processing Zones",
+        "description": "Data never leaves the European Union"
+      },
+      "noThirdCountry": {
+        "title": "No Third-Country Transfers",
+        "description": "Complete control over where your data is processed"
+      },
+      "mapLabels": {
+        "switzerland": "Switzerland",
+        "euZone": "EU Zone"
+      }
+    },
+    "security": {
+      "heading": "Security Architecture",
+      "subtitle": "Enterprise-grade security controls at every layer",
+      "categories": {
+        "dataProtection": {
+          "title": "Data Protection",
+          "features": {
+            "encryptionAtRest": {
+              "name": "Encryption at Rest",
+              "detail": "AES-256 encryption for all stored data"
+            },
+            "encryptionInTransit": {
+              "name": "Encryption in Transit",
+              "detail": "TLS 1.3 for all data transmission"
+            },
+            "dataIsolation": {
+              "name": "Data Isolation",
+              "detail": "Tenant-specific data segregation"
+            },
+            "keyManagement": {
+              "name": "Secure Key Management",
+              "detail": "Hardware security module (HSM) backed"
+            }
+          }
+        },
+        "accessControl": {
+          "title": "Access Control",
+          "features": {
+            "rbac": {
+              "name": "Role-Based Access (RBAC)",
+              "detail": "Granular permission management"
+            },
+            "sso": {
+              "name": "SSO Integration",
+              "detail": "SAML 2.0 and OIDC support"
+            },
+            "mfa": {
+              "name": "Multi-Factor Authentication",
+              "detail": "MFA enforcement available"
+            },
+            "sessionManagement": {
+              "name": "Session Management",
+              "detail": "Configurable timeout and controls"
+            }
+          }
+        },
+        "auditMonitoring": {
+          "title": "Audit & Monitoring",
+          "features": {
+            "auditLogs": {
+              "name": "Complete Audit Logs",
+              "detail": "Every action logged with timestamps"
+            },
+            "decisionReplay": {
+              "name": "Decision Replay",
+              "detail": "Re-run any decision with identical results"
+            },
+            "accessLogging": {
+              "name": "Access Logging",
+              "detail": "Full visibility into data access"
+            },
+            "retentionPolicies": {
+              "name": "Retention Policies",
+              "detail": "Configurable log retention periods"
+            }
+          }
+        }
+      }
+    },
+    "euAiAct": {
+      "badge": "Regulatory Compliance",
+      "heading": "EU AI Act Alignment",
+      "subtitle": "Our neuro-symbolic architecture is purpose-built to meet the transparency, oversight and documentation requirements of the EU AI Act for high-risk AI systems.",
+      "features": {
+        "humanOversight": {
+          "requirement": "Human Oversight",
+          "description": "Configurable approval gates and exception routing ensure human review where required"
+        },
+        "transparency": {
+          "requirement": "Transparency",
+          "description": "Every decision traceable to specific policy clauses and source documents"
+        },
+        "technicalDocumentation": {
+          "requirement": "Technical Documentation",
+          "description": "Comprehensive system documentation available for regulatory review"
+        },
+        "riskManagement": {
+          "requirement": "Risk Management",
+          "description": "Built-in confidence scoring and exception handling for edge cases"
+        },
+        "dataGovernance": {
+          "requirement": "Data Governance",
+          "description": "Clear data lineage and quality controls throughout the pipeline"
+        },
+        "accuracyRobustness": {
+          "requirement": "Accuracy & Robustness",
+          "description": "Deterministic logic ensures consistent outputs for identical inputs"
+        }
+      },
+      "callout": {
+        "heading": "Why Deterministic AI Matters for Compliance",
+        "description": "Unlike probabilistic AI systems, our deterministic logic engine produces identical outputs for identical inputs, making it straightforward to demonstrate consistency, fairness and transparency to regulators.",
+        "emphasis": "identical outputs for identical inputs"
+      }
+    }
+  }
+}

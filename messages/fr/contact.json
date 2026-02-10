@@ -1,0 +1,91 @@
+{
+  "contact": {
+    "hero": {
+      "badge": "Contactez-nous",
+      "titleLine1": "Parlons de",
+      "titleLine2": "l'automatisation des sinistres",
+      "description": "Que vous exploriez les options ou soyez prêt pour un pilote, nous serions ravis de vous montrer ce que l'IA auditable peut accomplir."
+    },
+    "form": {
+      "heading": "Réserver une démo",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "workEmail": "E-mail professionnel",
+      "company": "Entreprise",
+      "jobTitle": "Fonction",
+      "country": "Pays",
+      "interest": "Qu'est-ce qui vous intéresse ?",
+      "leadSource": "Comment avez-vous entendu parler de nous ?",
+      "claimsVolume": "Volume annuel de sinistres",
+      "message": "Parlez-nous de vos besoins",
+      "consent": "J'accepte de recevoir des communications de True Aim",
+      "required": "*",
+      "optional": "(Facultatif)",
+      "selectCountry": "Sélectionner un pays",
+      "selectInterest": "Sélectionner un intérêt",
+      "selectSource": "Sélectionner une source",
+      "placeholders": {
+        "firstName": "Jean",
+        "lastName": "Dupont",
+        "email": "jean.dupont@entreprise.com",
+        "company": "Nom de l'entreprise",
+        "jobTitle": "Responsable gestion des sinistres",
+        "claimsVolume": "p. ex. 50 000 sinistres/an",
+        "message": "Quels défis rencontrez-vous dans le traitement des sinistres ?"
+      },
+      "countries": {
+        "switzerland": "Suisse",
+        "germany": "Allemagne",
+        "austria": "Autriche",
+        "unitedKingdom": "Royaume-Uni",
+        "france": "France",
+        "italy": "Italie",
+        "netherlands": "Pays-Bas",
+        "belgium": "Belgique",
+        "spain": "Espagne",
+        "unitedStates": "États-Unis",
+        "other": "Autre"
+      },
+      "interests": {
+        "mira": "Automatiser les décisions de sinistres (MIRA)",
+        "contextbuilder": "Traitement de documents et extraction de données (ContextBuilder)",
+        "claimeval": "Assurance qualité et détection des fuites (ClaimEval)",
+        "auditability": "Auditabilité et conformité réglementaire",
+        "earlyStage": "Évaluation de l'IA pour les sinistres (phase initiale)",
+        "other": "Autre chose / Pas encore sûr"
+      },
+      "leadSources": {
+        "referral": "Recommandation",
+        "industryEvent": "Événement du secteur",
+        "onlineResearch": "Recherche en ligne",
+        "linkedin": "LinkedIn",
+        "other": "Autre"
+      },
+      "validation": {
+        "firstNameRequired": "Le prénom est requis",
+        "lastNameRequired": "Le nom est requis",
+        "emailInvalid": "Veuillez saisir une adresse e-mail valide",
+        "companyRequired": "L'entreprise est requise",
+        "jobTitleRequired": "La fonction est requise",
+        "countryRequired": "Veuillez sélectionner un pays",
+        "interestRequired": "Veuillez sélectionner votre intérêt",
+        "consentRequired": "Vous devez accepter de recevoir des communications"
+      },
+      "submit": "Réserver une démo",
+      "submitting": "Envoi en cours...",
+      "responseTime": "Nous répondons généralement sous 1 jour ouvrable.",
+      "errorGeneric": "Une erreur est survenue. Veuillez réessayer."
+    },
+    "success": {
+      "heading": "Merci !",
+      "message": "Nous avons bien reçu votre demande. Nous répondons généralement sous 1 jour ouvrable.",
+      "submitAnother": "Soumettre une autre demande"
+    },
+    "sidebar": {
+      "alternativeContact": "Contact alternatif",
+      "emailUs": "Écrivez-nous",
+      "emailAddress": "info@trueaim.ai",
+      "bookCall": "Réserver un appel de 30 minutes"
+    }
+  }
+}

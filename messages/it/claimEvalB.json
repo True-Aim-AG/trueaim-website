@@ -1,0 +1,159 @@
+{
+  "claimEvalB": {
+    "versionIndicator": "Versione B",
+    "hero": {
+      "eyebrow": "Per assicuratori danni con >$50M di premi emessi",
+      "title": "State perdendo ",
+      "titleHighlight": "$3.2M all'anno",
+      "titleEnd": " per sinistri che non avete mai verificato.",
+      "subtitle": "ClaimEval verifica il 100% dei vostri sinistri in tempo reale. Non il 2%. Tutti. Riducete le spese per indennizzi dell'8%. Recuperate rivalse mancate. Senza nuove assunzioni.",
+      "ctaPrimary": "Mostratemi le mie perdite",
+      "trustBadge": "Certificato SOC2 Type II",
+      "trustTimeline": "Operativo sul vostro sistema sinistri in 3 settimane"
+    },
+    "dashboard": {
+      "claimNumber": "Sinistro #2024-AUT-7832",
+      "policyHolder": "Contraente",
+      "policyHolderValue": "Sarah Mitchell",
+      "lob": "Ramo",
+      "lobValue": "Auto - Collisione",
+      "reserve": "Riserva",
+      "reserveValue": "$18.500",
+      "policeReportLabel": "Estratto rapporto di polizia:",
+      "policeReportText": "Il richiedente ha dichiarato che stava attraversando l'incrocio quando l'altro veicolo non ha dato la precedenza. ",
+      "policeReportHighlight": "Il conducente ha ammesso di aver inviato un messaggio mentre svoltava.",
+      "alertTitle": "Rivalsa mancata rilevata",
+      "alertValue": "$15.000"
+    },
+    "problem": {
+      "title": "Il vostro processo QA è un lancio di moneta. Il vostro loss ratio ne paga il prezzo.",
+      "description": "Costi di riparazione in aumento del 20% dal 2020. Verdetti estremi superiori a $10M+. Liquidatori junior gestiscono fascicoli che prima andavano ai vostri migliori elementi. E la vostra difesa? Un audit manuale che vede il 2% dei fascicoli chiusi.",
+      "subtitle": "Non state gestendo il rischio. State sperando.",
+      "leaks": {
+        "blindSpot": {
+          "title": "Il punto cieco",
+          "description": "Il 98% dei sinistri viene chiuso senza un secondo sguardo. Ognuno è una responsabilità che non avete mai visto."
+        },
+        "skillGap": {
+          "title": "Il divario di competenze",
+          "description": "I nuovi liquidatori mancano ciò che i veterani colgono. L'incoerenza si traduce in milioni."
+        },
+        "buriedRecovery": {
+          "title": "Il recupero sepolto",
+          "description": "Segnali di rivalsa sepolti nelle note dei liquidatori. Denaro che vi spetta. Denaro che non recupererete mai."
+        }
+      },
+      "icebergTipLabel": "2% verificati",
+      "icebergMassLabel": "98% rischio non esaminato"
+    },
+    "solution": {
+      "title": "Smettete di auditare i sinistri. Iniziate a difendere il vostro loss ratio.",
+      "subtitle": "ClaimEval non sostituisce i vostri liquidatori. Fa di ognuno di loro il vostro migliore.",
+      "steps": {
+        "ingest": {
+          "label": "Acquisizione",
+          "title": "Leggiamo ciò che gli umani saltano.",
+          "description": "Dati strutturati. Note non strutturate. Rapporti di polizia. Fatture mediche. Abbreviazioni dei liquidatori. I nostri modelli sono stati addestrati da esperti in sinistri con oltre 20 anni di esperienza."
+        },
+        "analyze": {
+          "label": "Analisi",
+          "title": "Ogni fascicolo. Ogni volta. Senza eccezioni.",
+          "description": "Ogni sinistro viene analizzato secondo le vostre best practice e oltre 500 scenari di perdita. Individuiamo l'errore da $12.000 alle 16:47 di un venerdì."
+        },
+        "alert": {
+          "label": "Avviso",
+          "title": "Segnalazioni, non sovrascritture.",
+          "description": "Il vostro liquidatore riceve una notifica in tempo reale nel suo workflow. L'AI mostra le prove. L'umano prende la decisione. Controllo totale."
+        }
+      },
+      "smartNudgeTitle": "Notifica intelligente",
+      "smartNudgeMessage": "Limite di copertura superato di $500. Verificate i limiti della polizza prima del pagamento."
+    },
+    "microDemo": {
+      "title": "Trovate una perdita in 30 secondi.",
+      "subtitle": "Guardate ClaimEval individuare un recupero mancato in un sinistro auto standard.",
+      "ctaLink": "Vedere una demo dal vivo",
+      "claimHeader": "Rapporto di polizia - Sinistro #2024-7291",
+      "claimText": "Il 15/03/2024 alle ore 14:34 circa, una collisione tra due veicoli si è verificata all'incrocio tra Via Principale e Viale delle Querce. Il veicolo assicurato, una Honda Accord 2021, procedeva in direzione ovest. ",
+      "claimHighlight": "\"Ero fermo al semaforo rosso quando sono stato colpito\"",
+      "claimTextEnd": ", ha dichiarato il richiedente. L'altro conducente è stato sanzionato per mancato arresto. La perizia dei danni indica un impatto posteriore coerente con il racconto del richiedente.",
+      "alertTitle": "0% di responsabilità rilevata",
+      "alertAction": "Azione: Aprire fascicolo di rivalsa",
+      "scanButton": "Analizzare il sinistro",
+      "scanningButton": "Analisi in corso...",
+      "scanCompleteButton": "Analisi completata",
+      "resetButton": "Reimpostare"
+    },
+    "differentiation": {
+      "title": "Un'AI che si spiega da sola. Costruita da persone che hanno gestito sinistri.",
+      "features": {
+        "noBlackBox": {
+          "title": "Nessuna scatola nera",
+          "description": "Ogni segnalazione cita il linguaggio della polizza o il dato. I vostri auditor possono verificare in pochi secondi."
+        },
+        "guardrails": {
+          "title": "Protezioni integrate",
+          "description": "I liquidatori junior ricevono guida in tempo reale. Coerenza senza microgestione."
+        },
+        "auditTrail": {
+          "title": "Traccia di audit pronta",
+          "description": "Ogni decisione registrata. Ogni ragione documentata. I regolatori chiedono? Siete pronti."
+        },
+        "noRipReplace": {
+          "title": "Nessuna sostituzione totale",
+          "description": "Si sovrappone alla vostra piattaforma sinistri esistente. Operativo in settimane. Non in anni."
+        }
+      }
+    },
+    "socialProof": {
+      "quote": "Pensavamo che l'AI non potesse gestire fascicoli complessi di danni alla persona. In 90 giorni, ClaimEval ha individuato ",
+      "quoteHighlight": "$1.2M di rivalse mancate",
+      "quoteEnd": ". Si è ripagato nel primo trimestre.",
+      "attribution": "VP Sinistri, Assicuratore auto regionale",
+      "badges": {
+        "soc2": "SOC2 Type II",
+        "iso": "ISO 27001",
+        "api": "API-First",
+        "gdpr": "GDPR"
+      }
+    },
+    "roiCalculator": {
+      "title": "Calcolate quanto state perdendo adesso",
+      "dwpLabel": "Premi emessi annuali",
+      "lossRatioLabel": "Loss ratio attuale",
+      "resultPrefix": "Una riduzione dell'1% delle perdite =",
+      "resultSuffix": "di ritorno nelle vostre riserve.",
+      "ctaButton": "Ottenere il mio rapporto personalizzato sulle perdite"
+    },
+    "faq": {
+      "title": "FAQ",
+      "items": {
+        "replaceAdjusters": {
+          "question": "Questo sostituirà i miei liquidatori?",
+          "answer": "No. ClaimEval gestisce il carico di audit. Il vostro team gestisce il giudizio, la negoziazione e la cura del cliente."
+        },
+        "dataSecurity": {
+          "question": "Quanto sono sicuri i miei dati?",
+          "answer": "SOC2 Type II. ISO 27001. Crittografia a riposo. Non addestriamo mai i nostri modelli sui vostri dati senza consenso."
+        },
+        "timeToResults": {
+          "question": "Quanto tempo prima di vedere risultati?",
+          "answer": "La maggior parte degli assicuratori è operativa in 3-4 settimane. Impatto misurabile entro il mese 3."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "I vostri dati sui sinistri hanno delle risposte. Troviamole.",
+      "subtitle": "Sessione strategica di 30 minuti. Analisi delle perdite dal vivo sul vostro portafoglio. Nessuna presentazione. Solo dati.",
+      "lobPlaceholder": "Ramo principale",
+      "lobAuto": "Auto",
+      "lobProperty": "Proprietà",
+      "lobWC": "Infortuni sul lavoro",
+      "volumePlaceholder": "Volume sinistri",
+      "volumeLt10k": "<10k",
+      "volumeGt10k": "10k+",
+      "emailPlaceholder": "E-mail aziendale",
+      "submitButton": "Analizzare le mie perdite"
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "trust": {
+    "hero": {
+      "badge": "Trust Center",
+      "titleLine1": "Unternehmenssicherheit.",
+      "titleLine2": "Regulatorische Compliance.",
+      "description": "Von Grund auf für regulierte Branchen entwickelt. Schweizer Präzision und Datensicherheit."
+    },
+    "compliance": {
+      "heading": "Compliance & Zertifizierungen",
+      "subtitle": "Die Standards erfüllen, die für regulierte Branchen wichtig sind",
+      "badges": {
+        "gdpr": {
+          "name": "GDPR",
+          "description": "Architektur konform mit der EU-Datenschutzverordnung",
+          "status": "aligned"
+        },
+        "euAiAct": {
+          "name": "KI-Verordnung",
+          "description": "Entwickelt für die Anforderungen an Hochrisiko-AI-Systeme",
+          "status": "aligned"
+        },
+        "swissHosting": {
+          "name": "Schweizer Hosting",
+          "description": "Datenhaltung innerhalb der Schweizer Grenzen",
+          "status": "provided"
+        },
+        "iso27001": {
+          "name": "ISO 27001",
+          "description": "Aktuelle Kontrollen entsprechen dem Framework. Formale Zertifizierung für 2026 geplant.",
+          "status": "roadmap"
+        },
+        "soc2": {
+          "name": "SOC 2 Type II",
+          "description": "Aktuelle Kontrollen entsprechen dem Framework. Formale Zertifizierung für 2026 geplant.",
+          "status": "roadmap"
+        },
+        "finma": {
+          "name": "FINMA-Richtlinien",
+          "description": "Compliance mit der Schweizer Finanzmarktaufsicht",
+          "status": "aligned"
+        },
+        "dora": {
+          "name": "DORA",
+          "description": "Konformität mit dem Digital Operational Resilience Act für Finanzunternehmen",
+          "status": "aligned"
+        }
+      },
+      "statusLabels": {
+        "roadmap": "2026",
+        "compliant": "konform",
+        "ready": "bereit",
+        "provided": "bereitgestellt",
+        "aligned": "konform"
+      }
+    },
+    "dataResidency": {
+      "heading": "Datenhaltung & Datensouveränität",
+      "description": "Ihre Daten bleiben, wo Sie sie brauchen. Schweizer Hosting für maximale Datensouveränität und Compliance.",
+      "swissDataCenter": {
+        "title": "Schweizer Rechenzentrum",
+        "description": "Hosten Sie Ihre Daten innerhalb der Schweizer Grenzen, geschützt durch Schweizer Datenschutzgesetze"
+      },
+      "euProcessingZones": {
+        "title": "EU-Verarbeitungszonen",
+        "description": "Daten verlassen niemals die Europäische Union"
+      },
+      "noThirdCountry": {
+        "title": "Keine Drittlandübermittlungen",
+        "description": "Vollständige Kontrolle darüber, wo Ihre Daten verarbeitet werden"
+      },
+      "mapLabels": {
+        "switzerland": "Schweiz",
+        "euZone": "EU-Zone"
+      }
+    },
+    "security": {
+      "heading": "Sicherheitsarchitektur",
+      "subtitle": "Enterprise-Sicherheitskontrollen auf jeder Ebene",
+      "categories": {
+        "dataProtection": {
+          "title": "Datenschutz",
+          "features": {
+            "encryptionAtRest": {
+              "name": "Verschlüsselung im Ruhezustand",
+              "detail": "AES-256-Verschlüsselung für alle gespeicherten Daten"
+            },
+            "encryptionInTransit": {
+              "name": "Verschlüsselung bei Übertragung",
+              "detail": "TLS 1.3 für alle Datenübertragungen"
+            },
+            "dataIsolation": {
+              "name": "Datenisolierung",
+              "detail": "Mandantenspezifische Datentrennung"
+            },
+            "keyManagement": {
+              "name": "Sicheres Schlüsselmanagement",
+              "detail": "Unterstützt durch Hardware-Sicherheitsmodul (HSM)"
+            }
+          }
+        },
+        "accessControl": {
+          "title": "Zugriffskontrolle",
+          "features": {
+            "rbac": {
+              "name": "Rollenbasierter Zugriff (RBAC)",
+              "detail": "Granulare Berechtigungsverwaltung"
+            },
+            "sso": {
+              "name": "SSO-Integration",
+              "detail": "SAML 2.0 und OIDC Unterstützung"
+            },
+            "mfa": {
+              "name": "Multi-Faktor-Authentifizierung",
+              "detail": "MFA-Durchsetzung verfügbar"
+            },
+            "sessionManagement": {
+              "name": "Sitzungsverwaltung",
+              "detail": "Konfigurierbares Timeout und Kontrollen"
+            }
+          }
+        },
+        "auditMonitoring": {
+          "title": "Audit & Überwachung",
+          "features": {
+            "auditLogs": {
+              "name": "Vollständige Audit-Protokolle",
+              "detail": "Jede Aktion mit Zeitstempeln protokolliert"
+            },
+            "decisionReplay": {
+              "name": "Entscheidungswiederholung",
+              "detail": "Jede Entscheidung mit identischen Ergebnissen erneut ausführen"
+            },
+            "accessLogging": {
+              "name": "Zugriffsprotokollierung",
+              "detail": "Volle Einsicht in den Datenzugriff"
+            },
+            "retentionPolicies": {
+              "name": "Aufbewahrungsrichtlinien",
+              "detail": "Konfigurierbare Protokoll-Aufbewahrungsfristen"
+            }
+          }
+        }
+      }
+    },
+    "euAiAct": {
+      "badge": "Regulatorische Compliance",
+      "heading": "Konformität mit der KI-Verordnung",
+      "subtitle": "Unsere neuro-symbolische Architektur ist speziell darauf ausgelegt, die Transparenz-, Aufsichts- und Dokumentationsanforderungen der KI-Verordnung für Hochrisiko-AI-Systeme zu erfüllen.",
+      "features": {
+        "humanOversight": {
+          "requirement": "Menschliche Aufsicht",
+          "description": "Konfigurierbare Genehmigungsstufen und Ausnahme-Routing stellen sicher, dass bei Bedarf eine menschliche Prüfung erfolgt"
+        },
+        "transparency": {
+          "requirement": "Transparenz",
+          "description": "Jede Entscheidung rückverfolgbar auf spezifische Policenklauseln und Quelldokumente"
+        },
+        "technicalDocumentation": {
+          "requirement": "Technische Dokumentation",
+          "description": "Umfassende Systemdokumentation für die regulatorische Prüfung verfügbar"
+        },
+        "riskManagement": {
+          "requirement": "Risikomanagement",
+          "description": "Integrierte Konfidenzbewertung und Ausnahmebehandlung für Grenzfälle"
+        },
+        "dataGovernance": {
+          "requirement": "Data Governance",
+          "description": "Klare Datenherkunft und Qualitätskontrollen über die gesamte Pipeline"
+        },
+        "accuracyRobustness": {
+          "requirement": "Genauigkeit & Robustheit",
+          "description": "Deterministische Logik gewährleistet konsistente Ergebnisse bei identischen Eingaben"
+        }
+      },
+      "callout": {
+        "heading": "Warum deterministische AI für Compliance wichtig ist",
+        "description": "Im Gegensatz zu probabilistischen AI-Systemen liefert unsere deterministische Logik-Engine identische Ergebnisse bei identischen Eingaben, wodurch es einfach ist, Konsistenz, Fairness und Transparenz gegenüber Aufsichtsbehörden nachzuweisen.",
+        "emphasis": "identische Ergebnisse bei identischen Eingaben"
+      }
+    }
+  }
+}

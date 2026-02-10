@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "root": {
+      "titleDefault": "True Aim | Neuro-Symbolic AI for Auditable Claims Decisions",
+      "titleTemplate": "%s | True Aim",
+      "description": "Combine agentic AI with deterministic logic for claims automation. Every decision traceable, aligned with EU AI Act requirements. Swiss precision meets auditable AI.",
+      "ogTitle": "True Aim | Neuro-Symbolic AI for Auditable Claims Decisions",
+      "ogDescription": "Combine agentic AI with deterministic logic for claims automation. Every decision traceable, aligned with EU AI Act requirements."
+    },
+    "mira": {
+      "title": "MIRA - Neuro-Symbolic Decisioning Engine",
+      "description": "Transform complex policy terms into automated, fully-deterministic claim decisions. Every outcome traceable to the legal text. The world's first neuro-symbolic engine for claims.",
+      "ogTitle": "MIRA - Neuro-Symbolic Decisioning Engine | True Aim",
+      "ogDescription": "Transform complex policy terms into automated, fully-deterministic claim decisions. Every outcome traceable to the legal text."
+    },
+    "contextBuilder": {
+      "title": "ContextBuilder - Claims Document Pipeline",
+      "description": "Turn messy claim documents into structured, trusted data. AI-powered document ingestion with human review when needed. 97% accuracy, 97% document coverage.",
+      "ogTitle": "ContextBuilder - Claims Document Pipeline | True Aim",
+      "ogDescription": "Turn messy claim documents into structured, trusted data. AI-powered document ingestion with human review when needed."
+    },
+    "claimEval": {
+      "title": "ClaimEval - Claims Quality Assurance",
+      "description": "Scale QA beyond sampling. Run consistent inspections across your entire claims portfolio. Surface exceptions, prioritize human effort with intelligent risk scoring.",
+      "ogTitle": "ClaimEval - Claims Quality Assurance | True Aim",
+      "ogDescription": "Scale QA beyond sampling. Run consistent inspections across your entire claims portfolio. Surface exceptions, prioritize human effort."
+    },
+    "company": {
+      "title": "Company - About True Aim",
+      "description": "Swiss precision meets auditable AI. Meet our leadership team, advisors, and partners including Yarowa AG, ZHAW, and Innosuisse. Backed by Switzerland's innovation ecosystem.",
+      "ogTitle": "Company - About True Aim",
+      "ogDescription": "Swiss precision meets auditable AI. Meet our leadership team, advisors, and partners. Backed by Switzerland's innovation ecosystem."
+    },
+    "technology": {
+      "title": "Technology - Neuro-Symbolic AI Architecture",
+      "description": "Not probabilistic. Not a black box. Our hybrid approach combines agentic AI execution with deterministic decision-making, purpose-built for regulated industries and EU AI Act compliance.",
+      "ogTitle": "Technology - Neuro-Symbolic AI Architecture | True Aim",
+      "ogDescription": "Our hybrid approach combines agentic AI execution with deterministic decision-making, purpose-built for regulated industries."
+    },
+    "contact": {
+      "title": "Contact - Request a Demo",
+      "description": "Request a demo of True Aim's neuro-symbolic AI for claims automation. Book a 30-minute discovery call to see auditable AI in action.",
+      "ogTitle": "Contact - Request a Demo | True Aim",
+      "ogDescription": "Request a demo of True Aim's neuro-symbolic AI for claims automation. Book a 30-minute discovery call."
+    },
+    "trust": {
+      "title": "Trust & Compliance",
+      "description": "True Aim's compliance architecture. EU AI Act alignment, GDPR, Swiss FADP compliance. Every decision auditable, every outcome traceable.",
+      "ogTitle": "Trust & Compliance | True Aim",
+      "ogDescription": "EU AI Act alignment, GDPR, Swiss FADP compliance. Every decision auditable, every outcome traceable."
+    },
+    "impact": {
+      "title": "Impact Estimator",
+      "description": "Explore potential value with True Aim's AI-powered claims automation. Estimate impact based on real pilot data - no commitment required.",
+      "ogTitle": "Impact Estimator | True Aim",
+      "ogDescription": "Explore potential value with AI-powered claims automation. Estimate impact based on real pilot data."
+    },
+    "caseStudies": {
+      "title": "Case Studies",
+      "description": "See how True Aim's neuro-symbolic AI transforms claims processing. Real-world case studies from insurance companies using MIRA, ContextBuilder, and ClaimEval.",
+      "ogTitle": "Case Studies | True Aim",
+      "ogDescription": "Real-world case studies from insurance companies using True Aim's neuro-symbolic AI for claims automation."
+    },
+    "partners": {
+      "title": "Partners",
+      "titleTemplate": "%s | Partners | True Aim",
+      "description": "True Aim's strategic partners and ecosystem. Backed by Innosuisse, ZHAW, and Yarowa AG in Switzerland's innovation ecosystem.",
+      "ogTitle": "Partners | True Aim",
+      "ogDescription": "True Aim's strategic partners and ecosystem. Backed by Innosuisse, ZHAW, and Yarowa AG in Switzerland's innovation ecosystem."
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "impact": {
+    "hero": {
+      "badge": "Impact Estimator",
+      "titleLine1": "Explore Your",
+      "titleLine2": "Potential Value",
+      "description": "See the estimated impact of automating claims decisions with True Aim. Adjust the high-level inputs to match your operation.",
+      "benefits": {
+        "conservative": "Conservative estimates",
+        "pilotData": "Based on real pilot data",
+        "instant": "Instant indication"
+      }
+    },
+    "cta": {
+      "heading": "Ready for a Detailed Assessment?",
+      "description": "Our team can analyse your specific claims data, policy complexity and operational constraints to provide a customized impact estimate.",
+      "bookDemo": "Book a Demo",
+      "seeMira": "See MIRA in Action"
+    },
+    "calculator": {
+      "inputPanel": {
+        "title": "Your Claims Operation",
+        "subtitle": "Adjust the values to match your situation",
+        "currency": "Currency",
+        "claimsVolume": "Annual Claims Volume:",
+        "claimsVolumeUnit": "claims/year",
+        "handlingTime": "Average handling time per claim:",
+        "handlingTimeUnit": "minutes",
+        "handlingTimeHint": "Use an estimate for a typical claim without unusual complexity",
+        "claimsHandlers": "Number of claims handlers or assessors:",
+        "automationLevel": "Eligible for straight-through or assisted processing",
+        "rangeMin": {
+          "claims": "10,000",
+          "claimsMax": "1,000,000",
+          "timeMin": "5 min",
+          "timeMax": "180 min",
+          "handlersMin": "1",
+          "handlersMax": "500"
+        }
+      },
+      "results": {
+        "mainImpact": {
+          "label": "Estimated Gross Operational Impact (Conservative)",
+          "sublabel": "Based on pilot-scale assumptions",
+          "reductionSuffix": "% reduction in claims handling costs"
+        },
+        "breakdown": {
+          "heading": "Savings Breakdown",
+          "capacity": {
+            "title": "Capacity unlocked",
+            "description": "Fewer touches per claim, shorter handling time"
+          },
+          "rework": {
+            "title": "Rework avoided",
+            "description": "Fewer reopens, appeals and corrections"
+          },
+          "leakage": {
+            "title": "Leakage reduction",
+            "description": "Reduced inconsistent decisions"
+          }
+        },
+        "metrics": {
+          "hoursSaved": "Hours saved/year",
+          "fteEquivalent": "Capacity unlocked (FTE equivalent)",
+          "fteNote": "Reflects reduced handling effort, not headcount reduction"
+        },
+        "disclaimers": {
+          "grossImpact": "All figures shown represent gross operational impact and do not take into account the cost of True Aim's services.",
+          "pricing": "Platform pricing is not provided. Final pricing is based on contract terms and commercial negotiations.",
+          "pilotData": "Based on pilot data from insurance claims."
+        },
+        "assumptions": {
+          "toggle": "Methodology and Assumptions",
+          "howWeCalculate": "How We Calculate",
+          "currentHandlingCost": "Current Handling Cost",
+          "currentHandlingCostFormula": "= Handling Time x Cost per Minute x Claims Volume",
+          "grossSavings": "Gross Savings",
+          "grossSavingsFormula": "= Capacity + Rework + Leakage",
+          "conservativeEstimate": "Conservative Estimate",
+          "conservativeEstimateFormula": "= Gross Savings x 75% Sensitivity Adjustment",
+          "keyAssumptions": "Key Assumptions",
+          "assumption1": "Savings apply only to eligible claim categories",
+          "assumption2": "No immediate headcount reduction assumed",
+          "assumption3": "Savings reflect reduced handling effort and rework",
+          "assumption4": "75% sensitivity adjustment applied to all projections",
+          "breakdownTitle": "Your Numbers Breakdown",
+          "breakdownRows": {
+            "annualVolume": "Annual claims volume",
+            "automatedClaims": "Claims automated by True Aim",
+            "manualClaims": "Claims requiring manual review",
+            "capacityGross": "Capacity savings (gross)",
+            "reworkGross": "Rework avoided (gross)",
+            "leakageGross": "Leakage reduction (gross)",
+            "sensitivityAdjustment": "Sensitivity adjustment (75%)",
+            "grossAnnualImpact": "Gross annual impact (conservative)"
+          },
+          "importantNotes": "Important Notes",
+          "note1": "Estimates are informed by pilot data from travel insurance claims",
+          "note2": "Actual automation rates depend on policy complexity and claim types"
+        },
+        "report": {
+          "received": "Request Received",
+          "receivedMessage": "We'll send your personalised impact breakdown within 1 business day.",
+          "requestTitle": "Request Detailed Impact Report",
+          "namePlaceholder": "Your name",
+          "emailPlaceholder": "Work email",
+          "sending": "Sending...",
+          "sendButton": "Send My Impact Report",
+          "wantFullBreakdown": "Want the full breakdown?",
+          "fullBreakdownDesc": "Get a personalised impact report with detailed methodology and assumptions.",
+          "requestButton": "Request Detailed Impact Report",
+          "bookDemo": "Book a Demo"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "impact": {
+    "hero": {
+      "badge": "Impact Estimator",
+      "titleLine1": "Erkunden Sie Ihr",
+      "titleLine2": "Wertschöpfungspotenzial",
+      "description": "Sehen Sie die geschätzte Auswirkung der Automatisierung von Schadenentscheidungen mit True Aim. Passen Sie die übergeordneten Eingaben an Ihren Betrieb an.",
+      "benefits": {
+        "conservative": "Konservative Schätzungen",
+        "pilotData": "Basierend auf realen Pilotdaten",
+        "instant": "Sofortige Einschätzung"
+      }
+    },
+    "cta": {
+      "heading": "Bereit für eine detaillierte Bewertung?",
+      "description": "Unser Team kann Ihre spezifischen Schadendaten, Policenkomplexität und betrieblichen Rahmenbedingungen analysieren, um eine individuelle Impact-Schätzung zu erstellen.",
+      "bookDemo": "Demo buchen",
+      "seeMira": "MIRA in Aktion sehen"
+    },
+    "calculator": {
+      "inputPanel": {
+        "title": "Ihr Schadenbetrieb",
+        "subtitle": "Passen Sie die Werte an Ihre Situation an",
+        "currency": "Währung",
+        "claimsVolume": "Jährliches Schadenvolumen:",
+        "claimsVolumeUnit": "Schadenmeldungen/Jahr",
+        "handlingTime": "Durchschnittliche Bearbeitungszeit pro Schadenmeldung:",
+        "handlingTimeUnit": "Minuten",
+        "handlingTimeHint": "Verwenden Sie eine Schätzung für eine typische Schadenmeldung ohne besondere Komplexität",
+        "claimsHandlers": "Anzahl Schadensachbearbeiter oder Prüfer:",
+        "automationLevel": "Geeignet für Dunkelverarbeitung oder unterstützte Bearbeitung",
+        "rangeMin": {
+          "claims": "10.000",
+          "claimsMax": "1.000.000",
+          "timeMin": "5 Min.",
+          "timeMax": "180 Min.",
+          "handlersMin": "1",
+          "handlersMax": "500"
+        }
+      },
+      "results": {
+        "mainImpact": {
+          "label": "Geschätzter operativer Brutto-Impact (Konservativ)",
+          "sublabel": "Basierend auf Pilotannahmen",
+          "reductionSuffix": "% Reduktion der Schadenbearbeitungskosten"
+        },
+        "breakdown": {
+          "heading": "Einsparungsaufschlüsselung",
+          "capacity": {
+            "title": "Freigesetzte Kapazität",
+            "description": "Weniger Bearbeitungsschritte pro Schadenmeldung, kürzere Bearbeitungszeit"
+          },
+          "rework": {
+            "title": "Vermiedene Nacharbeit",
+            "description": "Weniger Wiedereröffnungen, Einsprüche und Korrekturen"
+          },
+          "leakage": {
+            "title": "Leakage-Reduktion",
+            "description": "Weniger inkonsistente Entscheidungen"
+          }
+        },
+        "metrics": {
+          "hoursSaved": "Eingesparte Stunden/Jahr",
+          "fteEquivalent": "Freigesetzte Kapazität (FTE-Äquivalent)",
+          "fteNote": "Spiegelt reduzierten Bearbeitungsaufwand wider, nicht Personalabbau"
+        },
+        "disclaimers": {
+          "grossImpact": "Alle dargestellten Zahlen stellen den operativen Brutto-Impact dar und berücksichtigen nicht die Kosten der Dienstleistungen von True Aim.",
+          "pricing": "Plattformpreise werden nicht angegeben. Die endgültige Preisgestaltung basiert auf Vertragskonditionen und kommerziellen Verhandlungen.",
+          "pilotData": "Basierend auf Pilotdaten aus der Versicherungsschadenbearbeitung."
+        },
+        "assumptions": {
+          "toggle": "Methodik und Annahmen",
+          "howWeCalculate": "So berechnen wir",
+          "currentHandlingCost": "Aktuelle Bearbeitungskosten",
+          "currentHandlingCostFormula": "= Bearbeitungszeit x Kosten pro Minute x Schadenvolumen",
+          "grossSavings": "Bruttoeinsparungen",
+          "grossSavingsFormula": "= Kapazität + Nacharbeit + Leakage",
+          "conservativeEstimate": "Konservative Schätzung",
+          "conservativeEstimateFormula": "= Bruttoeinsparungen x 75% Sensitivitätsanpassung",
+          "keyAssumptions": "Kernannahmen",
+          "assumption1": "Einsparungen gelten nur für berechtigte Schadenkategorien",
+          "assumption2": "Kein sofortiger Personalabbau angenommen",
+          "assumption3": "Einsparungen spiegeln reduzierten Bearbeitungsaufwand und Nacharbeit wider",
+          "assumption4": "75% Sensitivitätsanpassung auf alle Prognosen angewendet",
+          "breakdownTitle": "Ihre Zahlen im Detail",
+          "breakdownRows": {
+            "annualVolume": "Jährliches Schadenvolumen",
+            "automatedClaims": "Von True Aim automatisierte Schadenmeldungen",
+            "manualClaims": "Schadenmeldungen mit manueller Prüfung",
+            "capacityGross": "Kapazitätseinsparungen (brutto)",
+            "reworkGross": "Vermiedene Nacharbeit (brutto)",
+            "leakageGross": "Leakage-Reduktion (brutto)",
+            "sensitivityAdjustment": "Sensitivitätsanpassung (75%)",
+            "grossAnnualImpact": "Jährlicher Brutto-Impact (konservativ)"
+          },
+          "importantNotes": "Wichtige Hinweise",
+          "note1": "Schätzungen basieren auf Pilotdaten aus der Reiseversicherungsschadenbearbeitung",
+          "note2": "Tatsächliche Automatisierungsraten hängen von der Policenkomplexität und den Schadenarten ab"
+        },
+        "report": {
+          "received": "Anfrage erhalten",
+          "receivedMessage": "Wir senden Ihnen Ihre individuelle Impact-Aufschlüsselung innerhalb eines Werktages.",
+          "requestTitle": "Detaillierten Impact-Bericht anfordern",
+          "namePlaceholder": "Ihr Name",
+          "emailPlaceholder": "Geschäftliche E-Mail",
+          "sending": "Wird gesendet...",
+          "sendButton": "Meinen Impact-Bericht senden",
+          "wantFullBreakdown": "Die vollständige Aufschlüsselung gewünscht?",
+          "fullBreakdownDesc": "Erhalten Sie einen individualisierten Impact-Bericht mit detaillierter Methodik und Annahmen.",
+          "requestButton": "Detaillierten Impact-Bericht anfordern",
+          "bookDemo": "Demo buchen"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "technology": {
+    "hero": {
+      "badge": "Our Technology",
+      "titleLine1": "Neuro-Symbolic AI: The Architecture",
+      "titleLine2": "Regulators Trust",
+      "description": "Not probabilistic. Not a black box. Our hybrid approach combines agentic AI execution with deterministic decision-making, purpose-built for regulated industries."
+    },
+    "problem": {
+      "heading": "The Problem with Probabilistic AI",
+      "description": "Large language models are powerful, but they're probabilistic. Given the same input twice, they might produce different outputs. They can't explain their reasoning in terms regulators understand.",
+      "emphasis": "For claims decisions, this is unacceptable."
+    },
+    "architecture": {
+      "heading": "Separation of Concerns",
+      "subtitle": "Two layers, each optimized for what it does best",
+      "agentic": {
+        "title": "Agentic AI",
+        "subtitle": "Flexible and adaptive",
+        "capabilities": {
+          "docReading": "Document reading",
+          "dataExtraction": "Data extraction",
+          "classification": "Classification",
+          "orchestration": "Orchestration"
+        },
+        "description": "Uses machine learning to handle unstructured data, understand context and orchestrate complex workflows."
+      },
+      "deterministic": {
+        "title": "Deterministic Decision Engine",
+        "subtitle": "Precise and auditable",
+        "capabilities": {
+          "coverageRules": "Coverage rules",
+          "policyLogic": "Policy logic",
+          "costCalculation": "Cost calculation",
+          "decisionOutput": "Decision output"
+        },
+        "description": "Applies encoded rules to produce consistent, explainable decisions every time."
+      },
+      "auditTrail": {
+        "title": "Complete Audit Trail",
+        "description": "Every field traces to source documents. Every decision traces to policy terms. Full transparency for regulators and auditors."
+      }
+    },
+    "control": {
+      "badge": "Enterprise Control",
+      "heading": "The Control Layer",
+      "subtitle": "Automation with oversight. Every feature designed to keep humans in control where it matters.",
+      "features": {
+        "replayLogs": {
+          "title": "Replay Logs",
+          "description": "Re-run any decision with the same inputs and get identical outputs. Every execution is deterministic and reproducible."
+        },
+        "ruleTraceability": {
+          "title": "Rule Traceability",
+          "description": "Every coverage decision is mapped to specific policy clause IDs. See exactly which rules fired and why."
+        },
+        "approvalGates": {
+          "title": "Approval Gates",
+          "description": "Configure thresholds for human review escalation. High-value or edge cases automatically route to experts."
+        },
+        "exceptionRouting": {
+          "title": "Exception Routing",
+          "description": "Automatic routing based on claim complexity score. Unusual patterns flagged for manual inspection."
+        },
+        "confidenceScoring": {
+          "title": "Confidence Scoring",
+          "description": "Field-level certainty indicators show where the system is confident and where human review adds value."
+        }
+      },
+      "philosophy": "AI should handle the heavy lifting, but humans must always be able to understand, verify and override. Every control exists because regulated industries demand it.",
+      "philosophyPrefix": "Our philosophy:"
+    },
+    "comparison": {
+      "heading": "Not Another Black Box",
+      "subtitle": "See how True Aim compares to traditional AI approaches",
+      "columns": {
+        "capability": "Capability",
+        "traditional": "Traditional AI",
+        "trueaim": "True Aim"
+      },
+      "rows": {
+        "consistency": {
+          "capability": "Decision consistency",
+          "traditional": "Variable",
+          "trueaim": "Deterministic"
+        },
+        "auditTrail": {
+          "capability": "Audit trail",
+          "traditional": "Partial",
+          "trueaim": "Complete"
+        },
+        "explainability": {
+          "capability": "Explainability",
+          "traditional": "\"Model said so\"",
+          "trueaim": "Traceable to clause"
+        },
+        "euAiAct": {
+          "capability": "EU AI Act ready",
+          "traditional": "Unclear",
+          "trueaim": "Yes"
+        }
+      }
+    },
+    "research": {
+      "heading": "Research Partnership",
+      "descriptionStart": "Parts of our technology are being developed in collaboration with",
+      "zhawName": "ZHAW",
+      "descriptionMiddle": "(Zurich University of Applied Sciences) and advanced through an",
+      "innosuisseName": "Innosuisse",
+      "descriptionEnd": "-funded research programme, recognised through Switzerland's national innovation framework."
+    },
+    "cta": {
+      "heading": "See our Technology in Action",
+      "description": "Book a demo to understand how our neuro-symbolic architecture can work for your claims operations.",
+      "button": "Book a demo"
+    }
+  }
+}

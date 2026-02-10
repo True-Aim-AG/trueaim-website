@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "products": "Produits",
+    "resources": "Ressources",
+    "technology": "Technologie",
+    "company": "Entreprise",
+    "contact": "Contact",
+    "bookDemo": "Réserver une démo",
+    "logoAlt": "Logo True Aim",
+    "toggleMenu": "Ouvrir/fermer le menu",
+    "productsDropdown": {
+      "mira": "MIRA",
+      "miraDesc": "Moteur de décision",
+      "contextBuilder": "ContextBuilder",
+      "contextBuilderDesc": "Pipeline documentaire",
+      "claimEval": "ClaimEval",
+      "claimEvalDesc": "Assurance qualité"
+    },
+    "resourcesDropdown": {
+      "caseStudies": "Études de cas",
+      "caseStudiesDesc": "Témoignages de réussite clients",
+      "impactEstimator": "Impact Estimator",
+      "impactEstimatorDesc": "Explorez la valeur potentielle",
+      "trustCenter": "Trust Center",
+      "trustCenterDesc": "Sécurité & conformité",
+      "blog": "Blog",
+      "blogDesc": "Analyses et actualités"
+    }
+  },
+  "footer": {
+    "logoAlt": "Logo True Aim",
+    "tagline": "Précision suisse. IA auditable.",
+    "company": "Entreprise",
+    "resources": "Ressources",
+    "products": "Produits",
+    "legal": "Mentions légales",
+    "about": "À propos",
+    "contact": "Contact",
+    "caseStudies": "Études de cas",
+    "impactEstimator": "Impact Estimator",
+    "trustCenter": "Trust Center",
+    "blog": "Blog",
+    "mira": "MIRA",
+    "contextBuilder": "ContextBuilder",
+    "claimEval": "ClaimEval",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "cookies": "Politique relative aux cookies",
+    "paia": "Manuel PAIA",
+    "copyright": "© {year} True Aim. Tous droits réservés.",
+    "linkedin": "LinkedIn"
+  },
+  "cookie": {
+    "title": "Préférences en matière de cookies",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience. Les cookies essentiels sont toujours actifs. Vous pouvez choisir d'activer les cookies d'analyse pour nous aider à améliorer notre site web.",
+    "learnMore": "En savoir plus",
+    "acceptAll": "Tout accepter",
+    "decline": "Refuser",
+    "managePreferences": "Gérer les préférences",
+    "savePreferences": "Enregistrer les préférences",
+    "essential": "Essentiels",
+    "essentialDesc": "Nécessaires au fonctionnement du site web",
+    "analytics": "Analyse",
+    "analyticsDesc": "Nous aident à comprendre comment les visiteurs utilisent notre site"
+  },
+  "skipToContent": "Accéder au contenu principal"
+}

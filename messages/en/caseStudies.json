@@ -1,0 +1,281 @@
+{
+  "caseStudies": {
+    "hero": {
+      "badge": "Customer Success",
+      "titleLine1": "Real Results from",
+      "titleLine2": "Real Insurers",
+      "description": "See how insurers are using True Aim to transform their claims operations with measurable, auditable results."
+    },
+    "featured": {
+      "badge": "Featured",
+      "readFullStudy": "Read full case study"
+    },
+    "wip": {
+      "heading": "Additional Case Studies In Progress",
+      "description": "These case studies are currently being documented. Check back for the full write-ups.",
+      "badge": "In Progress"
+    },
+    "cta": {
+      "heading": "See What Auditable AI Can Do for Your Claims",
+      "description": "Let's analyse a batch of your closed claims to quantify the potential impact.",
+      "bookDemo": "Book a Demo",
+      "getEstimate": "Get Impact Estimate"
+    },
+    "detail": {
+      "allCaseStudies": "All Case Studies",
+      "notFound": "Case Study Not Found",
+      "viewAll": "View all case studies",
+      "theChallenge": "The Challenge",
+      "theSolution": "The Solution",
+      "keyHighlights": "Key Highlights",
+      "getSimilarResults": "Get Similar Results",
+      "previous": "Previous",
+      "next": "Next",
+      "ctaHeading": "Ready to Achieve Similar Results?",
+      "ctaDescription": "Start with a pilot on your closed claims and see the impact for yourself.",
+      "requestPilot": "Request a Pilot"
+    },
+    "vehicleWarranty": {
+      "heroTitle": "Automating Vehicle Warranty Claims with AI Document Intelligence",
+      "heroSubtitle": "From 18% to 98% Decision Accuracy in 7 Days",
+      "theProblem": "The Problem",
+      "problemP1": "A vehicle warranty claim lands on an adjuster's desk: five documents, three languages, a cost estimate with 30 line items, a policy with coverage tiers, mileage-dependent reimbursement rates and component exclusion lists.",
+      "problemP2": "Processing takes 15-30 minutes per claim. Multiply that by hundreds of claims per month.",
+      "problemP3Start": "76% of denied claims fail for a single reason: ",
+      "problemP3Emphasis": "the part is not covered by the policy",
+      "problemP3End": " - a deterministic lookup, not a judgment call.",
+      "stats": {
+        "approvalDenial": "Approval-to-denial split",
+        "avgPayout": "Avg approved payout",
+        "vehicleBrands": "Vehicle brands represented",
+        "docTypes": "Distinct document types",
+        "avgDocs": "Avg documents per claim"
+      },
+      "whyExistingFail": "Why Existing Approaches Fall Short",
+      "whyExistingFailIntro": "Most document processing tools extract text from PDFs - that gets you 10% of the way. The real challenge is",
+      "whyExistingFailEmphasis": "cross-document reasoning",
+      "whyExistingFailIntroEnd": ": a cost estimate means nothing without the policy, a mileage reading means nothing without the coverage cap.",
+      "failReasons": {
+        "genericOcr": {
+          "title": "Generic OCR pipelines lack domain depth",
+          "desc": "Swiss repair invoices contain line items in German with part numbers, labor codes, carry-forward subtotals across pages. Standard OCR extracts text but not structured data with coverage implications."
+        },
+        "singleModel": {
+          "title": "Single-model approaches plateau early",
+          "desc": "Sending an entire claim to an LLM produces inconsistent results - hallucinated part names, invented coverage rules, unreliable financial calculations. Baseline LLM-only accuracy: 18%."
+        },
+        "ruleBased": {
+          "title": "Rule-based systems cannot scale to vocabulary",
+          "desc": "Thousands of part names across multiple languages. A \"Wasserpumpe\" in German is a \"pompe \u00e0 eau\" in French. Pure keyword matching breaks on the first synonym it has not seen."
+        }
+      },
+      "hybridSolution": "The solution requires a",
+      "hybridArchitecture": "hybrid architecture",
+      "hybridSolutionEnd": ": deterministic rules where they work, keyword matching for known vocabulary and LLM reasoning as a calibrated fallback - each layer with explicit confidence scoring and provenance tracking.",
+      "architectureTitle": "The Architecture: A Multi-Stage Pipeline",
+      "architectureIntro": "An end-to-end claims processing pipeline moves raw documents through five stages, each with quality gates and audit logging.",
+      "stages": {
+        "ingestion": "Ingestion",
+        "classification": "Classification",
+        "extraction": "Extraction",
+        "screening": "Screening",
+        "qaReview": "QA Review",
+        "stageLabel": "Stage"
+      },
+      "multiTier": {
+        "heading": "Coverage Analysis: Multi-Tier Matching",
+        "intro": "Each line item goes through a multi-tier matching pipeline, prioritizing deterministic approaches before falling back to AI:",
+        "deterministic": {
+          "name": "Deterministic Rules",
+          "confidence": "Highest",
+          "desc": "Exact matches for known items, exclusions, and consumables. Zero ambiguity, instant resolution."
+        },
+        "keyword": {
+          "name": "Keyword Matching",
+          "confidence": "High",
+          "desc": "Maps multilingual repair terms to component categories with synonym normalization."
+        },
+        "aiFallback": {
+          "name": "AI Fallback",
+          "confidence": "Moderate",
+          "desc": "LLM with structured prompts for genuinely ambiguous items that require contextual reasoning."
+        },
+        "confidenceLabel": "confidence"
+      },
+      "expandable": {
+        "ingestionTitle": "Stage details: Ingestion, Classification & Extraction",
+        "stage1Title": "Stage 1: Document Ingestion",
+        "stage1Desc": "Pluggable ingestion layer supporting multiple OCR providers for production workloads. Each page extracted independently with position tracking for full provenance.",
+        "stage2Title": "Stage 2: Document Classification",
+        "stage2Desc": "AI-powered router classifies documents by type with language-specific cues across German, French, and Italian. Near-100% classification accuracy.",
+        "stage3Title": "Stage 3: Structured Field Extraction",
+        "stage3Desc": "Domain-specific extractors handle comprehensive field sets for warranty policies. Cost estimate extractors handle multi-page documents with carry-forward subtotals and total validation. Every field carries a confidence score, provenance and quality gate verdict.",
+        "screeningTitle": "Stage details: Deterministic screening checks",
+        "screeningIntro": "The screening pipeline runs multiple deterministic checks covering policy validity, coverage eligibility, and compliance requirements. Each check produces one of three verdicts:",
+        "hardFail": "Hard fail",
+        "hardFailDesc": "Blocks automation, requires human review",
+        "softCheck": "Soft check",
+        "softCheckDesc": "Flags for attention but doesn't block",
+        "conditional": "Conditional",
+        "conditionalDesc": "Outcome depends on additional context",
+        "screeningNote": "Checks cover areas like policy status, coverage dates, mileage limits, component eligibility, and exclusion patterns.",
+        "payoutTitle": "Payout calculation approach",
+        "payoutIntro": "The payout calculation follows insurer-specific business rules, typically including:",
+        "payoutItems": {
+          "sumCovered": "Summing covered items",
+          "applyCaps": "Applying coverage caps and reimbursement rates",
+          "addTaxes": "Adding applicable taxes",
+          "calcDeductibles": "Calculating deductibles",
+          "computeFinal": "Computing final payout"
+        },
+        "payoutNote": "Each insurer has specific rules for deductibles, reimbursement tiers, and parts/labor splits that must be matched exactly."
+      },
+      "journey": {
+        "heading": "The Implementation Journey: From 18% to 98%",
+        "day1_3": {
+          "label": "Days 1-3",
+          "title": "Baseline and Architecture",
+          "desc": "The initial LLM-only approach produced plausible-sounding but unreliable results: hallucinated part names, invented coverage rules, inconsistent calculations.",
+          "insight": "Key insight:",
+          "insightText": "LLMs are good at language understanding but bad at deterministic business rules. The architecture had to separate judgment from precision."
+        },
+        "day3_5": {
+          "label": "Days 3-5",
+          "title": "Screening + Coverage Pipeline",
+          "desc": "The deterministic screening pipeline and multi-tier coverage matching drove the biggest single improvement. Rule-based checks alone caught most denials correctly."
+        },
+        "day5_8": {
+          "label": "Days 5-8",
+          "title": "Iteration and Refinement",
+          "desc": "60+ evaluation iterations solving increasingly subtle problems: substring matching bugs, labor demotion logic, and part-number normalization across OCR outputs."
+        },
+        "holdout": {
+          "label": "Holdout Test",
+          "title": "Unseen Data Validation",
+          "desc": "30 previously unseen claims revealed failure modes the development set did not cover: causal exclusion clauses, missing document scenarios and sub-component interpretation gaps.",
+          "honest": "The holdout gap (98% vs 77%) is the honest measure of generalization."
+        }
+      },
+      "iterationDetails": {
+        "title": "Detailed iteration fixes (88% to 98%)",
+        "substringBug": "Cross-category substring matching bug:",
+        "substringBugDesc": "An EGR valve synonym (\"abgasrueckfuehrung\") contained the substring \"asr\" (anti-slip regulation). The system declared the EGR valve covered under brakes. Fix: symmetric guard requiring exact match when either term is 3 characters or fewer.",
+        "laborDemotion": "Labor demotion over-aggression:",
+        "laborDemotionDesc": "When a part was covered, the associated installation labor should also be covered. Fix: labor promotion logic that inherits coverage from the parent repair.",
+        "partNumber": "Part-number normalization:",
+        "partNumberDesc": "A Mercedes part number was not matched due to spacing differences in OCR extraction. Fix: normalize all part numbers by stripping spaces and special characters before lookup."
+      },
+      "holdoutAnalysis": {
+        "title": "Holdout failure analysis",
+        "causal": {
+          "title": "Causal exclusion clauses",
+          "desc": "A turbocharger is covered, but if the turbo failed because the engine (not covered) failed first, the policy denies coverage. The system does not reason about failure chains."
+        },
+        "missingDocs": {
+          "title": "Missing documents",
+          "desc": "One claim was denied because the policy premium was not paid. This information lives in the insurer's internal system, not in any processable document."
+        },
+        "subComponent": {
+          "title": "Sub-component interpretation gaps",
+          "desc": "A DPF sensor is functionally part of the exhaust system. The policy covers exhausts but only lists specific sub-components. The adjuster approved by interpreting the sensor as an exhaust sub-component."
+        },
+        "excludedDominance": {
+          "title": "Excluded-component dominance",
+          "desc": "A claim for a hose repair (excluded) was approved because a minor bolt (CHF 3.70, covered) was also on the invoice."
+        }
+      },
+      "showMore": "Show more details",
+      "showLess": "Show less",
+      "technicalChallenges": {
+        "heading": "Technical Challenges",
+        "multiLang": {
+          "title": "Multi-Language Processing",
+          "desc": "Language-aware classification and extraction across German, French and Italian. Comparable approval rates with no measurable language bias."
+        },
+        "auditability": {
+          "title": "Auditability and Compliance",
+          "desc": "Full provenance chain: every extracted field links to its source document and page. Every coverage decision includes match method, confidence score and explanation."
+        },
+        "payoutPrecision": {
+          "title": "Payout Formula Precision",
+          "desc": "Order-of-operations errors in financial calculations can cause significant overpayment. Finding them requires walking through calculations claim by claim with adjusters."
+        },
+        "costControl": {
+          "title": "Cost Control",
+          "desc": "Deterministic rules and keyword matching handle the majority of items with zero LLM cost. Token usage monitoring with configurable thresholds prevents runaway costs."
+        }
+      },
+      "orderOfOps": {
+        "title": "Order-of-operations lesson",
+        "intro": "When applying degraded reimbursement rates, the order of operations matters:",
+        "wrong": "Wrong:",
+        "wrongDesc": "Apply rate after VAT and deductible calculations",
+        "correct": "Correct:",
+        "correctDesc": "Apply rate to covered amount first, then add VAT and subtract deductible",
+        "note": "A single operation-order error can cause significant overpayment. Finding these bugs requires walking through calculations with adjusters."
+      },
+      "results": {
+        "heading": "Results",
+        "evalSet": "Initial Evaluation Set",
+        "holdoutSet": "Holdout Set",
+        "metrics": {
+          "decisionAccuracy": "Decision accuracy",
+          "approvedCorrect": "Approved claims correctly identified",
+          "deniedCorrect": "Denied claims correctly identified",
+          "falseReject": "False reject rate",
+          "falseApprove": "False approve rate"
+        },
+        "processingChars": {
+          "multipleDocTypes": "Multiple document types",
+          "multiBrand": "Multi-brand support",
+          "deterministicScreening": "Deterministic screening",
+          "multiTierMatching": "Multi-tier matching",
+          "comprehensiveKeywords": "Comprehensive keywords",
+          "fullFieldExtraction": "Full field extraction",
+          "languagesSupported": "Languages supported",
+          "extensiveTestCoverage": "Extensive test coverage"
+        }
+      },
+      "lessons": {
+        "heading": "What We Learned",
+        "lesson1": {
+          "title": "Deterministic checks beat LLM judgment for structured rules.",
+          "desc": "76% of claim denials are \"part not covered\" - a lookup, not a judgment call. The screening pipeline handles these with 100% confidence and zero LLM cost."
+        },
+        "lesson2": {
+          "title": "The accuracy curve has diminishing returns.",
+          "desc": "18% to 76% took 3 days. 76% to 98% took 4 more days. The holdout gap (98% vs 77%) confirmed that real-world generalization requires significantly more data."
+        },
+        "lesson3": {
+          "title": "The payout formula is harder than the AI.",
+          "desc": "Getting the financial calculation to match the insurer's exact formula requires sitting with an adjuster and walking through calculations by hand. No amount of prompt engineering solves a business logic bug."
+        },
+        "lesson4": {
+          "title": "Provenance tracking is non-negotiable.",
+          "desc": "In a regulated industry, every extracted value and coverage decision must trace back to a source document. Fundamental to trust and compliance."
+        }
+      },
+      "nextSteps": {
+        "heading": "Next Steps Taken",
+        "step1": "Expanded on ground truth dataset",
+        "step2": "Integrated with insurer's policy management API for real-time status checks",
+        "step3": "Implemented causal exclusion reasoning for cascading-damage denials",
+        "step4": "Deployed production triage: auto-reject high-confidence denials, auto-approve simple approvals, route edge cases for human review",
+        "conclusion": "The goal is not to replace adjusters but to give them back their time on the 76% of denials that are straightforward lookups, so they can focus their expertise on the 24% that actually require judgment."
+      },
+      "sidebar": {
+        "keyHighlights": "Key Highlights",
+        "productsUsed": "Products Used",
+        "capabilities": "Capabilities",
+        "capabilityList": {
+          "docProcessing": "Document Processing",
+          "hybridAi": "Hybrid AI",
+          "multilingual": "Multilingual",
+          "fullProvenance": "Full Provenance",
+          "auditReady": "Audit Ready"
+        },
+        "getSimilarResults": "Get Similar Results"
+      }
+    }
+  }
+}

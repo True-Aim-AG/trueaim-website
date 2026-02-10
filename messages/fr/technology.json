@@ -1,0 +1,118 @@
+{
+  "technology": {
+    "hero": {
+      "badge": "Notre technologie",
+      "titleLine1": "AI neuro-symbolique : L'architecture",
+      "titleLine2": "à laquelle les régulateurs font confiance",
+      "description": "Pas probabiliste. Pas une boîte noire. Notre approche hybride combine l'exécution AI agentique avec la prise de décision déterministe, conçue spécifiquement pour les industries réglementées."
+    },
+    "problem": {
+      "heading": "Le problème de l'AI probabiliste",
+      "description": "Les grands modèles de langage sont puissants, mais ils sont probabilistes. Avec la même entrée deux fois, ils peuvent produire des résultats différents. Ils ne peuvent pas expliquer leur raisonnement dans des termes compréhensibles par les régulateurs.",
+      "emphasis": "Pour les décisions de sinistres, c'est inacceptable."
+    },
+    "architecture": {
+      "heading": "Séparation des responsabilités",
+      "subtitle": "Deux couches, chacune optimisée pour ce qu'elle fait le mieux",
+      "agentic": {
+        "title": "AI agentique",
+        "subtitle": "Flexible et adaptative",
+        "capabilities": {
+          "docReading": "Lecture de documents",
+          "dataExtraction": "Extraction de données",
+          "classification": "Classification",
+          "orchestration": "Orchestration"
+        },
+        "description": "Utilise l'apprentissage automatique pour traiter les données non structurées, comprendre le contexte et orchestrer des workflows complexes."
+      },
+      "deterministic": {
+        "title": "Moteur de décision déterministe",
+        "subtitle": "Précis et auditable",
+        "capabilities": {
+          "coverageRules": "Règles de couverture",
+          "policyLogic": "Logique de police",
+          "costCalculation": "Calcul des coûts",
+          "decisionOutput": "Résultat de décision"
+        },
+        "description": "Applique des règles encodées pour produire des décisions cohérentes et explicables à chaque fois."
+      },
+      "auditTrail": {
+        "title": "Piste d'audit complète",
+        "description": "Chaque champ est traçable jusqu'aux documents sources. Chaque décision est traçable jusqu'aux conditions de la police. Transparence totale pour les régulateurs et les auditeurs."
+      }
+    },
+    "control": {
+      "badge": "Contrôle entreprise",
+      "heading": "La couche de contrôle",
+      "subtitle": "Automatisation avec supervision. Chaque fonctionnalité est conçue pour maintenir le contrôle humain là où c'est important.",
+      "features": {
+        "replayLogs": {
+          "title": "Journaux de rejeu",
+          "description": "Rejouez n'importe quelle décision avec les mêmes entrées et obtenez des résultats identiques. Chaque exécution est déterministe et reproductible."
+        },
+        "ruleTraceability": {
+          "title": "Traçabilité des règles",
+          "description": "Chaque décision de couverture est associée à des identifiants de clauses de police spécifiques. Voyez exactement quelles règles se sont déclenchées et pourquoi."
+        },
+        "approvalGates": {
+          "title": "Niveaux d'approbation",
+          "description": "Configurez des seuils pour l'escalade vers la revue humaine. Les cas à haute valeur ou les cas limites sont automatiquement dirigés vers des experts."
+        },
+        "exceptionRouting": {
+          "title": "Routage des exceptions",
+          "description": "Routage automatique basé sur le score de complexité du sinistre. Les schémas inhabituels sont signalés pour inspection manuelle."
+        },
+        "confidenceScoring": {
+          "title": "Score de confiance",
+          "description": "Des indicateurs de certitude au niveau du champ montrent où le système est confiant et où la revue humaine apporte de la valeur."
+        }
+      },
+      "philosophy": "L'AI devrait gérer le gros du travail, mais les humains doivent toujours pouvoir comprendre, vérifier et surcharger. Chaque contrôle existe parce que les industries réglementées l'exigent.",
+      "philosophyPrefix": "Notre philosophie :"
+    },
+    "comparison": {
+      "heading": "Pas une autre boîte noire",
+      "subtitle": "Découvrez comment True Aim se compare aux approches AI traditionnelles",
+      "columns": {
+        "capability": "Capacité",
+        "traditional": "AI traditionnelle",
+        "trueaim": "True Aim"
+      },
+      "rows": {
+        "consistency": {
+          "capability": "Cohérence des décisions",
+          "traditional": "Variable",
+          "trueaim": "Déterministe"
+        },
+        "auditTrail": {
+          "capability": "Piste d'audit",
+          "traditional": "Partielle",
+          "trueaim": "Complète"
+        },
+        "explainability": {
+          "capability": "Explicabilité",
+          "traditional": "\"Le modèle l'a dit\"",
+          "trueaim": "Traçable jusqu'à la clause"
+        },
+        "euAiAct": {
+          "capability": "Conforme au Règlement sur l'IA",
+          "traditional": "Incertain",
+          "trueaim": "Oui"
+        }
+      }
+    },
+    "research": {
+      "heading": "Partenariat de recherche",
+      "descriptionStart": "Des parties de notre technologie sont développées en collaboration avec la",
+      "zhawName": "ZHAW",
+      "descriptionMiddle": "(Haute école zurichoise de sciences appliquées) et avancées grâce à un programme de recherche financé par",
+      "innosuisseName": "Innosuisse",
+      "descriptionEnd": ", reconnu à travers le cadre national d'innovation de la Suisse."
+    },
+    "cta": {
+      "heading": "Découvrez notre technologie en action",
+      "description": "Réservez une démo pour comprendre comment notre architecture neuro-symbolique peut fonctionner pour vos opérations de gestion des sinistres.",
+      "button": "Réserver une démo"
+    }
+  }
+}

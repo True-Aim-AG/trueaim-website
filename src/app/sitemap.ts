@@ -1,92 +1,107 @@
 import { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://trueaim.ai";
+const baseUrl = "https://trueaim.ai";
+const locales = ["en", "de", "fr", "it"] as const;
 
-  return [
+/**
+ * Build hreflang alternates for a given path.
+ * EN (default locale) has no prefix; other locales get /{locale}/ prefix.
+ */
+function buildAlternates(path: string) {
+  return {
+    languages: Object.fromEntries(
+      locales.map((locale) => [
+        locale,
+        locale === "en"
+          ? `${baseUrl}${path}`
+          : `${baseUrl}/${locale}${path}`,
+      ])
+    ),
+  };
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  // --- Translated pages (all 4 locales) ---
+
+  const translatedPages: {
+    path: string;
+    changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+    priority: number;
+  }[] = [
+    { path: "", changeFrequency: "monthly", priority: 1 },
+    { path: "/products/mira", changeFrequency: "monthly", priority: 0.9 },
     {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/products/mira`,
-      lastModified: new Date(),
+      path: "/products/contextbuilder",
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/products/contextbuilder`,
-      lastModified: new Date(),
+      path: "/products/claimeval",
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    { path: "/technology", changeFrequency: "monthly", priority: 0.8 },
+    { path: "/company", changeFrequency: "monthly", priority: 0.7 },
+    { path: "/trust", changeFrequency: "monthly", priority: 0.7 },
+    { path: "/case-studies", changeFrequency: "monthly", priority: 0.7 },
     {
-      url: `${baseUrl}/products/claimeval`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/technology`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/company`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/trust`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/case-studies`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/impact-estimator`,
-      lastModified: new Date(),
+      path: "/impact-estimator",
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    { path: "/contact", changeFrequency: "yearly", priority: 0.6 },
+    { path: "/partners", changeFrequency: "monthly", priority: 0.6 },
+    { path: "/partners/yarowa", changeFrequency: "monthly", priority: 0.5 },
     {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.6,
+      path: "/partners/innosuisse",
+      changeFrequency: "monthly",
+      priority: 0.5,
     },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/cookies`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
+    { path: "/partners/zhaw", changeFrequency: "monthly", priority: 0.5 },
   ];
+
+  const translatedEntries: MetadataRoute.Sitemap = translatedPages.map(
+    ({ path, changeFrequency, priority }) => ({
+      url: `${baseUrl}${path}`,
+      lastModified: new Date(),
+      changeFrequency,
+      priority,
+      alternates: buildAlternates(path),
+    })
+  );
+
+  // --- English-only pages (no alternates) ---
+
+  const englishOnlyPages: {
+    path: string;
+    changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+    priority: number;
+  }[] = [
+    { path: "/blog", changeFrequency: "weekly", priority: 0.6 },
+    {
+      path: "/blog/auditability-evidence-chains",
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      path: "/blog/build-vs-buy-idp-vendors",
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
+    { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
+    { path: "/cookies", changeFrequency: "yearly", priority: 0.3 },
+    { path: "/paia", changeFrequency: "yearly", priority: 0.3 },
+  ];
+
+  const englishOnlyEntries: MetadataRoute.Sitemap = englishOnlyPages.map(
+    ({ path, changeFrequency, priority }) => ({
+      url: `${baseUrl}${path}`,
+      lastModified: new Date(),
+      changeFrequency,
+      priority,
+    })
+  );
+
+  return [...translatedEntries, ...englishOnlyEntries];
 }

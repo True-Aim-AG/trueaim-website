@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "products": "Products",
+    "resources": "Resources",
+    "technology": "Technology",
+    "company": "Company",
+    "contact": "Contact",
+    "bookDemo": "Book a Demo",
+    "logoAlt": "True Aim Logo",
+    "toggleMenu": "Toggle menu",
+    "productsDropdown": {
+      "mira": "MIRA",
+      "miraDesc": "Decisioning Engine",
+      "contextBuilder": "ContextBuilder",
+      "contextBuilderDesc": "Document Pipeline",
+      "claimEval": "ClaimEval",
+      "claimEvalDesc": "Quality Assurance"
+    },
+    "resourcesDropdown": {
+      "caseStudies": "Case Studies",
+      "caseStudiesDesc": "Customer success stories",
+      "impactEstimator": "Impact Estimator",
+      "impactEstimatorDesc": "Explore potential value",
+      "trustCenter": "Trust Center",
+      "trustCenterDesc": "Security & compliance",
+      "blog": "Blog",
+      "blogDesc": "Insights and updates"
+    }
+  },
+  "footer": {
+    "logoAlt": "True Aim Logo",
+    "tagline": "Swiss Precision. Auditable AI.",
+    "company": "Company",
+    "resources": "Resources",
+    "products": "Products",
+    "legal": "Legal",
+    "about": "About",
+    "contact": "Contact",
+    "caseStudies": "Case Studies",
+    "impactEstimator": "Impact Estimator",
+    "trustCenter": "Trust Center",
+    "blog": "Blog",
+    "mira": "MIRA",
+    "contextBuilder": "ContextBuilder",
+    "claimEval": "ClaimEval",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
+    "paia": "PAIA Manual",
+    "copyright": "\u00a9 {year} True Aim. All rights reserved.",
+    "linkedin": "LinkedIn"
+  },
+  "cookie": {
+    "title": "Cookie Preferences",
+    "description": "We use cookies to improve your experience. Essential cookies are always active. You can choose to enable analytics cookies to help us improve our website.",
+    "learnMore": "Learn more",
+    "acceptAll": "Accept All",
+    "decline": "Decline",
+    "managePreferences": "Manage Preferences",
+    "savePreferences": "Save Preferences",
+    "essential": "Essential",
+    "essentialDesc": "Required for the website to function",
+    "analytics": "Analytics",
+    "analyticsDesc": "Help us understand how visitors use our site"
+  },
+  "skipToContent": "Skip to main content"
+}

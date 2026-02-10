@@ -1,0 +1,91 @@
+{
+  "contact": {
+    "hero": {
+      "badge": "Contact Us",
+      "titleLine1": "Let's Talk",
+      "titleLine2": "Claims Automation",
+      "description": "Whether you're exploring options or ready for a pilot, we'd love to show you what auditable AI can do."
+    },
+    "form": {
+      "heading": "Book a Demo",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "workEmail": "Work Email",
+      "company": "Company",
+      "jobTitle": "Job Title",
+      "country": "Country",
+      "interest": "What interests you?",
+      "leadSource": "How did you hear about us?",
+      "claimsVolume": "Annual claims volume",
+      "message": "Tell us about your needs",
+      "consent": "I agree to receive communications from True Aim",
+      "required": "*",
+      "optional": "(Optional)",
+      "selectCountry": "Select country",
+      "selectInterest": "Select interest",
+      "selectSource": "Select source",
+      "placeholders": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john.doe@company.com",
+        "company": "Company Name",
+        "jobTitle": "Head of Claim Operations",
+        "claimsVolume": "e.g., 50,000 claims/year",
+        "message": "What challenges are you facing with claims processing?"
+      },
+      "countries": {
+        "switzerland": "Switzerland",
+        "germany": "Germany",
+        "austria": "Austria",
+        "unitedKingdom": "United Kingdom",
+        "france": "France",
+        "italy": "Italy",
+        "netherlands": "Netherlands",
+        "belgium": "Belgium",
+        "spain": "Spain",
+        "unitedStates": "United States",
+        "other": "Other"
+      },
+      "interests": {
+        "mira": "Automating claims decisions (MIRA)",
+        "contextbuilder": "Document processing and data extraction (ContextBuilder)",
+        "claimeval": "Quality assurance and leakage detection (ClaimEval)",
+        "auditability": "Auditability and regulatory compliance",
+        "earlyStage": "Evaluating AI for claims (early-stage)",
+        "other": "Something else / Not sure yet"
+      },
+      "leadSources": {
+        "referral": "Referral",
+        "industryEvent": "Industry event",
+        "onlineResearch": "Online research",
+        "linkedin": "LinkedIn",
+        "other": "Other"
+      },
+      "validation": {
+        "firstNameRequired": "First name is required",
+        "lastNameRequired": "Last name is required",
+        "emailInvalid": "Please enter a valid email address",
+        "companyRequired": "Company is required",
+        "jobTitleRequired": "Job title is required",
+        "countryRequired": "Please select a country",
+        "interestRequired": "Please select your interest",
+        "consentRequired": "You must agree to receive communications"
+      },
+      "submit": "Book a Demo",
+      "submitting": "Submitting...",
+      "responseTime": "We typically respond within 1 business day.",
+      "errorGeneric": "Something went wrong. Please try again."
+    },
+    "success": {
+      "heading": "Thank You!",
+      "message": "We've received your request. We typically respond within 1 business day.",
+      "submitAnother": "Submit another request"
+    },
+    "sidebar": {
+      "alternativeContact": "Alternative Contact",
+      "emailUs": "Email us",
+      "emailAddress": "info@trueaim.ai",
+      "bookCall": "Book a 30-minute call"
+    }
+  }
+}

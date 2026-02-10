@@ -1,0 +1,127 @@
+{
+  "partners": {
+    "yarowa": {
+      "hero": {
+        "badge": "Strategic Partner",
+        "titleLine1": "Yarowa AG",
+        "titleLine2": "Strategic Partner",
+        "description1": "Yarowa AG is a Swiss InsurTech platform with deep roots in the insurance industry, operating at scale across core insurance workflows in highly regulated environments. Its platform is shaped by years of close collaboration with insurers and real-world production use.",
+        "description2": "True Aim AG is a spinout from Yarowa, established to focus specifically on auditable, regulation-ready AI for insurance, combining proven industry expertise with purpose-built technology for transparent, enterprise deployment."
+      },
+      "strengths": {
+        "heading": "Partnership Strengths",
+        "distribution": {
+          "title": "Direct Insurer Distribution",
+          "description": "Access to an established network of insurer relationships across Switzerland and Europe. A proven distribution channel for enterprise software."
+        },
+        "delivery": {
+          "title": "Enterprise Delivery Experience",
+          "description": "Yarowa brings deep enterprise delivery experience. From procurement through implementation, their methodology accelerates time-to-value for insurer clients."
+        },
+        "platform": {
+          "title": "Swiss InsurTech Platform",
+          "description": "A Swiss-based technology platform purpose-built for the insurance industry. Yarowa's infrastructure and market knowledge complement True Aim's decisioning capabilities."
+        },
+        "vision": {
+          "title": "Aligned Vision",
+          "description": "Both True Aim and Yarowa share the conviction that insurance needs transparent, auditable technology. This strategic alignment drives our joint go-to-market approach."
+        }
+      },
+      "cta": {
+        "heading": "See Our Products in Action",
+        "description": "Discover how our partnership delivers auditable claims automation to insurers.",
+        "learnProducts": "Learn About Our Products",
+        "bookDemo": "Book a Demo"
+      }
+    },
+    "innosuisse": {
+      "hero": {
+        "badge": "Federal Innovation Partner",
+        "titleLine1": "Innosuisse-Funded",
+        "titleLine2": "Innovation Partner",
+        "description1": "True Aim's core technology is supported through a competitive research grant awarded by Innosuisse, Switzerland's national innovation agency. The grant reflects formal, national-level validation of the technical approach and research programme behind True Aim's work in auditable AI.",
+        "description2": "The funding supports applied research into transparent, controllable and regulation-ready AI systems for highly regulated industries, with a clear focus on measurable outcomes and real-world deployment."
+      },
+      "keyPoints": {
+        "govValidation": {
+          "title": "Official Government Validation",
+          "description": "Innosuisse is the Swiss Confederation's official innovation agency, providing federal endorsement for research and development projects with commercial potential."
+        },
+        "excellence": {
+          "title": "Competitive Excellence",
+          "description": "Innosuisse grants are awarded through rigorous selection criteria. Receiving funding demonstrates the technical merit and market viability of True Aim's neuro-symbolic approach."
+        },
+        "priority": {
+          "title": "National Strategic Priority",
+          "description": "The grant reflects Switzerland's national commitment to advancing trustworthy AI in regulated industries. True Aim is at the forefront of this initiative."
+        },
+        "zhawCollab": {
+          "title": "ZHAW Collaboration",
+          "description": "The research programme is conducted in partnership with ZHAW (School of Engineering, Institute of Applied IT, Centre for AI) and is led by Dr. Dandolo Flumini."
+        }
+      },
+      "grantDetails": {
+        "label": "Innovation Funding",
+        "title": "Innosuisse Innovation Project Funding",
+        "description": "Non-dilutive funding from the Swiss Confederation to advance neuro-symbolic AI for deterministic claims decisioning in regulated industries.",
+        "visitLink": "Visit Innosuisse"
+      },
+      "cta": {
+        "heading": "Learn More About Our Technology",
+        "description": "Discover how Innosuisse-backed innovation powers our claims decisioning engine.",
+        "exploreTech": "Explore Our Technology",
+        "bookDemo": "Book a Demo"
+      }
+    },
+    "zhaw": {
+      "hero": {
+        "badge": "Research Partner",
+        "titleLine1": "ZHAW Research",
+        "titleLine2": "Partnership",
+        "description1": "Parts of True Aim's innovative technology is developed in collaboration with ZHAW Zurich University of Applied Sciences, one of Switzerland's leading applied research universities, recognised for deep-tech research in AI, data science and engineering with a strong focus on real-world deployment.",
+        "description2": "The work is supported through Innosuisse innovation funding, with ZHAW as the formal research partner and True Aim as the industry implementation partner, advancing transparent and regulation-ready neuro-symbolic AI for highly regulated industries."
+      },
+      "research": {
+        "heading": "Research Focus Areas",
+        "neuroSymbolic": {
+          "title": "Neuro-Symbolic AI",
+          "description": "Combining the flexibility of neural networks with the precision of symbolic reasoning. Our research focuses on making AI decisions deterministic and fully explainable."
+        },
+        "logicExtraction": {
+          "title": "Logic Extraction & Automation",
+          "description": "Developing methods to extract formal logic from natural-language policy documents and transform it into computable decision rules."
+        },
+        "deterministic": {
+          "title": "Deterministic Decisioning",
+          "description": "Ensuring that identical inputs always produce identical outputs, with complete traceability from decision to source text. Critical for regulatory compliance."
+        },
+        "applied": {
+          "title": "Applied Industry Research",
+          "description": "Bridging academic research and real-world insurance operations. Testing and validating approaches against actual claims data and policy documents."
+        }
+      },
+      "researchGroup": {
+        "heading": "About the Research Group",
+        "description": "The research is hosted within ZHAW's {schoolOfEngineering}, specifically the {init} and the {cai}.",
+        "schoolOfEngineering": "School of Engineering",
+        "init": "Institute of Applied Information Technology (InIT)",
+        "cai": "Centre for Artificial Intelligence (CAI)",
+        "dandolo": {
+          "name": "Dr. Dandolo Flumini",
+          "bio": "Original developer of the MIRA technology. PhD in Mathematics and Computer Science. Leads True Aim's Innosuisse-funded Innovation Project."
+        },
+        "lukas": {
+          "name": "Dr. Lukas Lichtensteiger",
+          "bio": "Harvard alumnus, serial entrepreneur and CTO. ZHAW researcher in AI and robotics. True Aim technical advisor."
+        },
+        "visitLink": "Visit ZHAW"
+      },
+      "cta": {
+        "heading": "See the Research in Action",
+        "description": "Discover how our ZHAW-rooted technology delivers auditable claims decisions.",
+        "exploreTech": "Explore Our Technology",
+        "bookDemo": "Book a Demo"
+      }
+    }
+  }
+}

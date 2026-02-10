@@ -1,0 +1,195 @@
+{
+  "hero": {
+    "title": "Versicherungsentscheidungen automatisieren.",
+    "titleHighlight": "Prüfbar durch Design.",
+    "subtitle1": "Policenbedingungen klar und konsistent anwenden.",
+    "subtitle2": "Entwickelt für regulierte Versicherungen.",
+    "subtitle3": "Keine Black Boxes.",
+    "pipelineTitle": "Von Dokumenten zu Entscheidungen in einem Ablauf",
+    "steps": {
+      "ingest": {
+        "label": "Erfassen",
+        "shortDesc": "Eingaben erfassen & validieren",
+        "description": "Dokumente eingegangen per E-Mail, Portal oder Systemexport",
+        "time": "< 10 Sek.",
+        "value": "Manuelles Sortieren und Weiterleiten eliminieren",
+        "automation": "ContextBuilder erfasst und klassifiziert Dokumente automatisch"
+      },
+      "process": {
+        "label": "Verarbeiten",
+        "shortDesc": "Policenlogik & Prüfungen anwenden",
+        "description": "Schlüsseldaten aus Schadendokumenten extrahiert",
+        "time": "15 – 45 Sek.",
+        "value": "Fehler bei der Neueingabe und Datenerfassungskosten reduzieren",
+        "automation": "AI extrahiert Felder mit Nachweisverknüpfung"
+      },
+      "assess": {
+        "label": "Bewerten",
+        "shortDesc": "Ergebnis & Bearbeitung bestätigen",
+        "description": "Deckungsprüfung anhand der Versicherungspolice",
+        "time": "< 5 Sek.",
+        "value": "Konsistente, nachvollziehbare Entscheidungen bei jeder Schadenmeldung",
+        "automation": "MIRA wendet deterministische Policenlogik an"
+      },
+      "execute": {
+        "label": "Ausführen",
+        "shortDesc": "Nächste Schritte auslösen",
+        "description": "Rückstellungen bilden, Zahlung vorbereiten, Kommunikation versenden",
+        "time": "< 10 Sek.",
+        "value": "Schnellere Regulierungszyklen, verbesserte Kundenerfahrung",
+        "automation": "Automatisierte Aufgabenausführung basierend auf der Entscheidung"
+      },
+      "audit": {
+        "label": "Audit",
+        "shortDesc": "Vollständige Nachvollziehbarkeit",
+        "description": "Vollständiger Entscheidungspfad protokolliert",
+        "time": "Sofort",
+        "value": "Prüfungsbereite Audit-Trails ohne manuelle Vorbereitung",
+        "automation": "Decision Dossier wird automatisch erstellt"
+      }
+    },
+    "legendFully": "Vollautomatisiert",
+    "legendHuman": "Mensch in der Schleife",
+    "ctaDemo": "Demo buchen",
+    "ctaImpact": "Impact-Schätzung erhalten"
+  },
+  "valueProps": {
+    "title": "Schadenautomatisierung, der Regulierungsbehörden vertrauen",
+    "subtitle": "Messbare Ergebnisse ab dem ersten Tag",
+    "upTo": "BIS ZU",
+    "cards": {
+      "speed": {
+        "label": "Schnellere Schadenentscheidungen",
+        "description": "Schadenmeldungen in Sekunden bearbeiten, nicht in Tagen. Dokumente werden erfasst, verstanden und automatisch entschieden.",
+        "proof": "Pilotergebnisse: durchschn. 2,3 s Entscheidungszeit"
+      },
+      "cost": {
+        "label": "Reduktion der Bearbeitungskosten",
+        "description": "Fehler bei der Neueingabe und inkonsistente Interpretationen eliminieren. Gleiche Eingabe, gleiches Ergebnis, jedes Mal.",
+        "proof": "Basierend auf Closed-File-Review-Analyse"
+      },
+      "audit": {
+        "label": "Überprüfbare Entscheidungen",
+        "description": "Jede Entscheidung verweist direkt auf Policenklauseln und Quelldokumente. Entwickelt für die Konformität mit der KI-Verordnung.",
+        "proof": "Vollständige Entscheidungsnachvollziehbarkeit garantiert"
+      },
+      "cx": {
+        "label": "Überlegene Kundenerfahrung",
+        "description": "Sofortige Bestätigung, Echtzeit-Statusupdates und schnellere Auszahlungen. Versicherungsnehmer bei jedem Schritt informiert.",
+        "proof": "Gesamter Schadenlebenszyklus < 60 s"
+      }
+    }
+  },
+  "productsGrid": {
+    "title": "Zweckentwickelte Produkte für exzellente Schadenregulierung",
+    "subtitle": "Eine vollständige Suite für den gesamten Schadenlebenszyklus",
+    "products": {
+      "contextBuilder": {
+        "name": "ContextBuilder",
+        "badge": "Dokumenten-Pipeline",
+        "description": "Verwandeln Sie fragmentierte, unstrukturierte Schadendokumente in hochwertige strukturierte Daten. KI-gestützte Extraktion mit menschlicher Überprüfung gewährleistet saubere Eingaben für deterministische Entscheidungen.",
+        "explore": "ContextBuilder entdecken"
+      },
+      "mira": {
+        "name": "MIRA",
+        "badge": "Entscheidungs-Engine",
+        "description": "Die zentrale deterministische Entscheidungs-Engine. Komplexe Policenbedingungen in automatisierte Entscheidungen umwandeln, die konsistent, reproduzierbar und frei von probabilistischer Inferenz sind.",
+        "explore": "MIRA entdecken"
+      },
+      "decisionDossier": {
+        "name": "Decision Dossier",
+        "badge": "Prüfprotokoll",
+        "description": "Jeder Fall erzeugt ein vollständig nachvollziehbares Prüfprotokoll, das Ergebnisse auf Quellklauseln, Dokumente und Entscheidungspfade zurückführt. Erklärbar, verteidigungsfähig und wiederholbar.",
+        "explore": "Decision Dossier entdecken"
+      },
+      "claimEval": {
+        "name": "ClaimEval",
+        "badge": "Qualitätssicherung",
+        "description": "Qualitätssicherung über Stichproben hinaus skalieren. Entscheidungen über Ihr gesamtes Schadenportfolio automatisch prüfen, um Inkonsistenzen, Prozessabweichungen und Logiklücken zu erkennen.",
+        "explore": "ClaimEval entdecken"
+      }
+    }
+  },
+  "cta": {
+    "title": "Bereit, überprüfbare KI in Aktion zu sehen?",
+    "subtitle": "Buchen Sie eine 30-minütige Demo und erfahren Sie, wie True Aim Ihre Schadenregulierung transformieren kann.",
+    "bookDemo": "Demo buchen",
+    "getImpact": "Impact-Schätzung erhalten",
+    "trustCompliance": "Compliance by Design",
+    "trustSwiss": "Schweizer Datenhosting",
+    "trustEnterprise": "Nach Enterprise-Standards gebaut"
+  },
+  "decisionDossier": {
+    "teaserBadge": "Einzigartig bei True Aim",
+    "teaserTagline": "Prüfbar durch Design.",
+    "teaserTitle": "Das Decision Dossier",
+    "teaserDescription": "Jede Schadenentscheidung erzeugt ein vollständiges, reproduzierbares Prüfprotokoll. Anders als bei Black-Box-KI kann jede True Aim Entscheidung <strong>wiederholt, erklärt und verteidigt</strong> werden, in Audits oder Streitfällen.",
+    "teaserLink": "So funktioniert es",
+    "previewTitle": "Decision Dossier",
+    "previewClaimId": "Schadenmeldung #2024-TR-4521",
+    "previewDecision": "Entscheidung: <strong>Gedeckt</strong>",
+    "previewPolicy": "Police: Art. 5.2.1, 5.2.3",
+    "previewEvidence": "Nachweise: 4 Dokumente verknüpft",
+    "previewConfidence": "Konfidenz: <span>98.5%</span>",
+    "fullBadge": "Einzigartiges Differenzierungsmerkmal",
+    "fullTitle": "Das Decision Dossier",
+    "fullDescription": "Jede Schadenentscheidung erzeugt ein vollständiges, reproduzierbares Prüfprotokoll, Ihre Verteidigung in jedem Audit oder Streitfall.",
+    "contents": {
+      "inputSummary": {
+        "title": "Eingabezusammenfassung",
+        "description": "Vollständige Schadendaten wie eingegangen: Dokumente, Parteien, Zeitverlauf, Fakten"
+      },
+      "policyMatch": {
+        "title": "Policenabgleich",
+        "description": "Angewandte Policenklauseln mit Klausel-IDs und exakten Textreferenzen"
+      },
+      "logicTrace": {
+        "title": "Logikprotokoll",
+        "description": "Schrittweiser Entscheidungspfad: geprüfte Bedingungen, angewandte Regeln, eingeschlagene Pfade"
+      },
+      "evidenceLinks": {
+        "title": "Nachweisverknüpfungen",
+        "description": "Jedes Feld auf Quelldokumente mit Seite und Position zurückverfolgt"
+      },
+      "confidenceScore": {
+        "title": "Konfidenzwert",
+        "description": "Automatisierungssicherheitsstufe mit markierten Bereichen, die menschliche Prüfung erfordern"
+      },
+      "replayCapability": {
+        "title": "Wiederholbarkeit",
+        "description": "Erneut ausführen mit identischen Eingaben, identische Ergebnisse erhalten, jedes Mal"
+      }
+    },
+    "mockupTitle": "Decision Dossier",
+    "mockupGenerated": "Erstellt: 12. Jan. 2026 14:32:05 UTC",
+    "mockupCovered": "Gedeckt",
+    "mockupClaimRef": "Schadenreferenz",
+    "mockupClaimId": "TRV-2024-4521",
+    "mockupClaimDetails": " | Reiseversicherung | Medizinische Kosten",
+    "mockupPolicyClauses": "Angewandte Policenklauseln",
+    "mockupClause1Ref": "Art. 5.2.1",
+    "mockupClause1Desc": "Medizinische Notfalldeckung",
+    "mockupClause2Ref": "Art. 5.2.3",
+    "mockupClause2Desc": "Rückführungsleistungen",
+    "mockupEvidenceTrail": "Nachweisverlauf",
+    "mockupConfidenceLabel": "Konfidenz:",
+    "mockupConfidenceValue": "98.5%",
+    "mockupReplay": "Entscheidung wiederholen",
+    "mockupDifferentiator": "<strong>Anders als Black-Box-KI:</strong> Jede True Aim Entscheidung kann wiederholt, erklärt und verteidigt werden."
+  },
+  "socialProof": {
+    "badge": "Bewährte Ergebnisse",
+    "title": "Vertrauen führender Versicherer",
+    "subtitle": "Erfahren Sie, wie Versicherer ihre Schadenregulierung mit messbaren, überprüfbaren Ergebnissen transformieren",
+    "readCaseStudy": "Fallstudie lesen",
+    "viewAllCaseStudies": "Alle Fallstudien ansehen"
+  },
+  "partnerLogos": {
+    "title": "Vertrauenswürdige Partner",
+    "logoAlt": "{name} Logo"
+  },
+  "trustBar": {
+    "title": "Preisgekrönte Technologie",
+    "subtitle": "Anerkannt in der Schweiz, Deutschland und Italien"
+  }
+}

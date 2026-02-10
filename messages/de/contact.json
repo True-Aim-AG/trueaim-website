@@ -1,0 +1,91 @@
+{
+  "contact": {
+    "hero": {
+      "badge": "Kontaktieren Sie uns",
+      "titleLine1": "Lassen Sie uns sprechen",
+      "titleLine2": "Schadenautomatisierung",
+      "description": "Ob Sie Optionen erkunden oder bereit für ein Pilotprojekt sind, wir zeigen Ihnen gerne, was überprüfbare KI leisten kann."
+    },
+    "form": {
+      "heading": "Demo buchen",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "workEmail": "Geschäftliche E-Mail",
+      "company": "Unternehmen",
+      "jobTitle": "Berufsbezeichnung",
+      "country": "Land",
+      "interest": "Was interessiert Sie?",
+      "leadSource": "Wie haben Sie von uns erfahren?",
+      "claimsVolume": "Jährliches Schadenvolumen",
+      "message": "Erzählen Sie uns von Ihren Anforderungen",
+      "consent": "Ich stimme zu, Mitteilungen von True Aim zu erhalten",
+      "required": "*",
+      "optional": "(Optional)",
+      "selectCountry": "Land auswählen",
+      "selectInterest": "Interesse auswählen",
+      "selectSource": "Quelle auswählen",
+      "placeholders": {
+        "firstName": "Max",
+        "lastName": "Mustermann",
+        "email": "max.mustermann@firma.com",
+        "company": "Firmenname",
+        "jobTitle": "Leiter Schadenregulierung",
+        "claimsVolume": "z. B. 50.000 Schadenmeldungen/Jahr",
+        "message": "Welche Herausforderungen haben Sie bei der Schadenbearbeitung?"
+      },
+      "countries": {
+        "switzerland": "Schweiz",
+        "germany": "Deutschland",
+        "austria": "Österreich",
+        "unitedKingdom": "Vereinigtes Königreich",
+        "france": "Frankreich",
+        "italy": "Italien",
+        "netherlands": "Niederlande",
+        "belgium": "Belgien",
+        "spain": "Spanien",
+        "unitedStates": "Vereinigte Staaten",
+        "other": "Andere"
+      },
+      "interests": {
+        "mira": "Schadenentscheidungen automatisieren (MIRA)",
+        "contextbuilder": "Dokumentenverarbeitung und Datenextraktion (ContextBuilder)",
+        "claimeval": "Qualitätssicherung und Leakage-Erkennung (ClaimEval)",
+        "auditability": "Überprüfbarkeit und regulatorische Compliance",
+        "earlyStage": "KI für Schadenregulierung evaluieren (Frühphase)",
+        "other": "Etwas anderes / Noch nicht sicher"
+      },
+      "leadSources": {
+        "referral": "Empfehlung",
+        "industryEvent": "Branchenveranstaltung",
+        "onlineResearch": "Online-Recherche",
+        "linkedin": "LinkedIn",
+        "other": "Andere"
+      },
+      "validation": {
+        "firstNameRequired": "Vorname ist erforderlich",
+        "lastNameRequired": "Nachname ist erforderlich",
+        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "companyRequired": "Unternehmen ist erforderlich",
+        "jobTitleRequired": "Berufsbezeichnung ist erforderlich",
+        "countryRequired": "Bitte wählen Sie ein Land aus",
+        "interestRequired": "Bitte wählen Sie Ihr Interesse aus",
+        "consentRequired": "Sie müssen dem Erhalt von Mitteilungen zustimmen"
+      },
+      "submit": "Demo buchen",
+      "submitting": "Wird gesendet...",
+      "responseTime": "Wir antworten in der Regel innerhalb eines Werktages.",
+      "errorGeneric": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+    },
+    "success": {
+      "heading": "Vielen Dank!",
+      "message": "Wir haben Ihre Anfrage erhalten. Wir antworten in der Regel innerhalb eines Werktages.",
+      "submitAnother": "Weitere Anfrage senden"
+    },
+    "sidebar": {
+      "alternativeContact": "Alternativer Kontakt",
+      "emailUs": "Schreiben Sie uns",
+      "emailAddress": "info@trueaim.ai",
+      "bookCall": "30-minütiges Gespräch buchen"
+    }
+  }
+}

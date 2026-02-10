@@ -1,0 +1,281 @@
+{
+  "caseStudies": {
+    "hero": {
+      "badge": "Succes clients",
+      "titleLine1": "Des resultats concrets",
+      "titleLine2": "d'assureurs reels",
+      "description": "Decouvrez comment les assureurs utilisent True Aim pour transformer leurs operations de sinistres avec des resultats mesurables et auditables."
+    },
+    "featured": {
+      "badge": "A la une",
+      "readFullStudy": "Lire l'etude de cas complete"
+    },
+    "wip": {
+      "heading": "Etudes de cas supplementaires en cours",
+      "description": "Ces etudes de cas sont en cours de documentation. Revenez pour les rapports complets.",
+      "badge": "En cours"
+    },
+    "cta": {
+      "heading": "Decouvrez ce que l'AI auditable peut faire pour vos sinistres",
+      "description": "Analysons un echantillon de vos sinistres clotures pour quantifier l'impact potentiel.",
+      "bookDemo": "Reserver une demo",
+      "getEstimate": "Obtenir une estimation d'impact"
+    },
+    "detail": {
+      "allCaseStudies": "Toutes les etudes de cas",
+      "notFound": "Etude de cas introuvable",
+      "viewAll": "Voir toutes les etudes de cas",
+      "theChallenge": "Le defi",
+      "theSolution": "La solution",
+      "keyHighlights": "Points cles",
+      "getSimilarResults": "Obtenir des resultats similaires",
+      "previous": "Precedent",
+      "next": "Suivant",
+      "ctaHeading": "Pret a obtenir des resultats similaires ?",
+      "ctaDescription": "Commencez par un pilote sur vos sinistres clotures et constatez l'impact par vous-meme.",
+      "requestPilot": "Demander un pilote"
+    },
+    "vehicleWarranty": {
+      "heroTitle": "Automatisation des reclamations de garantie vehicule avec l'intelligence documentaire AI",
+      "heroSubtitle": "De 18% a 98% de precision decisionnelle en 7 jours",
+      "theProblem": "Le probleme",
+      "problemP1": "Une reclamation de garantie vehicule arrive sur le bureau d'un gestionnaire : cinq documents, trois langues, un devis avec 30 postes, une police avec des niveaux de couverture, des taux de remboursement lies au kilometrage et des listes d'exclusion de composants.",
+      "problemP2": "Le traitement prend 15 a 30 minutes par sinistre. Multipliez cela par des centaines de sinistres par mois.",
+      "problemP3Start": "76% des sinistres refuses echouent pour une seule raison : ",
+      "problemP3Emphasis": "la piece n'est pas couverte par la police",
+      "problemP3End": " - une recherche deterministe, pas une decision de jugement.",
+      "stats": {
+        "approvalDenial": "Ratio approbation/refus",
+        "avgPayout": "Paiement moyen approuve",
+        "vehicleBrands": "Marques de vehicules representees",
+        "docTypes": "Types de documents distincts",
+        "avgDocs": "Moy. de documents par sinistre"
+      },
+      "whyExistingFail": "Pourquoi les approches existantes echouent",
+      "whyExistingFailIntro": "La plupart des outils de traitement documentaire extraient du texte des PDFs, ce qui ne couvre que 10% du chemin. Le veritable defi est",
+      "whyExistingFailEmphasis": "le raisonnement inter-documents",
+      "whyExistingFailIntroEnd": " : un devis n'a aucun sens sans la police, un releve kilometrique n'a aucun sens sans le plafond de couverture.",
+      "failReasons": {
+        "genericOcr": {
+          "title": "Les pipelines OCR generiques manquent de profondeur sectorielle",
+          "desc": "Les factures de reparation suisses contiennent des postes en allemand avec des numeros de pieces, des codes de main-d'oeuvre et des sous-totaux reportes sur plusieurs pages. L'OCR standard extrait du texte mais pas des donnees structurees avec des implications de couverture."
+        },
+        "singleModel": {
+          "title": "Les approches a modele unique plafonnent rapidement",
+          "desc": "Envoyer un sinistre entier a un LLM produit des resultats inconsistants : des noms de pieces hallucines, des regles de couverture inventees, des calculs financiers peu fiables. Precision de base avec LLM seul : 18%."
+        },
+        "ruleBased": {
+          "title": "Les systemes a base de regles ne scalent pas avec le vocabulaire",
+          "desc": "Des milliers de noms de pieces dans plusieurs langues. Une \"Wasserpumpe\" en allemand est une \"pompe a eau\" en francais. Le matching par mots-cles pur echoue au premier synonyme non repertorie."
+        }
+      },
+      "hybridSolution": "La solution necessite une",
+      "hybridArchitecture": "architecture hybride",
+      "hybridSolutionEnd": " : des regles deterministes la ou elles fonctionnent, du matching par mots-cles pour le vocabulaire connu et du raisonnement LLM comme solution de repli calibree, chaque couche avec un scoring de confiance explicite et un suivi de provenance.",
+      "architectureTitle": "L'architecture : un pipeline multi-etapes",
+      "architectureIntro": "Un pipeline de traitement des sinistres de bout en bout fait passer les documents bruts par cinq etapes, chacune avec des controles de qualite et une journalisation d'audit.",
+      "stages": {
+        "ingestion": "Ingestion",
+        "classification": "Classification",
+        "extraction": "Extraction",
+        "screening": "Filtrage",
+        "qaReview": "Revue QA",
+        "stageLabel": "Etape"
+      },
+      "multiTier": {
+        "heading": "Analyse de couverture : matching multi-niveaux",
+        "intro": "Chaque poste passe par un pipeline de matching multi-niveaux, priorisant les approches deterministes avant de recourir a l'AI :",
+        "deterministic": {
+          "name": "Regles deterministes",
+          "confidence": "Maximale",
+          "desc": "Correspondances exactes pour les elements connus, les exclusions et les consommables. Zero ambiguite, resolution instantanee."
+        },
+        "keyword": {
+          "name": "Matching par mots-cles",
+          "confidence": "Elevee",
+          "desc": "Associe les termes de reparation multilingues aux categories de composants avec normalisation des synonymes."
+        },
+        "aiFallback": {
+          "name": "AI en repli",
+          "confidence": "Moderee",
+          "desc": "LLM avec des prompts structures pour les elements veritablement ambigus necessitant un raisonnement contextuel."
+        },
+        "confidenceLabel": "confiance"
+      },
+      "expandable": {
+        "ingestionTitle": "Details des etapes : ingestion, classification & extraction",
+        "stage1Title": "Etape 1 : Ingestion des documents",
+        "stage1Desc": "Couche d'ingestion modulaire supportant plusieurs fournisseurs OCR pour les charges de production. Chaque page est extraite independamment avec suivi de position pour une provenance complete.",
+        "stage2Title": "Etape 2 : Classification des documents",
+        "stage2Desc": "Routeur alimente par l'AI classifiant les documents par type avec des indices linguistiques specifiques en allemand, francais et italien. Precision de classification proche de 100%.",
+        "stage3Title": "Etape 3 : Extraction structuree des champs",
+        "stage3Desc": "Des extracteurs specialises traitent des ensembles complets de champs pour les polices de garantie. Les extracteurs de devis gerent les documents multi-pages avec des sous-totaux reportes et une validation des totaux. Chaque champ porte un score de confiance, une provenance et un verdict de controle qualite.",
+        "screeningTitle": "Details des etapes : controles de filtrage deterministes",
+        "screeningIntro": "Le pipeline de filtrage execute plusieurs controles deterministes couvrant la validite de la police, l'eligibilite a la couverture et les exigences de conformite. Chaque controle produit l'un des trois verdicts :",
+        "hardFail": "Echec bloquant",
+        "hardFailDesc": "Bloque l'automatisation, necessite une revision humaine",
+        "softCheck": "Alerte souple",
+        "softCheckDesc": "Signale pour attention mais ne bloque pas",
+        "conditional": "Conditionnel",
+        "conditionalDesc": "Le resultat depend d'un contexte supplementaire",
+        "screeningNote": "Les controles couvrent des domaines tels que le statut de la police, les dates de couverture, les limites de kilometrage, l'eligibilite des composants et les schemas d'exclusion.",
+        "payoutTitle": "Approche de calcul du paiement",
+        "payoutIntro": "Le calcul du paiement suit les regles metier specifiques a l'assureur, incluant generalement :",
+        "payoutItems": {
+          "sumCovered": "Sommation des elements couverts",
+          "applyCaps": "Application des plafonds de couverture et des taux de remboursement",
+          "addTaxes": "Ajout des taxes applicables",
+          "calcDeductibles": "Calcul des franchises",
+          "computeFinal": "Calcul du paiement final"
+        },
+        "payoutNote": "Chaque assureur a des regles specifiques pour les franchises, les niveaux de remboursement et la repartition pieces/main-d'oeuvre qui doivent etre respectees exactement."
+      },
+      "journey": {
+        "heading": "Le parcours d'implementation : de 18% a 98%",
+        "day1_3": {
+          "label": "Jours 1-3",
+          "title": "Baseline et architecture",
+          "desc": "L'approche initiale uniquement LLM a produit des resultats plausibles mais peu fiables : des noms de pieces hallucines, des regles de couverture inventees, des calculs inconsistants.",
+          "insight": "Constat cle :",
+          "insightText": "Les LLMs excellent en comprehension linguistique mais echouent sur les regles metier deterministes. L'architecture devait separer le jugement de la precision."
+        },
+        "day3_5": {
+          "label": "Jours 3-5",
+          "title": "Pipeline de filtrage + couverture",
+          "desc": "Le pipeline de filtrage deterministe et le matching de couverture multi-niveaux ont produit la plus grande amelioration unitaire. Les controles bases sur les regles ont a eux seuls detecte correctement la plupart des refus."
+        },
+        "day5_8": {
+          "label": "Jours 5-8",
+          "title": "Iteration et raffinement",
+          "desc": "Plus de 60 iterations d'evaluation resolvant des problemes de plus en plus subtils : bugs de matching de sous-chaines, logique de retrogradation de main-d'oeuvre et normalisation des numeros de pieces sur les sorties OCR."
+        },
+        "holdout": {
+          "label": "Test holdout",
+          "title": "Validation sur donnees inedites",
+          "desc": "30 sinistres jamais vus ont revele des modes de defaillance que le jeu de developpement ne couvrait pas : clauses d'exclusion causale, scenarios de documents manquants et lacunes d'interpretation des sous-composants.",
+          "honest": "L'ecart holdout (98% vs 77%) est la mesure honnete de la generalisation."
+        }
+      },
+      "iterationDetails": {
+        "title": "Corrections detaillees des iterations (88% a 98%)",
+        "substringBug": "Bug de matching de sous-chaines inter-categories :",
+        "substringBugDesc": "Un synonyme de vanne EGR (\"abgasrueckfuehrung\") contenait la sous-chaine \"asr\" (regulation anti-patinage). Le systeme declarait la vanne EGR couverte sous les freins. Correction : garde symetrique exigeant une correspondance exacte lorsque l'un des termes fait 3 caracteres ou moins.",
+        "laborDemotion": "Sur-agressivite de la retrogradation de main-d'oeuvre :",
+        "laborDemotionDesc": "Lorsqu'une piece etait couverte, la main-d'oeuvre d'installation associee devait aussi etre couverte. Correction : logique de promotion de la main-d'oeuvre heritant la couverture de la reparation parente.",
+        "partNumber": "Normalisation des numeros de pieces :",
+        "partNumberDesc": "Un numero de piece Mercedes n'etait pas reconnu en raison de differences d'espacement dans l'extraction OCR. Correction : normaliser tous les numeros de pieces en supprimant les espaces et caracteres speciaux avant la recherche."
+      },
+      "holdoutAnalysis": {
+        "title": "Analyse des echecs holdout",
+        "causal": {
+          "title": "Clauses d'exclusion causale",
+          "desc": "Un turbocompresseur est couvert, mais si le turbo a casse parce que le moteur (non couvert) a casse en premier, la police refuse la couverture. Le systeme ne raisonne pas sur les chaines de defaillance."
+        },
+        "missingDocs": {
+          "title": "Documents manquants",
+          "desc": "Un sinistre a ete refuse car la prime de la police n'avait pas ete payee. Cette information se trouve dans le systeme interne de l'assureur, pas dans un document traitable."
+        },
+        "subComponent": {
+          "title": "Lacunes d'interpretation des sous-composants",
+          "desc": "Un capteur DPF fait fonctionnellement partie du systeme d'echappement. La police couvre les echappements mais ne liste que des sous-composants specifiques. Le gestionnaire a approuve en interpretant le capteur comme un sous-composant d'echappement."
+        },
+        "excludedDominance": {
+          "title": "Dominance des composants exclus",
+          "desc": "Un sinistre pour une reparation de flexible (exclu) a ete approuve parce qu'un boulon mineur (CHF 3.70, couvert) figurait egalement sur la facture."
+        }
+      },
+      "showMore": "Afficher plus de details",
+      "showLess": "Afficher moins",
+      "technicalChallenges": {
+        "heading": "Defis techniques",
+        "multiLang": {
+          "title": "Traitement multilingue",
+          "desc": "Classification et extraction tenant compte de la langue en allemand, francais et italien. Taux d'approbation comparables sans biais linguistique mesurable."
+        },
+        "auditability": {
+          "title": "Auditabilite et conformite",
+          "desc": "Chaine de provenance complete : chaque champ extrait est lie a son document source et a sa page. Chaque decision de couverture inclut la methode de matching, le score de confiance et l'explication."
+        },
+        "payoutPrecision": {
+          "title": "Precision de la formule de paiement",
+          "desc": "Les erreurs d'ordre des operations dans les calculs financiers peuvent causer des surpaiements significatifs. Les trouver necessite de parcourir les calculs sinistre par sinistre avec les gestionnaires."
+        },
+        "costControl": {
+          "title": "Maitrise des couts",
+          "desc": "Les regles deterministes et le matching par mots-cles traitent la majorite des elements sans cout LLM. Le suivi de la consommation de tokens avec des seuils configurables empeche les couts incontroles."
+        }
+      },
+      "orderOfOps": {
+        "title": "Lecon sur l'ordre des operations",
+        "intro": "Lors de l'application de taux de remboursement degrades, l'ordre des operations est determinant :",
+        "wrong": "Incorrect :",
+        "wrongDesc": "Appliquer le taux apres les calculs de TVA et de franchise",
+        "correct": "Correct :",
+        "correctDesc": "Appliquer le taux au montant couvert d'abord, puis ajouter la TVA et soustraire la franchise",
+        "note": "Une seule erreur d'ordre des operations peut causer un surpaiement significatif. Trouver ces bugs necessite de parcourir les calculs avec les gestionnaires."
+      },
+      "results": {
+        "heading": "Resultats",
+        "evalSet": "Jeu d'evaluation initial",
+        "holdoutSet": "Jeu holdout",
+        "metrics": {
+          "decisionAccuracy": "Precision decisionnelle",
+          "approvedCorrect": "Sinistres approuves correctement identifies",
+          "deniedCorrect": "Sinistres refuses correctement identifies",
+          "falseReject": "Taux de faux refus",
+          "falseApprove": "Taux de fausses approbations"
+        },
+        "processingChars": {
+          "multipleDocTypes": "Plusieurs types de documents",
+          "multiBrand": "Support multi-marques",
+          "deterministicScreening": "Filtrage deterministe",
+          "multiTierMatching": "Matching multi-niveaux",
+          "comprehensiveKeywords": "Mots-cles exhaustifs",
+          "fullFieldExtraction": "Extraction complete des champs",
+          "languagesSupported": "Langues supportees",
+          "extensiveTestCoverage": "Couverture de test etendue"
+        }
+      },
+      "lessons": {
+        "heading": "Ce que nous avons appris",
+        "lesson1": {
+          "title": "Les controles deterministes surpassent le jugement LLM pour les regles structurees.",
+          "desc": "76% des refus de sinistres sont \"piece non couverte\" - une recherche, pas un jugement. Le pipeline de filtrage les traite avec 100% de confiance et zero cout LLM."
+        },
+        "lesson2": {
+          "title": "La courbe de precision a des rendements decroissants.",
+          "desc": "De 18% a 76% a pris 3 jours. De 76% a 98% a pris 4 jours de plus. L'ecart holdout (98% vs 77%) a confirme que la generalisation en conditions reelles necessite significativement plus de donnees."
+        },
+        "lesson3": {
+          "title": "La formule de paiement est plus difficile que l'AI.",
+          "desc": "Faire correspondre le calcul financier a la formule exacte de l'assureur necessite de s'asseoir avec un gestionnaire et de parcourir les calculs a la main. Aucun prompt engineering ne resout un bug de logique metier."
+        },
+        "lesson4": {
+          "title": "Le suivi de provenance est non negociable.",
+          "desc": "Dans un secteur reglemente, chaque valeur extraite et chaque decision de couverture doit etre tracable jusqu'a un document source. Fondamental pour la confiance et la conformite."
+        }
+      },
+      "nextSteps": {
+        "heading": "Prochaines etapes realisees",
+        "step1": "Extension du jeu de donnees de verite terrain",
+        "step2": "Integration avec l'API de gestion des polices de l'assureur pour des verifications de statut en temps reel",
+        "step3": "Implementation du raisonnement d'exclusion causale pour les refus de dommages en cascade",
+        "step4": "Deploiement du triage en production : refus automatique des refus a haute confiance, approbation automatique des cas simples, acheminement des cas limites vers une revision humaine",
+        "conclusion": "L'objectif n'est pas de remplacer les gestionnaires mais de leur rendre leur temps sur les 76% de refus qui sont des recherches simples, afin qu'ils puissent concentrer leur expertise sur les 24% qui necessitent reellement un jugement."
+      },
+      "sidebar": {
+        "keyHighlights": "Points cles",
+        "productsUsed": "Produits utilises",
+        "capabilities": "Capacites",
+        "capabilityList": {
+          "docProcessing": "Traitement documentaire",
+          "hybridAi": "AI hybride",
+          "multilingual": "Multilingue",
+          "fullProvenance": "Provenance complete",
+          "auditReady": "Pret pour l'audit"
+        },
+        "getSimilarResults": "Obtenir des resultats similaires"
+      }
+    }
+  }
+}

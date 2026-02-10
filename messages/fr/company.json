@@ -1,0 +1,90 @@
+{
+  "company": {
+    "hero": {
+      "badge": "A propos",
+      "titleLine1": "Precision suisse.",
+      "titleLine2": "AI auditable.",
+      "description": "True Aim est pionnier de l'AI neuro-symbolic pour les industries reglementees. Nous developpons le moteur de decision qui permet des decisions conformes, explicables et a grande echelle."
+    },
+    "mission": {
+      "quote": "Eliminer l'AI \"boite noire\" dans l'assurance en combinant la prise de decision deterministe avec l'AI generative pour fournir des determinations de sinistres rapides, equitables et auditables, concues pour repondre aux normes les plus elevees en matiere de protection des donnees, de securite de l'information et de gouvernance de l'AI.",
+      "label": "Notre mission"
+    },
+    "team": {
+      "heading": "Equipe de direction",
+      "subtitle": "Expertise approfondie en assurance, technologie et reglementation",
+      "connectLinkedIn": "Se connecter sur LinkedIn",
+      "founders": {
+        "reuben": {
+          "name": "Reuben John",
+          "role": "Co-fondateur & CEO",
+          "tagline": "2x fondateur | Avocat | Ancien directeur general de la plus grande societe mondiale de recuperation de retenues a la source",
+          "bio": "Reuben a dirige des projets operationnels et reglementaires a forts enjeux en Europe et en Afrique, supervisant l'expansion de marche, la numerisation complexe et les initiatives de conformite pour des clients multinationaux. Son parcours couvre les operations d'entreprise et la strategie reglementaire multi-juridictionnelle. Chez True Aim, il porte la vision, la strategie commerciale et l'execution de la mise sur le marche."
+        },
+        "frederic": {
+          "name": "Frederic Brunner",
+          "role": "Co-fondateur & CTO",
+          "tagline": "Ancien Zurich Insurance | Expert en automatisation et conception de systemes",
+          "bio": "Technologue experimente avec plus de 30 ans d'experience en developpement logiciel et plus de 20 ans en automatisation d'entreprise, Frederic allie une expertise architecturale approfondie a une experience pratique de mise en oeuvre. Il a precedemment dirige la transformation technologique chez Guidewire. Chez True Aim, il pilote le developpement technologique, garantissant que le moteur hybride Agentic-AI reponde aux exigences rigoureuses des industries reglementees."
+        }
+      }
+    },
+    "advisors": {
+      "heading": "Conseil consultatif",
+      "subtitle": "Guide par des leaders du secteur et des experts reconnus",
+      "members": {
+        "claudio": {
+          "name": "Claudio Gienal",
+          "title": "AXA Group Chief Transformation Officer | Ancien AXA CEO UK & Ireland | Ex-McKinsey | Innovateur en assurance",
+          "relevance": "Gestion des sinistres & transformation de l'assurance"
+        },
+        "eric": {
+          "name": "Eric Zielinski",
+          "title": "Wharton | Ex-Bain | Fondateur tech | Specialiste en execution & implementation",
+          "relevance": "Strategie & achats entreprise"
+        },
+        "lukas": {
+          "name": "Dr. Lukas Lichtensteiger",
+          "title": "Harvard | Entrepreneur en serie & CTO | Fondateur en AI & robotique | Chercheur ZHAW",
+          "relevance": "Architecture technologique & mise a l'echelle"
+        },
+        "dave": {
+          "name": "Dave Stoll",
+          "title": "Ancien Zurich Insurance CFO (Espagne) | Fondateur de doppo | Specialiste scale-up Fintech & Insurtech",
+          "relevance": "Assurance, levee de fonds & reglementation"
+        },
+        "dandolo": {
+          "name": "Dr. Dandolo Flumini",
+          "title": "Developpeur originel de la technologie MIRA | PhD Mathematiques & Informatique | Chercheur ZHAW",
+          "relevance": "Moteur de logique centrale & recherche"
+        },
+        "bassil": {
+          "name": "Bassil Eid",
+          "title": "Fondateur en serie & CFO | Innovateur Web3, Fintech & comptabilite | Specialiste en finance strategique & croissance",
+          "relevance": "Mise sur le marche Fintech & finance"
+        }
+      }
+    },
+    "partners": {
+      "heading": "Partenaires & investisseurs",
+      "subtitle": "Soutenu par l'ecosysteme d'innovation suisse.",
+      "yarowa": {
+        "name": "Yarowa AG",
+        "description": "Investisseur et partenaire strategique. Fournisseur InsurTech suisse profondement ancre dans l'ecosysteme europeen de l'assurance."
+      },
+      "zhaw": {
+        "name": "ZHAW",
+        "description": "Haute ecole zurichoise de sciences appliquees. Partenariat de recherche suite a l'obtention de la subvention non dilutive d'Innosuisse."
+      },
+      "innosuisse": {
+        "name": "Innosuisse",
+        "description": "L'agence officielle d'innovation de la Suisse. Subvention non dilutive obtenue par True Aim. Validation au niveau national de notre recherche et de notre technologie."
+      }
+    },
+    "cta": {
+      "heading": "Rejoignez-nous pour transformer l'automatisation des sinistres dans les environnements reglementes",
+      "description": "Que vous soyez un assureur souhaitant automatiser le traitement des sinistres ou un professionnel interesse a rejoindre notre equipe, nous serions ravis d'echanger avec vous.",
+      "button": "Nous contacter"
+    }
+  }
+}

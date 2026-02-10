@@ -1,0 +1,91 @@
+{
+  "contact": {
+    "hero": {
+      "badge": "Contattaci",
+      "titleLine1": "Parliamo di",
+      "titleLine2": "automazione dei sinistri",
+      "description": "Che stia esplorando le opzioni o sia pronto per un progetto pilota, saremo lieti di mostrarLe cosa può fare l'IA verificabile."
+    },
+    "form": {
+      "heading": "Prenota una demo",
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "workEmail": "E-mail aziendale",
+      "company": "Azienda",
+      "jobTitle": "Qualifica professionale",
+      "country": "Paese",
+      "interest": "Cosa Le interessa?",
+      "leadSource": "Come ha sentito parlare di noi?",
+      "claimsVolume": "Volume annuale di sinistri",
+      "message": "Ci parli delle Sue esigenze",
+      "consent": "Acconsento a ricevere comunicazioni da True Aim",
+      "required": "*",
+      "optional": "(Facoltativo)",
+      "selectCountry": "Seleziona il paese",
+      "selectInterest": "Seleziona l'interesse",
+      "selectSource": "Seleziona la fonte",
+      "placeholders": {
+        "firstName": "Mario",
+        "lastName": "Rossi",
+        "email": "mario.rossi@azienda.com",
+        "company": "Nome dell'azienda",
+        "jobTitle": "Responsabile gestione sinistri",
+        "claimsVolume": "es. 50.000 sinistri/anno",
+        "message": "Quali sfide affronta nella gestione dei sinistri?"
+      },
+      "countries": {
+        "switzerland": "Svizzera",
+        "germany": "Germania",
+        "austria": "Austria",
+        "unitedKingdom": "Regno Unito",
+        "france": "Francia",
+        "italy": "Italia",
+        "netherlands": "Paesi Bassi",
+        "belgium": "Belgio",
+        "spain": "Spagna",
+        "unitedStates": "Stati Uniti",
+        "other": "Altro"
+      },
+      "interests": {
+        "mira": "Automatizzare le decisioni sui sinistri (MIRA)",
+        "contextbuilder": "Elaborazione documenti ed estrazione dati (ContextBuilder)",
+        "claimeval": "Assicurazione qualità e rilevamento perdite (ClaimEval)",
+        "auditability": "Verificabilità e conformità normativa",
+        "earlyStage": "Valutazione dell'IA per i sinistri (fase iniziale)",
+        "other": "Altro / Non ancora sicuro"
+      },
+      "leadSources": {
+        "referral": "Raccomandazione",
+        "industryEvent": "Evento di settore",
+        "onlineResearch": "Ricerca online",
+        "linkedin": "LinkedIn",
+        "other": "Altro"
+      },
+      "validation": {
+        "firstNameRequired": "Il nome è obbligatorio",
+        "lastNameRequired": "Il cognome è obbligatorio",
+        "emailInvalid": "Si prega di inserire un indirizzo e-mail valido",
+        "companyRequired": "L'azienda è obbligatoria",
+        "jobTitleRequired": "La qualifica professionale è obbligatoria",
+        "countryRequired": "Si prega di selezionare un paese",
+        "interestRequired": "Si prega di selezionare il Suo interesse",
+        "consentRequired": "Deve acconsentire a ricevere comunicazioni"
+      },
+      "submit": "Prenota una demo",
+      "submitting": "Invio in corso...",
+      "responseTime": "Rispondiamo generalmente entro 1 giorno lavorativo.",
+      "errorGeneric": "Si è verificato un errore. La preghiamo di riprovare."
+    },
+    "success": {
+      "heading": "Grazie!",
+      "message": "Abbiamo ricevuto la Sua richiesta. Rispondiamo generalmente entro 1 giorno lavorativo.",
+      "submitAnother": "Invia un'altra richiesta"
+    },
+    "sidebar": {
+      "alternativeContact": "Contatto alternativo",
+      "emailUs": "Ci scriva",
+      "emailAddress": "info@trueaim.ai",
+      "bookCall": "Prenota una chiamata di 30 minuti"
+    }
+  }
+}

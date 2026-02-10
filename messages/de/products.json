@@ -1,0 +1,524 @@
+{
+  "mira": {
+    "hero": {
+      "badge": "Entscheidungs-Engine",
+      "title": "MIRA: Die neuro-symbolische Entscheidungs-Engine",
+      "subtitle": "Verwandeln Sie komplexe Policenbedingungen in automatisierte, vollständig deterministische Schadenentscheidungen. Jedes Ergebnis rückverfolgbar zum Vertragstext.",
+      "description": "Arbeitet mit bestehenden Schadensystemen zusammen. Integration ohne Unterbrechung.",
+      "ctaPrimary": "MIRA in Aktion sehen",
+      "ctaSecondary": "Demo buchen"
+    },
+    "problem": {
+      "title": "Schadenentscheidungen sind immer noch manuell, inkonsistent und intransparent",
+      "paragraph1": "Heutige Schadenbearbeiter verbringen Stunden mit der Interpretation dichter Policensprache.",
+      "paragraph2": "Entscheidungen variieren je nach Bearbeiter und die Auditvorbereitung dauert Wochen.",
+      "paragraph3": "Probabilistische AI-Tools können ihre Schlussfolgerungen nicht erklären.",
+      "cta": "MIRA ändert alles."
+    },
+    "solution": {
+      "title": "Agentic AI trifft auf deterministische Logik",
+      "description": "MIRA ist die weltweit erste neuro-symbolische Engine, die speziell für Versicherungsschäden entwickelt wurde. Sie nutzt agentic AI für intelligente Workflow-Orchestrierung (Dokumente lesen, Daten extrahieren, Parteien identifizieren usw.) und setzt auf deterministische Logik für die eigentliche Deckungsentscheidung.",
+      "result": "Das Ergebnis: Entscheidungen, die schnell, konsistent und vollständig nachvollziehbar sind."
+    },
+    "workflow": {
+      "title": "So funktioniert MIRA",
+      "subtitle": "Fünf Schritte vom Dokument zur Entscheidung",
+      "steps": {
+        "1": {
+          "title": "Erfassung",
+          "description": "Schlüsseldaten werden aus E-Mails, PDFs, Fotos, gescannten Notizen usw. in den berechenbaren Vertrag übernommen."
+        },
+        "2": {
+          "title": "Verstehen",
+          "description": "Der agentic Workflow liest die Fallakte: identifiziert Parteien, erstellt einen Zeitablauf, extrahiert Schlüsseldaten usw."
+        },
+        "3": {
+          "title": "Bestimmung",
+          "description": "Deterministische Logik bewertet den Deckungsstatus: Gedeckt | Teilweise gedeckt | Nicht gedeckt | Zusätzliche Informationen erforderlich"
+        },
+        "4": {
+          "title": "Ausführung",
+          "description": "Aufgaben werden ausgeführt: Schadenmeldung eröffnen, Reserven festlegen, Zahlung vorbereiten, Kommunikation entwerfen usw."
+        },
+        "5": {
+          "title": "Ausgabe",
+          "description": "Prüfbare Ergebnisse: Deckungsbericht, Kundenbrief mit Begründung, Audit-Protokoll, Reserveempfehlung usw."
+        }
+      }
+    },
+    "demo": {
+      "title": "Testen Sie MIRA mit Ihren Schadenfällen",
+      "subtitle": "Interaktive Demo der MIRA-Verarbeitung von Reiseversicherungsansprüchen",
+      "iframeTitle": "MIRA Demo"
+    },
+    "capabilities": {
+      "title": "Funktionen",
+      "items": {
+        "coverageDetermination": {
+          "title": "Deckungsermittlung",
+          "description": "Berechnet die gesamte Police gegen die Schadenfakten. Identifiziert anwendbare Gefahren, Ausschlüsse und Bedingungen. Berechnet exakte Kostenpositionen für jeden Risikoträger."
+        },
+        "multiVertical": {
+          "title": "Branchenübergreifende Unterstützung",
+          "description": "Versicherung: Gesundheit, Tier, Kfz, Hausrat, Leben.\n\nReise: Flugerstattungen, Zugerstattungen, Unterkunft.\n\nGarantie: Fahrzeug, Elektronik, erweiterte Deckung."
+        },
+        "integration": {
+          "title": "Integrationsbereit",
+          "description": "API-first-Architektur. Arbeitet mit bestehenden Schadenmanagementsystemen zusammen. Keine Integrationsunterbrechung. Flexibles Deployment: Cloud oder On-Premise"
+        },
+        "compliance": {
+          "title": "Compliance by Design",
+          "description": "Jede Entscheidung ist mit dem Vertragstext verknüpft. Vollständige Audit-Protokolle für die Prüfung durch Aufsichtsbehörden. Abgestimmt auf die Anforderungen der KI-Verordnung."
+        }
+      }
+    },
+    "results": {
+      "title": "Nachgewiesene Ergebnisse",
+      "metrics": {
+        "speed": {
+          "prefix": "BIS ZU",
+          "label": "Schneller als manuelle Prüfung"
+        },
+        "cost": {
+          "prefix": "BIS ZU",
+          "label": "Reduktion der Bearbeitungskosten"
+        },
+        "leakage": {
+          "label": "Leakage-Reduktion aus Closed-File-Reviews"
+        }
+      }
+    },
+    "cta": {
+      "title": "Testen Sie MIRA mit Ihren Schadenfällen",
+      "description": "Verarbeiten Sie eine Stichprobe abgeschlossener Schadenfälle, um genau zu sehen, wie MIRA diese bearbeitet hätte.",
+      "button": "Demo buchen"
+    }
+  },
+  "contextBuilder": {
+    "hero": {
+      "badge": "Dokumenten-Pipeline",
+      "title": "ContextBuilder: Von unstrukturierten Dokumenten zu vertrauenswürdigen Daten",
+      "subtitle": "Eine Schadendokumenten-Pipeline, die PDFs, Scans und Bilder in strukturierte, qualitätsgeprüfte Schadendaten umwandelt, mit menschlicher Prüfung, wo es darauf ankommt.",
+      "ctaPrimary": "ContextBuilder entdecken",
+      "ctaSecondary": "Demo buchen"
+    },
+    "problem": {
+      "title": "Das Dokumentenchaos-Problem",
+      "description": "Schadenmeldungen kommen als chaotische Dokumentenbündel an: unscharfe Fotos, mehrseitige PDFs, gescannte Formulare. Die Extraktion genauer Daten ist langsam, fehleranfällig und teuer."
+    },
+    "solution": {
+      "title": "Speziell entwickelte Pipeline für Schadenfälle",
+      "description": "ContextBuilder ist eine speziell für Schadendokumente entwickelte Pipeline. Sie erfasst, klassifiziert und extrahiert Daten automatisch und wendet dann Qualitätsprüfungen an, um Ausnahmen für die menschliche Überprüfung hervorzuheben.",
+      "result": "Das Ergebnis: Schadenbereite \"Kontextpakete\", denen nachgelagerte Systeme vertrauen können."
+    },
+    "pipeline": {
+      "title": "5-Schritte-Pipeline",
+      "subtitle": "Von Rohdokumenten zu strukturierten Daten",
+      "steps": {
+        "1": {
+          "title": "Erfassen",
+          "description": "Transformiert Dokumente mittels fortschrittlicher OCR- und Vision-Modelle in maschinenlesbaren Text und Layout."
+        },
+        "2": {
+          "title": "Klassifizieren",
+          "description": "Identifiziert Dokumenttyp und Sprache für die korrekte Weiterleitung: Schadenmeldung, Polizeibericht, Rechnung usw."
+        },
+        "3": {
+          "title": "Extrahieren",
+          "description": "Extrahiert strukturierte Felder basierend auf dem Dokumenttyp. Normalisiert, damit dasselbe Konzept überall gleich aussieht."
+        },
+        "4": {
+          "title": "Qualitätsprüfungen",
+          "description": "Automatisierte Prüfungen validieren Vollständigkeit und Konsistenz. Pass / Warnung / Fehler Bewertung."
+        },
+        "5": {
+          "title": "QA-Konsole",
+          "description": "Human-in-the-Loop-Prüfungsarbeitsplatz. Dokumente schnell bestätigen, korrigieren und labeln."
+        }
+      },
+      "dataSovereigntyNote": "Die gesamte Dokumentenverarbeitung ist darauf ausgelegt, die Anforderungen an Unternehmenssicherheit, Datenschutz und regulatorische Vorgaben zu erfüllen. Besuchen Sie unser <trustCenterLink>Trust Center</trustCenterLink> für weitere Details."
+    },
+    "demo": {
+      "title": "Code erkunden",
+      "subtitle": "ContextBuilder ist auf Transparenz ausgelegt",
+      "repoName": "AgenticContextBuilder",
+      "repoDescription": "Erkunden Sie unsere Open-Source-Dokumentenverarbeitungspipeline auf GitHub. Sehen Sie, wie wir unstrukturierte Schadendokumente in strukturierte, vertrauenswürdige Daten umwandeln.",
+      "viewOnGitHub": "Auf GitHub ansehen"
+    },
+    "output": {
+      "title": "Was Sie erhalten: Ein schadenbereites Kontextpaket",
+      "features": {
+        "cleanDataset": {
+          "title": "Bereinigter strukturierter Datensatz",
+          "description": "Schlüsselfelder extrahiert und normalisiert"
+        },
+        "qualityStatus": {
+          "title": "Qualitätsstatus",
+          "description": "Pass/Warnung/Fehler pro Dokument und Durchlauf"
+        },
+        "evidenceLinks": {
+          "title": "Nachweisverknüpfungen",
+          "description": "Von jedem Feld zurück zum Ursprungsdokumenttext"
+        },
+        "humanLabels": {
+          "title": "Menschliche Anmerkungen",
+          "description": "Optionale Notizen, wo eine Prüfung durchgeführt wurde"
+        }
+      }
+    },
+    "metrics": {
+      "title": "Leistungskennzahlen",
+      "items": {
+        "coverage": {
+          "label": "Dokumentenabdeckung"
+        },
+        "accuracy": {
+          "label": "Genauigkeit"
+        },
+        "evidenceRate": {
+          "label": "Nachweisrate"
+        },
+        "errorRate": {
+          "label": "Dokumentenklassifizierungs-Fehlerrate",
+          "footnote": "Basierend auf Kundendaten"
+        }
+      }
+    },
+    "cta": {
+      "title": "Verarbeiten Sie eine Stichprobe Ihrer Dokumente",
+      "description": "Teilen Sie sicher eine Stichprobe von Schadendokumenten. Wir verarbeiten sie mit ContextBuilder und zeigen Ihnen die Extraktionsqualität, Fehleranalyse und Zeiteinsparungen.",
+      "button": "Demo buchen"
+    }
+  },
+  "claimEval": {
+    "hero": {
+      "badge": "Qualitätssicherung",
+      "title": "ClaimEval: Qualitätssicherung über Stichproben hinaus skalieren",
+      "subtitle": "Wechseln Sie von manueller, stichprobenbasierter QA zu konsistenten Prüfungen über Ihr gesamtes Schadenportfolio. Ausnahmen aufdecken. Menschlichen Aufwand priorisieren.",
+      "ctaPrimary": "ClaimEval in Aktion sehen",
+      "ctaSecondary": "Demo buchen"
+    },
+    "problem": {
+      "title": "Das Stichprobenproblem",
+      "description": "Traditionelle QA basiert auf Zufallsstichproben und prüft nur einen kleinen Prozentsatz der Schadenfälle. Muster bleiben unentdeckt. Leakage summiert sich. Schulungslücken bestehen fort.",
+      "cta": "Was wäre, wenn Sie jeden Schadenfall prüfen könnten?"
+    },
+    "solution": {
+      "title": "100% Abdeckung, intelligente Priorisierung",
+      "description": "ClaimEval führt definierte Prüfungen über alle abgeschlossenen Schadenfälle durch. Es bewertet Risiken, markiert Probleme und hebt die Schadenfälle hervor, die menschliche Aufmerksamkeit benötigen.",
+      "note": "ClaimEval ist eine Qualitätssicherungsebene. Es unterstützt Ihre Schadenbearbeiter, es ersetzt sie nicht."
+    },
+    "features": {
+      "title": "Hauptfunktionen",
+      "items": {
+        "riskScoring": {
+          "title": "Risikobewertung",
+          "description": "Jeder Schadenfall wird anhand konfigurierbarer Regeln bewertet. Flag-Zähler heben potenzielle Probleme hervor. Sortieren Sie nach Risiko, um die Prüfung zu priorisieren."
+        },
+        "inspectionCatalogues": {
+          "title": "Prüfkataloge",
+          "description": "Vorgefertigte Prüfungen für verschiedene Versicherungsanwendungsfälle. Konfigurierbare Prüfdefinitionen. Jede Prüfung liefert klare Ergebnisse, Kontext und nächste Schritte."
+        },
+        "reviewerWorkflow": {
+          "title": "Prüfer-Workflow",
+          "description": "Filtern nach Sparte, Status, Risikobewertung usw. Geprüft vs. nicht geprüft verfolgen. Prüfergebnisse des Dokumentenprüfers bewerten."
+        }
+      }
+    },
+    "demo": {
+      "title": "ClaimEval in Aktion sehen",
+      "subtitle": "Interaktive Demo der Schadenprüfung und -überprüfung",
+      "iframeTitle": "ClaimEval Demo"
+    },
+    "coverageAreas": {
+      "title": "Prüfbereiche",
+      "subtitle": "Vorgefertigte Prüfkataloge für Kfz, Hausrat, Leben, Garantie und mehr",
+      "motor": {
+        "title": "Kfz",
+        "zones": {
+          "1": "Schadenanlage & Aktenintegrität",
+          "2": "Haftung & Entscheidungskohärenz",
+          "3": "Kundenkommunikation",
+          "4": "Reparatur & Lieferantenhandling",
+          "5": "Totalschaden & Bewertung",
+          "6": "Mietwagenkosten / AMC",
+          "7": "Finanzhygiene & Regressforderungen"
+        }
+      },
+      "home": {
+        "title": "Hausrat",
+        "zones": {
+          "1": "Deckung & Kausalität",
+          "2": "Ermittlung & Beweisangemessenheit",
+          "3": "Reparaturen & Lieferantenaufsicht",
+          "4": "Barauszahlungen & Schutzbedürftigkeit",
+          "5": "Ersatzunterkunft"
+        }
+      },
+      "life": {
+        "title": "Leben",
+        "zones": {
+          "1": "Policengültigkeit & Begünstigtenprüfung",
+          "2": "Todesursache & Ausschlussüberprüfung",
+          "3": "Medizinische Beweisangemessenheit",
+          "4": "Auszahlungsberechnung",
+          "5": "Anfechtungsfrist-Compliance"
+        }
+      },
+      "warranty": {
+        "title": "Garantie",
+        "zones": {
+          "1": "Deckungsumfang & Komponentenberechtigung",
+          "2": "Reparatur vs. Ersatz Logik",
+          "3": "Lieferanten- & Teileverifizierung",
+          "4": "Kostenposition & Selbstbeteiligung",
+          "5": "Policenlaufzeit & Kilometerstand-Compliance"
+        },
+        "caseStudyLink": "Zur Fallstudie Garantieanbieter"
+      },
+      "exampleCheck": {
+        "label": "Beispiel-Prüfung",
+        "title": "Reservenangemessenheitsprüfung",
+        "description": "Vergleicht die anfängliche Reserve mit dem endgültigen Regulierungsbetrag über alle abgeschlossenen Schadenfälle. Markiert Fälle, in denen die Reserve mehr als 30% unter der endgültigen Auszahlung lag, was auf mögliche Unterreservierungsmuster hinweist.",
+        "passLabel": "Pass: innerhalb der Toleranz",
+        "warnLabel": "Warnung: 15-30% Abweichung",
+        "failLabel": "Fehler: >30% Abweichung"
+      }
+    },
+    "cta": {
+      "title": "Führen Sie ClaimEval auf Ihren abgeschlossenen Schadenfällen aus",
+      "description": "Wir analysieren eine Charge Ihrer historischen Schadenfälle und zeigen Ihnen die Prüfergebnisse, Risikoverteilung und priorisierte Befunde.",
+      "button": "Demo buchen"
+    }
+  },
+  "claimEvalA": {
+    "versionIndicator": "Version A",
+    "hero": {
+      "badge": "Qualitätssicherung",
+      "title": "ClaimEval: Qualitätssicherung über Stichproben hinaus skalieren",
+      "subtitle": "Wechseln Sie von manueller, stichprobenbasierter QA zu konsistenten Prüfungen über Ihr gesamtes Schadenportfolio. Ausnahmen aufdecken. Menschlichen Aufwand priorisieren.",
+      "description": "ClaimEval ist eine QA- und Governance-Ebene. Es unterstützt Ihre Bearbeiter, es ersetzt sie nicht.",
+      "ctaPrimary": "ClaimEval Demo ansehen",
+      "ctaSecondary": "Pilotprojekt anfragen"
+    },
+    "problem": {
+      "title": "Das Stichprobenproblem",
+      "description": "Traditionelle QA basiert auf Zufallsstichproben und prüft 2-5% der Schadenfälle. Muster bleiben unentdeckt. Leakage summiert sich. Schulungslücken bestehen fort.",
+      "cta": "Was wäre, wenn Sie jeden Schadenfall prüfen könnten?"
+    },
+    "solution": {
+      "title": "100% Abdeckung, intelligente Priorisierung",
+      "description": "ClaimEval führt definierte Prüfungen über alle abgeschlossenen Schadenfälle durch. Es bewertet Risiken, markiert Probleme und hebt die Schadenfälle hervor, die menschliche Aufmerksamkeit benötigen, ohne menschliches Urteilsvermögen zu ersetzen."
+    },
+    "features": {
+      "title": "Hauptfunktionen",
+      "items": {
+        "riskScoring": {
+          "title": "Risikobewertung",
+          "description": "Jeder Schadenfall wird anhand konfigurierbarer Regeln bewertet. Flag-Zähler heben potenzielle Probleme hervor. Sortieren Sie nach Risiko, um die Prüfung zu priorisieren."
+        },
+        "inspectionCatalogues": {
+          "title": "Prüfkataloge",
+          "description": "Vorgefertigte Prüfungen für Kfz, Hausrat und mehr. Anpassbare Prüfdefinitionen. Jede Prüfung beantwortet: Was? Gefunden? Warum relevant? Nächste Aktion?"
+        },
+        "reviewerWorkflow": {
+          "title": "Prüfer-Workflow",
+          "description": "Filtern nach Sparte, Status, Risikobewertung. Geprüft vs. nicht geprüft verfolgen. Prüfergebnisse dokumentieren."
+        }
+      }
+    },
+    "demo": {
+      "title": "ClaimEval in Aktion sehen",
+      "subtitle": "Interaktive Demo der Schadenprüfung und -überprüfung",
+      "iframeTitle": "ClaimEval Demo"
+    },
+    "inspectionZones": {
+      "title": "Prüfzonen",
+      "subtitle": "Vorgefertigte Prüfkataloge nach Sparte",
+      "motor": {
+        "title": "Kfz",
+        "zones": {
+          "1": "Schadenanlage & Aktenintegrität",
+          "2": "Haftung & Entscheidungskohärenz",
+          "3": "Kundenkommunikation",
+          "4": "Reparatur & Lieferantenhandling",
+          "5": "Totalschaden & Bewertung",
+          "6": "Mietwagenkosten / AMC",
+          "7": "Finanzhygiene & Regressforderungen"
+        }
+      },
+      "home": {
+        "title": "Hausrat",
+        "zones": {
+          "1": "Deckung & Kausalität",
+          "2": "Ermittlung & Beweisangemessenheit",
+          "3": "Reparaturen & Lieferantenaufsicht",
+          "4": "Barauszahlungen & Schutzbedürftigkeit",
+          "5": "Ersatzunterkunft"
+        }
+      }
+    },
+    "cta": {
+      "title": "Führen Sie ClaimEval auf Ihren abgeschlossenen Schadenfällen aus",
+      "description": "Wir analysieren eine Charge Ihrer historischen Schadenfälle und zeigen Ihnen die Prüfergebnisse, Risikoverteilung und priorisierte Befunde.",
+      "button": "Pilotprojekt anfragen"
+    }
+  },
+  "claimEvalB": {
+    "versionIndicator": "Version B",
+    "hero": {
+      "eyebrow": "Für Sach-/Haftpflichtversicherer mit >$50M GBP",
+      "title": "Sie verlieren ",
+      "titleHighlight": "$3.2M pro Jahr",
+      "titleEnd": " durch Schadenfälle, die Sie nie geprüft haben.",
+      "subtitle": "ClaimEval prüft 100% Ihrer Schadenfälle in Echtzeit. Nicht 2%. Alle. Reduzieren Sie Entschädigungsausgaben um 8%. Regressansprüche zurückgewinnen. Ohne Neueinstellungen.",
+      "ctaPrimary": "Zeigen Sie mir meine Leakage",
+      "trustBadge": "SOC2 Type II zertifiziert",
+      "trustTimeline": "In 3 Wochen live auf Ihrem Schadensystem"
+    },
+    "dashboard": {
+      "claimNumber": "Schadenfall #2024-AUT-7832",
+      "policyHolder": "Versicherungsnehmer",
+      "policyHolderValue": "Sarah Mitchell",
+      "lob": "Sparte",
+      "lobValue": "Kfz - Kollision",
+      "reserve": "Reserve",
+      "reserveValue": "$18.500",
+      "policeReportLabel": "Auszug Polizeibericht:",
+      "policeReportText": "Der Anspruchsteller gab an, dass er die Kreuzung durchfuhr, als das andere Fahrzeug die Vorfahrt missachtete. ",
+      "policeReportHighlight": "Der Fahrer gab zu, während des Abbiegens eine Textnachricht geschrieben zu haben.",
+      "alertTitle": "Verpasster Regressanspruch erkannt",
+      "alertValue": "$15.000"
+    },
+    "problem": {
+      "title": "Ihr QA-Prozess ist ein Münzwurf. Ihre Schadenquote zahlt den Preis.",
+      "description": "Reparaturkosten seit 2020 um 20% gestiegen. Extreme Urteile über $10M+. Nachwuchssachbearbeiter bearbeiten Fälle, die früher an Ihre besten Leute gingen. Und Ihre Verteidigung? Ein manuelles Audit, das 2% der abgeschlossenen Akten sieht.",
+      "subtitle": "Sie managen kein Risiko. Sie hoffen.",
+      "leaks": {
+        "blindSpot": {
+          "title": "Der blinde Fleck",
+          "description": "98% der Schadenfälle werden ohne eine zweite Prüfung abgeschlossen. Jeder einzelne ist ein Haftungsrisiko, das Sie nie gesehen haben."
+        },
+        "skillGap": {
+          "title": "Die Kompetenzlücke",
+          "description": "Neue Sachbearbeiter übersehen, was erfahrene erkennen. Inkonsistenz summiert sich zu Millionen."
+        },
+        "buriedRecovery": {
+          "title": "Die verborgene Rückforderung",
+          "description": "Regresssignale verborgen in Sachbearbeiternotizen. Geld, das Ihnen zusteht. Geld, das Sie nie einziehen werden."
+        }
+      },
+      "icebergTipLabel": "2% geprüft",
+      "icebergMassLabel": "98% ungeprüftes Risiko"
+    },
+    "solution": {
+      "title": "Hören Sie auf, Schadenfälle zu auditieren. Beginnen Sie, Ihre Schadenquote zu verteidigen.",
+      "subtitle": "ClaimEval ersetzt nicht Ihre Sachbearbeiter. Es macht jeden einzelnen zu Ihrem besten.",
+      "steps": {
+        "ingest": {
+          "label": "Erfassen",
+          "title": "Wir lesen, was Menschen überspringen.",
+          "description": "Strukturierte Daten. Unstrukturierte Notizen. Polizeiberichte. Arztrechnungen. Sachbearbeiter-Kurznotizen. Unsere Modelle wurden von Schadenexperten mit über 20 Jahren Erfahrung trainiert."
+        },
+        "analyze": {
+          "label": "Analysieren",
+          "title": "Jede Akte. Jedes Mal. Ohne Ausnahme.",
+          "description": "Jeder Schadenfall wird gegen Ihre Best Practices und über 500 Leakage-Szenarien geprüft. Wir erkennen den $12.000-Fehler um 16:47 Uhr an einem Freitag."
+        },
+        "alert": {
+          "label": "Warnen",
+          "title": "Hinweise, keine Überschreibungen.",
+          "description": "Ihr Sachbearbeiter erhält einen Echtzeit-Hinweis in seinem Workflow. Die AI zeigt die Beweise. Der Mensch trifft die Entscheidung. Volle Kontrolle."
+        }
+      },
+      "smartNudgeTitle": "Intelligenter Hinweis",
+      "smartNudgeMessage": "Deckungslimit um $500 überschritten. Überprüfen Sie die Policenlimits vor der Zahlung."
+    },
+    "microDemo": {
+      "title": "Finden Sie ein Leck in 30 Sekunden.",
+      "subtitle": "Sehen Sie, wie ClaimEval einen verpassten Regressanspruch in einem Standard-Kfz-Schadenfall erkennt.",
+      "ctaLink": "Live-Demo ansehen",
+      "claimHeader": "Polizeibericht - Schadenfall #2024-7291",
+      "claimText": "Am 15.03.2024 gegen 14:34 Uhr ereignete sich eine Kollision zweier Fahrzeuge an der Kreuzung Hauptstrasse und Eichenallee. Das versicherte Fahrzeug, ein Honda Accord 2021, fuhr in westlicher Richtung. ",
+      "claimHighlight": "\"Ich stand an der roten Ampel, als ich getroffen wurde\"",
+      "claimTextEnd": ", erklärte der Anspruchsteller. Der andere Fahrer wurde wegen Nichtbeachtung des Haltezeichens angezeigt. Die Schadensbegutachtung zeigt einen Heckaufprall, der mit dem Bericht des Anspruchstellers übereinstimmt.",
+      "alertTitle": "0% Haftung erkannt",
+      "alertAction": "Aktion: Regressakte eröffnen",
+      "scanButton": "Schadenfall scannen",
+      "scanningButton": "Wird gescannt...",
+      "scanCompleteButton": "Scan abgeschlossen",
+      "resetButton": "Zurücksetzen"
+    },
+    "differentiation": {
+      "title": "AI, die sich selbst erklärt. Entwickelt von Menschen, die Schadenfälle bearbeitet haben.",
+      "features": {
+        "noBlackBox": {
+          "title": "Keine Black Box",
+          "description": "Jeder Hinweis zitiert die Policensprache oder den Datenpunkt. Ihre Prüfer können in Sekunden verifizieren."
+        },
+        "guardrails": {
+          "title": "Integrierte Leitplanken",
+          "description": "Nachwuchssachbearbeiter erhalten Echtzeit-Anleitung. Konsistenz ohne Mikromanagement."
+        },
+        "auditTrail": {
+          "title": "Audit-bereiter Nachweis",
+          "description": "Jede Entscheidung protokolliert. Jeder Grund dokumentiert. Aufsichtsbehörden fragen? Sie sind bereit."
+        },
+        "noRipReplace": {
+          "title": "Kein Rip-and-Replace",
+          "description": "Integriert sich in Ihre bestehende Schadenplattform. In Wochen live. Nicht in Jahren."
+        }
+      }
+    },
+    "socialProof": {
+      "quote": "Wir dachten, AI könnte komplexe Personenschadenakten nicht verarbeiten. Innerhalb von 90 Tagen hat ClaimEval ",
+      "quoteHighlight": "$1.2M an verpassten Regressansprüchen",
+      "quoteEnd": " aufgedeckt. Es hat sich im 1. Quartal amortisiert.",
+      "attribution": "VP of Claims, Regionaler Kfz-Versicherer",
+      "badges": {
+        "soc2": "SOC2 Type II",
+        "iso": "ISO 27001",
+        "api": "API-First",
+        "gdpr": "GDPR"
+      }
+    },
+    "roiCalculator": {
+      "title": "Berechnen Sie, was Sie gerade verlieren",
+      "dwpLabel": "Jährliche GBP",
+      "lossRatioLabel": "Aktuelle Schadenquote",
+      "resultPrefix": "Eine 1% Leakage-Reduktion =",
+      "resultSuffix": "zurück in Ihren Reserven.",
+      "ctaButton": "Meinen individuellen Leakage-Report erhalten"
+    },
+    "faq": {
+      "title": "FAQ",
+      "items": {
+        "replaceAdjusters": {
+          "question": "Wird dies meine Sachbearbeiter ersetzen?",
+          "answer": "Nein. ClaimEval übernimmt die Auditlast. Ihr Team übernimmt Urteilsvermögen, Verhandlung und Kundenbetreuung."
+        },
+        "dataSecurity": {
+          "question": "Wie sicher sind meine Daten?",
+          "answer": "SOC2 Type II. ISO 27001. Verschlüsselt im Ruhezustand. Wir trainieren niemals mit Ihren Daten ohne Zustimmung."
+        },
+        "timeToResults": {
+          "question": "Wie lange bis wir Ergebnisse sehen?",
+          "answer": "Die meisten Versicherer sind in 3-4 Wochen live. Messbare Wirkung bis Monat 3."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Ihre Schadendaten haben Antworten. Lassen Sie uns diese finden.",
+      "subtitle": "30-Minuten-Strategiegespräch. Live-Leakage-Analyse Ihres Bestands. Kein Pitch-Deck. Nur Daten.",
+      "lobPlaceholder": "Primäre Versicherungssparte",
+      "lobAuto": "Kfz",
+      "lobProperty": "Sach",
+      "lobWC": "Arbeitsunfall",
+      "volumePlaceholder": "Schadenvolumen",
+      "volumeLt10k": "<10k",
+      "volumeGt10k": "10k+",
+      "emailPlaceholder": "Geschäftliche E-Mail",
+      "submitButton": "Meine Leakage analysieren"
+    }
+  }
+}

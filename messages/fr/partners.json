@@ -1,0 +1,127 @@
+{
+  "partners": {
+    "yarowa": {
+      "hero": {
+        "badge": "Partenaire strategique",
+        "titleLine1": "Yarowa AG",
+        "titleLine2": "Partenaire strategique",
+        "description1": "Yarowa AG est une plateforme InsurTech suisse profondement ancree dans le secteur de l'assurance, operant a grande echelle sur les processus d'assurance essentiels dans des environnements hautement reglementes. Sa plateforme a ete faconnee par des annees de collaboration etroite avec les assureurs et une utilisation reelle en production.",
+        "description2": "True Aim AG est une societe issue de Yarowa, creee pour se concentrer specifiquement sur l'AI auditable et conforme aux reglementations pour l'assurance, combinant une expertise sectorielle eprouvee avec une technologie concue pour un deploiement entreprise transparent."
+      },
+      "strengths": {
+        "heading": "Forces du partenariat",
+        "distribution": {
+          "title": "Distribution directe aux assureurs",
+          "description": "Acces a un reseau etabli de relations avec les assureurs en Suisse et en Europe. Un canal de distribution eprouve pour les logiciels d'entreprise."
+        },
+        "delivery": {
+          "title": "Experience de livraison entreprise",
+          "description": "Yarowa apporte une profonde experience de livraison entreprise. De l'approvisionnement a l'implementation, leur methodologie accelere le delai de rentabilite pour les clients assureurs."
+        },
+        "platform": {
+          "title": "Plateforme InsurTech suisse",
+          "description": "Une plateforme technologique basee en Suisse, concue pour le secteur de l'assurance. L'infrastructure et la connaissance du marche de Yarowa completent les capacites decisionnelles de True Aim."
+        },
+        "vision": {
+          "title": "Vision commune",
+          "description": "True Aim et Yarowa partagent la conviction que l'assurance a besoin d'une technologie transparente et auditable. Cet alignement strategique guide notre approche commune de mise sur le marche."
+        }
+      },
+      "cta": {
+        "heading": "Decouvrez nos produits en action",
+        "description": "Decouvrez comment notre partenariat fournit une automatisation auditable des sinistres aux assureurs.",
+        "learnProducts": "Decouvrir nos produits",
+        "bookDemo": "Reserver une demo"
+      }
+    },
+    "innosuisse": {
+      "hero": {
+        "badge": "Partenaire d'innovation federal",
+        "titleLine1": "Finance par Innosuisse",
+        "titleLine2": "Partenaire d'innovation",
+        "description1": "La technologie fondamentale de True Aim est soutenue par une subvention de recherche competitive accordee par Innosuisse, l'agence nationale d'innovation de la Suisse. La subvention reflete une validation formelle au niveau national de l'approche technique et du programme de recherche derriere le travail de True Aim dans le domaine de l'AI auditable.",
+        "description2": "Le financement soutient la recherche appliquee sur des systemes d'AI transparents, controlables et conformes aux reglementations pour les industries hautement reglementees, avec un accent clair sur les resultats mesurables et le deploiement reel."
+      },
+      "keyPoints": {
+        "govValidation": {
+          "title": "Validation gouvernementale officielle",
+          "description": "Innosuisse est l'agence officielle d'innovation de la Confederation suisse, fournissant un soutien federal pour les projets de recherche et developpement a potentiel commercial."
+        },
+        "excellence": {
+          "title": "Excellence competitive",
+          "description": "Les subventions Innosuisse sont attribuees selon des criteres de selection rigoureux. L'obtention du financement demontre le merite technique et la viabilite commerciale de l'approche neuro-symbolic de True Aim."
+        },
+        "priority": {
+          "title": "Priorite strategique nationale",
+          "description": "La subvention reflete l'engagement national de la Suisse a faire progresser une AI digne de confiance dans les industries reglementees. True Aim est a l'avant-garde de cette initiative."
+        },
+        "zhawCollab": {
+          "title": "Collaboration ZHAW",
+          "description": "Le programme de recherche est mene en partenariat avec la ZHAW (School of Engineering, Institut d'informatique appliquee, Centre pour l'AI) et est dirige par Dr. Dandolo Flumini."
+        }
+      },
+      "grantDetails": {
+        "label": "Financement de l'innovation",
+        "title": "Financement de projet d'innovation Innosuisse",
+        "description": "Financement non dilutif de la Confederation suisse pour faire progresser l'AI neuro-symbolic pour la prise de decision deterministe en matiere de sinistres dans les industries reglementees.",
+        "visitLink": "Visiter Innosuisse"
+      },
+      "cta": {
+        "heading": "En savoir plus sur notre technologie",
+        "description": "Decouvrez comment l'innovation soutenue par Innosuisse alimente notre moteur de decision en matiere de sinistres.",
+        "exploreTech": "Explorer notre technologie",
+        "bookDemo": "Reserver une demo"
+      }
+    },
+    "zhaw": {
+      "hero": {
+        "badge": "Partenaire de recherche",
+        "titleLine1": "Partenariat de recherche",
+        "titleLine2": "ZHAW",
+        "description1": "Une partie de la technologie innovante de True Aim est developpee en collaboration avec la ZHAW Haute ecole zurichoise de sciences appliquees, l'une des principales universites de recherche appliquee de Suisse, reconnue pour sa recherche de pointe en AI, data science et ingenierie avec un fort accent sur le deploiement reel.",
+        "description2": "Les travaux sont soutenus par le financement d'innovation Innosuisse, la ZHAW etant le partenaire de recherche formel et True Aim le partenaire d'implementation industrielle, faisant progresser l'AI neuro-symbolic transparente et conforme aux reglementations pour les industries hautement reglementees."
+      },
+      "research": {
+        "heading": "Domaines de recherche",
+        "neuroSymbolic": {
+          "title": "Neuro-Symbolic AI",
+          "description": "Combiner la flexibilite des reseaux neuronaux avec la precision du raisonnement symbolique. Notre recherche se concentre sur la production de decisions AI deterministes et entierement explicables."
+        },
+        "logicExtraction": {
+          "title": "Extraction de logique & automatisation",
+          "description": "Developpement de methodes pour extraire la logique formelle des documents de police d'assurance en langage naturel et la transformer en regles de decision calculables."
+        },
+        "deterministic": {
+          "title": "Prise de decision deterministe",
+          "description": "Garantir que des entrees identiques produisent toujours des sorties identiques, avec une tracabilite complete de la decision au texte source. Essentiel pour la conformite reglementaire."
+        },
+        "applied": {
+          "title": "Recherche industrielle appliquee",
+          "description": "Faire le pont entre la recherche academique et les operations d'assurance reelles. Tester et valider les approches par rapport aux donnees reelles de sinistres et aux documents de police d'assurance."
+        }
+      },
+      "researchGroup": {
+        "heading": "A propos du groupe de recherche",
+        "description": "La recherche est hebergee au sein de la {schoolOfEngineering} de la ZHAW, plus precisement au sein de l'{init} et du {cai}.",
+        "schoolOfEngineering": "School of Engineering",
+        "init": "Institut d'informatique appliquee (InIT)",
+        "cai": "Centre pour l'intelligence artificielle (CAI)",
+        "dandolo": {
+          "name": "Dr. Dandolo Flumini",
+          "bio": "Developpeur originel de la technologie MIRA. PhD en mathematiques et informatique. Dirige le projet d'innovation finance par Innosuisse de True Aim."
+        },
+        "lukas": {
+          "name": "Dr. Lukas Lichtensteiger",
+          "bio": "Diplome de Harvard, entrepreneur en serie et CTO. Chercheur ZHAW en AI et robotique. Conseiller technique de True Aim."
+        },
+        "visitLink": "Visiter la ZHAW"
+      },
+      "cta": {
+        "heading": "Voyez la recherche en action",
+        "description": "Decouvrez comment notre technologie issue de la ZHAW fournit des decisions de sinistres auditables.",
+        "exploreTech": "Explorer notre technologie",
+        "bookDemo": "Reserver une demo"
+      }
+    }
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "claimEvalB": {
+    "versionIndicator": "Version B",
+    "hero": {
+      "eyebrow": "Pour les assureurs IARD avec >$50M de primes émises",
+      "title": "Vous perdez ",
+      "titleHighlight": "$3.2M par an",
+      "titleEnd": " sur des sinistres que vous n'avez jamais audités.",
+      "subtitle": "ClaimEval audite 100% de vos sinistres en temps réel. Pas 2%. Tous. Réduisez les dépenses d'indemnisation de 8%. Récupérez les recours manqués. Sans nouvelle embauche.",
+      "ctaPrimary": "Montrez-moi mes fuites",
+      "trustBadge": "Certifié SOC2 Type II",
+      "trustTimeline": "Opérationnel sur votre système de sinistres en 3 semaines"
+    },
+    "dashboard": {
+      "claimNumber": "Sinistre #2024-AUT-7832",
+      "policyHolder": "Assuré",
+      "policyHolderValue": "Sarah Mitchell",
+      "lob": "Branche",
+      "lobValue": "Auto - Collision",
+      "reserve": "Réserve",
+      "reserveValue": "$18 500",
+      "policeReportLabel": "Extrait du rapport de police :",
+      "policeReportText": "Le demandeur a déclaré qu'il traversait l'intersection lorsque l'autre véhicule n'a pas cédé le passage. ",
+      "policeReportHighlight": "Le conducteur a admis envoyer un SMS en tournant.",
+      "alertTitle": "Recours manqué détecté",
+      "alertValue": "$15 000"
+    },
+    "problem": {
+      "title": "Votre processus QA est un coup de dés. Votre ratio de sinistralité en paie le prix.",
+      "description": "Coûts de réparation en hausse de 20% depuis 2020. Verdicts extrêmes dépassant $10M+. Des gestionnaires juniors traitent des dossiers qui allaient autrefois à vos meilleurs éléments. Et votre défense ? Un audit manuel qui ne voit que 2% des dossiers clos.",
+      "subtitle": "Vous ne gérez pas le risque. Vous espérez.",
+      "leaks": {
+        "blindSpot": {
+          "title": "L'angle mort",
+          "description": "98% des sinistres sont clos sans un second regard. Chacun est une responsabilité que vous n'avez jamais vue."
+        },
+        "skillGap": {
+          "title": "Le déficit de compétences",
+          "description": "Les nouveaux gestionnaires ratent ce que les vétérans détectent. L'incohérence se traduit en millions."
+        },
+        "buriedRecovery": {
+          "title": "Le recouvrement enfoui",
+          "description": "Des signaux de recours enfouis dans les notes des gestionnaires. De l'argent que vous avez gagné. De l'argent que vous ne récupérerez jamais."
+        }
+      },
+      "icebergTipLabel": "2% audités",
+      "icebergMassLabel": "98% de risque non examiné"
+    },
+    "solution": {
+      "title": "Arrêtez d'auditer les sinistres. Commencez à défendre votre ratio de sinistralité.",
+      "subtitle": "ClaimEval ne remplace pas vos gestionnaires. Il fait de chacun d'entre eux votre meilleur élément.",
+      "steps": {
+        "ingest": {
+          "label": "Ingestion",
+          "title": "Nous lisons ce que les humains sautent.",
+          "description": "Données structurées. Notes non structurées. Rapports de police. Factures médicales. Abréviations des gestionnaires. Nos modèles ont été entraînés par des experts en sinistres avec plus de 20 ans d'expérience."
+        },
+        "analyze": {
+          "label": "Analyse",
+          "title": "Chaque dossier. À chaque fois. Sans exception.",
+          "description": "Chaque sinistre est analysé selon vos meilleures pratiques et plus de 500 scénarios de fuite. Nous détectons l'erreur de $12 000 à 16h47 un vendredi."
+        },
+        "alert": {
+          "label": "Alerte",
+          "title": "Des signalements, pas des annulations.",
+          "description": "Votre gestionnaire reçoit une notification en temps réel dans son workflow. L'AI montre les preuves. L'humain prend la décision. Contrôle total."
+        }
+      },
+      "smartNudgeTitle": "Notification intelligente",
+      "smartNudgeMessage": "Limite de couverture dépassée de $500. Vérifiez les limites de la police avant le paiement."
+    },
+    "microDemo": {
+      "title": "Trouvez une fuite en 30 secondes.",
+      "subtitle": "Regardez ClaimEval détecter un recouvrement manqué dans un sinistre auto standard.",
+      "ctaLink": "Voir une démo en direct",
+      "claimHeader": "Rapport de police - Sinistre #2024-7291",
+      "claimText": "Le 15/03/2024 vers 14h34, une collision entre deux véhicules s'est produite à l'intersection de la rue Principale et de l'avenue du Chêne. Le véhicule assuré, une Honda Accord 2021, circulait en direction de l'ouest. ",
+      "claimHighlight": "\"J'étais arrêté au feu rouge quand j'ai été percuté\"",
+      "claimTextEnd": ", a déclaré le demandeur. L'autre conducteur a été verbalisé pour non-respect du stop. L'expertise des dommages indique un impact arrière cohérent avec le récit du demandeur.",
+      "alertTitle": "0% de responsabilité détectée",
+      "alertAction": "Action : Ouvrir un dossier de recours",
+      "scanButton": "Scanner le sinistre",
+      "scanningButton": "Analyse en cours...",
+      "scanCompleteButton": "Analyse terminée",
+      "resetButton": "Réinitialiser"
+    },
+    "differentiation": {
+      "title": "Une AI qui s'explique. Conçue par des personnes qui ont traité des sinistres.",
+      "features": {
+        "noBlackBox": {
+          "title": "Pas de boîte noire",
+          "description": "Chaque signalement cite le langage de la police ou le point de données. Vos auditeurs peuvent vérifier en quelques secondes."
+        },
+        "guardrails": {
+          "title": "Garde-fous intégrés",
+          "description": "Les gestionnaires juniors reçoivent des conseils en temps réel. Cohérence sans micro-management."
+        },
+        "auditTrail": {
+          "title": "Piste d'audit prête",
+          "description": "Chaque décision enregistrée. Chaque raison documentée. Les régulateurs demandent ? Vous êtes prêt."
+        },
+        "noRipReplace": {
+          "title": "Pas de remplacement total",
+          "description": "Se superpose à votre plateforme de sinistres existante. Opérationnel en semaines. Pas en années."
+        }
+      }
+    },
+    "socialProof": {
+      "quote": "Nous pensions que l'AI ne pouvait pas traiter les dossiers complexes de dommages corporels. En 90 jours, ClaimEval a mis en évidence ",
+      "quoteHighlight": "$1.2M de recours manqués",
+      "quoteEnd": ". Il s'est rentabilisé au T1.",
+      "attribution": "VP Sinistres, Assureur auto régional",
+      "badges": {
+        "soc2": "SOC2 Type II",
+        "iso": "ISO 27001",
+        "api": "API-First",
+        "gdpr": "GDPR"
+      }
+    },
+    "roiCalculator": {
+      "title": "Calculez ce que vous perdez en ce moment",
+      "dwpLabel": "Primes émises annuelles",
+      "lossRatioLabel": "Ratio de sinistralité actuel",
+      "resultPrefix": "Une réduction de 1% des fuites =",
+      "resultSuffix": "de retour dans vos réserves.",
+      "ctaButton": "Obtenir mon rapport de fuite personnalisé"
+    },
+    "faq": {
+      "title": "FAQ",
+      "items": {
+        "replaceAdjusters": {
+          "question": "Est-ce que cela va remplacer mes gestionnaires ?",
+          "answer": "Non. ClaimEval gère la charge d'audit. Votre équipe gère le jugement, la négociation et la relation client."
+        },
+        "dataSecurity": {
+          "question": "Quelle est la sécurité de mes données ?",
+          "answer": "SOC2 Type II. ISO 27001. Chiffrement au repos. Nous n'entraînons jamais nos modèles sur vos données sans consentement."
+        },
+        "timeToResults": {
+          "question": "Combien de temps avant de voir des résultats ?",
+          "answer": "La plupart des assureurs sont opérationnels en 3-4 semaines. Impact mesurable dès le mois 3."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Vos données de sinistres ont des réponses. Trouvons-les.",
+      "subtitle": "Session stratégique de 30 minutes. Analyse de fuite en direct sur votre portefeuille. Pas de présentation. Uniquement des données.",
+      "lobPlaceholder": "Branche principale",
+      "lobAuto": "Auto",
+      "lobProperty": "Habitation",
+      "lobWC": "Accidents du travail",
+      "volumePlaceholder": "Volume de sinistres",
+      "volumeLt10k": "<10k",
+      "volumeGt10k": "10k+",
+      "emailPlaceholder": "E-mail professionnel",
+      "submitButton": "Analyser mes fuites"
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "hero": {
+    "title": "Automate Insurance Claim Decisions.",
+    "titleHighlight": "Auditable by Design.",
+    "subtitle1": "Apply policy terms clearly and consistently.",
+    "subtitle2": "Built for regulated insurance.",
+    "subtitle3": "No black boxes.",
+    "pipelineTitle": "From Documents to Decisions in One Flow",
+    "steps": {
+      "ingest": {
+        "label": "Ingest",
+        "shortDesc": "Capture & validate inputs",
+        "description": "Documents received via email, portal or system export",
+        "time": "< 10 sec",
+        "value": "Eliminate manual sorting and routing",
+        "automation": "ContextBuilder auto-ingests and classifies documents"
+      },
+      "process": {
+        "label": "Process",
+        "shortDesc": "Apply policy logic & checks",
+        "description": "Key data pulled from claims documents",
+        "time": "15 \u2013 45 sec",
+        "value": "Reduce re-keying errors and data entry cost",
+        "automation": "AI extracts fields with evidence linking"
+      },
+      "assess": {
+        "label": "Assess",
+        "shortDesc": "Confirm outcome & handling",
+        "description": "Coverage determination against policy",
+        "time": "< 5 sec",
+        "value": "Consistent, defensible decisions on every claim",
+        "automation": "MIRA applies deterministic policy logic"
+      },
+      "execute": {
+        "label": "Execute",
+        "shortDesc": "Trigger next steps",
+        "description": "Set reserves, draft payment, send comms",
+        "time": "< 10 sec",
+        "value": "Faster settlement cycles, improved CX",
+        "automation": "Automated task execution based on decision"
+      },
+      "audit": {
+        "label": "Audit",
+        "shortDesc": "Full traceability",
+        "description": "Complete decision trail logged",
+        "time": "Instant",
+        "value": "Regulator-ready audit trails without manual prep",
+        "automation": "Decision Dossier generated automatically"
+      }
+    },
+    "legendFully": "Fully Automated",
+    "legendHuman": "Human in the Loop",
+    "ctaDemo": "Book a Demo",
+    "ctaImpact": "Get Impact Estimate"
+  },
+  "valueProps": {
+    "title": "Claims Automation That Regulators Trust",
+    "subtitle": "Measurable results from day one",
+    "upTo": "UP TO",
+    "cards": {
+      "speed": {
+        "label": "Faster claim determinations",
+        "description": "Process claims in seconds, not days. Documents are ingested, understood, and decided automatically.",
+        "proof": "Pilot results: avg 2.3s decision time"
+      },
+      "cost": {
+        "label": "Reduction in handling costs",
+        "description": "Eliminate re-keying errors and inconsistent interpretations. Same input, same output, every time.",
+        "proof": "Based on closed file review analysis"
+      },
+      "audit": {
+        "label": "Auditable decisions",
+        "description": "Every decision links directly to policy clauses and source documents. Built for EU AI Act compliance.",
+        "proof": "Complete decision traceability guaranteed"
+      },
+      "cx": {
+        "label": "Superior customer experience",
+        "description": "Instant acknowledgment, real-time status updates and faster payouts. Policyholders informed at every step.",
+        "proof": "End-to-end claim lifecycle < 60s"
+      }
+    }
+  },
+  "productsGrid": {
+    "title": "Purpose-Built Products for Claims Excellence",
+    "subtitle": "A complete suite designed for the claims lifecycle",
+    "products": {
+      "contextBuilder": {
+        "name": "ContextBuilder",
+        "badge": "Document Pipeline",
+        "description": "Turn fragmented, unstructured claim documents into high-quality structured data. AI-assisted extraction with human-in-the-loop review ensures clean inputs for deterministic decisioning.",
+        "explore": "Explore ContextBuilder"
+      },
+      "mira": {
+        "name": "MIRA",
+        "badge": "Decisioning Engine",
+        "description": "The core deterministic decision engine. Transform complex policy terms and conditions into automated decisions that are consistent, reproducible and free from probabilistic inference.",
+        "explore": "Explore MIRA"
+      },
+      "decisionDossier": {
+        "name": "Decision Dossier",
+        "badge": "Audit Record",
+        "description": "Every case produces a fully traceable audit record linking outcomes back to source clauses, documents and decision paths. Explainable, defensible and replayable.",
+        "explore": "Explore Decision Dossier"
+      },
+      "claimEval": {
+        "name": "ClaimEval",
+        "badge": "Quality Assurance",
+        "description": "Scale quality assurance beyond sampling. Automatically inspect decisions across your full claims portfolio to detect inconsistencies, process deviation and logic gaps.",
+        "explore": "Explore ClaimEval"
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to See Auditable AI in Action?",
+    "subtitle": "Book a 30-minute demo to see how True Aim can transform your claims operations.",
+    "bookDemo": "Book a Demo",
+    "getImpact": "Get Impact Estimate",
+    "trustCompliance": "Compliance by Design",
+    "trustSwiss": "Swiss data hosting",
+    "trustEnterprise": "Built to enterprise standards"
+  },
+  "decisionDossier": {
+    "teaserBadge": "Unique to True Aim",
+    "teaserTagline": "Auditable by Design.",
+    "teaserTitle": "The Decision Dossier",
+    "teaserDescription": "Every claim decision produces a complete, reproducible audit record. Unlike black-box AI, every True Aim decision can be <strong>replayed, explained & defended</strong> in audit or dispute.",
+    "teaserLink": "See how it works",
+    "previewTitle": "Decision Dossier",
+    "previewClaimId": "Claim #2024-TR-4521",
+    "previewDecision": "Decision: <strong>Covered</strong>",
+    "previewPolicy": "Policy: Art. 5.2.1, 5.2.3",
+    "previewEvidence": "Evidence: 4 documents linked",
+    "previewConfidence": "Confidence: <span>98.5%</span>",
+    "fullBadge": "Unique Differentiator",
+    "fullTitle": "The Decision Dossier",
+    "fullDescription": "Every claim decision produces a complete, reproducible audit record, your defense in any audit or dispute.",
+    "contents": {
+      "inputSummary": {
+        "title": "Input Summary",
+        "description": "Complete claim data as received: documents, parties, timeline, facts"
+      },
+      "policyMatch": {
+        "title": "Policy Match",
+        "description": "Specific policy clauses applied, with clause IDs and exact text references"
+      },
+      "logicTrace": {
+        "title": "Logic Trace",
+        "description": "Step-by-step decision path: conditions checked, rules applied, branches taken"
+      },
+      "evidenceLinks": {
+        "title": "Evidence Links",
+        "description": "Every field linked back to source documents with page and location"
+      },
+      "confidenceScore": {
+        "title": "Confidence Score",
+        "description": "Automation certainty level with flagged areas requiring human review"
+      },
+      "replayCapability": {
+        "title": "Replay Capability",
+        "description": "Re-run with identical inputs, get identical outputs, every time"
+      }
+    },
+    "mockupTitle": "Decision Dossier",
+    "mockupGenerated": "Generated: Jan 12, 2026 14:32:05 UTC",
+    "mockupCovered": "Covered",
+    "mockupClaimRef": "Claim Reference",
+    "mockupClaimId": "TRV-2024-4521",
+    "mockupClaimDetails": " | Travel Insurance | Medical Expenses",
+    "mockupPolicyClauses": "Policy Clauses Applied",
+    "mockupClause1Ref": "Art. 5.2.1",
+    "mockupClause1Desc": "Medical emergency coverage",
+    "mockupClause2Ref": "Art. 5.2.3",
+    "mockupClause2Desc": "Repatriation benefits",
+    "mockupEvidenceTrail": "Evidence Trail",
+    "mockupConfidenceLabel": "Confidence:",
+    "mockupConfidenceValue": "98.5%",
+    "mockupReplay": "Replay Decision",
+    "mockupDifferentiator": "<strong>Unlike black-box AI:</strong> Every True Aim decision can be replayed, explained, defended."
+  },
+  "socialProof": {
+    "badge": "Proven Results",
+    "title": "Trusted by Leading Insurers",
+    "subtitle": "See how insurers are transforming their claims operations with measurable, auditable results",
+    "readCaseStudy": "Read case study",
+    "viewAllCaseStudies": "View All Case Studies"
+  },
+  "partnerLogos": {
+    "title": "Trusted Partners",
+    "logoAlt": "{name} logo"
+  },
+  "trustBar": {
+    "title": "Award-Winning Technology",
+    "subtitle": "Recognised across Switzerland, Germany and Italy"
+  }
+}

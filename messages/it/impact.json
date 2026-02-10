@@ -1,0 +1,117 @@
+{
+  "impact": {
+    "hero": {
+      "badge": "Impact Estimator",
+      "titleLine1": "Esplori il Suo",
+      "titleLine2": "valore potenziale",
+      "description": "Visualizzi l'impatto stimato dell'automazione delle decisioni sui sinistri con True Aim. Regoli i parametri di alto livello per adattarli alla Sua attività.",
+      "benefits": {
+        "conservative": "Stime conservative",
+        "pilotData": "Basato su dati pilota reali",
+        "instant": "Indicazione istantanea"
+      }
+    },
+    "cta": {
+      "heading": "Pronto per una valutazione dettagliata?",
+      "description": "Il nostro team può analizzare i Suoi dati specifici sui sinistri, la complessità delle polizze e i vincoli operativi per fornire una stima d'impatto personalizzata.",
+      "bookDemo": "Prenota una demo",
+      "seeMira": "Vedi MIRA in azione"
+    },
+    "calculator": {
+      "inputPanel": {
+        "title": "La Sua attività sinistri",
+        "subtitle": "Regoli i valori per adattarli alla Sua situazione",
+        "currency": "Valuta",
+        "claimsVolume": "Volume annuale di sinistri:",
+        "claimsVolumeUnit": "sinistri/anno",
+        "handlingTime": "Tempo medio di gestione per sinistro:",
+        "handlingTimeUnit": "minuti",
+        "handlingTimeHint": "Utilizzi una stima per un sinistro tipico senza particolare complessità",
+        "claimsHandlers": "Numero di gestori sinistri o periti:",
+        "automationLevel": "Idoneo per l'elaborazione automatica o assistita",
+        "rangeMin": {
+          "claims": "10.000",
+          "claimsMax": "1.000.000",
+          "timeMin": "5 min",
+          "timeMax": "180 min",
+          "handlersMin": "1",
+          "handlersMax": "500"
+        }
+      },
+      "results": {
+        "mainImpact": {
+          "label": "Impatto operativo lordo stimato (Conservativo)",
+          "sublabel": "Basato su ipotesi a scala pilota",
+          "reductionSuffix": "% di riduzione dei costi di gestione sinistri"
+        },
+        "breakdown": {
+          "heading": "Dettaglio dei risparmi",
+          "capacity": {
+            "title": "Capacità sbloccata",
+            "description": "Meno interventi per sinistro, tempo di gestione ridotto"
+          },
+          "rework": {
+            "title": "Rilavorazioni evitate",
+            "description": "Meno riaperture, ricorsi e correzioni"
+          },
+          "leakage": {
+            "title": "Riduzione delle perdite",
+            "description": "Meno decisioni incoerenti"
+          }
+        },
+        "metrics": {
+          "hoursSaved": "Ore risparmiate/anno",
+          "fteEquivalent": "Capacità sbloccata (equivalente FTE)",
+          "fteNote": "Riflette la riduzione dell'impegno di gestione, non la riduzione del personale"
+        },
+        "disclaimers": {
+          "grossImpact": "Tutte le cifre presentate rappresentano l'impatto operativo lordo e non tengono conto del costo dei servizi di True Aim.",
+          "pricing": "I prezzi della piattaforma non sono indicati. Il prezzo finale è basato sulle condizioni contrattuali e sulle negoziazioni commerciali.",
+          "pilotData": "Basato su dati pilota da sinistri assicurativi."
+        },
+        "assumptions": {
+          "toggle": "Metodologia e ipotesi",
+          "howWeCalculate": "Come calcoliamo",
+          "currentHandlingCost": "Costo di gestione attuale",
+          "currentHandlingCostFormula": "= Tempo di gestione x Costo al minuto x Volume sinistri",
+          "grossSavings": "Risparmi lordi",
+          "grossSavingsFormula": "= Capacità + Rilavorazioni + Perdite",
+          "conservativeEstimate": "Stima conservativa",
+          "conservativeEstimateFormula": "= Risparmi lordi x 75% Aggiustamento di sensibilità",
+          "keyAssumptions": "Ipotesi chiave",
+          "assumption1": "I risparmi si applicano solo alle categorie di sinistri idonee",
+          "assumption2": "Nessuna riduzione immediata del personale prevista",
+          "assumption3": "I risparmi riflettono la riduzione dell'impegno di gestione e delle rilavorazioni",
+          "assumption4": "Aggiustamento di sensibilità del 75% applicato a tutte le proiezioni",
+          "breakdownTitle": "I Suoi numeri in dettaglio",
+          "breakdownRows": {
+            "annualVolume": "Volume annuale di sinistri",
+            "automatedClaims": "Sinistri automatizzati da True Aim",
+            "manualClaims": "Sinistri che richiedono revisione manuale",
+            "capacityGross": "Risparmi di capacità (lordo)",
+            "reworkGross": "Rilavorazioni evitate (lordo)",
+            "leakageGross": "Riduzione delle perdite (lordo)",
+            "sensitivityAdjustment": "Aggiustamento di sensibilità (75%)",
+            "grossAnnualImpact": "Impatto annuale lordo (conservativo)"
+          },
+          "importantNotes": "Note importanti",
+          "note1": "Le stime si basano su dati pilota da sinistri di assicurazione viaggio",
+          "note2": "I tassi di automazione effettivi dipendono dalla complessità delle polizze e dai tipi di sinistro"
+        },
+        "report": {
+          "received": "Richiesta ricevuta",
+          "receivedMessage": "Le invieremo l'analisi d'impatto personalizzata entro 1 giorno lavorativo.",
+          "requestTitle": "Richiedi un rapporto d'impatto dettagliato",
+          "namePlaceholder": "Il Suo nome",
+          "emailPlaceholder": "E-mail aziendale",
+          "sending": "Invio in corso...",
+          "sendButton": "Invia il mio rapporto d'impatto",
+          "wantFullBreakdown": "Desidera l'analisi completa?",
+          "fullBreakdownDesc": "Ottenga un rapporto d'impatto personalizzato con metodologia e ipotesi dettagliate.",
+          "requestButton": "Richiedi un rapporto d'impatto dettagliato",
+          "bookDemo": "Prenota una demo"
+        }
+      }
+    }
+  }
+}

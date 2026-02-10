@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "products": "Produkte",
+    "resources": "Ressourcen",
+    "technology": "Technologie",
+    "company": "Unternehmen",
+    "contact": "Kontakt",
+    "bookDemo": "Demo buchen",
+    "logoAlt": "True Aim Logo",
+    "toggleMenu": "Menü umschalten",
+    "productsDropdown": {
+      "mira": "MIRA",
+      "miraDesc": "Entscheidungs-Engine",
+      "contextBuilder": "ContextBuilder",
+      "contextBuilderDesc": "Dokumenten-Pipeline",
+      "claimEval": "ClaimEval",
+      "claimEvalDesc": "Qualitätssicherung"
+    },
+    "resourcesDropdown": {
+      "caseStudies": "Fallstudien",
+      "caseStudiesDesc": "Erfolgsgeschichten unserer Kunden",
+      "impactEstimator": "Impact Estimator",
+      "impactEstimatorDesc": "Potenzielle Wertschöpfung erkunden",
+      "trustCenter": "Trust Center",
+      "trustCenterDesc": "Sicherheit & Compliance",
+      "blog": "Blog",
+      "blogDesc": "Einblicke und Neuigkeiten"
+    }
+  },
+  "footer": {
+    "logoAlt": "True Aim Logo",
+    "tagline": "Schweizer Präzision. Überprüfbare KI.",
+    "company": "Unternehmen",
+    "resources": "Ressourcen",
+    "products": "Produkte",
+    "legal": "Rechtliches",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "caseStudies": "Fallstudien",
+    "impactEstimator": "Impact Estimator",
+    "trustCenter": "Trust Center",
+    "blog": "Blog",
+    "mira": "MIRA",
+    "contextBuilder": "ContextBuilder",
+    "claimEval": "ClaimEval",
+    "privacy": "Datenschutzerklärung",
+    "terms": "Nutzungsbedingungen",
+    "cookies": "Cookie-Richtlinie",
+    "paia": "PAIA-Handbuch",
+    "copyright": "© {year} True Aim. Alle Rechte vorbehalten.",
+    "linkedin": "LinkedIn"
+  },
+  "cookie": {
+    "title": "Cookie-Einstellungen",
+    "description": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Essentielle Cookies sind immer aktiv. Sie können Analyse-Cookies aktivieren, um uns bei der Verbesserung unserer Website zu unterstützen.",
+    "learnMore": "Mehr erfahren",
+    "acceptAll": "Alle akzeptieren",
+    "decline": "Ablehnen",
+    "managePreferences": "Einstellungen verwalten",
+    "savePreferences": "Einstellungen speichern",
+    "essential": "Essentiell",
+    "essentialDesc": "Erforderlich für die Funktion der Website",
+    "analytics": "Analyse",
+    "analyticsDesc": "Helfen uns zu verstehen, wie Besucher unsere Website nutzen"
+  },
+  "skipToContent": "Zum Hauptinhalt springen"
+}

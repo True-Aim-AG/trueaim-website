@@ -1,0 +1,118 @@
+{
+  "technology": {
+    "hero": {
+      "badge": "Unsere Technologie",
+      "titleLine1": "Neuro-symbolische AI: Die Architektur,",
+      "titleLine2": "der Aufsichtsbehörden vertrauen",
+      "description": "Nicht probabilistisch. Keine Black Box. Unser hybrider Ansatz kombiniert agentic AI-Ausführung mit deterministischer Entscheidungsfindung, speziell entwickelt für regulierte Branchen."
+    },
+    "problem": {
+      "heading": "Das Problem mit probabilistischer AI",
+      "description": "Grosse Sprachmodelle sind leistungsfähig, aber sie sind probabilistisch. Bei gleicher Eingabe können sie unterschiedliche Ergebnisse liefern. Sie können ihre Schlussfolgerungen nicht in einer Sprache erklären, die Aufsichtsbehörden verstehen.",
+      "emphasis": "Für Schadenentscheidungen ist das inakzeptabel."
+    },
+    "architecture": {
+      "heading": "Trennung der Zuständigkeiten",
+      "subtitle": "Zwei Ebenen, jeweils optimiert für ihre Stärke",
+      "agentic": {
+        "title": "Agentic AI",
+        "subtitle": "Flexibel und adaptiv",
+        "capabilities": {
+          "docReading": "Dokumentenerfassung",
+          "dataExtraction": "Datenextraktion",
+          "classification": "Klassifizierung",
+          "orchestration": "Orchestrierung"
+        },
+        "description": "Nutzt maschinelles Lernen zur Verarbeitung unstrukturierter Daten, zum Kontextverständnis und zur Orchestrierung komplexer Workflows."
+      },
+      "deterministic": {
+        "title": "Deterministische Entscheidungs-Engine",
+        "subtitle": "Präzise und prüfbar",
+        "capabilities": {
+          "coverageRules": "Deckungsregeln",
+          "policyLogic": "Policenlogik",
+          "costCalculation": "Kostenberechnung",
+          "decisionOutput": "Entscheidungsausgabe"
+        },
+        "description": "Wendet kodierte Regeln an, um jedes Mal konsistente, nachvollziehbare Entscheidungen zu treffen."
+      },
+      "auditTrail": {
+        "title": "Vollständiger Audit-Trail",
+        "description": "Jedes Feld ist auf Quelldokumente rückverfolgbar. Jede Entscheidung ist auf Policenbedingungen rückverfolgbar. Volle Transparenz für Aufsichtsbehörden und Prüfer."
+      }
+    },
+    "control": {
+      "badge": "Enterprise-Kontrolle",
+      "heading": "Die Kontrollebene",
+      "subtitle": "Automatisierung mit Aufsicht. Jede Funktion ist darauf ausgelegt, Menschen dort die Kontrolle zu geben, wo es darauf ankommt.",
+      "features": {
+        "replayLogs": {
+          "title": "Replay-Protokolle",
+          "description": "Führen Sie jede Entscheidung mit denselben Eingaben erneut aus und erhalten Sie identische Ergebnisse. Jede Ausführung ist deterministisch und reproduzierbar."
+        },
+        "ruleTraceability": {
+          "title": "Regelverfolgbarkeit",
+          "description": "Jede Deckungsentscheidung ist auf bestimmte Policenklausel-IDs abgebildet. Sehen Sie genau, welche Regeln ausgelöst wurden und warum."
+        },
+        "approvalGates": {
+          "title": "Genehmigungsstufen",
+          "description": "Konfigurieren Sie Schwellenwerte für die Eskalation zur menschlichen Prüfung. Hochwertige oder Grenzfälle werden automatisch an Experten weitergeleitet."
+        },
+        "exceptionRouting": {
+          "title": "Ausnahme-Routing",
+          "description": "Automatische Weiterleitung basierend auf dem Komplexitätsgrad des Schadenfalls. Ungewöhnliche Muster werden zur manuellen Inspektion markiert."
+        },
+        "confidenceScoring": {
+          "title": "Konfidenzbewertung",
+          "description": "Feldbasierte Sicherheitsindikatoren zeigen, wo das System zuversichtlich ist und wo menschliche Prüfung Mehrwert bietet."
+        }
+      },
+      "philosophy": "AI sollte die Schwerstarbeit übernehmen, aber Menschen müssen immer in der Lage sein, zu verstehen, zu verifizieren und zu übersteuern. Jede Kontrolle existiert, weil regulierte Branchen sie verlangen.",
+      "philosophyPrefix": "Unsere Philosophie:"
+    },
+    "comparison": {
+      "heading": "Keine weitere Black Box",
+      "subtitle": "Sehen Sie, wie True Aim im Vergleich zu traditionellen AI-Ansätzen abschneidet",
+      "columns": {
+        "capability": "Fähigkeit",
+        "traditional": "Traditionelle AI",
+        "trueaim": "True Aim"
+      },
+      "rows": {
+        "consistency": {
+          "capability": "Entscheidungskonsistenz",
+          "traditional": "Variabel",
+          "trueaim": "Deterministisch"
+        },
+        "auditTrail": {
+          "capability": "Audit-Trail",
+          "traditional": "Teilweise",
+          "trueaim": "Vollständig"
+        },
+        "explainability": {
+          "capability": "Erklärbarkeit",
+          "traditional": "\"Das Modell hat es gesagt\"",
+          "trueaim": "Rückverfolgbar zur Klausel"
+        },
+        "euAiAct": {
+          "capability": "KI-Verordnung-konform",
+          "traditional": "Unklar",
+          "trueaim": "Ja"
+        }
+      }
+    },
+    "research": {
+      "heading": "Forschungspartnerschaft",
+      "descriptionStart": "Teile unserer Technologie werden in Zusammenarbeit mit der",
+      "zhawName": "ZHAW",
+      "descriptionMiddle": "(Zürcher Hochschule für Angewandte Wissenschaften) entwickelt und durch ein",
+      "innosuisseName": "Innosuisse",
+      "descriptionEnd": "-gefördertes Forschungsprogramm vorangetrieben, anerkannt durch das nationale Innovationsnetzwerk der Schweiz."
+    },
+    "cta": {
+      "heading": "Erleben Sie unsere Technologie in Aktion",
+      "description": "Buchen Sie eine Demo, um zu verstehen, wie unsere neuro-symbolische Architektur für Ihre Schadenregulierung arbeiten kann.",
+      "button": "Demo buchen"
+    }
+  }
+}

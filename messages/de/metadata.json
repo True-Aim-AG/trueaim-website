@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "root": {
+      "titleDefault": "True Aim | Neuro-symbolische KI für überprüfbare Schadenentscheidungen",
+      "titleTemplate": "%s | True Aim",
+      "description": "Agentische KI mit deterministischer Logik für die Schadenautomatisierung kombinieren. Jede Entscheidung nachvollziehbar, konform mit der KI-Verordnung. Schweizer Präzision trifft überprüfbare KI.",
+      "ogTitle": "True Aim | Neuro-symbolische KI für überprüfbare Schadenentscheidungen",
+      "ogDescription": "Agentische KI mit deterministischer Logik für die Schadenautomatisierung kombinieren. Jede Entscheidung nachvollziehbar, konform mit der KI-Verordnung."
+    },
+    "mira": {
+      "title": "MIRA – Neuro-symbolische Entscheidungs-Engine",
+      "description": "Komplexe Policenbedingungen in automatisierte, volldeterministische Schadenentscheidungen umwandeln. Jedes Ergebnis auf den Rechtstext zurückführbar. Die weltweit erste neuro-symbolische Engine für Schadenregulierung.",
+      "ogTitle": "MIRA – Neuro-symbolische Entscheidungs-Engine | True Aim",
+      "ogDescription": "Komplexe Policenbedingungen in automatisierte, volldeterministische Schadenentscheidungen umwandeln. Jedes Ergebnis auf den Rechtstext zurückführbar."
+    },
+    "contextBuilder": {
+      "title": "ContextBuilder – Schadendokumenten-Pipeline",
+      "description": "Ungeordnete Schadendokumente in strukturierte, vertrauenswürdige Daten umwandeln. KI-gestützte Dokumentenerfassung mit menschlicher Prüfung bei Bedarf. 97% Genauigkeit, 97% Dokumentenabdeckung.",
+      "ogTitle": "ContextBuilder – Schadendokumenten-Pipeline | True Aim",
+      "ogDescription": "Ungeordnete Schadendokumente in strukturierte, vertrauenswürdige Daten umwandeln. KI-gestützte Dokumentenerfassung mit menschlicher Prüfung bei Bedarf."
+    },
+    "claimEval": {
+      "title": "ClaimEval – Qualitätssicherung für Schadenmeldungen",
+      "description": "QA über Stichproben hinaus skalieren. Konsistente Prüfungen über Ihr gesamtes Schadenportfolio durchführen. Ausnahmen erkennen, menschlichen Aufwand durch intelligente Risikobewertung priorisieren.",
+      "ogTitle": "ClaimEval – Qualitätssicherung für Schadenmeldungen | True Aim",
+      "ogDescription": "QA über Stichproben hinaus skalieren. Konsistente Prüfungen über Ihr gesamtes Schadenportfolio durchführen. Ausnahmen erkennen, menschlichen Aufwand priorisieren."
+    },
+    "company": {
+      "title": "Unternehmen – Über True Aim",
+      "description": "Schweizer Präzision trifft überprüfbare KI. Lernen Sie unser Führungsteam, unsere Berater und Partner kennen, darunter Yarowa AG, ZHAW und Innosuisse. Unterstützt durch das Schweizer Innovationsökosystem.",
+      "ogTitle": "Unternehmen – Über True Aim",
+      "ogDescription": "Schweizer Präzision trifft überprüfbare KI. Lernen Sie unser Führungsteam, unsere Berater und Partner kennen. Unterstützt durch das Schweizer Innovationsökosystem."
+    },
+    "technology": {
+      "title": "Technologie – Neuro-symbolische KI-Architektur",
+      "description": "Nicht probabilistisch. Keine Black Box. Unser hybrider Ansatz kombiniert agentische KI-Ausführung mit deterministischer Entscheidungsfindung, speziell entwickelt für regulierte Branchen und die Konformität mit der KI-Verordnung.",
+      "ogTitle": "Technologie – Neuro-symbolische KI-Architektur | True Aim",
+      "ogDescription": "Unser hybrider Ansatz kombiniert agentische KI-Ausführung mit deterministischer Entscheidungsfindung, speziell entwickelt für regulierte Branchen."
+    },
+    "contact": {
+      "title": "Kontakt – Demo anfordern",
+      "description": "Fordern Sie eine Demo der neuro-symbolischen KI von True Aim für die Schadenautomatisierung an. Buchen Sie ein 30-minütiges Kennenlerngespräch, um überprüfbare KI in Aktion zu erleben.",
+      "ogTitle": "Kontakt – Demo anfordern | True Aim",
+      "ogDescription": "Fordern Sie eine Demo der neuro-symbolischen KI von True Aim für die Schadenautomatisierung an. Buchen Sie ein 30-minütiges Kennenlerngespräch."
+    },
+    "trust": {
+      "title": "Vertrauen & Compliance",
+      "description": "Die Compliance-Architektur von True Aim. Konformität mit der KI-Verordnung, GDPR und Schweizer DSG. Jede Entscheidung überprüfbar, jedes Ergebnis nachvollziehbar.",
+      "ogTitle": "Vertrauen & Compliance | True Aim",
+      "ogDescription": "Konformität mit der KI-Verordnung, GDPR und Schweizer DSG. Jede Entscheidung überprüfbar, jedes Ergebnis nachvollziehbar."
+    },
+    "impact": {
+      "title": "Impact Estimator",
+      "description": "Erkunden Sie das Wertschöpfungspotenzial mit der KI-gestützten Schadenautomatisierung von True Aim. Impact-Schätzung basierend auf realen Pilotdaten, ohne Verpflichtung.",
+      "ogTitle": "Impact Estimator | True Aim",
+      "ogDescription": "Erkunden Sie das Wertschöpfungspotenzial mit KI-gestützter Schadenautomatisierung. Impact-Schätzung basierend auf realen Pilotdaten."
+    },
+    "caseStudies": {
+      "title": "Fallstudien",
+      "description": "Erfahren Sie, wie die neuro-symbolische KI von True Aim die Schadenbearbeitung transformiert. Praxisbeispiele von Versicherungsunternehmen, die MIRA, ContextBuilder und ClaimEval einsetzen.",
+      "ogTitle": "Fallstudien | True Aim",
+      "ogDescription": "Praxisbeispiele von Versicherungsunternehmen, die die neuro-symbolische KI von True Aim für die Schadenautomatisierung einsetzen."
+    },
+    "partners": {
+      "title": "Partner",
+      "titleTemplate": "%s | Partner | True Aim",
+      "description": "Die strategischen Partner und das Ökosystem von True Aim. Unterstützt durch Innosuisse, ZHAW und Yarowa AG im Schweizer Innovationsökosystem.",
+      "ogTitle": "Partner | True Aim",
+      "ogDescription": "Die strategischen Partner und das Ökosystem von True Aim. Unterstützt durch Innosuisse, ZHAW und Yarowa AG im Schweizer Innovationsökosystem."
+    }
+  }
+}

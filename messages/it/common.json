@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "products": "Prodotti",
+    "resources": "Risorse",
+    "technology": "Tecnologia",
+    "company": "Azienda",
+    "contact": "Contatti",
+    "bookDemo": "Prenota una demo",
+    "logoAlt": "Logo True Aim",
+    "toggleMenu": "Apri/chiudi menu",
+    "productsDropdown": {
+      "mira": "MIRA",
+      "miraDesc": "Motore decisionale",
+      "contextBuilder": "ContextBuilder",
+      "contextBuilderDesc": "Pipeline documentale",
+      "claimEval": "ClaimEval",
+      "claimEvalDesc": "Assicurazione qualità"
+    },
+    "resourcesDropdown": {
+      "caseStudies": "Casi di studio",
+      "caseStudiesDesc": "Storie di successo dei clienti",
+      "impactEstimator": "Impact Estimator",
+      "impactEstimatorDesc": "Esplora il valore potenziale",
+      "trustCenter": "Trust Center",
+      "trustCenterDesc": "Sicurezza e conformità",
+      "blog": "Blog",
+      "blogDesc": "Approfondimenti e aggiornamenti"
+    }
+  },
+  "footer": {
+    "logoAlt": "Logo True Aim",
+    "tagline": "Precisione svizzera. IA verificabile.",
+    "company": "Azienda",
+    "resources": "Risorse",
+    "products": "Prodotti",
+    "legal": "Note legali",
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "caseStudies": "Casi di studio",
+    "impactEstimator": "Impact Estimator",
+    "trustCenter": "Trust Center",
+    "blog": "Blog",
+    "mira": "MIRA",
+    "contextBuilder": "ContextBuilder",
+    "claimEval": "ClaimEval",
+    "privacy": "Informativa sulla privacy",
+    "terms": "Condizioni di servizio",
+    "cookies": "Politica sui cookie",
+    "paia": "Manuale PAIA",
+    "copyright": "© {year} True Aim. Tutti i diritti riservati.",
+    "linkedin": "LinkedIn"
+  },
+  "cookie": {
+    "title": "Preferenze sui cookie",
+    "description": "Utilizziamo i cookie per migliorare la Sua esperienza. I cookie essenziali sono sempre attivi. Può scegliere di abilitare i cookie di analisi per aiutarci a migliorare il nostro sito web.",
+    "learnMore": "Per saperne di più",
+    "acceptAll": "Accetta tutti",
+    "decline": "Rifiuta",
+    "managePreferences": "Gestisci preferenze",
+    "savePreferences": "Salva preferenze",
+    "essential": "Essenziali",
+    "essentialDesc": "Necessari per il funzionamento del sito web",
+    "analytics": "Analisi",
+    "analyticsDesc": "Ci aiutano a capire come i visitatori utilizzano il nostro sito"
+  },
+  "skipToContent": "Vai al contenuto principale"
+}

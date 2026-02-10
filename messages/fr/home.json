@@ -1,0 +1,195 @@
+{
+  "hero": {
+    "title": "Automatisez les décisions de sinistres.",
+    "titleHighlight": "Auditable par conception.",
+    "subtitle1": "Appliquer les conditions de police de manière claire et cohérente.",
+    "subtitle2": "Conçu pour l'assurance réglementée.",
+    "subtitle3": "Aucune boîte noire.",
+    "pipelineTitle": "Des documents aux décisions en un seul flux",
+    "steps": {
+      "ingest": {
+        "label": "Ingestion",
+        "shortDesc": "Capturer & valider les entrées",
+        "description": "Documents reçus par e-mail, portail ou export système",
+        "time": "< 10 sec",
+        "value": "Éliminer le tri et le routage manuels",
+        "automation": "ContextBuilder ingère et classifie automatiquement les documents"
+      },
+      "process": {
+        "label": "Traitement",
+        "shortDesc": "Appliquer la logique de police & les vérifications",
+        "description": "Données clés extraites des documents de sinistre",
+        "time": "15 – 45 sec",
+        "value": "Réduire les erreurs de ressaisie et les coûts de saisie de données",
+        "automation": "L'IA extrait les champs avec liaison aux preuves"
+      },
+      "assess": {
+        "label": "Évaluation",
+        "shortDesc": "Confirmer le résultat & le traitement",
+        "description": "Détermination de la couverture selon la police",
+        "time": "< 5 sec",
+        "value": "Décisions cohérentes et défendables pour chaque sinistre",
+        "automation": "MIRA applique une logique de police déterministe"
+      },
+      "execute": {
+        "label": "Exécution",
+        "shortDesc": "Déclencher les étapes suivantes",
+        "description": "Constituer les réserves, préparer le paiement, envoyer les communications",
+        "time": "< 10 sec",
+        "value": "Cycles de règlement plus rapides, meilleure expérience client",
+        "automation": "Exécution automatisée des tâches basée sur la décision"
+      },
+      "audit": {
+        "label": "Audit",
+        "shortDesc": "Traçabilité complète",
+        "description": "Parcours décisionnel complet enregistré",
+        "time": "Instantané",
+        "value": "Pistes d'audit prêtes pour le régulateur sans préparation manuelle",
+        "automation": "Decision Dossier généré automatiquement"
+      }
+    },
+    "legendFully": "Entièrement automatisé",
+    "legendHuman": "Humain dans la boucle",
+    "ctaDemo": "Réserver une démo",
+    "ctaImpact": "Obtenir une estimation d'impact"
+  },
+  "valueProps": {
+    "title": "Automatisation des sinistres à laquelle les régulateurs font confiance",
+    "subtitle": "Résultats mesurables dès le premier jour",
+    "upTo": "JUSQU'À",
+    "cards": {
+      "speed": {
+        "label": "Décisions de sinistres plus rapides",
+        "description": "Traiter les sinistres en secondes, pas en jours. Les documents sont ingérés, compris et décidés automatiquement.",
+        "proof": "Résultats pilotes : temps de décision moyen 2,3 s"
+      },
+      "cost": {
+        "label": "Réduction des coûts de traitement",
+        "description": "Éliminer les erreurs de ressaisie et les interprétations incohérentes. Même entrée, même résultat, à chaque fois.",
+        "proof": "Basé sur l'analyse de revue de dossiers clos"
+      },
+      "audit": {
+        "label": "Décisions auditables",
+        "description": "Chaque décision renvoie directement aux clauses de police et aux documents sources. Conçu pour la conformité au Règlement sur l'IA.",
+        "proof": "Traçabilité complète des décisions garantie"
+      },
+      "cx": {
+        "label": "Expérience client supérieure",
+        "description": "Accusé de réception instantané, mises à jour en temps réel et paiements plus rapides. Les assurés informés à chaque étape.",
+        "proof": "Cycle de vie complet du sinistre < 60 s"
+      }
+    }
+  },
+  "productsGrid": {
+    "title": "Produits conçus spécifiquement pour l'excellence en gestion des sinistres",
+    "subtitle": "Une suite complète conçue pour le cycle de vie des sinistres",
+    "products": {
+      "contextBuilder": {
+        "name": "ContextBuilder",
+        "badge": "Pipeline documentaire",
+        "description": "Transformer des documents de sinistre fragmentés et non structurés en données structurées de haute qualité. L'extraction assistée par IA avec revue humaine garantit des entrées fiables pour une prise de décision déterministe.",
+        "explore": "Découvrir ContextBuilder"
+      },
+      "mira": {
+        "name": "MIRA",
+        "badge": "Moteur de décision",
+        "description": "Le moteur de décision déterministe central. Transformer des conditions de police complexes en décisions automatisées, cohérentes, reproductibles et exemptes d'inférence probabiliste.",
+        "explore": "Découvrir MIRA"
+      },
+      "decisionDossier": {
+        "name": "Decision Dossier",
+        "badge": "Dossier d'audit",
+        "description": "Chaque dossier produit un enregistrement d'audit entièrement traçable reliant les résultats aux clauses sources, documents et parcours décisionnels. Explicable, défendable et rejouable.",
+        "explore": "Découvrir Decision Dossier"
+      },
+      "claimEval": {
+        "name": "ClaimEval",
+        "badge": "Assurance qualité",
+        "description": "Étendre l'assurance qualité au-delà de l'échantillonnage. Inspecter automatiquement les décisions sur l'ensemble de votre portefeuille de sinistres pour détecter les incohérences, les écarts de processus et les lacunes logiques.",
+        "explore": "Découvrir ClaimEval"
+      }
+    }
+  },
+  "cta": {
+    "title": "Prêt à voir l'IA auditable en action ?",
+    "subtitle": "Réservez une démo de 30 minutes pour découvrir comment True Aim peut transformer votre gestion des sinistres.",
+    "bookDemo": "Réserver une démo",
+    "getImpact": "Obtenir une estimation d'impact",
+    "trustCompliance": "Conformité par conception",
+    "trustSwiss": "Hébergement des données en Suisse",
+    "trustEnterprise": "Conçu selon les standards entreprise"
+  },
+  "decisionDossier": {
+    "teaserBadge": "Unique chez True Aim",
+    "teaserTagline": "Auditable par conception.",
+    "teaserTitle": "Le Decision Dossier",
+    "teaserDescription": "Chaque décision de sinistre produit un enregistrement d'audit complet et reproductible. Contrairement à l'IA boîte noire, chaque décision True Aim peut être <strong>rejouée, expliquée et défendue</strong> en audit ou en litige.",
+    "teaserLink": "Voir comment ça fonctionne",
+    "previewTitle": "Decision Dossier",
+    "previewClaimId": "Sinistre #2024-TR-4521",
+    "previewDecision": "Décision : <strong>Couvert</strong>",
+    "previewPolicy": "Police : Art. 5.2.1, 5.2.3",
+    "previewEvidence": "Preuves : 4 documents liés",
+    "previewConfidence": "Confiance : <span>98.5%</span>",
+    "fullBadge": "Différenciateur unique",
+    "fullTitle": "Le Decision Dossier",
+    "fullDescription": "Chaque décision de sinistre produit un enregistrement d'audit complet et reproductible, votre défense dans tout audit ou litige.",
+    "contents": {
+      "inputSummary": {
+        "title": "Résumé des données d'entrée",
+        "description": "Données complètes du sinistre telles que reçues : documents, parties, chronologie, faits"
+      },
+      "policyMatch": {
+        "title": "Correspondance de police",
+        "description": "Clauses de police spécifiques appliquées, avec identifiants de clause et références textuelles exactes"
+      },
+      "logicTrace": {
+        "title": "Trace logique",
+        "description": "Parcours décisionnel étape par étape : conditions vérifiées, règles appliquées, branches empruntées"
+      },
+      "evidenceLinks": {
+        "title": "Liens de preuves",
+        "description": "Chaque champ relié aux documents sources avec page et emplacement"
+      },
+      "confidenceScore": {
+        "title": "Score de confiance",
+        "description": "Niveau de certitude de l'automatisation avec signalement des zones nécessitant une revue humaine"
+      },
+      "replayCapability": {
+        "title": "Capacité de rejeu",
+        "description": "Relancer avec des entrées identiques, obtenir des résultats identiques, à chaque fois"
+      }
+    },
+    "mockupTitle": "Decision Dossier",
+    "mockupGenerated": "Généré le : 12 jan. 2026 14:32:05 UTC",
+    "mockupCovered": "Couvert",
+    "mockupClaimRef": "Référence du sinistre",
+    "mockupClaimId": "TRV-2024-4521",
+    "mockupClaimDetails": " | Assurance voyage | Frais médicaux",
+    "mockupPolicyClauses": "Clauses de police appliquées",
+    "mockupClause1Ref": "Art. 5.2.1",
+    "mockupClause1Desc": "Couverture urgence médicale",
+    "mockupClause2Ref": "Art. 5.2.3",
+    "mockupClause2Desc": "Prestations de rapatriement",
+    "mockupEvidenceTrail": "Trace des preuves",
+    "mockupConfidenceLabel": "Confiance :",
+    "mockupConfidenceValue": "98.5%",
+    "mockupReplay": "Rejouer la décision",
+    "mockupDifferentiator": "<strong>Contrairement à l'IA boîte noire :</strong> Chaque décision True Aim peut être rejouée, expliquée et défendue."
+  },
+  "socialProof": {
+    "badge": "Résultats prouvés",
+    "title": "La confiance des assureurs de premier plan",
+    "subtitle": "Découvrez comment les assureurs transforment leur gestion des sinistres avec des résultats mesurables et auditables",
+    "readCaseStudy": "Lire l'étude de cas",
+    "viewAllCaseStudies": "Voir toutes les études de cas"
+  },
+  "partnerLogos": {
+    "title": "Partenaires de confiance",
+    "logoAlt": "Logo {name}"
+  },
+  "trustBar": {
+    "title": "Technologie primée",
+    "subtitle": "Reconnue en Suisse, en Allemagne et en Italie"
+  }
+}

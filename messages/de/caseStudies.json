@@ -1,0 +1,281 @@
+{
+  "caseStudies": {
+    "hero": {
+      "badge": "Kundenerfolge",
+      "titleLine1": "Echte Ergebnisse von",
+      "titleLine2": "echten Versicherern",
+      "description": "Erfahren Sie, wie Versicherer True Aim nutzen, um ihre Schadenbearbeitung mit messbaren, auditierbaren Ergebnissen zu transformieren."
+    },
+    "featured": {
+      "badge": "Hervorgehoben",
+      "readFullStudy": "Vollstaendige Fallstudie lesen"
+    },
+    "wip": {
+      "heading": "Weitere Fallstudien in Bearbeitung",
+      "description": "Diese Fallstudien werden derzeit dokumentiert. Schauen Sie spaeter fuer die vollstaendigen Berichte vorbei.",
+      "badge": "In Bearbeitung"
+    },
+    "cta": {
+      "heading": "Erfahren Sie, was auditierbare AI fuer Ihre Schadenmeldungen leisten kann",
+      "description": "Lassen Sie uns eine Stichprobe Ihrer abgeschlossenen Schadenfaelle analysieren, um die potenzielle Wirkung zu quantifizieren.",
+      "bookDemo": "Demo buchen",
+      "getEstimate": "Wirkungsabschaetzung erhalten"
+    },
+    "detail": {
+      "allCaseStudies": "Alle Fallstudien",
+      "notFound": "Fallstudie nicht gefunden",
+      "viewAll": "Alle Fallstudien ansehen",
+      "theChallenge": "Die Herausforderung",
+      "theSolution": "Die Loesung",
+      "keyHighlights": "Wichtigste Highlights",
+      "getSimilarResults": "Aehnliche Ergebnisse erzielen",
+      "previous": "Zurueck",
+      "next": "Weiter",
+      "ctaHeading": "Bereit fuer aehnliche Ergebnisse?",
+      "ctaDescription": "Starten Sie mit einem Pilotprojekt auf Basis Ihrer abgeschlossenen Schadenfaelle und erleben Sie die Wirkung selbst.",
+      "requestPilot": "Pilotprojekt anfragen"
+    },
+    "vehicleWarranty": {
+      "heroTitle": "Automatisierung von Fahrzeug-Garantieanspruechen mit AI-basierter Dokumentenintelligenz",
+      "heroSubtitle": "Von 18% auf 98% Entscheidungsgenauigkeit in 7 Tagen",
+      "theProblem": "Das Problem",
+      "problemP1": "Ein Garantieanspruch fuer ein Fahrzeug landet auf dem Schreibtisch eines Sachbearbeiters: fuenf Dokumente, drei Sprachen, ein Kostenvoranschlag mit 30 Positionen, eine Police mit Deckungsstufen, kilometerabhaengigen Erstattungssaetzen und Komponentenausschlusslisten.",
+      "problemP2": "Die Bearbeitung dauert 15-30 Minuten pro Schadenmeldung. Multipliziert mit Hunderten von Schadenmeldungen pro Monat.",
+      "problemP3Start": "76% der abgelehnten Schadenmeldungen scheitern aus einem einzigen Grund: ",
+      "problemP3Emphasis": "das Teil ist nicht durch die Police gedeckt",
+      "problemP3End": " - eine deterministische Suche, kein Ermessensentscheid.",
+      "stats": {
+        "approvalDenial": "Genehmigungs-/Ablehnungsquote",
+        "avgPayout": "Durchschn. genehmigte Auszahlung",
+        "vehicleBrands": "Vertretene Fahrzeugmarken",
+        "docTypes": "Unterschiedliche Dokumenttypen",
+        "avgDocs": "Durchschn. Dokumente pro Schadenmeldung"
+      },
+      "whyExistingFail": "Warum bestehende Ansaetze nicht ausreichen",
+      "whyExistingFailIntro": "Die meisten Dokumentenverarbeitungstools extrahieren Text aus PDFs. Das bringt Sie 10% des Weges. Die eigentliche Herausforderung ist",
+      "whyExistingFailEmphasis": "dokumentenuebergreifendes Schlussfolgern",
+      "whyExistingFailIntroEnd": ": Ein Kostenvoranschlag ist ohne die Police bedeutungslos, ein Kilometerstand ist ohne die Deckungsobergrenze bedeutungslos.",
+      "failReasons": {
+        "genericOcr": {
+          "title": "Generische OCR-Pipelines fehlt Fachtiefe",
+          "desc": "Schweizer Werkstattrechnungen enthalten Positionen auf Deutsch mit Teilenummern, Arbeitscodes und seitenuebergreifenden Zwischensummen. Standard-OCR extrahiert Text, aber keine strukturierten Daten mit Deckungsimplikationen."
+        },
+        "singleModel": {
+          "title": "Einzelmodell-Ansaetze stagnieren frueh",
+          "desc": "Das Senden einer gesamten Schadenmeldung an ein LLM liefert inkonsistente Ergebnisse: halluzinierte Teilenamen, erfundene Deckungsregeln, unzuverlaessige Finanzberechnungen. Baseline-Genauigkeit nur mit LLM: 18%."
+        },
+        "ruleBased": {
+          "title": "Regelbasierte Systeme skalieren nicht mit dem Vokabular",
+          "desc": "Tausende von Teilenamen in mehreren Sprachen. Eine \"Wasserpumpe\" auf Deutsch ist eine \"pompe \u00e0 eau\" auf Franzoesisch. Reines Keyword-Matching versagt beim ersten unbekannten Synonym."
+        }
+      },
+      "hybridSolution": "Die Loesung erfordert eine",
+      "hybridArchitecture": "hybride Architektur",
+      "hybridSolutionEnd": ": deterministische Regeln wo sie funktionieren, Keyword-Matching fuer bekanntes Vokabular und LLM-Reasoning als kalibrierter Fallback. Jede Ebene mit explizitem Konfidenz-Scoring und Herkunftsverfolgung.",
+      "architectureTitle": "Die Architektur: Eine mehrstufige Pipeline",
+      "architectureIntro": "Eine End-to-End-Pipeline zur Schadenbearbeitung fuehrt Rohdokumente durch fuenf Stufen, jede mit Qualitaetskontrolle und Audit-Protokollierung.",
+      "stages": {
+        "ingestion": "Erfassung",
+        "classification": "Klassifizierung",
+        "extraction": "Extraktion",
+        "screening": "Vorpruefung",
+        "qaReview": "QA-Pruefung",
+        "stageLabel": "Stufe"
+      },
+      "multiTier": {
+        "heading": "Deckungsanalyse: Mehrstufiges Matching",
+        "intro": "Jede Position durchlaeuft eine mehrstufige Matching-Pipeline, die deterministische Ansaetze priorisiert, bevor auf AI zurueckgegriffen wird:",
+        "deterministic": {
+          "name": "Deterministische Regeln",
+          "confidence": "Hoechste",
+          "desc": "Exakte Treffer fuer bekannte Positionen, Ausschluesse und Verbrauchsmaterialien. Null Ambiguitaet, sofortige Aufloesung."
+        },
+        "keyword": {
+          "name": "Keyword-Matching",
+          "confidence": "Hoch",
+          "desc": "Ordnet mehrsprachige Reparaturbegriffe Komponentenkategorien mit Synonymnormalisierung zu."
+        },
+        "aiFallback": {
+          "name": "AI-Fallback",
+          "confidence": "Mittel",
+          "desc": "LLM mit strukturierten Prompts fuer genuinerweise mehrdeutige Positionen, die kontextbezogenes Schlussfolgern erfordern."
+        },
+        "confidenceLabel": "Konfidenz"
+      },
+      "expandable": {
+        "ingestionTitle": "Stufendetails: Erfassung, Klassifizierung & Extraktion",
+        "stage1Title": "Stufe 1: Dokumentenerfassung",
+        "stage1Desc": "Modulare Erfassungsschicht mit Unterstuetzung mehrerer OCR-Anbieter fuer Produktions-Workloads. Jede Seite wird unabhaengig extrahiert mit Positionsverfolgung fuer vollstaendige Herkunftsnachverfolgung.",
+        "stage2Title": "Stufe 2: Dokumentenklassifizierung",
+        "stage2Desc": "AI-gestuetzter Router klassifiziert Dokumente nach Typ mit sprachspezifischen Merkmalen ueber Deutsch, Franzoesisch und Italienisch. Nahezu 100% Klassifizierungsgenauigkeit.",
+        "stage3Title": "Stufe 3: Strukturierte Feldextraktion",
+        "stage3Desc": "Fachspezifische Extraktoren verarbeiten umfassende Feldsaetze fuer Garantiepolicen. Kostenvoranschlag-Extraktoren verarbeiten mehrseitige Dokumente mit seitenuebergreifenden Zwischensummen und Gesamtvalidierung. Jedes Feld traegt einen Konfidenzwert, Herkunftsnachweis und Qualitaetskontroll-Ergebnis.",
+        "screeningTitle": "Stufendetails: Deterministische Vorpruefungen",
+        "screeningIntro": "Die Vorpruefungs-Pipeline fuehrt mehrere deterministische Pruefungen durch, die Policengueltigkeit, Deckungsanspruch und Compliance-Anforderungen abdecken. Jede Pruefung liefert eines von drei Ergebnissen:",
+        "hardFail": "Harter Fehler",
+        "hardFailDesc": "Blockiert die Automatisierung, erfordert manuelle Pruefung",
+        "softCheck": "Weicher Hinweis",
+        "softCheckDesc": "Markiert zur Beachtung, blockiert aber nicht",
+        "conditional": "Bedingt",
+        "conditionalDesc": "Ergebnis haengt von zusaetzlichem Kontext ab",
+        "screeningNote": "Pruefungen umfassen Bereiche wie Policenstatus, Deckungszeitraeume, Kilometergrenzen, Komponentenanspruch und Ausschlussmuster.",
+        "payoutTitle": "Auszahlungsberechnungsansatz",
+        "payoutIntro": "Die Auszahlungsberechnung folgt versichererspezifischen Geschaeftsregeln, typischerweise einschliesslich:",
+        "payoutItems": {
+          "sumCovered": "Summierung der gedeckten Positionen",
+          "applyCaps": "Anwendung von Deckungsobergrenzen und Erstattungssaetzen",
+          "addTaxes": "Hinzufuegen anfallender Steuern",
+          "calcDeductibles": "Berechnung des Selbstbehalts",
+          "computeFinal": "Berechnung der endgueltigen Auszahlung"
+        },
+        "payoutNote": "Jeder Versicherer hat spezifische Regeln fuer Selbstbehalte, Erstattungsstufen und Teile-/Arbeitsaufteilungen, die exakt eingehalten werden muessen."
+      },
+      "journey": {
+        "heading": "Der Implementierungsweg: Von 18% auf 98%",
+        "day1_3": {
+          "label": "Tage 1-3",
+          "title": "Baseline und Architektur",
+          "desc": "Der anfaengliche Nur-LLM-Ansatz lieferte plausibel klingende, aber unzuverlaessige Ergebnisse: halluzinierte Teilenamen, erfundene Deckungsregeln, inkonsistente Berechnungen.",
+          "insight": "Zentrale Erkenntnis:",
+          "insightText": "LLMs sind gut im Sprachverstaendnis, aber schlecht bei deterministischen Geschaeftsregeln. Die Architektur musste Ermessensentscheide von Praezision trennen."
+        },
+        "day3_5": {
+          "label": "Tage 3-5",
+          "title": "Vorpruefungs- + Deckungs-Pipeline",
+          "desc": "Die deterministische Vorpruefungs-Pipeline und das mehrstufige Deckungsmatching erzielten die groesste Einzelverbesserung. Regelbasierte Pruefungen allein erkannten die meisten Ablehnungen korrekt."
+        },
+        "day5_8": {
+          "label": "Tage 5-8",
+          "title": "Iteration und Verfeinerung",
+          "desc": "Ueber 60 Evaluierungsiterationen zur Loesung zunehmend subtiler Probleme: Substring-Matching-Fehler, Logik der Arbeitszeitherabstufung und Teilenummer-Normalisierung ueber OCR-Ausgaben hinweg."
+        },
+        "holdout": {
+          "label": "Holdout-Test",
+          "title": "Validierung mit ungesehenen Daten",
+          "desc": "30 zuvor ungesehene Schadenmeldungen deckten Fehlermodi auf, die der Entwicklungsdatensatz nicht abdeckte: kausale Ausschlussklauseln, fehlende Dokumentszenarien und Subkomponenten-Interpretationsluecken.",
+          "honest": "Die Holdout-Luecke (98% vs 77%) ist das ehrliche Mass der Generalisierung."
+        }
+      },
+      "iterationDetails": {
+        "title": "Detaillierte Iterationskorrekturen (88% auf 98%)",
+        "substringBug": "Kategorieuebergreifender Substring-Matching-Fehler:",
+        "substringBugDesc": "Ein AGR-Ventil-Synonym (\"abgasrueckfuehrung\") enthielt den Substring \"asr\" (Antischlupfregelung). Das System deklarierte das AGR-Ventil als unter Bremsen gedeckt. Fix: symmetrischer Schutz, der exaktes Matching erfordert, wenn einer der Begriffe 3 Zeichen oder weniger hat.",
+        "laborDemotion": "Ueberaggressivitaet bei der Arbeitszeit-Herabstufung:",
+        "laborDemotionDesc": "Wenn ein Teil gedeckt war, sollte auch die zugehoerige Einbauarbeit gedeckt sein. Fix: Arbeitszeitfoerderungslogik, die die Deckung von der uebergeordneten Reparatur erbt.",
+        "partNumber": "Teilenummer-Normalisierung:",
+        "partNumberDesc": "Eine Mercedes-Teilenummer wurde aufgrund von Abstandsunterschieden in der OCR-Extraktion nicht zugeordnet. Fix: Normalisierung aller Teilenummern durch Entfernung von Leerzeichen und Sonderzeichen vor dem Abgleich."
+      },
+      "holdoutAnalysis": {
+        "title": "Holdout-Fehleranalyse",
+        "causal": {
+          "title": "Kausale Ausschlussklauseln",
+          "desc": "Ein Turbolader ist gedeckt, aber wenn der Turbo ausgefallen ist, weil der Motor (nicht gedeckt) zuerst ausgefallen ist, verweigert die Police die Deckung. Das System kann keine Ausfallketten nachvollziehen."
+        },
+        "missingDocs": {
+          "title": "Fehlende Dokumente",
+          "desc": "Eine Schadenmeldung wurde abgelehnt, weil die Praemie nicht bezahlt wurde. Diese Information befindet sich im internen System des Versicherers, nicht in einem verarbeitbaren Dokument."
+        },
+        "subComponent": {
+          "title": "Subkomponenten-Interpretationsluecken",
+          "desc": "Ein DPF-Sensor ist funktional Teil des Abgassystems. Die Police deckt Abgasanlagen, listet aber nur bestimmte Subkomponenten auf. Der Sachbearbeiter genehmigte, indem er den Sensor als Abgas-Subkomponente interpretierte."
+        },
+        "excludedDominance": {
+          "title": "Dominanz ausgeschlossener Komponenten",
+          "desc": "Eine Schadenmeldung fuer eine Schlauchreparatur (ausgeschlossen) wurde genehmigt, weil eine geringfuegige Schraube (CHF 3.70, gedeckt) ebenfalls auf der Rechnung stand."
+        }
+      },
+      "showMore": "Mehr Details anzeigen",
+      "showLess": "Weniger anzeigen",
+      "technicalChallenges": {
+        "heading": "Technische Herausforderungen",
+        "multiLang": {
+          "title": "Mehrsprachige Verarbeitung",
+          "desc": "Sprachbewusste Klassifizierung und Extraktion ueber Deutsch, Franzoesisch und Italienisch. Vergleichbare Genehmigungsquoten ohne messbare Sprachverzerrung."
+        },
+        "auditability": {
+          "title": "Auditierbarkeit und Compliance",
+          "desc": "Vollstaendige Herkunftskette: Jedes extrahierte Feld verlinkt auf sein Quelldokument und die Seite. Jede Deckungsentscheidung umfasst Matching-Methode, Konfidenzwert und Erklaerung."
+        },
+        "payoutPrecision": {
+          "title": "Praezision der Auszahlungsformel",
+          "desc": "Reihenfolge-Fehler in Finanzberechnungen koennen erhebliche Ueberzahlungen verursachen. Um sie zu finden, muss man Berechnungen Schadenmeldung fuer Schadenmeldung mit Sachbearbeitern durchgehen."
+        },
+        "costControl": {
+          "title": "Kostenkontrolle",
+          "desc": "Deterministische Regeln und Keyword-Matching bewaltigen die Mehrheit der Positionen ohne LLM-Kosten. Token-Verbrauchsueberwachung mit konfigurierbaren Schwellenwerten verhindert unkontrollierte Kosten."
+        }
+      },
+      "orderOfOps": {
+        "title": "Lektion zur Reihenfolge der Operationen",
+        "intro": "Bei der Anwendung reduzierter Erstattungssaetze ist die Reihenfolge der Operationen entscheidend:",
+        "wrong": "Falsch:",
+        "wrongDesc": "Satz nach MwSt.- und Selbstbehalt-Berechnungen anwenden",
+        "correct": "Richtig:",
+        "correctDesc": "Satz zuerst auf den gedeckten Betrag anwenden, dann MwSt. addieren und Selbstbehalt abziehen",
+        "note": "Ein einziger Reihenfolge-Fehler kann zu erheblicher Ueberzahlung fuehren. Um diese Fehler zu finden, muss man Berechnungen mit Sachbearbeitern durchgehen."
+      },
+      "results": {
+        "heading": "Ergebnisse",
+        "evalSet": "Initialer Evaluierungssatz",
+        "holdoutSet": "Holdout-Satz",
+        "metrics": {
+          "decisionAccuracy": "Entscheidungsgenauigkeit",
+          "approvedCorrect": "Genehmigte Schadenmeldungen korrekt identifiziert",
+          "deniedCorrect": "Abgelehnte Schadenmeldungen korrekt identifiziert",
+          "falseReject": "Falsch-Ablehnungsrate",
+          "falseApprove": "Falsch-Genehmigungsrate"
+        },
+        "processingChars": {
+          "multipleDocTypes": "Mehrere Dokumenttypen",
+          "multiBrand": "Multi-Marken-Unterstuetzung",
+          "deterministicScreening": "Deterministische Vorpruefung",
+          "multiTierMatching": "Mehrstufiges Matching",
+          "comprehensiveKeywords": "Umfassende Schluesselwoerter",
+          "fullFieldExtraction": "Vollstaendige Feldextraktion",
+          "languagesSupported": "Unterstuetzte Sprachen",
+          "extensiveTestCoverage": "Umfangreiche Testabdeckung"
+        }
+      },
+      "lessons": {
+        "heading": "Was wir gelernt haben",
+        "lesson1": {
+          "title": "Deterministische Pruefungen schlagen LLM-Urteilsvermoegen bei strukturierten Regeln.",
+          "desc": "76% der Schadenablehnungen sind \"Teil nicht gedeckt\" - eine Suche, kein Ermessensentscheid. Die Vorpruefungs-Pipeline bewaeltigt diese mit 100% Konfidenz und null LLM-Kosten."
+        },
+        "lesson2": {
+          "title": "Die Genauigkeitskurve zeigt abnehmenden Grenznutzen.",
+          "desc": "Von 18% auf 76% dauerte 3 Tage. Von 76% auf 98% dauerte 4 weitere Tage. Die Holdout-Luecke (98% vs 77%) bestaetigte, dass Generalisierung in der Praxis deutlich mehr Daten erfordert."
+        },
+        "lesson3": {
+          "title": "Die Auszahlungsformel ist schwieriger als die AI.",
+          "desc": "Um die Finanzberechnung mit der exakten Formel des Versicherers abzustimmen, muss man mit einem Sachbearbeiter zusammensitzen und Berechnungen von Hand durchgehen. Kein Mass an Prompt-Engineering loest einen Geschaeftslogik-Fehler."
+        },
+        "lesson4": {
+          "title": "Herkunftsverfolgung ist unverzichtbar.",
+          "desc": "In einer regulierten Branche muss jeder extrahierte Wert und jede Deckungsentscheidung auf ein Quelldokument zurueckverfolgbar sein. Grundlegend fuer Vertrauen und Compliance."
+        }
+      },
+      "nextSteps": {
+        "heading": "Naechste Schritte",
+        "step1": "Erweiterung des Ground-Truth-Datensatzes",
+        "step2": "Integration mit der Policenverwaltungs-API des Versicherers fuer Echtzeit-Statuspruefungen",
+        "step3": "Implementierung kausaler Ausschlusslogik fuer Kaskadierende-Schaden-Ablehnungen",
+        "step4": "Produktiv-Triage: automatische Ablehnung hochkonfidenter Ablehnungen, automatische Genehmigung einfacher Faelle, Weiterleitung von Grenzfaellen zur manuellen Pruefung",
+        "conclusion": "Das Ziel ist nicht, Sachbearbeiter zu ersetzen, sondern ihnen ihre Zeit bei den 76% der Ablehnungen zurueckzugeben, die einfache Nachschlagewerke sind, damit sie ihre Expertise auf die 24% konzentrieren koennen, die tatsaechlich Ermessensentscheide erfordern."
+      },
+      "sidebar": {
+        "keyHighlights": "Wichtigste Highlights",
+        "productsUsed": "Verwendete Produkte",
+        "capabilities": "Faehigkeiten",
+        "capabilityList": {
+          "docProcessing": "Dokumentenverarbeitung",
+          "hybridAi": "Hybride AI",
+          "multilingual": "Mehrsprachig",
+          "fullProvenance": "Vollstaendige Herkunft",
+          "auditReady": "Audit-bereit"
+        },
+        "getSimilarResults": "Aehnliche Ergebnisse erzielen"
+      }
+    }
+  }
+}
