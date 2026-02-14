@@ -252,8 +252,9 @@ export default async function TechnologyPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-12 glass-panel p-8 text-center"
           >
-            <p className="text-lg text-[var(--text-secondary)]">
-              <strong className="text-[var(--text-primary)]">{t("control.philosophyPrefix")}</strong> {t("control.philosophy")}
+            <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">{t("control.philosophyHeading")}</h3>
+            <p className="text-lg text-[var(--text-secondary)] max-w-[820px] mx-auto leading-relaxed">
+              {t("control.philosophy")}
             </p>
           </MotionDiv>
         </div>

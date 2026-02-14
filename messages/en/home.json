@@ -23,8 +23,8 @@
         "value": "Reduce re-keying errors and data entry cost",
         "automation": "AI extracts fields with evidence linking"
       },
-      "assess": {
-        "label": "Assess",
+      "decide": {
+        "label": "Decide",
         "shortDesc": "Confirm outcome & handling",
         "description": "Coverage determination against policy",
         "time": "< 5 sec",

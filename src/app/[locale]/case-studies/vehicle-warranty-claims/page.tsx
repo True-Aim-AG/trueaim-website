@@ -25,18 +25,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { caseStudies } from "@/data/case-studies";
-
-const productColors: Record<string, string> = {
-  mira: "bg-indigo-100 text-indigo-700 border-indigo-200",
-  contextbuilder: "bg-teal-100 text-teal-700 border-teal-200",
-  claimeval: "bg-blue-100 text-blue-700 border-blue-200",
-};
-
-const productNames: Record<string, string> = {
-  mira: "MIRA",
-  contextbuilder: "ContextBuilder",
-  claimeval: "ClaimEval",
-};
+import { productPillColors, productNames } from "@/lib/product-styles";
 
 const productLinks: Record<string, string> = {
   mira: "/products/mira",
@@ -90,7 +79,6 @@ function ExpandableSection({
 
 export default function VehicleWarrantyCaseStudy() {
   const t = useTranslations("caseStudies");
-  const [showDetails, setShowDetails] = useState(false);
 
   return (
     <div className="min-h-screen">
@@ -142,7 +130,7 @@ export default function VehicleWarrantyCaseStudy() {
                 <Link
                   key={product}
                   href={productLinks[product]}
-                  className={`text-sm px-3 py-1.5 rounded-full font-medium border ${productColors[product]} hover:opacity-80 transition-opacity`}
+                  className={`text-sm px-3 py-1.5 rounded-full font-medium ${productPillColors[product]} transition-colors`}
                 >
                   {productNames[product]}
                 </Link>
@@ -164,7 +152,7 @@ export default function VehicleWarrantyCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
           >
             {study.metrics.map((metric) => (
               <div key={metric.label} className="glass-panel p-6 text-center">
@@ -187,14 +175,55 @@ export default function VehicleWarrantyCaseStudy() {
 
       {/* === FULL ARTICLE CONTENT === */}
       <section className="py-12 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-8">
             {/* Main Content */}
-            <div className="lg:col-span-2 space-y-16">
-              {/* The Problem */}
+            <article className="space-y-16">
+              {/* 1. Executive Summary */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-                  The Problem
+                  Executive Summary
+                </h2>
+                <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
+                  <p>
+                    A European vehicle warranty provider processing hundreds of claims per month
+                    needed to automate the adjudication of multilingual warranty claims. Each claim
+                    involved up to five documents in three languages (German, French, Italian),
+                    with processing taking 15 to 30 minutes per claim due to manual cross-referencing
+                    of cost estimates, coverage tiers, mileage caps and component exclusion lists.
+                    An initial LLM-only approach achieved just 18% decision accuracy, failing on
+                    deterministic business rules, financial calculations and multilingual part-name
+                    resolution. True Aim deployed the full product stack: ContextBuilder for document
+                    ingestion and structured extraction, MIRA for hybrid deterministic and AI coverage
+                    matching, and ClaimEval for quality assurance with full provenance tracking. A
+                    multi-tier matching architecture routes 80 to 90% of line items through
+                    deterministic rules and keyword matching with zero LLM cost, reserving AI
+                    reasoning for genuinely ambiguous cases. Within seven days and over 60 evaluation
+                    iterations, decision accuracy rose from 18% to 98% on the development set.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                    {[
+                      "18% to 98% decision accuracy in 7 days across 60+ evaluation iterations",
+                      "80-90% of line items resolved without LLM involvement",
+                      "Three languages (DE/FR/IT) with no measurable language bias",
+                      "Full provenance chain from every decision back to source document and page",
+                    ].map((point) => (
+                      <div key={point} className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-[var(--text-secondary)]">
+                          {point}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* 2. Operational Context */}
+              <motion.div {...fadeIn}>
+                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                  Operational Context
                 </h2>
                 <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
                   <p>
@@ -258,11 +287,13 @@ export default function VehicleWarrantyCaseStudy() {
                 </div>
               </motion.div>
 
-              {/* Why Existing Approaches Fall Short */}
+              {/* 3. Architectural Approach */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-                  Why Existing Approaches Fall Short
+                  Architectural Approach
                 </h2>
+
+                {/* Part A: Why existing approaches fall short */}
                 <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
                   Most document processing tools extract text from PDFs - that
                   gets you 10% of the way. The real challenge is{" "}
@@ -273,7 +304,7 @@ export default function VehicleWarrantyCaseStudy() {
                   reading means nothing without the coverage cap.
                 </p>
 
-                <div className="space-y-3">
+                <div className="space-y-3 mb-6">
                   {[
                     {
                       icon: AlertTriangle,
@@ -308,7 +339,7 @@ export default function VehicleWarrantyCaseStudy() {
                   ))}
                 </div>
 
-                <p className="mt-4 text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-[var(--text-secondary)] leading-relaxed mb-8">
                   The solution requires a{" "}
                   <span className="font-semibold text-[var(--text-primary)]">
                     hybrid architecture
@@ -318,13 +349,11 @@ export default function VehicleWarrantyCaseStudy() {
                   each layer with explicit confidence scoring and provenance
                   tracking.
                 </p>
-              </motion.div>
 
-              {/* The Architecture - Summary + Expandable */}
-              <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
-                  The Architecture: A Multi-Stage Pipeline
-                </h2>
+                {/* Part B: The multi-stage pipeline */}
+                <h3 className="text-lg font-bold text-[var(--text-primary)] mb-4">
+                  Multi-Stage Pipeline
+                </h3>
                 <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
                   An end-to-end claims processing pipeline moves raw documents
                   through five stages, each with quality gates and audit
@@ -355,7 +384,7 @@ export default function VehicleWarrantyCaseStudy() {
                   ))}
                 </div>
 
-                {/* Multi-Tier Matching - Key Differentiator */}
+                {/* Multi-Tier Matching */}
                 <h3 className="text-lg font-bold text-[var(--text-primary)] mb-3">
                   Coverage Analysis: Multi-Tier Matching
                 </h3>
@@ -502,10 +531,10 @@ export default function VehicleWarrantyCaseStudy() {
                 </div>
               </motion.div>
 
-              {/* The Implementation Journey */}
+              {/* 4. Deployment and Iteration */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-                  The Implementation Journey: From 18% to 98%
+                  Deployment and Iteration
                 </h2>
 
                 <div className="space-y-6">
@@ -606,175 +635,12 @@ export default function VehicleWarrantyCaseStudy() {
                     </p>
                   </div>
                 </div>
-
-                {/* Expandable: Iteration details */}
-                <div className="mt-6 space-y-3">
-                  <ExpandableSection title="Detailed iteration fixes (88% to 98%)">
-                    <div className="space-y-3">
-                      <div className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]">
-                        <span className="font-medium text-[var(--text-primary)]">
-                          Cross-category substring matching bug:
-                        </span>{" "}
-                        An EGR valve synonym (&quot;abgasrueckfuehrung&quot;)
-                        contained the substring &quot;asr&quot; (anti-slip
-                        regulation). The system declared the EGR valve covered
-                        under brakes. Fix: symmetric guard requiring exact match
-                        when either term is 3 characters or fewer.
-                      </div>
-                      <div className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]">
-                        <span className="font-medium text-[var(--text-primary)]">
-                          Labor demotion over-aggression:
-                        </span>{" "}
-                        When a part was covered, the associated installation
-                        labor should also be covered. Fix: labor promotion logic
-                        that inherits coverage from the parent repair.
-                      </div>
-                      <div className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]">
-                        <span className="font-medium text-[var(--text-primary)]">
-                          Part-number normalization:
-                        </span>{" "}
-                        A Mercedes part number{" "}
-                        <code className="text-[var(--primary)]">
-                          A205 906 41 04
-                        </code>{" "}
-                        was not matched due to spacing differences in OCR
-                        extraction. Fix: normalize all part numbers by stripping
-                        spaces and special characters before lookup.
-                      </div>
-                    </div>
-                  </ExpandableSection>
-
-                  <ExpandableSection title="Holdout failure analysis">
-                    <div className="space-y-2">
-                      {[
-                        {
-                          title: "Causal exclusion clauses",
-                          desc: "A turbocharger is covered, but if the turbo failed because the engine (not covered) failed first, the policy denies coverage. The system does not reason about failure chains.",
-                        },
-                        {
-                          title: "Missing documents",
-                          desc: "One claim was denied because the policy premium was not paid. This information lives in the insurer's internal system, not in any processable document.",
-                        },
-                        {
-                          title: "Sub-component interpretation gaps",
-                          desc: "A DPF sensor is functionally part of the exhaust system. The policy covers exhausts but only lists specific sub-components. The adjuster approved by interpreting the sensor as an exhaust sub-component.",
-                        },
-                        {
-                          title: "Excluded-component dominance",
-                          desc: "A claim for a hose repair (excluded) was approved because a minor bolt (CHF 3.70, covered) was also on the invoice.",
-                        },
-                      ].map((item) => (
-                        <div
-                          key={item.title}
-                          className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]"
-                        >
-                          <span className="font-medium text-[var(--text-primary)]">
-                            {item.title}:
-                          </span>{" "}
-                          {item.desc}
-                        </div>
-                      ))}
-                    </div>
-                  </ExpandableSection>
-                </div>
               </motion.div>
 
-              {/* Show More Details Toggle */}
-              <div className="relative py-2">
-                <div className="absolute inset-x-0 top-1/2 h-px bg-[var(--border)]" />
-                <div className="relative flex justify-center">
-                  <button
-                    onClick={() => setShowDetails(!showDetails)}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[var(--subtle-bg)] border border-[var(--border)] text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--primary)]/50 transition-all"
-                  >
-                    {showDetails ? t("vehicleWarranty.showLess") : t("vehicleWarranty.showMore")}
-                    <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${showDetails ? "rotate-180" : ""}`}
-                    />
-                  </button>
-                </div>
-              </div>
-
-              {showDetails && (
-              <>
-              {/* Technical Challenges */}
+              {/* 5. Measured Outcomes */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-                  Technical Challenges
-                </h2>
-
-                <div className="space-y-3">
-                  {[
-                    {
-                      icon: Globe,
-                      title: "Multi-Language Processing",
-                      desc: "Language-aware classification and extraction across German, French and Italian. Comparable approval rates with no measurable language bias.",
-                    },
-                    {
-                      icon: Lock,
-                      title: "Auditability and Compliance",
-                      desc: "Full provenance chain: every extracted field links to its source document and page. Every coverage decision includes match method, confidence score and explanation.",
-                    },
-                    {
-                      icon: Calculator,
-                      title: "Payout Formula Precision",
-                      desc: "Order-of-operations errors in financial calculations can cause significant overpayment. Finding them requires walking through calculations claim by claim with adjusters.",
-                    },
-                    {
-                      icon: DollarSign,
-                      title: "Cost Control",
-                      desc: "Deterministic rules and keyword matching handle the majority of items with zero LLM cost. Token usage monitoring with configurable thresholds prevents runaway costs.",
-                    },
-                  ].map((challenge) => (
-                    <div
-                      key={challenge.title}
-                      className="glass-panel p-5 flex gap-4"
-                    >
-                      <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center flex-shrink-0">
-                        <challenge.icon className="w-5 h-5 text-[var(--primary)]" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">
-                          {challenge.title}
-                        </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                          {challenge.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Expandable: Payout formula lesson */}
-                <div className="mt-4">
-                  <ExpandableSection title="Order-of-operations lesson">
-                    <div className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                      <p className="mb-3">
-                        When applying degraded reimbursement rates, the order of operations matters:
-                      </p>
-                      <div className="space-y-2 mb-3">
-                        <div className="flex items-start gap-2">
-                          <span className="text-red-400 font-medium">Wrong:</span>
-                          <span>Apply rate after VAT and deductible calculations</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-emerald-400 font-medium">Correct:</span>
-                          <span>Apply rate to covered amount first, then add VAT and subtract deductible</span>
-                        </div>
-                      </div>
-                      <p className="text-xs text-[var(--text-muted)]">
-                        A single operation-order error can cause significant overpayment.
-                        Finding these bugs requires walking through calculations with adjusters.
-                      </p>
-                    </div>
-                  </ExpandableSection>
-                </div>
-              </motion.div>
-
-              {/* Results and Metrics */}
-              <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-                  Results
+                  Measured Outcomes
                 </h2>
 
                 <div className="space-y-6">
@@ -853,14 +719,14 @@ export default function VehicleWarrantyCaseStudy() {
                   {/* Processing Characteristics */}
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                     {[
-                      { value: "✓", label: "Multiple document types" },
-                      { value: "✓", label: "Multi-brand support" },
-                      { value: "✓", label: "Deterministic screening" },
-                      { value: "✓", label: "Multi-tier matching" },
-                      { value: "✓", label: "Comprehensive keywords" },
-                      { value: "✓", label: "Full field extraction" },
+                      { value: "\u2713", label: "Multiple document types" },
+                      { value: "\u2713", label: "Multi-brand support" },
+                      { value: "\u2713", label: "Deterministic screening" },
+                      { value: "\u2713", label: "Multi-tier matching" },
+                      { value: "\u2713", label: "Comprehensive keywords" },
+                      { value: "\u2713", label: "Full field extraction" },
                       { value: "3", label: "Languages supported" },
-                      { value: "✓", label: "Extensive test coverage" },
+                      { value: "\u2713", label: "Extensive test coverage" },
                     ].map((item) => (
                       <div
                         key={item.label}
@@ -878,11 +744,51 @@ export default function VehicleWarrantyCaseStudy() {
                 </div>
               </motion.div>
 
-              {/* What We Learned */}
+              {/* 6. Edge Cases and Operational Insights */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-                  What We Learned
+                  Edge Cases and Operational Insights
                 </h2>
+
+                {/* Holdout failure analysis */}
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
+                  Holdout Failure Analysis
+                </h3>
+                <div className="space-y-2 mb-8">
+                  {[
+                    {
+                      title: "Causal exclusion clauses",
+                      desc: "A turbocharger is covered, but if the turbo failed because the engine (not covered) failed first, the policy denies coverage. The system does not reason about failure chains.",
+                    },
+                    {
+                      title: "Missing documents",
+                      desc: "One claim was denied because the policy premium was not paid. This information lives in the insurer's internal system, not in any processable document.",
+                    },
+                    {
+                      title: "Sub-component interpretation gaps",
+                      desc: "A DPF sensor is functionally part of the exhaust system. The policy covers exhausts but only lists specific sub-components. The adjuster approved by interpreting the sensor as an exhaust sub-component.",
+                    },
+                    {
+                      title: "Excluded-component dominance",
+                      desc: "A claim for a hose repair (excluded) was approved because a minor bolt (CHF 3.70, covered) was also on the invoice.",
+                    },
+                  ].map((item) => (
+                    <div
+                      key={item.title}
+                      className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]"
+                    >
+                      <span className="font-medium text-[var(--text-primary)]">
+                        {item.title}:
+                      </span>{" "}
+                      {item.desc}
+                    </div>
+                  ))}
+                </div>
+
+                {/* What We Learned */}
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-4">
+                  Key Lessons
+                </h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -925,6 +831,75 @@ export default function VehicleWarrantyCaseStudy() {
                 </div>
               </motion.div>
 
+              {/* 7. Production Readiness */}
+              <motion.div {...fadeIn}>
+                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                  Production Readiness
+                </h2>
+
+                {/* Next Steps Taken */}
+                <div className="space-y-3 text-[var(--text-secondary)] leading-relaxed mb-8">
+                  <ol className="list-decimal list-inside space-y-2 pl-2 text-sm">
+                    <li>Expanded on ground truth dataset</li>
+                    <li>Integrated with insurer&apos;s policy management API for real-time status checks</li>
+                    <li>Implemented causal exclusion reasoning for cascading-damage denials</li>
+                    <li>Deployed production triage: auto-reject high-confidence denials, auto-approve simple approvals, route edge cases for human review</li>
+                  </ol>
+                  <p className="mt-4 font-medium text-[var(--text-primary)]">
+                    The goal is not to replace adjusters but to give them back
+                    their time on the 76% of denials that are straightforward
+                    lookups, so they can focus their expertise on the 24% that
+                    actually require judgment.
+                  </p>
+                </div>
+
+                {/* Technical Considerations */}
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-4">
+                  Technical Considerations
+                </h3>
+                <div className="space-y-3">
+                  {[
+                    {
+                      icon: Globe,
+                      title: "Multi-Language Processing",
+                      desc: "Language-aware classification and extraction across German, French and Italian. Comparable approval rates with no measurable language bias.",
+                    },
+                    {
+                      icon: Lock,
+                      title: "Auditability and Compliance",
+                      desc: "Full provenance chain: every extracted field links to its source document and page. Every coverage decision includes match method, confidence score and explanation.",
+                    },
+                    {
+                      icon: Calculator,
+                      title: "Payout Formula Precision",
+                      desc: "Order-of-operations errors in financial calculations can cause significant overpayment. Finding them requires walking through calculations claim by claim with adjusters.",
+                    },
+                    {
+                      icon: DollarSign,
+                      title: "Cost Control",
+                      desc: "Deterministic rules and keyword matching handle the majority of items with zero LLM cost. Token usage monitoring with configurable thresholds prevents runaway costs.",
+                    },
+                  ].map((challenge) => (
+                    <div
+                      key={challenge.title}
+                      className="glass-panel p-5 flex gap-4"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center flex-shrink-0">
+                        <challenge.icon className="w-5 h-5 text-[var(--primary)]" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">
+                          {challenge.title}
+                        </h4>
+                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                          {challenge.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
               {/* Quote */}
               {study.quote && (
                 <motion.div
@@ -946,32 +921,74 @@ export default function VehicleWarrantyCaseStudy() {
                 </motion.div>
               )}
 
-              {/* What's Next */}
+              {/* Bottom Accordions: Deep Detail */}
               <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
-                  Next Steps Taken
+                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
+                  Deep Detail
                 </h2>
-                <div className="space-y-3 text-[var(--text-secondary)] leading-relaxed">
-                  <ol className="list-decimal list-inside space-y-2 pl-2 text-sm">
-                    <li>Expanded on ground truth dataset</li>
-                    <li>Integrated with insurer's policy management API for real-time status checks</li>
-                    <li>Implemented causal exclusion reasoning for cascading-damage denials</li>
-                    <li>Deployed production triage: auto-reject high-confidence denials, auto-approve simple approvals, route edge cases for human review</li>
-                  </ol>
-                  <p className="mt-4 font-medium text-[var(--text-primary)]">
-                    The goal is not to replace adjusters but to give them back
-                    their time on the 76% of denials that are straightforward
-                    lookups, so they can focus their expertise on the 24% that
-                    actually require judgment.
-                  </p>
+                <div className="space-y-3">
+                  <ExpandableSection title="Detailed iteration fixes (88% to 98%)">
+                    <div className="space-y-3">
+                      <div className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]">
+                        <span className="font-medium text-[var(--text-primary)]">
+                          Cross-category substring matching bug:
+                        </span>{" "}
+                        An EGR valve synonym (&quot;abgasrueckfuehrung&quot;)
+                        contained the substring &quot;asr&quot; (anti-slip
+                        regulation). The system declared the EGR valve covered
+                        under brakes. Fix: symmetric guard requiring exact match
+                        when either term is 3 characters or fewer.
+                      </div>
+                      <div className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]">
+                        <span className="font-medium text-[var(--text-primary)]">
+                          Labor demotion over-aggression:
+                        </span>{" "}
+                        When a part was covered, the associated installation
+                        labor should also be covered. Fix: labor promotion logic
+                        that inherits coverage from the parent repair.
+                      </div>
+                      <div className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]">
+                        <span className="font-medium text-[var(--text-primary)]">
+                          Part-number normalization:
+                        </span>{" "}
+                        A Mercedes part number{" "}
+                        <code className="text-[var(--primary)]">
+                          A205 906 41 04
+                        </code>{" "}
+                        was not matched due to spacing differences in OCR
+                        extraction. Fix: normalize all part numbers by stripping
+                        spaces and special characters before lookup.
+                      </div>
+                    </div>
+                  </ExpandableSection>
+
+                  <ExpandableSection title="Order-of-operations lesson">
+                    <div className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                      <p className="mb-3">
+                        When applying degraded reimbursement rates, the order of operations matters:
+                      </p>
+                      <div className="space-y-2 mb-3">
+                        <div className="flex items-start gap-2">
+                          <span className="text-red-400 font-medium">Wrong:</span>
+                          <span>Apply rate after VAT and deductible calculations</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <span className="text-emerald-400 font-medium">Correct:</span>
+                          <span>Apply rate to covered amount first, then add VAT and subtract deductible</span>
+                        </div>
+                      </div>
+                      <p className="text-xs text-[var(--text-muted)]">
+                        A single operation-order error can cause significant overpayment.
+                        Finding these bugs requires walking through calculations with adjusters.
+                      </p>
+                    </div>
+                  </ExpandableSection>
                 </div>
               </motion.div>
-              </>
-              )}
-            </div>
+            </article>
 
             {/* Sidebar */}
-            <div className="lg:col-span-1">
+            <aside aria-label="Key highlights">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -1002,7 +1019,7 @@ export default function VehicleWarrantyCaseStudy() {
                       <Link
                         key={product}
                         href={productLinks[product]}
-                        className={`block text-sm px-3 py-2 rounded-lg font-medium border ${productColors[product]} hover:opacity-80 transition-opacity text-center`}
+                        className={`block text-sm px-3 py-2 rounded-lg font-medium ${productPillColors[product]} transition-colors text-center`}
                       >
                         {productNames[product]}
                       </Link>
@@ -1042,7 +1059,7 @@ export default function VehicleWarrantyCaseStudy() {
                   </Link>
                 </div>
               </motion.div>
-            </div>
+            </aside>
           </div>
         </div>
       </section>

@@ -7,7 +7,7 @@
       "description": "Non probabilistica. Non una scatola nera. Il nostro approccio ibrido combina l'esecuzione AI agentica con il processo decisionale deterministico, progettato specificamente per le industrie regolamentate."
     },
     "problem": {
-      "heading": "Il problema dell'AI probabilistica",
+      "heading": "I limiti dell'AI probabilistica nelle decisioni regolamentate",
       "description": "I grandi modelli linguistici sono potenti, ma sono probabilistici. Con lo stesso input due volte, potrebbero produrre risultati diversi. Non possono spiegare il loro ragionamento in termini comprensibili per i regolatori.",
       "emphasis": "Per le decisioni sui sinistri, questo è inaccettabile."
     },
@@ -68,6 +68,7 @@
         }
       },
       "philosophy": "L'AI dovrebbe gestire il lavoro pesante, ma gli umani devono sempre poter comprendere, verificare e sovrascrivere. Ogni controllo esiste perché le industrie regolamentate lo richiedono.",
+      "philosophyHeading": "La nostra filosofia",
       "philosophyPrefix": "La nostra filosofia:"
     },
     "comparison": {

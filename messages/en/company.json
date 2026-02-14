@@ -67,7 +67,7 @@
     },
     "partners": {
       "heading": "Partners & Investors",
-      "subtitle": "Supported by Switzerland's innovation ecosystem.",
+      "subtitle": "Supported by Switzerland deep tech and innovation ecosystem",
       "yarowa": {
         "name": "Yarowa AG",
         "description": "Strategic investor and partner. Swiss InsurTech provider with deep roots in the European insurance ecosystem."
@@ -78,7 +78,16 @@
       },
       "innosuisse": {
         "name": "Innosuisse",
-        "description": "Switzerland's official innovation agency. Non-dilutive grant received by True Aim. National-level validation of our research and technology."
+        "description": "Switzerland's official innovation agency. Non-dilutive grant received. National-level validation of our research & technology."
+      }
+    },
+    "headquarters": {
+      "heading": "Headquarters",
+      "mapLabel": "Zug, Switzerland",
+      "address": {
+        "street": "Metallstrasse 9",
+        "city": "6300 Zug",
+        "country": "Switzerland"
       }
     },
     "cta": {

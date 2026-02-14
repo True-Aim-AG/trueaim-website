@@ -21,7 +21,7 @@
   /* Text Colors — Dark Mode Hierarchy */
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
-  --text-muted: rgba(255, 255, 255, 0.6);
+  --text-muted: rgba(255, 255, 255, 0.70);
 
   /* ===== Primary Colors — Ocean Blue ===== */
   --primary: #2563EB;
@@ -42,17 +42,28 @@
 
   /* ===== Aurora Accent Colors ===== */
   --aurora-cyan: #06B6D4;
-  --aurora-teal: #14B8A6;
+  --aurora-teal: #06B6D4;
   --aurora-purple: #8B5CF6;
 
-  /* ===== Product Accent Colors ===== */
-  --mira: #6366F1;
-  --mira-bg: rgba(99, 102, 241, 0.15);
-  --mira-text: #818CF8;
+  /* ===== TrueAim Design Tokens (REQ-V6-026) ===== */
+  --ta-blue: #2563EB;
+  --ta-cyan: #06B6D4;
+  --ta-success: #16A34A;
+  --ta-bg: #0B0C15;
+  --ta-surface: #12141D;
+  --ta-text: #FFFFFF;
+  --ta-text-muted: rgba(255, 255, 255, 0.70);
+  --ta-border: rgba(255, 255, 255, 0.05);
+  --ta-overlay: rgba(255, 255, 255, 0.10);
 
-  --contextbuilder: #14B8A6;
-  --contextbuilder-bg: rgba(20, 184, 166, 0.15);
-  --contextbuilder-text: #2DD4BF;
+  /* ===== Product Accent Colors ===== */
+  --mira: #2563EB;
+  --mira-bg: rgba(37, 99, 235, 0.15);
+  --mira-text: #60A5FA;
+
+  --contextbuilder: #06B6D4;
+  --contextbuilder-bg: rgba(6, 182, 212, 0.15);
+  --contextbuilder-text: #22D3EE;
 
   --claimeval: #2563EB;
   --claimeval-bg: rgba(37, 99, 235, 0.15);
@@ -128,17 +139,17 @@
 
   /* Aurora Accent Colors (slightly adjusted for light) */
   --aurora-cyan: #0891B2;
-  --aurora-teal: #0D9488;
+  --aurora-teal: #0891B2;
   --aurora-purple: #7C3AED;
 
   /* Product Accent Colors */
-  --mira: #4F46E5;
-  --mira-bg: rgba(79, 70, 229, 0.1);
-  --mira-text: #4338CA;
+  --mira: #2563EB;
+  --mira-bg: rgba(37, 99, 235, 0.1);
+  --mira-text: #1D4ED8;
 
-  --contextbuilder: #0D9488;
-  --contextbuilder-bg: rgba(13, 148, 136, 0.1);
-  --contextbuilder-text: #0F766E;
+  --contextbuilder: #0891B2;
+  --contextbuilder-bg: rgba(8, 145, 178, 0.1);
+  --contextbuilder-text: #0E7490;
 
   --claimeval: #2563EB;
   --claimeval-bg: rgba(37, 99, 235, 0.1);
@@ -346,6 +357,11 @@ code, .data-value, .claim-id, .metric-value {
 
 [data-theme="light"] .aurora-blob-3 {
   background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+}
+
+@keyframes flowLine {
+  0% { background-position: 200% 0; }
+  100% { background-position: 0% 0; }
 }
 
 @keyframes float {

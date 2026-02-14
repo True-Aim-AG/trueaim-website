@@ -7,7 +7,7 @@
       "description": "Not probabilistic. Not a black box. Our hybrid approach combines agentic AI execution with deterministic decision-making, purpose-built for regulated industries."
     },
     "problem": {
-      "heading": "The Problem with Probabilistic AI",
+      "heading": "The Limits of Probabilistic AI in Regulated Decisions",
       "description": "Large language models are powerful, but they're probabilistic. Given the same input twice, they might produce different outputs. They can't explain their reasoning in terms regulators understand.",
       "emphasis": "For claims decisions, this is unacceptable."
     },
@@ -68,6 +68,7 @@
         }
       },
       "philosophy": "AI should handle the heavy lifting, but humans must always be able to understand, verify and override. Every control exists because regulated industries demand it.",
+      "philosophyHeading": "Our Philosophy",
       "philosophyPrefix": "Our philosophy:"
     },
     "comparison": {

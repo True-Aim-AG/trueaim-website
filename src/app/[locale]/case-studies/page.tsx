@@ -10,18 +10,7 @@ import {
   Construction,
 } from "lucide-react";
 import { caseStudies } from "@/data/case-studies";
-
-const productColors: Record<string, string> = {
-  mira: "bg-indigo-100 text-indigo-700",
-  contextbuilder: "bg-teal-100 text-teal-700",
-  claimeval: "bg-blue-100 text-blue-700",
-};
-
-const productNames: Record<string, string> = {
-  mira: "MIRA",
-  contextbuilder: "ContextBuilder",
-  claimeval: "ClaimEval",
-};
+import { productPillColors, productNames } from "@/lib/product-styles";
 
 const featured = caseStudies.find((cs) => !cs.wip);
 const wipStudies = caseStudies.filter((cs) => cs.wip);
@@ -114,7 +103,7 @@ export default async function CaseStudiesPage() {
                       {featured.products.map((product) => (
                         <span
                           key={product}
-                          className={`text-xs px-2.5 py-1 rounded-full font-medium ${productColors[product]}`}
+                          className={`text-xs px-2.5 py-1 rounded-full font-medium ${productPillColors[product]} transition-colors`}
                         >
                           {productNames[product]}
                         </span>

@@ -5,16 +5,17 @@ import {
   Lock,
   Key,
   FileCheck,
-  Globe,
   CheckCircle,
   MapPin,
   Eye,
   History,
   Building2,
 } from "lucide-react";
+import { SwitzerlandMap } from "@/components/ui/SwitzerlandMap";
 
 const complianceBadgeMeta = [
   { key: "gdpr", status: "aligned", icon: Shield },
+  { key: "swissFadp", status: "aligned", icon: Shield },
   { key: "euAiAct", status: "aligned", icon: Eye },
   { key: "swissHosting", status: "provided", icon: MapPin },
   { key: "iso27001", status: "roadmap", icon: FileCheck },
@@ -190,64 +191,7 @@ export default async function TrustPage() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              {/* Stylized Europe map representation */}
-              <div className="glass-panel p-8 relative overflow-hidden min-h-[300px] flex items-center justify-center">
-                {/* Simplified Europe outline - decorative SVG background */}
-                <svg
-                  viewBox="0 0 400 400"
-                  className="absolute inset-0 w-full h-full opacity-[0.08]"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M200 60 L220 70 L240 65 L260 80 L280 75 L300 90 L310 110 L320 130 L315 150 L325 170 L320 190 L310 210 L300 220 L290 240 L280 250 L260 260 L250 280 L240 290 L220 285 L200 290 L180 285 L170 270 L160 260 L150 240 L140 230 L130 210 L120 190 L115 170 L120 150 L115 130 L120 110 L130 90 L150 80 L170 75 L180 65 Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    className="text-slate-400"
-                  />
-                  <path
-                    d="M100 120 L90 140 L85 160 L80 180 L85 200 L90 210 L100 220 L110 225"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="text-slate-400"
-                  />
-                  <path
-                    d="M320 100 L340 110 L350 130 L345 150 L340 160"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="text-slate-400"
-                  />
-                  <path
-                    d="M140 280 L130 300 L140 320 L160 330 L180 325 L200 330 L220 325 L240 330 L260 320 L270 300 L260 280"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="text-slate-400"
-                  />
-                </svg>
-
-                <div className="absolute inset-4 border-2 border-dashed border-[var(--border)] rounded-xl" />
-
-                {/* Switzerland marker */}
-                <div className="relative z-10">
-                  <div className="relative">
-                    <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center">
-                      <MapPin className="w-8 h-8 text-red-400" />
-                    </div>
-                    <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
-                      <span className="text-sm font-semibold text-[var(--text-primary)] bg-[var(--subtle-bg)] px-2 py-1 rounded backdrop-blur-sm">
-                        {t("dataResidency.mapLabels.switzerland")}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* EU zone indicator */}
-                <div className="absolute inset-8 border-2 border-blue-400/30 rounded-xl bg-blue-500/5" />
-                <div className="absolute top-4 right-4 flex items-center gap-2 glass-panel-light px-3 py-1.5 rounded-lg">
-                  <Globe className="w-4 h-4 text-blue-400" />
-                  <span className="text-xs font-medium text-blue-400">{t("dataResidency.mapLabels.euZone")}</span>
-                </div>
-              </div>
+              <SwitzerlandMap label={t("dataResidency.mapLabels.switzerland")} />
             </MotionDiv>
           </div>
         </div>

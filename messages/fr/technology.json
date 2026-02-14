@@ -7,7 +7,7 @@
       "description": "Pas probabiliste. Pas une boîte noire. Notre approche hybride combine l'exécution AI agentique avec la prise de décision déterministe, conçue spécifiquement pour les industries réglementées."
     },
     "problem": {
-      "heading": "Le problème de l'AI probabiliste",
+      "heading": "Les limites de l'AI probabiliste dans les décisions réglementées",
       "description": "Les grands modèles de langage sont puissants, mais ils sont probabilistes. Avec la même entrée deux fois, ils peuvent produire des résultats différents. Ils ne peuvent pas expliquer leur raisonnement dans des termes compréhensibles par les régulateurs.",
       "emphasis": "Pour les décisions de sinistres, c'est inacceptable."
     },
@@ -68,6 +68,7 @@
         }
       },
       "philosophy": "L'AI devrait gérer le gros du travail, mais les humains doivent toujours pouvoir comprendre, vérifier et surcharger. Chaque contrôle existe parce que les industries réglementées l'exigent.",
+      "philosophyHeading": "Notre philosophie",
       "philosophyPrefix": "Notre philosophie :"
     },
     "comparison": {

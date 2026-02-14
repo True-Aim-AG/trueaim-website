@@ -23,7 +23,7 @@
         "value": "Réduire les erreurs de ressaisie et les coûts de saisie de données",
         "automation": "L'IA extrait les champs avec liaison aux preuves"
       },
-      "assess": {
+      "decide": {
         "label": "Évaluation",
         "shortDesc": "Confirmer le résultat & le traitement",
         "description": "Détermination de la couverture selon la police",

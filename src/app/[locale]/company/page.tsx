@@ -4,10 +4,12 @@ import Image from "next/image";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowRight,
+  MapPin,
   Quote,
   Users,
   Linkedin
 } from "lucide-react";
+import { SwitzerlandMap } from "@/components/ui/SwitzerlandMap";
 
 const founderKeys = ["reuben", "frederic"] as const;
 
@@ -25,8 +27,12 @@ const founderMeta = {
 const advisorKeys = ["claudio", "eric", "lukas", "dave", "dandolo", "bassil"] as const;
 
 const advisorImages: Record<string, string | undefined> = {
+  claudio: "/team/claudio.png",
+  eric: "/team/eric.png",
   lukas: "/team/lukas-lichtensteiger.jpg",
+  dave: "/team/dave.png",
   dandolo: "/team/dandolo-flumini.jpg",
+  bassil: "/team/bassil.png",
 };
 
 const partnerKeys = ["yarowa", "zhaw", "innosuisse"] as const;
@@ -126,12 +132,12 @@ export default async function CompanyPage() {
                 className="glass-panel glass-panel-hover p-8"
               >
                 {/* Profile Photo */}
-                <div className="w-24 h-24 rounded-full overflow-hidden mb-6 ring-2 ring-[var(--border)] ring-offset-2 ring-offset-[var(--background)]">
+                <div className="w-48 h-48 rounded-full overflow-hidden mb-6 ring-2 ring-[var(--border)] ring-offset-2 ring-offset-[var(--background)]">
                   <Image
                     src={founderMeta[key].image}
                     alt={t(`team.founders.${key}.name`)}
-                    width={96}
-                    height={96}
+                    width={192}
+                    height={192}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -195,17 +201,17 @@ export default async function CompanyPage() {
                 className="glass-panel glass-panel-hover p-6"
               >
                 {image ? (
-                  <div className="w-12 h-12 rounded-full overflow-hidden mb-4 ring-1 ring-[var(--border)]">
+                  <div className="w-24 h-24 rounded-full overflow-hidden mb-4 ring-1 ring-[var(--border)]">
                     <Image
                       src={image}
                       alt={name}
-                      width={48}
-                      height={48}
+                      width={96}
+                      height={96}
                       className="w-full h-full object-cover"
                     />
                   </div>
                 ) : (
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--aurora-purple)]/30 to-[var(--aurora-cyan)]/30 flex items-center justify-center mb-4">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[var(--aurora-purple)]/30 to-[var(--aurora-cyan)]/30 flex items-center justify-center mb-4">
                     <span className="text-lg font-bold text-white">
                       {name.split(' ').map((n: string) => n[0]).join('')}
                     </span>
@@ -253,10 +259,11 @@ export default async function CompanyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="h-full"
               >
                 <Link
                   href={partnerMeta[key].link}
-                  className="block glass-panel glass-panel-hover p-8 transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--background)]"
+                  className="block glass-panel glass-panel-hover p-8 h-full transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--background)]"
                 >
                   <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center mb-6 p-2">
                     <Image
@@ -277,6 +284,37 @@ export default async function CompanyPage() {
               </MotionDiv>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Headquarters Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-[var(--primary)]" />
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)]">
+                    {t("headquarters.heading")}
+                  </h2>
+                </div>
+                <address className="not-italic text-lg text-[var(--text-secondary)] leading-relaxed space-y-1">
+                  <p>{t("headquarters.address.street")}</p>
+                  <p>{t("headquarters.address.city")}</p>
+                  <p>{t("headquarters.address.country")}</p>
+                </address>
+              </div>
+              <SwitzerlandMap label={t("headquarters.mapLabel")} />
+            </div>
+          </MotionDiv>
         </div>
       </section>
 

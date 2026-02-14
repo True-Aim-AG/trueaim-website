@@ -4,7 +4,7 @@ import Image from "next/image";
 import { slideFromLeft, slideFromRight, staggerContainer } from "@/lib/animations";
 import { PartnerLogos } from "./PartnerLogos";
 
-const awards = [
+const awards: { country: string; title: string; titleLine2?: string; image: string }[] = [
   {
     country: "Switzerland",
     title: "Innovationspreis der Schweizer Assekuranz",
@@ -17,7 +17,8 @@ const awards = [
   },
   {
     country: "Italy",
-    title: "Miglior InsurTech - IKN Awards",
+    title: "Miglior InsurTech",
+    titleLine2: "IKN Awards",
     image: "/awards/ikn-italy.png",
   },
 ];
@@ -75,7 +76,8 @@ export async function TrustBar() {
                     {award.country}
                   </p>
                   <p className="text-base font-semibold text-[var(--text-primary)] leading-tight">
-                    {award.title}
+                    <span className="block">{award.title}</span>
+                    {award.titleLine2 && <span className="block">{award.titleLine2}</span>}
                   </p>
                 </div>
               </div>

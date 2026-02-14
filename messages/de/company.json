@@ -67,7 +67,7 @@
     },
     "partners": {
       "heading": "Partner & Investoren",
-      "subtitle": "Unterstuetzt durch das Schweizer Innovationsoekosystem.",
+      "subtitle": "Unterstuetzt durch das Schweizer Deep-Tech- und Innovationsoekosystem",
       "yarowa": {
         "name": "Yarowa AG",
         "description": "Strategischer Investor und Partner. Schweizer InsurTech-Anbieter mit tiefer Verwurzelung im europaeischen Versicherungsoekosystem."
@@ -78,7 +78,16 @@
       },
       "innosuisse": {
         "name": "Innosuisse",
-        "description": "Die offizielle Innovationsagentur der Schweiz. Nicht-verwassernder Foerderbeitrag fuer True Aim erhalten. Validierung auf nationaler Ebene fuer unsere Forschung und Technologie."
+        "description": "Die offizielle Innovationsagentur der Schweiz. Nicht-verwassernder Foerderbeitrag erhalten. Validierung auf nationaler Ebene fuer unsere Forschung & Technologie."
+      }
+    },
+    "headquarters": {
+      "heading": "Hauptsitz",
+      "mapLabel": "Zug, Schweiz",
+      "address": {
+        "street": "Metallstrasse 9",
+        "city": "6300 Zug",
+        "country": "Schweiz"
       }
     },
     "cta": {

@@ -15,6 +15,11 @@
           "description": "Architektur konform mit der EU-Datenschutzverordnung",
           "status": "aligned"
         },
+        "swissFadp": {
+          "name": "Swiss FADP",
+          "description": "Konformität mit dem Schweizer Bundesgesetz über den Datenschutz",
+          "status": "aligned"
+        },
         "euAiAct": {
           "name": "KI-Verordnung",
           "description": "Entwickelt für die Anforderungen an Hochrisiko-AI-Systeme",
@@ -27,12 +32,12 @@
         },
         "iso27001": {
           "name": "ISO 27001",
-          "description": "Aktuelle Kontrollen entsprechen dem Framework. Formale Zertifizierung für 2026 geplant.",
+          "description": "Aktuelle Kontrollen entsprechen dem Framework. Formale Zertifizierung für 2026 geplant",
           "status": "roadmap"
         },
         "soc2": {
           "name": "SOC 2 Type II",
-          "description": "Aktuelle Kontrollen entsprechen dem Framework. Formale Zertifizierung für 2026 geplant.",
+          "description": "Aktuelle Kontrollen entsprechen dem Framework. Formale Zertifizierung für 2026 geplant",
           "status": "roadmap"
         },
         "finma": {

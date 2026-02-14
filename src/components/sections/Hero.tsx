@@ -3,14 +3,14 @@
 import { useRef, useEffect, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, FileText, Search, Scale, Send, ClipboardCheck, Zap, UserCheck, CheckCircle } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, FileText, Search, Scale, Send, ClipboardCheck, Zap, UserCheck } from "lucide-react";
 import { fadeIn, scaleIn, springTransition } from "@/lib/animations";
 
 const pipelineStepsMeta = [
   { key: "ingest" as const, icon: FileText, color: "var(--trust)", hitlOptional: false },
-  { key: "process" as const, icon: Search, color: "var(--secondary)", hitlOptional: true },
-  { key: "assess" as const, icon: Scale, color: "var(--primary)", hitlOptional: false },
+  { key: "process" as const, icon: Search, color: "var(--secondary)", hitlOptional: false },
+  { key: "decide" as const, icon: Scale, color: "var(--primary)", hitlOptional: true },
   { key: "execute" as const, icon: Send, color: "var(--aurora-cyan)", hitlOptional: true },
   { key: "audit" as const, icon: ClipboardCheck, color: "var(--secondary)", hitlOptional: false },
 ];
@@ -34,7 +34,6 @@ export function Hero() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(
     () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
   );
-  const [expandedStep, setExpandedStep] = useState<number | null>(null);
 
   // Check for reduced motion preference
   useEffect(() => {
@@ -108,7 +107,17 @@ export function Hero() {
             </div>
 
             {/* Pipeline steps */}
-            <div className="flex flex-col md:flex-row items-start justify-between gap-4 md:gap-0">
+            <div className="relative flex flex-col md:flex-row items-start justify-between gap-4 md:gap-0">
+              {/* Animated flow line (desktop only) */}
+              <div
+                className="hidden md:block absolute top-10 left-0 right-0 h-[2px] opacity-35"
+                style={{
+                  background: "linear-gradient(90deg, var(--primary), var(--aurora-cyan), var(--primary))",
+                  backgroundSize: "200% 100%",
+                  animation: "flowLine 3s linear infinite",
+                }}
+              />
+
               {pipelineSteps.map((step, index) => (
                 <div key={step.label} className="flex items-start w-full md:w-auto">
                   {/* Step */}
@@ -121,8 +130,7 @@ export function Hero() {
                       type: "spring",
                       stiffness: 200
                     }}
-                    className="flex flex-col items-center cursor-pointer w-full md:w-auto"
-                    onClick={() => setExpandedStep(expandedStep === index ? null : index)}
+                    className="flex flex-col items-center w-full md:w-auto"
                   >
                     <div className="relative">
                       <div
@@ -136,16 +144,21 @@ export function Hero() {
                           style={{ color: step.color }}
                         />
                       </div>
-                      {/* Automation badge */}
-                      <div className={`absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center ${
-                        step.hitlOptional ? 'bg-amber-100 dark:bg-amber-900/50' : 'bg-emerald-100 dark:bg-emerald-900/50'
-                      }`}>
-                        {step.hitlOptional ? (
-                          <UserCheck className="w-3 h-3 text-amber-600 dark:text-amber-400" />
-                        ) : (
+                      {/* Automation badges */}
+                      {step.hitlOptional ? (
+                        <>
+                          <div className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center bg-emerald-100 dark:bg-emerald-900/50">
+                            <Zap className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
+                          </div>
+                          <div className="absolute -top-1 -right-7 w-5 h-5 rounded-full flex items-center justify-center bg-amber-100 dark:bg-amber-900/50">
+                            <UserCheck className="w-3 h-3 text-amber-600 dark:text-amber-400" />
+                          </div>
+                        </>
+                      ) : (
+                        <div className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center bg-emerald-100 dark:bg-emerald-900/50">
                           <Zap className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
-                        )}
-                      </div>
+                        </div>
+                      )}
                     </div>
                     <span className="text-base font-semibold text-[var(--text-primary)]">
                       {step.label}
@@ -156,44 +169,7 @@ export function Hero() {
                     <span className="text-xs text-[var(--secondary)] font-medium mt-0.5">
                       {step.automatedTime}
                     </span>
-
-                    {/* Expanded detail card */}
-                    <AnimatePresence>
-                      {expandedStep === index && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="overflow-hidden w-full max-w-[180px]"
-                        >
-                          <div className="mt-3 p-3 rounded-lg bg-[var(--subtle-bg)] border border-[var(--border)] text-left">
-                            <p className="text-xs text-[var(--text-muted)] mb-2">{step.description}</p>
-                            <div className="flex items-start gap-1.5 mb-2">
-                              <CheckCircle className="w-3 h-3 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                              <span className="text-xs text-[var(--text-muted)]">{step.automationDetail}</span>
-                            </div>
-                            <p className="text-xs text-[var(--primary)] font-medium">{step.businessValue}</p>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
                   </motion.div>
-
-                  {/* Connector arrow (not after last item) */}
-                  {index < pipelineSteps.length - 1 && (
-                    <motion.div
-                      initial={{ opacity: 0, scaleX: 0 }}
-                      animate={{ opacity: 1, scaleX: 1 }}
-                      transition={{ duration: 0.4, delay: 0.8 + index * 0.15 }}
-                      className="hidden md:flex items-center mx-4 mt-8"
-                    >
-                      <div className="w-12 lg:w-20 h-0.5 bg-gradient-to-r from-[var(--border)] to-[var(--primary)]" />
-                      <div
-                        className="w-0 h-0 border-t-4 border-b-4 border-l-[6px] border-transparent border-l-[var(--primary)]"
-                      />
-                    </motion.div>
-                  )}
                 </div>
               ))}
             </div>

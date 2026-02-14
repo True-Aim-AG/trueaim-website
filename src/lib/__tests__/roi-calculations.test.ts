@@ -10,7 +10,6 @@ import {
 const DEFAULT_INPUTS: ROIInputs = {
   claimsVolume: 50000,
   handlingTime: 45,
-  claimsHandlers: 50,
   automationLevel: "none",
   currency: "CHF",
 };
@@ -24,6 +23,7 @@ describe("calculateROI", () => {
       expect(result).toHaveProperty("grossAnnualImpact");
       expect(result).toHaveProperty("savingsPercentage");
       expect(result).toHaveProperty("hoursSaved");
+      expect(result).toHaveProperty("workingDaysSaved");
       expect(result).toHaveProperty("fteEquivalent");
       expect(result).toHaveProperty("volume");
       expect(result).toHaveProperty("buckets");
@@ -75,10 +75,10 @@ describe("calculateROI", () => {
   });
 
   describe("automation levels", () => {
-    it("'none' automates 85% of claims", () => {
+    it("'none' automates 80% of claims", () => {
       const result = calculateROI({ ...DEFAULT_INPUTS, automationLevel: "none" });
-      expect(result.details.automationRate).toBe(85);
-      expect(result.details.automatedClaims).toBe(50000 * 0.85);
+      expect(result.details.automationRate).toBe(80);
+      expect(result.details.automatedClaims).toBe(50000 * 0.80);
     });
 
     it("'some' automates 70% of claims", () => {
@@ -102,9 +102,9 @@ describe("calculateROI", () => {
       expect(some.grossAnnualImpact).toBeGreaterThan(significant.grossAnnualImpact);
     });
 
-    it("falls back to 85% for unknown automation level", () => {
+    it("falls back to 80% for unknown automation level", () => {
       const result = calculateROI({ ...DEFAULT_INPUTS, automationLevel: "unknown" });
-      expect(result.details.automationRate).toBe(85);
+      expect(result.details.automationRate).toBe(80);
     });
   });
 
@@ -112,22 +112,19 @@ describe("calculateROI", () => {
     it("capacity savings is the largest bucket", () => {
       const result = calculateROI(DEFAULT_INPUTS);
       expect(result.buckets.capacityGross).toBeGreaterThan(result.buckets.reworkGross);
-      expect(result.buckets.capacityGross).toBeGreaterThan(result.buckets.leakageGross);
     });
 
     it("all bucket values are positive", () => {
       const result = calculateROI(DEFAULT_INPUTS);
       expect(result.buckets.capacityGross).toBeGreaterThan(0);
       expect(result.buckets.reworkGross).toBeGreaterThan(0);
-      expect(result.buckets.leakageGross).toBeGreaterThan(0);
     });
 
-    it("gross total = sum of three buckets", () => {
+    it("gross total = sum of two buckets", () => {
       const result = calculateROI(DEFAULT_INPUTS);
       const sum =
         result.buckets.capacityGross +
-        result.buckets.reworkGross +
-        result.buckets.leakageGross;
+        result.buckets.reworkGross;
       expect(result.buckets.grossTotal).toBeCloseTo(sum, 2);
     });
 
@@ -137,12 +134,6 @@ describe("calculateROI", () => {
         result.buckets.grossTotal * ASSUMPTIONS.sensitivityAdjustment,
         2
       );
-    });
-
-    it("leakage savings is independent of currency", () => {
-      const chf = calculateROI({ ...DEFAULT_INPUTS, currency: "CHF" });
-      const eur = calculateROI({ ...DEFAULT_INPUTS, currency: "EUR" });
-      expect(chf.buckets.leakageGross).toBeCloseTo(eur.buckets.leakageGross, 2);
     });
   });
 
@@ -177,6 +168,14 @@ describe("calculateROI", () => {
     it("hours saved is positive", () => {
       const result = calculateROI(DEFAULT_INPUTS);
       expect(result.hoursSaved).toBeGreaterThan(0);
+    });
+
+    it("working days saved = hours saved / 10", () => {
+      const result = calculateROI(DEFAULT_INPUTS);
+      expect(result.workingDaysSaved).toBeCloseTo(
+        result.hoursSaved / 10,
+        4
+      );
     });
 
     it("FTE equivalent = hours saved / 2080", () => {

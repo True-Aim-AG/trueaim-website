@@ -27,15 +27,12 @@
         "handlingTime": "Average handling time per claim:",
         "handlingTimeUnit": "minutes",
         "handlingTimeHint": "Use an estimate for a typical claim without unusual complexity",
-        "claimsHandlers": "Number of claims handlers or assessors:",
         "automationLevel": "Eligible for straight-through or assisted processing",
         "rangeMin": {
           "claims": "10,000",
           "claimsMax": "1,000,000",
           "timeMin": "5 min",
-          "timeMax": "180 min",
-          "handlersMin": "1",
-          "handlersMax": "500"
+          "timeMax": "180 min"
         }
       },
       "results": {
@@ -53,29 +50,24 @@
           "rework": {
             "title": "Rework avoided",
             "description": "Fewer reopens, appeals and corrections"
-          },
-          "leakage": {
-            "title": "Leakage reduction",
-            "description": "Reduced inconsistent decisions"
           }
         },
         "metrics": {
-          "hoursSaved": "Hours saved/year",
+          "workingDaysSaved": "Working days saved/year",
           "fteEquivalent": "Capacity unlocked (FTE equivalent)",
           "fteNote": "Reflects reduced handling effort, not headcount reduction"
-        },
-        "disclaimers": {
-          "grossImpact": "All figures shown represent gross operational impact and do not take into account the cost of True Aim's services.",
-          "pricing": "Platform pricing is not provided. Final pricing is based on contract terms and commercial negotiations.",
-          "pilotData": "Based on pilot data from insurance claims."
         },
         "assumptions": {
           "toggle": "Methodology and Assumptions",
           "howWeCalculate": "How We Calculate",
           "currentHandlingCost": "Current Handling Cost",
           "currentHandlingCostFormula": "= Handling Time x Cost per Minute x Claims Volume",
+          "reworkAvoided": "Rework Avoided",
+          "reworkAvoidedFormula": "= Rework Claims x Handling Time x Rework Multiplier x Cost per Minute",
           "grossSavings": "Gross Savings",
-          "grossSavingsFormula": "= Capacity + Rework + Leakage",
+          "grossSavingsFormula": "= Capacity + Rework",
+          "workingDaysFormula": "Working days saved = Hours saved \u00f7 10",
+          "workingDaysUnit": "days",
           "conservativeEstimate": "Conservative Estimate",
           "conservativeEstimateFormula": "= Gross Savings x 75% Sensitivity Adjustment",
           "keyAssumptions": "Key Assumptions",
@@ -83,6 +75,7 @@
           "assumption2": "No immediate headcount reduction assumed",
           "assumption3": "Savings reflect reduced handling effort and rework",
           "assumption4": "75% sensitivity adjustment applied to all projections",
+          "assumption5": "Currency selection applies region-linked market data for insurance industry salary benchmarks which informs cost per minute assumptions.",
           "breakdownTitle": "Your Numbers Breakdown",
           "breakdownRows": {
             "annualVolume": "Annual claims volume",
@@ -90,26 +83,13 @@
             "manualClaims": "Claims requiring manual review",
             "capacityGross": "Capacity savings (gross)",
             "reworkGross": "Rework avoided (gross)",
-            "leakageGross": "Leakage reduction (gross)",
             "sensitivityAdjustment": "Sensitivity adjustment (75%)",
             "grossAnnualImpact": "Gross annual impact (conservative)"
           },
           "importantNotes": "Important Notes",
-          "note1": "Estimates are informed by pilot data from travel insurance claims",
-          "note2": "Actual automation rates depend on policy complexity and claim types"
-        },
-        "report": {
-          "received": "Request Received",
-          "receivedMessage": "We'll send your personalised impact breakdown within 1 business day.",
-          "requestTitle": "Request Detailed Impact Report",
-          "namePlaceholder": "Your name",
-          "emailPlaceholder": "Work email",
-          "sending": "Sending...",
-          "sendButton": "Send My Impact Report",
-          "wantFullBreakdown": "Want the full breakdown?",
-          "fullBreakdownDesc": "Get a personalised impact report with detailed methodology and assumptions.",
-          "requestButton": "Request Detailed Impact Report",
-          "bookDemo": "Book a Demo"
+          "note1": "All figures shown represent gross operational impact and do not take into account the cost of True Aim's services.",
+          "note2": "Platform pricing is not provided. Final pricing is based on commercial terms to be discussed.",
+          "note3": "Calculator based on data from actual insurance claims and case studies with insurers."
         }
       }
     }

@@ -23,7 +23,7 @@
         "value": "Fehler bei der Neueingabe und Datenerfassungskosten reduzieren",
         "automation": "AI extrahiert Felder mit Nachweisverknüpfung"
       },
-      "assess": {
+      "decide": {
         "label": "Bewerten",
         "shortDesc": "Ergebnis & Bearbeitung bestätigen",
         "description": "Deckungsprüfung anhand der Versicherungspolice",

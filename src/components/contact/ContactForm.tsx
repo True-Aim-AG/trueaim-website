@@ -31,7 +31,7 @@ type ContactFormData = {
 
 const countryKeys = [
   "switzerland", "germany", "austria", "unitedKingdom", "france",
-  "italy", "netherlands", "belgium", "spain", "unitedStates", "other",
+  "italy", "netherlands", "belgium", "southAfrica", "spain", "unitedStates", "other",
 ] as const;
 
 const interestKeys = [

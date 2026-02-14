@@ -163,7 +163,8 @@ export default function BlogPage() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold tracking-tight text-[var(--text-primary)] mb-8 text-center">
-            Topics We Cover (and more)
+            <span className="block">Topics We Cover</span>
+            <span className="block text-base font-normal opacity-70 mt-2">(and more)</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

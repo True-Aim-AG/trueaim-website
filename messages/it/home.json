@@ -23,7 +23,7 @@
         "value": "Ridurre gli errori di reinserimento e i costi di data entry",
         "automation": "L'AI estrae i campi con collegamento alle prove"
       },
-      "assess": {
+      "decide": {
         "label": "Valutazione",
         "shortDesc": "Confermare esito e gestione",
         "description": "Determinazione della copertura rispetto alla polizza",

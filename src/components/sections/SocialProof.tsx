@@ -3,18 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { ArrowRight, Building2, TrendingUp, Quote } from "lucide-react";
 import { caseStudies } from "@/data/case-studies";
-
-const productColors: Record<string, string> = {
-  mira: "bg-indigo-100 text-indigo-700",
-  contextbuilder: "bg-teal-100 text-teal-700",
-  claimeval: "bg-blue-100 text-blue-700",
-};
-
-const productNames: Record<string, string> = {
-  mira: "MIRA",
-  contextbuilder: "ContextBuilder",
-  claimeval: "ClaimEval",
-};
+import { productPillColors, productNames } from "@/lib/product-styles";
 
 export async function SocialProof() {
   const t = await getTranslations("socialProof");
@@ -86,7 +75,7 @@ export async function SocialProof() {
                   {featured.products.map((product) => (
                     <span
                       key={product}
-                      className={`text-xs px-2 py-1 rounded-full font-medium ${productColors[product]}`}
+                      className={`text-xs px-2 py-1 rounded-full font-medium transition-colors ${productPillColors[product]}`}
                     >
                       {productNames[product]}
                     </span>

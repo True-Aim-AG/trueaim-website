@@ -7,7 +7,7 @@
       "description": "Nicht probabilistisch. Keine Black Box. Unser hybrider Ansatz kombiniert agentic AI-Ausführung mit deterministischer Entscheidungsfindung, speziell entwickelt für regulierte Branchen."
     },
     "problem": {
-      "heading": "Das Problem mit probabilistischer AI",
+      "heading": "Die Grenzen probabilistischer AI bei regulierten Entscheidungen",
       "description": "Grosse Sprachmodelle sind leistungsfähig, aber sie sind probabilistisch. Bei gleicher Eingabe können sie unterschiedliche Ergebnisse liefern. Sie können ihre Schlussfolgerungen nicht in einer Sprache erklären, die Aufsichtsbehörden verstehen.",
       "emphasis": "Für Schadenentscheidungen ist das inakzeptabel."
     },
@@ -68,6 +68,7 @@
         }
       },
       "philosophy": "AI sollte die Schwerstarbeit übernehmen, aber Menschen müssen immer in der Lage sein, zu verstehen, zu verifizieren und zu übersteuern. Jede Kontrolle existiert, weil regulierte Branchen sie verlangen.",
+      "philosophyHeading": "Unsere Philosophie",
       "philosophyPrefix": "Unsere Philosophie:"
     },
     "comparison": {

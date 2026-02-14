@@ -6,13 +6,12 @@
 export interface ROIInputs {
   claimsVolume: number;
   handlingTime: number;
-  claimsHandlers: number;
   automationLevel: string;
   currency: string;
 }
 
 export const AUTOMATION_OPTIONS = [
-  { value: "none", label: "No current automation", factor: 0.85 },
+  { value: "none", label: "No current automation", factor: 0.80 },
   { value: "some", label: "Basic rules or triage in place", factor: 0.7 },
   {
     value: "significant",
@@ -37,9 +36,6 @@ export const ASSUMPTIONS = {
   sensitivityAdjustment: 0.75, // 75% conservative factor
   reworkReductionRate: 0.03, // 3% of claims avoid rework
   reworkCostMultiplier: 2.5,
-  leakageReductionRate: 0.02,
-  averageClaimValue: 5000,
-  leakagePercentOfClaim: 0.05,
 } as const;
 
 export interface ROIResults {
@@ -47,12 +43,12 @@ export interface ROIResults {
   grossAnnualImpact: number;
   savingsPercentage: number;
   hoursSaved: number;
+  workingDaysSaved: number;
   fteEquivalent: number;
   volume: number;
   buckets: {
     capacityGross: number;
     reworkGross: number;
-    leakageGross: number;
     grossTotal: number;
     conservativeTotal: number;
   };
@@ -76,7 +72,7 @@ export function calculateROI(inputs: ROIInputs): ROIResults {
   const volume = inputs.claimsVolume;
   const automationFactor =
     AUTOMATION_OPTIONS.find((a) => a.value === inputs.automationLevel)
-      ?.factor || 0.85;
+      ?.factor || 0.80;
 
   const salaryBenchmark =
     SALARY_BENCHMARKS[inputs.currency] || SALARY_BENCHMARKS.CHF;
@@ -107,15 +103,7 @@ export function calculateROI(inputs: ROIInputs): ROIResults {
     ASSUMPTIONS.reworkCostMultiplier *
     (costPerMinute * 60);
 
-  // Bucket 3: Leakage Reduction
-  const leakageSavingsGross =
-    volume *
-    ASSUMPTIONS.leakageReductionRate *
-    ASSUMPTIONS.averageClaimValue *
-    ASSUMPTIONS.leakagePercentOfClaim;
-
-  const grossSavings =
-    capacitySavingsGross + reworkSavingsGross + leakageSavingsGross;
+  const grossSavings = capacitySavingsGross + reworkSavingsGross;
   const conservativeSavings = grossSavings * ASSUMPTIONS.sensitivityAdjustment;
   const grossAnnualImpact = conservativeSavings;
   const savingsPercentage =
@@ -124,6 +112,7 @@ export function calculateROI(inputs: ROIInputs): ROIResults {
       : 0;
 
   const hoursSaved = totalHoursPerYear - trueAimTotalHours;
+  const workingDaysSaved = hoursSaved / 10;
   const fteEquivalent = hoursSaved / ASSUMPTIONS.workHoursPerYear;
 
   return {
@@ -131,12 +120,12 @@ export function calculateROI(inputs: ROIInputs): ROIResults {
     grossAnnualImpact,
     savingsPercentage,
     hoursSaved,
+    workingDaysSaved,
     fteEquivalent,
     volume,
     buckets: {
       capacityGross: capacitySavingsGross,
       reworkGross: reworkSavingsGross,
-      leakageGross: leakageSavingsGross,
       grossTotal: grossSavings,
       conservativeTotal: conservativeSavings,
     },

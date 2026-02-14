@@ -14,18 +14,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { getCaseStudy, caseStudies } from "@/data/case-studies";
-
-const productColors: Record<string, string> = {
-  mira: "bg-indigo-100 text-indigo-700 border-indigo-200",
-  contextbuilder: "bg-teal-100 text-teal-700 border-teal-200",
-  claimeval: "bg-blue-100 text-blue-700 border-blue-200",
-};
-
-const productNames: Record<string, string> = {
-  mira: "MIRA",
-  contextbuilder: "ContextBuilder",
-  claimeval: "ClaimEval",
-};
+import { productPillColors, productNames } from "@/lib/product-styles";
 
 const productLinks: Record<string, string> = {
   mira: "/products/mira",
@@ -110,7 +99,7 @@ export default function CaseStudyPage() {
                 <Link
                   key={product}
                   href={productLinks[product]}
-                  className={`text-sm px-3 py-1.5 rounded-full font-medium border ${productColors[product]} hover:opacity-80 transition-opacity`}
+                  className={`text-sm px-3 py-1.5 rounded-full font-medium ${productPillColors[product]} transition-colors`}
                 >
                   {productNames[product]}
                 </Link>

@@ -5,9 +5,9 @@ import { ArrowRight, Brain, FileSearch, ClipboardCheck, FileText } from "lucide-
 import { getAlternatingSlide, defaultTransition } from "@/lib/animations";
 
 const productsMeta = [
-  { key: "contextBuilder" as const, href: "/products/contextbuilder", icon: FileSearch, color: "var(--contextbuilder)", gradient: "from-teal-500/20 to-cyan-500/20" },
-  { key: "mira" as const, href: "/products/mira", icon: Brain, color: "var(--mira)", gradient: "from-indigo-500/20 to-violet-500/20" },
-  { key: "decisionDossier" as const, href: "/technology#decision-dossier", icon: FileText, color: "var(--primary)", gradient: "from-purple-500/20 to-indigo-500/20" },
+  { key: "contextBuilder" as const, href: "/products/contextbuilder", icon: FileSearch, color: "var(--contextbuilder)", gradient: "from-cyan-500/20 to-blue-500/20" },
+  { key: "mira" as const, href: "/products/mira", icon: Brain, color: "var(--mira)", gradient: "from-blue-500/20 to-cyan-500/20" },
+  { key: "decisionDossier" as const, href: "/technology#decision-dossier", icon: FileText, color: "var(--primary)", gradient: "from-blue-500/20 to-cyan-500/20" },
   { key: "claimEval" as const, href: "/products/claimeval", icon: ClipboardCheck, color: "var(--claimeval)", gradient: "from-blue-500/20 to-sky-500/20" },
 ];
 
@@ -90,7 +90,7 @@ export async function ProductsGrid() {
 
                     {/* Link */}
                     <div
-                      className="inline-flex items-center gap-2 font-medium transition-all group-hover:gap-3 text-[var(--card-color)] group-hover:text-white mt-auto"
+                      className="inline-flex items-center gap-2 font-medium transition-all group-hover:gap-3 text-[var(--primary)] group-hover:text-white mt-auto"
                     >
                       {product.explore}
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
