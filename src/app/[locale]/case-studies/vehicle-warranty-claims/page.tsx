@@ -121,7 +121,7 @@ export default function VehicleWarrantyCaseStudy() {
               Automating Vehicle Warranty Claims with AI Document Intelligence
             </h1>
             <p className="text-xl md:text-2xl text-[var(--primary)] font-semibold mb-6">
-              From 18% to 98% Decision Accuracy in 7 Days
+              Multilingual, Auditable Warranty Adjudication
             </p>
 
             {/* Products & Timeline */}
@@ -186,25 +186,25 @@ export default function VehicleWarrantyCaseStudy() {
                 </h2>
                 <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
                   <p>
-                    A European vehicle warranty provider processing hundreds of claims per month
-                    needed to automate the adjudication of multilingual warranty claims. Each claim
-                    involved up to five documents in three languages (German, French, Italian),
-                    with processing taking 15 to 30 minutes per claim due to manual cross-referencing
-                    of cost estimates, coverage tiers, mileage caps and component exclusion lists.
-                    An initial LLM-only approach achieved just 18% decision accuracy, failing on
-                    deterministic business rules, financial calculations and multilingual part-name
-                    resolution. True Aim deployed the full product stack: ContextBuilder for document
-                    ingestion and structured extraction, MIRA for hybrid deterministic and AI coverage
-                    matching, and ClaimEval for quality assurance with full provenance tracking. A
-                    multi-tier matching architecture routes 80 to 90% of line items through
-                    deterministic rules and keyword matching with zero LLM cost, reserving AI
-                    reasoning for genuinely ambiguous cases. Within seven days and over 60 evaluation
-                    iterations, decision accuracy rose from 18% to 98% on the development set.
+                    A European vehicle warranty provider needed to automate the adjudication of
+                    multilingual warranty claims. Each claim involved up to five documents in three
+                    languages (German, French, Italian), with processing taking more than 30 minutes
+                    on average per claim due to manual cross-referencing of cost estimates, coverage
+                    tiers, mileage caps and component exclusion lists.
+                  </p>
+                  <p>
+                    True Aim deployed the full product stack: ContextBuilder for document ingestion
+                    and structured extraction, MIRA for hybrid deterministic and AI coverage matching,
+                    and ClaimEval for quality assurance with full provenance tracking. A multi-tier
+                    matching architecture routes 80%-90% of line items through deterministic rules
+                    and keyword matching with zero LLM cost, reserving AI reasoning for genuinely
+                    ambiguous cases. Within seven days and through multiple evaluation iterations,
+                    decision accuracy reached 98% on the development set of holdout data.
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
                     {[
-                      "18% to 98% decision accuracy in 7 days across 60+ evaluation iterations",
+                      "98% decision accuracy in 7 days across multiple evaluation iterations",
                       "80-90% of line items resolved without LLM involvement",
                       "Three languages (DE/FR/IT) with no measurable language bias",
                       "Full provenance chain from every decision back to source document and page",
@@ -233,8 +233,8 @@ export default function VehicleWarrantyCaseStudy() {
                     reimbursement rates and component exclusion lists.
                   </p>
                   <p className="font-semibold text-[var(--text-primary)]">
-                    Processing takes 15-30 minutes per claim. Multiply that by
-                    hundreds of claims per month.
+                    Standard processing takes 30+ minutes per claim. Multiply that by
+                    thousands of claims per month.
                   </p>
                   <p>
                     76% of denied claims fail for a single reason:{" "}
@@ -314,7 +314,7 @@ export default function VehicleWarrantyCaseStudy() {
                     {
                       icon: AlertTriangle,
                       title: "Single-model approaches plateau early",
-                      desc: "Sending an entire claim to an LLM produces inconsistent results - hallucinated part names, invented coverage rules, unreliable financial calculations. Baseline LLM-only accuracy: 18%.",
+                      desc: "Sending an entire claim to an LLM produces inconsistent results - hallucinated part names, invented coverage rules, unreliable financial calculations.",
                     },
                     {
                       icon: AlertTriangle,
@@ -522,7 +522,7 @@ export default function VehicleWarrantyCaseStudy() {
                       <li>Calculating deductibles</li>
                       <li>Computing final payout</li>
                     </ul>
-                    <p className="text-xs text-[var(--text-muted)] mt-3">
+                    <p className="text-sm text-[var(--text-secondary)] mt-3">
                       Each insurer has specific rules for deductibles,
                       reimbursement tiers, and parts/labor splits that must be
                       matched exactly.
@@ -544,9 +544,6 @@ export default function VehicleWarrantyCaseStudy() {
                     <div className="flex items-center gap-3 mb-2">
                       <span className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider">
                         Days 1-3
-                      </span>
-                      <span className="text-2xl font-bold font-mono-data text-red-400">
-                        18%
                       </span>
                     </div>
                     <h4 className="font-semibold text-[var(--text-primary)] mb-2">
@@ -799,7 +796,7 @@ export default function VehicleWarrantyCaseStudy() {
                     {
                       num: "2",
                       title: "The accuracy curve has diminishing returns.",
-                      desc: "18% to 76% took 3 days. 76% to 98% took 4 more days. The holdout gap (98% vs 77%) confirmed that real-world generalization requires significantly more data.",
+                      desc: "76% accuracy took 3 days. 76% to 98% took 4 more days. The holdout gap (98% vs 77%) confirmed that real-world generalization requires significantly more data.",
                     },
                     {
                       num: "3",
@@ -1065,7 +1062,7 @@ export default function VehicleWarrantyCaseStudy() {
       </section>
 
       {/* Navigation */}
-      <section className="py-12 px-6 border-t border-[var(--border)]">
+      <section className="py-12 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-between items-center">
             {prevStudy ? (

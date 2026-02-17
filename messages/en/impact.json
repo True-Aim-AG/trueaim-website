@@ -7,7 +7,7 @@
       "description": "See the estimated impact of automating claims decisions with True Aim. Adjust the high-level inputs to match your operation.",
       "benefits": {
         "conservative": "Conservative estimates",
-        "pilotData": "Based on real pilot data",
+        "pilotData": "Based on actual insurer data",
         "instant": "Instant indication"
       }
     },

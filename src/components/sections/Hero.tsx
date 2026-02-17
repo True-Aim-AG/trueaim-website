@@ -108,15 +108,6 @@ export function Hero() {
 
             {/* Pipeline steps */}
             <div className="relative flex flex-col md:flex-row items-start justify-between gap-4 md:gap-0">
-              {/* Animated flow line (desktop only) */}
-              <div
-                className="hidden md:block absolute top-10 left-0 right-0 h-[2px] opacity-35"
-                style={{
-                  background: "linear-gradient(90deg, var(--primary), var(--aurora-cyan), var(--primary))",
-                  backgroundSize: "200% 100%",
-                  animation: "flowLine 3s linear infinite",
-                }}
-              />
 
               {pipelineSteps.map((step, index) => (
                 <div key={step.label} className="flex items-start w-full md:w-auto">

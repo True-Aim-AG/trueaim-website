@@ -7,7 +7,7 @@
       "description": "Sehen Sie die gesch\u00e4tzte Auswirkung der Automatisierung von Schadenentscheidungen mit True Aim. Passen Sie die \u00fcbergeordneten Eingaben an Ihren Betrieb an.",
       "benefits": {
         "conservative": "Konservative Sch\u00e4tzungen",
-        "pilotData": "Basierend auf realen Pilotdaten",
+        "pilotData": "Basierend auf tatsächlichen Versichererdaten",
         "instant": "Sofortige Einsch\u00e4tzung"
       }
     },

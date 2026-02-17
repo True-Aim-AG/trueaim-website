@@ -6,7 +6,7 @@ interface SwitzerlandMapProps {
 
 export function SwitzerlandMap({ label = "Switzerland" }: SwitzerlandMapProps) {
   return (
-    <div className="glass-panel p-8 relative overflow-hidden min-h-[300px] flex items-center justify-center">
+    <div className="glass-panel p-8 relative overflow-hidden min-h-[300px] h-full flex items-center justify-center">
       <div className="absolute inset-4 border-2 border-dashed border-[var(--border)] rounded-xl" />
 
       {/* Switzerland marker */}

@@ -86,7 +86,14 @@
       "alternativeContact": "Contact alternatif",
       "emailUs": "Écrivez-nous",
       "emailAddress": "info@trueaim.ai",
-      "bookCall": "Réserver un appel de 30 minutes"
+      "bookCall": "Réserver un appel de 30 minutes",
+      "headquarters": "Siège social",
+      "address": {
+        "street": "Metallstrasse 9",
+        "city": "6300 Zug",
+        "country": "Suisse"
+      },
+      "mapLabel": "Zoug, Suisse"
     }
   }
 }

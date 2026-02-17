@@ -227,11 +227,9 @@ export default async function MiraPage() {
                   <div className="w-16 h-16 rounded-full bg-indigo-500/20 flex items-center justify-center mx-auto mb-4">
                     <Icon className="w-8 h-8 text-indigo-400" />
                   </div>
-                  {hasPrefix && (
-                    <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                      {t(`results.metrics.${key}.prefix`)}
-                    </p>
-                  )}
+                  <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1" style={{ visibility: hasPrefix ? 'visible' : 'hidden' }}>
+                    {hasPrefix ? t(`results.metrics.${key}.prefix`) : '\u00A0'}
+                  </p>
                   <p className="text-5xl font-bold text-[var(--primary)] font-mono-data mb-2">
                     {value}
                   </p>

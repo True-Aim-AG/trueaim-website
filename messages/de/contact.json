@@ -86,7 +86,14 @@
       "alternativeContact": "Alternativer Kontakt",
       "emailUs": "Schreiben Sie uns",
       "emailAddress": "info@trueaim.ai",
-      "bookCall": "30-minütiges Gespräch buchen"
+      "bookCall": "30-minütiges Gespräch buchen",
+      "headquarters": "Hauptsitz",
+      "address": {
+        "street": "Metallstrasse 9",
+        "city": "6300 Zug",
+        "country": "Schweiz"
+      },
+      "mapLabel": "Zug, Schweiz"
     }
   }
 }

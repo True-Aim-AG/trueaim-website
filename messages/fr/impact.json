@@ -7,7 +7,7 @@
       "description": "Visualisez l'impact estim\u00e9 de l'automatisation des d\u00e9cisions de sinistres avec True Aim. Ajustez les param\u00e8tres de haut niveau pour correspondre \u00e0 votre activit\u00e9.",
       "benefits": {
         "conservative": "Estimations conservatrices",
-        "pilotData": "Bas\u00e9 sur des donn\u00e9es pilotes r\u00e9elles",
+        "pilotData": "Bas\u00e9 sur des donn\u00e9es r\u00e9elles d'assureurs",
         "instant": "Indication instantan\u00e9e"
       }
     },

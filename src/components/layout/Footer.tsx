@@ -1,4 +1,5 @@
 import { Link } from "@/i18n/navigation";
+import Image from "next/image";
 import { Linkedin } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import packageJson from "../../../package.json";
@@ -40,14 +41,27 @@ export async function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <img
+              <Image
                 src="/images/logo.png"
                 alt={t("logoAlt")}
-                className="h-12 w-auto"
+                width={48}
+                height={48}
+                className="h-10 w-auto object-contain"
               />
-              <span className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">
-                True <span className="text-[var(--primary)]">AI</span>m
-              </span>
+              <Image
+                src="/images/wordmark.png"
+                alt="True AIm"
+                width={152}
+                height={20}
+                className="h-5 w-auto object-contain light-only"
+              />
+              <Image
+                src="/images/wordmark-dark.png"
+                alt="True AIm"
+                width={152}
+                height={20}
+                className="h-5 w-auto object-contain dark-only"
+              />
             </Link>
             <p className="text-[var(--text-muted)] text-sm mb-4">
               {t("tagline")}

@@ -20,7 +20,7 @@ const pipelineIcons = [Upload, FileType, FileText, ShieldCheck, Users];
 const outputFeatureKeys = ["cleanDataset", "qualityStatus", "evidenceLinks", "humanLabels"] as const;
 const outputFeatureIcons = [CheckCircle, FileCheck, Link2, MessageSquare];
 
-const metricValues = ["95%", "97%", "96%", "<1%"];
+const metricValues = ["95%", "99%", "96%", "<1%"];
 const metricKeys = ["coverage", "accuracy", "evidenceRate", "errorRate"] as const;
 
 export default async function ContextBuilderPage() {

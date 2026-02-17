@@ -100,6 +100,17 @@ export default async function YarowaPage() {
               </p>
             </div>
           </div>
+
+          <div className="text-center mt-4 md:mt-6">
+            <a
+              href="https://www.yarowa.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--primary)] hover:underline transition-colors"
+            >
+              {t("hero.visitYarowa")}
+            </a>
+          </div>
         </div>
       </section>
 

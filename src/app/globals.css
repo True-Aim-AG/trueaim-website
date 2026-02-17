@@ -359,11 +359,6 @@ code, .data-value, .claim-id, .metric-value {
   background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
 }
 
-@keyframes flowLine {
-  0% { background-position: 200% 0; }
-  100% { background-position: 0% 0; }
-}
-
 @keyframes float {
   0%, 100% { transform: translate(0, 0) scale(1); }
   25% { transform: translate(30px, -30px) scale(1.05); }
@@ -490,6 +485,12 @@ body,
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* ===== Theme-Conditional Display ===== */
+/* Dark is default (:root), so .light-only is hidden by default */
+.light-only { display: none !important; }
+[data-theme="light"] .light-only { display: initial !important; }
+[data-theme="light"] .dark-only { display: none !important; }
 
 /* Performance: content-visibility for below-fold sections */
 .content-visibility-auto {

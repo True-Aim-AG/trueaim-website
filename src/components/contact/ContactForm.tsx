@@ -12,7 +12,9 @@ import {
   CheckCircle,
   AlertCircle,
   ChevronDown,
+  MapPin,
 } from "lucide-react";
+import { SwitzerlandMap } from "@/components/ui/SwitzerlandMap";
 import { cn } from "@/lib/utils";
 
 type ContactFormData = {
@@ -481,6 +483,25 @@ export function ContactForm() {
           </div>
         </div>
 
+        {/* Headquarters */}
+        <div className="glass-panel p-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center">
+              <MapPin className="w-5 h-5 text-[var(--primary)]" />
+            </div>
+            <h3 className="text-xl font-bold text-[var(--text-primary)]">
+              {t("sidebar.headquarters")}
+            </h3>
+          </div>
+          <address className="not-italic text-[var(--text-secondary)] leading-relaxed space-y-1 mb-6">
+            <p>{t("sidebar.address.street")}</p>
+            <p>{t("sidebar.address.city")}</p>
+            <p>{t("sidebar.address.country")}</p>
+          </address>
+          <div className="aspect-square">
+            <SwitzerlandMap label={t("sidebar.mapLabel")} />
+          </div>
+        </div>
       </motion.div>
     </div>
   );

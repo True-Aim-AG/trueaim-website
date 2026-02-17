@@ -124,7 +124,7 @@ export default async function ZHAWPage() {
                       alt={t("researchGroup.dandolo.name")}
                       width={80}
                       height={80}
-                      className="rounded-full object-cover w-20 h-20"
+                      className="rounded-full object-cover w-20 h-20 grayscale scale-110"
                     />
                   </div>
                   <h3 className="font-semibold text-[var(--text-primary)] mb-2">{t("researchGroup.dandolo.name")}</h3>

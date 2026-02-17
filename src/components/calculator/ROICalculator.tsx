@@ -428,33 +428,6 @@ export function ROICalculator() {
         </AnimatePresence>
       </motion.div>
 
-      {/* Row 4: Bottom CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
-        className="glass-panel p-8 text-center"
-      >
-        <h4 className="text-xl font-semibold text-white mb-2">{t("cta.heading")}</h4>
-        <p className="text-sm text-[var(--text-muted)] mb-6 max-w-2xl mx-auto">
-          {t("cta.description")}
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-[var(--primary)]/30"
-          >
-            {t("cta.bookDemo")}
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link
-            href="/products/mira"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors"
-          >
-            {t("cta.seeMira")}
-          </Link>
-        </div>
-      </motion.div>
     </div>
   );
 }

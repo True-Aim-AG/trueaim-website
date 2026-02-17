@@ -4,12 +4,10 @@ import Image from "next/image";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowRight,
-  MapPin,
   Quote,
   Users,
   Linkedin
 } from "lucide-react";
-import { SwitzerlandMap } from "@/components/ui/SwitzerlandMap";
 
 const founderKeys = ["reuben", "frederic"] as const;
 
@@ -191,6 +189,7 @@ export default async function CompanyPage() {
             {advisorKeys.map((key, index) => {
               const name = t(`advisors.members.${key}.name`);
               const image = advisorImages[key];
+              const isDandolo = key === "dandolo";
               return (
               <MotionDiv
                 key={key}
@@ -201,13 +200,13 @@ export default async function CompanyPage() {
                 className="glass-panel glass-panel-hover p-6"
               >
                 {image ? (
-                  <div className="w-24 h-24 rounded-full overflow-hidden mb-4 ring-1 ring-[var(--border)]">
+                  <div className={`w-24 h-24 rounded-full overflow-hidden mb-4 ${isDandolo ? 'bg-transparent' : 'ring-1 ring-[var(--border)]'}`}>
                     <Image
                       src={image}
                       alt={name}
                       width={96}
                       height={96}
-                      className="w-full h-full object-cover"
+                      className={`w-full h-full object-cover ${isDandolo ? 'grayscale scale-110' : ''}`}
                     />
                   </div>
                 ) : (
@@ -284,37 +283,6 @@ export default async function CompanyPage() {
               </MotionDiv>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Headquarters Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-[var(--primary)]" />
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)]">
-                    {t("headquarters.heading")}
-                  </h2>
-                </div>
-                <address className="not-italic text-lg text-[var(--text-secondary)] leading-relaxed space-y-1">
-                  <p>{t("headquarters.address.street")}</p>
-                  <p>{t("headquarters.address.city")}</p>
-                  <p>{t("headquarters.address.country")}</p>
-                </address>
-              </div>
-              <SwitzerlandMap label={t("headquarters.mapLabel")} />
-            </div>
-          </MotionDiv>
         </div>
       </section>
 

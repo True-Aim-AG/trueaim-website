@@ -241,7 +241,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Navigation */}
-      <section className="py-12 px-6 border-t border-[var(--border)]">
+      <section className="py-12 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-between items-center">
             {prevStudy ? (

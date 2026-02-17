@@ -39,12 +39,12 @@ export const caseStudies: CaseStudy[] = [
       isAnonymized: true,
     },
     challenge:
-      "Each warranty claim required 15-30 minutes of manual cross-referencing across 5 documents in 3 languages, with 14 distinct document types per workflow. An LLM-only approach achieved just 18% accuracy due to hallucinated part names, invented coverage rules and unreliable financial calculations.",
+      "Each warranty claim required more than 30 minutes of manual cross-referencing across 5 documents in 3 languages, with 14 distinct document types per workflow.",
     solution:
       "Deployed the full True Aim stack for end-to-end claims automation. ContextBuilder handles multilingual document processing and classification. MIRA's hybrid decisioning combines deterministic rules with AI fallback for accurate coverage matching. ClaimEval provides quality assurance with full provenance tracking.",
     products: ["mira", "contextbuilder", "claimeval"],
     metrics: [
-      { label: "Decision Accuracy", value: "98%", improvement: "from 18% baseline" },
+      { label: "Decision Accuracy", value: "98%", improvement: "on development set" },
       { label: "Time to Results", value: "7 days", improvement: "full pipeline live" },
       { label: "No-LLM Resolution", value: "80-90%", improvement: "of line items" },
       { label: "Languages", value: "3", improvement: "DE / FR / IT" },

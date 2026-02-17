@@ -27,7 +27,7 @@ export async function TrustBar() {
   const t = await getTranslations("trustBar");
 
   return (
-    <section className="py-24 px-6 border-y border-[var(--border)]">
+    <section className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}

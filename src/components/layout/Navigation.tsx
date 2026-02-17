@@ -42,20 +42,28 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="bg-white rounded-lg p-1 shadow-lg shadow-white/10">
-              <Image
-                src="/images/logo.png"
-                alt={t("logoAlt")}
-                width={36}
-                height={36}
-                className="object-contain"
-                priority
-                unoptimized
-              />
-            </div>
-            <span className="text-2xl font-bold tracking-tight text-[var(--text-primary)]">
-              True <span className="text-[var(--primary)]">AI</span>m
-            </span>
+            <Image
+              src="/images/logo.png"
+              alt={t("logoAlt")}
+              width={40}
+              height={40}
+              className="object-contain"
+              priority
+            />
+            <Image
+              src="/images/wordmark.png"
+              alt="True AIm"
+              width={120}
+              height={20}
+              className="h-5 w-auto object-contain light-only"
+            />
+            <Image
+              src="/images/wordmark-dark.png"
+              alt="True AIm"
+              width={120}
+              height={20}
+              className="h-5 w-auto object-contain dark-only"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -172,7 +180,7 @@ export function Navigation() {
         {/* Mobile Menu */}
         <div className={cn(
           "md:hidden overflow-hidden transition-all duration-300",
-          mobileMenuOpen ? "max-h-[500px] pt-4" : "max-h-0"
+          mobileMenuOpen ? "max-h-[80vh] overflow-y-auto pt-4" : "max-h-0"
         )}>
           <div className="flex flex-col gap-2 pb-4">
             {/* Products Section */}
