@@ -1,9 +1,21 @@
 import { Link } from "@/i18n/navigation";
-import { ArrowRight, BookOpen, Calendar, Clock, Shield, Scale } from "lucide-react";
+import { ArrowRight, BookOpen, Calendar, Clock, Shield, Scale, BarChart3 } from "lucide-react";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 
 // Blog post data
 const blogPosts = [
+  {
+    slug: "why-claims-ai-pilots-stall",
+    title: "Why Claims AI Pilots Stall Before Production Readiness",
+    excerpt:
+      "Many claims AI pilots report accuracy in the mid 90s. Yet months later they are still not live in production. The root cause is measurement discipline and production realism.",
+    category: "Production Readiness",
+    categoryIcon: BarChart3,
+    date: "February 2026",
+    readTime: "10 min read",
+    tags: ["Claims AI", "Production Readiness", "Evaluation", "Accuracy"],
+    featured: true,
+  },
   {
     slug: "build-vs-buy-idp-vendors",
     title: "Build vs Buy: What to Demand from IDP Vendors",
@@ -14,7 +26,7 @@ const blogPosts = [
     date: "February 2025",
     readTime: "15 min read",
     tags: ["Vendor Evaluation", "Build vs Buy", "IDP", "Claims AI"],
-    featured: true,
+    featured: false,
   },
   {
     slug: "auditability-evidence-chains",

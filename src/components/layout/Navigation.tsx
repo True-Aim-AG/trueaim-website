@@ -42,14 +42,16 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/images/logo.png"
-              alt={t("logoAlt")}
-              width={40}
-              height={40}
-              className="object-contain"
-              priority
-            />
+            <div className="bg-white rounded-lg p-1 shadow-lg shadow-white/10">
+              <Image
+                src="/images/logo.png"
+                alt={t("logoAlt")}
+                width={36}
+                height={36}
+                className="object-contain"
+                priority
+              />
+            </div>
             <Image
               src="/images/wordmark.png"
               alt="True AIm"
