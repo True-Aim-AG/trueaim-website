@@ -1,0 +1,91 @@
+Why Claims AI Pilots Stall Before Production Readiness
+Many claims AI pilots report accuracy in the mid 90s.
+
+Yet months later they are still not live in production.
+
+This pattern is common across the market. It is rarely caused by lack of budget or executive support. In most cases the root cause is measurement discipline and production realism.
+
+In early pilots reported accuracy is often calculated on development data. These are claims the system has already been tuned against during configuration. When evaluated on unseen production data accuracy frequently drops into the 70s.
+
+The difference between those two numbers determines whether a system can be safely deployed.
+
+The accuracy illusion
+When someone reports 95 percent accuracy the first question should be simple. Measured on what dataset.
+
+Most pilots rely on curated development sets. These sets are useful for tuning prompts rules and extraction pipelines. They are not representative of full production variability.
+
+Production includes policy variations unfamiliar invoice formats language differences rare edge cases and inconsistent data quality. A model that performs well on curated data may fail silently on real claims.
+
+What matters is performance on a holdout set. Claims the system has never seen. Drawn directly from production archives. Stratified across approval and denial claim value language vehicle brand and document complexity.
+
+In our own evaluation the development set reached 98 percent. The holdout set reached 76.7 percent.
+
+That gap was not caused by randomness. It exposed missing coverage logic vocabulary gaps and structural extraction weaknesses.
+
+A pilot measured only on development data creates confidence. A pilot measured on a holdout set creates clarity.
+
+What changes between demo and production
+The transition from demo to production introduces distribution shift. The characteristics of real claims differ in meaningful ways from test data.
+
+We initially modelled 5 coverage categories. Production required 13. When additional categories entered the pipeline the system produced confident but incorrect outputs. After expanding coverage logic accuracy improved by 34 percentage points in a single iteration.
+
+The model was not unstable. The domain model was incomplete.
+
+Language introduced additional complexity. German and French claims required separate vocabularies and handling logic. German compound words behave differently from French terminology. Without explicit modelling entire classes of valid claims were rejected.
+
+Document structure was another source of error. Multi column invoices page breaks duplicated line items and layout differences led to missing or double counted amounts when extraction logic was not format aware.
+
+These are standard operational realities. They are not rare edge cases.
+
+If a pilot has not been stress tested against these conditions reported accuracy is only partially informative.
+
+The three metrics that matter
+A single accuracy number hides operational trade offs.
+
+Three metrics provide better visibility into production readiness.
+
+False approve rate
+This measures financial exposure. A false approval means a claim was paid incorrectly. Even a small percentage can materially affect leakage and audit exposure.
+
+False deny rate
+This measures customer and operational impact. Incorrect denials lead to complaints rework escalation and reputational risk.
+
+Refer rate
+This measures automation depth. If a large percentage of claims are referred to human reviewers the system has not materially reduced workload.
+
+In early iterations our false approve rate was 44 percent. Reducing it below 5 percent required structured domain expansion vocabulary refinement and threshold calibration. It did not require a new model.
+
+Before entering production discussions ask vendors for these three metrics measured on a properly defined holdout set and broken down by claim type and language.
+
+If they cannot provide that level of detail the pilot has not yet reached operational maturity.
+
+What moves a pilot forward
+Progress did not come from replacing technology. It came from disciplined evaluation cycles.
+
+We constructed a 50 claim holdout dataset stratified by outcome value language and structural complexity. A senior adjuster labelled each claim. That dataset was quarantined and never used for tuning.
+
+Every iteration followed the same loop. Measure diagnose correct retest.
+
+A hybrid architecture proved necessary. Deterministic rules handled clear coverage definitions and structured logic. Language models handled ambiguous descriptions and contextual interpretation. Each component was constrained to the role it performs best.
+
+Confidence thresholds were asymmetric by design. Approvals required higher confidence than denials. Low confidence decisions were routed to human review to protect against financial exposure.
+
+Across 47 iterations accuracy improved from 18 percent to 98 percent on the holdout set. The largest single improvement resulted from expanding coverage categories not from changing models.
+
+Domain modelling and measurement discipline were the primary drivers of stability.
+
+Operational takeaway
+Many claims AI pilots stall because they are measured optimistically and engineered incrementally without structured evaluation.
+
+Breaking through the 70 to 80 percent plateau requires:
+
+A properly stratified holdout set derived from real production data
+Clear separation of false approvals false denials and referrals
+Explicit domain coverage modelling across all policy categories
+Language specific vocabulary design
+Confidence thresholds aligned with financial and operational risk
+
+Claims automation is viable. It requires honest measurement clear metrics and deliberate domain engineering.
+
+If you are evaluating a pilot or preparing for production deployment and want to benchmark your approach against a structured holdout framework we are available to share how we structure evaluation and iteration.
+
