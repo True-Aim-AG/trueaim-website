@@ -76,9 +76,23 @@ All copy is in /docs/TrueAim_Website_Copy.md
 
 ## Deployment
 - **Platform**: Vercel
-- **Auto-deploy**: Enabled on push to `main` branch
-- **Production URL**: https://trueaim.ai
-- **Project**: trueaim (linked to Fr3nn3r/TrueAIm.ai GitHub repo)
+- **GitHub repo**: True-Aim-AG/trueaim-website (redirected from Fr3nn3r/TrueAIm.ai)
+
+### Vercel Projects
+
+| Project | URL | Purpose | Project ID |
+|---------|-----|---------|------------|
+| `trueaim` | https://trueaim.ai / https://www.trueaim.ai | **Production** | `prj_LPsEqV6syPd3AfA4Lq0j94ZLjbuj` |
+| `trueaim-staging` | https://trueaim-staging.vercel.app | **Staging** (preview before production) | `prj_HZTYPi5GKNtnDVxMW1UOzHiXOCbe` |
+
+### Deploy Commands
+- **Staging**: `npx vercel --prod --project trueaim-staging` (deploy to staging for review)
+- **Production**: `npx vercel --prod` (deploys to trueaim.ai via `.vercel/project.json`)
+
+### Important
+- `.vercel/project.json` must point to the **production** project (`trueaim`). Do not change this.
+- Auto-deploy via GitHub integration is currently not triggering. Use CLI deploys.
+- Always deploy to staging first, verify, then deploy to production.
 
 ## Reference Files
 - `/docs/TrueAim_Website_PRD.md` - Full PRD
