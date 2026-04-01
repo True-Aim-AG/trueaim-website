@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "@/i18n/navigation";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import {
   ArrowLeft,
   ArrowRight,
@@ -21,7 +21,50 @@ import {
   RefreshCw,
   ShieldCheck,
   Target,
+  ArrowDownRight,
+  Database,
+  Brain,
+  BarChart3,
 } from "lucide-react";
+
+/* ─── Animated counter ─── */
+function AnimatedNumber({ value, suffix = "" }: { value: number; suffix?: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true });
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    let start = 0;
+    const duration = 1200;
+    const step = (timestamp: number) => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setDisplay(Math.round(eased * value));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [isInView, value]);
+
+  return (
+    <span ref={ref}>
+      {display}
+      {suffix}
+    </span>
+  );
+}
+
+/* ─── Stagger container ─── */
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1 } },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0, 0, 0.2, 1] as const } },
+};
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 } as const,
@@ -30,6 +73,7 @@ const fadeIn = {
   transition: { duration: 0.6 } as const,
 };
 
+/* ─── Expandable architecture section ─── */
 function ExpandableSection({
   title,
   children,
@@ -53,23 +97,119 @@ function ExpandableSection({
           className={`w-4 h-4 text-[var(--text-muted)] transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         />
       </button>
-      {open && <div className="px-5 pb-5 pt-0">{children}</div>}
+      <motion.div
+        initial={false}
+        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="overflow-hidden"
+      >
+        <div className="px-5 pb-5 pt-0">{children}</div>
+      </motion.div>
     </div>
   );
 }
 
+/* ─── Design principle card (Constraint → Design → Outcome) ─── */
+function DesignBlock({
+  constraintIcon: ConstraintIcon,
+  constraint,
+  design,
+  outcome,
+  index,
+}: {
+  constraintIcon: React.ElementType;
+  constraint: string;
+  design: string;
+  outcome: string;
+  index: number;
+}) {
+  return (
+    <motion.div
+      variants={fadeUp}
+      className="glass-panel overflow-hidden relative group"
+    >
+      {/* Accent bar */}
+      <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-amber-400 via-blue-500 to-emerald-400" />
+
+      <div className="p-6 pl-7 space-y-5">
+        {/* Constraint */}
+        <div className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+            <ConstraintIcon className="w-5 h-5 text-amber-400" />
+          </div>
+          <div>
+            <div className="text-[10px] font-semibold text-amber-400/80 uppercase tracking-widest mb-1">
+              Constraint
+            </div>
+            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+              {constraint}
+            </p>
+          </div>
+        </div>
+
+        {/* Arrow connector */}
+        <div className="flex items-center gap-2 pl-14">
+          <ArrowDownRight className="w-4 h-4 text-[var(--text-muted)]/40" />
+          <div className="h-px flex-1 bg-gradient-to-r from-[var(--border)] to-transparent" />
+        </div>
+
+        {/* Design */}
+        <div className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+            <Brain className="w-5 h-5 text-blue-400" />
+          </div>
+          <div>
+            <div className="text-[10px] font-semibold text-blue-400/80 uppercase tracking-widest mb-1">
+              Design
+            </div>
+            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+              {design}
+            </p>
+          </div>
+        </div>
+
+        {/* Arrow connector */}
+        <div className="flex items-center gap-2 pl-14">
+          <ArrowDownRight className="w-4 h-4 text-[var(--text-muted)]/40" />
+          <div className="h-px flex-1 bg-gradient-to-r from-[var(--border)] to-transparent" />
+        </div>
+
+        {/* Outcome */}
+        <div className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+            <CheckCircle className="w-5 h-5 text-emerald-400" />
+          </div>
+          <div>
+            <div className="text-[10px] font-semibold text-emerald-400/80 uppercase tracking-widest mb-1">
+              Outcome
+            </div>
+            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+              {outcome}
+            </p>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+/* ═══════════════════════════════════════════════
+   PAGE
+   ═══════════════════════════════════════════════ */
 export default function AISupportCaseStudy() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-[var(--background)] to-slate-900">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--primary)] opacity-10 rounded-full blur-3xl" />
+      {/* ── HERO ── */}
+      <section className="relative py-28 px-6 overflow-hidden bg-gradient-to-b from-[var(--background)] via-slate-900/80 to-[var(--background)]">
+        {/* Floating gradient orbs */}
+        <div className="absolute top-10 left-10 w-[500px] h-[500px] bg-[var(--primary)] opacity-[0.07] rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-500 opacity-[0.05] rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7 }}
           >
             {/* Breadcrumb */}
             <Link
@@ -80,103 +220,126 @@ export default function AISupportCaseStudy() {
               All Case Studies
             </Link>
 
-            {/* Customer Info */}
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-xl bg-[var(--subtle-bg)] flex items-center justify-center">
-                <Building2 className="w-8 h-8 text-[var(--text-muted)]" />
+            {/* Customer badge */}
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-14 h-14 rounded-xl bg-[var(--subtle-bg)] flex items-center justify-center ring-1 ring-[var(--border)]">
+                <Building2 className="w-7 h-7 text-[var(--text-muted)]" />
               </div>
               <div>
                 <div className="text-lg font-medium text-[var(--text-primary)]">
                   Swiss Insurance Services Platform
                 </div>
-                <div className="text-[var(--text-muted)]">
-                  Insurance Services / B2B Platform · 95 tickets/day · 3
-                  languages (DE/IT/FR)
+                <div className="text-sm text-[var(--text-muted)]">
+                  Insurance Services / B2B Platform · 230 tickets/day · 3
+                  languages (DE/IT/FR) · 5 L1 agents
                 </div>
               </div>
             </div>
 
-            {/* Title */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-              Multilingual B2B support scaled 35% with zero headcount increase
-              using AI-assisted resolution
+            {/* Headline */}
+            <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[var(--text-primary)] mb-5 leading-[1.15]">
+              Multilingual B2B support scaled 35% with a 40% smaller team using
+              AI-assisted resolution
             </h1>
-            <p className="text-xl md:text-2xl text-[var(--primary)] font-semibold mb-6">
-              38% fully automated, 91% faster first response, 87% AI draft
-              acceptance
-            </p>
 
-            {/* Product & Timeline */}
-            <div className="flex flex-wrap items-center gap-4">
+            {/* Sub-headline metrics */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-xl md:text-2xl font-semibold mb-8"
+            >
+              <span className="text-[var(--primary)]">43% fully automated</span>
+              <span className="text-[var(--text-muted)] mx-2">·</span>
+              <span className="text-emerald-400">93% faster first response</span>
+              <span className="text-[var(--text-muted)] mx-2">·</span>
+              <span className="text-[var(--primary)]">90% AI draft acceptance</span>
+            </motion.p>
+
+            {/* Product & Timeline tags */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              className="flex flex-wrap items-center gap-3"
+            >
               <span className="text-sm px-3 py-1.5 rounded-full font-medium bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
                 ClaimPilot
               </span>
-              <div className="flex items-center gap-2 text-[var(--text-muted)]">
+              <span className="text-sm px-3 py-1.5 rounded-full font-medium bg-[var(--primary)]/10 border border-[var(--primary)]/20 text-[var(--primary)]">
+                True Aim AG
+              </span>
+              <div className="flex items-center gap-2 text-[var(--text-muted)] text-sm">
                 <Clock className="w-4 h-4" />
                 4-week POC, 5-month rollout
               </div>
-            </div>
+              <div className="text-sm text-[var(--text-muted)]">
+                March 2026
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Metrics Grid */}
-      <section className="py-12 px-6">
+      {/* ── KEY METRICS ── */}
+      <section className="py-14 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3"
           >
             {[
-              {
-                value: "38%",
-                label: "Fully automated",
-                improvement: "no human touch",
-              },
-              {
-                value: "91%",
-                label: "Faster first response",
-                improvement: "45 min to < 4 min",
-              },
-              {
-                value: "87%",
-                label: "AI draft acceptance",
-                improvement: "minor or no edits",
-              },
-              {
-                value: "89%",
-                label: "Customer satisfaction",
-                improvement: "+9 points from 80%",
-              },
-            ].map((metric) => (
-              <div key={metric.label} className="glass-panel p-6 text-center">
-                <div className="text-3xl md:text-4xl font-bold font-mono-data text-[var(--primary)] mb-1">
-                  {metric.value}
-                </div>
-                <div className="text-sm text-[var(--text-muted)]">
-                  {metric.label}
-                </div>
-                {metric.improvement && (
-                  <div className="text-xs text-[var(--secondary)] mt-1">
-                    {metric.improvement}
-                  </div>
+              { value: 43, suffix: "%", label: "Fully automated", sub: "no human touch", highlight: true },
+              { value: 90, suffix: "%", label: "AI draft acceptance", sub: "minor or no edits", highlight: false },
+              { value: 93, suffix: "%", label: "Faster first response", sub: "45 min → < 4 min", highlight: true },
+              { value: 91, suffix: "%", label: "Customer satisfaction", sub: "+11 points from 80%", highlight: false },
+              { value: 94, suffix: "%", label: "AI-assisted coverage", sub: "of all tickets", highlight: false },
+              { value: 2.1, suffix: "%", label: "Escalation false +", sub: "target was <5%", highlight: false },
+              { value: 311, suffix: "", label: "Tickets/day", sub: "up from 230", highlight: true },
+            ].map((m) => (
+              <motion.div
+                key={m.label}
+                variants={fadeUp}
+                className={`glass-panel p-5 text-center relative overflow-hidden ${
+                  m.highlight
+                    ? "ring-1 ring-[var(--primary)]/30"
+                    : ""
+                }`}
+              >
+                {m.highlight && (
+                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[var(--primary)] to-emerald-400" />
                 )}
-              </div>
+                <div className="text-2xl md:text-3xl font-bold font-mono-data text-[var(--primary)] mb-1">
+                  {m.suffix === "%" && m.value !== 2.1 ? (
+                    <AnimatedNumber value={m.value} suffix="%" />
+                  ) : m.value === 2.1 ? (
+                    "2.1%"
+                  ) : (
+                    <AnimatedNumber value={m.value} />
+                  )}
+                </div>
+                <div className="text-xs text-[var(--text-muted)] leading-tight">
+                  {m.label}
+                </div>
+                <div className="text-[10px] text-[var(--secondary)] mt-1">
+                  {m.sub}
+                </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* === MAIN CONTENT + SIDEBAR === */}
+      {/* ── MAIN CONTENT + SIDEBAR ── */}
       <section className="py-12 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-8">
-            {/* Main Content */}
-            <article className="space-y-16">
-              {/* 1. Problem */}
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_340px] gap-10">
+            {/* ── MAIN ── */}
+            <article className="space-y-20">
+              {/* ─ PROBLEM ─ */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                   Problem
@@ -188,10 +351,10 @@ export default function AISupportCaseStudy() {
                     Switzerland, Italy and Germany. Platform users submit support
                     requests through an in-app button or country-specific email
                     addresses. Everything funnels into a shared Freshdesk inbox
-                    managed by three first-level agents.
+                    managed by five first-level agents.
                   </p>
                   <p>
-                    By early 2026, daily ticket volume had reached 70 requests
+                    By early 2026, daily ticket volume had reached 230 requests
                     per day and was climbing 20-25% year over year. The team
                     maintained an 80% customer satisfaction score and a two-hour
                     first-response SLA, but the gap between ticket growth and
@@ -199,29 +362,36 @@ export default function AISupportCaseStudy() {
                   </p>
                 </div>
 
-                {/* Stats Grid */}
-                <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {/* Baseline stats */}
+                <motion.div
+                  variants={stagger}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3"
+                >
                   {[
-                    { value: "70", label: "Tickets per day (baseline)" },
-                    { value: "3", label: "L1 agents" },
+                    { value: "230", label: "Tickets per day" },
+                    { value: "5", label: "L1 agents" },
                     { value: "3", label: "Languages (DE/IT/FR)" },
                     { value: "20-25%", label: "YoY volume growth" },
-                  ].map((stat) => (
-                    <div
-                      key={stat.label}
+                  ].map((s) => (
+                    <motion.div
+                      key={s.label}
+                      variants={fadeUp}
                       className="glass-panel-light p-4 text-center"
                     >
                       <div className="text-lg font-bold font-mono-data text-[var(--primary)]">
-                        {stat.value}
+                        {s.value}
                       </div>
                       <div className="text-xs text-[var(--text-muted)]">
-                        {stat.label}
+                        {s.label}
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
+                </motion.div>
 
-                {/* Customer Requirements */}
+                {/* Defined outcomes */}
                 <div className="mt-8">
                   <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-4">
                     Defined outcomes
@@ -232,23 +402,30 @@ export default function AISupportCaseStudy() {
                       "We need consistent response quality across three languages regardless of who is on shift",
                       "We need our agents spending time on complex cases, not answering the same questions repeatedly",
                     ].map((req) => (
-                      <div
+                      <motion.div
                         key={req}
+                        {...fadeIn}
                         className="glass-panel-light p-3 text-sm text-[var(--text-secondary)] flex items-start gap-3"
                       >
                         <Quote className="w-4 h-4 text-[var(--primary)] flex-shrink-0 mt-0.5 opacity-50" />
                         <span>&ldquo;{req}&rdquo;</span>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
 
-                {/* Key Constraints */}
+                {/* Key constraints */}
                 <div className="mt-8">
                   <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-4">
                     Key constraints
                   </h3>
-                  <div className="space-y-3">
+                  <motion.div
+                    variants={stagger}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    className="space-y-3"
+                  >
                     {[
                       {
                         icon: Globe,
@@ -258,21 +435,22 @@ export default function AISupportCaseStudy() {
                       {
                         icon: BookOpen,
                         title: "Knowledge constraint",
-                        desc: "The answers to most tickets already existed, scattered across Confluence documentation, Freshdesk canned responses and the heads of three experienced agents. No single source of truth. New agents took weeks to ramp. Consistency drifted across languages and shifts.",
+                        desc: "The answers to most tickets already existed, scattered across Confluence documentation, Freshdesk canned responses and the heads of five experienced agents. No single source of truth. New agents took weeks to ramp. Consistency drifted across languages and shifts.",
                       },
                       {
                         icon: MessageSquare,
                         title: "Workflow constraint",
-                        desc: "Three agents with an established Freshdesk-based process. The system could not require a new tool or change how agents worked day to day.",
+                        desc: "Five agents with an established Freshdesk-based process. The system could not require a new tool or change how agents worked day to day.",
                       },
                       {
                         icon: Users,
                         title: "Volume constraint",
-                        desc: "70 tickets per day climbing 20-25% year over year. Roughly 70% were answerable from existing knowledge without any system investigation. Agents spent the same time on a password-reset walkthrough as on a complex integration issue. The repetitive work was crowding out cases that needed human judgment.",
+                        desc: "230 tickets per day climbing 20-25% year over year. Roughly 70% were answerable from existing knowledge without any system investigation. Agents spent the same time on a password-reset walkthrough as on a complex integration issue. The repetitive work was crowding out cases that needed human judgment.",
                       },
                     ].map((item) => (
-                      <div
+                      <motion.div
                         key={item.title}
+                        variants={fadeUp}
                         className="glass-panel p-5 flex gap-4"
                       >
                         <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center flex-shrink-0">
@@ -286,434 +464,169 @@ export default function AISupportCaseStudy() {
                             {item.desc}
                           </p>
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
-                  </div>
+                  </motion.div>
                 </div>
               </motion.div>
 
-              {/* 2. First-Principles Design */}
+              {/* ─ FIRST-PRINCIPLES DESIGN ─ */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                   First-principles design
                 </h2>
 
-                <div className="space-y-8">
-                  {/* Design Block 1: Knowledge consolidation */}
-                  <div className="glass-panel p-6">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                        <BookOpen className="w-5 h-5 text-amber-400" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                          Constraint
-                        </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                          70% of tickets were answerable from existing knowledge,
-                          but that knowledge lived in three places: Confluence
-                          documentation, Freshdesk canned responses and
-                          experienced agents&apos; heads. No structured retrieval
-                          existed. New agents took weeks to become productive
-                          because the knowledge transfer was informal and
-                          incomplete.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                        <Layers className="w-5 h-5 text-blue-400" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                          Design
-                        </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                          A retrieval-augmented generation pipeline ingesting all
-                          three knowledge sources plus 18 months of historical
-                          ticket-response pairs. A single retrieval layer serves
-                          all agents and all languages. The system surfaces the
-                          most relevant knowledge for each incoming ticket,
-                          regardless of which source it originally lived in.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="w-5 h-5 text-emerald-400" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                          Outcome
-                        </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                          One knowledge base, three languages, consistent answers
-                          regardless of agent experience level. The ramp time for
-                          new agents collapsed because the institutional knowledge
-                          that previously lived in people&apos;s heads became
-                          searchable and retrievable.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Design Block 2: Multilingual quality */}
-                  <div className="glass-panel p-6">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                        <Globe className="w-5 h-5 text-amber-400" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                          Constraint
-                        </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                          Tickets arrive in German (50%), Italian (35%) and French
-                          (15%). Each language requires native-quality responses
-                          with market-specific terminology. The strongest Italian
-                          speaker on the team was part-time, creating chronic
-                          quality inconsistency in that language. Hiring
-                          trilingual L1 agents in Switzerland is slow and
-                          expensive.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                        <MessageSquare className="w-5 h-5 text-blue-400" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                          Design
-                        </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                          Language-aware generation calibrated per market. The
-                          system detects the ticket language, retrieves
-                          language-matched knowledge and generates responses using
-                          terminology validated against historical agent responses
-                          in that language. The training signal is the team&apos;s
-                          own best responses, not generic translation.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="w-5 h-5 text-emerald-400" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                          Outcome
-                        </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                          Native-quality responses in all three languages. Italian
-                          CSAT (historically the weakest at 76% due to part-time
-                          coverage) jumped to 88%. Response quality no longer
-                          depends on which agent is on shift or which language
-                          they are strongest in.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Design Block 3: Workflow integration */}
-                  <div className="glass-panel p-6">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                        <MessageSquare className="w-5 h-5 text-amber-400" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                          Constraint
-                        </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                          Three agents with an established Freshdesk workflow. Any
-                          system requiring a new interface or changing their daily
-                          process would face adoption resistance and slow rollout.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                        <Zap className="w-5 h-5 text-blue-400" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                          Design
-                        </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                          AI drafts surface as internal notes inside Freshdesk.
-                          Agents review, edit if needed, send. No new interface.
-                          No workflow change. The system adapts to the tool they
-                          already use, not the other way around.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="w-5 h-5 text-emerald-400" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                          Outcome
-                        </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                          Adoption was immediate. Draft acceptance hit 78% in the
-                          first week against a 60% target. Six months in, agents
-                          edit roughly one in eight drafts, mostly to add a
-                          personal touch rather than correct factual errors.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Design Block 4: Confidence-based routing */}
-                  <div className="glass-panel p-6">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                        <Target className="w-5 h-5 text-amber-400" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                          Constraint
-                        </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                          Not all tickets carry the same risk. A password-reset
-                          walkthrough has a different error cost than a billing
-                          dispute or an integration question. Treating every
-                          ticket as equally risky wastes agent time on safe
-                          categories while under-protecting sensitive ones.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                        <ShieldCheck className="w-5 h-5 text-blue-400" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                          Design
-                        </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                          Confidence-based routing with three tiers.
-                          High-confidence, low-risk categories auto-send without
-                          human involvement. Medium-confidence tickets surface as
-                          pre-drafted responses for agent review. Low-confidence
-                          or sensitive tickets route to agents with retrieved
-                          context but no draft. Classification confidence
-                          thresholds are per-category, validated against
-                          historical accuracy before any category qualifies for
-                          auto-send.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="w-5 h-5 text-emerald-400" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                          Outcome
-                        </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                          38% of tickets resolve fully automatically. 94% receive
-                          AI assistance in some form. The remaining 6% are
-                          escalations that bypass the system entirely. Agent time
-                          concentrates on the cases that genuinely require human
-                          judgment.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <motion.div
+                  variants={stagger}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className="space-y-6"
+                >
+                  <DesignBlock
+                    constraintIcon={BookOpen}
+                    index={0}
+                    constraint="70% of tickets were answerable from existing knowledge, but that knowledge lived in three places: Confluence documentation, Freshdesk canned responses and experienced agents' heads. No structured retrieval existed. New agents took weeks to become productive because the knowledge transfer was informal and incomplete."
+                    design="A retrieval-augmented generation pipeline ingesting all three knowledge sources plus 18 months of historical ticket-response pairs. A single retrieval layer serves all agents and all languages. The system surfaces the most relevant knowledge for each incoming ticket, regardless of which source it originally lived in."
+                    outcome="One knowledge base, three languages, consistent answers regardless of agent experience level. The ramp time for new agents collapsed because the institutional knowledge that previously lived in people's heads became searchable and retrievable."
+                  />
+                  <DesignBlock
+                    constraintIcon={Globe}
+                    index={1}
+                    constraint="Tickets arrive in German (50%), Italian (35%) and French (15%). Each language requires native-quality responses with market-specific terminology. The strongest Italian speaker on the team was part-time, creating chronic quality inconsistency in that language. Hiring trilingual L1 agents in Switzerland is slow and expensive."
+                    design="Language-aware generation calibrated per market. The system detects the ticket language, retrieves language-matched knowledge and generates responses using terminology validated against historical agent responses in that language. The training signal is the team's own best responses, not generic translation."
+                    outcome="Native-quality responses in all three languages. Italian CSAT (historically the weakest at 76% due to part-time coverage) jumped to 88%. Response quality no longer depends on which agent is on shift or which language they are strongest in."
+                  />
+                  <DesignBlock
+                    constraintIcon={MessageSquare}
+                    index={2}
+                    constraint="Five agents with an established Freshdesk workflow. Any system requiring a new interface or changing their daily process would face adoption resistance and slow rollout."
+                    design="AI drafts surface as internal notes inside Freshdesk. Agents review, edit if needed, send. No new interface. No workflow change. The system adapts to the tool they already use, not the other way around."
+                    outcome="Adoption was immediate. Draft acceptance hit 78% in the first week against a 60% target. Six months in, agents edit roughly one in ten drafts, mostly to add a personal touch rather than correct factual errors."
+                  />
+                  <DesignBlock
+                    constraintIcon={Target}
+                    index={3}
+                    constraint="Not all tickets carry the same risk. A password-reset walkthrough has a different error cost than a billing dispute or an integration question. Treating every ticket as equally risky wastes agent time on safe categories while under-protecting sensitive ones."
+                    design="Confidence-based routing with three tiers. High-confidence, low-risk categories auto-send without human involvement. Medium-confidence tickets surface as pre-drafted responses for agent review. Low-confidence or sensitive tickets route to agents with retrieved context but no draft. Classification confidence thresholds are per-category, validated against historical accuracy before any category qualifies for auto-send."
+                    outcome="43% of tickets resolve fully automatically. 94% receive AI assistance in some form. The remaining 6% are escalations that bypass the system entirely. Agent time concentrates on the cases that genuinely require human judgment."
+                  />
+                </motion.div>
               </motion.div>
 
-              {/* 3. Architecture */}
+              {/* ─ ARCHITECTURE ─ */}
               <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
                   Architecture
                 </h2>
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-[var(--text-secondary)] leading-relaxed mb-8">
                   The system runs as four layers between the customer&apos;s
                   Freshdesk inbox and their agents.
                 </p>
 
-                {/* Pipeline Visualization */}
-                <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 mb-8">
+                {/* Pipeline visualization */}
+                <motion.div
+                  variants={stagger}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className="grid grid-cols-1 sm:grid-cols-4 gap-2 mb-8"
+                >
                   {[
-                    {
-                      icon: BookOpen,
-                      label: "Knowledge Ingestion",
-                      stage: "1",
-                    },
-                    {
-                      icon: Layers,
-                      label: "Classification & Routing",
-                      stage: "2",
-                    },
-                    {
-                      icon: MessageSquare,
-                      label: "Response Generation",
-                      stage: "3",
-                    },
-                    {
-                      icon: RefreshCw,
-                      label: "Feedback & Learning",
-                      stage: "4",
-                    },
+                    { icon: Database, label: "Knowledge Ingestion", stage: "1", color: "text-amber-400", bg: "bg-amber-500/15" },
+                    { icon: Layers, label: "Classification & Routing", stage: "2", color: "text-blue-400", bg: "bg-blue-500/15" },
+                    { icon: MessageSquare, label: "Response Generation", stage: "3", color: "text-[var(--primary)]", bg: "bg-[var(--primary)]/15" },
+                    { icon: RefreshCw, label: "Feedback & Learning", stage: "4", color: "text-emerald-400", bg: "bg-emerald-500/15" },
                   ].map((s) => (
-                    <div
+                    <motion.div
                       key={s.stage}
-                      className="glass-panel-light p-3 text-center"
+                      variants={fadeUp}
+                      className="glass-panel p-4 text-center relative overflow-hidden group"
                     >
-                      <s.icon className="w-5 h-5 text-[var(--primary)] mx-auto mb-1" />
-                      <div className="text-[10px] text-[var(--text-muted)] uppercase tracking-wider">
+                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[var(--primary)]/40 to-transparent" />
+                      <div className={`w-10 h-10 rounded-lg ${s.bg} flex items-center justify-center mx-auto mb-2`}>
+                        <s.icon className={`w-5 h-5 ${s.color}`} />
+                      </div>
+                      <div className="text-[10px] text-[var(--text-muted)] uppercase tracking-wider font-medium">
                         Layer {s.stage}
                       </div>
-                      <div className="text-xs font-medium text-[var(--text-primary)]">
+                      <div className="text-xs font-semibold text-[var(--text-primary)] mt-0.5">
                         {s.label}
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
+                </motion.div>
 
-                {/* Architecture Detail Sections */}
+                {/* Architecture detail sections */}
                 <div className="space-y-3">
                   <ExpandableSection
                     title="1. Knowledge ingestion and indexing"
                     defaultOpen
                   >
-                    <div className="space-y-3 text-sm text-[var(--text-secondary)] leading-relaxed">
-                      <ul className="space-y-2">
-                        <li className="flex items-start gap-2">
+                    <ul className="space-y-2 text-sm text-[var(--text-secondary)] leading-relaxed">
+                      {[
+                        "Three source types: Confluence documentation, Freshdesk canned responses, 18 months of historical ticket-response pairs.",
+                        "Language-specific indexing. Content tagged and retrievable by language with terminology mapping across German, Italian and French.",
+                        "Incremental updates. New agent responses and corrections feed back into the knowledge base automatically. The system learns from every interaction without manual retraining.",
+                      ].map((item) => (
+                        <li key={item} className="flex items-start gap-2">
                           <CheckCircle className="w-4 h-4 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                          <span>
-                            Three source types: Confluence documentation,
-                            Freshdesk canned responses, 18 months of historical
-                            ticket-response pairs.
-                          </span>
+                          <span>{item}</span>
                         </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                          <span>
-                            Language-specific indexing. Content tagged and
-                            retrievable by language with terminology mapping
-                            across German, Italian and French.
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                          <span>
-                            Incremental updates. New agent responses and
-                            corrections feed back into the knowledge base
-                            automatically. The system learns from every
-                            interaction without manual retraining.
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
+                      ))}
+                    </ul>
                   </ExpandableSection>
 
                   <ExpandableSection title="2. Classification and routing">
-                    <div className="space-y-3 text-sm text-[var(--text-secondary)] leading-relaxed">
-                      <ul className="space-y-2">
-                        <li className="flex items-start gap-2">
+                    <ul className="space-y-2 text-sm text-[var(--text-secondary)] leading-relaxed">
+                      {[
+                        "Language detection on every incoming ticket.",
+                        "Category classification with per-ticket confidence scoring.",
+                        "Routing decision based on confidence: auto-send (high confidence in a validated category), draft for review (medium confidence) or context-only with no draft (low confidence or sensitive category).",
+                        "Confidence thresholds calibrated per category against historical accuracy. A category only qualifies for auto-send after sustained accuracy above validated thresholds.",
+                      ].map((item) => (
+                        <li key={item} className="flex items-start gap-2">
                           <CheckCircle className="w-4 h-4 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                          <span>
-                            Language detection on every incoming ticket.
-                          </span>
+                          <span>{item}</span>
                         </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                          <span>
-                            Category classification with per-ticket confidence
-                            scoring.
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                          <span>
-                            Routing decision based on confidence: auto-send (high
-                            confidence in a validated category), draft for review
-                            (medium confidence) or context-only with no draft
-                            (low confidence or sensitive category).
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                          <span>
-                            Confidence thresholds calibrated per category against
-                            historical accuracy. A category only qualifies for
-                            auto-send after sustained accuracy above validated
-                            thresholds.
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
+                      ))}
+                    </ul>
                   </ExpandableSection>
 
                   <ExpandableSection title="3. Response generation">
-                    <div className="space-y-3 text-sm text-[var(--text-secondary)] leading-relaxed">
-                      <ul className="space-y-2">
-                        <li className="flex items-start gap-2">
+                    <ul className="space-y-2 text-sm text-[var(--text-secondary)] leading-relaxed">
+                      {[
+                        "Retrieval: language-matched knowledge chunks ranked by relevance to the specific ticket.",
+                        "Generation: response drafted using retrieved context, matching the ticket's language and market-specific terminology.",
+                        "Quality signal: every draft carries a confidence score visible to the agent. The system communicates what it is confident about and where it is uncertain.",
+                      ].map((item) => (
+                        <li key={item} className="flex items-start gap-2">
                           <CheckCircle className="w-4 h-4 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                          <span>
-                            Retrieval: language-matched knowledge chunks ranked
-                            by relevance to the specific ticket.
-                          </span>
+                          <span>{item}</span>
                         </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                          <span>
-                            Generation: response drafted using retrieved context,
-                            matching the ticket&apos;s language and
-                            market-specific terminology.
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                          <span>
-                            Quality signal: every draft carries a confidence
-                            score visible to the agent. The system communicates
-                            what it is confident about and where it is uncertain.
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
+                      ))}
+                    </ul>
                   </ExpandableSection>
 
                   <ExpandableSection title="4. Feedback and learning">
-                    <div className="space-y-3 text-sm text-[var(--text-secondary)] leading-relaxed">
-                      <ul className="space-y-2">
-                        <li className="flex items-start gap-2">
+                    <ul className="space-y-2 text-sm text-[var(--text-secondary)] leading-relaxed">
+                      {[
+                        "Every agent edit logged as a diff against the original AI draft.",
+                        "Corrections feed into prompt refinement and retrieval ranking adjustments.",
+                        "Category-level accuracy tracked over time. Auto-send eligibility reviewed continuously against accuracy drift.",
+                      ].map((item) => (
+                        <li key={item} className="flex items-start gap-2">
                           <CheckCircle className="w-4 h-4 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                          <span>
-                            Every agent edit logged as a diff against the
-                            original AI draft.
-                          </span>
+                          <span>{item}</span>
                         </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                          <span>
-                            Corrections feed into prompt refinement and retrieval
-                            ranking adjustments.
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                          <span>
-                            Category-level accuracy tracked over time. Auto-send
-                            eligibility reviewed continuously against accuracy
-                            drift.
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
+                      ))}
+                    </ul>
                   </ExpandableSection>
                 </div>
 
-                <div className="glass-panel-light p-4 mt-6">
+                <div className="glass-panel-light p-4 mt-6 border-l-2 border-l-amber-400/60">
                   <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                    <span className="font-medium text-[var(--text-primary)]">
+                    <span className="font-semibold text-[var(--text-primary)]">
                       The deterministic boundary is explicit.
                     </span>{" "}
                     Category classification, confidence thresholds, routing
@@ -725,7 +638,7 @@ export default function AISupportCaseStudy() {
                 </div>
               </motion.div>
 
-              {/* 4. Integration */}
+              {/* ─ INTEGRATION ─ */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
                   Integration into existing ecosystem
@@ -754,9 +667,7 @@ export default function AISupportCaseStudy() {
                           key={item}
                           className="text-sm text-[var(--text-secondary)] flex items-start gap-2"
                         >
-                          <span className="text-[var(--text-muted)]">
-                            &bull;
-                          </span>
+                          <span className="text-[var(--text-muted)]">&bull;</span>
                           {item}
                         </li>
                       ))}
@@ -789,7 +700,7 @@ export default function AISupportCaseStudy() {
                   </div>
                 </div>
 
-                {/* Data Flow */}
+                {/* Data flow */}
                 <div className="glass-panel-light p-4">
                   <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-2">
                     Data flow
@@ -807,7 +718,7 @@ export default function AISupportCaseStudy() {
                 </div>
               </motion.div>
 
-              {/* 5. Results */}
+              {/* ─ RESULTS ─ */}
               <motion.div {...fadeIn}>
                 <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
                   Results
@@ -817,45 +728,18 @@ export default function AISupportCaseStudy() {
                   pre-deployment baseline:
                 </p>
 
-                <div className="glass-panel overflow-hidden overflow-x-auto mb-6">
+                {/* Results table */}
+                <div className="glass-panel overflow-hidden overflow-x-auto mb-8">
                   <table className="w-full text-sm min-w-[400px]">
                     <tbody>
                       {[
-                        [
-                          "Fully automated resolution rate",
-                          "38% (auto-send, no human touch)",
-                          true,
-                        ],
-                        [
-                          "AI draft acceptance rate",
-                          "87% (minor or no edits)",
-                          false,
-                        ],
-                        [
-                          "First response time reduction",
-                          "91% (45 min to under 4 min)",
-                          true,
-                        ],
-                        [
-                          "Customer satisfaction",
-                          "89% (+9 points from 80%)",
-                          false,
-                        ],
-                        [
-                          "Ticket coverage (AI-assisted)",
-                          "94%",
-                          false,
-                        ],
-                        [
-                          "Escalation false positive rate",
-                          "2.1% (target was <5%)",
-                          false,
-                        ],
-                        [
-                          "POC to production",
-                          "4-week POC, 5-month rollout",
-                          false,
-                        ],
+                        ["Fully automated resolution rate", "43% (auto-send, no human touch)", true],
+                        ["AI draft acceptance rate", "90% (minor or no edits)", false],
+                        ["First response time reduction", "93% (45 min to under 4 min)", true],
+                        ["Customer satisfaction", "91% (+11 points from 80%)", false],
+                        ["Ticket coverage (AI-assisted)", "94%", false],
+                        ["Escalation false positive rate", "2.1% (target was <5%)", false],
+                        ["POC to production", "4-week POC, 5-month rollout", false],
                       ].map((row) => (
                         <tr
                           key={row[0] as string}
@@ -877,25 +761,27 @@ export default function AISupportCaseStudy() {
                   </table>
                 </div>
 
+                {/* Results narrative */}
                 <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
                   <p>
-                    The 62% of tickets that still require human review arrive
+                    The 57% of tickets that still require human review arrive
                     pre-drafted: the relevant knowledge is already retrieved, the
                     response is generated in the correct language and the
                     agent&apos;s task is to confirm and refine rather than
                     research and compose from scratch.
                   </p>
                   <p>
-                    The team of three now handles 95 tickets per day, up from 70
-                    six months earlier. No additional staff were hired. With
-                    routine tickets handled or pre-drafted, agents shifted to
-                    complex integration support, proactive outreach to at-risk
-                    accounts and higher-quality bug escalations. The work changed
-                    from clearing a queue to solving problems that require
-                    judgment.
+                    A team of three, reduced from five, now handles 311 tickets
+                    per day, up from 230 six months earlier. This represents a
+                    35% increase in volume while reducing headcount from five to
+                    three. With routine tickets handled or pre-drafted, agents
+                    shifted to complex integration support, proactive outreach to
+                    at-risk accounts and higher-quality bug escalations. The work
+                    changed from clearing a queue to solving problems that
+                    require judgment.
                   </p>
                   <p>
-                    The 38% full automation rate reflects deliberately
+                    The 43% full automation rate reflects deliberately
                     conservative confidence thresholds chosen for initial
                     deployment. As the knowledge base accumulates confirmed
                     responses and category-level accuracy matures, the automation
@@ -913,40 +799,83 @@ export default function AISupportCaseStudy() {
                     of time or staffing.
                   </p>
                 </div>
+
+                {/* Before/After callout */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="mt-8 grid grid-cols-2 gap-3"
+                >
+                  <div className="glass-panel p-5 text-center border-t-2 border-t-[var(--text-muted)]/30">
+                    <div className="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-2 font-medium">
+                      Before
+                    </div>
+                    <div className="text-2xl font-bold font-mono-data text-[var(--text-muted)]">
+                      230
+                    </div>
+                    <div className="text-xs text-[var(--text-muted)]">
+                      tickets/day · 5 agents
+                    </div>
+                  </div>
+                  <div className="glass-panel p-5 text-center border-t-2 border-t-emerald-400">
+                    <div className="text-xs uppercase tracking-wider text-emerald-400 mb-2 font-medium">
+                      After
+                    </div>
+                    <div className="text-2xl font-bold font-mono-data text-emerald-400">
+                      311
+                    </div>
+                    <div className="text-xs text-[var(--text-muted)]">
+                      tickets/day · 3 agents
+                    </div>
+                  </div>
+                </motion.div>
               </motion.div>
 
-              {/* 6. Strategic Impact */}
+              {/* ─ STRATEGIC IMPACT ─ */}
               <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
                   Strategic impact
                 </h2>
                 <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
                   Beyond operational efficiency:
                 </p>
 
-                <div className="space-y-6">
+                <motion.div
+                  variants={stagger}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className="space-y-6"
+                >
                   {[
                     {
                       num: "1",
                       title: "Capacity without headcount.",
-                      desc: "35% volume growth absorbed by the same team of three. The constraint was never response speed. It was that every ticket cost the same amount of agent time regardless of complexity. Confidence-based routing solved this by matching effort to difficulty.",
+                      desc: "35% volume growth absorbed while reducing the team from five to three agents. The constraint was never response speed. It was that every ticket cost the same amount of agent time regardless of complexity. Confidence-based routing solved this by matching effort to difficulty.",
+                      icon: TrendingUp,
                     },
                     {
                       num: "2",
                       title: "Language consistency as quality lever.",
                       desc: "Response quality no longer depends on which agent is on shift or which language they are strongest in. The biggest impact landed in the weakest language (Italian), where part-time coverage had caused chronic inconsistency. Consistent multilingual quality is now a system property, not a staffing outcome.",
+                      icon: Globe,
                     },
                     {
                       num: "3",
                       title: "Built-in feedback loop.",
                       desc: "Every agent correction improves retrieval ranking and response quality for the next similar ticket. The system does not degrade with scale. It improves with use. No manual retraining cycles or prompt maintenance required.",
+                      icon: RefreshCw,
                     },
                   ].map((lesson) => (
-                    <div key={lesson.num} className="flex gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[var(--primary)]/20 flex items-center justify-center flex-shrink-0">
-                        <span className="text-sm font-bold text-[var(--primary)]">
-                          {lesson.num}
-                        </span>
+                    <motion.div
+                      key={lesson.num}
+                      variants={fadeUp}
+                      className="glass-panel p-6 flex gap-5"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-[var(--primary)]/15 flex items-center justify-center flex-shrink-0">
+                        <lesson.icon className="w-6 h-6 text-[var(--primary)]" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-[var(--text-primary)] mb-1">
@@ -956,54 +885,53 @@ export default function AISupportCaseStudy() {
                           {lesson.desc}
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
+                </motion.div>
               </motion.div>
 
-              {/* Quote */}
+              {/* ─ CLOSING ─ */}
               <motion.div
                 {...fadeIn}
-                className="glass-panel p-8 border-l-4 border-l-[var(--primary)]"
+                className="glass-panel p-8 border-l-4 border-l-[var(--primary)] relative overflow-hidden"
               >
-                <Quote className="w-10 h-10 text-[var(--primary)] mb-4 opacity-50" />
-                <blockquote className="text-lg text-[var(--text-primary)] italic mb-4">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--primary)] opacity-[0.04] rounded-full blur-2xl" />
+                <p className="text-[var(--text-secondary)] leading-relaxed italic">
                   ClaimPilot is developed by True Aim AG, a Swiss insurtech
                   company headquartered in Zug, Switzerland. For technical
-                  discussions or pilot scoping, contact us at hello@trueaim.ai.
-                </blockquote>
-                <div className="text-sm">
-                  <div className="font-semibold text-[var(--text-primary)]">
-                    True Aim AG
-                  </div>
-                  <div className="text-[var(--text-muted)]">
-                    Zug, Switzerland
-                  </div>
-                </div>
+                  discussions or pilot scoping, contact us at{" "}
+                  <a
+                    href="mailto:hello@trueaim.ai"
+                    className="text-[var(--primary)] hover:underline"
+                  >
+                    hello@trueaim.ai
+                  </a>
+                  .
+                </p>
               </motion.div>
             </article>
 
-            {/* Sidebar */}
+            {/* ── SIDEBAR ── */}
             <aside aria-label="Key highlights">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="glass-panel p-6"
+                className="glass-panel p-6 sticky top-24"
               >
                 <h3 className="font-semibold text-[var(--text-primary)] mb-4">
                   Key Highlights
                 </h3>
                 <ul className="space-y-3">
                   {[
-                    "38% fully automated resolution",
-                    "91% faster first response (45 min to < 4 min)",
-                    "87% AI draft acceptance rate",
-                    "89% CSAT (+9 points)",
-                    "Italian CSAT: 76% to 88%",
+                    "43% fully automated resolution",
+                    "93% faster first response (45 min → < 4 min)",
+                    "90% AI draft acceptance rate",
+                    "91% CSAT (+11 points)",
+                    "Italian CSAT: 76% → 88%",
                     "94% AI-assisted ticket coverage",
-                    "35% volume growth, zero headcount increase",
+                    "35% volume growth, team reduced from 5 to 3",
                     "Runs on customer's own Azure infrastructure",
                   ].map((highlight, index) => (
                     <li key={index} className="flex items-start gap-3">
@@ -1019,11 +947,9 @@ export default function AISupportCaseStudy() {
                   <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">
                     Product
                   </h4>
-                  <div className="space-y-2">
-                    <span className="block text-sm px-3 py-2 rounded-lg font-medium bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-center">
-                      ClaimPilot
-                    </span>
-                  </div>
+                  <span className="block text-sm px-3 py-2 rounded-lg font-medium bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-center">
+                    ClaimPilot
+                  </span>
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-[var(--border)]">
@@ -1039,6 +965,7 @@ export default function AISupportCaseStudy() {
                       "Freshdesk Integration",
                       "Feedback Loop",
                       "Knowledge Consolidation",
+                      "Azure OpenAI",
                     ].map((capability) => (
                       <span
                         key={capability}
@@ -1065,21 +992,22 @@ export default function AISupportCaseStudy() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-6 bg-gradient-to-br from-slate-900 to-[var(--background)]">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* ── CTA ── */}
+      <section className="py-24 px-6 relative overflow-hidden bg-gradient-to-br from-slate-900 to-[var(--background)]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(37,99,235,0.08),transparent_60%)] pointer-events-none" />
+        <div className="max-w-4xl mx-auto text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <TrendingUp className="w-12 h-12 text-[var(--text-muted)] mx-auto mb-6" />
+            <BarChart3 className="w-12 h-12 text-[var(--primary)]/60 mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
               Ready to achieve similar results?
             </h2>
-            <p className="text-lg text-gray-300 mb-10">
-              Start with a pilot on your closed claims and see the impact for
+            <p className="text-lg text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto">
+              Start with a pilot on your support workflow and see the impact for
               yourself.
             </p>
             <Link
