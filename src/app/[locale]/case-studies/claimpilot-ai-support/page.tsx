@@ -128,10 +128,7 @@ function DesignBlock({
       variants={fadeUp}
       className="glass-panel overflow-hidden relative group"
     >
-      {/* Accent bar */}
-      <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-amber-400 via-blue-500 to-emerald-400" />
-
-      <div className="p-6 pl-7 space-y-5">
+      <div className="p-6 space-y-5">
         {/* Constraint */}
         <div className="flex items-start gap-4">
           <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center flex-shrink-0">
