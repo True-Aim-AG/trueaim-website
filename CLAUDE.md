@@ -91,7 +91,7 @@ All copy is in /docs/TrueAim_Website_Copy.md
 
 ### Important
 - `.vercel/project.json` must point to the **production** project (`trueaim`). Do not change this.
-- Auto-deploy via GitHub integration is currently not triggering. Use CLI deploys.
+- Auto-deploy via GitHub integration is not available (Hobby plan). Use CLI deploys.
 - Always deploy to staging first, verify, then deploy to production.
 
 ## Reference Files
