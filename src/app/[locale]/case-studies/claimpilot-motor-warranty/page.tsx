@@ -24,6 +24,7 @@ import {
   Database,
   Eye,
 } from "lucide-react";
+import { ZoomableInfographic } from "@/components/ui/ZoomableInfographic";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 } as const,
@@ -556,6 +557,14 @@ export default function ClaimPilotMotorWarrantyCaseStudy() {
                   results across all documents in a claim and produces a
                   decision.
                 </p>
+
+                {/* Architecture infographic */}
+                <ZoomableInfographic
+                  src="/images/case-studies/claimpilot-motor-warranty-architecture.png"
+                  alt="ClaimPilot motor warranty architecture diagram"
+                  width={2754}
+                  height={1536}
+                />
 
                 {/* Pipeline Visualization */}
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 mb-8">

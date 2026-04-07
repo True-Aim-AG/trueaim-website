@@ -26,6 +26,7 @@ import {
   Brain,
   BarChart3,
 } from "lucide-react";
+import { ZoomableInfographic } from "@/components/ui/ZoomableInfographic";
 
 /* ─── Animated counter ─── */
 function AnimatedNumber({ value, suffix = "" }: { value: number; suffix?: string }) {
@@ -520,6 +521,14 @@ export default function AISupportCaseStudy() {
                   The system runs as four layers between the customer&apos;s
                   Freshdesk inbox and their agents.
                 </p>
+
+                {/* Architecture infographic */}
+                <ZoomableInfographic
+                  src="/images/case-studies/claimpilot-ai-support-architecture.png"
+                  alt="ClaimPilot AI support architecture diagram"
+                  width={2754}
+                  height={1536}
+                />
 
                 {/* Pipeline visualization */}
                 <motion.div
