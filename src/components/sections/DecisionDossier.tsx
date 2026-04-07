@@ -17,7 +17,7 @@ const dossierContentsMeta = [
   { key: "inputSummary" as const, icon: FileText, color: "text-blue-400", bgColor: "bg-blue-500/20" },
   { key: "policyMatch" as const, icon: Scale, color: "text-indigo-400", bgColor: "bg-indigo-500/20" },
   { key: "logicTrace" as const, icon: FileSearch, color: "text-purple-400", bgColor: "bg-purple-500/20" },
-  { key: "evidenceLinks" as const, icon: Link2, color: "text-teal-400", bgColor: "bg-teal-500/20" },
+  { key: "evidenceLinks" as const, icon: Link2, color: "text-blue-400", bgColor: "bg-blue-500/20" },
   { key: "confidenceScore" as const, icon: Shield, color: "text-emerald-400", bgColor: "bg-emerald-500/20" },
   { key: "replayCapability" as const, icon: RefreshCw, color: "text-orange-400", bgColor: "bg-orange-500/20" },
 ];

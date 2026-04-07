@@ -45,7 +45,7 @@ export async function SocialProof() {
         >
           <Link
             href={`/case-studies/${featured.slug}`}
-            className="block glass-panel glass-panel-hover p-8 group"
+            className="block rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] p-8 group card-glow"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Left: Info */}

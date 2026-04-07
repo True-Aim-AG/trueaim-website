@@ -1,18 +1,44 @@
+"use client";
+
 import { Link } from "@/i18n/navigation";
-import { getTranslations } from "next-intl/server";
-import { MotionDiv } from "@/components/ui/MotionDiv";
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 import { ArrowRight, Brain, FileSearch, ClipboardCheck, FileText } from "lucide-react";
-import { getAlternatingSlide, defaultTransition } from "@/lib/animations";
 
 const productsMeta = [
-  { key: "contextBuilder" as const, href: "/products/contextbuilder", icon: FileSearch, color: "var(--contextbuilder)", gradient: "from-cyan-500/20 to-blue-500/20" },
-  { key: "mira" as const, href: "/products/mira", icon: Brain, color: "var(--mira)", gradient: "from-blue-500/20 to-cyan-500/20" },
-  { key: "decisionDossier" as const, href: "/technology#decision-dossier", icon: FileText, color: "var(--primary)", gradient: "from-blue-500/20 to-cyan-500/20" },
-  { key: "claimEval" as const, href: "/products/claimeval", icon: ClipboardCheck, color: "var(--claimeval)", gradient: "from-blue-500/20 to-sky-500/20" },
+  {
+    key: "contextBuilder" as const,
+    href: "/products/contextbuilder",
+    icon: FileSearch,
+    color: "var(--contextbuilder)",
+    accentHex: "#8B5CF6",
+  },
+  {
+    key: "mira" as const,
+    href: "/products/mira",
+    icon: Brain,
+    color: "var(--mira)",
+    accentHex: "#00A3FF",
+  },
+  {
+    key: "decisionDossier" as const,
+    href: "/technology#decision-dossier",
+    icon: FileText,
+    color: "var(--primary)",
+    accentHex: "#3B82F6",
+    featured: true,
+  },
+  {
+    key: "claimEval" as const,
+    href: "/products/claimeval",
+    icon: ClipboardCheck,
+    color: "var(--claimeval)",
+    accentHex: "#00A3FF",
+  },
 ];
 
-export async function ProductsGrid() {
-  const t = await getTranslations("productsGrid");
+export function ProductsGrid() {
+  const t = useTranslations("productsGrid");
 
   const products = productsMeta.map((meta) => ({
     name: t(`products.${meta.key}.name`),
@@ -22,75 +48,114 @@ export async function ProductsGrid() {
     href: meta.href,
     icon: meta.icon,
     color: meta.color,
-    gradient: meta.gradient,
+    accentHex: meta.accentHex,
+    featured: meta.featured,
   }));
+
   return (
-    <section className="py-24 px-6">
+    <section className="py-24 px-6 relative">
       <div className="max-w-7xl mx-auto">
-        <MotionDiv
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
             {t("title")}
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
             {t("subtitle")}
           </p>
-        </MotionDiv>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product, index) => (
-            <MotionDiv
+            <motion.div
               key={product.name}
-              variants={getAlternatingSlide(index)}
-              initial="initial"
-              whileInView="animate"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ ...defaultTransition, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link href={product.href} className="block h-full group">
                 <div
-                  className="relative glass-panel glass-panel-hover h-full overflow-hidden p-8"
-                  style={{ '--card-color': product.color } as React.CSSProperties}
+                  className={`relative h-full overflow-hidden rounded-2xl border transition-all duration-300 group-hover:-translate-y-1 ${
+                    product.featured
+                      ? "border-[var(--primary)]/30 bg-gradient-to-b from-[var(--primary)]/[0.06] to-transparent"
+                      : "border-[var(--border)] bg-[var(--card-bg)]"
+                  }`}
+                  style={{
+                    "--card-accent": product.color,
+                    "--card-accent-hex": product.accentHex,
+                  } as React.CSSProperties}
                 >
-                  {/* Background gradient on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Top glow on hover */}
+                  <div
+                    className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{ background: `linear-gradient(90deg, transparent, ${product.accentHex}, transparent)` }}
+                  />
 
-                  <div className="relative h-full flex flex-col">
-                    {/* Icon */}
-                    <div
-                      className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all group-hover:scale-110 bg-[color-mix(in_srgb,var(--card-color)_25%,transparent)] group-hover:bg-white/20"
-                    >
-                      <product.icon
-                        className="w-8 h-8 text-[var(--card-color)] group-hover:text-white transition-colors"
-                      />
+                  {/* Hover glow */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    style={{
+                      background: `radial-gradient(ellipse at top, ${product.accentHex}08 0%, transparent 60%)`,
+                    }}
+                  />
+
+                  <div className="relative p-8 h-full flex flex-col">
+                    {/* Icon with animated background */}
+                    <div className="relative mb-6">
+                      <motion.div
+                        whileHover={{ scale: 1.08, rotate: 2 }}
+                        className="w-14 h-14 rounded-xl flex items-center justify-center transition-all"
+                        style={{
+                          background: `color-mix(in srgb, ${product.color} 15%, transparent)`,
+                          border: `1px solid color-mix(in srgb, ${product.color} 20%, transparent)`,
+                        }}
+                      >
+                        <product.icon
+                          className="w-7 h-7"
+                          style={{ color: product.color }}
+                        />
+                      </motion.div>
+
+                      {/* Subtle particle trail on featured card */}
+                      {product.featured && (
+                        <div
+                          className="absolute -top-1 -right-1 w-3 h-3 rounded-full teal-glow-pulse"
+                          style={{ background: product.accentHex, opacity: 0.6 }}
+                        />
+                      )}
                     </div>
 
                     {/* Badge */}
                     <div
-                      className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 bg-[color-mix(in_srgb,var(--card-color)_20%,transparent)] text-[var(--card-color)] group-hover:bg-white/20 group-hover:text-white transition-colors"
+                      className="inline-block self-start px-3 py-1 rounded-full text-xs font-medium mb-4 transition-colors"
+                      style={{
+                        background: `color-mix(in srgb, ${product.color} 12%, transparent)`,
+                        color: product.color,
+                      }}
                     >
                       {product.badge}
                     </div>
 
                     {/* Name */}
-                    <h3 className="text-2xl font-bold text-[var(--text-primary)] group-hover:text-white mb-3 transition-colors">
+                    <h3 className="text-xl font-bold text-[var(--text-primary)] mb-3 group-hover:text-[var(--primary)] transition-colors">
                       {product.name}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-[var(--text-secondary)] group-hover:text-white/90 leading-relaxed mb-6 flex-grow transition-colors">
+                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-6 flex-grow">
                       {product.description}
                     </p>
 
                     {/* Link */}
                     <div
-                      className="inline-flex items-center gap-2 font-medium transition-all group-hover:gap-3 text-[var(--primary)] group-hover:text-white mt-auto"
+                      className="inline-flex items-center gap-2 text-sm font-medium transition-all group-hover:gap-3"
+                      style={{ color: product.color }}
                     >
                       {product.explore}
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -98,10 +163,9 @@ export async function ProductsGrid() {
                   </div>
                 </div>
               </Link>
-            </MotionDiv>
+            </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

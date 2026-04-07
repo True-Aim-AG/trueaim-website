@@ -177,6 +177,28 @@
     "mockupReplay": "Rejouer la décision",
     "mockupDifferentiator": "<strong>Contrairement à l'IA boîte noire :</strong> Chaque décision True Aim peut être rejouée, expliquée et défendue."
   },
+  "processFlow": {
+    "title": "Des documents aux décisions en un seul flux",
+    "subtitle": "Automatisation complète des sinistres en moins de deux minutes, chaque étape entièrement vérifiable",
+    "steps": {
+      "ingest": {
+        "label": "Ingestion de documents",
+        "description": "ContextBuilder capture, classe et structure automatiquement les documents de sinistre"
+      },
+      "mira": {
+        "label": "Logique de police (MIRA)",
+        "description": "Le moteur de décision déterministe applique les conditions exactes de la police aux données structurées"
+      },
+      "dossier": {
+        "label": "Decision Dossier",
+        "description": "Dossier d'audit complet reliant la décision aux clauses sources, documents et chemins logiques"
+      },
+      "audit": {
+        "label": "Piste d'audit",
+        "description": "Chaque étape est rejouable, explicable et prête pour l'examen réglementaire"
+      }
+    }
+  },
   "socialProof": {
     "badge": "Résultats prouvés",
     "title": "La confiance des assureurs de premier plan",

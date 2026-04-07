@@ -177,6 +177,28 @@
     "mockupReplay": "Entscheidung wiederholen",
     "mockupDifferentiator": "<strong>Anders als Black-Box-KI:</strong> Jede True Aim Entscheidung kann wiederholt, erklärt und verteidigt werden."
   },
+  "processFlow": {
+    "title": "Von Dokumenten zu Entscheidungen in einem Ablauf",
+    "subtitle": "End-to-End Schadenautomatisierung in unter zwei Minuten, mit jedem Schritt vollständig prüfbar",
+    "steps": {
+      "ingest": {
+        "label": "Dokumentenaufnahme",
+        "description": "ContextBuilder erfasst, klassifiziert und strukturiert Schadendokumente automatisch"
+      },
+      "mira": {
+        "label": "Policenlogik (MIRA)",
+        "description": "Deterministische Entscheidungsmaschine wendet exakte Policenbedingungen auf strukturierte Schadendaten an"
+      },
+      "dossier": {
+        "label": "Decision Dossier",
+        "description": "Vollständiger Prüfbericht, der Entscheidungen mit Quellklauseln, Dokumenten und Logikpfaden verknüpft"
+      },
+      "audit": {
+        "label": "Prüfpfad",
+        "description": "Jeder Schritt ist nachvollziehbar, erklärbar und bereit für regulatorische Überprüfung"
+      }
+    }
+  },
   "socialProof": {
     "badge": "Bewährte Ergebnisse",
     "title": "Vertrauen führender Versicherer",

@@ -177,6 +177,28 @@
     "mockupReplay": "Replay Decision",
     "mockupDifferentiator": "<strong>Unlike black-box AI:</strong> Every True Aim decision can be replayed, explained, defended."
   },
+  "processFlow": {
+    "title": "From Documents to Decisions in One Flow",
+    "subtitle": "End-to-end claim automation in under two minutes, with every step fully auditable",
+    "steps": {
+      "ingest": {
+        "label": "Document Ingestion",
+        "description": "ContextBuilder captures, classifies and structures claim documents automatically"
+      },
+      "mira": {
+        "label": "Policy Logic (MIRA)",
+        "description": "Deterministic decision engine applies exact policy terms to structured claim data"
+      },
+      "dossier": {
+        "label": "Decision Dossier",
+        "description": "Complete audit record linking decision to source clauses, documents and logic paths"
+      },
+      "audit": {
+        "label": "Audit Trail",
+        "description": "Every step is replayable, explainable and ready for regulatory review"
+      }
+    }
+  },
   "socialProof": {
     "badge": "Proven Results",
     "title": "Trusted by Leading Insurers",

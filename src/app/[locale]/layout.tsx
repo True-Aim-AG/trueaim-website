@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { GoogleAnalyticsWrapper } from "@/components/layout/GoogleAnalytics";
 import { AuroraBackground } from "@/components/layout/AuroraBackground";
+import { NeuralBackground } from "@/components/layout/NeuralBackground";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { JsonLd, organizationJsonLd, websiteJsonLd } from "@/components/seo/JsonLd";
 import { NextIntlClientProvider } from 'next-intl';
@@ -149,6 +150,7 @@ export default async function LocaleLayout({ children, params }: Props) {
               {t("skipToContent")}
             </a>
             <AuroraBackground />
+            <NeuralBackground />
             <Navigation />
             <main id="main-content" className="pt-[73px] relative z-10">{children}</main>
             <Footer />

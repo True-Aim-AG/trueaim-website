@@ -40,6 +40,30 @@ export default async function ContextBuilderPage() {
         primaryCTAClassName="bg-[var(--aurora-cyan)] text-white hover:bg-[#0891b2] shadow-lg shadow-[var(--aurora-cyan)]/30"
       />
 
+      {/* Pipeline Animation Video */}
+      <section className="pb-10 px-6">
+        <div className="max-w-5xl mx-auto">
+          <MotionDiv
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative rounded-2xl overflow-hidden border border-[var(--border)] shadow-2xl shadow-[var(--aurora-cyan)]/5"
+          >
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto"
+              poster=""
+            >
+              <source src="/videos/contextbuilder-pipeline.mp4" type="video/mp4" />
+            </video>
+          </MotionDiv>
+        </div>
+      </section>
+
       {/* Problem Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">

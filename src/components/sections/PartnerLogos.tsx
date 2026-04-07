@@ -1,6 +1,8 @@
+"use client";
+
 import { Link } from "@/i18n/navigation";
-import { getTranslations } from "next-intl/server";
-import { MotionDiv } from "@/components/ui/MotionDiv";
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const partners = [
@@ -27,25 +29,22 @@ const partners = [
   },
 ];
 
-export async function PartnerLogos() {
-  const t = await getTranslations("partnerLogos");
+export function PartnerLogos() {
+  const t = useTranslations("partnerLogos");
 
   return (
-    <MotionDiv
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: 0.3 }}
       className="relative mt-10"
     >
-      {/* Section Label - matches Award-Winning Technology heading style */}
       <h2 className="text-center text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
         {t("title")}
       </h2>
 
-      {/* Static Logo Display */}
       <div className="relative rounded-2xl bg-gradient-to-r from-slate-50 via-white to-slate-50 py-8 shadow-inner">
-        {/* Subtle top/bottom border lines */}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
@@ -74,8 +73,7 @@ export async function PartnerLogos() {
         </div>
       </div>
 
-      {/* Subtle ambient glow */}
       <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-2/3 h-8 bg-gradient-to-t from-[var(--primary)]/5 to-transparent blur-xl rounded-full" />
-    </MotionDiv>
+    </motion.div>
   );
 }

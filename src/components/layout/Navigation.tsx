@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { LanguageSwitcher, LanguageSwitcherMobile } from "@/components/layout/LanguageSwitcher";
@@ -37,12 +38,16 @@ export function Navigation() {
   const [resourcesOpen, setResourcesOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 nav-header backdrop-blur-md border-b border-[var(--border)]">
-      <nav className="max-w-7xl mx-auto px-6 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 nav-header backdrop-blur-xl border-b border-[var(--border)]">
+      <nav className="max-w-7xl mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <div className="bg-white rounded-lg p-1 shadow-lg shadow-white/10">
+          {/* Logo with hover glow */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <motion.div
+              className="relative bg-white rounded-xl p-1.5 shadow-lg shadow-white/10"
+              whileHover={{ scale: 1.08 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+            >
               <Image
                 src="/images/logo.png"
                 alt={t("logoAlt")}
@@ -51,7 +56,11 @@ export function Navigation() {
                 className="object-contain"
                 priority
               />
-            </div>
+              {/* Teal glow on hover */}
+              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                style={{ boxShadow: "0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.15)" }}
+              />
+            </motion.div>
             <Image
               src="/images/wordmark.png"
               alt="True AIm"
@@ -79,11 +88,11 @@ export function Navigation() {
                     onMouseLeave={() => item.dropdownType === "products" ? setProductsOpen(false) : setResourcesOpen(false)}
                   >
                     <button
-                      className="flex items-center gap-1 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors font-medium"
+                      className="flex items-center gap-1 text-[var(--text-secondary)] hover:text-[var(--primary)] transition-all duration-200 font-medium hover:-translate-y-px"
                     >
                       {t(item.nameKey)}
                       <ChevronDown className={cn(
-                        "w-4 h-4 transition-transform",
+                        "w-4 h-4 transition-transform duration-200",
                         (item.dropdownType === "products" ? productsOpen : resourcesOpen) && "rotate-180"
                       )} />
                     </button>
@@ -92,16 +101,16 @@ export function Navigation() {
                     {item.dropdownType === "products" && (
                       <div className={cn(
                         "absolute top-full left-0 pt-2 transition-all duration-200",
-                        productsOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                        productsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1"
                       )}>
-                        <div className="nav-dropdown backdrop-blur-xl border border-[var(--border)] rounded-xl shadow-2xl p-2 min-w-[220px]">
+                        <div className="nav-dropdown backdrop-blur-xl border border-[var(--border)] rounded-xl shadow-2xl p-2 min-w-[240px]">
                           {products.map((product) => (
                             <Link
                               key={product.nameKey}
                               href={product.href}
-                              className="block px-4 py-3 rounded-lg hover:bg-[var(--primary-light)] transition-colors"
+                              className="block px-4 py-3 rounded-lg hover:bg-[var(--primary-light)] transition-all group/item"
                             >
-                              <div className="font-medium text-[var(--text-primary)]">
+                              <div className="font-medium text-[var(--text-primary)] group-hover/item:text-[var(--primary)] transition-colors">
                                 {t(product.nameKey)}
                               </div>
                               <div className="text-sm text-[var(--text-muted)]">
@@ -117,19 +126,17 @@ export function Navigation() {
                     {item.dropdownType === "resources" && (
                       <div className={cn(
                         "absolute top-full left-0 pt-2 transition-all duration-200",
-                        resourcesOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                        resourcesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1"
                       )}>
-                        <div className="nav-dropdown backdrop-blur-xl border border-[var(--border)] rounded-xl shadow-2xl p-2 min-w-[240px]">
+                        <div className="nav-dropdown backdrop-blur-xl border border-[var(--border)] rounded-xl shadow-2xl p-2 min-w-[260px]">
                           {resources.map((resource) => (
                             <Link
                               key={resource.nameKey}
                               href={resource.href}
-                              className="block px-4 py-3 rounded-lg hover:bg-[var(--primary-light)] transition-colors"
+                              className="block px-4 py-3 rounded-lg hover:bg-[var(--primary-light)] transition-all group/item"
                             >
-                              <div className="flex items-center gap-2">
-                                <span className="font-medium text-[var(--text-primary)]">
-                                  {t(resource.nameKey)}
-                                </span>
+                              <div className="font-medium text-[var(--text-primary)] group-hover/item:text-[var(--primary)] transition-colors">
+                                {t(resource.nameKey)}
                               </div>
                               <div className="text-sm text-[var(--text-muted)]">
                                 {t(resource.descKey)}
@@ -143,7 +150,7 @@ export function Navigation() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors font-medium"
+                    className="text-[var(--text-secondary)] hover:text-[var(--primary)] transition-all duration-200 font-medium hover:-translate-y-px"
                   >
                     {t(item.nameKey)}
                   </Link>
@@ -158,7 +165,7 @@ export function Navigation() {
             <ThemeToggle />
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/50"
+              className="btn-shine inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] font-semibold hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/20 hover:shadow-[var(--primary)]/40 hover:scale-[1.02]"
             >
               {t("bookDemo")}
             </Link>
@@ -194,7 +201,7 @@ export function Navigation() {
                 <Link
                   key={product.nameKey}
                   href={product.href}
-                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--primary-light)] transition-colors"
+                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--primary)] hover:bg-[var(--primary-light)] transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t(product.nameKey)}
@@ -211,7 +218,7 @@ export function Navigation() {
                 <Link
                   key={resource.nameKey}
                   href={resource.href}
-                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--primary-light)] transition-colors"
+                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--primary)] hover:bg-[var(--primary-light)] transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t(resource.nameKey)}
@@ -225,7 +232,7 @@ export function Navigation() {
                 <Link
                   key={item.nameKey}
                   href={item.href}
-                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--primary-light)] transition-colors"
+                  className="block px-4 py-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--primary)] hover:bg-[var(--primary-light)] transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t(item.nameKey)}
@@ -240,7 +247,7 @@ export function Navigation() {
                 <ThemeToggle />
                 <Link
                   href="/contact"
-                  className="flex-1 inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/30"
+                  className="flex-1 btn-shine inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] font-semibold hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/20"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("bookDemo")}

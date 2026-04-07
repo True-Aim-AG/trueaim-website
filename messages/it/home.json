@@ -177,6 +177,28 @@
     "mockupReplay": "Riproduci decisione",
     "mockupDifferentiator": "<strong>A differenza dell'IA a scatola nera:</strong> Ogni decisione True Aim può essere riprodotta, spiegata e difesa."
   },
+  "processFlow": {
+    "title": "Dai documenti alle decisioni in un unico flusso",
+    "subtitle": "Automazione completa dei sinistri in meno di due minuti, con ogni passaggio completamente verificabile",
+    "steps": {
+      "ingest": {
+        "label": "Acquisizione documenti",
+        "description": "ContextBuilder acquisisce, classifica e struttura automaticamente i documenti dei sinistri"
+      },
+      "mira": {
+        "label": "Logica di polizza (MIRA)",
+        "description": "Il motore decisionale deterministico applica i termini esatti della polizza ai dati strutturati"
+      },
+      "dossier": {
+        "label": "Decision Dossier",
+        "description": "Record di audit completo che collega la decisione alle clausole, documenti e percorsi logici"
+      },
+      "audit": {
+        "label": "Traccia di audit",
+        "description": "Ogni passaggio è riproducibile, spiegabile e pronto per la revisione normativa"
+      }
+    }
+  },
   "socialProof": {
     "badge": "Risultati comprovati",
     "title": "La fiducia dei principali assicuratori",
