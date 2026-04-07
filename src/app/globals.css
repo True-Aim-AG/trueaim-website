@@ -577,16 +577,12 @@ body,
   box-shadow: 0 0 30px rgba(37, 99, 235, 0.1), 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
-/* ===== Gradient text ===== */
+/* ===== Gradient text =====
+   Uses palette vars so the gradient tracks --primary and --aurora-purple
+   across themes instead of drifting from hardcoded hex. Dark resolves to
+   #3B82F6 → #8B5CF6, light to #2563EB → #7C3AED. */
 .text-gradient {
-  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-[data-theme="light"] .text-gradient {
-  background: linear-gradient(135deg, #2563EB, #7C3AED);
+  background: linear-gradient(135deg, var(--primary), var(--aurora-purple));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

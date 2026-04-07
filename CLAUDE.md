@@ -76,22 +76,44 @@ All copy is in /docs/TrueAim_Website_Copy.md
 
 ## Deployment
 - **Platform**: Vercel
-- **GitHub repo**: True-Aim-AG/trueaim-website (redirected from Fr3nn3r/TrueAIm.ai)
+- **GitHub repo**: `True-Aim-AG/trueaim-website` (redirected from `Fr3nn3r/TrueAIm.ai`)
+- **Team**: `fred-brunners-projects` (org ID `team_L7CF6FpMAykgkUtgD710Muuj`)
 
 ### Vercel Projects
 
-| Project | URL | Purpose | Project ID |
+| Project | Canonical URL | Purpose | Project ID |
 |---------|-----|---------|------------|
 | `trueaim` | https://trueaim.ai / https://www.trueaim.ai | **Production** | `prj_LPsEqV6syPd3AfA4Lq0j94ZLjbuj` |
-| `trueaim-staging` | https://trueaim-staging.vercel.app | **Staging** (preview before production) | `prj_HZTYPi5GKNtnDVxMW1UOzHiXOCbe` |
+| `trueaim-staging` | https://trueaim-staging-fred-brunners-projects.vercel.app | **Staging** (manual review before promoting) | `prj_HZTYPi5GKNtnDVxMW1UOzHiXOCbe` |
 
-### Deploy Commands
-- **Staging**: `npx vercel --prod --project trueaim-staging` (deploy to staging for review)
-- **Production**: `npx vercel --prod` (deploys to trueaim.ai via `.vercel/project.json`)
+### Auto-deploy status (neither project auto-deploys in practice)
+- **`trueaim` (prod)**: no GitHub integration. Nothing fires on push. Only manual CLI deploys.
+- **`trueaim-staging`**: has a stale GitHub integration pointing at the old `Fr3nn3r/TrueAIm.ai` repo. Because the repo was renamed to `True-Aim-AG/trueaim-website`, the webhook is orphaned and no longer fires on pushes to `main`. Still manual in practice. If you want to revive auto-deploy, reconnect the integration to the new repo path in the Vercel dashboard; otherwise leave it — manual is the intentional flow.
+- **Principle**: never push code directly to production without a manual verification step on staging first.
+
+### Deploy commands
+
+**Production** (`trueaim.ai`) — uses the linked `.vercel/project.json`:
+```bash
+npx vercel --prod
+```
+
+**Staging** (`trueaim-staging-fred-brunners-projects.vercel.app`) — override the linked project via env vars so the prod link is not clobbered, then alias the unique deployment URL to the stable staging URL (the `--prod` flag alone does not reliably move the stable alias):
+```bash
+# 1. Deploy
+VERCEL_ORG_ID=team_L7CF6FpMAykgkUtgD710Muuj \
+VERCEL_PROJECT_ID=prj_HZTYPi5GKNtnDVxMW1UOzHiXOCbe \
+npx vercel deploy --prod --yes
+# → prints a unique URL like trueaim-staging-<hash>-fred-brunners-projects.vercel.app
+
+# 2. Alias it to the stable staging URL
+VERCEL_ORG_ID=team_L7CF6FpMAykgkUtgD710Muuj \
+VERCEL_PROJECT_ID=prj_HZTYPi5GKNtnDVxMW1UOzHiXOCbe \
+npx vercel alias set <unique-deployment-url> trueaim-staging-fred-brunners-projects.vercel.app
+```
 
 ### Important
-- `.vercel/project.json` must point to the **production** project (`trueaim`). Do not change this.
-- Auto-deploy via GitHub integration is not available (Hobby plan). Use CLI deploys.
+- `.vercel/project.json` must point to the **production** project (`trueaim`). Do not change this — it is what makes bare `vercel --prod` target production.
 - Always deploy to staging first, verify, then deploy to production.
 
 ## Reference Files
