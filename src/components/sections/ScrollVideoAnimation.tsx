@@ -68,23 +68,47 @@ export function ScrollVideoAnimation() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Cover-fit: fill the canvas while maintaining aspect ratio
     const imgRatio = img.naturalWidth / img.naturalHeight;
     const canvasRatio = canvas.width / canvas.height;
+    const isMobile = window.innerWidth < 768;
 
-    let sx = 0, sy = 0, sw = img.naturalWidth, sh = img.naturalHeight;
-
-    if (imgRatio > canvasRatio) {
-      // Image is wider — crop sides
-      sw = img.naturalHeight * canvasRatio;
-      sx = (img.naturalWidth - sw) / 2;
+    if (isMobile) {
+      // Contain-fit on mobile: show the whole frame, letterbox into the
+      // section background. Avoids the aggressive center-crop that cuts
+      // off horizontally-arranged content on portrait screens.
+      let destW: number, destH: number;
+      if (imgRatio > canvasRatio) {
+        // Image is wider than canvas — fit to width, vertical letterbox
+        destW = canvas.width;
+        destH = canvas.width / imgRatio;
+      } else {
+        // Image is taller than canvas — fit to height, horizontal letterbox
+        destH = canvas.height;
+        destW = canvas.height * imgRatio;
+      }
+      const dx = (canvas.width - destW) / 2;
+      const dy = (canvas.height - destH) / 2;
+      ctx.drawImage(
+        img,
+        0, 0, img.naturalWidth, img.naturalHeight,
+        dx, dy, destW, destH
+      );
     } else {
-      // Image is taller — crop top/bottom
-      sh = img.naturalWidth / canvasRatio;
-      sy = (img.naturalHeight - sh) / 2;
-    }
+      // Cover-fit on desktop: fill the canvas while maintaining aspect ratio
+      let sx = 0, sy = 0, sw = img.naturalWidth, sh = img.naturalHeight;
 
-    ctx.drawImage(img, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+      if (imgRatio > canvasRatio) {
+        // Image is wider — crop sides
+        sw = img.naturalHeight * canvasRatio;
+        sx = (img.naturalWidth - sw) / 2;
+      } else {
+        // Image is taller — crop top/bottom
+        sh = img.naturalWidth / canvasRatio;
+        sy = (img.naturalHeight - sh) / 2;
+      }
+
+      ctx.drawImage(img, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+    }
   }, []);
 
   // Stream frames in. Canvas reveals as soon as frame 0 is ready; the
@@ -197,7 +221,7 @@ export function ScrollVideoAnimation() {
   }, [loaded, drawFrame]);
 
   return (
-    <section ref={containerRef} className="relative" style={{ height: "350vh" }}>
+    <section ref={containerRef} className="relative h-[200vh] md:h-[350vh]">
       {/* Sticky canvas fills viewport */}
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {/* Loading indicator — shown only until frame 0 is ready, so it
