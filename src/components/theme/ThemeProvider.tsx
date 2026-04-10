@@ -18,19 +18,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
-    // Check localStorage first, then system preference
-    const stored = localStorage.getItem("theme") as Theme | null;
-    if (stored) {
-      setThemeState(stored);
-      document.documentElement.setAttribute("data-theme", stored);
-    } else {
-      // Default to dark mode on mobile (< 768px) or if system prefers dark
-      const isMobile = window.innerWidth < 768;
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const initial = (isMobile || prefersDark) ? "dark" : "light";
-      setThemeState(initial);
-      document.documentElement.setAttribute("data-theme", initial);
-    }
+    // Dark mode only — light mode is disabled
+    document.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
   }, []);
 
   const setThemeAndSync = (newTheme: Theme) => {

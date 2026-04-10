@@ -123,15 +123,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme');
-                  if (!theme) {
-                    theme = (window.innerWidth < 768 || window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
-                  }
-                  document.documentElement.setAttribute('data-theme', theme);
-                } catch (e) {}
-              })();
+              document.documentElement.setAttribute('data-theme', 'dark');
             `,
           }}
         />

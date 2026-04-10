@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/theme/ThemeToggle";
+
 import { LanguageSwitcher, LanguageSwitcherMobile } from "@/components/layout/LanguageSwitcher";
 import { useTranslations } from "next-intl";
 
@@ -62,18 +62,11 @@ export function Navigation() {
               />
             </motion.div>
             <Image
-              src="/images/wordmark.png"
-              alt="True AIm"
-              width={120}
-              height={20}
-              className="h-5 w-auto object-contain light-only"
-            />
-            <Image
               src="/images/wordmark-dark.png"
               alt="True AIm"
               width={120}
               height={20}
-              className="h-5 w-auto object-contain dark-only"
+              className="h-5 w-auto object-contain"
             />
           </Link>
 
@@ -162,7 +155,6 @@ export function Navigation() {
           {/* CTA Button, Language & Theme Toggle */}
           <div className="hidden md:flex items-center gap-2">
             <LanguageSwitcher />
-            <ThemeToggle />
             <Link
               href="/contact"
               className="btn-shine inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] font-semibold hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/20 hover:shadow-[var(--primary)]/40 hover:scale-[1.02]"
@@ -244,7 +236,6 @@ export function Navigation() {
             <div className="flex flex-col gap-3 mt-2">
               <LanguageSwitcherMobile />
               <div className="flex items-center gap-2">
-                <ThemeToggle />
                 <Link
                   href="/contact"
                   className="flex-1 btn-shine inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] font-semibold hover:bg-[var(--primary-hover)] transition-all shadow-lg shadow-[var(--primary)]/20"
