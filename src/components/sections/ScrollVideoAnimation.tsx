@@ -70,45 +70,27 @@ export function ScrollVideoAnimation() {
 
     const imgRatio = img.naturalWidth / img.naturalHeight;
     const canvasRatio = canvas.width / canvas.height;
-    const isMobile = window.innerWidth < 768;
 
-    if (isMobile) {
-      // Contain-fit on mobile: show the whole frame, letterbox into the
-      // section background. Avoids the aggressive center-crop that cuts
-      // off horizontally-arranged content on portrait screens.
-      let destW: number, destH: number;
-      if (imgRatio > canvasRatio) {
-        // Image is wider than canvas — fit to width, vertical letterbox
-        destW = canvas.width;
-        destH = canvas.width / imgRatio;
-      } else {
-        // Image is taller than canvas — fit to height, horizontal letterbox
-        destH = canvas.height;
-        destW = canvas.height * imgRatio;
-      }
-      const dx = (canvas.width - destW) / 2;
-      const dy = (canvas.height - destH) / 2;
-      ctx.drawImage(
-        img,
-        0, 0, img.naturalWidth, img.naturalHeight,
-        dx, dy, destW, destH
-      );
+    // Contain-fit: show the whole frame, letterbox into the section
+    // background. Avoids the aggressive center-crop that made frames
+    // look zoomed-in when viewport ratio didn't match the source frames.
+    let destW: number, destH: number;
+    if (imgRatio > canvasRatio) {
+      // Image is wider than canvas — fit to width, vertical letterbox
+      destW = canvas.width;
+      destH = canvas.width / imgRatio;
     } else {
-      // Cover-fit on desktop: fill the canvas while maintaining aspect ratio
-      let sx = 0, sy = 0, sw = img.naturalWidth, sh = img.naturalHeight;
-
-      if (imgRatio > canvasRatio) {
-        // Image is wider — crop sides
-        sw = img.naturalHeight * canvasRatio;
-        sx = (img.naturalWidth - sw) / 2;
-      } else {
-        // Image is taller — crop top/bottom
-        sh = img.naturalWidth / canvasRatio;
-        sy = (img.naturalHeight - sh) / 2;
-      }
-
-      ctx.drawImage(img, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+      // Image is taller than canvas — fit to height, horizontal letterbox
+      destH = canvas.height;
+      destW = canvas.height * imgRatio;
     }
+    const dx = (canvas.width - destW) / 2;
+    const dy = (canvas.height - destH) / 2;
+    ctx.drawImage(
+      img,
+      0, 0, img.naturalWidth, img.naturalHeight,
+      dx, dy, destW, destH
+    );
   }, []);
 
   // Stream frames in. Canvas reveals as soon as frame 0 is ready; the
