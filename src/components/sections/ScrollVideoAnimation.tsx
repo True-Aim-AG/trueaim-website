@@ -71,21 +71,25 @@ export function ScrollVideoAnimation() {
     const imgRatio = img.naturalWidth / img.naturalHeight;
     const canvasRatio = canvas.width / canvas.height;
 
-    // Contain-fit: show the whole frame, letterbox into the section
-    // background. Avoids the aggressive center-crop that made frames
-    // look zoomed-in when viewport ratio didn't match the source frames.
+    // Contain-fit everywhere: guarantees the whole frame is always
+    // visible, never clipped. Subject size varies wildly across the
+    // animation (tight capsule → exploded pipeline filling the frame),
+    // so any cover-fit or crop risks cutting off the dense frames.
+    //
+    // Anchor: top on landscape (so vertical slack drops to the bottom
+    // where the gradient hides it — avoids subject sitting low on
+    // screen); centered on portrait (symmetric framing; the bottom
+    // slack on a top-anchor would be visually jarring on mobile).
     let destW: number, destH: number;
     if (imgRatio > canvasRatio) {
-      // Image is wider than canvas — fit to width, vertical letterbox
       destW = canvas.width;
       destH = canvas.width / imgRatio;
     } else {
-      // Image is taller than canvas — fit to height, horizontal letterbox
       destH = canvas.height;
       destW = canvas.height * imgRatio;
     }
     const dx = (canvas.width - destW) / 2;
-    const dy = (canvas.height - destH) / 2;
+    const dy = canvasRatio < 1 ? (canvas.height - destH) / 2 : 0;
     ctx.drawImage(
       img,
       0, 0, img.naturalWidth, img.naturalHeight,
@@ -165,11 +169,18 @@ export function ScrollVideoAnimation() {
         const rawProgress = -rect.top / scrollableHeight;
         const clampedProgress = Math.max(0, Math.min(1, rawProgress));
 
-        setProgress(clampedProgress);
+        // Ease-in curve on the scroll→frame mapping: early scroll advances
+        // through more frames so the capsule starts opening immediately,
+        // instead of sitting closed while the user wonders if it's working.
+        // Annotation cards track the same eased value, so they stay synced
+        // with the visual frame rather than the raw scroll position.
+        const easedProgress = Math.pow(clampedProgress, 0.6);
+
+        setProgress(easedProgress);
 
         const frameIndex = Math.min(
           TOTAL_FRAMES - 1,
-          Math.floor(clampedProgress * (TOTAL_FRAMES - 1))
+          Math.floor(easedProgress * (TOTAL_FRAMES - 1))
         );
 
         if (frameIndex !== currentFrameRef.current) {
@@ -236,6 +247,23 @@ export function ScrollVideoAnimation() {
           style={{
             background:
               "linear-gradient(to top, var(--background) 0%, var(--background) 15%, transparent 100%)",
+          }}
+        />
+        {/* Side overlays blend ultrawide horizontal letterbox into the
+            page background. On standard-ratio viewports they act as a
+            soft cinematic edge vignette. */}
+        <div
+          className="absolute inset-y-0 left-0 w-[20vw] pointer-events-none z-10 hidden md:block"
+          style={{
+            background:
+              "linear-gradient(to right, var(--background) 0%, transparent 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-y-0 right-0 w-[20vw] pointer-events-none z-10 hidden md:block"
+          style={{
+            background:
+              "linear-gradient(to left, var(--background) 0%, transparent 100%)",
           }}
         />
 
