@@ -5,6 +5,7 @@ import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { GoogleAnalyticsWrapper } from "@/components/layout/GoogleAnalytics";
+import { HubSpotTracking } from "@/components/layout/HubSpotTracking";
 import { AuroraBackground } from "@/components/layout/AuroraBackground";
 import { NeuralBackground } from "@/components/layout/NeuralBackground";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
@@ -130,9 +131,11 @@ export default async function LocaleLayout({ children, params }: Props) {
         <link rel="preconnect" href="https://mira-travel-demo.vercel.app" />
         <link rel="preconnect" href="https://claimeval.vercel.app" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://js-eu1.hs-scripts.com" />
       </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} antialiased`}>
         <GoogleAnalyticsWrapper />
+        <HubSpotTracking />
         <ThemeProvider>
           <NextIntlClientProvider>
             <a
