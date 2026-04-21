@@ -33,7 +33,7 @@ const advisorImages: Record<string, string | undefined> = {
   bassil: "/team/bassil.png",
 };
 
-const partnerKeys = ["yarowa", "zhaw", "innosuisse"] as const;
+const partnerKeys = ["yarowa", "zhaw", "innosuisse", "swissInsurtechHub"] as const;
 
 const partnerMeta = {
   yarowa: {
@@ -47,6 +47,10 @@ const partnerMeta = {
   innosuisse: {
     image: "/partners/innosuisse.png",
     link: "/partners/innosuisse",
+  },
+  swissInsurtechHub: {
+    image: "/partners/swiss-insurtech-hub.png",
+    link: "/partners/swissinsurtechhub",
   },
 };
 
@@ -250,7 +254,7 @@ export default async function CompanyPage() {
             </p>
           </MotionDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {partnerKeys.map((key, index) => (
               <MotionDiv
                 key={key}
