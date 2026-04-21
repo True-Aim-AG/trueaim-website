@@ -2,6 +2,7 @@ import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { ArrowRight, ExternalLink, Award, Shield, Landmark, Microscope } from "lucide-react";
+import { PartnerOutboundLink } from "@/components/partners/PartnerOutboundLink";
 
 export default async function InnosuissePage() {
   const t = await getTranslations("partners.innosuisse");
@@ -109,15 +110,14 @@ export default async function InnosuissePage() {
               {t("grantDetails.description")}
             </p>
             <div className="mt-6">
-              <a
+              <PartnerOutboundLink
                 href="https://www.innosuisse.ch"
-                target="_blank"
-                rel="noopener noreferrer"
+                label="innosuisse"
                 className="inline-flex items-center gap-2 text-[var(--primary)] font-medium hover:underline"
               >
                 {t("grantDetails.visitLink")}
                 <ExternalLink className="w-4 h-4" />
-              </a>
+              </PartnerOutboundLink>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { ArrowRight, Building2, Network, Globe, Handshake } from "lucide-react";
+import { PartnerOutboundLink } from "@/components/partners/PartnerOutboundLink";
 
 export default async function YarowaPage() {
   const t = await getTranslations("partners.yarowa");
@@ -102,14 +103,13 @@ export default async function YarowaPage() {
           </div>
 
           <div className="text-center mt-4 md:mt-6">
-            <a
+            <PartnerOutboundLink
               href="https://www.yarowa.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              label="yarowa"
               className="text-[var(--primary)] hover:underline transition-colors"
             >
               {t("hero.visitYarowa")}
-            </a>
+            </PartnerOutboundLink>
           </div>
         </div>
       </section>

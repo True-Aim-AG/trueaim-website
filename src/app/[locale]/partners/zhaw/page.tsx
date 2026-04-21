@@ -2,6 +2,7 @@ import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { ArrowRight, ExternalLink, GraduationCap, Brain, Users, FlaskConical } from "lucide-react";
+import { PartnerOutboundLink } from "@/components/partners/PartnerOutboundLink";
 
 export default async function ZHAWPage() {
   const t = await getTranslations("partners.zhaw");
@@ -150,15 +151,14 @@ export default async function ZHAWPage() {
               </div>
 
               <div className="pt-4">
-                <a
+                <PartnerOutboundLink
                   href="https://www.zhaw.ch/en/about-us/person/flum"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  label="zhaw"
                   className="inline-flex items-center gap-2 text-[var(--primary)] font-medium hover:underline"
                 >
                   {t("researchGroup.visitLink")}
                   <ExternalLink className="w-4 h-4" />
-                </a>
+                </PartnerOutboundLink>
               </div>
             </div>
           </div>
