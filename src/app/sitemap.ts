@@ -58,6 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     { path: "/partners/zhaw", changeFrequency: "monthly", priority: 0.5 },
+    { path: "/partners/swissinsurtechhub", changeFrequency: "monthly", priority: 0.5 },
   ];
 
   const translatedEntries: MetadataRoute.Sitemap = translatedPages.map(
