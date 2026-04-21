@@ -120,6 +120,41 @@
         "exploreTech": "Explore Our Technology",
         "bookDemo": "Book a Demo"
       }
+    },
+    "swissInsurtechHub": {
+      "hero": {
+        "badge": "Strategic Partner",
+        "titleLine1": "Swiss InsurTech Hub",
+        "titleLine2": "Strategic Partner",
+        "description1": "Swiss InsurTech Hub is Switzerland's leading network for insurance innovation, bringing together insurers, startups and technology partners to accelerate digital transformation across the industry. The platform fosters collaboration, knowledge sharing and access to a broad ecosystem of forward-thinking organisations.",
+        "description2": "True Aim AG is a member of the Swiss InsurTech Hub, actively contributing to the advancement of auditable, regulation-ready AI in insurance, and engaging with leading industry participants to shape the future of claims automation and decisioning.",
+        "visitLink": "Visit Swiss InsurTech Hub"
+      },
+      "strengths": {
+        "heading": "Partnership Strengths",
+        "ecosystem": {
+          "title": "Ecosystem Access",
+          "description": "Access to a broad network of insurers, partners and innovators across Switzerland and Europe. A strong platform for collaboration, partnerships and market visibility."
+        },
+        "collaboration": {
+          "title": "Industry Collaboration",
+          "description": "Facilitates collaboration between incumbents and emerging technology providers. Enables practical engagement on real-world use cases and innovation initiatives."
+        },
+        "platform": {
+          "title": "Innovation Platform",
+          "description": "A recognised Swiss platform dedicated to advancing insurance innovation. Supports knowledge exchange, thought leadership and industry alignment."
+        },
+        "vision": {
+          "title": "Aligned Vision",
+          "description": "Both True Aim and the Swiss InsurTech Hub share a focus on advancing modern, transparent and compliant insurance technology. This alignment supports long-term innovation and responsible adoption of AI."
+        }
+      },
+      "cta": {
+        "heading": "See Our Products in Action",
+        "description": "Discover how our partnerships deliver auditable claims automation to insurers.",
+        "learnProducts": "Learn About Our Products",
+        "bookDemo": "Book a Demo"
+      }
     }
   }
 }

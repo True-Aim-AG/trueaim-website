@@ -79,6 +79,10 @@
       "innosuisse": {
         "name": "Innosuisse",
         "description": "Switzerland's official innovation agency. Non-dilutive grant received. National-level validation of our research & technology."
+      },
+      "swissInsurtechHub": {
+        "name": "Swiss InsurTech Hub",
+        "description": "Switzerland's leading insurance innovation network. Strategic ecosystem partner supporting collaboration, industry engagement and market access across insurers, startups and technology providers."
       }
     },
     "headquarters": {
