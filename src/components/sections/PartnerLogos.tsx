@@ -27,6 +27,13 @@ const partners = [
     height: 150,
     href: "/partners/innosuisse",
   },
+  {
+    name: "Swiss InsurTech Hub",
+    logo: "/partners/swiss-insurtech-hub.png",
+    width: 292,
+    height: 150,
+    href: "/partners/swissinsurtechhub",
+  },
 ];
 
 export function PartnerLogos() {
