@@ -30,8 +30,8 @@ const partners = [
   {
     name: "Swiss InsurTech Hub",
     logo: "/partners/swiss-insurtech-hub.png",
-    width: 292,
-    height: 150,
+    width: 195,
+    height: 100,
     href: "/partners/swissinsurtechhub",
   },
 ];
@@ -55,7 +55,7 @@ export function PartnerLogos() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
-        <div className="flex items-center justify-center gap-20 md:gap-32 lg:gap-40 flex-wrap px-8">
+        <div className="flex items-center justify-center gap-6 md:gap-10 lg:gap-12 flex-wrap px-8">
           {partners.map((partner) => (
             <Link
               key={partner.name}
