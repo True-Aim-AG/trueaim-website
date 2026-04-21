@@ -120,6 +120,41 @@
         "exploreTech": "Unsere Technologie entdecken",
         "bookDemo": "Demo buchen"
       }
+    },
+    "swissInsurtechHub": {
+      "hero": {
+        "badge": "Strategischer Partner",
+        "titleLine1": "Swiss InsurTech Hub",
+        "titleLine2": "Strategischer Partner",
+        "description1": "Der Swiss InsurTech Hub ist das fuehrende Netzwerk der Schweiz fuer Versicherungsinnovation und bringt Versicherer, Startups und Technologiepartner zusammen, um die digitale Transformation der Branche zu beschleunigen. Die Plattform foerdert Zusammenarbeit, Wissensaustausch und Zugang zu einem breiten Oekosystem zukunftsorientierter Organisationen.",
+        "description2": "Die True Aim AG ist Mitglied des Swiss InsurTech Hub und traegt aktiv zur Weiterentwicklung auditierbarer, regulierungskonformer AI in der Versicherungsbranche bei. Gemeinsam mit fuehrenden Branchenakteuren gestalten wir die Zukunft der Schadenautomatisierung und -entscheidung.",
+        "visitLink": "Swiss InsurTech Hub besuchen"
+      },
+      "strengths": {
+        "heading": "Staerken der Partnerschaft",
+        "ecosystem": {
+          "title": "Zugang zum Oekosystem",
+          "description": "Zugang zu einem breiten Netzwerk von Versicherern, Partnern und Innovatoren in der Schweiz und Europa. Eine starke Plattform fuer Zusammenarbeit, Partnerschaften und Marktpraesenz."
+        },
+        "collaboration": {
+          "title": "Branchenuebergreifende Zusammenarbeit",
+          "description": "Erleichtert die Zusammenarbeit zwischen etablierten Akteuren und aufstrebenden Technologieanbietern. Ermoeglicht praktisches Engagement bei realen Anwendungsfaellen und Innovationsinitiativen."
+        },
+        "platform": {
+          "title": "Innovationsplattform",
+          "description": "Eine anerkannte Schweizer Plattform, die sich der Weiterentwicklung von Versicherungsinnovation widmet. Unterstuetzt Wissensaustausch, Thought Leadership und branchenweite Abstimmung."
+        },
+        "vision": {
+          "title": "Gemeinsame Vision",
+          "description": "Sowohl True Aim als auch der Swiss InsurTech Hub setzen auf die Weiterentwicklung moderner, transparenter und konformer Versicherungstechnologie. Diese Ausrichtung unterstuetzt langfristige Innovation und die verantwortungsvolle Einfuehrung von AI."
+        }
+      },
+      "cta": {
+        "heading": "Unsere Produkte in Aktion erleben",
+        "description": "Erfahren Sie, wie unsere Partnerschaften auditierbare Schadenautomatisierung fuer Versicherer bereitstellen.",
+        "learnProducts": "Unsere Produkte kennenlernen",
+        "bookDemo": "Demo buchen"
+      }
     }
   }
 }

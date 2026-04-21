@@ -79,6 +79,10 @@
       "innosuisse": {
         "name": "Innosuisse",
         "description": "Die offizielle Innovationsagentur der Schweiz. Nicht-verwassernder Foerderbeitrag erhalten. Validierung auf nationaler Ebene fuer unsere Forschung & Technologie."
+      },
+      "swissInsurtechHub": {
+        "name": "Swiss InsurTech Hub",
+        "description": "Das fuehrende Schweizer Netzwerk fuer Versicherungsinnovation. Strategischer Oekosystempartner, der Zusammenarbeit, Brancheneinbindung und Marktzugang zwischen Versicherern, Startups und Technologieanbietern unterstuetzt."
       }
     },
     "headquarters": {
