@@ -79,6 +79,10 @@
       "innosuisse": {
         "name": "Innosuisse",
         "description": "L'agence officielle d'innovation de la Suisse. Subvention non dilutive obtenue. Validation au niveau national de notre recherche & technologie."
+      },
+      "swissInsurtechHub": {
+        "name": "Swiss InsurTech Hub",
+        "description": "Le reseau suisse de reference pour l'innovation dans l'assurance. Partenaire strategique de l'ecosysteme, il soutient la collaboration, l'engagement sectoriel et l'acces au marche entre assureurs, start-ups et fournisseurs technologiques."
       }
     },
     "headquarters": {
