@@ -215,8 +215,12 @@ export function ScrollVideoAnimation() {
 
   return (
     <section ref={containerRef} className="relative h-[200vh] md:h-[350vh]">
-      {/* Sticky canvas fills viewport */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
+      {/* Sticky canvas sits below the fixed navbar so the top of the
+          video aligns with the navbar's bottom edge. Navbar height is
+          ~75px (py-3 + 48px logo + 1px border); using 76px avoids a
+          sub-pixel sliver. If the navbar height ever changes, update
+          both `top` and `calc(100vh - ...)` here. */}
+      <div className="sticky top-[76px] h-[calc(100vh-76px)] w-full overflow-hidden">
         {/* Loading indicator — shown only until frame 0 is ready, so it
             stays briefly and is just an indeterminate hint. */}
         {!loaded && (
@@ -234,14 +238,12 @@ export function ScrollVideoAnimation() {
           style={{ opacity: loaded ? 1 : 0 }}
         />
 
-        {/* Gradient overlays for blending with site background */}
-        <div
-          className="absolute inset-x-0 top-0 h-[240px] pointer-events-none z-10"
-          style={{
-            background:
-              "linear-gradient(to bottom, var(--background) 0%, var(--background) 15%, transparent 100%)",
-          }}
-        />
+        {/* Bottom overlay blends the canvas into the next section. No
+            top overlay: the fixed navbar already has its own solid bg
+            (rgba(6,11,24,0.80)) + backdrop-blur-xl, which separates it
+            from the canvas cleanly. A top fade here dimmed the actual
+            frame content (labels, subject) that the user is meant to
+            see crisply. */}
         <div
           className="absolute inset-x-0 bottom-0 h-[240px] pointer-events-none z-10"
           style={{
