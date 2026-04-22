@@ -1,11 +1,38 @@
 # https://www.robotstxt.org/robotstxt.html
+
+# Default: allow all crawlers
 User-agent: *
 Allow: /
+
+# Explicit AI crawlers — allowed, no training opt-out at this time
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Block admin and API paths from all crawlers
+User-agent: *
+Disallow: /api/
 
 # Sitemap
 Sitemap: https://trueaim.ai/sitemap.xml
 
-# LLM Documentation
-# See https://llmstxt.org for the llms.txt standard
+# LLM documentation (https://llmstxt.org)
 # llms.txt: https://trueaim.ai/llms.txt
 # llms-full.txt: https://trueaim.ai/llms-full.txt
