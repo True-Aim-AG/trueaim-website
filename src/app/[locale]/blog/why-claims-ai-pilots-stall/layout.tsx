@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: TITLE,
-    description: OG_DESCRIPTION,
+    description: DESCRIPTION,
     url: URL,
     type: "article",
     publishedTime: PUBLISHED,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: TITLE,
-    description: OG_DESCRIPTION,
+    description: DESCRIPTION,
   },
   alternates: {
     canonical: URL,
