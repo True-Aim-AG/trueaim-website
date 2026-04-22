@@ -5,13 +5,17 @@ const SLUG = "auditability-evidence-chains";
 const URL = `https://trueaim.ai/blog/${SLUG}`;
 const TITLE =
   "Auditability in Claims AI: Building Evidence Chains That Auditors Actually Accept";
-const DESCRIPTION =
-  "Everyone says their AI is explainable. Few can prove it to an auditor. Here's the architecture that makes it possible, and the regulatory requirements it satisfies.";
+const META_DESCRIPTION =
+  "Learn how to build AI systems with complete audit trails that satisfy FINMA and EU AI Act requirements. Practical architecture for field-to-source provenance, decision audit trails, and human override capture.";
+const OG_DESCRIPTION =
+  "Everyone says their AI is explainable. Few can prove it to an auditor. Here's the architecture that makes it possible.";
+const TWITTER_DESCRIPTION =
+  "Learn how to build AI systems with complete audit trails that satisfy regulators.";
 const PUBLISHED = "2025-02-01T00:00:00.000Z";
 
 export const metadata: Metadata = {
   title: TITLE,
-  description: DESCRIPTION,
+  description: META_DESCRIPTION,
   keywords: [
     "AI auditability",
     "claims automation",
@@ -24,8 +28,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: TITLE,
-    description:
-      "Everyone says their AI is explainable. Few can prove it to an auditor. Here's the architecture that makes it possible.",
+    description: OG_DESCRIPTION,
     url: URL,
     type: "article",
     publishedTime: PUBLISHED,
@@ -35,8 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: TITLE,
-    description:
-      "Learn how to build AI systems with complete audit trails that satisfy regulators.",
+    description: TWITTER_DESCRIPTION,
   },
   alternates: {
     canonical: URL,
@@ -47,7 +49,7 @@ const blogPostingJsonLd = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   headline: TITLE,
-  description: DESCRIPTION,
+  description: META_DESCRIPTION,
   url: URL,
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
