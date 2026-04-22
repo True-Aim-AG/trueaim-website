@@ -4,15 +4,13 @@ import { JsonLd } from "@/components/seo/JsonLd";
 const SLUG = "why-claims-ai-pilots-stall";
 const URL = `https://trueaim.ai/blog/${SLUG}`;
 const TITLE = "Why Claims AI Pilots Stall Before Production Readiness";
-const META_DESCRIPTION =
-  "Many claims AI pilots report accuracy in the mid 90s. Yet months later they are still not live in production. The root cause is measurement discipline and production realism — not model capability.";
-const OG_DESCRIPTION =
+const DESCRIPTION =
   "Many claims AI pilots report accuracy in the mid 90s. Yet months later they are still not live in production. The root cause is measurement discipline and production realism.";
 const PUBLISHED = "2026-02-15T00:00:00.000Z";
 
 export const metadata: Metadata = {
   title: TITLE,
-  description: META_DESCRIPTION,
+  description: DESCRIPTION,
   keywords: [
     "Claims AI",
     "Production readiness",
@@ -46,7 +44,7 @@ const blogPostingJsonLd = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   headline: TITLE,
-  description: META_DESCRIPTION,
+  description: DESCRIPTION,
   url: URL,
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
