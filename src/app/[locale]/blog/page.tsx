@@ -1,47 +1,13 @@
 import { Link } from "@/i18n/navigation";
 import { ArrowRight, BookOpen, Calendar, Clock, Shield, Scale, BarChart3 } from "lucide-react";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { blogPosts } from "@/lib/blog-posts";
 
-// Blog post data
-const blogPosts = [
-  {
-    slug: "why-claims-ai-pilots-stall",
-    title: "Why Claims AI Pilots Stall Before Production Readiness",
-    excerpt:
-      "Many claims AI pilots report accuracy in the mid 90s. Yet months later they are still not live in production. The root cause is measurement discipline and production realism.",
-    category: "Production Readiness",
-    categoryIcon: BarChart3,
-    date: "February 2026",
-    readTime: "10 min read",
-    tags: ["Claims AI", "Production Readiness", "Evaluation", "Accuracy"],
-    featured: true,
-  },
-  {
-    slug: "build-vs-buy-idp-vendors",
-    title: "Build vs Buy: What to Demand from IDP Vendors",
-    excerpt:
-      "A practical evaluation framework for insurance teams evaluating claims automation solutions. Learn when to build, when to buy, and how to evaluate vendors objectively.",
-    category: "Vendor Evaluation",
-    categoryIcon: Scale,
-    date: "February 2025",
-    readTime: "15 min read",
-    tags: ["Vendor Evaluation", "Build vs Buy", "IDP", "Claims AI"],
-    featured: false,
-  },
-  {
-    slug: "auditability-evidence-chains",
-    title:
-      "Auditability in Claims AI: Building Evidence Chains That Auditors Actually Accept",
-    excerpt:
-      "Everyone says their AI is explainable. Few can prove it to an auditor. Here's the architecture that makes it possible, and the regulatory requirements it satisfies.",
-    category: "Compliance & Governance",
-    categoryIcon: Shield,
-    date: "February 2025",
-    readTime: "12 min read",
-    tags: ["Auditability", "FINMA", "EU AI Act", "Claims AI"],
-    featured: false,
-  },
-];
+const iconBySlug: Record<string, typeof BarChart3> = {
+  "why-claims-ai-pilots-stall": BarChart3,
+  "auditability-evidence-chains": Shield,
+  "build-vs-buy-idp-vendors": Scale,
+};
 
 export default function BlogPage() {
   const featuredPost = blogPosts.find((post) => post.featured);
@@ -80,7 +46,10 @@ export default function BlogPage() {
               <article className="glass-panel p-8 hover:border-[var(--primary)]/50 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] text-sm font-medium">
-                    <featuredPost.categoryIcon className="w-4 h-4" />
+                    {(() => {
+                      const Icon = iconBySlug[featuredPost.slug] ?? BookOpen;
+                      return <Icon className="w-4 h-4" />;
+                    })()}
                     {featuredPost.category}
                   </span>
                 </div>
@@ -97,7 +66,7 @@ export default function BlogPage() {
                   <div className="flex items-center gap-4 text-sm text-[var(--text-muted)]">
                     <div className="flex items-center gap-2">
                       <Calendar className="w-4 h-4" />
-                      {featuredPost.date}
+                      {featuredPost.displayDate}
                     </div>
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4" />
@@ -145,7 +114,10 @@ export default function BlogPage() {
                   <article className="glass-panel p-6 h-full hover:border-[var(--primary)]/50 transition-all duration-300">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] text-xs font-medium">
-                        <post.categoryIcon className="w-3 h-3" />
+                        {(() => {
+                          const Icon = iconBySlug[post.slug] ?? BookOpen;
+                          return <Icon className="w-3 h-3" />;
+                        })()}
                         {post.category}
                       </span>
                     </div>
@@ -159,7 +131,7 @@ export default function BlogPage() {
                     </p>
 
                     <div className="flex items-center gap-3 text-xs text-[var(--text-muted)]">
-                      <span>{post.date}</span>
+                      <span>{post.displayDate}</span>
                       <span>·</span>
                       <span>{post.readTime}</span>
                     </div>
