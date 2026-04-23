@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { blogPosts } from "../blog-posts";
 
 describe("blogPosts", () => {
-  it("includes all four known blog slugs", () => {
+  it("includes all three known blog slugs", () => {
     const slugs = blogPosts.map((p) => p.slug).sort();
     expect(slugs).toEqual([
       "auditability-evidence-chains",
