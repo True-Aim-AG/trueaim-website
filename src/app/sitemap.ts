@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { blogPosts } from "@/lib/blog-posts";
 
 const baseUrl = "https://trueaim.ai";
 const locales = ["en", "de", "fr", "it"] as const;
@@ -79,16 +80,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: number;
   }[] = [
     { path: "/blog", changeFrequency: "weekly", priority: 0.6 },
-    {
-      path: "/blog/auditability-evidence-chains",
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      path: "/blog/build-vs-buy-idp-vendors",
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
     { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
     { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
     { path: "/cookies", changeFrequency: "yearly", priority: 0.3 },
@@ -104,5 +95,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  return [...translatedEntries, ...englishOnlyEntries];
+  const blogPostEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.publishedIso),
+    changeFrequency: "monthly",
+    priority: 0.5,
+  }));
+
+  return [...translatedEntries, ...englishOnlyEntries, ...blogPostEntries];
 }

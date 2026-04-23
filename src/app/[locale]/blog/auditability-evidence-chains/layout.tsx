@@ -1,9 +1,21 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/JsonLd";
+
+const SLUG = "auditability-evidence-chains";
+const PAGE_URL = `https://trueaim.ai/blog/${SLUG}`;
+const TITLE =
+  "Auditability in Claims AI: Building Evidence Chains That Auditors Actually Accept";
+const META_DESCRIPTION =
+  "Learn how to build AI systems with complete audit trails that satisfy FINMA and EU AI Act requirements. Practical architecture for field-to-source provenance, decision audit trails, and human override capture.";
+const OG_DESCRIPTION =
+  "Everyone says their AI is explainable. Few can prove it to an auditor. Here's the architecture that makes it possible.";
+const TWITTER_DESCRIPTION =
+  "Learn how to build AI systems with complete audit trails that satisfy regulators.";
+const PUBLISHED = "2025-02-01T00:00:00.000Z";
 
 export const metadata: Metadata = {
-  title: "Auditability in Claims AI: Building Evidence Chains That Auditors Actually Accept",
-  description:
-    "Learn how to build AI systems with complete audit trails that satisfy FINMA and EU AI Act requirements. Practical architecture for field-to-source provenance, decision audit trails, and human override capture.",
+  title: TITLE,
+  description: META_DESCRIPTION,
   keywords: [
     "AI auditability",
     "claims automation",
@@ -15,24 +27,57 @@ export const metadata: Metadata = {
     "explainable AI",
   ],
   openGraph: {
-    title: "Auditability in Claims AI: Building Evidence Chains That Auditors Actually Accept",
-    description:
-      "Everyone says their AI is explainable. Few can prove it to an auditor. Here's the architecture that makes it possible.",
-    url: "https://trueaim.ai/blog/auditability-evidence-chains",
+    title: TITLE,
+    description: OG_DESCRIPTION,
+    url: PAGE_URL,
     type: "article",
-    publishedTime: "2025-02-01T00:00:00.000Z",
+    publishedTime: PUBLISHED,
     authors: ["True Aim"],
     tags: ["AI", "Compliance", "Insurance", "Auditability", "FINMA", "EU AI Act"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Auditability in Claims AI: Building Evidence Chains",
-    description:
-      "Learn how to build AI systems with complete audit trails that satisfy regulators.",
+    title: TITLE,
+    description: TWITTER_DESCRIPTION,
   },
   alternates: {
-    canonical: "https://trueaim.ai/blog/auditability-evidence-chains",
+    canonical: PAGE_URL,
   },
+};
+
+const blogPostingJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: TITLE,
+  description: META_DESCRIPTION,
+  url: PAGE_URL,
+  datePublished: PUBLISHED,
+  dateModified: PUBLISHED,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": PAGE_URL,
+  },
+  author: {
+    "@type": "Organization",
+    name: "TrueAim AG",
+    url: "https://trueaim.ai",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "TrueAim AG",
+    url: "https://trueaim.ai",
+  },
+  keywords: ["Auditability", "FINMA", "EU AI Act", "Claims AI"],
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://trueaim.ai" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://trueaim.ai/blog" },
+    { "@type": "ListItem", position: 3, name: TITLE, item: PAGE_URL },
+  ],
 };
 
 export default function BlogPostLayout({
@@ -40,5 +85,11 @@ export default function BlogPostLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <JsonLd data={blogPostingJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
+      {children}
+    </>
+  );
 }
