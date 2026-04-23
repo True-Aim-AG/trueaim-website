@@ -1,5 +1,9 @@
 import { blogPosts } from "@/lib/blog-posts";
 
+// Static content — regenerates only at build time, not per-request.
+// Keeps the feed fast at the edge and lets Vercel's CDN cache it fully.
+export const dynamic = "force-static";
+
 const SITE_URL = "https://trueaim.ai";
 const FEED_TITLE = "True Aim — Blog";
 const FEED_DESCRIPTION =
@@ -15,11 +19,11 @@ function escapeXml(unsafe: string): string {
 }
 
 export async function GET() {
-  const lastBuildDate = new Date().toUTCString();
   const latestPost = blogPosts[0];
-  const pubDate = latestPost
+  const lastBuildDate = latestPost
     ? new Date(latestPost.publishedIso).toUTCString()
-    : lastBuildDate;
+    : new Date(0).toUTCString();
+  const pubDate = lastBuildDate;
 
   const items = blogPosts
     .map((post) => {
