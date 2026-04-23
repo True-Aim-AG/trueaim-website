@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 const SLUG = "build-vs-buy-idp-vendors";
-const URL = `https://trueaim.ai/blog/${SLUG}`;
+const PAGE_URL = `https://trueaim.ai/blog/${SLUG}`;
 const TITLE = "Build vs Buy: What to Demand from IDP Vendors";
 const DESCRIPTION =
   "A practical evaluation framework for insurance teams evaluating claims automation solutions. Learn when to build, when to buy, and how to evaluate vendors objectively.";
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description:
       "A practical evaluation framework for insurance teams evaluating claims automation solutions.",
-    url: URL,
+    url: PAGE_URL,
     type: "article",
     publishedTime: PUBLISHED,
     authors: ["True Aim"],
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
       "A practical evaluation framework for insurance teams evaluating claims automation solutions.",
   },
   alternates: {
-    canonical: URL,
+    canonical: PAGE_URL,
   },
 };
 
@@ -47,12 +47,12 @@ const blogPostingJsonLd = {
   "@type": "BlogPosting",
   headline: TITLE,
   description: DESCRIPTION,
-  url: URL,
+  url: PAGE_URL,
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": URL,
+    "@id": PAGE_URL,
   },
   author: {
     "@type": "Organization",
@@ -63,10 +63,6 @@ const blogPostingJsonLd = {
     "@type": "Organization",
     name: "TrueAim AG",
     url: "https://trueaim.ai",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://trueaim.ai/logo.png",
-    },
   },
   keywords: ["Vendor Evaluation", "Build vs Buy", "IDP", "Claims AI"],
 };
@@ -77,7 +73,7 @@ const breadcrumbJsonLd = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://trueaim.ai" },
     { "@type": "ListItem", position: 2, name: "Blog", item: "https://trueaim.ai/blog" },
-    { "@type": "ListItem", position: 3, name: TITLE, item: URL },
+    { "@type": "ListItem", position: 3, name: TITLE, item: PAGE_URL },
   ],
 };
 

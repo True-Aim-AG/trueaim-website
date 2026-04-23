@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 const SLUG = "why-claims-ai-pilots-stall";
-const URL = `https://trueaim.ai/blog/${SLUG}`;
+const PAGE_URL = `https://trueaim.ai/blog/${SLUG}`;
 const TITLE = "Why Claims AI Pilots Stall Before Production Readiness";
 const DESCRIPTION =
   "Many claims AI pilots report accuracy in the mid 90s. Yet months later they are still not live in production. The root cause is measurement discipline and production realism.";
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: URL,
+    url: PAGE_URL,
     type: "article",
     publishedTime: PUBLISHED,
     authors: ["True Aim"],
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
   },
   alternates: {
-    canonical: URL,
+    canonical: PAGE_URL,
   },
 };
 
@@ -45,12 +45,12 @@ const blogPostingJsonLd = {
   "@type": "BlogPosting",
   headline: TITLE,
   description: DESCRIPTION,
-  url: URL,
+  url: PAGE_URL,
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": URL,
+    "@id": PAGE_URL,
   },
   author: {
     "@type": "Organization",
@@ -61,10 +61,6 @@ const blogPostingJsonLd = {
     "@type": "Organization",
     name: "TrueAim AG",
     url: "https://trueaim.ai",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://trueaim.ai/logo.png",
-    },
   },
   keywords: ["Claims AI", "Production Readiness", "Evaluation", "Accuracy"],
 };
@@ -75,7 +71,7 @@ const breadcrumbJsonLd = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://trueaim.ai" },
     { "@type": "ListItem", position: 2, name: "Blog", item: "https://trueaim.ai/blog" },
-    { "@type": "ListItem", position: 3, name: TITLE, item: URL },
+    { "@type": "ListItem", position: 3, name: TITLE, item: PAGE_URL },
   ],
 };
 
