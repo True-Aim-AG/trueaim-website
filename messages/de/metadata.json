@@ -1,10 +1,10 @@
 {
   "metadata": {
     "root": {
-      "titleDefault": "True Aim | Neuro-symbolische KI für überprüfbare Schadenentscheidungen",
+      "titleDefault": "True Aim | Schadenentscheidungen automatisieren. Auditierbar by Design.",
       "titleTemplate": "%s | True Aim",
       "description": "Agentische KI mit deterministischer Logik für die Schadenautomatisierung kombinieren. Jede Entscheidung nachvollziehbar, konform mit der KI-Verordnung. Schweizer Präzision trifft überprüfbare KI.",
-      "ogTitle": "True Aim | Neuro-symbolische KI für überprüfbare Schadenentscheidungen",
+      "ogTitle": "True Aim | Schadenentscheidungen automatisieren. Auditierbar by Design.",
       "ogDescription": "Agentische KI mit deterministischer Logik für die Schadenautomatisierung kombinieren. Jede Entscheidung nachvollziehbar, konform mit der KI-Verordnung."
     },
     "mira": {

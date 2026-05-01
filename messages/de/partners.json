@@ -155,6 +155,24 @@
         "learnProducts": "Unsere Produkte kennenlernen",
         "bookDemo": "Demo buchen"
       }
+    },
+    "hub": {
+      "title": "Partner",
+      "subtitle": "Das Schweizer Innovationsoekosystem hinter True Aim",
+      "intro": "True Aim baut auf der Staerke von Schweizer Versicherungen, Forschungseinrichtungen und Innovationsfoerderern auf. Jeder Partner bringt Fachtiefe, Kapital oder Forschung ein, die unsere auditierbare KI praegen.",
+      "viewPartner": "Partner ansehen",
+      "yarowa": {
+        "tagline": "Strategischer Partner und Mutterunternehmen von True Aim"
+      },
+      "innosuisse": {
+        "tagline": "Foerderung und Zertifizierung durch den Bund"
+      },
+      "zhaw": {
+        "tagline": "Angewandte Forschungspartnerschaft"
+      },
+      "swissInsurtechHub": {
+        "tagline": "Schweizer Insurtech-Oekosystem und Reichweite"
+      }
     }
   }
 }

@@ -155,6 +155,24 @@
         "learnProducts": "Learn About Our Products",
         "bookDemo": "Book a Demo"
       }
+    },
+    "hub": {
+      "title": "Partners",
+      "subtitle": "Switzerland's innovation ecosystem behind True Aim",
+      "intro": "True Aim is built on the strengths of Swiss insurance, research, and federal innovation institutions. Each partner contributes domain depth, capital, or research that shapes how we build auditable AI.",
+      "viewPartner": "View partner",
+      "yarowa": {
+        "tagline": "Strategic partner and parent of True Aim"
+      },
+      "innosuisse": {
+        "tagline": "Federal innovation funding and certification"
+      },
+      "zhaw": {
+        "tagline": "Applied research collaboration"
+      },
+      "swissInsurtechHub": {
+        "tagline": "Swiss insurtech ecosystem and reach"
+      }
     }
   }
 }

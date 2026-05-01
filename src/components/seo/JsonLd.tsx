@@ -49,3 +49,22 @@ export const websiteJsonLd = {
     name: "TrueAim AG",
   },
 };
+
+export const siteNavigationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Primary navigation",
+  itemListElement: [
+    { "@type": "SiteNavigationElement", position: 1, name: "Products", url: "https://trueaim.ai/products/mira" },
+    { "@type": "SiteNavigationElement", position: 2, name: "MIRA", url: "https://trueaim.ai/products/mira" },
+    { "@type": "SiteNavigationElement", position: 3, name: "ContextBuilder", url: "https://trueaim.ai/products/contextbuilder" },
+    { "@type": "SiteNavigationElement", position: 4, name: "ClaimEval", url: "https://trueaim.ai/products/claimeval" },
+    { "@type": "SiteNavigationElement", position: 5, name: "Technology", url: "https://trueaim.ai/technology" },
+    { "@type": "SiteNavigationElement", position: 6, name: "Case Studies", url: "https://trueaim.ai/case-studies" },
+    { "@type": "SiteNavigationElement", position: 7, name: "Trust Center", url: "https://trueaim.ai/trust" },
+    { "@type": "SiteNavigationElement", position: 8, name: "Impact Estimator", url: "https://trueaim.ai/impact-estimator" },
+    { "@type": "SiteNavigationElement", position: 9, name: "Blog", url: "https://trueaim.ai/blog" },
+    { "@type": "SiteNavigationElement", position: 10, name: "Company", url: "https://trueaim.ai/company" },
+    { "@type": "SiteNavigationElement", position: 11, name: "Contact", url: "https://trueaim.ai/contact" },
+  ],
+};

@@ -36,6 +36,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
       description: t("ogDescription"),
     },
     alternates: {
+      canonical: getLocaleUrl(locale, "/partners"),
       languages,
     },
   };

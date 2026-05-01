@@ -155,6 +155,24 @@
         "learnProducts": "Decouvrir nos produits",
         "bookDemo": "Reserver une demo"
       }
+    },
+    "hub": {
+      "title": "Partenaires",
+      "subtitle": "L'ecosysteme suisse d'innovation derriere True Aim",
+      "intro": "True Aim s'appuie sur les forces de l'assurance suisse, de la recherche et des institutions federales d'innovation. Chaque partenaire apporte une expertise sectorielle, du capital ou des travaux de recherche qui faconnent notre IA auditable.",
+      "viewPartner": "Voir le partenaire",
+      "yarowa": {
+        "tagline": "Partenaire strategique et societe mere de True Aim"
+      },
+      "innosuisse": {
+        "tagline": "Financement et certification federale d'innovation"
+      },
+      "zhaw": {
+        "tagline": "Collaboration en recherche appliquee"
+      },
+      "swissInsurtechHub": {
+        "tagline": "Ecosysteme et portee de l'insurtech suisse"
+      }
     }
   }
 }

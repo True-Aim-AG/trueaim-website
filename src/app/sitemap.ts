@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog-posts";
+import { caseStudies } from "@/data/case-studies";
 
 const baseUrl = "https://trueaim.ai";
 const locales = ["en", "de", "fr", "it"] as const;
@@ -102,5 +103,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...translatedEntries, ...englishOnlyEntries, ...blogPostEntries];
+  const caseStudyEntries: MetadataRoute.Sitemap = caseStudies.map((cs) => ({
+    url: `${baseUrl}/case-studies/${cs.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: cs.wip ? 0.3 : 0.6,
+    alternates: buildAlternates(`/case-studies/${cs.slug}`),
+  }));
+
+  return [
+    ...translatedEntries,
+    ...englishOnlyEntries,
+    ...blogPostEntries,
+    ...caseStudyEntries,
+  ];
 }

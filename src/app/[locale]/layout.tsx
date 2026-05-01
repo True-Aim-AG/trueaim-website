@@ -9,7 +9,7 @@ import { HubSpotTracking } from "@/components/layout/HubSpotTracking";
 import { AuroraBackground } from "@/components/layout/AuroraBackground";
 import { NeuralBackground } from "@/components/layout/NeuralBackground";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
-import { JsonLd, organizationJsonLd, websiteJsonLd } from "@/components/seo/JsonLd";
+import { JsonLd, organizationJsonLd, websiteJsonLd, siteNavigationJsonLd } from "@/components/seo/JsonLd";
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { hasLocale } from 'next-intl';
@@ -121,6 +121,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <head>
         <JsonLd data={{ ...organizationJsonLd, inLanguage: locale }} />
         <JsonLd data={{ ...websiteJsonLd, inLanguage: locale }} />
+        <JsonLd data={siteNavigationJsonLd} />
         <script
           dangerouslySetInnerHTML={{
             __html: `
