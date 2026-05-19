@@ -60,7 +60,10 @@ export default function DPAPage() {
           line-height: 2rem;
           margin-top: 2.5rem;
           margin-bottom: 1rem;
-          scroll-margin-top: 6rem;
+          scroll-margin-top: 7rem;
+        }
+        .doc-panel section[id] {
+          scroll-margin-top: 7rem;
         }
         .doc-panel h3 {
           font-size: 1.125rem;
