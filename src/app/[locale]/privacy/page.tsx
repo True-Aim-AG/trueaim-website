@@ -1,5 +1,24 @@
-import { Link } from "@/i18n/navigation";
+import Link from "next/link";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+
+const PUBLISH_DATE = "2026-05-21";
+
+type TocItem = { id: string; label: string };
+
+const TOC: TocItem[] = [
+  { id: "roles", label: "1. Roles" },
+  { id: "categories", label: "2. Categories of personal data we process" },
+  { id: "lawful-bases", label: "3. Lawful bases for processing" },
+  { id: "use", label: "4. How we use personal data" },
+  { id: "sub-processors", label: "5. Sub-processors and disclosures" },
+  { id: "transfers", label: "6. International transfers" },
+  { id: "security", label: "7. Security" },
+  { id: "retention", label: "8. Retention" },
+  { id: "rights", label: "9. Your rights" },
+  { id: "automated", label: "10. Automated decision-making" },
+  { id: "changes", label: "11. Changes to this policy" },
+  { id: "contact", label: "12. Contact" },
+];
 
 export default function PrivacyPage() {
   return (
@@ -10,127 +29,144 @@ export default function PrivacyPage() {
           <h1 className="text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
             Privacy Policy
           </h1>
+          <p className="text-sm text-[var(--text-muted)] mb-2">
+            <strong>Effective date:</strong> {PUBLISH_DATE} &nbsp;|&nbsp; <strong>Last updated:</strong> {PUBLISH_DATE}
+          </p>
           <p className="text-sm text-[var(--text-muted)] mb-8">
-            Last updated: 08 February 2026
+            Previous versions:{" "}
+            <Link href="/privacy-legacy" className="text-[var(--primary)] hover:underline">
+              v1 (Feb 2026)
+            </Link>
           </p>
 
+          <div className="glass-panel p-6 md:p-8 mb-8">
+            <h2 className="text-lg font-semibold text-[var(--text-primary)] mb-4">Contents</h2>
+            <ol className="space-y-1 list-none pl-0">
+              {TOC.map((item) => (
+                <li key={item.id}>
+                  <a
+                    href={`#${item.id}`}
+                    className="text-sm text-[var(--primary)] hover:underline"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+
           <div className="glass-panel p-8 md:p-12 space-y-8">
-            <section>
-              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">1. Who we are</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              True Aim AG (&ldquo;True Aim&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) provides a multi-tenant claims-processing platform (&ldquo;Service&rdquo;). This Privacy Policy describes how we collect, use, disclose, and protect personal data when our customers (&ldquo;Tenants&rdquo;) and their end users (collectively, &ldquo;you&rdquo;) interact with our Service or with this website.
+            </p>
+
+            <section id="roles" className="scroll-mt-24">
+              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">1. Roles</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                This website is operated by <strong>True Aim AG</strong>, company registration number <strong>CHE-325.128.066</strong>, with its registered office in Zug, Switzerland. Registered address: c/o Yarowa AG, Metallstrasse 9, 6300 Zug, Switzerland. This Privacy Policy explains how we collect, use and protect personal data when you interact with our website.
+                For personal data submitted by a Tenant about its end users in connection with the Service, the Tenant is the data controller and True Aim acts as a data processor under a data processing agreement. For personal data we collect directly, including account information of Tenant administrators and marketing-site visitor data, True Aim acts as a data controller.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">2. Scope of this Privacy Policy</h2>
+            <section id="categories" className="scroll-mt-24">
+              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">2. Categories of personal data we process</h2>
+              <ul className="list-disc pl-6 text-[var(--text-secondary)] leading-relaxed space-y-2">
+                <li><strong>Account data:</strong> name, email, organisation, role, authentication metadata.</li>
+                <li><strong>Claims data submitted by Tenants:</strong> claim narratives, claimant identifiers, dates of loss, policy numbers, uploaded documents.</li>
+                <li><strong>Derived data:</strong> structured data extracted from uploaded documents by our document intelligence and language model components.</li>
+                <li><strong>Usage and telemetry:</strong> application logs, audit trail entries, request metadata, operational metrics.</li>
+                <li><strong>Website data:</strong> IP address, browser metadata, pages visited (collected via standard server logs and, where applicable, cookies as described in our Cookie Notice).</li>
+              </ul>
+            </section>
+
+            <section id="lawful-bases" className="scroll-mt-24">
+              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">3. Lawful bases for processing (GDPR / Swiss FADP)</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                This Privacy Policy applies to personal data collected through our public website, including contact forms, demo booking forms and meeting scheduling links. It does not govern the processing of data under commercial agreements or customer contracts, which are subject to separate contractual terms.
+                Contract performance, legitimate interest in operating and securing the Service, consent where required, and legal obligation.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">3. Personal data we collect</h2>
-              <p className="text-[var(--text-secondary)] leading-relaxed">
-                We collect personal data that you voluntarily provide when you contact us or request a demo. This may include your first and last name, work email address, company name, job title, country and any information you choose to include in free-text fields or which you may submit following a request by us from time to time. If you book a meeting using a calendar link, we may also receive scheduling-related information. We may additionally collect technical data such as IP address, browser type and usage data, amongst others, through cookies and analytics tools.
-              </p>
-            </section>
-
-            <section>
+            <section id="use" className="scroll-mt-24">
               <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">4. How we use personal data</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                We use personal data to respond to enquiries, arrange demos or meetings, communicate with prospective customers and partners, improve our website and understand how it is used. Where you have consented, we may also use your details to send relevant communications about True Aim and our services. We do not sell personal data and do not use it for automated decision-making affecting individuals.
+                To provide and operate the Service; authenticate users; detect, investigate, and prevent security incidents; comply with legal obligations; and improve the Service in aggregated, non-identifying form. We do not sell personal data and we do not use Tenant data to train foundation models.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">5. Legal basis for processing</h2>
+            <section id="sub-processors" className="scroll-mt-24">
+              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">5. Sub-processors and disclosures</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                We process personal data based on your consent, our legitimate interests in operating and improving our website and responding to business enquiries, and where applicable, to comply with legal obligations. You may withdraw consent at any time.
+                We host the Service on Microsoft Azure in Switzerland North. Our active sub-processors are:
+              </p>
+              <ul className="list-disc pl-6 text-[var(--text-secondary)] leading-relaxed space-y-2 mt-3">
+                <li><strong>Microsoft Azure</strong> (compute, database, storage, networking, Application Insights, Key Vault, Container Registry).</li>
+                <li><strong>Microsoft Azure OpenAI Service</strong> (language model inference; no training on customer data).</li>
+                <li><strong>Microsoft Azure Document Intelligence</strong> (document OCR and extraction).</li>
+                <li><strong>GitHub</strong> (source control and CI/CD; no customer production data).</li>
+                <li><strong>Google Workspace</strong> (business email and operational documents, EU region).</li>
+              </ul>
+              <p className="text-[var(--text-secondary)] leading-relaxed mt-3">
+                We do not disclose personal data to other third parties except as required by law or with explicit Tenant instruction.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">6. Data hosting and international transfers</h2>
+            <section id="transfers" className="scroll-mt-24">
+              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">6. International transfers</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Our primary data hosting and security infrastructure is based in <strong>Switzerland</strong>. Personal data may be accessed or processed from other jurisdictions where necessary to operate our website or support business activities. Where international transfers occur, we take appropriate steps to ensure adequate data protection in line with Swiss and EU standards.
+                Personal data is stored in Switzerland. Where processing occurs outside Switzerland or the EU/EEA, we rely on Standard Contractual Clauses and equivalent safeguards.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">7. Data retention</h2>
+            <section id="security" className="scroll-mt-24">
+              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">7. Security</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                We retain personal data only for as long as necessary to fulfil the purposes described in this Privacy Policy, unless a longer retention period is required or permitted by law. Information submitted through contact or demo forms is typically retained for business follow-up and record-keeping purposes.
+                We protect personal data using administrative, technical, and physical controls including encryption in transit and at rest, network segregation, least-privilege access, multi-factor authentication, and continuous monitoring. Our security posture is described in further detail at{" "}
+                <Link href="/security" className="text-[var(--primary)] hover:underline">
+                  trueaim.ai/security
+                </Link>{" "}
+                and in our SOC 2 report (available under NDA).
               </p>
             </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">8. Data security</h2>
+            <section id="retention" className="scroll-mt-24">
+              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">8. Retention</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                We implement appropriate technical and organisational measures to protect personal data against unauthorised access, loss or misuse. While no system can be guaranteed to be completely secure, we take data protection seriously and aim to have the appropriate safeguards in place.
+                We retain personal data only as long as necessary to deliver the Service and meet our legal obligations. Tenant data is retained for the duration of the Tenant&rsquo;s subscription plus the contractually agreed return/deletion period. Specific retention periods are documented in our internal data retention schedule and reflected in our customer{" "}
+                <Link href="/dpa" className="text-[var(--primary)] hover:underline">
+                  Data Processing Agreement
+                </Link>.
               </p>
             </section>
 
-            <section>
+            <section id="rights" className="scroll-mt-24">
               <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">9. Your rights</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Depending on your location and applicable law, you may have the right to request access to your personal data, request correction or deletion, object to or restrict processing or withdraw consent. Requests can be made by contacting us at{" "}
-                <a href="mailto:info@trueaim.ai" className="text-[var(--primary)] hover:underline font-medium">
-                  info@trueaim.ai
-                </a>.
+                Subject to applicable law (including GDPR and Swiss FADP), you have rights of access, rectification, erasure, restriction, portability, and objection. If you are an end user of a Tenant, please contact the Tenant first; we will support the Tenant in fulfilling your request. To contact us directly, email{" "}
+                <a href="mailto:privacy@trueaim.ai" className="text-[var(--primary)] hover:underline">privacy@trueaim.ai</a>. You also have the right to lodge a complaint with a supervisory authority. In Switzerland, the Federal Data Protection and Information Commissioner (FDPIC); in the EU, your local data protection authority.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">10. South Africa and POPIA</h2>
+            <section id="automated" className="scroll-mt-24">
+              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">10. Automated decision-making</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Where personal data is processed in or from South Africa, we take steps to align with the Protection of Personal Information Act (POPIA). Our{" "}
-                <Link href="/paia" className="text-[var(--primary)] hover:underline">
-                  PAIA Manual
-                </Link>{" "}
-                provides further information on access to information requests under South African law.
+                The Service supports human-in-the-loop claims processing. Outputs of our document intelligence and language models are recommendations to Tenant operators; final decisions are made by the Tenant&rsquo;s authorised personnel. No solely-automated decisions producing legal or similarly significant effects are taken by True Aim against end users.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">11. Cookies and analytics</h2>
+            <section id="changes" className="scroll-mt-24">
+              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">11. Changes to this policy</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                We use cookies and similar technologies as described in our{" "}
-                <Link href="/cookies" className="text-[var(--primary)] hover:underline">
-                  Cookie Policy
-                </Link>. Analytics tools help us understand website usage and improve performance. You can manage cookie preferences at any time.
+                We will update this policy as our practices evolve. The &ldquo;Last updated&rdquo; date at the top of this page reflects the most recent revision. Material changes will be communicated to active Tenants.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">12. Changes to this Privacy Policy</h2>
+            <section id="contact" className="scroll-mt-24">
+              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">12. Contact</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                We may update this Privacy Policy from time to time to reflect changes in legal requirements, technology or our practices. The latest version will always be available on this page or upon request if a later version exists but has not been published yet.
+                True Aim AG, c/o Yarowa AG, Metallstrasse 9, 6300 Zug, Switzerland.<br />
+                Email:{" "}
+                <a href="mailto:privacy@trueaim.ai" className="text-[var(--primary)] hover:underline">privacy@trueaim.ai</a>.
               </p>
             </section>
-
-            <section>
-              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">13. Contact</h2>
-              <p className="text-[var(--text-secondary)] leading-relaxed">
-                If you have any questions about this Privacy Policy or how we handle personal data, you can contact us at{" "}
-                <a href="mailto:info@trueaim.ai" className="text-[var(--primary)] hover:underline font-medium">
-                  info@trueaim.ai
-                </a>.
-              </p>
-              <p className="text-[var(--text-secondary)] leading-relaxed mt-2">
-                Company: True Aim AG<br />
-                Registered office: Zug, Switzerland
-              </p>
-            </section>
-
-            <div className="pt-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors"
-              >
-                Contact Us
-              </Link>
-            </div>
           </div>
         </div>
       </div>

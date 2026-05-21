@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy | True Aim AG",
   description:
-    "True Aim AG privacy policy. Learn how we collect, process, and protect your personal data in compliance with GDPR and Swiss FADP.",
+    "How True Aim AG collects, uses, and protects personal data in compliance with Swiss FADP and GDPR. Includes processor roles, sub-processors, retention, and rights.",
   alternates: {
     canonical: "https://trueaim.ai/privacy",
   },

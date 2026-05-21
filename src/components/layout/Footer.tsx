@@ -20,12 +20,20 @@ const footerLinks = {
     { nameKey: "contextBuilder" as const, href: "/products/contextbuilder" },
     { nameKey: "claimEval" as const, href: "/products/claimeval" },
   ],
+  trust: [
+    { nameKey: "security" as const, href: "/security" },
+    { nameKey: "ethics" as const, href: "/ethics" },
+    { nameKey: "product" as const, href: "/product" },
+    { nameKey: "support" as const, href: "/support" },
+    { nameKey: "changelog" as const, href: "/changelog" },
+  ],
   legal: [
     { nameKey: "privacy" as const, href: "/privacy" },
     { nameKey: "terms" as const, href: "/terms" },
-    { nameKey: "aiTransparency" as const, href: "/ai-transparency" },
+    { nameKey: "dpa" as const, href: "/dpa" },
     { nameKey: "cookies" as const, href: "/cookies" },
     { nameKey: "paia" as const, href: "/paia" },
+    { nameKey: "aiTransparency" as const, href: "/ai-transparency" },
   ],
 };
 
@@ -38,7 +46,7 @@ export async function Footer() {
 
       <div className="relative max-w-7xl mx-auto px-6 py-16">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
@@ -126,6 +134,25 @@ export async function Footer() {
             </h3>
             <ul className="space-y-3">
               {footerLinks.products.map((link) => (
+                <li key={link.nameKey}>
+                  <Link
+                    href={link.href}
+                    className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors text-sm"
+                  >
+                    {t(link.nameKey)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Trust Links */}
+          <div>
+            <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-[var(--text-primary)]">
+              {t("trust")}
+            </h3>
+            <ul className="space-y-3">
+              {footerLinks.trust.map((link) => (
                 <li key={link.nameKey}>
                   <Link
                     href={link.href}
