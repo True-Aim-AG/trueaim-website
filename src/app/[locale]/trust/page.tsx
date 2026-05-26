@@ -1,3 +1,4 @@
+import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
@@ -10,8 +11,19 @@ import {
   Eye,
   History,
   Building2,
+  ArrowRight,
 } from "lucide-react";
 import { SwitzerlandMap } from "@/components/ui/SwitzerlandMap";
+
+const publicDocs = [
+  { key: "privacy", href: "/privacy" },
+  { key: "security", href: "/security" },
+  { key: "ethics", href: "/ethics" },
+  { key: "dpa", href: "/dpa" },
+  { key: "product", href: "/product" },
+  { key: "support", href: "/support" },
+  { key: "changelog", href: "/changelog" },
+] as const;
 
 const complianceBadgeMeta = [
   { key: "gdpr", status: "aligned", icon: Shield },
@@ -302,6 +314,53 @@ export default async function TrustPage() {
               {t("euAiAct.callout.description")}
             </p>
           </MotionDiv>
+        </div>
+      </section>
+
+      {/* Public Documents */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+              {t("publicDocuments.heading")}
+            </h2>
+            <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
+              {t("publicDocuments.subtitle")}
+            </p>
+          </MotionDiv>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {publicDocs.map((doc, index) => (
+              <MotionDiv
+                key={doc.key}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+              >
+                <Link
+                  href={doc.href}
+                  className="glass-panel glass-panel-hover p-6 flex items-start justify-between gap-4 h-full group"
+                >
+                  <div>
+                    <h3 className="font-semibold text-[var(--text-primary)] mb-1 group-hover:text-[var(--primary)] transition-colors">
+                      {t(`publicDocuments.items.${doc.key}.title`)}
+                    </h3>
+                    <p className="text-sm text-[var(--text-muted)]">
+                      {t(`publicDocuments.items.${doc.key}.description`)}
+                    </p>
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-[var(--text-muted)] group-hover:text-[var(--primary)] group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
+                </Link>
+              </MotionDiv>
+            ))}
+          </div>
         </div>
       </section>
 

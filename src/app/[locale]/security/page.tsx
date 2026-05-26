@@ -31,7 +31,7 @@ export default function SecurityPage() {
 
           <div className="glass-panel p-8 md:p-12 space-y-8">
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              True Aim AG operates a claims-processing platform for insurers. Security is a core requirement of our Service, and our customers entrust us with personal data of their policyholders. This page describes our security program at a high level. For full audit-grade evidence (SOC 2 Type II report, ISO 27001 certificate when issued, sub-processor list, Data Processing Agreement), contact{" "}
+              True Aim AG operates a claims-processing platform for insurers, brokers, and any entity in the insurance value chain handling or processing claims. Security is a core requirement of our Service, and our customers entrust us with personal data of their policyholders. This page describes our security program at a high level. For full audit-grade evidence (SOC 2 Type II report when issued, ISO 27001 certificate when issued, sub-processor list, Data Processing Agreement), contact{" "}
               <a href="mailto:security@trueaim.ai" className="text-[var(--primary)] hover:underline">security@trueaim.ai</a>. These are available under NDA.
             </p>
 
@@ -40,7 +40,7 @@ export default function SecurityPage() {
               <ul className="list-disc pl-6 text-[var(--text-secondary)] leading-relaxed space-y-2">
                 <li><strong>ISO 27001:2022</strong>: readiness assessment complete, certification audit in progress.</li>
                 <li><strong>SOC 2 Type II</strong>: control implementation complete, observation period in progress.</li>
-                <li><strong>Swiss FADP</strong> and <strong>GDPR</strong>: compliant as data processor for customer data.</li>
+                <li><strong>Swiss FADP</strong> and <strong>GDPR</strong>: aligned as data processor for customer data, pending formal certification as part of our SOC 2 and ISO 27001 audits.</li>
                 <li><strong>EU AI Act</strong>: AI Technical File maintained for the ClaimPilot platform; current readiness is documented and tracked.</li>
               </ul>
             </section>
@@ -55,9 +55,9 @@ export default function SecurityPage() {
             <section>
               <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">Sub-processors</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                We use a limited set of Microsoft Azure services for hosting, AI inference, and operational telemetry, plus GitHub (for source control and CI/CD) and Google Workspace (for business email). See our{" "}
+                We use a limited set of Microsoft Azure services for hosting, AI inference, and operational telemetry, plus Google Workspace (for business email). See our{" "}
                 <Link href="/privacy#sub-processors" className="text-[var(--primary)] hover:underline">Privacy Policy</Link>{" "}
-                for the current list. We notify customers in advance of changes.
+                for the current list. We notify customers in advance of changes. Internal-only tools (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed.
               </p>
             </section>
 

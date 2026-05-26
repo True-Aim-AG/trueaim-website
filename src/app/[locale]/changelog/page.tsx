@@ -110,14 +110,14 @@ export default function ChangelogPage() {
 
           <div className="glass-panel p-8 md:p-12 space-y-12">
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              Public release history of the True Aim ClaimPilot platform. Each entry summarizes user-visible features, reliability improvements, fixes, and security or compliance work shipped in that release.
+              Public release history of the True Aim Platform. Each entry summarizes user-visible features, reliability improvements, fixes, and security or compliance work shipped in that release.
             </p>
 
             {RELEASES.map((release) => (
               <article key={release.version} className="space-y-4">
                 <header>
                   <h2 className="text-2xl font-semibold text-[var(--text-primary)]">
-                    ClaimPilot {release.version} &mdash; {release.date}
+                    True Aim Platform {release.version} &mdash; {release.date}
                   </h2>
                 </header>
                 {release.intro && (

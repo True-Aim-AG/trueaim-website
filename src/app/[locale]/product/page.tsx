@@ -10,7 +10,7 @@ export default function ProductPage() {
       <div className="py-24 px-6">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
-            ClaimPilot &mdash; Product Overview
+            The True Aim Platform &mdash; Product Overview
           </h1>
           <p className="text-sm text-[var(--text-muted)] mb-8">
             <strong>Last updated:</strong> {PUBLISH_DATE}
@@ -18,16 +18,16 @@ export default function ProductPage() {
 
           <div className="glass-panel p-8 md:p-12 space-y-8">
             <section>
-              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">What ClaimPilot is</h2>
+              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">What the Platform is</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                ClaimPilot is True Aim&rsquo;s multi-tenant, AI-assisted claims-processing platform. It ingests claim documents, extracts and classifies their content, runs configurable decisioning workflows, and presents the results to insurer operators for review and final adjudication. Every step is captured in an audit trail.
+                The True Aim Platform is our multi-tenant, AI-assisted platform for claims and case processing. It ingests documents, extracts and classifies their content, runs configurable decisioning workflows, and presents the results to operators for review and final adjudication. Every step is captured in an audit trail.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">Who it&rsquo;s for</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed mb-3">
-                ClaimPilot is built for property &amp; casualty insurers, MGAs, and claims-service providers. Typical user roles include:
+                The Platform is built for insurers, brokers, and any entity in the insurance value chain handling or processing claims. Typical user roles include:
               </p>
               <ul className="list-disc pl-6 text-[var(--text-secondary)] leading-relaxed space-y-2">
                 <li><strong>Claims operators</strong>: review extracted data, override AI recommendations, finalize claims.</li>
@@ -55,7 +55,7 @@ export default function ProductPage() {
             <section>
               <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">How it fits</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                ClaimPilot sits between the insurer&rsquo;s intake channels (broker portals, customer apps, email) and its core policy administration or claims systems. Documents and structured intake data flow in; verified, structured claim outcomes flow out via APIs or exports. Insurers retain control of underwriting, pricing, and final adjudication; ClaimPilot accelerates and standardizes the operator workflow in between.
+                The Platform sits between an organisation&rsquo;s intake channels (broker portals, customer apps, email) and its core policy administration or claims systems. Documents and structured intake data flow in; verified, structured claim outcomes flow out via APIs or exports. Customers retain control of underwriting, pricing, and final adjudication; the Platform accelerates and standardizes the operator workflow in between.
               </p>
             </section>
 

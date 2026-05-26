@@ -183,6 +183,40 @@
         "description": "A differenza dei sistemi AI probabilistici, il nostro motore di logica deterministica produce risultati identici per input identici, rendendo semplice dimostrare coerenza, equità e trasparenza ai regolatori.",
         "emphasis": "risultati identici per input identici"
       }
+    },
+    "publicDocuments": {
+      "heading": "Documenti pubblici",
+      "subtitle": "Politiche, accordi e materiale di riferimento pubblicati per potenziali clienti, clienti, revisori e ricercatori di sicurezza.",
+      "items": {
+        "privacy": {
+          "title": "Informativa sulla privacy",
+          "description": "Come raccogliamo, utilizziamo e proteggiamo i dati personali come responsabile e titolare del trattamento."
+        },
+        "security": {
+          "title": "Programma di sicurezza",
+          "description": "Framework di conformità, crittografia, controllo degli accessi, monitoraggio e divulgazione responsabile."
+        },
+        "ethics": {
+          "title": "Etica & segnalazioni",
+          "description": "Canale confidenziale per segnalare comportamenti scorretti, con istruzioni per la segnalazione anonima e impegno alla non ritorsione."
+        },
+        "dpa": {
+          "title": "Accordo sul trattamento dei dati",
+          "description": "Modello DPA allineato a LPD svizzera Art. 9 e GDPR Art. 28, comprensivo di TOM ed elenco dei sub-responsabili."
+        },
+        "product": {
+          "title": "Panoramica della piattaforma",
+          "description": "Cosa è la piattaforma True Aim, a chi si rivolge e come si integra nel flusso di gestione sinistri."
+        },
+        "support": {
+          "title": "Supporto clienti",
+          "description": "Come contattarci, orari di servizio e impegni di tempo di risposta per livello di gravità."
+        },
+        "changelog": {
+          "title": "Registro modifiche",
+          "description": "Cronologia pubblica delle versioni della piattaforma True Aim."
+        }
+      }
     }
   }
 }

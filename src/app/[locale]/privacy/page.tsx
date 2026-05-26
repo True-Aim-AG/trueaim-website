@@ -101,11 +101,10 @@ export default function PrivacyPage() {
                 <li><strong>Microsoft Azure</strong> (compute, database, storage, networking, Application Insights, Key Vault, Container Registry).</li>
                 <li><strong>Microsoft Azure OpenAI Service</strong> (language model inference; no training on customer data).</li>
                 <li><strong>Microsoft Azure Document Intelligence</strong> (document OCR and extraction).</li>
-                <li><strong>GitHub</strong> (source control and CI/CD; no customer production data).</li>
                 <li><strong>Google Workspace</strong> (business email and operational documents, EU region).</li>
               </ul>
               <p className="text-[var(--text-secondary)] leading-relaxed mt-3">
-                We do not disclose personal data to other third parties except as required by law or with explicit Tenant instruction.
+                Tools used internally (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed here. We do not disclose personal data to other third parties except as required by law or with explicit Tenant instruction.
               </p>
             </section>
 

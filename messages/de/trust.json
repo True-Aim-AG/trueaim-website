@@ -183,6 +183,40 @@
         "description": "Im Gegensatz zu probabilistischen AI-Systemen liefert unsere deterministische Logik-Engine identische Ergebnisse bei identischen Eingaben, wodurch es einfach ist, Konsistenz, Fairness und Transparenz gegenüber Aufsichtsbehörden nachzuweisen.",
         "emphasis": "identische Ergebnisse bei identischen Eingaben"
       }
+    },
+    "publicDocuments": {
+      "heading": "Öffentliche Dokumente",
+      "subtitle": "Richtlinien, Vereinbarungen und Referenzmaterial für Interessenten, Kunden, Auditoren und Sicherheitsforscher.",
+      "items": {
+        "privacy": {
+          "title": "Datenschutzerklärung",
+          "description": "Wie wir personenbezogene Daten als Auftragsverarbeiter und Verantwortlicher erheben, nutzen und schützen."
+        },
+        "security": {
+          "title": "Sicherheitsprogramm",
+          "description": "Compliance-Rahmenwerke, Verschlüsselung, Zugriffskontrolle, Monitoring und Responsible Disclosure."
+        },
+        "ethics": {
+          "title": "Ethik & Meldungen",
+          "description": "Vertraulicher Kanal zur Meldung von Fehlverhalten, mit Hinweisen zur anonymen Meldung und Schutz vor Repressalien."
+        },
+        "dpa": {
+          "title": "Auftragsverarbeitungsvertrag",
+          "description": "AVV-Vorlage gemäss Schweizer DSG Art. 9 und DSGVO Art. 28, einschliesslich TOMs und Unterauftragsverarbeiter-Liste."
+        },
+        "product": {
+          "title": "Plattform-Übersicht",
+          "description": "Was die True Aim Plattform ist, für wen sie gedacht ist und wie sie in den Schadenprozess passt."
+        },
+        "support": {
+          "title": "Kundensupport",
+          "description": "Kontaktaufnahme, Geschäftszeiten und Reaktionszeit-Verpflichtungen nach Schweregrad."
+        },
+        "changelog": {
+          "title": "Änderungsprotokoll",
+          "description": "Öffentliche Versionshistorie der True Aim Plattform."
+        }
+      }
     }
   }
 }

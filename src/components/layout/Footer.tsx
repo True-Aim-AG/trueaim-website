@@ -21,11 +21,7 @@ const footerLinks = {
     { nameKey: "claimEval" as const, href: "/products/claimeval" },
   ],
   trust: [
-    { nameKey: "security" as const, href: "/security" },
-    { nameKey: "ethics" as const, href: "/ethics" },
-    { nameKey: "product" as const, href: "/product" },
-    { nameKey: "support" as const, href: "/support" },
-    { nameKey: "changelog" as const, href: "/changelog" },
+    { nameKey: "trustCenter" as const, href: "/trust" },
   ],
   legal: [
     { nameKey: "privacy" as const, href: "/privacy" },
@@ -46,7 +42,7 @@ export async function Footer() {
 
       <div className="relative max-w-7xl mx-auto px-6 py-16">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
