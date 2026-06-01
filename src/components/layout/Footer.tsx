@@ -41,50 +41,8 @@ export async function Footer() {
       <div className="absolute inset-0 footer-overlay backdrop-blur-sm" />
 
       <div className="relative max-w-7xl mx-auto px-6 py-16">
-        {/* Main Footer Grid */}
+        {/* Link Sections */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-          {/* Brand Column */}
-          <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <Image
-                src="/images/logo.png"
-                alt={t("logoAlt")}
-                width={48}
-                height={48}
-                className="h-10 w-auto object-contain"
-              />
-              <Image
-                src="/images/wordmark.png"
-                alt="True AIm"
-                width={152}
-                height={20}
-                className="h-5 w-auto object-contain light-only"
-              />
-              <Image
-                src="/images/wordmark-dark.png"
-                alt="True AIm"
-                width={152}
-                height={20}
-                className="h-5 w-auto object-contain dark-only"
-              />
-            </Link>
-            <p className="text-[var(--text-muted)] text-sm mb-4">
-              {t("tagline")}
-            </p>
-            {/* Social Links */}
-            <div className="flex gap-4">
-              <a
-                href="https://www.linkedin.com/company/true-aim-ag"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
-                aria-label={t("linkedin")}
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
-
           {/* Company Links */}
           <div>
             <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-[var(--text-primary)]">
@@ -181,9 +139,42 @@ export async function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[var(--border)]">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
+        {/* Brand + Bottom Bar (centered) */}
+        <div className="pt-10 border-t border-[var(--border)] flex flex-col items-center text-center gap-4">
+          <Link href="/" className="inline-flex items-center gap-2">
+            <Image
+              src="/images/logo.png"
+              alt={t("logoAlt")}
+              width={48}
+              height={48}
+              className="h-10 w-auto object-contain"
+            />
+            <Image
+              src="/images/wordmark.png"
+              alt="True AIm"
+              width={152}
+              height={20}
+              className="h-5 w-auto object-contain light-only"
+            />
+            <Image
+              src="/images/wordmark-dark.png"
+              alt="True AIm"
+              width={152}
+              height={20}
+              className="h-5 w-auto object-contain dark-only"
+            />
+          </Link>
+          <p className="text-[var(--text-muted)] text-sm">{t("tagline")}</p>
+          <a
+            href="https://www.linkedin.com/company/true-aim-ag"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
+            aria-label={t("linkedin")}
+          >
+            <Linkedin className="w-5 h-5" />
+          </a>
+          <div className="flex flex-col items-center gap-1 mt-4">
             <p className="text-[var(--text-muted)] text-sm">
               {t("copyright", { year: new Date().getFullYear() })}
             </p>
