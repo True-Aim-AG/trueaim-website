@@ -183,6 +183,40 @@
         "description": "Unlike probabilistic AI systems, our deterministic logic engine produces identical outputs for identical inputs, making it straightforward to demonstrate consistency, fairness and transparency to regulators.",
         "emphasis": "identical outputs for identical inputs"
       }
+    },
+    "publicDocuments": {
+      "heading": "Public Documents",
+      "subtitle": "Policies, agreements, and reference material published to support prospects, customers, auditors, and security researchers.",
+      "items": {
+        "privacy": {
+          "title": "Privacy Policy",
+          "description": "How we collect, use, and protect personal data as processor and controller."
+        },
+        "security": {
+          "title": "Security Program",
+          "description": "Compliance frameworks, encryption, access control, monitoring, and responsible disclosure."
+        },
+        "ethics": {
+          "title": "Ethics & Reporting",
+          "description": "Confidential channel for reporting misconduct, with anonymous-reporting instructions and non-retaliation commitment."
+        },
+        "dpa": {
+          "title": "Data Processing Agreement",
+          "description": "DPA template aligned with Swiss FADP Art. 9 and GDPR Art. 28, including TOMs and sub-processor schedule."
+        },
+        "product": {
+          "title": "Platform Overview",
+          "description": "What the True Aim Platform is, who it serves, and how it fits into the claims workflow."
+        },
+        "support": {
+          "title": "Customer Support",
+          "description": "How to contact support, business hours, and severity-based response time commitments."
+        },
+        "changelog": {
+          "title": "Changelog",
+          "description": "Public release history of the True Aim Platform."
+        }
+      }
     }
   }
 }

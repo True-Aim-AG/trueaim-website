@@ -183,6 +183,40 @@
         "description": "Contrairement aux systèmes AI probabilistes, notre moteur de logique déterministe produit des résultats identiques pour des entrées identiques, ce qui facilite la démonstration de la cohérence, de l'équité et de la transparence auprès des régulateurs.",
         "emphasis": "résultats identiques pour des entrées identiques"
       }
+    },
+    "publicDocuments": {
+      "heading": "Documents publics",
+      "subtitle": "Politiques, accords et matériel de référence publiés pour les prospects, clients, auditeurs et chercheurs en sécurité.",
+      "items": {
+        "privacy": {
+          "title": "Politique de confidentialité",
+          "description": "Comment nous collectons, utilisons et protégeons les données personnelles en tant que sous-traitant et responsable du traitement."
+        },
+        "security": {
+          "title": "Programme de sécurité",
+          "description": "Cadres de conformité, chiffrement, contrôle d'accès, surveillance et divulgation responsable."
+        },
+        "ethics": {
+          "title": "Éthique & signalements",
+          "description": "Canal confidentiel pour signaler les manquements, avec instructions de signalement anonyme et engagement de non-représailles."
+        },
+        "dpa": {
+          "title": "Accord de traitement des données",
+          "description": "Modèle d'ATD aligné avec la LPD suisse Art. 9 et le RGPD Art. 28, incluant MTOs et liste des sous-traitants."
+        },
+        "product": {
+          "title": "Aperçu de la plateforme",
+          "description": "Ce qu'est la plateforme True Aim, à qui elle s'adresse et comment elle s'intègre dans le flux de gestion des sinistres."
+        },
+        "support": {
+          "title": "Support client",
+          "description": "Comment nous contacter, horaires et engagements de temps de réponse par niveau de gravité."
+        },
+        "changelog": {
+          "title": "Journal des modifications",
+          "description": "Historique public des versions de la plateforme True Aim."
+        }
+      }
     }
   }
 }

@@ -20,6 +20,7 @@ const resources = [
   { nameKey: "resourcesDropdown.caseStudies" as const, href: "/case-studies", descKey: "resourcesDropdown.caseStudiesDesc" as const },
   { nameKey: "resourcesDropdown.impactEstimator" as const, href: "/impact-estimator", descKey: "resourcesDropdown.impactEstimatorDesc" as const },
   { nameKey: "resourcesDropdown.trustCenter" as const, href: "/trust", descKey: "resourcesDropdown.trustCenterDesc" as const },
+  { nameKey: "resourcesDropdown.product" as const, href: "/product", descKey: "resourcesDropdown.productDesc" as const },
   { nameKey: "resourcesDropdown.blog" as const, href: "/blog", descKey: "resourcesDropdown.blogDesc" as const },
 ];
 
