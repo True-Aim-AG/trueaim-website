@@ -4,13 +4,13 @@ import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 export const metadata: Metadata = {
   title: "Data Processing Agreement | True Aim AG",
   description:
-    "Data Processing Agreement (DPA) v1.0 between True Aim AG and its clients, compliant with Swiss FADP Art. 9 and GDPR Art. 28.",
+    "Data Processing Agreement (DPA) v1.1 between True Aim AG and its clients, compliant with Swiss FADP Art. 9 and GDPR Art. 28.",
   alternates: { canonical: "https://trueaim.ai/dpa" },
 };
 
-const LAST_UPDATED = "2026-05-19";
-const VERSION = "1.0";
-const EFFECTIVE_DATE = "2026-05-19";
+const LAST_UPDATED = "2026-06-01";
+const VERSION = "1.1";
+const EFFECTIVE_DATE = "2026-06-01";
 
 type TocItem = { id: string; label: string };
 
@@ -218,14 +218,14 @@ export default function DPAPage() {
               </div>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="/legal/dpa-v1.0.pdf"
+                  href="/legal/dpa-v1.1.pdf"
                   download
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-sm"
                 >
                   Download PDF
                 </a>
                 <a
-                  href="/legal/dpa-v1.0.md"
+                  href="/legal/dpa-v1.1.md"
                   download
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--subtle-bg)] transition-colors text-sm"
                 >
@@ -933,10 +933,11 @@ export default function DPAPage() {
                   authenticated by email and password using industry-standard password
                   hashing, with secure session management, cross-site request forgery
                   (CSRF) protection, and login rate-limiting and abuse throttling.
-                  Multi-factor authentication is enforced on the Platform&apos;s
-                  first-party authentication flow for all users. Access to underlying
-                  cloud infrastructure by Company personnel is restricted to named
-                  engineers and protected by multi-factor authentication.
+                  The Platform supports multi-factor authentication and provides
+                  Client organisations with the ability to enforce multi-factor
+                  authentication policies for their users. Multi-factor authentication
+                  is mandatory for all Company personnel, and access to underlying
+                  cloud infrastructure is further restricted to named engineers.
                 </p>
                 <p className="clause">
                   <span className="clause-num">1.3</span>
@@ -1194,6 +1195,7 @@ export default function DPAPage() {
                       <th>Version</th>
                       <th>Effective Date</th>
                       <th>Summary of Changes</th>
+                      <th>Documents</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1201,6 +1203,33 @@ export default function DPAPage() {
                       <td>1.0</td>
                       <td>2026-05-19</td>
                       <td>Initial publication</td>
+                      <td className="whitespace-nowrap">
+                        <a href="/legal/dpa-v1.0.pdf" download className="text-blue-700 underline">
+                          PDF
+                        </a>
+                        {" · "}
+                        <a href="/legal/dpa-v1.0.md" download className="text-blue-700 underline">
+                          MD
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>1.1</td>
+                      <td>2026-06-01</td>
+                      <td>
+                        Clause 1.2 (Schedule 1) corrected: MFA stated as supported and
+                        customer-enforceable, and mandatory for all Company personnel,
+                        rather than enforced for all users.
+                      </td>
+                      <td className="whitespace-nowrap">
+                        <a href="/legal/dpa-v1.1.pdf" download className="text-blue-700 underline">
+                          PDF
+                        </a>
+                        {" · "}
+                        <a href="/legal/dpa-v1.1.md" download className="text-blue-700 underline">
+                          MD
+                        </a>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
