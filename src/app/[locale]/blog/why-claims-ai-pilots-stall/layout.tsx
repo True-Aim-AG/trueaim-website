@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { defaultOgImages } from "@/lib/og-image";
 
 const SLUG = "why-claims-ai-pilots-stall";
 const PAGE_URL = `https://trueaim.ai/blog/${SLUG}`;
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: PAGE_URL,
     type: "article",
+    images: defaultOgImages,
     publishedTime: PUBLISHED,
     authors: ["True Aim"],
     tags: ["AI", "Claims AI", "Production Readiness", "Evaluation", "Accuracy"],

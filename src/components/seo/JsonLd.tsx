@@ -10,19 +10,22 @@ export function JsonLd({ data }: { data: Record<string, unknown> }) {
 export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "TrueAim AG",
-  legalName: "TrueAim AG",
+  name: "True Aim AG",
+  legalName: "True Aim AG",
   url: "https://trueaim.ai",
   logo: "https://trueaim.ai/logo.png",
+  image: "https://trueaim.ai/logo.png",
   description:
     "Neuro-symbolic AI for auditable insurance claims decisions. Combine agentic AI with deterministic logic for compliant, explainable claims automation.",
   foundingDate: "2023",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Metallstrasse 9",
+    postalCode: "6300",
+    addressLocality: "Zug",
     addressCountry: "CH",
-    addressLocality: "Zurich",
   },
-  sameAs: [],
+  sameAs: ["https://www.linkedin.com/company/true-aim-ag"],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
@@ -46,7 +49,7 @@ export const websiteJsonLd = {
     "Neuro-symbolic AI for auditable insurance claims decisions.",
   publisher: {
     "@type": "Organization",
-    name: "TrueAim AG",
+    name: "True Aim AG",
   },
 };
 

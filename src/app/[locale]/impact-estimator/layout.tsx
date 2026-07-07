@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { defaultOgImages, DEFAULT_OG_IMAGE } from "@/lib/og-image";
 
 function getLocaleUrl(locale: string, path: string): string {
   const prefix = locale === "en" ? "" : `/${locale}`;
@@ -27,11 +28,13 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
       title: t("ogTitle"),
       description: t("ogDescription"),
       url: getLocaleUrl(locale, "/impact-estimator"),
+      images: defaultOgImages,
     },
     twitter: {
       card: "summary_large_image",
       title: t("ogTitle"),
       description: t("ogDescription"),
+      images: [DEFAULT_OG_IMAGE],
     },
     alternates: {
       canonical: getLocaleUrl(locale, "/impact-estimator"),
