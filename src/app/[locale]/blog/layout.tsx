@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { defaultOgImages } from "@/lib/og-image";
 import { blogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
       "Insights on auditable AI, claims automation, and the future of insurance technology.",
     url: "https://trueaim.ai/blog",
     type: "website",
+    images: defaultOgImages,
   },
   alternates: {
     canonical: "https://trueaim.ai/blog",

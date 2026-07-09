@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { defaultOgImages } from "@/lib/og-image";
 
 const SLUG = "build-vs-buy-idp-vendors";
 const PAGE_URL = `https://trueaim.ai/blog/${SLUG}`;
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
       "A practical evaluation framework for insurance teams evaluating claims automation solutions.",
     url: PAGE_URL,
     type: "article",
+    images: defaultOgImages,
     publishedTime: PUBLISHED,
     authors: ["True Aim"],
     tags: ["AI", "Vendor Evaluation", "Insurance", "Claims Automation", "IDP"],

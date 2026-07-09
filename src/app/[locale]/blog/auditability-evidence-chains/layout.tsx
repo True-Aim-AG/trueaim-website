@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { defaultOgImages } from "@/lib/og-image";
 
 const SLUG = "auditability-evidence-chains";
 const PAGE_URL = `https://trueaim.ai/blog/${SLUG}`;
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     description: OG_DESCRIPTION,
     url: PAGE_URL,
     type: "article",
+    images: defaultOgImages,
     publishedTime: PUBLISHED,
     authors: ["True Aim"],
     tags: ["AI", "Compliance", "Insurance", "Auditability", "FINMA", "EU AI Act"],
