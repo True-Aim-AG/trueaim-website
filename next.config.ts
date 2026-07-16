@@ -4,6 +4,13 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
+  async rewrites() {
+    return [
+      // NFC contact card: clean URL -> static file in /public. Path is intentionally
+      // "contact-card" (not "contact", which is the localized contact page).
+      { source: "/contact-card", destination: "/contact-card.html" },
+    ];
+  },
   async headers() {
     return [
       {
