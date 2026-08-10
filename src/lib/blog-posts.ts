@@ -12,6 +12,19 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ai-claims-handling-eu-ai-act-high-risk",
+    title:
+      "AI Claims Handling Is Not High-Risk Under the EU AI Act. Here Is What Binds It Instead.",
+    excerpt:
+      "Claims handling is absent from Annex III. GDPR Article 22 binds it anyway. Only 24% of insurers say they could pass a governance review in 90 days.",
+    publishedIso: "2026-07-28T00:00:00.000Z",
+    displayDate: "July 2026",
+    readTime: "12 min read",
+    category: "Regulatory & Compliance",
+    tags: ["EU AI Act", "GDPR Article 22", "EIOPA", "Claims AI", "Governance"],
+    featured: true,
+  },
+  {
     slug: "why-claims-ai-pilots-stall",
     title: "Why Claims AI Pilots Stall Before Production Readiness",
     excerpt:
@@ -21,7 +34,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "10 min read",
     category: "Production Readiness",
     tags: ["Claims AI", "Production Readiness", "Evaluation", "Accuracy"],
-    featured: true,
   },
   {
     slug: "auditability-evidence-chains",
