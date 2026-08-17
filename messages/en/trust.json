@@ -200,9 +200,9 @@
           "title": "Ethics & Reporting",
           "description": "Confidential channel for reporting misconduct, with anonymous-reporting instructions and non-retaliation commitment."
         },
-        "dpa": {
-          "title": "Data Processing Agreement",
-          "description": "DPA template aligned with Swiss FADP Art. 9 and GDPR Art. 28, including TOMs and sub-processor schedule."
+        "subProcessors": {
+          "title": "List of Sub-Processors",
+          "description": "Operative list of sub-processors (Schedule 2 to the DPA): entity, service, data categories and processing location."
         },
         "product": {
           "title": "Platform Overview",

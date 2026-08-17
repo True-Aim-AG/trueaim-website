@@ -95,16 +95,14 @@ export default function PrivacyPage() {
             <section id="sub-processors" className="scroll-mt-24">
               <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">5. Sub-processors and disclosures</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                We host the Service on Microsoft Azure in Switzerland North. Our active sub-processors are:
+                We host the Service on Microsoft Azure in Switzerland North. The operative list of our active sub-processors, including the service each provides, the categories of personal data affected and the processing location, is published at{" "}
+                <Link href="/sub-processors" className="text-[var(--primary)] hover:underline">
+                  trueaim.ai/sub-processors
+                </Link>{" "}
+                and is maintained as Schedule 2 to our customer Data Processing Agreement.
               </p>
-              <ul className="list-disc pl-6 text-[var(--text-secondary)] leading-relaxed space-y-2 mt-3">
-                <li><strong>Microsoft Azure</strong> (compute, database, storage, networking, Application Insights, Key Vault, Container Registry).</li>
-                <li><strong>Microsoft Azure OpenAI Service</strong> (language model inference; no training on customer data).</li>
-                <li><strong>Microsoft Azure Document Intelligence</strong> (document OCR and extraction).</li>
-                <li><strong>Google Workspace</strong> (business email and operational documents, EU region).</li>
-              </ul>
               <p className="text-[var(--text-secondary)] leading-relaxed mt-3">
-                Tools used internally (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed here. We do not disclose personal data to other third parties except as required by law or with explicit Tenant instruction.
+                Tools used internally (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed there. We do not disclose personal data to other third parties except as required by law or with explicit Tenant instruction.
               </p>
             </section>
 
@@ -129,10 +127,7 @@ export default function PrivacyPage() {
             <section id="retention" className="scroll-mt-24">
               <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">8. Retention</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                We retain personal data only as long as necessary to deliver the Service and meet our legal obligations. Tenant data is retained for the duration of the Tenant&rsquo;s subscription plus the contractually agreed return/deletion period. Specific retention periods are documented in our internal data retention schedule and reflected in our customer{" "}
-                <Link href="/dpa" className="text-[var(--primary)] hover:underline">
-                  Data Processing Agreement
-                </Link>.
+                We retain personal data only as long as necessary to deliver the Service and meet our legal obligations. Tenant data is retained for the duration of the Tenant&rsquo;s subscription plus the contractually agreed return/deletion period. Specific retention periods are documented in our internal data retention schedule and reflected in the Data Processing Agreement concluded with each Tenant.
               </p>
             </section>
 

@@ -55,8 +55,8 @@ export default function SecurityPage() {
             <section>
               <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">Sub-processors</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                We use a limited set of Microsoft Azure services for hosting, AI inference, and operational telemetry, plus Google Workspace (for business email). See our{" "}
-                <Link href="/privacy#sub-processors" className="text-[var(--primary)] hover:underline">Privacy Policy</Link>{" "}
+                We use a limited set of Microsoft Azure services for hosting, AI inference, and operational telemetry, plus Google Workspace (for business email) and Slack (for internal team communication). See our{" "}
+                <Link href="/sub-processors" className="text-[var(--primary)] hover:underline">List of Sub-Processors</Link>{" "}
                 for the current list. We notify customers in advance of changes. Internal-only tools (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed.
               </p>
             </section>

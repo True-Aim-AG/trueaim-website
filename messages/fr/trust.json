@@ -200,9 +200,9 @@
           "title": "Éthique & signalements",
           "description": "Canal confidentiel pour signaler les manquements, avec instructions de signalement anonyme et engagement de non-représailles."
         },
-        "dpa": {
-          "title": "Accord de traitement des données",
-          "description": "Modèle d'ATD aligné avec la LPD suisse Art. 9 et le RGPD Art. 28, incluant MTOs et liste des sous-traitants."
+        "subProcessors": {
+          "title": "Liste des sous-traitants",
+          "description": "Liste opérationnelle des sous-traitants (Annexe 2 de l'ATD) : entité, service, catégories de données et lieu de traitement."
         },
         "product": {
           "title": "Aperçu de la plateforme",

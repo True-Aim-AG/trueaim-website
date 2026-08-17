@@ -11,6 +11,19 @@ const nextConfig: NextConfig = {
       { source: "/contact-card", destination: "/contact-card.html" },
     ];
   },
+  async redirects() {
+    return [
+      // The DPA is no longer published on the website: it is a signed annex to the MSA.
+      // Its Schedule 2 (the sub-processor list) is the only part that stays public, and
+      // the DPA itself points at /sub-processors as the operative list.
+      { source: "/dpa", destination: "/sub-processors", permanent: true },
+      {
+        source: "/:locale(de|fr|it)/dpa",
+        destination: "/:locale/sub-processors",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
