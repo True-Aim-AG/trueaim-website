@@ -200,9 +200,9 @@
           "title": "Etica & segnalazioni",
           "description": "Canale confidenziale per segnalare comportamenti scorretti, con istruzioni per la segnalazione anonima e impegno alla non ritorsione."
         },
-        "dpa": {
-          "title": "Accordo sul trattamento dei dati",
-          "description": "Modello DPA allineato a LPD svizzera Art. 9 e GDPR Art. 28, comprensivo di TOM ed elenco dei sub-responsabili."
+        "subProcessors": {
+          "title": "Elenco dei sub-responsabili",
+          "description": "Elenco operativo dei sub-responsabili (Allegato 2 al DPA): entità, servizio, categorie di dati e luogo del trattamento."
         },
         "product": {
           "title": "Panoramica della piattaforma",

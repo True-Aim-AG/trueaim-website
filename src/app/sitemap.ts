@@ -86,6 +86,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
     { path: "/cookies", changeFrequency: "yearly", priority: 0.3 },
     { path: "/paia", changeFrequency: "yearly", priority: 0.3 },
+    { path: "/sub-processors", changeFrequency: "monthly", priority: 0.3 },
   ];
 
   const englishOnlyEntries: MetadataRoute.Sitemap = englishOnlyPages.map(
