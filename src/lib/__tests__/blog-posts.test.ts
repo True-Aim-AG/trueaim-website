@@ -2,9 +2,10 @@ import { describe, it, expect } from "vitest";
 import { blogPosts } from "../blog-posts";
 
 describe("blogPosts", () => {
-  it("includes all three known blog slugs", () => {
+  it("includes all known blog slugs", () => {
     const slugs = blogPosts.map((p) => p.slug).sort();
     expect(slugs).toEqual([
+      "ai-claims-handling-eu-ai-act-high-risk",
       "auditability-evidence-chains",
       "build-vs-buy-idp-vendors",
       "why-claims-ai-pilots-stall",

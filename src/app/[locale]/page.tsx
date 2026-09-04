@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/Hero";
-import { ScrollVideoAnimation } from "@/components/sections/ScrollVideoAnimation";
+import { PipelineRow } from "@/components/sections/PipelineRow";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { ProductsGrid } from "@/components/sections/ProductsGrid";
 import { ProcessFlow } from "@/components/sections/ProcessFlow";
@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <ScrollVideoAnimation />
+      <PipelineRow />
       <TrustBar />
       <ProcessFlow />
       <ProductsGrid />

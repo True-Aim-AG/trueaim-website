@@ -57,13 +57,13 @@ export default async function PartnersHubPage({
     <div className="min-h-screen">
       <section className="relative py-24 px-6">
         <div className="relative max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+          <h1 className="font-display text-4xl font-bold leading-[1.15] text-strong sm:text-5xl lg:text-[54px] mb-6">
             {t("title")}
           </h1>
-          <p className="text-xl md:text-2xl text-[var(--primary)] font-medium mb-6">
+          <p className="text-lede font-medium text-accent mb-6">
             {t("subtitle")}
           </p>
-          <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lede text-body max-w-3xl mx-auto">
             {t("intro")}
           </p>
         </div>
@@ -78,9 +78,9 @@ export default async function PartnersHubPage({
                 <li key={p.slug}>
                   <Link
                     href={`/partners/${p.slug}`}
-                    className="glass-panel glass-panel-hover p-8 flex flex-col gap-6 h-full"
+                    className="flex h-full flex-col gap-6 rounded-pill bg-card p-8 shadow-card transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch"
                   >
-                    <div className="bg-white p-4 rounded-xl self-start">
+                    <div className="self-start rounded-pill bg-ta-neutral-0 p-6 shadow-swatch">
                       <Image
                         src={p.logo}
                         alt={`${p.name} logo`}
@@ -90,16 +90,16 @@ export default async function PartnersHubPage({
                       />
                     </div>
                     <div>
-                      <h2 className="text-2xl font-semibold text-[var(--text-primary)] mb-2">
+                      <h2 className="font-display text-2xl font-bold text-strong mb-2">
                         {p.name}
                       </h2>
-                      <p className="text-[var(--text-secondary)] leading-relaxed">
+                      <p className="text-body">
                         {t(`${key}.tagline`)}
                       </p>
                     </div>
-                    <span className="inline-flex items-center gap-2 text-[var(--primary)] font-medium mt-auto">
+                    <span className="mt-auto inline-flex items-center gap-2 font-medium text-accent">
                       {t("viewPartner")}
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight strokeWidth={1.5} className="w-4 h-4" />
                     </span>
                   </Link>
                 </li>

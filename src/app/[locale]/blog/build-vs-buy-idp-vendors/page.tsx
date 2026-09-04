@@ -1,6 +1,8 @@
 import { Link } from "@/i18n/navigation";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { ButtonLink } from "@/components/brand/Button";
+import { GridPattern } from "@/components/brand/GridPattern";
 import {
   ArrowLeft,
   ArrowRight,
@@ -17,11 +19,13 @@ import {
   Target,
 } from "lucide-react";
 
+const ease = [0.4, 0, 0.2, 1] as const;
+
 const fadeIn = {
   initial: { opacity: 0, y: 20 } as const,
   whileInView: { opacity: 1, y: 0 } as const,
   viewport: { once: true } as const,
-  transition: { duration: 0.6 } as const,
+  transition: { duration: 0.6, ease } as const,
 };
 
 export default function BuildVsBuyBlogPost() {
@@ -29,55 +33,55 @@ export default function BuildVsBuyBlogPost() {
     <div className="min-h-screen">
       <EnglishOnlyBanner />
       {/* Hero Section */}
-      <section className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-[var(--background)] to-slate-900">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--primary)] opacity-10 rounded-full blur-3xl" />
+      <section className="relative overflow-hidden">
+        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease }}
           >
             {/* Breadcrumb */}
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors mb-8"
+              className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
               All Articles
             </Link>
 
             {/* Category Tag */}
             <div className="flex items-center gap-3 mb-6">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] text-sm font-medium">
-                <Scale className="w-4 h-4" />
+              <span className="inline-flex items-center gap-2 rounded-pill bg-accent-soft text-accent px-3 py-1 text-sm font-medium">
+                <Scale className="w-4 h-4" strokeWidth={1.5} />
                 Vendor Evaluation
               </span>
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-6 leading-tight">
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-strong mb-6 leading-tight">
               Build vs Buy: What to Demand from IDP Vendors
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xl text-[var(--text-secondary)] mb-8 leading-relaxed">
+            <p className="text-lede text-body mb-8">
               A practical evaluation framework for insurance teams evaluating
               claims automation solutions
             </p>
 
             {/* Meta */}
-            <div className="flex flex-wrap items-center gap-6 text-sm text-[var(--text-muted)]">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-subtle">
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
+                <Calendar className="w-4 h-4" strokeWidth={1.5} />
                 February 2025
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
+                <Clock className="w-4 h-4" strokeWidth={1.5} />
                 15 min read
               </div>
               <div className="flex items-center gap-2">
-                <BookOpen className="w-4 h-4" />
+                <BookOpen className="w-4 h-4" strokeWidth={1.5} />
                 Strategic Guide
               </div>
             </div>
@@ -90,34 +94,34 @@ export default function BuildVsBuyBlogPost() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             {/* Main Content */}
-            <div className="lg:col-span-3 space-y-12">
+            <div className="lg:col-span-3 max-w-3xl space-y-12">
               {/* The Wrong Question */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   The Wrong Question
                 </h2>
 
-                <div className="glass-panel p-6 border-l-4 border-l-amber-500 mb-6">
-                  <p className="text-lg text-[var(--text-primary)] italic">
+                <div className="border-l-2 border-ta-blue pl-6 mb-8">
+                  <p className="text-body-lg text-strong">
                     &ldquo;Should we build or buy our claims AI?&rdquo;
                   </p>
                 </div>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+                <p className="text-body leading-[1.6] mb-5">
                   This is the wrong question. Vendors will show you polished
                   demos. Your developers will promise they can &ldquo;just use
                   GPT-4.&rdquo; Neither perspective captures reality.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   The right question:{" "}
-                  <strong className="text-[var(--text-primary)]">
+                  <strong className="text-strong">
                     What do you need to be true for this to work in production,
                     and who can actually make it true?
                   </strong>
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-body leading-[1.6]">
                   We&apos;ve worked through 47 evaluation iterations on a claims
                   automation pipeline, watching accuracy climb from 18% to 98%.
                   Along the way, we documented every failure mode, every false
@@ -128,22 +132,22 @@ export default function BuildVsBuyBlogPost() {
 
               {/* When to Build */}
               <MotionDiv {...fadeIn}>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                    <Wrench className="w-5 h-5 text-blue-400" />
+                <div className="flex items-center gap-3 mt-14 mb-6">
+                  <div className="w-10 h-10 rounded-pill bg-lilac grid place-items-center text-accent">
+                    <Wrench className="w-5 h-5" strokeWidth={1.5} />
                   </div>
-                  <h2 className="text-2xl font-bold text-[var(--text-primary)]">
+                  <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong">
                     When to Build
                   </h2>
                 </div>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Build is a capability investment, not a cost savings. Choose
                   it for strategic reasons, not fear of vendors.
                 </p>
 
-                <div className="glass-panel p-6 mb-6">
-                  <h3 className="font-semibold text-[var(--text-primary)] mb-4">
+                <div className="bg-card shadow-card rounded-pill p-8 mb-6">
+                  <h3 className="font-display font-semibold text-strong mb-4">
                     Build Makes Sense When:
                   </h3>
                   <ul className="space-y-3">
@@ -172,12 +176,12 @@ export default function BuildVsBuyBlogPost() {
                       },
                     ].map((item) => (
                       <li key={item.title} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                         <div>
-                          <span className="font-medium text-[var(--text-primary)]">
+                          <span className="font-medium text-strong">
                             {item.title}.
                           </span>{" "}
-                          <span className="text-[var(--text-secondary)]">
+                          <span className="text-body">
                             {item.desc}
                           </span>
                         </div>
@@ -187,18 +191,18 @@ export default function BuildVsBuyBlogPost() {
                 </div>
 
                 {/* Build Traps */}
-                <div className="glass-panel-light p-6 mb-6">
-                  <h3 className="font-semibold text-[var(--text-primary)] mb-4">
+                <div className="bg-card shadow-card rounded-pill p-8 mb-6">
+                  <h3 className="font-display font-semibold text-strong mb-4">
                     Build Traps to Avoid:
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                      <AlertTriangle className="w-5 h-5 text-referred-dark flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                       <div>
-                        <span className="font-medium text-[var(--text-primary)]">
+                        <span className="font-medium text-strong">
                           &ldquo;We&apos;ll just use GPT-4.&rdquo;
                         </span>
-                        <p className="text-sm text-[var(--text-secondary)] mt-1">
+                        <p className="text-sm text-body mt-1">
                           You&apos;ll hit the same accuracy ceiling everyone
                           else does. Our baseline LLM-only approach achieved 18%
                           accuracy. Not 80%. Not 60%. Eighteen percent.
@@ -206,12 +210,12 @@ export default function BuildVsBuyBlogPost() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                      <AlertTriangle className="w-5 h-5 text-referred-dark flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                       <div>
-                        <span className="font-medium text-[var(--text-primary)]">
+                        <span className="font-medium text-strong">
                           &ldquo;Our developers can figure it out.&rdquo;
                         </span>
-                        <p className="text-sm text-[var(--text-secondary)] mt-1">
+                        <p className="text-sm text-body mt-1">
                           Claims domain is deep. German compound words like{" "}
                           <em>Abgasrückführungsventil</em> (exhaust gas
                           recirculation valve) require automotive vocabulary
@@ -220,12 +224,12 @@ export default function BuildVsBuyBlogPost() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                      <AlertTriangle className="w-5 h-5 text-referred-dark flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                       <div>
-                        <span className="font-medium text-[var(--text-primary)]">
+                        <span className="font-medium text-strong">
                           &ldquo;We don&apos;t want vendor lock-in.&rdquo;
                         </span>
-                        <p className="text-sm text-[var(--text-secondary)] mt-1">
+                        <p className="text-sm text-body mt-1">
                           You&apos;ll trade it for internal lock-in: dependency
                           on engineers who understand your bespoke system.
                         </p>
@@ -235,11 +239,11 @@ export default function BuildVsBuyBlogPost() {
                 </div>
 
                 {/* Real Cost of Build */}
-                <div className="p-4 bg-blue-500/10 rounded-lg border border-blue-500/20">
-                  <h4 className="font-medium text-blue-400 mb-2">
+                <div className="bg-card shadow-card rounded-pill p-8">
+                  <h4 className="font-display font-semibold text-strong mb-2">
                     The Real Cost of Build:
                   </h4>
-                  <ul className="text-sm text-[var(--text-secondary)] space-y-1">
+                  <ul className="text-sm text-body space-y-1">
                     <li>• 2-4 ML engineers for 12+ months</li>
                     <li>
                       • Domain expert time for labeling and validation (~20
@@ -256,23 +260,23 @@ export default function BuildVsBuyBlogPost() {
 
               {/* When to Buy */}
               <MotionDiv {...fadeIn}>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center">
-                    <ShoppingCart className="w-5 h-5 text-emerald-400" />
+                <div className="flex items-center gap-3 mt-14 mb-6">
+                  <div className="w-10 h-10 rounded-pill bg-lilac grid place-items-center text-accent">
+                    <ShoppingCart className="w-5 h-5" strokeWidth={1.5} />
                   </div>
-                  <h2 className="text-2xl font-bold text-[var(--text-primary)]">
+                  <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong">
                     When to Buy
                   </h2>
                 </div>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Buy is a speed-to-market trade-off. Choose it because you
                   value time, not because you think it&apos;s
                   &ldquo;easier.&rdquo;
                 </p>
 
-                <div className="glass-panel p-6 mb-6">
-                  <h3 className="font-semibold text-[var(--text-primary)] mb-4">
+                <div className="bg-card shadow-card rounded-pill p-8 mb-6">
+                  <h3 className="font-display font-semibold text-strong mb-4">
                     Buy Makes Sense When:
                   </h3>
                   <ul className="space-y-3">
@@ -297,12 +301,12 @@ export default function BuildVsBuyBlogPost() {
                       },
                     ].map((item) => (
                       <li key={item.title} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                         <div>
-                          <span className="font-medium text-[var(--text-primary)]">
+                          <span className="font-medium text-strong">
                             {item.title}.
                           </span>{" "}
-                          <span className="text-[var(--text-secondary)]">
+                          <span className="text-body">
                             {item.desc}
                           </span>
                         </div>
@@ -312,18 +316,18 @@ export default function BuildVsBuyBlogPost() {
                 </div>
 
                 {/* Buy Traps */}
-                <div className="glass-panel-light p-6 mb-6">
-                  <h3 className="font-semibold text-[var(--text-primary)] mb-4">
+                <div className="bg-card shadow-card rounded-pill p-8 mb-6">
+                  <h3 className="font-display font-semibold text-strong mb-4">
                     Buy Traps to Avoid:
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                      <AlertTriangle className="w-5 h-5 text-referred-dark flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                       <div>
-                        <span className="font-medium text-[var(--text-primary)]">
+                        <span className="font-medium text-strong">
                           &ldquo;They showed a great demo.&rdquo;
                         </span>
-                        <p className="text-sm text-[var(--text-secondary)] mt-1">
+                        <p className="text-sm text-body mt-1">
                           Demo data is curated. Our system looked great on
                           German documents until we ran French claims. All 25
                           approved claims were wrongly rejected.
@@ -331,12 +335,12 @@ export default function BuildVsBuyBlogPost() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                      <AlertTriangle className="w-5 h-5 text-referred-dark flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                       <div>
-                        <span className="font-medium text-[var(--text-primary)]">
+                        <span className="font-medium text-strong">
                           &ldquo;They said 99% accuracy.&rdquo;
                         </span>
-                        <p className="text-sm text-[var(--text-secondary)] mt-1">
+                        <p className="text-sm text-body mt-1">
                           Ask: accuracy on what? Their test set or your
                           documents? Our 98% accuracy came with 36% payout
                           accuracy. Decision accuracy ≠ business accuracy.
@@ -344,12 +348,12 @@ export default function BuildVsBuyBlogPost() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                      <AlertTriangle className="w-5 h-5 text-referred-dark flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                       <div>
-                        <span className="font-medium text-[var(--text-primary)]">
+                        <span className="font-medium text-strong">
                           &ldquo;It&apos;s plug and play.&rdquo;
                         </span>
-                        <p className="text-sm text-[var(--text-secondary)] mt-1">
+                        <p className="text-sm text-body mt-1">
                           Integration is always harder than promised. Document
                           formats vary. Field names differ. Your policy
                           structure has quirks.
@@ -360,11 +364,11 @@ export default function BuildVsBuyBlogPost() {
                 </div>
 
                 {/* Real Cost of Buy */}
-                <div className="p-4 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
-                  <h4 className="font-medium text-emerald-400 mb-2">
+                <div className="bg-card shadow-card rounded-pill p-8">
+                  <h4 className="font-display font-semibold text-strong mb-2">
                     The Real Cost of Buy:
                   </h4>
-                  <ul className="text-sm text-[var(--text-secondary)] space-y-1">
+                  <ul className="text-sm text-body space-y-1">
                     <li>
                       • License fees (per claim, per document, or platform)
                     </li>
@@ -382,44 +386,44 @@ export default function BuildVsBuyBlogPost() {
 
               {/* Vendor Evaluation Framework */}
               <MotionDiv {...fadeIn}>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center">
-                    <ClipboardList className="w-5 h-5 text-[var(--primary)]" />
+                <div className="flex items-center gap-3 mt-14 mb-6">
+                  <div className="w-10 h-10 rounded-pill bg-lilac grid place-items-center text-accent">
+                    <ClipboardList className="w-5 h-5" strokeWidth={1.5} />
                   </div>
-                  <h2 className="text-2xl font-bold text-[var(--text-primary)]">
+                  <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong">
                     The Vendor Evaluation Framework
                   </h2>
                 </div>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-6">
                   A systematic approach to comparing vendors. Weight categories
                   based on your priorities.
                 </p>
 
                 {/* Category 1: Accuracy */}
-                <div className="glass-panel p-6 mb-4">
+                <div className="bg-card shadow-card rounded-pill p-8 mb-4">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-semibold text-[var(--text-primary)]">
+                    <h3 className="font-display font-semibold text-strong">
                       Category 1: Accuracy & Evaluation
                     </h3>
-                    <span className="text-sm font-medium text-[var(--primary)] bg-[var(--primary)]/10 px-2 py-1 rounded">
+                    <span className="text-sm font-medium text-accent bg-accent-soft px-3 py-1 rounded-pill">
                       30% Weight
                     </span>
                   </div>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead>
-                        <tr className="border-b border-[var(--border)]">
-                          <th className="text-left py-2 pr-4 text-[var(--text-muted)]">
+                        <tr className="border-b border-hairline">
+                          <th className="text-left py-2 pr-4 font-display text-strong">
                             Question
                           </th>
-                          <th className="text-left py-2 text-[var(--text-muted)]">
+                          <th className="text-left py-2 font-display text-strong">
                             What You&apos;re Looking For
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="text-[var(--text-secondary)]">
-                        <tr className="border-b border-[var(--border)]/50">
+                      <tbody className="text-body">
+                        <tr className="border-b border-hairline">
                           <td className="py-2 pr-4">
                             What&apos;s your holdout accuracy?
                           </td>
@@ -427,13 +431,13 @@ export default function BuildVsBuyBlogPost() {
                             Specific %, methodology explained
                           </td>
                         </tr>
-                        <tr className="border-b border-[var(--border)]/50">
+                        <tr className="border-b border-hairline">
                           <td className="py-2 pr-4">
                             What&apos;s your false approve rate?
                           </td>
                           <td className="py-2">Tracked separately, &lt;5%</td>
                         </tr>
-                        <tr className="border-b border-[var(--border)]/50">
+                        <tr className="border-b border-hairline">
                           <td className="py-2 pr-4">
                             Can you show error categories?
                           </td>
@@ -450,8 +454,8 @@ export default function BuildVsBuyBlogPost() {
                       </tbody>
                     </table>
                   </div>
-                  <p className="text-xs text-[var(--text-muted)] mt-4">
-                    <strong className="text-red-400">Red flags:</strong>{" "}
+                  <p className="text-xs text-muted mt-4">
+                    <strong className="text-denied-dark">Red flags:</strong>{" "}
                     &ldquo;Our accuracy is 99%&rdquo; without explaining holdout
                     methodology. We tracked 14 distinct failure modes across
                     matching, extraction, coverage logic, and calculation.
@@ -459,41 +463,41 @@ export default function BuildVsBuyBlogPost() {
                 </div>
 
                 {/* Category 2: Auditability */}
-                <div className="glass-panel p-6 mb-4">
+                <div className="bg-card shadow-card rounded-pill p-8 mb-4">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-semibold text-[var(--text-primary)]">
+                    <h3 className="font-display font-semibold text-strong">
                       Category 2: Auditability
                     </h3>
-                    <span className="text-sm font-medium text-[var(--primary)] bg-[var(--primary)]/10 px-2 py-1 rounded">
+                    <span className="text-sm font-medium text-accent bg-accent-soft px-3 py-1 rounded-pill">
                       25% Weight
                     </span>
                   </div>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead>
-                        <tr className="border-b border-[var(--border)]">
-                          <th className="text-left py-2 pr-4 text-[var(--text-muted)]">
+                        <tr className="border-b border-hairline">
+                          <th className="text-left py-2 pr-4 font-display text-strong">
                             Question
                           </th>
-                          <th className="text-left py-2 text-[var(--text-muted)]">
+                          <th className="text-left py-2 font-display text-strong">
                             What You&apos;re Looking For
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="text-[var(--text-secondary)]">
-                        <tr className="border-b border-[var(--border)]/50">
+                      <tbody className="text-body">
+                        <tr className="border-b border-hairline">
                           <td className="py-2 pr-4">
                             Can I trace any field to its source document?
                           </td>
                           <td className="py-2">Page and character level</td>
                         </tr>
-                        <tr className="border-b border-[var(--border)]/50">
+                        <tr className="border-b border-hairline">
                           <td className="py-2 pr-4">
                             Do you log model version and confidence?
                           </td>
                           <td className="py-2">Complete audit trail</td>
                         </tr>
-                        <tr className="border-b border-[var(--border)]/50">
+                        <tr className="border-b border-hairline">
                           <td className="py-2 pr-4">
                             Can you reproduce a 6-month-old decision?
                           </td>
@@ -508,36 +512,36 @@ export default function BuildVsBuyBlogPost() {
                       </tbody>
                     </table>
                   </div>
-                  <p className="text-xs text-[var(--text-muted)] mt-4">
+                  <p className="text-xs text-muted mt-4">
                     For Swiss and EU regulated workflows, auditability isn&apos;t
                     negotiable.
                   </p>
                 </div>
 
                 {/* Category 3: Architecture */}
-                <div className="glass-panel p-6 mb-4">
+                <div className="bg-card shadow-card rounded-pill p-8 mb-4">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-semibold text-[var(--text-primary)]">
+                    <h3 className="font-display font-semibold text-strong">
                       Category 3: Architecture
                     </h3>
-                    <span className="text-sm font-medium text-[var(--primary)] bg-[var(--primary)]/10 px-2 py-1 rounded">
+                    <span className="text-sm font-medium text-accent bg-accent-soft px-3 py-1 rounded-pill">
                       20% Weight
                     </span>
                   </div>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead>
-                        <tr className="border-b border-[var(--border)]">
-                          <th className="text-left py-2 pr-4 text-[var(--text-muted)]">
+                        <tr className="border-b border-hairline">
+                          <th className="text-left py-2 pr-4 font-display text-strong">
                             Question
                           </th>
-                          <th className="text-left py-2 text-[var(--text-muted)]">
+                          <th className="text-left py-2 font-display text-strong">
                             What You&apos;re Looking For
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="text-[var(--text-secondary)]">
-                        <tr className="border-b border-[var(--border)]/50">
+                      <tbody className="text-body">
+                        <tr className="border-b border-hairline">
                           <td className="py-2 pr-4">
                             What % is deterministic vs ML?
                           </td>
@@ -545,13 +549,13 @@ export default function BuildVsBuyBlogPost() {
                             Higher deterministic = lower risk
                           </td>
                         </tr>
-                        <tr className="border-b border-[var(--border)]/50">
+                        <tr className="border-b border-hairline">
                           <td className="py-2 pr-4">
                             What are your confidence thresholds?
                           </td>
                           <td className="py-2">Asymmetric, configurable</td>
                         </tr>
-                        <tr className="border-b border-[var(--border)]/50">
+                        <tr className="border-b border-hairline">
                           <td className="py-2 pr-4">
                             How do you detect distribution shift?
                           </td>
@@ -566,7 +570,7 @@ export default function BuildVsBuyBlogPost() {
                       </tbody>
                     </table>
                   </div>
-                  <p className="text-xs text-[var(--text-muted)] mt-4">
+                  <p className="text-xs text-muted mt-4">
                     Our architecture: 57% of items handled by deterministic
                     rules (zero LLM cost). Higher deterministic percentage =
                     lower cost and higher explainability.
@@ -575,32 +579,32 @@ export default function BuildVsBuyBlogPost() {
 
                 {/* Categories 4 & 5 */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="glass-panel p-5">
+                  <div className="bg-card shadow-card rounded-pill p-8">
                     <div className="flex items-center justify-between mb-3">
-                      <h4 className="font-semibold text-[var(--text-primary)] text-sm">
+                      <h4 className="font-display font-semibold text-strong text-sm">
                         Cost & Operations
                       </h4>
-                      <span className="text-xs font-medium text-[var(--primary)] bg-[var(--primary)]/10 px-2 py-0.5 rounded">
+                      <span className="text-xs font-medium text-accent bg-accent-soft px-3 py-0.5 rounded-pill">
                         15%
                       </span>
                     </div>
-                    <ul className="text-xs text-[var(--text-secondary)] space-y-1">
+                    <ul className="text-xs text-body space-y-1">
                       <li>• Cost per claim breakdown</li>
                       <li>• Token limits, circuit breakers</li>
                       <li>• P50, P95, P99 latencies</li>
                       <li>• Native language handling</li>
                     </ul>
                   </div>
-                  <div className="glass-panel p-5">
+                  <div className="bg-card shadow-card rounded-pill p-8">
                     <div className="flex items-center justify-between mb-3">
-                      <h4 className="font-semibold text-[var(--text-primary)] text-sm">
+                      <h4 className="font-display font-semibold text-strong text-sm">
                         Risk & Safety
                       </h4>
-                      <span className="text-xs font-medium text-[var(--primary)] bg-[var(--primary)]/10 px-2 py-0.5 rounded">
+                      <span className="text-xs font-medium text-accent bg-accent-soft px-3 py-0.5 rounded-pill">
                         10%
                       </span>
                     </div>
-                    <ul className="text-xs text-[var(--text-secondary)] space-y-1">
+                    <ul className="text-xs text-body space-y-1">
                       <li>• Documented failure modes</li>
                       <li>• Automated regression testing</li>
                       <li>• Graceful degradation to human</li>
@@ -612,46 +616,46 @@ export default function BuildVsBuyBlogPost() {
 
               {/* Demo Checklist */}
               <MotionDiv {...fadeIn}>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                    <Target className="w-5 h-5 text-amber-400" />
+                <div className="flex items-center gap-3 mt-14 mb-6">
+                  <div className="w-10 h-10 rounded-pill bg-lilac grid place-items-center text-accent">
+                    <Target className="w-5 h-5" strokeWidth={1.5} />
                   </div>
-                  <h2 className="text-2xl font-bold text-[var(--text-primary)]">
+                  <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong">
                     The Demo Checklist
                   </h2>
                 </div>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-6">
                   What to demand when vendors present.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                  <div className="glass-panel p-5">
-                    <h4 className="font-semibold text-[var(--text-primary)] mb-3">
+                  <div className="bg-card shadow-card rounded-pill p-8">
+                    <h4 className="font-display font-semibold text-strong mb-3">
                       Before the Demo
                     </h4>
-                    <ul className="text-sm text-[var(--text-secondary)] space-y-2">
+                    <ul className="text-sm text-body space-y-2">
                       <li>• Send 10-20 of YOUR claims</li>
                       <li>• Include edge cases: multilingual, poor scan quality</li>
                       <li>• Define success criteria upfront</li>
                     </ul>
                   </div>
-                  <div className="glass-panel p-5">
-                    <h4 className="font-semibold text-[var(--text-primary)] mb-3">
+                  <div className="bg-card shadow-card rounded-pill p-8">
+                    <h4 className="font-display font-semibold text-strong mb-3">
                       During the Demo
                     </h4>
-                    <ul className="text-sm text-[var(--text-secondary)] space-y-2">
+                    <ul className="text-sm text-body space-y-2">
                       <li>• Run on YOUR documents</li>
                       <li>• Ask to see a failure</li>
                       <li>• Click through to field provenance</li>
                       <li>• Request confidence scores</li>
                     </ul>
                   </div>
-                  <div className="glass-panel p-5">
-                    <h4 className="font-semibold text-[var(--text-primary)] mb-3">
+                  <div className="bg-card shadow-card rounded-pill p-8">
+                    <h4 className="font-display font-semibold text-strong mb-3">
                       After the Demo
                     </h4>
-                    <ul className="text-sm text-[var(--text-secondary)] space-y-2">
+                    <ul className="text-sm text-body space-y-2">
                       <li>• Compare claimed vs actual accuracy</li>
                       <li>• Count &ldquo;we&apos;ll tune that&rdquo; responses</li>
                       <li>• Evaluate: could your team use this daily?</li>
@@ -659,11 +663,11 @@ export default function BuildVsBuyBlogPost() {
                   </div>
                 </div>
 
-                <div className="glass-panel-light p-6">
-                  <h4 className="font-semibold text-[var(--text-primary)] mb-3">
+                <div className="bg-card shadow-card rounded-pill p-8">
+                  <h4 className="font-display font-semibold text-strong mb-3">
                     The 5-Minute Stress Test
                   </h4>
-                  <p className="text-sm text-[var(--text-secondary)]">
+                  <p className="text-sm text-body">
                     Pick your weirdest claim. A German compound word like{" "}
                     <em>Zylinderkopfdichtung</em> (cylinder head gasket) with a
                     French invoice format and a borderline coverage decision. If
@@ -675,42 +679,44 @@ export default function BuildVsBuyBlogPost() {
 
               {/* The Hybrid Path */}
               <MotionDiv {...fadeIn}>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
-                    <Building className="w-5 h-5 text-purple-400" />
+                <div className="flex items-center gap-3 mt-14 mb-6">
+                  <div className="w-10 h-10 rounded-pill bg-lilac grid place-items-center text-accent">
+                    <Building className="w-5 h-5" strokeWidth={1.5} />
                   </div>
-                  <h2 className="text-2xl font-bold text-[var(--text-primary)]">
+                  <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong">
                     The Hybrid Path
                   </h2>
                 </div>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-6">
                   Consider the middle ground. Build some, buy some.
                 </p>
 
-                <div className="glass-panel p-6 mb-6">
+                <div className="bg-card shadow-card rounded-pill p-8 mb-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                      <h4 className="font-semibold text-emerald-400 mb-2">
+                      <h4 className="font-display font-semibold text-strong mb-2">
                         Buy
                       </h4>
-                      <p className="text-sm text-[var(--text-secondary)]">
+                      <p className="text-sm text-body">
                         Document extraction, OCR, classification: vendors are
                         good at generic document understanding
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-blue-400 mb-2">Build</h4>
-                      <p className="text-sm text-[var(--text-secondary)]">
+                      <h4 className="font-display font-semibold text-strong mb-2">
+                        Build
+                      </h4>
+                      <p className="text-sm text-body">
                         Policy-specific business rules, coverage logic: you&apos;re
                         better at your specific domain
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-[var(--primary)] mb-2">
+                      <h4 className="font-display font-semibold text-strong mb-2">
                         Own
                       </h4>
-                      <p className="text-sm text-[var(--text-secondary)]">
+                      <p className="text-sm text-body">
                         Evaluation framework, ground truth, quality
                         monitoring. Maintain control of the decision layer
                       </p>
@@ -718,9 +724,9 @@ export default function BuildVsBuyBlogPost() {
                   </div>
                 </div>
 
-                <div className="p-4 bg-purple-500/10 rounded-lg border border-purple-500/20">
-                  <p className="text-sm text-[var(--text-secondary)]">
-                    <strong className="text-purple-400">Why this works:</strong>{" "}
+                <div className="bg-lilac rounded-pill px-8 py-6">
+                  <p className="text-sm text-body leading-[1.6]">
+                    <strong className="text-strong">Why this works:</strong>{" "}
                     Vendors handle commodity parts. You handle differentiated
                     parts. You can swap vendors without rewriting rules. You
                     maintain audit control over final decisions.
@@ -730,7 +736,7 @@ export default function BuildVsBuyBlogPost() {
 
               {/* Next Steps */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Next Steps
                 </h2>
 
@@ -758,16 +764,16 @@ export default function BuildVsBuyBlogPost() {
                     },
                   ].map((step) => (
                     <div key={step.num} className="flex gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[var(--primary)]/20 flex items-center justify-center flex-shrink-0">
-                        <span className="text-sm font-bold text-[var(--primary)]">
+                      <div className="w-8 h-8 rounded-full bg-accent-soft grid place-items-center flex-shrink-0">
+                        <span className="text-sm font-display font-semibold text-accent">
                           {step.num}
                         </span>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[var(--text-primary)]">
+                        <h4 className="font-display font-semibold text-strong">
                           {step.title}
                         </h4>
-                        <p className="text-sm text-[var(--text-secondary)]">
+                        <p className="text-sm text-body">
                           {step.desc}
                         </p>
                       </div>
@@ -775,15 +781,15 @@ export default function BuildVsBuyBlogPost() {
                   ))}
                 </div>
 
-                <div className="glass-panel p-6 border-l-4 border-l-[var(--primary)]">
-                  <p className="text-[var(--text-primary)] leading-relaxed">
+                <div className="border-l-2 border-ta-blue pl-6">
+                  <p className="text-body-lg text-strong">
                     The goal isn&apos;t to avoid vendors or avoid building. It&apos;s
                     to make an informed decision based on your specific
                     situation, timeline, and capabilities.
                   </p>
                 </div>
 
-                <p className="mt-6 text-sm text-[var(--text-muted)] italic">
+                <p className="mt-6 text-sm text-subtle italic">
                   True Aim AG builds auditable AI systems for Swiss and EU
                   regulated markets. We&apos;ve learned these lessons the hard
                   way, 47 iterations worth.
@@ -797,10 +803,10 @@ export default function BuildVsBuyBlogPost() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="glass-panel p-6"
+                transition={{ duration: 0.6, ease }}
+                className="bg-card shadow-card rounded-pill p-8"
               >
-                <h3 className="font-semibold text-[var(--text-primary)] mb-4">
+                <h3 className="font-display font-semibold text-strong mb-4">
                   Key Takeaways
                 </h3>
                 <ul className="space-y-3">
@@ -813,16 +819,16 @@ export default function BuildVsBuyBlogPost() {
                     "Auditability is non-negotiable",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-[var(--text-secondary)]">
+                      <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <span className="text-sm text-body">
                         {item}
                       </span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-8 pt-6 border-t border-[var(--border)]">
-                  <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">
+                <div className="mt-8 pt-6 border-t border-hairline">
+                  <h4 className="text-caption-sm text-subtle mb-3">
                     Related Topics
                   </h4>
                   <div className="flex flex-wrap gap-1.5">
@@ -836,7 +842,7 @@ export default function BuildVsBuyBlogPost() {
                     ].map((tag) => (
                       <span
                         key={tag}
-                        className="text-[10px] px-2 py-1 rounded bg-[var(--subtle-bg)] text-[var(--text-muted)]"
+                        className="text-xs px-3 py-1 rounded-pill bg-accent-soft text-accent"
                       >
                         {tag}
                       </span>
@@ -844,14 +850,11 @@ export default function BuildVsBuyBlogPost() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-[var(--border)]">
-                  <Link
-                    href="/contact"
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors"
-                  >
+                <div className="mt-8 pt-6 border-t border-hairline">
+                  <ButtonLink href="/contact" variant="primary" className="w-full">
                     Talk to Us
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+                    <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+                  </ButtonLink>
                 </div>
               </MotionDiv>
             </div>
@@ -860,31 +863,25 @@ export default function BuildVsBuyBlogPost() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-gradient-to-br from-slate-900 to-[var(--background)]">
+      <section data-theme="dark" className="py-20 px-6 bg-page-tint">
         <div className="max-w-4xl mx-auto text-center">
           <MotionDiv {...fadeIn}>
-            <Scale className="w-12 h-12 text-[var(--text-muted)] mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <Scale className="w-12 h-12 text-muted mx-auto mb-6" strokeWidth={1.5} />
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-strong mb-6">
               Evaluating Claims AI Vendors?
             </h2>
-            <p className="text-lg text-gray-300 mb-10">
+            <p className="text-lg text-body mb-10">
               We can help you build an evaluation framework tailored to your
               requirements and run objective vendor comparisons.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg"
-              >
+              <ButtonLink href="/contact" variant="primary" size="lg">
                 Get in Touch
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                href="/blog/auditability-evidence-chains"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
-              >
+                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+              </ButtonLink>
+              <ButtonLink href="/blog/auditability-evidence-chains" variant="on-dark" size="lg">
                 Read: Auditability in Claims AI
-              </Link>
+              </ButtonLink>
             </div>
           </MotionDiv>
         </div>

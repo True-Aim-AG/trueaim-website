@@ -1,7 +1,14 @@
-import { Link } from "@/i18n/navigation";
-import { MotionDiv } from "@/components/ui/MotionDiv";
-import { ArrowRight } from "lucide-react";
-import { type ReactNode } from "react";
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+import { ButtonLink } from "@/components/brand/Button";
+import { Eyebrow } from "@/components/brand/Eyebrow";
+import { GlassBox } from "@/components/brand/GlassBox";
+import { Glow } from "@/components/brand/Glow";
+import { GridPattern } from "@/components/brand/GridPattern";
+import type { ReactNode } from "react";
+
+const ease = [0.4, 0, 0.2, 1] as const;
 
 interface ProductHeroCTA {
   label: string;
@@ -10,75 +17,90 @@ interface ProductHeroCTA {
 
 interface ProductHeroProps {
   badge: string;
-  badgeIcon?: ReactNode;
   headline: string;
   description: string;
   supportingText?: string;
   primaryCTA: ProductHeroCTA;
   secondaryCTA?: ProductHeroCTA;
-  badgeClassName?: string;
-  primaryCTAClassName?: string;
+  /** Optional brand graphic for the right column. Defaults to a Glass Box with a glow behind it. */
+  graphic?: ReactNode;
 }
 
+/**
+ * Product page hero, following the brand page-hero pattern (design system brief §7):
+ * eyebrow -> H1 -> lede -> pill buttons in a left-aligned copy column, with a structured
+ * grid and an optional brand graphic on the right. Square corners, no card around the hero.
+ */
 export function ProductHero({
   badge,
-  badgeIcon,
   headline,
   description,
   supportingText,
   primaryCTA,
   secondaryCTA,
-  badgeClassName = "bg-[var(--primary)]/20 text-[var(--primary)]",
-  primaryCTAClassName = "bg-[var(--primary)] text-white hover:bg-[var(--primary-hover)] shadow-lg shadow-[var(--primary)]/30",
+  graphic,
 }: ProductHeroProps) {
+  const reduce = useReducedMotion();
+  const fade = (delay: number) =>
+    reduce
+      ? {}
+      : { initial: { opacity: 0, y: 12 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.6, delay, ease } };
+
   return (
-    <section className="relative py-24 px-6 overflow-hidden">
-      <div className="relative max-w-7xl mx-auto">
-        <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-[820px] mx-auto text-center"
-        >
-          <div
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 ${badgeClassName}`}
+    <section className="relative overflow-hidden pb-16 pt-20 md:pt-28">
+      <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
+
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-[minmax(0,640px)_1fr] lg:gap-8">
+        {/* Copy column */}
+        <div className="max-w-[640px]">
+          <motion.div {...fade(0)}>
+            <Eyebrow>{badge}</Eyebrow>
+          </motion.div>
+
+          <motion.h1
+            {...fade(0.05)}
+            className="mt-4 font-display text-[40px] font-bold leading-[1.05] text-strong sm:text-[48px] lg:text-[54px]"
           >
-            {badgeIcon}
-            {badge}
-          </div>
-
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
             {headline}
-          </h1>
+          </motion.h1>
 
-          <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-4 leading-relaxed">
+          <motion.p {...fade(0.15)} className="mt-[26px] text-lede text-body">
             {description}
-          </p>
+          </motion.p>
 
           {supportingText && (
-            <p className="text-base text-[var(--text-muted)] mb-8 leading-relaxed">
+            <motion.p {...fade(0.2)} className="mt-4 text-lede text-body">
               {supportingText}
-            </p>
+            </motion.p>
           )}
 
-          <div className={`flex justify-center gap-4 flex-col sm:flex-row ${!supportingText ? "mt-8" : ""}`}>
-            <Link
-              href={primaryCTA.href}
-              className={`inline-flex items-center justify-center px-8 py-4 rounded-lg font-medium transition-colors text-lg ${primaryCTAClassName}`}
-            >
+          <motion.div {...fade(0.25)} className="mt-10 flex flex-col gap-3.5 sm:flex-row">
+            <ButtonLink href={primaryCTA.href} variant="primary" size="lg">
               {primaryCTA.label}
-            </Link>
+            </ButtonLink>
             {secondaryCTA && (
-              <Link
-                href={secondaryCTA.href}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
-              >
+              <ButtonLink href={secondaryCTA.href} variant="secondary" size="lg">
                 {secondaryCTA.label}
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+              </ButtonLink>
             )}
-          </div>
-        </MotionDiv>
+          </motion.div>
+        </div>
+
+        {/* Brand graphic */}
+        <motion.div
+          initial={reduce ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.9, delay: 0.3, ease }}
+          className="relative mx-auto hidden h-[320px] w-[320px] lg:block"
+          aria-hidden
+        >
+          {graphic ?? (
+            <>
+              <Glow size={320} opacity={0.6} className="absolute left-0 top-0" />
+              <GlassBox size={260} glow={false} className="absolute left-[30px] top-[30px]" />
+            </>
+          )}
+        </motion.div>
       </div>
     </section>
   );

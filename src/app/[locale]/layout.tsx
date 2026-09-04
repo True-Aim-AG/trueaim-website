@@ -1,36 +1,32 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Inter_Tight, IBM_Plex_Sans } from "next/font/google";
 import "../globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { GoogleAnalyticsWrapper } from "@/components/layout/GoogleAnalytics";
 import { HubSpotTracking } from "@/components/layout/HubSpotTracking";
-import { AuroraBackground } from "@/components/layout/AuroraBackground";
-import { NeuralBackground } from "@/components/layout/NeuralBackground";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { JsonLd, organizationJsonLd, websiteJsonLd, siteNavigationJsonLd } from "@/components/seo/JsonLd";
+import { defaultOgImages } from "@/lib/og-image";
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 
-const inter = Inter({
-  variable: "--font-inter",
+/* Brand type: Inter Tight for titles, IBM Plex Sans for everything else (docs/DESIGN_SYSTEM.md §4). */
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--font-ibm-plex-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 function getLocaleUrl(locale: string, path: string): string {
@@ -67,6 +63,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
       "claims decisioning",
     ],
     authors: [{ name: "True Aim" }],
+    manifest: "/site.webmanifest",
     icons: {
       icon: [
         { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
@@ -82,11 +79,13 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
       siteName: "True Aim",
       title: t("ogTitle"),
       description: t("ogDescription"),
+      images: defaultOgImages,
     },
     twitter: {
       card: "summary_large_image",
       title: t("ogTitle"),
       description: t("ogDescription"),
+      images: defaultOgImages.map((i) => i.url),
     },
     robots: {
       index: true,
@@ -98,6 +97,11 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
     },
   };
 }
+
+export const viewport = {
+  themeColor: "#2C2B2A",
+  colorScheme: "dark" as const,
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -117,38 +121,29 @@ export default async function LocaleLayout({ children, params }: Props) {
   const t = await getTranslations();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} data-theme="dark" suppressHydrationWarning>
       <head>
         <JsonLd data={{ ...organizationJsonLd, inLanguage: locale }} />
         <JsonLd data={{ ...websiteJsonLd, inLanguage: locale }} />
         <JsonLd data={siteNavigationJsonLd} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              document.documentElement.setAttribute('data-theme', 'dark');
-            `,
-          }}
-        />
         <link rel="preconnect" href="https://mira-travel-demo.vercel.app" />
         <link rel="preconnect" href="https://claimeval.vercel.app" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://js-eu1.hs-scripts.com" />
       </head>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} antialiased`}>
+      <body className={`${interTight.variable} ${ibmPlexSans.variable} antialiased`}>
         <GoogleAnalyticsWrapper />
         <HubSpotTracking />
         <ThemeProvider>
           <NextIntlClientProvider>
             <a
               href="#main-content"
-              className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[var(--primary)] focus:text-white focus:rounded-lg focus:outline-none"
+              className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-5 focus:py-2.5 focus:rounded-pill focus:bg-ta-blue focus:text-on-brand focus:outline-none"
             >
               {t("skipToContent")}
             </a>
-            <AuroraBackground />
-            <NeuralBackground />
             <Navigation />
-            <main id="main-content" className="pt-[73px] relative z-10">{children}</main>
+            <main id="main-content" className="pt-[76px] relative z-10">{children}</main>
             <Footer />
             <CookieBanner />
           </NextIntlClientProvider>

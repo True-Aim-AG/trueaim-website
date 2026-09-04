@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { loadOgFonts } from "@/lib/og-fonts";
 
 export const runtime = "edge";
 
@@ -9,7 +10,11 @@ export const size = {
 };
 export const contentType = "image/png";
 
+const HEX_PATH = "M 92.565 80.224 L 92.565 26.74 L 46.282 0 L 0 26.74 L 0 80.224 L 46.282 106.964 L 92.565 80.224 Z";
+
 export default async function Image() {
+  const fonts = await loadOgFonts();
+
   return new ImageResponse(
     (
       <div
@@ -20,8 +25,8 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#0A1628",
-          backgroundImage: "linear-gradient(135deg, #0A1628 0%, #0f3d3e 100%)",
+          backgroundColor: "#2C2B2A",
+          backgroundImage: "linear-gradient(119.33deg, #2C2B2A 24.34%, #3F3F42 84.09%)",
         }}
       >
         <div
@@ -38,12 +43,13 @@ export default async function Image() {
             style={{
               display: "flex",
               alignItems: "center",
-              padding: "8px 20px",
-              backgroundColor: "rgba(20, 184, 166, 0.2)",
-              borderRadius: 50,
-              color: "#5eead4",
+              padding: "10px 24px",
+              backgroundColor: "rgba(145,167,255,.16)",
+              borderRadius: 40,
+              color: "#91A7FF",
               fontSize: 20,
-              fontWeight: 600,
+              fontFamily: "IBM Plex Sans",
+              fontWeight: 500,
             }}
           >
             Document Pipeline
@@ -53,8 +59,9 @@ export default async function Image() {
           <div
             style={{
               fontSize: 72,
+              fontFamily: "Inter Tight",
               fontWeight: 700,
-              color: "#14B8A6",
+              color: "#FBFCFD",
               marginTop: 10,
             }}
           >
@@ -65,7 +72,9 @@ export default async function Image() {
           <div
             style={{
               fontSize: 32,
-              color: "white",
+              fontFamily: "IBM Plex Sans",
+              fontWeight: 500,
+              color: "rgba(251,252,253,.82)",
               textAlign: "center",
               maxWidth: 800,
               lineHeight: 1.4,
@@ -78,7 +87,9 @@ export default async function Image() {
           <div
             style={{
               fontSize: 22,
-              color: "#94a3b8",
+              fontFamily: "IBM Plex Sans",
+              fontWeight: 400,
+              color: "rgba(251,252,253,.62)",
               textAlign: "center",
               maxWidth: 700,
               marginTop: 10,
@@ -95,41 +106,23 @@ export default async function Image() {
               marginTop: 40,
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <div style={{ fontSize: 48, fontWeight: 700, color: "#14B8A6" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <div style={{ fontSize: 48, fontFamily: "Inter Tight", fontWeight: 700, color: "#91A7FF" }}>
                 97%
               </div>
-              <div style={{ fontSize: 16, color: "#94a3b8" }}>Doc Coverage</div>
+              <div style={{ fontSize: 16, fontFamily: "IBM Plex Sans", fontWeight: 400, color: "rgba(251,252,253,.62)" }}>Doc Coverage</div>
             </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <div style={{ fontSize: 48, fontWeight: 700, color: "#14B8A6" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <div style={{ fontSize: 48, fontFamily: "Inter Tight", fontWeight: 700, color: "#91A7FF" }}>
                 97.3%
               </div>
-              <div style={{ fontSize: 16, color: "#94a3b8" }}>Accuracy</div>
+              <div style={{ fontSize: 16, fontFamily: "IBM Plex Sans", fontWeight: 400, color: "rgba(251,252,253,.62)" }}>Accuracy</div>
             </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <div style={{ fontSize: 48, fontWeight: 700, color: "#14B8A6" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <div style={{ fontSize: 48, fontFamily: "Inter Tight", fontWeight: 700, color: "#91A7FF" }}>
                 96.5%
               </div>
-              <div style={{ fontSize: 16, color: "#94a3b8" }}>Evidence Rate</div>
+              <div style={{ fontSize: 16, fontFamily: "IBM Plex Sans", fontWeight: 400, color: "rgba(251,252,253,.62)" }}>Evidence Rate</div>
             </div>
           </div>
 
@@ -138,19 +131,21 @@ export default async function Image() {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: 8,
+              gap: 10,
               marginTop: 30,
-              opacity: 0.7,
             }}
           >
-            <div style={{ fontSize: 24, color: "white" }}>True Aim</div>
-            <div style={{ fontSize: 24, color: "#2563EB" }}>.ai</div>
+            <svg width="26" height="30" viewBox="0 0 92.565 106.964">
+              <path d={HEX_PATH} fill="#91A7FF" />
+            </svg>
+            <div style={{ fontSize: 24, fontFamily: "Inter Tight", fontWeight: 700, color: "#FBFCFD" }}>True Aim</div>
           </div>
         </div>
       </div>
     ),
     {
       ...size,
+      fonts,
     }
   );
 }

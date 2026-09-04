@@ -52,7 +52,7 @@ const miraJsonLd = {
   url: "https://trueaim.ai/products/mira",
   author: {
     "@type": "Organization",
-    name: "TrueAim AG",
+    name: "True Aim AG",
     url: "https://trueaim.ai",
   },
   offers: {

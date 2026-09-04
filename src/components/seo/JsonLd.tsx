@@ -13,8 +13,8 @@ export const organizationJsonLd = {
   name: "True Aim AG",
   legalName: "True Aim AG",
   url: "https://trueaim.ai",
-  logo: "https://trueaim.ai/logo.png",
-  image: "https://trueaim.ai/logo.png",
+  logo: "https://trueaim.ai/android-chrome-512x512.png",
+  image: "https://trueaim.ai/android-chrome-512x512.png",
   description:
     "Neuro-symbolic AI for auditable insurance claims decisions. Combine agentic AI with deterministic logic for compliant, explainable claims automation.",
   foundingDate: "2023",

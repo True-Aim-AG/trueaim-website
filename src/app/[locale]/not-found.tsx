@@ -1,14 +1,16 @@
-import { Link } from '@/i18n/navigation';
+import { Logo } from "@/components/brand/Logo";
+import { ButtonLink } from "@/components/brand/Button";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="flex min-h-screen items-center justify-center px-6">
       <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-gray-600 mb-8">Page not found</p>
-        <Link href="/" className="text-[var(--primary)] hover:underline">
+        <Logo variant="symbol-blue" height={48} className="mx-auto mb-8" />
+        <h1 className="font-display text-4xl font-bold text-strong mb-4">404</h1>
+        <p className="text-body mb-8">Page not found</p>
+        <ButtonLink href="/" variant="primary" size="lg">
           Go home
-        </Link>
+        </ButtonLink>
       </div>
     </div>
   );

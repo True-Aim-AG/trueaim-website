@@ -26,19 +26,18 @@ export const scaleIn: Variants = {
   exit: { opacity: 0, scale: 0.9 },
 };
 
-// Scale in with slight bounce - for emphasized CTAs
+// Scale in (calm, no bounce) - for emphasized CTAs
 export const scaleInBounce: Variants = {
-  initial: { opacity: 0, scale: 0.8 },
+  initial: { opacity: 0, scale: 0.96 },
   animate: {
     opacity: 1,
     scale: 1,
     transition: {
-      type: "spring",
-      stiffness: 200,
-      damping: 15,
+      duration: 0.4,
+      ease: [0.4, 0, 0.2, 1],
     }
   },
-  exit: { opacity: 0, scale: 0.8 },
+  exit: { opacity: 0, scale: 0.96 },
 };
 
 // Slide from left - for alternating card animations
@@ -118,19 +117,14 @@ export const float: Variants = {
   },
 };
 
-// Glow pulse - for highlighted elements
+// Glow pulse - calm no-op opacity fade (no box-shadow glow; brand motion has no infinite pulsing glows)
 export const glowPulse: Variants = {
-  initial: { boxShadow: "0 0 0 rgba(37, 99, 235, 0)" },
+  initial: { opacity: 0.9 },
   animate: {
-    boxShadow: [
-      "0 0 20px rgba(37, 99, 235, 0.2)",
-      "0 0 40px rgba(37, 99, 235, 0.4)",
-      "0 0 20px rgba(37, 99, 235, 0.2)",
-    ],
+    opacity: 1,
     transition: {
-      duration: 2,
-      repeat: Infinity,
-      ease: "easeInOut",
+      duration: 0.3,
+      ease: [0.4, 0, 0.2, 1],
     },
   },
 };
@@ -138,14 +132,13 @@ export const glowPulse: Variants = {
 // Default transition settings
 export const defaultTransition = {
   duration: 0.5,
-  ease: "easeOut" as const,
+  ease: [0.4, 0, 0.2, 1] as const,
 };
 
-// Spring transition for bouncy animations
+// Calm transition (name kept for compatibility; no spring/bounce per brand motion rules)
 export const springTransition = {
-  type: "spring" as const,
-  stiffness: 200,
-  damping: 20,
+  duration: 0.4,
+  ease: [0.4, 0, 0.2, 1] as const,
 };
 
 // Viewport settings for scroll-triggered animations

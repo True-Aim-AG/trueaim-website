@@ -51,3 +51,7 @@ scratch/
 tmpclaude*
 .vercel
 .env*.local
+
+# Playwright artifacts
+/playwright-report/
+/test-results/

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
@@ -14,12 +13,16 @@ import {
   Server,
   ChevronRight,
 } from "lucide-react";
+import { ButtonLink } from "@/components/brand/Button";
+import { GridPattern } from "@/components/brand/GridPattern";
+import { IntegrationPatternA } from "@/components/diagrams/IntegrationPatternA";
+import { IntegrationPatternB } from "@/components/diagrams/IntegrationPatternB";
 
 const fadeIn = {
   initial: { opacity: 0, y: 16 } as const,
   whileInView: { opacity: 1, y: 0 } as const,
   viewport: { once: true, margin: "-80px" } as const,
-  transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } as const,
+  transition: { duration: 0.55, ease: [0.4, 0, 0.2, 1] } as const,
 };
 
 const principles = [
@@ -157,75 +160,54 @@ export default function IntegrationPlaybookPage() {
   return (
     <div className="min-h-screen relative">
       {/* Confidential ribbon */}
-      <div className="border-y border-[var(--border)] bg-[var(--background-secondary)]/40 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto px-6 py-2.5 flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--text-muted)]">
+      <div className="border-y border-hairline bg-lilac">
+        <div className="max-w-6xl mx-auto px-6 py-2.5 flex items-center justify-between text-caption-sm text-subtle">
           <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] animate-pulse" />
-            Internal · Unlisted
+            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+            Internal &middot; Unlisted
           </span>
-          <span className="hidden sm:inline">Doc · TA-IPB / v1.0 / 2026</span>
+          <span className="hidden sm:inline">Doc &middot; TA-IPB / v1.0 / 2026</span>
         </div>
       </div>
 
       {/* === HERO === */}
       <section className="relative px-6 pt-20 pb-24 overflow-hidden">
-        {/* Blueprint grid */}
-        <div
-          aria-hidden
-          className="absolute inset-0 opacity-[0.18] pointer-events-none"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, rgba(59,130,246,0.18) 1px, transparent 1px), linear-gradient(to bottom, rgba(59,130,246,0.18) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-            maskImage:
-              "radial-gradient(ellipse at 50% 30%, black 35%, transparent 75%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse at 50% 30%, black 35%, transparent 75%)",
-          }}
-        />
-        <div
-          aria-hidden
-          className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 60%)",
-          }}
-        />
+        <GridPattern className="absolute inset-x-0 top-0 hidden h-[600px] md:block" />
 
         <div className="relative max-w-6xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.18em] text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors mb-12"
+            className="inline-flex items-center gap-2 text-caption-sm text-subtle hover:text-accent transition-colors mb-12"
           >
-            <ArrowLeft className="w-3.5 h-3.5" />
+            <ArrowLeft className="w-3.5 h-3.5" strokeWidth={1.5} />
             True Aim
           </Link>
 
           <MotionDiv
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
           >
-            <div className="font-mono text-[11px] uppercase tracking-[0.32em] text-[var(--primary)] mb-8 flex items-center gap-3">
-              <span className="w-8 h-px bg-[var(--primary)]" />
+            <div className="text-caption-sm text-accent mb-8 flex items-center gap-3">
+              <span className="w-8 h-px bg-ta-blue" />
               Playbook
-              <span className="text-[var(--text-muted)]">/</span>
-              <span className="text-[var(--text-muted)]">Integration</span>
+              <span className="text-subtle">/</span>
+              <span className="text-subtle">Integration</span>
             </div>
 
             <h1
-              className="font-display font-bold tracking-tight text-[var(--text-primary)] leading-[0.95] mb-10"
+              className="font-display font-bold text-strong leading-[0.95] mb-10"
               style={{ fontSize: "clamp(2.5rem, 6.5vw, 5.25rem)" }}
             >
               The True Aim
               <br />
-              <span className="italic font-normal text-[var(--primary)]">
+              <span className="italic font-normal text-accent">
                 integration
               </span>{" "}
               playbook.
             </h1>
 
-            <p className="text-xl md:text-2xl text-[var(--text-secondary)] leading-relaxed max-w-3xl mb-16">
+            <p className="text-xl md:text-2xl text-body leading-relaxed max-w-3xl mb-16">
               How we plug into existing landscapes, what patterns we use, and
               how a first integration unfolds.
             </p>
@@ -233,7 +215,7 @@ export default function IntegrationPlaybookPage() {
 
           {/* Spec strip */}
           <MotionDiv {...fadeIn}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[var(--border)] border border-[var(--border)] rounded-lg overflow-hidden">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { label: "Patterns", value: "5" },
                 { label: "Phases", value: "3" },
@@ -242,12 +224,12 @@ export default function IntegrationPlaybookPage() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="bg-[var(--background)]/80 backdrop-blur-sm px-5 py-5"
+                  className="bg-card shadow-card rounded-pill px-6 py-5"
                 >
-                  <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--text-muted)] mb-2">
+                  <div className="text-caption-sm text-subtle mb-2">
                     {stat.label}
                   </div>
-                  <div className="font-display text-2xl md:text-3xl font-bold text-[var(--text-primary)]">
+                  <div className="font-display text-2xl md:text-3xl font-bold text-strong">
                     {stat.value}
                   </div>
                 </div>
@@ -263,7 +245,7 @@ export default function IntegrationPlaybookPage() {
           {/* Sticky TOC */}
           <aside className="hidden lg:block">
             <div className="sticky top-24">
-              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)] mb-4 pb-3 border-b border-[var(--border)]">
+              <div className="text-caption-sm text-subtle mb-4 pb-3 border-b border-hairline">
                 Contents
               </div>
               <ol className="space-y-2.5">
@@ -271,9 +253,9 @@ export default function IntegrationPlaybookPage() {
                   <li key={item.num}>
                     <a
                       href={`#${item.anchor}`}
-                      className="group flex items-baseline gap-3 text-sm text-[var(--text-secondary)] hover:text-[var(--primary)] transition-colors"
+                      className="group flex items-baseline gap-3 text-sm text-body hover:text-accent transition-colors"
                     >
-                      <span className="font-mono text-[10px] text-[var(--text-muted)] group-hover:text-[var(--primary)] transition-colors">
+                      <span className="text-[10px] font-medium tabular-nums text-subtle group-hover:text-accent transition-colors">
                         {item.num}
                       </span>
                       <span className="leading-snug">{item.label}</span>
@@ -282,18 +264,18 @@ export default function IntegrationPlaybookPage() {
                 ))}
               </ol>
 
-              <div className="mt-10 pt-6 border-t border-[var(--border)] space-y-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--text-muted)]">
+              <div className="mt-10 pt-6 border-t border-hairline space-y-2 text-caption-sm text-subtle">
                 <div className="flex justify-between">
                   <span>Read</span>
-                  <span className="text-[var(--text-secondary)]">8 min</span>
+                  <span className="text-body">8 min</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Audience</span>
-                  <span className="text-[var(--text-secondary)]">Eng / Ops</span>
+                  <span className="text-body">Eng / Ops</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Status</span>
-                  <span className="text-[var(--primary)]">Live</span>
+                  <span className="text-accent">Live</span>
                 </div>
               </div>
             </div>
@@ -305,21 +287,21 @@ export default function IntegrationPlaybookPage() {
               <MotionDiv {...fadeIn}>
                 <SectionHeader num="01" eyebrow="Executive summary" />
 
-                <div className="space-y-6 text-lg text-[var(--text-secondary)] leading-[1.75] max-w-3xl">
-                  <p className="text-2xl md:text-[1.65rem] text-[var(--text-primary)] leading-[1.45] font-light">
+                <div className="space-y-6 max-w-3xl">
+                  <p className="text-body-lg text-strong font-light">
                     True Aim integrates with insurance core systems, document
                     platforms, AI vendors, and communication channels using a
                     small set of well-understood patterns. We start from the
                     business outcome and work backwards into the integration
                     surface. The goal is{" "}
-                    <span className="font-medium text-[var(--primary)]">
+                    <span className="font-medium text-accent">
                       the smallest integration footprint that delivers the
                       value
                     </span>
                     , not coverage for its own sake.
                   </p>
 
-                  <p>
+                  <p className="text-body leading-[1.6]">
                     Customer data shared with us stays inside our
                     infrastructure. We do not send customer data to third-party
                     model providers. Every system action is logged, hashed, and
@@ -327,7 +309,7 @@ export default function IntegrationPlaybookPage() {
                     human-in-the-loop checkpoint that the customer configures.
                   </p>
 
-                  <p>
+                  <p className="text-body leading-[1.6]">
                     This document sets out the principles, the patterns, two
                     reference implementations, and how a first integration
                     unfolds in four to six weeks.
@@ -341,20 +323,20 @@ export default function IntegrationPlaybookPage() {
               <MotionDiv {...fadeIn}>
                 <SectionHeader num="02" eyebrow="Integration principles" />
 
-                <ol className="space-y-px border-y border-[var(--border)]">
+                <ol className="space-y-px border-y border-hairline">
                   {principles.map((p, idx) => (
                     <li
                       key={p.title}
-                      className="grid grid-cols-[64px_1fr] md:grid-cols-[100px_1fr] gap-6 py-7 border-b border-[var(--border)] last:border-b-0 group hover:bg-[var(--subtle-bg)] transition-colors -mx-4 md:-mx-6 px-4 md:px-6 rounded-sm"
+                      className="grid grid-cols-[64px_1fr] md:grid-cols-[100px_1fr] gap-6 py-7 border-b border-hairline last:border-b-0 group hover:bg-surface-muted transition-colors -mx-4 md:-mx-6 px-4 md:px-6"
                     >
-                      <div className="font-mono text-3xl md:text-5xl font-light text-[var(--primary)] leading-none tabular-nums">
+                      <div className="font-display text-3xl md:text-5xl font-light text-accent leading-none tabular-nums">
                         {String(idx + 1).padStart(2, "0")}
                       </div>
                       <div>
-                        <h3 className="font-display text-xl md:text-2xl font-medium text-[var(--text-primary)] mb-2 leading-snug">
+                        <h3 className="font-display text-xl md:text-2xl font-medium text-strong mb-2 leading-snug">
                           {p.title}
                         </h3>
-                        <p className="text-[var(--text-secondary)] leading-relaxed max-w-2xl">
+                        <p className="text-body leading-[1.6] max-w-2xl">
                           {p.body}
                         </p>
                       </div>
@@ -369,12 +351,12 @@ export default function IntegrationPlaybookPage() {
               <MotionDiv {...fadeIn}>
                 <SectionHeader num="03" eyebrow="Integration patterns we use" />
 
-                <p className="text-[var(--text-secondary)] leading-relaxed max-w-2xl mb-10">
+                <p className="text-body leading-[1.6] max-w-2xl mb-10">
                   A short catalogue. Most projects use two or three of these in
                   combination.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--border)] border border-[var(--border)] rounded-xl overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {patterns.map((pattern, idx) => {
                     const Icon = pattern.icon;
                     const isLastOdd =
@@ -382,21 +364,21 @@ export default function IntegrationPlaybookPage() {
                     return (
                       <div
                         key={pattern.name}
-                        className={`bg-[var(--background)]/80 backdrop-blur-sm p-7 flex flex-col gap-5 hover:bg-[var(--background-secondary)] transition-colors group ${
+                        className={`bg-card shadow-card rounded-pill p-7 flex flex-col gap-5 transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch ${
                           isLastOdd ? "md:col-span-2" : ""
                         }`}
                       >
                         <div className="flex items-center gap-3">
-                          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">
+                          <span className="text-caption-sm text-subtle">
                             P/{String(idx + 1).padStart(2, "0")}
                           </span>
-                          <div className="flex-1 h-px bg-[var(--border)]" />
-                          <div className="w-10 h-10 rounded-md bg-[var(--primary-light)] border border-[var(--primary)]/20 flex items-center justify-center group-hover:bg-[var(--primary)]/20 transition-colors">
-                            <Icon className="w-4 h-4 text-[var(--primary)]" />
+                          <div className="flex-1 h-px bg-hairline" />
+                          <div className="w-10 h-10 rounded-pill bg-lilac grid place-items-center text-accent">
+                            <Icon className="w-4 h-4" strokeWidth={1.5} />
                           </div>
                         </div>
 
-                        <h3 className="font-display text-xl font-semibold text-[var(--text-primary)] leading-tight">
+                        <h3 className="font-display text-xl font-semibold text-strong leading-tight">
                           {pattern.name}
                         </h3>
 
@@ -419,38 +401,37 @@ export default function IntegrationPlaybookPage() {
 
               {/* Pattern A */}
               <MotionDiv {...fadeIn} className="mb-20">
-                <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--primary)] mb-3">
-                  Pattern A · Swiss insurer
+                <div className="text-caption-sm text-accent mb-3">
+                  Pattern A &middot; Swiss insurer
                 </div>
-                <h3 className="font-display text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-6 leading-tight">
+                <h3 className="font-display text-3xl md:text-4xl font-bold text-strong mb-6 leading-tight">
                   Document-driven complex
                   <br className="hidden md:block" /> claims decisioning.
                 </h3>
 
-                <p className="text-[var(--text-secondary)] leading-[1.8] max-w-3xl mb-6 text-lg">
+                <p className="text-body leading-[1.6] max-w-3xl mb-5">
                   Documents arrive on a customer-owned storage location. A True
                   Aim batch reader, running inside our Azure environment, pulls
                   them on a schedule. Complex claims decisioning and key data
                   extraction run on our side. A small number of external
                   enrichment calls (parts lookup, geolocation) are made for
                   specific use cases. A single policy lookup against the
-                  customer's ERP provides coverage context. Users complete
+                  customer&apos;s ERP provides coverage context. Users complete
                   review inside the True Aim platform. On approval, we push one
                   structured JSON file per claim with the decision, plus a
                   processing log capturing metadata, model versions, and any
-                  errors, back to a return location in the customer's
+                  errors, back to a return location in the customer&apos;s
                   infrastructure.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-[1.8] max-w-3xl mb-10 text-lg italic">
-                  Customer data shared with us stays inside True Aim's Azure
+                <p className="text-body leading-[1.6] max-w-3xl mb-10 italic">
+                  Customer data shared with us stays inside True Aim&apos;s Azure
                   tenant. No customer data is sent to third-party model
                   providers.
                 </p>
 
                 <DiagramFigure
-                  src="/images/blog/integration-pattern-a.png"
-                  alt="Pattern A — document-driven complex claims decisioning. Diagram shows inbound documents pulled from customer storage by a batch reader inside True Aim's Azure tenant, processed for decisioning and extraction, with policy lookup against the customer ERP, optional enrichment calls, human-in-the-loop review, and structured JSON output written back to the customer's return storage."
+                  diagram={<IntegrationPatternA />}
                   figureLabel="Fig. A"
                   caption="Pattern A — document-driven complex claims decisioning."
                 />
@@ -466,16 +447,16 @@ export default function IntegrationPlaybookPage() {
 
               {/* Pattern B */}
               <MotionDiv {...fadeIn}>
-                <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--primary)] mb-3">
-                  Pattern B · US insurance ops
+                <div className="text-caption-sm text-accent mb-3">
+                  Pattern B &middot; US insurance ops
                 </div>
-                <h3 className="font-display text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-6 leading-tight">
+                <h3 className="font-display text-3xl md:text-4xl font-bold text-strong mb-6 leading-tight">
                   Multi-source orchestration
                   <br className="hidden md:block" /> with SLA workflow.
                 </h3>
 
-                <p className="text-[var(--text-secondary)] leading-[1.8] max-w-3xl mb-6 text-lg">
-                  The customer's working data lives across several systems: a
+                <p className="text-body leading-[1.6] max-w-3xl mb-5">
+                  The customer&apos;s working data lives across several systems: a
                   CRM, Google Workspace, a Postgres database, periodic SQL
                   dumps from upstream insurers, and a WhatsApp channel for
                   inbound customer comms. A True Aim orchestration backend
@@ -487,17 +468,16 @@ export default function IntegrationPlaybookPage() {
                   systems.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-[1.8] max-w-3xl mb-10 text-lg">
+                <p className="text-body leading-[1.6] max-w-3xl mb-10">
                   For a small number of high-value workflows where no API
                   exists on the receiving side, a browser-based integration
-                  completes data entry directly in the insurer's UI. We
+                  completes data entry directly in the insurer&apos;s UI. We
                   reserve this pattern for cases where the value clearly
                   justifies the operational footprint.
                 </p>
 
                 <DiagramFigure
-                  src="/images/blog/integration-pattern-b.png"
-                  alt="Pattern B — multi-source orchestration with SLA workflow. Diagram shows five customer source systems (CRM, Google Workspace, Postgres, SQL dumps from upstream insurers, WhatsApp) feeding an n8n orchestration backend inside True Aim, a workflow UI handling comms, SLA tracking and human-in-the-loop, and a flat-file generator producing artifacts for downstream insurer legacy systems including a fallback browser-based legacy UI integration."
+                  diagram={<IntegrationPatternB />}
                   figureLabel="Fig. B"
                   caption="Pattern B — multi-source orchestration with SLA workflow."
                 />
@@ -516,7 +496,7 @@ export default function IntegrationPlaybookPage() {
               <MotionDiv {...fadeIn}>
                 <SectionHeader num="05" eyebrow="How we deliver" />
 
-                <p className="text-[var(--text-secondary)] leading-relaxed max-w-2xl mb-12">
+                <p className="text-body leading-[1.6] max-w-2xl mb-12">
                   A first integration runs in three phases. The pattern repeats
                   for each subsequent use case, with shorter timelines as
                   customer-side knowledge accumulates.
@@ -526,19 +506,19 @@ export default function IntegrationPlaybookPage() {
                   {phases.map((phase, idx) => (
                     <div
                       key={phase.label}
-                      className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-y-4 md:gap-x-10 py-10 border-t border-[var(--border)] last:border-b last:border-b-[var(--border)] relative"
+                      className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-y-4 md:gap-x-10 py-10 border-t border-hairline last:border-b last:border-b-hairline relative"
                     >
                       <div className="md:sticky md:top-24 md:self-start">
-                        <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--text-muted)] mb-2">
+                        <div className="text-caption-sm text-subtle mb-2">
                           {phase.label}
                         </div>
-                        <div className="font-display text-5xl md:text-6xl font-light text-[var(--primary)] leading-none tabular-nums">
+                        <div className="font-display text-5xl md:text-6xl font-light text-accent leading-none tabular-nums">
                           {String(idx + 1).padStart(2, "0")}
                         </div>
                       </div>
 
                       <div className="space-y-6 max-w-2xl">
-                        <h3 className="font-display text-2xl md:text-3xl font-bold text-[var(--text-primary)] leading-tight">
+                        <h3 className="font-display text-2xl md:text-3xl font-bold text-strong leading-tight">
                           {phase.title}
                         </h3>
 
@@ -555,16 +535,16 @@ export default function IntegrationPlaybookPage() {
                         />
 
                         <div>
-                          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)] mb-3">
+                          <div className="text-caption-sm text-subtle mb-3">
                             {idx === 2 ? "Outcome" : "Outputs"}
                           </div>
                           <ul className="space-y-2.5">
                             {phase.outputs.map((o) => (
                               <li
                                 key={o}
-                                className="flex items-start gap-3 text-[var(--text-secondary)] leading-relaxed"
+                                className="flex items-start gap-3 text-body leading-relaxed"
                               >
-                                <ChevronRight className="w-4 h-4 text-[var(--primary)] flex-shrink-0 mt-1" />
+                                <ChevronRight className="w-4 h-4 text-accent flex-shrink-0 mt-1" strokeWidth={1.5} />
                                 <span>{o}</span>
                               </li>
                             ))}
@@ -591,22 +571,22 @@ export default function IntegrationPlaybookPage() {
                     return (
                       <div
                         key={c.title}
-                        className="relative glass-panel p-7 flex flex-col gap-5 group hover:border-[var(--primary)]/40 transition-colors"
+                        className="relative bg-card shadow-card rounded-pill p-7 flex flex-col gap-5 transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch"
                       >
                         <div className="flex items-center justify-between">
-                          <div className="w-11 h-11 rounded-lg bg-[var(--primary-light)] border border-[var(--primary)]/20 flex items-center justify-center">
-                            <Icon className="w-5 h-5 text-[var(--primary)]" />
+                          <div className="w-11 h-11 rounded-pill bg-lilac grid place-items-center text-accent">
+                            <Icon className="w-5 h-5" strokeWidth={1.5} />
                           </div>
-                          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">
+                          <span className="text-caption-sm text-subtle">
                             C/{String(idx + 1).padStart(2, "0")}
                           </span>
                         </div>
 
-                        <h3 className="font-display text-xl font-semibold text-[var(--text-primary)] leading-tight">
+                        <h3 className="font-display text-xl font-semibold text-strong leading-tight">
                           {c.title}
                         </h3>
 
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                        <p className="text-sm text-body leading-relaxed">
                           {c.body}
                         </p>
                       </div>
@@ -619,31 +599,25 @@ export default function IntegrationPlaybookPage() {
             {/* === END / CTA === */}
             <article>
               <MotionDiv {...fadeIn}>
-                <div className="border-t border-[var(--border)] pt-14">
-                  <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--text-muted)] mb-6">
+                <div className="border-t border-hairline pt-14">
+                  <div className="text-caption-sm text-subtle mb-6">
                     End of document
                   </div>
                   <h2
-                    className="font-display font-bold tracking-tight text-[var(--text-primary)] leading-[1.05] mb-8"
+                    className="font-display font-bold text-strong leading-[1.05] mb-8"
                     style={{ fontSize: "clamp(2rem, 4.5vw, 3.25rem)" }}
                   >
                     Want to walk through this <br className="hidden md:block" />
                     against your own landscape?
                   </h2>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors"
-                    >
+                    <ButtonLink href="/contact" variant="primary" size="md">
                       Start a discovery session
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                    <Link
-                      href="/technology"
-                      className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--subtle-bg)] transition-colors"
-                    >
+                      <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+                    </ButtonLink>
+                    <ButtonLink href="/technology" variant="secondary" size="md">
                       How the technology works
-                    </Link>
+                    </ButtonLink>
                   </div>
                 </div>
               </MotionDiv>
@@ -659,12 +633,12 @@ function SectionHeader({ num, eyebrow }: { num: string; eyebrow: string }) {
   return (
     <header className="mb-10">
       <div className="flex items-baseline gap-5 mb-3">
-        <span className="font-mono text-sm text-[var(--primary)] tabular-nums">
+        <span className="font-display text-sm text-accent tabular-nums">
           {num}
         </span>
-        <div className="h-px flex-1 bg-gradient-to-r from-[var(--primary)]/40 to-transparent" />
+        <div className="h-px flex-1 bg-hairline" />
       </div>
-      <h2 className="font-display text-3xl md:text-[2.75rem] font-bold tracking-tight text-[var(--text-primary)] leading-[1.05]">
+      <h2 className="font-display text-3xl md:text-[2.75rem] font-bold text-strong leading-[1.05]">
         {eyebrow}
       </h2>
     </header>
@@ -674,10 +648,10 @@ function SectionHeader({ num, eyebrow }: { num: string; eyebrow: string }) {
 function Field({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)] mb-1.5">
+      <div className="text-caption-sm text-subtle mb-1.5">
         {label}
       </div>
-      <p className="text-[var(--text-secondary)] leading-relaxed">{value}</p>
+      <p className="text-body leading-relaxed">{value}</p>
     </div>
   );
 }
@@ -685,51 +659,42 @@ function Field({ label, value }: { label: string; value: string }) {
 function PhaseField({ label, value }: { label: string; value: string }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-2 sm:gap-6">
-      <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)] sm:pt-1">
+      <div className="text-caption-sm text-subtle sm:pt-1">
         {label}
       </div>
-      <p className="text-[var(--text-secondary)] leading-relaxed">{value}</p>
+      <p className="text-body leading-relaxed">{value}</p>
     </div>
   );
 }
 
 function DiagramFigure({
-  src,
-  alt,
+  diagram,
   figureLabel,
   caption,
 }: {
-  src: string;
-  alt: string;
+  diagram: React.ReactNode;
   figureLabel: string;
   caption: string;
 }) {
   return (
     <figure className="relative my-4">
       {/* Frame label */}
-      <div className="flex items-center gap-3 mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
-        <span className="text-[var(--primary)]">{figureLabel}</span>
-        <span className="h-px flex-1 bg-[var(--border)]" />
+      <div className="flex items-center gap-3 mb-3 text-caption-sm text-subtle">
+        <span className="text-accent">{figureLabel}</span>
+        <span className="h-px flex-1 bg-hairline" />
       </div>
 
-      <div className="relative rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] overflow-hidden">
+      <div className="relative rounded-none shadow-card bg-lilac overflow-hidden p-6 md:p-8">
         {/* Corner ticks */}
-        <span aria-hidden className="absolute top-0 left-0 w-3 h-3 border-l border-t border-[var(--primary)]/60" />
-        <span aria-hidden className="absolute top-0 right-0 w-3 h-3 border-r border-t border-[var(--primary)]/60" />
-        <span aria-hidden className="absolute bottom-0 left-0 w-3 h-3 border-l border-b border-[var(--primary)]/60" />
-        <span aria-hidden className="absolute bottom-0 right-0 w-3 h-3 border-r border-b border-[var(--primary)]/60" />
+        <span aria-hidden className="absolute top-0 left-0 w-3 h-3 border-l border-t border-ta-blue/60" />
+        <span aria-hidden className="absolute top-0 right-0 w-3 h-3 border-r border-t border-ta-blue/60" />
+        <span aria-hidden className="absolute bottom-0 left-0 w-3 h-3 border-l border-b border-ta-blue/60" />
+        <span aria-hidden className="absolute bottom-0 right-0 w-3 h-3 border-r border-b border-ta-blue/60" />
 
-        <Image
-          src={src}
-          alt={alt}
-          width={1600}
-          height={900}
-          className="w-full h-auto block"
-          sizes="(max-width: 1024px) 100vw, 900px"
-        />
+        {diagram}
       </div>
 
-      <figcaption className="mt-3 text-sm text-[var(--text-muted)] italic">
+      <figcaption className="mt-3 text-sm text-muted italic">
         {caption}
       </figcaption>
     </figure>
@@ -738,16 +703,13 @@ function DiagramFigure({
 
 function ProvesCallout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-10 relative">
-      <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-[var(--primary)] via-[var(--primary)]/40 to-transparent" />
-      <div className="pl-6 md:pl-8">
-        <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--primary)] mb-2">
-          What this proves
-        </div>
-        <p className="text-lg md:text-xl text-[var(--text-primary)] leading-[1.6] font-light max-w-3xl">
-          {children}
-        </p>
+    <div className="mt-10 bg-lilac rounded-pill px-8 py-6">
+      <div className="text-caption-sm text-accent mb-2">
+        What this proves
       </div>
+      <p className="text-body-lg text-strong font-light max-w-3xl">
+        {children}
+      </p>
     </div>
   );
 }

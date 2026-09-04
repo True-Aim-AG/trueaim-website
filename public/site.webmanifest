@@ -1,0 +1,13 @@
+{
+  "name": "True Aim",
+  "short_name": "True Aim",
+  "description": "Automate insurance claim decisions. Auditable by design.",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#2C2B2A",
+  "background_color": "#2C2B2A",
+  "display": "standalone",
+  "start_url": "/"
+}

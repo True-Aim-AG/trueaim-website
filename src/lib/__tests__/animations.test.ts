@@ -41,8 +41,8 @@ describe("staggerFromCenter", () => {
     const center = staggerFromCenter(2, 5);
     const edge = staggerFromCenter(0, 5);
 
-    const centerDelay = ((center.animate as Record<string, Record<string, number>>).transition).delay;
-    const edgeDelay = ((edge.animate as Record<string, Record<string, number>>).transition).delay;
+    const centerDelay = ((center.animate as unknown as Record<string, Record<string, number>>).transition).delay;
+    const edgeDelay = ((edge.animate as unknown as Record<string, Record<string, number>>).transition).delay;
 
     expect(centerDelay).toBeLessThan(edgeDelay);
   });
@@ -51,8 +51,8 @@ describe("staggerFromCenter", () => {
     const left = staggerFromCenter(0, 5);
     const right = staggerFromCenter(4, 5);
 
-    const leftDelay = ((left.animate as Record<string, Record<string, number>>).transition).delay;
-    const rightDelay = ((right.animate as Record<string, Record<string, number>>).transition).delay;
+    const leftDelay = ((left.animate as unknown as Record<string, Record<string, number>>).transition).delay;
+    const rightDelay = ((right.animate as unknown as Record<string, Record<string, number>>).transition).delay;
 
     expect(leftDelay).toBe(rightDelay);
   });
@@ -75,7 +75,7 @@ describe("animation variant shapes", () => {
   });
 
   it("staggerContainer has staggerChildren", () => {
-    const animate = staggerContainer.animate as Record<string, Record<string, number>>;
+    const animate = staggerContainer.animate as unknown as Record<string, Record<string, number>>;
     expect(animate.transition.staggerChildren).toBe(0.1);
     expect(animate.transition.delayChildren).toBe(0.2);
   });
@@ -84,7 +84,7 @@ describe("animation variant shapes", () => {
 describe("constants", () => {
   it("defaultTransition has expected shape", () => {
     expect(defaultTransition.duration).toBe(0.5);
-    expect(defaultTransition.ease).toBe("easeOut");
+    expect(defaultTransition.ease).toEqual([0.4, 0, 0.2, 1]);
   });
 
   it("defaultViewport has once: true", () => {

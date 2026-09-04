@@ -1,4 +1,4 @@
-# TrueAim AG security contact (RFC 9116)
+# True Aim AG security contact (RFC 9116)
 Contact: mailto:security@trueaim.ai
 Contact: https://trueaim.ai/contact
 Expires: 2027-04-22T00:00:00.000Z

@@ -11,12 +11,16 @@ import {
   Shield,
 } from "lucide-react";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { ButtonLink } from "@/components/brand/Button";
+import { GridPattern } from "@/components/brand/GridPattern";
+
+const ease = [0.4, 0, 0.2, 1] as const;
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 } as const,
   whileInView: { opacity: 1, y: 0 } as const,
   viewport: { once: true } as const,
-  transition: { duration: 0.6 } as const,
+  transition: { duration: 0.6, ease } as const,
 };
 
 const annexRows: [string, string][] = [
@@ -138,57 +142,57 @@ export default function EUAIActClaimsBlogPost() {
     <div className="min-h-screen">
       <EnglishOnlyBanner />
       {/* Hero Section */}
-      <section className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-[var(--background)] to-slate-900">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--primary)] opacity-10 rounded-full blur-3xl" />
+      <section className="relative overflow-hidden">
+        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease }}
           >
             {/* Breadcrumb */}
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors mb-8"
+              className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
               All Articles
             </Link>
 
             {/* Category Tag */}
             <div className="flex items-center gap-3 mb-6">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] text-sm font-medium">
-                <Gavel className="w-4 h-4" />
+              <span className="inline-flex items-center gap-2 rounded-pill bg-accent-soft text-accent px-3 py-1 text-sm font-medium">
+                <Gavel className="w-4 h-4" strokeWidth={1.5} />
                 Regulatory &amp; Compliance
               </span>
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-6 leading-tight">
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-strong mb-6 leading-tight">
               AI Claims Handling Is Not High-Risk Under the EU AI Act. Here Is
               What Binds It Instead.
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xl text-[var(--text-secondary)] mb-8 leading-relaxed">
+            <p className="text-lede text-body mb-8">
               Claims handling is absent from Annex III. GDPR Article 22 binds it
               anyway. Only 24% of insurers say they could pass a governance
               review in 90 days.
             </p>
 
             {/* Meta */}
-            <div className="flex flex-wrap items-center gap-6 text-sm text-[var(--text-muted)]">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-subtle">
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
+                <Calendar className="w-4 h-4" strokeWidth={1.5} />
                 <time dateTime="2026-07-28">July 2026</time>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
+                <Clock className="w-4 h-4" strokeWidth={1.5} />
                 12 min read
               </div>
               <div className="flex items-center gap-2">
-                <BookOpen className="w-4 h-4" />
+                <BookOpen className="w-4 h-4" strokeWidth={1.5} />
                 Regulatory Analysis
               </div>
             </div>
@@ -201,18 +205,18 @@ export default function EUAIActClaimsBlogPost() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             {/* Main Content */}
-            <div className="lg:col-span-3 space-y-12">
+            <div className="lg:col-span-3 max-w-3xl space-y-12">
               {/* The short answer */}
               <MotionDiv {...fadeIn}>
-                <div className="glass-panel p-6 border-l-4 border-l-[var(--primary)] mb-8">
-                  <h2 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-4">
+                <div className="bg-card shadow-card rounded-pill p-8 mb-8">
+                  <h2 className="text-caption-sm text-subtle mb-4">
                     The short answer
                   </h2>
-                  <ul className="space-y-3 text-[var(--text-secondary)] leading-relaxed">
+                  <ul className="space-y-3 text-body leading-[1.6]">
                     <li className="flex items-start gap-3">
-                      <span className="text-[var(--primary)] mt-1">•</span>
+                      <span className="text-accent mt-1">&bull;</span>
                       <span>
-                        <strong className="text-[var(--text-primary)]">
+                        <strong className="text-strong">
                           Claims handling is not in Annex III.
                         </strong>{" "}
                         The Commission&apos;s own draft classification
@@ -223,9 +227,9 @@ export default function EUAIActClaimsBlogPost() {
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[var(--primary)] mt-1">•</span>
+                      <span className="text-accent mt-1">&bull;</span>
                       <span>
-                        <strong className="text-[var(--text-primary)]">
+                        <strong className="text-strong">
                           The Digital Omnibus deferral changes nothing for a
                           claims operation.
                         </strong>{" "}
@@ -234,9 +238,9 @@ export default function EUAIActClaimsBlogPost() {
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[var(--primary)] mt-1">•</span>
+                      <span className="text-accent mt-1">&bull;</span>
                       <span>
-                        <strong className="text-[var(--text-primary)]">
+                        <strong className="text-strong">
                           GDPR Article 22 is what binds
                         </strong>
                         . It has applied since 25 May 2018. A declined or
@@ -245,9 +249,9 @@ export default function EUAIActClaimsBlogPost() {
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[var(--primary)] mt-1">•</span>
+                      <span className="text-accent mt-1">&bull;</span>
                       <span>
-                        <strong className="text-[var(--text-primary)]">
+                        <strong className="text-strong">
                           EIOPA has already told supervisors what it expects
                         </strong>
                         : explainable outcomes and reproducible records under
@@ -256,9 +260,9 @@ export default function EUAIActClaimsBlogPost() {
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[var(--primary)] mt-1">•</span>
+                      <span className="text-accent mt-1">&bull;</span>
                       <span>
-                        <strong className="text-[var(--text-primary)]">
+                        <strong className="text-strong">
                           The test is reconstruction.
                         </strong>{" "}
                         If you cannot rebuild a closed decision on demand, the
@@ -268,7 +272,7 @@ export default function EUAIActClaimsBlogPost() {
                   </ul>
                 </div>
 
-                <p className="text-lg text-[var(--text-primary)] leading-relaxed mb-6">
+                <p className="text-body-lg text-strong mb-6">
                   On 24 July 2026 the Digital Omnibus on AI was published in the
                   Official Journal as Regulation (EU) 2026/1744. It entered into
                   force three days later. High-risk obligations for standalone
@@ -277,11 +281,11 @@ export default function EUAIActClaimsBlogPost() {
                   August 2028.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Sixteen extra months, then.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-body leading-[1.6]">
                   A claims operation did not get them. Not because the deferral
                   is narrow, but because claims handling was never in the
                   chapter that moved.
@@ -290,22 +294,22 @@ export default function EUAIActClaimsBlogPost() {
 
               {/* Is AI claims handling high-risk */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Is AI claims handling high-risk under the EU AI Act?
                 </h2>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   No. Annex III does not list it.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Point 5 of Annex III covers access to essential private and
                   public services. It names four things: evaluating eligibility
                   for essential public assistance benefits, where used by or on
                   behalf of public authorities; evaluating creditworthiness or
                   establishing a credit score, excluding systems used to detect
                   financial fraud;{" "}
-                  <strong className="text-[var(--text-primary)]">
+                  <strong className="text-strong">
                     risk assessment and pricing in relation to natural persons
                     in the case of life and health insurance
                   </strong>
@@ -313,40 +317,40 @@ export default function EUAIActClaimsBlogPost() {
                   calls.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Life and health risk assessment and pricing is in scope.
                   Motor, property, warranty and commercial-lines claims handling
                   is not.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-8">
+                <p className="text-body leading-[1.6] mb-6">
                   The Commission now says so itself. Its draft guidelines on the
                   classification of high-risk AI systems, published on 19 May
                   2026 and open for consultation until 23 June, set out worked
                   examples on both sides of the line.
                 </p>
 
-                <div className="glass-panel p-6 mb-8">
-                  <h3 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-4">
+                <div className="bg-card shadow-card rounded-pill p-8 mb-8">
+                  <h3 className="text-caption-sm text-subtle mb-4">
                     Annex III point 5(c): the Commission&apos;s worked examples
                   </h3>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead>
-                        <tr className="border-b border-[var(--border)]">
-                          <th className="text-left py-3 pr-4 text-[var(--text-muted)] font-medium align-top">
+                        <tr className="border-b border-hairline">
+                          <th className="text-left py-3 pr-4 font-display font-medium text-strong align-top">
                             Inside point 5(c): high-risk
                           </th>
-                          <th className="text-left py-3 text-[var(--text-muted)] font-medium align-top">
+                          <th className="text-left py-3 font-display font-medium text-strong align-top">
                             Outside point 5(c)
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="text-[var(--text-secondary)]">
+                      <tbody className="text-body">
                         {annexRows.map((row, idx) => (
                           <tr
                             key={idx}
-                            className="border-b border-[var(--border)]/50 align-top"
+                            className="border-b border-hairline align-top"
                           >
                             <td className="py-3 pr-4">{row[0]}</td>
                             <td className="py-3">{row[1]}</td>
@@ -357,20 +361,20 @@ export default function EUAIActClaimsBlogPost() {
                   </div>
                 </div>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   The Commission&apos;s reasoning for the exclusion is worth
                   reading in its own words:
                 </p>
 
-                <blockquote className="glass-panel-light p-6 border-l-4 border-l-[var(--primary)] mb-6">
-                  <p className="text-[var(--text-primary)] leading-relaxed italic">
+                <blockquote className="border-l-2 border-ta-blue pl-6 mb-6">
+                  <p className="text-body-lg text-strong italic">
                     These use cases are distinct from carrying out a risk
                     assessment or pricing, even though their outcome might
                     affect the enjoyment of the health insurance.
                   </p>
                 </blockquote>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Note which line of business that example uses. Health
                   insurance is the one place where underwriting <em>is</em>{" "}
                   high-risk. Claims management falls outside the use case even
@@ -381,7 +385,7 @@ export default function EUAIActClaimsBlogPost() {
                   way.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-body leading-[1.6]">
                   That is the answer to the question. It is also where most
                   readings stop and where the two things that actually decide
                   your exposure begin. They are different questions for
@@ -392,31 +396,27 @@ export default function EUAIActClaimsBlogPost() {
 
               {/* Four terms */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Four terms that decide the answer
                 </h2>
 
-                <div className="glass-panel-light p-6 space-y-5">
-                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                    <strong className="text-[var(--text-primary)]">
-                      Annex III.
-                    </strong>{" "}
+                <div className="bg-card shadow-card rounded-pill p-8 space-y-5">
+                  <p className="text-sm text-body leading-[1.6]">
+                    <strong className="text-strong">Annex III.</strong>{" "}
                     The list of high-risk use cases in Regulation (EU)
                     2024/1689. A system is high-risk under this route only if it
                     matches a use case on the list. Adjacency to a listed use
                     case is not membership of it.
                   </p>
-                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                    <strong className="text-[var(--text-primary)]">
-                      Profiling.
-                    </strong>{" "}
+                  <p className="text-sm text-body leading-[1.6]">
+                    <strong className="text-strong">Profiling.</strong>{" "}
                     Automated evaluation of personal aspects of a natural
                     person: economic situation, health, reliability, behaviour.
                     The AI Act borrows the term from the GDPR. It carries
                     decisive weight in Article 6(3).
                   </p>
-                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                    <strong className="text-[var(--text-primary)]">
+                  <p className="text-sm text-body leading-[1.6]">
+                    <strong className="text-strong">
                       A solely automated decision.
                     </strong>{" "}
                     Under GDPR Article 22, a decision reached without meaningful
@@ -424,10 +424,8 @@ export default function EUAIActClaimsBlogPost() {
                     significant ones. A human who cannot in practice overturn
                     the output does not make the decision jointly.
                   </p>
-                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                    <strong className="text-[var(--text-primary)]">
-                      Audit-readiness.
-                    </strong>{" "}
+                  <p className="text-sm text-body leading-[1.6]">
+                    <strong className="text-strong">Audit-readiness.</strong>{" "}
                     The property of being able to reconstruct a past decision
                     from records the system produced at the time. It is distinct
                     from audit-preparation, which is an exercise you run before
@@ -438,18 +436,18 @@ export default function EUAIActClaimsBlogPost() {
 
               {/* Profiling closes the exit */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   If you do have an Annex III system, profiling closes the exit
                 </h2>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   This applies to life and health risk assessment and pricing,
                   not to claims handling. If you run those systems, read on. If
                   you do not, skip to the next section, because Article 6(3) has
                   nothing to say about you.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Carriers inside Annex III generally plan to escape via Article
                   6(3), which lifts high-risk status where a system &ldquo;does
                   not pose a significant risk of harm to the health, safety or
@@ -461,12 +459,12 @@ export default function EUAIActClaimsBlogPost() {
                   preparatory task.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   One sentence cancels all four:
                 </p>
 
-                <blockquote className="glass-panel-light p-6 border-l-4 border-l-[var(--primary)] mb-6">
-                  <p className="text-[var(--text-primary)] leading-relaxed italic">
+                <blockquote className="border-l-2 border-ta-blue pl-6 mb-6">
+                  <p className="text-body-lg text-strong italic">
                     Notwithstanding the first subparagraph, an AI system
                     referred to in Annex III shall always be considered to be
                     high-risk where the AI system performs profiling of natural
@@ -474,13 +472,13 @@ export default function EUAIActClaimsBlogPost() {
                   </p>
                 </blockquote>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   A life or health pricing model that segments individuals on
                   economic situation, health, reliability or behaviour is
                   profiling. The derogation does not reach it.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-body leading-[1.6]">
                   Article 6(4) then closes the loop. A provider who considers an
                   Annex III system not high-risk must document that assessment
                   before the system is placed on the market or put into service,
@@ -492,36 +490,36 @@ export default function EUAIActClaimsBlogPost() {
 
               {/* Which regime binds */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Which regime actually binds a European claims operation?
                 </h2>
 
-                <div className="glass-panel p-6 mb-8">
-                  <h3 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-4">
+                <div className="bg-card shadow-card rounded-pill p-8 mb-8">
+                  <h3 className="text-caption-sm text-subtle mb-4">
                     What reaches a claims operation and from when
                   </h3>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead>
-                        <tr className="border-b border-[var(--border)]">
-                          <th className="text-left py-3 pr-4 text-[var(--text-muted)] font-medium align-top">
+                        <tr className="border-b border-hairline">
+                          <th className="text-left py-3 pr-4 font-display font-medium text-strong align-top">
                             Instrument
                           </th>
-                          <th className="text-left py-3 pr-4 text-[var(--text-muted)] font-medium align-top">
+                          <th className="text-left py-3 pr-4 font-display font-medium text-strong align-top">
                             What it reaches
                           </th>
-                          <th className="text-left py-3 text-[var(--text-muted)] font-medium align-top">
+                          <th className="text-left py-3 font-display font-medium text-strong align-top">
                             Applies from
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="text-[var(--text-secondary)]">
+                      <tbody className="text-body">
                         {regimeRows.map((row, idx) => (
                           <tr
                             key={idx}
-                            className="border-b border-[var(--border)]/50 align-top"
+                            className="border-b border-hairline align-top"
                           >
-                            <td className="py-3 pr-4 font-medium text-[var(--text-primary)]">
+                            <td className="py-3 pr-4 font-display font-medium text-strong">
                               {row[0]}
                             </td>
                             <td className="py-3 pr-4">{row[1]}</td>
@@ -533,7 +531,7 @@ export default function EUAIActClaimsBlogPost() {
                   </div>
                 </div>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-body leading-[1.6]">
                   The pattern is the one that catches people out. The instrument
                   everyone is preparing for is the one that does not reach them.
                   The instrument that does reach them has been in force for
@@ -543,15 +541,15 @@ export default function EUAIActClaimsBlogPost() {
 
               {/* Article 22 */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Does GDPR Article 22 apply to an automated claims decision?
                 </h2>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Yes. Unlike the AI Act it has applied since 25 May 2018.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   One qualifier before the detail. The GDPR is not the only data
                   protection regime a European claims operation can answer to.
                   Which instrument binds you depends on where you are
@@ -561,23 +559,23 @@ export default function EUAIActClaimsBlogPost() {
                   book.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Article 22 restricts decisions based solely on automated
                   processing that produce legal effects or similarly significant
                   ones. A declined or reduced claim meets that bar.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-6">
                   Three sources define what that now requires. None of them
                   moved in July.
                 </p>
 
                 <div className="space-y-4 mb-6">
-                  <div className="glass-panel p-6">
-                    <h3 className="font-semibold text-[var(--text-primary)] mb-3">
+                  <div className="bg-card shadow-card rounded-pill p-8">
+                    <h3 className="font-display font-semibold text-strong mb-3">
                       Automated scores can themselves be decisions.
                     </h3>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    <p className="text-sm text-body leading-[1.6]">
                       In <em>OQ v Land Hessen</em>, the SCHUFA case (C-634/21, 7
                       December 2023), the CJEU held that the automated
                       generation of a probability value about a person&apos;s
@@ -590,11 +588,11 @@ export default function EUAIActClaimsBlogPost() {
                     </p>
                   </div>
 
-                  <div className="glass-panel p-6">
-                    <h3 className="font-semibold text-[var(--text-primary)] mb-3">
+                  <div className="bg-card shadow-card rounded-pill p-8">
+                    <h3 className="font-display font-semibold text-strong mb-3">
                       A sign-off is not oversight.
                     </h3>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    <p className="text-sm text-body leading-[1.6]">
                       Under the Article 29 Working Party guidelines on automated
                       decision-making (WP251rev.01), endorsed by the EDPB, human
                       involvement escapes Article 22 only where it is
@@ -606,11 +604,11 @@ export default function EUAIActClaimsBlogPost() {
                     </p>
                   </div>
 
-                  <div className="glass-panel p-6">
-                    <h3 className="font-semibold text-[var(--text-primary)] mb-3">
+                  <div className="bg-card shadow-card rounded-pill p-8">
+                    <h3 className="font-display font-semibold text-strong mb-3">
                       An explanation has a defined standard.
                     </h3>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    <p className="text-sm text-body leading-[1.6]">
                       In <em>Dun &amp; Bradstreet Austria</em> (C-203/22, 27
                       February 2025) the CJEU set out what &ldquo;meaningful
                       information about the logic involved&rdquo; requires under
@@ -630,7 +628,7 @@ export default function EUAIActClaimsBlogPost() {
                   </div>
                 </div>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-body leading-[1.6]">
                   That is a comparative standard, not a narrative one. Answering
                   it requires knowing what the system actually did with which
                   inputs.
@@ -639,11 +637,11 @@ export default function EUAIActClaimsBlogPost() {
 
               {/* EIOPA */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Where the sector supervisor sits
                 </h2>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   EIOPA&apos;s{" "}
                   <em>Opinion on AI governance and risk management</em>{" "}
                   (EIOPA-BoS-25-360, 6 August 2025) is addressed to national
@@ -654,7 +652,7 @@ export default function EUAIActClaimsBlogPost() {
                   IDD delegated regulations, not on the AI Act.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Its own framing is the point worth taking. Those systems, it
                   says, &ldquo;continue to operate subject to existing sectoral
                   legislation without new requirements&rdquo;, the exceptions
@@ -664,7 +662,7 @@ export default function EUAIActClaimsBlogPost() {
                   force applies.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Within it, undertakings should ensure the outcomes of AI
                   systems can be meaningfully explained and should keep
                   appropriate records of training and testing data and of
@@ -674,7 +672,7 @@ export default function EUAIActClaimsBlogPost() {
                   that do.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-body leading-[1.6]">
                   Claims handling therefore leaves the AI Act&apos;s heaviest
                   chapter and arrives at a proportionate but real set of
                   expectations by a different route. The obligation does not
@@ -684,11 +682,11 @@ export default function EUAIActClaimsBlogPost() {
 
               {/* Cost of not explaining */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   What does it cost to be unable to explain a decision?
                 </h2>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   The Hamburg data protection authority fined a financial
                   services provider EUR 492,000, reported on 30 September 2025.
                   The firm rejected credit card applications automatically,
@@ -700,7 +698,7 @@ export default function EUAIActClaimsBlogPost() {
                   access to the underlying rationale when asked.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-body leading-[1.6]">
                   The authority expressly treated the firm&apos;s cooperation as
                   a significant mitigating factor. That was the discounted
                   price.
@@ -709,11 +707,11 @@ export default function EUAIActClaimsBlogPost() {
 
               {/* The gap */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   The gap that will actually catch carriers
                 </h2>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Grant Thornton&apos;s 2026 AI Impact Survey, fielded 23
                   February to 18 March 2026 across 950 executives including 100
                   in insurance, found:
@@ -721,40 +719,43 @@ export default function EUAIActClaimsBlogPost() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   {governanceStats.map((stat) => (
-                    <div key={stat.value} className="glass-panel p-5">
-                      <div className="text-3xl font-bold text-[var(--primary)] mb-2">
+                    <div
+                      key={stat.value}
+                      className="bg-card shadow-card rounded-pill px-[29px] py-[27px]"
+                    >
+                      <div className="text-kpi text-accent mb-2">
                         {stat.value}
                       </div>
-                      <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                      <p className="text-sm text-body leading-[1.6]">
                         {stat.label}
                       </p>
                     </div>
                   ))}
                 </div>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Grant Thornton&apos;s own reading: &ldquo;Most insurers
                   already have AI governance policies in place, but they
                   haven&apos;t built the operational infrastructure to prove and
                   test them.&rdquo;
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-6">
                   The distance between 61 and 24 is the whole problem. That same
                   fragmentation is what strands pilots short of production, for
                   the same reason: it is structural rather than a modelling
                   defect and it is found late. We covered that pattern in{" "}
                   <Link
                     href="/blog/why-claims-ai-pilots-stall"
-                    className="text-[var(--primary)] hover:underline"
+                    className="text-link hover:underline"
                   >
                     why claims AI pilots stall before production readiness
                   </Link>
                   .
                 </p>
 
-                <div className="p-4 bg-[var(--primary)]/10 rounded-lg border border-[var(--primary)]/20">
-                  <p className="text-sm font-medium text-[var(--primary)]">
+                <div className="bg-lilac rounded-pill px-8 py-6">
+                  <p className="text-sm font-medium text-accent">
                     A policy is a claim about how you behave. Evidence is proof
                     that you did. Supervisors examine the second.
                   </p>
@@ -763,11 +764,11 @@ export default function EUAIActClaimsBlogPost() {
 
               {/* Why 2027 does not help */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Why the 2027 date does not help
                 </h2>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Field-level provenance, tamper-evident decision logs and
                   versioned, reproducible decision records are architectural
                   properties. They are determined when the pipeline is designed
@@ -776,7 +777,7 @@ export default function EUAIActClaimsBlogPost() {
                   The decision it recorded is gone.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   This is why audit-readiness and audit-preparation are
                   different things. Preparation is an exercise you run before an
                   examination. Readiness is a property the system either has
@@ -784,7 +785,7 @@ export default function EUAIActClaimsBlogPost() {
                   answers a question about a claim closed last year.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   An explanation is an opinion about a decision. Provenance is
                   evidence of one. <em>Dun &amp; Bradstreet</em> asks what the
                   system would have produced from different inputs. Only the
@@ -792,7 +793,7 @@ export default function EUAIActClaimsBlogPost() {
                   set out in{" "}
                   <Link
                     href="/blog/auditability-evidence-chains"
-                    className="text-[var(--primary)] hover:underline"
+                    className="text-link hover:underline"
                   >
                     auditability in claims AI: building evidence chains that
                     auditors actually accept
@@ -800,7 +801,7 @@ export default function EUAIActClaimsBlogPost() {
                   .
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-body leading-[1.6]">
                   There is a design consequence worth stating plainly. The more
                   of a decision that runs on deterministic rules rather than a
                   model, the less of it needs explaining under a comparative
@@ -808,7 +809,7 @@ export default function EUAIActClaimsBlogPost() {
                   European vehicle warranty programme we route{" "}
                   <Link
                     href="/case-studies/vehicle-warranty-claims"
-                    className="text-[var(--primary)] hover:underline"
+                    className="text-link hover:underline"
                   >
                     80 to 90% of line items through deterministic logic
                   </Link>
@@ -820,34 +821,34 @@ export default function EUAIActClaimsBlogPost() {
 
               {/* The test */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   The test worth running this week
                 </h2>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   Take one closed claim from last year. Ask your team to
                   reconstruct the decision: every field and where it came from,
                   which model version ran, what a human changed and on what
                   basis.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-5">
                   If that takes one click, you can answer a supervisor under any
                   of the regimes above. The 2027 date is a formality.
                 </p>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-6">
                   If it takes a quarter, you have found the real deadline. It
                   was not 2 December 2027. It was 25 May 2018. The deferral did
                   not move it.
                 </p>
 
-                <div className="glass-panel p-6 border-l-4 border-l-[var(--primary)]">
-                  <p className="text-[var(--text-primary)] leading-relaxed">
+                <div className="bg-lilac rounded-pill px-8 py-6">
+                  <p className="text-sm font-medium text-accent">
                     Reconstructing a decision on demand is what{" "}
                     <Link
                       href="/products/mira"
-                      className="text-[var(--primary)] hover:underline"
+                      className="underline hover:no-underline"
                     >
                       MIRA
                     </Link>{" "}
@@ -860,16 +861,19 @@ export default function EUAIActClaimsBlogPost() {
 
               {/* Key takeaways */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Key takeaways
                 </h2>
 
-                <div className="glass-panel-light p-6">
+                <div className="bg-card shadow-card rounded-pill p-8">
                   <ul className="space-y-4">
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                        <strong className="text-[var(--text-primary)]">
+                      <CheckCircle
+                        className="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
+                        strokeWidth={1.5}
+                      />
+                      <span className="text-sm text-body leading-[1.6]">
+                        <strong className="text-strong">
                           Claims handling is not listed in Annex III.
                         </strong>{" "}
                         Only life and health risk assessment and pricing appear,
@@ -880,9 +884,12 @@ export default function EUAIActClaimsBlogPost() {
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                        <strong className="text-[var(--text-primary)]">
+                      <CheckCircle
+                        className="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
+                        strokeWidth={1.5}
+                      />
+                      <span className="text-sm text-body leading-[1.6]">
+                        <strong className="text-strong">
                           The Digital Omnibus deferral does not help a claims
                           operation
                         </strong>
@@ -891,9 +898,12 @@ export default function EUAIActClaimsBlogPost() {
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                        <strong className="text-[var(--text-primary)]">
+                      <CheckCircle
+                        className="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
+                        strokeWidth={1.5}
+                      />
+                      <span className="text-sm text-body leading-[1.6]">
+                        <strong className="text-strong">
                           GDPR Article 22 is the binding constraint in the EU
                         </strong>
                         . It has applied since 25 May 2018. A declined or
@@ -902,9 +912,12 @@ export default function EUAIActClaimsBlogPost() {
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                        <strong className="text-[var(--text-primary)]">
+                      <CheckCircle
+                        className="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
+                        strokeWidth={1.5}
+                      />
+                      <span className="text-sm text-body leading-[1.6]">
+                        <strong className="text-strong">
                           The Article 6(3) profiling override is a trap for life
                           and health systems only.
                         </strong>{" "}
@@ -913,9 +926,12 @@ export default function EUAIActClaimsBlogPost() {
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                        <strong className="text-[var(--text-primary)]">
+                      <CheckCircle
+                        className="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
+                        strokeWidth={1.5}
+                      />
+                      <span className="text-sm text-body leading-[1.6]">
+                        <strong className="text-strong">
                           Policy is not evidence.
                         </strong>{" "}
                         61% of insurers have board-level AI governance policies;
@@ -929,17 +945,20 @@ export default function EUAIActClaimsBlogPost() {
 
               {/* FAQ */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Frequently asked questions
                 </h2>
 
                 <div className="space-y-4">
                   {faqs.map((faq) => (
-                    <div key={faq.q} className="glass-panel p-6">
-                      <h3 className="font-semibold text-[var(--text-primary)] mb-3">
+                    <div
+                      key={faq.q}
+                      className="bg-card shadow-card rounded-pill p-8"
+                    >
+                      <h3 className="font-display font-semibold text-strong mb-3">
                         {faq.q}
                       </h3>
-                      <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                      <p className="text-sm text-body leading-[1.6]">
                         {faq.a}
                       </p>
                     </div>
@@ -949,43 +968,43 @@ export default function EUAIActClaimsBlogPost() {
 
               {/* Related reading */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Related reading
                 </h2>
 
                 <div className="space-y-4">
-                  <div className="glass-panel-light p-5">
+                  <div className="bg-card shadow-card rounded-pill p-8">
                     <Link
                       href="/blog/why-claims-ai-pilots-stall"
-                      className="font-medium text-[var(--primary)] hover:underline"
+                      className="font-display font-medium text-link hover:underline"
                     >
                       Why claims AI pilots stall before production readiness
                     </Link>
-                    <p className="text-sm text-[var(--text-muted)] mt-1">
+                    <p className="text-sm text-subtle mt-1">
                       The structural reasons pilots do not reach production.
                     </p>
                   </div>
-                  <div className="glass-panel-light p-5">
+                  <div className="bg-card shadow-card rounded-pill p-8">
                     <Link
                       href="/blog/auditability-evidence-chains"
-                      className="font-medium text-[var(--primary)] hover:underline"
+                      className="font-display font-medium text-link hover:underline"
                     >
                       Auditability in claims AI: building evidence chains that
                       auditors actually accept
                     </Link>
-                    <p className="text-sm text-[var(--text-muted)] mt-1">
+                    <p className="text-sm text-subtle mt-1">
                       The architecture behind the reconstruction test above.
                     </p>
                   </div>
-                  <div className="glass-panel-light p-5">
+                  <div className="bg-card shadow-card rounded-pill p-8">
                     <Link
                       href="/case-studies/vehicle-warranty-claims"
-                      className="font-medium text-[var(--primary)] hover:underline"
+                      className="font-display font-medium text-link hover:underline"
                     >
                       Vehicle warranty provider achieves 98% decision accuracy
                       in 7 days
                     </Link>
-                    <p className="text-sm text-[var(--text-muted)] mt-1">
+                    <p className="text-sm text-subtle mt-1">
                       The programme the deterministic-routing figure comes from.
                     </p>
                   </div>
@@ -994,11 +1013,11 @@ export default function EUAIActClaimsBlogPost() {
 
               {/* Sources */}
               <MotionDiv {...fadeIn}>
-                <h2 className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-6 pt-6 border-t border-[var(--border)]">
+                <h2 className="text-caption-sm text-subtle mb-6 pt-6 border-t border-hairline">
                   Sources
                 </h2>
 
-                <ul className="space-y-3 text-sm text-[var(--text-muted)] leading-relaxed list-disc pl-5">
+                <ul className="space-y-3 text-sm text-subtle leading-[1.6] list-disc pl-5">
                   <li>
                     Regulation (EU) 2026/1744 (Digital Omnibus on AI), Official
                     Journal, 24 July 2026; in force 27 July 2026.{" "}
@@ -1006,7 +1025,7 @@ export default function EUAIActClaimsBlogPost() {
                       href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--primary)] hover:underline"
+                      className="text-link hover:underline"
                     >
                       eur-lex.europa.eu
                     </a>
@@ -1018,7 +1037,7 @@ export default function EUAIActClaimsBlogPost() {
                       href="https://artificialintelligenceact.eu/annex/3/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--primary)] hover:underline"
+                      className="text-link hover:underline"
                     >
                       artificialintelligenceact.eu
                     </a>
@@ -1035,7 +1054,7 @@ export default function EUAIActClaimsBlogPost() {
                       href="https://digital-strategy.ec.europa.eu/en/library/draft-commission-guidelines-classification-high-risk-ai-systems"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--primary)] hover:underline"
+                      className="text-link hover:underline"
                     >
                       digital-strategy.ec.europa.eu
                     </a>
@@ -1071,7 +1090,7 @@ export default function EUAIActClaimsBlogPost() {
                       href="https://www.eiopa.europa.eu/publications/opinion-artificial-intelligence-governance-and-risk-management_en"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--primary)] hover:underline"
+                      className="text-link hover:underline"
                     >
                       eiopa.europa.eu
                     </a>
@@ -1088,14 +1107,14 @@ export default function EUAIActClaimsBlogPost() {
                       href="https://www.grantthornton.com/insights/survey-reports/insurance/2026/insurance-insights-2026-ai-impact-survey-report"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--primary)] hover:underline"
+                      className="text-link hover:underline"
                     >
                       grantthornton.com
                     </a>
                   </li>
                 </ul>
 
-                <p className="mt-6 pt-6 border-t border-[var(--border)] text-sm text-[var(--text-muted)] italic">
+                <p className="mt-6 pt-6 border-t border-hairline text-sm text-subtle italic">
                   Regulatory position stated as at 31 July 2026. This is not
                   legal advice. Confirm classification and sequencing for your
                   own systems with qualified counsel.
@@ -1109,25 +1128,26 @@ export default function EUAIActClaimsBlogPost() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="glass-panel p-6"
+                transition={{ duration: 0.6, ease }}
+                className="bg-card shadow-card rounded-pill p-8"
               >
-                <h3 className="font-semibold text-[var(--text-primary)] mb-4">
+                <h3 className="font-display font-semibold text-strong mb-4">
                   Key Takeaways
                 </h3>
                 <ul className="space-y-3">
                   {sidebarTakeaways.map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-[var(--text-secondary)]">
-                        {item}
-                      </span>
+                      <CheckCircle
+                        className="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
+                        strokeWidth={1.5}
+                      />
+                      <span className="text-sm text-body">{item}</span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-8 pt-6 border-t border-[var(--border)]">
-                  <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">
+                <div className="mt-8 pt-6 border-t border-hairline">
+                  <h4 className="text-caption-sm text-subtle mb-3">
                     Related Topics
                   </h4>
                   <div className="flex flex-wrap gap-1.5">
@@ -1141,7 +1161,7 @@ export default function EUAIActClaimsBlogPost() {
                     ].map((tag) => (
                       <span
                         key={tag}
-                        className="text-[10px] px-2 py-1 rounded bg-[var(--subtle-bg)] text-[var(--text-muted)]"
+                        className="text-xs px-3 py-1 rounded-pill bg-accent-soft text-accent"
                       >
                         {tag}
                       </span>
@@ -1149,14 +1169,11 @@ export default function EUAIActClaimsBlogPost() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-[var(--border)]">
-                  <Link
-                    href="/contact"
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors"
-                  >
+                <div className="mt-8 pt-6 border-t border-hairline">
+                  <ButtonLink href="/contact" variant="primary" className="w-full">
                     Talk to Us
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+                    <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+                  </ButtonLink>
                 </div>
               </MotionDiv>
             </div>
@@ -1165,31 +1182,25 @@ export default function EUAIActClaimsBlogPost() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-gradient-to-br from-slate-900 to-[var(--background)]">
+      <section data-theme="dark" className="py-20 px-6 bg-page-tint">
         <div className="max-w-4xl mx-auto text-center">
           <MotionDiv {...fadeIn}>
-            <Shield className="w-12 h-12 text-[var(--text-muted)] mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <Shield className="w-12 h-12 text-muted mx-auto mb-6" strokeWidth={1.5} />
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-strong mb-6">
               Can You Reconstruct Last Year&apos;s Decision?
             </h2>
-            <p className="text-lg text-gray-300 mb-10">
+            <p className="text-lg text-body mb-10">
               We build claims systems where every decision can be rebuilt from
               the record it produced at the time.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg"
-              >
+              <ButtonLink href="/contact" variant="primary" size="lg">
                 Get in Touch
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                href="/products/mira"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
-              >
+                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+              </ButtonLink>
+              <ButtonLink href="/products/mira" variant="on-dark" size="lg">
                 Explore MIRA
-              </Link>
+              </ButtonLink>
             </div>
           </MotionDiv>
         </div>

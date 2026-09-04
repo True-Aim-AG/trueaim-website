@@ -279,8 +279,10 @@ test.describe('REQ-V7-004: Remove Connector Line in Workflow Section', () => {
      * Type: DESIGN_CHANGE
      * Change: Remove horizontal connector line behind workflow steps
      */
+    // Matches both the compact icon-row's sr-only heading and the richer
+    // process-flow section's visible heading further down the page.
     await expect(
-      page.getByText('From Documents to Decisions in One Flow', { exact: false })
+      page.getByText('From Documents to Decisions in One Flow', { exact: false }).first()
     ).toBeVisible();
   });
 
@@ -294,46 +296,48 @@ test.describe('REQ-V7-004: Remove Connector Line in Workflow Section', () => {
     }
   });
 
-  test('REQ-V7-004-003: Workflow badges preserved', async ({ page }) => {
-    const workflowSection = page.locator('section').filter({
-      hasText: /From Documents to Decisions in One Flow/,
-    });
-    await expect(workflowSection.getByText('Fully Automated', { exact: false }).first()).toBeVisible();
-    await expect(workflowSection.getByText('Human in the Loop', { exact: false }).first()).toBeVisible();
-  });
+  // REQ-V7-004-003 removed: the "Fully Automated" / "Human in the Loop" mode
+  // legend was part of the old interactive flow diagram and was dropped in
+  // the True Aim redesign (see the removed FLOW:MODE test in
+  // website-review-v2.spec.ts).
 
   test('REQ-V7-004-004: No visible connector line element', async ({ page }) => {
     const workflowSection = page.locator('section').filter({
       hasText: /From Documents to Decisions in One Flow/,
     });
 
-    // Check that no dedicated connector line element exists
+    // Check that no dedicated connector line element exists in either
+    // matched section (the redesign added a second section reusing this
+    // heading text as an sr-only label, so this now matches two <section>
+    // elements - use evaluateAll to check across all of them).
     // Connector lines are typically absolute/relative divs with a background or border
-    const hasConnectorLine = await workflowSection.evaluate(el => {
-      // Look for elements that could be a horizontal connector line
-      const candidates = el.querySelectorAll('div, span, hr');
-      for (const candidate of candidates) {
-        const style = window.getComputedStyle(candidate);
-        const rect = candidate.getBoundingClientRect();
-        // A connector line would be very thin (< 6px height), wide (> 200px), and visible
-        if (
-          rect.height > 0 && rect.height < 6 &&
-          rect.width > 200 &&
-          style.display !== 'none' &&
-          style.visibility !== 'hidden' &&
-          style.opacity !== '0'
-        ) {
-          // Check if it has a visible background or border
-          const hasBg = style.backgroundColor !== 'rgba(0, 0, 0, 0)' &&
-                        style.backgroundColor !== 'transparent';
-          const hasBorder = parseFloat(style.borderTopWidth) > 0 ||
-                           parseFloat(style.borderBottomWidth) > 0;
-          if (hasBg || hasBorder) return true;
+    const results = await workflowSection.evaluateAll(sections => {
+      return sections.map(el => {
+        // Look for elements that could be a horizontal connector line
+        const candidates = el.querySelectorAll('div, span, hr');
+        for (const candidate of candidates) {
+          const style = window.getComputedStyle(candidate);
+          const rect = candidate.getBoundingClientRect();
+          // A connector line would be very thin (< 6px height), wide (> 200px), and visible
+          if (
+            rect.height > 0 && rect.height < 6 &&
+            rect.width > 200 &&
+            style.display !== 'none' &&
+            style.visibility !== 'hidden' &&
+            style.opacity !== '0'
+          ) {
+            // Check if it has a visible background or border
+            const hasBg = style.backgroundColor !== 'rgba(0, 0, 0, 0)' &&
+                          style.backgroundColor !== 'transparent';
+            const hasBorder = parseFloat(style.borderTopWidth) > 0 ||
+                             parseFloat(style.borderBottomWidth) > 0;
+            if (hasBg || hasBorder) return true;
+          }
         }
-      }
-      return false;
+        return false;
+      });
     });
-    expect(hasConnectorLine).toBe(false);
+    expect(results.some(Boolean)).toBe(false);
   });
 });
 
@@ -489,7 +493,9 @@ test.describe('REQ-V7-007: Fix Dandolo Avatar (ZHAW Page)', () => {
         };
       });
       expect(parseFloat(styles.wrapperBorder)).toBe(0);
-      expect(styles.wrapperBoxShadow).toBe('none');
+      // A subtle drop shadow (`shadow-swatch`, docs/DESIGN_SYSTEM.md §5) is
+      // now an intentional part of floating plates like this avatar; only a
+      // ring/border/outline is disallowed, not any box-shadow.
       expect(parseFloat(styles.wrapperOutline)).toBe(0);
     }
   });
@@ -805,8 +811,12 @@ test.describe('REQ-V7-010: Fix Third Metric Card Vertical Alignment', () => {
       hasText: /92%/,
     }).first();
 
-    // Get all metric cards within this section (typically direct children with card styling)
-    const cards = metricSection.locator('> div > div, [class*="card"], [class*="metric"]');
+    // Get the metric cards within this section. The generic
+    // `> div > div, [class*="card"], [class*="metric"]` selector this test
+    // used to rely on matched too many unrelated nested elements after the
+    // redesign; target the actual card wrapper class instead
+    // (`bg-card shadow-card rounded-pill`, docs/DESIGN_SYSTEM.md §5).
+    const cards = metricSection.locator('div.bg-card.shadow-card');
     const cardCount = await cards.count();
 
     if (cardCount >= 3) {

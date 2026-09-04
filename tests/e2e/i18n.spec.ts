@@ -112,8 +112,10 @@ test.describe('Language switcher', () => {
     await expect(deOption).toBeVisible();
     await deOption.click();
 
-    // Wait for navigation
-    await page.waitForLoadState('domcontentloaded');
+    // The locale switch is a client-side transition (next-intl router.replace),
+    // not a full navigation, so wait for the URL itself to settle rather than
+    // for a load event that may already have fired.
+    await page.waitForURL(/\/de(\/|$)/);
 
     // Verify URL changed to /de
     expect(page.url()).toContain('/de');
@@ -140,8 +142,8 @@ test.describe('Language switcher', () => {
     await expect(enOption).toBeVisible();
     await enOption.click();
 
-    // Wait for navigation
-    await page.waitForLoadState('domcontentloaded');
+    // Wait for the client-side transition to settle (see comment above).
+    await page.waitForURL((url) => !url.pathname.startsWith('/de'));
 
     // Verify URL does NOT contain /en/
     expect(page.url()).not.toContain('/en/');
@@ -170,7 +172,9 @@ test.describe('Language switcher preserves path', () => {
     await switcherButton.click();
     const frOption = page.locator('button').filter({ hasText: 'Français' });
     await frOption.click();
-    await page.waitForLoadState('domcontentloaded');
+    // Client-side transition: wait for the URL to actually settle rather than
+    // for a load event that may already have fired.
+    await page.waitForURL(/\/fr\/company/);
 
     // Verify URL is /fr/company
     expect(page.url()).toContain('/fr/company');
@@ -180,7 +184,7 @@ test.describe('Language switcher preserves path', () => {
     await switcherButton.click();
     const enOption = page.locator('button').filter({ hasText: 'English' });
     await enOption.click();
-    await page.waitForLoadState('domcontentloaded');
+    await page.waitForURL((url) => !url.pathname.startsWith('/fr'));
 
     // Verify URL is /company (no /en/ prefix)
     expect(page.url()).toMatch(/\/company\/?$/);
@@ -293,29 +297,19 @@ test.describe('Internal navigation preserves locale prefix', () => {
     await page.goto(`${BASE_URL}/de`);
     await page.waitForLoadState('domcontentloaded');
 
-    // Click the Technology nav link (may be in EN since nav is hardcoded)
-    const technologyLink = page.locator('nav a[href*="technology"], nav a:has-text("Technology")').first();
+    // Navigation.tsx uses the i18n-aware Link from @/i18n/navigation, so the
+    // rendered nav label is translated ("Technologie" on /de) but the href
+    // still contains "technology" and carries the /de/ prefix.
+    const technologyLink = page.locator('nav a[href*="technology"]').first();
     const linkCount = await technologyLink.count();
 
     if (linkCount > 0) {
       await technologyLink.click();
-      await page.waitForLoadState('domcontentloaded');
+      // Client-side transition: wait for the URL to actually settle.
+      await page.waitForURL(/\/de\/technology/);
 
-      // If the Navigation uses i18n-aware links, URL should include /de/
-      // If not (hardcoded next/link), we check whatever the behavior is
-      const url = page.url();
-      // The page should still set lang="de" if locale is preserved,
-      // or "en" if the navigation breaks out of the locale context
-      const lang = await page.locator('html').getAttribute('lang');
-
-      // Document the actual behavior: either locale is preserved or not
-      if (url.includes('/de/')) {
-        expect(lang).toBe('de');
-      } else {
-        // Navigation uses plain next/link which does not preserve locale
-        // This is a known limitation when nav links are not i18n-aware
-        expect(url).toContain('/technology');
-      }
+      expect(page.url()).toContain('/de/technology');
+      await expect(page.locator('html')).toHaveAttribute('lang', 'de');
     } else {
       test.skip(true, 'Technology link not found in navigation');
     }
@@ -349,11 +343,9 @@ test.describe('Internal navigation preserves locale prefix', () => {
 // ============================================================================
 
 test.describe('Translated content on locale pages', () => {
-  // Note: As of the current implementation, translation JSON files for de/fr/it
-  // contain the same English text as en. These tests validate that the i18n
-  // framework correctly loads and renders content from the locale message files.
-  // When actual translations are added, these tests should be updated with
-  // the expected translated strings.
+  // The de/fr/it message files now carry real translations of the hero
+  // headline (see messages/<locale>/home.json), not the English placeholder
+  // text. Each test checks the actual translated string for its locale.
 
   test('EN home page renders English hero content', async ({ page }) => {
     await page.goto(BASE_URL);
@@ -369,9 +361,8 @@ test.describe('Translated content on locale pages', () => {
     await page.waitForLoadState('domcontentloaded');
 
     await expect(page.locator('html')).toHaveAttribute('lang', 'de');
-    // Verify the page loaded successfully with content
-    // The hero title comes from de/home.json (currently identical to EN)
-    await expect(page.locator('text=Automate Insurance Claim Decisions')).toBeVisible();
+    // Hero title from de/home.json ("hero.title")
+    await expect(page.locator('text=Versicherungsentscheidungen automatisieren')).toBeVisible();
   });
 
   test('FR home page loads and renders content from FR message files', async ({ page }) => {
@@ -379,7 +370,8 @@ test.describe('Translated content on locale pages', () => {
     await page.waitForLoadState('domcontentloaded');
 
     await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
-    await expect(page.locator('text=Automate Insurance Claim Decisions')).toBeVisible();
+    // Hero title from fr/home.json ("hero.title")
+    await expect(page.locator('text=Automatisez les décisions de sinistres')).toBeVisible();
   });
 
   test('IT home page loads and renders content from IT message files', async ({ page }) => {
@@ -387,7 +379,8 @@ test.describe('Translated content on locale pages', () => {
     await page.waitForLoadState('domcontentloaded');
 
     await expect(page.locator('html')).toHaveAttribute('lang', 'it');
-    await expect(page.locator('text=Automate Insurance Claim Decisions')).toBeVisible();
+    // Hero title from it/home.json ("hero.title")
+    await expect(page.locator('text=Automatizza le decisioni sui sinistri assicurativi')).toBeVisible();
   });
 
   test('DE technology page loads correctly', async ({ page }) => {
@@ -421,10 +414,14 @@ test.describe('Translated content on locale pages', () => {
 // ============================================================================
 
 test.describe('Navigation items on locale pages', () => {
-  // The Navigation component currently uses hardcoded English strings
-  // and plain next/link (not the i18n-aware Link from @/i18n/navigation).
-  // These tests verify that the navigation renders on locale pages and
-  // document the current behavior.
+  // Navigation.tsx uses the i18n-aware Link and translated labels from
+  // messages/<locale>/common.json ("nav" namespace), so the visible nav text
+  // is localized. Check each locale's actual translated labels.
+  const navLabels: Record<string, { technology: string; company: string; contact: string }> = {
+    de: { technology: 'Technologie', company: 'Unternehmen', contact: 'Kontakt' },
+    fr: { technology: 'Technologie', company: 'Entreprise', contact: 'Contact' },
+    it: { technology: 'Tecnologia', company: 'Azienda', contact: 'Contatti' },
+  };
 
   for (const locale of NON_DEFAULT_LOCALES) {
     test(`Navigation renders on /${locale} page`, async ({ page }) => {
@@ -434,15 +431,15 @@ test.describe('Navigation items on locale pages', () => {
       // Navigation header should be visible
       await expect(page.locator('header nav')).toBeVisible();
 
-      // Navigation items should be present (currently hardcoded in English)
+      // Navigation items should be present, translated for the locale
       // Desktop nav items (hidden on mobile via md:flex)
       const desktopNav = page.locator('header nav .hidden.md\\:flex').first();
       const navCount = await desktopNav.count();
       if (navCount > 0) {
-        // Check that standard nav items are rendered
-        await expect(page.locator('header nav').getByText('Technology', { exact: true }).first()).toBeVisible();
-        await expect(page.locator('header nav').getByText('Company', { exact: true }).first()).toBeVisible();
-        await expect(page.locator('header nav').getByText('Contact', { exact: true }).first()).toBeVisible();
+        const labels = navLabels[locale];
+        await expect(page.locator('header nav').getByText(labels.technology, { exact: true }).first()).toBeVisible();
+        await expect(page.locator('header nav').getByText(labels.company, { exact: true }).first()).toBeVisible();
+        await expect(page.locator('header nav').getByText(labels.contact, { exact: true }).first()).toBeVisible();
       }
     });
   }

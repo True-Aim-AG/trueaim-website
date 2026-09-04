@@ -1,7 +1,7 @@
-# TrueAim.ai Website
+# True Aim Website
 
 ## Project Context
-Building MVP corporate website for TrueAim.ai - a Swiss AI company offering neuro-symbolic decisioning for insurance claims. The website must communicate enterprise credibility and regulatory compliance.
+Building MVP corporate website for True Aim - a Swiss AI company offering neuro-symbolic decisioning for insurance claims. The website must communicate enterprise credibility and regulatory compliance.
 
 ## Tech Stack
 - Next.js 14 (App Router)
@@ -13,12 +13,12 @@ Building MVP corporate website for TrueAim.ai - a Swiss AI company offering neur
 
 ## Design System
 
-### Colors (use CSS variables in globals.css)
-- **Color Palette: `/docs/PALETTE_OVERRIDE.md` (overrides PRD Section 7.2)**
+### Colors
+- Tokens and rules: docs/DESIGN_SYSTEM.md (True Aim Design System v4). Light theme default; True Aim Blue #5151DB; Inter Tight titles, IBM Plex Sans body; pills r40 for filled containers; cards without borders.
 
 ### Typography
-- Headlines: font-bold, tracking-tight
-- Body: text-gray-600, leading-relaxed
+- Headlines: font-display font-bold (no tracking-tight)
+- Body: text-body leading-[1.6]
 
 ### Spacing
 - Section padding: py-24 px-6
@@ -67,6 +67,7 @@ All copy is in /docs/TrueAim_Website_Copy.md
 
 ## Copy Guidelines
 - **No dashes for rhythm**: Avoid using em-dashes (—), en-dashes (–), or spaced hyphens ( - ) for rhythmic pauses or clause separation in website copy. Rewrite sentences to avoid dash-based phrasing. Legitimate uses (compound words like "real-time", technical terms, URLs) are acceptable.
+- **Brand name in text is always True Aim (two words).**
 
 ## Commands
 - `npm run dev` - Start dev server

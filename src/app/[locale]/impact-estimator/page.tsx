@@ -1,8 +1,10 @@
-import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import dynamic from "next/dynamic";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { Calculator, ArrowRight, CheckCircle } from "lucide-react";
+import { Eyebrow } from "@/components/brand/Eyebrow";
+import { ButtonLink } from "@/components/brand/Button";
+import { GridPattern } from "@/components/brand/GridPattern";
 
 const ROICalculator = dynamic(
   () => import("@/components/calculator/ROICalculator").then((m) => m.ROICalculator)
@@ -15,33 +17,34 @@ export default async function ImpactEstimatorPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 px-6 overflow-hidden">
-        <div className="relative max-w-7xl mx-auto">
+      <section className="relative overflow-hidden">
+        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
+        <div className="relative max-w-7xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] text-sm font-medium mb-6">
-              <Calculator className="w-4 h-4" />
+            <Eyebrow className="inline-flex items-center gap-2 mb-6">
+              <Calculator strokeWidth={1.5} className="w-4 h-4" />
               {t("hero.badge")}
-            </div>
+            </Eyebrow>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-strong mb-6">
               {t("hero.titleLine1")}
               <br />
-              <span className="text-[var(--primary)]">{t("hero.titleLine2")}</span>
+              <span className="text-accent">{t("hero.titleLine2")}</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-lede text-body max-w-3xl mx-auto mb-8">
               {t("hero.description")}
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
               {benefitKeys.map((key) => (
-                <div key={key} className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
-                  <CheckCircle className="w-4 h-4 text-emerald-400" />
+                <div key={key} className="flex items-center gap-2 text-sm text-muted">
+                  <CheckCircle strokeWidth={1.5} className="w-4 h-4 text-accent" />
                   {t(`hero.benefits.${key}`)}
                 </div>
               ))}
@@ -58,35 +61,28 @@ export default async function ImpactEstimatorPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
+      <section data-theme="dark" className="py-20 px-6 bg-page-tint">
+        <div className="max-w-4xl mx-auto text-center">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="glass-panel p-12 text-center"
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-strong mb-6">
               {t("cta.heading")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto">
+            <p className="text-lede text-body mb-10 max-w-2xl mx-auto">
               {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/30"
-              >
+              <ButtonLink href="/contact" variant="primary" size="lg">
                 {t("cta.bookDemo")}
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                href="/products/mira"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-[var(--border)] text-[var(--text-primary)] font-medium hover:bg-[var(--primary-light)] transition-colors text-lg"
-              >
+                <ArrowRight strokeWidth={1.5} className="w-5 h-5" />
+              </ButtonLink>
+              <ButtonLink href="/products/mira" variant="on-dark" size="lg">
                 {t("cta.seeMira")}
-              </Link>
+              </ButtonLink>
             </div>
           </MotionDiv>
         </div>

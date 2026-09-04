@@ -1,117 +1,74 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
-import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
-import { HolographicOwlHero } from "./HolographicOwlLoader";
+import { motion, useReducedMotion } from "framer-motion";
+import { ButtonLink } from "@/components/brand/Button";
+import { GlassBox } from "@/components/brand/GlassBox";
+import { Glow } from "@/components/brand/Glow";
+import { GridPattern } from "@/components/brand/GridPattern";
 
-// ─── Main Hero Component ────────────────────────────────────────────────────
+const ease = [0.4, 0, 0.2, 1] as const;
 
+/**
+ * Home hero, transcribed from the design system's marketing "Example" frame:
+ * page tint, structured grid top-right, ~540px copy column, Glass Box graphic with violet glow.
+ */
 export function Hero() {
   const t = useTranslations("hero");
-  const sectionRef = useRef<HTMLElement>(null);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  );
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
-    mediaQuery.addEventListener("change", handler);
-    return () => mediaQuery.removeEventListener("change", handler);
-  }, []);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-  const scrollIndicatorOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  const reduce = useReducedMotion();
+  const fade = (delay: number) =>
+    reduce
+      ? {}
+      : { initial: { opacity: 0, y: 12 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.6, delay, ease } };
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden"
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.06)_0%,transparent_60%)] pointer-events-none" />
+    <section className="relative overflow-hidden">
+      <GridPattern className="absolute right-0 top-0 hidden h-[760px] w-[746px] lg:block" />
 
-      <div className="relative max-w-7xl mx-auto w-full">
-        <motion.div
-          style={prefersReducedMotion ? {} : { y, opacity }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
-        >
-          {/* Left: Content */}
-          <div className="text-center lg:text-left">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-[var(--text-primary)] mb-6 leading-[1.1]"
-            >
-              {t("title")}
-              <br />
-              <span className="text-gradient">{t("titleHighlight")}</span>
-            </motion.h1>
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-16 pt-20 md:pt-28 lg:min-h-[640px] lg:grid-cols-[minmax(0,560px)_1fr] lg:gap-8 lg:pb-24 lg:pt-[120px]">
+        {/* Copy column */}
+        <div className="max-w-[560px]">
+          <motion.h1 {...fade(0.05)} className="font-display text-[40px] font-bold leading-[1.05] text-strong sm:text-[48px] lg:text-[54px] lg:leading-none">
+            {t("title")}
+            <br />
+            {t("titleHighlight")}
+          </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-lg md:text-xl text-[var(--text-secondary)] max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
-            >
-              {t("subtitle1")} {t("subtitle2")} {t("subtitle3")}
-            </motion.p>
+          <motion.p {...fade(0.15)} className="mt-[26px] max-w-[480px] text-lede text-body">
+            {t("subtitle1")}
+            <br />
+            {t("subtitle2")} {t("subtitle3")}
+          </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-            >
-              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-                <Link
-                  href="/contact"
-                  className="btn-shine inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[var(--primary)] text-[var(--primary-foreground)] font-semibold text-lg transition-all shadow-lg shadow-[var(--primary)]/25 hover:shadow-[var(--primary)]/40"
-                >
-                  {t("ctaDemo")}
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-                <Link
-                  href="/impact-estimator"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-[var(--border)] text-[var(--text-primary)] font-medium text-lg hover:bg-[var(--primary-light)] hover:border-[var(--primary)] transition-all backdrop-blur-sm"
-                >
-                  {t("ctaImpact")}
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </motion.div>
-            </motion.div>
-          </div>
-
-          {/* Right: Holographic Owl */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="hidden lg:flex items-center justify-center h-[900px]"
-          >
-            <HolographicOwlHero />
+          <motion.div {...fade(0.25)} className="mt-10 flex flex-col gap-3.5 sm:flex-row">
+            <ButtonLink href="/contact" variant="primary" size="lg">
+              {t("ctaDemo")}
+            </ButtonLink>
+            <ButtonLink href="/impact-estimator" variant="secondary" size="lg">
+              {t("ctaImpact")}
+            </ButtonLink>
           </motion.div>
-        </motion.div>
-      </div>
+        </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        style={prefersReducedMotion ? { opacity: 0.6 } : { opacity: scrollIndicatorOpacity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <span className="text-xs text-[var(--text-muted)] uppercase tracking-widest">Scroll</span>
-        <ChevronDown className="w-5 h-5 text-[var(--primary)] scroll-indicator" />
-      </motion.div>
+        {/* Brand graphic: glow + glass box + rim glow (Example frame offsets, scaled) */}
+        <motion.div
+          initial={reduce ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.9, delay: 0.3, ease }}
+          className="relative mx-auto hidden h-[520px] w-[470px] lg:block"
+          aria-hidden
+        >
+          <Glow size={470} opacity={0.7} className="absolute left-0 top-[60px]" />
+          <GlassBox size={312} glow={false} className="absolute left-[80px] top-[130px]" />
+          <Glow variant="rim" width={220} height={300} className="absolute left-[125px] top-[110px]" />
+        </motion.div>
+
+        {/* Compact graphic for small screens */}
+        <div className="relative mx-auto h-[260px] w-[260px] lg:hidden" aria-hidden>
+          <Glow size={260} opacity={0.6} className="absolute left-0 top-0" />
+          <GlassBox size={170} glow={false} className="absolute left-[45px] top-[60px]" id="gb-sm" />
+        </div>
+      </div>
     </section>
   );
 }

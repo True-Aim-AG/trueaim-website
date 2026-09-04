@@ -1,6 +1,8 @@
-# True AIm Website
+# True Aim Website
 
-Welcome! This guide will help you make changes to the True AIm website, even if you've never worked with code before.
+Welcome! This guide will help you make changes to the True Aim website, even if you've never worked with code before.
+
+> **Design & branding:** Colours, typography, spacing, and component rules live in [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md), the single source of truth for the True Aim brand on this site.
 
 ## Table of Contents
 
