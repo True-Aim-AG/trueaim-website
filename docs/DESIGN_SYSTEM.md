@@ -37,8 +37,9 @@ confident, transparent, reassuring. Calm, declarative, regulatory-grade. Content
 8. **Dark theme is the site default** (the design system's dark theme: Primary Dark `#2C2B2A` page, Deep Charcoal `#3F3F42`
    cards, Primary Light text, True Aim Blue fills, Light Blue `#91A7FF` for accent text and outlines, light logo). Heroes and
    bands use the dark gradient (`bg-page-tint`); nested `data-theme="dark"` bands step one level deeper. Light surfaces are
-   opt-in per section with `data-theme="light"` (e.g. white plates behind third-party logos). Always use the semantic tokens;
-   never hard-code `#0B0C15`, `#060B18`, navy or slate.
+   opt-in per section with `data-theme="light"` (e.g. white plates behind third-party logos). Visitors can switch the whole
+   site with the header `ThemeToggle` (persisted in `localStorage.theme`, applied before paint). Always use the semantic
+   tokens so both themes stay correct; never hard-code `#0B0C15`, `#060B18`, navy or slate.
 9. **No emoji, no exclamation marks, no unicode glyphs as icons.** No hand-drawn illustration, no noise, no stock photos.
 10. **Motion is calm.** `ease-brand` (`cubic-bezier(.4,0,.2,1)`), 150–600ms, fades and slow translations. No springs,
     no bounces, no rotate-on-hover, no scale > 1.02, no infinite pulsing glows. Respect `prefers-reduced-motion`.

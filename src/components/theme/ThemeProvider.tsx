@@ -1,44 +1,72 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 
 /**
- * The website is dark-first (docs/DESIGN_SYSTEM.md §2.8): the design system's dark theme is the
- * site default, light is available per section via data-theme="light". The provider pins the document.
+ * Theme state for the site. Dark is the default (docs/DESIGN_SYSTEM.md §2.8); the visitor can switch
+ * to light with the ThemeToggle. The choice is persisted in localStorage under "theme" and applied
+ * before paint by the inline script in the locale layout, so there is no flash on load.
  */
-type Theme = "light" | "dark";
+export type Theme = "light" | "dark";
+
+export const THEME_STORAGE_KEY = "theme";
+const DEFAULT_THEME: Theme = "dark";
 
 interface ThemeContextType {
   theme: Theme;
   setTheme: (theme: Theme) => void;
+  toggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("dark");
+function readStoredTheme(): Theme {
+  try {
+    const stored = localStorage.getItem(THEME_STORAGE_KEY);
+    return stored === "light" || stored === "dark" ? stored : DEFAULT_THEME;
+  } catch {
+    return DEFAULT_THEME;
+  }
+}
 
+function applyTheme(theme: Theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.style.colorScheme = theme;
+}
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [theme, setThemeState] = useState<Theme>(DEFAULT_THEME);
+
+  // Sync React state with the attribute the inline script already applied before hydration.
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "dark");
+    const stored = readStoredTheme();
+    setThemeState(stored);
+    applyTheme(stored);
+  }, []);
+
+  const setTheme = useCallback((next: Theme) => {
+    setThemeState(next);
+    applyTheme(next);
     try {
-      localStorage.removeItem("theme");
+      localStorage.setItem(THEME_STORAGE_KEY, next);
     } catch {
       /* storage unavailable */
     }
   }, []);
 
-  const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
-  };
+  const toggleTheme = useCallback(() => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  }, [theme, setTheme]);
 
-  return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
+  const value = useMemo(() => ({ theme, setTheme, toggleTheme }), [theme, setTheme, toggleTheme]);
+
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }
 
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (context === undefined) {
-    return { theme: "dark" as Theme, setTheme: () => {} };
+    return { theme: DEFAULT_THEME, setTheme: () => {}, toggleTheme: () => {} };
   }
   return context;
 }

@@ -126,6 +126,13 @@ export default async function LocaleLayout({ children, params }: Props) {
         <JsonLd data={{ ...organizationJsonLd, inLanguage: locale }} />
         <JsonLd data={{ ...websiteJsonLd, inLanguage: locale }} />
         <JsonLd data={siteNavigationJsonLd} />
+        {/* Apply the persisted theme before first paint (dark is the default). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}}catch(e){}",
+          }}
+        />
         <link rel="preconnect" href="https://mira-travel-demo.vercel.app" />
         <link rel="preconnect" href="https://claimeval.vercel.app" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />

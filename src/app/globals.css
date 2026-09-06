@@ -50,6 +50,11 @@
   --ta-rim-glow: radial-gradient(closest-side, rgba(153,102,255,.3) 0%, rgba(77,38,178,.1) 50%, rgba(38,20,102,0) 100%);
   --ta-sweep: linear-gradient(90deg, rgba(222,229,255,.2) 0%, rgba(145,167,255,.3) 18.75%, rgba(81,81,219,.5) 54.33%, #5151DB 100%);
 
+}
+
+/* ===== Dark semantic aliases: the site default, and any nested data-theme="dark" band inside a light root ===== */
+:root,
+[data-theme="dark"] {
   /* ----- Semantic aliases (dark theme, site default) ----- */
   --surface-page: var(--ta-primary-dark);
   --surface-page-tint: var(--ta-gradient-dark);
@@ -87,6 +92,9 @@
   --shadow-card: 0 9px 14.7px 0 rgba(0, 0, 0, .25);
   --shadow-swatch: 0 4px 7px 0 rgba(0, 0, 0, .30);
 
+}
+
+:root {
   /* ----- Type ----- */
   --font-display: var(--font-inter-tight), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-body: var(--font-ibm-plex-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -356,11 +364,28 @@ body, .nav-header, .nav-dropdown {
    True Aim Blue is a fill colour on dark surfaces; text and outlines use Light Blue (design system dark theme). */
 :root:not([data-theme="light"]) .text-accent,
 :root:not([data-theme="light"]) .text-ta-blue,
-:root:not([data-theme="light"]) .text-link { color: var(--ta-light-blue); }
-:root:not([data-theme="light"]) .border-ta-blue { border-color: var(--ta-light-blue); }
-:root:not([data-theme="light"]) .hover\:text-accent:hover { color: var(--ta-light-blue); }
-:root:not([data-theme="light"]) .icon-plate { color: var(--ta-light-blue); }
-:root:not([data-theme="light"]) .bg-ta-blue { color: #FFFFFF; }
+:root:not([data-theme="light"]) .text-link,
+[data-theme="dark"] .text-accent,
+[data-theme="dark"] .text-ta-blue,
+[data-theme="dark"] .text-link { color: var(--ta-light-blue); }
+:root:not([data-theme="light"]) .border-ta-blue,
+[data-theme="dark"] .border-ta-blue { border-color: var(--ta-light-blue); }
+:root:not([data-theme="light"]) .hover\:text-accent:hover,
+[data-theme="dark"] .hover\:text-accent:hover { color: var(--ta-light-blue); }
+:root:not([data-theme="light"]) .icon-plate,
+[data-theme="dark"] .icon-plate { color: var(--ta-light-blue); }
+:root:not([data-theme="light"]) .bg-ta-blue,
+[data-theme="dark"] .bg-ta-blue { color: #FFFFFF; }
+/* Light surfaces (root or nested plates) keep True Aim Blue for accent text and outlines. */
+[data-theme="light"] .text-accent,
+[data-theme="light"] .text-ta-blue,
+[data-theme="light"] .text-link { color: var(--ta-blue); }
+[data-theme="light"] .border-ta-blue { border-color: var(--ta-blue); }
+[data-theme="light"] .hover\:text-accent:hover { color: var(--ta-blue); }
+[data-theme="light"] .icon-plate { color: var(--ta-blue); }
+/* Themed logos inside a nested band follow that band. */
+[data-theme="dark"] .light-only { display: none !important; }
+[data-theme="dark"] .dark-only { display: inline-block !important; }
 
 /* ===== Reduced motion ===== */
 @media (prefers-reduced-motion: reduce) {
