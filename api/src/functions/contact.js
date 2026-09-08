@@ -12,8 +12,17 @@ const contactRateLimiter = {
   },
 };
 
+// Global headers from staticwebapp.config.json do not apply to API responses,
+// so the function sets the same security headers itself.
+const securityHeaders = {
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "DENY",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Cache-Control": "no-store",
+};
+
 function json(jsonBody, { status = 200 } = {}) {
-  return { status, jsonBody };
+  return { status, jsonBody, headers: securityHeaders };
 }
 
 async function contact(request, context) {

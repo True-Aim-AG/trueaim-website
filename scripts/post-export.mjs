@@ -104,6 +104,29 @@ for (const path of metadataFiles) {
     repairedMetadataFiles++;
   }
 }
+// Links to /en/... may exist from the middleware era (they used to redirect).
+// Static hosting cannot rewrite a wildcard, so leave a tiny redirect stub at
+// every English page's old prefixed path, pointing at its canonical URL.
+let englishStubs = 0;
+const nonPageTopLevel = new Set(["_next", "de", "fr", "it", "en", "images", "frames", "videos", "partners", "team", "screenshots", "awards", ".well-known"]);
+const stubHtml = (target) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><link rel="canonical" href="https://trueaim.ai${target}"><meta http-equiv="refresh" content="0;url=${target}"><title>Redirecting</title></head><body><a href="${target}">${target}</a></body></html>\n`;
+async function writeEnglishStubs(directory, prefix = "") {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) {
+      if (entry.name.startsWith("_") || (prefix === "" && nonPageTopLevel.has(entry.name))) continue;
+      await writeEnglishStubs(path, prefix + "/" + entry.name);
+    } else if (entry.name === "index.html" && prefix !== "") {
+      await mkdir(join(out, "en", prefix), { recursive: true });
+      await writeFile(join(out, "en", prefix, "index.html"), stubHtml(prefix));
+      englishStubs++;
+    }
+  }
+}
+await writeEnglishStubs(out);
+await mkdir(join(out, "en"), { recursive: true });
+await writeFile(join(out, "en", "index.html"), stubHtml("/"));
+console.log(`Wrote ${englishStubs + 1} /en redirect stubs.`);
 const serializedConfig = JSON.stringify(config) + "\n";
 const configBytes = Buffer.byteLength(serializedConfig, "utf8");
 const maxConfigBytes = 16 * 1024;

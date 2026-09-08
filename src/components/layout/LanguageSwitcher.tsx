@@ -1,8 +1,17 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { usePathname } from "@/i18n/navigation";
+import { useRouter } from "next/navigation";
 import { routing } from "@/i18n/routing";
+
+// Static hosting: there is no middleware to turn next-intl's explicit
+// "/en/..." switch target back into the unprefixed English URL, so build the
+// public URL directly. `pathname` from next-intl is already locale-stripped.
+function publicPath(pathname: string, locale: string): string {
+  if (locale === routing.defaultLocale) return pathname;
+  return pathname === "/" ? `/${locale}` : `/${locale}${pathname}`;
+}
 import { Globe, Check } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -36,7 +45,7 @@ export function LanguageSwitcher() {
   }, []);
 
   function switchLocale(newLocale: string) {
-    router.replace(pathname, { locale: newLocale });
+    router.replace(publicPath(pathname, newLocale));
     setIsOpen(false);
   }
 
@@ -126,7 +135,7 @@ export function LanguageSwitcherMobile() {
   const pathname = usePathname();
 
   function switchLocale(newLocale: string) {
-    router.replace(pathname, { locale: newLocale });
+    router.replace(publicPath(pathname, newLocale));
   }
 
   return (

@@ -3,6 +3,7 @@ import { test } from "node:test";
 import { app } from "@azure/functions";
 
 let registration;
+const stripHeaders = (response) => { const { headers, ...rest } = response; return rest; };
 const originalHttp = app.http;
 app.http = (name, options) => { registration = { name, ...options }; };
 await import("../src/functions/contact.js");
@@ -28,7 +29,7 @@ test("contact preserves the original proxy and rate-limit contract", async (t) =
   const submit = (ip) => registration.handler(request(ip), context);
 
   delete process.env.GOOGLE_SCRIPT_URL;
-  assert.deepEqual(await submit("missing-config"), {
+  assert.deepEqual(stripHeaders(await submit("missing-config")), {
     status: 500, jsonBody: { error: "Form submission is not configured" },
   });
   process.env.GOOGLE_SCRIPT_URL = "https://example.invalid/test";
@@ -39,18 +40,18 @@ test("contact preserves the original proxy and rate-limit contract", async (t) =
     assert.deepEqual(JSON.parse(options.body), { name: "Test" });
     return new Response('{"result":"success"}');
   };
-  assert.deepEqual(await submit("success"), { status: 200, jsonBody: { success: true } });
+  assert.deepEqual(stripHeaders(await submit("success")), { status: 200, jsonBody: { success: true } });
   globalThis.fetch = async () => new Response("<html>Success</html>");
-  assert.deepEqual(await submit("html"), { status: 200, jsonBody: { success: true } });
+  assert.deepEqual(stripHeaders(await submit("html")), { status: 200, jsonBody: { success: true } });
   globalThis.fetch = async () => new Response('{"message":"Rejected"}');
-  assert.deepEqual(await submit("rejected"), { status: 500, jsonBody: { error: "Rejected" } });
+  assert.deepEqual(stripHeaders(await submit("rejected")), { status: 500, jsonBody: { error: "Rejected" } });
   globalThis.fetch = async () => new Response("Bad gateway", { status: 502 });
-  assert.deepEqual(await submit("bad-response"), {
+  assert.deepEqual(stripHeaders(await submit("bad-response")), {
     status: 500, jsonBody: { error: "Failed to submit form. Please try again." },
   });
   globalThis.fetch = async () => new Response('{"result":"success"}');
   for (let i = 0; i < 5; i++) assert.equal((await submit("limited, proxy-" + i)).status, 200);
-  assert.deepEqual(await submit("limited, another-proxy"), {
+  assert.deepEqual(stripHeaders(await submit("limited, another-proxy")), {
     status: 429, jsonBody: { error: "Too many requests. Please try again later." },
   });
   assert.equal((await submit("different-client")).status, 200);

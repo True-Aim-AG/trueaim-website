@@ -10,25 +10,27 @@ on:
     branches: [main]
   release:
     types: [published]
+  # Run this workflow FROM a release tag (vX.Y.Z) to redeploy it; any other
+  # ref is refused below.
   workflow_dispatch:
-    inputs:
-      ref:
-        description: Existing release tag (vX.Y.Z) to redeploy to production
-        required: true
-        type: string
 
 permissions:
   contents: read
 
 jobs:
   build:
+    # No environment here: pull-request builds must not be attached to a
+    # deployment environment, and the build reads only repository variables.
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    environment: ${{ (github.event_name == 'release' || github.event_name == 'workflow_dispatch') && 'production' || 'staging' }}
     steps:
+      - name: Refuse a manual production run that is not a release tag
+        if: github.event_name == 'workflow_dispatch' && !startsWith(github.ref, 'refs/tags/v')
+        run: |
+          echo "::error::Run this workflow from a published release tag (vX.Y.Z), not from ${GITHUB_REF}"
+          exit 1
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.ref || github.ref }}
           persist-credentials: false
       - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
@@ -68,24 +70,40 @@ jobs:
       group: deploy-staging
       cancel-in-progress: false
     steps:
+      # Two pushes in quick succession can finish building out of order;
+      # only the current head of main may deploy, so an older build cannot
+      # roll staging back.
+      - name: Skip unless this commit is still the head of main
+        id: freshness
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          head="$(gh api "repos/${GITHUB_REPOSITORY}/branches/main" --jq .commit.sha)"
+          if [ "$head" != "$GITHUB_SHA" ]; then
+            echo "::notice::main moved on to ${head}; not deploying ${GITHUB_SHA}"
+            echo "stale=true" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        if: steps.freshness.outputs.stale != 'true'
         with:
-          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.ref || github.ref }}
           persist-credentials: false
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        if: steps.freshness.outputs.stale != 'true'
         with:
           name: website
       # The contact function's endpoint travels as an environment secret and
       # is written into the function package here, so it is neither in git,
       # in the build artifact, nor in Terraform. Never echoed.
       - name: Configure the contact function
+        if: steps.freshness.outputs.stale != 'true'
         env:
           GOOGLE_SCRIPT_URL: ${{ secrets.GOOGLE_SCRIPT_URL }}
         run: |
           set +x
-          test -n "$GOOGLE_SCRIPT_URL" || { echo "::error::GOOGLE_SCRIPT_URL secret is not set for this environment"; exit 1; }
-          node -e 'require("node:fs").writeFileSync("api/src/generated-config.js", "export const scriptUrl = " + JSON.stringify(process.env.GOOGLE_SCRIPT_URL) + ";\n")'
+          if [ -z "$GOOGLE_SCRIPT_URL" ]; then echo "::warning::GOOGLE_SCRIPT_URL is not set for this environment; the contact form will answer 'not configured'"; fi
+          node -e 'require("node:fs").writeFileSync("api/src/generated-config.js", "export const scriptUrl = " + JSON.stringify(process.env.GOOGLE_SCRIPT_URL || "") + ";\n")'
       - uses: Azure/static-web-apps-deploy@4d27395796ac319302594769cfe812bd207490b1 # v1
+        if: steps.freshness.outputs.stale != 'true'
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           action: upload
@@ -97,7 +115,9 @@ jobs:
 
   production:
     needs: build
-    if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+    # A published, non-prerelease release (release-please), or a manual run
+    # from an existing release tag (guarded in the build job).
+    if: (github.event_name == 'release' && !github.event.release.prerelease) || (github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/tags/v'))
     runs-on: ubuntu-latest
     timeout-minutes: 20
     environment: production
@@ -107,7 +127,6 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.ref || github.ref }}
           persist-credentials: false
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
@@ -120,8 +139,8 @@ jobs:
           GOOGLE_SCRIPT_URL: ${{ secrets.GOOGLE_SCRIPT_URL }}
         run: |
           set +x
-          test -n "$GOOGLE_SCRIPT_URL" || { echo "::error::GOOGLE_SCRIPT_URL secret is not set for this environment"; exit 1; }
-          node -e 'require("node:fs").writeFileSync("api/src/generated-config.js", "export const scriptUrl = " + JSON.stringify(process.env.GOOGLE_SCRIPT_URL) + ";\n")'
+          if [ -z "$GOOGLE_SCRIPT_URL" ]; then echo "::warning::GOOGLE_SCRIPT_URL is not set for this environment; the contact form will answer 'not configured'"; fi
+          node -e 'require("node:fs").writeFileSync("api/src/generated-config.js", "export const scriptUrl = " + JSON.stringify(process.env.GOOGLE_SCRIPT_URL || "") + ";\n")'
       - uses: Azure/static-web-apps-deploy@4d27395796ac319302594769cfe812bd207490b1 # v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
