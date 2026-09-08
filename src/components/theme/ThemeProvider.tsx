@@ -14,10 +14,8 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("dark");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     // Dark mode only — light mode is disabled
     document.documentElement.setAttribute("data-theme", "dark");
     localStorage.setItem("theme", "dark");

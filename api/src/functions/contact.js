@@ -1,11 +1,25 @@
-import { NextRequest, NextResponse } from "next/server";
-import { contactRateLimiter } from "@/lib/rate-limiter";
+import { app } from "@azure/functions";
 
-export async function POST(request: NextRequest) {
+const log = new Map();
+const contactRateLimiter = {
+  isRateLimited(key, now = Date.now()) {
+    const recent = (log.get(key) || []).filter((t) => now - t < 60_000);
+    log.set(key, recent);
+    if (recent.length >= 5) return true;
+    recent.push(now);
+    return false;
+  },
+};
+
+function json(jsonBody, { status = 200 } = {}) {
+  return { status, jsonBody };
+}
+
+async function contact(request, context) {
   const forwarded = request.headers.get("x-forwarded-for");
   const ip = forwarded?.split(",")[0]?.trim() || "unknown";
   if (contactRateLimiter.isRateLimited(ip)) {
-    return NextResponse.json(
+    return json(
       { error: "Too many requests. Please try again later." },
       { status: 429 }
     );
@@ -14,8 +28,8 @@ export async function POST(request: NextRequest) {
   const scriptUrl = process.env.GOOGLE_SCRIPT_URL;
 
   if (!scriptUrl) {
-    console.error("GOOGLE_SCRIPT_URL environment variable is not set");
-    return NextResponse.json(
+    context.error("GOOGLE_SCRIPT_URL environment variable is not set");
+    return json(
       { error: "Form submission is not configured" },
       { status: 500 }
     );
@@ -47,18 +61,25 @@ export async function POST(request: NextRequest) {
     }
 
     if (result.result === "success") {
-      return NextResponse.json({ success: true });
+      return json({ success: true });
     }
 
-    return NextResponse.json(
+    return json(
       { error: result.message || "Submission failed" },
       { status: 500 }
     );
   } catch (error) {
-    console.error("Contact form submission error:", error);
-    return NextResponse.json(
+    context.error("Contact form submission error:", error);
+    return json(
       { error: "Failed to submit form. Please try again." },
       { status: 500 }
     );
   }
 }
+
+app.http("contact", {
+  route: "contact",
+  methods: ["POST"],
+  authLevel: "anonymous",
+  handler: contact,
+});

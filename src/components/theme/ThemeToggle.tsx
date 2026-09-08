@@ -14,6 +14,8 @@ export function ThemeToggle({ className = "" }: ThemeToggleProps) {
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
+    // Read browser-only state after hydration, preserving the server render.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

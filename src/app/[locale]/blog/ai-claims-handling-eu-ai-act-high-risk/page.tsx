@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
@@ -133,7 +134,9 @@ const sidebarTakeaways = [
   "Policy is not evidence: 61% have policies, 24% could prove them",
 ];
 
-export default function EUAIActClaimsBlogPost() {
+export default async function EUAIActClaimsBlogPost({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />

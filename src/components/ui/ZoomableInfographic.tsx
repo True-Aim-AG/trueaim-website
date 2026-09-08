@@ -24,6 +24,8 @@ export function ZoomableInfographic({
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Read browser-only state after hydration, preserving the server render.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

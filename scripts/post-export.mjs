@@ -1,0 +1,116 @@
+import { lstat, readdir, rename, rmdir, mkdir, access, readFile, writeFile } from "node:fs/promises";
+import { resolve, join } from "node:path";
+
+const out = resolve("out");
+const moves = [];
+const directories = [];
+
+async function exists(path) {
+  try {
+    return await lstat(path);
+  } catch (error) {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  }
+}
+
+// Preflight the entire merge so a collision cannot leave a partial export.
+async function plan(source, destination) {
+  const sourceStat = await lstat(source);
+  const destinationStat = await exists(destination);
+  if (sourceStat.isDirectory() && destinationStat?.isDirectory()) {
+    for (const name of await readdir(source)) {
+      await plan(join(source, name), join(destination, name));
+    }
+    directories.push(source);
+  } else {
+    if (destinationStat) throw new Error(`Export collision: ${destination}`);
+    moves.push([source, destination]);
+  }
+}
+
+await access(join(out, "404.html"));
+await plan(join(out, "en"), out);
+// With trailingSlash disabled, Next exports the locale home beside en/.
+for (const extension of ["html", "txt"]) {
+  const source = join(out, `en.${extension}`);
+  if (await exists(source)) await plan(source, join(out, `index.${extension}`));
+}
+const destinations = new Set();
+for (const [, destination] of moves) {
+  if (destinations.has(destination)) throw new Error(`Export collision: ${destination}`);
+  destinations.add(destination);
+}
+for (const [source, destination] of moves) await rename(source, destination);
+for (const directory of directories) await rmdir(directory);
+await access(join(out, "index.html"));
+// Use SWA's directory index resolution without a per-page routing registry.
+// Preflight every destination before moving pages, preserving adjacent assets.
+const pageMoves = [];
+async function planPages(directory) {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const source = join(directory, entry.name);
+    if (entry.isDirectory()) {
+      await planPages(source);
+    } else if (entry.name.endsWith(".html") && ![join(out, "index.html"), join(out, "404.html")].includes(source)) {
+      const destinationDirectory = source.slice(0, -5);
+      const destination = join(destinationDirectory, "index.html");
+      const directoryStat = await exists(destinationDirectory);
+      if ((directoryStat && !directoryStat.isDirectory()) || await exists(destination)) {
+        throw new Error(`Export collision: ${destination}`);
+      }
+      pageMoves.push([source, destinationDirectory, destination]);
+    }
+  }
+}
+await planPages(out);
+for (const [source, directory, destination] of pageMoves) {
+  await mkdir(directory, { recursive: true });
+  await rename(source, destination);
+}
+// Only extensionless PNGs need generated hosting rules.
+const config = JSON.parse(await readFile(join(out, "staticwebapp.config.json"), "utf8"));
+const metadataFiles = [];
+const englishImages = [];
+async function addImageRoutes(directory, prefix = "") {
+  for (const entry of (await readdir(directory, { withFileTypes: true })).sort((a, b) => a.name.localeCompare(b.name))) {
+    const path = join(directory, entry.name);
+    const url = prefix + "/" + entry.name;
+    if (entry.isFile() && /\.(html|txt)$/.test(entry.name)) metadataFiles.push(path);
+    if (entry.isDirectory()) {
+      if (entry.name !== "_next") await addImageRoutes(path, url);
+    } else if (entry.name === "opengraph-image") {
+      const bytes = await readFile(path);
+      if (!bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) {
+        throw new Error(`Expected PNG: ${path}`);
+      }
+      if (!/^\/(de|fr|it)\//.test(url)) englishImages.push(url);
+      config.routes.push({ route: url, headers: { "Content-Type": "image/png" } });
+    }
+  }
+}
+await addImageRoutes(out);
+// Next's file-based metadata still embeds /en in English image URLs.
+// Update only those known image URLs in HTML and React payloads.
+let repairedMetadataFiles = 0;
+for (const path of metadataFiles) {
+  const original = await readFile(path, "utf8");
+  let updated = original;
+  for (const url of englishImages) {
+    updated = updated.replaceAll("https://trueaim.ai/en" + url, "https://trueaim.ai" + url);
+  }
+  if (updated !== original) {
+    await writeFile(path, updated);
+    repairedMetadataFiles++;
+  }
+}
+const serializedConfig = JSON.stringify(config) + "\n";
+const configBytes = Buffer.byteLength(serializedConfig, "utf8");
+const maxConfigBytes = 16 * 1024;
+console.log(`SWA configuration size: ${configBytes} bytes (limit: ${maxConfigBytes} bytes).`);
+if (configBytes > maxConfigBytes) {
+  throw new Error(`staticwebapp.config.json exceeds 16 KB: ${configBytes} bytes`);
+}
+await writeFile(join(out, "staticwebapp.config.json"), serializedConfig);
+console.log(`Moved ${pageMoves.length} pages to directory indexes; repaired image URLs in ${repairedMetadataFiles} metadata files.`);
+console.log("Static export ready: English at /; localized pages preserved; 404.html verified.");

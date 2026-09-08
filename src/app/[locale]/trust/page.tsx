@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   Shield,
@@ -64,7 +64,9 @@ const euAiActFeatureKeys = [
 ] as const;
 
 
-export default async function TrustPage() {
+export default async function TrustPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("trust");
   return (
     <div className="min-h-screen">

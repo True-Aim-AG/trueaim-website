@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 
 const SLUG = "integration-playbook";
@@ -24,10 +25,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function IntegrationPlaybookLayout({
+export default async function IntegrationPlaybookLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return <>{children}</>;
 }

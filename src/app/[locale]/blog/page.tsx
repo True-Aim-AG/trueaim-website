@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight, BookOpen, Calendar, Clock, Gavel, Shield, Scale, BarChart3 } from "lucide-react";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
@@ -10,7 +11,9 @@ const iconBySlug: Record<string, typeof BarChart3> = {
   "build-vs-buy-idp-vendors": Scale,
 };
 
-export default function BlogPage() {
+export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const featuredPost = blogPosts.find((post) => post.featured);
   const otherPosts = blogPosts.filter((post) => !post.featured);
 

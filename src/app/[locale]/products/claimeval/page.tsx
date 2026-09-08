@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { ProductHero } from "@/components/products/ProductHero";
 import {
@@ -17,7 +17,9 @@ import {
 const featureKeys = ["riskScoring", "inspectionCatalogues", "reviewerWorkflow"] as const;
 const featureIcons = [BarChart3, ListChecks, Users];
 
-export default async function ClaimEvalPage() {
+export default async function ClaimEvalPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("claimEval");
 
   const motorZones = [1, 2, 3, 4, 5, 6, 7] as const;

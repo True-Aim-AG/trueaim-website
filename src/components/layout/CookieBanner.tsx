@@ -25,6 +25,8 @@ export function CookieBanner() {
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (!stored) {
+      // Read browser-only state after hydration, preserving the server render.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVisible(true);
     }
   }, []);
