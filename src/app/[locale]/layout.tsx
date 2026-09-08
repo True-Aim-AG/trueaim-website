@@ -126,6 +126,9 @@ export default async function LocaleLayout({ children, params }: Props) {
           dangerouslySetInnerHTML={{
             __html: `
               document.documentElement.setAttribute('data-theme', 'dark');
+              if (location.hostname === 'www.trueaim.ai') {
+                location.replace('https://trueaim.ai' + location.pathname + location.search + location.hash);
+              }
             `,
           }}
         />

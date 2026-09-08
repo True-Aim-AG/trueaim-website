@@ -82,10 +82,11 @@ All copy is in /docs/TrueAim_Website_Copy.md
 | Environment | Azure resource | Subscription | URL | How it deploys |
 |---|---|---|---|---|
 | staging | `trueaim-website-staging-web` in `trueaim-website-staging` | nonprod | the site's `*.azurestaticapps.net` default hostname (see the Terraform output) | automatically on every push to `main` |
-| production | `trueaim-website-production-web` in `trueaim-website-production` | prod | https://trueaim.ai (www redirects to the apex; both terminate on Front Door owned by the infra DNS root) | by publishing a GitHub release: release-please keeps a release PR open on `main`; merging it tags `vX.Y.Z`, publishes the release, and the `release` event deploys production. `workflow_dispatch` with an existing tag redeploys. |
+| production | `trueaim-website-production-web` in `trueaim-website-production` | prod | https://trueaim.ai and https://www.trueaim.ai, both registered on the site; www redirects to the apex client-side and every page declares the apex as canonical | by publishing a GitHub release: release-please keeps a release PR open on `main`; merging it tags `vX.Y.Z`, publishes the release, and the `release` event deploys production. `workflow_dispatch` with an existing tag redeploys. |
 
 ### Principles
 - Never release to production without verifying staging first: staging always runs the current `main`, and the release PR is merged only after that check. Use conventional commit messages (`feat:`, `fix:`, `chore:`) so release-please computes the version and changelog.
+- The site is served by Azure Static Web Apps directly, no CDN or edge in front. Static hosting has no host-based redirect, hence the tiny `www` redirect script in the locale layout head.
 - Public URL shape is unchanged from the Vercel era: English pages unprefixed (`/products/mira`), other locales prefixed (`/de/products/mira`), no trailing slashes (Static Web Apps redirects `/x/` to `/x`).
 - The browser-language auto-redirect that the old next-intl middleware did no longer exists (static hosting); everything else is identical.
 - Static Web Apps behaviour (security headers, redirects, the `/contact-card` rewrite, the 404 page, the Node runtime for the API) lives in `public/staticwebapp.config.json`. `scripts/post-export.mjs` runs after `next build` and moves the English export to the root and every page to `<path>/index.html`; the final config must stay under 16 KB (hard platform limit 20 KB).
