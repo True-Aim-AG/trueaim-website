@@ -1,16 +1,20 @@
 name: Deploy static website
 
+# Every push to main deploys staging. Production deploys from a published
+# GitHub release (created by release-please from the merged release PR); the
+# workflow_dispatch path exists only to redeploy an existing release tag.
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+  release:
+    types: [published]
   workflow_dispatch:
     inputs:
       ref:
-        description: Git ref to build and deploy to production
+        description: Existing release tag (vX.Y.Z) to redeploy to production
         required: true
-        default: main
         type: string
 
 permissions:
@@ -20,7 +24,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    environment: ${{ github.event_name == 'workflow_dispatch' && 'production' || 'staging' }}
+    environment: ${{ (github.event_name == 'release' || github.event_name == 'workflow_dispatch') && 'production' || 'staging' }}
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
@@ -71,6 +75,16 @@ jobs:
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           name: website
+      # The contact function's endpoint travels as an environment secret and
+      # is written into the function package here, so it is neither in git,
+      # in the build artifact, nor in Terraform. Never echoed.
+      - name: Configure the contact function
+        env:
+          GOOGLE_SCRIPT_URL: ${{ secrets.GOOGLE_SCRIPT_URL }}
+        run: |
+          set +x
+          test -n "$GOOGLE_SCRIPT_URL" || { echo "::error::GOOGLE_SCRIPT_URL secret is not set for this environment"; exit 1; }
+          node -e 'require("node:fs").writeFileSync("api/src/generated-config.js", "export const scriptUrl = " + JSON.stringify(process.env.GOOGLE_SCRIPT_URL) + ";\n")'
       - uses: Azure/static-web-apps-deploy@4d27395796ac319302594769cfe812bd207490b1 # v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
@@ -83,7 +97,7 @@ jobs:
 
   production:
     needs: build
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     environment: production
@@ -98,6 +112,16 @@ jobs:
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           name: website
+      # The contact function's endpoint travels as an environment secret and
+      # is written into the function package here, so it is neither in git,
+      # in the build artifact, nor in Terraform. Never echoed.
+      - name: Configure the contact function
+        env:
+          GOOGLE_SCRIPT_URL: ${{ secrets.GOOGLE_SCRIPT_URL }}
+        run: |
+          set +x
+          test -n "$GOOGLE_SCRIPT_URL" || { echo "::error::GOOGLE_SCRIPT_URL secret is not set for this environment"; exit 1; }
+          node -e 'require("node:fs").writeFileSync("api/src/generated-config.js", "export const scriptUrl = " + JSON.stringify(process.env.GOOGLE_SCRIPT_URL) + ";\n")'
       - uses: Azure/static-web-apps-deploy@4d27395796ac319302594769cfe812bd207490b1 # v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}

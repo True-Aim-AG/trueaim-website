@@ -1,4 +1,5 @@
 import { app } from "@azure/functions";
+import { scriptUrl as configuredScriptUrl } from "../generated-config.js";
 
 const log = new Map();
 const contactRateLimiter = {
@@ -25,7 +26,9 @@ async function contact(request, context) {
     );
   }
 
-  const scriptUrl = process.env.GOOGLE_SCRIPT_URL;
+  // The deploy workflow writes generated-config.js from the environment's
+  // GitHub secret; an application setting, if ever set, takes precedence.
+  const scriptUrl = process.env.GOOGLE_SCRIPT_URL || configuredScriptUrl;
 
   if (!scriptUrl) {
     context.error("GOOGLE_SCRIPT_URL environment variable is not set");
