@@ -46,6 +46,17 @@ jobs:
         env:
           NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ vars.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
           NEXT_PUBLIC_HUBSPOT_PORTAL_ID: ${{ vars.NEXT_PUBLIC_HUBSPOT_PORTAL_ID }}
+      # Static Web Apps caps an app at 250 MB on Free (staging) and 15,000
+      # files; fail here, with a margin, rather than at deploy time.
+      - name: Check export size against the Free plan limits
+        run: |
+          bytes="$(du -sk out | cut -f1)"
+          files="$(find out -type f | wc -l | tr -d ' ')"
+          echo "export: $((bytes / 1024)) MB, ${files} files"
+          if [ "$bytes" -gt 225000 ] || [ "$files" -gt 14000 ]; then
+            echo "::error::export exceeds the Static Web Apps Free plan margin (225 MB / 14,000 files)"
+            exit 1
+          fi
       - run: npm ci
         working-directory: api
       - run: npm test
