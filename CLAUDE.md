@@ -95,9 +95,9 @@ All copy is in /docs/TrueAim_Website_Copy.md
 | Name | Kind | Where |
 |---|---|---|
 | `AZURE_STATIC_WEB_APPS_API_TOKEN` | secret, one per site | GitHub **environment** secret in `staging` and `production`; value from `az staticwebapp secrets list` once Terraform has created the site, never committed |
-| `GOOGLE_SCRIPT_URL` | sensitive endpoint for `api/contact` | GitHub **environment** secret in `staging` and `production`; the deploy job writes it into `api/src/generated-config.js` right before upload, so it is never in git, Terraform, or the build artifact |
+| `GOOGLE_SCRIPT_URL` | Apps Script endpoint URL for `api/contact` (not a credential) | GitHub **repository** variable, one value for both environments; the deploy job writes it into `api/src/generated-config.js` right before upload. Unset means the form answers "not configured". |
 | `RELEASE_PLEASE_TOKEN` | fine-grained PAT (this repo: Contents read/write, Pull requests read/write) | GitHub **repository** secret; needed so the release it publishes triggers the production deploy |
-| `NEXT_PUBLIC_GA_MEASUREMENT_ID`, `NEXT_PUBLIC_HUBSPOT_PORTAL_ID` | public build-time IDs | GitHub **repository** variables read by the build job |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID`, `NEXT_PUBLIC_HUBSPOT_PORTAL_ID` | public build-time IDs, both optional | GitHub **repository** variables read by the build job; when one is unset that tracker is simply not loaded |
 
 ### Local checks
 ```bash

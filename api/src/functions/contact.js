@@ -35,8 +35,8 @@ async function contact(request, context) {
     );
   }
 
-  // The deploy workflow writes generated-config.js from the environment's
-  // GitHub secret; an application setting, if ever set, takes precedence.
+  // The deploy workflow writes generated-config.js from the GitHub
+  // repository variable; an application setting, if ever set, takes precedence.
   const scriptUrl = process.env.GOOGLE_SCRIPT_URL || configuredScriptUrl;
 
   if (!scriptUrl) {
