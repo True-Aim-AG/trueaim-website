@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { defaultOgImages, DEFAULT_OG_IMAGE } from "@/lib/og-image";
 
@@ -43,10 +43,14 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
   };
 }
 
-export default function TrustLayout({
+export default async function TrustLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return children;
 }

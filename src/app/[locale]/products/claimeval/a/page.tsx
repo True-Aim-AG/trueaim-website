@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { ButtonLink, buttonClasses } from "@/components/brand/Button";
 import { BrandIcon, type BrandIconName } from "@/components/brand/BrandIcon";
@@ -8,7 +8,9 @@ import { ArrowRight, Car, Home } from "lucide-react";
 const featureKeys = ["riskScoring", "inspectionCatalogues", "reviewerWorkflow"] as const;
 const featureIcons: BrandIconName[] = ["rule-applied", "quality", "human-review"];
 
-export default async function ClaimEvalPageA() {
+export default async function ClaimEvalPageA({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("claimEvalA");
 
   const motorZones = [1, 2, 3, 4, 5, 6, 7] as const;

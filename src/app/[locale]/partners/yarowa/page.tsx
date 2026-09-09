@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { ArrowRight, Building2, Network, Globe, Handshake } from "lucide-react";
 import { PartnerOutboundLink } from "@/components/partners/PartnerOutboundLink";
@@ -6,7 +6,9 @@ import { Eyebrow } from "@/components/brand/Eyebrow";
 import { ButtonLink } from "@/components/brand/Button";
 import { GridPattern } from "@/components/brand/GridPattern";
 
-export default async function YarowaPage() {
+export default async function YarowaPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("partners.yarowa");
   return (
     <div className="min-h-screen">

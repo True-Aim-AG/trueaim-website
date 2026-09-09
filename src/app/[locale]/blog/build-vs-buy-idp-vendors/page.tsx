@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
@@ -28,7 +29,9 @@ const fadeIn = {
   transition: { duration: 0.6, ease } as const,
 };
 
-export default function BuildVsBuyBlogPost() {
+export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />

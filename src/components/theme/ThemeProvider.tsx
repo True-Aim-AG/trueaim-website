@@ -40,6 +40,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   // Sync React state with the attribute the inline script already applied before hydration.
   useEffect(() => {
     const stored = readStoredTheme();
+    // Read browser-only state after hydration, preserving the server render.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setThemeState(stored);
     applyTheme(stored);
   }, []);

@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 import { Eyebrow } from "@/components/brand/Eyebrow";
 
@@ -96,7 +97,9 @@ const RELEASES: Release[] = [
 
 const GROUP_ORDER: Group[] = ["Features", "Improvements", "Fixes", "Security"];
 
-export default function ChangelogPage() {
+export default async function ChangelogPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />

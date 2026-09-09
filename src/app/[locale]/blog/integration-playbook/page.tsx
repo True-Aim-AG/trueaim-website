@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
@@ -156,7 +157,9 @@ const tableOfContents = [
   { num: "06", label: "Commitments", anchor: "commitments" },
 ];
 
-export default function IntegrationPlaybookPage() {
+export default async function IntegrationPlaybookPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <div className="min-h-screen relative">
       {/* Confidential ribbon */}

@@ -1,5 +1,4 @@
 import { Inter_Tight, IBM_Plex_Sans } from "next/font/google";
-import Link from "next/link";
 import "./globals.css";
 import { Logo } from "@/components/brand/Logo";
 import { buttonClasses } from "@/components/brand/Button";
@@ -26,9 +25,11 @@ export default function RootNotFound() {
             <Logo variant="symbol-blue" height={48} className="mx-auto mb-8" />
             <h1 className="font-display text-4xl font-bold text-strong mb-4">404</h1>
             <p className="text-body mb-8">Page not found</p>
-            <Link href="/" className={buttonClasses("primary", "lg")}>
+            {/* Full document navigation restores the locale layout from the root 404. */}
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+            <a href="/" className={buttonClasses("primary", "lg")}>
               Go home
-            </Link>
+            </a>
           </div>
         </div>
       </body>

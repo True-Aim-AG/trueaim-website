@@ -1,7 +1,11 @@
 import { ImageResponse } from "next/og";
 import { loadOgFonts } from "@/lib/og-fonts";
 
-export const runtime = "edge";
+export const dynamic = "force-static";
+export function generateStaticParams() {
+  return ["en", "de", "fr", "it"].map((locale) => ({ locale }));
+}
+
 
 export const alt = "ContextBuilder - Claims Document Pipeline | True Aim";
 export const size = {

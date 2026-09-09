@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 
 import { ArrowRight, Brain, Scale, GraduationCap, AlertTriangle } from "lucide-react";
@@ -26,7 +26,9 @@ const controlFeatureMeta = [
   { key: "confidenceScoring", icon: "quality" as BrandIconName },
 ] as const;
 
-export default async function TechnologyPage() {
+export default async function TechnologyPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("technology");
   return (
     <div className="min-h-screen">

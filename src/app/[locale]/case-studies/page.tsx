@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowRight,
@@ -19,7 +19,9 @@ import { GridPattern } from "@/components/brand/GridPattern";
 const featured = caseStudies.find((cs) => !cs.wip);
 const wipStudies = caseStudies.filter((cs) => cs.wip);
 
-export default async function CaseStudiesPage() {
+export default async function CaseStudiesPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("caseStudies");
   return (
     <div className="min-h-screen">

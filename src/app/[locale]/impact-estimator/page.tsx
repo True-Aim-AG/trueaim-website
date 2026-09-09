@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import dynamic from "next/dynamic";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { Calculator, ArrowRight, CheckCircle } from "lucide-react";
@@ -12,7 +12,9 @@ const ROICalculator = dynamic(
 
 const benefitKeys = ["conservative", "pilotData", "instant"] as const;
 
-export default async function ImpactEstimatorPage() {
+export default async function ImpactEstimatorPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("impact");
   return (
     <div className="min-h-screen">

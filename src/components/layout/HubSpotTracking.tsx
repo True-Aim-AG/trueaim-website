@@ -21,6 +21,8 @@ export function HubSpotTracking() {
   const [consented, setConsented] = useState(false);
 
   useEffect(() => {
+    // Read browser-only state after hydration, preserving the server render.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setConsented(hasAnalyticsConsent());
     const handleConsent = () => setConsented(hasAnalyticsConsent());
     window.addEventListener("cookie-consent-update", handleConsent);

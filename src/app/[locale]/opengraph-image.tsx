@@ -1,7 +1,11 @@
 import { ImageResponse } from "next/og";
 import { loadOgFonts } from "@/lib/og-fonts";
 
-export const runtime = "edge";
+export const dynamic = "force-static";
+export function generateStaticParams() {
+  return ["en", "de", "fr", "it"].map((locale) => ({ locale }));
+}
+
 
 export const alt = "True Aim. Automate insurance claim decisions. Auditable by design.";
 export const size = { width: 1200, height: 630 };

@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { ProductHero } from "@/components/products/ProductHero";
 import { ButtonLink } from "@/components/brand/Button";
@@ -14,7 +14,9 @@ const outputFeatureIcons: BrandIconName[] = ["structured-data", "quality", "trac
 const metricValues = ["95%", "99%", "96%", "<1%"];
 const metricKeys = ["coverage", "accuracy", "evidenceRate", "errorRate"] as const;
 
-export default async function ContextBuilderPage() {
+export default async function ContextBuilderPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("contextBuilder");
 
   return (

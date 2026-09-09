@@ -1,7 +1,10 @@
+import { setRequestLocale } from "next-intl/server";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 import { ButtonLink } from "@/components/brand/Button";
 
-export default function AITransparencyPage() {
+export default async function AITransparencyPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />

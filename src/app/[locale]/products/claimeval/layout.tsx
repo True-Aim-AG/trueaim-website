@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { JsonLd } from "@/components/seo/JsonLd";
 
@@ -101,6 +101,7 @@ export default async function ClaimEvalLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <JsonLd data={{ ...claimEvalJsonLd, inLanguage: locale }} />

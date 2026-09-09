@@ -1,8 +1,11 @@
+import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 import { ButtonLink } from "@/components/brand/Button";
 
-export default function PrivacyPage() {
+export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />

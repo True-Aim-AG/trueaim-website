@@ -126,10 +126,12 @@ export default async function LocaleLayout({ children, params }: Props) {
         <JsonLd data={{ ...organizationJsonLd, inLanguage: locale }} />
         <JsonLd data={{ ...websiteJsonLd, inLanguage: locale }} />
         <JsonLd data={siteNavigationJsonLd} />
-        {/* Apply the persisted theme before first paint (dark is the default). */}
+        {/* Static hosting has no host-based redirect, so www falls back to the apex here. */}
+        {/* Then apply the persisted theme before first paint (dark is the default). */}
         <script
           dangerouslySetInnerHTML={{
             __html:
+              "if(location.hostname==='www.trueaim.ai'){location.replace('https://trueaim.ai'+location.pathname+location.search+location.hash);}" +
               "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}}catch(e){}",
           }}
         />
