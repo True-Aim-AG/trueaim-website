@@ -1,17 +1,15 @@
 name: Deploy static website
 
-# Every push to main deploys staging. Production deploys from a published
-# GitHub release (created by release-please from the merged release PR); the
-# workflow_dispatch path exists only to redeploy an existing release tag.
+# Staging: every push to main, plus a manual run from ANY branch (the
+# "Run workflow" button, choosing that branch) so any work can be shown on
+# staging.trueaim.ai. Production: a manual run from a vX.Y.Z release tag,
+# which release-please.yml triggers itself right after it publishes a
+# release. See AGENTS.md for the rules.
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-  release:
-    types: [published]
-  # Run this workflow FROM a release tag (vX.Y.Z) to redeploy it; any other
-  # ref is refused below.
   workflow_dispatch:
 
 permissions:
@@ -24,11 +22,14 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: Refuse a manual production run that is not a release tag
-        if: github.event_name == 'workflow_dispatch' && !startsWith(github.ref, 'refs/tags/v')
+      - name: Say where this run will deploy
+        if: github.event_name == 'workflow_dispatch'
         run: |
-          echo "::error::Run this workflow from a published release tag (vX.Y.Z), not from ${GITHUB_REF}"
-          exit 1
+          case "$GITHUB_REF" in
+            refs/tags/v*) echo "::notice::Manual run from release tag ${GITHUB_REF_NAME}: deploys PRODUCTION" ;;
+            refs/heads/*) echo "::notice::Manual run from branch ${GITHUB_REF_NAME}: deploys STAGING (staging.trueaim.ai)" ;;
+            *) echo "::error::Run this workflow from a branch (staging) or a vX.Y.Z tag (production), not ${GITHUB_REF}"; exit 1 ;;
+          esac
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
@@ -73,7 +74,8 @@ jobs:
 
   staging:
     needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # Push to main, or a manual run from any branch.
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/'))
     runs-on: ubuntu-latest
     timeout-minutes: 20
     environment: staging
@@ -81,11 +83,13 @@ jobs:
       group: deploy-staging
       cancel-in-progress: false
     steps:
-      # Two pushes in quick succession can finish building out of order;
-      # only the current head of main may deploy, so an older build cannot
-      # roll staging back.
-      - name: Skip unless this commit is still the head of main
+      # Two pushes to main in quick succession can finish building out of
+      # order; only the current head of main may deploy automatically, so an
+      # older build cannot roll staging back. A manual run always deploys
+      # what it was started from.
+      - name: Skip an automatic deploy that is no longer the head of main
         id: freshness
+        if: github.event_name == 'push'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -125,9 +129,10 @@ jobs:
 
   production:
     needs: build
-    # A published, non-prerelease release (release-please), or a manual run
-    # from an existing release tag (guarded in the build job).
-    if: (github.event_name == 'release' && !github.event.release.prerelease) || (github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/tags/v'))
+    # Only a run started from a vX.Y.Z release tag: release-please.yml starts
+    # one right after publishing a release, and a human can start one to
+    # redeploy an existing release.
+    if: github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     timeout-minutes: 20
     environment: production

@@ -81,10 +81,11 @@ All copy is in /docs/TrueAim_Website_Copy.md
 
 | Environment | Azure resource | Subscription | URL | How it deploys |
 |---|---|---|---|---|
-| staging | `trueaim-website-staging-web` in `trueaim-website-staging` | nonprod | the site's `*.azurestaticapps.net` default hostname (see the Terraform output) | automatically on every push to `main` |
-| production | `trueaim-website-production-web` in `trueaim-website-production` | prod | https://trueaim.ai and https://www.trueaim.ai, both registered on the site; www redirects to the apex client-side and every page declares the apex as canonical | by publishing a GitHub release: release-please keeps a release PR open on `main`; merging it tags `vX.Y.Z`, publishes the release, and the `release` event deploys production. To redeploy an existing release, run the workflow manually **from that tag** (any other ref is refused). |
+| staging | `trueaim-website-staging-web` in `trueaim-website-staging` | nonprod | https://staging.trueaim.ai (the site's `*.azurestaticapps.net` default hostname also works) | automatically on every push to `main`, and manually from **any branch** by running the workflow from that branch |
+| production | `trueaim-website-production-web` in `trueaim-website-production` | prod | https://trueaim.ai and https://www.trueaim.ai, both registered on the site; www redirects to the apex client-side and every page declares the apex as canonical | by publishing a GitHub release: release-please keeps a release PR open on `main`; merging it tags `vX.Y.Z`, publishes the release, and starts the production deployment for that tag. To redeploy an existing release, run the workflow manually **from that tag** (branches deploy staging, anything else is refused). |
 
 ### Principles
+- The deployment rules everyone follows are in `AGENTS.md` (staging is where work is shown, any branch can be deployed there, production only from a release tag).
 - Never release to production without verifying staging first: staging always runs the current `main`, and the release PR is merged only after that check. Use conventional commit messages (`feat:`, `fix:`, `chore:`) so release-please computes the version and changelog.
 - The site is served by Azure Static Web Apps directly, no CDN or edge in front. Static hosting has no host-based redirect, hence the tiny `www` redirect script in the locale layout head.
 - Public URL shape is unchanged from the Vercel era: English pages unprefixed (`/products/mira`), other locales prefixed (`/de/products/mira`), no trailing slashes (Static Web Apps redirects `/x/` to `/x`).
@@ -96,7 +97,6 @@ All copy is in /docs/TrueAim_Website_Copy.md
 |---|---|---|
 | `AZURE_STATIC_WEB_APPS_API_TOKEN` | secret, one per site | GitHub **environment** secret in `staging` and `production`; value from `az staticwebapp secrets list` once Terraform has created the site, never committed |
 | `GOOGLE_SCRIPT_URL` | Apps Script endpoint URL for `api/contact` (not a credential) | GitHub **repository** variable, one value for both environments; the deploy job writes it into `api/src/generated-config.js` right before upload. Unset means the form answers "not configured". |
-| `RELEASE_PLEASE_TOKEN` | fine-grained PAT (this repo: Contents read/write, Pull requests read/write) | GitHub **repository** secret; needed so the release it publishes triggers the production deploy |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID`, `NEXT_PUBLIC_HUBSPOT_PORTAL_ID` | public build-time IDs, both optional | GitHub **repository** variables read by the build job; when one is unset that tracker is simply not loaded |
 
 ### Local checks
