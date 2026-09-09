@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 import { ThemedLogo } from "@/components/brand/Logo";
 import { buttonClasses } from "@/components/brand/Button";
 import { LanguageSwitcher, LanguageSwitcherMobile } from "@/components/layout/LanguageSwitcher";
-import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { useTranslations } from "next-intl";
 
 const products = [
@@ -113,7 +112,6 @@ export function Navigation() {
 
           {/* CTA + language */}
           <div className="hidden md:flex items-center gap-3">
-            <ThemeToggle />
             <LanguageSwitcher />
             <Link href="/contact" className={buttonClasses("primary", "sm")}>
               {t("bookDemo")}
@@ -160,7 +158,6 @@ export function Navigation() {
             </div>
             <div className="flex flex-col gap-3 mt-3 px-1">
               <LanguageSwitcherMobile />
-              <ThemeToggle withLabel className="rounded-pill bg-surface-muted" />
               <Link href="/contact" className={buttonClasses("primary", "md", "w-full")} onClick={() => setMobileMenuOpen(false)}>
                 {t("bookDemo")}
               </Link>

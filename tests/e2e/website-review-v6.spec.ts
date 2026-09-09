@@ -1469,12 +1469,9 @@ test.describe('REQ-V6-024: Headquarters Section + Contact Form', () => {
 // ============================================================================
 
 test.describe('REQ-V6-025: Site-Wide Colour Standardization', () => {
-  test('REQ-V6-025-001: Background base is dark', async ({ page }) => {
-    // Force dark color scheme so ThemeProvider picks dark mode
-    await page.emulateMedia({ colorScheme: 'dark' });
+  test('REQ-V6-025-001: Background base is light', async ({ page }) => {
     await page.goto(BASE_URL);
     await page.waitForLoadState('domcontentloaded');
-    await page.waitForTimeout(500); // Allow ThemeProvider to hydrate
 
     const bgColor = await page.evaluate(() => {
       return window.getComputedStyle(document.body).backgroundColor;
@@ -1482,10 +1479,10 @@ test.describe('REQ-V6-025: Site-Wide Colour Standardization', () => {
 
     const rgb = parseRgb(bgColor);
     if (rgb) {
-      // Background should be dark (close to Primary Dark #2C2B2A, rgb(44,43,42))
-      expect(rgb.r).toBeLessThan(50);
-      expect(rgb.g).toBeLessThan(50);
-      expect(rgb.b).toBeLessThan(50);
+      // Light is the only site theme: Primary Light #FBFCFD, rgb(251,252,253).
+      expect(rgb.r).toBeGreaterThan(200);
+      expect(rgb.g).toBeGreaterThan(200);
+      expect(rgb.b).toBeGreaterThan(200);
     }
   });
 
@@ -1508,14 +1505,10 @@ test.describe('REQ-V6-025: Site-Wide Colour Standardization', () => {
   });
 
   test('REQ-V6-025-003: Consistent across pages', async ({ page }) => {
-    // Force dark color scheme so ThemeProvider picks dark mode
-    await page.emulateMedia({ colorScheme: 'dark' });
-
     const pagePaths = ['/', '/technology', '/trust', '/company'];
     for (const path of pagePaths) {
       await page.goto(`${BASE_URL}${path}`);
       await page.waitForLoadState('domcontentloaded');
-      await page.waitForTimeout(500); // Allow ThemeProvider to hydrate
 
       const bgColor = await page.evaluate(() => {
         return window.getComputedStyle(document.body).backgroundColor;
@@ -1523,10 +1516,10 @@ test.describe('REQ-V6-025: Site-Wide Colour Standardization', () => {
 
       const rgb = parseRgb(bgColor);
       if (rgb) {
-        // All pages should have dark background (Primary Dark #2C2B2A, rgb(44,43,42))
-        expect(rgb.r).toBeLessThan(50);
-        expect(rgb.g).toBeLessThan(50);
-        expect(rgb.b).toBeLessThan(50);
+        // Every page shares the light base (Primary Light #FBFCFD, rgb(251,252,253)).
+        expect(rgb.r).toBeGreaterThan(200);
+        expect(rgb.g).toBeGreaterThan(200);
+        expect(rgb.b).toBeGreaterThan(200);
       }
     }
   });
@@ -1566,15 +1559,37 @@ test.describe('REQ-V6-026: CSS Token System Implementation', () => {
   });
 
   test('REQ-V6-026-004: page background CSS variable defined', async ({ page }) => {
+    // Light is the only site theme, so the root resolves to Primary Light.
     const value = await getCSSVariable(page, '--surface-page');
     expect(value).not.toBe('');
-    expect(value.toLowerCase()).toContain('2c2b2a');
+    expect(value.toLowerCase()).toContain('fbfcfd');
   });
 
   test('REQ-V6-026-005: card surface CSS variable defined', async ({ page }) => {
     const value = await getCSSVariable(page, '--surface-card');
     expect(value).not.toBe('');
-    expect(value.toLowerCase()).toContain('3f3f42');
+    expect(value.toLowerCase()).toContain('fbfcfd');
+  });
+
+  test('REQ-V6-026-004b: a data-theme="dark" band still resolves to the dark palette', async ({ page }) => {
+    // Dark is no longer a site theme but is still a per-section device.
+    const band = await page.evaluate(() => {
+      const el = document.querySelector('[data-theme="dark"]');
+      if (!el) return null;
+      const cs = getComputedStyle(el);
+      return {
+        surfacePage: cs.getPropertyValue('--surface-page').trim().toLowerCase(),
+        surfaceCard: cs.getPropertyValue('--surface-card').trim().toLowerCase(),
+        color: cs.color,
+      };
+    });
+    if (band) {
+      expect(band.surfacePage).toContain('2c2b2a');
+      expect(band.surfaceCard).toContain('3f3f42');
+      // The band must set its own text colour, or it inherits dark text from the light page.
+      const rgb = parseRgb(band.color);
+      if (rgb) expect(rgb.r + rgb.g + rgb.b).toBeGreaterThan(600);
+    }
   });
 
   test('REQ-V6-026-006: heading text CSS variable defined', async ({ page }) => {

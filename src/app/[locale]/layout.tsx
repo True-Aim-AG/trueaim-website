@@ -6,7 +6,6 @@ import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { GoogleAnalyticsWrapper } from "@/components/layout/GoogleAnalytics";
 import { HubSpotTracking } from "@/components/layout/HubSpotTracking";
-import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { JsonLd, organizationJsonLd, websiteJsonLd, siteNavigationJsonLd } from "@/components/seo/JsonLd";
 import { defaultOgImages } from "@/lib/og-image";
 import { NextIntlClientProvider } from 'next-intl';
@@ -121,18 +120,16 @@ export default async function LocaleLayout({ children, params }: Props) {
   const t = await getTranslations();
 
   return (
-    <html lang={locale} data-theme="dark" suppressHydrationWarning>
+    <html lang={locale} data-theme="light" suppressHydrationWarning>
       <head>
         <JsonLd data={{ ...organizationJsonLd, inLanguage: locale }} />
         <JsonLd data={{ ...websiteJsonLd, inLanguage: locale }} />
         <JsonLd data={siteNavigationJsonLd} />
         {/* Static hosting has no host-based redirect, so www falls back to the apex here. */}
-        {/* Then apply the persisted theme before first paint (dark is the default). */}
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "if(location.hostname==='www.trueaim.ai'){location.replace('https://trueaim.ai'+location.pathname+location.search+location.hash);}" +
-              "try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}}catch(e){}",
+              "if(location.hostname==='www.trueaim.ai'){location.replace('https://trueaim.ai'+location.pathname+location.search+location.hash);}",
           }}
         />
         <link rel="preconnect" href="https://mira-travel-demo.vercel.app" />
@@ -143,20 +140,18 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className={`${interTight.variable} ${ibmPlexSans.variable} antialiased`}>
         <GoogleAnalyticsWrapper />
         <HubSpotTracking />
-        <ThemeProvider>
-          <NextIntlClientProvider>
-            <a
-              href="#main-content"
-              className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-5 focus:py-2.5 focus:rounded-pill focus:bg-ta-blue focus:text-on-brand focus:outline-none"
-            >
-              {t("skipToContent")}
-            </a>
-            <Navigation />
-            <main id="main-content" className="pt-[76px] relative z-10">{children}</main>
-            <Footer />
-            <CookieBanner />
-          </NextIntlClientProvider>
-        </ThemeProvider>
+        <NextIntlClientProvider>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-5 focus:py-2.5 focus:rounded-pill focus:bg-ta-blue focus:text-on-brand focus:outline-none"
+          >
+            {t("skipToContent")}
+          </a>
+          <Navigation />
+          <main id="main-content" className="pt-[76px] relative z-10">{children}</main>
+          <Footer />
+          <CookieBanner />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

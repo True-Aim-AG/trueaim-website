@@ -42,10 +42,9 @@ test.describe('Home Page - Global Header', () => {
   test('GLOBAL_HEADER: Logo displays the True Aim brand mark', async ({ page }) => {
     // The header logo is now an SVG brand asset (public/brand/logo/*.svg),
     // not a text wordmark, per docs/DESIGN_SYSTEM.md §9. The header renders
-    // both a light-theme and a dark-theme logo variant (toggled via CSS);
-    // since the site is dark by default, check the dark-theme logo
-    // (logo-horizontal-light.svg) specifically, not just the first match.
-    const logo = page.locator('header').locator('img[src*="/brand/logo/logo-horizontal-light"]').first();
+    // both logo variants and CSS shows one; light is the only site theme, so
+    // the visible one is the dark-ink logo (logo-horizontal-dark.svg).
+    const logo = page.locator('header').locator('img[src*="/brand/logo/logo-horizontal-dark"]').first();
     await expect(logo).toBeVisible();
   });
 
@@ -909,9 +908,9 @@ test.describe('Cross-Page - Global Header/Footer Consistency', () => {
       const header = page.locator('header');
       await expect(header).toBeVisible();
       // Logo is the SVG brand mark, not a text wordmark (docs/DESIGN_SYSTEM.md §9).
-      // The header renders both a light- and dark-theme logo variant; since
-      // the site is dark by default, check the dark-theme logo specifically.
-      await expect(header.locator('img[src*="/brand/logo/logo-horizontal-light"]').first()).toBeVisible();
+      // The header renders both variants and CSS shows one; light is the only
+      // site theme, so the visible one is the dark-ink logo.
+      await expect(header.locator('img[src*="/brand/logo/logo-horizontal-dark"]').first()).toBeVisible();
       await expect(page.getByRole('link', { name: /book a demo/i }).first()).toBeVisible();
     });
 

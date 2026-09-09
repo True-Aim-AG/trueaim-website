@@ -34,12 +34,15 @@ confident, transparent, reassuring. Calm, declarative, regulatory-grade. Content
    `glass-panel*`, `backdrop-blur-*`, `card-glow`, `btn-shine`, `text-gradient`, `teal-glow-pulse`, `aurora-*`,
    `bg-gradient-to-*` colour washes, `shadow-[var(--primary)]/xx` glows. Atmosphere comes only from the brand components
    (`Glow`, `GridPattern`, `GlassBox`) and the page tint.
-8. **Dark theme is the site default** (the design system's dark theme: Primary Dark `#2C2B2A` page, Deep Charcoal `#3F3F42`
-   cards, Primary Light text, True Aim Blue fills, Light Blue `#91A7FF` for accent text and outlines, light logo). Heroes and
-   bands use the dark gradient (`bg-page-tint`); nested `data-theme="dark"` bands step one level deeper. Light surfaces are
-   opt-in per section with `data-theme="light"` (e.g. white plates behind third-party logos). Visitors can switch the whole
-   site with the header `ThemeToggle` (persisted in `localStorage.theme`, applied before paint). Always use the semantic
-   tokens so both themes stay correct; never hard-code `#0B0C15`, `#060B18`, navy or slate.
+8. **Light is the only site theme** (Primary Light `#FBFCFD` page, `#FBFCFD` cards on `shadow-card`, Deep Charcoal body
+   text, Primary Dark headings, True Aim Blue `#5151DB` for fills, accent text and outlines, dark logo). It is set as
+   `data-theme="light"` on `<html>` and is what bare `:root` resolves to, so a page with no theme attribute is light. There
+   is no theme switcher and no persisted preference: the site does not follow `prefers-color-scheme`.
+   **Dark remains a per-section device, not a site theme.** Put `data-theme="dark"` on a band to render it dark inside the
+   light page (Primary Dark `#2C2B2A` page, Deep Charcoal `#3F3F42` cards, Primary Light text, Light Blue `#91A7FF` for
+   accent text and outlines, light logo); a `data-theme="dark"` band nested inside another steps one level deeper, and
+   `data-theme="light"` brings a section back to light inside a dark band. Always use the semantic tokens so both stay
+   correct; never hard-code `#0B0C15`, `#060B18`, navy or slate.
 9. **No emoji, no exclamation marks, no unicode glyphs as icons.** No hand-drawn illustration, no noise, no stock photos.
 10. **Motion is calm.** `ease-brand` (`cubic-bezier(.4,0,.2,1)`), 150–600ms, fades and slow translations. No springs,
     no bounces, no rotate-on-hover, no scale > 1.02, no infinite pulsing glows. Respect `prefers-reduced-motion`.
@@ -54,7 +57,7 @@ confident, transparent, reassuring. Calm, declarative, regulatory-grade. Content
 
 Use Tailwind utilities (preferred) or `var(--token)`. Both resolve through the same CSS variables and flip in dark bands.
 
-| Purpose | Tailwind class | CSS var | Light (`data-theme="light"`) | Dark (site default) |
+| Purpose | Tailwind class | CSS var | Light (site theme) | Dark (`data-theme="dark"` band) |
 |---|---|---|---|---|
 | Page background | `bg-page` / `bg-page-tint` | `--surface-page` / `--surface-page-tint` | `#FBFCFD` / 231° `#F6F3FF→#FBFCFD` | `#2C2B2A` / `#2C2B2A→#3F3F42` |
 | Card surface | `bg-card` | `--surface-card` | `#FBFCFD` (+ `shadow-card`) | `#3F3F42` |

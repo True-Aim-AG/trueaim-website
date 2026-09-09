@@ -11,7 +11,8 @@
 /* =============================================================================
    True Aim Design System — v4 (September 2026)
    Source of truth: docs/DESIGN_SYSTEM.md
-   Dark theme is the site default (data-theme="dark" on <html>); light is opt-in via data-theme="light".
+   Light is the only site theme (data-theme="light" on <html>). Dark stays available per section:
+   put data-theme="dark" on a band to render it as a dark band inside the light page.
    ============================================================================= */
 
 :root {
@@ -52,10 +53,9 @@
 
 }
 
-/* ===== Dark semantic aliases: the site default, and any nested data-theme="dark" band inside a light root ===== */
-:root,
+/* ===== Dark semantic aliases: any data-theme="dark" band placed inside the light page ===== */
 [data-theme="dark"] {
-  /* ----- Semantic aliases (dark theme, site default) ----- */
+  /* ----- Semantic aliases (dark band) ----- */
   --surface-page: var(--ta-primary-dark);
   --surface-page-tint: var(--ta-gradient-dark);
   --surface-card: var(--ta-charcoal);
@@ -91,7 +91,7 @@
   --icon-accent: var(--ta-light-blue);
   --shadow-card: 0 9px 14.7px 0 rgba(0, 0, 0, .25);
   --shadow-swatch: 0 4px 7px 0 rgba(0, 0, 0, .30);
-
+  color: var(--text-body);
 }
 
 :root {
@@ -114,8 +114,9 @@
 
 }
 
-/* ===== Light theme (opt-in) =====
-   Apply data-theme="light" to <html> or to a section to re-resolve the semantic tokens to the light palette. */
+/* ===== Light theme: the site default, set on <html> =====
+   Also usable on a section to bring it back to light inside a dark band. */
+:root,
 [data-theme="light"] {
   --surface-page: var(--ta-primary-light);
   --surface-page-tint: var(--ta-gradient-page);
@@ -156,7 +157,6 @@
 }
 
 /* ===== Dark bands nested inside the dark site: one step deeper so they still read as a band ===== */
-:root:not([data-theme="light"]) [data-theme="dark"],
 [data-theme="dark"] [data-theme="dark"] {
   --surface-page: var(--ta-neutral-950);
   --surface-page-tint: linear-gradient(119.33deg, #222222 24.34%, #2C2B2A 84.09%);
@@ -355,26 +355,19 @@ body, .nav-header, .nav-dropdown {
   transition: background var(--dur-base) var(--ease-brand), color var(--dur-base) var(--ease-brand);
 }
 
-/* ===== Theme-conditional display (dark is default) ===== */
-.light-only { display: none !important; }
+/* ===== Theme-conditional display (light is the site theme) ===== */
+.dark-only { display: none !important; }
 [data-theme="light"] .light-only { display: inline-block !important; }
 [data-theme="light"] .dark-only { display: none !important; }
 
-/* ===== Dark-theme accent legibility =====
+/* ===== Dark-band accent legibility =====
    True Aim Blue is a fill colour on dark surfaces; text and outlines use Light Blue (design system dark theme). */
-:root:not([data-theme="light"]) .text-accent,
-:root:not([data-theme="light"]) .text-ta-blue,
-:root:not([data-theme="light"]) .text-link,
 [data-theme="dark"] .text-accent,
 [data-theme="dark"] .text-ta-blue,
 [data-theme="dark"] .text-link { color: var(--ta-light-blue); }
-:root:not([data-theme="light"]) .border-ta-blue,
 [data-theme="dark"] .border-ta-blue { border-color: var(--ta-light-blue); }
-:root:not([data-theme="light"]) .hover\:text-accent:hover,
 [data-theme="dark"] .hover\:text-accent:hover { color: var(--ta-light-blue); }
-:root:not([data-theme="light"]) .icon-plate,
 [data-theme="dark"] .icon-plate { color: var(--ta-light-blue); }
-:root:not([data-theme="light"]) .bg-ta-blue,
 [data-theme="dark"] .bg-ta-blue { color: #FFFFFF; }
 /* Light surfaces (root or nested plates) keep True Aim Blue for accent text and outlines. */
 [data-theme="light"] .text-accent,
