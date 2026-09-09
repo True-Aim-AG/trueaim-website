@@ -4,9 +4,11 @@
 # the production deployment itself (workflow_dispatch is the documented
 # exception to that rule), so no personal access token is needed.
 #
-# Known trade-off of using the workflow token: the release PR it opens gets
-# no pull_request checks. That PR only changes CHANGELOG.md and the version;
-# the merge to main and the tag deploy both build and test the code.
+# Known trade-off of using the workflow token: pull_request runs for the
+# release PR it opens are created awaiting manual approval in the Actions
+# tab rather than starting on their own. That PR only changes CHANGELOG.md
+# and the version; the merge to main and the tag deploy both build and test
+# the code, and main has no required checks.
 name: Release Please
 
 on:
