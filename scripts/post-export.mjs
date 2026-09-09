@@ -104,7 +104,12 @@ for (const path of metadataFiles) {
     updated = updated.replaceAll("https://trueaim.ai/en" + url, "https://trueaim.ai" + url);
   }
   // Point every Open Graph / Twitter image URL at the renamed .png file.
-  updated = updated.replace(/(https:\/\/trueaim\.ai(?:\/(?:de|fr|it))?(?:\/[a-z0-9-]+)*\/opengraph-image)(?=[?"'&\s])/g, "$1.png");
+  // The terminator set includes a backslash: inside the RSC payload that Next
+  // embeds in the HTML, string quotes are escaped, so a queryless URL ends in
+  // opengraph-image\" rather than opengraph-image".
+  updated = updated.replace(/(https:\/\/trueaim\.ai(?:\/(?:de|fr|it))?(?:\/[a-z0-9-]+)*\/opengraph-image)(?=[?"'&\s\\])/g, "$1.png");
+  const stale = updated.match(/\/opengraph-image(?!\.png)/g);
+  if (stale) throw new Error(`${path}: ${stale.length} Open Graph image reference(s) still point at the extensionless file`);
   if (updated !== original) {
     await writeFile(path, updated);
     repairedMetadataFiles++;
