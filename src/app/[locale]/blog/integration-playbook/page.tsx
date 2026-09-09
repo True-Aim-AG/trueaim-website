@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { MotionDiv } from "@/components/ui/MotionDiv";
@@ -153,7 +154,9 @@ const tableOfContents = [
   { num: "06", label: "Commitments", anchor: "commitments" },
 ];
 
-export default function IntegrationPlaybookPage() {
+export default async function IntegrationPlaybookPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <div className="min-h-screen relative">
       {/* Confidential ribbon */}
@@ -434,16 +437,16 @@ export default function IntegrationPlaybookPage() {
                   extraction run on our side. A small number of external
                   enrichment calls (parts lookup, geolocation) are made for
                   specific use cases. A single policy lookup against the
-                  customer's ERP provides coverage context. Users complete
+                  customer&apos;s ERP provides coverage context. Users complete
                   review inside the True Aim platform. On approval, we push one
                   structured JSON file per claim with the decision, plus a
                   processing log capturing metadata, model versions, and any
-                  errors, back to a return location in the customer's
+                  errors, back to a return location in the customer&apos;s
                   infrastructure.
                 </p>
 
                 <p className="text-[var(--text-secondary)] leading-[1.8] max-w-3xl mb-10 text-lg italic">
-                  Customer data shared with us stays inside True Aim's Azure
+                  Customer data shared with us stays inside True Aim&apos;s Azure
                   tenant. No customer data is sent to third-party model
                   providers.
                 </p>
@@ -475,7 +478,7 @@ export default function IntegrationPlaybookPage() {
                 </h3>
 
                 <p className="text-[var(--text-secondary)] leading-[1.8] max-w-3xl mb-6 text-lg">
-                  The customer's working data lives across several systems: a
+                  The customer&apos;s working data lives across several systems: a
                   CRM, Google Workspace, a Postgres database, periodic SQL
                   dumps from upstream insurers, and a WhatsApp channel for
                   inbound customer comms. A True Aim orchestration backend
@@ -490,7 +493,7 @@ export default function IntegrationPlaybookPage() {
                 <p className="text-[var(--text-secondary)] leading-[1.8] max-w-3xl mb-10 text-lg">
                   For a small number of high-value workflows where no API
                   exists on the receiving side, a browser-based integration
-                  completes data entry directly in the insurer's UI. We
+                  completes data entry directly in the insurer&apos;s UI. We
                   reserve this pattern for cases where the value clearly
                   justifies the operational footprint.
                 </p>

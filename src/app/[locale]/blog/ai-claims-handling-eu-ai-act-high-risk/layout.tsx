@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { defaultOgImages } from "@/lib/og-image";
@@ -211,11 +212,15 @@ const breadcrumbJsonLd = {
   ],
 };
 
-export default function BlogPostLayout({
+export default async function BlogPostLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <JsonLd data={blogPostingJsonLd} />

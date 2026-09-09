@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { getAllCaseStudySlugs } from "@/data/case-studies";
 import { buildCaseStudyMetadata } from "@/lib/case-study-seo";
@@ -25,10 +26,14 @@ export async function generateMetadata({
   return buildCaseStudyMetadata(locale, slug);
 }
 
-export default function CaseStudySlugLayout({
+export default async function CaseStudySlugLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return children;
 }

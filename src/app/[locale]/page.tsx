@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/Hero";
 import { ScrollVideoAnimation } from "@/components/sections/ScrollVideoAnimation";
@@ -15,7 +16,9 @@ const SocialProof = dynamic(
   () => import("@/components/sections/SocialProof").then((m) => m.SocialProof)
 );
 
-export default function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <Hero />

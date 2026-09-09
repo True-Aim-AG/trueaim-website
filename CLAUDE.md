@@ -75,46 +75,36 @@ All copy is in /docs/TrueAim_Website_Copy.md
 - `npx playwright test` - Run E2E tests
 
 ## Deployment
-- **Platform**: Vercel
-- **GitHub repo**: `True-Aim-AG/trueaim-website` (redirected from `Fr3nn3r/TrueAIm.ai`)
-- **Team**: `fred-brunners-projects` (org ID `team_L7CF6FpMAykgkUtgD710Muuj`)
+- **Platform**: Azure Static Web Apps, owned by Terraform in the `taim-infrastructure` repo (ADR 0032 there). The site is a fully static export (`output: "export"`); the contact form runs as a Static Web Apps managed Azure Function in `api/`.
+- **GitHub repo**: `True-Aim-AG/trueaim-website`
+- **Workflow**: `.github/workflows/deploy.yml`
 
-### Vercel Projects
+| Environment | Azure resource | Subscription | URL | How it deploys |
+|---|---|---|---|---|
+| staging | `trueaim-website-staging-web` in `trueaim-website-staging` | nonprod | https://staging.trueaim.ai (the site's `*.azurestaticapps.net` default hostname also works) | automatically on every push to `main`, and manually from **any branch** by running the workflow from that branch |
+| production | `trueaim-website-production-web` in `trueaim-website-production` | prod | https://trueaim.ai and https://www.trueaim.ai, both registered on the site; www redirects to the apex client-side and every page declares the apex as canonical | by publishing a GitHub release: release-please keeps a release PR open on `main`; merging it tags `vX.Y.Z`, publishes the release, and starts the production deployment for that tag. To redeploy an existing release, run the workflow manually **from that tag** (branches deploy staging, anything else is refused). |
 
-| Project | Canonical URL | Purpose | Project ID |
-|---------|-----|---------|------------|
-| `trueaim` | https://trueaim.ai / https://www.trueaim.ai | **Production** | `prj_LPsEqV6syPd3AfA4Lq0j94ZLjbuj` |
-| `trueaim-staging` | https://trueaim-staging-fred-brunners-projects.vercel.app | **Staging** (manual review before promoting) | `prj_HZTYPi5GKNtnDVxMW1UOzHiXOCbe` |
+### Principles
+- The deployment rules everyone follows are in `AGENTS.md` (staging is where work is shown, any branch can be deployed there, production only from a release tag).
+- Never release to production without verifying staging first. Staging shows the last deployment, which is `main` unless someone deployed a branch since, so check which commit is on staging (the last "Deploy static website" run) and redeploy `main` if needed before merging the release PR. Use conventional commit messages (`feat:`, `fix:`, `chore:`) so release-please computes the version and changelog.
+- The site is served by Azure Static Web Apps directly, no CDN or edge in front. Static hosting has no host-based redirect, hence the tiny `www` redirect script in the locale layout head.
+- Public URL shape is unchanged from the Vercel era: English pages unprefixed (`/products/mira`), other locales prefixed (`/de/products/mira`), no trailing slashes (Static Web Apps redirects `/x/` to `/x`).
+- Differences from the Vercel era, all deliberate: no browser-language auto-redirect on first visit (the middleware is gone); `/en/...` links land on tiny redirect stubs instead of a middleware redirect; images are served unoptimized; the `/dpa` redirects are 301 rather than 308; API responses carry their own security headers; the contact rate limiter is per function instance; `npm run dev` has no contact API (the function lives in `api/`, run it with the SWA CLI) and `npm start` does not apply to a static export.
+- Static Web Apps behaviour (security headers, redirects, the `/contact-card` rewrite, the 404 page, the Node runtime for the API) lives in `public/staticwebapp.config.json`. `scripts/post-export.mjs` runs after `next build` and moves the English export to the root and every page to `<path>/index.html`; the final config must stay under 16 KB (hard platform limit 20 KB).
 
-### Auto-deploy status (neither project auto-deploys in practice)
-- **`trueaim` (prod)**: no GitHub integration. Nothing fires on push. Only manual CLI deploys.
-- **`trueaim-staging`**: has a stale GitHub integration pointing at the old `Fr3nn3r/TrueAIm.ai` repo. Because the repo was renamed to `True-Aim-AG/trueaim-website`, the webhook is orphaned and no longer fires on pushes to `main`. Still manual in practice. If you want to revive auto-deploy, reconnect the integration to the new repo path in the Vercel dashboard; otherwise leave it — manual is the intentional flow.
-- **Principle**: never push code directly to production without a manual verification step on staging first.
+### Configuration
+| Name | Kind | Where |
+|---|---|---|
+| `AZURE_STATIC_WEB_APPS_API_TOKEN` | secret, one per site | GitHub **environment** secret in `staging` and `production`; value from `az staticwebapp secrets list` once Terraform has created the site, never committed |
+| `GOOGLE_SCRIPT_URL` | Apps Script endpoint URL for `api/contact` (not a credential) | GitHub **repository** variable, one value for both environments; the deploy job writes it into `api/src/generated-config.js` right before upload. Unset means the form answers "not configured". |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID`, `NEXT_PUBLIC_HUBSPOT_PORTAL_ID` | public build-time IDs, both optional | GitHub **repository** variables read by the build job; when one is unset that tracker is simply not loaded |
 
-### Deploy commands
-
-**Production** (`trueaim.ai`) — uses the linked `.vercel/project.json`:
+### Local checks
 ```bash
-npx vercel --prod
+npm run lint && npm test && npm run build      # export lands in out/
+cd api && npm ci && npm test                    # contact function contract tests
+npx -y @azure/static-web-apps-cli@latest start out --swa-config-location out --port 4280   # emulator
 ```
-
-**Staging** (`trueaim-staging-fred-brunners-projects.vercel.app`) — override the linked project via env vars so the prod link is not clobbered, then alias the unique deployment URL to the stable staging URL (the `--prod` flag alone does not reliably move the stable alias):
-```bash
-# 1. Deploy
-VERCEL_ORG_ID=team_L7CF6FpMAykgkUtgD710Muuj \
-VERCEL_PROJECT_ID=prj_HZTYPi5GKNtnDVxMW1UOzHiXOCbe \
-npx vercel deploy --prod --yes
-# → prints a unique URL like trueaim-staging-<hash>-fred-brunners-projects.vercel.app
-
-# 2. Alias it to the stable staging URL
-VERCEL_ORG_ID=team_L7CF6FpMAykgkUtgD710Muuj \
-VERCEL_PROJECT_ID=prj_HZTYPi5GKNtnDVxMW1UOzHiXOCbe \
-npx vercel alias set <unique-deployment-url> trueaim-staging-fred-brunners-projects.vercel.app
-```
-
-### Important
-- `.vercel/project.json` must point to the **production** project (`trueaim`). Do not change this — it is what makes bare `vercel --prod` target production.
-- Always deploy to staging first, verify, then deploy to production.
 
 ## Reference Files
 - `/docs/TrueAim_Website_PRD.md` - Full PRD

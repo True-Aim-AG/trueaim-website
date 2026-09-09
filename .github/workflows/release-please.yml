@@ -1,0 +1,42 @@
+# Opens and maintains a release PR from conventional commits on main; merging
+# it tags vX.Y.Z and publishes a GitHub release. Because events created with
+# the workflow token never trigger other workflows, this workflow then starts
+# the production deployment itself (workflow_dispatch is the documented
+# exception to that rule), so no personal access token is needed.
+#
+# Known trade-off of using the workflow token: pull_request runs for the
+# release PR it opens are created awaiting manual approval in the Actions
+# tab rather than starting on their own. That PR only changes CHANGELOG.md
+# and the version; the merge to main and the tag deploy both build and test
+# the code, and main has no required checks.
+name: Release Please
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: release-please
+  cancel-in-progress: false
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - id: release
+        uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+      - name: Deploy the new release to production
+        if: steps.release.outputs.release_created == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.release.outputs.tag_name }}
+        run: gh workflow run deploy.yml --repo "$GITHUB_REPOSITORY" --ref "$TAG"

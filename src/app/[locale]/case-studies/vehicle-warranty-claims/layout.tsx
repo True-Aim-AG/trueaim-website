@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { buildCaseStudyMetadata } from "@/lib/case-study-seo";
 
@@ -12,10 +13,14 @@ export async function generateMetadata({
   return buildCaseStudyMetadata(locale, "vehicle-warranty-claims");
 }
 
-export default function VehicleWarrantyClaimsLayout({
+export default async function VehicleWarrantyClaimsLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return children;
 }

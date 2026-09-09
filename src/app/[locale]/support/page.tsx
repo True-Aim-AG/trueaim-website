@@ -1,9 +1,12 @@
+import { setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 
 const PUBLISH_DATE = "2026-05-21";
 
-export default function SupportPage() {
+export default async function SupportPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />

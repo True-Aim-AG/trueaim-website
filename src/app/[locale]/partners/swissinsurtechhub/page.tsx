@@ -1,10 +1,12 @@
 import { Link } from "@/i18n/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { ArrowRight, Building2, Network, Globe, Handshake } from "lucide-react";
 import { PartnerOutboundLink } from "@/components/partners/PartnerOutboundLink";
 
-export default async function SwissInsurtechHubPage() {
+export default async function SwissInsurtechHubPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("partners.swissInsurtechHub");
   return (
     <div className="min-h-screen">

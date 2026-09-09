@@ -1,6 +1,9 @@
 import { ImageResponse } from "next/og";
+export const dynamic = "force-static";
+export function generateStaticParams() {
+  return ["en", "de", "fr", "it"].map((locale) => ({ locale }));
+}
 
-export const runtime = "edge";
 
 export const alt = "ClaimEval - Claims Quality Assurance | True Aim";
 export const size = {

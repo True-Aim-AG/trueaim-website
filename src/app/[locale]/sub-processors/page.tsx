@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 
@@ -22,7 +23,9 @@ const TOC: TocItem[] = [
   { id: "version-history", label: "Version History" },
 ];
 
-export default function SubProcessorsPage() {
+export default async function SubProcessorsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />

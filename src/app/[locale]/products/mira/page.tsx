@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { ProductHero } from "@/components/products/ProductHero";
 import {
@@ -27,7 +27,9 @@ const metricKeys = ["speed", "cost", "leakage"] as const;
 const metricValues = ["92%", "71%", "2-5%"];
 const metricIcons = [Clock, DollarSign, TrendingDown];
 
-export default async function MiraPage() {
+export default async function MiraPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("mira");
 
   return (

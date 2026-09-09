@@ -1,0 +1,166 @@
+name: Deploy static website
+
+# Staging: every push to main, plus a manual run from ANY branch (the
+# "Run workflow" button, choosing that branch) so any work can be shown on
+# staging.trueaim.ai. Production: a manual run from a vX.Y.Z release tag,
+# which release-please.yml triggers itself right after it publishes a
+# release. See AGENTS.md for the rules.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    # No environment here: pull-request builds must not be attached to a
+    # deployment environment, and the build reads only repository variables.
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Say where this run will deploy
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          case "$GITHUB_REF" in
+            refs/tags/v*) echo "::notice::Manual run from release tag ${GITHUB_REF_NAME}: deploys PRODUCTION" ;;
+            refs/heads/*) echo "::notice::Manual run from branch ${GITHUB_REF_NAME}: deploys STAGING (staging.trueaim.ai)" ;;
+            *) echo "::error::Run this workflow from a branch (staging) or a vX.Y.Z tag (production), not ${GITHUB_REF}"; exit 1 ;;
+          esac
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            api/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ vars.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
+          NEXT_PUBLIC_HUBSPOT_PORTAL_ID: ${{ vars.NEXT_PUBLIC_HUBSPOT_PORTAL_ID }}
+      # Static Web Apps caps an app at 250 MB on Free (staging) and 15,000
+      # files; fail here, with a margin, rather than at deploy time.
+      - name: Check export size against the Free plan limits
+        run: |
+          bytes="$(du -sk out | cut -f1)"
+          files="$(find out -type f | wc -l | tr -d ' ')"
+          echo "export: $((bytes / 1024)) MB, ${files} files"
+          if [ "$bytes" -gt 225000 ] || [ "$files" -gt 14000 ]; then
+            echo "::error::export exceeds the Static Web Apps Free plan margin (225 MB / 14,000 files)"
+            exit 1
+          fi
+      - run: npm ci
+        working-directory: api
+      - run: npm test
+        working-directory: api
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: website
+          path: |
+            out/
+            api/
+            !api/node_modules/
+          if-no-files-found: error
+          retention-days: 7
+
+  staging:
+    needs: build
+    # Push to main, or a manual run from any branch.
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: staging
+    concurrency:
+      group: deploy-staging
+      cancel-in-progress: false
+    steps:
+      # Two pushes to main in quick succession can finish building out of
+      # order; only the current head of main may deploy automatically, so an
+      # older build cannot roll staging back. A manual run always deploys
+      # what it was started from.
+      - name: Skip an automatic deploy that is no longer the head of main
+        id: freshness
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          head="$(gh api "repos/${GITHUB_REPOSITORY}/branches/main" --jq .commit.sha)"
+          if [ "$head" != "$GITHUB_SHA" ]; then
+            echo "::notice::main moved on to ${head}; not deploying ${GITHUB_SHA}"
+            echo "stale=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        if: steps.freshness.outputs.stale != 'true'
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        if: steps.freshness.outputs.stale != 'true'
+        with:
+          name: website
+      # The contact function's Apps Script endpoint is a repository variable
+      # (a URL, not a credential) written into the function package here so
+      # the same value serves both environments without touching Azure.
+      - name: Configure the contact function
+        if: steps.freshness.outputs.stale != 'true'
+        env:
+          GOOGLE_SCRIPT_URL: ${{ vars.GOOGLE_SCRIPT_URL }}
+        run: |
+          if [ -z "$GOOGLE_SCRIPT_URL" ]; then echo "::warning::GOOGLE_SCRIPT_URL variable is not set; the contact form will answer 'not configured'"; fi
+          node -e 'require("node:fs").writeFileSync("api/src/generated-config.js", "export const scriptUrl = " + JSON.stringify(process.env.GOOGLE_SCRIPT_URL || "") + ";\n")'
+      - uses: Azure/static-web-apps-deploy@4d27395796ac319302594769cfe812bd207490b1 # v1
+        if: steps.freshness.outputs.stale != 'true'
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: upload
+          app_location: out
+          api_location: api
+          skip_app_build: true
+          skip_api_build: false
+          output_location: ""
+
+  production:
+    needs: build
+    # Only a run started from a vX.Y.Z release tag: release-please.yml starts
+    # one right after publishing a release, and a human can start one to
+    # redeploy an existing release.
+    if: github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: website
+      # The contact function's Apps Script endpoint is a repository variable
+      # (a URL, not a credential) written into the function package here so
+      # the same value serves both environments without touching Azure.
+      - name: Configure the contact function
+        env:
+          GOOGLE_SCRIPT_URL: ${{ vars.GOOGLE_SCRIPT_URL }}
+        run: |
+          if [ -z "$GOOGLE_SCRIPT_URL" ]; then echo "::warning::GOOGLE_SCRIPT_URL variable is not set; the contact form will answer 'not configured'"; fi
+          node -e 'require("node:fs").writeFileSync("api/src/generated-config.js", "export const scriptUrl = " + JSON.stringify(process.env.GOOGLE_SCRIPT_URL || "") + ";\n")'
+      - uses: Azure/static-web-apps-deploy@4d27395796ac319302594769cfe812bd207490b1 # v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: upload
+          app_location: out
+          api_location: api
+          skip_app_build: true
+          skip_api_build: false
+          output_location: ""
