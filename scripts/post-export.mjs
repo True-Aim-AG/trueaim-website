@@ -68,28 +68,32 @@ for (const [source, directory, destination] of pageMoves) {
   await mkdir(directory, { recursive: true });
   await rename(source, destination);
 }
-// Only extensionless PNGs need generated hosting rules.
+// Static Web Apps serves extensionless files as application/octet-stream and
+// route headers do not override that, so every generated Open Graph image is
+// renamed to opengraph-image.png and the page metadata is rewritten to match.
 const config = JSON.parse(await readFile(join(out, "staticwebapp.config.json"), "utf8"));
 const metadataFiles = [];
 const englishImages = [];
-async function addImageRoutes(directory, prefix = "") {
+let renamedImages = 0;
+async function renameImages(directory, prefix = "") {
   for (const entry of (await readdir(directory, { withFileTypes: true })).sort((a, b) => a.name.localeCompare(b.name))) {
     const path = join(directory, entry.name);
     const url = prefix + "/" + entry.name;
     if (entry.isFile() && /\.(html|txt)$/.test(entry.name)) metadataFiles.push(path);
     if (entry.isDirectory()) {
-      if (entry.name !== "_next") await addImageRoutes(path, url);
+      if (entry.name !== "_next") await renameImages(path, url);
     } else if (entry.name === "opengraph-image") {
       const bytes = await readFile(path);
       if (!bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) {
         throw new Error(`Expected PNG: ${path}`);
       }
       if (!/^\/(de|fr|it)\//.test(url)) englishImages.push(url);
-      config.routes.push({ route: url, headers: { "Content-Type": "image/png" } });
+      await rename(path, path + ".png");
+      renamedImages++;
     }
   }
 }
-await addImageRoutes(out);
+await renameImages(out);
 // Next's file-based metadata still embeds /en in English image URLs.
 // Update only those known image URLs in HTML and React payloads.
 let repairedMetadataFiles = 0;
@@ -99,6 +103,13 @@ for (const path of metadataFiles) {
   for (const url of englishImages) {
     updated = updated.replaceAll("https://trueaim.ai/en" + url, "https://trueaim.ai" + url);
   }
+  // Point every Open Graph / Twitter image URL at the renamed .png file.
+  // The terminator set includes a backslash: inside the RSC payload that Next
+  // embeds in the HTML, string quotes are escaped, so a queryless URL ends in
+  // opengraph-image\" rather than opengraph-image".
+  updated = updated.replace(/(https:\/\/trueaim\.ai(?:\/(?:de|fr|it))?(?:\/[a-z0-9-]+)*\/opengraph-image)(?=[?"'&\s\\])/g, "$1.png");
+  const stale = updated.match(/\/opengraph-image(?!\.png)/g);
+  if (stale) throw new Error(`${path}: ${stale.length} Open Graph image reference(s) still point at the extensionless file`);
   if (updated !== original) {
     await writeFile(path, updated);
     repairedMetadataFiles++;
@@ -135,5 +146,5 @@ if (configBytes > maxConfigBytes) {
   throw new Error(`staticwebapp.config.json exceeds 16 KB: ${configBytes} bytes`);
 }
 await writeFile(join(out, "staticwebapp.config.json"), serializedConfig);
-console.log(`Moved ${pageMoves.length} pages to directory indexes; repaired image URLs in ${repairedMetadataFiles} metadata files.`);
+console.log(`Moved ${pageMoves.length} pages to directory indexes; renamed ${renamedImages} Open Graph images to .png; repaired image URLs in ${repairedMetadataFiles} metadata files.`);
 console.log("Static export ready: English at /; localized pages preserved; 404.html verified.");
