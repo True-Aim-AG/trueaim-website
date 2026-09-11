@@ -217,7 +217,7 @@ export default async function AuditabilityScorecardBlogPost({
                   detail separately in{" "}
                   <Link
                     href="/blog/ai-claims-handling-eu-ai-act-high-risk"
-                    className="text-[var(--primary)] hover:underline"
+                    className="text-[var(--primary)] underline underline-offset-2"
                   >
                     our article on the AI Act and claims handling
                   </Link>
@@ -360,7 +360,7 @@ export default async function AuditabilityScorecardBlogPost({
                   described in full in{" "}
                   <Link
                     href="/blog/auditability-evidence-chains"
-                    className="text-[var(--primary)] hover:underline"
+                    className="text-[var(--primary)] underline underline-offset-2"
                   >
                     our article on evidence chains
                   </Link>
@@ -405,7 +405,7 @@ export default async function AuditabilityScorecardBlogPost({
                   The scorecard applies to any system, including ours.{" "}
                   <Link
                     href="/trust"
-                    className="text-[var(--primary)] hover:underline"
+                    className="text-[var(--primary)] underline underline-offset-2"
                   >
                     Our Trust Center
                   </Link>{" "}
@@ -583,7 +583,7 @@ export default async function AuditabilityScorecardBlogPost({
                       href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202601744"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--primary)] hover:underline"
+                      className="text-[var(--primary)] underline underline-offset-2"
                     >
                       eur-lex.europa.eu
                     </a>
@@ -595,7 +595,7 @@ export default async function AuditabilityScorecardBlogPost({
                       href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401689"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--primary)] hover:underline"
+                      className="text-[var(--primary)] underline underline-offset-2"
                     >
                       eur-lex.europa.eu
                     </a>
@@ -606,7 +606,7 @@ export default async function AuditabilityScorecardBlogPost({
                       href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--primary)] hover:underline"
+                      className="text-[var(--primary)] underline underline-offset-2"
                     >
                       eur-lex.europa.eu
                     </a>
@@ -622,7 +622,7 @@ export default async function AuditabilityScorecardBlogPost({
                       href="https://www.finma.ch/en/~/media/finma/dokumente/dokumentencenter/myfinma/4dokumentation/finma-aufsichtsmitteilungen/20241218-finma-aufsichtsmitteilung-08-2024.pdf?sc_lang=en"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--primary)] hover:underline"
+                      className="text-[var(--primary)] underline underline-offset-2"
                     >
                       finma.ch
                     </a>
@@ -639,7 +639,7 @@ export default async function AuditabilityScorecardBlogPost({
                       href="https://www.finma.ch/en/~/media/finma/dokumente/dokumentencenter/myfinma/rundschreiben/finma-rs-2018-03-01012021_de.pdf?sc_lang=en"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--primary)] hover:underline"
+                      className="text-[var(--primary)] underline underline-offset-2"
                     >
                       finma.ch
                     </a>
@@ -652,7 +652,7 @@ export default async function AuditabilityScorecardBlogPost({
                       href="https://www.grantthornton.com/insights/survey-reports/insurance/2026/insurance-insights-2026-ai-impact-survey-report"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--primary)] hover:underline"
+                      className="text-[var(--primary)] underline underline-offset-2"
                     >
                       grantthornton.com
                     </a>
