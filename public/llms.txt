@@ -31,5 +31,6 @@ TrueAim.ai builds AI-powered decisioning software for insurance claims. Our hybr
 - Company: https://trueaim.ai/company
 - Case Studies: https://trueaim.ai/case-studies
 - Trust & Compliance: https://trueaim.ai/trust
+- Blog: https://trueaim.ai/blog (RSS: https://trueaim.ai/feed.xml)
 - ROI Calculator: https://trueaim.ai/roi-calculator
 - Full details: https://trueaim.ai/llms-full.txt

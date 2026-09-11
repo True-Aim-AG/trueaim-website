@@ -127,6 +127,19 @@ TrueAim's architecture is designed for regulatory compliance:
 
 ---
 
+## Insights (Blog)
+
+**Index:** https://trueaim.ai/blog
+**RSS:** https://trueaim.ai/feed.xml
+
+- [The AI Claims Auditability Scorecard](https://trueaim.ai/blog/ai-claims-auditability-scorecard) (10 September 2026, Reuben John, CEO): Twelve questions every claims leader should be able to answer about AI operating in their name, in four groups: provenance, reconstruction, human judgement and continuity, with the standard and how True Aim meets it under each.
+- [AI Claims Handling Is Not High-Risk Under the EU AI Act. Here Is What Binds It Instead.](https://trueaim.ai/blog/ai-claims-handling-eu-ai-act-high-risk) (28 July 2026): Claims handling is absent from Annex III. GDPR Article 22 binds it anyway.
+- [Why Claims AI Pilots Stall Before Production Readiness](https://trueaim.ai/blog/why-claims-ai-pilots-stall) (15 February 2026): Measurement discipline and production realism, not model accuracy, decide whether a pilot ships.
+- [Auditability in Claims AI: Building Evidence Chains That Auditors Actually Accept](https://trueaim.ai/blog/auditability-evidence-chains) (1 February 2025): The architecture behind provenance and reconstruction, and the requirements it satisfies.
+- [Build vs Buy: What to Demand from IDP Vendors](https://trueaim.ai/blog/build-vs-buy-idp-vendors) (1 February 2025): An evaluation framework for insurance teams choosing claims automation.
+
+---
+
 ## Contact
 
 - Website: https://trueaim.ai
@@ -146,6 +159,7 @@ TrueAim's architecture is designed for regulatory compliance:
 - Company: https://trueaim.ai/company
 - Case Studies: https://trueaim.ai/case-studies
 - Trust & Compliance: https://trueaim.ai/trust
+- Blog: https://trueaim.ai/blog
 - ROI Calculator: https://trueaim.ai/roi-calculator
 - Contact: https://trueaim.ai/contact
 - Privacy Policy: https://trueaim.ai/privacy

@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ai-claims-auditability-scorecard",
+    title: "The AI Claims Auditability Scorecard",
+    excerpt:
+      "Twelve questions that show whether an AI claims system can account for every decision it makes, and how True Aim answers each one.",
+    publishedIso: "2026-09-10T00:00:00.000Z",
+    displayDate: "September 2026",
+    readTime: "14 min read",
+    category: "Best Practice",
+    tags: ["Auditability", "GDPR Article 22", "EU AI Act", "Claims AI"],
+    featured: true,
+  },
+  {
     slug: "ai-claims-handling-eu-ai-act-high-risk",
     title:
       "AI Claims Handling Is Not High-Risk Under the EU AI Act. Here Is What Binds It Instead.",
@@ -22,7 +34,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "12 min read",
     category: "Regulatory & Compliance",
     tags: ["EU AI Act", "GDPR Article 22", "EIOPA", "Claims AI", "Governance"],
-    featured: true,
   },
   {
     slug: "why-claims-ai-pilots-stall",
