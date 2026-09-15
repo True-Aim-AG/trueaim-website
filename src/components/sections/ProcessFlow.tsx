@@ -34,7 +34,7 @@ function DocumentIngestionAnim({ active }: { active: boolean }) {
             transition={{ duration: 0.5, delay: doc.delay, ease }}
             className="flex items-center gap-2"
           >
-            <div className="w-[56px] h-[42px] rounded-pill bg-elevated shadow-swatch p-1.5 flex-shrink-0">
+            <div className="w-[56px] h-[42px] rounded-lg bg-elevated shadow-swatch p-1.5 flex-shrink-0">
               <div className="flex items-center gap-1 mb-1">
                 <div className="text-[6px] font-bold text-accent bg-accent-soft px-1 rounded-pill">{doc.icon}</div>
               </div>
@@ -107,7 +107,7 @@ function DocumentIngestionAnim({ active }: { active: boolean }) {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={active ? { opacity: 1, scale: 1 } : {}}
           transition={{ delay: 0.9, duration: 0.4, ease }}
-          className="w-[130px] rounded-pill bg-elevated shadow-swatch overflow-hidden"
+          className="w-[130px] rounded-lg bg-elevated shadow-swatch overflow-hidden"
         >
           {/* Mini header */}
           <div className="px-2.5 py-1.5 border-b border-hairline flex items-center gap-1.5">
@@ -192,7 +192,7 @@ function PolicyLogicAnim({ active }: { active: boolean }) {
           style={{ left: node.x, top: node.y }}
         >
           <div
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-pill text-[10px] font-semibold whitespace-nowrap ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-semibold whitespace-nowrap ${
               node.root
                 ? "bg-accent-soft text-accent"
                 : node.result || node.excluded
@@ -211,7 +211,7 @@ function PolicyLogicAnim({ active }: { active: boolean }) {
               initial={{ scale: 1, opacity: 0.4 }}
               animate={{ scale: 1.8, opacity: 0 }}
               transition={{ duration: 1, delay: node.delay + 0.8, ease }}
-              className="absolute inset-0 rounded-pill border border-approved-base"
+              className="absolute inset-0 rounded-lg border border-approved-base"
             />
           )}
         </motion.div>
@@ -238,6 +238,26 @@ function PolicyLogicAnim({ active }: { active: boolean }) {
 }
 
 // ─── Animated Illustration: Decision Dossier ────────────────────────────────
+// Which source card feeds which dossier row (source index -> row index).
+const dossierLinks = [
+  { from: 0, to: 0 },
+  { from: 1, to: 1 },
+  { from: 2, to: 2 },
+];
+
+/** Layout position of `el` inside `root`, ignoring transforms (entrance animations). */
+function layoutBox(el: HTMLElement, root: HTMLElement) {
+  let x = 0;
+  let y = 0;
+  let node: HTMLElement | null = el;
+  while (node && node !== root) {
+    x += node.offsetLeft;
+    y += node.offsetTop;
+    node = node.offsetParent as HTMLElement | null;
+  }
+  return { x, y, w: el.offsetWidth, h: el.offsetHeight };
+}
+
 function DecisionDossierAnim({ active }: { active: boolean }) {
   const sources = [
     { label: "Documents", detail: "3 files linked", icon: "extraction" as const, delay: 0.1 },
@@ -252,18 +272,54 @@ function DecisionDossierAnim({ active }: { active: boolean }) {
     { label: "Evidence Links", ref: "pg.2 ¶3, items 1-4", delay: 1.3 },
   ];
 
+  const rootRef = useRef<HTMLDivElement>(null);
+  const sourceEls = useRef<(HTMLDivElement | null)[]>([]);
+  const rowEls = useRef<(HTMLDivElement | null)[]>([]);
+  const [paths, setPaths] = useState<{ from: number; to: number; d: string }[]>([]);
+
+  // Draw each connector from the right edge of its source card to the left
+  // edge of its dossier row, using measured positions so the lines land on
+  // the cards at any width.
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    const measure = () => {
+      const next: { from: number; to: number; d: string }[] = [];
+      dossierLinks.forEach(({ from, to }) => {
+        const s = sourceEls.current[from];
+        const r = rowEls.current[to];
+        if (!s || !r) return;
+        const a = layoutBox(s, root);
+        const b = layoutBox(r, root);
+        const x1 = a.x + a.w;
+        const y1 = a.y + a.h / 2;
+        const x2 = b.x;
+        const y2 = b.y + b.h / 2;
+        const mx = (x1 + x2) / 2;
+        next.push({ from, to, d: `M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}` });
+      });
+      setPaths(next);
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(root);
+    [...sourceEls.current, ...rowEls.current].forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="relative w-full h-[260px] flex items-center justify-center overflow-hidden">
+    <div ref={rootRef} className="relative w-full h-[260px] flex items-center justify-between px-1 overflow-hidden">
 
       {/* Left: source inputs */}
-      <div className="absolute left-1 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-10">
-        {sources.map((src) => (
+      <div className="relative flex flex-col gap-3 z-10">
+        {sources.map((src, i) => (
           <motion.div
             key={src.label}
+            ref={(el) => { sourceEls.current[i] = el; }}
             initial={{ x: -60, opacity: 0 }}
             animate={active ? { x: 0, opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: src.delay, ease }}
-            className="w-[110px] rounded-pill bg-elevated shadow-swatch p-2"
+            className="w-[110px] rounded-lg bg-elevated shadow-swatch p-2"
           >
             <div className="flex items-center gap-1.5 mb-1">
               <BrandIcon name={src.icon} size={14} className="flex-shrink-0" />
@@ -274,54 +330,47 @@ function DecisionDossierAnim({ active }: { active: boolean }) {
         ))}
       </div>
 
-      {/* Center: animated connection lines (SVG) */}
-      <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none" viewBox="0 0 350 260" preserveAspectRatio="none">
-        {sources.map((src, i) => {
-          const startY = (30 + i * 38) / 100 * 260;
-          const endY = (22 + i * 25) / 100 * 260;
-          return (
-            <motion.path
-              key={src.label}
-              d={`M 120 ${startY} C 160 ${startY}, 180 ${endY}, 220 ${endY}`}
-              fill="none"
-              stroke="var(--ta-light-blue)"
-              strokeWidth={1.5}
-              strokeDasharray="4 3"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={active ? { pathLength: 1, opacity: 0.6 } : {}}
-              transition={{ duration: 0.6, delay: src.delay + 0.3 }}
-            />
-          );
-        })}
+      {/* Center: connection lines (SVG), drawn from measured card positions */}
+      <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none" aria-hidden="true">
+        {paths.map((p) => (
+          <motion.path
+            key={`${p.from}-${p.to}`}
+            d={p.d}
+            fill="none"
+            stroke="var(--ta-light-blue)"
+            strokeWidth={1.5}
+            strokeDasharray="4 3"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={active ? { pathLength: 1, opacity: 0.6 } : {}}
+            transition={{ duration: 0.6, delay: sources[p.from].delay + 0.3 }}
+          />
+        ))}
       </svg>
 
-      {/* Flowing dots along connection paths */}
-      {active && sources.map((src, i) => (
+      {/* Flowing dots along the connection paths */}
+      {active && paths.map((p) => (
         <motion.div
-          key={`dot-${src.label}`}
-          animate={{
-            x: [120, 145, 175, 210],
-            opacity: [0, 1, 1, 0],
-          }}
+          key={`dot-${p.from}-${p.to}`}
+          style={{ offsetPath: `path("${p.d}")` }}
+          animate={{ offsetDistance: ["0%", "100%"], opacity: [0, 1, 1, 0] }}
           transition={{
             duration: 1,
             repeat: Infinity,
-            delay: 1.5 + i * 0.3,
+            delay: 1.5 + p.from * 0.3,
             repeatDelay: 1.5,
             ease: "easeInOut",
           }}
-          className="absolute w-1.5 h-1.5 rounded-full bg-light-blue z-10"
-          style={{ top: `${30 + i * 27}%` }}
+          className="absolute top-0 left-0 w-1.5 h-1.5 rounded-full bg-light-blue z-10"
         />
       ))}
 
       {/* Right: assembling dossier */}
-      <div className="absolute right-1 top-1/2 -translate-y-1/2 z-10">
+      <div className="relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={active ? { opacity: 1, scale: 1 } : {}}
           transition={{ delay: 0.5, duration: 0.4, ease }}
-          className="w-[150px] rounded-pill bg-card shadow-card overflow-hidden"
+          className="w-[150px] rounded-lg bg-card shadow-card overflow-hidden"
         >
           {/* Dossier header */}
           <div className="px-3 py-2 bg-accent-soft border-b border-hairline flex items-center justify-between">
@@ -342,13 +391,14 @@ function DecisionDossierAnim({ active }: { active: boolean }) {
 
           {/* Dossier rows assembling */}
           <div className="p-2 space-y-1">
-            {dossierRows.map((row) => (
+            {dossierRows.map((row, i) => (
               <motion.div
                 key={row.label}
+                ref={(el) => { rowEls.current[i] = el; }}
                 initial={{ opacity: 0, x: 15 }}
                 animate={active ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.35, delay: row.delay }}
-                className="flex items-center gap-1.5 px-2 py-1.5 rounded-pill bg-surface-muted"
+                className="flex items-center gap-1.5 px-2 py-1.5 rounded-md bg-surface-muted"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
                 <div className="min-w-0 flex-1">
@@ -446,7 +496,7 @@ function AuditTrailAnim({ active }: { active: boolean }) {
 
               {/* Block content */}
               <div
-                className={`flex-1 px-3 py-2 rounded-pill text-[10px] ${
+                className={`flex-1 px-3 py-2 rounded-lg text-[10px] ${
                   block.highlight
                     ? "bg-elevated shadow-swatch"
                     : "bg-card shadow-swatch"
