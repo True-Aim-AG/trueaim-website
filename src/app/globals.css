@@ -8,601 +8,380 @@
 @source not "../../build-output.txt";
 @source not "../../nul";
 
-/* TrueAim.ai Design System — Theme Variables */
+/* =============================================================================
+   True Aim Design System — v4 (September 2026)
+   Source of truth: docs/DESIGN_SYSTEM.md
+   Light is the only site theme (data-theme="light" on <html>). Dark stays available per section:
+   put data-theme="dark" on a band to render it as a dark band inside the light page.
+   ============================================================================= */
 
-/* ===== Dark Theme (Default) ===== */
-:root,
+:root {
+  /* ----- Primary ----- */
+  --ta-primary-dark: #2C2B2A;   /* Primary Dark: core structure, headings, dark surfaces */
+  --ta-blue: #5151DB;           /* True Aim Blue: the single brand accent */
+  --ta-primary-light: #FBFCFD;  /* Primary Light: page background, clarity */
+  /* ----- Secondary ----- */
+  --ta-charcoal: #3F3F42;       /* Deep Charcoal: body text, dark surface 2 */
+  --ta-light-blue: #91A7FF;     /* Light Blue: supporting highlights */
+  --ta-lilac: #F3EEFE;          /* Soft Lilac: atmospheric backgrounds, icon plates */
+
+  /* ----- Blue scale ----- */
+  --ta-blue-50: #EFF4FE; --ta-blue-100: #E2EAFD; --ta-blue-200: #CBD7FA; --ta-blue-300: #ABBCF6; --ta-blue-400: #91A7FF;
+  --ta-blue-500: #6C76E8; --ta-blue-600: #5151DB; --ta-blue-700: #4441C1; --ta-blue-800: #37379C; --ta-blue-900: #33347C;
+
+  /* ----- Neutral scale ----- */
+  --ta-neutral-0: #FFFFFF; --ta-neutral-50: #FBFCFD; --ta-neutral-100: #EFEFF0; --ta-neutral-200: #E4E4E6; --ta-neutral-300: #CFCFD2;
+  --ta-neutral-400: #ADAEB3; --ta-neutral-500: #84858C; --ta-neutral-600: #696A71; --ta-neutral-700: #4D4D51; --ta-neutral-800: #3F3F42;
+  --ta-neutral-900: #2C2B2A; --ta-neutral-950: #222222;
+
+  /* ----- Semantic triads: light (status bg) / base (indicator) / dark (emphasis) ----- */
+  --ta-neutral-status-light: #CFCFD2; --ta-neutral-status-base: #84858C; --ta-neutral-status-dark: #2C2B2A;
+  --ta-progress-light: #ABBCF6; --ta-progress-base: #5151DB; --ta-progress-dark: #37379C;
+  --ta-approved-light: #7EE791; --ta-approved-base: #1BB037; --ta-approved-dark: #0E6A20;
+  --ta-referred-light: #FFCF8B; --ta-referred-base: #FFAA36; --ta-referred-dark: #D37F0D;
+  --ta-denied-light: #FF8264;   --ta-denied-base: #E94119;   --ta-denied-dark: #A92100;
+  --ta-help-light: #D79DFF;     --ta-help-base: #AA57E1;     --ta-help-dark: #6C19A4;
+
+  /* ----- Gradients & glows (Colors + Graphics pages) ----- */
+  --ta-gradient-light: linear-gradient(-42.07deg, #F6F3FF -2.63%, #FBFCFD 88.65%);
+  --ta-gradient-dark: linear-gradient(119.33deg, #2C2B2A 24.34%, #3F3F42 84.09%);
+  --ta-gradient-page: linear-gradient(231.19deg, #F6F3FF 14%, #FBFCFD 87.15%);
+  --ta-glow: radial-gradient(closest-side, rgba(128,89,255,.6) 0%, rgba(89,51,217,.35) 40%, rgba(51,26,153,.12) 75%, rgba(26,13,102,0) 100%);
+  --ta-glow-soft: radial-gradient(closest-side, rgba(128,89,255,.24) 0%, rgba(89,51,217,.14) 40%, rgba(51,26,153,.048) 75%, rgba(26,13,102,0) 100%);
+  --ta-rim-glow: radial-gradient(closest-side, rgba(153,102,255,.3) 0%, rgba(77,38,178,.1) 50%, rgba(38,20,102,0) 100%);
+  --ta-sweep: linear-gradient(90deg, rgba(222,229,255,.2) 0%, rgba(145,167,255,.3) 18.75%, rgba(81,81,219,.5) 54.33%, #5151DB 100%);
+
+}
+
+/* ===== Dark semantic aliases: any data-theme="dark" band placed inside the light page ===== */
 [data-theme="dark"] {
-  /* ===== Dark Mode Base Colors — Deep Navy ===== */
-  --background: #060B18;
-  --background-secondary: #0A1228;
-  --background-tertiary: #0E1A35;
-  --foreground: #ffffff;
-
-  /* Text Colors — Dark Mode Hierarchy */
-  --text-primary: #F0F4FF;
-  --text-secondary: rgba(240, 244, 255, 0.75);
-  --text-muted: rgba(240, 244, 255, 0.50);
-
-  /* ===== Primary Colors — Ocean Blue ===== */
-  --primary: #3B82F6;
-  --primary-hover: #60A5FA;
-  --primary-dark: #0A1F3D;
-  --primary-light: rgba(59, 130, 246, 0.12);
-  --primary-foreground: #060B18;
-
-  /* Secondary Colors — Ocean Blue */
-  --secondary: #00A3FF;
-  --secondary-light: #38BFFF;
-  --secondary-bg: rgba(0, 163, 255, 0.12);
-  --secondary-foreground: #ffffff;
-
-  /* Legacy trust color — maps to primary */
-  --trust: #3B82F6;
-  --trust-foreground: #060B18;
-
-  /* ===== Aurora Accent Colors ===== */
-  --aurora-cyan: #3B82F6;
-  --aurora-teal: #3B82F6;
-  --aurora-purple: #8B5CF6;
-
-  /* ===== TrueAim Design Tokens (REQ-V6-026) ===== */
-  --ta-blue: #00A3FF;
-  --ta-cyan: #3B82F6;
-  --ta-success: #16A34A;
-  --ta-bg: #060B18;
-  --ta-surface: #0A1228;
-  --ta-text: #F0F4FF;
-  --ta-text-muted: rgba(240, 244, 255, 0.50);
-  --ta-border: rgba(255, 255, 255, 0.06);
-  --ta-overlay: rgba(255, 255, 255, 0.08);
-
-  /* ===== Product Accent Colors ===== */
-  --mira: #00A3FF;
-  --mira-bg: rgba(0, 163, 255, 0.12);
-  --mira-text: #38BFFF;
-
-  --contextbuilder: #8B5CF6;
-  --contextbuilder-bg: rgba(139, 92, 246, 0.12);
-  --contextbuilder-text: #A78BFA;
-
-  --claimeval: #00A3FF;
-  --claimeval-bg: rgba(0, 163, 255, 0.12);
-  --claimeval-text: #38BFFF;
-
-  /* ===== Subtle Background Colors ===== */
-  --subtle-bg: rgba(255, 255, 255, 0.06);
-  --subtle-bg-hover: rgba(255, 255, 255, 0.10);
-  --card-bg: rgba(255, 255, 255, 0.04);
-  --card-bg-hover: rgba(255, 255, 255, 0.08);
-
-  /* ===== Border Colors — Glass Effect ===== */
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.16);
-
-  /* ===== Status Colors ===== */
-  --success: #22C55E;
-  --warning: #F59E0B;
-  --error: #EF4444;
-
-  /* ===== Shadows — Dark Mode ===== */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.4);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.5);
-
-  /* ===== Glass Panel Variables ===== */
-  --glass-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
-  --glass-blur: 16px;
-  --glass-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.5);
-  --glass-border: rgba(255, 255, 255, 0.08);
-
-  /* ===== Glow Effects ===== */
-  --glow-primary: 0 0 40px rgba(59, 130, 246, 0.25);
-  --glow-cyan: 0 0 40px rgba(59, 130, 246, 0.3);
-  --glow-blue: 0 0 40px rgba(0, 163, 255, 0.3);
-  --glow-purple: 0 0 40px rgba(139, 92, 246, 0.25);
-
-  /* ===== Radius ===== */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
+  /* ----- Semantic aliases (dark band) ----- */
+  --surface-page: var(--ta-primary-dark);
+  --surface-page-tint: var(--ta-gradient-dark);
+  --surface-card: var(--ta-charcoal);
+  --surface-card-accent: var(--ta-blue);
+  --surface-dark: var(--ta-neutral-950);
+  --surface-dark-2: var(--ta-neutral-900);
+  --surface-lilac: rgba(243, 238, 254, .08);
+  --surface-muted: var(--ta-neutral-700);
+  --surface-elevated: var(--ta-neutral-700);
+  --text-strong: var(--ta-primary-light);
+  --text-body: rgba(251, 252, 253, .82);
+  --text-muted: rgba(251, 252, 253, .62);
+  --text-subtle: rgba(251, 252, 253, .45);
+  --text-on-dark: var(--ta-primary-light);
+  --text-on-brand: #FFFFFF;
+  --text-link: var(--ta-light-blue);
+  --accent: var(--ta-blue);
+  --accent-hover: var(--ta-blue-500);
+  --accent-active: var(--ta-blue);
+  --accent-soft: rgba(145, 167, 255, .14);
+  --accent-text: var(--ta-light-blue);
+  --focus-ring: var(--ta-light-blue);
+  --border-subtle: rgba(251, 252, 253, .10);
+  --border-default: rgba(251, 252, 253, .18);
+  --border-hairline: rgba(255, 255, 255, .12);
+  --grid-line: rgba(145, 167, 255, .14);
+  --chart-bar: rgba(251, 252, 253, .14);
+  --chart-bar-active: var(--ta-blue);
+  --chart-track: rgba(251, 252, 253, .10);
+  --chart-track-on-brand: var(--ta-blue-700);
+  --overlay-scrim: rgba(0, 0, 0, .6);
+  --icon-line: var(--ta-primary-light);
+  --icon-accent: var(--ta-light-blue);
+  --shadow-card: 0 9px 14.7px 0 rgba(0, 0, 0, .25);
+  --shadow-swatch: 0 4px 7px 0 rgba(0, 0, 0, .30);
+  color: var(--text-body);
 }
 
-/* ===== Light Theme ===== */
+:root {
+  /* ----- Type ----- */
+  --font-display: var(--font-inter-tight), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-ibm-plex-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* ----- Shape / elevation / lines / motion ----- */
+  --radius-pill: 40px;
+  --radius-bar: 1px;
+  --shadow-dot-halo: 0 0 0 5px rgba(163, 165, 182, .16);
+  --stroke-hairline: 0.5px;
+  --stroke-grid: 1px;
+  --stroke-icon: 1.5px;
+  --grid-step: 48px;
+  --ease-brand: cubic-bezier(.4, 0, .2, 1);
+  --dur-fast: 150ms;
+  --dur-base: 300ms;
+  --dur-slow: 600ms;
+
+}
+
+/* ===== Light theme: the site default, set on <html> =====
+   Also usable on a section to bring it back to light inside a dark band. */
+:root,
 [data-theme="light"] {
-  /* Base Colors */
-  --background: #FFFFFF;
-  --background-secondary: #F8FAFC;
-  --foreground: #020617;
-
-  /* Text Colors — Light Mode Hierarchy */
-  --text-primary: #020617;
-  --text-secondary: #1E293B;
-  --text-muted: #64748B;
-
-  /* Primary Colors — Blue (light-adjusted) */
-  --primary: #2563EB;
-  --primary-hover: #1D4ED8;
-  --primary-dark: #1E3A8A;
-  --primary-light: rgba(37, 99, 235, 0.08);
-  --primary-foreground: #ffffff;
-
-  /* Secondary Colors — Ocean Blue */
-  --secondary: #0077CC;
-  --secondary-light: #0099FF;
-  --secondary-bg: rgba(0, 119, 204, 0.08);
-  --secondary-foreground: #ffffff;
-
-  /* Legacy trust color */
-  --trust: #2563EB;
-  --trust-foreground: #ffffff;
-
-  /* Aurora Accent Colors (adjusted for light) */
-  --aurora-cyan: #2563EB;
-  --aurora-teal: #2563EB;
-  --aurora-purple: #7C3AED;
-
-  /* Product Accent Colors */
-  --mira: #0077CC;
-  --mira-bg: rgba(0, 119, 204, 0.08);
-  --mira-text: #005FA3;
-
-  --contextbuilder: #7C3AED;
-  --contextbuilder-bg: rgba(124, 58, 237, 0.08);
-  --contextbuilder-text: #6D28D9;
-
-  --claimeval: #0077CC;
-  --claimeval-bg: rgba(0, 119, 204, 0.08);
-  --claimeval-text: #005FA3;
-
-  /* Subtle Background Colors — Light Mode */
-  --subtle-bg: rgba(0, 0, 0, 0.05);
-  --subtle-bg-hover: rgba(0, 0, 0, 0.08);
-  --card-bg: rgba(0, 0, 0, 0.03);
-  --card-bg-hover: rgba(0, 0, 0, 0.06);
-
-  /* Border Colors — Light Mode */
-  --border: #E2E8F0;
-  --border-hover: #CBD5E1;
-
-  /* Status Colors (same) */
-  --success: #22C55E;
-  --warning: #F59E0B;
-  --error: #EF4444;
-
-  /* Shadows — Light Mode */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-
-  /* Glass Panel Variables — Light Mode */
-  --glass-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
-  --glass-blur: 12px;
-  --glass-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.08);
-  --glass-border: rgba(0, 0, 0, 0.08);
-
-  /* Glow Effects — Light Mode (subtle) */
-  --glow-primary: 0 0 40px rgba(37, 99, 235, 0.12);
-  --glow-cyan: 0 0 40px rgba(37, 99, 235, 0.15);
-  --glow-blue: 0 0 40px rgba(0, 119, 204, 0.15);
-  --glow-purple: 0 0 40px rgba(124, 58, 237, 0.12);
+  --surface-page: var(--ta-primary-light);
+  --surface-page-tint: var(--ta-gradient-page);
+  --surface-card: var(--ta-neutral-50);
+  --surface-card-accent: var(--ta-blue);
+  --surface-dark: var(--ta-primary-dark);
+  --surface-dark-2: var(--ta-charcoal);
+  --surface-lilac: var(--ta-lilac);
+  --surface-muted: var(--ta-neutral-100);
+  --surface-elevated: var(--ta-neutral-0);
+  --text-strong: var(--ta-primary-dark);
+  --text-body: var(--ta-charcoal);
+  --text-muted: var(--ta-neutral-600);
+  --text-subtle: var(--ta-neutral-500);
+  --text-on-dark: var(--ta-primary-light);
+  --text-on-brand: #FFFFFF;
+  --text-link: var(--ta-blue);
+  --accent: var(--ta-blue);
+  --accent-hover: var(--ta-blue-700);
+  --accent-active: var(--ta-blue-800);
+  --accent-soft: var(--ta-blue-100);
+  --accent-text: var(--ta-blue);
+  --focus-ring: var(--ta-blue-300);
+  --border-subtle: var(--ta-neutral-200);
+  --border-default: var(--ta-neutral-300);
+  --border-hairline: rgba(0, 0, 0, .11);
+  --grid-line: var(--ta-blue-100);
+  --chart-bar: var(--ta-neutral-200);
+  --chart-bar-active: var(--ta-blue);
+  --chart-track: var(--ta-neutral-100);
+  --chart-track-on-brand: var(--ta-blue-700);
+  --overlay-scrim: rgba(44, 43, 42, .5);
+  --icon-line: var(--ta-charcoal);
+  --icon-accent: var(--ta-blue);
+  --shadow-card: 0 9px 14.7px 0 rgba(0, 0, 0, .04);
+  --shadow-swatch: 0 4px 7px 0 rgba(0, 0, 0, .10);
+  color: var(--text-body);
 }
 
+/* ===== Dark bands nested inside the dark site: one step deeper so they still read as a band ===== */
+[data-theme="dark"] [data-theme="dark"] {
+  --surface-page: var(--ta-neutral-950);
+  --surface-page-tint: linear-gradient(119.33deg, #222222 24.34%, #2C2B2A 84.09%);
+  --surface-card: var(--ta-neutral-800);
+}
+
+/* ===== Tailwind theme bridge =====
+   `inline` so utilities read the runtime variable and flip inside dark bands. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-trust: var(--trust);
+  /* semantic colours */
+  --color-page: var(--surface-page);
+  --color-card: var(--surface-card);
+  --color-elevated: var(--surface-elevated);
+  --color-surface-muted: var(--surface-muted);
+  --color-lilac: var(--surface-lilac);
+  --color-dark: var(--surface-dark);
+  --color-dark-2: var(--surface-dark-2);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-active: var(--accent-active);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-text: var(--accent-text);
+  --color-strong: var(--text-strong);
+  --color-body: var(--text-body);
+  --color-muted: var(--text-muted);
+  --color-subtle: var(--text-subtle);
+  --color-on-dark: var(--text-on-dark);
+  --color-on-brand: var(--text-on-brand);
+  --color-link: var(--text-link);
+  --color-line: var(--border-subtle);
+  --color-line-strong: var(--border-default);
+  --color-hairline: var(--border-hairline);
+  --color-focus: var(--focus-ring);
+  --color-grid: var(--grid-line);
+  /* raw brand palette */
+  --color-ta-blue: var(--ta-blue);
+  --color-ta-dark: var(--ta-primary-dark);
+  --color-ta-charcoal: var(--ta-charcoal);
+  --color-ta-light: var(--ta-primary-light);
+  --color-light-blue: var(--ta-light-blue);
+  --color-ta-lilac: var(--ta-lilac);
+  --color-ta-blue-50: var(--ta-blue-50); --color-ta-blue-100: var(--ta-blue-100); --color-ta-blue-200: var(--ta-blue-200);
+  --color-ta-blue-300: var(--ta-blue-300); --color-ta-blue-400: var(--ta-blue-400); --color-ta-blue-500: var(--ta-blue-500);
+  --color-ta-blue-600: var(--ta-blue-600); --color-ta-blue-700: var(--ta-blue-700); --color-ta-blue-800: var(--ta-blue-800);
+  --color-ta-blue-900: var(--ta-blue-900);
+  --color-ta-neutral-0: var(--ta-neutral-0); --color-ta-neutral-50: var(--ta-neutral-50); --color-ta-neutral-100: var(--ta-neutral-100);
+  --color-ta-neutral-200: var(--ta-neutral-200); --color-ta-neutral-300: var(--ta-neutral-300); --color-ta-neutral-400: var(--ta-neutral-400);
+  --color-ta-neutral-500: var(--ta-neutral-500); --color-ta-neutral-600: var(--ta-neutral-600); --color-ta-neutral-700: var(--ta-neutral-700);
+  --color-ta-neutral-800: var(--ta-neutral-800); --color-ta-neutral-900: var(--ta-neutral-900); --color-ta-neutral-950: var(--ta-neutral-950);
+  /* semantic status triads */
+  --color-approved-light: var(--ta-approved-light); --color-approved-base: var(--ta-approved-base); --color-approved-dark: var(--ta-approved-dark);
+  --color-referred-light: var(--ta-referred-light); --color-referred-base: var(--ta-referred-base); --color-referred-dark: var(--ta-referred-dark);
+  --color-denied-light: var(--ta-denied-light); --color-denied-base: var(--ta-denied-base); --color-denied-dark: var(--ta-denied-dark);
+  --color-progress-light: var(--ta-progress-light); --color-progress-base: var(--ta-progress-base); --color-progress-dark: var(--ta-progress-dark);
+  --color-help-light: var(--ta-help-light); --color-help-base: var(--ta-help-base); --color-help-dark: var(--ta-help-dark);
+  --color-neutral-status-light: var(--ta-neutral-status-light); --color-neutral-status-base: var(--ta-neutral-status-base); --color-neutral-status-dark: var(--ta-neutral-status-dark);
+  /* type */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  /* shape & motion */
+  --radius-pill: var(--radius-pill);
+  --shadow-card: var(--shadow-card);
+  --shadow-swatch: var(--shadow-swatch);
+  --ease-brand: var(--ease-brand);
 }
 
-/* ===== Base Styles ===== */
+/* ===== Custom utilities ===== */
+@utility bg-page-tint { background: var(--surface-page-tint); }
+@utility bg-sweep { background: var(--ta-sweep); }
+@utility text-caption {
+  font-family: var(--font-body); font-weight: 500; font-size: 16px; line-height: 1.4;
+  letter-spacing: 0.16em; text-transform: uppercase;
+}
+@utility text-caption-sm {
+  font-family: var(--font-body); font-weight: 500; font-size: 12px; line-height: 1.4;
+  letter-spacing: 0.16em; text-transform: uppercase;
+}
+@utility text-button { font-family: var(--font-body); font-weight: 500; font-size: 16px; line-height: 1.1; letter-spacing: 0; }
+@utility text-lede { font-family: var(--font-body); font-weight: 400; font-size: 18px; line-height: 30px; }
+@utility text-body-lg { font-family: var(--font-body); font-weight: 500; font-size: 24px; line-height: 1.4; letter-spacing: 0.01em; }
+@utility text-kpi { font-family: var(--font-display); font-weight: 600; font-size: 36px; line-height: 1; font-variant-numeric: tabular-nums; }
+@utility text-kpi-lg { font-family: var(--font-display); font-weight: 600; font-size: 56px; line-height: 1; font-variant-numeric: tabular-nums; }
+@utility divide-hairline { & > :not(:last-child) { border-bottom: 1px solid var(--border-hairline); } }
+@utility icon-plate {
+  display: grid; place-items: center; width: 56px; height: 56px;
+  border-radius: var(--radius-pill); background: var(--surface-lilac); color: var(--accent);
+}
+
+@layer base {
+/* ===== Base ===== */
+html {
+  scroll-behavior: smooth;
+  background: var(--surface-page);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  background: var(--surface-page);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display, system-ui, sans-serif);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: var(--text-primary);
+  font-family: var(--font-display);
+  color: var(--text-strong);
+  letter-spacing: 0;
+  text-wrap: pretty;
 }
+h1, h2, h3 { font-weight: 700; }
+h4, h5, h6 { font-weight: 600; letter-spacing: 0.01em; }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
+p { text-wrap: pretty; }
 
-/* Focus styles for accessibility */
+a { color: inherit; }
+
+strong, b { font-weight: 600; color: var(--text-strong); }
+
 *:focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
-/* Selection color */
 ::selection {
-  background-color: var(--primary);
-  color: white;
+  background-color: var(--ta-blue-200);
+  color: var(--ta-primary-dark);
 }
 
-/* ===== Monospace Font for Data ===== */
-.font-mono-data {
-  font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
-  letter-spacing: -0.01em;
-}
-
+/* Numbers and data: Inter Tight SemiBold, tabular (replaces the old monospace treatment) */
 code, .data-value, .claim-id, .metric-value {
-  font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+pre, pre code, kbd, samp {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-weight: 400;
 }
 
-/* ===== Glass Panel Styles ===== */
-.glass-panel {
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-  border-radius: var(--radius-2xl);
 }
 
-/* Cookie banner: fully opaque for readability */
-.cookie-banner-bg {
-  background: #1f2937;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+@layer base {
+/* ===== Forms =====
+   Brand primitive is the underline text box (.ta-textbox). Filled pill inputs (default) stay for accessibility on long forms. */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), textarea, select {
+  background: var(--ta-neutral-0);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  transition: border-color var(--dur-fast) var(--ease-brand), box-shadow var(--dur-fast) var(--ease-brand);
 }
-[data-theme="light"] .cookie-banner-bg {
-  background: #f9fafb;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-/* Glass Panel with Hover Glow Effect */
-.glass-panel-hover {
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.glass-panel-hover::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: calc(var(--radius-2xl) + 1px);
-  background: linear-gradient(135deg, var(--aurora-cyan), var(--aurora-teal), var(--primary));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
-.glass-panel-hover:hover::before {
-  opacity: 1;
-}
-
-.glass-panel-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--glow-primary);
-  border-color: transparent;
-}
-
-/* Glass Panel Light Variant (for nested elements) */
-.glass-panel-light {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-lg);
-}
-
-[data-theme="light"] .glass-panel-light {
-  background: rgba(241, 245, 249, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-/* ===== Aurora Background System ===== */
-.aurora-bg {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  z-index: -10;
-  background: var(--background);
-  pointer-events: none;
-}
-
-.aurora-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  will-change: transform;
-  animation: float 20s infinite ease-in-out;
-}
-
-.aurora-blob-1 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
-  top: -200px;
-  left: -100px;
-}
-
-.aurora-blob-2 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(0, 163, 255, 0.18) 0%, transparent 70%);
-  top: 30%;
-  right: -150px;
-  animation-delay: -7s;
-}
-
-.aurora-blob-3 {
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
-  bottom: -200px;
-  left: 20%;
-  animation-delay: -14s;
-}
-
-/* Light Theme Aurora - Softer, more subtle */
-[data-theme="light"] .aurora-blob-1 {
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
-}
-
-[data-theme="light"] .aurora-blob-2 {
-  background: radial-gradient(circle, rgba(0, 119, 204, 0.08) 0%, transparent 70%);
-}
-
-[data-theme="light"] .aurora-blob-3 {
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
-}
-
-@keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(30px, -30px) scale(1.05); }
-  50% { transform: translate(-20px, 20px) scale(0.95); }
-  75% { transform: translate(20px, 10px) scale(1.02); }
-}
-
-/* ===== Partner Logo Marquee ===== */
-@keyframes marquee {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-
-.animate-marquee {
-  animation: marquee 10s linear infinite;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
-}
-
-/* ===== Performance & Accessibility ===== */
-@media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
-    animation: none;
-  }
-  .aurora-blob {
-    animation: none;
-  }
-  .glass-panel-hover:hover {
-    transform: none;
-  }
-  .glass-panel-hover::before {
-    transition: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .aurora-blob {
-    filter: blur(60px);
-  }
-  .aurora-blob-1 {
-    width: 400px;
-    height: 400px;
-  }
-  .aurora-blob-2 {
-    width: 350px;
-    height: 350px;
-  }
-  .aurora-blob-3 {
-    width: 380px;
-    height: 380px;
-  }
-}
-
-/* ===== Form Input Styles ===== */
-input, textarea, select {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border);
-  color: var(--text-primary);
-}
-
-input::placeholder, textarea::placeholder {
-  color: var(--text-muted);
-}
-
+textarea { border-radius: 24px; }
+input::placeholder, textarea::placeholder { color: var(--text-subtle); }
 input:focus, textarea:focus, select:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+[data-theme="dark"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background: rgba(251, 252, 253, .06);
+  border-color: var(--border-subtle);
+}
+input[type="range"] { accent-color: var(--accent); }
+input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
+
+.ta-textbox {
+  appearance: none; background: transparent; border: 0; border-bottom: 0.5px solid var(--border-hairline);
+  border-radius: 0; padding: 8px 2px; width: 100%; font: 400 18px/1 var(--font-body); color: var(--text-body);
+  caret-color: var(--accent); transition: border-color var(--dur-fast) var(--ease-brand), border-width var(--dur-fast) var(--ease-brand);
+}
+.ta-textbox:focus { outline: none; box-shadow: none; border-bottom: 2px solid rgb(105, 118, 235); }
+
 }
 
-/* Light Mode Form Inputs */
-[data-theme="light"] input,
-[data-theme="light"] textarea,
-[data-theme="light"] select {
-  background: #FFFFFF;
-  border: 1px solid var(--border);
+@layer components {
+/* ===== Navigation / footer surfaces ===== */
+.nav-header { background: color-mix(in srgb, var(--surface-page) 92%, transparent); }
+.nav-header[data-menu-open="true"] { background: var(--surface-page); box-shadow: var(--shadow-card); }
+@media (max-width: 767px) { .nav-header { background: var(--surface-page); } }
+.nav-dropdown { background: var(--surface-card); box-shadow: var(--shadow-card); }
+[data-theme="light"] .nav-dropdown { background: var(--ta-neutral-0); }
+
+/* Cookie banner: opaque card */
+.cookie-banner-bg { background: var(--surface-card); box-shadow: var(--shadow-swatch); }
+[data-theme="light"] .cookie-banner-bg { background: var(--ta-neutral-0); }
 }
 
-/* ===== Navigation Styles ===== */
-.nav-header {
-  background: rgba(6, 11, 24, 0.80);
+/* ===== Theme transitions ===== */
+body, .nav-header, .nav-dropdown {
+  transition: background var(--dur-base) var(--ease-brand), color var(--dur-base) var(--ease-brand);
 }
 
-.nav-dropdown {
-  background: rgba(10, 18, 40, 0.98);
-}
-
-[data-theme="light"] .nav-header {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-[data-theme="light"] .nav-dropdown {
-  background: rgba(255, 255, 255, 0.98);
-}
-
-.footer-overlay {
-  background: rgba(6, 11, 24, 0.7);
-}
-
-[data-theme="light"] .footer-overlay {
-  background: rgba(248, 250, 252, 0.9);
-}
-
-/* ===== Theme Transition ===== */
-html {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-body,
-.glass-panel,
-.aurora-blob,
-.nav-header,
-.nav-dropdown {
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* ===== Utility: Hide Scrollbar ===== */
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-/* ===== Theme-Conditional Display ===== */
-/* Dark is default (:root), so .light-only is hidden by default */
-.light-only { display: none !important; }
-[data-theme="light"] .light-only { display: initial !important; }
+/* ===== Theme-conditional display (light is the site theme) ===== */
+.dark-only { display: none !important; }
+[data-theme="light"] .light-only { display: inline-block !important; }
 [data-theme="light"] .dark-only { display: none !important; }
 
-/* Performance: content-visibility for below-fold sections */
-.content-visibility-auto {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 500px;
-}
+/* ===== Dark-band accent legibility =====
+   True Aim Blue is a fill colour on dark surfaces; text and outlines use Light Blue (design system dark theme). */
+[data-theme="dark"] .text-accent,
+[data-theme="dark"] .text-ta-blue,
+[data-theme="dark"] .text-link { color: var(--ta-light-blue); }
+[data-theme="dark"] .border-ta-blue { border-color: var(--ta-light-blue); }
+[data-theme="dark"] .hover\:text-accent:hover { color: var(--ta-light-blue); }
+[data-theme="dark"] .icon-plate { color: var(--ta-light-blue); }
+[data-theme="dark"] .bg-ta-blue { color: #FFFFFF; }
+/* Light surfaces (root or nested plates) keep True Aim Blue for accent text and outlines. */
+[data-theme="light"] .text-accent,
+[data-theme="light"] .text-ta-blue,
+[data-theme="light"] .text-link { color: var(--ta-blue); }
+[data-theme="light"] .border-ta-blue { border-color: var(--ta-blue); }
+[data-theme="light"] .hover\:text-accent:hover { color: var(--ta-blue); }
+[data-theme="light"] .icon-plate { color: var(--ta-blue); }
+/* Themed logos inside a nested band follow that band. */
+[data-theme="dark"] .light-only { display: none !important; }
+[data-theme="dark"] .dark-only { display: inline-block !important; }
 
-/* ===== Premium Button Shine Effect ===== */
-.btn-shine {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-shine::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-.btn-shine:hover::after {
-  left: 100%;
-}
-
-/* ===== Scroll Indicator ===== */
-@keyframes scrollBounce {
-  0%, 100% { transform: translateY(0); opacity: 0.6; }
-  50% { transform: translateY(8px); opacity: 1; }
-}
-
-.scroll-indicator {
-  animation: scrollBounce 2s ease-in-out infinite;
-}
-
-/* ===== Confidence Meter Fill ===== */
-@keyframes meterFill {
-  from { width: 0%; }
-  to { width: var(--meter-value, 98.5%); }
-}
-
-.meter-fill {
-  animation: meterFill 2s ease-out forwards;
-}
-
-/* ===== Timeline connector ===== */
-@keyframes lineGrow {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
-}
-
-.timeline-line {
-  transform-origin: left;
-  animation: lineGrow 0.8s ease-out forwards;
-}
-
-/* ===== Primary Glow Pulse ===== */
-@keyframes tealGlow {
-  0%, 100% { box-shadow: 0 0 8px rgba(59, 130, 246, 0.3); }
-  50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(59, 130, 246, 0.2); }
-}
-
-.teal-glow-pulse {
-  animation: tealGlow 3s ease-in-out infinite;
-}
-
-/* ===== Card hover teal glow ===== */
-.card-glow {
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.card-glow:hover {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
-  transform: translateY(-4px);
-}
-
-[data-theme="light"] .card-glow:hover {
-  box-shadow: 0 0 30px rgba(37, 99, 235, 0.1), 0 8px 32px rgba(0, 0, 0, 0.08);
-}
-
-/* ===== Gradient text =====
-   Uses palette vars so the gradient tracks --primary and --aurora-purple
-   across themes instead of drifting from hardcoded hex. Dark resolves to
-   #3B82F6 → #8B5CF6, light to #2563EB → #7C3AED. */
-.text-gradient {
-  background: linear-gradient(135deg, var(--primary), var(--aurora-purple));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ===== Reduced motion for new animations ===== */
+/* ===== Reduced motion ===== */
 @media (prefers-reduced-motion: reduce) {
-  .scroll-indicator,
-  .teal-glow-pulse {
-    animation: none;
-  }
-  .btn-shine::after {
-    display: none;
-  }
-  .meter-fill {
-    animation: none;
-    width: var(--meter-value, 98.5%);
-  }
-  .timeline-line {
-    animation: none;
-    transform: scaleX(1);
-  }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }

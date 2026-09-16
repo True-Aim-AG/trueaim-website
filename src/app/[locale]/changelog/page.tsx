@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { Eyebrow } from "@/components/brand/Eyebrow";
 
 const LAST_UPDATED = "2026-05-20";
 
@@ -102,44 +103,50 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <div className="py-24 px-6">
+      <div className="pt-20 md:pt-28 pb-16 px-6">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+          <h1 className="mt-3 font-display text-4xl font-bold leading-[1.05] text-strong mb-4">
             Changelog
           </h1>
-          <p className="text-sm text-[var(--text-muted)] mb-8">
-            <strong>Last updated:</strong> {LAST_UPDATED}
+          <p className="text-sm text-muted mb-8">
+            <strong className="text-strong">Last updated:</strong> {LAST_UPDATED}
           </p>
 
-          <div className="glass-panel p-8 md:p-12 space-y-12">
-            <p className="text-[var(--text-secondary)] leading-relaxed">
+          <div>
+            <p className="text-body leading-[1.6]">
               Public release history of the True Aim Platform. Each entry summarizes user-visible features, reliability improvements, fixes, and security or compliance work shipped in that release.
             </p>
 
-            {RELEASES.map((release) => (
-              <article key={release.version} className="space-y-4">
+            {RELEASES.map((release, index) => (
+              <article
+                key={release.version}
+                className={index === 0 ? "mt-14" : "mt-14 pt-14 border-t border-hairline"}
+              >
                 <header>
-                  <h2 className="text-2xl font-semibold text-[var(--text-primary)]">
-                    True Aim Platform {release.version} &mdash; {release.date}
+                  <Eyebrow>{release.date}</Eyebrow>
+                  <h2 className="font-display text-2xl font-bold text-strong mt-1">
+                    True Aim Platform {release.version}
                   </h2>
                 </header>
                 {release.intro && (
-                  <p className="text-[var(--text-secondary)] leading-relaxed italic">
+                  <p className="text-body leading-[1.6] italic mt-4">
                     {release.intro}
                   </p>
                 )}
-                {GROUP_ORDER.filter((g) => release.groups[g]).map((group) => (
-                  <div key={group}>
-                    <h3 className="text-base font-semibold text-[var(--text-primary)] mb-2">
-                      {group}
-                    </h3>
-                    <ul className="list-disc pl-6 text-[var(--text-secondary)] leading-relaxed space-y-1">
-                      {release.groups[group]!.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+                <div className="mt-6 space-y-6">
+                  {GROUP_ORDER.filter((g) => release.groups[g]).map((group) => (
+                    <div key={group}>
+                      <span className="inline-flex items-center rounded-pill bg-accent-soft text-accent px-3 py-1 text-xs font-medium mb-3">
+                        {group}
+                      </span>
+                      <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-1">
+                        {release.groups[group]!.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
               </article>
             ))}
           </div>

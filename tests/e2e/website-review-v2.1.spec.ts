@@ -115,7 +115,9 @@ test.describe('Home Page - Flow Section Font Sizes (REQ-HOME-003 to REQ-HOME-007
     // Verify text content is unchanged
     await expect(flowSection.getByText('Ingest').first()).toBeVisible();
     await expect(flowSection.getByText('Capture & validate inputs').first()).toBeVisible();
-    await expect(flowSection.getByText('< 10 sec').first()).toBeVisible();
+    // Time badge ("< 10 sec") was removed from the compact pipeline row in the
+    // True Aim redesign (docs/DESIGN_SYSTEM.md §7 "Pipeline / process row" is
+    // icon + label + description only, no time badge).
 
     // Find the step container and compare font sizes
     const step1Container = flowSection.locator('[data-step="1"], .flow-step').filter({ hasText: 'Ingest' }).first();
@@ -166,23 +168,22 @@ test.describe('Home Page - Flow Section Font Sizes (REQ-HOME-003 to REQ-HOME-007
 
     const flowSection = page.locator('section').filter({ hasText: 'From Documents to Decisions' });
 
-    // Line 1: "Assess"
-    await expect(flowSection.getByText('Assess').first()).toBeVisible();
+    // Line 1: "Decide" (renamed from "Assess" per REQ-V6-001; the True Aim
+    // redesign also dropped the per-step time badge from this compact row)
+    await expect(flowSection.getByText('Decide').first()).toBeVisible();
 
     // Line 2: "Confirm outcome & handling" (note: "&" not "and", "handling" not "routing")
     await expect(flowSection.getByText('Confirm outcome & handling').first()).toBeVisible();
 
-    // Line 3: "< 5 sec"
-    await expect(flowSection.getByText('< 5 sec').first()).toBeVisible();
-
     // Verify OLD text is NOT present
     await expect(flowSection.getByText('Confirm outcome and routing')).not.toBeVisible();
+    await expect(flowSection.getByText('Assess', { exact: true })).not.toBeVisible();
 
     // Font size check
-    const step3Container = flowSection.locator('[data-step="3"], .flow-step').filter({ hasText: 'Assess' }).first();
+    const step3Container = flowSection.locator('[data-step="3"], .flow-step').filter({ hasText: 'Decide' }).first();
 
     if (await step3Container.count() > 0) {
-      const titleFontSize = await step3Container.locator('text=Assess').first().evaluate(el =>
+      const titleFontSize = await step3Container.locator('text=Decide').first().evaluate(el =>
         parseFloat(window.getComputedStyle(el).fontSize)
       );
       const descFontSize = await step3Container.locator('text=Confirm outcome').first().evaluate(el =>
@@ -203,7 +204,8 @@ test.describe('Home Page - Flow Section Font Sizes (REQ-HOME-003 to REQ-HOME-007
     // Verify text content is unchanged
     await expect(flowSection.getByText('Execute').first()).toBeVisible();
     await expect(flowSection.getByText('Trigger next steps').first()).toBeVisible();
-    await expect(flowSection.getByText('< 10 sec').first()).toBeVisible();
+    // Time badge ("< 10 sec") was removed from the compact pipeline row in the
+    // True Aim redesign (docs/DESIGN_SYSTEM.md §7 is icon + label + description only).
 
     // Font size check
     const step4Container = flowSection.locator('[data-step="4"], .flow-step').filter({ hasText: 'Execute' }).first();
@@ -331,8 +333,10 @@ test.describe('Home Page - Dossier Section (REQ-HOME-009)', () => {
 
     const dossierSection = page.locator('section').filter({ hasText: 'Decision Dossier' });
 
-    // Verify heading "Auditable by Design." is present in dossier section
-    await expect(dossierSection.getByText('Auditable by Design.').first()).toBeVisible();
+    // The section heading is now "The Decision Dossier" (the "Auditable by
+    // Design." tagline moved to the hero H1 sub-line and is no longer
+    // repeated as this section's own heading).
+    await expect(dossierSection.getByText('The Decision Dossier').first()).toBeVisible();
 
     // Verify body text with "explained & defended" (ampersand)
     await expect(
@@ -372,12 +376,12 @@ test.describe('Home Page - Footer (REQ-HOME-010, REQ-HOME-011)', () => {
 
   test('REQ-HOME-011: Footer copyright preserved', async ({ page }) => {
     // SECTION_ID: GLOBAL_FOOTER:COPYRIGHT
-    // Required: "© 2026 True Aim. All rights reserved." - NO CHANGE
+    // Required: "© 2026 True Aim AG. All rights reserved." (legal entity is "True Aim AG" per DESIGN_SYSTEM.md §2)
 
     const footer = page.locator('footer');
 
     // Verify copyright text
-    await expect(footer.getByText(/© 2026 True Aim\. All rights reserved\./)).toBeVisible();
+    await expect(footer.getByText(/© 2026 True Aim AG\. All rights reserved\./)).toBeVisible();
 
     // Verify copyright symbol is present
     await expect(footer.getByText('©')).toBeVisible();
@@ -512,7 +516,7 @@ test.describe('Global Footer Propagation (RULE-003)', () => {
     test(`${pageInfo.name} page has correct copyright in footer`, async ({ page }) => {
       await page.goto(`${BASE_URL}${pageInfo.url}`);
 
-      await expect(page.getByText(/© 2026 True Aim\. All rights reserved\./)).toBeVisible();
+      await expect(page.getByText(/© 2026 True Aim AG\. All rights reserved\./)).toBeVisible();
     });
 
     test(`${pageInfo.name} page has version number in footer`, async ({ page }) => {
@@ -539,7 +543,10 @@ test.describe('Regression - V2 Requirements Still Valid', () => {
   });
 
   test('Flow section title still shows "From Documents to Decisions in One Flow"', async ({ page }) => {
-    await expect(page.getByText('From Documents to Decisions in One Flow')).toBeVisible();
+    // The redesign added a second (compact icon-row) section that reuses this
+    // title as an sr-only heading, alongside the original visible heading
+    // further down the page, so this now matches two elements.
+    await expect(page.getByText('From Documents to Decisions in One Flow').first()).toBeVisible();
   });
 
   test('Awards section still shows "Award-Winning Technology"', async ({ page }) => {

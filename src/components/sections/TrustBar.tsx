@@ -5,6 +5,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { PartnerLogos } from "./PartnerLogos";
 
+const ease = [0.4, 0, 0.2, 1] as const;
+
 const awards = [
   {
     country: "Switzerland",
@@ -35,13 +37,13 @@ export function TrustBar() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)]">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-strong">
             {t("title")}
           </h2>
-          <p className="text-base text-[var(--text-secondary)] mt-3">
+          <p className="text-base text-body mt-3">
             {t("subtitle")}
           </p>
         </motion.div>
@@ -54,13 +56,13 @@ export function TrustBar() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex-shrink-0 md:flex-1 max-w-sm md:max-w-none group"
+              transition={{ duration: 0.5, delay: index * 0.1, ease }}
+              className="flex-shrink-0 md:flex-1 max-w-sm md:max-w-none"
             >
-              <div className="flex items-center gap-5 p-6 h-full rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] card-glow transition-all">
-                <div className={`flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden flex items-center justify-center p-2 ${
-                  award.darkBg ? 'bg-slate-600' : 'bg-white'
-                } group-hover:shadow-lg transition-shadow`}>
+              <div className="flex items-center gap-5 p-6 h-full rounded-pill bg-card shadow-card transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch">
+                <div className={`flex-shrink-0 w-20 h-20 rounded-pill overflow-hidden flex items-center justify-center p-2 shadow-swatch ${
+                  award.darkBg ? 'bg-ta-charcoal' : 'bg-ta-neutral-0'
+                }`}>
                   <Image
                     src={award.image}
                     alt={award.title}
@@ -70,10 +72,10 @@ export function TrustBar() {
                   />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wide mb-1">
+                  <p className="text-caption-sm text-subtle mb-1">
                     {award.country}
                   </p>
-                  <p className="text-base font-semibold text-[var(--text-primary)] leading-tight">
+                  <p className="text-base font-semibold text-strong leading-tight">
                     <span className="block">{award.title}</span>
                     {award.titleLine2 && <span className="block">{award.titleLine2}</span>}
                   </p>

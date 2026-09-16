@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
+import { StatusPill } from "@/components/brand/StatusPill";
 import {
   Shield,
   Lock,
@@ -19,7 +20,6 @@ const publicDocs = [
   { key: "privacy", href: "/privacy" },
   { key: "security", href: "/security" },
   { key: "ethics", href: "/ethics" },
-  { key: "subProcessors", href: "/sub-processors" },
   { key: "product", href: "/product" },
   { key: "support", href: "/support" },
   { key: "changelog", href: "/changelog" },
@@ -71,25 +71,25 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 px-6 overflow-hidden">
+      <section className="relative overflow-hidden py-24 px-6">
         <div className="relative max-w-7xl mx-auto text-center">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
-              <Shield className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-pill bg-accent-soft text-accent text-sm font-medium mb-6">
+              <Shield className="w-4 h-4" strokeWidth={1.5} />
               {t("hero.badge")}
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-[54px] font-bold leading-[1.05] text-strong mb-6">
               {t("hero.titleLine1")}
               <br />
-              <span className="text-[var(--primary)]">{t("hero.titleLine2")}</span>
+              <span className="text-accent">{t("hero.titleLine2")}</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lede text-body max-w-3xl mx-auto">
               {t("hero.description")}
             </p>
           </MotionDiv>
@@ -106,10 +106,10 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-4">
               {t("compliance.heading")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)]">
+            <p className="text-lede text-body">
               {t("compliance.subtitle")}
             </p>
           </MotionDiv>
@@ -122,32 +122,25 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-panel glass-panel-hover p-6"
+                className="bg-card shadow-card rounded-pill p-6 transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch"
               >
                 <div className="flex items-start gap-4">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                    badge.status === 'provided' || badge.status === 'aligned'
-                      ? 'bg-emerald-500/20'
-                      : 'bg-amber-500/20'
-                  }`}>
-                    <badge.icon className={`w-6 h-6 ${
-                      badge.status === 'provided' || badge.status === 'aligned'
-                        ? 'text-emerald-400'
-                        : 'text-amber-400'
-                    }`} />
+                  <div className="w-12 h-12 rounded-pill bg-lilac grid place-items-center flex-shrink-0 text-accent">
+                    <badge.icon className="w-6 h-6" strokeWidth={1.5} />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-semibold text-[var(--text-primary)]">{t(`compliance.badges.${badge.key}.name`)}</h3>
-                      <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-                        badge.status === 'provided' ? 'bg-emerald-500/20 text-emerald-400' :
-                        badge.status === 'aligned' ? 'bg-emerald-500/20 text-emerald-400' :
-                        'bg-amber-500/20 text-amber-400'
-                      }`}>
+                      <h3 className="font-display font-semibold text-strong">{t(`compliance.badges.${badge.key}.name`)}</h3>
+                      <StatusPill
+                        tone={badge.status === "roadmap" ? "progress" : "approved"}
+                        emphasis="light"
+                        dot={false}
+                        size="sm"
+                      >
                         {t(`compliance.statusLabels.${badge.status}`)}
-                      </span>
+                      </StatusPill>
                     </div>
-                    <p className="text-sm text-[var(--text-muted)]">{t(`compliance.badges.${badge.key}.description`)}</p>
+                    <p className="text-sm text-muted">{t(`compliance.badges.${badge.key}.description`)}</p>
                   </div>
                 </div>
               </MotionDiv>
@@ -166,33 +159,33 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+              <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-6">
                 {t("dataResidency.heading")}
               </h2>
-              <p className="text-lg text-[var(--text-secondary)] mb-6 leading-relaxed">
+              <p className="text-lede text-body mb-6">
                 {t("dataResidency.description")}
               </p>
 
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                   <div>
-                    <strong className="text-[var(--text-primary)]">{t("dataResidency.swissDataCenter.title")}</strong>
-                    <p className="text-sm text-[var(--text-muted)]">{t("dataResidency.swissDataCenter.description")}</p>
+                    <strong className="text-strong">{t("dataResidency.swissDataCenter.title")}</strong>
+                    <p className="text-sm text-muted">{t("dataResidency.swissDataCenter.description")}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                   <div>
-                    <strong className="text-[var(--text-primary)]">{t("dataResidency.euProcessingZones.title")}</strong>
-                    <p className="text-sm text-[var(--text-muted)]">{t("dataResidency.euProcessingZones.description")}</p>
+                    <strong className="text-strong">{t("dataResidency.euProcessingZones.title")}</strong>
+                    <p className="text-sm text-muted">{t("dataResidency.euProcessingZones.description")}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                   <div>
-                    <strong className="text-[var(--text-primary)]">{t("dataResidency.noThirdCountry.title")}</strong>
-                    <p className="text-sm text-[var(--text-muted)]">{t("dataResidency.noThirdCountry.description")}</p>
+                    <strong className="text-strong">{t("dataResidency.noThirdCountry.title")}</strong>
+                    <p className="text-sm text-muted">{t("dataResidency.noThirdCountry.description")}</p>
                   </div>
                 </li>
               </ul>
@@ -221,10 +214,10 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-4">
               {t("security.heading")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)]">
+            <p className="text-lede text-body">
               {t("security.subtitle")}
             </p>
           </MotionDiv>
@@ -237,19 +230,19 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-panel p-8"
+                className="bg-card shadow-card rounded-pill p-8"
               >
-                <div className="w-14 h-14 rounded-xl bg-[var(--primary)]/20 flex items-center justify-center mb-6">
-                  <category.icon className="w-7 h-7 text-[var(--primary)]" />
+                <div className="w-14 h-14 rounded-pill bg-lilac grid place-items-center mb-6 text-accent">
+                  <category.icon className="w-7 h-7" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-6">
+                <h3 className="font-display text-xl font-semibold text-strong mb-6">
                   {t(`security.categories.${category.key}.title`)}
                 </h3>
                 <ul className="space-y-4">
                   {category.featureKeys.map((fKey) => (
-                    <li key={fKey} className="border-b border-[var(--border)] pb-4 last:border-0 last:pb-0">
-                      <div className="font-medium text-[var(--text-primary)] mb-1">{t(`security.categories.${category.key}.features.${fKey}.name`)}</div>
-                      <div className="text-sm text-[var(--text-muted)]">{t(`security.categories.${category.key}.features.${fKey}.detail`)}</div>
+                    <li key={fKey} className="border-b border-hairline pb-4 last:border-0 last:pb-0">
+                      <div className="font-medium text-strong mb-1">{t(`security.categories.${category.key}.features.${fKey}.name`)}</div>
+                      <div className="text-sm text-muted">{t(`security.categories.${category.key}.features.${fKey}.detail`)}</div>
                     </li>
                   ))}
                 </ul>
@@ -269,14 +262,14 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/20 text-blue-400 text-sm font-medium mb-4">
-              <Eye className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-pill bg-accent-soft text-accent text-sm font-medium mb-4">
+              <Eye className="w-4 h-4" strokeWidth={1.5} />
               {t("euAiAct.badge")}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-4">
               {t("euAiAct.heading")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
+            <p className="text-lede text-body max-w-3xl mx-auto">
               {t("euAiAct.subtitle")}
             </p>
           </MotionDiv>
@@ -289,13 +282,13 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="glass-panel glass-panel-hover p-6"
+                className="bg-card shadow-card rounded-pill p-6 transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch"
               >
                 <div className="flex items-start gap-3 mb-3">
-                  <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <h3 className="font-semibold text-[var(--text-primary)]">{t(`euAiAct.features.${fKey}.requirement`)}</h3>
+                  <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                  <h3 className="font-display font-semibold text-strong">{t(`euAiAct.features.${fKey}.requirement`)}</h3>
                 </div>
-                <p className="text-sm text-[var(--text-muted)] ml-8">{t(`euAiAct.features.${fKey}.description`)}</p>
+                <p className="text-sm text-muted ml-8">{t(`euAiAct.features.${fKey}.description`)}</p>
               </MotionDiv>
             ))}
           </div>
@@ -306,13 +299,13 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-12 glass-panel p-8 text-center"
+            className="mt-12 bg-lilac rounded-pill px-8 py-10 text-center"
           >
-            <FileCheck className="w-10 h-10 text-[var(--primary)] mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">
+            <FileCheck className="w-10 h-10 text-accent mx-auto mb-4" strokeWidth={1.5} />
+            <h3 className="font-display text-xl font-semibold text-strong mb-2">
               {t("euAiAct.callout.heading")}
             </h3>
-            <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
+            <p className="text-body max-w-2xl mx-auto">
               {t("euAiAct.callout.description")}
             </p>
           </MotionDiv>
@@ -329,10 +322,10 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-4">
               {t("publicDocuments.heading")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
+            <p className="text-lede text-body max-w-3xl mx-auto">
               {t("publicDocuments.subtitle")}
             </p>
           </MotionDiv>
@@ -348,17 +341,17 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
               >
                 <Link
                   href={doc.href}
-                  className="glass-panel glass-panel-hover p-6 flex items-start justify-between gap-4 h-full group"
+                  className="bg-card shadow-card rounded-pill p-6 flex items-start justify-between gap-4 h-full group transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch"
                 >
                   <div>
-                    <h3 className="font-semibold text-[var(--text-primary)] mb-1 group-hover:text-[var(--primary)] transition-colors">
+                    <h3 className="font-display font-semibold text-strong mb-1 group-hover:text-accent transition-colors">
                       {t(`publicDocuments.items.${doc.key}.title`)}
                     </h3>
-                    <p className="text-sm text-[var(--text-muted)]">
+                    <p className="text-sm text-muted">
                       {t(`publicDocuments.items.${doc.key}.description`)}
                     </p>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-[var(--text-muted)] group-hover:text-[var(--primary)] group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
+                  <ArrowRight className="w-5 h-5 text-muted group-hover:text-accent transition-colors flex-shrink-0 mt-1" strokeWidth={1.5} />
                 </Link>
               </MotionDiv>
             ))}

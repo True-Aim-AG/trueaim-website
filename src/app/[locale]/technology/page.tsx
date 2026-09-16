@@ -2,36 +2,28 @@ import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 
-import {
-  ArrowRight,
-  Brain,
-  Cpu,
-  FileSearch,
-  Workflow,
-  Shield,
-  Scale,
-  GraduationCap,
-  CheckCircle,
-  RefreshCw,
-  GitBranch,
-  UserCheck,
-  AlertTriangle,
-  Gauge,
-} from "lucide-react";
+import { ArrowRight, Brain, Scale, GraduationCap, AlertTriangle } from "lucide-react";
+import { ButtonLink } from "@/components/brand/Button";
+import { BrandIcon, type BrandIconName } from "@/components/brand/BrandIcon";
+import { Eyebrow } from "@/components/brand/Eyebrow";
+import { Glow } from "@/components/brand/Glow";
+import { StatusPill } from "@/components/brand/StatusPill";
 import { DecisionDossier } from "@/components/sections/DecisionDossier";
 
 const agenticCapabilityKeys = ["docReading", "dataExtraction", "classification", "orchestration"] as const;
+const agenticCapabilityIcons: BrandIconName[] = ["document", "extraction", "classification", "workflow"];
 
 const deterministicCapabilityKeys = ["coverageRules", "policyLogic", "costCalculation", "decisionOutput"] as const;
+const deterministicCapabilityIcons: BrandIconName[] = ["rules", "logic", "processing", "decision"];
 
 const comparisonRowKeys = ["consistency", "auditTrail", "explainability", "euAiAct"] as const;
 
 const controlFeatureMeta = [
-  { key: "replayLogs", icon: RefreshCw, color: "text-blue-400", bgColor: "bg-blue-500/20" },
-  { key: "ruleTraceability", icon: GitBranch, color: "text-indigo-400", bgColor: "bg-indigo-500/20" },
-  { key: "approvalGates", icon: UserCheck, color: "text-emerald-400", bgColor: "bg-emerald-500/20" },
-  { key: "exceptionRouting", icon: AlertTriangle, color: "text-amber-400", bgColor: "bg-amber-500/20" },
-  { key: "confidenceScoring", icon: Gauge, color: "text-purple-400", bgColor: "bg-purple-500/20" },
+  { key: "replayLogs", icon: "traceability" as BrandIconName },
+  { key: "ruleTraceability", icon: "rule-applied" as BrandIconName },
+  { key: "approvalGates", icon: "human-review" as BrandIconName },
+  { key: "exceptionRouting", icon: null },
+  { key: "confidenceScoring", icon: "quality" as BrandIconName },
 ] as const;
 
 export default async function TechnologyPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -48,18 +40,15 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--subtle-bg)] text-[var(--text-secondary)] text-sm font-medium mb-6">
-              <Cpu className="w-4 h-4" />
-              {t("hero.badge")}
-            </div>
+            <Eyebrow className="mb-6">{t("hero.badge")}</Eyebrow>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <h1 className="font-display text-[40px] font-bold leading-[1.05] text-strong sm:text-[48px] lg:text-[54px] mb-6">
               {t("hero.titleLine1")}
               <br />
-              <span className="text-[var(--primary)]">{t("hero.titleLine2")}</span>
+              <span className="text-accent">{t("hero.titleLine2")}</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lede text-body max-w-3xl mx-auto">
               {t("hero.description")}
             </p>
           </MotionDiv>
@@ -76,13 +65,13 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-6">
               {t("problem.heading")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
+            <p className="text-lede text-body">
               {t("problem.description")}
             </p>
-            <p className="text-xl font-semibold text-[var(--primary)] mt-6">
+            <p className="text-xl font-semibold text-accent mt-6">
               {t("problem.emphasis")}
             </p>
           </MotionDiv>
@@ -99,10 +88,10 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-4">
               {t("architecture.heading")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)]">
+            <p className="text-lg text-body">
               {t("architecture.subtitle")}
             </p>
           </MotionDiv>
@@ -114,33 +103,33 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="glass-panel p-8"
+              className="bg-card shadow-card rounded-pill p-8"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl bg-[var(--aurora-cyan)]/30 flex items-center justify-center">
-                  <Brain className="w-8 h-8 text-[var(--aurora-cyan)]" />
+                <div className="w-16 h-16 rounded-pill bg-lilac grid place-items-center">
+                  <Brain className="w-8 h-8 text-accent" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-[var(--text-primary)]">
+                  <h3 className="font-display text-2xl font-bold text-strong">
                     {t("architecture.agentic.title")}
                   </h3>
-                  <p className="text-[var(--aurora-cyan)] font-medium">{t("architecture.agentic.subtitle")}</p>
+                  <p className="text-accent font-medium">{t("architecture.agentic.subtitle")}</p>
                 </div>
               </div>
 
               <ul className="space-y-4">
-                {agenticCapabilityKeys.map((capKey) => (
+                {agenticCapabilityKeys.map((capKey, index) => (
                   <li key={capKey} className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-[var(--aurora-cyan)]/20 flex items-center justify-center flex-shrink-0">
-                      <FileSearch className="w-4 h-4 text-[var(--aurora-cyan)]" />
+                    <div className="w-8 h-8 rounded-pill bg-lilac flex items-center justify-center flex-shrink-0">
+                      <BrandIcon name={agenticCapabilityIcons[index]} size={18} />
                     </div>
-                    <span className="text-[var(--text-primary)] font-medium">{t(`architecture.agentic.capabilities.${capKey}`)}</span>
+                    <span className="text-strong font-medium">{t(`architecture.agentic.capabilities.${capKey}`)}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-6 p-4 glass-panel-light">
-                <p className="text-sm text-[var(--text-secondary)]">
+              <div className="mt-6 p-4 bg-surface-muted rounded-pill">
+                <p className="text-sm text-body">
                   {t("architecture.agentic.description")}
                 </p>
               </div>
@@ -152,33 +141,33 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="glass-panel p-8"
+              className="bg-card shadow-card rounded-pill p-8"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl bg-[var(--primary)]/30 flex items-center justify-center">
-                  <Scale className="w-8 h-8 text-[var(--primary)]" />
+                <div className="w-16 h-16 rounded-pill bg-lilac grid place-items-center">
+                  <Scale className="w-8 h-8 text-accent" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-[var(--text-primary)]">
+                  <h3 className="font-display text-2xl font-bold text-strong">
                     {t("architecture.deterministic.title")}
                   </h3>
-                  <p className="text-[var(--primary)] font-medium">{t("architecture.deterministic.subtitle")}</p>
+                  <p className="text-accent font-medium">{t("architecture.deterministic.subtitle")}</p>
                 </div>
               </div>
 
               <ul className="space-y-4">
-                {deterministicCapabilityKeys.map((capKey) => (
+                {deterministicCapabilityKeys.map((capKey, index) => (
                   <li key={capKey} className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center flex-shrink-0">
-                      <Workflow className="w-4 h-4 text-[var(--primary)]" />
+                    <div className="w-8 h-8 rounded-pill bg-lilac flex items-center justify-center flex-shrink-0">
+                      <BrandIcon name={deterministicCapabilityIcons[index]} size={18} />
                     </div>
-                    <span className="text-[var(--text-primary)] font-medium">{t(`architecture.deterministic.capabilities.${capKey}`)}</span>
+                    <span className="text-strong font-medium">{t(`architecture.deterministic.capabilities.${capKey}`)}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-6 p-4 glass-panel-light">
-                <p className="text-sm text-[var(--text-secondary)]">
+              <div className="mt-6 p-4 bg-surface-muted rounded-pill">
+                <p className="text-sm text-body">
                   {t("architecture.deterministic.description")}
                 </p>
               </div>
@@ -191,11 +180,11 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-8 glass-panel border border-emerald-500/20 bg-emerald-500/10 rounded-2xl p-8 text-center"
+            className="mt-8 bg-accent-soft rounded-pill p-8 text-center"
           >
-            <Shield className="w-12 h-12 mx-auto mb-4 text-emerald-400 opacity-90" />
-            <h3 className="text-2xl font-bold mb-2 text-[var(--text-primary)]">{t("architecture.auditTrail.title")}</h3>
-            <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
+            <BrandIcon name="traceability" size={40} className="mx-auto mb-4" />
+            <h3 className="font-display text-2xl font-bold mb-2 text-strong">{t("architecture.auditTrail.title")}</h3>
+            <p className="text-body max-w-2xl mx-auto">
               {t("architecture.auditTrail.description")}
             </p>
           </MotionDiv>
@@ -215,14 +204,11 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium mb-4">
-              <Shield className="w-4 h-4" />
-              {t("control.badge")}
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <Eyebrow className="mb-4">{t("control.badge")}</Eyebrow>
+            <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-4">
               {t("control.heading")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
+            <p className="text-lg text-body max-w-3xl mx-auto">
               {t("control.subtitle")}
             </p>
           </MotionDiv>
@@ -235,13 +221,17 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-panel glass-panel-hover p-6"
+                className="bg-card shadow-card rounded-pill p-6 transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch"
               >
-                <div className={`w-12 h-12 rounded-xl ${feature.bgColor} flex items-center justify-center mb-4`}>
-                  <feature.icon className={`w-6 h-6 ${feature.color}`} />
+                <div className="w-12 h-12 rounded-pill bg-lilac grid place-items-center mb-4">
+                  {feature.icon ? (
+                    <BrandIcon name={feature.icon} size={24} />
+                  ) : (
+                    <AlertTriangle className="w-6 h-6 text-accent" strokeWidth={1.5} />
+                  )}
                 </div>
-                <h3 className="font-semibold text-[var(--text-primary)] mb-2">{t(`control.features.${feature.key}.title`)}</h3>
-                <p className="text-sm text-[var(--text-muted)]">{t(`control.features.${feature.key}.description`)}</p>
+                <h3 className="font-display font-semibold text-strong mb-2">{t(`control.features.${feature.key}.title`)}</h3>
+                <p className="text-sm text-muted">{t(`control.features.${feature.key}.description`)}</p>
               </MotionDiv>
             ))}
           </div>
@@ -252,10 +242,10 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-12 glass-panel p-8 text-center"
+            className="mt-12 bg-card shadow-card rounded-pill p-8 text-center"
           >
-            <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">{t("control.philosophyHeading")}</h3>
-            <p className="text-lg text-[var(--text-secondary)] max-w-[820px] mx-auto leading-relaxed">
+            <h3 className="font-display text-xl font-semibold text-strong mb-3">{t("control.philosophyHeading")}</h3>
+            <p className="text-lede text-body max-w-[820px] mx-auto">
               {t("control.philosophy")}
             </p>
           </MotionDiv>
@@ -272,10 +262,10 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-4">
               {t("comparison.heading")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)]">
+            <p className="text-lg text-body">
               {t("comparison.subtitle")}
             </p>
           </MotionDiv>
@@ -285,26 +275,25 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="glass-panel overflow-hidden"
+            className="bg-card shadow-card rounded-pill overflow-hidden"
           >
             <table className="w-full">
               <thead>
-                <tr className="border-b border-[var(--border)]">
-                  <th className="text-left p-6 text-[var(--text-primary)] font-semibold">{t("comparison.columns.capability")}</th>
-                  <th className="text-center p-6 text-[var(--text-muted)] font-semibold">{t("comparison.columns.traditional")}</th>
-                  <th className="text-center p-6 text-[var(--primary)] font-semibold">{t("comparison.columns.trueaim")}</th>
+                <tr className="border-b border-hairline">
+                  <th className="text-left p-6 font-display text-strong font-semibold">{t("comparison.columns.capability")}</th>
+                  <th className="text-center p-6 text-muted font-semibold">{t("comparison.columns.traditional")}</th>
+                  <th className="text-center p-6 text-accent font-semibold">{t("comparison.columns.trueaim")}</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonRowKeys.map((rowKey, index) => (
-                  <tr key={rowKey} className={index < comparisonRowKeys.length - 1 ? "border-b border-[var(--border)]" : ""}>
-                    <td className="p-6 text-[var(--text-primary)] font-medium">{t(`comparison.rows.${rowKey}.capability`)}</td>
-                    <td className="p-6 text-center text-[var(--text-muted)]">{t(`comparison.rows.${rowKey}.traditional`)}</td>
+                  <tr key={rowKey} className={index < comparisonRowKeys.length - 1 ? "border-b border-hairline" : ""}>
+                    <td className="p-6 text-strong font-medium">{t(`comparison.rows.${rowKey}.capability`)}</td>
+                    <td className="p-6 text-center text-muted">{t(`comparison.rows.${rowKey}.traditional`)}</td>
                     <td className="p-6 text-center">
-                      <span className="inline-flex items-center gap-2 text-[var(--secondary)] font-medium">
-                        <CheckCircle className="w-5 h-5" />
+                      <StatusPill tone="approved" size="sm">
                         {t(`comparison.rows.${rowKey}.trueaim`)}
-                      </span>
+                      </StatusPill>
                     </td>
                   </tr>
                 ))}
@@ -322,24 +311,24 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-panel p-8 md:p-12 text-center"
+            className="bg-card shadow-card rounded-pill p-8 md:p-12 text-center"
           >
-            <div className="w-16 h-16 rounded-full bg-[var(--aurora-cyan)]/20 flex items-center justify-center mx-auto mb-6">
-              <GraduationCap className="w-8 h-8 text-[var(--aurora-cyan)]" />
+            <div className="w-16 h-16 rounded-pill bg-lilac grid place-items-center mx-auto mb-6">
+              <GraduationCap className="w-8 h-8 text-accent" strokeWidth={1.5} />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="font-display text-2xl font-bold leading-[1.2] text-strong md:text-3xl mb-4">
               {t("research.heading")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              {t("research.descriptionStart")} <Link href="/partners/zhaw" className="text-[var(--primary)] underline hover:text-[var(--primary-hover)]">{t("research.zhawName")}</Link> {t("research.descriptionMiddle")} <Link href="/partners/innosuisse" className="text-[var(--primary)] underline hover:text-[var(--primary-hover)]">{t("research.innosuisseName")}</Link>{t("research.descriptionEnd")}
+            <p className="text-lede text-body">
+              {t("research.descriptionStart")} <Link href="/partners/zhaw" className="text-link hover:underline">{t("research.zhawName")}</Link> {t("research.descriptionMiddle")} <Link href="/partners/innosuisse" className="text-link hover:underline">{t("research.innosuisseName")}</Link>{t("research.descriptionEnd")}
             </p>
           </MotionDiv>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary-dark)]/50 to-transparent" />
+      <section data-theme="dark" className="relative overflow-hidden bg-page-tint py-20 px-6">
+        <Glow variant="soft" size={480} className="absolute -right-40 -top-40" />
         <div className="relative max-w-4xl mx-auto text-center">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -347,19 +336,16 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-6">
               {t("cta.heading")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)] mb-10">
+            <p className="text-lg text-body mb-10">
               {t("cta.description")}
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-all text-lg shadow-lg shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/50"
-            >
+            <ButtonLink href="/contact" variant="primary" size="lg">
               {t("cta.button")}
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+              <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+            </ButtonLink>
           </MotionDiv>
         </div>
       </section>

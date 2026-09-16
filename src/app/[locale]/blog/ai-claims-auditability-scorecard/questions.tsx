@@ -307,7 +307,7 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Where is claim data processed, by whom, and who is accountable for each decision made in your name?",
     plainAnswer:
-      "A claims operation remains accountable for every decision made in its name, whichever software made it. Swiss supervision is explicit on the point: FINMA expects institutions that use AI to align their governance, risk management and control systems accordingly, and an insurer that outsources a function remains accountable to FINMA as if it performed that function itself. The standard is a published list of processors, a known processing location and a record that shows, for every decision, whether a person or a system made it. True Aim stores and processes customer data on Microsoft Azure in the Switzerland North region and does not transfer it outside Switzerland for routine processing. Our list of sub-processors is published, with the service, the data categories and the processing location for each. The claim record counts human and automated decisions separately and lists every action chronologically by actor, so accountability is visible for every decision, not asserted for the whole.",
+      "A claims operation remains accountable for every decision made in its name, whichever software made it. Swiss supervision is explicit on the point: FINMA expects institutions that use AI to align their governance, risk management and control systems accordingly, and an insurer that outsources a function remains accountable to FINMA as if it performed that function itself. The standard is a published list of processors, a known processing location and a record that shows, for every decision, whether a person or a system made it. True Aim stores and processes customer data on Microsoft Azure in the Switzerland North region and does not transfer it outside Switzerland for routine processing. Our list of sub-processors is available on request, with the service, the data categories and the processing location for each. The claim record counts human and automated decisions separately and lists every action chronologically by actor, so accountability is visible for every decision, not asserted for the whole.",
     body: (
       <>
         <p>
@@ -323,7 +323,7 @@ export const scorecardQuestions: ScorecardQuestion[] = [
         <p>
           True Aim stores and processes customer data on Microsoft Azure in the
           Switzerland North region and does not transfer it outside Switzerland
-          for routine processing. Our list of sub-processors is published, with
+          for routine processing. Our list of sub-processors is available on request, with
           the service, the data categories and the processing location for
           each. The claim record counts human and automated decisions
           separately and lists every action chronologically by actor, so

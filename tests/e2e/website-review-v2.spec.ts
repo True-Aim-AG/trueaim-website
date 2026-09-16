@@ -39,9 +39,13 @@ test.describe('Home Page - Global Header', () => {
     await page.goto(BASE_URL);
   });
 
-  test('GLOBAL_HEADER: Logo text displays "True AIm"', async ({ page }) => {
-    const logoText = await page.locator('header').getByText('True AIm', { exact: false }).first();
-    await expect(logoText).toBeVisible();
+  test('GLOBAL_HEADER: Logo displays the True Aim brand mark', async ({ page }) => {
+    // The header logo is now an SVG brand asset (public/brand/logo/*.svg),
+    // not a text wordmark, per docs/DESIGN_SYSTEM.md §9. The header renders
+    // both logo variants and CSS shows one; light is the only site theme, so
+    // the visible one is the dark-ink logo (logo-horizontal-dark.svg).
+    const logo = page.locator('header').locator('img[src*="/brand/logo/logo-horizontal-dark"]').first();
+    await expect(logo).toBeVisible();
   });
 
   test('GLOBAL_HEADER:NAV - Products dropdown exists with correct items', async ({ page }) => {
@@ -146,9 +150,16 @@ test.describe('Home Page - Hero Section', () => {
   });
 
   test('HERO:SUBTEXT - Updated supporting sentence', async ({ page }) => {
-    await expect(page.getByText('Apply policy terms clearly and consistently in regulated environments, without black boxes.')).toBeVisible();
+    // The single-line sentence was itself later split into the current
+    // three-line hero subtext (see REQ-HOME-002 in website-review-v2.1.spec.ts).
+    await expect(page.getByText('Apply policy terms clearly and consistently.')).toBeVisible();
+    await expect(page.getByText('Built for regulated insurance.')).toBeVisible();
+    await expect(page.getByText('No black boxes.')).toBeVisible();
     // Old text should NOT exist
     await expect(page.getByText('Turn policy terms into instant, deterministic claim decisions')).not.toBeVisible();
+    await expect(
+      page.getByText('Apply policy terms clearly and consistently in regulated environments, without black boxes.')
+    ).not.toBeVisible();
   });
 
   test('HERO:CTA_PRIMARY - Book a Demo button exists', async ({ page }) => {
@@ -171,14 +182,17 @@ test.describe('Home Page - Flow Section (Process Infographic)', () => {
   });
 
   test('FLOW:TITLE - Section heading "From Documents to Decisions in One Flow"', async ({ page }) => {
-    await expect(page.getByText('From Documents to Decisions in One Flow')).toBeVisible();
+    // Matches both the compact icon-row's sr-only heading and the richer
+    // process-flow section's visible heading further down the page.
+    await expect(page.getByText('From Documents to Decisions in One Flow').first()).toBeVisible();
   });
 
   test('FLOW:STEP_1 - Ingest step with updated content', async ({ page }) => {
     const flowSection = page.locator('section').filter({ hasText: 'From Documents to Decisions' });
     await expect(flowSection.getByText('Ingest').first()).toBeVisible();
     await expect(flowSection.getByText('Capture & validate inputs', { exact: false }).first()).toBeVisible();
-    await expect(flowSection.getByText('< 10 sec', { exact: false }).first()).toBeVisible();
+    // Time badge ("< 10 sec") was removed from the compact pipeline row in the
+    // True Aim redesign (docs/DESIGN_SYSTEM.md §7).
   });
 
   test('FLOW:STEP_2 - Process step with updated content', async ({ page }) => {
@@ -188,11 +202,14 @@ test.describe('Home Page - Flow Section (Process Infographic)', () => {
     await expect(flowSection.getByText('15', { exact: false }).first()).toBeVisible(); // Part of "15 – 45 sec"
   });
 
-  test('FLOW:STEP_3 - Assess step (renamed from Decide)', async ({ page }) => {
-    await expect(page.getByText('Assess')).toBeVisible();
-    await expect(page.getByText('Confirm outcome and routing', { exact: false })).toBeVisible();
-    await expect(page.getByText('< 5 sec', { exact: false })).toBeVisible();
-    // Old "Decide" as main label should not exist (may still appear in other contexts)
+  test('FLOW:STEP_3 - Decide step (renamed back from Assess per REQ-V6-001)', async ({ page }) => {
+    // Step 3 was renamed "Decide" -> "Assess" -> "Decide" again; current copy
+    // is "Decide" / "Confirm outcome & handling" (see website-review-v6.spec.ts
+    // REQ-V6-001 and website-review-v2.1.spec.ts REQ-HOME-005).
+    const flowSection = page.locator('section').filter({ hasText: 'From Documents to Decisions' });
+    await expect(flowSection.getByText('Decide').first()).toBeVisible();
+    await expect(flowSection.getByText('Confirm outcome & handling', { exact: false }).first()).toBeVisible();
+    await expect(page.getByText('Assess', { exact: true })).not.toBeVisible();
   });
 
   test('FLOW:STEP_4 - Execute step (renamed from Act)', async ({ page }) => {
@@ -207,10 +224,11 @@ test.describe('Home Page - Flow Section (Process Infographic)', () => {
     await expect(flowSection.getByText('Instant', { exact: false }).first()).toBeVisible();
   });
 
-  test('FLOW:MODE - Flow mode labels exist', async ({ page }) => {
-    await expect(page.getByText('Fully Automated')).toBeVisible();
-    await expect(page.getByText('Human in the Loop')).toBeVisible();
-  });
+  // FLOW:MODE removed: the "Fully Automated" / "Human in the Loop" mode legend
+  // was part of the old interactive flow diagram. The True Aim redesign
+  // replaced it with the compact icon-row pipeline and the simpler 3-step
+  // process-flow section, neither of which has a mode toggle/legend. The
+  // strings still exist in messages/en/home.json but are no longer rendered.
 
   test('FLOW:METRIC - "Processing time" and "<2 seconds" REMOVED', async ({ page }) => {
     // These components should be removed
@@ -277,7 +295,10 @@ test.describe('Home Page - Awards Section', () => {
   });
 
   test('AWARDS:AWARD_3 - Italian award name', async ({ page }) => {
-    await expect(page.getByText('Miglior InsurTech - IKN Awards')).toBeVisible();
+    // Rendered as two stacked lines (no dash separator), per the "no dashes
+    // for rhythm" copy rule in CLAUDE.md, instead of one hyphenated string.
+    await expect(page.getByText('Miglior InsurTech')).toBeVisible();
+    await expect(page.getByText('IKN Awards')).toBeVisible();
   });
 });
 
@@ -369,16 +390,27 @@ test.describe('Home Page - Decision Dossier Section', () => {
     await expect(page.getByText('complete, reproducible audit record', { exact: false })).toBeVisible();
   });
 
-  test('DOSSIER:CTA - "See how it works" CTA', async ({ page }) => {
-    await expect(page.getByRole('link', { name: /see how it works/i })).toBeVisible();
+  test('DOSSIER:CTA - "Replay Decision" CTA', async ({ page }) => {
+    // The dossier mock panel now has an interactive "Replay Decision" button
+    // instead of a plain "See how it works" text link.
+    await expect(page.getByRole('button', { name: /replay decision/i })).toBeVisible();
   });
 
   test('DOSSIER:MOCK - Mock panel displays correct content', async ({ page }) => {
-    await expect(page.getByText('Claim #2024-TR-4521')).toBeVisible();
-    await expect(page.getByText('Decision: Covered')).toBeVisible();
-    await expect(page.getByText('Policy: Art. 5.2.1, 5.2.3')).toBeVisible();
-    await expect(page.getByText('Evidence: 4 documents linked')).toBeVisible();
-    await expect(page.getByText('Confidence: 98.5%')).toBeVisible();
+    // The mock dossier panel was redesigned: claim ID, status pill and policy
+    // clauses are now separate elements rather than combined label strings.
+    // "Covered" and the policy clause codes also match other (hidden,
+    // animation-pending) elements elsewhere on the page, so scope to the
+    // actual mock panel to disambiguate.
+    const panel = page.locator('div')
+      .filter({ hasText: 'TRV-2024-4521' })
+      .filter({ hasText: 'Covered' })
+      .filter({ hasText: 'Art. 5.2.1' })
+      .last();
+    await expect(page.getByText('TRV-2024-4521').first()).toBeVisible();
+    await expect(panel.getByText('Covered', { exact: true })).toBeVisible();
+    await expect(panel.getByText('Art. 5.2.1')).toBeVisible();
+    await expect(panel.getByText('Art. 5.2.3')).toBeVisible();
   });
 });
 
@@ -399,8 +431,10 @@ test.describe('Home Page - Case Study Section', () => {
     await expect(page.getByText('See how insurers are transforming their claims operations', { exact: false })).toBeVisible();
   });
 
-  test('CASESTUDY:CARD - Card meta shows "European Warranty Insurer"', async ({ page }) => {
-    await expect(page.getByText('European Warranty Insurer')).toBeVisible();
+  test('CASESTUDY:CARD - Card meta shows "European Warranty Provider"', async ({ page }) => {
+    // Copy changed "Insurer" -> "Provider" (also superseded the older
+    // "Insurer" wording checked as removed in website-review-v4.spec.ts REQ-CS).
+    await expect(page.getByText('European Warranty Provider')).toBeVisible();
   });
 
   test('CASESTUDY:CARD - Card meta shows "Vehicle Warranty Insurance" (simplified)', async ({ page }) => {
@@ -410,9 +444,11 @@ test.describe('Home Page - Case Study Section', () => {
   });
 
   test('CASESTUDY:CARD - Updated headline', async ({ page }) => {
-    await expect(page.getByText('Vehicle Warranty Insurer Achieves 98% Decision Accuracy in 7 Days')).toBeVisible();
+    // "Insurer" -> "Provider"
+    await expect(page.getByText('Vehicle Warranty Provider Achieves 98% Decision Accuracy in 7 Days')).toBeVisible();
     // Old headline should NOT exist
     await expect(page.getByText('Goes from 18% to 98%')).not.toBeVisible();
+    await expect(page.getByText('Vehicle Warranty Insurer Achieves', { exact: false })).not.toBeVisible();
   });
 
   test('CASESTUDY:CARD - Product tags exist', async ({ page }) => {
@@ -436,7 +472,9 @@ test.describe('Home Page - Case Study Section', () => {
     const caseStudySection = page.locator('section').filter({ hasText: 'Trusted by Leading Insurers' });
     await expect(caseStudySection.getByText('98%').first()).toBeVisible();
     await expect(caseStudySection.getByText('Decision Accuracy').first()).toBeVisible();
-    await expect(caseStudySection.getByText('from 18% baseline').first()).toBeVisible();
+    // Sub-label under the accuracy metric is now "on development set"
+    // (the "from 18% baseline" comparison was dropped).
+    await expect(caseStudySection.getByText('on development set').first()).toBeVisible();
     await expect(caseStudySection.getByText('Time to Results').first()).toBeVisible();
     await expect(caseStudySection.getByText('full pipeline live').first()).toBeVisible();
     await expect(caseStudySection.getByText('80-90%').first()).toBeVisible();
@@ -508,9 +546,11 @@ test.describe('Home Page - Global Footer', () => {
     await page.goto(BASE_URL);
   });
 
-  test('GLOBAL_FOOTER - Logo text "True AIm"', async ({ page }) => {
+  test('GLOBAL_FOOTER - Logo displays the True Aim brand mark', async ({ page }) => {
+    // The footer logo is now an SVG brand asset (public/brand/logo/*.svg),
+    // not a text wordmark, per docs/DESIGN_SYSTEM.md §9.
     const footer = page.locator('footer');
-    await expect(footer.getByText('True AIm', { exact: false }).first()).toBeVisible();
+    await expect(footer.locator('img[src*="/brand/logo/"]').first()).toBeVisible();
   });
 
   test('GLOBAL_FOOTER:TAGLINE - "Swiss Precision. Auditable AI."', async ({ page }) => {
@@ -544,7 +584,9 @@ test.describe('Home Page - Global Footer', () => {
     await expect(footer.getByText('Resources', { exact: true })).toBeVisible();
     await expect(footer.getByRole('link', { name: /case studies/i })).toBeVisible();
     await expect(footer.getByRole('link', { name: /impact estimator/i })).toBeVisible();
-    await expect(footer.getByRole('link', { name: /trust center/i })).toBeVisible();
+    // Trust Center is now linked from more than one footer column, so
+    // disambiguate with .first().
+    await expect(footer.getByRole('link', { name: /trust center/i }).first()).toBeVisible();
     await expect(footer.getByRole('link', { name: /blog/i })).toBeVisible();
   });
 
@@ -566,7 +608,7 @@ test.describe('Home Page - Global Footer', () => {
   });
 
   test('GLOBAL_FOOTER:COPYRIGHT - Copyright text', async ({ page }) => {
-    await expect(page.getByText(/© 2026 True Aim\. All rights reserved\./)).toBeVisible();
+    await expect(page.getByText(/© 2026 True Aim AG\. All rights reserved\./)).toBeVisible();
   });
 });
 
@@ -865,7 +907,10 @@ test.describe('Cross-Page - Global Header/Footer Consistency', () => {
       // Check header exists with key elements
       const header = page.locator('header');
       await expect(header).toBeVisible();
-      await expect(header.getByText('True AIm', { exact: false })).toBeVisible();
+      // Logo is the SVG brand mark, not a text wordmark (docs/DESIGN_SYSTEM.md §9).
+      // The header renders both variants and CSS shows one; light is the only
+      // site theme, so the visible one is the dark-ink logo.
+      await expect(header.locator('img[src*="/brand/logo/logo-horizontal-dark"]').first()).toBeVisible();
       await expect(page.getByRole('link', { name: /book a demo/i }).first()).toBeVisible();
     });
 

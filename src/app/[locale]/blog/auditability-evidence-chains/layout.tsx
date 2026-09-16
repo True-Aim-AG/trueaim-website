@@ -62,12 +62,12 @@ const blogPostingJsonLd = {
   },
   author: {
     "@type": "Organization",
-    name: "TrueAim AG",
+    name: "True Aim AG",
     url: "https://trueaim.ai",
   },
   publisher: {
     "@type": "Organization",
-    name: "TrueAim AG",
+    name: "True Aim AG",
     url: "https://trueaim.ai",
   },
   keywords: ["Auditability", "FINMA", "EU AI Act", "Claims AI"],

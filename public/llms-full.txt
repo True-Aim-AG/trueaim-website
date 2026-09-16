@@ -1,10 +1,11 @@
-# TrueAim.ai — Full Documentation for LLMs
+# True Aim — Full Documentation for LLMs
 
 > Neuro-symbolic AI for auditable insurance claims decisions. Swiss precision meets compliant automation.
 
 ## Company Overview
 
-TrueAim AG is a Swiss InsurTech company headquartered in Zurich, Switzerland. We build AI-powered decisioning software for insurance claims processing. Our hybrid neuro-symbolic approach combines the adaptability of agentic AI with the precision of deterministic logic, delivering compliant, explainable decisions at scale—every outcome traceable to the source.
+True Aim AG is a Swiss InsurTech company headquartered in Zurich, Switzerland. We build AI-powered decisioning software for insurance claims processing. Our hybrid neuro-symbolic approach combines the adaptability of agentic AI with the precision of deterministic logic, delivering compliant, explainable decisions at scale—every outcome traceable to the source.
+
 
 ### Awards & Recognition
 
@@ -86,7 +87,7 @@ ClaimEval scales quality assurance beyond traditional sampling methods, running 
 
 ### Neuro-Symbolic Architecture
 
-TrueAim's technology is not probabilistic and not a black box. Our hybrid approach combines:
+True Aim's technology is not probabilistic and not a black box. Our hybrid approach combines:
 
 - **Neural AI (Agentic Layer):** Handles document understanding, extraction, classification, and natural language processing tasks where flexibility is needed.
 - **Symbolic AI (Deterministic Layer):** Executes policy logic, computes coverage, calculates costs, and produces decisions with mathematical certainty.
@@ -107,7 +108,7 @@ This combination ensures that while AI handles the messy, unstructured parts of 
 
 **URL:** https://trueaim.ai/trust
 
-TrueAim's architecture is designed for regulatory compliance:
+True Aim's architecture is designed for regulatory compliance:
 
 - **EU AI Act:** Deterministic decisioning aligns with requirements for high-risk AI systems in insurance
 - **GDPR:** Architecture aligned with EU data protection regulation
@@ -165,4 +166,3 @@ TrueAim's architecture is designed for regulatory compliance:
 - Privacy Policy: https://trueaim.ai/privacy
 - Terms of Service: https://trueaim.ai/terms
 - Cookie Policy: https://trueaim.ai/cookies
-- List of Sub-Processors: https://trueaim.ai/sub-processors

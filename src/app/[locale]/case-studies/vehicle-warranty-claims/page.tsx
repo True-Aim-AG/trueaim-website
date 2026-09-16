@@ -26,6 +26,11 @@ import {
 } from "lucide-react";
 import { caseStudies } from "@/data/case-studies";
 import { productPillColors, productNames } from "@/lib/product-styles";
+import { ButtonLink } from "@/components/brand/Button";
+import { StatusPill } from "@/components/brand/StatusPill";
+import { GridPattern } from "@/components/brand/GridPattern";
+
+const ease = [0.4, 0, 0.2, 1] as const;
 
 const productLinks: Record<string, string> = {
   mira: "/products/mira",
@@ -46,8 +51,19 @@ const fadeIn = {
   initial: { opacity: 0, y: 20 } as const,
   whileInView: { opacity: 1, y: 0 } as const,
   viewport: { once: true } as const,
-  transition: { duration: 0.6 } as const,
+  transition: { duration: 0.6, ease } as const,
 };
+
+const processingStats: { check?: boolean; value?: string; label: string }[] = [
+  { check: true, label: "Multiple document types" },
+  { check: true, label: "Multi-brand support" },
+  { check: true, label: "Deterministic screening" },
+  { check: true, label: "Multi-tier matching" },
+  { check: true, label: "Comprehensive keywords" },
+  { check: true, label: "Full field extraction" },
+  { value: "3", label: "Languages supported" },
+  { check: true, label: "Extensive test coverage" },
+];
 
 function ExpandableSection({
   title,
@@ -60,16 +76,17 @@ function ExpandableSection({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="glass-panel overflow-hidden">
+    <div className="bg-card shadow-card rounded-pill overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between p-5 text-left hover:bg-[var(--subtle-bg)]/50 transition-colors"
+        className="w-full flex items-center justify-between p-5 text-left hover:bg-surface-muted transition-colors"
       >
-        <span className="font-semibold text-sm text-[var(--text-primary)]">
+        <span className="font-semibold text-sm text-strong">
           {title}
         </span>
         <ChevronDown
-          className={`w-4 h-4 text-[var(--text-muted)] transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          strokeWidth={1.5}
+          className={`w-4 h-4 text-muted transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         />
       </button>
       {open && <div className="px-5 pb-5 pt-0">{children}</div>}
@@ -83,44 +100,44 @@ export default function VehicleWarrantyCaseStudy() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-[var(--background)] to-slate-900">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--primary)] opacity-10 rounded-full blur-3xl" />
+      <section className="relative overflow-hidden">
+        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease }}
           >
             {/* Breadcrumb */}
             <Link
               href="/case-studies"
-              className="inline-flex items-center gap-2 py-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors mb-8"
+              className="inline-flex items-center gap-2 py-2 text-muted hover:text-accent transition-colors mb-8"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
               {t("detail.allCaseStudies")}
             </Link>
 
             {/* Customer Info */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-xl bg-[var(--subtle-bg)] flex items-center justify-center">
-                <Building2 className="w-8 h-8 text-[var(--text-muted)]" />
+              <div className="w-16 h-16 rounded-pill bg-lilac grid place-items-center text-accent">
+                <Building2 className="w-8 h-8" strokeWidth={1.5} />
               </div>
               <div>
-                <div className="text-lg font-medium text-[var(--text-primary)]">
+                <div className="text-lg font-medium text-strong">
                   {study.customer.name}
                 </div>
-                <div className="text-[var(--text-muted)]">
+                <div className="text-muted">
                   {study.customer.industry} · {study.customer.size}
                 </div>
               </div>
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-strong mb-4">
               Automating Vehicle Warranty Claims with AI Document Intelligence
             </h1>
-            <p className="text-xl md:text-2xl text-[var(--primary)] font-semibold mb-6">
+            <p className="text-xl md:text-2xl text-accent font-semibold mb-6">
               Multilingual, Auditable Warranty Adjudication
             </p>
 
@@ -130,13 +147,13 @@ export default function VehicleWarrantyCaseStudy() {
                 <Link
                   key={product}
                   href={productLinks[product]}
-                  className={`text-sm px-3 py-1.5 rounded-full font-medium ${productPillColors[product]} transition-colors`}
+                  className={`text-sm px-3 py-1.5 font-medium ${productPillColors[product]}`}
                 >
                   {productNames[product]}
                 </Link>
               ))}
-              <div className="flex items-center gap-2 text-[var(--text-muted)]">
-                <Clock className="w-4 h-4" />
+              <div className="flex items-center gap-2 text-muted">
+                <Clock className="w-4 h-4" strokeWidth={1.5} />
                 {study.timeline}
               </div>
             </div>
@@ -151,19 +168,19 @@ export default function VehicleWarrantyCaseStudy() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease }}
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
           >
             {study.metrics.map((metric) => (
-              <div key={metric.label} className="glass-panel p-6 text-center">
-                <div className="text-3xl md:text-4xl font-bold font-mono-data text-[var(--primary)] mb-1">
+              <div key={metric.label} className="bg-card shadow-card rounded-pill px-[29px] py-[27px] text-center">
+                <div className="text-kpi text-accent mb-1">
                   {metric.value}
                 </div>
-                <div className="text-sm text-[var(--text-muted)]">
+                <div className="text-sm text-muted">
                   {metric.label}
                 </div>
                 {metric.improvement && (
-                  <div className="text-xs text-[var(--secondary)] mt-1">
+                  <div className="text-xs text-subtle mt-1">
                     {metric.improvement}
                   </div>
                 )}
@@ -178,13 +195,13 @@ export default function VehicleWarrantyCaseStudy() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-8">
             {/* Main Content */}
-            <article className="space-y-16">
+            <article className="space-y-16 max-w-3xl">
               {/* 1. Executive Summary */}
               <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mb-4">
                   Executive Summary
                 </h2>
-                <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
+                <div className="space-y-5 text-body leading-[1.6]">
                   <p>
                     A European vehicle warranty provider needed to automate the adjudication of
                     multilingual warranty claims. Each claim involved up to five documents in three
@@ -210,8 +227,8 @@ export default function VehicleWarrantyCaseStudy() {
                       "Full provenance chain from every decision back to source document and page",
                     ].map((point) => (
                       <div key={point} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-[var(--text-secondary)]">
+                        <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                        <span className="text-sm text-body">
                           {point}
                         </span>
                       </div>
@@ -222,23 +239,23 @@ export default function VehicleWarrantyCaseStudy() {
 
               {/* 2. Operational Context */}
               <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Operational Context
                 </h2>
-                <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
+                <div className="space-y-5 text-body leading-[1.6]">
                   <p>
                     A vehicle warranty claim lands on an adjuster&apos;s desk:
                     five documents, three languages, a cost estimate with 30
                     line items, a policy with coverage tiers, mileage-dependent
                     reimbursement rates and component exclusion lists.
                   </p>
-                  <p className="font-semibold text-[var(--text-primary)]">
+                  <p className="font-semibold text-strong">
                     Standard processing takes 30+ minutes per claim. Multiply that by
                     thousands of claims per month.
                   </p>
                   <p>
                     76% of denied claims fail for a single reason:{" "}
-                    <span className="font-semibold text-[var(--text-primary)]">
+                    <span className="font-semibold text-strong">
                       the part is not covered by the policy
                     </span>{" "}
                     - a deterministic lookup, not a judgment call.
@@ -255,12 +272,12 @@ export default function VehicleWarrantyCaseStudy() {
                     ].map((stat) => (
                       <div
                         key={stat.label}
-                        className="glass-panel-light p-4 text-center"
+                        className="bg-surface-muted rounded-pill p-4 text-center"
                       >
-                        <div className="text-lg font-bold font-mono-data text-[var(--primary)]">
+                        <div className="text-lg font-display font-bold tabular-nums text-accent">
                           {stat.value}
                         </div>
-                        <div className="text-xs text-[var(--text-muted)]">
+                        <div className="text-xs text-muted">
                           {stat.label}
                         </div>
                       </div>
@@ -273,12 +290,12 @@ export default function VehicleWarrantyCaseStudy() {
                     ].map((stat) => (
                       <div
                         key={stat.label}
-                        className="glass-panel-light p-4 text-center"
+                        className="bg-surface-muted rounded-pill p-4 text-center"
                       >
-                        <div className="text-lg font-bold font-mono-data text-[var(--primary)]">
+                        <div className="text-lg font-display font-bold tabular-nums text-accent">
                           {stat.value}
                         </div>
-                        <div className="text-xs text-[var(--text-muted)]">
+                        <div className="text-xs text-muted">
                           {stat.label}
                         </div>
                       </div>
@@ -289,15 +306,15 @@ export default function VehicleWarrantyCaseStudy() {
 
               {/* 3. Architectural Approach */}
               <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Architectural Approach
                 </h2>
 
                 {/* Part A: Why existing approaches fall short */}
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+                <p className="text-body leading-[1.6] mb-5">
                   Most document processing tools extract text from PDFs - that
                   gets you 10% of the way. The real challenge is{" "}
-                  <span className="font-semibold text-[var(--text-primary)]">
+                  <span className="font-semibold text-strong">
                     cross-document reasoning
                   </span>
                   : a cost estimate means nothing without the policy, a mileage
@@ -319,19 +336,19 @@ export default function VehicleWarrantyCaseStudy() {
                     {
                       icon: AlertTriangle,
                       title: "Rule-based systems cannot scale to vocabulary",
-                      desc: "Thousands of part names across multiple languages. A \"Wasserpumpe\" in German is a \"pompe \u00e0 eau\" in French. Pure keyword matching breaks on the first synonym it has not seen.",
+                      desc: "Thousands of part names across multiple languages. A \"Wasserpumpe\" in German is a \"pompe à eau\" in French. Pure keyword matching breaks on the first synonym it has not seen.",
                     },
                   ].map((item) => (
                     <div
                       key={item.title}
-                      className="glass-panel p-5 flex gap-4"
+                      className="bg-card shadow-card rounded-pill p-6 flex gap-4"
                     >
-                      <item.icon className="w-6 h-6 text-amber-400 flex-shrink-0 mt-0.5" />
+                      <item.icon className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                       <div>
-                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">
+                        <h4 className="font-semibold text-strong mb-1">
                           {item.title}
                         </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                        <p className="text-sm text-body leading-[1.6]">
                           {item.desc}
                         </p>
                       </div>
@@ -339,9 +356,9 @@ export default function VehicleWarrantyCaseStudy() {
                   ))}
                 </div>
 
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-8">
+                <p className="text-body leading-[1.6] mb-8">
                   The solution requires a{" "}
-                  <span className="font-semibold text-[var(--text-primary)]">
+                  <span className="font-semibold text-strong">
                     hybrid architecture
                   </span>
                   : deterministic rules where they work, keyword matching for
@@ -351,10 +368,10 @@ export default function VehicleWarrantyCaseStudy() {
                 </p>
 
                 {/* Part B: The multi-stage pipeline */}
-                <h3 className="text-lg font-bold text-[var(--text-primary)] mb-4">
+                <h3 className="font-display font-semibold text-xl mt-10 mb-3">
                   Multi-Stage Pipeline
                 </h3>
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+                <p className="text-body leading-[1.6] mb-6">
                   An end-to-end claims processing pipeline moves raw documents
                   through five stages, each with quality gates and audit
                   logging.
@@ -371,13 +388,13 @@ export default function VehicleWarrantyCaseStudy() {
                   ].map((s) => (
                     <div
                       key={s.stage}
-                      className="glass-panel-light p-3 text-center"
+                      className="bg-surface-muted rounded-pill p-3 text-center"
                     >
-                      <s.icon className="w-5 h-5 text-[var(--primary)] mx-auto mb-1" />
-                      <div className="text-[10px] text-[var(--text-muted)] uppercase tracking-wider">
+                      <s.icon className="w-5 h-5 text-accent mx-auto mb-1" strokeWidth={1.5} />
+                      <div className="text-[10px] text-subtle uppercase tracking-wider">
                         Stage {s.stage}
                       </div>
-                      <div className="text-xs font-medium text-[var(--text-primary)]">
+                      <div className="text-xs font-medium text-strong">
                         {s.label}
                       </div>
                     </div>
@@ -385,10 +402,10 @@ export default function VehicleWarrantyCaseStudy() {
                 </div>
 
                 {/* Multi-Tier Matching */}
-                <h3 className="text-lg font-bold text-[var(--text-primary)] mb-3">
+                <h3 className="font-display font-semibold text-xl mt-10 mb-3">
                   Coverage Analysis: Multi-Tier Matching
                 </h3>
-                <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
+                <p className="text-sm text-body leading-[1.6] mb-4">
                   Each line item goes through a multi-tier matching pipeline,
                   prioritizing deterministic approaches before falling back to AI:
                 </p>
@@ -396,39 +413,36 @@ export default function VehicleWarrantyCaseStudy() {
                   {[
                     {
                       name: "Deterministic Rules",
-                      confidence: "Highest",
-                      color: "text-emerald-400",
-                      bg: "bg-emerald-500/10 border-emerald-500/20",
+                      tone: "approved" as const,
+                      confidence: "Highest confidence",
                       desc: "Exact matches for known items, exclusions, and consumables. Zero ambiguity, instant resolution.",
                     },
                     {
                       name: "Keyword Matching",
-                      confidence: "High",
-                      color: "text-blue-400",
-                      bg: "bg-blue-500/10 border-blue-500/20",
+                      tone: "progress" as const,
+                      confidence: "High confidence",
                       desc: "Maps multilingual repair terms to component categories with synonym normalization.",
                     },
                     {
                       name: "AI Fallback",
-                      confidence: "Moderate",
-                      color: "text-amber-400",
-                      bg: "bg-amber-500/10 border-amber-500/20",
+                      tone: "referred" as const,
+                      confidence: "Moderate confidence",
                       desc: "LLM with structured prompts for genuinely ambiguous items that require contextual reasoning.",
                     },
-                  ].map((tier, idx) => (
+                  ].map((tier) => (
                     <div
-                      key={idx}
-                      className={`p-4 rounded-lg border ${tier.bg}`}
+                      key={tier.name}
+                      className="bg-card shadow-card rounded-pill p-6"
                     >
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="font-semibold text-sm text-[var(--text-primary)]">
+                      <div className="flex items-center justify-between mb-2 gap-3">
+                        <span className="font-semibold text-sm text-strong">
                           {tier.name}
                         </span>
-                        <span className={`text-xs font-medium ${tier.color}`}>
-                          {tier.confidence} confidence
-                        </span>
+                        <StatusPill tone={tier.tone} emphasis="light" dot={false} size="sm">
+                          {tier.confidence}
+                        </StatusPill>
                       </div>
-                      <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                      <p className="text-xs text-body leading-[1.6]">
                         {tier.desc}
                       </p>
                     </div>
@@ -438,9 +452,9 @@ export default function VehicleWarrantyCaseStudy() {
                 {/* Expandable Architecture Details */}
                 <div className="space-y-3">
                   <ExpandableSection title="Stage details: Ingestion, Classification & Extraction">
-                    <div className="space-y-4 text-sm text-[var(--text-secondary)] leading-relaxed">
+                    <div className="space-y-4 text-sm text-body leading-[1.6]">
                       <div>
-                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">
+                        <h4 className="font-semibold text-strong mb-1">
                           Stage 1: Document Ingestion
                         </h4>
                         <p>
@@ -450,7 +464,7 @@ export default function VehicleWarrantyCaseStudy() {
                         </p>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">
+                        <h4 className="font-semibold text-strong mb-1">
                           Stage 2: Document Classification
                         </h4>
                         <p>
@@ -460,7 +474,7 @@ export default function VehicleWarrantyCaseStudy() {
                         </p>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">
+                        <h4 className="font-semibold text-strong mb-1">
                           Stage 3: Structured Field Extraction
                         </h4>
                         <p>
@@ -476,7 +490,7 @@ export default function VehicleWarrantyCaseStudy() {
                   </ExpandableSection>
 
                   <ExpandableSection title="Stage details: Deterministic screening checks">
-                    <div className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    <div className="text-sm text-body leading-[1.6]">
                       <p className="mb-4">
                         The screening pipeline runs multiple deterministic checks
                         covering policy validity, coverage eligibility, and
@@ -485,25 +499,25 @@ export default function VehicleWarrantyCaseStudy() {
                       </p>
                       <div className="space-y-2 mb-4">
                         <div className="flex items-center gap-2">
-                          <span className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-red-500/20 text-red-400">
+                          <StatusPill tone="denied" emphasis="light" dot={false} size="sm">
                             Hard fail
-                          </span>
+                          </StatusPill>
                           <span className="text-xs">Blocks automation, requires human review</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-amber-500/20 text-amber-400">
+                          <StatusPill tone="referred" emphasis="light" dot={false} size="sm">
                             Soft check
-                          </span>
+                          </StatusPill>
                           <span className="text-xs">Flags for attention but doesn&apos;t block</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-500/20 text-blue-400">
+                          <StatusPill tone="progress" emphasis="light" dot={false} size="sm">
                             Conditional
-                          </span>
+                          </StatusPill>
                           <span className="text-xs">Outcome depends on additional context</span>
                         </div>
                       </div>
-                      <p className="text-xs text-[var(--text-muted)]">
+                      <p className="text-xs text-muted">
                         Checks cover areas like policy status, coverage dates,
                         mileage limits, component eligibility, and exclusion patterns.
                       </p>
@@ -511,18 +525,18 @@ export default function VehicleWarrantyCaseStudy() {
                   </ExpandableSection>
 
                   <ExpandableSection title="Payout calculation approach">
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-3">
+                    <p className="text-sm text-body leading-[1.6] mb-3">
                       The payout calculation follows insurer-specific business rules,
                       typically including:
                     </p>
-                    <ul className="list-disc list-inside space-y-1 text-sm text-[var(--text-secondary)]">
+                    <ul className="list-disc list-inside space-y-1 text-sm text-body">
                       <li>Summing covered items</li>
                       <li>Applying coverage caps and reimbursement rates</li>
                       <li>Adding applicable taxes</li>
                       <li>Calculating deductibles</li>
                       <li>Computing final payout</li>
                     </ul>
-                    <p className="text-sm text-[var(--text-secondary)] mt-3">
+                    <p className="text-sm text-body mt-3">
                       Each insurer has specific rules for deductibles,
                       reimbursement tiers, and parts/labor splits that must be
                       matched exactly.
@@ -533,29 +547,29 @@ export default function VehicleWarrantyCaseStudy() {
 
               {/* 4. Deployment and Iteration */}
               <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Deployment and Iteration
                 </h2>
 
                 <div className="space-y-6">
                   {/* Day 1-3 */}
-                  <div className="relative pl-8 border-l-2 border-[var(--border)] pb-6">
-                    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-red-500 border-2 border-[var(--background)]" />
+                  <div className="relative pl-8 border-l-2 border-hairline pb-6">
+                    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-denied-base border-2 border-page" />
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider">
+                      <span className="text-xs font-medium text-subtle uppercase tracking-wider">
                         Days 1-3
                       </span>
                     </div>
-                    <h4 className="font-semibold text-[var(--text-primary)] mb-2">
+                    <h4 className="font-semibold text-strong mb-2">
                       Baseline and Architecture
                     </h4>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    <p className="text-sm text-body leading-[1.6]">
                       The initial LLM-only approach produced plausible-sounding
                       but unreliable results: hallucinated part names, invented
                       coverage rules, inconsistent calculations.
                     </p>
-                    <div className="glass-panel-light p-3 mt-3 text-xs text-[var(--text-secondary)]">
-                      <span className="font-medium text-[var(--text-primary)]">
+                    <div className="bg-surface-muted rounded-pill p-3 mt-3 text-xs text-body">
+                      <span className="font-medium text-strong">
                         Key insight:
                       </span>{" "}
                       LLMs are good at language understanding but bad at
@@ -565,20 +579,20 @@ export default function VehicleWarrantyCaseStudy() {
                   </div>
 
                   {/* Day 3-5 */}
-                  <div className="relative pl-8 border-l-2 border-[var(--border)] pb-6">
-                    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-amber-500 border-2 border-[var(--background)]" />
+                  <div className="relative pl-8 border-l-2 border-hairline pb-6">
+                    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-referred-base border-2 border-page" />
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider">
+                      <span className="text-xs font-medium text-subtle uppercase tracking-wider">
                         Days 3-5
                       </span>
-                      <span className="text-2xl font-bold font-mono-data text-amber-400">
+                      <span className="text-2xl font-display font-bold tabular-nums text-referred-dark">
                         76%
                       </span>
                     </div>
-                    <h4 className="font-semibold text-[var(--text-primary)] mb-2">
+                    <h4 className="font-semibold text-strong mb-2">
                       Screening + Coverage Pipeline
                     </h4>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    <p className="text-sm text-body leading-[1.6]">
                       The deterministic screening pipeline and multi-tier coverage
                       matching drove the biggest single improvement.
                       Rule-based checks alone caught most denials correctly.
@@ -586,20 +600,20 @@ export default function VehicleWarrantyCaseStudy() {
                   </div>
 
                   {/* Day 5-8 */}
-                  <div className="relative pl-8 border-l-2 border-[var(--border)] pb-6">
-                    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-[var(--background)]" />
+                  <div className="relative pl-8 border-l-2 border-hairline pb-6">
+                    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-approved-base border-2 border-page" />
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider">
+                      <span className="text-xs font-medium text-subtle uppercase tracking-wider">
                         Days 5-8
                       </span>
-                      <span className="text-2xl font-bold font-mono-data text-emerald-400">
+                      <span className="text-2xl font-display font-bold tabular-nums text-approved-dark">
                         88% &rarr; 94% &rarr; 98%
                       </span>
                     </div>
-                    <h4 className="font-semibold text-[var(--text-primary)] mb-2">
+                    <h4 className="font-semibold text-strong mb-2">
                       Iteration and Refinement
                     </h4>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    <p className="text-sm text-body leading-[1.6]">
                       60+ evaluation iterations solving increasingly subtle
                       problems: substring matching bugs, labor demotion logic,
                       and part-number normalization across OCR outputs.
@@ -608,25 +622,25 @@ export default function VehicleWarrantyCaseStudy() {
 
                   {/* Holdout */}
                   <div className="relative pl-8">
-                    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-2 border-[var(--background)]" />
+                    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-progress-base border-2 border-page" />
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider">
+                      <span className="text-xs font-medium text-subtle uppercase tracking-wider">
                         Holdout Test
                       </span>
-                      <span className="text-2xl font-bold font-mono-data text-blue-400">
+                      <span className="text-2xl font-display font-bold tabular-nums text-progress-dark">
                         77%
                       </span>
                     </div>
-                    <h4 className="font-semibold text-[var(--text-primary)] mb-2">
+                    <h4 className="font-semibold text-strong mb-2">
                       Unseen Data Validation
                     </h4>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    <p className="text-sm text-body leading-[1.6]">
                       30 previously unseen claims revealed failure modes the
                       development set did not cover: causal exclusion clauses,
                       missing document scenarios and sub-component
                       interpretation gaps.
                     </p>
-                    <p className="text-sm font-medium text-[var(--text-primary)] mt-2">
+                    <p className="text-sm font-medium text-strong mt-2">
                       The holdout gap (98% vs 77%) is the honest measure of
                       generalization.
                     </p>
@@ -636,17 +650,17 @@ export default function VehicleWarrantyCaseStudy() {
 
               {/* 5. Measured Outcomes */}
               <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Measured Outcomes
                 </h2>
 
                 <div className="space-y-6">
                   {/* Eval Set */}
                   <div>
-                    <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
+                    <h3 className="font-display font-semibold text-xl mt-10 mb-3">
                       Initial Evaluation Set
                     </h3>
-                    <div className="glass-panel overflow-hidden overflow-x-auto">
+                    <div className="bg-card shadow-card rounded-pill overflow-hidden overflow-x-auto">
                       <table className="w-full text-sm min-w-[400px]">
                         <tbody>
                           {[
@@ -658,15 +672,15 @@ export default function VehicleWarrantyCaseStudy() {
                           ].map((row) => (
                             <tr
                               key={row[0] as string}
-                              className={`border-b border-[var(--border)]/50 ${row[2] ? "bg-[var(--primary)]/5" : ""}`}
+                              className={`border-b border-hairline ${row[2] ? "bg-accent-soft" : ""}`}
                             >
                               <td
-                                className={`py-3 px-4 ${row[2] ? "font-semibold text-[var(--text-primary)]" : "text-[var(--text-secondary)]"}`}
+                                className={`py-3 px-4 ${row[2] ? "font-semibold text-strong" : "text-body"}`}
                               >
                                 {row[0] as string}
                               </td>
                               <td
-                                className={`py-3 px-4 text-right font-mono-data ${row[2] ? "font-bold text-[var(--primary)]" : "text-[var(--text-primary)]"}`}
+                                className={`py-3 px-4 text-right font-display tabular-nums ${row[2] ? "font-bold text-accent" : "text-strong"}`}
                               >
                                 {row[1] as string}
                               </td>
@@ -679,10 +693,10 @@ export default function VehicleWarrantyCaseStudy() {
 
                   {/* Holdout Set */}
                   <div>
-                    <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
+                    <h3 className="font-display font-semibold text-xl mt-10 mb-3">
                       Holdout Set
                     </h3>
-                    <div className="glass-panel overflow-hidden overflow-x-auto">
+                    <div className="bg-card shadow-card rounded-pill overflow-hidden overflow-x-auto">
                       <table className="w-full text-sm min-w-[400px]">
                         <tbody>
                           {[
@@ -694,15 +708,15 @@ export default function VehicleWarrantyCaseStudy() {
                           ].map((row) => (
                             <tr
                               key={row[0] as string}
-                              className={`border-b border-[var(--border)]/50 ${row[2] ? "bg-[var(--primary)]/5" : ""}`}
+                              className={`border-b border-hairline ${row[2] ? "bg-accent-soft" : ""}`}
                             >
                               <td
-                                className={`py-3 px-4 ${row[2] ? "font-semibold text-[var(--text-primary)]" : "text-[var(--text-secondary)]"}`}
+                                className={`py-3 px-4 ${row[2] ? "font-semibold text-strong" : "text-body"}`}
                               >
                                 {row[0] as string}
                               </td>
                               <td
-                                className={`py-3 px-4 text-right font-mono-data ${row[2] ? "font-bold text-[var(--primary)]" : "text-[var(--text-primary)]"}`}
+                                className={`py-3 px-4 text-right font-display tabular-nums ${row[2] ? "font-bold text-accent" : "text-strong"}`}
                               >
                                 {row[1] as string}
                               </td>
@@ -715,24 +729,19 @@ export default function VehicleWarrantyCaseStudy() {
 
                   {/* Processing Characteristics */}
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                    {[
-                      { value: "\u2713", label: "Multiple document types" },
-                      { value: "\u2713", label: "Multi-brand support" },
-                      { value: "\u2713", label: "Deterministic screening" },
-                      { value: "\u2713", label: "Multi-tier matching" },
-                      { value: "\u2713", label: "Comprehensive keywords" },
-                      { value: "\u2713", label: "Full field extraction" },
-                      { value: "3", label: "Languages supported" },
-                      { value: "\u2713", label: "Extensive test coverage" },
-                    ].map((item) => (
+                    {processingStats.map((item) => (
                       <div
                         key={item.label}
-                        className="glass-panel-light p-3 text-center"
+                        className="bg-surface-muted rounded-pill p-3 text-center"
                       >
-                        <div className="text-lg font-bold font-mono-data text-[var(--primary)]">
-                          {item.value}
-                        </div>
-                        <div className="text-[10px] text-[var(--text-muted)]">
+                        {item.check ? (
+                          <CheckCircle className="w-5 h-5 mx-auto text-accent" strokeWidth={1.5} />
+                        ) : (
+                          <div className="text-lg font-display font-bold tabular-nums text-accent">
+                            {item.value}
+                          </div>
+                        )}
+                        <div className="text-[10px] text-muted mt-1">
                           {item.label}
                         </div>
                       </div>
@@ -743,12 +752,12 @@ export default function VehicleWarrantyCaseStudy() {
 
               {/* 6. Edge Cases and Operational Insights */}
               <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Edge Cases and Operational Insights
                 </h2>
 
                 {/* Holdout failure analysis */}
-                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
+                <h3 className="font-display font-semibold text-xl mt-10 mb-3">
                   Holdout Failure Analysis
                 </h3>
                 <div className="space-y-2 mb-8">
@@ -772,9 +781,9 @@ export default function VehicleWarrantyCaseStudy() {
                   ].map((item) => (
                     <div
                       key={item.title}
-                      className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]"
+                      className="bg-surface-muted rounded-pill p-3 text-xs text-body"
                     >
-                      <span className="font-medium text-[var(--text-primary)]">
+                      <span className="font-medium text-strong">
                         {item.title}:
                       </span>{" "}
                       {item.desc}
@@ -783,7 +792,7 @@ export default function VehicleWarrantyCaseStudy() {
                 </div>
 
                 {/* What We Learned */}
-                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-4">
+                <h3 className="font-display font-semibold text-xl mt-10 mb-4">
                   Key Lessons
                 </h3>
                 <div className="space-y-6">
@@ -810,16 +819,16 @@ export default function VehicleWarrantyCaseStudy() {
                     },
                   ].map((lesson) => (
                     <div key={lesson.num} className="flex gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[var(--primary)]/20 flex items-center justify-center flex-shrink-0">
-                        <span className="text-sm font-bold text-[var(--primary)]">
+                      <div className="w-8 h-8 rounded-full bg-accent-soft flex items-center justify-center flex-shrink-0">
+                        <span className="text-sm font-display font-semibold text-accent">
                           {lesson.num}
                         </span>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">
+                        <h4 className="font-semibold text-strong mb-1">
                           {lesson.title}
                         </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                        <p className="text-sm text-body leading-[1.6]">
                           {lesson.desc}
                         </p>
                       </div>
@@ -830,19 +839,19 @@ export default function VehicleWarrantyCaseStudy() {
 
               {/* 7. Production Readiness */}
               <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Production Readiness
                 </h2>
 
                 {/* Next Steps Taken */}
-                <div className="space-y-3 text-[var(--text-secondary)] leading-relaxed mb-8">
+                <div className="space-y-3 text-body leading-[1.6] mb-8">
                   <ol className="list-decimal list-inside space-y-2 pl-2 text-sm">
                     <li>Expanded on ground truth dataset</li>
                     <li>Integrated with insurer&apos;s policy management API for real-time status checks</li>
                     <li>Implemented causal exclusion reasoning for cascading-damage denials</li>
                     <li>Deployed production triage: auto-reject high-confidence denials, auto-approve simple approvals, route edge cases for human review</li>
                   </ol>
-                  <p className="mt-4 font-medium text-[var(--text-primary)]">
+                  <p className="mt-4 font-medium text-strong">
                     The goal is not to replace adjusters but to give them back
                     their time on the 76% of denials that are straightforward
                     lookups, so they can focus their expertise on the 24% that
@@ -851,7 +860,7 @@ export default function VehicleWarrantyCaseStudy() {
                 </div>
 
                 {/* Technical Considerations */}
-                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-4">
+                <h3 className="font-display font-semibold text-xl mt-10 mb-4">
                   Technical Considerations
                 </h3>
                 <div className="space-y-3">
@@ -879,16 +888,16 @@ export default function VehicleWarrantyCaseStudy() {
                   ].map((challenge) => (
                     <div
                       key={challenge.title}
-                      className="glass-panel p-5 flex gap-4"
+                      className="bg-card shadow-card rounded-pill p-6 flex gap-4"
                     >
-                      <div className="w-10 h-10 rounded-lg bg-[var(--primary)]/20 flex items-center justify-center flex-shrink-0">
-                        <challenge.icon className="w-5 h-5 text-[var(--primary)]" />
+                      <div className="w-10 h-10 rounded-pill bg-lilac grid place-items-center text-accent flex-shrink-0">
+                        <challenge.icon className="w-5 h-5" strokeWidth={1.5} />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">
+                        <h4 className="font-semibold text-strong mb-1">
                           {challenge.title}
                         </h4>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                        <p className="text-sm text-body leading-[1.6]">
                           {challenge.desc}
                         </p>
                       </div>
@@ -901,17 +910,17 @@ export default function VehicleWarrantyCaseStudy() {
               {study.quote && (
                 <motion.div
                   {...fadeIn}
-                  className="glass-panel p-8 border-l-4 border-l-[var(--primary)]"
+                  className="border-l-2 border-ta-blue pl-6"
                 >
-                  <Quote className="w-10 h-10 text-[var(--primary)] mb-4 opacity-50" />
-                  <blockquote className="text-lg text-[var(--text-primary)] italic mb-4">
+                  <Quote className="w-10 h-10 text-accent mb-4 opacity-40" strokeWidth={1.5} />
+                  <blockquote className="text-body-lg text-strong italic mb-4">
                     &ldquo;{study.quote.text}&rdquo;
                   </blockquote>
                   <div className="text-sm">
-                    <div className="font-semibold text-[var(--text-primary)]">
+                    <div className="font-semibold text-strong">
                       {study.quote.author}
                     </div>
-                    <div className="text-[var(--text-muted)]">
+                    <div className="text-muted">
                       {study.quote.role}
                     </div>
                   </div>
@@ -920,14 +929,14 @@ export default function VehicleWarrantyCaseStudy() {
 
               {/* Bottom Accordions: Deep Detail */}
               <motion.div {...fadeIn}>
-                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
+                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   Deep Detail
                 </h2>
                 <div className="space-y-3">
                   <ExpandableSection title="Detailed iteration fixes (88% to 98%)">
                     <div className="space-y-3">
-                      <div className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]">
-                        <span className="font-medium text-[var(--text-primary)]">
+                      <div className="bg-surface-muted rounded-pill p-3 text-xs text-body">
+                        <span className="font-medium text-strong">
                           Cross-category substring matching bug:
                         </span>{" "}
                         An EGR valve synonym (&quot;abgasrueckfuehrung&quot;)
@@ -936,20 +945,20 @@ export default function VehicleWarrantyCaseStudy() {
                         under brakes. Fix: symmetric guard requiring exact match
                         when either term is 3 characters or fewer.
                       </div>
-                      <div className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]">
-                        <span className="font-medium text-[var(--text-primary)]">
+                      <div className="bg-surface-muted rounded-pill p-3 text-xs text-body">
+                        <span className="font-medium text-strong">
                           Labor demotion over-aggression:
                         </span>{" "}
                         When a part was covered, the associated installation
                         labor should also be covered. Fix: labor promotion logic
                         that inherits coverage from the parent repair.
                       </div>
-                      <div className="glass-panel-light p-3 text-xs text-[var(--text-secondary)]">
-                        <span className="font-medium text-[var(--text-primary)]">
+                      <div className="bg-surface-muted rounded-pill p-3 text-xs text-body">
+                        <span className="font-medium text-strong">
                           Part-number normalization:
                         </span>{" "}
                         A Mercedes part number{" "}
-                        <code className="text-[var(--primary)]">
+                        <code className="bg-surface-muted rounded-pill px-2 py-0.5 text-strong">
                           A205 906 41 04
                         </code>{" "}
                         was not matched due to spacing differences in OCR
@@ -960,21 +969,21 @@ export default function VehicleWarrantyCaseStudy() {
                   </ExpandableSection>
 
                   <ExpandableSection title="Order-of-operations lesson">
-                    <div className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    <div className="text-sm text-body leading-[1.6]">
                       <p className="mb-3">
                         When applying degraded reimbursement rates, the order of operations matters:
                       </p>
                       <div className="space-y-2 mb-3">
                         <div className="flex items-start gap-2">
-                          <span className="text-red-400 font-medium">Wrong:</span>
+                          <span className="text-denied-dark font-medium">Wrong:</span>
                           <span>Apply rate after VAT and deductible calculations</span>
                         </div>
                         <div className="flex items-start gap-2">
-                          <span className="text-emerald-400 font-medium">Correct:</span>
+                          <span className="text-approved-dark font-medium">Correct:</span>
                           <span>Apply rate to covered amount first, then add VAT and subtract deductible</span>
                         </div>
                       </div>
-                      <p className="text-xs text-[var(--text-muted)]">
+                      <p className="text-xs text-muted">
                         A single operation-order error can cause significant overpayment.
                         Finding these bugs requires walking through calculations with adjusters.
                       </p>
@@ -990,25 +999,25 @@ export default function VehicleWarrantyCaseStudy() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="glass-panel p-6"
+                transition={{ duration: 0.6, ease }}
+                className="bg-card shadow-card rounded-pill p-8"
               >
-                <h3 className="font-semibold text-[var(--text-primary)] mb-4">
+                <h3 className="font-display font-semibold text-strong mb-4">
                   {t("detail.keyHighlights")}
                 </h3>
                 <ul className="space-y-3">
                   {study.highlights.map((highlight, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[var(--secondary)] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-[var(--text-secondary)]">
+                      <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <span className="text-sm text-body">
                         {highlight}
                       </span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-8 pt-6 border-t border-[var(--border)]">
-                  <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">
+                <div className="mt-8 pt-6 border-t border-hairline">
+                  <h4 className="text-caption-sm text-subtle mb-3">
                     {t("vehicleWarranty.sidebar.productsUsed")}
                   </h4>
                   <div className="space-y-2">
@@ -1016,7 +1025,7 @@ export default function VehicleWarrantyCaseStudy() {
                       <Link
                         key={product}
                         href={productLinks[product]}
-                        className={`block text-sm px-3 py-2 rounded-lg font-medium ${productPillColors[product]} transition-colors text-center`}
+                        className={`block text-sm px-3 py-2 font-medium ${productPillColors[product]} text-center`}
                       >
                         {productNames[product]}
                       </Link>
@@ -1024,8 +1033,8 @@ export default function VehicleWarrantyCaseStudy() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-[var(--border)]">
-                  <h4 className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">
+                <div className="mt-8 pt-6 border-t border-hairline">
+                  <h4 className="text-caption-sm text-subtle mb-3">
                     {t("vehicleWarranty.sidebar.capabilities")}
                   </h4>
                   <div className="flex flex-wrap gap-1.5">
@@ -1038,7 +1047,7 @@ export default function VehicleWarrantyCaseStudy() {
                     ].map((capability) => (
                       <span
                         key={capability}
-                        className="text-[10px] px-2 py-1 rounded bg-[var(--subtle-bg)] text-[var(--text-muted)]"
+                        className="text-xs px-3 py-1 rounded-pill bg-accent-soft text-accent"
                       >
                         {capability}
                       </span>
@@ -1046,14 +1055,11 @@ export default function VehicleWarrantyCaseStudy() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-[var(--border)]">
-                  <Link
-                    href="/contact"
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors"
-                  >
+                <div className="mt-8 pt-6 border-t border-hairline">
+                  <ButtonLink href="/contact" variant="primary" className="w-full">
                     {t("vehicleWarranty.sidebar.getSimilarResults")}
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+                    <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+                  </ButtonLink>
                 </div>
               </motion.div>
             </aside>
@@ -1068,9 +1074,9 @@ export default function VehicleWarrantyCaseStudy() {
             {prevStudy ? (
               <Link
                 href={`/case-studies/${prevStudy.slug}`}
-                className="flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors"
+                className="flex items-center gap-2 text-muted hover:text-accent transition-colors"
               >
-                <ArrowLeft className="w-4 h-4" />
+                <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
                 <span className="text-sm">{t("detail.previous")}</span>
               </Link>
             ) : (
@@ -1079,10 +1085,10 @@ export default function VehicleWarrantyCaseStudy() {
             {nextStudy ? (
               <Link
                 href={`/case-studies/${nextStudy.slug}`}
-                className="flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors"
+                className="flex items-center gap-2 text-muted hover:text-accent transition-colors"
               >
                 <span className="text-sm">{t("detail.next")}</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
               </Link>
             ) : (
               <div />
@@ -1092,28 +1098,25 @@ export default function VehicleWarrantyCaseStudy() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-gradient-to-br from-slate-900 to-[var(--background)]">
+      <section data-theme="dark" className="py-20 px-6 bg-page-tint">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease }}
           >
-            <TrendingUp className="w-12 h-12 text-[var(--text-muted)] mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <TrendingUp className="w-12 h-12 text-muted mx-auto mb-6" strokeWidth={1.5} />
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-strong mb-6">
               {t("detail.ctaHeading")}
             </h2>
-            <p className="text-lg text-gray-300 mb-10">
+            <p className="text-lg text-body mb-10">
               {t("detail.ctaDescription")}
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg"
-            >
+            <ButtonLink href="/contact" variant="primary" size="lg">
               {t("detail.requestPilot")}
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+              <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+            </ButtonLink>
           </motion.div>
         </div>
       </section>

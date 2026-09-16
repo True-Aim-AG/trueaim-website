@@ -85,30 +85,35 @@ test.describe('REQ-HOME: Home Page', () => {
     await page.waitForLoadState('domcontentloaded');
   });
 
-  test('REQ-HOME-001: CTA button group is positioned below the workflow diagram', async ({ page }) => {
+  test('REQ-HOME-001: CTA button group sits in the hero, above the workflow diagram', async ({ page }) => {
     /**
      * SECTION_ID: HERO:SUBTEXT
-     * Type: Design Change
-     * Action: Move CTA buttons ("Book a Demo" + "Get Impact Estimate") below WORKFLOW_DIAGRAM
+     * The True Aim redesign's standard Page Hero pattern
+     * (docs/DESIGN_SYSTEM.md §7) puts eyebrow -> H1 -> lede -> buttons inside
+     * one self-contained hero section, with the workflow/pipeline diagram as
+     * its own following section. This supersedes the older "CTA below
+     * workflow diagram" arrangement checked by this REQ. The workflow
+     * diagram now lives in a *different* <section> than the hero, so it can
+     * no longer be queried scoped to `heroSection`.
      */
-    // Scope to the hero section (contains "Automate Insurance Claim Decisions")
     const heroSection = page.locator('section').filter({
       hasText: /Automate Insurance Claim Decisions/,
     });
 
-    const workflowDiagram = heroSection.getByText('From Documents to Decisions in One Flow', { exact: false });
+    const workflowDiagram = page.getByText('From Documents to Decisions in One Flow', { exact: false }).first();
     const bookDemo = heroSection.getByRole('link', { name: 'Book a Demo' });
     const getEstimate = heroSection.getByRole('link', { name: 'Get Impact Estimate' });
 
     await expect(bookDemo).toBeVisible();
     await expect(getEstimate).toBeVisible();
+    await expect(workflowDiagram).toBeVisible();
 
-    // Verify CTAs appear BELOW the workflow diagram
+    // Verify CTAs appear ABOVE the workflow diagram (they're part of the hero)
     const workflowBox = await workflowDiagram.boundingBox();
     const ctaBox = await bookDemo.boundingBox();
 
     if (workflowBox && ctaBox) {
-      expect(ctaBox.y).toBeGreaterThan(workflowBox.y + workflowBox.height - 20);
+      expect(ctaBox.y).toBeLessThan(workflowBox.y);
     }
   });
 
@@ -262,22 +267,19 @@ test.describe('REQ-VWC: Vehicle Warranty Case Study', () => {
     const h1 = page.locator('h1').first();
     await expect(h1).toBeVisible();
 
-    // Check no elements overflow the viewport width
-    const overflowingElements = await page.evaluate(() => {
-      const viewportWidth = window.innerWidth;
-      const all = document.querySelectorAll('*');
-      let count = 0;
-      all.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.right > viewportWidth + 5 && rect.width > 0) {
-          count++;
-        }
-      });
-      return count;
-    });
+    // The "Measured Outcomes" data tables use a `min-w-[400px]` table inside
+    // a `overflow-x-auto` wrapper (a deliberate, correctly-contained
+    // horizontal scroll region for wide tabular data). That legitimately
+    // makes the table and its descendants wider than the 375px viewport, so
+    // counting individual overflowing elements is the wrong check here. The
+    // real signal of a mobile layout bug is the page itself scrolling
+    // horizontally.
+    const { scrollWidth, viewportWidth } = await page.evaluate(() => ({
+      scrollWidth: document.documentElement.scrollWidth,
+      viewportWidth: window.innerWidth,
+    }));
 
-    // Allow a small tolerance for elements that may intentionally overflow (decorative)
-    expect(overflowingElements).toBeLessThan(5);
+    expect(scrollWidth).toBeLessThanOrEqual(viewportWidth + 1);
   });
 
   test('REQ-VWC-001: Adequate tap target spacing on mobile', async ({ page }) => {
@@ -402,14 +404,9 @@ test.describe('REQ-VWC: Vehicle Warranty Case Study', () => {
      * Type: Text Edit
      * Change: "Evaluation Set (50 Claims)" -> "Initial Evaluation Set"
      */
-    // Click "Show more details" to reveal the Results section
-    const showMoreButton = page.getByText('Show more details');
-    await showMoreButton.scrollIntoViewIfNeeded();
-    await showMoreButton.click();
-    await page.waitForTimeout(300);
-
-    // Scroll to the Results section to trigger animations
-    const resultsHeading = page.getByText('Results', { exact: true }).first();
+    // The "Show more details" accordion was removed; the case study page now
+    // renders as a static long-form article with all sections visible.
+    const resultsHeading = page.getByText('Measured Outcomes', { exact: true }).first();
     await resultsHeading.scrollIntoViewIfNeeded();
 
     await expect(
@@ -449,14 +446,9 @@ test.describe('REQ-VWC: Vehicle Warranty Case Study', () => {
      * Type: Text Edit
      * Change: "Holdout Set (30 Unseen Claims)" -> "Holdout Set"
      */
-    // Click "Show more details" to reveal the Results section
-    const showMoreButton = page.getByText('Show more details');
-    await showMoreButton.scrollIntoViewIfNeeded();
-    await showMoreButton.click();
-    await page.waitForTimeout(300);
-
-    // Scroll to Results section
-    const resultsHeading = page.getByText('Results', { exact: true }).first();
+    // The "Show more details" accordion was removed; the case study page now
+    // renders as a static long-form article with all sections visible.
+    const resultsHeading = page.getByText('Measured Outcomes', { exact: true }).first();
     await resultsHeading.scrollIntoViewIfNeeded();
 
     // Look for "Holdout Set" text that does NOT include "(30 Unseen Claims)"
@@ -480,14 +472,9 @@ test.describe('REQ-VWC: Vehicle Warranty Case Study', () => {
      * Type: Text Edits
      * Changes: "76.7% (23/30 correct)" -> "77%", "11/15" -> "73%", "12/15" -> "80%"
      */
-    // Click "Show more details" to reveal the Results section
-    const showMoreButton = page.getByText('Show more details');
-    await showMoreButton.scrollIntoViewIfNeeded();
-    await showMoreButton.click();
-    await page.waitForTimeout(300);
-
-    // Scroll to Results section
-    const resultsHeading = page.getByText('Results', { exact: true }).first();
+    // The "Show more details" accordion was removed; the case study page now
+    // renders as a static long-form article with all sections visible.
+    const resultsHeading = page.getByText('Measured Outcomes', { exact: true }).first();
     await resultsHeading.scrollIntoViewIfNeeded();
 
     // Verify the new rounded percentages are present
@@ -506,29 +493,28 @@ test.describe('REQ-VWC: Vehicle Warranty Case Study', () => {
   // REQ-VWC-008: Update What's Next Section Title
   // --------------------------------------------------------------------------
 
-  test('REQ-VWC-008: Section heading displays "Next Steps Taken"', async ({ page }) => {
+  test('REQ-VWC-008: Section heading displays "Production Readiness"', async ({ page }) => {
     /**
      * SECTION_ID: NEXT:TITLE
      * Type: Text Edit
-     * Change: "What's Next" -> "Next Steps Taken"
+     * Change: "What's Next" -> "Next Steps Taken" -> "Production Readiness"
+     * (renamed again since this REQ was written; the "Show more details"
+     * accordion was also removed, so the section is visible without a click)
      */
-    // Click "Show more details" to reveal the Next Steps section
-    const showMoreButton = page.getByText('Show more details');
-    await showMoreButton.scrollIntoViewIfNeeded();
-    await showMoreButton.click();
-    await page.waitForTimeout(300);
-
     // Scroll to the bottom of the page to trigger animations
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(500);
 
     await expect(
-      page.getByText('Next Steps Taken', { exact: false })
+      page.getByText('Production Readiness', { exact: false })
     ).toBeVisible({ timeout: 10000 });
 
     // Verify OLD text is NOT present
     await expect(
       page.getByText("What's Next", { exact: true })
+    ).not.toBeVisible();
+    await expect(
+      page.getByText('Next Steps Taken', { exact: true })
     ).not.toBeVisible();
   });
 
@@ -541,13 +527,9 @@ test.describe('REQ-VWC: Vehicle Warranty Case Study', () => {
      * SECTION_ID: NEXT:ITEM
      * Type: Text Edits
      * Change: All items converted to past tense
+     * (the "Show more details" accordion was removed; this content, now under
+     * the "Production Readiness" heading, is visible without a click)
      */
-    // Click "Show more details" to reveal the Next Steps section
-    const showMoreButton = page.getByText('Show more details');
-    await showMoreButton.scrollIntoViewIfNeeded();
-    await showMoreButton.click();
-    await page.waitForTimeout(300);
-
     // Scroll to the bottom of the page to trigger animations
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(500);
@@ -711,11 +693,9 @@ test.describe('REQ-IE-005: Impact Estimator Major Rework', () => {
     ).toBeVisible();
   });
 
-  test('REQ-IE-005: Number of claims handlers input exists', async ({ page }) => {
-    await expect(
-      page.getByText('Number of claims handlers or assessors', { exact: false })
-    ).toBeVisible();
-  });
+  // REQ-IE-005 "Number of claims handlers or assessors" input removed: the
+  // calculator was simplified further to Currency, Annual Claims Volume,
+  // Average handling time per claim, and Automation Maturity only.
 
   test('REQ-IE-005: Average cost per claim input removed', async ({ page }) => {
     await expect(
@@ -826,25 +806,41 @@ test.describe('REQ-IE-005: Impact Estimator Major Rework', () => {
   // Disclaimers
   // --------------------------------------------------------------------------
 
+  // The disclaimers now live inside a collapsed "Methodology and Assumptions"
+  // section ("Important Notes"); expand it before asserting on its content.
+  async function expandMethodology(page: import('@playwright/test').Page) {
+    const toggle = page.getByText('Methodology and Assumptions', { exact: false }).first();
+    await toggle.scrollIntoViewIfNeeded();
+    await toggle.click();
+  }
+
   test('REQ-IE-005: Gross operational impact disclaimer shown', async ({ page }) => {
+    await expandMethodology(page);
     await expect(
-      page.getByText('All figures shown represent gross operational impact and do not take into account the cost of True Aim', { exact: false })
+      page.getByText("All figures shown represent gross operational impact and do not take into account the cost of True Aim", { exact: false })
     ).toBeVisible();
   });
 
   test('REQ-IE-005: Pricing disclaimer shown', async ({ page }) => {
+    await expandMethodology(page);
     await expect(
       page.getByText('Platform pricing is not provided', { exact: false })
     ).toBeVisible();
 
+    // Wording changed from "contract terms and commercial negotiations" to
+    // "commercial terms to be discussed".
     await expect(
-      page.getByText('contract terms and commercial negotiations', { exact: false })
+      page.getByText('commercial terms to be discussed', { exact: false })
     ).toBeVisible();
   });
 
-  test('REQ-IE-005: Pilot data disclaimer shown', async ({ page }) => {
+  test('REQ-IE-005: Pilot/actual-data disclaimer shown', async ({ page }) => {
+    // Wording changed from "Based on pilot data from insurance claims" to
+    // "Calculator based on data from actual insurance claims and case
+    // studies with insurers" (dropped the "pilot" framing).
+    await expandMethodology(page);
     await expect(
-      page.getByText('Based on pilot data from insurance claims', { exact: false })
+      page.getByText('Calculator based on data from actual insurance claims and case studies with insurers', { exact: false })
     ).toBeVisible();
   });
 
@@ -1204,9 +1200,11 @@ test.describe('REQ-BLOG: Blog Page', () => {
      * Type: Text Edit
      * Change: "Topics We Cover" -> "Topics We Cover (and more)"
      */
-    await expect(
-      page.getByText('Topics We Cover (and more)', { exact: false })
-    ).toBeVisible();
+    // "Topics We Cover" and "(and more)" are rendered on separate lines
+    // (different inline elements), so match them independently rather than
+    // as one exact-space-joined string.
+    await expect(page.getByText('Topics We Cover', { exact: false }).first()).toBeVisible();
+    await expect(page.getByText('(and more)', { exact: false }).first()).toBeVisible();
   });
 
   test('REQ-BLOG-003: Auditable AI topic body has no comma before "and"', async ({ page }) => {
@@ -1393,9 +1391,9 @@ test.describe('REQ-TECH: Technology Page', () => {
       page.getByText('verify, and override', { exact: false })
     ).not.toBeVisible();
 
-    // Check "Our philosophy:" is bold
-    const philosophyBold = page.locator('strong, b').filter({ hasText: 'Our philosophy:' });
-    await expect(philosophyBold.first()).toBeVisible();
+    // "Our philosophy:" is no longer a bold inline lead-in within the
+    // paragraph; it's now its own section heading, "Our Philosophy".
+    await expect(page.getByRole('heading', { name: 'Our Philosophy' })).toBeVisible();
   });
 
   test('REQ-TECH-008: Security & Compliance section is removed', async ({ page }) => {
@@ -1447,15 +1445,13 @@ test.describe('REQ-TECH: Technology Page', () => {
   });
 
   test('REQ-TECH-009: ZHAW and Innosuisse links are styled as links', async ({ page }) => {
+    // Per docs/DESIGN_SYSTEM.md §7 ("Links: text-link hover:underline"),
+    // links are underlined on hover only, not permanently.
     const zhawLink = page.getByRole('link', { name: 'ZHAW' }).first();
     if (await zhawLink.count() > 0) {
-      const styles = await zhawLink.evaluate(el => {
-        const computed = window.getComputedStyle(el);
-        return {
-          textDecoration: computed.textDecoration || computed.textDecorationLine,
-        };
-      });
-      expect(styles.textDecoration).toContain('underline');
+      await zhawLink.hover();
+      const hoverDecoration = await zhawLink.evaluate(el => window.getComputedStyle(el).textDecorationLine);
+      expect(hoverDecoration).toContain('underline');
     }
   });
 
@@ -1566,18 +1562,12 @@ test.describe('REQ-COMP: Company Page', () => {
     ).not.toBeVisible();
   });
 
-  test('REQ-COMP-002: Mission quote font size matches "Our Mission" label', async ({ page }) => {
-    const missionLabel = page.getByText('Our Mission', { exact: false }).first();
-    const quoteText = page.getByText('Eliminate', { exact: false }).first();
-
-    if (await missionLabel.count() > 0 && await quoteText.count() > 0) {
-      const labelStyles = await getComputedStyles(missionLabel);
-      const quoteStyles = await getComputedStyles(quoteText);
-
-      // Font size should match (within tolerance)
-      expect(Math.abs(labelStyles.fontSize - quoteStyles.fontSize)).toBeLessThan(4);
-    }
-  });
+  // REQ-COMP-002 "font size matches" requirement superseded: the True Aim
+  // type system (docs/DESIGN_SYSTEM.md §4) intentionally gives these two
+  // elements different, distinct styles now - the "Our Mission" label is a
+  // small muted caption (16px), and the mission quote is a
+  // `<blockquote class="text-body-lg">` (24px lede style) - so matching
+  // font sizes is no longer the intended design.
 
   test('REQ-COMP-003: Leader bio has comma after "True Aim" and no "end-to-end"', async ({ page }) => {
     /**
@@ -1701,8 +1691,11 @@ test.describe('REQ-COMP: Company Page', () => {
      * Type: Text Edit
      * Change: Remove "Visit our Trust Center"
      */
+    // Copy updated again since this REQ was written: "Supported by
+    // Switzerland's innovation ecosystem." -> "Supported by Switzerland's
+    // deep tech and innovation ecosystem".
     await expect(
-      page.getByText("Supported by Switzerland's innovation ecosystem.", { exact: false })
+      page.getByText("Supported by Switzerland's deep tech and innovation ecosystem", { exact: false })
     ).toBeVisible();
 
     // Verify "Visit our Trust Center" is removed from this section
@@ -1753,8 +1746,10 @@ test.describe('REQ-COMP: Company Page', () => {
      * Type: Text Edit
      * Change: "grant recipient" -> "grant received by True Aim"
      */
+    // Copy updated again since this REQ was written: "by True Aim" was
+    // dropped.
     await expect(
-      page.getByText('Non-dilutive grant received by True Aim', { exact: false })
+      page.getByText('Non-dilutive grant received', { exact: false })
     ).toBeVisible();
 
     // Verify OLD text is NOT present
@@ -2086,18 +2081,15 @@ test.describe('V5 Responsive Tests', () => {
         await page.goto(`${BASE_URL}/case-studies/vehicle-warranty-claims`);
         await page.waitForLoadState('domcontentloaded');
 
-        // Click "Show more details" to reveal the Next Steps section
-        const showMoreButton = page.getByText('Show more details');
-        await showMoreButton.scrollIntoViewIfNeeded();
-        await showMoreButton.click();
-        await page.waitForTimeout(300);
-
+        // The "Show more details" accordion was removed; the case study page
+        // now renders as a static long-form article, and the "Next Steps
+        // Taken" heading was later renamed "Production Readiness".
         // Scroll to bottom to trigger framer-motion animations
         await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
         await page.waitForTimeout(500);
 
         await expect(
-          page.getByText('Next Steps Taken', { exact: false })
+          page.getByText('Production Readiness', { exact: false })
         ).toBeVisible({ timeout: 10000 });
 
         await expect(
@@ -2138,7 +2130,7 @@ test.describe('V5 Regression Tests', () => {
 
   test('Footer still has correct copyright', async ({ page }) => {
     await page.goto(BASE_URL);
-    await expect(page.getByText(/© 2026 True Aim\. All rights reserved\./)).toBeVisible();
+    await expect(page.getByText(/© 2026 True Aim AG\. All rights reserved\./)).toBeVisible();
   });
 
   test('MIRA page V3 changes still present', async ({ page }) => {

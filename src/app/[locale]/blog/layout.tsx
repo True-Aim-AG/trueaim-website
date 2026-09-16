@@ -34,7 +34,7 @@ const blogJsonLd = {
     "Insights on auditable AI, claims automation, and the future of insurance technology.",
   publisher: {
     "@type": "Organization",
-    name: "TrueAim AG",
+    name: "True Aim AG",
     url: "https://trueaim.ai",
   },
   blogPost: blogPosts.map((post) => ({

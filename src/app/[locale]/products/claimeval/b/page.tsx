@@ -1,31 +1,28 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  AlertTriangle,
   Eye,
   BarChart3,
   Coins,
-  Database,
-  Brain,
   Bell,
-  Package,
-  Shield,
-  ClipboardList,
   Plug,
   ArrowRight,
   Quote,
-  CheckCircle,
 } from "lucide-react";
 import {
   fadeUp,
-  float,
   staggerContainer,
   defaultTransition,
 } from "@/lib/animations";
+import { Button, ButtonLink, buttonClasses } from "@/components/brand/Button";
+import { BrandIcon, type BrandIconName } from "@/components/brand/BrandIcon";
+import { Eyebrow } from "@/components/brand/Eyebrow";
+import { Glow } from "@/components/brand/Glow";
+import { GridPattern } from "@/components/brand/GridPattern";
+import { StatusPill } from "@/components/brand/StatusPill";
 
 // ============================================================================
 // Section 1: Hero
@@ -33,14 +30,7 @@ import {
 function HeroSection({ t }: { t: ReturnType<typeof useTranslations<"claimEvalB">> }) {
   return (
     <section className="relative pt-32 pb-24 px-6 overflow-hidden">
-      {/* Radial cyan glow behind visual */}
-      <div
-        className="absolute top-1/2 right-0 w-[800px] h-[800px] -translate-y-1/2 translate-x-1/4 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%)",
-        }}
-      />
+      <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
 
       <div className="relative max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -52,136 +42,95 @@ function HeroSection({ t }: { t: ReturnType<typeof useTranslations<"claimEvalB">
             variants={staggerContainer}
           >
             {/* Eyebrow */}
-            <motion.p
-              variants={fadeUp}
-              className="text-xs uppercase tracking-widest text-sky-400 font-medium mb-6"
-            >
-              {t("hero.eyebrow")}
-            </motion.p>
+            <motion.div variants={fadeUp} className="mb-6">
+              <Eyebrow>{t("hero.eyebrow")}</Eyebrow>
+            </motion.div>
 
             {/* Headline */}
             <motion.h1
               variants={fadeUp}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight"
+              className="font-display text-[40px] font-bold leading-[1.05] text-strong sm:text-[48px] lg:text-[54px] mb-6"
             >
               {t("hero.title")}
-              <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">
-                {t("hero.titleHighlight")}
-              </span>
+              <span className="text-accent">{t("hero.titleHighlight")}</span>
               {t("hero.titleEnd")}
             </motion.h1>
 
             {/* Subhead */}
-            <motion.p
-              variants={fadeUp}
-              className="text-lg text-slate-400 mb-8 leading-relaxed"
-            >
+            <motion.p variants={fadeUp} className="text-lede text-body mb-8">
               {t("hero.subtitle")}
             </motion.p>
 
             {/* Primary CTA */}
             <motion.div variants={fadeUp} className="mb-6">
-              <Link
-                href="#impact-calculator"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-500 transition-all text-lg shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50 group"
-              >
+              <a href="#impact-calculator" className={buttonClasses("primary", "lg")}>
                 {t("hero.ctaPrimary")}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+              </a>
             </motion.div>
 
             {/* Trust badges */}
-            <motion.div
-              variants={fadeUp}
-              className="flex flex-wrap items-center gap-4 text-sm text-slate-500"
-            >
+            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4 text-sm text-muted">
               <span className="flex items-center gap-2">
-                <Shield className="w-4 h-4" />
+                <BrandIcon name="control" size={18} />
                 {t("hero.trustBadge")}
               </span>
-              <span className="text-slate-700">|</span>
+              <span className="text-line">|</span>
               <span>{t("hero.trustTimeline")}</span>
             </motion.div>
           </motion.div>
 
           {/* Right Column - Visual (7 cols) */}
           <motion.div
-            className="lg:col-span-7"
+            className="lg:col-span-7 relative"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            {/* Floating Dashboard */}
-            <div
-              className="relative rounded-2xl p-6 backdrop-blur-xl border border-white/10"
-              style={{ background: "rgba(30, 41, 59, 0.4)" }}
-            >
-              {/* Dashboard header */}
-              <div className="flex items-center gap-3 mb-4 pb-4 border-b border-white/10">
-                <div className="w-3 h-3 rounded-full bg-red-500" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                <div className="w-3 h-3 rounded-full bg-green-500" />
-                <span className="ml-4 text-sm text-slate-400">
-                  {t("dashboard.claimNumber")}
-                </span>
+            <Glow variant="soft" size={480} className="absolute -right-20 -top-24 -z-10" />
+
+            {/* Claim document card */}
+            <div className="relative rounded-pill bg-card shadow-card p-6">
+              {/* Card header */}
+              <div className="flex items-center gap-3 mb-4 pb-4 border-b border-hairline">
+                <BrandIcon name="claim" size={20} />
+                <span className="text-sm text-muted">{t("dashboard.claimNumber")}</span>
               </div>
 
               {/* Claim file content */}
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-slate-500">{t("dashboard.policyHolder")}</span>
-                  <span className="text-sm text-white">{t("dashboard.policyHolderValue")}</span>
+              <div className="divide-hairline">
+                <div className="flex items-center justify-between py-3">
+                  <span className="text-sm text-muted">{t("dashboard.policyHolder")}</span>
+                  <span className="text-sm font-medium text-strong">{t("dashboard.policyHolderValue")}</span>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-slate-500">{t("dashboard.lob")}</span>
-                  <span className="text-sm text-white">{t("dashboard.lobValue")}</span>
+                <div className="flex items-center justify-between py-3">
+                  <span className="text-sm text-muted">{t("dashboard.lob")}</span>
+                  <span className="text-sm font-medium text-strong">{t("dashboard.lobValue")}</span>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-slate-500">{t("dashboard.reserve")}</span>
-                  <span className="text-sm text-white">{t("dashboard.reserveValue")}</span>
+                <div className="flex items-center justify-between py-3">
+                  <span className="text-sm text-muted">{t("dashboard.reserve")}</span>
+                  <span className="text-sm font-medium text-strong">{t("dashboard.reserveValue")}</span>
                 </div>
+              </div>
 
-                {/* Police report section */}
-                <div className="mt-6 p-4 rounded-lg bg-slate-900/50 relative">
-                  <p className="text-xs text-slate-500 mb-2">
-                    {t("dashboard.policeReportLabel")}
-                  </p>
-                  <p className="text-sm text-slate-300 leading-relaxed">
-                    &quot;{t("dashboard.policeReportText")}
-                    <motion.span
-                      className="bg-orange-500/30 text-orange-300 px-1 rounded relative"
-                      animate={{
-                        boxShadow: [
-                          "0 0 10px rgba(249, 115, 22, 0.3)",
-                          "0 0 20px rgba(249, 115, 22, 0.6)",
-                          "0 0 10px rgba(249, 115, 22, 0.3)",
-                        ],
-                      }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      {t("dashboard.policeReportHighlight")}
-                    </motion.span>
-                    &quot;
-                  </p>
+              {/* Police report section */}
+              <div className="mt-6 p-4 rounded-pill bg-surface-muted">
+                <p className="text-xs text-subtle mb-2">
+                  {t("dashboard.policeReportLabel")}
+                </p>
+                <p className="text-sm text-body leading-relaxed">
+                  &quot;{t("dashboard.policeReportText")}
+                  <span className="bg-referred-light text-referred-dark px-1">
+                    {t("dashboard.policeReportHighlight")}
+                  </span>
+                  &quot;
+                </p>
+              </div>
 
-                  {/* Floating tooltip */}
-                  <motion.div
-                    variants={float}
-                    initial="initial"
-                    animate="animate"
-                    className="absolute -right-4 -top-4 p-3 rounded-lg bg-slate-800 border border-orange-500/50 shadow-lg shadow-orange-500/20"
-                  >
-                    <div className="flex items-center gap-2">
-                      <AlertTriangle className="w-4 h-4 text-orange-500" />
-                      <div>
-                        <p className="text-xs text-orange-400 font-medium">
-                          {t("dashboard.alertTitle")}
-                        </p>
-                        <p className="text-sm text-white font-bold">{t("dashboard.alertValue")}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
+              {/* Flag */}
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <StatusPill tone="referred">{t("dashboard.alertTitle")}</StatusPill>
+                <span className="text-sm font-semibold text-strong">{t("dashboard.alertValue")}</span>
               </div>
             </div>
           </motion.div>
@@ -210,10 +159,10 @@ function ProblemSection({ t }: { t: ReturnType<typeof useTranslations<"claimEval
           transition={defaultTransition}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+          <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-6">
             {t("problem.title")}
           </h2>
-          <p className="text-lg text-slate-400 leading-relaxed">
+          <p className="text-lede text-body">
             {t("problem.description")}
           </p>
         </motion.div>
@@ -229,7 +178,7 @@ function ProblemSection({ t }: { t: ReturnType<typeof useTranslations<"claimEval
           >
             <motion.p
               variants={fadeUp}
-              className="text-xl font-semibold text-white mb-8"
+              className="text-xl font-semibold text-strong mb-8"
             >
               {t("problem.subtitle")}
             </motion.p>
@@ -244,14 +193,14 @@ function ProblemSection({ t }: { t: ReturnType<typeof useTranslations<"claimEval
                     transition={{ delay: index * 0.1 }}
                     className="flex gap-4"
                   >
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-sky-500/20 flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-sky-400" />
+                    <div className="flex-shrink-0 w-12 h-12 rounded-pill bg-lilac grid place-items-center">
+                      <Icon className="w-6 h-6 text-accent" strokeWidth={1.5} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">
+                      <h3 className="text-lg font-semibold text-strong mb-1">
                         {t(`problem.leaks.${key}.title`)}
                       </h3>
-                      <p className="text-slate-400">{t(`problem.leaks.${key}.description`)}</p>
+                      <p className="text-body">{t(`problem.leaks.${key}.description`)}</p>
                     </div>
                   </motion.div>
                 );
@@ -279,7 +228,7 @@ function ProblemSection({ t }: { t: ReturnType<typeof useTranslations<"claimEval
                 y1="150"
                 x2="400"
                 y2="150"
-                stroke="#38BDF8"
+                stroke="#5151DB"
                 strokeWidth="2"
                 strokeDasharray="8 4"
                 opacity="0.5"
@@ -288,8 +237,8 @@ function ProblemSection({ t }: { t: ReturnType<typeof useTranslations<"claimEval
               {/* Iceberg tip (above water) */}
               <motion.polygon
                 points="200,20 240,150 160,150"
-                fill="rgba(255,255,255,0.1)"
-                stroke="#FFFFFF"
+                fill="#F3EEFE"
+                stroke="#2C2B2A"
                 strokeWidth="1"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -300,8 +249,8 @@ function ProblemSection({ t }: { t: ReturnType<typeof useTranslations<"claimEval
               {/* Iceberg mass (below water) - wireframe style */}
               <motion.polygon
                 points="200,150 280,250 320,400 260,480 140,480 80,400 120,250"
-                fill="rgba(30, 41, 59, 0.5)"
-                stroke="#1E293B"
+                fill="#EFEFF0"
+                stroke="#CFCFD2"
                 strokeWidth="2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -311,11 +260,11 @@ function ProblemSection({ t }: { t: ReturnType<typeof useTranslations<"claimEval
 
               {/* Wireframe lines inside underwater mass */}
               <motion.g
-                stroke="#334155"
+                stroke="#CFCFD2"
                 strokeWidth="1"
-                opacity="0.5"
+                opacity="0.6"
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 0.5 }}
+                whileInView={{ opacity: 0.6 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
@@ -336,14 +285,14 @@ function ProblemSection({ t }: { t: ReturnType<typeof useTranslations<"claimEval
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
                 {/* Tip label */}
-                <rect x="250" y="70" width="100" height="30" rx="4" fill="#1E293B" />
-                <text x="300" y="90" textAnchor="middle" fill="#FFFFFF" fontSize="12" fontWeight="600">
+                <rect x="250" y="70" width="100" height="30" rx="15" fill="#F3EEFE" />
+                <text x="300" y="90" textAnchor="middle" fill="#2C2B2A" fontSize="12" fontWeight="600">
                   {t("problem.icebergTipLabel")}
                 </text>
 
                 {/* Mass label */}
-                <rect x="250" y="320" width="140" height="30" rx="4" fill="#1E293B" />
-                <text x="320" y="340" textAnchor="middle" fill="#38BDF8" fontSize="12" fontWeight="600">
+                <rect x="250" y="320" width="140" height="30" rx="15" fill="#E2EAFD" />
+                <text x="320" y="340" textAnchor="middle" fill="#5151DB" fontSize="12" fontWeight="600">
                   {t("problem.icebergMassLabel")}
                 </text>
               </motion.g>
@@ -360,7 +309,7 @@ function ProblemSection({ t }: { t: ReturnType<typeof useTranslations<"claimEval
 // ============================================================================
 function SolutionSection({ t }: { t: ReturnType<typeof useTranslations<"claimEvalB">> }) {
   const stepKeys = ["ingest", "analyze", "alert"] as const;
-  const stepIcons = [Database, Brain, Bell];
+  const stepIcons: (BrandIconName | null)[] = ["ingestion", "processing", null];
 
   return (
     <section className="py-24 px-6">
@@ -374,10 +323,10 @@ function SolutionSection({ t }: { t: ReturnType<typeof useTranslations<"claimEva
           transition={defaultTransition}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+          <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-4">
             {t("solution.title")}
           </h2>
-          <p className="text-lg text-slate-400">
+          <p className="text-lg text-body">
             {t("solution.subtitle")}
           </p>
         </motion.div>
@@ -386,7 +335,7 @@ function SolutionSection({ t }: { t: ReturnType<typeof useTranslations<"claimEva
         <div className="relative">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
             {stepKeys.map((key, index) => {
-              const Icon = stepIcons[index];
+              const icon = stepIcons[index];
               return (
                 <motion.div
                   key={key}
@@ -403,7 +352,7 @@ function SolutionSection({ t }: { t: ReturnType<typeof useTranslations<"claimEva
                         className="h-full"
                         style={{
                           backgroundImage:
-                            "repeating-linear-gradient(90deg, #38BDF8 0px, #38BDF8 4px, transparent 4px, transparent 8px)",
+                            "repeating-linear-gradient(90deg, #5151DB 0px, #5151DB 4px, transparent 4px, transparent 8px)",
                         }}
                         initial={{ scaleX: 0 }}
                         whileInView={{ scaleX: 1 }}
@@ -414,20 +363,21 @@ function SolutionSection({ t }: { t: ReturnType<typeof useTranslations<"claimEva
                   )}
 
                   {/* Card */}
-                  <div
-                    className="h-full p-8 rounded-2xl backdrop-blur-xl border border-white/10 hover:border-sky-500/30 transition-colors"
-                    style={{ background: "rgba(30, 41, 59, 0.15)" }}
-                  >
-                    <div className="w-14 h-14 rounded-xl bg-sky-500/20 flex items-center justify-center mb-6">
-                      <Icon className="w-7 h-7 text-sky-400" />
+                  <div className="h-full p-8 bg-card shadow-card rounded-pill transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch">
+                    <div className="w-14 h-14 rounded-pill bg-lilac grid place-items-center mb-6">
+                      {icon ? (
+                        <BrandIcon name={icon} size={28} />
+                      ) : (
+                        <Bell className="w-7 h-7 text-accent" strokeWidth={1.5} />
+                      )}
                     </div>
-                    <p className="text-xs uppercase tracking-widest text-sky-400 font-medium mb-2">
+                    <p className="text-caption-sm text-accent mb-2">
                       {t(`solution.steps.${key}.label`)}
                     </p>
-                    <h3 className="text-xl font-semibold text-white mb-3">
+                    <h3 className="font-display font-semibold text-xl text-strong mb-3">
                       {t(`solution.steps.${key}.title`)}
                     </h3>
-                    <p className="text-slate-400 leading-relaxed">{t(`solution.steps.${key}.description`)}</p>
+                    <p className="text-body leading-relaxed">{t(`solution.steps.${key}.description`)}</p>
                   </div>
                 </motion.div>
               );
@@ -443,17 +393,14 @@ function SolutionSection({ t }: { t: ReturnType<typeof useTranslations<"claimEva
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-12 max-w-lg mx-auto"
         >
-          <div
-            className="p-4 rounded-xl backdrop-blur-xl border border-white/10"
-            style={{ background: "rgba(30, 41, 59, 0.3)" }}
-          >
+          <div className="p-4 bg-card shadow-card rounded-pill">
             <div className="flex items-center gap-2 mb-2">
-              <Bell className="w-4 h-4 text-sky-400" />
-              <span className="text-sm font-semibold text-white">
+              <Bell className="w-4 h-4 text-accent" strokeWidth={1.5} />
+              <span className="text-sm font-semibold text-strong">
                 {t("solution.smartNudgeTitle")}
               </span>
             </div>
-            <p className="text-sm text-slate-300">
+            <p className="text-sm text-body">
               {t("solution.smartNudgeMessage")}
             </p>
           </div>
@@ -482,7 +429,7 @@ function MicroDemoSection({ t }: { t: ReturnType<typeof useTranslations<"claimEv
   };
 
   return (
-    <section className="py-24 px-6" style={{ background: "#0B1120" }}>
+    <section data-theme="dark" className="bg-page-tint py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column */}
@@ -493,19 +440,16 @@ function MicroDemoSection({ t }: { t: ReturnType<typeof useTranslations<"claimEv
             variants={fadeUp}
             transition={defaultTransition}
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-4">
               {t("microDemo.title")}
             </h2>
-            <p className="text-lg text-slate-400 mb-8">
+            <p className="text-lg text-body mb-8">
               {t("microDemo.subtitle")}
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-sky-500 text-sky-400 font-medium hover:bg-sky-500/10 transition-colors"
-            >
+            <ButtonLink href="/contact" variant="on-dark" size="md">
               {t("microDemo.ctaLink")}
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+              <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+            </ButtonLink>
           </motion.div>
 
           {/* Right Column - Interactive Module */}
@@ -515,16 +459,11 @@ function MicroDemoSection({ t }: { t: ReturnType<typeof useTranslations<"claimEv
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div
-              className="rounded-2xl p-6 backdrop-blur-xl border border-white/10 relative overflow-hidden"
-              style={{ background: "rgba(30, 41, 59, 0.3)" }}
-            >
+            <div className="rounded-pill p-6 bg-card shadow-card relative overflow-hidden">
               {/* Header */}
-              <div className="flex items-center gap-3 mb-4 pb-4 border-b border-white/10">
-                <div className="w-3 h-3 rounded-full bg-red-500" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                <div className="w-3 h-3 rounded-full bg-green-500" />
-                <span className="ml-4 text-sm text-slate-400">
+              <div className="flex items-center gap-3 mb-4 pb-4 border-b border-hairline">
+                <BrandIcon name="claim" size={18} />
+                <span className="text-sm text-muted">
                   {t("microDemo.claimHeader")}
                 </span>
               </div>
@@ -535,7 +474,7 @@ function MicroDemoSection({ t }: { t: ReturnType<typeof useTranslations<"claimEv
                 <AnimatePresence>
                   {demoState === "scanning" && (
                     <motion.div
-                      className="absolute left-0 right-0 h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent z-10"
+                      className="absolute left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent to-transparent z-10"
                       initial={{ top: 0 }}
                       animate={{ top: "100%" }}
                       exit={{ opacity: 0 }}
@@ -545,13 +484,11 @@ function MicroDemoSection({ t }: { t: ReturnType<typeof useTranslations<"claimEv
                 </AnimatePresence>
 
                 {/* Text content */}
-                <p className="text-sm text-slate-300 leading-relaxed">
+                <p className="text-sm text-body leading-relaxed">
                   {t("microDemo.claimText")}
                   <span
-                    className={`transition-all duration-500 px-1 rounded ${
-                      demoState === "complete"
-                        ? "bg-purple-500/40 text-purple-200"
-                        : ""
+                    className={`transition-all duration-300 px-1 ${
+                      demoState === "complete" ? "bg-referred-light text-referred-dark" : ""
                     }`}
                   >
                     {t("microDemo.claimHighlight")}
@@ -563,19 +500,16 @@ function MicroDemoSection({ t }: { t: ReturnType<typeof useTranslations<"claimEv
                 <AnimatePresence>
                   {demoState === "complete" && (
                     <motion.div
-                      initial={{ opacity: 0, scale: 0.8, y: 10 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.8 }}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="absolute bottom-4 right-4 p-4 rounded-lg bg-emerald-900/90 border border-emerald-500/50 shadow-lg"
+                      className="absolute bottom-4 right-4 max-w-[220px] p-4 bg-card shadow-swatch rounded-pill"
                     >
-                      <div className="flex items-center gap-2 mb-1">
-                        <CheckCircle className="w-5 h-5 text-emerald-400" />
-                        <span className="text-sm font-semibold text-emerald-300">
-                          {t("microDemo.alertTitle")}
-                        </span>
-                      </div>
-                      <p className="text-xs text-emerald-200">
+                      <StatusPill tone="approved" emphasis="solid" size="sm" className="mb-2">
+                        {t("microDemo.alertTitle")}
+                      </StatusPill>
+                      <p className="text-xs text-body">
                         {t("microDemo.alertAction")}
                       </p>
                     </motion.div>
@@ -585,26 +519,20 @@ function MicroDemoSection({ t }: { t: ReturnType<typeof useTranslations<"claimEv
 
               {/* Scan Button */}
               <div className="mt-6 flex gap-3">
-                <button
+                <Button
                   onClick={handleScan}
                   disabled={demoState !== "idle"}
-                  className={`px-6 py-3 rounded-lg font-medium transition-all ${
-                    demoState === "idle"
-                      ? "bg-sky-500 text-white hover:bg-sky-400"
-                      : "bg-slate-700 text-slate-400 cursor-not-allowed"
-                  }`}
+                  variant="primary"
+                  size="md"
                 >
                   {demoState === "idle" && t("microDemo.scanButton")}
                   {demoState === "scanning" && t("microDemo.scanningButton")}
                   {demoState === "complete" && t("microDemo.scanCompleteButton")}
-                </button>
+                </Button>
                 {demoState === "complete" && (
-                  <button
-                    onClick={resetDemo}
-                    className="px-6 py-3 rounded-lg font-medium border border-slate-600 text-slate-300 hover:bg-slate-800 transition-colors"
-                  >
+                  <Button onClick={resetDemo} variant="on-dark" size="md">
                     {t("microDemo.resetButton")}
-                  </button>
+                  </Button>
                 )}
               </div>
             </div>
@@ -620,7 +548,7 @@ function MicroDemoSection({ t }: { t: ReturnType<typeof useTranslations<"claimEv
 // ============================================================================
 function DifferentiationSection({ t }: { t: ReturnType<typeof useTranslations<"claimEvalB">> }) {
   const featureKeys = ["noBlackBox", "guardrails", "auditTrail", "noRipReplace"] as const;
-  const featureIcons = [Package, Shield, ClipboardList, Plug];
+  const featureIcons: (BrandIconName | null)[] = ["document", "control", "traceability", null];
 
   return (
     <section className="py-24 px-6">
@@ -634,7 +562,7 @@ function DifferentiationSection({ t }: { t: ReturnType<typeof useTranslations<"c
           transition={defaultTransition}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
+          <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px]">
             {t("differentiation.title")}
           </h2>
         </motion.div>
@@ -642,7 +570,7 @@ function DifferentiationSection({ t }: { t: ReturnType<typeof useTranslations<"c
         {/* 2x2 Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {featureKeys.map((key, index) => {
-            const Icon = featureIcons[index];
+            const icon = featureIcons[index];
             return (
               <motion.div
                 key={key}
@@ -650,16 +578,19 @@ function DifferentiationSection({ t }: { t: ReturnType<typeof useTranslations<"c
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-8 rounded-2xl backdrop-blur-xl border border-white/10"
-                style={{ background: "rgba(30, 41, 59, 0.15)" }}
+                className="p-8 bg-card shadow-card rounded-pill"
               >
-                <div className="w-14 h-14 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-6">
-                  <Icon className="w-7 h-7 text-emerald-400" />
+                <div className="w-14 h-14 rounded-pill bg-lilac grid place-items-center mb-6">
+                  {icon ? (
+                    <BrandIcon name={icon} size={28} />
+                  ) : (
+                    <Plug className="w-7 h-7 text-accent" strokeWidth={1.5} />
+                  )}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="font-display font-semibold text-xl text-strong mb-3">
                   {t(`differentiation.features.${key}.title`)}
                 </h3>
-                <p className="text-slate-400 leading-relaxed">
+                <p className="text-body leading-relaxed">
                   {t(`differentiation.features.${key}.description`)}
                 </p>
               </motion.div>
@@ -688,15 +619,15 @@ function SocialProofSection({ t }: { t: ReturnType<typeof useTranslations<"claim
           transition={{ duration: 0.6 }}
           className="relative mb-12"
         >
-          <Quote className="absolute -top-8 -left-4 w-16 h-16 text-sky-500/20" />
-          <blockquote className="text-xl md:text-2xl text-white italic leading-relaxed">
+          <Quote className="absolute -top-8 -left-4 w-16 h-16 text-accent-soft" strokeWidth={1.5} />
+          <blockquote className="text-xl md:text-2xl text-strong italic leading-relaxed">
             &quot;{t("socialProof.quote")}
-            <span className="text-sky-400 font-semibold">
+            <span className="text-accent font-semibold not-italic">
               {t("socialProof.quoteHighlight")}
             </span>
             {t("socialProof.quoteEnd")}&quot;
           </blockquote>
-          <p className="mt-6 text-slate-500">
+          <p className="mt-6 text-muted">
             &ndash; {t("socialProof.attribution")}
           </p>
         </motion.div>
@@ -712,7 +643,7 @@ function SocialProofSection({ t }: { t: ReturnType<typeof useTranslations<"claim
           {badgeKeys.map((key) => (
             <span
               key={key}
-              className="px-4 py-2 rounded-full text-sm text-slate-500 border border-slate-700"
+              className="px-4 py-2 rounded-pill text-sm text-muted border border-line"
             >
               {t(`socialProof.badges.${key}`)}
             </span>
@@ -750,10 +681,9 @@ function ROICalculatorSection({ t }: { t: ReturnType<typeof useTranslations<"cla
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="p-8 md:p-12 rounded-2xl backdrop-blur-xl border border-white/10"
-          style={{ background: "rgba(30, 41, 59, 0.3)" }}
+          className="p-8 md:p-12 bg-card shadow-card rounded-pill"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
+          <h2 className="font-display text-3xl font-bold text-strong text-center mb-8 md:text-4xl">
             {t("roiCalculator.title")}
           </h2>
 
@@ -762,11 +692,11 @@ function ROICalculatorSection({ t }: { t: ReturnType<typeof useTranslations<"cla
             <div className="space-y-6">
               {/* Annual DWP */}
               <div>
-                <label className="block text-sm text-slate-400 mb-2">
+                <label className="block text-sm text-muted mb-2">
                   {t("roiCalculator.dwpLabel")}
                 </label>
                 <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-subtle">
                     $
                   </span>
                   <input
@@ -776,14 +706,14 @@ function ROICalculatorSection({ t }: { t: ReturnType<typeof useTranslations<"cla
                       const val = parseInt(e.target.value.replace(/,/g, "")) || 0;
                       setDwp(val);
                     }}
-                    className="w-full pl-8 pr-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white focus:outline-none focus:border-sky-500 transition-colors"
+                    className="w-full pl-8 pr-4 py-3"
                   />
                 </div>
               </div>
 
               {/* Loss Ratio */}
               <div>
-                <label className="block text-sm text-slate-400 mb-2">
+                <label className="block text-sm text-muted mb-2">
                   {t("roiCalculator.lossRatioLabel")}
                 </label>
                 <div className="relative">
@@ -793,9 +723,9 @@ function ROICalculatorSection({ t }: { t: ReturnType<typeof useTranslations<"cla
                     onChange={(e) =>
                       setLossRatio(Math.min(100, Math.max(0, parseInt(e.target.value) || 0)))
                     }
-                    className="w-full pr-8 pl-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white focus:outline-none focus:border-sky-500 transition-colors"
+                    className="w-full pr-8 pl-4 py-3"
                   />
-                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500">
+                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-subtle">
                     %
                   </span>
                 </div>
@@ -804,24 +734,21 @@ function ROICalculatorSection({ t }: { t: ReturnType<typeof useTranslations<"cla
 
             {/* Output */}
             <div className="text-center lg:text-left">
-              <p className="text-slate-400 mb-2">{t("roiCalculator.resultPrefix")}</p>
+              <p className="text-muted mb-2">{t("roiCalculator.resultPrefix")}</p>
               <motion.p
                 key={savings}
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                className="text-4xl md:text-5xl font-bold text-emerald-400 mb-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-kpi-lg text-accent mb-2"
               >
                 {formatCurrency(savings)}
               </motion.p>
-              <p className="text-slate-400 mb-8">{t("roiCalculator.resultSuffix")}</p>
+              <p className="text-muted mb-8">{t("roiCalculator.resultSuffix")}</p>
 
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/30"
-              >
+              <ButtonLink href="/contact" variant="primary" size="lg">
                 {t("roiCalculator.ctaButton")}
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+              </ButtonLink>
             </div>
           </div>
         </motion.div>
@@ -844,7 +771,7 @@ function FAQSection({ t }: { t: ReturnType<typeof useTranslations<"claimEvalB">>
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold text-white text-center mb-12"
+          className="font-display text-3xl font-bold text-strong text-center mb-12 md:text-4xl"
         >
           {t("faq.title")}
         </motion.h2>
@@ -857,12 +784,12 @@ function FAQSection({ t }: { t: ReturnType<typeof useTranslations<"claimEvalB">>
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 rounded-xl border border-slate-800"
+              className="p-6 bg-card shadow-card rounded-pill"
             >
-              <h3 className="text-lg font-semibold text-white mb-3">
+              <h3 className="font-display font-semibold text-lg text-strong mb-3">
                 {t(`faq.items.${key}.question`)}
               </h3>
-              <p className="text-slate-400">{t(`faq.items.${key}.answer`)}</p>
+              <p className="text-body">{t(`faq.items.${key}.answer`)}</p>
             </motion.div>
           ))}
         </div>
@@ -880,15 +807,8 @@ function FinalCTASection({ t }: { t: ReturnType<typeof useTranslations<"claimEva
   const [email, setEmail] = useState("");
 
   return (
-    <section className="relative py-24 px-6 overflow-hidden">
-      {/* Blue burst gradient from bottom */}
-      <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at bottom center, rgba(37, 99, 235, 0.3) 0%, transparent 60%)",
-        }}
-      />
+    <section data-theme="dark" className="relative overflow-hidden bg-page-tint py-24 px-6">
+      <Glow variant="soft" size={560} className="absolute inset-x-0 -bottom-40 mx-auto" />
 
       <div className="relative max-w-4xl mx-auto text-center">
         <motion.div
@@ -897,10 +817,10 @@ function FinalCTASection({ t }: { t: ReturnType<typeof useTranslations<"claimEva
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="font-display text-3xl font-bold text-strong mb-4 md:text-4xl">
             {t("finalCta.title")}
           </h2>
-          <p className="text-lg text-slate-400 mb-12">
+          <p className="text-lg text-body mb-12">
             {t("finalCta.subtitle")}
           </p>
         </motion.div>
@@ -917,7 +837,7 @@ function FinalCTASection({ t }: { t: ReturnType<typeof useTranslations<"claimEva
           <select
             value={lob}
             onChange={(e) => setLob(e.target.value)}
-            className="px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white focus:outline-none focus:border-sky-500 transition-colors md:w-auto"
+            className="px-4 py-3 md:w-auto"
           >
             <option value="">{t("finalCta.lobPlaceholder")}</option>
             <option value="auto">{t("finalCta.lobAuto")}</option>
@@ -928,7 +848,7 @@ function FinalCTASection({ t }: { t: ReturnType<typeof useTranslations<"claimEva
           <select
             value={volume}
             onChange={(e) => setVolume(e.target.value)}
-            className="px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white focus:outline-none focus:border-sky-500 transition-colors md:w-auto"
+            className="px-4 py-3 md:w-auto"
           >
             <option value="">{t("finalCta.volumePlaceholder")}</option>
             <option value="lt10k">{t("finalCta.volumeLt10k")}</option>
@@ -940,16 +860,13 @@ function FinalCTASection({ t }: { t: ReturnType<typeof useTranslations<"claimEva
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={t("finalCta.emailPlaceholder")}
-            className="px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder:text-slate-500 focus:outline-none focus:border-sky-500 transition-colors flex-grow md:flex-grow-0 md:w-64"
+            className="px-4 py-3 flex-grow md:flex-grow-0 md:w-64"
           />
 
-          <button
-            type="submit"
-            className="px-8 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2"
-          >
+          <Button type="submit" variant="primary" size="md">
             {t("finalCta.submitButton")}
-            <ArrowRight className="w-5 h-5" />
-          </button>
+            <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+          </Button>
         </motion.form>
       </div>
     </section>
@@ -963,9 +880,9 @@ export default function ClaimEvalPageB() {
   const t = useTranslations("claimEvalB");
 
   return (
-    <div className="min-h-screen" style={{ background: "#050810" }}>
+    <div className="min-h-screen">
       {/* Version indicator */}
-      <div className="fixed top-20 right-4 z-50 px-3 py-1.5 rounded-full bg-sky-500/20 text-sky-400 text-xs font-medium border border-sky-500/30">
+      <div className="fixed top-20 right-4 z-50 px-3 py-1.5 rounded-pill bg-accent-soft text-accent text-xs font-medium">
         {t("versionIndicator")}
       </div>
 

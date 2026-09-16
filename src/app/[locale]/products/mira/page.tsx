@@ -1,27 +1,14 @@
-import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { ProductHero } from "@/components/products/ProductHero";
-import {
-  Brain,
-  FileInput,
-  Search,
-  Scale,
-  Zap,
-  FileOutput,
-  CheckCircle,
-  Shield,
-  Globe,
-  Plug,
-  Clock,
-  DollarSign,
-  TrendingDown
-} from "lucide-react";
+import { ButtonLink } from "@/components/brand/Button";
+import { BrandIcon, type BrandIconName } from "@/components/brand/BrandIcon";
+import { Glow } from "@/components/brand/Glow";
+import { Globe, Plug, Clock, DollarSign, TrendingDown } from "lucide-react";
 
-const workflowIcons = [FileInput, Search, Scale, Zap, FileOutput];
+const workflowIcons: BrandIconName[] = ["ingestion", "extraction", "decision", "workflow", "traceability"];
 
 const capabilityKeys = ["coverageDetermination", "multiVertical", "integration", "compliance"] as const;
-const capabilityIcons = [CheckCircle, Globe, Plug, Shield];
 
 const metricKeys = ["speed", "cost", "leakage"] as const;
 const metricValues = ["92%", "71%", "2-5%"];
@@ -37,14 +24,17 @@ export default async function MiraPage({ params }: { params: Promise<{ locale: s
       {/* Hero Section */}
       <ProductHero
         badge={t("hero.badge")}
-        badgeIcon={<Brain className="w-4 h-4" />}
         headline={t("hero.title")}
         description={t("hero.subtitle")}
         supportingText={t("hero.description")}
         primaryCTA={{ label: t("hero.ctaPrimary"), href: "/contact" }}
         secondaryCTA={{ label: t("hero.ctaSecondary"), href: "/contact" }}
-        badgeClassName="bg-indigo-500/20 text-indigo-400"
-        primaryCTAClassName="bg-[var(--primary)] text-white hover:bg-[var(--primary-hover)] shadow-lg shadow-[var(--primary)]/30"
+        graphic={
+          <>
+            <Glow size={320} opacity={0.6} className="absolute left-0 top-0" />
+            <BrandIcon name="mira" size={220} className="absolute left-[50px] top-[50px]" />
+          </>
+        }
       />
 
       {/* Problem Section */}
@@ -55,19 +45,19 @@ export default async function MiraPage({ params }: { params: Promise<{ locale: s
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center glass-panel p-8 md:p-12"
+            className="max-w-3xl mx-auto text-center bg-card shadow-card rounded-pill p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-6">
               {t("problem.title")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
+            <p className="text-lede text-body">
               {t("problem.paragraph1")}
               <br /><br />
               {t("problem.paragraph2")}
               <br /><br />
               {t("problem.paragraph3")}
             </p>
-            <p className="text-xl font-semibold text-[var(--primary)] mt-6">
+            <p className="text-xl font-semibold text-accent mt-6">
               {t("problem.cta")}
             </p>
           </MotionDiv>
@@ -84,13 +74,13 @@ export default async function MiraPage({ params }: { params: Promise<{ locale: s
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-6">
               {t("solution.title")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
+            <p className="text-lede text-body">
               {t("solution.description")}
             </p>
-            <p className="text-lg text-[var(--text-primary)] font-medium mt-4">
+            <p className="text-lg text-strong font-medium mt-4">
               {t("solution.result")}
             </p>
           </MotionDiv>
@@ -107,20 +97,18 @@ export default async function MiraPage({ params }: { params: Promise<{ locale: s
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-4">
               {t("workflow.title")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)]">
+            <p className="text-lg text-body">
               {t("workflow.subtitle")}
             </p>
           </MotionDiv>
 
           <div className="relative">
-            {/* Connector line removed per V3-MIRA-012 */}
-
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
               {[1, 2, 3, 4, 5].map((step, index) => {
-                const Icon = workflowIcons[index];
+                const icon = workflowIcons[index];
                 return (
                   <MotionDiv
                     key={step}
@@ -130,19 +118,19 @@ export default async function MiraPage({ params }: { params: Promise<{ locale: s
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="relative"
                   >
-                    <div className="glass-panel glass-panel-hover p-6 h-full text-center">
-                      <div className="w-12 h-12 rounded-full bg-[var(--primary)] text-white flex items-center justify-center text-lg font-bold mx-auto mb-4 relative z-10">
+                    <div className="bg-card shadow-card rounded-pill p-6 h-full text-center transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch">
+                      <div className="w-12 h-12 rounded-full bg-accent text-on-brand flex items-center justify-center text-lg font-bold mx-auto mb-4 relative z-10">
                         {step}
                       </div>
 
-                      <div className="w-14 h-14 rounded-xl bg-indigo-500/20 flex items-center justify-center mx-auto mb-4">
-                        <Icon className="w-7 h-7 text-indigo-400" />
+                      <div className="w-14 h-14 rounded-pill bg-lilac grid place-items-center mx-auto mb-4">
+                        <BrandIcon name={icon} size={28} />
                       </div>
 
-                      <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                      <h3 className="font-display font-semibold text-lg text-strong mb-2">
                         {t(`workflow.steps.${step}.title`)}
                       </h3>
-                      <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                      <p className="text-sm text-muted">
                         {t(`workflow.steps.${step}.description`)}
                       </p>
                     </div>
@@ -164,14 +152,23 @@ export default async function MiraPage({ params }: { params: Promise<{ locale: s
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-4">
               {t("capabilities.title")}
             </h2>
           </MotionDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {capabilityKeys.map((key, index) => {
-              const Icon = capabilityIcons[index];
+              const icon =
+                key === "coverageDetermination" ? (
+                  <BrandIcon name="rules" size={28} />
+                ) : key === "compliance" ? (
+                  <BrandIcon name="control" size={28} />
+                ) : key === "multiVertical" ? (
+                  <Globe className="w-7 h-7 text-accent" strokeWidth={1.5} />
+                ) : (
+                  <Plug className="w-7 h-7 text-accent" strokeWidth={1.5} />
+                );
               return (
                 <MotionDiv
                   key={key}
@@ -179,15 +176,15 @@ export default async function MiraPage({ params }: { params: Promise<{ locale: s
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="glass-panel glass-panel-hover p-8"
+                  className="bg-card shadow-card rounded-pill p-8 transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch"
                 >
-                  <div className="w-14 h-14 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-6">
-                    <Icon className="w-7 h-7 text-indigo-400" />
+                  <div className="w-14 h-14 rounded-pill bg-lilac grid place-items-center mb-6">
+                    {icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
+                  <h3 className="font-display font-semibold text-xl text-strong mb-3">
                     {t(`capabilities.items.${key}.title`)}
                   </h3>
-                  <p className="text-[var(--text-secondary)] leading-relaxed whitespace-pre-line">
+                  <p className="text-body leading-relaxed whitespace-pre-line">
                     {t(`capabilities.items.${key}.description`)}
                   </p>
                 </MotionDiv>
@@ -207,7 +204,7 @@ export default async function MiraPage({ params }: { params: Promise<{ locale: s
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+            <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-4">
               {t("results.title")}
             </h2>
           </MotionDiv>
@@ -224,18 +221,18 @@ export default async function MiraPage({ params }: { params: Promise<{ locale: s
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center glass-panel p-8"
+                  className="text-center bg-card shadow-card rounded-pill p-8"
                 >
-                  <div className="w-16 h-16 rounded-full bg-indigo-500/20 flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-8 h-8 text-indigo-400" />
+                  <div className="w-16 h-16 rounded-pill bg-lilac grid place-items-center mx-auto mb-4">
+                    <Icon className="w-8 h-8 text-accent" strokeWidth={1.5} />
                   </div>
-                  <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1" style={{ visibility: hasPrefix ? 'visible' : 'hidden' }}>
-                    {hasPrefix ? t(`results.metrics.${key}.prefix`) : '\u00A0'}
+                  <p className="text-caption-sm text-subtle mb-1" style={{ visibility: hasPrefix ? 'visible' : 'hidden' }}>
+                    {hasPrefix ? t(`results.metrics.${key}.prefix`) : ' '}
                   </p>
-                  <p className="text-5xl font-bold text-[var(--primary)] font-mono-data mb-2">
+                  <p className="text-kpi-lg text-accent mb-2">
                     {value}
                   </p>
-                  <p className="text-[var(--text-secondary)]">
+                  <p className="text-body">
                     {t(`results.metrics.${key}.label`)}
                   </p>
                 </MotionDiv>
@@ -246,27 +243,24 @@ export default async function MiraPage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
+      <section data-theme="dark" className="relative overflow-hidden bg-page-tint py-20 px-6">
+        <Glow variant="soft" size={480} className="absolute -right-40 -top-40" />
+        <div className="relative max-w-4xl mx-auto text-center">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-panel p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-6">
               {t("cta.title")}
             </h2>
-            <p className="text-lg text-[var(--text-secondary)] mb-10">
+            <p className="text-lg text-body mb-10">
               {t("cta.description")}
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[var(--primary)] text-white font-medium hover:bg-[var(--primary-hover)] transition-colors text-lg shadow-lg shadow-[var(--primary)]/30"
-            >
+            <ButtonLink href="/contact" variant="primary" size="lg">
               {t("cta.button")}
-            </Link>
+            </ButtonLink>
           </MotionDiv>
         </div>
       </section>

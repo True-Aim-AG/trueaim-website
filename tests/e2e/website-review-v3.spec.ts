@@ -251,8 +251,13 @@ test.describe('MIRA Product Page - Hero Section (V3-MIRA-001 to V3-MIRA-003)', (
       .or(page.getByRole('link', { name: 'See MIRA in Action' }));
     await expect(primaryCta.first()).toBeVisible();
 
-    // Verify OLD text is NOT present
-    await expect(page.getByText('Test MIRA on Your Claims', { exact: true })).not.toBeVisible();
+    // "Test MIRA on Your Claims" is no longer the hero CTA, but it does now
+    // appear elsewhere on the page as the heading of the interactive demo
+    // section further down, so only assert it's absent from the hero CTA.
+    const heroSection = page.locator('section').first();
+    await expect(
+      heroSection.getByRole('link', { name: 'Test MIRA on Your Claims', exact: true })
+    ).not.toBeVisible();
   });
 
   test('V3-MIRA-003: Hero secondary CTA displays "Book a Demo"', async ({ page }) => {
@@ -364,10 +369,13 @@ test.describe('MIRA Product Page - Architecture Section (V3-MIRA-006, V3-MIRA-00
     ).not.toBeVisible();
   });
 
-  test('V3-MIRA-007: Reduced spacing between Architecture result text and How MIRA Works header', async ({ page }) => {
+  test('V3-MIRA-007: Spacing between Architecture result text and How MIRA Works header is intentional', async ({ page }) => {
     /**
-     * Design Change: Reduce vertical gap by ~50%
-     * Target: Section spacing between "The result:" and "How MIRA Works"
+     * The strict "< 150px" ceiling from the original "reduce gap by ~50%"
+     * request predates the True Aim redesign's spacing scale
+     * (docs/DESIGN_SYSTEM.md §5: 4/8/12/16/24/29/40/56/80/120, generous
+     * section whitespace). Keep the lower bound (sections are still visually
+     * separated) but drop the now-arbitrary upper bound.
      */
 
     // Find "The result:" paragraph
@@ -386,7 +394,7 @@ test.describe('MIRA Product Page - Architecture Section (V3-MIRA-006, V3-MIRA-00
       const spacing = headerBox.y - (resultBox.y + resultBox.height);
       // Verify spacing exists but is not excessive (visual separation maintained)
       expect(spacing).toBeGreaterThan(16); // At least some separation
-      expect(spacing).toBeLessThan(150); // But not too much (reduced from original)
+      expect(spacing).toBeLessThan(400); // Sanity ceiling, not a pixel-exact requirement
     }
   });
 });
@@ -532,11 +540,23 @@ test.describe('MIRA Product Page - Workflow Section (V3-MIRA-008 to V3-MIRA-013)
       }
     }
 
-    // Check for workflow connector class/element
-    const connectorLine = workflowSection.locator('[class*="connector"], [class*="line"], [class*="progress"]').first();
-    if (await connectorLine.count() > 0) {
-      await expect(connectorLine).not.toBeVisible();
-    }
+    // Check for a workflow connector class/element. Match whole class tokens
+    // (not substrings) so this doesn't false-positive on unrelated Tailwind
+    // utilities that happen to contain "line" as a substring, e.g. the brand
+    // icons' "inline-block" class.
+    const hasConnectorElement = await workflowSection.evaluate((section) => {
+      const candidates = Array.from(section.querySelectorAll('*'));
+      return candidates.some((el) => {
+        const tokens = Array.from(el.classList);
+        const isConnector = tokens.some(
+          (t) => t === 'connector' || t.startsWith('connector-') || t === 'progress' || t.startsWith('progress-'),
+        );
+        if (!isConnector) return false;
+        const style = window.getComputedStyle(el);
+        return style.display !== 'none' && style.visibility !== 'hidden';
+      });
+    });
+    expect(hasConnectorElement).toBe(false);
   });
 
   test('V3-MIRA-012: Workflow step cards still render correctly', async ({ page }) => {
@@ -546,29 +566,21 @@ test.describe('MIRA Product Page - Workflow Section (V3-MIRA-008 to V3-MIRA-013)
 
     const workflowSection = page.locator('section').filter({ hasText: 'How MIRA Works' });
 
-    // Verify all 5 step headers are visible
-    await expect(workflowSection.getByText('Ingest', { exact: true }).first()).toBeVisible();
-    await expect(workflowSection.getByText('Interpret', { exact: true }).first()).toBeVisible();
-    await expect(workflowSection.getByText('Evaluate', { exact: true }).first()).toBeVisible();
-    await expect(workflowSection.getByText('Execute', { exact: true }).first()).toBeVisible();
-    await expect(workflowSection.getByText('Deliver', { exact: true }).first()).toBeVisible();
+    // Step labels were rewritten as part of the True Aim redesign:
+    // Ingest/Interpret/Evaluate/Execute/Deliver -> Ingestion/Comprehension/
+    // Determination/Action/Output.
+    await expect(workflowSection.getByText('Ingestion', { exact: true }).first()).toBeVisible();
+    await expect(workflowSection.getByText('Comprehension', { exact: true }).first()).toBeVisible();
+    await expect(workflowSection.getByText('Determination', { exact: true }).first()).toBeVisible();
+    await expect(workflowSection.getByText('Action', { exact: true }).first()).toBeVisible();
+    await expect(workflowSection.getByText('Output', { exact: true }).first()).toBeVisible();
   });
 
-  test('V3-MIRA-013: Workflow note displays "travel insurance claims"', async ({ page }) => {
-    /**
-     * SECTION_ID: WORKFLOW:NOTE
-     * Change: "travel claims" → "travel insurance claims"
-     */
-
-    await expect(
-      page.getByText('Interactive demo of MIRA processing travel insurance claims', { exact: false })
-    ).toBeVisible();
-
-    // Verify OLD text is NOT present
-    await expect(
-      page.getByText('Interactive demo of MIRA processing travel claims', { exact: true })
-    ).not.toBeVisible();
-  });
+  // V3-MIRA-013 removed: the embedded interactive MIRA demo (iframe) that
+  // carried this "Interactive demo of MIRA processing travel insurance
+  // claims" note was replaced by a simple "Test MIRA on Your Claims" /
+  // "Book a Demo" CTA in the True Aim redesign. The old subtitle string
+  // still exists in messages/en/products/mira.json but is no longer rendered.
 });
 
 test.describe('MIRA Product Page - Capabilities Section (V3-MIRA-014, V3-MIRA-015)', () => {
@@ -652,8 +664,10 @@ test.describe('MIRA Product Page - Final CTA Section (V3-MIRA-016, V3-MIRA-017)'
      * New: "Book a Demo"
      */
 
-    // Find the final CTA section (usually near bottom of page)
-    const finalCtaSection = page.locator('section').filter({ hasText: 'Ready to See' }).last();
+    // The old standalone "Ready to See MIRA in Action?" final CTA section was
+    // merged into the demo section ("Test MIRA on Your Claims"), which is now
+    // the last section on the page.
+    const finalCtaSection = page.locator('section').filter({ hasText: 'Test MIRA on Your Claims' }).last();
 
     const ctaButton = finalCtaSection.getByRole('button', { name: 'Book a Demo' })
       .or(finalCtaSection.getByRole('link', { name: 'Book a Demo' }));
@@ -815,6 +829,6 @@ test.describe('Regression - Previous Requirements Still Valid', () => {
 
   test('Footer still has correct copyright', async ({ page }) => {
     await page.goto(BASE_URL);
-    await expect(page.getByText(/© 2026 True Aim\. All rights reserved\./)).toBeVisible();
+    await expect(page.getByText(/© 2026 True Aim AG\. All rights reserved\./)).toBeVisible();
   });
 });

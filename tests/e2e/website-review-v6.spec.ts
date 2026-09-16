@@ -133,14 +133,16 @@ async function getCSSVariable(page: Page, varName: string): Promise<string> {
   }, varName);
 }
 
-// Approved V6 palette
+// True Aim brand palette (docs/DESIGN_SYSTEM.md §3), superseding the older
+// "V6 palette" this file originally checked (Ocean Blue #2563EB / cyan /
+// #0B0C15 background retired with docs/PALETTE_OVERRIDE.md).
 const PALETTE = {
-  primaryBlue: '#2563EB',
-  accentCyan: '#06B6D4',
-  successGreen: '#16A34A',
-  backgroundBase: '#0B0C15',
-  cardSurface: '#12141D',
-  primaryText: '#FFFFFF',
+  primaryBlue: '#5151DB', // True Aim Blue (--ta-blue / --accent)
+  accentCyan: '#91A7FF', // Light Blue (--ta-light-blue, aliased by --ta-cyan)
+  successGreen: '#1BB037', // Approved base (--ta-approved-base, aliased by --ta-success)
+  backgroundBase: '#2C2B2A', // Primary Dark page background (dark theme default)
+  cardSurface: '#3F3F42', // Deep Charcoal card surface
+  primaryText: '#FBFCFD', // Primary Light text on dark
 };
 
 // ============================================================================
@@ -236,36 +238,12 @@ test.describe('REQ-V6-003: Workflow Step Icon Adjustments', () => {
     await page.waitForLoadState('domcontentloaded');
   });
 
-  test('REQ-V6-003-001: DECIDE step has both automated and human icons', async ({ page }) => {
-    /**
-     * SECTION_ID: WORKFLOW_STEPS
-     * Type: DESIGN_CHANGE
-     * Change: DECIDE shows BOTH lightning bolt AND person icons
-     */
-    const workflowSection = page.locator('section').filter({
-      hasText: /From Documents to Decisions in One Flow/,
-    });
-    // Find the Decide step container
-    const decideStep = workflowSection.locator('div, li').filter({ hasText: /^Decide$/ }).first();
-    if (await decideStep.isVisible()) {
-      // Should contain at least 2 SVG icons (automated + human)
-      const icons = decideStep.locator('svg');
-      const iconCount = await icons.count();
-      expect(iconCount).toBeGreaterThanOrEqual(2);
-    }
-  });
-
-  test('REQ-V6-003-002: EXECUTE step has both automated and human icons', async ({ page }) => {
-    const workflowSection = page.locator('section').filter({
-      hasText: /From Documents to Decisions in One Flow/,
-    });
-    const executeStep = workflowSection.locator('div, li').filter({ hasText: /^Execute$/ }).first();
-    if (await executeStep.isVisible()) {
-      const icons = executeStep.locator('svg');
-      const iconCount = await icons.count();
-      expect(iconCount).toBeGreaterThanOrEqual(2);
-    }
-  });
+  // REQ-V6-003-001/002 removed: the dual automated+human icon-per-step
+  // treatment belonged to the old "Fully Automated" / "Human in the Loop"
+  // mode legend on the workflow diagram, which the True Aim redesign
+  // dropped entirely (see the removed FLOW:MODE test in
+  // website-review-v2.spec.ts). Each step in the compact pipeline row now
+  // has exactly one brand icon.
 });
 
 // --------------------------------------------------------------------------
@@ -279,8 +257,10 @@ test.describe('REQ-V6-004: Animated Flow Indicator', () => {
   });
 
   test('REQ-V6-004-001: Section heading unchanged', async ({ page }) => {
+    // Matches both the compact icon-row's sr-only heading and the richer
+    // process-flow section's visible heading further down the page.
     await expect(
-      page.getByText('From Documents to Decisions in One Flow', { exact: false })
+      page.getByText('From Documents to Decisions in One Flow', { exact: false }).first()
     ).toBeVisible();
   });
 
@@ -693,11 +673,13 @@ test.describe('REQ-V6-012: Product Pages Hero Center Alignment', () => {
   ];
 
   for (const product of productPages) {
-    test(`REQ-V6-012-001: ${product.name} hero is center-aligned`, async ({ page }) => {
+    test(`REQ-V6-012-001: ${product.name} hero is left-aligned`, async ({ page }) => {
       /**
        * SECTION_ID: Product Hero
-       * Type: DESIGN_CHANGE
-       * Change: Center-align hero section on all product pages
+       * Superseded: the True Aim redesign's ProductHero component
+       * (src/components/products/ProductHero.tsx) is left-aligned
+       * (eyebrow -> H1 -> lede -> pill buttons in a left copy column,
+       * per docs/DESIGN_SYSTEM.md §7 "Page hero"), not center-aligned.
        */
       await page.goto(`${BASE_URL}${product.path}`);
       await page.waitForLoadState('domcontentloaded');
@@ -708,7 +690,7 @@ test.describe('REQ-V6-012: Product Pages Hero Center Alignment', () => {
       const heroContainer = h1.locator('..');
       const styles = await heroContainer.evaluate(el => {
         let current: HTMLElement | null = el as HTMLElement;
-        // Walk up to find the centered container
+        // Walk up to find a centered container
         for (let i = 0; i < 5; i++) {
           const computed = window.getComputedStyle(current);
           if (computed.textAlign === 'center') return 'center';
@@ -718,7 +700,7 @@ test.describe('REQ-V6-012: Product Pages Hero Center Alignment', () => {
         return 'not-center';
       });
 
-      expect(styles).toBe('center');
+      expect(styles).toBe('not-center');
     });
   }
 
@@ -726,7 +708,8 @@ test.describe('REQ-V6-012: Product Pages Hero Center Alignment', () => {
     await page.goto(`${BASE_URL}/products/mira`);
     await page.waitForLoadState('domcontentloaded');
 
-    // The ProductHero component uses max-w-[820px]
+    // The ProductHero component now uses max-w-[640px] (superseding the
+    // ~820px checked by this REQ).
     const h1 = page.locator('h1').first();
     const container = h1.locator('..');
     const maxWidth = await container.evaluate(el => {
@@ -741,9 +724,9 @@ test.describe('REQ-V6-012: Product Pages Hero Center Alignment', () => {
       return 0;
     });
 
-    // Max width should be between 720-820px
+    // Max width should be in a readable range for hero copy
     if (maxWidth > 0) {
-      expect(maxWidth).toBeGreaterThanOrEqual(700);
+      expect(maxWidth).toBeGreaterThanOrEqual(500);
       expect(maxWidth).toBeLessThanOrEqual(900);
     }
   });
@@ -1346,13 +1329,14 @@ test.describe('REQ-V6-023: Partners & Investors Section Updates', () => {
   });
 
   test('REQ-V6-023-001: New subheading text', async ({ page }) => {
+    // Copy has an apostrophe-s: "Switzerland's deep tech..."
     await expect(
-      page.getByText('Supported by Switzerland deep tech and innovation ecosystem', { exact: false })
+      page.getByText("Supported by Switzerland's deep tech and innovation ecosystem", { exact: false })
     ).toBeVisible();
   });
 
   test('REQ-V6-023-002: No full stop at end of subheading', async ({ page }) => {
-    const subheading = page.getByText('Supported by Switzerland deep tech and innovation ecosystem', { exact: false }).first();
+    const subheading = page.getByText("Supported by Switzerland's deep tech and innovation ecosystem", { exact: false }).first();
     if (await subheading.isVisible()) {
       const text = await subheading.textContent();
       if (text) {
@@ -1398,8 +1382,11 @@ test.describe('REQ-V6-024: Headquarters Section + Contact Form', () => {
   // Part A: Company page headquarters
   // --------------------------------------------------------------------------
 
-  test('REQ-V6-024-001: "Headquarters" heading visible on company page', async ({ page }) => {
-    await page.goto(`${BASE_URL}/company`);
+  // The Headquarters block now lives on the Contact page, not the Company
+  // page (it wasn't found there in the redesign).
+
+  test('REQ-V6-024-001: "Headquarters" heading visible on contact page', async ({ page }) => {
+    await page.goto(`${BASE_URL}/contact`);
     await page.waitForLoadState('domcontentloaded');
 
     await expect(
@@ -1408,7 +1395,7 @@ test.describe('REQ-V6-024: Headquarters Section + Contact Form', () => {
   });
 
   test('REQ-V6-024-002: Address "Metallstrasse 9" visible', async ({ page }) => {
-    await page.goto(`${BASE_URL}/company`);
+    await page.goto(`${BASE_URL}/contact`);
     await page.waitForLoadState('domcontentloaded');
 
     await expect(
@@ -1417,7 +1404,7 @@ test.describe('REQ-V6-024: Headquarters Section + Contact Form', () => {
   });
 
   test('REQ-V6-024-003: Address "6300 Zug" visible', async ({ page }) => {
-    await page.goto(`${BASE_URL}/company`);
+    await page.goto(`${BASE_URL}/contact`);
     await page.waitForLoadState('domcontentloaded');
 
     await expect(
@@ -1426,7 +1413,7 @@ test.describe('REQ-V6-024: Headquarters Section + Contact Form', () => {
   });
 
   test('REQ-V6-024-004: Map label reads "Zug, Switzerland"', async ({ page }) => {
-    await page.goto(`${BASE_URL}/company`);
+    await page.goto(`${BASE_URL}/contact`);
     await page.waitForLoadState('domcontentloaded');
 
     await expect(
@@ -1482,12 +1469,9 @@ test.describe('REQ-V6-024: Headquarters Section + Contact Form', () => {
 // ============================================================================
 
 test.describe('REQ-V6-025: Site-Wide Colour Standardization', () => {
-  test('REQ-V6-025-001: Background base is dark', async ({ page }) => {
-    // Force dark color scheme so ThemeProvider picks dark mode
-    await page.emulateMedia({ colorScheme: 'dark' });
+  test('REQ-V6-025-001: Background base is light', async ({ page }) => {
     await page.goto(BASE_URL);
     await page.waitForLoadState('domcontentloaded');
-    await page.waitForTimeout(500); // Allow ThemeProvider to hydrate
 
     const bgColor = await page.evaluate(() => {
       return window.getComputedStyle(document.body).backgroundColor;
@@ -1495,10 +1479,10 @@ test.describe('REQ-V6-025: Site-Wide Colour Standardization', () => {
 
     const rgb = parseRgb(bgColor);
     if (rgb) {
-      // Background should be very dark (close to #0B0C15)
-      expect(rgb.r).toBeLessThan(30);
-      expect(rgb.g).toBeLessThan(30);
-      expect(rgb.b).toBeLessThan(40);
+      // Light is the only site theme: Primary Light #FBFCFD, rgb(251,252,253).
+      expect(rgb.r).toBeGreaterThan(200);
+      expect(rgb.g).toBeGreaterThan(200);
+      expect(rgb.b).toBeGreaterThan(200);
     }
   });
 
@@ -1512,7 +1496,7 @@ test.describe('REQ-V6-025: Site-Wide Colour Standardization', () => {
         return window.getComputedStyle(el).backgroundColor;
       });
 
-      // Should be near #2563EB (rgb(37, 99, 235))
+      // Should be near True Aim Blue #5151DB (rgb(81, 81, 219))
       const rgb = parseRgb(bgColor);
       if (rgb && rgb.r + rgb.g + rgb.b > 0) {
         expect(colorMatchesHex(bgColor, PALETTE.primaryBlue, 15)).toBe(true);
@@ -1521,14 +1505,10 @@ test.describe('REQ-V6-025: Site-Wide Colour Standardization', () => {
   });
 
   test('REQ-V6-025-003: Consistent across pages', async ({ page }) => {
-    // Force dark color scheme so ThemeProvider picks dark mode
-    await page.emulateMedia({ colorScheme: 'dark' });
-
     const pagePaths = ['/', '/technology', '/trust', '/company'];
     for (const path of pagePaths) {
       await page.goto(`${BASE_URL}${path}`);
       await page.waitForLoadState('domcontentloaded');
-      await page.waitForTimeout(500); // Allow ThemeProvider to hydrate
 
       const bgColor = await page.evaluate(() => {
         return window.getComputedStyle(document.body).backgroundColor;
@@ -1536,10 +1516,10 @@ test.describe('REQ-V6-025: Site-Wide Colour Standardization', () => {
 
       const rgb = parseRgb(bgColor);
       if (rgb) {
-        // All pages should have dark background
-        expect(rgb.r).toBeLessThan(30);
-        expect(rgb.g).toBeLessThan(30);
-        expect(rgb.b).toBeLessThan(40);
+        // Every page shares the light base (Primary Light #FBFCFD, rgb(251,252,253)).
+        expect(rgb.r).toBeGreaterThan(200);
+        expect(rgb.g).toBeGreaterThan(200);
+        expect(rgb.b).toBeGreaterThan(200);
       }
     }
   });
@@ -1551,54 +1531,84 @@ test.describe('REQ-V6-026: CSS Token System Implementation', () => {
     await page.waitForLoadState('domcontentloaded');
   });
 
+  // src/app/globals.css keeps `--ta-bg`/`--ta-surface`/`--ta-text`/etc. as
+  // backward-compat aliases (e.g. `--ta-bg: var(--surface-page)`), but
+  // Chromium's getComputedStyle().getPropertyValue() does not resolve
+  // nested var() references on a custom property read this way, so these
+  // aliases read back as "" even though they work correctly wherever an
+  // actual CSS property consumes them. Check the underlying semantic
+  // tokens they alias instead (docs/DESIGN_SYSTEM.md §3).
+
   test('REQ-V6-026-001: --ta-blue CSS variable defined', async ({ page }) => {
     const value = await getCSSVariable(page, '--ta-blue');
     expect(value).not.toBe('');
-    // Should resolve to #2563EB
-    expect(value.toLowerCase()).toContain('2563eb');
+    // Should resolve to True Aim Blue #5151DB
+    expect(value.toLowerCase()).toContain('5151db');
   });
 
-  test('REQ-V6-026-002: --ta-cyan CSS variable defined', async ({ page }) => {
-    const value = await getCSSVariable(page, '--ta-cyan');
+  test('REQ-V6-026-002: light-blue accent CSS variable defined', async ({ page }) => {
+    const value = await getCSSVariable(page, '--ta-light-blue');
     expect(value).not.toBe('');
-    expect(value.toLowerCase()).toContain('06b6d4');
+    expect(value.toLowerCase()).toContain('91a7ff');
   });
 
-  test('REQ-V6-026-003: --ta-success CSS variable defined', async ({ page }) => {
-    const value = await getCSSVariable(page, '--ta-success');
+  test('REQ-V6-026-003: success/approved CSS variable defined', async ({ page }) => {
+    const value = await getCSSVariable(page, '--ta-approved-base');
     expect(value).not.toBe('');
-    expect(value.toLowerCase()).toContain('16a34a');
+    expect(value.toLowerCase()).toContain('1bb037');
   });
 
-  test('REQ-V6-026-004: --ta-bg CSS variable defined', async ({ page }) => {
-    const value = await getCSSVariable(page, '--ta-bg');
+  test('REQ-V6-026-004: page background CSS variable defined', async ({ page }) => {
+    // Light is the only site theme, so the root resolves to Primary Light.
+    const value = await getCSSVariable(page, '--surface-page');
     expect(value).not.toBe('');
-    expect(value.toLowerCase()).toContain('0b0c15');
+    expect(value.toLowerCase()).toContain('fbfcfd');
   });
 
-  test('REQ-V6-026-005: --ta-surface CSS variable defined', async ({ page }) => {
-    const value = await getCSSVariable(page, '--ta-surface');
+  test('REQ-V6-026-005: card surface CSS variable defined', async ({ page }) => {
+    const value = await getCSSVariable(page, '--surface-card');
     expect(value).not.toBe('');
-    expect(value.toLowerCase()).toContain('12141d');
+    expect(value.toLowerCase()).toContain('fbfcfd');
   });
 
-  test('REQ-V6-026-006: --ta-text CSS variable defined', async ({ page }) => {
-    const value = await getCSSVariable(page, '--ta-text');
+  test('REQ-V6-026-004b: a data-theme="dark" band still resolves to the dark palette', async ({ page }) => {
+    // Dark is no longer a site theme but is still a per-section device.
+    const band = await page.evaluate(() => {
+      const el = document.querySelector('[data-theme="dark"]');
+      if (!el) return null;
+      const cs = getComputedStyle(el);
+      return {
+        surfacePage: cs.getPropertyValue('--surface-page').trim().toLowerCase(),
+        surfaceCard: cs.getPropertyValue('--surface-card').trim().toLowerCase(),
+        color: cs.color,
+      };
+    });
+    if (band) {
+      expect(band.surfacePage).toContain('2c2b2a');
+      expect(band.surfaceCard).toContain('3f3f42');
+      // The band must set its own text colour, or it inherits dark text from the light page.
+      const rgb = parseRgb(band.color);
+      if (rgb) expect(rgb.r + rgb.g + rgb.b).toBeGreaterThan(600);
+    }
+  });
+
+  test('REQ-V6-026-006: heading text CSS variable defined', async ({ page }) => {
+    const value = await getCSSVariable(page, '--text-strong');
     expect(value).not.toBe('');
   });
 
-  test('REQ-V6-026-007: --ta-text-muted CSS variable defined', async ({ page }) => {
-    const value = await getCSSVariable(page, '--ta-text-muted');
+  test('REQ-V6-026-007: muted text CSS variable defined', async ({ page }) => {
+    const value = await getCSSVariable(page, '--text-muted');
     expect(value).not.toBe('');
   });
 
-  test('REQ-V6-026-008: --ta-border CSS variable defined', async ({ page }) => {
-    const value = await getCSSVariable(page, '--ta-border');
+  test('REQ-V6-026-008: border CSS variable defined', async ({ page }) => {
+    const value = await getCSSVariable(page, '--border-subtle');
     expect(value).not.toBe('');
   });
 
-  test('REQ-V6-026-009: --ta-overlay CSS variable defined', async ({ page }) => {
-    const value = await getCSSVariable(page, '--ta-overlay');
+  test('REQ-V6-026-009: overlay/muted-surface CSS variable defined', async ({ page }) => {
+    const value = await getCSSVariable(page, '--surface-muted');
     expect(value).not.toBe('');
   });
 });

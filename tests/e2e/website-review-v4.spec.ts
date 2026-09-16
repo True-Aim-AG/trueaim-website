@@ -330,20 +330,18 @@ test.describe('REQ-CB: ContextBuilder Product Page', () => {
     ).not.toBeVisible();
   });
 
-  test('REQ-CB-011: Trust Center link has blue text and underline styling', async ({ page }) => {
+  test('REQ-CB-011: Trust Center link has blue text and hover-underline styling', async ({ page }) => {
+    // Per docs/DESIGN_SYSTEM.md §7 ("Links: text-link hover:underline"),
+    // links are underlined on hover only, not permanently.
     const trustCenterLink = page.getByRole('link', { name: /Trust Center/i }).first();
     await expect(trustCenterLink).toBeVisible();
 
-    const styles = await trustCenterLink.evaluate(el => {
-      const computed = window.getComputedStyle(el);
-      return {
-        color: computed.color,
-        textDecoration: computed.textDecoration || computed.textDecorationLine,
-      };
-    });
+    const restStyles = await trustCenterLink.evaluate(el => window.getComputedStyle(el).textDecorationLine);
+    expect(restStyles).toBe('none');
 
-    // Verify link has underline styling
-    expect(styles.textDecoration).toContain('underline');
+    await trustCenterLink.hover();
+    const hoverStyles = await trustCenterLink.evaluate(el => window.getComputedStyle(el).textDecorationLine);
+    expect(hoverStyles).toContain('underline');
   });
 
   // --------------------------------------------------------------------------
@@ -367,15 +365,15 @@ test.describe('REQ-CB: ContextBuilder Product Page', () => {
     // 97% may appear as the second metric value (REQ-CB-013), but not as the first
   });
 
-  test('REQ-CB-013: Second metric value displays "97%"', async ({ page }) => {
+  test('REQ-CB-013: Second metric value displays "99%"', async ({ page }) => {
     /**
      * SECTION_ID: METRICS:VALUE (2nd metric)
      * Type: Text Edit
-     * Change: "97.3%" → "97%"
+     * Change: "97.3%" → "97%" → "99%" (copy updated again after this REQ was written)
      */
-    await expect(page.getByText('97%').first()).toBeVisible();
+    await expect(page.getByText('99%').first()).toBeVisible();
 
-    // Verify OLD value "97.3%" is NOT present
+    // Verify OLD values are NOT present
     await expect(page.getByText('97.3%')).not.toBeVisible();
   });
 
@@ -394,10 +392,10 @@ test.describe('REQ-CB: ContextBuilder Product Page', () => {
   test('REQ-CB-012/013/014: Metrics display correct set of values', async ({ page }) => {
     /**
      * Combined check: all three metric values are correct
-     * Expected: 95%, 97%, 96%
+     * Expected: 95%, 99%, 96% (2nd metric later updated 97% -> 99%)
      */
     await expect(page.getByText('95%').first()).toBeVisible();
-    await expect(page.getByText('97%').first()).toBeVisible();
+    await expect(page.getByText('99%').first()).toBeVisible();
     await expect(page.getByText('96%').first()).toBeVisible();
 
     // Old values should not be present
@@ -766,16 +764,11 @@ test.describe('REQ-CE: ClaimEval Product Page', () => {
   // Example Inspection Check
   // --------------------------------------------------------------------------
 
-  test('REQ-CE-015: Example inspection check result labels are correct', async ({ page }) => {
-    /**
-     * SECTION_ID: EXAMPLE:RESULT (multiple)
-     * Type: Text Edit
-     * Required: 3 result labels
-     */
-    await expect(page.getByText('Pass: within tolerance', { exact: false }).first()).toBeVisible();
-    await expect(page.getByText('Warn: 15-30% deviation', { exact: false }).first()).toBeVisible();
-    await expect(page.getByText('Fail: >30% deviation', { exact: false }).first()).toBeVisible();
-  });
+  // REQ-CE-015 removed: the "Example Inspection Check" section (with its
+  // Pass/Warn/Fail example result labels) no longer exists on the ClaimEval
+  // page. The page was restructured around "The Sampling Problem", coverage
+  // stats, Key Features (Risk Scoring, Inspection Catalogues, Reviewer
+  // Workflow) and Coverage Areas in the True Aim redesign.
 
   // --------------------------------------------------------------------------
   // Final CTA Section
@@ -959,7 +952,7 @@ test.describe('REQ-CC: Cookie Consent Modal', () => {
         return {
           backgroundColor: styles.backgroundColor,
           opacity: parseFloat(styles.opacity),
-          backdropFilter: styles.backdropFilter || styles.webkitBackdropFilter || '',
+          backdropFilter: styles.backdropFilter || (styles as unknown as Record<string, string>).webkitBackdropFilter || '',
         };
       });
 
@@ -1411,7 +1404,7 @@ test.describe('Regression - Previous Requirements Still Valid', () => {
 
   test('Footer still has correct copyright', async ({ page }) => {
     await page.goto(BASE_URL);
-    await expect(page.getByText(/© 2026 True Aim\. All rights reserved\./)).toBeVisible();
+    await expect(page.getByText(/© 2026 True Aim AG\. All rights reserved\./)).toBeVisible();
   });
 
   test('MIRA page V3 changes still present - hero text', async ({ page }) => {

@@ -49,7 +49,7 @@ export function ZoomableInfographic({
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          className="relative block w-full group glass-panel overflow-hidden rounded-xl cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]"
+          className="relative block w-full group bg-card shadow-card overflow-hidden rounded-none cursor-zoom-in focus:outline-none focus-visible:ring-[3px] focus-visible:ring-focus"
           aria-label={`Zoom in on ${alt}`}
         >
           <Image
@@ -60,13 +60,13 @@ export function ZoomableInfographic({
             className="w-full h-auto"
             sizes="(max-width: 768px) 100vw, 768px"
           />
-          <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm rounded-lg p-2 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity flex items-center gap-1.5">
-            <ZoomIn className="w-4 h-4 text-white" />
-            <span className="text-xs text-white font-medium">Click to zoom</span>
+          <div className="absolute top-3 right-3 flex items-center gap-1.5 rounded-pill bg-dark px-3 py-2 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity">
+            <ZoomIn className="w-4 h-4 text-on-dark" strokeWidth={1.5} />
+            <span className="text-xs text-on-dark font-medium">Click to zoom</span>
           </div>
         </button>
         {caption && (
-          <figcaption className="text-xs text-[var(--text-muted)] text-center mt-3">
+          <figcaption className="text-xs text-muted text-center mt-3">
             {caption}
           </figcaption>
         )}
@@ -75,7 +75,8 @@ export function ZoomableInfographic({
       {mounted && isOpen &&
         createPortal(
           <div
-            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+            style={{ background: "var(--overlay-scrim)" }}
             onClick={() => setIsOpen(false)}
             role="dialog"
             aria-modal="true"
@@ -84,10 +85,10 @@ export function ZoomableInfographic({
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-2.5 transition-colors"
+              className="absolute top-4 right-4 rounded-pill bg-dark p-2.5 transition-colors hover:bg-dark-2"
               aria-label="Close zoom view"
             >
-              <X className="w-6 h-6 text-white" />
+              <X className="w-6 h-6 text-on-dark" strokeWidth={1.5} />
             </button>
             <div
               className="relative max-w-[95vw] max-h-[95vh]"

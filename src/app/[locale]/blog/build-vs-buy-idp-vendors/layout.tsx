@@ -59,12 +59,12 @@ const blogPostingJsonLd = {
   },
   author: {
     "@type": "Organization",
-    name: "TrueAim AG",
+    name: "True Aim AG",
     url: "https://trueaim.ai",
   },
   publisher: {
     "@type": "Organization",
-    name: "TrueAim AG",
+    name: "True Aim AG",
     url: "https://trueaim.ai",
   },
   keywords: ["Vendor Evaluation", "Build vs Buy", "IDP", "Claims AI"],

@@ -1,12 +1,12 @@
-# TrueAim.ai
+# True Aim
 
 > Neuro-symbolic AI for auditable insurance claims decisions. Swiss precision meets compliant automation.
 
-TrueAim.ai builds AI-powered decisioning software for insurance claims. Our hybrid neuro-symbolic approach combines the adaptability of agentic AI with the precision of deterministic logic, delivering compliant, explainable decisions at scale.
+True Aim builds AI-powered decisioning software for insurance claims. Our hybrid neuro-symbolic approach combines the adaptability of agentic AI with the precision of deterministic logic, delivering compliant, explainable decisions at scale.
 
 ## Company
 
-- Name: TrueAim AG
+- Name: True Aim AG
 - Location: Zurich, Switzerland
 - Industry: InsurTech / AI
 - Website: https://trueaim.ai

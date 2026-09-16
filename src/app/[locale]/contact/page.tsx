@@ -2,6 +2,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { MessageSquare } from "lucide-react";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { Eyebrow } from "@/components/brand/Eyebrow";
+import { GridPattern } from "@/components/brand/GridPattern";
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -10,25 +12,26 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 px-6 overflow-hidden">
-        <div className="relative max-w-7xl mx-auto text-center">
+      <section className="relative overflow-hidden">
+        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
+        <div className="relative max-w-7xl mx-auto text-center px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] text-sm font-medium mb-6">
-              <MessageSquare className="w-4 h-4" />
+            <Eyebrow className="inline-flex items-center gap-2 mb-6">
+              <MessageSquare strokeWidth={1.5} className="w-4 h-4" />
               {t("hero.badge")}
-            </div>
+            </Eyebrow>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-strong mb-6">
               {t("hero.titleLine1")}
               <br />
-              <span className="text-[var(--primary)]">{t("hero.titleLine2")}</span>
+              <span className="text-accent">{t("hero.titleLine2")}</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lede text-body max-w-2xl mx-auto">
               {t("hero.description")}
             </p>
           </MotionDiv>
