@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight, BookOpen, Calendar, Clock, Gavel, Shield, Scale, BarChart3 } from "lucide-react";
+import { ArrowRight, BookOpen, Calendar, ClipboardCheck, Clock, Gavel, Shield, Scale, BarChart3 } from "lucide-react";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 import { Eyebrow } from "@/components/brand/Eyebrow";
 import { ButtonLink } from "@/components/brand/Button";
@@ -8,6 +8,7 @@ import { GridPattern } from "@/components/brand/GridPattern";
 import { blogPosts } from "@/lib/blog-posts";
 
 const iconBySlug: Record<string, typeof BarChart3> = {
+  "ai-claims-auditability-scorecard": ClipboardCheck,
   "ai-claims-handling-eu-ai-act-high-risk": Gavel,
   "why-claims-ai-pilots-stall": BarChart3,
   "auditability-evidence-chains": Shield,

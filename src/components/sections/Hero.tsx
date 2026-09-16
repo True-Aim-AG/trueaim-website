@@ -2,16 +2,16 @@
 
 import { useTranslations } from "next-intl";
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import { ButtonLink } from "@/components/brand/Button";
-import { GlassBox } from "@/components/brand/GlassBox";
-import { Glow } from "@/components/brand/Glow";
 import { GridPattern } from "@/components/brand/GridPattern";
 
 const ease = [0.4, 0, 0.2, 1] as const;
 
 /**
  * Home hero, transcribed from the design system's marketing "Example" frame:
- * page tint, structured grid top-right, ~540px copy column, Glass Box graphic with violet glow.
+ * page tint, structured grid top-right, ~540px copy column, and the dimensional Glass Box render
+ * from the brand guidelines (custom graphics, dimensional) on the right.
  */
 export function Hero() {
   const t = useTranslations("hero");
@@ -50,7 +50,7 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Brand graphic: glow + glass box + rim glow (Example frame offsets, scaled) */}
+        {/* Brand graphic: the Glass Box render (glow baked in, transparent background) */}
         <motion.div
           initial={reduce ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -58,15 +58,26 @@ export function Hero() {
           className="relative mx-auto hidden h-[520px] w-[470px] lg:block"
           aria-hidden
         >
-          <Glow size={470} opacity={0.7} className="absolute left-0 top-[60px]" />
-          <GlassBox size={312} glow={false} className="absolute left-[80px] top-[130px]" />
-          <Glow variant="rim" width={220} height={300} className="absolute left-[125px] top-[110px]" />
+          <Image
+            src="/brand/3d/glass-box.webp"
+            alt=""
+            width={940}
+            height={900}
+            priority
+            className="absolute left-0 top-[35px] h-auto w-[470px]"
+          />
         </motion.div>
 
         {/* Compact graphic for small screens */}
         <div className="relative mx-auto h-[260px] w-[260px] lg:hidden" aria-hidden>
-          <Glow size={260} opacity={0.6} className="absolute left-0 top-0" />
-          <GlassBox size={170} glow={false} className="absolute left-[45px] top-[60px]" id="gb-sm" />
+          <Image
+            src="/brand/3d/glass-box.webp"
+            alt=""
+            width={940}
+            height={900}
+            priority
+            className="absolute left-0 top-[5px] h-auto w-[260px]"
+          />
         </div>
       </div>
     </section>

@@ -27,6 +27,9 @@ test.describe("Agent discoverability endpoints", () => {
     const res = await request.get("/sitemap.xml");
     expect(res.status()).toBe(200);
     const body = await res.text();
+    expect(body).toContain(
+      "https://trueaim.ai/blog/ai-claims-auditability-scorecard",
+    );
     expect(body).toContain("https://trueaim.ai/blog/why-claims-ai-pilots-stall");
     expect(body).toContain("https://trueaim.ai/blog/build-vs-buy-idp-vendors");
     expect(body).toContain("https://trueaim.ai/blog/auditability-evidence-chains");
@@ -40,6 +43,9 @@ test.describe("Agent discoverability endpoints", () => {
     expect(body).toContain('<?xml version="1.0"');
     expect(body).toContain('<rss version="2.0"');
     expect(body).toContain("<channel>");
+    expect(body).toContain(
+      "https://trueaim.ai/blog/ai-claims-auditability-scorecard",
+    );
     expect(body).toContain("https://trueaim.ai/blog/why-claims-ai-pilots-stall");
     expect(body).toContain("https://trueaim.ai/blog/build-vs-buy-idp-vendors");
     expect(body).toContain("https://trueaim.ai/blog/auditability-evidence-chains");
@@ -48,8 +54,12 @@ test.describe("Agent discoverability endpoints", () => {
   test("llms.txt and llms-full.txt are still served", async ({ request }) => {
     const llms = await request.get("/llms.txt");
     expect(llms.status()).toBe(200);
+    expect(await llms.text()).toContain("https://trueaim.ai/blog");
     const full = await request.get("/llms-full.txt");
     expect(full.status()).toBe(200);
+    expect(await full.text()).toContain(
+      "https://trueaim.ai/blog/ai-claims-auditability-scorecard",
+    );
   });
 
   test("blog index exposes RSS alternate link", async ({ page }) => {
@@ -60,6 +70,7 @@ test.describe("Agent discoverability endpoints", () => {
 
   test("blog post pages include BlogPosting JSON-LD", async ({ page }) => {
     const slugs = [
+      "ai-claims-auditability-scorecard",
       "why-claims-ai-pilots-stall",
       "build-vs-buy-idp-vendors",
       "auditability-evidence-chains",
@@ -76,5 +87,20 @@ test.describe("Agent discoverability endpoints", () => {
       expect(hasBlogPosting, `BlogPosting missing on ${slug}`).toBe(true);
       expect(hasBreadcrumb, `Breadcrumb missing on ${slug}`).toBe(true);
     }
+  });
+
+  test("the scorecard post publishes its checklist and FAQ as structured data", async ({
+    page,
+  }) => {
+    await page.goto("/blog/ai-claims-auditability-scorecard");
+    const scripts = await page
+      .locator('script[type="application/ld+json"]')
+      .allTextContents();
+    const itemList = scripts
+      .map((s) => JSON.parse(s))
+      .find((d) => d["@id"]?.endsWith("#scorecard"));
+    expect(itemList, "ItemList of the twelve questions missing").toBeTruthy();
+    expect(itemList.itemListElement).toHaveLength(12);
+    expect(scripts.some((s) => s.includes('"@type":"FAQPage"'))).toBe(true);
   });
 });

@@ -27,26 +27,6 @@
       }
     },
     {
-      "route": "/dpa",
-      "redirect": "/sub-processors",
-      "statusCode": 301
-    },
-    {
-      "route": "/de/dpa",
-      "redirect": "/de/sub-processors",
-      "statusCode": 301
-    },
-    {
-      "route": "/fr/dpa",
-      "redirect": "/fr/sub-processors",
-      "statusCode": 301
-    },
-    {
-      "route": "/it/dpa",
-      "redirect": "/it/sub-processors",
-      "statusCode": 301
-    },
-    {
       "route": "/contact-card.html",
       "redirect": "/contact-card",
       "statusCode": 301

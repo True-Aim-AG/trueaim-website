@@ -5,6 +5,7 @@ describe("blogPosts", () => {
   it("includes all known blog slugs", () => {
     const slugs = blogPosts.map((p) => p.slug).sort();
     expect(slugs).toEqual([
+      "ai-claims-auditability-scorecard",
       "ai-claims-handling-eu-ai-act-high-risk",
       "auditability-evidence-chains",
       "build-vs-buy-idp-vendors",
@@ -21,6 +22,11 @@ describe("blogPosts", () => {
       expect(Array.isArray(post.tags)).toBe(true);
       expect(post.tags.length).toBeGreaterThan(0);
     }
+  });
+
+  it("exactly one post holds the featured slot", () => {
+    const featured = blogPosts.filter((p) => p.featured);
+    expect(featured).toHaveLength(1);
   });
 
   it("posts are ordered newest-first by publishedIso", () => {

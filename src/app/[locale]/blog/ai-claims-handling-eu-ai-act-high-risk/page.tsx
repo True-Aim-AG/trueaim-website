@@ -832,7 +832,15 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                   Take one closed claim from last year. Ask your team to
                   reconstruct the decision: every field and where it came from,
                   which model version ran, what a human changed and on what
-                  basis.
+                  basis. The twelve questions to put to that record are set
+                  out in{" "}
+                  <Link
+                    href="/blog/ai-claims-auditability-scorecard"
+                    className="text-link hover:underline"
+                  >
+                    the AI claims auditability scorecard
+                  </Link>
+                  .
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
