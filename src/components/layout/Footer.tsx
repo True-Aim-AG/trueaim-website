@@ -26,6 +26,7 @@ const footerLinks = {
   legal: [
     { nameKey: "privacy" as const, href: "/privacy" },
     { nameKey: "terms" as const, href: "/terms" },
+    { nameKey: "subProcessors" as const, href: "/sub-processors" },
     { nameKey: "cookies" as const, href: "/cookies" },
     { nameKey: "paia" as const, href: "/paia" },
     { nameKey: "aiTransparency" as const, href: "/ai-transparency" },

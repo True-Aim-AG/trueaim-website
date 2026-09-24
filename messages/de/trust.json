@@ -200,6 +200,10 @@
           "title": "Ethik & Meldungen",
           "description": "Vertraulicher Kanal zur Meldung von Fehlverhalten, mit Hinweisen zur anonymen Meldung und Schutz vor Repressalien."
         },
+        "subProcessors": {
+          "title": "Liste der Unterauftragsverarbeiter",
+          "description": "Verbindliche Liste der Unterauftragsverarbeiter (Anhang 2 zum AVV): Unternehmen, Dienstleistung, Datenkategorien und Verarbeitungsort."
+        },
         "product": {
           "title": "Plattform-Übersicht",
           "description": "Was die True Aim Plattform ist, für wen sie gedacht ist und wie sie in den Schadenprozess passt."

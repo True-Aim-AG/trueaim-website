@@ -20,6 +20,7 @@ const publicDocs = [
   { key: "privacy", href: "/privacy" },
   { key: "security", href: "/security" },
   { key: "ethics", href: "/ethics" },
+  { key: "subProcessors", href: "/sub-processors" },
   { key: "product", href: "/product" },
   { key: "support", href: "/support" },
   { key: "changelog", href: "/changelog" },

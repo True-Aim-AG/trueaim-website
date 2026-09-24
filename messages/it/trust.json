@@ -200,6 +200,10 @@
           "title": "Etica & segnalazioni",
           "description": "Canale confidenziale per segnalare comportamenti scorretti, con istruzioni per la segnalazione anonima e impegno alla non ritorsione."
         },
+        "subProcessors": {
+          "title": "Elenco dei sub-responsabili",
+          "description": "Elenco operativo dei sub-responsabili (Allegato 2 al DPA): entità, servizio, categorie di dati e luogo del trattamento."
+        },
         "product": {
           "title": "Panoramica della piattaforma",
           "description": "Cosa è la piattaforma True Aim, a chi si rivolge e come si integra nel flusso di gestione sinistri."

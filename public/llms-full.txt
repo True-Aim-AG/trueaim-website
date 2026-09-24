@@ -166,3 +166,4 @@ True Aim's architecture is designed for regulatory compliance:
 - Privacy Policy: https://trueaim.ai/privacy
 - Terms of Service: https://trueaim.ai/terms
 - Cookie Policy: https://trueaim.ai/cookies
+- List of Sub-Processors: https://trueaim.ai/sub-processors

@@ -200,6 +200,10 @@
           "title": "Ethics & Reporting",
           "description": "Confidential channel for reporting misconduct, with anonymous-reporting instructions and non-retaliation commitment."
         },
+        "subProcessors": {
+          "title": "List of Sub-Processors",
+          "description": "Operative list of sub-processors (Schedule 2 to the DPA): entity, service, data categories and processing location."
+        },
         "product": {
           "title": "Platform Overview",
           "description": "What the True Aim Platform is, who it serves, and how it fits into the claims workflow."
