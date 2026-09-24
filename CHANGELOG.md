@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.15.0...v1.16.0) (2026-09-24)
+
+
+### Features
+
+* **legal:** restore the List of Sub-Processors at v1.1, adding Sentry ([#14](https://github.com/True-Aim-AG/trueaim-website/issues/14)) ([287e833](https://github.com/True-Aim-AG/trueaim-website/commit/287e8335609afd104ea01a932413d37ea2deb4f6))
+
 ## [1.15.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.14.0...v1.15.0) (2026-09-16)
 
 
