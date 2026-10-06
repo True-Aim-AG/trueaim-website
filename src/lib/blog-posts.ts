@@ -12,6 +12,19 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "where-the-language-model-does-not-belong",
+    title:
+      "Where the Language Model Does Not Belong: Designing Defensible AI in Claims Operations",
+    excerpt:
+      "Every claim decision is reading, computing and judging. Where a language model belongs, where rules must hold and how the record shows the line.",
+    publishedIso: "2026-10-06T00:00:00.000Z",
+    displayDate: "October 2026",
+    readTime: "7 min read",
+    category: "Technical Architecture",
+    tags: ["Claims AI", "Decision Trees", "Language Models", "Auditability"],
+    featured: true,
+  },
+  {
     slug: "ai-claims-auditability-scorecard",
     title: "The AI Claims Auditability Scorecard",
     excerpt:
@@ -21,7 +34,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "14 min read",
     category: "Best Practice",
     tags: ["Auditability", "GDPR Article 22", "EU AI Act", "Claims AI"],
-    featured: true,
   },
   {
     slug: "ai-claims-handling-eu-ai-act-high-risk",

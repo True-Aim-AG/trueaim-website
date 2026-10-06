@@ -9,6 +9,7 @@ describe("blogPosts", () => {
       "ai-claims-handling-eu-ai-act-high-risk",
       "auditability-evidence-chains",
       "build-vs-buy-idp-vendors",
+      "where-the-language-model-does-not-belong",
       "why-claims-ai-pilots-stall",
     ].sort());
   });

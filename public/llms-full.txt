@@ -133,6 +133,7 @@ True Aim's architecture is designed for regulatory compliance:
 **Index:** https://trueaim.ai/blog
 **RSS:** https://trueaim.ai/feed.xml
 
+- [Where the Language Model Does Not Belong: Designing Defensible AI in Claims Operations](https://trueaim.ai/blog/where-the-language-model-does-not-belong) (6 October 2026, Reuben John, CEO): A claim decision is a chain of three kinds of steps: reading, computing and judging. Computing belongs to rules. A model earns its place in reading and, marked as probabilistic, in judging. The record keeps the boundary visible on every step.
 - [The AI Claims Auditability Scorecard](https://trueaim.ai/blog/ai-claims-auditability-scorecard) (10 September 2026, Reuben John, CEO): Twelve questions every claims leader should be able to answer about AI operating in their name, in four groups: provenance, reconstruction, human judgement and continuity, with the standard and how True Aim meets it under each.
 - [AI Claims Handling Is Not High-Risk Under the EU AI Act. Here Is What Binds It Instead.](https://trueaim.ai/blog/ai-claims-handling-eu-ai-act-high-risk) (28 July 2026): Claims handling is absent from Annex III. GDPR Article 22 binds it anyway.
 - [Why Claims AI Pilots Stall Before Production Readiness](https://trueaim.ai/blog/why-claims-ai-pilots-stall) (15 February 2026): Measurement discipline and production realism, not model accuracy, decide whether a pilot ships.

@@ -70,6 +70,7 @@ test.describe("Agent discoverability endpoints", () => {
 
   test("blog post pages include BlogPosting JSON-LD", async ({ page }) => {
     const slugs = [
+      "where-the-language-model-does-not-belong",
       "ai-claims-auditability-scorecard",
       "why-claims-ai-pilots-stall",
       "build-vs-buy-idp-vendors",
