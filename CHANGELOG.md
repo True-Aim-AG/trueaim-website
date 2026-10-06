@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.16.0...v1.17.0) (2026-10-06)
+
+
+### Features
+
+* **blog:** add "Where the Language Model Does Not Belong" ([9cb627b](https://github.com/True-Aim-AG/trueaim-website/commit/9cb627b21a0f15e1fa7c64b84c8d9e4940510e48))
+
 ## [1.16.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.15.0...v1.16.0) (2026-09-24)
 
 
