@@ -37,17 +37,7 @@
       "statusCode": 301
     },
     {
-      "route": "/dpa/",
-      "redirect": "/en/sub-processors/",
-      "statusCode": 301
-    },
-    {
       "route": "/de/dpa",
-      "redirect": "/de/sub-processors/",
-      "statusCode": 301
-    },
-    {
-      "route": "/de/dpa/",
       "redirect": "/de/sub-processors/",
       "statusCode": 301
     },
@@ -57,17 +47,7 @@
       "statusCode": 301
     },
     {
-      "route": "/fr/dpa/",
-      "redirect": "/fr/sub-processors/",
-      "statusCode": 301
-    },
-    {
       "route": "/it/dpa",
-      "redirect": "/it/sub-processors/",
-      "statusCode": 301
-    },
-    {
-      "route": "/it/dpa/",
       "redirect": "/it/sub-processors/",
       "statusCode": 301
     },

@@ -81,9 +81,10 @@ for (const path of metadataFiles) {
 }
 // English lived at the root until October 2026, so every old unprefixed URL
 // gets a real 301 to its /en/ page. Static Web Apps cannot capture a wildcard
-// path into a redirect target, so one route per page is generated here, in
-// both the bare and the trailing-slash form. Renamed pages are handled by the
-// redirect map, not here.
+// path into a redirect target, so one route per page is generated here.
+// Static Web Apps treats /x and /x/ as the same pattern and rejects a config
+// that lists both, so only the bare form is written. Renamed pages are
+// handled by the redirect map, not here.
 let redirectRoutes = 0;
 const englishPages = [];
 async function collectPages(directory, prefix = "") {
@@ -95,13 +96,11 @@ async function collectPages(directory, prefix = "") {
   }
 }
 await collectPages(join(out, "en"));
-const existingRoutes = new Set(config.routes.map((route) => route.route));
+const existingRoutes = new Set(config.routes.map((route) => route.route.replace(/\/+$/, "") || "/"));
 for (const pagePath of englishPages) {
-  for (const route of [pagePath, pagePath + "/"]) {
-    if (existingRoutes.has(route)) continue;
-    config.routes.push({ route, redirect: "/en" + pagePath + "/", statusCode: 301 });
-    redirectRoutes++;
-  }
+  if (existingRoutes.has(pagePath)) continue;
+  config.routes.push({ route: pagePath, redirect: "/en" + pagePath + "/", statusCode: 301 });
+  redirectRoutes++;
 }
 const serializedConfig = JSON.stringify(config) + "\n";
 const configBytes = Buffer.byteLength(serializedConfig, "utf8");

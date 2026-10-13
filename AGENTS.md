@@ -107,11 +107,13 @@ npx -y @azure/static-web-apps-cli@latest start out --swa-config-location out --p
 ```
 
 The emulator applies the same `staticwebapp.config.json` as Static Web Apps,
-including `trailingSlash: always`. Checks worth running against it:
+including `trailingSlash: always`, with one difference: the platform treats
+`/x` and `/x/` as the same route pattern (and rejects a config that lists
+both), while the CLI matches routes exactly, so a `/dpa/` request redirects on
+staging but is 404 on the emulator. Checks worth running against it:
 
 ```bash
 curl -sI localhost:4280/ | grep -i location              # /en/
 curl -sI localhost:4280/technology | grep -i location    # /en/technology/, one hop
-curl -sI localhost:4280/dpa/ | head -1                   # 301, not 404
 curl -so /dev/null -w '%{http_code}' localhost:4280/en/nope/   # 404
 ```
