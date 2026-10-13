@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Confidential channel to report ethical concerns, misconduct, or security and privacy issues to True Aim AG. Anonymous reporting and non-retaliation commitment.",
   alternates: {
-    canonical: "https://trueaim.ai/ethics",
+    canonical: "https://trueaim.ai/en/ethics/",
   },
   robots: {
     index: true,

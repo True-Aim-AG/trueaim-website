@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Previous version of True Aim AG's privacy policy. The current policy is at trueaim.ai/privacy.",
   alternates: {
-    canonical: "https://trueaim.ai/privacy-legacy",
+    canonical: "https://trueaim.ai/en/privacy-legacy/",
   },
   robots: {
     index: false,

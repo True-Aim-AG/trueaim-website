@@ -7,7 +7,7 @@
  * these into their metadata so links still render a branded card on LinkedIn/Slack. Pages
  * that ship their own `opengraph-image` file (the product pages) don't need this.
  */
-export const DEFAULT_OG_IMAGE = "https://trueaim.ai/opengraph-image";
+export const DEFAULT_OG_IMAGE = "https://trueaim.ai/en/opengraph-image";
 
 export const defaultOgImages = [
   {

@@ -2,11 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { JsonLd } from "@/components/seo/JsonLd";
-
-function getLocaleUrl(locale: string, path: string): string {
-  const prefix = locale === "en" ? "" : `/${locale}`;
-  return `https://trueaim.ai${prefix}${path}`;
-}
+import { localeUrl as getLocaleUrl } from "@/lib/site-url";
 
 type MetadataProps = {
   params: Promise<{ locale: string }>;
@@ -20,6 +16,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
   for (const loc of routing.locales) {
     languages[loc] = getLocaleUrl(loc, "/products/contextbuilder");
   }
+  languages["x-default"] = getLocaleUrl("en", "/products/contextbuilder");
 
   return {
     title: t("title"),
@@ -49,7 +46,7 @@ const contextBuilderJsonLd = {
   operatingSystem: "Cloud",
   description:
     "Claims document pipeline that transforms unstructured claim documents into structured, trusted data with AI-powered ingestion and human review when needed.",
-  url: "https://trueaim.ai/products/contextbuilder",
+  url: "https://trueaim.ai/en/products/contextbuilder/",
   author: {
     "@type": "Organization",
     name: "True Aim AG",
@@ -78,7 +75,7 @@ const breadcrumbJsonLd = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://trueaim.ai",
+      item: "https://trueaim.ai/en/",
     },
     {
       "@type": "ListItem",
@@ -89,7 +86,7 @@ const breadcrumbJsonLd = {
       "@type": "ListItem",
       position: 3,
       name: "ContextBuilder",
-      item: "https://trueaim.ai/products/contextbuilder",
+      item: "https://trueaim.ai/en/products/contextbuilder/",
     },
   ],
 };

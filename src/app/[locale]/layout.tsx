@@ -13,6 +13,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { localeUrl as getLocaleUrl } from "@/lib/site-url";
 
 /* Brand type: Inter Tight for titles, IBM Plex Sans for everything else (docs/DESIGN_SYSTEM.md §4). */
 const interTight = Inter_Tight({
@@ -28,11 +29,6 @@ const ibmPlexSans = IBM_Plex_Sans({
   display: "swap",
 });
 
-function getLocaleUrl(locale: string, path: string): string {
-  const prefix = locale === "en" ? "" : `/${locale}`;
-  return `https://trueaim.ai${prefix}${path}`;
-}
-
 type MetadataProps = {
   params: Promise<{ locale: string }>;
 };
@@ -45,6 +41,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
   for (const loc of routing.locales) {
     languages[loc] = getLocaleUrl(loc, "");
   }
+  languages["x-default"] = getLocaleUrl("en", "");
 
   return {
     metadataBase: new URL("https://trueaim.ai"),

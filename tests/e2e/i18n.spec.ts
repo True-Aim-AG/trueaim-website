@@ -4,7 +4,8 @@
  * Tests the next-intl i18n implementation for the TrueAim.ai website.
  * Configuration:
  *   - Locales: en (default), de, fr, it
- *   - localePrefix: 'as-needed' (EN has no prefix, others get /de/, /fr/, /it/)
+ *   - localePrefix: 'always' (every locale is prefixed: /en/, /de/, /fr/, /it/)
+ *   - trailingSlash: true (every page URL ends in a slash)
  *   - Framework: next-intl with Next.js App Router
  *
  * Run with: npx playwright test tests/e2e/i18n.spec.ts --project=chromium
@@ -17,26 +18,25 @@ const NON_DEFAULT_LOCALES = ['de', 'fr', 'it'] as const;
 const ALL_LOCALES = ['en', 'de', 'fr', 'it'] as const;
 
 // ============================================================================
-// 1. DEFAULT LOCALE (EN) RENDERS WITHOUT PREFIX
+// 1. DEFAULT LOCALE (EN) RENDERS UNDER /en/ LIKE EVERY OTHER LOCALE
 // ============================================================================
 
 test.describe('Default locale (EN) routing', () => {
-  test('EN home page renders without locale prefix in URL', async ({ page }) => {
-    await page.goto(BASE_URL);
+  test('EN home page renders at /en/', async ({ page }) => {
+    await page.goto(`${BASE_URL}/en/`);
     await page.waitForLoadState('domcontentloaded');
 
-    // URL should NOT contain /en/
-    expect(page.url()).not.toContain('/en/');
+    expect(page.url()).toContain('/en/');
     // html lang attribute should be "en"
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   });
 
-  test('EN subpages render without locale prefix', async ({ page }) => {
-    for (const path of ['/technology', '/company', '/contact']) {
-      await page.goto(`${BASE_URL}${path}`);
+  test('EN subpages render under /en/ with a trailing slash', async ({ page }) => {
+    for (const path of ['/technology/', '/company/', '/contact/']) {
+      await page.goto(`${BASE_URL}/en${path}`);
       await page.waitForLoadState('domcontentloaded');
 
-      expect(page.url()).not.toContain('/en/');
+      expect(page.url()).toContain(`/en${path}`);
       await expect(page.locator('html')).toHaveAttribute('lang', 'en');
     }
   });
@@ -76,7 +76,7 @@ test.describe('Non-default locale routing', () => {
 
 test.describe('Language switcher', () => {
   test('Language switcher button is visible and shows current locale', async ({ page }) => {
-    await page.goto(BASE_URL);
+    await page.goto(`${BASE_URL}/en/`);
     await page.waitForLoadState('domcontentloaded');
 
     // The language switcher has an aria-label "Switch language" and shows locale short code
@@ -94,7 +94,7 @@ test.describe('Language switcher', () => {
   });
 
   test('Switching to DE changes URL and lang attribute', async ({ page }) => {
-    await page.goto(BASE_URL);
+    await page.goto(`${BASE_URL}/en/`);
     await page.waitForLoadState('domcontentloaded');
 
     const switcherButton = page.locator('button[aria-label="Switch language"]');
@@ -123,7 +123,7 @@ test.describe('Language switcher', () => {
     await expect(page.locator('html')).toHaveAttribute('lang', 'de');
   });
 
-  test('Switching from DE back to EN removes locale prefix', async ({ page }) => {
+  test('Switching from DE back to EN lands on /en/', async ({ page }) => {
     await page.goto(`${BASE_URL}/de`);
     await page.waitForLoadState('domcontentloaded');
 
@@ -143,10 +143,10 @@ test.describe('Language switcher', () => {
     await enOption.click();
 
     // Wait for the client-side transition to settle (see comment above).
-    await page.waitForURL((url) => !url.pathname.startsWith('/de'));
+    await page.waitForURL(/\/en(\/|$)/);
 
-    // Verify URL does NOT contain /en/
-    expect(page.url()).not.toContain('/en/');
+    // Verify URL moved to the /en/ prefix
+    expect(page.url()).toContain('/en/');
     // Verify lang attribute is "en"
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   });
@@ -158,7 +158,7 @@ test.describe('Language switcher', () => {
 
 test.describe('Language switcher preserves path', () => {
   test('Switching locale on /company preserves the path segment', async ({ page }) => {
-    await page.goto(`${BASE_URL}/company`);
+    await page.goto(`${BASE_URL}/en/company/`);
     await page.waitForLoadState('domcontentloaded');
 
     const switcherButton = page.locator('button[aria-label="Switch language"]');
@@ -184,11 +184,10 @@ test.describe('Language switcher preserves path', () => {
     await switcherButton.click();
     const enOption = page.locator('button').filter({ hasText: 'English' });
     await enOption.click();
-    await page.waitForURL((url) => !url.pathname.startsWith('/fr'));
+    await page.waitForURL(/\/en\/company/);
 
-    // Verify URL is /company (no /en/ prefix)
-    expect(page.url()).toMatch(/\/company\/?$/);
-    expect(page.url()).not.toContain('/en/');
+    // Verify URL is /en/company/
+    expect(page.url()).toMatch(/\/en\/company\/?$/);
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   });
 });
@@ -205,7 +204,7 @@ test.describe('EnglishOnlyBanner on blog pages', () => {
   };
 
   test('EN blog page does NOT show the EnglishOnlyBanner', async ({ page }) => {
-    await page.goto(`${BASE_URL}/blog`);
+    await page.goto(`${BASE_URL}/en/blog/`);
     await page.waitForLoadState('domcontentloaded');
 
     // The banner should not appear for English
@@ -248,7 +247,7 @@ test.describe('EnglishOnlyBanner on legal pages', () => {
 
   for (const legalPage of legalPages) {
     test(`EN ${legalPage} does NOT show EnglishOnlyBanner`, async ({ page }) => {
-      await page.goto(`${BASE_URL}${legalPage}`);
+      await page.goto(`${BASE_URL}/en${legalPage}/`);
       await page.waitForLoadState('domcontentloaded');
 
       for (const msg of Object.values(bannerMessages)) {
@@ -348,7 +347,7 @@ test.describe('Translated content on locale pages', () => {
   // text. Each test checks the actual translated string for its locale.
 
   test('EN home page renders English hero content', async ({ page }) => {
-    await page.goto(BASE_URL);
+    await page.goto(`${BASE_URL}/en/`);
     await page.waitForLoadState('domcontentloaded');
 
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
@@ -451,7 +450,7 @@ test.describe('Navigation items on locale pages', () => {
 
 test.describe('Not Found (404) page with locale', () => {
   test('EN 404 page renders for nonexistent path', async ({ page }) => {
-    await page.goto(`${BASE_URL}/nonexistent-page-xyz`);
+    await page.goto(`${BASE_URL}/en/nonexistent-page-xyz`);
     await page.waitForLoadState('domcontentloaded');
 
     // Should show the 404 page content
@@ -492,10 +491,9 @@ test.describe('HTML lang attribute consistency across pages', () => {
   const pagePaths = ['', '/technology', '/company', '/contact', '/blog', '/trust'];
 
   for (const locale of ALL_LOCALES) {
-    test(`All pages set lang="${locale}" when accessed under /${locale === 'en' ? '' : locale}`, async ({ page }) => {
+    test(`All pages set lang="${locale}" when accessed under /${locale}/`, async ({ page }) => {
       for (const path of pagePaths) {
-        const prefix = locale === 'en' ? '' : `/${locale}`;
-        await page.goto(`${BASE_URL}${prefix}${path}`);
+        await page.goto(`${BASE_URL}/${locale}${path}/`);
         await page.waitForLoadState('domcontentloaded');
 
         await expect(page.locator('html')).toHaveAttribute('lang', locale);
@@ -505,24 +503,25 @@ test.describe('HTML lang attribute consistency across pages', () => {
 });
 
 // ============================================================================
-// ADDITIONAL: LOCALE PREFIX REDIRECTION
+// ADDITIONAL: TRAILING SLASH NORMALISATION
 // ============================================================================
 
-test.describe('Locale prefix edge cases', () => {
-  test('Accessing /en should redirect or render without /en/ prefix', async ({ page }) => {
+test.describe('Trailing slash edge cases', () => {
+  test('Accessing /en without a trailing slash lands on /en/', async ({ page }) => {
     await page.goto(`${BASE_URL}/en`);
     await page.waitForLoadState('domcontentloaded');
 
-    // With localePrefix: 'as-needed', /en may either redirect to /
-    // or render the page. Either way, lang should be "en".
+    // trailingSlash: true, so the dev server and Static Web Apps both
+    // redirect /en to /en/. Either way, lang should be "en".
+    expect(page.url()).toContain('/en/');
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   });
 
-  test('Accessing /en/technology should redirect or render correctly', async ({ page }) => {
+  test('Accessing /en/technology without a trailing slash lands on /en/technology/', async ({ page }) => {
     await page.goto(`${BASE_URL}/en/technology`);
     await page.waitForLoadState('domcontentloaded');
 
-    // Should either redirect to /technology or render with lang="en"
+    expect(page.url()).toContain('/en/technology/');
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   });
 });

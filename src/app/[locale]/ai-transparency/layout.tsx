@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "How True Aim AG approaches the design and use of artificial intelligence within its products, including oversight mechanisms and data handling principles.",
   alternates: {
-    canonical: "https://trueaim.ai/ai-transparency",
+    canonical: "https://trueaim.ai/en/ai-transparency/",
   },
   robots: {
     index: true,

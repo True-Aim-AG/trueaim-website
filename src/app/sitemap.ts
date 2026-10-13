@@ -2,24 +2,21 @@ import { MetadataRoute } from "next";
 export const dynamic = "force-static";
 import { blogPosts } from "@/lib/blog-posts";
 import { caseStudies } from "@/data/case-studies";
+import { localeUrl } from "@/lib/site-url";
+import { routing } from "@/i18n/routing";
 
-const baseUrl = "https://trueaim.ai";
-const locales = ["en", "de", "fr", "it"] as const;
+const locales = routing.locales;
 
 /**
  * Build hreflang alternates for a given path.
- * EN (default locale) has no prefix; other locales get /{locale}/ prefix.
+ * Every locale is prefixed (/en/, /de/, ...) and x-default points at English.
  */
 function buildAlternates(path: string) {
   return {
-    languages: Object.fromEntries(
-      locales.map((locale) => [
-        locale,
-        locale === "en"
-          ? `${baseUrl}${path}`
-          : `${baseUrl}/${locale}${path}`,
-      ])
-    ),
+    languages: {
+      ...Object.fromEntries(locales.map((locale) => [locale, localeUrl(locale, path)])),
+      "x-default": localeUrl("en", path),
+    },
   };
 }
 
@@ -66,7 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const translatedEntries: MetadataRoute.Sitemap = translatedPages.map(
     ({ path, changeFrequency, priority }) => ({
-      url: `${baseUrl}${path}`,
+      url: localeUrl("en", path),
       lastModified: new Date(),
       changeFrequency,
       priority,
@@ -92,7 +89,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const englishOnlyEntries: MetadataRoute.Sitemap = englishOnlyPages.map(
     ({ path, changeFrequency, priority }) => ({
-      url: `${baseUrl}${path}`,
+      url: localeUrl("en", path),
       lastModified: new Date(),
       changeFrequency,
       priority,
@@ -100,14 +97,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   const blogPostEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
+    url: localeUrl("en", `/blog/${post.slug}`),
     lastModified: new Date(post.publishedIso),
     changeFrequency: "monthly",
     priority: 0.5,
   }));
 
   const caseStudyEntries: MetadataRoute.Sitemap = caseStudies.map((cs) => ({
-    url: `${baseUrl}/case-studies/${cs.slug}`,
+    url: localeUrl("en", `/case-studies/${cs.slug}`),
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: cs.wip ? 0.3 : 0.6,

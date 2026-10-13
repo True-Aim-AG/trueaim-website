@@ -2,11 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { defaultOgImages, DEFAULT_OG_IMAGE } from "@/lib/og-image";
-
-function getLocaleUrl(locale: string, path: string): string {
-  const prefix = locale === "en" ? "" : `/${locale}`;
-  return `https://trueaim.ai${prefix}${path}`;
-}
+import { localeUrl as getLocaleUrl } from "@/lib/site-url";
 
 type MetadataProps = {
   params: Promise<{ locale: string }>;
@@ -20,6 +16,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
   for (const loc of routing.locales) {
     languages[loc] = getLocaleUrl(loc, "/technology");
   }
+  languages["x-default"] = getLocaleUrl("en", "/technology");
 
   return {
     title: t("title"),

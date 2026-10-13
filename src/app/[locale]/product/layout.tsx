@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "The True Aim Platform: AI-assisted claims and case processing for insurers, brokers, and the broader insurance value chain. Capabilities, users, data residency, and workflow fit.",
   alternates: {
-    canonical: "https://trueaim.ai/product",
+    canonical: "https://trueaim.ai/en/product/",
   },
   robots: {
     index: true,

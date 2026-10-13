@@ -12,12 +12,12 @@ export const metadata: Metadata = {
     title: "Blog | True Aim",
     description:
       "Insights on auditable AI, claims automation, and the future of insurance technology.",
-    url: "https://trueaim.ai/blog",
+    url: "https://trueaim.ai/en/blog/",
     type: "website",
     images: defaultOgImages,
   },
   alternates: {
-    canonical: "https://trueaim.ai/blog",
+    canonical: "https://trueaim.ai/en/blog/",
     types: {
       "application/rss+xml": "https://trueaim.ai/feed.xml",
     },
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
 const blogJsonLd = {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "@id": "https://trueaim.ai/blog",
+  "@id": "https://trueaim.ai/en/blog/",
   name: "True Aim Blog",
-  url: "https://trueaim.ai/blog",
+  url: "https://trueaim.ai/en/blog/",
   description:
     "Insights on auditable AI, claims automation, and the future of insurance technology.",
   publisher: {
@@ -40,7 +40,7 @@ const blogJsonLd = {
   blogPost: blogPosts.map((post) => ({
     "@type": "BlogPosting",
     headline: post.title,
-    url: `https://trueaim.ai/blog/${post.slug}`,
+    url: `https://trueaim.ai/en/blog/${post.slug}/`,
     datePublished: post.publishedIso,
     description: post.excerpt,
   })),
@@ -54,13 +54,13 @@ const breadcrumbJsonLd = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://trueaim.ai",
+      item: "https://trueaim.ai/en/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Blog",
-      item: "https://trueaim.ai/blog",
+      item: "https://trueaim.ai/en/blog/",
     },
   ],
 };

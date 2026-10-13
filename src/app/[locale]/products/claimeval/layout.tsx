@@ -2,11 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { JsonLd } from "@/components/seo/JsonLd";
-
-function getLocaleUrl(locale: string, path: string): string {
-  const prefix = locale === "en" ? "" : `/${locale}`;
-  return `https://trueaim.ai${prefix}${path}`;
-}
+import { localeUrl as getLocaleUrl } from "@/lib/site-url";
 
 type MetadataProps = {
   params: Promise<{ locale: string }>;
@@ -20,6 +16,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
   for (const loc of routing.locales) {
     languages[loc] = getLocaleUrl(loc, "/products/claimeval");
   }
+  languages["x-default"] = getLocaleUrl("en", "/products/claimeval");
 
   return {
     title: t("title"),
@@ -49,7 +46,7 @@ const claimEvalJsonLd = {
   operatingSystem: "Cloud",
   description:
     "Claims quality assurance platform that scales QA beyond sampling. Runs consistent inspections across entire claims portfolios with intelligent risk scoring.",
-  url: "https://trueaim.ai/products/claimeval",
+  url: "https://trueaim.ai/en/products/claimeval/",
   author: {
     "@type": "Organization",
     name: "True Aim AG",
@@ -77,7 +74,7 @@ const breadcrumbJsonLd = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://trueaim.ai",
+      item: "https://trueaim.ai/en/",
     },
     {
       "@type": "ListItem",
@@ -88,7 +85,7 @@ const breadcrumbJsonLd = {
       "@type": "ListItem",
       position: 3,
       name: "ClaimEval",
-      item: "https://trueaim.ai/products/claimeval",
+      item: "https://trueaim.ai/en/products/claimeval/",
     },
   ],
 };

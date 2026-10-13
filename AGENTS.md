@@ -72,12 +72,13 @@ environment the run will deploy to.
 ## How the site is built and served
 
 - `npm run build` runs `next build` and then `scripts/post-export.mjs`, which
-  moves the English export to the root, puts every page at
-  `<path>/index.html`, renames the Open Graph images to `.png`, and writes the
-  `/en/...` redirect stubs. The export lands in `out/`.
-- URL shape: English pages unprefixed (`/products/mira`), other locales
-  prefixed (`/de/products/mira`), no trailing slashes (Static Web Apps
-  redirects `/x/` to `/x`). `/en/...` links land on redirect stubs.
+  puts every page at
+  `<path>/index.html`, renames the Open Graph images to `.png`, and adds a
+  301 route for every old unprefixed English URL. The export lands in `out/`.
+- URL shape: every locale is prefixed, English included (`/en/products/mira/`,
+  `/de/products/mira/`), with a trailing slash on every page (Static Web Apps
+  redirects `/x` to `/x/`). `/` redirects to `/en/`. Old unprefixed English
+  URLs 301 to their `/en/` page; renamed pages belong in the redirect map.
 - Azure Static Web Apps serves the site directly, with no CDN or edge in
   front. Static hosting has no host-based redirect, so the `www`-to-apex
   redirect is a small script in the locale layout head.
@@ -103,5 +104,12 @@ cd api && npm ci && npm test                   # contact function contract tests
 npx -y @azure/static-web-apps-cli@latest start out --swa-config-location out --port 4280
 ```
 
-The emulator adds a trailing slash where real Static Web Apps strips one;
-that difference is the emulator's, not the site's.
+The emulator applies the same `staticwebapp.config.json` as Static Web Apps,
+including `trailingSlash: always`. Checks worth running against it:
+
+```bash
+curl -sI localhost:4280/ | grep -i location              # /en/
+curl -sI localhost:4280/technology | grep -i location    # /en/technology/, one hop
+curl -sI localhost:4280/dpa/ | head -1                   # 301, not 404
+curl -so /dev/null -w '%{http_code}' localhost:4280/en/nope/   # 404
+```

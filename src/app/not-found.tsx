@@ -27,7 +27,7 @@ export default function RootNotFound() {
             <p className="text-body mb-8">Page not found</p>
             {/* Full document navigation restores the locale layout from the root 404. */}
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-            <a href="/" className={buttonClasses("primary", "lg")}>
+            <a href="/en/" className={buttonClasses("primary", "lg")}>
               Go home
             </a>
           </div>

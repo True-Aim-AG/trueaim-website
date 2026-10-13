@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "True Aim AG cookie policy. Learn about the cookies we use, their purposes, and how to manage your cookie preferences.",
   alternates: {
-    canonical: "https://trueaim.ai/cookies",
+    canonical: "https://trueaim.ai/en/cookies/",
   },
   robots: {
     index: true,

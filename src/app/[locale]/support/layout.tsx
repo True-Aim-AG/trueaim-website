@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "How to reach True Aim customer support. Business hours, severity-based response time commitments, and contact channels for sales, privacy, security, and ethics.",
   alternates: {
-    canonical: "https://trueaim.ai/support",
+    canonical: "https://trueaim.ai/en/support/",
   },
   robots: {
     index: true,

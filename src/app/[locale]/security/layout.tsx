@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "True Aim AG security program: compliance frameworks, data residency, encryption, access control, monitoring, vulnerability management, and responsible disclosure.",
   alternates: {
-    canonical: "https://trueaim.ai/security",
+    canonical: "https://trueaim.ai/en/security/",
   },
   robots: {
     index: true,

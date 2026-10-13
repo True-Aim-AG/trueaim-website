@@ -10,13 +10,13 @@ True Aim builds AI-powered decisioning software for insurance claims. Our hybrid
 - Location: Zurich, Switzerland
 - Industry: InsurTech / AI
 - Website: https://trueaim.ai
-- Contact: https://trueaim.ai/contact
+- Contact: https://trueaim.ai/en/contact/
 
 ## Products
 
-- [MIRA](https://trueaim.ai/products/mira): Neuro-symbolic decisioning engine. Transforms policy terms and conditions into automated, fully-deterministic claim decisions. Every outcome traceable to the legal text.
-- [ContextBuilder](https://trueaim.ai/products/contextbuilder): Claims document pipeline. Turns messy claim documents into structured, trusted data with AI-powered ingestion and human review when needed.
-- [ClaimEval](https://trueaim.ai/products/claimeval): Claims quality assurance. Scales QA beyond sampling with consistent inspections across entire claims portfolios.
+- [MIRA](https://trueaim.ai/en/products/mira/): Neuro-symbolic decisioning engine. Transforms policy terms and conditions into automated, fully-deterministic claim decisions. Every outcome traceable to the legal text.
+- [ContextBuilder](https://trueaim.ai/en/products/contextbuilder/): Claims document pipeline. Turns messy claim documents into structured, trusted data with AI-powered ingestion and human review when needed.
+- [ClaimEval](https://trueaim.ai/en/products/claimeval/): Claims quality assurance. Scales QA beyond sampling with consistent inspections across entire claims portfolios.
 
 ## Key Differentiators
 
@@ -27,10 +27,10 @@ True Aim builds AI-powered decisioning software for insurance claims. Our hybrid
 
 ## Links
 
-- Technology: https://trueaim.ai/technology
-- Company: https://trueaim.ai/company
-- Case Studies: https://trueaim.ai/case-studies
-- Trust & Compliance: https://trueaim.ai/trust
-- Blog: https://trueaim.ai/blog (RSS: https://trueaim.ai/feed.xml)
-- ROI Calculator: https://trueaim.ai/roi-calculator
+- Technology: https://trueaim.ai/en/technology/
+- Company: https://trueaim.ai/en/company/
+- Case Studies: https://trueaim.ai/en/case-studies/
+- Trust & Compliance: https://trueaim.ai/en/trust/
+- Blog: https://trueaim.ai/en/blog/ (RSS: https://trueaim.ai/feed.xml)
+- ROI Calculator: https://trueaim.ai/en/roi-calculator/
 - Full details: https://trueaim.ai/llms-full.txt

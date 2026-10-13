@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "How True Aim AG collects, uses, and protects personal data in compliance with Swiss FADP and GDPR. Includes processor roles, sub-processors, retention, and rights.",
   alternates: {
-    canonical: "https://trueaim.ai/privacy",
+    canonical: "https://trueaim.ai/en/privacy/",
   },
   robots: {
     index: true,

@@ -6,7 +6,7 @@ import { operations } from "./operations";
 import { faqs } from "./faqs";
 
 const SLUG = "where-the-language-model-does-not-belong";
-const PAGE_URL = `https://trueaim.ai/blog/${SLUG}`;
+const PAGE_URL = `https://trueaim.ai/en/blog/${SLUG}/`;
 // Deliberately different: TITLE is the <title> tag written for the query,
 // OG_TITLE is the article's headline and the one used everywhere else.
 const TITLE = "Rules or Model? Where AI Belongs in a Claim Decision";
@@ -73,7 +73,7 @@ const blogPostingJsonLd = {
   alternativeHeadline: TITLE,
   description: DESCRIPTION,
   url: PAGE_URL,
-  image: "https://trueaim.ai/opengraph-image.png",
+  image: "https://trueaim.ai/en/opengraph-image.png",
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": PAGE_URL,
@@ -132,8 +132,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://trueaim.ai" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://trueaim.ai/blog" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://trueaim.ai/en/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://trueaim.ai/en/blog/" },
     { "@type": "ListItem", position: 3, name: OG_TITLE, item: PAGE_URL },
   ],
 };

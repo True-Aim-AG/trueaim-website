@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Public release history of the True Aim Platform. Features, fixes, and security improvements by release.",
   alternates: {
-    canonical: "https://trueaim.ai/changelog",
+    canonical: "https://trueaim.ai/en/changelog/",
   },
   robots: {
     index: true,

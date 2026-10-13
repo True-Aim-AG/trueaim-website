@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "List of Sub-Processors | True Aim AG",
   description:
     "Schedule 2 to the True Aim AG Data Processing Agreement: the operative list of sub-processors engaged in the processing of personal data, with service, data categories and processing location.",
-  alternates: { canonical: "https://trueaim.ai/sub-processors" },
+  alternates: { canonical: "https://trueaim.ai/en/sub-processors/" },
   robots: { index: true, follow: true },
 };
 

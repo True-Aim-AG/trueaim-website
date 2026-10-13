@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "True Aim AG PAIA manual. Promotion of Access to Information Act compliance documentation for True Aim AG.",
   alternates: {
-    canonical: "https://trueaim.ai/paia",
+    canonical: "https://trueaim.ai/en/paia/",
   },
   robots: {
     index: true,

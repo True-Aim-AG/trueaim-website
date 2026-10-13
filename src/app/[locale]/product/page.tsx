@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 
 const PUBLISH_DATE = "2026-05-21";

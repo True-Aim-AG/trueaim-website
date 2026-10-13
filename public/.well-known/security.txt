@@ -1,7 +1,7 @@
 # True Aim AG security contact (RFC 9116)
 Contact: mailto:security@trueaim.ai
-Contact: https://trueaim.ai/contact
+Contact: https://trueaim.ai/en/contact/
 Expires: 2027-04-22T00:00:00.000Z
 Preferred-Languages: en, de
 Canonical: https://trueaim.ai/.well-known/security.txt
-Policy: https://trueaim.ai/security
+Policy: https://trueaim.ai/en/security/

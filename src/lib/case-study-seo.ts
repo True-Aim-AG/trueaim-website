@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { routing } from "@/i18n/routing";
 import { getCaseStudy } from "@/data/case-studies";
 import { defaultOgImages, DEFAULT_OG_IMAGE } from "@/lib/og-image";
-
-const SITE = "https://trueaim.ai";
+import { localeUrl as getLocaleUrl } from "@/lib/site-url";
 
 type CaseStudySeo = { title: string; description: string };
 
@@ -35,11 +34,6 @@ const CASE_STUDY_SEO: Record<string, CaseStudySeo> = {
       "A UK motor insurer cleared its entire claims backlog with True Aim: decision time cut from 2 days to under 5 minutes, 45% fewer appeals, 100% consistency.",
   },
 };
-
-function getLocaleUrl(locale: string, path: string): string {
-  const prefix = locale === "en" ? "" : `/${locale}`;
-  return `${SITE}${prefix}${path}`;
-}
 
 /**
  * Build self-canonical, uniquely-described metadata for a case-study detail
@@ -75,6 +69,7 @@ export function buildCaseStudyMetadata(locale: string, slug: string): Metadata {
   for (const loc of routing.locales) {
     languages[loc] = getLocaleUrl(loc, path);
   }
+  languages["x-default"] = getLocaleUrl("en", path);
   const url = getLocaleUrl(locale, path);
 
   return {

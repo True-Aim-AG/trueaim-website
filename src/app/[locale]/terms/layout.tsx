@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "True Aim AG terms of service. Read the terms and conditions governing use of our website and AI-powered claims decisioning services.",
   alternates: {
-    canonical: "https://trueaim.ai/terms",
+    canonical: "https://trueaim.ai/en/terms/",
   },
   robots: {
     index: true,

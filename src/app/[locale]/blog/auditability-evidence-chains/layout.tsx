@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { defaultOgImages } from "@/lib/og-image";
 
 const SLUG = "auditability-evidence-chains";
-const PAGE_URL = `https://trueaim.ai/blog/${SLUG}`;
+const PAGE_URL = `https://trueaim.ai/en/blog/${SLUG}/`;
 const TITLE =
   "Auditability in Claims AI: Building Evidence Chains That Auditors Actually Accept";
 const META_DESCRIPTION =
@@ -77,8 +77,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://trueaim.ai" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://trueaim.ai/blog" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://trueaim.ai/en/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://trueaim.ai/en/blog/" },
     { "@type": "ListItem", position: 3, name: TITLE, item: PAGE_URL },
   ],
 };

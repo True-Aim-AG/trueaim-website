@@ -1,10 +1,10 @@
 import { blogPosts } from "@/lib/blog-posts";
+import { SITE_URL, localeUrl } from "@/lib/site-url";
 
 // Static content — regenerates only at build time, not per-request.
 // Keeps the feed fast at the edge and lets Vercel's CDN cache it fully.
 export const dynamic = "force-static";
 
-const SITE_URL = "https://trueaim.ai";
 const FEED_TITLE = "True Aim — Blog";
 const FEED_DESCRIPTION =
   "Insights on auditable AI, claims automation, and the future of insurance technology.";
@@ -27,7 +27,7 @@ export async function GET() {
 
   const items = blogPosts
     .map((post) => {
-      const url = `${SITE_URL}/blog/${post.slug}`;
+      const url = localeUrl("en", `/blog/${post.slug}`);
       const categories = post.tags
         .map((tag) => `<category>${escapeXml(tag)}</category>`)
         .join("");
@@ -47,7 +47,7 @@ export async function GET() {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>${escapeXml(FEED_TITLE)}</title>
-    <link>${SITE_URL}/blog</link>
+    <link>${localeUrl("en", "/blog")}</link>
     <description>${escapeXml(FEED_DESCRIPTION)}</description>
     <language>en-us</language>
     <lastBuildDate>${lastBuildDate}</lastBuildDate>

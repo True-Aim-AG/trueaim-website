@@ -29,7 +29,7 @@ The corporate website for True Aim, a Swiss AI company offering neuro-symbolic d
 ```
 src/
 ├── app/
-│   ├── [locale]/          all pages; en is unprefixed in the built URLs
+│   ├── [locale]/          all pages; every locale is prefixed (/en/, /de/, ...), trailing slashes on
 │   ├── globals.css        design tokens and theme blocks
 │   ├── not-found.tsx      built to out/404.html, served for every unmatched path
 │   └── sitemap.ts, feed.xml/

@@ -2,7 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 
 const SLUG = "integration-playbook";
-const PAGE_URL = `https://trueaim.ai/blog/${SLUG}`;
+const PAGE_URL = `https://trueaim.ai/en/blog/${SLUG}/`;
 const TITLE = "True Aim Integration Playbook";
 const META_DESCRIPTION =
   "How True Aim plugs into existing landscapes, the integration patterns we use, and how a first integration unfolds in four to six weeks.";

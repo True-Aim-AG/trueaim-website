@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { defaultOgImages } from "@/lib/og-image";
 
 const SLUG = "why-claims-ai-pilots-stall";
-const PAGE_URL = `https://trueaim.ai/blog/${SLUG}`;
+const PAGE_URL = `https://trueaim.ai/en/blog/${SLUG}/`;
 const TITLE = "Why Claims AI Pilots Stall Before Production Readiness";
 const DESCRIPTION =
   "Many claims AI pilots report accuracy in the mid 90s. Yet months later they are still not live in production. The root cause is measurement discipline and production realism.";
@@ -72,8 +72,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://trueaim.ai" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://trueaim.ai/blog" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://trueaim.ai/en/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://trueaim.ai/en/blog/" },
     { "@type": "ListItem", position: 3, name: TITLE, item: PAGE_URL },
   ],
 };

@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { defaultOgImages } from "@/lib/og-image";
 
 const SLUG = "ai-claims-handling-eu-ai-act-high-risk";
-const PAGE_URL = `https://trueaim.ai/blog/${SLUG}`;
+const PAGE_URL = `https://trueaim.ai/en/blog/${SLUG}/`;
 const TITLE = "Is AI Claims Handling High-Risk Under the EU AI Act?";
 const OG_TITLE =
   "AI Claims Handling Is Not High-Risk Under the EU AI Act. Here Is What Binds It Instead.";
@@ -206,8 +206,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://trueaim.ai" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://trueaim.ai/blog" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://trueaim.ai/en/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://trueaim.ai/en/blog/" },
     { "@type": "ListItem", position: 3, name: TITLE, item: PAGE_URL },
   ],
 };
