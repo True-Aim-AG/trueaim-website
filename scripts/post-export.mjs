@@ -112,5 +112,12 @@ if (configBytes > maxConfigBytes) {
   throw new Error(`staticwebapp.config.json exceeds 16 KB: ${configBytes} bytes`);
 }
 await writeFile(join(out, "staticwebapp.config.json"), serializedConfig);
+// The Static Web Apps deploy action refuses an app folder without a root
+// index.html. The "/" route above answers first with a 301 to /en/, so this
+// file only serves a client that somehow bypasses the route.
+await writeFile(
+  join(out, "index.html"),
+  '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><link rel="canonical" href="https://trueaim.ai/en/"><meta http-equiv="refresh" content="0;url=/en/"><title>True Aim</title></head><body><a href="/en/">https://trueaim.ai/en/</a></body></html>',
+);
 console.log(`Moved ${pageMoves.length} pages to directory indexes; renamed ${renamedImages} Open Graph images to .png; repaired image URLs in ${repairedMetadataFiles} metadata files.`);
 console.log("Static export ready: every locale prefixed, trailing slashes on, 404.html verified.");

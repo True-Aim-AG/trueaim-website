@@ -74,7 +74,9 @@ environment the run will deploy to.
 - `npm run build` runs `next build` and then `scripts/post-export.mjs`, which
   puts every page at
   `<path>/index.html`, renames the Open Graph images to `.png`, and adds a
-  301 route for every old unprefixed English URL. The export lands in `out/`.
+  301 route for every old unprefixed English URL, and writes a root `index.html`
+  placeholder because the deploy action refuses an app folder without one (the
+  `/` route answers first with the 301). The export lands in `out/`.
 - URL shape: every locale is prefixed, English included (`/en/products/mira/`,
   `/de/products/mira/`), with a trailing slash on every page (Static Web Apps
   redirects `/x` to `/x/`). `/` redirects to `/en/`. Old unprefixed English
