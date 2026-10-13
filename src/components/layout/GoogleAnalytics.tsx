@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { GoogleAnalytics as NextGA } from "@next/third-parties/google";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -26,14 +26,22 @@ function updateConsent() {
 }
 
 export function GoogleAnalyticsWrapper() {
+  const [consented, setConsented] = useState(false);
+
   useEffect(() => {
     if (!GA_ID) return;
 
-    // Check existing consent on mount
+    // Check existing consent on mount.
+    // Read browser-only state after hydration, preserving the server render.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setConsented(hasAnalyticsConsent());
     updateConsent();
 
     // Listen for consent changes from cookie banner
-    const handleConsent = () => updateConsent();
+    const handleConsent = () => {
+      setConsented(hasAnalyticsConsent());
+      updateConsent();
+    };
     window.addEventListener("cookie-consent-update", handleConsent);
     return () => window.removeEventListener("cookie-consent-update", handleConsent);
   }, []);
@@ -42,7 +50,8 @@ export function GoogleAnalyticsWrapper() {
 
   return (
     <>
-      {/* Default consent to denied — upgraded when user accepts analytics cookies */}
+      {/* Consent Mode v2 default: all four signals denied. Analytics is granted
+          when the user accepts analytics cookies; the ad signals stay denied. */}
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -50,11 +59,15 @@ export function GoogleAnalyticsWrapper() {
             function gtag(){dataLayer.push(arguments);}
             gtag('consent', 'default', {
               analytics_storage: 'denied',
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
             });
           `,
         }}
       />
-      <NextGA gaId={GA_ID} />
+      {/* Basic consent mode: the Google tag is not loaded until consent is given */}
+      {consented && <NextGA gaId={GA_ID} />}
     </>
   );
 }
