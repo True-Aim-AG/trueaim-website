@@ -13,6 +13,7 @@ import {
   saveConsent,
   type ConsentPreferences,
 } from "@/lib/consent";
+import { clearFirstTouch } from "@/lib/tracking/first-touch";
 
 const ease = [0.4, 0, 0.2, 1] as const;
 
@@ -59,6 +60,7 @@ export function CookieBanner() {
       // Withdrawn: deny, drop the tracking cookies, and reload so no tag
       // that was already loaded keeps running.
       revokeTracking();
+      clearFirstTouch();
       window.location.reload();
     }
   };

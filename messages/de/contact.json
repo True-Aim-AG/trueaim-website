@@ -56,10 +56,11 @@
         "other": "Etwas anderes / Noch nicht sicher"
       },
       "leadSources": {
+        "aiAssistant": "KI-Assistent wie ChatGPT oder Perplexity",
+        "searchEngine": "Suchmaschine",
+        "linkedin": "LinkedIn",
         "referral": "Empfehlung",
         "industryEvent": "Branchenveranstaltung",
-        "onlineResearch": "Online-Recherche",
-        "linkedin": "LinkedIn",
         "other": "Andere"
       },
       "validation": {
@@ -70,7 +71,8 @@
         "jobTitleRequired": "Berufsbezeichnung ist erforderlich",
         "countryRequired": "Bitte wählen Sie ein Land aus",
         "interestRequired": "Bitte wählen Sie Ihr Interesse aus",
-        "consentRequired": "Sie müssen dem Erhalt von Mitteilungen zustimmen"
+        "consentRequired": "Sie müssen dem Erhalt von Mitteilungen zustimmen",
+        "heardAboutRequired": "Bitte geben Sie an, wie Sie von uns erfahren haben"
       },
       "submit": "Demo buchen",
       "submitting": "Wird gesendet...",

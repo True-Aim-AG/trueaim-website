@@ -5,6 +5,7 @@ import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { Analytics } from "@/components/layout/Analytics";
+import { FirstTouchCapture } from "@/components/layout/FirstTouchCapture";
 import { HubSpotTracking } from "@/components/layout/HubSpotTracking";
 import { JsonLd, organizationJsonLd, websiteJsonLd, siteNavigationJsonLd } from "@/components/seo/JsonLd";
 import { defaultOgImages } from "@/lib/og-image";
@@ -138,6 +139,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       </head>
       <body className={`${interTight.variable} ${ibmPlexSans.variable} antialiased`}>
         <Analytics />
+        <FirstTouchCapture />
         <HubSpotTracking />
         <NextIntlClientProvider>
           <a
