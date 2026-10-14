@@ -24,7 +24,7 @@ const partners = [
   },
   {
     name: "Innosuisse",
-    logo: "/partners/innosuisse.png",
+    logo: "/partners/innosuisse.webp",
     width: 200,
     height: 150,
     href: "/partners/innosuisse",

@@ -24,7 +24,7 @@ export default async function InnosuissePage({ params }: { params: Promise<{ loc
           <div className="flex justify-center mb-8">
             <div className="rounded-pill bg-ta-neutral-0 p-6 shadow-swatch">
               <Image
-                src="/partners/innosuisse.png"
+                src="/partners/innosuisse.webp"
                 alt="Innosuisse logo"
                 width={340}
                 height={96}
