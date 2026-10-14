@@ -1,0 +1,18 @@
+# Review routing for trueaim.ai. Copy, pages and metadata go to Kai; hosting,
+# deployment, build scripts, routing and the contact function also go to Alin.
+# Later rules win, so the specific paths sit below the catch-all.
+
+*                                  @kpraschma-TA
+
+/.github/                          @akoppandi-trueaim @kpraschma-TA
+/api/                              @akoppandi-trueaim @kpraschma-TA
+/scripts/                          @akoppandi-trueaim @kpraschma-TA
+/public/staticwebapp.config.json   @akoppandi-trueaim @kpraschma-TA
+/public/robots.txt                 @akoppandi-trueaim @kpraschma-TA
+/next.config.ts                    @akoppandi-trueaim @kpraschma-TA
+/package.json                      @akoppandi-trueaim @kpraschma-TA
+/package-lock.json                 @akoppandi-trueaim @kpraschma-TA
+/src/i18n/                         @akoppandi-trueaim @kpraschma-TA
+/src/lib/consent.ts                @akoppandi-trueaim @kpraschma-TA
+/src/lib/tracking/                 @akoppandi-trueaim @kpraschma-TA
+/AGENTS.md                         @akoppandi-trueaim @kpraschma-TA
