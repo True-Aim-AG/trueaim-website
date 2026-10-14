@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.1](https://github.com/True-Aim-AG/trueaim-website/compare/v1.18.0...v1.18.1) (2026-10-14)
+
+
+### Bug Fixes
+
+* use trailingSlash auto so files keep their URLs ([5c26039](https://github.com/True-Aim-AG/trueaim-website/commit/5c260395ccd422f1d07281f418328ee301e9b05a))
+
 ## [1.18.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.17.0...v1.18.0) (2026-10-14)
 
 
