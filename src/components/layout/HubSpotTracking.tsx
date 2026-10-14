@@ -2,21 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Script from "next/script";
+import { CONSENT_UPDATED_EVENT, hasAnalyticsConsent } from "@/lib/consent";
 
 const PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID;
-const STORAGE_KEY = "cookie-consent";
 
-function hasAnalyticsConsent(): boolean {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (!stored) return false;
-    const prefs = JSON.parse(stored);
-    return prefs.analytics === true;
-  } catch {
-    return false;
-  }
-}
-
+/** HubSpot tracking follows the same analytics consent as GA4. */
 export function HubSpotTracking() {
   const [consented, setConsented] = useState(false);
 
@@ -25,8 +15,8 @@ export function HubSpotTracking() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setConsented(hasAnalyticsConsent());
     const handleConsent = () => setConsented(hasAnalyticsConsent());
-    window.addEventListener("cookie-consent-update", handleConsent);
-    return () => window.removeEventListener("cookie-consent-update", handleConsent);
+    window.addEventListener(CONSENT_UPDATED_EVENT, handleConsent);
+    return () => window.removeEventListener(CONSENT_UPDATED_EVENT, handleConsent);
   }, []);
 
   if (!PORTAL_ID || !consented) return null;
