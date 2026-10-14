@@ -79,7 +79,9 @@ environment the run will deploy to.
   `/` route answers first with the 301). The export lands in `out/`.
 - URL shape: every locale is prefixed, English included (`/en/products/mira/`,
   `/de/products/mira/`), with a trailing slash on every page (Static Web Apps
-  redirects `/x` to `/x/`). `/` redirects to `/en/`. Old unprefixed English
+  `trailingSlash: auto` redirects `/x` to `/x/` for folders and leaves files such
+  as `/favicon.ico` alone; `always` would redirect every file too, which broke
+  every asset on staging on 13 Oct). `/` redirects to `/en/`. Old unprefixed English
   URLs 301 to their `/en/` page; renamed pages belong in the redirect map.
 - Azure Static Web Apps serves the site directly, with no CDN or edge in
   front. Static hosting has no host-based redirect, so the `www`-to-apex
@@ -107,7 +109,7 @@ npx -y @azure/static-web-apps-cli@latest start out --swa-config-location out --p
 ```
 
 The emulator applies the same `staticwebapp.config.json` as Static Web Apps,
-including `trailingSlash: always`, with one difference: the platform treats
+including `trailingSlash: auto`, with one difference: the platform treats
 `/x` and `/x/` as the same route pattern (and rejects a config that lists
 both), while the CLI matches routes exactly, so a `/dpa/` request redirects on
 staging but is 404 on the emulator. Checks worth running against it:
