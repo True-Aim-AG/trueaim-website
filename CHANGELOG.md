@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.18.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.17.0...v1.18.0) (2026-10-14)
+
+
+### Features
+
+* prefix every locale and enforce trailing slashes ([6cd6072](https://github.com/True-Aim-AG/trueaim-website/commit/6cd607276c07668ba7e7003ea585606b94ec5a3c))
+
+
+### Bug Fixes
+
+* Consent Mode v2 defaults and basic consent mode ([5b3ef40](https://github.com/True-Aim-AG/trueaim-website/commit/5b3ef4083f14b0eacf4299494ab9a8a2e703c598))
+* Consent Mode v2 defaults and basic consent mode for the Google tag ([26b809e](https://github.com/True-Aim-AG/trueaim-website/commit/26b809e8164318ac19baac367e380b1778506dfc))
+* correct the Sentry entry on the sub-processors list ([c5d7342](https://github.com/True-Aim-AG/trueaim-website/commit/c5d73427826ede2c6f12bb068534875300bf34bc))
+* correct the Sentry entry on the sub-processors list ([75114ef](https://github.com/True-Aim-AG/trueaim-website/commit/75114efcfb967569e23dd720caa9322eebab7108))
+* list each redirect route once for Static Web Apps ([1d0d097](https://github.com/True-Aim-AG/trueaim-website/commit/1d0d0974d5f88a6fb9e517c6e12653ba2af8e9b2))
+* write a root index.html so the deploy action accepts the export ([5d3c925](https://github.com/True-Aim-AG/trueaim-website/commit/5d3c925f61a4f308f9369e071f2a9f89359b8a11))
+
 ## [1.17.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.16.0...v1.17.0) (2026-10-06)
 
 
