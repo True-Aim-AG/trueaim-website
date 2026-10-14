@@ -59,9 +59,9 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
                   </span>
                 </div>
 
-                <h3 className="font-display text-2xl md:text-3xl font-bold text-strong mb-4">
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-strong mb-4">
                   {featuredPost.title}
-                </h3>
+                </h2>
 
                 <p className="text-body leading-relaxed mb-6">
                   {featuredPost.excerpt}
@@ -125,9 +125,9 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
                       </span>
                     </div>
 
-                    <h3 className="font-display text-lg font-bold text-strong mb-3 line-clamp-2">
+                    <h2 className="font-display text-lg font-bold text-strong mb-3 line-clamp-2">
                       {post.title}
-                    </h3>
+                    </h2>
 
                     <p className="text-sm text-body leading-relaxed mb-4 line-clamp-3">
                       {post.excerpt}

@@ -737,9 +737,9 @@ Timestamp: [ISO timestamp]`}</pre>
                         </span>
                       </div>
                       <div>
-                        <h4 className="font-display font-semibold text-strong">
+                        <h3 className="font-display font-semibold text-strong">
                           {step.title}
-                        </h4>
+                        </h3>
                         <p className="text-sm text-body">
                           {step.desc}
                         </p>

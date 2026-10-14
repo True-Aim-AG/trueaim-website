@@ -634,9 +634,9 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                   <div className="bg-card shadow-card rounded-pill p-8">
-                    <h4 className="font-display font-semibold text-strong mb-3">
+                    <h3 className="font-display font-semibold text-strong mb-3">
                       Before the Demo
-                    </h4>
+                    </h3>
                     <ul className="text-sm text-body space-y-2">
                       <li>• Send 10-20 of YOUR claims</li>
                       <li>• Include edge cases: multilingual, poor scan quality</li>
@@ -644,9 +644,9 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                     </ul>
                   </div>
                   <div className="bg-card shadow-card rounded-pill p-8">
-                    <h4 className="font-display font-semibold text-strong mb-3">
+                    <h3 className="font-display font-semibold text-strong mb-3">
                       During the Demo
-                    </h4>
+                    </h3>
                     <ul className="text-sm text-body space-y-2">
                       <li>• Run on YOUR documents</li>
                       <li>• Ask to see a failure</li>
@@ -655,9 +655,9 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                     </ul>
                   </div>
                   <div className="bg-card shadow-card rounded-pill p-8">
-                    <h4 className="font-display font-semibold text-strong mb-3">
+                    <h3 className="font-display font-semibold text-strong mb-3">
                       After the Demo
-                    </h4>
+                    </h3>
                     <ul className="text-sm text-body space-y-2">
                       <li>• Compare claimed vs actual accuracy</li>
                       <li>• Count &ldquo;we&apos;ll tune that&rdquo; responses</li>
@@ -667,9 +667,9 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                 </div>
 
                 <div className="bg-card shadow-card rounded-pill p-8">
-                  <h4 className="font-display font-semibold text-strong mb-3">
+                  <h3 className="font-display font-semibold text-strong mb-3">
                     The 5-Minute Stress Test
-                  </h4>
+                  </h3>
                   <p className="text-sm text-body">
                     Pick your weirdest claim. A German compound word like{" "}
                     <em>Zylinderkopfdichtung</em> (cylinder head gasket) with a
@@ -698,27 +698,27 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                 <div className="bg-card shadow-card rounded-pill p-8 mb-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                      <h4 className="font-display font-semibold text-strong mb-2">
+                      <h3 className="font-display font-semibold text-strong mb-2">
                         Buy
-                      </h4>
+                      </h3>
                       <p className="text-sm text-body">
                         Document extraction, OCR, classification: vendors are
                         good at generic document understanding
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-display font-semibold text-strong mb-2">
+                      <h3 className="font-display font-semibold text-strong mb-2">
                         Build
-                      </h4>
+                      </h3>
                       <p className="text-sm text-body">
                         Policy-specific business rules, coverage logic: you&apos;re
                         better at your specific domain
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-display font-semibold text-strong mb-2">
+                      <h3 className="font-display font-semibold text-strong mb-2">
                         Own
-                      </h4>
+                      </h3>
                       <p className="text-sm text-body">
                         Evaluation framework, ground truth, quality
                         monitoring. Maintain control of the decision layer
@@ -773,9 +773,9 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                         </span>
                       </div>
                       <div>
-                        <h4 className="font-display font-semibold text-strong">
+                        <h3 className="font-display font-semibold text-strong">
                           {step.title}
-                        </h4>
+                        </h3>
                         <p className="text-sm text-body">
                           {step.desc}
                         </p>

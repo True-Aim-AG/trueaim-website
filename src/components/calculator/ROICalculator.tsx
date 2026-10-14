@@ -78,7 +78,7 @@ export function ROICalculator() {
               <Calculator strokeWidth={1.5} className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-display font-semibold text-strong">{t("calculator.inputPanel.title")}</h3>
+              <h2 className="font-display font-semibold text-strong">{t("calculator.inputPanel.title")}</h2>
               <p className="text-sm text-muted">{t("calculator.inputPanel.subtitle")}</p>
             </div>
           </div>
@@ -209,7 +209,7 @@ export function ROICalculator() {
 
           {/* 2-Bucket Breakdown */}
           <div className="space-y-3">
-            <h4 className="text-caption-sm text-subtle">{t("calculator.results.breakdown.heading")}</h4>
+            <h3 className="text-caption-sm text-subtle">{t("calculator.results.breakdown.heading")}</h3>
 
             {/* Capacity unlocked */}
             <div className="rounded-pill bg-card shadow-card p-4">
@@ -268,7 +268,7 @@ export function ROICalculator() {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="rounded-pill bg-card shadow-card p-6"
       >
-        <h4 className="text-sm font-semibold text-strong mb-4">{t("calculator.results.assumptions.breakdownTitle")}</h4>
+        <h3 className="text-sm font-semibold text-strong mb-4">{t("calculator.results.assumptions.breakdownTitle")}</h3>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <tbody className="divide-hairline">
@@ -340,7 +340,7 @@ export function ROICalculator() {
               <div className="px-4 pb-4 space-y-6 border-t border-hairline">
                 {/* How We Calculate */}
                 <div className="pt-4">
-                  <h4 className="text-sm font-semibold text-strong mb-3">{t("calculator.results.assumptions.howWeCalculate")}</h4>
+                  <h3 className="text-sm font-semibold text-strong mb-3">{t("calculator.results.assumptions.howWeCalculate")}</h3>
                   <div className="space-y-3 text-sm">
                     <div className="p-3 rounded-pill bg-surface-muted">
                       <p className="text-muted mb-2">
@@ -391,7 +391,7 @@ export function ROICalculator() {
 
                 {/* Key Assumptions */}
                 <div>
-                  <h4 className="text-sm font-semibold text-strong mb-3">{t("calculator.results.assumptions.keyAssumptions")}</h4>
+                  <h3 className="text-sm font-semibold text-strong mb-3">{t("calculator.results.assumptions.keyAssumptions")}</h3>
                   <ul className="space-y-2 text-xs text-muted">
                     <li className="flex items-start gap-2">
                       <CheckCircle strokeWidth={1.5} className="w-3 h-3 text-approved-base flex-shrink-0 mt-0.5" />
@@ -418,10 +418,10 @@ export function ROICalculator() {
 
                 {/* Important Notes */}
                 <div className="p-3 rounded-pill bg-surface-muted">
-                  <h4 className="text-sm font-semibold text-strong mb-2 flex items-center gap-2">
+                  <h3 className="text-sm font-semibold text-strong mb-2 flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-referred-base" />
                     {t("calculator.results.assumptions.importantNotes")}
-                  </h4>
+                  </h3>
                   <ul className="text-xs text-muted space-y-1 list-disc list-inside">
                     <li>{t("calculator.results.assumptions.note1")}</li>
                     <li>{t("calculator.results.assumptions.note2")}</li>
