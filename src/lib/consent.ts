@@ -68,3 +68,27 @@ export function pushDataLayer(event: Record<string, string | number>): void {
   w.dataLayer = w.dataLayer || [];
   w.dataLayer.push(event);
 }
+
+const TRACKING_COOKIE = /^(_ga|_gid|_gat|hubspotutk|__hs|messagesUtk)/;
+
+/**
+ * Undoes analytics after the visitor withdraws consent: denies analytics
+ * storage, tells HubSpot to drop its cookies, and deletes the GA and
+ * HubSpot cookies on this host and its parent domain. The caller reloads
+ * the page afterwards so no loaded tag keeps running.
+ */
+export function revokeTracking(): void {
+  gtag("consent", "update", { analytics_storage: "denied" });
+  const w = window as unknown as { _hsq?: unknown[] };
+  w._hsq = w._hsq || [];
+  w._hsq.push(["revokeCookieConsent"]);
+  const host = window.location.hostname;
+  const domains = ["", host, `.${host}`, `.${host.split(".").slice(-2).join(".")}`];
+  for (const cookie of document.cookie.split(";")) {
+    const name = cookie.split("=")[0].trim();
+    if (!TRACKING_COOKIE.test(name)) continue;
+    for (const domain of domains) {
+      document.cookie = `${name}=; Max-Age=0; path=/${domain ? `; domain=${domain}` : ""}`;
+    }
+  }
+}

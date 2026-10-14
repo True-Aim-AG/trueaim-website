@@ -2,6 +2,7 @@ import { Link } from "@/i18n/navigation";
 import { Linkedin } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Logo } from "@/components/brand/Logo";
+import { CookieSettingsButton } from "@/components/layout/CookieSettingsButton";
 import packageJson from "../../../package.json";
 
 const footerLinks = {
@@ -45,6 +46,7 @@ const columns: { key: ColumnKey; titleKey: "company" | "resources" | "products" 
 /** Dark band footer: dark gradient surface, light logo lock-up (docs/DESIGN_SYSTEM.md §7). */
 export async function Footer() {
   const t = await getTranslations("footer");
+  const tCookie = await getTranslations("cookie");
   return (
     <footer data-theme="dark" className="relative bg-dark text-body">
       <div className="max-w-7xl mx-auto px-6 pt-20 pb-12">
@@ -77,6 +79,11 @@ export async function Footer() {
                     </Link>
                   </li>
                 ))}
+                {col.key === "legal" && (
+                  <li>
+                    <CookieSettingsButton label={tCookie("title")} />
+                  </li>
+                )}
               </ul>
             </div>
           ))}
