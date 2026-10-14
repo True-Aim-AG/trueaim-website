@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 
 // Set both to the day this version goes live. Clause 9.2 of the DPA requires the
 // list updated before a new sub-processor begins processing, with written notice.
-const VERSION = "1.1";
-const EFFECTIVE_DATE = "2026-09-24";
-const LAST_UPDATED = "2026-09-24";
+const VERSION = "1.2";
+const EFFECTIVE_DATE = "2026-10-14";
+const LAST_UPDATED = "2026-10-14";
 
 type SubProcessor = {
   id: string;
@@ -57,9 +57,9 @@ const SUB_PROCESSORS: SubProcessor[] = [
       "Functional Software, Inc. d/b/a Sentry, 45 Fremont Street, 8th Floor, San Francisco, CA 94105, United States",
     service: "Error and performance monitoring for the Platform.",
     data:
-      "Authorised-user account data (user identifier, email address) and request metadata that appear in application error reports. Claim-related Personal Data can reach an error report despite filtering.",
+      "Technical error data from the Platform: stack traces, internal user identifiers and request metadata. Sentry’s server-side data scrubbing is on, and IP addresses are not stored. Claim-related Personal Data can still reach an error report despite filtering.",
     location:
-      "European Union (Sentry data region in Germany). Transfers to the United States rely on the EU-U.S. Data Privacy Framework and its Swiss extension, backed by the Standard Contractual Clauses with the Swiss FADP amendments.",
+      "Error data is stored in the European Union (Frankfurt, Germany). Account and configuration metadata is stored in the United States. Sentry staff access data remotely for support and operations from the United States, Austria, Canada and the Netherlands. Transfers to the United States rely on the EU-U.S. Data Privacy Framework and the Swiss-U.S. Data Privacy Framework, backed by the Standard Contractual Clauses with the Swiss FADP amendments.",
   },
   {
     id: "slack",
@@ -77,8 +77,14 @@ const SUB_PROCESSORS: SubProcessor[] = [
 
 const VERSION_HISTORY = [
   {
-    version: "1.1",
+    version: "1.2",
     date: EFFECTIVE_DATE,
+    summary:
+      "Corrected the Sentry entry: account metadata stored in the United States, remote access locations, and the personal data affected.",
+  },
+  {
+    version: "1.1",
+    date: "2026-09-24",
     summary:
       "Added Sentry. Widened the Google Workspace entry to cover claims submitted by email. Clarified where Microsoft Azure runs AI inference.",
   },

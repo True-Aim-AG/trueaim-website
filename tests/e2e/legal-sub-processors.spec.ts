@@ -2,6 +2,7 @@
  * List of Sub-Processors page + DPA page removal
  *
  * v1.1 (2026-09-24) restores the page removed on 2026-09-16 and adds Sentry.
+ * v1.2 (2026-10-14) corrects the Sentry storage, access and data facts.
  *
  * Covers the legal changes requested by NRF via Reuben (2026-08-16):
  *   - REQ-SP-001: /sub-processors renders at the exact URL required by the DPA
@@ -39,7 +40,7 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
       await expect(meta.locator('dt', { hasText: new RegExp(`^${label}$`) })).toBeVisible();
     }
 
-    await expect(meta.getByText('1.1', { exact: true })).toBeVisible();
+    await expect(meta.getByText('1.2', { exact: true })).toBeVisible();
     await expect(
       meta.getByText('Swiss FADP Art. 9; GDPR Art. 28', { exact: true })
     ).toBeVisible();
@@ -75,7 +76,7 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
     // Locations required by the DPA
     await expect(page.locator('section#microsoft')).toContainText('Switzerland North (Zurich)');
     await expect(page.locator('section#google')).toContainText('European Union');
-    await expect(page.locator('section#sentry')).toContainText('Sentry data region in Germany');
+    await expect(page.locator('section#sentry')).toContainText('European Union (Frankfurt, Germany)');
     await expect(page.locator('section#slack')).toContainText('Slack EU data residency');
   });
 
@@ -83,6 +84,7 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
     const history = page.locator('section#version-history');
     await expect(history.getByRole('heading', { name: 'Version History' })).toBeVisible();
     await expect(history.locator('table')).toBeVisible();
+    await expect(history).toContainText('1.2');
     await expect(history).toContainText('1.1');
     await expect(history).toContainText('1.0');
   });
