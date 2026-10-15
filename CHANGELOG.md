@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.19.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.18.1...v1.19.0) (2026-10-15)
+
+
+### Features
+
+* launch build: crawling, tracking, content components and build checks ([#27](https://github.com/True-Aim-AG/trueaim-website/issues/27)) ([b8d7707](https://github.com/True-Aim-AG/trueaim-website/commit/b8d77073e540819983e235fb8354a1185e77ef5c))
+* page inventory for launch ([#29](https://github.com/True-Aim-AG/trueaim-website/issues/29)) ([f8bc148](https://github.com/True-Aim-AG/trueaim-website/commit/f8bc148871920bcae1c64bf67dbad68cd2597887))
+* per-page metadata source and JSON-LD graph by [@id](https://github.com/id) ([#31](https://github.com/True-Aim-AG/trueaim-website/issues/31)) ([80e8681](https://github.com/True-Aim-AG/trueaim-website/commit/80e8681b9a8e4017503519c4248654fd91550acf))
+
+
+### Bug Fixes
+
+* drop the in-browser www redirect now that Azure answers www with a 301 ([#30](https://github.com/True-Aim-AG/trueaim-website/issues/30)) ([271255a](https://github.com/True-Aim-AG/trueaim-website/commit/271255a611d1565794f572a651bcf456c21d8113))
+
 ## [1.18.1](https://github.com/True-Aim-AG/trueaim-website/compare/v1.18.0...v1.18.1) (2026-10-14)
 
 
