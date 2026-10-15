@@ -2,6 +2,9 @@ import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { pageMetadata } from "@/lib/seo/metadata";
 
 type Partner = {
   slug: string;
@@ -44,6 +47,11 @@ const partners: Partner[] = [
   },
 ];
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, "/partners");
+}
+
 export default async function PartnersHubPage({
   params,
 }: {
@@ -55,6 +63,7 @@ export default async function PartnersHubPage({
 
   return (
     <div className="min-h-screen">
+      <PageSeo locale={locale} path="/partners" template="collection" />
       <section className="relative py-24 px-6">
         <div className="relative max-w-7xl mx-auto text-center">
           <h1 className="font-display text-4xl font-bold leading-[1.15] text-strong sm:text-5xl lg:text-[54px] mb-6">

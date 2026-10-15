@@ -1,31 +1,28 @@
-import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import { englishOnlyStaticParams } from "@/i18n/page-locales";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { pageMetadata } from "@/lib/seo/metadata";
 
 // English only until the translation lands; see src/i18n/page-locales.ts.
 export const generateStaticParams = englishOnlyStaticParams;
 
-export const metadata: Metadata = {
-  title: "AI Transparency & Oversight",
-  description:
-    "How True Aim AG approaches the design and use of artificial intelligence within its products, including oversight mechanisms and data handling principles.",
-  alternates: {
-    canonical: "https://trueaim.ai/en/ai-transparency/",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+const PATH = "/ai-transparency";
 
-export default async function AITransparencyLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}) {
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, PATH);
+}
+
+export default async function AITransparencyLayout({ children, params }: Props & { children: React.ReactNode }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return children;
+  return (
+    <>
+      <PageSeo locale={locale} path={PATH} template="page" />
+      {children}
+    </>
+  );
 }

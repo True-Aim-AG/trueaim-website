@@ -1,26 +1,24 @@
 import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
-import { buildCaseStudyMetadata } from "@/lib/case-study-seo";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { pageMetadata } from "@/lib/seo/metadata";
 
-type MetadataProps = {
-  params: Promise<{ locale: string }>;
-};
+const PATH = "/case-studies/vehicle-warranty-claims";
 
-export async function generateMetadata({
-  params,
-}: MetadataProps): Promise<Metadata> {
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  return buildCaseStudyMetadata(locale, "vehicle-warranty-claims");
+  return pageMetadata(locale, PATH, {});
 }
 
-export default async function VehicleWarrantyClaimsLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}) {
+export default async function VehicleWarrantyClaimsLayout({ children, params }: Props & { children: React.ReactNode }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return children;
+  return (
+    <>
+      <PageSeo locale={locale} path={PATH} template="caseStudy" />
+      {children}
+    </>
+  );
 }

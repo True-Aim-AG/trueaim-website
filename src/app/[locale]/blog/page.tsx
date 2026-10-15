@@ -6,6 +6,9 @@ import { Eyebrow } from "@/components/brand/Eyebrow";
 import { ButtonLink } from "@/components/brand/Button";
 import { GridPattern } from "@/components/brand/GridPattern";
 import { blogPosts } from "@/lib/blog-posts";
+import type { Metadata } from "next";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { pageMetadata } from "@/lib/seo/metadata";
 
 const iconBySlug: Record<string, typeof BarChart3> = {
   "where-the-language-model-does-not-belong": GitBranch,
@@ -16,6 +19,12 @@ const iconBySlug: Record<string, typeof BarChart3> = {
   "build-vs-buy-idp-vendors": Scale,
 };
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const metadata = pageMetadata(locale, "/blog");
+  return { ...metadata, alternates: { ...metadata.alternates, types: { "application/rss+xml": "https://trueaim.ai/feed.xml" } } };
+}
+
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -25,6 +34,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
+      <PageSeo locale={locale} path="/blog" template="collection" />
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />

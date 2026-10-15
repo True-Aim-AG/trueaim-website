@@ -1,7 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { getAllCaseStudySlugs } from "@/data/case-studies";
-import { buildCaseStudyMetadata } from "@/lib/case-study-seo";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { pageMetadata } from "@/lib/seo/metadata";
 
 // Only real case studies are valid slugs; anything else 404s instead of
 // rendering a soft-404 (HTTP 200) that Google could index.
@@ -23,7 +24,7 @@ export async function generateMetadata({
   params,
 }: MetadataProps): Promise<Metadata> {
   const { locale, slug } = await params;
-  return buildCaseStudyMetadata(locale, slug);
+  return pageMetadata(locale, `/case-studies/${slug}`, {});
 }
 
 export default async function CaseStudySlugLayout({
@@ -31,9 +32,14 @@ export default async function CaseStudySlugLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { locale } = await params;
+  const { locale, slug } = await params;
   setRequestLocale(locale);
-  return children;
+  return (
+    <>
+      <PageSeo locale={locale} path={`/case-studies/${slug}`} template="caseStudy" />
+      {children}
+    </>
+  );
 }

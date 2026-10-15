@@ -1,78 +1,370 @@
 {
-  "metadata": {
-    "root": {
-      "titleDefault": "True Aim | Automate Insurance Claim Decisions. Auditable by Design.",
-      "titleTemplate": "%s | True Aim",
-      "description": "Combine agentic AI with deterministic logic for claims automation. Every decision traceable, aligned with EU AI Act requirements. Swiss precision meets auditable AI.",
-      "ogTitle": "True Aim | Automate Insurance Claim Decisions. Auditable by Design.",
-      "ogDescription": "Combine agentic AI with deterministic logic for claims automation. Every decision traceable, aligned with EU AI Act requirements."
+  "site": {
+    "name": "True Aim",
+    "breadcrumbLabel": "Breadcrumb"
+  },
+  "pages": {
+    "/": {
+      "title": "Auditable AI for Insurance Claim Decisions | True Aim",
+      "description": "True Aim combines agentic AI with deterministic logic to automate insurance claim decisions. Every decision is traceable and aligned with the EU AI Act.",
+      "h1": "Automate Insurance Claim Decisions. Auditable by Design.",
+      "breadcrumb": "Home",
+      "ogTitle": "Automate insurance claim decisions. Auditable by design.",
+      "ogDescription": "True Aim combines agentic AI with deterministic logic to automate insurance claim decisions. Every decision is traceable and aligned with the EU AI Act.",
+      "updated": "2026-10-15"
     },
-    "invoiceBenchmarking": {
-      "title": "Invoice Benchmarking | True Aim",
+    "/platform": {
+      "title": "Platform Overview: Claims AI for Insurers | True Aim",
+      "description": "The True Aim platform: AI-assisted claims processing for insurers, brokers and the wider insurance value chain, with its capabilities, users and workflow fit.",
+      "h1": "The True Aim Platform — Product Overview",
+      "breadcrumb": "Platform",
+      "ogTitle": "The True Aim platform",
+      "ogDescription": "AI-assisted claims processing for insurers, brokers and the wider insurance value chain, with its capabilities, users and workflow fit.",
+      "updated": "2026-10-15"
+    },
+    "/platform/invoice-benchmarking": {
+      "title": "Invoice Benchmarking: Check Every Claims Invoice | True Aim",
       "description": "Check every invoice, quote and estimate against benchmark data by trade and region, and see which lines are too high and why.",
-      "ogTitle": "Invoice Benchmarking | True Aim",
-      "ogDescription": "Check every invoice, quote and estimate against benchmark data by trade and region, and see which lines are too high and why."
+      "h1": "Invoice Benchmarking",
+      "breadcrumb": "Invoice Benchmarking",
+      "ogTitle": "Invoice Benchmarking by True Aim",
+      "ogDescription": "Check every invoice, quote and estimate against benchmark data by trade and region, and see which lines are too high and why.",
+      "updated": "2026-10-15"
     },
-    "claimsDecisioning": {
-      "title": "Claims Decisioning | True Aim",
+    "/platform/claims-decisioning": {
+      "title": "Claims Decisioning: Every Line Checked | True Aim",
       "description": "Every line of a claim checked against the policy wording, with the amount calculated and the reason recorded. A full recommendation in about two minutes.",
-      "ogTitle": "Claims Decisioning | True Aim",
-      "ogDescription": "Every line of a claim checked against the policy wording, with the amount calculated and the reason recorded. A full recommendation in about two minutes."
+      "h1": "Claims Decisioning",
+      "breadcrumb": "Claims Decisioning",
+      "ogTitle": "Claims Decisioning by True Aim",
+      "ogDescription": "Every line of a claim checked against the policy wording, with the amount calculated and the reason recorded. A full recommendation in about two minutes.",
+      "updated": "2026-10-15"
     },
-    "damageReporting": {
-      "title": "Damage Reporting | True Aim",
+    "/platform/damage-reporting": {
+      "title": "Damage Reporting: Priced Estimates from Photos | True Aim",
       "description": "A priced damage estimate and full scope of work from the customer's photographs and documents, at first notification.",
-      "ogTitle": "Damage Reporting | True Aim",
-      "ogDescription": "A priced damage estimate and full scope of work from the customer's photographs and documents, at first notification."
+      "h1": "Damage Reporting",
+      "breadcrumb": "Damage Reporting",
+      "ogTitle": "Damage Reporting by True Aim",
+      "ogDescription": "A priced damage estimate and full scope of work from the customer's photographs and documents, at first notification.",
+      "updated": "2026-10-15"
     },
-    "otus": {
-      "title": "Otus, True Aim's claims specialist | True Aim",
+    "/platform/otus": {
+      "title": "Otus, True Aim's Claims Specialist | True Aim",
       "description": "Ask anything about a claim, in the AI assistant your company has already approved. Otus explains each decision in plain language.",
-      "ogTitle": "Otus, True Aim's claims specialist | True Aim",
-      "ogDescription": "Ask anything about a claim, in the AI assistant your company has already approved. Otus explains each decision in plain language."
+      "h1": "Otus, True Aim's claims specialist",
+      "breadcrumb": "Otus",
+      "ogTitle": "Otus, True Aim's claims specialist",
+      "ogDescription": "Ask anything about a claim, in the AI assistant your company has already approved. Otus explains each decision in plain language.",
+      "updated": "2026-10-15"
     },
-    "company": {
-      "title": "Company - About True Aim",
-      "description": "Swiss precision meets auditable AI. Meet our leadership team, advisors, and partners including Yarowa AG, ZHAW, and Innosuisse. Backed by Switzerland's innovation ecosystem.",
-      "ogTitle": "Company - About True Aim",
-      "ogDescription": "Swiss precision meets auditable AI. Meet our leadership team, advisors, and partners. Backed by Switzerland's innovation ecosystem."
+    "/technology": {
+      "title": "Neuro-Symbolic AI Architecture for Claims | True Aim",
+      "description": "True Aim combines agentic AI execution with deterministic decision-making, built for regulated insurance and EU AI Act compliance. Not a black box.",
+      "h1": "Neuro-Symbolic AI: The Architecture Regulators Trust",
+      "breadcrumb": "Technology",
+      "ogTitle": "Neuro-symbolic AI: the architecture regulators trust",
+      "ogDescription": "True Aim combines agentic AI execution with deterministic decision-making, built for regulated insurance and EU AI Act compliance.",
+      "updated": "2026-10-13"
     },
-    "technology": {
-      "title": "Technology - Neuro-Symbolic AI Architecture",
-      "description": "Not probabilistic. Not a black box. Our hybrid approach combines agentic AI execution with deterministic decision-making, purpose-built for regulated industries and EU AI Act compliance.",
-      "ogTitle": "Technology - Neuro-Symbolic AI Architecture | True Aim",
-      "ogDescription": "Our hybrid approach combines agentic AI execution with deterministic decision-making, purpose-built for regulated industries."
+    "/trust": {
+      "title": "Trust and Compliance: EU AI Act, GDPR, FADP | True Aim",
+      "description": "How True Aim meets the EU AI Act, GDPR and the Swiss FADP. Every claims decision is auditable and every outcome traceable.",
+      "h1": "Enterprise Security. Regulatory Compliance.",
+      "breadcrumb": "Trust",
+      "ogTitle": "Trust and compliance at True Aim",
+      "ogDescription": "How True Aim meets the EU AI Act, GDPR and the Swiss FADP. Every claims decision is auditable and every outcome traceable.",
+      "updated": "2026-10-15"
     },
-    "contact": {
-      "title": "Contact - Request a Demo",
-      "description": "Request a demo of True Aim's neuro-symbolic AI for claims automation. Book a 30-minute discovery call to see auditable AI in action.",
-      "ogTitle": "Contact - Request a Demo | True Aim",
-      "ogDescription": "Request a demo of True Aim's neuro-symbolic AI for claims automation. Book a 30-minute discovery call."
+    "/about": {
+      "title": "About Us: Auditable Claims AI from Switzerland | True Aim",
+      "description": "Meet the leadership team, advisers and partners behind True Aim, including Yarowa AG, ZHAW and Innosuisse, building auditable claims AI in Zug, Switzerland.",
+      "h1": "Swiss Precision. Auditable AI.",
+      "breadcrumb": "About",
+      "ogTitle": "About True Aim",
+      "ogDescription": "Meet the leadership team, advisers and partners behind True Aim, building auditable claims AI in Zug, Switzerland.",
+      "updated": "2026-10-15"
     },
-    "trust": {
-      "title": "Trust & Compliance",
-      "description": "True Aim's compliance architecture. EU AI Act alignment, GDPR, Swiss FADP compliance. Every decision auditable, every outcome traceable.",
-      "ogTitle": "Trust & Compliance | True Aim",
-      "ogDescription": "EU AI Act alignment, GDPR, Swiss FADP compliance. Every decision auditable, every outcome traceable."
+    "/contact": {
+      "title": "Contact Us and Request a Demo | True Aim",
+      "description": "Request a demo of True Aim's auditable AI for insurance claims decisions, or contact the team in Zug about your claims automation project.",
+      "h1": "Let's Talk Claims Automation",
+      "breadcrumb": "Contact",
+      "ogTitle": "Contact True Aim",
+      "ogDescription": "Request a demo of True Aim's auditable AI for insurance claims decisions.",
+      "updated": "2026-10-13"
     },
-    "impact": {
-      "title": "Impact Estimator",
-      "description": "Explore potential value with True Aim's AI-powered claims automation. Estimate impact based on real pilot data - no commitment required.",
-      "ogTitle": "Impact Estimator | True Aim",
-      "ogDescription": "Explore potential value with AI-powered claims automation. Estimate impact based on real pilot data."
+    "/impact-estimator": {
+      "title": "Claims Automation Impact Estimator | True Aim",
+      "description": "Estimate the value of True Aim's claims automation for your portfolio, based on real pilot data. No commitment required.",
+      "h1": "Explore Your Potential Value",
+      "breadcrumb": "Impact estimator",
+      "ogTitle": "Estimate the impact of claims automation",
+      "ogDescription": "Estimate the value of True Aim's claims automation for your portfolio, based on real pilot data.",
+      "updated": "2026-10-15"
     },
-    "caseStudies": {
-      "title": "Case Studies",
-      "description": "See how True Aim's neuro-symbolic AI transforms claims processing. Real-world case studies from insurance companies using MIRA, ContextBuilder, and ClaimEval.",
-      "ogTitle": "Case Studies | True Aim",
-      "ogDescription": "Real-world case studies from insurance companies using True Aim's neuro-symbolic AI for claims automation."
+    "/case-studies": {
+      "title": "Claims AI Case Studies from Insurers | True Aim",
+      "description": "How insurers and warranty providers use True Aim to automate claims decisions: results from travel, health, motor and vehicle warranty claims.",
+      "h1": "Real Results from Real Insurers",
+      "breadcrumb": "Case studies",
+      "ogTitle": "Real results from real insurers",
+      "ogDescription": "How insurers and warranty providers use True Aim to automate claims decisions in travel, health, motor and vehicle warranty claims.",
+      "updated": "2026-10-15"
     },
-    "partners": {
-      "title": "Partners",
-      "titleTemplate": "%s | Partners | True Aim",
-      "description": "True Aim's strategic partners and ecosystem. Backed by Innosuisse, ZHAW, and Yarowa AG in Switzerland's innovation ecosystem.",
-      "ogTitle": "Partners | True Aim",
-      "ogDescription": "True Aim's strategic partners and ecosystem. Backed by Innosuisse, ZHAW, and Yarowa AG in Switzerland's innovation ecosystem."
+    "/case-studies/european-health-insurer": {
+      "title": "Health Insurer Cuts Claims Costs 71% | True Aim",
+      "description": "A European health insurer cut claims handling costs 71% with True Aim: 65% touchless processing, 99.2% decision accuracy and previously hidden leakage detected.",
+      "h1": "European Health Insurer Reduces Handling Costs by 71%",
+      "breadcrumb": "European health insurer",
+      "ogTitle": "European health insurer reduces handling costs by 71%",
+      "ogDescription": "65% touchless processing, 99.2% decision accuracy and previously hidden leakage detected with True Aim.",
+      "updated": "2026-10-15"
+    },
+    "/case-studies/motor-claims-pilot": {
+      "title": "UK Motor Claims: Backlog to Real-Time | True Aim",
+      "description": "A UK motor insurer cleared its entire claims backlog with True Aim: decision time cut from 2 days to under 5 minutes, 45% fewer appeals, 100% consistency.",
+      "h1": "Motor Claims Pilot: From Backlog to Real-Time Processing",
+      "breadcrumb": "Motor claims pilot",
+      "ogTitle": "Motor claims pilot: from backlog to real-time processing",
+      "ogDescription": "Decision time cut from 2 days to under 5 minutes, with 45% fewer appeals and 100% consistency.",
+      "updated": "2026-10-15"
+    },
+    "/case-studies/swiss-travel-insurer": {
+      "title": "Swiss Travel Insurer Cuts Claims Time 92% | True Aim",
+      "description": "A Swiss travel insurer cut claim decisions from 45 minutes to 2.3 seconds with True Aim: 92% faster, with 78% straight-through processing.",
+      "h1": "Swiss Travel Insurer Achieves 92% Faster Claims Processing",
+      "breadcrumb": "Swiss travel insurer",
+      "ogTitle": "Swiss travel insurer achieves 92% faster claims processing",
+      "ogDescription": "Claim decisions cut from 45 minutes to 2.3 seconds, with 78% straight-through processing.",
+      "updated": "2026-10-15"
+    },
+    "/case-studies/vehicle-warranty-claims": {
+      "title": "Vehicle Warranty Claims Automation Case Study | True Aim",
+      "description": "A European warranty provider automated multilingual vehicle warranty claims with True Aim: 98% decision accuracy, with most line items resolved without an LLM.",
+      "h1": "Automating Vehicle Warranty Claims with AI Document Intelligence",
+      "breadcrumb": "Vehicle warranty claims",
+      "ogTitle": "Automating vehicle warranty claims with AI document intelligence",
+      "ogDescription": "98% decision accuracy on multilingual vehicle warranty claims, with most line items resolved without an LLM.",
+      "updated": "2026-10-15"
+    },
+    "/partners": {
+      "title": "Our Partners in Research and Insurance | True Aim",
+      "description": "True Aim works with Innosuisse, ZHAW, Yarowa AG and the Swiss InsurTech Hub on research, funding and insurance innovation in Switzerland.",
+      "h1": "Partners",
+      "breadcrumb": "Partners",
+      "ogTitle": "True Aim partners",
+      "ogDescription": "Innosuisse, ZHAW, Yarowa AG and the Swiss InsurTech Hub: research, funding and insurance innovation in Switzerland.",
+      "updated": "2026-10-15"
+    },
+    "/partners/innosuisse": {
+      "title": "Innosuisse-Funded Innovation Partner | True Aim",
+      "description": "True Aim's core technology is supported by a competitive research grant from Innosuisse, Switzerland's national innovation agency.",
+      "h1": "Innosuisse-Funded Innovation Partner",
+      "breadcrumb": "Innosuisse",
+      "ogTitle": "Innosuisse-funded innovation partner",
+      "ogDescription": "True Aim's core technology is supported by a competitive research grant from Innosuisse, Switzerland's national innovation agency.",
+      "updated": "2026-10-15"
+    },
+    "/partners/swissinsurtechhub": {
+      "title": "Swiss InsurTech Hub Strategic Partner | True Aim",
+      "description": "True Aim is a strategic partner of the Swiss InsurTech Hub, Switzerland's network for insurance innovation that brings together insurers, startups and technology partners.",
+      "h1": "Swiss InsurTech Hub Strategic Partner",
+      "breadcrumb": "Swiss InsurTech Hub",
+      "ogTitle": "Swiss InsurTech Hub strategic partner",
+      "ogDescription": "True Aim is a strategic partner of the Swiss InsurTech Hub, Switzerland's network for insurance innovation.",
+      "updated": "2026-10-15"
+    },
+    "/partners/yarowa": {
+      "title": "Yarowa AG Strategic Partner | True Aim",
+      "description": "True Aim AG is a spinout from Yarowa AG, a Swiss InsurTech platform that runs core insurance workflows at scale in highly regulated environments.",
+      "h1": "Yarowa AG Strategic Partner",
+      "breadcrumb": "Yarowa AG",
+      "ogTitle": "Yarowa AG strategic partner",
+      "ogDescription": "True Aim AG is a spinout from Yarowa AG, a Swiss InsurTech platform that runs core insurance workflows at scale.",
+      "updated": "2026-10-15"
+    },
+    "/partners/zhaw": {
+      "title": "ZHAW Research Partnership | True Aim",
+      "description": "Parts of True Aim's technology are developed with ZHAW Zurich University of Applied Sciences, supported by Innosuisse innovation funding.",
+      "h1": "ZHAW Research Partnership",
+      "breadcrumb": "ZHAW",
+      "ogTitle": "ZHAW research partnership",
+      "ogDescription": "Parts of True Aim's technology are developed with ZHAW Zurich University of Applied Sciences.",
+      "updated": "2026-09-16"
+    },
+    "/blog": {
+      "title": "Blog: Auditable AI in Insurance Claims | True Aim",
+      "description": "Articles from True Aim on auditable AI, claims automation, AI regulation in insurance and taking claims AI from pilot to production.",
+      "h1": "Blog",
+      "breadcrumb": "Blog",
+      "ogTitle": "The True Aim blog",
+      "ogDescription": "Articles on auditable AI, claims automation, AI regulation in insurance and taking claims AI from pilot to production.",
+      "updated": "2026-10-15"
+    },
+    "/blog/where-the-language-model-does-not-belong": {
+      "title": "Rules or Model? Where AI Belongs in a Claim Decision | True Aim",
+      "description": "Every claim decision is reading, computing and judging. Where a language model belongs, where rules must hold and how the record shows the line.",
+      "h1": "Where the Language Model Does Not Belong",
+      "breadcrumb": "Where the language model does not belong",
+      "ogTitle": "Where the Language Model Does Not Belong: Designing Defensible AI in Claims Operations",
+      "ogDescription": "Every claim decision is reading, computing and judging. Where a language model belongs, where rules must hold and how the record shows the line.",
+      "updated": "2026-10-06"
+    },
+    "/blog/ai-claims-auditability-scorecard": {
+      "title": "12 Questions Before You Trust AI With a Claim | True Aim",
+      "description": "Twelve questions that show whether an AI claims system can account for every decision it makes, and how True Aim answers each one.",
+      "h1": "The AI Claims Auditability Scorecard",
+      "breadcrumb": "The AI claims auditability scorecard",
+      "ogTitle": "The AI Claims Auditability Scorecard",
+      "ogDescription": "Twelve questions that show whether an AI claims system can account for every decision it makes, and how True Aim answers each one.",
+      "updated": "2026-09-10"
+    },
+    "/blog/ai-claims-handling-eu-ai-act-high-risk": {
+      "title": "Is AI Claims Handling High-Risk Under the EU AI Act? | True Aim",
+      "description": "Claims handling is absent from Annex III. GDPR Article 22 binds it anyway. Only 24% of insurers say they could pass a governance review in 90 days.",
+      "h1": "AI Claims Handling Is Not High-Risk Under the EU AI Act. Here Is What Binds It Instead.",
+      "breadcrumb": "AI claims handling and the EU AI Act",
+      "ogTitle": "AI Claims Handling Is Not High-Risk Under the EU AI Act. Here Is What Binds It Instead.",
+      "ogDescription": "Claims handling is absent from Annex III. GDPR Article 22 binds it anyway. Only 24% of insurers say they could pass a governance review in 90 days.",
+      "updated": "2026-07-31"
+    },
+    "/blog/why-claims-ai-pilots-stall": {
+      "title": "Why Claims AI Pilots Stall Before Production | True Aim",
+      "description": "Many claims AI pilots report accuracy in the mid 90s yet never reach production. The root cause is measurement discipline and production realism.",
+      "h1": "Why Claims AI Pilots Stall Before Production Readiness",
+      "breadcrumb": "Why claims AI pilots stall",
+      "ogTitle": "Why Claims AI Pilots Stall Before Production Readiness",
+      "ogDescription": "Many claims AI pilots report accuracy in the mid 90s yet never reach production. The root cause is measurement discipline and production realism.",
+      "updated": "2026-02-15"
+    },
+    "/blog/auditability-evidence-chains": {
+      "title": "Auditability in Claims AI: Evidence Chains | True Aim",
+      "description": "How to build claims AI with audit trails that meet FINMA and EU AI Act requirements: field-to-source provenance, decision trails and human override capture.",
+      "h1": "Auditability in Claims AI: Building Evidence Chains That Auditors Actually Accept",
+      "breadcrumb": "Building evidence chains auditors accept",
+      "ogTitle": "Auditability in Claims AI: Building Evidence Chains That Auditors Actually Accept",
+      "ogDescription": "How to build claims AI with audit trails that meet FINMA and EU AI Act requirements.",
+      "updated": "2025-02-01"
+    },
+    "/blog/build-vs-buy-idp-vendors": {
+      "title": "Build vs Buy: What to Demand from IDP Vendors | True Aim",
+      "description": "An evaluation framework for insurance teams choosing claims automation: when to build, when to buy and how to assess document processing vendors objectively.",
+      "h1": "Build vs Buy: What to Demand from IDP Vendors",
+      "breadcrumb": "Build vs buy",
+      "ogTitle": "Build vs Buy: What to Demand from IDP Vendors",
+      "ogDescription": "An evaluation framework for insurance teams choosing claims automation: when to build, when to buy and how to assess vendors objectively.",
+      "updated": "2025-02-01"
+    },
+    "/blog/integration-playbook": {
+      "title": "Integration Playbook | True Aim",
+      "description": "How True Aim plugs into existing landscapes, the integration patterns we use, and how a first integration unfolds in four to six weeks.",
+      "h1": "The True Aim integration playbook.",
+      "breadcrumb": "Integration playbook",
+      "ogTitle": "The True Aim integration playbook",
+      "ogDescription": "How True Aim plugs into existing landscapes and how a first integration unfolds in four to six weeks.",
+      "robots": "noindex, nofollow",
+      "updated": "2026-10-13"
+    },
+    "/security": {
+      "title": "Security Programme | True Aim",
+      "description": "True Aim's security programme: compliance frameworks, data residency, encryption, access control, monitoring, vulnerability management and responsible disclosure.",
+      "h1": "Security at True Aim",
+      "breadcrumb": "Security",
+      "ogTitle": "Security at True Aim",
+      "ogDescription": "Compliance frameworks, data residency, encryption, access control, monitoring, vulnerability management and responsible disclosure.",
+      "updated": "2026-10-15"
+    },
+    "/ai-transparency": {
+      "title": "AI Transparency and Oversight | True Aim",
+      "description": "How True Aim designs and uses artificial intelligence in its products, including human oversight mechanisms and data handling principles.",
+      "h1": "AI Transparency & Oversight",
+      "breadcrumb": "AI transparency",
+      "ogTitle": "AI transparency and oversight at True Aim",
+      "ogDescription": "How True Aim designs and uses artificial intelligence in its products, including human oversight and data handling.",
+      "updated": "2026-10-15"
+    },
+    "/ethics": {
+      "title": "Ethics and Confidential Reporting | True Aim",
+      "description": "A confidential channel to report ethical concerns, misconduct or security and privacy issues to True Aim, with anonymous reporting and a non-retaliation commitment.",
+      "h1": "Ethics & Confidential Reporting",
+      "breadcrumb": "Ethics",
+      "ogTitle": "Ethics and confidential reporting",
+      "ogDescription": "A confidential channel to report ethical concerns, misconduct or security and privacy issues to True Aim.",
+      "updated": "2026-10-15"
+    },
+    "/support": {
+      "title": "Customer Support | True Aim",
+      "description": "How to reach True Aim customer support: business hours, response times by severity and contact channels for sales, privacy, security and ethics.",
+      "h1": "Customer Support",
+      "breadcrumb": "Support",
+      "ogTitle": "True Aim customer support",
+      "ogDescription": "Business hours, response times by severity and contact channels for sales, privacy, security and ethics.",
+      "updated": "2026-10-15"
+    },
+    "/changelog": {
+      "title": "Platform Changelog and Release History | True Aim",
+      "description": "Public release history of the True Aim platform: new features, fixes and security improvements, listed by release.",
+      "h1": "Changelog",
+      "breadcrumb": "Changelog",
+      "ogTitle": "True Aim platform changelog",
+      "ogDescription": "Public release history of the True Aim platform: new features, fixes and security improvements, listed by release.",
+      "updated": "2026-10-15"
+    },
+    "/privacy": {
+      "title": "Privacy Policy | True Aim",
+      "description": "How True Aim AG collects, uses and protects personal data under the Swiss FADP and GDPR, including processor roles, sub-processors, retention and your rights.",
+      "h1": "Privacy Policy",
+      "breadcrumb": "Privacy policy",
+      "ogTitle": "True Aim privacy policy",
+      "ogDescription": "How True Aim AG collects, uses and protects personal data under the Swiss FADP and GDPR.",
+      "updated": "2026-10-15"
+    },
+    "/privacy-legacy": {
+      "title": "Privacy Policy, Previous Version | True Aim",
+      "description": "The previous version of True Aim AG's privacy policy, kept for reference. The current policy is at trueaim.ai/en/privacy/.",
+      "h1": "Privacy Policy (Previous Version)",
+      "breadcrumb": "Privacy policy (previous version)",
+      "ogTitle": "True Aim privacy policy, previous version",
+      "ogDescription": "The previous version of True Aim AG's privacy policy, kept for reference.",
+      "robots": "noindex",
+      "updated": "2026-10-15"
+    },
+    "/cookies": {
+      "title": "Cookie Policy | True Aim",
+      "description": "Which cookies the True Aim website uses, what each one is for and how to manage your cookie preferences.",
+      "h1": "Cookie Policy",
+      "breadcrumb": "Cookie policy",
+      "ogTitle": "True Aim cookie policy",
+      "ogDescription": "Which cookies the True Aim website uses, what each one is for and how to manage your cookie preferences.",
+      "updated": "2026-10-15"
+    },
+    "/terms": {
+      "title": "Terms of Use | True Aim",
+      "description": "The terms governing use of the True Aim website and of True Aim AG's AI-powered claims decisioning services.",
+      "h1": "Terms of Use",
+      "breadcrumb": "Terms of use",
+      "ogTitle": "True Aim terms of use",
+      "ogDescription": "The terms governing use of the True Aim website and of True Aim AG's AI-powered claims decisioning services.",
+      "updated": "2026-10-15"
+    },
+    "/sub-processors": {
+      "title": "List of Sub-Processors | True Aim",
+      "description": "Schedule 2 to the True Aim AG Data Processing Agreement: every sub-processor that handles personal data, with service, data categories and location.",
+      "h1": "List of Sub-Processors",
+      "breadcrumb": "Sub-processors",
+      "ogTitle": "True Aim list of sub-processors",
+      "ogDescription": "Schedule 2 to the True Aim AG Data Processing Agreement: every sub-processor that handles personal data.",
+      "updated": "2026-10-15"
+    },
+    "/paia": {
+      "title": "PAIA Manual | True Aim",
+      "description": "True Aim AG's manual under the Promotion of Access to Information Act (PAIA), with the compliance documentation the Act requires.",
+      "h1": "PAIA Manual",
+      "breadcrumb": "PAIA manual",
+      "ogTitle": "True Aim PAIA manual",
+      "ogDescription": "True Aim AG's manual under the Promotion of Access to Information Act (PAIA).",
+      "updated": "2026-10-15"
     }
   }
 }

@@ -1,45 +1,6 @@
-import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
-import { routing } from "@/i18n/routing";
-import { defaultOgImages, DEFAULT_OG_IMAGE } from "@/lib/og-image";
-import { localeUrl as getLocaleUrl } from "@/lib/site-url";
+import { setRequestLocale } from "next-intl/server";
 
-type MetadataProps = {
-  params: Promise<{ locale: string }>;
-};
-
-export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "metadata.caseStudies" });
-
-  const languages: Record<string, string> = {};
-  for (const loc of routing.locales) {
-    languages[loc] = getLocaleUrl(loc, "/case-studies");
-  }
-  languages["x-default"] = getLocaleUrl("en", "/case-studies");
-
-  return {
-    title: t("title"),
-    description: t("description"),
-    openGraph: {
-      title: t("ogTitle"),
-      description: t("ogDescription"),
-      url: getLocaleUrl(locale, "/case-studies"),
-      images: defaultOgImages,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("ogTitle"),
-      description: t("ogDescription"),
-      images: [DEFAULT_OG_IMAGE],
-    },
-    alternates: {
-      canonical: getLocaleUrl(locale, "/case-studies"),
-      languages,
-    },
-  };
-}
-
+// Metadata and schema are set by each page below this layout (pageMetadata, PageSeo).
 export default async function CaseStudiesLayout({
   children,
   params,
