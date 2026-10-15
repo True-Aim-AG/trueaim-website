@@ -15,4 +15,13 @@
 /src/i18n/                         @akoppandi-trueaim @kpraschma-TA
 /src/lib/consent.ts                @akoppandi-trueaim @kpraschma-TA
 /src/lib/tracking/                 @akoppandi-trueaim @kpraschma-TA
+/src/components/layout/Analytics.tsx          @akoppandi-trueaim @kpraschma-TA
+/src/components/layout/CookieBanner.tsx       @akoppandi-trueaim @kpraschma-TA
+/src/components/layout/CookieSettingsButton.tsx @akoppandi-trueaim @kpraschma-TA
+/src/components/layout/FirstTouchCapture.tsx  @akoppandi-trueaim @kpraschma-TA
+/src/components/layout/HubSpotTracking.tsx    @akoppandi-trueaim @kpraschma-TA
+/src/components/contact/ContactForm.tsx       @akoppandi-trueaim @kpraschma-TA
+# The locale layout (src/app/[locale]/layout.tsx) carries the consent
+# defaults; CODEOWNERS has no bracket syntax, so * stands for [locale].
+/src/app/*/layout.tsx                         @akoppandi-trueaim @kpraschma-TA
 /AGENTS.md                         @akoppandi-trueaim @kpraschma-TA
