@@ -1,72 +1,152 @@
 {
-  "metadata": {
-    "root": {
-      "titleDefault": "True Aim | Automatisez les décisions de sinistres. Auditable par conception.",
-      "titleTemplate": "%s | True Aim",
+  "site": {
+    "name": "True Aim",
+    "breadcrumbLabel": "Fil d'Ariane"
+  },
+  "pages": {
+    "/": {
+      "title": "Automatisez les décisions de sinistres. Auditable par conception | True Aim",
       "description": "Combiner l'IA agentique avec la logique déterministe pour l'automatisation des sinistres. Chaque décision traçable, conforme aux exigences du Règlement sur l'IA. Précision suisse et IA auditable.",
-      "ogTitle": "True Aim | Automatisez les décisions de sinistres. Auditable par conception.",
-      "ogDescription": "Combiner l'IA agentique avec la logique déterministe pour l'automatisation des sinistres. Chaque décision traçable, conforme aux exigences du Règlement sur l'IA."
+      "h1": "Automatisez les décisions de sinistres. Auditable par conception.",
+      "breadcrumb": "Accueil",
+      "ogTitle": "Automatisez les décisions de sinistres. Auditable par conception.",
+      "ogDescription": "Combiner l'IA agentique avec la logique déterministe pour l'automatisation des sinistres. Chaque décision traçable, conforme aux exigences du Règlement sur l'IA.",
+      "updated": "2026-10-15"
     },
-    "mira": {
-      "title": "MIRA – Moteur de décision neuro-symbolique",
-      "description": "Transformer des conditions de police complexes en décisions de sinistres automatisées et entièrement déterministes. Chaque résultat traçable jusqu'au texte juridique. Le premier moteur neuro-symbolique au monde pour les sinistres.",
-      "ogTitle": "MIRA – Moteur de décision neuro-symbolique | True Aim",
-      "ogDescription": "Transformer des conditions de police complexes en décisions de sinistres automatisées et entièrement déterministes. Chaque résultat traçable jusqu'au texte juridique."
-    },
-    "contextBuilder": {
-      "title": "ContextBuilder – Pipeline documentaire sinistres",
-      "description": "Transformer des documents de sinistre désordonnés en données structurées et fiables. Ingestion documentaire par IA avec revue humaine si nécessaire. 97% de précision, 97% de couverture documentaire.",
-      "ogTitle": "ContextBuilder – Pipeline documentaire sinistres | True Aim",
-      "ogDescription": "Transformer des documents de sinistre désordonnés en données structurées et fiables. Ingestion documentaire par IA avec revue humaine si nécessaire."
-    },
-    "claimEval": {
-      "title": "ClaimEval – Assurance qualité sinistres",
-      "description": "Étendre l'assurance qualité au-delà de l'échantillonnage. Effectuer des inspections cohérentes sur l'ensemble de votre portefeuille de sinistres. Identifier les exceptions, prioriser l'effort humain grâce à un scoring de risque intelligent.",
-      "ogTitle": "ClaimEval – Assurance qualité sinistres | True Aim",
-      "ogDescription": "Étendre l'assurance qualité au-delà de l'échantillonnage. Effectuer des inspections cohérentes sur l'ensemble de votre portefeuille de sinistres. Identifier les exceptions, prioriser l'effort humain."
-    },
-    "company": {
-      "title": "Entreprise – À propos de True Aim",
-      "description": "La précision suisse rencontre l'IA auditable. Découvrez notre équipe de direction, nos conseillers et partenaires, dont Yarowa AG, ZHAW et Innosuisse. Soutenu par l'écosystème d'innovation suisse.",
-      "ogTitle": "Entreprise – À propos de True Aim",
-      "ogDescription": "La précision suisse rencontre l'IA auditable. Découvrez notre équipe de direction, nos conseillers et partenaires. Soutenu par l'écosystème d'innovation suisse."
-    },
-    "technology": {
-      "title": "Technologie – Architecture IA neuro-symbolique",
+    "/technology": {
+      "title": "Technologie – Architecture IA neuro-symbolique | True Aim",
       "description": "Ni probabiliste. Ni boîte noire. Notre approche hybride combine l'exécution par IA agentique avec la prise de décision déterministe, conçue spécifiquement pour les secteurs réglementés et la conformité au Règlement sur l'IA.",
+      "h1": "AI neuro-symbolique : L'architecture à laquelle les régulateurs font confiance",
+      "breadcrumb": "Technologie",
       "ogTitle": "Technologie – Architecture IA neuro-symbolique | True Aim",
-      "ogDescription": "Notre approche hybride combine l'exécution par IA agentique avec la prise de décision déterministe, conçue spécifiquement pour les secteurs réglementés."
+      "ogDescription": "Notre approche hybride combine l'exécution par IA agentique avec la prise de décision déterministe, conçue spécifiquement pour les secteurs réglementés.",
+      "updated": "2026-10-13"
     },
-    "contact": {
-      "title": "Contact – Demander une démo",
-      "description": "Demandez une démo de l'IA neuro-symbolique de True Aim pour l'automatisation des sinistres. Réservez un appel découverte de 30 minutes pour voir l'IA auditable en action.",
-      "ogTitle": "Contact – Demander une démo | True Aim",
-      "ogDescription": "Demandez une démo de l'IA neuro-symbolique de True Aim pour l'automatisation des sinistres. Réservez un appel découverte de 30 minutes."
-    },
-    "trust": {
-      "title": "Confiance & Conformité",
+    "/trust": {
+      "title": "Confiance & Conformité | True Aim",
       "description": "L'architecture de conformité de True Aim. Conformité au Règlement sur l'IA, au GDPR et à la LPD suisse. Chaque décision auditable, chaque résultat traçable.",
+      "h1": "Sécurité d'entreprise. Conformité réglementaire.",
+      "breadcrumb": "Confiance",
       "ogTitle": "Confiance & Conformité | True Aim",
-      "ogDescription": "Conformité au Règlement sur l'IA, au GDPR et à la LPD suisse. Chaque décision auditable, chaque résultat traçable."
+      "ogDescription": "Conformité au Règlement sur l'IA, au GDPR et à la LPD suisse. Chaque décision auditable, chaque résultat traçable.",
+      "updated": "2026-10-15"
     },
-    "impact": {
-      "title": "Impact Estimator",
+    "/about": {
+      "title": "Entreprise – À propos de True Aim | True Aim",
+      "description": "La précision suisse rencontre l'IA auditable. Découvrez notre équipe de direction, nos conseillers et partenaires, dont Yarowa AG, ZHAW et Innosuisse. Soutenu par l'écosystème d'innovation suisse.",
+      "h1": "Precision suisse. AI auditable.",
+      "breadcrumb": "À propos",
+      "ogTitle": "Entreprise – À propos de True Aim",
+      "ogDescription": "La précision suisse rencontre l'IA auditable. Découvrez notre équipe de direction, nos conseillers et partenaires. Soutenu par l'écosystème d'innovation suisse.",
+      "updated": "2026-10-15"
+    },
+    "/contact": {
+      "title": "Contact – Demander une démo | True Aim",
+      "description": "Demandez une démo de l'IA neuro-symbolique de True Aim pour l'automatisation des sinistres. Réservez un appel découverte de 30 minutes pour voir l'IA auditable en action.",
+      "h1": "Parlons de l'automatisation des sinistres",
+      "breadcrumb": "Contact",
+      "ogTitle": "Contact – Demander une démo | True Aim",
+      "ogDescription": "Demandez une démo de l'IA neuro-symbolique de True Aim pour l'automatisation des sinistres. Réservez un appel découverte de 30 minutes.",
+      "updated": "2026-10-13"
+    },
+    "/impact-estimator": {
+      "title": "Impact Estimator | True Aim",
       "description": "Explorez la valeur potentielle avec l'automatisation des sinistres par IA de True Aim. Estimation d'impact basée sur des données pilotes réelles, sans engagement.",
+      "h1": "Explorez votre valeur potentielle",
+      "breadcrumb": "Impact Estimator",
       "ogTitle": "Impact Estimator | True Aim",
-      "ogDescription": "Explorez la valeur potentielle avec l'automatisation des sinistres par IA. Estimation d'impact basée sur des données pilotes réelles."
+      "ogDescription": "Explorez la valeur potentielle avec l'automatisation des sinistres par IA. Estimation d'impact basée sur des données pilotes réelles.",
+      "updated": "2026-10-15"
     },
-    "caseStudies": {
-      "title": "Études de cas",
+    "/case-studies": {
+      "title": "Études de cas | True Aim",
       "description": "Découvrez comment l'IA neuro-symbolique de True Aim transforme le traitement des sinistres. Études de cas réelles d'assureurs utilisant MIRA, ContextBuilder et ClaimEval.",
+      "h1": "Des resultats concrets d'assureurs reels",
+      "breadcrumb": "Études de cas",
       "ogTitle": "Études de cas | True Aim",
-      "ogDescription": "Études de cas réelles d'assureurs utilisant l'IA neuro-symbolique de True Aim pour l'automatisation des sinistres."
+      "ogDescription": "Études de cas réelles d'assureurs utilisant l'IA neuro-symbolique de True Aim pour l'automatisation des sinistres.",
+      "updated": "2026-10-15"
     },
-    "partners": {
-      "title": "Partenaires",
-      "titleTemplate": "%s | Partenaires | True Aim",
+    "/case-studies/european-health-insurer": {
+      "title": "Health Insurer Cuts Claims Costs 71% | True Aim",
+      "description": "A European health insurer cut claims handling costs 71% with True Aim: 65% touchless processing, 99.2% decision accuracy and previously hidden leakage detected.",
+      "h1": "European Health Insurer Reduces Handling Costs by 71%",
+      "breadcrumb": "European health insurer",
+      "ogTitle": "European health insurer reduces handling costs by 71%",
+      "ogDescription": "65% touchless processing, 99.2% decision accuracy and previously hidden leakage detected with True Aim.",
+      "updated": "2026-10-15"
+    },
+    "/case-studies/motor-claims-pilot": {
+      "title": "UK Motor Claims: Backlog to Real-Time | True Aim",
+      "description": "A UK motor insurer cleared its entire claims backlog with True Aim: decision time cut from 2 days to under 5 minutes, 45% fewer appeals, 100% consistency.",
+      "h1": "Motor Claims Pilot: From Backlog to Real-Time Processing",
+      "breadcrumb": "Motor claims pilot",
+      "ogTitle": "Motor claims pilot: from backlog to real-time processing",
+      "ogDescription": "Decision time cut from 2 days to under 5 minutes, with 45% fewer appeals and 100% consistency.",
+      "updated": "2026-10-15"
+    },
+    "/case-studies/swiss-travel-insurer": {
+      "title": "Swiss Travel Insurer Cuts Claims Time 92% | True Aim",
+      "description": "A Swiss travel insurer cut claim decisions from 45 minutes to 2.3 seconds with True Aim: 92% faster, with 78% straight-through processing.",
+      "h1": "Swiss Travel Insurer Achieves 92% Faster Claims Processing",
+      "breadcrumb": "Swiss travel insurer",
+      "ogTitle": "Swiss travel insurer achieves 92% faster claims processing",
+      "ogDescription": "Claim decisions cut from 45 minutes to 2.3 seconds, with 78% straight-through processing.",
+      "updated": "2026-10-15"
+    },
+    "/case-studies/vehicle-warranty-claims": {
+      "title": "Vehicle Warranty Claims Automation Case Study | True Aim",
+      "description": "A European warranty provider automated multilingual vehicle warranty claims with True Aim: 98% decision accuracy, with most line items resolved without an LLM.",
+      "h1": "Automating Vehicle Warranty Claims with AI Document Intelligence",
+      "breadcrumb": "Vehicle warranty claims",
+      "ogTitle": "Automating vehicle warranty claims with AI document intelligence",
+      "ogDescription": "98% decision accuracy on multilingual vehicle warranty claims, with most line items resolved without an LLM.",
+      "updated": "2026-10-15"
+    },
+    "/partners": {
+      "title": "Partenaires | True Aim",
       "description": "Les partenaires stratégiques et l'écosystème de True Aim. Soutenu par Innosuisse, ZHAW et Yarowa AG dans l'écosystème d'innovation suisse.",
+      "h1": "Partenaires",
+      "breadcrumb": "Partenaires",
       "ogTitle": "Partenaires | True Aim",
-      "ogDescription": "Les partenaires stratégiques et l'écosystème de True Aim. Soutenu par Innosuisse, ZHAW et Yarowa AG dans l'écosystème d'innovation suisse."
+      "ogDescription": "Les partenaires stratégiques et l'écosystème de True Aim. Soutenu par Innosuisse, ZHAW et Yarowa AG dans l'écosystème d'innovation suisse.",
+      "updated": "2026-10-15"
+    },
+    "/partners/innosuisse": {
+      "title": "Finance par Innosuisse Partenaire d'innovation | True Aim",
+      "description": "La technologie fondamentale de True Aim est soutenue par une subvention de recherche competitive accordee par Innosuisse, l'agence nationale d'innovation de la Suisse.",
+      "h1": "Finance par Innosuisse Partenaire d'innovation",
+      "breadcrumb": "Innosuisse",
+      "ogTitle": "Finance par Innosuisse Partenaire d'innovation",
+      "ogDescription": "La technologie fondamentale de True Aim est soutenue par une subvention de recherche competitive accordee par Innosuisse, l'agence nationale d'innovation de la Suisse.",
+      "updated": "2026-10-15"
+    },
+    "/partners/swissinsurtechhub": {
+      "title": "Swiss InsurTech Hub Partenaire strategique | True Aim",
+      "description": "Le Swiss InsurTech Hub est le reseau suisse de reference pour l'innovation dans l'assurance.",
+      "h1": "Swiss InsurTech Hub Partenaire strategique",
+      "breadcrumb": "Swiss InsurTech Hub",
+      "ogTitle": "Swiss InsurTech Hub Partenaire strategique",
+      "ogDescription": "Le Swiss InsurTech Hub est le reseau suisse de reference pour l'innovation dans l'assurance.",
+      "updated": "2026-10-15"
+    },
+    "/partners/yarowa": {
+      "title": "Yarowa AG Partenaire strategique | True Aim",
+      "description": "Yarowa AG est une plateforme InsurTech suisse profondement ancree dans le secteur de l'assurance, operant a grande echelle sur les processus d'assurance essentiels dans des environnements hautement reglementes.",
+      "h1": "Yarowa AG Partenaire strategique",
+      "breadcrumb": "Yarowa AG",
+      "ogTitle": "Yarowa AG Partenaire strategique",
+      "ogDescription": "Yarowa AG est une plateforme InsurTech suisse profondement ancree dans le secteur de l'assurance, operant a grande echelle sur les processus d'assurance essentiels dans des environnements hautement reglementes.",
+      "updated": "2026-10-15"
+    },
+    "/partners/zhaw": {
+      "title": "Partenariat de recherche ZHAW | True Aim",
+      "description": "Une partie de la technologie innovante de True Aim est developpee en collaboration avec la ZHAW Haute ecole zurichoise de sciences appliquees, l'une des principales universites de recherche appliquee de Suisse, reconnue pour sa recherche de pointe en AI, data science et ingenierie avec un fort accent sur le deploiement reel.",
+      "h1": "Partenariat de recherche ZHAW",
+      "breadcrumb": "ZHAW",
+      "ogTitle": "Partenariat de recherche ZHAW",
+      "ogDescription": "Une partie de la technologie innovante de True Aim est developpee en collaboration avec la ZHAW Haute ecole zurichoise de sciences appliquees, l'une des principales universites de recherche appliquee de Suisse, reconnue pour sa recherche de pointe en AI, data science et ingenierie avec un fort accent sur le deploiement reel.",
+      "updated": "2026-09-16"
     }
   }
 }

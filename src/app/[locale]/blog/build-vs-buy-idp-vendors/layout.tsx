@@ -1,98 +1,27 @@
-import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
-import { JsonLd } from "@/components/seo/JsonLd";
-import { defaultOgImages } from "@/lib/og-image";
+import { setRequestLocale } from "next-intl/server";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { pageMetadata } from "@/lib/seo/metadata";
+import { blogPosts } from "@/lib/blog-posts";
+import type { ArticleData } from "@/lib/seo/schema";
 
-const SLUG = "build-vs-buy-idp-vendors";
-const PAGE_URL = `https://trueaim.ai/en/blog/${SLUG}/`;
-const TITLE = "Build vs Buy: What to Demand from IDP Vendors";
-const DESCRIPTION =
-  "A practical evaluation framework for insurance teams evaluating claims automation solutions. Learn when to build, when to buy, and how to evaluate vendors objectively.";
-const PUBLISHED = "2025-02-01T00:00:00.000Z";
+const PATH = "/blog/build-vs-buy-idp-vendors";
+const post = blogPosts.find((entry) => entry.slug === PATH.split("/").pop())!;
+const article: ArticleData = { datePublished: post.publishedIso, section: post.category, keywords: post.tags };
 
-export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  keywords: [
-    "IDP vendors",
-    "claims automation",
-    "build vs buy",
-    "vendor evaluation",
-    "insurance AI",
-    "document processing",
-    "claims AI",
-    "vendor selection",
-  ],
-  openGraph: {
-    title: TITLE,
-    description:
-      "A practical evaluation framework for insurance teams evaluating claims automation solutions.",
-    url: PAGE_URL,
-    type: "article",
-    images: defaultOgImages,
-    publishedTime: PUBLISHED,
-    authors: ["True Aim"],
-    tags: ["AI", "Vendor Evaluation", "Insurance", "Claims Automation", "IDP"],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: TITLE,
-    description:
-      "A practical evaluation framework for insurance teams evaluating claims automation solutions.",
-  },
-  alternates: {
-    canonical: PAGE_URL,
-  },
-};
+type Props = { params: Promise<{ locale: string }> };
 
-const blogPostingJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  headline: TITLE,
-  description: DESCRIPTION,
-  url: PAGE_URL,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": PAGE_URL,
-  },
-  author: {
-    "@type": "Organization",
-    name: "True Aim AG",
-    url: "https://trueaim.ai",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "True Aim AG",
-    url: "https://trueaim.ai",
-  },
-  keywords: ["Vendor Evaluation", "Build vs Buy", "IDP", "Claims AI"],
-};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, PATH, { publishedTime: article.datePublished });
+}
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://trueaim.ai/en/" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://trueaim.ai/en/blog/" },
-    { "@type": "ListItem", position: 3, name: TITLE, item: PAGE_URL },
-  ],
-};
-
-export default async function BlogPostLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}) {
+export default async function BlogPostLayout({ children, params }: Props & { children: React.ReactNode }) {
   const { locale } = await params;
   setRequestLocale(locale);
   return (
     <>
-      <JsonLd data={blogPostingJsonLd} />
-      <JsonLd data={breadcrumbJsonLd} />
+      <PageSeo locale={locale} path={PATH} template="blogPost" article={article} />
       {children}
     </>
   );

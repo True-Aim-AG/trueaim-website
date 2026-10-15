@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageLocales } from "@/i18n/page-locales";
 import { products, findProduct } from "@/data/products";
 import { ProductTemplate } from "@/components/templates/ProductTemplate";
-import { defaultOgImages, DEFAULT_OG_IMAGE } from "@/lib/og-image";
-import { localeUrl } from "@/lib/site-url";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { pageMetadata } from "@/lib/seo/metadata";
 
 type Props = { params: Promise<{ locale: string; product: string }> };
 
@@ -19,35 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, product: slug } = await params;
   const product = findProduct(slug);
   if (!product) return {};
-  const t = await getTranslations({ locale, namespace: `metadata.${product.key}` });
-  const path = `/platform/${product.slug}`;
-
-  const languages: Record<string, string> = {};
-  for (const loc of pageLocales(path)) {
-    languages[loc] = localeUrl(loc, path);
-  }
-  languages["x-default"] = localeUrl("en", path);
-
-  return {
-    title: { absolute: t("title") },
-    description: t("description"),
-    openGraph: {
-      title: t("ogTitle"),
-      description: t("ogDescription"),
-      url: localeUrl(locale, path),
-      images: defaultOgImages,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("ogTitle"),
-      description: t("ogDescription"),
-      images: [DEFAULT_OG_IMAGE],
-    },
-    alternates: {
-      canonical: localeUrl(locale, path),
-      languages,
-    },
-  };
+  return pageMetadata(locale, `/platform/${product.slug}`);
 }
 
 export default async function ProductPage({ params }: Props) {
@@ -63,11 +34,14 @@ export default async function ProductPage({ params }: Props) {
     { title: t("related.platform"), href: `/${locale}/platform/` },
   ];
   return (
-    <ProductTemplate
-      name={t(`${product.key}.name`)}
-      summary={t(`${product.key}.summary`)}
-      relatedHeading={t("related.heading")}
-      related={related}
-    />
+    <>
+      <PageSeo locale={locale} path={`/platform/${product.slug}`} template="product" />
+      <ProductTemplate
+        name={t(`${product.key}.name`)}
+        summary={t(`${product.key}.summary`)}
+        relatedHeading={t("related.heading")}
+        related={related}
+      />
+    </>
   );
 }

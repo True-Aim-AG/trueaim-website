@@ -3,17 +3,11 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 import { englishOnlyStaticParams } from "@/i18n/page-locales";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { pageMetadata } from "@/lib/seo/metadata";
 
 // English only until the translation lands; see src/i18n/page-locales.ts.
 export const generateStaticParams = englishOnlyStaticParams;
-
-export const metadata: Metadata = {
-  title: "List of Sub-Processors | True Aim AG",
-  description:
-    "Schedule 2 to the True Aim AG Data Processing Agreement: the operative list of sub-processors engaged in the processing of personal data, with service, data categories and processing location.",
-  alternates: { canonical: "https://trueaim.ai/en/sub-processors/" },
-  robots: { index: true, follow: true },
-};
 
 // Set both to the day this version goes live. Clause 9.2 of the DPA requires the
 // list updated before a new sub-processor begins processing, with written notice.
@@ -112,12 +106,18 @@ const FIELDS: { key: "entity" | "service" | "data" | "location"; label: string }
   { key: "location", label: "Location" },
 ];
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, "/sub-processors");
+}
+
 export default async function SubProcessorsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
+      <PageSeo locale={locale} path="/sub-processors" template="page" />
       <div className="pt-20 md:pt-28 pb-16 px-6">
         <div className="max-w-3xl mx-auto">
           <p className="text-sm text-muted">Schedule 2 to Data Processing Agreement</p>

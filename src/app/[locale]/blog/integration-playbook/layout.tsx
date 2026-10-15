@@ -1,38 +1,24 @@
-import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { pageMetadata } from "@/lib/seo/metadata";
 
-const SLUG = "integration-playbook";
-const PAGE_URL = `https://trueaim.ai/en/blog/${SLUG}/`;
-const TITLE = "True Aim Integration Playbook";
-const META_DESCRIPTION =
-  "How True Aim plugs into existing landscapes, the integration patterns we use, and how a first integration unfolds in four to six weeks.";
+const PATH = "/blog/integration-playbook";
 
-export const metadata: Metadata = {
-  title: TITLE,
-  description: META_DESCRIPTION,
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-    googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
-    },
-  },
-  alternates: {
-    canonical: PAGE_URL,
-  },
-};
+type Props = { params: Promise<{ locale: string }> };
 
-export default async function IntegrationPlaybookLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, PATH, {});
+}
+
+export default async function IntegrationPlaybookLayout({ children, params }: Props & { children: React.ReactNode }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <>{children}</>;
+  return (
+    <>
+      <PageSeo locale={locale} path={PATH} template="blogPost" />
+      {children}
+    </>
+  );
 }

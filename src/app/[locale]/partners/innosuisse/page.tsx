@@ -5,6 +5,14 @@ import { PartnerOutboundLink } from "@/components/partners/PartnerOutboundLink";
 import { Eyebrow } from "@/components/brand/Eyebrow";
 import { ButtonLink } from "@/components/brand/Button";
 import { GridPattern } from "@/components/brand/GridPattern";
+import type { Metadata } from "next";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { pageMetadata } from "@/lib/seo/metadata";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, "/partners/innosuisse");
+}
 
 export default async function InnosuissePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -12,6 +20,7 @@ export default async function InnosuissePage({ params }: { params: Promise<{ loc
   const t = await getTranslations("partners.innosuisse");
   return (
     <div className="min-h-screen">
+      <PageSeo locale={locale} path="/partners/innosuisse" template="partner" partner={{ name: "Innosuisse", url: "https://www.innosuisse.ch" }} />
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />

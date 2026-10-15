@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/post-export.mjs && node scripts/build-sitemap.mjs && node scripts/check-html.mjs",
+    "build": "node scripts/check-metadata.mjs && next build && node scripts/post-export.mjs && node scripts/build-sitemap.mjs && node scripts/check-html.mjs && node scripts/check-metadata.mjs --out out",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",

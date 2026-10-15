@@ -7,14 +7,11 @@ import { CookieBanner } from "@/components/layout/CookieBanner";
 import { Analytics } from "@/components/layout/Analytics";
 import { FirstTouchCapture } from "@/components/layout/FirstTouchCapture";
 import { HubSpotTracking } from "@/components/layout/HubSpotTracking";
-import { JsonLd, organizationJsonLd, websiteJsonLd, siteNavigationJsonLd } from "@/components/seo/JsonLd";
-import { defaultOgImages } from "@/lib/og-image";
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { localeUrl as getLocaleUrl } from "@/lib/site-url";
 import { analyticsConfigured, consentDefaultScript } from "@/lib/consent";
 
 /* Brand type: Inter Tight for titles, IBM Plex Sans for everything else (docs/DESIGN_SYSTEM.md §4). */
@@ -31,70 +28,30 @@ const ibmPlexSans = IBM_Plex_Sans({
   display: "swap",
 });
 
-type MetadataProps = {
-  params: Promise<{ locale: string }>;
-};
-
-export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "metadata.root" });
-
-  const languages: Record<string, string> = {};
-  for (const loc of routing.locales) {
-    languages[loc] = getLocaleUrl(loc, "");
-  }
-  languages["x-default"] = getLocaleUrl("en", "");
-
-  return {
-    metadataBase: new URL("https://trueaim.ai"),
-    title: {
-      default: t("titleDefault"),
-      template: t("titleTemplate"),
-    },
-    description: t("description"),
-    keywords: [
-      "AI claims automation",
-      "neuro-symbolic AI",
-      "insurance claims",
-      "EU AI Act compliance",
-      "auditable AI",
-      "claims decisioning",
+// Site-wide metadata only. Each page sets its own title, description,
+// canonical, Open Graph and robots from messages/<locale>/metadata.json
+// through pageMetadata() in src/lib/seo/metadata.ts.
+export const metadata: Metadata = {
+  metadataBase: new URL("https://trueaim.ai"),
+  keywords: [
+    "AI claims automation",
+    "neuro-symbolic AI",
+    "insurance claims",
+    "EU AI Act compliance",
+    "auditable AI",
+    "claims decisioning",
+  ],
+  authors: [{ name: "True Aim" }],
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
     ],
-    authors: [{ name: "True Aim" }],
-    manifest: "/site.webmanifest",
-    icons: {
-      icon: [
-        { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-        { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      ],
-      shortcut: '/favicon.ico',
-      apple: '/apple-touch-icon.png',
-    },
-    openGraph: {
-      type: "website",
-      locale: locale === "en" ? "en_US" : locale,
-      url: getLocaleUrl(locale, ""),
-      siteName: "True Aim",
-      title: t("ogTitle"),
-      description: t("ogDescription"),
-      images: defaultOgImages,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("ogTitle"),
-      description: t("ogDescription"),
-      images: defaultOgImages.map((i) => i.url),
-    },
-    robots: {
-      index: true,
-      follow: true,
-    },
-    alternates: {
-      canonical: getLocaleUrl(locale, ""),
-      languages,
-    },
-  };
-}
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+};
 
 export const viewport = {
   themeColor: "#2C2B2A",
@@ -123,9 +80,6 @@ export default async function LocaleLayout({ children, params }: Props) {
       <head>
         {/* Consent Mode v2 defaults, before anything else: all four signals denied. */}
         {analyticsConfigured && <script dangerouslySetInnerHTML={{ __html: consentDefaultScript }} />}
-        <JsonLd data={{ ...organizationJsonLd, inLanguage: locale }} />
-        <JsonLd data={{ ...websiteJsonLd, inLanguage: locale }} />
-        <JsonLd data={siteNavigationJsonLd} />
         <link rel="preconnect" href="https://mira-travel-demo.vercel.app" />
         <link rel="preconnect" href="https://claimeval.vercel.app" />
         {/* No preconnect to Google or HubSpot: a connection before consent is already a request. */}

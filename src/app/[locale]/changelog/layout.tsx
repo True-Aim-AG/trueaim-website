@@ -1,31 +1,28 @@
-import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import { englishOnlyStaticParams } from "@/i18n/page-locales";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { pageMetadata } from "@/lib/seo/metadata";
 
 // English only until the translation lands; see src/i18n/page-locales.ts.
 export const generateStaticParams = englishOnlyStaticParams;
 
-export const metadata: Metadata = {
-  title: "Changelog | True Aim AG",
-  description:
-    "Public release history of the True Aim Platform. Features, fixes, and security improvements by release.",
-  alternates: {
-    canonical: "https://trueaim.ai/en/changelog/",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+const PATH = "/changelog";
 
-export default async function ChangelogLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}) {
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, PATH);
+}
+
+export default async function ChangelogLayout({ children, params }: Props & { children: React.ReactNode }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return children;
+  return (
+    <>
+      <PageSeo locale={locale} path={PATH} template="page" />
+      {children}
+    </>
+  );
 }

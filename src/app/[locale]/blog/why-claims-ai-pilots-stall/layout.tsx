@@ -1,96 +1,27 @@
-import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
-import { JsonLd } from "@/components/seo/JsonLd";
-import { defaultOgImages } from "@/lib/og-image";
+import { setRequestLocale } from "next-intl/server";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { pageMetadata } from "@/lib/seo/metadata";
+import { blogPosts } from "@/lib/blog-posts";
+import type { ArticleData } from "@/lib/seo/schema";
 
-const SLUG = "why-claims-ai-pilots-stall";
-const PAGE_URL = `https://trueaim.ai/en/blog/${SLUG}/`;
-const TITLE = "Why Claims AI Pilots Stall Before Production Readiness";
-const DESCRIPTION =
-  "Many claims AI pilots report accuracy in the mid 90s. Yet months later they are still not live in production. The root cause is measurement discipline and production realism.";
-const PUBLISHED = "2026-02-15T00:00:00.000Z";
+const PATH = "/blog/why-claims-ai-pilots-stall";
+const post = blogPosts.find((entry) => entry.slug === PATH.split("/").pop())!;
+const article: ArticleData = { datePublished: post.publishedIso, section: post.category, keywords: post.tags };
 
-export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  keywords: [
-    "Claims AI",
-    "Production readiness",
-    "AI evaluation",
-    "AI accuracy",
-    "insurance AI",
-    "claims automation",
-    "pilot to production",
-    "AI measurement",
-  ],
-  openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
-    url: PAGE_URL,
-    type: "article",
-    images: defaultOgImages,
-    publishedTime: PUBLISHED,
-    authors: ["True Aim"],
-    tags: ["AI", "Claims AI", "Production Readiness", "Evaluation", "Accuracy"],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: TITLE,
-    description: DESCRIPTION,
-  },
-  alternates: {
-    canonical: PAGE_URL,
-  },
-};
+type Props = { params: Promise<{ locale: string }> };
 
-const blogPostingJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  headline: TITLE,
-  description: DESCRIPTION,
-  url: PAGE_URL,
-  datePublished: PUBLISHED,
-  dateModified: PUBLISHED,
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": PAGE_URL,
-  },
-  author: {
-    "@type": "Organization",
-    name: "True Aim AG",
-    url: "https://trueaim.ai",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "True Aim AG",
-    url: "https://trueaim.ai",
-  },
-  keywords: ["Claims AI", "Production Readiness", "Evaluation", "Accuracy"],
-};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, PATH, { publishedTime: article.datePublished });
+}
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://trueaim.ai/en/" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://trueaim.ai/en/blog/" },
-    { "@type": "ListItem", position: 3, name: TITLE, item: PAGE_URL },
-  ],
-};
-
-export default async function BlogPostLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}) {
+export default async function BlogPostLayout({ children, params }: Props & { children: React.ReactNode }) {
   const { locale } = await params;
   setRequestLocale(locale);
   return (
     <>
-      <JsonLd data={blogPostingJsonLd} />
-      <JsonLd data={breadcrumbJsonLd} />
+      <PageSeo locale={locale} path={PATH} template="blogPost" article={article} />
       {children}
     </>
   );

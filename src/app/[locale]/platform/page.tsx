@@ -1,8 +1,16 @@
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import type { Metadata } from "next";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { pageMetadata } from "@/lib/seo/metadata";
 
 const PUBLISH_DATE = "2026-05-21";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, "/platform");
+}
 
 export default async function ProductPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -10,6 +18,7 @@ export default async function ProductPage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
+      <PageSeo locale={locale} path="/platform" template="platform" />
       <div className="py-24 px-6">
         <div className="max-w-3xl mx-auto">
           <h1 className="font-display text-4xl font-bold text-strong mb-4">
