@@ -61,7 +61,7 @@ if [ "$MODE" = "production" ]; then
   expect_redirect "https://www.$HOST/en/" "$BASE/en/" 301
 fi
 
-# Files keep their URL (trailingSlash: auto), with the right type
+# Files keep their URL (trailingSlash: auto)
 for path in /robots.txt /sitemap.xml /favicon.ico /llms.txt; do
   expect_status "$BASE$path" 200
 done
@@ -76,12 +76,38 @@ else
   if [ -z "$robots_header" ]; then pass "production sends no X-Robots-Tag"; else fail "production sends '$robots_header'"; fi
 fi
 
-robots="$(curl -s --max-time 20 "$BASE/robots.txt")"
-for agent in GPTBot OAI-SearchBot ChatGPT-User ClaudeBot Claude-User PerplexityBot Google-Extended Applebot-Extended; do
-  if printf '%s\n' "$robots" | grep -qx "User-agent: $agent"; then pass "robots.txt names $agent"; else fail "robots.txt does not name $agent"; fi
+robots="$(curl -s --max-time 20 "$BASE/robots.txt" | tr -d '\r')"
+# Prints the rule lines of the group(s) whose User-agent matches $1, per RFC
+# 9309: consecutive User-agent lines share the rules that follow them.
+group_rules() {
+  printf '%s\n' "$robots" | awk -v ua="$1" '
+    /^[ \t]*(#|$)/ { next }
+    tolower($0) ~ /^user-agent:/ {
+      value = $0; sub(/^[^:]*:[ \t]*/, "", value); sub(/[ \t]+$/, "", value)
+      if (in_rules) { matched = 0; in_rules = 0 }
+      if (tolower(value) == tolower(ua)) matched = 1
+      next
+    }
+    tolower($0) ~ /^sitemap:/ { next }
+    /^[A-Za-z-]+:/ { in_rules = 1; if (matched) print }'
+}
+# A crawler counts as allowed when it has its own group and that group does
+# not disallow the whole site.
+expect_allowed() {
+  local rules
+  rules="$(group_rules "$1")"
+  if [ -z "$rules" ]; then
+    fail "robots.txt has no group for $1"
+  elif printf '%s\n' "$rules" | grep -qiE '^disallow:[[:space:]]*/[[:space:]]*$'; then
+    fail "robots.txt blocks $1 with Disallow: /"
+  else
+    pass "robots.txt allows $1"
+  fi
+}
+for agent in '*' GPTBot OAI-SearchBot ChatGPT-User ClaudeBot Claude-User PerplexityBot Google-Extended Applebot-Extended; do
+  expect_allowed "$agent"
 done
 if printf '%s\n' "$robots" | grep -qx "Sitemap: https://trueaim.ai/sitemap.xml"; then pass "robots.txt links the sitemap"; else fail "robots.txt does not link the sitemap"; fi
-if printf '%s\n' "$robots" | grep -A2 -x "User-agent: \*" | grep -qx "Disallow: /"; then fail "robots.txt disallows everything"; fi
 
 sitemap="$(curl -s --max-time 20 "$BASE/sitemap.xml")"
 if printf '%s' "$sitemap" | grep -q "<loc>https://trueaim.ai/en/</loc>"; then pass "sitemap lists the English home"; else fail "sitemap does not list https://trueaim.ai/en/"; fi
@@ -89,7 +115,10 @@ if printf '%s' "$sitemap" | grep -q "<loc>https://trueaim.ai/en/</loc>"; then pa
 # Redirect map, one hop per row
 MAP="$(dirname "$0")/../redirects/redirects.csv"
 if [ -f "$MAP" ]; then
-  map_output="$(tail -n +2 "$MAP" | while IFS=, read -r old new status _; do
+  # "|| [ -n "$old" ]" keeps a last row that has no final newline; the
+  # carriage returns of a CRLF file are stripped from every field.
+  map_output="$(tail -n +2 "$MAP" | while IFS=, read -r old new status _ || [ -n "$old" ]; do
+    old="${old%$'\r'}"; new="${new%$'\r'}"; status="${status%$'\r'}"
     [ -z "$old" ] && continue
     case "$new" in http*) target="$new" ;; *) target="$BASE$new" ;; esac
     if [ "$status" = "404" ] || [ "$status" = "410" ]; then expect_status "$BASE$old" "$status"; else expect_redirect "$BASE$old" "$target" "$status"; fi
