@@ -27,13 +27,19 @@ function json(jsonBody, { status = 200 } = {}) {
 
 const GENERIC_ERROR = "Failed to submit form. Please try again.";
 
+// Each destination gets this long, well inside the 45 s Static Web Apps API
+// limit, so a stalled one becomes a logged failure and the other still
+// decides the answer.
+const SINK_TIMEOUT_MS = 10_000;
+
 // The HubSpot portal is EU-hosted (its tracking script is js-eu1), so forms
 // are submitted to the EU host of the unauthenticated Forms API v3.
 const HUBSPOT_SUBMIT_URL = "https://api-eu1.hsforms.com/submissions/v3/integration/submit";
 
-// HubSpot contact property (internal name) <- form payload key. Every
-// property must exist in the portal and be a field (hidden is fine) on the
-// HubSpot form, or HubSpot rejects the submission.
+// HubSpot contact property (internal name) <- form payload key, with an
+// optional length limit (default 2,000). Every property must exist in the
+// portal and be a field (hidden is fine) on the HubSpot form, or HubSpot
+// rejects the submission.
 const HUBSPOT_FIELDS = [
   ["firstname", "firstName"],
   ["lastname", "lastName"],
@@ -41,7 +47,7 @@ const HUBSPOT_FIELDS = [
   ["company", "company"],
   ["jobtitle", "jobTitle"],
   ["country", "country"],
-  ["message", "message"],
+  ["message", "message", 65_536],
   ["interest", "interest"],
   ["claims_volume", "claimsVolume"],
   ["heard_about", "heard_about"],
@@ -59,7 +65,7 @@ function text(value, max = 2000) {
 }
 
 function hubspotPayload(body) {
-  const fields = HUBSPOT_FIELDS.map(([name, key]) => ({ objectTypeId: "0-1", name, value: text(body[key]) })).filter(
+  const fields = HUBSPOT_FIELDS.map(([name, key, max]) => ({ objectTypeId: "0-1", name, value: text(body[key], max) })).filter(
     (field) => field.value !== "",
   );
   const context = {};
@@ -75,6 +81,7 @@ async function submitToHubSpot(body, { portalId, formGuid }) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(hubspotPayload(body)),
+    signal: AbortSignal.timeout(SINK_TIMEOUT_MS),
   });
   if (response.ok) return { ok: true };
   // Log the error types only; HubSpot's messages can echo submitted values.
@@ -84,12 +91,17 @@ async function submitToHubSpot(body, { portalId, formGuid }) {
 }
 
 async function submitToSheet(body, scriptUrl) {
-  // The sheet keeps its old lead_source column filled.
+  // lead_source is the name the form used before heard_about, kept for a
+  // sheet script that reads it. The archived script
+  // (docs/archive/google-apps-script-form-handler.js) appends neither, so
+  // heard_about and the first-visit fields reach the sheet only once the
+  // live Apps Script appends them.
   const response = await fetch(scriptUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...body, lead_source: body.heard_about }),
     redirect: "follow",
+    signal: AbortSignal.timeout(SINK_TIMEOUT_MS),
   });
 
   // Google Apps Script returns a redirect, then the final response
@@ -111,7 +123,7 @@ async function submitToSheet(body, scriptUrl) {
  * Sends a lead to HubSpot (Forms API) and to the Google Apps Script sheet,
  * which also emails the team. Both run while HubSpot is being proven; the
  * lead counts as received when at least one accepts it, so a HubSpot
- * mapping error in launch week costs a fix, not a lead. Either sink is
+ * mapping error in launch week does not lose the contact. Either sink is
  * skipped while its configuration is empty.
  */
 async function contact(request, context) {

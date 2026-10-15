@@ -148,3 +148,44 @@ test("contact sends leads to HubSpot and the sheet and succeeds when either acce
 
   assert.equal((await submit("bad-json", "{not json")).status, 400);
 });
+
+test("contact bounds each destination and sends the whole message to HubSpot", async (t) => {
+  const originalFetch = globalThis.fetch;
+  const saved = { ...process.env };
+  t.after(() => {
+    globalThis.fetch = originalFetch;
+    for (const key of ["GOOGLE_SCRIPT_URL", "HUBSPOT_PORTAL_ID", "HUBSPOT_FORM_GUID"]) {
+      if (saved[key] === undefined) delete process.env[key];
+      else process.env[key] = saved[key];
+    }
+  });
+  process.env.GOOGLE_SCRIPT_URL = "https://sheet.invalid/exec";
+  process.env.HUBSPOT_PORTAL_ID = "123";
+  process.env.HUBSPOT_FORM_GUID = "form-guid";
+  const errors = [];
+  const context = { error: (message) => errors.push(String(message)) };
+  const message = "x".repeat(5000);
+  const submit = (ip) => registration.handler(new Request("http://localhost/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "x-forwarded-for": ip },
+    body: JSON.stringify({ email: "a@example.com", heard_about: "other", message }),
+  }), context);
+
+  const signals = [];
+  let hubspotBody;
+  globalThis.fetch = async (url, options) => {
+    signals.push(options.signal);
+    if (String(url).includes("hsforms")) {
+      hubspotBody = JSON.parse(options.body);
+      // A stalled HubSpot call ends when its timeout signal aborts it.
+      throw new DOMException("The operation was aborted due to timeout", "TimeoutError");
+    }
+    return new Response('{"result":"success"}');
+  };
+  assert.deepEqual(stripHeaders(await submit("timeout")), { status: 200, jsonBody: { success: true } });
+  assert.equal(signals.length, 2);
+  assert.ok(signals.every((signal) => signal instanceof AbortSignal), "every destination has a timeout signal");
+  assert.ok(errors.some((line) => line.includes("HubSpot") && line.includes("timeout")));
+  const sentMessage = hubspotBody.fields.find((field) => field.name === "message").value;
+  assert.equal(sentMessage.length, 5000);
+});
