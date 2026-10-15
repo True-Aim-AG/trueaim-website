@@ -74,7 +74,7 @@ docs/                      PRD, design system, review requirements
 See `AGENTS.md` for the full local check sequence, including the Static Web Apps emulator.
 
 ## Reference Files
-- `docs/PRD.md` — full PRD
 - `docs/DESIGN_SYSTEM.md` — design system v4, the brand source of truth
-- `docs/website-review-v7-requirements.md` — latest website review requirements (v6 also present)
-- `tests/e2e/website-review-v7.spec.ts` — E2E suite for those requirements
+- `tests/e2e/website-review-v7.spec.ts` — E2E suite for the latest website review requirements
+
+This repository is public. The PRD, the website review documents and other internal working papers are kept in a private repository; do not add internal documents, customer material, local paths or personal settings here (`.claude/settings.local.json` is ignored).

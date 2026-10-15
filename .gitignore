@@ -49,6 +49,7 @@ scratch/
 .playwright-mcp/
 
 tmpclaude*
+.claude/settings.local.json
 .vercel
 .env*.local
 
