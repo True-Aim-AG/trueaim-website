@@ -4,9 +4,10 @@
 //   canonical is its own URL, so English-only copies under /de/ and
 //   redirects (which are routes, not files) never appear;
 // - its hreflang alternates are the page's own <link rel="alternate"> tags;
-// - lastmod is the last git commit touching the page's route folder, the
-//   components it imports and the messages files it reads, not the build
-//   date. The build therefore needs the full git history (fetch-depth: 0).
+// - lastmod is the last git commit touching the page's route folder, every
+//   module it reaches through static, side-effect or dynamic imports, and
+//   the messages files those read, not the build date. The build therefore
+//   needs the full git history (fetch-depth: 0).
 // The build fails if an alternate points at a URL that is not an indexable
 // page in the export, or if alternates are not reciprocal.
 import { execFileSync } from "node:child_process";
@@ -19,9 +20,16 @@ const LOCALES = ["en", "de", "fr", "it"];
 const out = resolve(process.argv[2] ?? "out");
 const root = resolve(".");
 const appRoot = join(root, "src", "app", "[locale]");
-// Shared chrome and helpers would bump every page on any change; only the
-// page's own sections and data count towards its lastmod.
-const IGNORED_IMPORTS = /^@\/(components\/(brand|layout|ui|seo)|lib|i18n)\//;
+// Shared chrome and helpers would bump every page on any change, so they
+// are not followed. Content modules (sections, data, blog-posts, the ROI
+// calculations, ...) are followed, however deep.
+const IGNORED_IMPORTS =
+  /^@\/(components\/(brand|layout|ui|seo)\/|i18n\/|lib\/(animations|consent|og-fonts|og-image|rate-limiter|site-url|utils)$|lib\/tracking\/)/;
+const IMPORT_SPECIFIERS = [
+  /\bfrom\s+["']([^"']+)["']/g,
+  /\bimport\s+["']([^"']+)["']/g,
+  /\bimport\(\s*["']([^"']+)["']\s*\)/g,
+];
 
 function git(args) {
   return execFileSync("git", args, { cwd: root, encoding: "utf8" }).trim();
@@ -105,12 +113,20 @@ function sourceFiles(directory, locale) {
       .filter((entry) => entry.isFile() && /\.(tsx?|mdx?)$/.test(entry.name))
       .map((entry) => join(directory, entry.name)),
   );
-  for (const file of [...files]) {
+  // Breadth-first over the import graph; the Set is the cycle guard.
+  const queue = [...files];
+  while (queue.length) {
+    const file = queue.shift();
     const code = readFileSync(file, "utf8");
-    for (const match of code.matchAll(/from\s+["']([^"']+)["']/g)) {
-      if (IGNORED_IMPORTS.test(match[1])) continue;
-      const resolved = resolveImport(match[1], file);
-      if (resolved && !resolved.startsWith(directory + sep)) files.add(resolved);
+    for (const pattern of IMPORT_SPECIFIERS) {
+      for (const match of code.matchAll(pattern)) {
+        if (IGNORED_IMPORTS.test(match[1])) continue;
+        const resolved = resolveImport(match[1], file);
+        if (resolved && resolved.startsWith(join(root, "src") + sep) && !files.has(resolved)) {
+          files.add(resolved);
+          queue.push(resolved);
+        }
+      }
     }
   }
   for (const file of [...files]) {
