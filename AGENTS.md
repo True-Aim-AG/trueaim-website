@@ -103,8 +103,8 @@ environment the run will deploy to.
   front. `trueaim.ai` is the production site's default domain, so
   `www.trueaim.ai` and the `*.azurestaticapps.net` hostname answer a 301 to
   the apex with path and query kept. The setting exists only in the Azure
-  portal; a Terraform check in taim-infrastructure fails the plan if it is
-  ever unset. Static Web Apps sets it, not this repository.
+  portal (Custom domains, `trueaim.ai`, Set default; set on 15 Oct 2026). It
+  survives deploys, but removing and re-adding the apex domain clears it.
 - There is no middleware and no Next.js API route, so: no browser-language
   auto-redirect on first visit; images are served unoptimized; the contact
   rate limiter is per function instance; `npm run dev` has no contact API
