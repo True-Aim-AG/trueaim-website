@@ -14,9 +14,11 @@ True Aim builds AI-powered decisioning software for insurance claims. Our hybrid
 
 ## Products
 
-- [MIRA](https://trueaim.ai/en/products/mira/): Neuro-symbolic decisioning engine. Transforms policy terms and conditions into automated, fully-deterministic claim decisions. Every outcome traceable to the legal text.
-- [ContextBuilder](https://trueaim.ai/en/products/contextbuilder/): Claims document pipeline. Turns messy claim documents into structured, trusted data with AI-powered ingestion and human review when needed.
-- [ClaimEval](https://trueaim.ai/en/products/claimeval/): Claims quality assurance. Scales QA beyond sampling with consistent inspections across entire claims portfolios.
+- [Platform overview](https://trueaim.ai/en/platform/): How the products fit together.
+- [Invoice Benchmarking](https://trueaim.ai/en/platform/invoice-benchmarking/): Checks every invoice, quote and estimate against benchmark data by trade and region, and shows which lines are too high and why.
+- [Claims Decisioning](https://trueaim.ai/en/platform/claims-decisioning/): Checks every line of a claim against the policy wording, with the amount calculated and the reason recorded.
+- [Damage Reporting](https://trueaim.ai/en/platform/damage-reporting/): A priced damage estimate and full scope of work from the customer's photographs and documents, at first notification.
+- [Otus, True Aim's claims specialist](https://trueaim.ai/en/platform/otus/): Answers questions about a claim in the AI assistant the company has already approved, and explains each decision in plain language.
 
 ## Key Differentiators
 
@@ -28,9 +30,9 @@ True Aim builds AI-powered decisioning software for insurance claims. Our hybrid
 ## Links
 
 - Technology: https://trueaim.ai/en/technology/
-- Company: https://trueaim.ai/en/company/
+- About: https://trueaim.ai/en/about/
 - Case Studies: https://trueaim.ai/en/case-studies/
 - Trust & Compliance: https://trueaim.ai/en/trust/
 - Blog: https://trueaim.ai/en/blog/ (RSS: https://trueaim.ai/feed.xml)
-- ROI Calculator: https://trueaim.ai/en/roi-calculator/
+- Impact Estimator: https://trueaim.ai/en/impact-estimator/
 - Full details: https://trueaim.ai/llms-full.txt

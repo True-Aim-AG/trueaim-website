@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { defaultOgImages } from "@/lib/og-image";
 import { blogPosts } from "@/lib/blog-posts";
+import { englishOnlyStaticParams } from "@/i18n/page-locales";
+
+// English only until the translation lands; see src/i18n/page-locales.ts.
+export const generateStaticParams = englishOnlyStaticParams;
 
 export const metadata: Metadata = {
   title: "Blog",

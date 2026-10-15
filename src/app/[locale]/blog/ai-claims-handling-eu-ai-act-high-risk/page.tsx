@@ -858,7 +858,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                   <p className="text-sm font-medium text-accent">
                     Reconstructing a decision on demand is what{" "}
                     <Link
-                      href="/products/mira"
+                      href="/platform/claims-decisioning"
                       className="underline hover:no-underline"
                     >
                       MIRA
@@ -1209,7 +1209,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 Get in Touch
                 <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
               </ButtonLink>
-              <ButtonLink href="/products/mira" variant="on-dark" size="lg">
+              <ButtonLink href="/platform/claims-decisioning" variant="on-dark" size="lg">
                 Explore MIRA
               </ButtonLink>
             </div>

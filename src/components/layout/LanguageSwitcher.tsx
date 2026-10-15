@@ -2,7 +2,7 @@
 
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
+import { pageLocales } from "@/i18n/page-locales";
 import { Globe, Check } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
@@ -61,7 +61,7 @@ export function LanguageSwitcher() {
         role="listbox"
         aria-label="Select language"
       >
-        {routing.locales.map((loc) => (
+        {pageLocales(pathname).map((loc) => (
           <button
             key={loc}
             type="button"
@@ -96,7 +96,7 @@ export function LanguageSwitcherMobile() {
 
   return (
     <div className="flex rounded-pill bg-surface-muted p-1 gap-1">
-      {routing.locales.map((loc) => (
+      {pageLocales(pathname).map((loc) => (
         <button
           key={loc}
           type="button"

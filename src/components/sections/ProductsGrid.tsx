@@ -13,12 +13,12 @@ const ease = [0.4, 0, 0.2, 1] as const;
 const productsMeta = [
   {
     key: "contextBuilder" as const,
-    href: "/products/contextbuilder",
+    href: "/platform",
     icon: "extraction" as BrandIconName,
   },
   {
     key: "mira" as const,
-    href: "/products/mira",
+    href: "/platform/claims-decisioning",
     icon: "mira" as BrandIconName,
   },
   {
@@ -29,7 +29,7 @@ const productsMeta = [
   },
   {
     key: "claimEval" as const,
-    href: "/products/claimeval",
+    href: "/platform",
     icon: "quality" as BrandIconName,
   },
 ];

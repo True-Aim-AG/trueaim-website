@@ -14,9 +14,9 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
 
   const languages: Record<string, string> = {};
   for (const loc of routing.locales) {
-    languages[loc] = getLocaleUrl(loc, "/company");
+    languages[loc] = getLocaleUrl(loc, "/about");
   }
-  languages["x-default"] = getLocaleUrl("en", "/company");
+  languages["x-default"] = getLocaleUrl("en", "/about");
 
   return {
     title: t("title"),
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),
-      url: getLocaleUrl(locale, "/company"),
+      url: getLocaleUrl(locale, "/about"),
       images: defaultOgImages,
     },
     twitter: {
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
       images: [DEFAULT_OG_IMAGE],
     },
     alternates: {
-      canonical: getLocaleUrl(locale, "/company"),
+      canonical: getLocaleUrl(locale, "/about"),
       languages,
     },
   };

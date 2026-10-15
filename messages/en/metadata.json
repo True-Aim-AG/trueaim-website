@@ -7,23 +7,29 @@
       "ogTitle": "True Aim | Automate Insurance Claim Decisions. Auditable by Design.",
       "ogDescription": "Combine agentic AI with deterministic logic for claims automation. Every decision traceable, aligned with EU AI Act requirements."
     },
-    "mira": {
-      "title": "MIRA - Neuro-Symbolic Decisioning Engine",
-      "description": "Transform complex policy terms into automated, fully-deterministic claim decisions. Every outcome traceable to the legal text. The world's first neuro-symbolic engine for claims.",
-      "ogTitle": "MIRA - Neuro-Symbolic Decisioning Engine | True Aim",
-      "ogDescription": "Transform complex policy terms into automated, fully-deterministic claim decisions. Every outcome traceable to the legal text."
+    "invoiceBenchmarking": {
+      "title": "Invoice Benchmarking | True Aim",
+      "description": "Check every invoice, quote and estimate against benchmark data by trade and region, and see which lines are too high and why.",
+      "ogTitle": "Invoice Benchmarking | True Aim",
+      "ogDescription": "Check every invoice, quote and estimate against benchmark data by trade and region, and see which lines are too high and why."
     },
-    "contextBuilder": {
-      "title": "ContextBuilder - Claims Document Pipeline",
-      "description": "Turn messy claim documents into structured, trusted data. AI-powered document ingestion with human review when needed. 97% accuracy, 97% document coverage.",
-      "ogTitle": "ContextBuilder - Claims Document Pipeline | True Aim",
-      "ogDescription": "Turn messy claim documents into structured, trusted data. AI-powered document ingestion with human review when needed."
+    "claimsDecisioning": {
+      "title": "Claims Decisioning | True Aim",
+      "description": "Every line of a claim checked against the policy wording, with the amount calculated and the reason recorded. A full recommendation in about two minutes.",
+      "ogTitle": "Claims Decisioning | True Aim",
+      "ogDescription": "Every line of a claim checked against the policy wording, with the amount calculated and the reason recorded. A full recommendation in about two minutes."
     },
-    "claimEval": {
-      "title": "ClaimEval - Claims Quality Assurance",
-      "description": "Scale QA beyond sampling. Run consistent inspections across your entire claims portfolio. Surface exceptions, prioritize human effort with intelligent risk scoring.",
-      "ogTitle": "ClaimEval - Claims Quality Assurance | True Aim",
-      "ogDescription": "Scale QA beyond sampling. Run consistent inspections across your entire claims portfolio. Surface exceptions, prioritize human effort."
+    "damageReporting": {
+      "title": "Damage Reporting | True Aim",
+      "description": "A priced damage estimate and full scope of work from the customer's photographs and documents, at first notification.",
+      "ogTitle": "Damage Reporting | True Aim",
+      "ogDescription": "A priced damage estimate and full scope of work from the customer's photographs and documents, at first notification."
+    },
+    "otus": {
+      "title": "Otus, True Aim's claims specialist | True Aim",
+      "description": "Ask anything about a claim, in the AI assistant your company has already approved. Otus explains each decision in plain language.",
+      "ogTitle": "Otus, True Aim's claims specialist | True Aim",
+      "ogDescription": "Ask anything about a claim, in the AI assistant your company has already approved. Otus explains each decision in plain language."
     },
     "company": {
       "title": "Company - About True Aim",

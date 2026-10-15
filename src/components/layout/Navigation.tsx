@@ -10,16 +10,17 @@ import { LanguageSwitcher, LanguageSwitcherMobile } from "@/components/layout/La
 import { useTranslations } from "next-intl";
 
 const products = [
-  { nameKey: "productsDropdown.mira" as const, href: "/products/mira", descKey: "productsDropdown.miraDesc" as const },
-  { nameKey: "productsDropdown.contextBuilder" as const, href: "/products/contextbuilder", descKey: "productsDropdown.contextBuilderDesc" as const },
-  { nameKey: "productsDropdown.claimEval" as const, href: "/products/claimeval", descKey: "productsDropdown.claimEvalDesc" as const },
+  { nameKey: "productsDropdown.invoiceBenchmarking" as const, href: "/platform/invoice-benchmarking", descKey: "productsDropdown.invoiceBenchmarkingDesc" as const },
+  { nameKey: "productsDropdown.claimsDecisioning" as const, href: "/platform/claims-decisioning", descKey: "productsDropdown.claimsDecisioningDesc" as const },
+  { nameKey: "productsDropdown.damageReporting" as const, href: "/platform/damage-reporting", descKey: "productsDropdown.damageReportingDesc" as const },
+  { nameKey: "productsDropdown.otus" as const, href: "/platform/otus", descKey: "productsDropdown.otusDesc" as const },
 ];
 
 const resources = [
   { nameKey: "resourcesDropdown.caseStudies" as const, href: "/case-studies", descKey: "resourcesDropdown.caseStudiesDesc" as const },
   { nameKey: "resourcesDropdown.impactEstimator" as const, href: "/impact-estimator", descKey: "resourcesDropdown.impactEstimatorDesc" as const },
   { nameKey: "resourcesDropdown.trustCenter" as const, href: "/trust", descKey: "resourcesDropdown.trustCenterDesc" as const },
-  { nameKey: "resourcesDropdown.product" as const, href: "/product", descKey: "resourcesDropdown.productDesc" as const },
+  { nameKey: "resourcesDropdown.product" as const, href: "/platform", descKey: "resourcesDropdown.productDesc" as const },
   { nameKey: "resourcesDropdown.blog" as const, href: "/blog", descKey: "resourcesDropdown.blogDesc" as const },
 ];
 
@@ -27,7 +28,7 @@ const navigation = [
   { nameKey: "products" as const, href: "/products", hasDropdown: true, dropdownType: "products" },
   { nameKey: "resources" as const, href: "/resources", hasDropdown: true, dropdownType: "resources" },
   { nameKey: "technology" as const, href: "/technology" },
-  { nameKey: "company" as const, href: "/company" },
+  { nameKey: "company" as const, href: "/about" },
   { nameKey: "contact" as const, href: "/contact" },
 ];
 

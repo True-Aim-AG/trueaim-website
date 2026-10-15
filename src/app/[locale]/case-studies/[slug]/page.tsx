@@ -21,9 +21,9 @@ import { GridPattern } from "@/components/brand/GridPattern";
 const ease = [0.4, 0, 0.2, 1] as const;
 
 const productLinks: Record<string, string> = {
-  mira: "/products/mira",
-  contextbuilder: "/products/contextbuilder",
-  claimeval: "/products/claimeval",
+  mira: "/platform/claims-decisioning",
+  contextbuilder: "/platform",
+  claimeval: "/platform",
 };
 
 export default function CaseStudyPage() {

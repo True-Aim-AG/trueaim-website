@@ -21,7 +21,7 @@ const publicDocs = [
   { key: "security", href: "/security" },
   { key: "ethics", href: "/ethics" },
   { key: "subProcessors", href: "/sub-processors" },
-  { key: "product", href: "/product" },
+  { key: "product", href: "/platform" },
   { key: "support", href: "/support" },
   { key: "changelog", href: "/changelog" },
 ] as const;

@@ -7,7 +7,7 @@ import packageJson from "../../../package.json";
 
 const footerLinks = {
   company: [
-    { nameKey: "about" as const, href: "/company" },
+    { nameKey: "about" as const, href: "/about" },
     { nameKey: "contact" as const, href: "/contact" },
   ],
   resources: [
@@ -17,9 +17,10 @@ const footerLinks = {
     { nameKey: "blog" as const, href: "/blog" },
   ],
   products: [
-    { nameKey: "mira" as const, href: "/products/mira" },
-    { nameKey: "contextBuilder" as const, href: "/products/contextbuilder" },
-    { nameKey: "claimEval" as const, href: "/products/claimeval" },
+    { nameKey: "invoiceBenchmarking" as const, href: "/platform/invoice-benchmarking" },
+    { nameKey: "claimsDecisioning" as const, href: "/platform/claims-decisioning" },
+    { nameKey: "damageReporting" as const, href: "/platform/damage-reporting" },
+    { nameKey: "otus" as const, href: "/platform/otus" },
   ],
   trust: [
     { nameKey: "trustCenter" as const, href: "/trust" },

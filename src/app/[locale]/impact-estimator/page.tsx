@@ -82,7 +82,7 @@ export default async function ImpactEstimatorPage({ params }: { params: Promise<
                 {t("cta.bookDemo")}
                 <ArrowRight strokeWidth={1.5} className="w-5 h-5" />
               </ButtonLink>
-              <ButtonLink href="/products/mira" variant="on-dark" size="lg">
+              <ButtonLink href="/platform/claims-decisioning" variant="on-dark" size="lg">
                 {t("cta.seeMira")}
               </ButtonLink>
             </div>

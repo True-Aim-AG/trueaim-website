@@ -25,7 +25,7 @@ True Aim AG is a Swiss InsurTech company headquartered in Zurich, Switzerland. W
 
 ### MIRA — Neuro-Symbolic Decisioning Engine
 
-**URL:** https://trueaim.ai/en/products/mira/
+**URL:** https://trueaim.ai/en/platform/claims-decisioning/
 **Demo:** https://mira-travel-demo.vercel.app/products
 
 MIRA is the world's first neuro-symbolic engine purpose-built for insurance claims decisioning. It transforms complex policy terms and conditions into automated, fully-deterministic claim decisions.
@@ -46,7 +46,7 @@ MIRA is the world's first neuro-symbolic engine purpose-built for insurance clai
 
 ### ContextBuilder — Claims Document Pipeline
 
-**URL:** https://trueaim.ai/en/products/contextbuilder/
+**URL:** https://trueaim.ai/en/platform/
 **Source:** https://github.com/Fr3nn3r/AgenticContextBuilder
 
 ContextBuilder transforms messy, unstructured claim documents into structured, trusted data ready for automated decisioning.
@@ -68,7 +68,7 @@ ContextBuilder transforms messy, unstructured claim documents into structured, t
 
 ### ClaimEval — Claims Quality Assurance
 
-**URL:** https://trueaim.ai/en/products/claimeval/
+**URL:** https://trueaim.ai/en/platform/
 
 ClaimEval scales quality assurance beyond traditional sampling methods, running consistent inspections across entire claims portfolios.
 
@@ -154,15 +154,17 @@ True Aim's architecture is designed for regulatory compliance:
 
 - Home: https://trueaim.ai
 - Products:
-  - MIRA: https://trueaim.ai/en/products/mira/
-  - ContextBuilder: https://trueaim.ai/en/products/contextbuilder/
-  - ClaimEval: https://trueaim.ai/en/products/claimeval/
+  - Platform overview: https://trueaim.ai/en/platform/
+  - Invoice Benchmarking: https://trueaim.ai/en/platform/invoice-benchmarking/
+  - Claims Decisioning: https://trueaim.ai/en/platform/claims-decisioning/
+  - Damage Reporting: https://trueaim.ai/en/platform/damage-reporting/
+  - Otus, True Aim's claims specialist: https://trueaim.ai/en/platform/otus/
 - Technology: https://trueaim.ai/en/technology/
-- Company: https://trueaim.ai/en/company/
+- About: https://trueaim.ai/en/about/
 - Case Studies: https://trueaim.ai/en/case-studies/
 - Trust & Compliance: https://trueaim.ai/en/trust/
 - Blog: https://trueaim.ai/en/blog/
-- ROI Calculator: https://trueaim.ai/en/roi-calculator/
+- Impact Estimator: https://trueaim.ai/en/impact-estimator/
 - Contact: https://trueaim.ai/en/contact/
 - Privacy Policy: https://trueaim.ai/en/privacy/
 - Terms of Service: https://trueaim.ai/en/terms/

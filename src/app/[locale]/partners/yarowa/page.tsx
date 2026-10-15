@@ -129,7 +129,7 @@ export default async function YarowaPage({ params }: { params: Promise<{ locale:
             {t("cta.description")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <ButtonLink href="/products/mira" variant="primary" size="lg">
+            <ButtonLink href="/platform/claims-decisioning" variant="primary" size="lg">
               {t("cta.learnProducts")}
               <ArrowRight strokeWidth={1.5} className="w-5 h-5" />
             </ButtonLink>
