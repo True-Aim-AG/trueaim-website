@@ -126,13 +126,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         <JsonLd data={{ ...organizationJsonLd, inLanguage: locale }} />
         <JsonLd data={{ ...websiteJsonLd, inLanguage: locale }} />
         <JsonLd data={siteNavigationJsonLd} />
-        {/* Static hosting has no host-based redirect, so www falls back to the apex here. */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              "if(location.hostname==='www.trueaim.ai'){location.replace('https://trueaim.ai'+location.pathname+location.search+location.hash);}",
-          }}
-        />
         <link rel="preconnect" href="https://mira-travel-demo.vercel.app" />
         <link rel="preconnect" href="https://claimeval.vercel.app" />
         {/* No preconnect to Google or HubSpot: a connection before consent is already a request. */}

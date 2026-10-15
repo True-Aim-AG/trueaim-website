@@ -18,7 +18,7 @@ environment the run will deploy to.
 | Environment | URL | Azure resource (subscription) | What it shows |
 |---|---|---|---|
 | staging | https://staging.trueaim.ai (the site's `*.azurestaticapps.net` default hostname also works) | `trueaim-website-staging-web` in `trueaim-website-staging` (nonprod) | whatever was deployed last: the head of `main`, or any branch someone deployed manually |
-| production | https://trueaim.ai and https://www.trueaim.ai | `trueaim-website-production-web` in `trueaim-website-production` (prod) | the latest published release tag `vX.Y.Z` |
+| production | https://trueaim.ai (www.trueaim.ai and the site's `*.azurestaticapps.net` hostname answer a 301 to it) | `trueaim-website-production-web` in `trueaim-website-production` (prod) | the latest published release tag `vX.Y.Z` |
 
 ## Showing work to someone
 
@@ -100,8 +100,11 @@ environment the run will deploy to.
   every asset on staging on 13 Oct). `/` redirects to `/en/`. Old unprefixed English
   URLs 301 to their `/en/` page; renamed pages belong in the redirect map.
 - Azure Static Web Apps serves the site directly, with no CDN or edge in
-  front. Static hosting has no host-based redirect, so the `www`-to-apex
-  redirect is a small script in the locale layout head.
+  front. `trueaim.ai` is the production site's default domain, so
+  `www.trueaim.ai` and the `*.azurestaticapps.net` hostname answer a 301 to
+  the apex with path and query kept. The setting exists only in the Azure
+  portal (Custom domains, `trueaim.ai`, Set default; set on 15 Oct 2026). It
+  survives deploys, but removing and re-adding the apex domain clears it.
 - There is no middleware and no Next.js API route, so: no browser-language
   auto-redirect on first visit; images are served unoptimized; the contact
   rate limiter is per function instance; `npm run dev` has no contact API
