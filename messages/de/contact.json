@@ -48,11 +48,10 @@
         "other": "Andere"
       },
       "interests": {
-        "mira": "Schadenentscheidungen automatisieren (MIRA)",
-        "contextbuilder": "Dokumentenverarbeitung und Datenextraktion (ContextBuilder)",
-        "claimeval": "Qualitätssicherung und Leakage-Erkennung (ClaimEval)",
-        "auditability": "Überprüfbarkeit und regulatorische Compliance",
-        "earlyStage": "KI für Schadenregulierung evaluieren (Frühphase)",
+        "invoiceBenchmarking": "Invoice Benchmarking",
+        "claimsDecisioning": "Claims Decisioning",
+        "damageReporting": "Damage Reporting",
+        "otus": "Otus",
         "other": "Etwas anderes / Noch nicht sicher"
       },
       "leadSources": {

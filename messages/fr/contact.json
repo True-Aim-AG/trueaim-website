@@ -48,11 +48,10 @@
         "other": "Autre"
       },
       "interests": {
-        "mira": "Automatiser les décisions de sinistres (MIRA)",
-        "contextbuilder": "Traitement de documents et extraction de données (ContextBuilder)",
-        "claimeval": "Assurance qualité et détection des fuites (ClaimEval)",
-        "auditability": "Auditabilité et conformité réglementaire",
-        "earlyStage": "Évaluation de l'IA pour les sinistres (phase initiale)",
+        "invoiceBenchmarking": "Invoice Benchmarking",
+        "claimsDecisioning": "Claims Decisioning",
+        "damageReporting": "Damage Reporting",
+        "otus": "Otus",
         "other": "Autre chose / Pas encore sûr"
       },
       "leadSources": {

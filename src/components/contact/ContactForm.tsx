@@ -39,16 +39,17 @@ const countryKeys = [
   "italy", "netherlands", "belgium", "southAfrica", "spain", "unitedStates", "other",
 ] as const;
 
+// Interest options, sent as interest. The values match the HubSpot form's
+// options; product names are never translated.
 const interestKeys = [
-  "mira", "contextbuilder", "claimeval", "auditability", "earlyStage", "other",
+  "invoiceBenchmarking", "claimsDecisioning", "damageReporting", "otus", "other",
 ] as const;
 
-const interestValues: Record<string, string> = {
-  mira: "mira",
-  contextbuilder: "contextbuilder",
-  claimeval: "claimeval",
-  auditability: "auditability",
-  earlyStage: "early-stage",
+const interestValues: Record<(typeof interestKeys)[number], string> = {
+  invoiceBenchmarking: "invoice_benchmarking",
+  claimsDecisioning: "claims_decisioning",
+  damageReporting: "damage_reporting",
+  otus: "otus",
   other: "other",
 };
 

@@ -48,11 +48,10 @@
         "other": "Other"
       },
       "interests": {
-        "mira": "Automating claims decisions (MIRA)",
-        "contextbuilder": "Document processing and data extraction (ContextBuilder)",
-        "claimeval": "Quality assurance and leakage detection (ClaimEval)",
-        "auditability": "Auditability and regulatory compliance",
-        "earlyStage": "Evaluating AI for claims (early-stage)",
+        "invoiceBenchmarking": "Invoice Benchmarking",
+        "claimsDecisioning": "Claims Decisioning",
+        "damageReporting": "Damage Reporting",
+        "otus": "Otus",
         "other": "Something else / Not sure yet"
       },
       "leadSources": {
