@@ -27,6 +27,20 @@ function json(jsonBody, { status = 200 } = {}) {
 
 const GENERIC_ERROR = "Failed to submit form. Please try again.";
 
+// A person needs longer than this to fill in the form; a bot posts at once.
+const MIN_FILL_MS = 3_000;
+
+// Returns why a submission looks automated, or "" when it looks human. The
+// form sends `website`, a field people never see, and `elapsed_ms`, the time
+// since the form appeared. A request without `elapsed_ms` did not come from
+// the form.
+function spamReason(body) {
+  if (body.website !== "") return "honeypot";
+  const elapsed = body.elapsed_ms;
+  if (typeof elapsed !== "number" || !Number.isFinite(elapsed) || elapsed < MIN_FILL_MS) return "fill time";
+  return "";
+}
+
 // Each destination gets this long, well inside the 45 s Static Web Apps API
 // limit, so a stalled one becomes a logged failure and the other still
 // decides the answer.
@@ -92,10 +106,9 @@ async function submitToHubSpot(body, { portalId, formGuid }) {
 
 async function submitToSheet(body, scriptUrl) {
   // lead_source is the name the form used before heard_about, kept for a
-  // sheet script that reads it. The archived script
-  // (docs/archive/google-apps-script-form-handler.js) appends neither, so
-  // heard_about and the first-visit fields reach the sheet only once the
-  // live Apps Script appends them.
+  // sheet script that reads it. The archived copy of the script appends
+  // neither, so heard_about and the first-visit fields reach the sheet only
+  // once the live Apps Script appends them.
   const response = await fetch(scriptUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -162,6 +175,16 @@ async function contact(request, context) {
   if (!body || typeof body !== "object" || Array.isArray(body)) {
     return json({ error: GENERIC_ERROR }, { status: 400 });
   }
+
+  // Answer a bot as if the lead went through, so it learns nothing, and
+  // send it nowhere.
+  const spam = spamReason(body);
+  if (spam) {
+    context.log?.(`Contact form submission dropped: ${spam}`);
+    return json({ success: true });
+  }
+  delete body.website;
+  delete body.elapsed_ms;
 
   const sinks = [];
   if (hubspotConfigured) sinks.push(["HubSpot", submitToHubSpot(body, hubspot)]);

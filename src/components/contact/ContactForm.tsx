@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
@@ -99,6 +99,13 @@ export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  // Spam checks for /api/contact: a field people never see or fill, and the
+  // time since the form appeared. Bots fill every field and post at once.
+  const honeypotRef = useRef<HTMLInputElement>(null);
+  const shownAtRef = useRef(0);
+  useEffect(() => {
+    if (!isSubmitted) shownAtRef.current = Date.now();
+  }, [isSubmitted]);
 
   const {
     register,
@@ -124,6 +131,8 @@ export function ContactForm() {
           page_uri: window.location.origin + window.location.pathname,
           page_name: document.title,
           hutk: hubspotUserToken(),
+          website: honeypotRef.current?.value ?? "",
+          elapsed_ms: Date.now() - shownAtRef.current,
         }),
       });
 
@@ -396,6 +405,12 @@ export function ContactForm() {
                   className="w-full px-6 py-3 resize-none"
                   placeholder={t("form.placeholders.message")}
                 />
+              </div>
+
+              {/* Honeypot: off screen, out of the tab order and hidden from
+                  assistive technology, so only bots fill it. */}
+              <div aria-hidden="true" className="absolute -left-[10000px] w-px h-px overflow-hidden">
+                <input ref={honeypotRef} type="text" name="website" tabIndex={-1} autoComplete="off" defaultValue="" />
               </div>
 
               {/* Consent */}

@@ -7,8 +7,8 @@ points here for anything about deployment.
 
 The site is a fully static Next.js export (`output: "export"`) on Azure Static
 Web Apps. The contact form runs as a Static Web Apps managed Azure Function in
-`api/`. The infrastructure is Terraform in `True-Aim-AG/taim-infrastructure`
-(ADR 0032 there); nothing is configured by hand in the Azure portal.
+`api/`. The infrastructure is Terraform in a separate, private infrastructure
+repository; nothing is configured by hand in the Azure portal.
 
 ## Where things run
 

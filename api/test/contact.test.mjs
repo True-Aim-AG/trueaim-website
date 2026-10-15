@@ -24,7 +24,7 @@ test("contact preserves the original proxy and rate-limit contract", async (t) =
   const request = (ip) => new Request("http://localhost/api/contact", {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-forwarded-for": ip },
-    body: JSON.stringify({ name: "Test" }),
+    body: JSON.stringify({ name: "Test", website: "", elapsed_ms: 5000 }),
   });
   const submit = (ip) => registration.handler(request(ip), context);
 
@@ -37,7 +37,7 @@ test("contact preserves the original proxy and rate-limit contract", async (t) =
     assert.equal(url, process.env.GOOGLE_SCRIPT_URL);
     assert.equal(options.method, "POST");
     assert.equal(options.redirect, "follow");
-    assert.deepEqual(JSON.parse(options.body), { name: "Test" });
+    assert.deepEqual(JSON.parse(options.body), { name: "Test" }, "spam checks stay out of the sheet");
     return new Response('{"result":"success"}');
   };
   assert.deepEqual(stripHeaders(await submit("success")), { status: 200, jsonBody: { success: true } });
@@ -75,7 +75,7 @@ test("contact sends leads to HubSpot and the sheet and succeeds when either acce
     heard_about: "ai_assistant", landing_page: "https://trueaim.ai/en/technology/", referrer: "https://chatgpt.com/",
     utm_source: "linkedin", utm_medium: "", utm_campaign: "", utm_term: "", utm_content: "",
     page_locale: "en", page_uri: "https://trueaim.ai/en/contact/", page_name: "Contact | True Aim",
-    hutk: "0123456789abcdef0123456789abcdef", consent: true,
+    hutk: "0123456789abcdef0123456789abcdef", consent: true, website: "", elapsed_ms: 12_000,
   };
   const submit = (ip, body = lead) => registration.handler(new Request("http://localhost/api/contact", {
     method: "POST",
@@ -168,7 +168,7 @@ test("contact bounds each destination and sends the whole message to HubSpot", a
   const submit = (ip) => registration.handler(new Request("http://localhost/api/contact", {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-forwarded-for": ip },
-    body: JSON.stringify({ email: "a@example.com", heard_about: "other", message }),
+    body: JSON.stringify({ email: "a@example.com", heard_about: "other", message, website: "", elapsed_ms: 5000 }),
   }), context);
 
   const signals = [];
@@ -188,4 +188,40 @@ test("contact bounds each destination and sends the whole message to HubSpot", a
   assert.ok(errors.some((line) => line.includes("HubSpot") && line.includes("timeout")));
   const sentMessage = hubspotBody.fields.find((field) => field.name === "message").value;
   assert.equal(sentMessage.length, 5000);
+});
+
+test("contact drops bot submissions silently and sends them nowhere", async (t) => {
+  const originalFetch = globalThis.fetch;
+  const originalUrl = process.env.GOOGLE_SCRIPT_URL;
+  t.after(() => {
+    globalThis.fetch = originalFetch;
+    if (originalUrl === undefined) delete process.env.GOOGLE_SCRIPT_URL;
+    else process.env.GOOGLE_SCRIPT_URL = originalUrl;
+  });
+  process.env.GOOGLE_SCRIPT_URL = "https://sheet.invalid/exec";
+  let sent = 0;
+  globalThis.fetch = async () => { sent++; return new Response('{"result":"success"}'); };
+  const logs = [];
+  const context = { error() {}, log: (message) => logs.push(String(message)) };
+  const submit = (ip, extra) => registration.handler(new Request("http://localhost/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "x-forwarded-for": ip },
+    body: JSON.stringify({ email: "bot@example.com", ...extra }),
+  }), context);
+
+  for (const [ip, extra] of [
+    ["honeypot", { website: "https://spam.example", elapsed_ms: 9000 }],
+    ["too-fast", { website: "", elapsed_ms: 400 }],
+    ["no-timer", { website: "" }],
+    ["no-honeypot", { elapsed_ms: 9000 }],
+    ["text-timer", { website: "", elapsed_ms: "9000" }],
+  ]) {
+    assert.deepEqual(stripHeaders(await submit("spam-" + ip, extra)), { status: 200, jsonBody: { success: true } }, ip);
+  }
+  assert.equal(sent, 0, "no bot submission reaches a destination");
+  assert.equal(logs.length, 5);
+  assert.ok(logs.every((line) => !line.includes("bot@example.com")), "no personal data in logs");
+
+  assert.equal((await submit("human", { website: "", elapsed_ms: 3000 })).status, 200);
+  assert.equal(sent, 1);
 });
