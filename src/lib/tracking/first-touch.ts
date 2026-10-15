@@ -41,8 +41,10 @@ function originAndPath(url: string): string {
   }
 }
 
-// www.trueaim.ai and trueaim.ai are one site: the www host redirects to the
-// apex in the browser, which leaves the www page as document.referrer.
+// www.trueaim.ai and trueaim.ai are one site. The server now answers www
+// with a 301, which keeps the original referrer, but a visitor whose cached
+// page still ran the old in-browser redirect arrives with the www page as
+// document.referrer; that must not count as an external source.
 function siteHost(host: string): string {
   return host.replace(/^www\./, "");
 }
