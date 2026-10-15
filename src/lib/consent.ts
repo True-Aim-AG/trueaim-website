@@ -32,6 +32,33 @@ export function hasAnalyticsConsent(): boolean {
   return readConsent()?.analytics === true;
 }
 
+function analyticsIn(raw: string | null): boolean {
+  try {
+    return raw !== null && (JSON.parse(raw) as { analytics?: unknown }).analytics === true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * What a `storage` event from another tab means for this tab: "withdrawn"
+ * (analytics was granted and no longer is), "granted" (newly granted), or
+ * "decided" (a choice was stored with no change to analytics). null when
+ * the event is not about consent. localStorage.clear() has a null key.
+ */
+export function consentChangeFromStorage(event: {
+  key: string | null;
+  oldValue: string | null;
+  newValue: string | null;
+}): "withdrawn" | "granted" | "decided" | null {
+  if (event.key !== null && event.key !== CONSENT_STORAGE_KEY) return null;
+  const before = analyticsIn(event.oldValue);
+  const after = analyticsIn(event.newValue);
+  if (before && !after) return "withdrawn";
+  if (!before && after) return "granted";
+  return event.newValue !== null ? "decided" : null;
+}
+
 export function saveConsent(preferences: ConsentPreferences): void {
   try {
     localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(preferences));

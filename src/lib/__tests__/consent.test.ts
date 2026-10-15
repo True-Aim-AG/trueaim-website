@@ -3,6 +3,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   CONSENT_STORAGE_KEY,
   CONSENT_UPDATED_EVENT,
+  consentChangeFromStorage,
   consentDefaultScript,
   hasAnalyticsConsent,
   readConsent,
@@ -57,5 +58,26 @@ describe("revokeTracking", () => {
     expect(document.cookie).not.toContain("_ga=");
     expect(document.cookie).not.toContain("hubspotutk=");
     expect(document.cookie).toContain("keep=1");
+  });
+});
+
+describe("consentChangeFromStorage", () => {
+  const granted = JSON.stringify({ essential: true, analytics: true });
+  const denied = JSON.stringify({ essential: true, analytics: false });
+  const change = (oldValue: string | null, newValue: string | null, key: string | null = CONSENT_STORAGE_KEY) =>
+    consentChangeFromStorage({ key, oldValue, newValue });
+
+  it("reads another tab's withdrawal, grant and plain choice", () => {
+    expect(change(granted, denied)).toBe("withdrawn");
+    expect(change(granted, null)).toBe("withdrawn");
+    expect(change(granted, null, null)).toBe("withdrawn");
+    expect(change(null, granted)).toBe("granted");
+    expect(change(denied, granted)).toBe("granted");
+    expect(change(null, denied)).toBe("decided");
+  });
+
+  it("ignores other keys and non-changes", () => {
+    expect(change(granted, denied, "ta-first-touch")).toBeNull();
+    expect(change(null, null)).toBeNull();
   });
 });

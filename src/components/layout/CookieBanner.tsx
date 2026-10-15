@@ -7,7 +7,9 @@ import { Cookie, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/brand/Button";
 import {
+  CONSENT_UPDATED_EVENT,
   OPEN_COOKIE_SETTINGS_EVENT,
+  consentChangeFromStorage,
   readConsent,
   revokeTracking,
   saveConsent,
@@ -43,7 +45,25 @@ export function CookieBanner() {
       setVisible(true);
     };
     window.addEventListener(OPEN_COOKIE_SETTINGS_EVENT, reopen);
-    return () => window.removeEventListener(OPEN_COOKIE_SETTINGS_EVENT, reopen);
+    // A choice saved in another tab applies here too: a withdrawal stops
+    // this tab's tags the same way, and a grant starts them.
+    const syncFromOtherTab = (event: StorageEvent) => {
+      const change = consentChangeFromStorage(event);
+      if (!change) return;
+      setVisible(false);
+      if (change === "withdrawn") {
+        revokeTracking();
+        clearFirstTouch();
+        window.location.reload();
+      } else {
+        window.dispatchEvent(new Event(CONSENT_UPDATED_EVENT));
+      }
+    };
+    window.addEventListener("storage", syncFromOtherTab);
+    return () => {
+      window.removeEventListener(OPEN_COOKIE_SETTINGS_EVENT, reopen);
+      window.removeEventListener("storage", syncFromOtherTab);
+    };
   }, []);
 
   // Opened from the footer: move focus into the banner for keyboard users.
