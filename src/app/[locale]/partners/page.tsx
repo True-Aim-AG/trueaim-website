@@ -23,7 +23,7 @@ const partners: Partner[] = [
   {
     slug: "innosuisse",
     name: "Innosuisse",
-    logo: "/partners/innosuisse.png",
+    logo: "/partners/innosuisse.webp",
     width: 200,
     height: 56,
   },

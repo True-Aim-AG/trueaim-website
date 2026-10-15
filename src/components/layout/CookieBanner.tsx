@@ -1,42 +1,88 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import { Cookie, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/brand/Button";
+import {
+  CONSENT_UPDATED_EVENT,
+  OPEN_COOKIE_SETTINGS_EVENT,
+  consentChangeFromStorage,
+  readConsent,
+  revokeTracking,
+  saveConsent,
+  type ConsentPreferences,
+} from "@/lib/consent";
+import { clearFirstTouch } from "@/lib/tracking/first-touch";
 
-interface CookiePreferences {
-  essential: boolean;
-  analytics: boolean;
-}
-
-const STORAGE_KEY = "cookie-consent";
 const ease = [0.4, 0, 0.2, 1] as const;
 
 export function CookieBanner() {
   const t = useTranslations("cookie");
   const [visible, setVisible] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
-  const [preferences, setPreferences] = useState<CookiePreferences>({
+  const [preferences, setPreferences] = useState<ConsentPreferences>({
     essential: true,
     analytics: false,
   });
+  const [reopened, setReopened] = useState(false);
+  const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (!stored) {
+    if (readConsent() === null) {
       // Read browser-only state after hydration, preserving the server render.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setVisible(true);
     }
+    // The footer's cookie settings control reopens the banner with the
+    // stored choice preselected, so consent can be changed at any time.
+    const reopen = () => {
+      setPreferences({ essential: true, analytics: readConsent()?.analytics === true });
+      setShowPreferences(true);
+      setReopened(true);
+      setVisible(true);
+    };
+    window.addEventListener(OPEN_COOKIE_SETTINGS_EVENT, reopen);
+    // A choice saved in another tab applies here too: a withdrawal stops
+    // this tab's tags the same way, and a grant starts them.
+    const syncFromOtherTab = (event: StorageEvent) => {
+      const change = consentChangeFromStorage(event);
+      if (!change) return;
+      setVisible(false);
+      if (change === "withdrawn") {
+        revokeTracking();
+        clearFirstTouch();
+        window.location.reload();
+      } else {
+        window.dispatchEvent(new Event(CONSENT_UPDATED_EVENT));
+      }
+    };
+    window.addEventListener("storage", syncFromOtherTab);
+    return () => {
+      window.removeEventListener(OPEN_COOKIE_SETTINGS_EVENT, reopen);
+      window.removeEventListener("storage", syncFromOtherTab);
+    };
   }, []);
 
-  const savePreferences = (prefs: CookiePreferences) => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+  // Opened from the footer: move focus into the banner for keyboard users.
+  useEffect(() => {
+    if (visible && reopened) bannerRef.current?.focus();
+  }, [visible, reopened]);
+
+  const savePreferences = (prefs: ConsentPreferences) => {
+    const previous = readConsent();
+    saveConsent(prefs);
     setVisible(false);
-    window.dispatchEvent(new Event("cookie-consent-update"));
+    setReopened(false);
+    if (previous?.analytics && !prefs.analytics) {
+      // Withdrawn: deny, drop the tracking cookies, and reload so no tag
+      // that was already loaded keeps running.
+      revokeTracking();
+      clearFirstTouch();
+      window.location.reload();
+    }
   };
 
   const handleAcceptAll = () => {
@@ -59,7 +105,11 @@ export function CookieBanner() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 24, opacity: 0 }}
           transition={{ duration: 0.3, ease }}
-          className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6"
+          ref={bannerRef}
+          tabIndex={-1}
+          role="region"
+          aria-labelledby="cookie-banner-title"
+          className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 outline-none"
         >
           <div className="cookie-banner-bg mx-auto max-w-4xl rounded-pill p-6 md:p-8">
             <div className="flex items-start gap-4">
@@ -67,7 +117,7 @@ export function CookieBanner() {
                 <Cookie strokeWidth={1.5} className="h-5 w-5" />
               </div>
               <div className="flex-1">
-                <h3 className="mb-1 font-semibold text-strong">{t("title")}</h3>
+                <h3 id="cookie-banner-title" className="mb-1 font-semibold text-strong">{t("title")}</h3>
                 <p className="mb-4 text-sm text-body">
                   {t("description")}{" "}
                   <Link href="/cookies" className="text-link hover:underline">

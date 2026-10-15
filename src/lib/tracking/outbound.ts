@@ -1,15 +1,4 @@
-const STORAGE_KEY = "cookie-consent";
-
-function hasAnalyticsConsent(): boolean {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (!stored) return false;
-    const prefs = JSON.parse(stored) as { analytics?: boolean };
-    return prefs.analytics === true;
-  } catch {
-    return false;
-  }
-}
+import { hasAnalyticsConsent } from "@/lib/consent";
 
 export function trackOutboundClick(url: string, label: string): void {
   if (typeof window === "undefined") return;

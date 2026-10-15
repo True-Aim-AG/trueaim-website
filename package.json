@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/post-export.mjs",
+    "build": "next build && node scripts/post-export.mjs && node scripts/build-sitemap.mjs && node scripts/check-html.mjs",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
-    "@next/third-parties": "^16.1.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.25.0",

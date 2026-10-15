@@ -48,18 +48,18 @@
         "other": "Altro"
       },
       "interests": {
-        "mira": "Automatizzare le decisioni sui sinistri (MIRA)",
-        "contextbuilder": "Elaborazione documenti ed estrazione dati (ContextBuilder)",
-        "claimeval": "Assicurazione qualità e rilevamento perdite (ClaimEval)",
-        "auditability": "Verificabilità e conformità normativa",
-        "earlyStage": "Valutazione dell'IA per i sinistri (fase iniziale)",
+        "invoiceBenchmarking": "Invoice Benchmarking",
+        "claimsDecisioning": "Claims Decisioning",
+        "damageReporting": "Damage Reporting",
+        "otus": "Otus",
         "other": "Altro / Non ancora sicuro"
       },
       "leadSources": {
+        "aiAssistant": "Assistente IA come ChatGPT o Perplexity",
+        "searchEngine": "Motore di ricerca",
+        "linkedin": "LinkedIn",
         "referral": "Raccomandazione",
         "industryEvent": "Evento di settore",
-        "onlineResearch": "Ricerca online",
-        "linkedin": "LinkedIn",
         "other": "Altro"
       },
       "validation": {
@@ -70,7 +70,8 @@
         "jobTitleRequired": "La qualifica professionale è obbligatoria",
         "countryRequired": "Si prega di selezionare un paese",
         "interestRequired": "Si prega di selezionare il Suo interesse",
-        "consentRequired": "Deve acconsentire a ricevere comunicazioni"
+        "consentRequired": "Deve acconsentire a ricevere comunicazioni",
+        "heardAboutRequired": "Ci indichi come ha saputo di noi"
       },
       "submit": "Prenota una demo",
       "submitting": "Invio in corso...",

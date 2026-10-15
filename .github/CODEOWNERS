@@ -1,0 +1,27 @@
+# Review routing for trueaim.ai. Copy, pages and metadata go to Kai; hosting,
+# deployment, build scripts, routing and the contact function also go to Alin.
+# Later rules win, so the specific paths sit below the catch-all.
+
+*                                  @kpraschma-TA
+
+/.github/                          @akoppandi-trueaim @kpraschma-TA
+/api/                              @akoppandi-trueaim @kpraschma-TA
+/scripts/                          @akoppandi-trueaim @kpraschma-TA
+/public/staticwebapp.config.json   @akoppandi-trueaim @kpraschma-TA
+/public/robots.txt                 @akoppandi-trueaim @kpraschma-TA
+/next.config.ts                    @akoppandi-trueaim @kpraschma-TA
+/package.json                      @akoppandi-trueaim @kpraschma-TA
+/package-lock.json                 @akoppandi-trueaim @kpraschma-TA
+/src/i18n/                         @akoppandi-trueaim @kpraschma-TA
+/src/lib/consent.ts                @akoppandi-trueaim @kpraschma-TA
+/src/lib/tracking/                 @akoppandi-trueaim @kpraschma-TA
+/src/components/layout/Analytics.tsx          @akoppandi-trueaim @kpraschma-TA
+/src/components/layout/CookieBanner.tsx       @akoppandi-trueaim @kpraschma-TA
+/src/components/layout/CookieSettingsButton.tsx @akoppandi-trueaim @kpraschma-TA
+/src/components/layout/FirstTouchCapture.tsx  @akoppandi-trueaim @kpraschma-TA
+/src/components/layout/HubSpotTracking.tsx    @akoppandi-trueaim @kpraschma-TA
+/src/components/contact/ContactForm.tsx       @akoppandi-trueaim @kpraschma-TA
+# The locale layout (src/app/[locale]/layout.tsx) carries the consent
+# defaults; CODEOWNERS has no bracket syntax, so * stands for [locale].
+/src/app/*/layout.tsx                         @akoppandi-trueaim @kpraschma-TA
+/AGENTS.md                         @akoppandi-trueaim @kpraschma-TA

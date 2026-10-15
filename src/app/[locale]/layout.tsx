@@ -4,7 +4,8 @@ import "../globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
-import { GoogleAnalyticsWrapper } from "@/components/layout/GoogleAnalytics";
+import { Analytics } from "@/components/layout/Analytics";
+import { FirstTouchCapture } from "@/components/layout/FirstTouchCapture";
 import { HubSpotTracking } from "@/components/layout/HubSpotTracking";
 import { JsonLd, organizationJsonLd, websiteJsonLd, siteNavigationJsonLd } from "@/components/seo/JsonLd";
 import { defaultOgImages } from "@/lib/og-image";
@@ -14,6 +15,7 @@ import { hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { localeUrl as getLocaleUrl } from "@/lib/site-url";
+import { analyticsConfigured, consentDefaultScript } from "@/lib/consent";
 
 /* Brand type: Inter Tight for titles, IBM Plex Sans for everything else (docs/DESIGN_SYSTEM.md §4). */
 const interTight = Inter_Tight({
@@ -119,6 +121,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} data-theme="light" suppressHydrationWarning>
       <head>
+        {/* Consent Mode v2 defaults, before anything else: all four signals denied. */}
+        {analyticsConfigured && <script dangerouslySetInnerHTML={{ __html: consentDefaultScript }} />}
         <JsonLd data={{ ...organizationJsonLd, inLanguage: locale }} />
         <JsonLd data={{ ...websiteJsonLd, inLanguage: locale }} />
         <JsonLd data={siteNavigationJsonLd} />
@@ -131,11 +135,11 @@ export default async function LocaleLayout({ children, params }: Props) {
         />
         <link rel="preconnect" href="https://mira-travel-demo.vercel.app" />
         <link rel="preconnect" href="https://claimeval.vercel.app" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://js-eu1.hs-scripts.com" />
+        {/* No preconnect to Google or HubSpot: a connection before consent is already a request. */}
       </head>
       <body className={`${interTight.variable} ${ibmPlexSans.variable} antialiased`}>
-        <GoogleAnalyticsWrapper />
+        <Analytics />
+        <FirstTouchCapture />
         <HubSpotTracking />
         <NextIntlClientProvider>
           <a

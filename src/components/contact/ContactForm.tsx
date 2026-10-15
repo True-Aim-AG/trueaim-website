@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,6 +17,8 @@ import { SwitzerlandMap } from "@/components/ui/SwitzerlandMap";
 import { StatusPill } from "@/components/brand/StatusPill";
 import { Button } from "@/components/brand/Button";
 import { cn } from "@/lib/utils";
+import { hasAnalyticsConsent, pushDataLayer } from "@/lib/consent";
+import { getFirstTouch } from "@/lib/tracking/first-touch";
 
 type ContactFormData = {
   firstName: string;
@@ -26,7 +28,7 @@ type ContactFormData = {
   jobTitle: string;
   country: string;
   interest: string;
-  lead_source?: string;
+  heard_about: string;
   claimsVolume?: string;
   message?: string;
   consent: boolean;
@@ -37,30 +39,42 @@ const countryKeys = [
   "italy", "netherlands", "belgium", "southAfrica", "spain", "unitedStates", "other",
 ] as const;
 
+// Interest options, sent as interest. The values match the HubSpot form's
+// options; product names are never translated.
 const interestKeys = [
-  "mira", "contextbuilder", "claimeval", "auditability", "earlyStage", "other",
+  "invoiceBenchmarking", "claimsDecisioning", "damageReporting", "otus", "other",
 ] as const;
 
-const interestValues: Record<string, string> = {
-  mira: "mira",
-  contextbuilder: "contextbuilder",
-  claimeval: "claimeval",
-  auditability: "auditability",
-  earlyStage: "early-stage",
+const interestValues: Record<(typeof interestKeys)[number], string> = {
+  invoiceBenchmarking: "invoice_benchmarking",
+  claimsDecisioning: "claims_decisioning",
+  damageReporting: "damage_reporting",
+  otus: "otus",
   other: "other",
 };
 
-const leadSourceKeys = [
-  "referral", "industryEvent", "onlineResearch", "linkedin", "other",
+// "How did you hear about us?" options, sent as heard_about and mapped to a
+// HubSpot contact property. PROPOSED set until Firon's Schedule 2 list is
+// confirmed: change the keys here and in messages/<locale>/contact.json.
+const heardAboutKeys = [
+  "aiAssistant", "searchEngine", "linkedin", "referral", "industryEvent", "other",
 ] as const;
 
-const leadSourceValues: Record<string, string> = {
-  referral: "referral",
-  industryEvent: "industry-event",
-  onlineResearch: "online-research",
+const heardAboutValues: Record<(typeof heardAboutKeys)[number], string> = {
+  aiAssistant: "ai_assistant",
+  searchEngine: "search_engine",
   linkedin: "linkedin",
+  referral: "referral",
+  industryEvent: "industry_event",
   other: "other",
 };
+
+/** HubSpot's visitor cookie, readable only once analytics consent loaded its script. */
+function hubspotUserToken(): string {
+  if (!hasAnalyticsConsent()) return "";
+  const match = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
+  return match ? decodeURIComponent(match[1]) : "";
+}
 
 function createContactSchema(t: (key: string) => string) {
   return z.object({
@@ -71,7 +85,7 @@ function createContactSchema(t: (key: string) => string) {
     jobTitle: z.string().min(1, t("form.validation.jobTitleRequired")),
     country: z.string().min(1, t("form.validation.countryRequired")),
     interest: z.string().min(1, t("form.validation.interestRequired")),
-    lead_source: z.string().optional(),
+    heard_about: z.string().min(1, t("form.validation.heardAboutRequired")),
     claimsVolume: z.string().optional(),
     message: z.string().optional(),
     consent: z.boolean().refine((val) => val === true, t("form.validation.consentRequired")),
@@ -80,6 +94,7 @@ function createContactSchema(t: (key: string) => string) {
 
 export function ContactForm() {
   const t = useTranslations("contact");
+  const locale = useLocale();
   const contactSchema = createContactSchema(t);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -102,7 +117,14 @@ export function ContactForm() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          ...getFirstTouch(),
+          page_locale: locale,
+          page_uri: window.location.origin + window.location.pathname,
+          page_name: document.title,
+          hutk: hubspotUserToken(),
+        }),
       });
 
       if (!response.ok) {
@@ -110,6 +132,13 @@ export function ContactForm() {
         throw new Error(result?.error || t("form.errorGeneric"));
       }
 
+      // Confirmed success only, never on click. No personal data.
+      pushDataLayer({
+        event: "form_submit_success",
+        form_name: "demo_request",
+        page_locale: locale,
+        heard_about: data.heard_about,
+      });
       setIsSubmitted(true);
       reset();
     } catch (error) {
@@ -159,11 +188,12 @@ export function ContactForm() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* First Name */}
               <div>
-                <label className="block text-caption-sm text-subtle mb-2">
+                <label htmlFor="contact-firstName" className="block text-caption-sm text-subtle mb-2">
                   {t("form.firstName")} <span className="normal-case tracking-normal">{t("form.required")}</span>
                 </label>
                 <input
                   {...register("firstName")}
+                  id="contact-firstName"
                   type="text"
                   className="w-full px-6 py-3"
                   placeholder={t("form.placeholders.firstName")}
@@ -178,11 +208,12 @@ export function ContactForm() {
 
               {/* Last Name */}
               <div>
-                <label className="block text-caption-sm text-subtle mb-2">
+                <label htmlFor="contact-lastName" className="block text-caption-sm text-subtle mb-2">
                   {t("form.lastName")} <span className="normal-case tracking-normal">{t("form.required")}</span>
                 </label>
                 <input
                   {...register("lastName")}
+                  id="contact-lastName"
                   type="text"
                   className="w-full px-6 py-3"
                   placeholder={t("form.placeholders.lastName")}
@@ -197,11 +228,12 @@ export function ContactForm() {
 
               {/* Email */}
               <div className="sm:col-span-2">
-                <label className="block text-caption-sm text-subtle mb-2">
+                <label htmlFor="contact-email" className="block text-caption-sm text-subtle mb-2">
                   {t("form.workEmail")} <span className="normal-case tracking-normal">{t("form.required")}</span>
                 </label>
                 <input
                   {...register("email")}
+                  id="contact-email"
                   type="email"
                   className="w-full px-6 py-3"
                   placeholder={t("form.placeholders.email")}
@@ -216,11 +248,12 @@ export function ContactForm() {
 
               {/* Company */}
               <div>
-                <label className="block text-caption-sm text-subtle mb-2">
+                <label htmlFor="contact-company" className="block text-caption-sm text-subtle mb-2">
                   {t("form.company")} <span className="normal-case tracking-normal">{t("form.required")}</span>
                 </label>
                 <input
                   {...register("company")}
+                  id="contact-company"
                   type="text"
                   className="w-full px-6 py-3"
                   placeholder={t("form.placeholders.company")}
@@ -235,11 +268,12 @@ export function ContactForm() {
 
               {/* Job Title */}
               <div>
-                <label className="block text-caption-sm text-subtle mb-2">
+                <label htmlFor="contact-jobTitle" className="block text-caption-sm text-subtle mb-2">
                   {t("form.jobTitle")} <span className="normal-case tracking-normal">{t("form.required")}</span>
                 </label>
                 <input
                   {...register("jobTitle")}
+                  id="contact-jobTitle"
                   type="text"
                   className="w-full px-6 py-3"
                   placeholder={t("form.placeholders.jobTitle")}
@@ -254,12 +288,13 @@ export function ContactForm() {
 
               {/* Country */}
               <div>
-                <label className="block text-caption-sm text-subtle mb-2">
+                <label htmlFor="contact-country" className="block text-caption-sm text-subtle mb-2">
                   {t("form.country")} <span className="normal-case tracking-normal">{t("form.required")}</span>
                 </label>
                 <div className="relative">
                   <select
                     {...register("country")}
+                    id="contact-country"
                     className="w-full px-6 py-3 pr-12 appearance-none"
                   >
                     <option value="">{t("form.selectCountry")}</option>
@@ -281,12 +316,13 @@ export function ContactForm() {
 
               {/* Interest */}
               <div>
-                <label className="block text-caption-sm text-subtle mb-2">
+                <label htmlFor="contact-interest" className="block text-caption-sm text-subtle mb-2">
                   {t("form.interest")} <span className="normal-case tracking-normal">{t("form.required")}</span>
                 </label>
                 <div className="relative">
                   <select
                     {...register("interest")}
+                    id="contact-interest"
                     className="w-full px-6 py-3 pr-12 appearance-none"
                   >
                     <option value="">{t("form.selectInterest")}</option>
@@ -306,34 +342,42 @@ export function ContactForm() {
                 )}
               </div>
 
-              {/* Lead Source */}
+              {/* How did you hear about us? */}
               <div className="sm:col-span-2">
-                <label className="block text-caption-sm text-subtle mb-2">
-                  {t("form.leadSource")} <span className="text-subtle normal-case tracking-normal">{t("form.optional")}</span>
+                <label htmlFor="contact-heard_about" className="block text-caption-sm text-subtle mb-2">
+                  {t("form.leadSource")} <span className="normal-case tracking-normal">{t("form.required")}</span>
                 </label>
                 <div className="relative">
                   <select
-                    {...register("lead_source")}
+                    {...register("heard_about")}
+                    id="contact-heard_about"
                     className="w-full px-6 py-3 pr-12 appearance-none"
                   >
                     <option value="">{t("form.selectSource")}</option>
-                    {leadSourceKeys.map((key) => (
-                      <option key={key} value={leadSourceValues[key]}>
+                    {heardAboutKeys.map((key) => (
+                      <option key={key} value={heardAboutValues[key]}>
                         {t(`form.leadSources.${key}`)}
                       </option>
                     ))}
                   </select>
                   <ChevronDown strokeWidth={1.5} className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-subtle pointer-events-none" />
                 </div>
+                {errors.heard_about && (
+                  <p className="mt-1 text-sm text-denied-dark flex items-center gap-1">
+                    <AlertCircle strokeWidth={1.5} className="w-4 h-4" />
+                    {errors.heard_about.message}
+                  </p>
+                )}
               </div>
 
               {/* Claims Volume */}
               <div className="sm:col-span-2">
-                <label className="block text-caption-sm text-subtle mb-2">
+                <label htmlFor="contact-claimsVolume" className="block text-caption-sm text-subtle mb-2">
                   {t("form.claimsVolume")} <span className="text-subtle normal-case tracking-normal">{t("form.optional")}</span>
                 </label>
                 <input
                   {...register("claimsVolume")}
+                  id="contact-claimsVolume"
                   type="text"
                   className="w-full px-6 py-3"
                   placeholder={t("form.placeholders.claimsVolume")}
@@ -342,11 +386,12 @@ export function ContactForm() {
 
               {/* Message */}
               <div className="sm:col-span-2">
-                <label className="block text-caption-sm text-subtle mb-2">
+                <label htmlFor="contact-message" className="block text-caption-sm text-subtle mb-2">
                   {t("form.message")} <span className="text-subtle normal-case tracking-normal">{t("form.optional")}</span>
                 </label>
                 <textarea
                   {...register("message")}
+                  id="contact-message"
                   rows={4}
                   className="w-full px-6 py-3 resize-none"
                   placeholder={t("form.placeholders.message")}

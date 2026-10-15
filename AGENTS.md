@@ -34,45 +34,61 @@ environment the run will deploy to.
    back, run the workflow again.
 4. **Every push to `main` deploys staging automatically**, so `main` is what
    staging shows unless someone deployed a branch since.
+5. **Staging is never indexed.** The staging job adds `X-Robots-Tag: noindex,
+   nofollow` to the exported `staticwebapp.config.json`
+   (`scripts/staging-noindex.mjs`) after the shared build, and the production
+   job refuses an export that carries that header, closes `robots.txt` or marks
+   the home page noindex (`scripts/check-production-export.mjs`). Staging keeps
+   an open `robots.txt` so crawlers can see the header.
 
 ## Releasing to production
 
-5. **Production deploys only from a release tag.** release-please keeps a
+6. **Production deploys only from a release tag.** release-please keeps a
    release PR open on `main`; merging it tags `vX.Y.Z`, publishes the
    release, and starts the production deployment. Do not merge the release
    PR before checking staging.
-6. **Never deploy a branch or an arbitrary commit to production.** The
+7. **Never deploy a branch or an arbitrary commit to production.** The
    workflow refuses anything that is not a `v*` tag. To redeploy an existing
    release, run the workflow from that tag.
-7. **Check what is actually on staging before releasing.** Staging shows the
+8. **Check what is actually on staging before releasing.** Staging shows the
    last deployment, which is `main` only if nobody has deployed a branch
    since. Look at the last "Deploy static website" run, and redeploy `main`
    if needed, before merging the release PR.
-8. **Write conventional commit messages** (`feat:`, `fix:`, `chore:`, `docs:`).
+9. **Write conventional commit messages** (`feat:`, `fix:`, `chore:`, `docs:`).
    They decide the next version number and the changelog.
 
 ## Configuration
 
-9. Secrets and variables live in GitHub only, never in Azure by hand and
+10. Secrets and variables live in GitHub only, never in Azure by hand and
    never in git:
 
 | Name | Kind | Where |
 |---|---|---|
 | `AZURE_STATIC_WEB_APPS_API_TOKEN` | secret, one per site | GitHub **environment** secret in `staging` and `production`; value from `az staticwebapp secrets list` once Terraform has created the site |
-| `GOOGLE_SCRIPT_URL` | Apps Script endpoint for `api/contact` (a URL, not a credential) | GitHub **repository** variable, one value for both environments; the deploy job writes it into `api/src/generated-config.js` right before upload. Unset means the form answers "not configured". |
-| `NEXT_PUBLIC_GA_MEASUREMENT_ID`, `NEXT_PUBLIC_HUBSPOT_PORTAL_ID` | public build-time IDs, both optional | GitHub **repository** variables read by the build job; when one is unset that tracker is simply not loaded |
+| `GOOGLE_SCRIPT_URL` | Apps Script endpoint for `api/contact` (a URL, not a credential); the sheet also emails the team | GitHub **repository** variable, one value for both environments; `scripts/configure-contact-function.mjs` writes it into `api/src/generated-config.js` right before upload. |
+| `HUBSPOT_FORM_GUID` | HubSpot form that `api/contact` submits leads to through the Forms API (an ID, not a credential) | GitHub **repository** variable, written into the function package like `GOOGLE_SCRIPT_URL`, together with `NEXT_PUBLIC_HUBSPOT_PORTAL_ID`. The HubSpot form must contain every property in `HUBSPOT_FIELDS` in `api/src/functions/contact.js` (hidden fields are fine). Unset means leads go to the sheet only; with neither set the form answers "not configured". |
+| `NEXT_PUBLIC_GTM_ID` | Google Tag Manager container, loaded only after analytics consent | GitHub **repository** variable read by the build job. Once set, GA4 runs from the container and the direct GA4 tag is never loaded. |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID`, `NEXT_PUBLIC_HUBSPOT_PORTAL_ID` | public build-time IDs, both optional | GitHub **repository** variables read by the build job; when one is unset that tracker is simply not loaded. The GA4 ID is only a fallback while `NEXT_PUBLIC_GTM_ID` is unset; delete it once GA4 runs from GTM. |
 
-10. Hosting behaviour (security headers, redirects, the `/contact-card`
+11. Hosting behaviour (security headers, redirects, the `/contact-card`
     rewrite, the 404 page, the Node runtime for the API) is
     `public/staticwebapp.config.json`; keep it under 16 KB (hard platform
     limit 20 KB).
-11. **Do not change website copy as part of an infrastructure or deployment
+12. **Do not change website copy as part of an infrastructure or deployment
     change.**
 
 ## How the site is built and served
 
-- `npm run build` runs `next build` and then `scripts/post-export.mjs`, which
-  puts every page at
+- `npm run build` runs `next build`, `scripts/post-export.mjs`,
+  `scripts/build-sitemap.mjs` and `scripts/check-html.mjs`, in that order.
+  The sitemap is built from the exported pages: every indexable page that is
+  canonical to itself, in every locale, with the hreflang alternates the page
+  declares and a `lastmod` from the git history of its route folder, sections
+  and messages, so the build needs a full clone (the workflow checks out with
+  `fetch-depth: 0`). The HTML check fails the build on a page without exactly
+  one H1, a skipped heading level, an unsized image, JSON-LD that does not
+  parse, or a wrong `<html lang>`.
+- `scripts/post-export.mjs` puts every page at
   `<path>/index.html`, renames the Open Graph images to `.png`, and adds a
   301 route for every old unprefixed English URL, and writes a root `index.html`
   placeholder because the deploy action refuses an app folder without one (the
@@ -118,4 +134,13 @@ staging but is 404 on the emulator. Checks worth running against it:
 curl -sI localhost:4280/ | grep -i location              # /en/
 curl -sI localhost:4280/technology | grep -i location    # /en/technology/, one hop
 curl -so /dev/null -w '%{http_code}' localhost:4280/en/nope/   # 404
+```
+
+Against a live host, `scripts/launch-check.sh` runs the scriptable part of
+Firon's launch checklist (redirects, 404, files, noindex, robots.txt,
+sitemap, and every row of `redirects/redirects.csv` once it exists):
+
+```bash
+scripts/launch-check.sh https://staging.trueaim.ai --staging
+scripts/launch-check.sh                                  # production
 ```

@@ -24,7 +24,7 @@ export default async function InnosuissePage({ params }: { params: Promise<{ loc
           <div className="flex justify-center mb-8">
             <div className="rounded-pill bg-ta-neutral-0 p-6 shadow-swatch">
               <Image
-                src="/partners/innosuisse.png"
+                src="/partners/innosuisse.webp"
                 alt="Innosuisse logo"
                 width={340}
                 height={96}
@@ -58,9 +58,9 @@ export default async function InnosuissePage({ params }: { params: Promise<{ loc
               <div className="icon-plate w-14 h-14 mb-6">
                 <Landmark strokeWidth={1.5} className="w-7 h-7" />
               </div>
-              <h3 className="font-display text-xl font-bold text-strong mb-3">
+              <h2 className="font-display text-xl font-bold text-strong mb-3">
                 {t("keyPoints.govValidation.title")}
-              </h3>
+              </h2>
               <p className="text-body">
                 {t("keyPoints.govValidation.description")}
               </p>
@@ -70,9 +70,9 @@ export default async function InnosuissePage({ params }: { params: Promise<{ loc
               <div className="icon-plate w-14 h-14 mb-6">
                 <Shield strokeWidth={1.5} className="w-7 h-7" />
               </div>
-              <h3 className="font-display text-xl font-bold text-strong mb-3">
+              <h2 className="font-display text-xl font-bold text-strong mb-3">
                 {t("keyPoints.excellence.title")}
-              </h3>
+              </h2>
               <p className="text-body">
                 {t("keyPoints.excellence.description")}
               </p>
@@ -82,9 +82,9 @@ export default async function InnosuissePage({ params }: { params: Promise<{ loc
               <div className="icon-plate w-14 h-14 mb-6">
                 <Award strokeWidth={1.5} className="w-7 h-7" />
               </div>
-              <h3 className="font-display text-xl font-bold text-strong mb-3">
+              <h2 className="font-display text-xl font-bold text-strong mb-3">
                 {t("keyPoints.priority.title")}
-              </h3>
+              </h2>
               <p className="text-body">
                 {t("keyPoints.priority.description")}
               </p>
@@ -94,9 +94,9 @@ export default async function InnosuissePage({ params }: { params: Promise<{ loc
               <div className="icon-plate w-14 h-14 mb-6">
                 <Microscope strokeWidth={1.5} className="w-7 h-7" />
               </div>
-              <h3 className="font-display text-xl font-bold text-strong mb-3">
+              <h2 className="font-display text-xl font-bold text-strong mb-3">
                 {t("keyPoints.zhawCollab.title")}
-              </h3>
+              </h2>
               <p className="text-body">
                 {t("keyPoints.zhawCollab.description")}
               </p>

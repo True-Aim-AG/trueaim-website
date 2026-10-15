@@ -32,13 +32,13 @@ src/
 │   ├── [locale]/          all pages; every locale is prefixed (/en/, /de/, ...), trailing slashes on
 │   ├── globals.css        design tokens and theme blocks
 │   ├── not-found.tsx      built to out/404.html, served for every unmatched path
-│   └── sitemap.ts, feed.xml/
-├── components/            brand, calculator, contact, diagrams, layout,
-│                          partners, products, sections, seo, ui
+│   └── feed.xml/          (the sitemap is built from the export, see AGENTS.md)
+├── components/            brand, calculator, contact, content, diagrams,
+│                          layout, partners, products, sections, seo, ui
 ├── data/  i18n/  lib/
 api/                       Static Web Apps managed Azure Function (contact form)
 messages/{en,de,fr,it}/    all site copy, 12 JSON namespaces per locale
-scripts/post-export.mjs    runs after next build; see AGENTS.md
+scripts/                   export, sitemap, HTML checks and deploy helpers; see AGENTS.md
 tests/e2e/                 Playwright specs
 docs/                      PRD, design system, review requirements
 ```
@@ -48,6 +48,11 @@ docs/                      PRD, design system, review requirements
 - **No dashes for rhythm**: avoid em-dashes (—), en-dashes (–) and spaced hyphens ( - ) for pauses or clause separation. Rewrite instead. Compound words ("real-time"), technical terms and URLs are fine.
 - **The brand name in text is always True Aim (two words).**
 - Copy is ICU-parsed by next-intl. An apostrophe immediately before a tag or brace (`l'<init>`) is read as an ICU escape and breaks the message; double it (`l''<init>`).
+
+## Tracking and Consent
+- Strict consent: nothing is requested from Google or HubSpot (no script, no preconnect) before the visitor accepts analytics cookies. Consent state and helpers live in `src/lib/consent.ts`.
+- GTM loads from `NEXT_PUBLIC_GTM_ID` after consent; the contact form pushes `form_submit_success` (form_name, page_locale, heard_about) only after `/api/contact` answers 2xx. Never put personal data in the data layer.
+- Page building blocks for Firon's templates (FAQ, summary, breadcrumbs, comparison table, related links, article meta, and their JSON-LD builders) live in `src/components/content/`.
 
 ## Demo Embeds
 - ClaimEval, embedded in `products/claimeval/a`: https://claimeval.vercel.app/claims

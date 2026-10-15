@@ -1,14 +1,23 @@
 # https://www.robotstxt.org/robotstxt.html
-# Per RFC 9309, each User-agent group is evaluated independently — the most specific
-# matching group wins, so /api/ must be disallowed inside every group to apply broadly.
+# Per RFC 9309, each User-agent group is evaluated independently: the most
+# specific matching group wins, so /api/ is disallowed inside every group.
 
 # Default: allow all crawlers, block /api/
 User-agent: *
 Allow: /
 Disallow: /api/
 
-# Explicit AI crawlers — allowed (no training opt-out at this time), /api/ blocked
+# AI search, assistant and training crawlers, named explicitly and allowed.
+
 User-agent: GPTBot
+Allow: /
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+
+User-agent: ChatGPT-User
 Allow: /
 Disallow: /api/
 
@@ -16,7 +25,7 @@ User-agent: ClaudeBot
 Allow: /
 Disallow: /api/
 
-User-agent: Claude-Web
+User-agent: Claude-User
 Allow: /
 Disallow: /api/
 
@@ -38,7 +47,3 @@ Disallow: /api/
 
 # Sitemap
 Sitemap: https://trueaim.ai/sitemap.xml
-
-# LLM documentation (https://llmstxt.org)
-# llms.txt: https://trueaim.ai/llms.txt
-# llms-full.txt: https://trueaim.ai/llms-full.txt

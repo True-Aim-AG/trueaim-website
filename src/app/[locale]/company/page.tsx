@@ -19,11 +19,11 @@ const founderKeys = ["reuben", "frederic"] as const;
 const founderMeta = {
   reuben: {
     linkedin: "https://www.linkedin.com/in/reubenj/",
-    image: "/team/reuben-john.jpg",
+    image: "/team/reuben-john.webp",
   },
   frederic: {
     linkedin: "https://www.linkedin.com/in/frdbrunner/",
-    image: "/team/frederic-brunner.jpg",
+    image: "/team/frederic-brunner.webp",
   },
 };
 
@@ -46,11 +46,11 @@ const partnerMeta = {
     link: "/partners/yarowa",
   },
   zhaw: {
-    image: "/partners/zhaw.jpg",
+    image: "/partners/zhaw.webp",
     link: "/partners/zhaw",
   },
   innosuisse: {
-    image: "/partners/innosuisse.png",
+    image: "/partners/innosuisse.webp",
     link: "/partners/innosuisse",
   },
   swissInsurtechHub: {

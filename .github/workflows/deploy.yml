@@ -33,6 +33,9 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
+          # Full history: scripts/build-sitemap.mjs reads each page's lastmod
+          # from git and refuses a shallow clone.
+          fetch-depth: 0
       - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
           node-version: '22'
@@ -45,6 +48,7 @@ jobs:
       - run: npm test
       - run: npm run build
         env:
+          NEXT_PUBLIC_GTM_ID: ${{ vars.NEXT_PUBLIC_GTM_ID }}
           NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ vars.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
           NEXT_PUBLIC_HUBSPOT_PORTAL_ID: ${{ vars.NEXT_PUBLIC_HUBSPOT_PORTAL_ID }}
       # Static Web Apps caps an app at 250 MB on Free (staging) and 15,000
@@ -106,16 +110,22 @@ jobs:
         if: steps.freshness.outputs.stale != 'true'
         with:
           name: website
-      # The contact function's Apps Script endpoint is a repository variable
-      # (a URL, not a credential) written into the function package here so
-      # the same value serves both environments without touching Azure.
+      # The contact function's Apps Script endpoint and HubSpot form are
+      # repository variables (identifiers, not credentials) written into the
+      # function package here so the same values serve both environments
+      # without touching Azure.
       - name: Configure the contact function
         if: steps.freshness.outputs.stale != 'true'
         env:
           GOOGLE_SCRIPT_URL: ${{ vars.GOOGLE_SCRIPT_URL }}
-        run: |
-          if [ -z "$GOOGLE_SCRIPT_URL" ]; then echo "::warning::GOOGLE_SCRIPT_URL variable is not set; the contact form will answer 'not configured'"; fi
-          node -e 'require("node:fs").writeFileSync("api/src/generated-config.js", "export const scriptUrl = " + JSON.stringify(process.env.GOOGLE_SCRIPT_URL || "") + ";\n")'
+          HUBSPOT_PORTAL_ID: ${{ vars.NEXT_PUBLIC_HUBSPOT_PORTAL_ID }}
+          HUBSPOT_FORM_GUID: ${{ vars.HUBSPOT_FORM_GUID }}
+        run: node scripts/configure-contact-function.mjs
+      # Staging must never be indexed. The header is added here, after the
+      # shared build, so no production artifact can carry it.
+      - name: Mark staging as noindex
+        if: steps.freshness.outputs.stale != 'true'
+        run: node scripts/staging-noindex.mjs out
       - uses: Azure/static-web-apps-deploy@4d27395796ac319302594769cfe812bd207490b1 # v1
         if: steps.freshness.outputs.stale != 'true'
         with:
@@ -146,15 +156,15 @@ jobs:
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           name: website
-      # The contact function's Apps Script endpoint is a repository variable
-      # (a URL, not a credential) written into the function package here so
-      # the same value serves both environments without touching Azure.
+      # Same as staging: the sheet endpoint and HubSpot form from repository variables.
       - name: Configure the contact function
         env:
           GOOGLE_SCRIPT_URL: ${{ vars.GOOGLE_SCRIPT_URL }}
-        run: |
-          if [ -z "$GOOGLE_SCRIPT_URL" ]; then echo "::warning::GOOGLE_SCRIPT_URL variable is not set; the contact form will answer 'not configured'"; fi
-          node -e 'require("node:fs").writeFileSync("api/src/generated-config.js", "export const scriptUrl = " + JSON.stringify(process.env.GOOGLE_SCRIPT_URL || "") + ";\n")'
+          HUBSPOT_PORTAL_ID: ${{ vars.NEXT_PUBLIC_HUBSPOT_PORTAL_ID }}
+          HUBSPOT_FORM_GUID: ${{ vars.HUBSPOT_FORM_GUID }}
+        run: node scripts/configure-contact-function.mjs
+      - name: Refuse an export that would de-index production
+        run: node scripts/check-production-export.mjs out
       - uses: Azure/static-web-apps-deploy@4d27395796ac319302594769cfe812bd207490b1 # v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}

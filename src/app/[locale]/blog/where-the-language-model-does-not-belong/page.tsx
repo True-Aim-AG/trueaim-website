@@ -15,7 +15,7 @@ import {
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 import { ButtonLink } from "@/components/brand/Button";
 import { GridPattern } from "@/components/brand/GridPattern";
-import { FaqAccordion } from "@/components/ui/FaqAccordion";
+import { FaqBlock } from "@/components/content";
 import { operations } from "./operations";
 import { faqs } from "./faqs";
 
@@ -552,7 +552,7 @@ export default async function LanguageModelBoundaryBlogPost({
                   Frequently Asked Questions
                 </h2>
 
-                <FaqAccordion faqs={faqs} />
+                <FaqBlock faqs={faqs} />
               </MotionDiv>
 
               {/* Related reading */}

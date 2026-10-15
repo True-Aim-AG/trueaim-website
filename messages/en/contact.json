@@ -48,18 +48,18 @@
         "other": "Other"
       },
       "interests": {
-        "mira": "Automating claims decisions (MIRA)",
-        "contextbuilder": "Document processing and data extraction (ContextBuilder)",
-        "claimeval": "Quality assurance and leakage detection (ClaimEval)",
-        "auditability": "Auditability and regulatory compliance",
-        "earlyStage": "Evaluating AI for claims (early-stage)",
+        "invoiceBenchmarking": "Invoice Benchmarking",
+        "claimsDecisioning": "Claims Decisioning",
+        "damageReporting": "Damage Reporting",
+        "otus": "Otus",
         "other": "Something else / Not sure yet"
       },
       "leadSources": {
+        "aiAssistant": "AI assistant such as ChatGPT or Perplexity",
+        "searchEngine": "Search engine",
+        "linkedin": "LinkedIn",
         "referral": "Referral",
         "industryEvent": "Industry event",
-        "onlineResearch": "Online research",
-        "linkedin": "LinkedIn",
         "other": "Other"
       },
       "validation": {
@@ -70,7 +70,8 @@
         "jobTitleRequired": "Job title is required",
         "countryRequired": "Please select a country",
         "interestRequired": "Please select your interest",
-        "consentRequired": "You must agree to receive communications"
+        "consentRequired": "You must agree to receive communications",
+        "heardAboutRequired": "Please tell us how you heard about us"
       },
       "submit": "Book a Demo",
       "submitting": "Submitting...",

@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
@@ -65,6 +64,10 @@ const processingStats: { check?: boolean; value?: string; label: string }[] = [
   { check: true, label: "Extensive test coverage" },
 ];
 
+/**
+ * Collapsible detail panel. Native <details>, so the collapsed content stays
+ * in the served HTML for crawlers and readers without JavaScript.
+ */
 function ExpandableSection({
   title,
   children,
@@ -74,23 +77,20 @@ function ExpandableSection({
   children: React.ReactNode;
   defaultOpen?: boolean;
 }) {
-  const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="bg-card shadow-card rounded-pill overflow-hidden">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between p-5 text-left hover:bg-surface-muted transition-colors"
-      >
+    <details open={defaultOpen} className="group bg-card shadow-card rounded-pill overflow-hidden">
+      <summary className="w-full flex cursor-pointer list-none items-center justify-between p-5 text-left hover:bg-surface-muted transition-colors [&::-webkit-details-marker]:hidden">
         <span className="font-semibold text-sm text-strong">
           {title}
         </span>
         <ChevronDown
+          aria-hidden="true"
           strokeWidth={1.5}
-          className={`w-4 h-4 text-muted transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className="w-4 h-4 text-muted transition-transform duration-200 group-open:rotate-180"
         />
-      </button>
-      {open && <div className="px-5 pb-5 pt-0">{children}</div>}
-    </div>
+      </summary>
+      <div className="px-5 pb-5 pt-0">{children}</div>
+    </details>
   );
 }
 
@@ -345,9 +345,9 @@ export default function VehicleWarrantyCaseStudy() {
                     >
                       <item.icon className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                       <div>
-                        <h4 className="font-semibold text-strong mb-1">
+                        <h3 className="font-semibold text-strong mb-1">
                           {item.title}
-                        </h4>
+                        </h3>
                         <p className="text-sm text-body leading-[1.6]">
                           {item.desc}
                         </p>
@@ -560,9 +560,9 @@ export default function VehicleWarrantyCaseStudy() {
                         Days 1-3
                       </span>
                     </div>
-                    <h4 className="font-semibold text-strong mb-2">
+                    <h3 className="font-semibold text-strong mb-2">
                       Baseline and Architecture
-                    </h4>
+                    </h3>
                     <p className="text-sm text-body leading-[1.6]">
                       The initial LLM-only approach produced plausible-sounding
                       but unreliable results: hallucinated part names, invented
@@ -589,9 +589,9 @@ export default function VehicleWarrantyCaseStudy() {
                         76%
                       </span>
                     </div>
-                    <h4 className="font-semibold text-strong mb-2">
+                    <h3 className="font-semibold text-strong mb-2">
                       Screening + Coverage Pipeline
-                    </h4>
+                    </h3>
                     <p className="text-sm text-body leading-[1.6]">
                       The deterministic screening pipeline and multi-tier coverage
                       matching drove the biggest single improvement.
@@ -610,9 +610,9 @@ export default function VehicleWarrantyCaseStudy() {
                         88% &rarr; 94% &rarr; 98%
                       </span>
                     </div>
-                    <h4 className="font-semibold text-strong mb-2">
+                    <h3 className="font-semibold text-strong mb-2">
                       Iteration and Refinement
-                    </h4>
+                    </h3>
                     <p className="text-sm text-body leading-[1.6]">
                       60+ evaluation iterations solving increasingly subtle
                       problems: substring matching bugs, labor demotion logic,
@@ -631,9 +631,9 @@ export default function VehicleWarrantyCaseStudy() {
                         77%
                       </span>
                     </div>
-                    <h4 className="font-semibold text-strong mb-2">
+                    <h3 className="font-semibold text-strong mb-2">
                       Unseen Data Validation
-                    </h4>
+                    </h3>
                     <p className="text-sm text-body leading-[1.6]">
                       30 previously unseen claims revealed failure modes the
                       development set did not cover: causal exclusion clauses,
