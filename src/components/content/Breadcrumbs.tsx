@@ -1,8 +1,11 @@
+import Link from "next/link";
 import type { BreadcrumbItem } from "./schema";
 
 /**
- * Visible breadcrumb trail for every page below home. Plain <a href> links
- * in an ordered list; the last item is the current page. Feed the same
+ * Visible breadcrumb trail for every page below home: links in an ordered
+ * list, the last item being the current page. next/link renders a plain
+ * <a href> in the HTML and navigates client-side, which keeps the in-memory
+ * first-visit attribution of visitors who have not accepted cookies. Feed the same
  * items to breadcrumbListSchema() so BreadcrumbList matches what is shown.
  * `label` names the landmark for screen readers and comes from messages.
  */
@@ -26,9 +29,9 @@ export function Breadcrumbs({
                   {item.name}
                 </span>
               ) : (
-                <a href={new URL(item.url).pathname} className="text-link hover:underline">
+                <Link href={new URL(item.url).pathname} className="text-link hover:underline">
                   {item.name}
-                </a>
+                </Link>
               )}
             </li>
           );

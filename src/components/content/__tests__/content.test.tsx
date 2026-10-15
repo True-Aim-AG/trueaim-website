@@ -56,7 +56,7 @@ describe("Breadcrumbs", () => {
     { name: "Post", url: "https://trueaim.ai/en/blog/post/" },
   ];
 
-  it("renders a labelled ordered list with plain links and a current page", () => {
+  it("renders a labelled ordered list of links and a current page", () => {
     const html = renderToStaticMarkup(<Breadcrumbs items={items} label="Breadcrumb" />);
     expect(html).toContain('<nav aria-label="Breadcrumb"');
     expect(html).toContain("<ol");
@@ -98,7 +98,7 @@ describe("Summary, RelatedLinks and ArticleMeta", () => {
     expect(html.startsWith("<p")).toBe(true);
   });
 
-  it("renders related links as plain anchors under a heading", () => {
+  it("renders related links as anchors under a heading", () => {
     const html = renderToStaticMarkup(
       <RelatedLinks heading="Related" links={[{ title: "Technology", href: "/en/technology/" }]} />,
     );

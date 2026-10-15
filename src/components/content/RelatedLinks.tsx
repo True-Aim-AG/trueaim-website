@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export type RelatedLink = {
   title: string;
   /** Final internal URL path, for example /en/technology/. Never a redirect. */
@@ -6,8 +8,10 @@ export type RelatedLink = {
 };
 
 /**
- * Internal links between products, solutions and resources, as plain
- * <a href> cards so crawlers follow them without JavaScript.
+ * Internal links between products, solutions and resources. next/link
+ * renders a plain <a href> card that crawlers follow without JavaScript,
+ * and navigates client-side, which keeps the in-memory first-visit
+ * attribution of visitors who have not accepted cookies.
  */
 export function RelatedLinks({
   heading,
@@ -27,7 +31,7 @@ export function RelatedLinks({
       <ul className="grid gap-6 md:grid-cols-3">
         {links.map((link) => (
           <li key={link.href}>
-            <a
+            <Link
               href={link.href}
               className="block h-full bg-card shadow-card rounded-pill p-8 hover:underline"
             >
@@ -39,7 +43,7 @@ export function RelatedLinks({
                   {link.description}
                 </span>
               )}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
