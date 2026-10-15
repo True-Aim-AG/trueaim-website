@@ -68,6 +68,12 @@ describe("first-touch attribution", () => {
     expect(getFirstTouch().utm_source).toBe("linkedin");
   });
 
+  it("treats the www host as the same site", () => {
+    setReferrer("http://www.localhost:3000/en/technology/");
+    captureFirstTouch();
+    expect(getFirstTouch().referrer).toBe("");
+  });
+
   it("clears the stored touch on withdrawal", () => {
     localStorage.setItem(FIRST_TOUCH_STORAGE_KEY, "{}");
     clearFirstTouch();

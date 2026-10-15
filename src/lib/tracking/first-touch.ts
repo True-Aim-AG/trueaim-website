@@ -41,12 +41,18 @@ function originAndPath(url: string): string {
   }
 }
 
+// www.trueaim.ai and trueaim.ai are one site: the www host redirects to the
+// apex in the browser, which leaves the www page as document.referrer.
+function siteHost(host: string): string {
+  return host.replace(/^www\./, "");
+}
+
 function fromLocation(): StoredFirstTouch {
   const params = new URLSearchParams(window.location.search);
   let referrer = "";
   try {
     const from = new URL(document.referrer);
-    if (from.host !== window.location.host) referrer = originAndPath(document.referrer);
+    if (siteHost(from.host) !== siteHost(window.location.host)) referrer = originAndPath(document.referrer);
   } catch {
     // No referrer, or not a URL.
   }
