@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 
 const PUBLISH_DATE = "2026-05-21";
+const LAST_UPDATED = "2026-10-16";
 
 type TocItem = { id: string; label: string };
 
@@ -33,7 +34,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             Privacy Policy
           </h1>
           <p className="text-sm text-muted mb-2">
-            <strong className="text-strong">Effective date:</strong> {PUBLISH_DATE} &nbsp;|&nbsp; <strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}
+            <strong className="text-strong">Effective date:</strong> {PUBLISH_DATE} &nbsp;|&nbsp; <strong className="text-strong">Last updated:</strong> {LAST_UPDATED}
           </p>
           <p className="text-sm text-muted mb-8">
             Previous versions:{" "}
@@ -77,7 +78,8 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 <li><strong className="text-strong">Claims data submitted by Tenants:</strong> claim narratives, claimant identifiers, dates of loss, policy numbers, uploaded documents.</li>
                 <li><strong className="text-strong">Derived data:</strong> structured data extracted from uploaded documents by our document intelligence and language model components.</li>
                 <li><strong className="text-strong">Usage and telemetry:</strong> application logs, audit trail entries, request metadata, operational metrics.</li>
-                <li><strong className="text-strong">Website data:</strong> IP address, browser metadata, pages visited (collected via standard server logs and, where applicable, cookies as described in our Cookie Notice).</li>
+                <li><strong className="text-strong">Website data:</strong> IP address, browser metadata and pages visited, collected through standard server logs and, only after you accept analytics cookies, through Google Tag Manager and Google Analytics 4 as described in our Cookie Policy.</li>
+                <li><strong className="text-strong">Contact form data:</strong> the details you enter in the form, together with attribution fields the website records with your submission: the page you first landed on, the referring site, campaign parameters (UTM) and your answer to &ldquo;how did you hear about us&rdquo;. This data is sent to HubSpot, our CRM (see section 5).</li>
               </ul>
             </section>
 
@@ -103,6 +105,14 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
               <p className="text-body leading-[1.6] mt-3">
                 Tools used internally (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed there. We do not disclose personal data to other third parties except as required by law or with explicit Tenant instruction.
               </p>
+              <p className="text-body leading-[1.6] mt-3">
+                This website uses the following services. None of them receives Tenant or claims data.
+              </p>
+              <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
+                <li><strong className="text-strong">Google Tag Manager and Google Analytics 4</strong> (Google Ireland Limited): loaded only after you accept analytics cookies; measure page views and interactions with IP anonymisation; no personal data is placed in the data layer.</li>
+                <li><strong className="text-strong">HubSpot</strong> (hosted in HubSpot&rsquo;s EU data centre): receives contact form submissions, including the attribution fields listed in section 2, and, only after you accept analytics cookies, records your visits to this website.</li>
+                <li><strong className="text-strong">Firon Marketing</strong>: the agency that works on our website performance, with access to Google Tag Manager, Google Analytics and Google Search Console; it has no access to customer or Tenant data.</li>
+              </ul>
             </section>
 
             <section id="transfers" className="scroll-mt-24">
