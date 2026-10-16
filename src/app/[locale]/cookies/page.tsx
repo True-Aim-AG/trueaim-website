@@ -15,7 +15,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
           Cookie Policy
         </h1>
         <p className="text-sm text-muted mb-8">
-          Last updated: 08 February 2026
+          Last updated: 16 October 2026
         </p>
 
         <div>
@@ -43,7 +43,15 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
           <section>
             <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">4. Cookies used on this website</h2>
             <p className="text-body leading-[1.6]">
-              We may use cookies and similar technologies in connection with website analytics, contact and demo request forms, calendar booking links and consent management tools. The specific cookies used may change over time as we improve our website and services.
+              No cookie is set before you make a choice in the cookie banner. The cookies and similar technologies on this website are:
+            </p>
+            <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
+              <li><strong className="text-strong">Consent choice</strong> (set by this website in your browser&rsquo;s local storage, not a cookie): remembers whether you accepted or declined analytics cookies.</li>
+              <li><strong className="text-strong">Google Analytics 4, loaded through Google Tag Manager</strong> (<code>_ga</code>, <code>_ga_*</code>): set only after you accept analytics cookies; measure page views and interactions.</li>
+              <li><strong className="text-strong">HubSpot</strong> (<code>hubspotutk</code>, <code>__hstc</code>, <code>__hssc</code>, <code>__hssrc</code>): set only after you accept analytics cookies; recognise returning visitors and link contact form submissions to visits.</li>
+            </ul>
+            <p className="text-body leading-[1.6] mt-3">
+              Firon Marketing, the agency that works on our website performance, has access to our Google Tag Manager and Google Analytics accounts and sets no cookies of its own. This list is updated when we add or remove a service.
             </p>
           </section>
 
