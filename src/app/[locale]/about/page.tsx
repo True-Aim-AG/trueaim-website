@@ -11,9 +11,9 @@ const team = ["reuben", "frederic", "alin", "kai", "henrique", "arnaud"] as cons
 const teamMeta: Record<(typeof team)[number], { image?: string; linkedin?: string }> = {
   reuben: { image: "/team/reuben-john.webp", linkedin: "https://www.linkedin.com/in/reubenj/" },
   frederic: { image: "/team/frederic-brunner.webp", linkedin: "https://www.linkedin.com/in/frdbrunner/" },
-  alin: {},
-  kai: {},
-  henrique: {},
+  alin: { image: "/team/alin-koppandi.webp" },
+  kai: { image: "/team/kai-praschma.webp" },
+  henrique: { linkedin: "https://www.linkedin.com/in/henriquemf213" },
   arnaud: {},
 };
 
@@ -67,6 +67,7 @@ function Portrait({ src, name }: { src?: string; name: string }) {
 const PERSON = cn(CARD, "flex h-full flex-col gap-2.5 p-7");
 const ROLE = "text-[12px] font-medium uppercase tracking-[0.1em] text-accent";
 const NAME = "font-display text-[20px] font-semibold leading-[1.3] text-strong";
+const GRID = "grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3";
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -78,7 +79,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <PageHero
         title={t("hero.title")}
         summary={t("hero.p1")}
-        buttons={[{ label: t("hero.button"), href: "/contact" }]}
         texture={{ name: "circ" }}
         visual={
           <Image
@@ -99,23 +99,25 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </PageHero>
 
+      {/* Sections alternate: white, lilac, white, lilac. */}
+
       {/* Mission */}
       <section className={SECTION}>
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-[70ch] text-center">
-            <p className="mb-4 font-body text-[14px] font-medium uppercase tracking-[0.16em] text-accent">{t("mission.label")}</p>
-            <p className="font-display text-[26px] font-semibold leading-[1.3] text-strong text-balance md:text-[32px]">
+            <h2 className="font-display text-[30px] font-bold leading-[1.15] text-strong md:text-[40px]">{t("mission.label")}</h2>
+            <p className="mt-6 font-display text-[24px] font-semibold leading-[1.35] text-strong text-balance md:text-[30px]">
               {t("mission.text")}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Team */}
-      <section id="team" className={SECTION}>
+      {/* Team and advisers */}
+      <section id="team" className={SECTION_LILAC}>
         <div className="mx-auto max-w-7xl">
           <SectionHead heading={t("team.heading")} className="mb-10" />
-          <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3">
+          <ul className={GRID}>
             {team.map((key) => {
               const name = t(`team.members.${key}.name`);
               const meta = teamMeta[key];
@@ -140,14 +142,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               );
             })}
           </ul>
-        </div>
-      </section>
 
-      {/* Advisers */}
-      <section className={SECTION_LILAC}>
-        <div className="mx-auto max-w-7xl">
-          <SectionHead heading={t("advisers.heading")} className="mb-10" />
-          <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3">
+          <SectionHead heading={t("advisers.heading")} className="mb-10 mt-20" />
+          <ul className={GRID}>
             {advisers.map((key) => {
               const name = t(`advisers.members.${key}.name`);
               return (
@@ -196,6 +193,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       <BadgeRow
         heading={t("awards.heading")}
+        lilac
         items={awards.map((key) => {
           const meta = awardMeta[key];
           return {

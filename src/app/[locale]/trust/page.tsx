@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, Shield } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import {
@@ -10,9 +10,10 @@ import {
   FaqSection,
   FeatureCards,
   PageHero,
-  SECTION,
+  SECTION_LILAC,
   SectionHead,
   SplitText,
+  type BadgeItem,
   type FaqItem,
 } from "@/components/content";
 import { HexDot } from "@/components/products/scenes/marks";
@@ -21,16 +22,17 @@ import { cn } from "@/lib/utils";
 
 const PATH = "/trust";
 
-// Certifications first, then the frameworks the controls are aligned with.
-// The label on each badge comes from messages/<locale>/trust.json and says
-// only what True Aim holds today. The marks are drawn in brand style until
-// the certification bodies' own files replace them.
+// Certifications first, as badges; then the frameworks the controls are
+// aligned with, on the icons the live page uses. The label on each comes
+// from messages/<locale>/trust.json and says only what True Aim holds today.
+// The two badges are drawn in brand style until the certification bodies'
+// own files replace them.
 const badges = [
   { key: "iso27001", mark: "/brand/marks/badge-iso-27001.svg" },
   { key: "soc2", mark: "/brand/marks/badge-soc-2-type-ii.svg" },
-  { key: "gdpr", mark: "/brand/marks/badge-gdpr.svg" },
-  { key: "fadp", mark: "/brand/marks/badge-fadp.svg" },
-  { key: "dora", mark: "/brand/marks/badge-dora.svg" },
+  { key: "gdpr" },
+  { key: "fadp" },
+  { key: "dora" },
 ] as const;
 
 const euAiActKeys = [
@@ -83,6 +85,19 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
   const t = await getTranslations("trust");
   const faqs = t.raw("faq.items") as FaqItem[];
 
+  const badgeItems: BadgeItem[] = badges.map((badge) => {
+    const name = t(`badges.items.${badge.key}.name`);
+    const status = t(`badges.items.${badge.key}.status`) as "certified" | "aligned";
+    return {
+      image: "mark" in badge ? { src: badge.mark, alt: name, width: 160, height: 160 } : undefined,
+      icon: "mark" in badge ? undefined : <Shield strokeWidth={1.5} className="h-7 w-7" />,
+      renderHeight: 80,
+      caption: t(`badges.statusLabels.${status}`),
+      title: name,
+      text: t(`badges.items.${badge.key}.description`),
+    };
+  });
+
   return (
     <>
       <PageSeo locale={locale} path={PATH} template="trust" faqs={faqs} />
@@ -105,27 +120,18 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
         }
       />
 
-      <BadgeRow
-        heading={t("badges.heading")}
-        items={badges.map((badge) => {
-          const name = t(`badges.items.${badge.key}.name`);
-          const status = t(`badges.items.${badge.key}.status`) as "certified" | "aligned";
-          return {
-            image: { src: badge.mark, alt: name, width: 160, height: 160 },
-            renderHeight: 80,
-            caption: t(`badges.statusLabels.${status}`),
-            title: name,
-          };
-        })}
-      />
+      {/* Sections alternate: white, lilac, white, lilac. */}
+      <BadgeRow heading={t("badges.heading")} items={badgeItems} />
 
       <FeatureCards
         heading={t("euAiAct.heading")}
+        intro={t("euAiAct.intro")}
         columns={3}
         items={euAiActKeys.map((key) => ({
           title: t(`euAiAct.features.${key}.requirement`),
           text: t(`euAiAct.features.${key}.description`),
         }))}
+        lilac
       />
 
       <SplitText
@@ -155,7 +161,7 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
 
       <FaqSection heading={t("faq.heading")} faqs={faqs} />
 
-      <section className={SECTION}>
+      <section className={SECTION_LILAC}>
         <div className="mx-auto max-w-7xl">
           <SectionHead heading={t("documents.heading")} className="mb-10" />
           <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3">

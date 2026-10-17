@@ -22,11 +22,11 @@ export default async function ImpactEstimatorPage({ params }: { params: Promise<
         texture={{ name: "glass", position: "72% 18%" }}
         visual={
           <Image
-            src="/brand/3d/glass-box.webp"
+            src="/brand/3d/target.webp"
             alt={t("hero.imageAlt")}
-            width={940}
-            height={900}
-            className="mx-auto h-auto w-full max-w-[460px] drop-shadow-[0_30px_40px_rgba(44,43,42,.22)]"
+            width={640}
+            height={640}
+            className="mx-auto h-auto w-full max-w-[440px] drop-shadow-[0_30px_40px_rgba(44,43,42,.22)]"
             priority
           />
         }
