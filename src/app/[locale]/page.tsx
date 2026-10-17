@@ -40,7 +40,6 @@ const relatedPages = [
   { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking", icon: productIcons.invoiceBenchmarking },
   { key: "damageReporting", href: "/platform/damage-reporting", icon: productIcons.damageReporting },
   { key: "otus", href: "/platform/otus", icon: productIcons.otus },
-  { key: "platform", href: "/platform", icon: "workflow" },
   { key: "trust", href: "/trust", icon: "control" },
 ] as const;
 

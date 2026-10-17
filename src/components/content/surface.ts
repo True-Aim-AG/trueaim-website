@@ -1,7 +1,7 @@
 /**
  * Shared surface classes: rounded cards with a 1px ring inside the shadow,
  * and sections whose backgrounds alternate down the page, white under the
- * hero, then the pale blue, then white again.
+ * hero, then the mockup's lilac, then white again.
  */
 
 /** A card: 12px radius, 1px ring in the shadow, the brand card shadow. */
@@ -11,10 +11,10 @@ export const CARD = "rounded-[12px] bg-card shadow-[0_0_0_1px_rgba(44,43,42,.06)
 export const CARD_HOVER =
   "transition-[box-shadow,transform] duration-300 ease-brand hover:-translate-y-[3px] hover:shadow-[0_0_0_1px_rgba(81,81,219,.28),0_14px_28px_-12px_rgba(44,43,42,.18)] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--focus-ring)]";
 
-/** Section backgrounds: white, or the pale blue that alternates with it. */
+/** Section backgrounds: white, or the mockup's lilac that alternates with it. */
 export type Tone = "white" | "tint";
 
-const TONES: Record<Tone, string> = { white: "bg-page", tint: "bg-ta-blue-50" };
+const TONES: Record<Tone, string> = { white: "bg-page", tint: "bg-lilac" };
 
 /** The section wrapper for a tone, at full or short height. */
 export function section(tone: Tone = "white", tight = false) {
