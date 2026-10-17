@@ -25,7 +25,7 @@
     "/trust": {
       "title": "Fiducia & Conformità | True Aim",
       "description": "L'architettura di conformità di True Aim. Conformità al Regolamento sull'IA, al GDPR e alla LPD svizzera. Ogni decisione verificabile, ogni risultato tracciabile.",
-      "h1": "Sicurezza aziendale. Conformità normativa.",
+      "h1": "Security and compliance, built in from day one",
       "breadcrumb": "Fiducia",
       "ogTitle": "Fiducia & Conformità | True Aim",
       "ogDescription": "Conformità al Regolamento sull'IA, al GDPR e alla LPD svizzera. Ogni decisione verificabile, ogni risultato tracciabile.",
@@ -34,7 +34,7 @@
     "/about": {
       "title": "Azienda – Chi è True Aim | True Aim",
       "description": "La precisione svizzera incontra l'IA verificabile. Conosca il nostro team di leadership, i consulenti e i partner, tra cui Yarowa AG, ZHAW e Innosuisse. Supportato dall'ecosistema di innovazione svizzero.",
-      "h1": "Precisione svizzera. AI verificabile.",
+      "h1": "Scalable trust",
       "breadcrumb": "Chi siamo",
       "ogTitle": "Azienda – Chi è True Aim",
       "ogDescription": "La precisione svizzera incontra l'IA verificabile. Conosca il nostro team di leadership, i consulenti e i partner. Supportato dall'ecosistema di innovazione svizzero.",
@@ -43,7 +43,7 @@
     "/contact": {
       "title": "Contatti – Richiedi una demo | True Aim",
       "description": "Richieda una demo dell'IA neuro-simbolica di True Aim per l'automazione dei sinistri. Prenoti una chiamata conoscitiva di 30 minuti per vedere l'IA verificabile in azione.",
-      "h1": "Parliamo di automazione dei sinistri",
+      "h1": "Request a demo",
       "breadcrumb": "Contatti",
       "ogTitle": "Contatti – Richiedi una demo | True Aim",
       "ogDescription": "Richieda una demo dell'IA neuro-simbolica di True Aim per l'automazione dei sinistri. Prenoti una chiamata conoscitiva di 30 minuti.",
@@ -52,7 +52,7 @@
     "/impact-estimator": {
       "title": "Impact Estimator | True Aim",
       "description": "Esplori il valore potenziale con l'automazione dei sinistri tramite IA di True Aim. Stima d'impatto basata su dati pilota reali, senza impegno.",
-      "h1": "Esplori il Suo valore potenziale",
+      "h1": "Estimate the impact of automating claim decisions",
       "breadcrumb": "Impact Estimator",
       "ogTitle": "Impact Estimator | True Aim",
       "ogDescription": "Esplori il valore potenziale con l'automazione dei sinistri tramite IA. Stima d'impatto basata su dati pilota reali.",
@@ -61,7 +61,7 @@
     "/case-studies": {
       "title": "Casi di studio | True Aim",
       "description": "Scopra come l'IA neuro-simbolica di True Aim trasforma la gestione dei sinistri. Casi di studio reali di compagnie assicurative che utilizzano MIRA, ContextBuilder e ClaimEval.",
-      "h1": "Risultati concreti da assicuratori reali",
+      "h1": "Real numbers in practice",
       "breadcrumb": "Casi di studio",
       "ogTitle": "Casi di studio | True Aim",
       "ogDescription": "Casi di studio reali di compagnie assicurative che utilizzano l'IA neuro-simbolica di True Aim per l'automazione dei sinistri.",
@@ -106,7 +106,7 @@
     "/partners": {
       "title": "Partner | True Aim",
       "description": "I partner strategici e l'ecosistema di True Aim. Supportato da Innosuisse, ZHAW e Yarowa AG nell'ecosistema di innovazione svizzero.",
-      "h1": "Partner",
+      "h1": "L'ecosistema innovativo dietro True Aim",
       "breadcrumb": "Partner",
       "ogTitle": "Partner | True Aim",
       "ogDescription": "I partner strategici e l'ecosistema di True Aim. Supportato da Innosuisse, ZHAW e Yarowa AG nell'ecosistema di innovazione svizzero.",

@@ -108,10 +108,12 @@ export default function CaseStudyPage() {
                   {productNames[product]}
                 </Link>
               ))}
-              <div className="flex items-center gap-2 text-muted">
-                <Clock className="w-4 h-4" strokeWidth={1.5} />
-                {study.timeline}
-              </div>
+              {study.timeline && (
+                <div className="flex items-center gap-2 text-muted">
+                  <Clock className="w-4 h-4" strokeWidth={1.5} />
+                  {study.timeline}
+                </div>
+              )}
             </div>
           </motion.div>
         </div>

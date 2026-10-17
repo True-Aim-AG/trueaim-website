@@ -1,10 +1,10 @@
 "use client";
 
-import { useLocale } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { useEffect, useRef, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
+import { Check, Globe } from "lucide-react";
+import { Link, usePathname } from "@/i18n/navigation";
 import { pageLocales } from "@/i18n/page-locales";
-import { Globe, Check } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 const localeConfig: Record<string, { name: string; short: string }> = {
@@ -14,103 +14,118 @@ const localeConfig: Record<string, { name: string; short: string }> = {
   it: { name: "Italiano", short: "IT" },
 };
 
+/**
+ * The globe button opens a list of plain links to the same page in each
+ * language it exists in. The list is in the HTML whether open or closed, so
+ * crawlers follow the links without JavaScript. Nothing renders on a page
+ * that exists in English only.
+ */
 export function LanguageSwitcher() {
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
+  const t = useTranslations("nav");
   const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
+    function close(event: MouseEvent) {
+      if (ref.current && !ref.current.contains(event.target as Node)) setIsOpen(false);
     }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", close);
+    return () => document.removeEventListener("mousedown", close);
   }, []);
 
-  function switchLocale(newLocale: string) {
-    router.replace(pathname, { locale: newLocale });
-    setIsOpen(false);
-  }
+  const locales = pageLocales(pathname);
+  if (locales.length < 2) return null;
 
   return (
-    <div ref={dropdownRef} className="relative">
+    <div ref={ref} className="relative">
       <button
         type="button"
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={() => setIsOpen((open) => !open)}
         className={cn(
-          "flex items-center gap-1.5 h-10 px-3.5 rounded-pill text-body transition-colors duration-150 ease-brand hover:bg-accent-soft hover:text-accent",
+          "flex h-10 items-center gap-1.5 rounded-pill px-3.5 text-body transition-colors duration-150 ease-brand hover:bg-accent-soft hover:text-accent",
           isOpen && "bg-accent-soft text-accent",
         )}
-        aria-label="Switch language"
+        aria-label={t("languageLabel")}
         aria-expanded={isOpen}
-        aria-haspopup="listbox"
+        aria-haspopup="true"
       >
-        <Globe strokeWidth={1.5} className="w-4 h-4" />
-        <span className="text-xs font-medium tracking-[0.08em]">{localeConfig[locale]?.short}</span>
+        <Globe strokeWidth={1.5} className="h-4 w-4" />
+        <span className="text-xs font-medium tracking-[0.08em]">{localeConfig[locale]?.short ?? locale.toUpperCase()}</span>
       </button>
 
-      <div
+      <nav
+        aria-label={t("languageLabel")}
         className={cn(
-          "absolute top-full right-0 mt-3 nav-dropdown rounded-pill p-2 min-w-[196px] z-50 transition-[opacity,transform,visibility] duration-150 ease-brand",
-          isOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1",
+          "nav-dropdown absolute right-0 top-full z-50 mt-3 min-w-[196px] rounded-pill p-2 transition-[opacity,transform,visibility] duration-150 ease-brand",
+          isOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0",
         )}
-        role="listbox"
-        aria-label="Select language"
       >
-        {pageLocales(pathname).map((loc) => (
-          <button
-            key={loc}
-            type="button"
-            onClick={() => switchLocale(loc)}
-            role="option"
-            aria-selected={loc === locale}
-            className={cn(
-              "w-full flex items-center justify-between rounded-pill px-4 py-2.5 text-sm transition-colors duration-150 ease-brand",
-              loc === locale ? "text-accent bg-accent-soft" : "text-body hover:bg-surface-muted",
-            )}
-          >
-            <span className="flex items-center gap-2.5">
-              <span className={cn("text-xs font-medium tracking-[0.08em] w-6", loc === locale ? "text-accent" : "text-subtle")}>{localeConfig[loc]?.short}</span>
-              <span className={cn("font-medium", loc === locale && "font-semibold")}>{localeConfig[loc]?.name}</span>
-            </span>
-            {loc === locale && <Check strokeWidth={1.5} className="w-4 h-4 text-accent" />}
-          </button>
-        ))}
-      </div>
+        <ul>
+          {locales.map((loc) => {
+            const current = loc === locale;
+            return (
+              <li key={loc}>
+                <Link
+                  href={pathname}
+                  locale={loc}
+                  hrefLang={loc}
+                  lang={loc}
+                  aria-current={current ? "page" : undefined}
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "flex w-full items-center justify-between rounded-pill px-4 py-2.5 text-sm transition-colors duration-150 ease-brand",
+                    current ? "bg-accent-soft text-accent" : "text-body hover:bg-surface-muted",
+                  )}
+                >
+                  <span className="flex items-center gap-2.5">
+                    <span className={cn("w-6 text-xs font-medium tracking-[0.08em]", current ? "text-accent" : "text-subtle")}>
+                      {localeConfig[loc]?.short ?? loc.toUpperCase()}
+                    </span>
+                    <span className={cn("font-medium", current && "font-semibold")}>{localeConfig[loc]?.name ?? loc}</span>
+                  </span>
+                  {current && <Check strokeWidth={1.5} className="h-4 w-4 text-accent" />}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     </div>
   );
 }
 
+/** The same links as a pill group, for the mobile menu. */
 export function LanguageSwitcherMobile() {
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
-
-  function switchLocale(newLocale: string) {
-    router.replace(pathname, { locale: newLocale });
-  }
+  const t = useTranslations("nav");
+  const locales = pageLocales(pathname);
+  if (locales.length < 2) return null;
 
   return (
-    <div className="flex rounded-pill bg-surface-muted p-1 gap-1">
-      {pageLocales(pathname).map((loc) => (
-        <button
-          key={loc}
-          type="button"
-          onClick={() => switchLocale(loc)}
-          className={cn(
-            "relative flex-1 px-3 py-2 rounded-pill text-xs font-medium tracking-[0.08em] transition-colors duration-150 ease-brand",
-            loc === locale ? "bg-ta-blue text-on-brand" : "text-body hover:bg-accent-soft",
-          )}
-          aria-label={localeConfig[loc]?.name}
-          aria-current={loc === locale ? "true" : undefined}
-        >
-          {localeConfig[loc]?.short}
-        </button>
-      ))}
-    </div>
+    <nav aria-label={t("languageLabel")} className="flex gap-1 rounded-pill bg-surface-muted p-1">
+      {locales.map((loc) => {
+        const current = loc === locale;
+        return (
+          <Link
+            key={loc}
+            href={pathname}
+            locale={loc}
+            hrefLang={loc}
+            lang={loc}
+            aria-current={current ? "page" : undefined}
+            aria-label={localeConfig[loc]?.name ?? loc}
+            className={cn(
+              "flex-1 rounded-pill px-3 py-2 text-center text-xs font-medium tracking-[0.08em] transition-colors duration-150 ease-brand",
+              current ? "bg-ta-blue text-on-brand" : "text-body hover:bg-accent-soft",
+            )}
+          >
+            {localeConfig[loc]?.short ?? loc.toUpperCase()}
+          </Link>
+        );
+      })}
+    </nav>
   );
 }

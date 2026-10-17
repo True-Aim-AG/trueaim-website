@@ -1,51 +1,60 @@
 {
   "nav": {
-    "products": "Produits",
-    "resources": "Ressources",
+    "platform": "Plateforme",
     "technology": "Technologie",
-    "company": "Entreprise",
+    "trust": "Confiance",
+    "resources": "Ressources",
+    "about": "À propos",
     "contact": "Contact",
-    "bookDemo": "Réserver une démo",
+    "requestDemo": "Demander une démo",
     "logoAlt": "Logo True Aim",
     "toggleMenu": "Ouvrir/fermer le menu",
-    "productsDropdown": {
-      "invoiceBenchmarking": "Invoice Benchmarking",
-      "invoiceBenchmarkingDesc": "Ne payez plus jamais une facture trop cher",
+    "languageLabel": "Langue",
+    "platformDropdown": {
+      "overview": "Aperçu de la plateforme",
+      "overviewDesc": "Les quatre modules et leur articulation",
       "claimsDecisioning": "Claims Decisioning",
-      "claimsDecisioningDesc": "Des sinistres réglés en minutes, pas en semaines",
+      "claimsDecisioningDesc": "Claims settled in minutes, not weeks",
+      "invoiceBenchmarking": "Invoice Benchmarking",
+      "invoiceBenchmarkingDesc": "Never overpay on an invoice again",
       "damageReporting": "Damage Reporting",
-      "damageReportingDesc": "Des rapports de dommages complets en quelques minutes",
+      "damageReportingDesc": "Completed damage reports in minutes",
       "otus": "Otus",
-      "otusDesc": "Le spécialiste sinistres de True Aim"
+      "otusDesc": "An AI-powered expert for every team member"
     },
     "resourcesDropdown": {
       "caseStudies": "Études de cas",
-      "caseStudiesDesc": "Témoignages de réussite clients",
-      "impactEstimator": "Impact Estimator",
-      "impactEstimatorDesc": "Explorez la valeur potentielle",
-      "trustCenter": "Trust Center",
-      "trustCenterDesc": "Sécurité & conformité",
-      "product": "Aperçu du produit",
-      "productDesc": "La plateforme True Aim",
+      "caseStudiesDesc": "Résultats d'équipes sinistres",
       "blog": "Blog",
-      "blogDesc": "Analyses et actualités"
+      "blogDesc": "Sinistres, preuves et réglementation",
+      "impactEstimator": "Impact Estimator",
+      "impactEstimatorDesc": "Calculate unlocked value",
+      "trustCenter": "Trust Center",
+      "trustCenterDesc": "Security, certification and data"
+    },
+    "company": "Entreprise",
+    "companyDropdown": {
+      "about": "À propos",
+      "aboutDesc": "Who we are and who we work with",
+      "partners": "Partenaires",
+      "partnersDesc": "Clients, partners and research",
+      "contact": "Contact",
+      "contactDesc": "Request a demo or ask a question"
     }
   },
   "footer": {
     "logoAlt": "Logo True Aim",
-    "tagline": "Précision suisse. IA auditable.",
     "company": "Entreprise",
     "resources": "Ressources",
-    "products": "Produits",
-    "trust": "Confiance",
+    "platform": "Plateforme",
     "trustCenter": "Trust Center",
     "legal": "Mentions légales",
     "about": "À propos",
     "contact": "Contact",
     "caseStudies": "Études de cas",
     "impactEstimator": "Impact Estimator",
-    "trustCenter": "Trust Center",
     "blog": "Blog",
+    "platformOverview": "Aperçu de la plateforme",
     "invoiceBenchmarking": "Invoice Benchmarking",
     "claimsDecisioning": "Claims Decisioning",
     "damageReporting": "Damage Reporting",
@@ -61,8 +70,16 @@
     "aiTransparency": "Transparence IA",
     "cookies": "Politique relative aux cookies",
     "paia": "Manuel PAIA",
-    "copyright": "© {year} True Aim AG. Tous droits réservés.",
-    "linkedin": "LinkedIn"
+    "copyright": "© {year} True Aim AG, Metallstrasse 9, 6300 Zug, Switzerland",
+    "linkedin": "LinkedIn",
+    "taglineLines": [
+      "Faster claims.",
+      "Smarter decisions.",
+      "Lower costs.",
+      "Auditable by design."
+    ],
+    "followLinkedin": "Suivez-nous sur LinkedIn",
+    "partners": "Partenaires"
   },
   "cookie": {
     "title": "Préférences en matière de cookies",

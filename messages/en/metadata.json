@@ -68,49 +68,49 @@
       "updated": "2026-10-13"
     },
     "/trust": {
-      "title": "Trust and Compliance: EU AI Act, GDPR, FADP | True Aim",
-      "description": "How True Aim meets the EU AI Act, GDPR and the Swiss FADP. Every claims decision is auditable and every outcome traceable.",
-      "h1": "Enterprise Security. Regulatory Compliance.",
+      "title": "Trust Centre: ISO 27001, SOC 2, GDPR, FADP, DORA | True Aim",
+      "description": "True Aim is certified to ISO 27001 and SOC 2 Type II and aligned with the GDPR, the Swiss FADP and DORA. Every claims decision is recorded with the reasoning behind it.",
+      "h1": "Security and compliance, built in from day one",
       "breadcrumb": "Trust",
-      "ogTitle": "Trust and compliance at True Aim",
-      "ogDescription": "How True Aim meets the EU AI Act, GDPR and the Swiss FADP. Every claims decision is auditable and every outcome traceable.",
-      "updated": "2026-10-15"
+      "ogTitle": "Security and compliance at True Aim",
+      "ogDescription": "True Aim is certified to ISO 27001 and SOC 2 Type II and aligned with the GDPR, the Swiss FADP and DORA. Every claims decision is recorded with the reasoning behind it.",
+      "updated": "2026-10-17"
     },
     "/about": {
-      "title": "About Us: Auditable Claims AI from Switzerland | True Aim",
-      "description": "Meet the leadership team, advisers and partners behind True Aim, including Yarowa AG, ZHAW and Innosuisse, building auditable claims AI in Zug, Switzerland.",
-      "h1": "Swiss Precision. Auditable AI.",
+      "title": "About True Aim: Scalable Trust for Claims Decisions | True Aim",
+      "description": "True Aim is a Swiss company building claims technology where every decision records the facts, the rules and the reasoning. The team, advisers, partners and awards.",
+      "h1": "Scalable trust",
       "breadcrumb": "About",
       "ogTitle": "About True Aim",
-      "ogDescription": "Meet the leadership team, advisers and partners behind True Aim, building auditable claims AI in Zug, Switzerland.",
-      "updated": "2026-10-15"
+      "ogDescription": "True Aim is a Swiss company building claims technology where every decision records the facts, the rules and the reasoning. The team, advisers, partners and awards.",
+      "updated": "2026-10-17"
     },
     "/contact": {
-      "title": "Contact Us and Request a Demo | True Aim",
-      "description": "Request a demo of True Aim's auditable AI for insurance claims decisions, or contact the team in Zug about your claims automation project.",
-      "h1": "Let's Talk Claims Automation",
+      "title": "Request a Demo | True Aim",
+      "description": "Request a demo of True Aim on your own invoices, claims or damage reports. We reply within one business day.",
+      "h1": "Request a demo",
       "breadcrumb": "Contact",
-      "ogTitle": "Contact True Aim",
-      "ogDescription": "Request a demo of True Aim's auditable AI for insurance claims decisions.",
-      "updated": "2026-10-13"
+      "ogTitle": "Request a demo of True Aim",
+      "ogDescription": "Request a demo of True Aim on your own invoices, claims or damage reports. We reply within one business day.",
+      "updated": "2026-10-17"
     },
     "/impact-estimator": {
-      "title": "Claims Automation Impact Estimator | True Aim",
-      "description": "Estimate the value of True Aim's claims automation for your portfolio, based on real pilot data. No commitment required.",
-      "h1": "Explore Your Potential Value",
+      "title": "Impact Estimator: Automating Claim Decisions | True Aim",
+      "description": "Enter your claims volume and handling time to see the time and cost True Aim could give back, on cautious assumptions, with the method behind every figure.",
+      "h1": "Estimate the impact of automating claim decisions",
       "breadcrumb": "Impact estimator",
-      "ogTitle": "Estimate the impact of claims automation",
-      "ogDescription": "Estimate the value of True Aim's claims automation for your portfolio, based on real pilot data.",
-      "updated": "2026-10-15"
+      "ogTitle": "Estimate the impact of automating claim decisions",
+      "ogDescription": "Enter your claims volume and handling time to see the time and cost True Aim could give back, on cautious assumptions.",
+      "updated": "2026-10-17"
     },
     "/case-studies": {
-      "title": "Claims AI Case Studies from Insurers | True Aim",
-      "description": "How insurers and warranty providers use True Aim to automate claims decisions: results from travel, health, motor and vehicle warranty claims.",
-      "h1": "Real Results from Real Insurers",
+      "title": "Case Studies: Real Numbers in Practice | True Aim",
+      "description": "How claims teams use True Aim on their own claims, and what changed: volume, languages, time to results and measured accuracy.",
+      "h1": "Real numbers in practice",
       "breadcrumb": "Case studies",
-      "ogTitle": "Real results from real insurers",
-      "ogDescription": "How insurers and warranty providers use True Aim to automate claims decisions in travel, health, motor and vehicle warranty claims.",
-      "updated": "2026-10-15"
+      "ogTitle": "Real numbers in practice",
+      "ogDescription": "How claims teams use True Aim on their own claims, and what changed: volume, languages, time to results and measured accuracy.",
+      "updated": "2026-10-17"
     },
     "/case-studies/european-health-insurer": {
       "title": "Health Insurer Cuts Claims Costs 71% | True Aim",
@@ -151,7 +151,7 @@
     "/partners": {
       "title": "Our Partners in Research and Insurance | True Aim",
       "description": "True Aim works with Innosuisse, ZHAW, Yarowa AG and the Swiss InsurTech Hub on research, funding and insurance innovation in Switzerland.",
-      "h1": "Partners",
+      "h1": "The innovative ecosystem behind True Aim",
       "breadcrumb": "Partners",
       "ogTitle": "True Aim partners",
       "ogDescription": "Innosuisse, ZHAW, Yarowa AG and the Swiss InsurTech Hub: research, funding and insurance innovation in Switzerland.",
@@ -196,7 +196,7 @@
     "/blog": {
       "title": "Blog: Auditable AI in Insurance Claims | True Aim",
       "description": "Articles from True Aim on auditable AI, claims automation, AI regulation in insurance and taking claims AI from pilot to production.",
-      "h1": "Blog",
+      "h1": "Insights and technical deep dives",
       "breadcrumb": "Blog",
       "ogTitle": "The True Aim blog",
       "ogDescription": "Articles on auditable AI, claims automation, AI regulation in insurance and taking claims AI from pilot to production.",

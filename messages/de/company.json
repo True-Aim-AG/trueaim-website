@@ -1,103 +1,144 @@
 {
   "company": {
     "hero": {
-      "badge": "Ueber uns",
-      "titleLine1": "Schweizer Praezision.",
-      "titleLine2": "Auditierbare AI.",
-      "description": "True Aim ist Vorreiter im Bereich neuro-symbolic AI fuer regulierte Branchen. Wir entwickeln die Entscheidungsplattform, die konforme, erklaerbare Entscheidungen im grossen Massstab ermoeglicht."
+      "title": "Scalable trust",
+      "p1": "True Aim is a Swiss company, spun out of Yarowa, Switzerland's leading insurtech, and supported by Innosuisse, the innovation arm of the Swiss government, on the strength of the technology we have built.",
+      "p2": "We are building towards an industry where the answer arrives at the speed of the evidence, where every decision records the facts, the rules and the reasoning behind it and where that record holds up under audit, regulatory review or dispute.",
+      "p3": "We call it scalable trust.",
+      "p4": "It asks for precision beyond what the market demands today, honesty about which decisions a machine should compute and which require human judgment and the discipline to solve the problems the industry is actually facing.",
+      "p5": "This is the work we have chosen.",
+      "imageAlt": "The True Aim symbol in glass and metal"
     },
     "mission": {
-      "quote": "\"Black Box\"-AI in der Versicherungsbranche beseitigen, indem deterministische Entscheidungsfindung mit generativer AI kombiniert wird, um schnelle, faire und auditierbare Schadenentscheide zu liefern, die den hoechsten Standards im Datenschutz, in der Informationssicherheit und in der AI-Governance entsprechen.",
-      "label": "Unsere Mission"
+      "label": "Mission",
+      "text": "To bring scalable trust to claims decisions. Every decision fast enough to matter, accurate enough to rely on and proven whenever it is questioned."
     },
     "team": {
-      "heading": "Fuehrungsteam",
-      "subtitle": "Fundierte Expertise in Versicherung, Technologie und Regulierung",
-      "connectLinkedIn": "Auf LinkedIn vernetzen",
-      "founders": {
+      "heading": "Our team",
+      "linkedin": "LinkedIn",
+      "members": {
         "reuben": {
           "name": "Reuben John",
-          "role": "Mitgruender & CEO",
-          "tagline": "2x Gruender | Rechtsanwalt | Ehem. Geschaeftsfuehrer des groessten globalen Quellensteuer-Rueckforderungsunternehmens",
-          "bio": "Reuben hat komplexe operative und regulatorische Projekte in Europa und Afrika geleitet und dabei Marktexpansion, anspruchsvolle Digitalisierung und Compliance-Initiativen fuer multinationale Kunden verantwortet. Sein Hintergrund umfasst Enterprise-Operations und mehrlaendige regulatorische Strategien. Bei True Aim treibt er die Vision, die Geschaeftsstrategie und die Markteinfuehrung voran."
+          "title": "Co-founder and CEO",
+          "bio": "Lawyer and operator. Reuben has led operational and regulatory projects across Europe and Africa, from market expansion to compliance programmes for multinational clients. He runs the company, its strategy and its commercial work."
         },
         "frederic": {
           "name": "Frederic Brunner",
-          "role": "Mitgruender & CTO",
-          "tagline": "Ehem. Zurich Insurance | Experte fuer Automatisierung und Systemdesign",
-          "bio": "Als erfahrener Technologe mit ueber 30 Jahren in der Softwareentwicklung und ueber 20 Jahren in der Unternehmensautomatisierung vereint Frederic tiefgreifende Architekturexpertise mit praktischer Umsetzungserfahrung. Zuvor leitete er die Technologietransformation bei Guidewire. Bei True Aim verantwortet er die technologische Entwicklung und stellt sicher, dass die hybride Agentic-AI-Plattform den strengen Anforderungen regulierter Branchen gerecht wird."
+          "title": "Co-founder and CTO",
+          "bio": "More than 30 years in software and 20 in enterprise automation, including at Zurich Insurance. Frederic leads the technology and the engineering work."
+        },
+        "alin": {
+          "name": "Alin Koppandi",
+          "title": "Senior AI Engineer",
+          "bio": "Builds the True Aim platform, from document reading to the decision engine and the record behind each decision."
+        },
+        "kai": {
+          "name": "Kai Praschma",
+          "title": "AI Solutions Specialist",
+          "bio": "Builds the automation that runs True Aim's operations and client delivery, and turns research into the tools, content and systems the team works with every day."
+        },
+        "henrique": {
+          "name": "Henrique Ferreira",
+          "title": "Implementation Specialist",
+          "bio": "Guides claims teams from first conversation to a running platform, shaping each deployment around their own claims, invoices and damage reports."
+        },
+        "arnaud": {
+          "name": "Arnaud Terville",
+          "title": "Commercial Lead",
+          "bio": "Brings enterprise insurance technology experience from Solera, Quantexa and Apple, where he helped multinational organisations adopt new platforms at scale. At True Aim he leads the commercial relationships that bring the platform into claims operations."
         }
       }
     },
-    "advisors": {
-      "heading": "Beirat",
-      "subtitle": "Begleitet von Branchenfuehrern und Fachexperten",
+    "advisers": {
+      "heading": "Advisers",
       "members": {
         "claudio": {
           "name": "Claudio Gienal",
-          "title": "AXA Group Chief Transformation Officer | Ehem. AXA CEO UK & Ireland | Ex-McKinsey | Versicherungsinnovator",
-          "relevance": "Schadenregulierung & Versicherungstransformation"
+          "title": "Former AXA CEO UK and Ireland",
+          "focus": "Claims operations and insurance transformation"
         },
-        "eric": {
-          "name": "Eric Zielinski",
-          "title": "Wharton | Ex-Bain | Tech-Gruender | Spezialist fuer Umsetzung & Implementierung",
-          "relevance": "Strategie & Enterprise-Beschaffung"
+        "kevin": {
+          "name": "Kevin Sartori",
+          "title": "Innosuisse coach",
+          "focus": "Commercial strategy and company building"
         },
         "lukas": {
-          "name": "Dr. Lukas Lichtensteiger",
-          "title": "Harvard | Serienunternehmer & CTO | Gruender in AI & Robotik | ZHAW-Forscher",
-          "relevance": "Technologiearchitektur & Skalierung"
+          "name": "Dr Lukas Lichtensteiger",
+          "title": "ZHAW researcher",
+          "focus": "Technology architecture and scaling"
         },
         "dave": {
           "name": "Dave Stoll",
-          "title": "Ehem. Zurich Insurance CFO (Spanien) | Gruender von doppo | Fintech- & Insurtech-Scale-Up-Spezialist",
-          "relevance": "Versicherung, Fundraising & Regulierung"
+          "title": "Former Zurich Insurance CFO, Spain",
+          "focus": "Insurance, fundraising and regulation"
+        },
+        "eric": {
+          "name": "Eric Zielinski",
+          "title": "Wharton, former Bain",
+          "focus": "Strategy and enterprise procurement"
         },
         "dandolo": {
-          "name": "Dr. Dandolo Flumini",
-          "title": "Urspruenglicher Entwickler der MIRA-Technologie | PhD Mathematik & Informatik | ZHAW-Forscher",
-          "relevance": "Kernlogik-Engine & Forschung"
-        },
-        "bassil": {
-          "name": "Bassil Eid",
-          "title": "Seriengruender & CFO | Web3, Fintech & Accounting-Innovator | Spezialist fuer strategische Finanzen & Wachstum",
-          "relevance": "Fintech-Markteinfuehrung & Finanzen"
+          "name": "Dr Dandolo Flumini",
+          "title": "ZHAW researcher",
+          "focus": "The core decision logic and the research behind it"
         }
       }
     },
     "partners": {
-      "heading": "Partner & Investoren",
-      "subtitle": "Unterstuetzt durch das Schweizer Deep-Tech- und Innovationsoekosystem",
-      "yarowa": {
-        "name": "Yarowa AG",
-        "description": "Strategischer Investor und Partner. Schweizer InsurTech-Anbieter mit tiefer Verwurzelung im europaeischen Versicherungsoekosystem."
-      },
-      "zhaw": {
-        "name": "ZHAW",
-        "description": "Zuercher Hochschule fuer Angewandte Wissenschaften. Forschungspartnerschaft nach Erhalt des nicht-verwassernden Foerderbeitrags von Innosuisse."
-      },
-      "innosuisse": {
-        "name": "Innosuisse",
-        "description": "Die offizielle Innovationsagentur der Schweiz. Nicht-verwassernder Foerderbeitrag erhalten. Validierung auf nationaler Ebene fuer unsere Forschung & Technologie."
-      },
-      "swissInsurtechHub": {
-        "name": "Swiss InsurTech Hub",
-        "description": "Das fuehrende Schweizer Netzwerk fuer Versicherungsinnovation. Strategischer Oekosystempartner, der Zusammenarbeit, Brancheneinbindung und Marktzugang zwischen Versicherern, Startups und Technologieanbietern unterstuetzt."
+      "heading": "Partners",
+      "items": {
+        "zhaw": {
+          "name": "ZHAW",
+          "description": "Zurich University of Applied Sciences. Research partner in a deep tech innovation project supported by Innosuisse.",
+          "more": "About the research"
+        },
+        "innosuisse": {
+          "name": "Innosuisse",
+          "description": "The Swiss Innovation Agency, which supports the innovation project with ZHAW.",
+          "more": "About the project"
+        },
+        "yarowa": {
+          "name": "Yarowa",
+          "description": "Swiss insurance technology company. Strategic investor and partner.",
+          "more": "About the partnership"
+        },
+        "swissInsurtechHub": {
+          "name": "Swiss InsurTech Hub",
+          "description": "Switzerland's insurance innovation network. True Aim is a member.",
+          "more": "About the network"
+        }
       }
     },
-    "headquarters": {
-      "heading": "Hauptsitz",
-      "mapLabel": "Zug, Schweiz",
-      "address": {
-        "street": "Metallstrasse 9",
-        "city": "6300 Zug",
-        "country": "Schweiz"
+    "awards": {
+      "heading": "Awards",
+      "winner": "Winner",
+      "items": {
+        "insurathon": {
+          "title": "Insurathon 2026",
+          "body": "Norton Rose Fulbright named True Aim the most innovative InsurTech start-up of 2026.",
+          "alt": "Norton Rose Fulbright"
+        },
+        "swissInnovation": {
+          "title": "Innovationspreis der Schweizer Assekuranz",
+          "body": "The Swiss insurance industry's innovation prize, awarded to the technology True Aim builds on.",
+          "alt": "Innovationspreis der Schweizer Assekuranz"
+        },
+        "leuchtturm": {
+          "title": "Digitaler Leuchtturm Versicherungen",
+          "body": "Germany's digital lighthouse award for insurance, awarded to the technology True Aim builds on.",
+          "alt": "Digitaler Leuchtturm Versicherungen"
+        },
+        "ikn": {
+          "title": "Miglior InsurTech, IKN Awards",
+          "body": "Best InsurTech at the IKN Insurance Awards, Italy, awarded to the technology True Aim builds on.",
+          "alt": "IKN Awards"
+        }
       }
     },
     "cta": {
-      "heading": "Gestalten Sie mit uns die Zukunft der Schadenautomatisierung in regulierten Umgebungen",
-      "description": "Ob Sie ein Versicherer sind, der die Schadenbearbeitung automatisieren moechte, oder ein Fachexperte, der sich unserem Team anschliessen moechte: Wir freuen uns auf Ihre Kontaktaufnahme.",
-      "button": "Kontakt aufnehmen"
+      "heading": "See True Aim on your own claims",
+      "description": "Bring your own invoices, claims or damage reports and the demo shows the finished outcome.",
+      "button": "Request a demo"
     }
   }
 }

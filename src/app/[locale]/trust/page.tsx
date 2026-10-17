@@ -1,61 +1,32 @@
-import { Link } from "@/i18n/navigation";
+import Image from "next/image";
+import { ArrowRight, Check, MapPin, Shield } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { MotionDiv } from "@/components/ui/MotionDiv";
-import { StatusPill } from "@/components/brand/StatusPill";
+import { Link } from "@/i18n/navigation";
 import {
-  Shield,
-  Lock,
-  Key,
-  FileCheck,
-  CheckCircle,
-  MapPin,
-  Eye,
-  History,
-  Building2,
-  ArrowRight,
-} from "lucide-react";
-import { SwitzerlandMap } from "@/components/ui/SwitzerlandMap";
+  BadgeRow,
+  CARD,
+  CARD_HOVER,
+  CtaBand,
+  FaqSection,
+  PageHero,
+  SECTION_LILAC,
+  SectionHead,
+  SplitText,
+  type BadgeItem,
+  type FaqItem,
+} from "@/components/content";
+import { HexDot } from "@/components/products/scenes/marks";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { cn } from "@/lib/utils";
 
-const publicDocs = [
-  { key: "privacy", href: "/privacy" },
-  { key: "security", href: "/security" },
-  { key: "ethics", href: "/ethics" },
-  { key: "subProcessors", href: "/sub-processors" },
-  { key: "product", href: "/platform" },
-  { key: "support", href: "/support" },
-  { key: "changelog", href: "/changelog" },
-] as const;
+const PATH = "/trust";
 
-const complianceBadgeMeta = [
-  { key: "gdpr", status: "aligned", icon: Shield },
-  { key: "swissFadp", status: "aligned", icon: Shield },
-  { key: "euAiAct", status: "aligned", icon: Eye },
-  { key: "swissHosting", status: "provided", icon: MapPin },
-  { key: "iso27001", status: "roadmap", icon: FileCheck },
-  { key: "soc2", status: "roadmap", icon: Lock },
-  { key: "finma", status: "aligned", icon: Building2 },
-  { key: "dora", status: "aligned", icon: Shield },
-] as const;
+// Certifications first, then the frameworks the controls are aligned with,
+// all on the icon the live page uses. The label on each comes from
+// messages/<locale>/trust.json and says only what True Aim holds today.
+const badges = ["iso27001", "soc2", "gdpr", "fadp", "dora"] as const;
 
-const securityCategoryMeta = [
-  {
-    key: "dataProtection",
-    icon: Lock,
-    featureKeys: ["encryptionAtRest", "encryptionInTransit", "dataIsolation", "keyManagement"],
-  },
-  {
-    key: "accessControl",
-    icon: Key,
-    featureKeys: ["rbac", "sso", "mfa", "sessionManagement"],
-  },
-  {
-    key: "auditMonitoring",
-    icon: History,
-    featureKeys: ["auditLogs", "decisionReplay", "accessLogging", "retentionPolicies"],
-  },
-] as const;
-
-const euAiActFeatureKeys = [
+const euAiActKeys = [
   "humanOversight",
   "transparency",
   "technicalDocumentation",
@@ -64,302 +35,148 @@ const euAiActFeatureKeys = [
   "accuracyRobustness",
 ] as const;
 
+const residencyKeys = ["swissDataCentre", "euProcessingZones", "noThirdCountry"] as const;
+
+// The sub-processor list keeps its URL for contracts and is not linked from here.
+const documents = [
+  { key: "privacy", href: "/privacy" },
+  { key: "terms", href: "/terms" },
+  { key: "cookies", href: "/cookies" },
+  { key: "paia", href: "/paia" },
+  { key: "aiTransparency", href: "/ai-transparency" },
+] as const;
+
+/** The Swiss pin on the brand texture, in the page's card style. */
+function ResidencyVisual({ label }: { label: string }) {
+  return (
+    <div className={cn(CARD, "relative min-h-[340px] w-full overflow-hidden")}>
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-cover"
+        style={{ backgroundImage: "url(/brand/textures/circular-light.webp)", backgroundPosition: "50% 50%" }}
+      />
+      <div aria-hidden className="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,252,253,.4)_0%,rgba(251,252,253,.1)_100%)]" />
+      <div className="relative grid min-h-[340px] place-items-center">
+        <div className="text-center">
+          <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-ta-blue shadow-[0_0_0_10px_rgba(81,81,219,.14)]">
+            <MapPin strokeWidth={1.5} className="h-7 w-7 text-on-brand" />
+          </div>
+          <p className="mt-6 inline-block rounded-pill bg-card px-4 py-1.5 font-display text-[15px] font-semibold text-strong shadow-swatch">
+            {label}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default async function TrustPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("trust");
+  const faqs = t.raw("faq.items") as FaqItem[];
+
+  const badgeItems: BadgeItem[] = badges.map((key) => {
+    const status = t(`badges.items.${key}.status`) as "certified" | "aligned";
+    return {
+      icon: <Shield strokeWidth={1.5} className="h-7 w-7" />,
+      caption: t(`badges.statusLabels.${status}`),
+      title: t(`badges.items.${key}.name`),
+      text: t(`badges.items.${key}.description`),
+    };
+  });
+
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-24 px-6">
-        <div className="relative max-w-7xl mx-auto text-center">
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-pill bg-accent-soft text-accent text-sm font-medium mb-6">
-              <Shield className="w-4 h-4" strokeWidth={1.5} />
-              {t("hero.badge")}
-            </div>
+    <>
+      <PageSeo locale={locale} path={PATH} template="trust" faqs={faqs} />
 
-            <h1 className="font-display text-4xl md:text-5xl lg:text-[54px] font-bold leading-[1.05] text-strong mb-6">
-              {t("hero.titleLine1")}
-              <br />
-              <span className="text-accent">{t("hero.titleLine2")}</span>
-            </h1>
+      <PageHero
+        eyebrow={t("hero.eyebrow")}
+        title={t("hero.title")}
+        summary={t("hero.summary")}
+        buttons={[{ label: t("hero.button"), href: "/contact" }]}
+        texture={{ name: "glass" }}
+        visual={
+          <Image
+            src="/brand/3d/lock.webp"
+            alt={t("hero.imageAlt")}
+            width={420}
+            height={420}
+            className="mx-auto h-auto w-full max-w-[420px] drop-shadow-[0_30px_40px_rgba(44,43,42,.22)]"
+            priority
+          />
+        }
+      />
 
-            <p className="text-lede text-body max-w-3xl mx-auto">
-              {t("hero.description")}
-            </p>
-          </MotionDiv>
-        </div>
-      </section>
+      {/* Sections alternate: white, lilac, white, lilac. */}
+      <BadgeRow heading={t("badges.heading")} items={badgeItems} />
 
-      {/* Compliance Badges Grid */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-4">
-              {t("compliance.heading")}
-            </h2>
-            <p className="text-lede text-body">
-              {t("compliance.subtitle")}
-            </p>
-          </MotionDiv>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {complianceBadgeMeta.map((badge, index) => (
-              <MotionDiv
-                key={badge.key}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card shadow-card rounded-pill p-6 transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-pill bg-lilac grid place-items-center flex-shrink-0 text-accent">
-                    <badge.icon className="w-6 h-6" strokeWidth={1.5} />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-display font-semibold text-strong">{t(`compliance.badges.${badge.key}.name`)}</h3>
-                      <StatusPill
-                        tone={badge.status === "roadmap" ? "progress" : "approved"}
-                        emphasis="light"
-                        dot={false}
-                        size="sm"
-                      >
-                        {t(`compliance.statusLabels.${badge.status}`)}
-                      </StatusPill>
-                    </div>
-                    <p className="text-sm text-muted">{t(`compliance.badges.${badge.key}.description`)}</p>
-                  </div>
+      {/* EU AI Act: the live page's panels, each with a blue tick. */}
+      <section className={SECTION_LILAC}>
+        <div className="mx-auto max-w-7xl">
+          <SectionHead heading={t("euAiAct.heading")} lede={t("euAiAct.intro")} />
+          <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3">
+            {euAiActKeys.map((key) => (
+              <li key={key} className={cn(CARD, "flex h-full flex-col gap-3 p-8")}>
+                <div className="flex items-start gap-3">
+                  <Check strokeWidth={2.5} className="mt-1 h-5 w-5 shrink-0 text-accent" aria-hidden />
+                  <h3 className="font-display text-[20px] font-semibold leading-[1.3] tracking-[0.01em] text-strong">
+                    {t(`euAiAct.features.${key}.requirement`)}
+                  </h3>
                 </div>
-              </MotionDiv>
+                <p className="pl-8 text-[15px] leading-[1.55] text-muted">{t(`euAiAct.features.${key}.description`)}</p>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      {/* Data Residency Map */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <MotionDiv
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-6">
-                {t("dataResidency.heading")}
-              </h2>
-              <p className="text-lede text-body mb-6">
-                {t("dataResidency.description")}
-              </p>
+      <SplitText
+        heading={t("humanInLoop.heading")}
+        paragraphs={[t("humanInLoop.p1"), t("humanInLoop.p2")]}
+        image={{ src: "/brand/3d/shield.webp", alt: t("humanInLoop.imageAlt"), width: 600, height: 600 }}
+      />
 
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                  <div>
-                    <strong className="text-strong">{t("dataResidency.swissDataCenter.title")}</strong>
-                    <p className="text-sm text-muted">{t("dataResidency.swissDataCenter.description")}</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                  <div>
-                    <strong className="text-strong">{t("dataResidency.euProcessingZones.title")}</strong>
-                    <p className="text-sm text-muted">{t("dataResidency.euProcessingZones.description")}</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                  <div>
-                    <strong className="text-strong">{t("dataResidency.noThirdCountry.title")}</strong>
-                    <p className="text-sm text-muted">{t("dataResidency.noThirdCountry.description")}</p>
-                  </div>
-                </li>
-              </ul>
-            </MotionDiv>
+      <SplitText
+        heading={t("dataResidency.heading")}
+        paragraphs={[t("dataResidency.description")]}
+        visual={<ResidencyVisual label={t("dataResidency.mapLabel")} />}
+        lilac
+      >
+        <ul className={cn(CARD, "mt-8 divide-y divide-hairline")}>
+          {residencyKeys.map((key) => (
+            <li key={key} className="flex items-start gap-4 px-6 py-5">
+              <HexDot className="mt-1.5 h-3.5 w-3.5" />
+              <div>
+                <p className="font-display text-[17px] font-semibold leading-[1.35] text-strong">{t(`dataResidency.items.${key}.title`)}</p>
+                <p className="mt-1 text-[15px] leading-[1.55] text-muted">{t(`dataResidency.items.${key}.description`)}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </SplitText>
 
-            <MotionDiv
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <SwitzerlandMap label={t("dataResidency.mapLabels.switzerland")} />
-            </MotionDiv>
-          </div>
-        </div>
-      </section>
+      <FaqSection heading={t("faq.heading")} faqs={faqs} />
 
-      {/* Security Features */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-4">
-              {t("security.heading")}
-            </h2>
-            <p className="text-lede text-body">
-              {t("security.subtitle")}
-            </p>
-          </MotionDiv>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {securityCategoryMeta.map((category, index) => (
-              <MotionDiv
-                key={category.key}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card shadow-card rounded-pill p-8"
-              >
-                <div className="w-14 h-14 rounded-pill bg-lilac grid place-items-center mb-6 text-accent">
-                  <category.icon className="w-7 h-7" strokeWidth={1.5} />
-                </div>
-                <h3 className="font-display text-xl font-semibold text-strong mb-6">
-                  {t(`security.categories.${category.key}.title`)}
-                </h3>
-                <ul className="space-y-4">
-                  {category.featureKeys.map((fKey) => (
-                    <li key={fKey} className="border-b border-hairline pb-4 last:border-0 last:pb-0">
-                      <div className="font-medium text-strong mb-1">{t(`security.categories.${category.key}.features.${fKey}.name`)}</div>
-                      <div className="text-sm text-muted">{t(`security.categories.${category.key}.features.${fKey}.detail`)}</div>
-                    </li>
-                  ))}
-                </ul>
-              </MotionDiv>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* EU AI Act Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-pill bg-accent-soft text-accent text-sm font-medium mb-4">
-              <Eye className="w-4 h-4" strokeWidth={1.5} />
-              {t("euAiAct.badge")}
-            </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-4">
-              {t("euAiAct.heading")}
-            </h2>
-            <p className="text-lede text-body max-w-3xl mx-auto">
-              {t("euAiAct.subtitle")}
-            </p>
-          </MotionDiv>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {euAiActFeatureKeys.map((fKey, index) => (
-              <MotionDiv
-                key={fKey}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="bg-card shadow-card rounded-pill p-6 transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch"
-              >
-                <div className="flex items-start gap-3 mb-3">
-                  <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                  <h3 className="font-display font-semibold text-strong">{t(`euAiAct.features.${fKey}.requirement`)}</h3>
-                </div>
-                <p className="text-sm text-muted ml-8">{t(`euAiAct.features.${fKey}.description`)}</p>
-              </MotionDiv>
-            ))}
-          </div>
-
-          {/* Deterministic advantage callout */}
-          <MotionDiv
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-12 bg-lilac rounded-pill px-8 py-10 text-center"
-          >
-            <FileCheck className="w-10 h-10 text-accent mx-auto mb-4" strokeWidth={1.5} />
-            <h3 className="font-display text-xl font-semibold text-strong mb-2">
-              {t("euAiAct.callout.heading")}
-            </h3>
-            <p className="text-body max-w-2xl mx-auto">
-              {t("euAiAct.callout.description")}
-            </p>
-          </MotionDiv>
-        </div>
-      </section>
-
-      {/* Public Documents */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-4">
-              {t("publicDocuments.heading")}
-            </h2>
-            <p className="text-lede text-body max-w-3xl mx-auto">
-              {t("publicDocuments.subtitle")}
-            </p>
-          </MotionDiv>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {publicDocs.map((doc, index) => (
-              <MotionDiv
-                key={doc.key}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-              >
-                <Link
-                  href={doc.href}
-                  className="bg-card shadow-card rounded-pill p-6 flex items-start justify-between gap-4 h-full group transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch"
-                >
-                  <div>
-                    <h3 className="font-display font-semibold text-strong mb-1 group-hover:text-accent transition-colors">
-                      {t(`publicDocuments.items.${doc.key}.title`)}
-                    </h3>
-                    <p className="text-sm text-muted">
-                      {t(`publicDocuments.items.${doc.key}.description`)}
-                    </p>
-                  </div>
-                  <ArrowRight className="w-5 h-5 text-muted group-hover:text-accent transition-colors flex-shrink-0 mt-1" strokeWidth={1.5} />
+      <section className={SECTION_LILAC}>
+        <div className="mx-auto max-w-7xl">
+          <SectionHead heading={t("documents.heading")} className="mb-10" />
+          <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3">
+            {documents.map((doc) => (
+              <li key={doc.key}>
+                <Link href={doc.href} className={cn(CARD, CARD_HOVER, "flex items-center justify-between gap-4 px-8 py-6")}>
+                  <span className="font-display text-[20px] font-semibold leading-[1.3] tracking-[0.01em] text-strong">
+                    {t(`documents.items.${doc.key}.title`)}
+                  </span>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-accent" strokeWidth={1.5} aria-hidden />
                 </Link>
-              </MotionDiv>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-    </div>
+      <CtaBand heading={t("cta.heading")} lede={t("cta.description")} buttons={[{ label: t("cta.button"), href: "/contact" }]} />
+    </>
   );
 }

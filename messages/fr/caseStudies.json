@@ -1,25 +1,19 @@
 {
   "caseStudies": {
     "hero": {
-      "badge": "Succes clients",
-      "titleLine1": "Des resultats concrets",
-      "titleLine2": "d'assureurs reels",
-      "description": "Decouvrez comment les assureurs utilisent True Aim pour transformer leurs operations de sinistres avec des resultats mesurables et auditables."
+      "eyebrow": "Case studies",
+      "title": "Real numbers in practice",
+      "summary": "How claims teams use True Aim on their own claims, and what changed. Each study names the volume, the languages, the time to results and the accuracy, and how each figure was measured.",
+      "button": "Request a demo"
     },
     "featured": {
-      "badge": "A la une",
-      "readFullStudy": "Lire l'etude de cas complete"
-    },
-    "wip": {
-      "heading": "Etudes de cas supplementaires en cours",
-      "description": "Ces etudes de cas sont en cours de documentation. Revenez pour les rapports complets.",
-      "badge": "En cours"
+      "badge": "Case study",
+      "readFullStudy": "Read the case study"
     },
     "cta": {
-      "heading": "Decouvrez ce que l'AI auditable peut faire pour vos sinistres",
-      "description": "Analysons un echantillon de vos sinistres clotures pour quantifier l'impact potentiel.",
-      "bookDemo": "Reserver une demo",
-      "getEstimate": "Obtenir une estimation d'impact"
+      "heading": "See True Aim on your own claims",
+      "description": "Bring your own invoices, claims or damage reports and the demo shows the finished outcome.",
+      "bookDemo": "Request a demo"
     },
     "detail": {
       "allCaseStudies": "Toutes les etudes de cas",
@@ -33,7 +27,7 @@
       "next": "Suivant",
       "ctaHeading": "Pret a obtenir des resultats similaires ?",
       "ctaDescription": "Commencez par un pilote sur vos sinistres clotures et constatez l'impact par vous-meme.",
-      "requestPilot": "R\u00e9server une d\u00e9mo"
+      "requestPilot": "Réserver une démo"
     },
     "vehicleWarranty": {
       "heroTitle": "Automatisation des reclamations de garantie vehicule avec l'intelligence documentaire AI",
