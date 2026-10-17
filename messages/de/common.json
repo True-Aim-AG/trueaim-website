@@ -14,23 +14,32 @@
       "overview": "Plattformübersicht",
       "overviewDesc": "Die vier Module und ihr Zusammenspiel",
       "claimsDecisioning": "Claims Decisioning",
-      "claimsDecisioningDesc": "Schäden in Minuten statt Wochen reguliert",
+      "claimsDecisioningDesc": "Claims settled in minutes, not weeks",
       "invoiceBenchmarking": "Invoice Benchmarking",
-      "invoiceBenchmarkingDesc": "Nie wieder zu viel für eine Rechnung zahlen",
+      "invoiceBenchmarkingDesc": "Never overpay on an invoice again",
       "damageReporting": "Damage Reporting",
-      "damageReportingDesc": "Fertige Schadenberichte in Minuten",
+      "damageReportingDesc": "Completed damage reports in minutes",
       "otus": "Otus",
-      "otusDesc": "Der Schadenspezialist von True Aim"
+      "otusDesc": "An AI-powered expert for every team member"
     },
     "resourcesDropdown": {
       "caseStudies": "Fallstudien",
       "caseStudiesDesc": "Ergebnisse aus Schadenteams",
       "blog": "Blog",
       "blogDesc": "Schaden, Beweise und Regulierung",
-      "news": "Neuigkeiten",
-      "newsDesc": "Ankündigungen von True Aim",
       "impactEstimator": "Impact Estimator",
-      "impactEstimatorDesc": "Was True Aim Ihrem Team sparen könnte"
+      "impactEstimatorDesc": "Calculate unlocked value",
+      "trustCenter": "Trust Center",
+      "trustCenterDesc": "Security, certification and data"
+    },
+    "company": "Unternehmen",
+    "companyDropdown": {
+      "about": "Über uns",
+      "aboutDesc": "Who we are and who we work with",
+      "partners": "Partner",
+      "partnersDesc": "Clients, partners and research",
+      "contact": "Kontakt",
+      "contactDesc": "Request a demo or ask a question"
     }
   },
   "footer": {
@@ -45,7 +54,6 @@
     "caseStudies": "Fallstudien",
     "impactEstimator": "Impact Estimator",
     "blog": "Blog",
-    "news": "Neuigkeiten",
     "platformOverview": "Plattformübersicht",
     "invoiceBenchmarking": "Invoice Benchmarking",
     "claimsDecisioning": "Claims Decisioning",
@@ -71,7 +79,7 @@
       "Auditable by design."
     ],
     "followLinkedin": "Folgen Sie uns auf LinkedIn",
-    "technology": "Technologie"
+    "partners": "Partner"
   },
   "cookie": {
     "title": "Cookie-Einstellungen",

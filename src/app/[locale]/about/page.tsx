@@ -102,7 +102,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       {/* Mission */}
       <section className={SECTION}>
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-[70ch]">
+          <div className="mx-auto max-w-[70ch] text-center">
             <p className="mb-4 font-body text-[14px] font-medium uppercase tracking-[0.16em] text-accent">{t("mission.label")}</p>
             <p className="font-display text-[26px] font-semibold leading-[1.3] text-strong text-balance md:text-[32px]">
               {t("mission.text")}
@@ -208,14 +208,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           };
         })}
       />
-
-      {/* Location */}
-      <section className={SECTION}>
-        <div className="mx-auto max-w-7xl">
-          <SectionHead heading={t("location.heading")} className="mb-6" />
-          <address className="not-italic text-[18px] leading-[30px] text-body">{t("location.address")}</address>
-        </div>
-      </section>
 
       <CtaBand heading={t("cta.heading")} lede={t("cta.description")} buttons={[{ label: t("cta.button"), href: "/contact" }]} />
     </>

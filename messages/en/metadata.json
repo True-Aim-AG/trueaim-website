@@ -59,13 +59,13 @@
       "updated": "2026-10-15"
     },
     "/technology": {
-      "title": "How True Aim Reads and Decides a Claim | True Aim",
-      "description": "True Aim separates reading from deciding: language models read the documents, a deterministic engine applies the policy, and every decision carries its reasoning.",
-      "h1": "How True Aim reads a claim and decides it",
+      "title": "Neuro-Symbolic AI Architecture for Claims | True Aim",
+      "description": "True Aim combines agentic AI execution with deterministic decision-making, built for regulated insurance and EU AI Act compliance. Not a black box.",
+      "h1": "Neuro-Symbolic AI: The Architecture Regulators Trust",
       "breadcrumb": "Technology",
-      "ogTitle": "How True Aim reads a claim and decides it",
-      "ogDescription": "True Aim separates reading from deciding: language models read the documents, a deterministic engine applies the policy, and every decision carries its reasoning.",
-      "updated": "2026-10-17"
+      "ogTitle": "Neuro-symbolic AI: the architecture regulators trust",
+      "ogDescription": "True Aim combines agentic AI execution with deterministic decision-making, built for regulated insurance and EU AI Act compliance.",
+      "updated": "2026-10-13"
     },
     "/trust": {
       "title": "Trust Centre: ISO 27001, SOC 2, GDPR, FADP, DORA | True Aim",
@@ -265,24 +265,6 @@
       "ogDescription": "How True Aim plugs into existing landscapes and how a first integration unfolds in four to six weeks.",
       "robots": "noindex, nofollow",
       "updated": "2026-10-13"
-    },
-    "/news": {
-      "title": "News from True Aim | True Aim",
-      "description": "Announcements from True Aim: awards, partnerships and company news, each with its date and its source.",
-      "h1": "News",
-      "breadcrumb": "News",
-      "ogTitle": "News from True Aim",
-      "ogDescription": "Announcements from True Aim: awards, partnerships and company news, each with its date and its source.",
-      "updated": "2026-10-17"
-    },
-    "/news/true-aim-wins-insurathon-2026": {
-      "title": "True Aim Wins the 2026 Insurathon | True Aim",
-      "description": "Norton Rose Fulbright named True Aim the most innovative InsurTech start-up at its ninth Insurathon, pitched in London on 1 July 2026.",
-      "h1": "True Aim wins the 2026 Insurathon",
-      "breadcrumb": "Insurathon 2026",
-      "ogTitle": "True Aim wins the 2026 Insurathon",
-      "ogDescription": "Norton Rose Fulbright named True Aim the most innovative InsurTech start-up at its ninth Insurathon, pitched in London on 1 July 2026.",
-      "updated": "2026-10-17"
     },
     "/security": {
       "title": "Security Programme | True Aim",

@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { AlertCircle, ChevronDown } from "lucide-react";
+import { AlertCircle, Check, ChevronDown, Linkedin, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/brand/Button";
 import { CARD } from "@/components/content/surface";
 import { Link } from "@/i18n/navigation";
@@ -87,9 +87,10 @@ function createContactSchema(t: (key: string) => string) {
 
 // Form controls as the prototype draws them: 8px corners on a neutral field.
 const LABEL = "mb-2 block text-sm font-medium text-strong";
-const FIELD = "w-full rounded-[8px] border border-line-strong bg-ta-neutral-50 px-3.5 py-3 text-base text-body";
+const FIELD = "w-full rounded-[8px] border border-line-strong bg-ta-neutral-0 px-3.5 py-3 text-base text-body";
 const SELECT = cn(FIELD, "appearance-none pr-12");
 const CHEVRON = "pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-subtle";
+const CHANNEL_ICON = "grid h-12 w-12 shrink-0 place-items-center rounded-full bg-card text-accent shadow-swatch";
 
 function FieldError({ message }: { message?: string }) {
   if (!message) return null;
@@ -172,23 +173,50 @@ export function ContactForm() {
 
   return (
     <div className="grid grid-cols-1 items-start gap-14 lg:grid-cols-[minmax(0,.8fr)_minmax(0,1.2fr)] lg:gap-20">
-      {/* The prototype's form grid: the title and the email line on the left, the form on the right. */}
-      <div>
-        <h2 className="font-display text-[30px] font-bold leading-[1.15] text-strong text-balance md:text-[40px]">
-          {t("form.heading")}
-        </h2>
-        <p className="mt-6 max-w-[42ch] text-[18px] leading-[30px] text-body">
-          {t("aside.email")}{" "}
-          <a href={`mailto:${t("aside.emailAddress")}`} className="font-medium text-accent hover:underline">
-            {t("aside.emailAddress")}
-          </a>
-        </p>
-      </div>
+      {/* The other ways in: email, LinkedIn and the office. */}
+      <ul className="space-y-7">
+        <li className="flex items-start gap-4">
+          <span className={CHANNEL_ICON}>
+            <Mail strokeWidth={1.5} className="h-5 w-5" />
+          </span>
+          <div>
+            <p className="text-sm font-medium text-strong">{t("aside.emailLabel")}</p>
+            <a href={`mailto:${t("aside.emailAddress")}`} className="mt-0.5 block text-[18px] font-medium text-accent hover:underline">
+              {t("aside.emailAddress")}
+            </a>
+          </div>
+        </li>
+        <li className="flex items-start gap-4">
+          <span className={CHANNEL_ICON}>
+            <Linkedin strokeWidth={1.5} className="h-5 w-5" />
+          </span>
+          <div>
+            <p className="text-sm font-medium text-strong">{t("aside.linkedinLabel")}</p>
+            <a
+              href="https://www.linkedin.com/company/true-aim-ag"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-0.5 block text-[18px] font-medium text-accent hover:underline"
+            >
+              {t("aside.linkedinText")}
+            </a>
+          </div>
+        </li>
+        <li className="flex items-start gap-4">
+          <span className={CHANNEL_ICON}>
+            <MapPin strokeWidth={1.5} className="h-5 w-5" />
+          </span>
+          <div>
+            <p className="text-sm font-medium text-strong">{t("aside.officeLabel")}</p>
+            <address className="mt-0.5 max-w-[32ch] not-italic text-[18px] leading-[1.5] text-body">{t("aside.address")}</address>
+          </div>
+        </li>
+      </ul>
 
       <div>
         {isSubmitted ? (
           <div className={cn(CARD, "p-10")}>
-            <h3 className="font-display text-[22px] font-semibold leading-[1.3] text-strong">{t("success.heading")}</h3>
+            <h2 className="font-display text-[22px] font-semibold leading-[1.3] text-strong">{t("success.heading")}</h2>
             <p className="mt-3 text-body">{t("success.message")}</p>
             <button type="button" onClick={() => setIsSubmitted(false)} className="mt-6 text-sm font-medium text-accent hover:underline">
               {t("success.submitAnother")}
@@ -312,8 +340,15 @@ export function ContactForm() {
               </div>
 
               <div className="sm:col-span-2">
+                {/* A white box with a hairline, filled blue when ticked. */}
                 <label className="flex cursor-pointer items-start gap-3">
-                  <input {...register("consent")} type="checkbox" className="mt-0.5 h-[18px] w-[18px] cursor-pointer" />
+                  <input {...register("consent")} type="checkbox" className="peer sr-only" />
+                  <span
+                    aria-hidden="true"
+                    className="mt-0.5 grid h-[18px] w-[18px] shrink-0 place-items-center rounded-[4px] border border-line-strong bg-ta-neutral-0 text-transparent transition-colors duration-150 ease-brand peer-checked:border-accent peer-checked:bg-accent peer-checked:text-on-brand peer-focus-visible:ring-[3px] peer-focus-visible:ring-focus"
+                  >
+                    <Check strokeWidth={2.5} className="h-3 w-3" />
+                  </span>
                   <span className="text-sm leading-[1.5] text-body">
                     {t.rich("form.consent", {
                       privacy: (chunks) => (
@@ -348,7 +383,6 @@ export function ContactForm() {
                     t("form.submit")
                   )}
                 </Button>
-                <p className="mt-3.5 text-sm text-muted">{t("form.responseTime")}</p>
               </div>
             </div>
           </form>

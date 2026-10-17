@@ -15,8 +15,9 @@ export function PageSeo(props: PageGraphInput) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />
+      {/* The trail stays in the HTML for crawlers and screen readers; the V5 design shows no breadcrumb. */}
       {trail.length > 1 && (
-        <div className="max-w-7xl mx-auto px-6 pt-6">
+        <div className="sr-only">
           <Breadcrumbs items={trail} label={siteText(locale).breadcrumbLabel} />
         </div>
       )}

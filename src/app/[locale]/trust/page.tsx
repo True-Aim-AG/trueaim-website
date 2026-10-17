@@ -1,23 +1,48 @@
 import Image from "next/image";
+import { ArrowRight, MapPin } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { BadgeRow, CtaBand, FaqSection, FeatureCards, PageHero, SplitText, type FaqItem } from "@/components/content";
+import { Link } from "@/i18n/navigation";
+import {
+  BadgeRow,
+  CARD,
+  CARD_HOVER,
+  CtaBand,
+  FaqSection,
+  FeatureCards,
+  PageHero,
+  SECTION,
+  SectionHead,
+  SplitText,
+  type FaqItem,
+} from "@/components/content";
+import { HexDot } from "@/components/products/scenes/marks";
 import { PageSeo } from "@/components/seo/PageSeo";
+import { cn } from "@/lib/utils";
 
 const PATH = "/trust";
 
 // Certifications first, then the frameworks the controls are aligned with.
 // The label on each badge comes from messages/<locale>/trust.json and says
 // only what True Aim holds today. The marks are drawn in brand style until
-// the official badge files replace them.
+// the certification bodies' own files replace them.
 const badges = [
-  { key: "iso27001", mark: "/brand/marks/cert-iso.svg" },
-  { key: "soc2", mark: "/brand/marks/cert-soc2.svg" },
-  { key: "gdpr", mark: "/brand/marks/cert-gdpr.svg" },
-  { key: "fadp", mark: "/brand/marks/cert-fadp.svg" },
-  { key: "dora", mark: "/brand/marks/cert-dora.svg" },
+  { key: "iso27001", mark: "/brand/marks/badge-iso-27001.svg" },
+  { key: "soc2", mark: "/brand/marks/badge-soc-2-type-ii.svg" },
+  { key: "gdpr", mark: "/brand/marks/badge-gdpr.svg" },
+  { key: "fadp", mark: "/brand/marks/badge-fadp.svg" },
+  { key: "dora", mark: "/brand/marks/badge-dora.svg" },
 ] as const;
 
-const standards = ["iso27001", "soc2", "dataProtection", "dora"] as const;
+const euAiActKeys = [
+  "humanOversight",
+  "transparency",
+  "technicalDocumentation",
+  "riskManagement",
+  "dataGovernance",
+  "accuracyRobustness",
+] as const;
+
+const residencyKeys = ["swissDataCentre", "euProcessingZones", "noThirdCountry"] as const;
 
 // The sub-processor list keeps its URL for contracts and is not linked from here.
 const documents = [
@@ -27,6 +52,30 @@ const documents = [
   { key: "paia", href: "/paia" },
   { key: "aiTransparency", href: "/ai-transparency" },
 ] as const;
+
+/** The Swiss pin on the brand texture, in the page's card style. */
+function ResidencyVisual({ label }: { label: string }) {
+  return (
+    <div className={cn(CARD, "relative min-h-[340px] w-full overflow-hidden")}>
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-cover"
+        style={{ backgroundImage: "url(/brand/textures/circular-light.webp)", backgroundPosition: "50% 50%" }}
+      />
+      <div aria-hidden className="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,252,253,.4)_0%,rgba(251,252,253,.1)_100%)]" />
+      <div className="relative grid min-h-[340px] place-items-center">
+        <div className="text-center">
+          <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-ta-blue shadow-[0_0_0_10px_rgba(81,81,219,.14)]">
+            <MapPin strokeWidth={1.5} className="h-7 w-7 text-on-brand" />
+          </div>
+          <p className="mt-6 inline-block rounded-pill bg-card px-4 py-1.5 font-display text-[15px] font-semibold text-strong shadow-swatch">
+            {label}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default async function TrustPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -62,8 +111,8 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
           const name = t(`badges.items.${badge.key}.name`);
           const status = t(`badges.items.${badge.key}.status`) as "certified" | "aligned";
           return {
-            image: { src: badge.mark, alt: name, width: 120, height: 120 },
-            renderHeight: 72,
+            image: { src: badge.mark, alt: name, width: 160, height: 160 },
+            renderHeight: 80,
             caption: t(`badges.statusLabels.${status}`),
             title: name,
           };
@@ -71,11 +120,11 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
       />
 
       <FeatureCards
-        heading={t("standards.heading")}
-        columns={2}
-        items={standards.map((key) => ({
-          title: t(`standards.items.${key}.title`),
-          text: t(`standards.items.${key}.body`),
+        heading={t("euAiAct.heading")}
+        columns={3}
+        items={euAiActKeys.map((key) => ({
+          title: t(`euAiAct.features.${key}.requirement`),
+          text: t(`euAiAct.features.${key}.description`),
         }))}
       />
 
@@ -85,18 +134,44 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
         image={{ src: "/brand/3d/shield.webp", alt: t("humanInLoop.imageAlt"), width: 600, height: 600 }}
       />
 
-      <FeatureCards
-        heading={t("documents.heading")}
-        columns={3}
-        items={documents.map((doc) => ({
-          title: t(`documents.items.${doc.key}.title`),
-          text: t(`documents.items.${doc.key}.description`),
-          href: doc.href,
-          linkLabel: t("documents.open"),
-        }))}
-      />
+      <SplitText
+        heading={t("dataResidency.heading")}
+        paragraphs={[t("dataResidency.description")]}
+        visual={<ResidencyVisual label={t("dataResidency.mapLabel")} />}
+        lilac
+      >
+        <ul className={cn(CARD, "mt-8 divide-y divide-hairline")}>
+          {residencyKeys.map((key) => (
+            <li key={key} className="flex items-start gap-4 px-6 py-5">
+              <HexDot className="mt-1.5 h-3.5 w-3.5" />
+              <div>
+                <p className="font-display text-[17px] font-semibold leading-[1.35] text-strong">{t(`dataResidency.items.${key}.title`)}</p>
+                <p className="mt-1 text-[15px] leading-[1.55] text-muted">{t(`dataResidency.items.${key}.description`)}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </SplitText>
 
       <FaqSection heading={t("faq.heading")} faqs={faqs} />
+
+      <section className={SECTION}>
+        <div className="mx-auto max-w-7xl">
+          <SectionHead heading={t("documents.heading")} className="mb-10" />
+          <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3">
+            {documents.map((doc) => (
+              <li key={doc.key}>
+                <Link href={doc.href} className={cn(CARD, CARD_HOVER, "flex items-center justify-between gap-4 px-8 py-6")}>
+                  <span className="font-display text-[20px] font-semibold leading-[1.3] tracking-[0.01em] text-strong">
+                    {t(`documents.items.${doc.key}.title`)}
+                  </span>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-accent" strokeWidth={1.5} aria-hidden />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       <CtaBand heading={t("cta.heading")} lede={t("cta.description")} buttons={[{ label: t("cta.button"), href: "/contact" }]} />
     </>

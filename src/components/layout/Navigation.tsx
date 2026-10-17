@@ -9,35 +9,32 @@ import { buttonClasses } from "@/components/brand/Button";
 import { LanguageSwitcher, LanguageSwitcherMobile } from "@/components/layout/LanguageSwitcher";
 import { useTranslations } from "next-intl";
 
-const platform = [
-  { nameKey: "platformDropdown.overview" as const, href: "/platform", descKey: "platformDropdown.overviewDesc" as const },
-  { nameKey: "platformDropdown.claimsDecisioning" as const, href: "/platform/claims-decisioning", descKey: "platformDropdown.claimsDecisioningDesc" as const },
-  { nameKey: "platformDropdown.invoiceBenchmarking" as const, href: "/platform/invoice-benchmarking", descKey: "platformDropdown.invoiceBenchmarkingDesc" as const },
-  { nameKey: "platformDropdown.damageReporting" as const, href: "/platform/damage-reporting", descKey: "platformDropdown.damageReportingDesc" as const },
-  { nameKey: "platformDropdown.otus" as const, href: "/platform/otus", descKey: "platformDropdown.otusDesc" as const },
-];
-
-const resources = [
-  { nameKey: "resourcesDropdown.caseStudies" as const, href: "/case-studies", descKey: "resourcesDropdown.caseStudiesDesc" as const },
-  { nameKey: "resourcesDropdown.blog" as const, href: "/blog", descKey: "resourcesDropdown.blogDesc" as const },
-  { nameKey: "resourcesDropdown.news" as const, href: "/news", descKey: "resourcesDropdown.newsDesc" as const },
-  { nameKey: "resourcesDropdown.impactEstimator" as const, href: "/impact-estimator", descKey: "resourcesDropdown.impactEstimatorDesc" as const },
-];
-
-type DropdownType = "platform" | "resources";
-
-const navigation: { nameKey: "platform" | "technology" | "trust" | "resources" | "about" | "contact"; href: string; dropdown?: DropdownType }[] = [
-  { nameKey: "platform", href: "/platform", dropdown: "platform" },
-  { nameKey: "technology", href: "/technology" },
-  { nameKey: "trust", href: "/trust" },
-  { nameKey: "resources", href: "/case-studies", dropdown: "resources" },
-  { nameKey: "about", href: "/about" },
-  { nameKey: "contact", href: "/contact" },
-];
-
-const dropdownItems = { platform, resources };
-
+type DropdownKey = "platform" | "resources" | "company";
 type DropdownItem = { nameKey: string; href: string; descKey: string };
+
+// The drop-downs of the V5 prototype. Solutions follows once its pages exist.
+const dropdowns: Record<DropdownKey, DropdownItem[]> = {
+  platform: [
+    { nameKey: "platformDropdown.overview", href: "/platform", descKey: "platformDropdown.overviewDesc" },
+    { nameKey: "platformDropdown.claimsDecisioning", href: "/platform/claims-decisioning", descKey: "platformDropdown.claimsDecisioningDesc" },
+    { nameKey: "platformDropdown.invoiceBenchmarking", href: "/platform/invoice-benchmarking", descKey: "platformDropdown.invoiceBenchmarkingDesc" },
+    { nameKey: "platformDropdown.damageReporting", href: "/platform/damage-reporting", descKey: "platformDropdown.damageReportingDesc" },
+    { nameKey: "platformDropdown.otus", href: "/platform/otus", descKey: "platformDropdown.otusDesc" },
+  ],
+  resources: [
+    { nameKey: "resourcesDropdown.caseStudies", href: "/case-studies", descKey: "resourcesDropdown.caseStudiesDesc" },
+    { nameKey: "resourcesDropdown.blog", href: "/blog", descKey: "resourcesDropdown.blogDesc" },
+    { nameKey: "resourcesDropdown.impactEstimator", href: "/impact-estimator", descKey: "resourcesDropdown.impactEstimatorDesc" },
+    { nameKey: "resourcesDropdown.trustCenter", href: "/trust", descKey: "resourcesDropdown.trustCenterDesc" },
+  ],
+  company: [
+    { nameKey: "companyDropdown.about", href: "/about", descKey: "companyDropdown.aboutDesc" },
+    { nameKey: "companyDropdown.partners", href: "/partners", descKey: "companyDropdown.partnersDesc" },
+    { nameKey: "companyDropdown.contact", href: "/contact", descKey: "companyDropdown.contactDesc" },
+  ],
+};
+
+const navigation: DropdownKey[] = ["platform", "resources", "company"];
 
 function Dropdown({ open, items, t }: { open: boolean; items: DropdownItem[]; t: ReturnType<typeof useTranslations<"nav">> }) {
   return (
@@ -68,7 +65,7 @@ function Dropdown({ open, items, t }: { open: boolean; items: DropdownItem[]; t:
 export function Navigation() {
   const t = useTranslations("nav");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<DropdownType | null>(null);
+  const [openDropdown, setOpenDropdown] = useState<DropdownKey | null>(null);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[60] nav-header border-b border-hairline" data-menu-open={mobileMenuOpen ? "true" : "false"}>
@@ -81,36 +78,26 @@ export function Navigation() {
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-9">
-            {navigation.map((item) => (
-              <div key={item.nameKey} className="relative">
-                {item.dropdown ? (
-                  <div
-                    className="relative"
-                    onMouseEnter={() => setOpenDropdown(item.dropdown!)}
-                    onMouseLeave={() => setOpenDropdown(null)}
-                  >
-                    <button
-                      type="button"
-                      className="flex items-center gap-1 text-button text-body transition-colors duration-150 ease-brand hover:text-accent"
-                      aria-expanded={openDropdown === item.dropdown}
-                      onClick={() => setOpenDropdown((v) => (v === item.dropdown ? null : item.dropdown!))}
-                    >
-                      {t(item.nameKey)}
-                      <ChevronDown
-                        strokeWidth={1.5}
-                        className={cn(
-                          "w-4 h-4 transition-transform duration-150 ease-brand",
-                          openDropdown === item.dropdown && "rotate-180",
-                        )}
-                      />
-                    </button>
-                    <Dropdown open={openDropdown === item.dropdown} items={dropdownItems[item.dropdown]} t={t} />
-                  </div>
-                ) : (
-                  <Link href={item.href} className="text-button text-body transition-colors duration-150 ease-brand hover:text-accent">
-                    {t(item.nameKey)}
-                  </Link>
-                )}
+            {navigation.map((key) => (
+              <div
+                key={key}
+                className="relative"
+                onMouseEnter={() => setOpenDropdown(key)}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <button
+                  type="button"
+                  className="flex items-center gap-1 text-button text-body transition-colors duration-150 ease-brand hover:text-accent"
+                  aria-expanded={openDropdown === key}
+                  onClick={() => setOpenDropdown((open) => (open === key ? null : key))}
+                >
+                  {t(key)}
+                  <ChevronDown
+                    strokeWidth={1.5}
+                    className={cn("w-4 h-4 transition-transform duration-150 ease-brand", openDropdown === key && "rotate-180")}
+                  />
+                </button>
+                <Dropdown open={openDropdown === key} items={dropdowns[key]} t={t} />
               </div>
             ))}
           </div>
@@ -138,29 +125,22 @@ export function Navigation() {
         {/* Mobile menu */}
         <div className={cn("md:hidden overflow-hidden transition-[max-height] duration-300 ease-brand", mobileMenuOpen ? "max-h-[80vh] overflow-y-auto" : "max-h-0")}>
           <div className="flex flex-col gap-1 pb-6 pt-2">
-            <div className="py-2">
-              <div className="text-caption-sm text-subtle px-4 mb-2">{t("platform")}</div>
-              {platform.map((item) => (
-                <Link key={item.nameKey} href={item.href} className="block rounded-pill px-4 py-2.5 text-body hover:bg-accent-soft hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                  {t(item.nameKey)}
-                </Link>
-              ))}
-            </div>
-            <div className="py-2 border-t border-hairline">
-              <div className="text-caption-sm text-subtle px-4 mb-2 mt-2">{t("resources")}</div>
-              {resources.map((item) => (
-                <Link key={item.nameKey} href={item.href} className="block rounded-pill px-4 py-2.5 text-body hover:bg-accent-soft hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                  {t(item.nameKey)}
-                </Link>
-              ))}
-            </div>
-            <div className="py-2 border-t border-hairline">
-              {navigation.filter((n) => !n.dropdown).map((item) => (
-                <Link key={item.nameKey} href={item.href} className="block rounded-pill px-4 py-2.5 text-body hover:bg-accent-soft hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                  {t(item.nameKey)}
-                </Link>
-              ))}
-            </div>
+            {navigation.map((key, index) => (
+              <div key={key} className={cn("py-2", index > 0 && "border-t border-hairline")}>
+                <div className={cn("text-caption-sm text-subtle px-4 mb-2", index > 0 && "mt-2")}>{t(key)}</div>
+                {dropdowns[key].map((item) => (
+                  <Link
+                    key={item.nameKey}
+                    href={item.href}
+                    className="block rounded-pill px-4 py-2.5 text-body hover:bg-accent-soft hover:text-accent transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                    {t(item.nameKey as any)}
+                  </Link>
+                ))}
+              </div>
+            ))}
             <div className="flex flex-col gap-3 mt-3 px-1">
               <LanguageSwitcherMobile />
               <Link href="/contact" className={buttonClasses("primary", "md", "w-full")} onClick={() => setMobileMenuOpen(false)}>

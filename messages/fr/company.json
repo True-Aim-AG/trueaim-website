@@ -36,17 +36,17 @@
         "kai": {
           "name": "Kai Praschma",
           "title": "AI Solutions Specialist",
-          "bio": "Designs and runs the automation behind True Aim's operations and client work. Holds a Master's degree in finance."
+          "bio": "Builds the automation that runs True Aim's operations and client delivery, and turns research into the tools, content and systems the team works with every day."
         },
         "henrique": {
           "name": "Henrique Ferreira",
           "title": "Implementation Specialist",
-          "bio": "Works with claims teams to get True Aim live on their own claims, invoices and damage reports."
+          "bio": "Guides claims teams from first conversation to a running platform, shaping each deployment around their own claims, invoices and damage reports."
         },
         "arnaud": {
           "name": "Arnaud Terville",
-          "title": "Sales",
-          "bio": "Enterprise insurance technology experience from Solera, Quantexa and Apple."
+          "title": "Commercial Lead",
+          "bio": "Brings enterprise insurance technology experience from Solera, Quantexa and Apple, where he helped multinational organisations adopt new platforms at scale. At True Aim he leads the commercial relationships that bring the platform into claims operations."
         }
       }
     },
@@ -135,10 +135,6 @@
           "alt": "IKN Awards"
         }
       }
-    },
-    "location": {
-      "heading": "Where to find us",
-      "address": "True Aim AG, Metallstrasse 9, 6300 Zug, Switzerland."
     },
     "cta": {
       "heading": "See True Aim on your own claims",

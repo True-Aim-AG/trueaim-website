@@ -1,10 +1,10 @@
 {
   "contact": {
     "hero": {
-      "title": "Request a demo"
+      "title": "Request a demo",
+      "summary": "Tell us about your claims operation and we will show you True Aim on your own invoices, claims and damage reports."
     },
     "form": {
-      "heading": "We'll come to you.",
       "firstName": "First name",
       "lastName": "Last name",
       "workEmail": "Work email",
@@ -72,7 +72,6 @@
       },
       "submit": "Request a demo",
       "submitting": "Sending",
-      "responseTime": "We usually reply within one business day.",
       "errorGeneric": "Something went wrong. Please try again."
     },
     "success": {
@@ -81,8 +80,12 @@
       "submitAnother": "Send another request"
     },
     "aside": {
-      "email": "Prefer email? Write to",
-      "emailAddress": "info@trueaim.ai"
+      "emailLabel": "Email",
+      "emailAddress": "info@trueaim.ai",
+      "linkedinLabel": "LinkedIn",
+      "linkedinText": "True Aim on LinkedIn",
+      "officeLabel": "Office",
+      "address": "True Aim AG, Metallstrasse 9, 6300 Zug, Switzerland"
     }
   }
 }

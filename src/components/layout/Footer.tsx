@@ -22,16 +22,15 @@ const columns = [
     links: [
       { nameKey: "caseStudies", href: "/case-studies" },
       { nameKey: "blog", href: "/blog" },
-      { nameKey: "news", href: "/news" },
       { nameKey: "impactEstimator", href: "/impact-estimator" },
+      { nameKey: "trustCenter", href: "/trust" },
     ],
   },
   {
     titleKey: "company",
     links: [
       { nameKey: "about", href: "/about" },
-      { nameKey: "technology", href: "/technology" },
-      { nameKey: "trustCenter", href: "/trust" },
+      { nameKey: "partners", href: "/partners" },
       { nameKey: "contact", href: "/contact" },
     ],
   },
@@ -83,9 +82,10 @@ export async function Footer() {
 
           {columns.map((column) => (
             <div key={column.titleKey}>
-              <h3 className="mb-[18px] font-body text-xs font-medium uppercase tracking-[0.14em] text-light-blue">
+              {/* A label, not a heading, as the prototype sets it: the page outline ends with the page's own sections. */}
+              <p className="mb-[18px] font-body text-xs font-medium uppercase tracking-[0.14em] text-light-blue">
                 {t(column.titleKey)}
-              </h3>
+              </p>
               <ul>
                 {column.links.map((link) => (
                   <li key={link.nameKey}>

@@ -45,12 +45,11 @@ export const caseStudies: CaseStudy[] = [
       "Deployed the full True Aim platform for end-to-end claims automation. The document layer handles multilingual document processing and classification. Claims Decisioning combines deterministic rules with AI fallback for accurate coverage matching. The quality check provides assurance with full provenance tracking.",
     products: ["mira", "contextbuilder", "claimeval"],
     metrics: [
-      { label: "Decision accuracy", value: "98%", improvement: "on the development set" },
-      { label: "Time to results", value: "7 days", improvement: "full pipeline live" },
-      { label: "Line items settled without a language model", value: "80-90%" },
-      { label: "Languages", value: "3", improvement: "German, French and Italian" },
+      { label: "Decision accuracy", value: "98%" },
+      { label: "Line items settled deterministically", value: "80-90%" },
+      { label: "English, German, French, Italian and more", value: "Multilingual" },
     ],
-    timeline: "7 days from baseline to 98% accuracy",
+    timeline: "",
     highlights: [
       "Near-100% document classification accuracy",
       "Comprehensive field extraction with confidence scoring",

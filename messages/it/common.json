@@ -14,23 +14,32 @@
       "overview": "Panoramica della piattaforma",
       "overviewDesc": "I quattro moduli e come si integrano",
       "claimsDecisioning": "Claims Decisioning",
-      "claimsDecisioningDesc": "Sinistri liquidati in minuti, non in settimane",
+      "claimsDecisioningDesc": "Claims settled in minutes, not weeks",
       "invoiceBenchmarking": "Invoice Benchmarking",
-      "invoiceBenchmarkingDesc": "Mai più una fattura pagata troppo",
+      "invoiceBenchmarkingDesc": "Never overpay on an invoice again",
       "damageReporting": "Damage Reporting",
-      "damageReportingDesc": "Perizie dei danni complete in pochi minuti",
+      "damageReportingDesc": "Completed damage reports in minutes",
       "otus": "Otus",
-      "otusDesc": "Lo specialista sinistri di True Aim"
+      "otusDesc": "An AI-powered expert for every team member"
     },
     "resourcesDropdown": {
       "caseStudies": "Casi di studio",
       "caseStudiesDesc": "Risultati dei team sinistri",
       "blog": "Blog",
       "blogDesc": "Sinistri, evidenze e regolamentazione",
-      "news": "Notizie",
-      "newsDesc": "Annunci di True Aim",
       "impactEstimator": "Impact Estimator",
-      "impactEstimatorDesc": "Quanto True Aim potrebbe far risparmiare al vostro team"
+      "impactEstimatorDesc": "Calculate unlocked value",
+      "trustCenter": "Trust Center",
+      "trustCenterDesc": "Security, certification and data"
+    },
+    "company": "Azienda",
+    "companyDropdown": {
+      "about": "Chi siamo",
+      "aboutDesc": "Who we are and who we work with",
+      "partners": "Partner",
+      "partnersDesc": "Clients, partners and research",
+      "contact": "Contatti",
+      "contactDesc": "Request a demo or ask a question"
     }
   },
   "footer": {
@@ -45,7 +54,6 @@
     "caseStudies": "Casi di studio",
     "impactEstimator": "Impact Estimator",
     "blog": "Blog",
-    "news": "Notizie",
     "platformOverview": "Panoramica della piattaforma",
     "invoiceBenchmarking": "Invoice Benchmarking",
     "claimsDecisioning": "Claims Decisioning",
@@ -71,7 +79,7 @@
       "Auditable by design."
     ],
     "followLinkedin": "Seguici su LinkedIn",
-    "technology": "Tecnologia"
+    "partners": "Partner"
   },
   "cookie": {
     "title": "Preferenze sui cookie",

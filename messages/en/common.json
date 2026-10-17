@@ -14,23 +14,32 @@
       "overview": "Platform overview",
       "overviewDesc": "The four modules and how they fit together",
       "claimsDecisioning": "Claims Decisioning",
-      "claimsDecisioningDesc": "The coverage check, from FNOL to settlement",
+      "claimsDecisioningDesc": "Claims settled in minutes, not weeks",
       "invoiceBenchmarking": "Invoice Benchmarking",
-      "invoiceBenchmarkingDesc": "Every invoice line checked against the benchmark",
+      "invoiceBenchmarkingDesc": "Never overpay on an invoice again",
       "damageReporting": "Damage Reporting",
-      "damageReportingDesc": "A priced estimate at first notification",
+      "damageReportingDesc": "Completed damage reports in minutes",
       "otus": "Otus",
-      "otusDesc": "True Aim's claims specialist"
+      "otusDesc": "An AI-powered expert for every team member"
     },
     "resourcesDropdown": {
       "caseStudies": "Case studies",
       "caseStudiesDesc": "Results from claims teams",
       "blog": "Blog",
       "blogDesc": "Claims, evidence and regulation",
-      "news": "News",
-      "newsDesc": "Announcements from True Aim",
       "impactEstimator": "Impact Estimator",
-      "impactEstimatorDesc": "The time and cost automation could give back"
+      "impactEstimatorDesc": "Calculate unlocked value",
+      "trustCenter": "Trust Centre",
+      "trustCenterDesc": "Security, certification and data"
+    },
+    "company": "Company",
+    "companyDropdown": {
+      "about": "About",
+      "aboutDesc": "Who we are and who we work with",
+      "partners": "Partners",
+      "partnersDesc": "Clients, partners and research",
+      "contact": "Contact",
+      "contactDesc": "Request a demo or ask a question"
     }
   },
   "footer": {
@@ -45,7 +54,6 @@
     "caseStudies": "Case studies",
     "impactEstimator": "Impact Estimator",
     "blog": "Blog",
-    "news": "News",
     "platformOverview": "Platform overview",
     "invoiceBenchmarking": "Invoice Benchmarking",
     "claimsDecisioning": "Claims Decisioning",
@@ -70,7 +78,7 @@
       "Auditable by design."
     ],
     "followLinkedin": "Follow us on LinkedIn",
-    "technology": "Technology"
+    "partners": "Partners"
   },
   "cookie": {
     "title": "Cookie preferences",
