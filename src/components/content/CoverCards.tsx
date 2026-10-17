@@ -27,7 +27,7 @@ const TEXTURES: Record<CoverTexture["name"], string> = {
 /**
  * Linked cards, each topped by a brand-texture cover with the hexagon mark
  * and, for a customer story, the customer's logo on a white plate. Two cards
- * sit under the heading; a single card sits to the right of it.
+ * sit under the heading; a single card sits to the right of it, narrower and with a shorter cover.
  */
 export function CoverCards({ heading, items, tone = "white" }: { heading: string; items: CoverCard[]; tone?: Tone }) {
   const single = items.length === 1;
@@ -35,13 +35,13 @@ export function CoverCards({ heading, items, tone = "white" }: { heading: string
     <section className={section(tone)}>
       <div className={cn("mx-auto max-w-7xl", single && "grid items-center gap-x-[29px] md:grid-cols-2")}>
         <SectionHead heading={heading} className={cn(single && "md:mb-0")} />
-        <ul className={cn("grid grid-cols-1 gap-[29px]", !single && "md:grid-cols-2")}>
+        <ul className={cn("grid grid-cols-1 gap-[29px]", single ? "w-full max-w-[480px] md:justify-self-end" : "md:grid-cols-2")}>
           {items.map((item, index) => (
             <li key={item.title}>
               <Reveal delay={index * 0.1} className="h-full">
                 <Link href={item.href} className={cn(CARD, CARD_HOVER, "flex h-full flex-col overflow-hidden")}>
                   <div
-                    className="relative aspect-[16/10] rounded-t-[12px] bg-no-repeat"
+                    className={cn("relative rounded-t-[12px] bg-no-repeat", single ? "aspect-[3/1]" : "aspect-[16/10]")}
                     style={{
                       backgroundImage: `url(${TEXTURES[item.cover.name]})`,
                       backgroundPosition: item.cover.position,
