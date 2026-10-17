@@ -68,10 +68,68 @@ await renameImages(out);
 // The terminator set includes a backslash: inside the RSC payload that Next
 // embeds in the HTML, string quotes are escaped, so a queryless URL ends in
 // opengraph-image\" rather than opengraph-image".
+const OG_IMAGE_URL = /(https:\/\/trueaim\.ai(?:\/[a-z0-9-]+)*\/opengraph-image)(?=[?"'&\s\\])/g;
+
+// The RSC payload holds text rows as <id>:T<byte length in hex>,<text>. A URL
+// rewritten inside one (the JSON-LD graph) must carry the new length, or the
+// client misreads every row after it and the page fails with "Connection
+// closed". Takes the payload in its chunks and returns them rewritten.
+function rewritePayload(chunks) {
+  const parts = chunks.map((chunk) => Buffer.from(chunk, "utf8").toString("latin1"));
+  const stream = parts.join("");
+  const edits = [];
+  for (const match of stream.matchAll(OG_IMAGE_URL)) edits.push({ at: match.index + match[0].length, remove: 0, insert: ".png" });
+  for (let position = 0; position < stream.length; ) {
+    const row = /^[0-9a-f]*:T([0-9a-f]+),/.exec(stream.slice(position, position + 32));
+    if (!row) {
+      const end = stream.indexOf("\n", position);
+      position = end === -1 ? stream.length : end + 1;
+      continue;
+    }
+    const start = position + row[0].length;
+    const end = start + parseInt(row[1], 16);
+    const added = edits.filter((edit) => edit.at > start && edit.at <= end).length * ".png".length;
+    if (added) edits.push({ at: start - row[1].length - 1, remove: row[1].length, insert: (parseInt(row[1], 16) + added).toString(16) });
+    position = end;
+  }
+  edits.sort((a, b) => b.at - a.at);
+  const bounds = [];
+  parts.reduce((offset, part) => (bounds.push(offset), offset + part.length), 0);
+  for (const edit of edits) {
+    // An insertion at a chunk boundary belongs to the chunk the URL ends in.
+    let index = bounds.length - 1;
+    while (index > 0 && bounds[index] >= edit.at + (edit.remove ? 1 : 0)) index--;
+    const local = edit.at - bounds[index];
+    if (local + edit.remove > parts[index].length) throw new Error("RSC text row header split across chunks");
+    parts[index] = parts[index].slice(0, local) + edit.insert + parts[index].slice(local + edit.remove);
+  }
+  return parts.map((part) => Buffer.from(part, "latin1").toString("utf8"));
+}
+
+/** The inline payload pushes in an exported page, rewritten as one stream. */
+function rewriteInlinePayload(html) {
+  const push = /(self\.__next_f\.push\(\[1,)("(?:[^"\\]|\\.)*")(\]\))/g;
+  const matches = [...html.matchAll(push)];
+  const rewritten = rewritePayload(matches.map((match) => JSON.parse(match[2])));
+  let result = "";
+  let last = 0;
+  matches.forEach((match, index) => {
+    const original = JSON.parse(match[2]);
+    // Escaped as Next escapes it, so a string with </script> cannot end the tag.
+    const encoded = rewritten[index] === original ? match[2] : JSON.stringify(rewritten[index])
+      .replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026")
+      .replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029");
+    result += html.slice(last, match.index) + match[1] + encoded + match[3];
+    last = match.index + match[0].length;
+  });
+  return result + html.slice(last);
+}
+
 let repairedMetadataFiles = 0;
 for (const path of metadataFiles) {
   const original = await readFile(path, "utf8");
-  const updated = original.replace(/(https:\/\/trueaim\.ai(?:\/[a-z0-9-]+)*\/opengraph-image)(?=[?"'&\s\\])/g, "$1.png");
+  const payloadFixed = path.endsWith(".txt") ? rewritePayload([original])[0] : rewriteInlinePayload(original);
+  const updated = payloadFixed.replace(OG_IMAGE_URL, "$1.png");
   const stale = updated.match(/\/opengraph-image(?!\.png)/g);
   if (stale) throw new Error(`${path}: ${stale.length} Open Graph image reference(s) still point at the extensionless file`);
   if (updated !== original) {
