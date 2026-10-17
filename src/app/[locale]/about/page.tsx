@@ -13,7 +13,7 @@ const teamMeta: Record<(typeof team)[number], { image?: string; linkedin?: strin
   frederic: { image: "/team/frederic-brunner.webp", linkedin: "https://www.linkedin.com/in/frdbrunner/" },
   alin: { image: "/team/alin-koppandi.webp" },
   kai: { image: "/team/kai-praschma.webp" },
-  henrique: { linkedin: "https://www.linkedin.com/in/henriquemf213" },
+  henrique: { image: "/team/henrique-ferreira.webp", linkedin: "https://www.linkedin.com/in/henriquemf213" },
   arnaud: {},
 };
 
