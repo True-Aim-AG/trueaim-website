@@ -1,5 +1,3 @@
-import type { BrandIconName } from "@/components/brand/BrandIcon";
-
 /**
  * The solutions pages, one per customer type under /<locale>/solutions/<segment>/,
  * in the order of the Solutions menu. English only until the translations land.
@@ -7,12 +5,12 @@ import type { BrandIconName } from "@/components/brand/BrandIcon";
  * `key` names the copy in messages/en/solutions.json (solutionPages) and metadata.json.
  */
 export const solutions = [
-  { segment: "insurers", key: "insurers", icon: "policy" },
-  { segment: "brokers", key: "brokers", icon: "workflow" },
-  { segment: "third-party-administrators", key: "tpas", icon: "process" },
-  { segment: "warranty-providers", key: "warranty", icon: "claim" },
-  { segment: "claims-technology-providers", key: "claimsTech", icon: "structure" },
-] as const satisfies readonly { segment: string; key: string; icon: BrandIconName }[];
+  { segment: "insurers", key: "insurers" },
+  { segment: "brokers", key: "brokers" },
+  { segment: "third-party-administrators", key: "tpas" },
+  { segment: "warranty-providers", key: "warranty" },
+  { segment: "claims-technology-providers", key: "claimsTech" },
+] as const;
 
 export type Solution = (typeof solutions)[number];
 
