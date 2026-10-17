@@ -5,6 +5,7 @@ import { Logo } from "@/components/brand/Logo";
 import { CookieSettingsButton } from "@/components/layout/CookieSettingsButton";
 import packageJson from "../../../package.json";
 
+// The sub-processor list stays at /sub-processors for contracts and is not linked from here.
 const footerLinks = {
   company: [
     { nameKey: "about" as const, href: "/about" },
@@ -12,13 +13,14 @@ const footerLinks = {
   ],
   resources: [
     { nameKey: "caseStudies" as const, href: "/case-studies" },
-    { nameKey: "impactEstimator" as const, href: "/impact-estimator" },
-    { nameKey: "trustCenter" as const, href: "/trust" },
     { nameKey: "blog" as const, href: "/blog" },
+    { nameKey: "news" as const, href: "/news" },
+    { nameKey: "impactEstimator" as const, href: "/impact-estimator" },
   ],
-  products: [
-    { nameKey: "invoiceBenchmarking" as const, href: "/platform/invoice-benchmarking" },
+  platform: [
+    { nameKey: "platformOverview" as const, href: "/platform" },
     { nameKey: "claimsDecisioning" as const, href: "/platform/claims-decisioning" },
+    { nameKey: "invoiceBenchmarking" as const, href: "/platform/invoice-benchmarking" },
     { nameKey: "damageReporting" as const, href: "/platform/damage-reporting" },
     { nameKey: "otus" as const, href: "/platform/otus" },
   ],
@@ -28,7 +30,6 @@ const footerLinks = {
   legal: [
     { nameKey: "privacy" as const, href: "/privacy" },
     { nameKey: "terms" as const, href: "/terms" },
-    { nameKey: "subProcessors" as const, href: "/sub-processors" },
     { nameKey: "cookies" as const, href: "/cookies" },
     { nameKey: "paia" as const, href: "/paia" },
     { nameKey: "aiTransparency" as const, href: "/ai-transparency" },
@@ -36,10 +37,10 @@ const footerLinks = {
 };
 
 type ColumnKey = keyof typeof footerLinks;
-const columns: { key: ColumnKey; titleKey: "company" | "resources" | "products" | "trust" | "legal" }[] = [
+const columns: { key: ColumnKey; titleKey: "company" | "resources" | "platform" | "trust" | "legal" }[] = [
   { key: "company", titleKey: "company" },
   { key: "resources", titleKey: "resources" },
-  { key: "products", titleKey: "products" },
+  { key: "platform", titleKey: "platform" },
   { key: "trust", titleKey: "trust" },
   { key: "legal", titleKey: "legal" },
 ];

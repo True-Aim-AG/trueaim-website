@@ -1,25 +1,17 @@
 {
   "caseStudies": {
     "hero": {
-      "badge": "Successi dei clienti",
-      "titleLine1": "Risultati concreti da",
-      "titleLine2": "assicuratori reali",
-      "description": "Scoprite come gli assicuratori utilizzano True Aim per trasformare le loro operazioni sui sinistri con risultati misurabili e verificabili."
+      "title": "Real numbers in practice",
+      "summary": "How claims teams use True Aim on their own claims, and what changed. Each case study names the volume, the languages, the time to results and the accuracy measured, and says how each figure was measured."
     },
     "featured": {
-      "badge": "In evidenza",
-      "readFullStudy": "Leggi il caso studio completo"
-    },
-    "wip": {
-      "heading": "Ulteriori casi studio in lavorazione",
-      "description": "Questi casi studio sono attualmente in fase di documentazione. Tornate per i report completi.",
-      "badge": "In lavorazione"
+      "badge": "Case study",
+      "readFullStudy": "Read the case study"
     },
     "cta": {
-      "heading": "Scoprite cosa puo fare l'AI verificabile per i vostri sinistri",
-      "description": "Analizziamo un campione dei vostri sinistri chiusi per quantificare l'impatto potenziale.",
-      "bookDemo": "Prenotate una demo",
-      "getEstimate": "Ottenere una stima dell'impatto"
+      "heading": "See True Aim on your own claims",
+      "description": "Bring a batch of your closed claims and the demo shows the finished outcome on them.",
+      "bookDemo": "Request a demo"
     },
     "detail": {
       "allCaseStudies": "Tutti i casi studio",

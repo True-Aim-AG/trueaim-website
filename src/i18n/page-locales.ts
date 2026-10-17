@@ -12,6 +12,7 @@ export const englishOnlyPaths = [
   "/changelog",
   "/cookies",
   "/ethics",
+  "/news",
   "/paia",
   "/platform",
   "/privacy",

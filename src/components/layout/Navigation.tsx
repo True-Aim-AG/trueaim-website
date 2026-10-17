@@ -6,31 +6,36 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemedLogo } from "@/components/brand/Logo";
 import { buttonClasses } from "@/components/brand/Button";
-import { LanguageSwitcher, LanguageSwitcherMobile } from "@/components/layout/LanguageSwitcher";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { useTranslations } from "next-intl";
 
-const products = [
-  { nameKey: "productsDropdown.invoiceBenchmarking" as const, href: "/platform/invoice-benchmarking", descKey: "productsDropdown.invoiceBenchmarkingDesc" as const },
-  { nameKey: "productsDropdown.claimsDecisioning" as const, href: "/platform/claims-decisioning", descKey: "productsDropdown.claimsDecisioningDesc" as const },
-  { nameKey: "productsDropdown.damageReporting" as const, href: "/platform/damage-reporting", descKey: "productsDropdown.damageReportingDesc" as const },
-  { nameKey: "productsDropdown.otus" as const, href: "/platform/otus", descKey: "productsDropdown.otusDesc" as const },
+const platform = [
+  { nameKey: "platformDropdown.overview" as const, href: "/platform", descKey: "platformDropdown.overviewDesc" as const },
+  { nameKey: "platformDropdown.claimsDecisioning" as const, href: "/platform/claims-decisioning", descKey: "platformDropdown.claimsDecisioningDesc" as const },
+  { nameKey: "platformDropdown.invoiceBenchmarking" as const, href: "/platform/invoice-benchmarking", descKey: "platformDropdown.invoiceBenchmarkingDesc" as const },
+  { nameKey: "platformDropdown.damageReporting" as const, href: "/platform/damage-reporting", descKey: "platformDropdown.damageReportingDesc" as const },
+  { nameKey: "platformDropdown.otus" as const, href: "/platform/otus", descKey: "platformDropdown.otusDesc" as const },
 ];
 
 const resources = [
   { nameKey: "resourcesDropdown.caseStudies" as const, href: "/case-studies", descKey: "resourcesDropdown.caseStudiesDesc" as const },
-  { nameKey: "resourcesDropdown.impactEstimator" as const, href: "/impact-estimator", descKey: "resourcesDropdown.impactEstimatorDesc" as const },
-  { nameKey: "resourcesDropdown.trustCenter" as const, href: "/trust", descKey: "resourcesDropdown.trustCenterDesc" as const },
-  { nameKey: "resourcesDropdown.product" as const, href: "/platform", descKey: "resourcesDropdown.productDesc" as const },
   { nameKey: "resourcesDropdown.blog" as const, href: "/blog", descKey: "resourcesDropdown.blogDesc" as const },
+  { nameKey: "resourcesDropdown.news" as const, href: "/news", descKey: "resourcesDropdown.newsDesc" as const },
+  { nameKey: "resourcesDropdown.impactEstimator" as const, href: "/impact-estimator", descKey: "resourcesDropdown.impactEstimatorDesc" as const },
 ];
 
-const navigation = [
-  { nameKey: "products" as const, href: "/products", hasDropdown: true, dropdownType: "products" },
-  { nameKey: "resources" as const, href: "/resources", hasDropdown: true, dropdownType: "resources" },
-  { nameKey: "technology" as const, href: "/technology" },
-  { nameKey: "company" as const, href: "/about" },
-  { nameKey: "contact" as const, href: "/contact" },
+type DropdownType = "platform" | "resources";
+
+const navigation: { nameKey: "platform" | "technology" | "trust" | "resources" | "about" | "contact"; href: string; dropdown?: DropdownType }[] = [
+  { nameKey: "platform", href: "/platform", dropdown: "platform" },
+  { nameKey: "technology", href: "/technology" },
+  { nameKey: "trust", href: "/trust" },
+  { nameKey: "resources", href: "/case-studies", dropdown: "resources" },
+  { nameKey: "about", href: "/about" },
+  { nameKey: "contact", href: "/contact" },
 ];
+
+const dropdownItems = { platform, resources };
 
 type DropdownItem = { nameKey: string; href: string; descKey: string };
 
@@ -63,8 +68,7 @@ function Dropdown({ open, items, t }: { open: boolean; items: DropdownItem[]; t:
 export function Navigation() {
   const t = useTranslations("nav");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
-  const [resourcesOpen, setResourcesOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<DropdownType | null>(null);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[60] nav-header border-b border-hairline" data-menu-open={mobileMenuOpen ? "true" : "false"}>
@@ -79,28 +83,28 @@ export function Navigation() {
           <div className="hidden md:flex items-center gap-9">
             {navigation.map((item) => (
               <div key={item.nameKey} className="relative">
-                {item.hasDropdown ? (
+                {item.dropdown ? (
                   <div
                     className="relative"
-                    onMouseEnter={() => (item.dropdownType === "products" ? setProductsOpen(true) : setResourcesOpen(true))}
-                    onMouseLeave={() => (item.dropdownType === "products" ? setProductsOpen(false) : setResourcesOpen(false))}
+                    onMouseEnter={() => setOpenDropdown(item.dropdown!)}
+                    onMouseLeave={() => setOpenDropdown(null)}
                   >
                     <button
                       type="button"
                       className="flex items-center gap-1 text-button text-body transition-colors duration-150 ease-brand hover:text-accent"
-                      aria-expanded={item.dropdownType === "products" ? productsOpen : resourcesOpen}
-                      onClick={() => (item.dropdownType === "products" ? setProductsOpen((v) => !v) : setResourcesOpen((v) => !v))}
+                      aria-expanded={openDropdown === item.dropdown}
+                      onClick={() => setOpenDropdown((v) => (v === item.dropdown ? null : item.dropdown!))}
                     >
                       {t(item.nameKey)}
                       <ChevronDown
                         strokeWidth={1.5}
                         className={cn(
                           "w-4 h-4 transition-transform duration-150 ease-brand",
-                          (item.dropdownType === "products" ? productsOpen : resourcesOpen) && "rotate-180",
+                          openDropdown === item.dropdown && "rotate-180",
                         )}
                       />
                     </button>
-                    <Dropdown open={item.dropdownType === "products" ? productsOpen : resourcesOpen} items={item.dropdownType === "products" ? products : resources} t={t} />
+                    <Dropdown open={openDropdown === item.dropdown} items={dropdownItems[item.dropdown]} t={t} />
                   </div>
                 ) : (
                   <Link href={item.href} className="text-button text-body transition-colors duration-150 ease-brand hover:text-accent">
@@ -115,7 +119,7 @@ export function Navigation() {
           <div className="hidden md:flex items-center gap-3">
             <LanguageSwitcher />
             <Link href="/contact" className={buttonClasses("primary", "sm")}>
-              {t("bookDemo")}
+              {t("requestDemo")}
             </Link>
           </div>
 
@@ -135,32 +139,32 @@ export function Navigation() {
         <div className={cn("md:hidden overflow-hidden transition-[max-height] duration-300 ease-brand", mobileMenuOpen ? "max-h-[80vh] overflow-y-auto" : "max-h-0")}>
           <div className="flex flex-col gap-1 pb-6 pt-2">
             <div className="py-2">
-              <div className="text-caption-sm text-subtle px-4 mb-2">{t("products")}</div>
-              {products.map((product) => (
-                <Link key={product.nameKey} href={product.href} className="block rounded-pill px-4 py-2.5 text-body hover:bg-accent-soft hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                  {t(product.nameKey)}
+              <div className="text-caption-sm text-subtle px-4 mb-2">{t("platform")}</div>
+              {platform.map((item) => (
+                <Link key={item.nameKey} href={item.href} className="block rounded-pill px-4 py-2.5 text-body hover:bg-accent-soft hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>
+                  {t(item.nameKey)}
                 </Link>
               ))}
             </div>
             <div className="py-2 border-t border-hairline">
               <div className="text-caption-sm text-subtle px-4 mb-2 mt-2">{t("resources")}</div>
-              {resources.map((resource) => (
-                <Link key={resource.nameKey} href={resource.href} className="block rounded-pill px-4 py-2.5 text-body hover:bg-accent-soft hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                  {t(resource.nameKey)}
+              {resources.map((item) => (
+                <Link key={item.nameKey} href={item.href} className="block rounded-pill px-4 py-2.5 text-body hover:bg-accent-soft hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>
+                  {t(item.nameKey)}
                 </Link>
               ))}
             </div>
             <div className="py-2 border-t border-hairline">
-              {navigation.filter((n) => !n.hasDropdown).map((item) => (
+              {navigation.filter((n) => !n.dropdown).map((item) => (
                 <Link key={item.nameKey} href={item.href} className="block rounded-pill px-4 py-2.5 text-body hover:bg-accent-soft hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>
                   {t(item.nameKey)}
                 </Link>
               ))}
             </div>
             <div className="flex flex-col gap-3 mt-3 px-1">
-              <LanguageSwitcherMobile />
+              <LanguageSwitcher />
               <Link href="/contact" className={buttonClasses("primary", "md", "w-full")} onClick={() => setMobileMenuOpen(false)}>
-                {t("bookDemo")}
+                {t("requestDemo")}
               </Link>
             </div>
           </div>

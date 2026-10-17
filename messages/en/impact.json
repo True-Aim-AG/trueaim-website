@@ -1,29 +1,27 @@
 {
   "impact": {
     "hero": {
-      "badge": "Impact Estimator",
-      "titleLine1": "Explore Your",
-      "titleLine2": "Potential Value",
-      "description": "See the estimated impact of automating claims decisions with True Aim. Adjust the high-level inputs to match your operation.",
+      "title": "Estimate the impact of automating claim decisions",
+      "summary": "Enter your claims volume, your average handling time and how much of the work is eligible for automation. The estimator shows the handling time and cost True Aim could give back, on cautious assumptions, and the method and assumptions behind every figure.",
+      "button": "Unlock potential value",
       "benefits": {
         "conservative": "Conservative estimates",
-        "pilotData": "Based on actual insurer data",
+        "pilotData": "Based on real insurer data",
         "instant": "Instant indication"
       }
     },
     "cta": {
-      "heading": "Ready for a Detailed Assessment?",
-      "description": "Our team can analyse your specific claims data, policy complexity and operational constraints to provide a customized impact estimate.",
-      "bookDemo": "Book a Demo",
-      "seeMira": "See MIRA in Action"
+      "heading": "Ready for a detailed assessment?",
+      "description": "The True Aim team can analyse your claims data, policy complexity and operational constraints and give you an estimate for your operation.",
+      "bookDemo": "Request a demo"
     },
     "calculator": {
       "inputPanel": {
-        "title": "Your Claims Operation",
+        "title": "Your claims operation",
         "subtitle": "Adjust the values to match your situation",
         "currency": "Currency",
-        "claimsVolume": "Annual Claims Volume:",
-        "claimsVolumeUnit": "claims/year",
+        "claimsVolume": "Annual claims volume:",
+        "claimsVolumeUnit": "claims a year",
         "handlingTime": "Average handling time per claim:",
         "handlingTimeUnit": "minutes",
         "handlingTimeHint": "Use an estimate for a typical claim without unusual complexity",
@@ -37,12 +35,12 @@
       },
       "results": {
         "mainImpact": {
-          "label": "Estimated Gross Operational Impact (Conservative)",
+          "label": "Estimated gross operational impact (conservative)",
           "sublabel": "Based on pilot-scale assumptions",
           "reductionSuffix": "% reduction in claims handling costs"
         },
         "breakdown": {
-          "heading": "Savings Breakdown",
+          "heading": "Savings breakdown",
           "capacity": {
             "title": "Capacity unlocked",
             "description": "Fewer touches per claim, shorter handling time"
@@ -53,30 +51,32 @@
           }
         },
         "metrics": {
-          "workingDaysSaved": "Working days saved/year",
+          "workingDaysSaved": "Working days saved a year",
           "fteEquivalent": "Capacity unlocked (FTE equivalent)",
           "fteNote": "Reflects reduced handling effort, not headcount reduction"
         },
         "assumptions": {
-          "toggle": "Methodology and Assumptions",
-          "howWeCalculate": "How We Calculate",
-          "currentHandlingCost": "Current Handling Cost",
-          "currentHandlingCostFormula": "= Handling Time x Cost per Minute x Claims Volume",
-          "reworkAvoided": "Rework Avoided",
-          "reworkAvoidedFormula": "= Rework Claims x Handling Time x Rework Multiplier x Cost per Minute",
-          "grossSavings": "Gross Savings",
+          "toggle": "Methodology and assumptions",
+          "howWeCalculate": "How the estimate is calculated",
+          "currentHandlingCost": "Current handling cost",
+          "currentHandlingCostFormula": "= Handling time x Cost per minute x Claims volume",
+          "capacityUnlocked": "Capacity unlocked",
+          "capacityUnlockedFormula": "= Current handling cost less the handling cost after automation, where an automated claim takes 36 seconds of review and each remaining manual claim takes half the current handling time",
+          "reworkAvoided": "Rework avoided",
+          "reworkAvoidedFormula": "= Rework claims x Handling time x Rework multiplier x Cost per minute",
+          "grossSavings": "Gross savings",
           "grossSavingsFormula": "= Capacity + Rework",
-          "workingDaysFormula": "Working days saved = Hours saved \u00f7 10",
+          "workingDaysFormula": "Working days saved = Hours saved ÷ 10",
           "workingDaysUnit": "days",
-          "conservativeEstimate": "Conservative Estimate",
-          "conservativeEstimateFormula": "= Gross Savings x 75% Sensitivity Adjustment",
-          "keyAssumptions": "Key Assumptions",
+          "conservativeEstimate": "Conservative estimate",
+          "conservativeEstimateFormula": "= Gross savings x 75% sensitivity adjustment",
+          "keyAssumptions": "Key assumptions",
           "assumption1": "Savings apply only to eligible claim categories",
           "assumption2": "No immediate headcount reduction assumed",
           "assumption3": "Savings reflect reduced handling effort and rework",
           "assumption4": "75% sensitivity adjustment applied to all projections",
-          "assumption5": "Currency selection applies region-linked market data for insurance industry salary benchmarks which informs cost per minute assumptions.",
-          "breakdownTitle": "Your Numbers Breakdown",
+          "assumption5": "Currency selection applies region-linked market data for insurance industry salary benchmarks, which informs the cost per minute",
+          "breakdownTitle": "Your numbers",
           "breakdownRows": {
             "annualVolume": "Annual claims volume",
             "automatedClaims": "Claims automated by True Aim",
@@ -86,10 +86,10 @@
             "sensitivityAdjustment": "Sensitivity adjustment (75%)",
             "grossAnnualImpact": "Gross annual impact (conservative)"
           },
-          "importantNotes": "Important Notes",
+          "importantNotes": "Important notes",
           "note1": "All figures shown represent gross operational impact and do not take into account the cost of True Aim's services.",
           "note2": "Platform pricing is not provided. Final pricing is based on commercial terms to be discussed.",
-          "note3": "Calculator based on data from actual insurance claims and case studies with insurers."
+          "note3": "The estimator is based on data from real insurance claims and case studies with insurers."
         }
       }
     }

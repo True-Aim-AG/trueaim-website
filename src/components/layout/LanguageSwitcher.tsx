@@ -1,10 +1,8 @@
 "use client";
 
-import { useLocale } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { pageLocales } from "@/i18n/page-locales";
-import { Globe, Check } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 const localeConfig: Record<string, { name: string; short: string }> = {
@@ -14,103 +12,40 @@ const localeConfig: Record<string, { name: string; short: string }> = {
   it: { name: "Italiano", short: "IT" },
 };
 
-export function LanguageSwitcher() {
+/**
+ * Plain links to the same page in each language it exists in, so crawlers
+ * can follow them without JavaScript. Nothing is rendered on a page that
+ * exists in English only.
+ */
+export function LanguageSwitcher({ className }: { className?: string }) {
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  function switchLocale(newLocale: string) {
-    router.replace(pathname, { locale: newLocale });
-    setIsOpen(false);
-  }
+  const t = useTranslations("nav");
+  const locales = pageLocales(pathname);
+  if (locales.length < 2) return null;
 
   return (
-    <div ref={dropdownRef} className="relative">
-      <button
-        type="button"
-        onClick={() => setIsOpen((prev) => !prev)}
-        className={cn(
-          "flex items-center gap-1.5 h-10 px-3.5 rounded-pill text-body transition-colors duration-150 ease-brand hover:bg-accent-soft hover:text-accent",
-          isOpen && "bg-accent-soft text-accent",
-        )}
-        aria-label="Switch language"
-        aria-expanded={isOpen}
-        aria-haspopup="listbox"
-      >
-        <Globe strokeWidth={1.5} className="w-4 h-4" />
-        <span className="text-xs font-medium tracking-[0.08em]">{localeConfig[locale]?.short}</span>
-      </button>
-
-      <div
-        className={cn(
-          "absolute top-full right-0 mt-3 nav-dropdown rounded-pill p-2 min-w-[196px] z-50 transition-[opacity,transform,visibility] duration-150 ease-brand",
-          isOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1",
-        )}
-        role="listbox"
-        aria-label="Select language"
-      >
-        {pageLocales(pathname).map((loc) => (
-          <button
+    <nav aria-label={t("languageLabel")} className={cn("flex items-center rounded-pill bg-surface-muted p-1 gap-1", className)}>
+      {locales.map((loc) => {
+        const current = loc === locale;
+        return (
+          <Link
             key={loc}
-            type="button"
-            onClick={() => switchLocale(loc)}
-            role="option"
-            aria-selected={loc === locale}
+            href={pathname}
+            locale={loc}
+            hrefLang={loc}
+            lang={loc}
+            aria-current={current ? "page" : undefined}
+            aria-label={localeConfig[loc]?.name}
             className={cn(
-              "w-full flex items-center justify-between rounded-pill px-4 py-2.5 text-sm transition-colors duration-150 ease-brand",
-              loc === locale ? "text-accent bg-accent-soft" : "text-body hover:bg-surface-muted",
+              "flex-1 rounded-pill px-3 py-2 text-center text-xs font-medium tracking-[0.08em] transition-colors duration-150 ease-brand",
+              current ? "bg-ta-blue text-on-brand" : "text-body hover:bg-accent-soft hover:text-accent",
             )}
           >
-            <span className="flex items-center gap-2.5">
-              <span className={cn("text-xs font-medium tracking-[0.08em] w-6", loc === locale ? "text-accent" : "text-subtle")}>{localeConfig[loc]?.short}</span>
-              <span className={cn("font-medium", loc === locale && "font-semibold")}>{localeConfig[loc]?.name}</span>
-            </span>
-            {loc === locale && <Check strokeWidth={1.5} className="w-4 h-4 text-accent" />}
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-export function LanguageSwitcherMobile() {
-  const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
-
-  function switchLocale(newLocale: string) {
-    router.replace(pathname, { locale: newLocale });
-  }
-
-  return (
-    <div className="flex rounded-pill bg-surface-muted p-1 gap-1">
-      {pageLocales(pathname).map((loc) => (
-        <button
-          key={loc}
-          type="button"
-          onClick={() => switchLocale(loc)}
-          className={cn(
-            "relative flex-1 px-3 py-2 rounded-pill text-xs font-medium tracking-[0.08em] transition-colors duration-150 ease-brand",
-            loc === locale ? "bg-ta-blue text-on-brand" : "text-body hover:bg-accent-soft",
-          )}
-          aria-label={localeConfig[loc]?.name}
-          aria-current={loc === locale ? "true" : undefined}
-        >
-          {localeConfig[loc]?.short}
-        </button>
-      ))}
-    </div>
+            {localeConfig[loc]?.short ?? loc.toUpperCase()}
+          </Link>
+        );
+      })}
+    </nav>
   );
 }

@@ -1,25 +1,17 @@
 {
   "caseStudies": {
     "hero": {
-      "badge": "Customer Success",
-      "titleLine1": "Real Results from",
-      "titleLine2": "Real Insurers",
-      "description": "See how insurers are using True Aim to transform their claims operations with measurable, auditable results."
+      "title": "Real numbers in practice",
+      "summary": "How claims teams use True Aim on their own claims, and what changed. Each case study names the volume, the languages, the time to results and the accuracy measured, and says how each figure was measured."
     },
     "featured": {
-      "badge": "Featured",
-      "readFullStudy": "Read full case study"
-    },
-    "wip": {
-      "heading": "Additional Case Studies In Progress",
-      "description": "These case studies are currently being documented. Check back for the full write-ups.",
-      "badge": "In Progress"
+      "badge": "Case study",
+      "readFullStudy": "Read the case study"
     },
     "cta": {
-      "heading": "See What Auditable AI Can Do for Your Claims",
-      "description": "Let's analyse a batch of your closed claims to quantify the potential impact.",
-      "bookDemo": "Book a Demo",
-      "getEstimate": "Get Impact Estimate"
+      "heading": "See True Aim on your own claims",
+      "description": "Bring a batch of your closed claims and the demo shows the finished outcome on them.",
+      "bookDemo": "Request a demo"
     },
     "detail": {
       "allCaseStudies": "All Case Studies",
@@ -66,7 +58,7 @@
         },
         "ruleBased": {
           "title": "Rule-based systems cannot scale to vocabulary",
-          "desc": "Thousands of part names across multiple languages. A \"Wasserpumpe\" in German is a \"pompe \u00e0 eau\" in French. Pure keyword matching breaks on the first synonym it has not seen."
+          "desc": "Thousands of part names across multiple languages. A \"Wasserpumpe\" in German is a \"pompe à eau\" in French. Pure keyword matching breaks on the first synonym it has not seen."
         }
       },
       "hybridSolution": "The solution requires a",

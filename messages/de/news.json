@@ -1,0 +1,22 @@
+{
+  "news": {
+    "index": {
+      "title": "News",
+      "summary": "Announcements from True Aim: awards, partnerships and company news. Each item carries its date and names its source.",
+      "readMore": "Read the announcement"
+    },
+    "items": {
+      "insurathon2026": {
+        "title": "True Aim wins the 2026 Insurathon",
+        "displayDate": "19 October 2026",
+        "excerpt": "Norton Rose Fulbright named True Aim the most innovative InsurTech start-up at its ninth Insurathon, pitched in London on 1 July 2026.",
+        "p1": "Norton Rose Fulbright named True Aim AG the winner of its 2026 Insurathon, the law firm's ninth annual competition for the most innovative InsurTech start-up. The final was pitched in London on 1 July 2026 and the result was announced on 3 July 2026.",
+        "p2": "True Aim builds claims technology for insurers, warranty providers and claims administrators. Language models read the documents of a claim, a deterministic decision engine applies the policy wording, and every decision carries the facts, the rules and the reasoning behind it.",
+        "sourceHeading": "Source",
+        "sourceLabel": "Norton Rose Fulbright, news release of 3 July 2026",
+        "sourceUrl": "https://www.nortonrosefulbright.com/en-gb/news/7b1b0c95/true-aim-wins-insurathon-competition-for-most-innovative-insurtech-start-up",
+        "backToNews": "All news"
+      }
+    }
+  }
+}

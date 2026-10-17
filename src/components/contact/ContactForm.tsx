@@ -6,14 +6,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import {
-  Mail,
-  Calendar,
-  AlertCircle,
-  ChevronDown,
-  MapPin,
-} from "lucide-react";
-import { SwitzerlandMap } from "@/components/ui/SwitzerlandMap";
+import { Mail, AlertCircle, ChevronDown } from "lucide-react";
 import { StatusPill } from "@/components/brand/StatusPill";
 import { Button } from "@/components/brand/Button";
 import { cn } from "@/lib/utils";
@@ -162,7 +155,7 @@ export function ContactForm() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-12">
       {/* Form */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
@@ -475,58 +468,22 @@ export function ContactForm() {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="space-y-8"
       >
-        {/* Alternative Contact */}
         <div className="rounded-pill bg-card shadow-card p-8">
           <h3 className="font-display text-xl font-bold text-strong mb-6">
-            {t("sidebar.alternativeContact")}
+            {t("sidebar.heading")}
           </h3>
-          <div className="space-y-4">
-            <a
-              href="mailto:info@trueaim.ai"
-              className="flex items-center gap-4 p-4 rounded-pill bg-surface-muted transition-colors duration-150 ease-brand hover:bg-accent-soft"
-            >
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-pill bg-lilac text-accent">
-                <Mail strokeWidth={1.5} className="w-6 h-6" />
-              </div>
-              <div>
-                <p className="font-medium text-strong">{t("sidebar.emailUs")}</p>
-                <p className="text-body">{t("sidebar.emailAddress")}</p>
-              </div>
-            </a>
-            <a
-              href="https://calendar.app.google/MEVp3kcksVTVw3nf6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 rounded-pill bg-surface-muted transition-colors duration-150 ease-brand hover:bg-accent-soft"
-            >
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-pill bg-lilac text-accent">
-                <Calendar strokeWidth={1.5} className="w-6 h-6" />
-              </div>
-              <div>
-                <p className="font-medium text-strong">{t("sidebar.bookCall")}</p>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        {/* Headquarters */}
-        <div className="rounded-pill bg-card shadow-card p-8">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-pill bg-lilac text-accent">
-              <MapPin strokeWidth={1.5} className="w-5 h-5" />
+          <a
+            href="mailto:info@trueaim.ai"
+            className="flex items-center gap-4 p-4 rounded-pill bg-surface-muted transition-colors duration-150 ease-brand hover:bg-accent-soft"
+          >
+            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-pill bg-lilac text-accent">
+              <Mail strokeWidth={1.5} className="w-6 h-6" />
             </div>
-            <h3 className="font-display text-xl font-bold text-strong">
-              {t("sidebar.headquarters")}
-            </h3>
-          </div>
-          <address className="not-italic text-body space-y-1 mb-6">
-            <p>{t("sidebar.address.street")}</p>
-            <p>{t("sidebar.address.city")}</p>
-            <p>{t("sidebar.address.country")}</p>
-          </address>
-          <div className="aspect-square">
-            <SwitzerlandMap label={t("sidebar.mapLabel")} />
-          </div>
+            <div>
+              <p className="font-medium text-strong">{t("sidebar.emailUs")}</p>
+              <p className="text-body">{t("sidebar.emailAddress")}</p>
+            </div>
+          </a>
         </div>
       </motion.div>
     </div>

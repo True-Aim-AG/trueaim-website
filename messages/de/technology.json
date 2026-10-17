@@ -1,119 +1,126 @@
 {
   "technology": {
     "hero": {
-      "badge": "Unsere Technologie",
-      "titleLine1": "Neuro-symbolische AI: Die Architektur,",
-      "titleLine2": "der Aufsichtsbehörden vertrauen",
-      "description": "Nicht probabilistisch. Keine Black Box. Unser hybrider Ansatz kombiniert agentic AI-Ausführung mit deterministischer Entscheidungsfindung, speziell entwickelt für regulierte Branchen."
+      "title": "How True Aim reads a claim and decides it",
+      "summary": "True Aim separates reading from deciding. Language models read the documents, extract the facts and sort them. A deterministic decision engine then applies the policy wording and the cost rules, so the same claim always gets the same answer and every answer carries its reasoning. This page explains both layers and the controls around them."
     },
     "problem": {
-      "heading": "Die Grenzen probabilistischer AI bei regulierten Entscheidungen",
-      "description": "Grosse Sprachmodelle sind leistungsfähig, aber sie sind probabilistisch. Bei gleicher Eingabe können sie unterschiedliche Ergebnisse liefern. Sie können ihre Schlussfolgerungen nicht in einer Sprache erklären, die Aufsichtsbehörden verstehen.",
-      "emphasis": "Für Schadenentscheidungen ist das inakzeptabel."
+      "heading": "Why a language model alone cannot decide a claim",
+      "p1": "Large language models are good at reading. They are also probabilistic: given the same input twice, they can produce different outputs, and they cannot explain a result in the terms a policy or a regulator uses.",
+      "p2": "A claims decision has to be the same tomorrow as today, and it has to say which clause, which figure and which rule led to it. True Aim therefore uses language models where reading is the task and fixed rules where deciding is the task."
     },
     "architecture": {
-      "heading": "Trennung der Zuständigkeiten",
-      "subtitle": "Zwei Ebenen, jeweils optimiert für ihre Stärke",
-      "agentic": {
-        "title": "Agentic AI",
-        "subtitle": "Flexibel und adaptiv",
+      "heading": "Two layers, each doing what it does best",
+      "reading": {
+        "title": "Reading layer",
+        "subtitle": "Language models and extraction",
         "capabilities": {
-          "docReading": "Dokumentenerfassung",
-          "dataExtraction": "Datenextraktion",
-          "classification": "Klassifizierung",
-          "orchestration": "Orchestrierung"
+          "docReading": "Document reading",
+          "dataExtraction": "Data extraction",
+          "classification": "Classification",
+          "orchestration": "Orchestration"
         },
-        "description": "Nutzt maschinelles Lernen zur Verarbeitung unstrukturierter Daten, zum Kontextverständnis und zur Orchestrierung komplexer Workflows."
+        "description": "Reads invoices, estimates, policies and correspondence in any format, extracts the fields and links each one to the page it came from."
       },
-      "deterministic": {
-        "title": "Deterministische Entscheidungs-Engine",
-        "subtitle": "Präzise und prüfbar",
+      "deciding": {
+        "title": "Decision engine",
+        "subtitle": "Deterministic rules",
         "capabilities": {
-          "coverageRules": "Deckungsregeln",
-          "policyLogic": "Policenlogik",
-          "costCalculation": "Kostenberechnung",
-          "decisionOutput": "Entscheidungsausgabe"
+          "coverageRules": "Coverage rules",
+          "policyLogic": "Policy logic",
+          "costCalculation": "Cost calculation",
+          "decisionOutput": "Decision output"
         },
-        "description": "Wendet kodierte Regeln an, um jedes Mal konsistente, nachvollziehbare Entscheidungen zu treffen."
+        "description": "Applies the coverage terms, the exclusions and the payout order as fixed rules, so every decision is consistent and explainable."
       },
       "auditTrail": {
-        "title": "Vollständiger Audit-Trail",
-        "description": "Jedes Feld ist auf Quelldokumente rückverfolgbar. Jede Entscheidung ist auf Policenbedingungen rückverfolgbar. Volle Transparenz für Aufsichtsbehörden und Prüfer."
+        "title": "Every figure has a source and every decision has a rule",
+        "description": "Each extracted field traces to its source document and page. Each decision traces to the policy clause and the rule that fired. The record is produced with the decision, not reconstructed later."
       }
     },
     "control": {
-      "badge": "Enterprise-Kontrolle",
-      "heading": "Die Kontrollebene",
-      "subtitle": "Automatisierung mit Aufsicht. Jede Funktion ist darauf ausgelegt, Menschen dort die Kontrolle zu geben, wo es darauf ankommt.",
+      "eyebrow": "Control",
+      "heading": "What keeps a person in control",
+      "subtitle": "Five controls sit around the two layers. Each one exists because a regulated business stays accountable for every decision made in its name.",
       "features": {
         "replayLogs": {
-          "title": "Replay-Protokolle",
-          "description": "Führen Sie jede Entscheidung mit denselben Eingaben erneut aus und erhalten Sie identische Ergebnisse. Jede Ausführung ist deterministisch und reproduzierbar."
+          "title": "Replay",
+          "description": "Any decision can be run again with the same inputs and gives the same output, so an auditor can reproduce it."
         },
         "ruleTraceability": {
-          "title": "Regelverfolgbarkeit",
-          "description": "Jede Deckungsentscheidung ist auf bestimmte Policenklausel-IDs abgebildet. Sehen Sie genau, welche Regeln ausgelöst wurden und warum."
+          "title": "Rule traceability",
+          "description": "Every coverage decision names the policy clause it rests on, so the adjuster sees which rules fired and why."
         },
         "approvalGates": {
-          "title": "Genehmigungsstufen",
-          "description": "Konfigurieren Sie Schwellenwerte für die Eskalation zur menschlichen Prüfung. Hochwertige oder Grenzfälle werden automatisch an Experten weitergeleitet."
+          "title": "Approval gates",
+          "description": "You set the thresholds for human review. High-value and unusual claims go to a person before anything is settled."
         },
         "exceptionRouting": {
-          "title": "Ausnahme-Routing",
-          "description": "Automatische Weiterleitung basierend auf dem Komplexitätsgrad des Schadenfalls. Ungewöhnliche Muster werden zur manuellen Inspektion markiert."
+          "title": "Exception routing",
+          "description": "Claims outside a known pattern are flagged and routed to a person instead of being decided by the rules."
         },
         "confidenceScoring": {
-          "title": "Konfidenzbewertung",
-          "description": "Feldbasierte Sicherheitsindikatoren zeigen, wo das System zuversichtlich ist und wo menschliche Prüfung Mehrwert bietet."
+          "title": "Confidence scoring",
+          "description": "Each extracted field carries a confidence score, so the adjuster sees where the system is sure and where a check adds value."
         }
       },
-      "philosophy": "AI sollte die Schwerstarbeit übernehmen, aber Menschen müssen immer in der Lage sein, zu verstehen, zu verifizieren und zu übersteuern. Jede Kontrolle existiert, weil regulierte Branchen sie verlangen.",
-      "philosophyHeading": "Unsere Philosophie",
-      "philosophyPrefix": "Unsere Philosophie:"
+      "philosophyHeading": "The rule behind the controls",
+      "philosophy": "Automation does the reading, the checking and the record-keeping. A person must always be able to understand, verify and override the result, because that is what a regulated business is accountable for."
     },
     "comparison": {
-      "heading": "Keine weitere Black Box",
-      "subtitle": "Sehen Sie, wie True Aim im Vergleich zu traditionellen AI-Ansätzen abschneidet",
+      "heading": "What changes compared with a language model alone",
+      "caption": "How True Aim's two-layer design compares with a language model used on its own",
       "columns": {
-        "capability": "Fähigkeit",
-        "traditional": "Traditionelle AI",
+        "capability": "Capability",
+        "traditional": "Language model alone",
         "trueaim": "True Aim"
       },
       "rows": {
-        "consistency": {
-          "capability": "Entscheidungskonsistenz",
-          "traditional": "Variabel",
-          "trueaim": "Deterministisch"
-        },
-        "auditTrail": {
-          "capability": "Audit-Trail",
-          "traditional": "Teilweise",
-          "trueaim": "Vollständig"
-        },
-        "explainability": {
-          "capability": "Erklärbarkeit",
-          "traditional": "\"Das Modell hat es gesagt\"",
-          "trueaim": "Rückverfolgbar zur Klausel"
-        },
-        "euAiAct": {
-          "capability": "KI-Verordnung-konform",
-          "traditional": "Unklar",
-          "trueaim": "Ja"
-        }
+        "consistency": { "capability": "Decision consistency", "traditional": "Varies between runs", "trueaim": "Deterministic" },
+        "auditTrail": { "capability": "Audit trail", "traditional": "Reconstructed after the fact", "trueaim": "Produced with the decision" },
+        "explainability": { "capability": "Explainability", "traditional": "The model said so", "trueaim": "Traceable to the clause" },
+        "oversight": { "capability": "Human oversight", "traditional": "Added around the model", "trueaim": "Built into the workflow" }
       }
     },
     "research": {
-      "heading": "Forschungspartnerschaft",
-      "descriptionStart": "Teile unserer Technologie werden in Zusammenarbeit mit der",
+      "heading": "Research partnership",
+      "descriptionStart": "Parts of True Aim's technology are developed with",
       "zhawName": "ZHAW",
-      "descriptionMiddle": "(Zürcher Hochschule für Angewandte Wissenschaften) entwickelt und durch ein",
+      "descriptionMiddle": "(Zurich University of Applied Sciences) in a deep tech innovation project supported by",
       "innosuisseName": "Innosuisse",
-      "descriptionEnd": "-gefördertes Forschungsprogramm vorangetrieben, anerkannt durch das nationale Innovationsnetzwerk der Schweiz."
+      "descriptionEnd": "."
+    },
+    "related": {
+      "heading": "Read next",
+      "decisionDossier": { "title": "The Decision Dossier", "description": "The record each claims decision produces: inputs, clause, reasoning and sources." },
+      "claimsDecisioning": { "title": "Claims Decisioning", "description": "The automated coverage check, from first notification to settlement." },
+      "trust": { "title": "Trust Centre", "description": "Certifications, the frameworks True Aim is aligned with and the policies behind them." }
+    },
+    "faq": {
+      "heading": "Questions about the technology",
+      "items": [
+        {
+          "question": "Does a language model make the decision?",
+          "answer": "No. Language models read the documents and extract the facts. The decision engine applies the policy terms and the cost rules as fixed logic. A language model takes part in a decision only where the rules do not settle the question, and that step is recorded like every other."
+        },
+        {
+          "question": "Can the same claim get two different answers?",
+          "answer": "No. The decision engine is deterministic: the same inputs produce the same outputs, and any decision can be run again to prove it."
+        },
+        {
+          "question": "How does an adjuster see why a claim was refused?",
+          "answer": "Each decision lists the clause that applied, the figures it used and the document and page each figure came from. The adjuster reads the reasoning, then confirms it or overrides it with a reason."
+        },
+        {
+          "question": "What happens when the system is not sure?",
+          "answer": "Each field carries a confidence score. Claims below the confidence threshold you set, above the value you set or outside a known pattern are routed to a person."
+        }
+      ]
     },
     "cta": {
-      "heading": "Erleben Sie unsere Technologie in Aktion",
-      "description": "Buchen Sie eine Demo, um zu verstehen, wie unsere neuro-symbolische Architektur für Ihre Schadenregulierung arbeiten kann.",
-      "button": "Demo buchen"
+      "heading": "See the two layers on your own claims",
+      "description": "Bring your own invoices, claims or damage reports and the demo shows the finished outcome with the record behind it.",
+      "button": "Request a demo"
     }
   }
 }

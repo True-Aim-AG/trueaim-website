@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 const PATH = "/technology";
@@ -12,13 +11,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return pageMetadata(locale, PATH);
 }
 
+// The JSON-LD graph and breadcrumb live in page.tsx, where the FAQ data is.
 export default async function TechnologyLayout({ children, params }: Props & { children: React.ReactNode }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return (
-    <>
-      <PageSeo locale={locale} path={PATH} template="technology" />
-      {children}
-    </>
-  );
+  return children;
 }

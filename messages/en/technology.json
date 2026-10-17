@@ -1,119 +1,126 @@
 {
   "technology": {
     "hero": {
-      "badge": "Our Technology",
-      "titleLine1": "Neuro-Symbolic AI: The Architecture",
-      "titleLine2": "Regulators Trust",
-      "description": "Not probabilistic. Not a black box. Our hybrid approach combines agentic AI execution with deterministic decision-making, purpose-built for regulated industries."
+      "title": "How True Aim reads a claim and decides it",
+      "summary": "True Aim separates reading from deciding. Language models read the documents, extract the facts and sort them. A deterministic decision engine then applies the policy wording and the cost rules, so the same claim always gets the same answer and every answer carries its reasoning. This page explains both layers and the controls around them."
     },
     "problem": {
-      "heading": "The Limits of Probabilistic AI in Regulated Decisions",
-      "description": "Large language models are powerful, but they're probabilistic. Given the same input twice, they might produce different outputs. They can't explain their reasoning in terms regulators understand.",
-      "emphasis": "For claims decisions, this is unacceptable."
+      "heading": "Why a language model alone cannot decide a claim",
+      "p1": "Large language models are good at reading. They are also probabilistic: given the same input twice, they can produce different outputs, and they cannot explain a result in the terms a policy or a regulator uses.",
+      "p2": "A claims decision has to be the same tomorrow as today, and it has to say which clause, which figure and which rule led to it. True Aim therefore uses language models where reading is the task and fixed rules where deciding is the task."
     },
     "architecture": {
-      "heading": "Separation of Concerns",
-      "subtitle": "Two layers, each optimized for what it does best",
-      "agentic": {
-        "title": "Agentic AI",
-        "subtitle": "Flexible and adaptive",
+      "heading": "Two layers, each doing what it does best",
+      "reading": {
+        "title": "Reading layer",
+        "subtitle": "Language models and extraction",
         "capabilities": {
           "docReading": "Document reading",
           "dataExtraction": "Data extraction",
           "classification": "Classification",
           "orchestration": "Orchestration"
         },
-        "description": "Uses machine learning to handle unstructured data, understand context and orchestrate complex workflows."
+        "description": "Reads invoices, estimates, policies and correspondence in any format, extracts the fields and links each one to the page it came from."
       },
-      "deterministic": {
-        "title": "Deterministic Decision Engine",
-        "subtitle": "Precise and auditable",
+      "deciding": {
+        "title": "Decision engine",
+        "subtitle": "Deterministic rules",
         "capabilities": {
           "coverageRules": "Coverage rules",
           "policyLogic": "Policy logic",
           "costCalculation": "Cost calculation",
           "decisionOutput": "Decision output"
         },
-        "description": "Applies encoded rules to produce consistent, explainable decisions every time."
+        "description": "Applies the coverage terms, the exclusions and the payout order as fixed rules, so every decision is consistent and explainable."
       },
       "auditTrail": {
-        "title": "Complete Audit Trail",
-        "description": "Every field traces to source documents. Every decision traces to policy terms. Full transparency for regulators and auditors."
+        "title": "Every figure has a source and every decision has a rule",
+        "description": "Each extracted field traces to its source document and page. Each decision traces to the policy clause and the rule that fired. The record is produced with the decision, not reconstructed later."
       }
     },
     "control": {
-      "badge": "Enterprise Control",
-      "heading": "The Control Layer",
-      "subtitle": "Automation with oversight. Every feature designed to keep humans in control where it matters.",
+      "eyebrow": "Control",
+      "heading": "What keeps a person in control",
+      "subtitle": "Five controls sit around the two layers. Each one exists because a regulated business stays accountable for every decision made in its name.",
       "features": {
         "replayLogs": {
-          "title": "Replay Logs",
-          "description": "Re-run any decision with the same inputs and get identical outputs. Every execution is deterministic and reproducible."
+          "title": "Replay",
+          "description": "Any decision can be run again with the same inputs and gives the same output, so an auditor can reproduce it."
         },
         "ruleTraceability": {
-          "title": "Rule Traceability",
-          "description": "Every coverage decision is mapped to specific policy clause IDs. See exactly which rules fired and why."
+          "title": "Rule traceability",
+          "description": "Every coverage decision names the policy clause it rests on, so the adjuster sees which rules fired and why."
         },
         "approvalGates": {
-          "title": "Approval Gates",
-          "description": "Configure thresholds for human review escalation. High-value or edge cases automatically route to experts."
+          "title": "Approval gates",
+          "description": "You set the thresholds for human review. High-value and unusual claims go to a person before anything is settled."
         },
         "exceptionRouting": {
-          "title": "Exception Routing",
-          "description": "Automatic routing based on claim complexity score. Unusual patterns flagged for manual inspection."
+          "title": "Exception routing",
+          "description": "Claims outside a known pattern are flagged and routed to a person instead of being decided by the rules."
         },
         "confidenceScoring": {
-          "title": "Confidence Scoring",
-          "description": "Field-level certainty indicators show where the system is confident and where human review adds value."
+          "title": "Confidence scoring",
+          "description": "Each extracted field carries a confidence score, so the adjuster sees where the system is sure and where a check adds value."
         }
       },
-      "philosophy": "AI should handle the heavy lifting, but humans must always be able to understand, verify and override. Every control exists because regulated industries demand it.",
-      "philosophyHeading": "Our Philosophy",
-      "philosophyPrefix": "Our philosophy:"
+      "philosophyHeading": "The rule behind the controls",
+      "philosophy": "Automation does the reading, the checking and the record-keeping. A person must always be able to understand, verify and override the result, because that is what a regulated business is accountable for."
     },
     "comparison": {
-      "heading": "Not Another Black Box",
-      "subtitle": "See how True Aim compares to traditional AI approaches",
+      "heading": "What changes compared with a language model alone",
+      "caption": "How True Aim's two-layer design compares with a language model used on its own",
       "columns": {
         "capability": "Capability",
-        "traditional": "Traditional AI",
+        "traditional": "Language model alone",
         "trueaim": "True Aim"
       },
       "rows": {
-        "consistency": {
-          "capability": "Decision consistency",
-          "traditional": "Variable",
-          "trueaim": "Deterministic"
-        },
-        "auditTrail": {
-          "capability": "Audit trail",
-          "traditional": "Partial",
-          "trueaim": "Complete"
-        },
-        "explainability": {
-          "capability": "Explainability",
-          "traditional": "\"Model said so\"",
-          "trueaim": "Traceable to clause"
-        },
-        "euAiAct": {
-          "capability": "EU AI Act ready",
-          "traditional": "Unclear",
-          "trueaim": "Yes"
-        }
+        "consistency": { "capability": "Decision consistency", "traditional": "Varies between runs", "trueaim": "Deterministic" },
+        "auditTrail": { "capability": "Audit trail", "traditional": "Reconstructed after the fact", "trueaim": "Produced with the decision" },
+        "explainability": { "capability": "Explainability", "traditional": "The model said so", "trueaim": "Traceable to the clause" },
+        "oversight": { "capability": "Human oversight", "traditional": "Added around the model", "trueaim": "Built into the workflow" }
       }
     },
     "research": {
-      "heading": "Research Partnership",
-      "descriptionStart": "Parts of our technology are being developed in collaboration with",
+      "heading": "Research partnership",
+      "descriptionStart": "Parts of True Aim's technology are developed with",
       "zhawName": "ZHAW",
-      "descriptionMiddle": "(Zurich University of Applied Sciences) and advanced through an",
+      "descriptionMiddle": "(Zurich University of Applied Sciences) in a deep tech innovation project supported by",
       "innosuisseName": "Innosuisse",
-      "descriptionEnd": "-funded research programme, recognised through Switzerland's national innovation framework."
+      "descriptionEnd": "."
+    },
+    "related": {
+      "heading": "Read next",
+      "decisionDossier": { "title": "The Decision Dossier", "description": "The record each claims decision produces: inputs, clause, reasoning and sources." },
+      "claimsDecisioning": { "title": "Claims Decisioning", "description": "The automated coverage check, from first notification to settlement." },
+      "trust": { "title": "Trust Centre", "description": "Certifications, the frameworks True Aim is aligned with and the policies behind them." }
+    },
+    "faq": {
+      "heading": "Questions about the technology",
+      "items": [
+        {
+          "question": "Does a language model make the decision?",
+          "answer": "No. Language models read the documents and extract the facts. The decision engine applies the policy terms and the cost rules as fixed logic. A language model takes part in a decision only where the rules do not settle the question, and that step is recorded like every other."
+        },
+        {
+          "question": "Can the same claim get two different answers?",
+          "answer": "No. The decision engine is deterministic: the same inputs produce the same outputs, and any decision can be run again to prove it."
+        },
+        {
+          "question": "How does an adjuster see why a claim was refused?",
+          "answer": "Each decision lists the clause that applied, the figures it used and the document and page each figure came from. The adjuster reads the reasoning, then confirms it or overrides it with a reason."
+        },
+        {
+          "question": "What happens when the system is not sure?",
+          "answer": "Each field carries a confidence score. Claims below the confidence threshold you set, above the value you set or outside a known pattern are routed to a person."
+        }
+      ]
     },
     "cta": {
-      "heading": "See our Technology in Action",
-      "description": "Book a demo to understand how our neuro-symbolic architecture can work for your claims operations.",
-      "button": "Book a demo"
+      "heading": "See the two layers on your own claims",
+      "description": "Bring your own invoices, claims or damage reports and the demo shows the finished outcome with the record behind it.",
+      "button": "Request a demo"
     }
   }
 }

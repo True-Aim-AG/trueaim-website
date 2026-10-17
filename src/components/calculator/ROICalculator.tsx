@@ -353,6 +353,15 @@ export function ROICalculator() {
 
                     <div className="p-3 rounded-pill bg-surface-muted">
                       <p className="text-muted mb-2">
+                        <span className="text-strong font-medium">{t("calculator.results.assumptions.capacityUnlocked")}</span> {t("calculator.results.assumptions.capacityUnlockedFormula")}
+                      </p>
+                      <p className="text-xs font-display font-semibold tabular-nums text-accent">
+                        {formatCurrency(results.currentAnnualCost)} - {formatCurrency(results.details.trueAimAnnualCost)} = {formatCurrency(results.buckets.capacityGross)}
+                      </p>
+                    </div>
+
+                    <div className="p-3 rounded-pill bg-surface-muted">
+                      <p className="text-muted mb-2">
                         <span className="text-strong font-medium">{t("calculator.results.assumptions.reworkAvoided")}</span> {t("calculator.results.assumptions.reworkAvoidedFormula")}
                       </p>
                       <p className="text-xs font-display font-semibold tabular-nums text-accent">

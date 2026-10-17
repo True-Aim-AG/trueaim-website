@@ -16,7 +16,7 @@
     "/technology": {
       "title": "Technologie – Architecture IA neuro-symbolique | True Aim",
       "description": "Ni probabiliste. Ni boîte noire. Notre approche hybride combine l'exécution par IA agentique avec la prise de décision déterministe, conçue spécifiquement pour les secteurs réglementés et la conformité au Règlement sur l'IA.",
-      "h1": "AI neuro-symbolique : L'architecture à laquelle les régulateurs font confiance",
+      "h1": "How True Aim reads a claim and decides it",
       "breadcrumb": "Technologie",
       "ogTitle": "Technologie – Architecture IA neuro-symbolique | True Aim",
       "ogDescription": "Notre approche hybride combine l'exécution par IA agentique avec la prise de décision déterministe, conçue spécifiquement pour les secteurs réglementés.",
@@ -25,7 +25,7 @@
     "/trust": {
       "title": "Confiance & Conformité | True Aim",
       "description": "L'architecture de conformité de True Aim. Conformité au Règlement sur l'IA, au GDPR et à la LPD suisse. Chaque décision auditable, chaque résultat traçable.",
-      "h1": "Sécurité d'entreprise. Conformité réglementaire.",
+      "h1": "Security and compliance, built in from day one",
       "breadcrumb": "Confiance",
       "ogTitle": "Confiance & Conformité | True Aim",
       "ogDescription": "Conformité au Règlement sur l'IA, au GDPR et à la LPD suisse. Chaque décision auditable, chaque résultat traçable.",
@@ -34,7 +34,7 @@
     "/about": {
       "title": "Entreprise – À propos de True Aim | True Aim",
       "description": "La précision suisse rencontre l'IA auditable. Découvrez notre équipe de direction, nos conseillers et partenaires, dont Yarowa AG, ZHAW et Innosuisse. Soutenu par l'écosystème d'innovation suisse.",
-      "h1": "Precision suisse. AI auditable.",
+      "h1": "Scalable trust",
       "breadcrumb": "À propos",
       "ogTitle": "Entreprise – À propos de True Aim",
       "ogDescription": "La précision suisse rencontre l'IA auditable. Découvrez notre équipe de direction, nos conseillers et partenaires. Soutenu par l'écosystème d'innovation suisse.",
@@ -43,7 +43,7 @@
     "/contact": {
       "title": "Contact – Demander une démo | True Aim",
       "description": "Demandez une démo de l'IA neuro-symbolique de True Aim pour l'automatisation des sinistres. Réservez un appel découverte de 30 minutes pour voir l'IA auditable en action.",
-      "h1": "Parlons de l'automatisation des sinistres",
+      "h1": "Request a demo",
       "breadcrumb": "Contact",
       "ogTitle": "Contact – Demander une démo | True Aim",
       "ogDescription": "Demandez une démo de l'IA neuro-symbolique de True Aim pour l'automatisation des sinistres. Réservez un appel découverte de 30 minutes.",
@@ -52,7 +52,7 @@
     "/impact-estimator": {
       "title": "Impact Estimator | True Aim",
       "description": "Explorez la valeur potentielle avec l'automatisation des sinistres par IA de True Aim. Estimation d'impact basée sur des données pilotes réelles, sans engagement.",
-      "h1": "Explorez votre valeur potentielle",
+      "h1": "Estimate the impact of automating claim decisions",
       "breadcrumb": "Impact Estimator",
       "ogTitle": "Impact Estimator | True Aim",
       "ogDescription": "Explorez la valeur potentielle avec l'automatisation des sinistres par IA. Estimation d'impact basée sur des données pilotes réelles.",
@@ -61,7 +61,7 @@
     "/case-studies": {
       "title": "Études de cas | True Aim",
       "description": "Découvrez comment l'IA neuro-symbolique de True Aim transforme le traitement des sinistres. Études de cas réelles d'assureurs utilisant MIRA, ContextBuilder et ClaimEval.",
-      "h1": "Des resultats concrets d'assureurs reels",
+      "h1": "Real numbers in practice",
       "breadcrumb": "Études de cas",
       "ogTitle": "Études de cas | True Aim",
       "ogDescription": "Études de cas réelles d'assureurs utilisant l'IA neuro-symbolique de True Aim pour l'automatisation des sinistres.",

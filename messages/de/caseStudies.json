@@ -1,25 +1,17 @@
 {
   "caseStudies": {
     "hero": {
-      "badge": "Kundenerfolge",
-      "titleLine1": "Echte Ergebnisse von",
-      "titleLine2": "echten Versicherern",
-      "description": "Erfahren Sie, wie Versicherer True Aim nutzen, um ihre Schadenbearbeitung mit messbaren, auditierbaren Ergebnissen zu transformieren."
+      "title": "Real numbers in practice",
+      "summary": "How claims teams use True Aim on their own claims, and what changed. Each case study names the volume, the languages, the time to results and the accuracy measured, and says how each figure was measured."
     },
     "featured": {
-      "badge": "Hervorgehoben",
-      "readFullStudy": "Vollstaendige Fallstudie lesen"
-    },
-    "wip": {
-      "heading": "Weitere Fallstudien in Bearbeitung",
-      "description": "Diese Fallstudien werden derzeit dokumentiert. Schauen Sie spaeter fuer die vollstaendigen Berichte vorbei.",
-      "badge": "In Bearbeitung"
+      "badge": "Case study",
+      "readFullStudy": "Read the case study"
     },
     "cta": {
-      "heading": "Erfahren Sie, was auditierbare AI fuer Ihre Schadenmeldungen leisten kann",
-      "description": "Lassen Sie uns eine Stichprobe Ihrer abgeschlossenen Schadenfaelle analysieren, um die potenzielle Wirkung zu quantifizieren.",
-      "bookDemo": "Demo buchen",
-      "getEstimate": "Wirkungsabschaetzung erhalten"
+      "heading": "See True Aim on your own claims",
+      "description": "Bring a batch of your closed claims and the demo shows the finished outcome on them.",
+      "bookDemo": "Request a demo"
     },
     "detail": {
       "allCaseStudies": "Alle Fallstudien",
@@ -66,7 +58,7 @@
         },
         "ruleBased": {
           "title": "Regelbasierte Systeme skalieren nicht mit dem Vokabular",
-          "desc": "Tausende von Teilenamen in mehreren Sprachen. Eine \"Wasserpumpe\" auf Deutsch ist eine \"pompe \u00e0 eau\" auf Franzoesisch. Reines Keyword-Matching versagt beim ersten unbekannten Synonym."
+          "desc": "Tausende von Teilenamen in mehreren Sprachen. Eine \"Wasserpumpe\" auf Deutsch ist eine \"pompe à eau\" auf Franzoesisch. Reines Keyword-Matching versagt beim ersten unbekannten Synonym."
         }
       },
       "hybridSolution": "Die Loesung erfordert eine",

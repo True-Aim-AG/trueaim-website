@@ -1,95 +1,95 @@
 {
   "impact": {
     "hero": {
-      "badge": "Impact Estimator",
-      "titleLine1": "Erkunden Sie Ihr",
-      "titleLine2": "Wertsch\u00f6pfungspotenzial",
-      "description": "Sehen Sie die gesch\u00e4tzte Auswirkung der Automatisierung von Schadenentscheidungen mit True Aim. Passen Sie die \u00fcbergeordneten Eingaben an Ihren Betrieb an.",
+      "title": "Estimate the impact of automating claim decisions",
+      "summary": "Enter your claims volume, your average handling time and how much of the work is eligible for automation. The estimator shows the handling time and cost True Aim could give back, on cautious assumptions, and the method and assumptions behind every figure.",
+      "button": "Unlock potential value",
       "benefits": {
-        "conservative": "Konservative Sch\u00e4tzungen",
-        "pilotData": "Basierend auf tatsächlichen Versichererdaten",
-        "instant": "Sofortige Einsch\u00e4tzung"
+        "conservative": "Conservative estimates",
+        "pilotData": "Based on real insurer data",
+        "instant": "Instant indication"
       }
     },
     "cta": {
-      "heading": "Bereit f\u00fcr eine detaillierte Bewertung?",
-      "description": "Unser Team kann Ihre spezifischen Schadendaten, Policenkomplexit\u00e4t und betrieblichen Rahmenbedingungen analysieren, um eine individuelle Impact-Sch\u00e4tzung zu erstellen.",
-      "bookDemo": "Demo buchen",
-      "seeMira": "MIRA in Aktion sehen"
+      "heading": "Ready for a detailed assessment?",
+      "description": "The True Aim team can analyse your claims data, policy complexity and operational constraints and give you an estimate for your operation.",
+      "bookDemo": "Request a demo"
     },
     "calculator": {
       "inputPanel": {
-        "title": "Ihr Schadenbetrieb",
-        "subtitle": "Passen Sie die Werte an Ihre Situation an",
-        "currency": "W\u00e4hrung",
-        "claimsVolume": "J\u00e4hrliches Schadenvolumen:",
-        "claimsVolumeUnit": "Schadenmeldungen/Jahr",
-        "handlingTime": "Durchschnittliche Bearbeitungszeit pro Schadenmeldung:",
-        "handlingTimeUnit": "Minuten",
-        "handlingTimeHint": "Verwenden Sie eine Sch\u00e4tzung f\u00fcr eine typische Schadenmeldung ohne besondere Komplexit\u00e4t",
-        "automationLevel": "Geeignet f\u00fcr Dunkelverarbeitung oder unterst\u00fctzte Bearbeitung",
+        "title": "Your claims operation",
+        "subtitle": "Adjust the values to match your situation",
+        "currency": "Currency",
+        "claimsVolume": "Annual claims volume:",
+        "claimsVolumeUnit": "claims a year",
+        "handlingTime": "Average handling time per claim:",
+        "handlingTimeUnit": "minutes",
+        "handlingTimeHint": "Use an estimate for a typical claim without unusual complexity",
+        "automationLevel": "Eligible for straight-through or assisted processing",
         "rangeMin": {
-          "claims": "10.000",
-          "claimsMax": "1.000.000",
-          "timeMin": "5 Min.",
-          "timeMax": "180 Min."
+          "claims": "10,000",
+          "claimsMax": "1,000,000",
+          "timeMin": "5 min",
+          "timeMax": "180 min"
         }
       },
       "results": {
         "mainImpact": {
-          "label": "Gesch\u00e4tzter operativer Brutto-Impact (Konservativ)",
-          "sublabel": "Basierend auf Pilotannahmen",
-          "reductionSuffix": "% Reduktion der Schadenbearbeitungskosten"
+          "label": "Estimated gross operational impact (conservative)",
+          "sublabel": "Based on pilot-scale assumptions",
+          "reductionSuffix": "% reduction in claims handling costs"
         },
         "breakdown": {
-          "heading": "Einsparungsaufschl\u00fcsselung",
+          "heading": "Savings breakdown",
           "capacity": {
-            "title": "Freigesetzte Kapazit\u00e4t",
-            "description": "Weniger Bearbeitungsschritte pro Schadenmeldung, k\u00fcrzere Bearbeitungszeit"
+            "title": "Capacity unlocked",
+            "description": "Fewer touches per claim, shorter handling time"
           },
           "rework": {
-            "title": "Vermiedene Nacharbeit",
-            "description": "Weniger Wiederer\u00f6ffnungen, Einspr\u00fcche und Korrekturen"
+            "title": "Rework avoided",
+            "description": "Fewer reopens, appeals and corrections"
           }
         },
         "metrics": {
-          "workingDaysSaved": "Eingesparte Arbeitstage/Jahr",
-          "fteEquivalent": "Freigesetzte Kapazit\u00e4t (FTE-\u00c4quivalent)",
-          "fteNote": "Spiegelt reduzierten Bearbeitungsaufwand wider, nicht Personalabbau"
+          "workingDaysSaved": "Working days saved a year",
+          "fteEquivalent": "Capacity unlocked (FTE equivalent)",
+          "fteNote": "Reflects reduced handling effort, not headcount reduction"
         },
         "assumptions": {
-          "toggle": "Methodik und Annahmen",
-          "howWeCalculate": "So berechnen wir",
-          "currentHandlingCost": "Aktuelle Bearbeitungskosten",
-          "currentHandlingCostFormula": "= Bearbeitungszeit x Kosten pro Minute x Schadenvolumen",
-          "reworkAvoided": "Vermiedene Nacharbeit",
-          "reworkAvoidedFormula": "= Nacharbeits-Schadenf\u00e4lle x Bearbeitungszeit x Nacharbeits-Multiplikator x Kosten pro Minute",
-          "grossSavings": "Bruttoeinsparungen",
-          "grossSavingsFormula": "= Kapazit\u00e4t + Nacharbeit",
-          "workingDaysFormula": "Eingesparte Arbeitstage = Eingesparte Stunden \u00f7 10",
-          "workingDaysUnit": "Tage",
-          "conservativeEstimate": "Konservative Sch\u00e4tzung",
-          "conservativeEstimateFormula": "= Bruttoeinsparungen x 75% Sensitivit\u00e4tsanpassung",
-          "keyAssumptions": "Kernannahmen",
-          "assumption1": "Einsparungen gelten nur f\u00fcr berechtigte Schadenkategorien",
-          "assumption2": "Kein sofortiger Personalabbau angenommen",
-          "assumption3": "Einsparungen spiegeln reduzierten Bearbeitungsaufwand und Nacharbeit wider",
-          "assumption4": "75% Sensitivit\u00e4tsanpassung auf alle Prognosen angewendet",
-          "assumption5": "Die W\u00e4hrungsauswahl verwendet regionsbezogene Marktdaten f\u00fcr Gehaltsbenchmarks der Versicherungsbranche, die die Annahmen zu den Kosten pro Minute bestimmen.",
-          "breakdownTitle": "Ihre Zahlen im Detail",
+          "toggle": "Methodology and assumptions",
+          "howWeCalculate": "How the estimate is calculated",
+          "currentHandlingCost": "Current handling cost",
+          "currentHandlingCostFormula": "= Handling time x Cost per minute x Claims volume",
+          "capacityUnlocked": "Capacity unlocked",
+          "capacityUnlockedFormula": "= Current handling cost less the handling cost after automation, where an automated claim takes 36 seconds of review and each remaining manual claim takes half the current handling time",
+          "reworkAvoided": "Rework avoided",
+          "reworkAvoidedFormula": "= Rework claims x Handling time x Rework multiplier x Cost per minute",
+          "grossSavings": "Gross savings",
+          "grossSavingsFormula": "= Capacity + Rework",
+          "workingDaysFormula": "Working days saved = Hours saved ÷ 10",
+          "workingDaysUnit": "days",
+          "conservativeEstimate": "Conservative estimate",
+          "conservativeEstimateFormula": "= Gross savings x 75% sensitivity adjustment",
+          "keyAssumptions": "Key assumptions",
+          "assumption1": "Savings apply only to eligible claim categories",
+          "assumption2": "No immediate headcount reduction assumed",
+          "assumption3": "Savings reflect reduced handling effort and rework",
+          "assumption4": "75% sensitivity adjustment applied to all projections",
+          "assumption5": "Currency selection applies region-linked market data for insurance industry salary benchmarks, which informs the cost per minute",
+          "breakdownTitle": "Your numbers",
           "breakdownRows": {
-            "annualVolume": "J\u00e4hrliches Schadenvolumen",
-            "automatedClaims": "Von True Aim automatisierte Schadenmeldungen",
-            "manualClaims": "Schadenmeldungen mit manueller Pr\u00fcfung",
-            "capacityGross": "Kapazit\u00e4tseinsparungen (brutto)",
-            "reworkGross": "Vermiedene Nacharbeit (brutto)",
-            "sensitivityAdjustment": "Sensitivit\u00e4tsanpassung (75%)",
-            "grossAnnualImpact": "J\u00e4hrlicher Brutto-Impact (konservativ)"
+            "annualVolume": "Annual claims volume",
+            "automatedClaims": "Claims automated by True Aim",
+            "manualClaims": "Claims requiring manual review",
+            "capacityGross": "Capacity savings (gross)",
+            "reworkGross": "Rework avoided (gross)",
+            "sensitivityAdjustment": "Sensitivity adjustment (75%)",
+            "grossAnnualImpact": "Gross annual impact (conservative)"
           },
-          "importantNotes": "Wichtige Hinweise",
-          "note1": "Alle dargestellten Zahlen stellen den operativen Brutto-Impact dar und ber\u00fccksichtigen nicht die Kosten der Dienstleistungen von True Aim.",
-          "note2": "Plattformpreise werden nicht angegeben. Die endg\u00fcltige Preisgestaltung basiert auf kommerziellen Konditionen, die besprochen werden.",
-          "note3": "Der Rechner basiert auf Daten aus tats\u00e4chlichen Versicherungssch\u00e4den und Fallstudien mit Versicherern."
+          "importantNotes": "Important notes",
+          "note1": "All figures shown represent gross operational impact and do not take into account the cost of True Aim's services.",
+          "note2": "Platform pricing is not provided. Final pricing is based on commercial terms to be discussed.",
+          "note3": "The estimator is based on data from real insurance claims and case studies with insurers."
         }
       }
     }

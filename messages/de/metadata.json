@@ -16,7 +16,7 @@
     "/technology": {
       "title": "Technologie – Neuro-symbolische KI-Architektur | True Aim",
       "description": "Nicht probabilistisch. Keine Black Box. Unser hybrider Ansatz kombiniert agentische KI-Ausführung mit deterministischer Entscheidungsfindung, speziell entwickelt für regulierte Branchen und die Konformität mit der KI-Verordnung.",
-      "h1": "Neuro-symbolische AI: Die Architektur, der Aufsichtsbehörden vertrauen",
+      "h1": "How True Aim reads a claim and decides it",
       "breadcrumb": "Technologie",
       "ogTitle": "Technologie – Neuro-symbolische KI-Architektur | True Aim",
       "ogDescription": "Unser hybrider Ansatz kombiniert agentische KI-Ausführung mit deterministischer Entscheidungsfindung, speziell entwickelt für regulierte Branchen.",
@@ -25,7 +25,7 @@
     "/trust": {
       "title": "Vertrauen & Compliance | True Aim",
       "description": "Die Compliance-Architektur von True Aim. Konformität mit der KI-Verordnung, GDPR und Schweizer DSG. Jede Entscheidung überprüfbar, jedes Ergebnis nachvollziehbar.",
-      "h1": "Unternehmenssicherheit. Regulatorische Compliance.",
+      "h1": "Security and compliance, built in from day one",
       "breadcrumb": "Vertrauen",
       "ogTitle": "Vertrauen & Compliance | True Aim",
       "ogDescription": "Konformität mit der KI-Verordnung, GDPR und Schweizer DSG. Jede Entscheidung überprüfbar, jedes Ergebnis nachvollziehbar.",
@@ -34,7 +34,7 @@
     "/about": {
       "title": "Unternehmen – Über True Aim | True Aim",
       "description": "Schweizer Präzision trifft überprüfbare KI. Lernen Sie unser Führungsteam, unsere Berater und Partner kennen, darunter Yarowa AG, ZHAW und Innosuisse. Unterstützt durch das Schweizer Innovationsökosystem.",
-      "h1": "Schweizer Praezision. Auditierbare AI.",
+      "h1": "Scalable trust",
       "breadcrumb": "Über uns",
       "ogTitle": "Unternehmen – Über True Aim",
       "ogDescription": "Schweizer Präzision trifft überprüfbare KI. Lernen Sie unser Führungsteam, unsere Berater und Partner kennen. Unterstützt durch das Schweizer Innovationsökosystem.",
@@ -43,7 +43,7 @@
     "/contact": {
       "title": "Kontakt – Demo anfordern | True Aim",
       "description": "Fordern Sie eine Demo der neuro-symbolischen KI von True Aim für die Schadenautomatisierung an. Buchen Sie ein 30-minütiges Kennenlerngespräch, um überprüfbare KI in Aktion zu erleben.",
-      "h1": "Lassen Sie uns sprechen Schadenautomatisierung",
+      "h1": "Request a demo",
       "breadcrumb": "Kontakt",
       "ogTitle": "Kontakt – Demo anfordern | True Aim",
       "ogDescription": "Fordern Sie eine Demo der neuro-symbolischen KI von True Aim für die Schadenautomatisierung an. Buchen Sie ein 30-minütiges Kennenlerngespräch.",
@@ -52,7 +52,7 @@
     "/impact-estimator": {
       "title": "Impact Estimator | True Aim",
       "description": "Erkunden Sie das Wertschöpfungspotenzial mit der KI-gestützten Schadenautomatisierung von True Aim. Impact-Schätzung basierend auf realen Pilotdaten, ohne Verpflichtung.",
-      "h1": "Erkunden Sie Ihr Wertschöpfungspotenzial",
+      "h1": "Estimate the impact of automating claim decisions",
       "breadcrumb": "Impact Estimator",
       "ogTitle": "Impact Estimator | True Aim",
       "ogDescription": "Erkunden Sie das Wertschöpfungspotenzial mit KI-gestützter Schadenautomatisierung. Impact-Schätzung basierend auf realen Pilotdaten.",
@@ -61,7 +61,7 @@
     "/case-studies": {
       "title": "Fallstudien | True Aim",
       "description": "Erfahren Sie, wie die neuro-symbolische KI von True Aim die Schadenbearbeitung transformiert. Praxisbeispiele von Versicherungsunternehmen, die MIRA, ContextBuilder und ClaimEval einsetzen.",
-      "h1": "Echte Ergebnisse von echten Versicherern",
+      "h1": "Real numbers in practice",
       "breadcrumb": "Fallstudien",
       "ogTitle": "Fallstudien | True Aim",
       "ogDescription": "Praxisbeispiele von Versicherungsunternehmen, die die neuro-symbolische KI von True Aim für die Schadenautomatisierung einsetzen.",

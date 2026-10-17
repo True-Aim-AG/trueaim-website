@@ -1,222 +1,81 @@
 {
   "trust": {
     "hero": {
-      "badge": "Trust Center",
-      "titleLine1": "Sicurezza aziendale.",
-      "titleLine2": "Conformità normativa.",
-      "description": "Costruito da zero per le industrie regolamentate. Precisione svizzera e sicurezza dei dati."
+      "title": "Security and compliance, built in from day one",
+      "summary": "True Aim is certified to ISO 27001 and SOC 2 Type 2 and aligns its controls with the GDPR, the Swiss FADP and DORA. Every claims decision is recorded with the facts, the rules and the reasoning behind it, so the record stands up to audit, regulatory review and dispute."
     },
-    "compliance": {
-      "heading": "Conformità & Certificazioni",
-      "subtitle": "Soddisfare gli standard che contano per le industrie regolamentate",
-      "badges": {
-        "gdpr": {
-          "name": "GDPR",
-          "description": "Architettura conforme al regolamento europeo sulla protezione dei dati",
-          "status": "aligned"
-        },
-        "swissFadp": {
-          "name": "Swiss FADP",
-          "description": "Conformità alla legge federale svizzera sulla protezione dei dati",
-          "status": "aligned"
-        },
-        "euAiAct": {
-          "name": "Regolamento sull'IA",
-          "description": "Progettato per i requisiti dei sistemi AI ad alto rischio",
-          "status": "aligned"
-        },
-        "swissHosting": {
-          "name": "Hosting svizzero",
-          "description": "Residenza dei dati entro i confini svizzeri",
-          "status": "provided"
-        },
-        "iso27001": {
-          "name": "ISO 27001",
-          "description": "I controlli attuali sono allineati al framework. Certificazione formale prevista per il 2026",
-          "status": "roadmap"
-        },
-        "soc2": {
-          "name": "SOC 2 Type II",
-          "description": "I controlli attuali sono allineati al framework. Certificazione formale prevista per il 2026",
-          "status": "roadmap"
-        },
-        "finma": {
-          "name": "Direttive FINMA",
-          "description": "Conformità con il regolatore finanziario svizzero",
-          "status": "aligned"
-        },
-        "dora": {
-          "name": "DORA",
-          "description": "Conformità al Digital Operational Resilience Act per le entità finanziarie",
-          "status": "aligned"
-        }
+    "badges": {
+      "heading": "Certified and aligned",
+      "items": {
+        "iso27001": { "name": "ISO 27001", "status": "certified" },
+        "soc2": { "name": "SOC 2 Type 2", "status": "certified" },
+        "gdpr": { "name": "GDPR", "status": "aligned" },
+        "fadp": { "name": "Swiss FADP", "status": "aligned" },
+        "dora": { "name": "DORA", "status": "aligned" }
       },
       "statusLabels": {
-        "roadmap": "2026",
-        "compliant": "conforme",
-        "ready": "pronto",
-        "provided": "fornito",
-        "aligned": "conforme"
+        "certified": "Certified",
+        "aligned": "Aligned"
       }
     },
-    "dataResidency": {
-      "heading": "Residenza dei dati & Sovranità",
-      "description": "I vostri dati restano dove ne avete bisogno. Hosting basato in Svizzera per la massima sovranità dei dati e conformità.",
-      "swissDataCenter": {
-        "title": "Centro dati svizzero",
-        "description": "Ospitate i vostri dati entro i confini svizzeri, protetti dalle leggi svizzere sulla privacy"
-      },
-      "euProcessingZones": {
-        "title": "Zone di elaborazione UE",
-        "description": "I dati non lasciano mai l'Unione Europea"
-      },
-      "noThirdCountry": {
-        "title": "Nessun trasferimento verso paesi terzi",
-        "description": "Controllo completo su dove vengono elaborati i vostri dati"
-      },
-      "mapLabels": {
-        "switzerland": "Svizzera",
-        "euZone": "Zona UE"
-      }
-    },
-    "security": {
-      "heading": "Architettura di sicurezza",
-      "subtitle": "Controlli di sicurezza di livello enterprise ad ogni livello",
-      "categories": {
-        "dataProtection": {
-          "title": "Protezione dei dati",
-          "features": {
-            "encryptionAtRest": {
-              "name": "Crittografia a riposo",
-              "detail": "Crittografia AES-256 per tutti i dati archiviati"
-            },
-            "encryptionInTransit": {
-              "name": "Crittografia in transito",
-              "detail": "TLS 1.3 per tutte le trasmissioni dati"
-            },
-            "dataIsolation": {
-              "name": "Isolamento dei dati",
-              "detail": "Segregazione dei dati per tenant"
-            },
-            "keyManagement": {
-              "name": "Gestione sicura delle chiavi",
-              "detail": "Supportata da modulo di sicurezza hardware (HSM)"
-            }
-          }
-        },
-        "accessControl": {
-          "title": "Controllo degli accessi",
-          "features": {
-            "rbac": {
-              "name": "Accesso basato sui ruoli (RBAC)",
-              "detail": "Gestione granulare dei permessi"
-            },
-            "sso": {
-              "name": "Integrazione SSO",
-              "detail": "Supporto SAML 2.0 e OIDC"
-            },
-            "mfa": {
-              "name": "Autenticazione multi-fattore",
-              "detail": "Applicazione MFA disponibile"
-            },
-            "sessionManagement": {
-              "name": "Gestione delle sessioni",
-              "detail": "Timeout e controlli configurabili"
-            }
-          }
-        },
-        "auditMonitoring": {
-          "title": "Audit & Monitoraggio",
-          "features": {
-            "auditLogs": {
-              "name": "Registri di audit completi",
-              "detail": "Ogni azione registrata con timestamp"
-            },
-            "decisionReplay": {
-              "name": "Replay delle decisioni",
-              "detail": "Rieseguite qualsiasi decisione con risultati identici"
-            },
-            "accessLogging": {
-              "name": "Registrazione degli accessi",
-              "detail": "Piena visibilità sull'accesso ai dati"
-            },
-            "retentionPolicies": {
-              "name": "Politiche di conservazione",
-              "detail": "Periodi di conservazione dei registri configurabili"
-            }
-          }
-        }
-      }
-    },
-    "euAiAct": {
-      "badge": "Conformità normativa",
-      "heading": "Conformità al Regolamento sull'IA",
-      "subtitle": "La nostra architettura neuro-simbolica è appositamente progettata per soddisfare i requisiti di trasparenza, supervisione e documentazione del Regolamento sull'IA per i sistemi AI ad alto rischio.",
-      "features": {
-        "humanOversight": {
-          "requirement": "Supervisione umana",
-          "description": "Livelli di approvazione configurabili e instradamento delle eccezioni garantiscono la revisione umana dove necessario"
-        },
-        "transparency": {
-          "requirement": "Trasparenza",
-          "description": "Ogni decisione tracciabile fino alle clausole di polizza specifiche e ai documenti fonte"
-        },
-        "technicalDocumentation": {
-          "requirement": "Documentazione tecnica",
-          "description": "Documentazione di sistema completa disponibile per la revisione normativa"
-        },
-        "riskManagement": {
-          "requirement": "Gestione del rischio",
-          "description": "Punteggio di confidenza integrato e gestione delle eccezioni per i casi limite"
-        },
-        "dataGovernance": {
-          "requirement": "Governance dei dati",
-          "description": "Lignaggio dei dati chiaro e controlli di qualità lungo tutta la pipeline"
-        },
-        "accuracyRobustness": {
-          "requirement": "Accuratezza & Robustezza",
-          "description": "La logica deterministica garantisce risultati coerenti per input identici"
-        }
-      },
-      "callout": {
-        "heading": "Perché l'AI deterministica è importante per la conformità",
-        "description": "A differenza dei sistemi AI probabilistici, il nostro motore di logica deterministica produce risultati identici per input identici, rendendo semplice dimostrare coerenza, equità e trasparenza ai regolatori.",
-        "emphasis": "risultati identici per input identici"
-      }
-    },
-    "publicDocuments": {
-      "heading": "Documenti pubblici",
-      "subtitle": "Politiche, accordi e materiale di riferimento pubblicati per potenziali clienti, clienti, revisori e ricercatori di sicurezza.",
+    "standards": {
+      "heading": "What the standards cover",
       "items": {
-        "privacy": {
-          "title": "Informativa sulla privacy",
-          "description": "Come raccogliamo, utilizziamo e proteggiamo i dati personali come responsabile e titolare del trattamento."
+        "iso27001": {
+          "title": "ISO 27001",
+          "body": "The international standard for an information security management system. An accredited auditor checks that the controls exist, work and are reviewed."
         },
-        "security": {
-          "title": "Programma di sicurezza",
-          "description": "Framework di conformità, crittografia, controllo degli accessi, monitoraggio e divulgazione responsabile."
+        "soc2": {
+          "title": "SOC 2 Type 2",
+          "body": "An independent audit of security controls over a period of months, not a single day. The report describes the controls and whether they operated as described."
         },
-        "ethics": {
-          "title": "Etica & segnalazioni",
-          "description": "Canale confidenziale per segnalare comportamenti scorretti, con istruzioni per la segnalazione anonima e impegno alla non ritorsione."
+        "dataProtection": {
+          "title": "GDPR and Swiss FADP",
+          "body": "True Aim processes customer data as a processor under the EU General Data Protection Regulation and the Swiss Federal Act on Data Protection. The privacy policy sets out the roles, the data and your rights."
         },
-        "subProcessors": {
-          "title": "Elenco dei sub-responsabili",
-          "description": "Elenco operativo dei sub-responsabili (Allegato 2 al DPA): entità, servizio, categorie di dati e luogo del trattamento."
-        },
-        "product": {
-          "title": "Panoramica della piattaforma",
-          "description": "Cosa è la piattaforma True Aim, a chi si rivolge e come si integra nel flusso di gestione sinistri."
-        },
-        "support": {
-          "title": "Supporto clienti",
-          "description": "Come contattarci, orari di servizio e impegni di tempo di risposta per livello di gravità."
-        },
-        "changelog": {
-          "title": "Registro modifiche",
-          "description": "Cronologia pubblica delle versioni della piattaforma True Aim."
+        "dora": {
+          "title": "DORA",
+          "body": "The EU Digital Operational Resilience Act sets requirements for financial entities and the technology providers they rely on. True Aim maps its controls against them."
         }
       }
+    },
+    "humanInLoop": {
+      "eyebrow": "Regulation",
+      "heading": "A person stays in the loop",
+      "p1": "By default, True Aim prepares a recommendation for a person to confirm. Full automation runs only where you and your regulator allow it.",
+      "p2": "True Aim is mapped against DORA, the EU AI Act, FINMA and BaFin requirements, the NAIC in the United States and POPIA in South Africa."
+    },
+    "documents": {
+      "heading": "Policies and documents",
+      "items": {
+        "privacy": { "title": "Privacy policy", "description": "How True Aim collects, uses and protects personal data." },
+        "terms": { "title": "Terms of service", "description": "The terms that govern the use of the True Aim website and platform." },
+        "cookies": { "title": "Cookie policy", "description": "Which cookies the website sets, who sets them and how to change your choice." },
+        "paia": { "title": "PAIA manual", "description": "Access to information under South Africa's Promotion of Access to Information Act." },
+        "aiTransparency": { "title": "AI transparency", "description": "How True Aim uses AI, what it decides and what it leaves to a person." }
+      }
+    },
+    "faq": {
+      "heading": "Questions about security and compliance",
+      "items": [
+        {
+          "question": "Which certifications does True Aim hold?",
+          "answer": "True Aim is certified to ISO 27001 and SOC 2 Type 2. Its controls are aligned with the GDPR, the Swiss FADP and DORA. The audit reports are available to customers under a non-disclosure agreement."
+        },
+        {
+          "question": "Does True Aim decide claims without a person?",
+          "answer": "Not by default. True Aim prepares a recommendation with the facts, the rules and the reasoning, and a person confirms it. Full automation runs only for the claim types where you and your regulator allow it."
+        },
+        {
+          "question": "Can a decision be checked after the fact?",
+          "answer": "Yes. Every decision is recorded with its inputs, the rules that applied and the source document behind each figure, and any decision can be run again with the same result."
+        }
+      ]
+    },
+    "cta": {
+      "heading": "See the record behind a decision",
+      "description": "Bring your own invoices, claims or damage reports and the demo shows the finished outcome with its evidence.",
+      "button": "Request a demo"
     }
   }
 }

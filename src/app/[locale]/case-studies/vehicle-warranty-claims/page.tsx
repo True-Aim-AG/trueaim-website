@@ -210,9 +210,9 @@ export default function VehicleWarrantyCaseStudy() {
                     tiers, mileage caps and component exclusion lists.
                   </p>
                   <p>
-                    True Aim deployed the full product stack: ContextBuilder for document ingestion
-                    and structured extraction, MIRA for hybrid deterministic and AI coverage matching,
-                    and ClaimEval for quality assurance with full provenance tracking. A multi-tier
+                    True Aim deployed the full platform: the document layer for document ingestion
+                    and structured extraction, Claims Decisioning for hybrid deterministic and AI coverage
+                    matching, and the quality check with full provenance tracking. A multi-tier
                     matching architecture routes 80%-90% of line items through deterministic rules
                     and keyword matching with zero LLM cost, reserving AI reasoning for genuinely
                     ambiguous cases. Within seven days and through multiple evaluation iterations,
