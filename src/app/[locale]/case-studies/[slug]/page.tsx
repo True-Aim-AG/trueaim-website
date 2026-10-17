@@ -11,12 +11,12 @@ import {
   Clock,
   CheckCircle,
   Quote,
-  TrendingUp,
 } from "lucide-react";
 import { getCaseStudy, caseStudies } from "@/data/case-studies";
 import { productPillColors, productNames } from "@/lib/product-styles";
 import { ButtonLink } from "@/components/brand/Button";
-import { GridPattern } from "@/components/brand/GridPattern";
+import { CARD, CtaBand, PageHero, SECTION, SECTION_LILAC } from "@/components/content";
+import { cn } from "@/lib/utils";
 
 const ease = [0.4, 0, 0.2, 1] as const;
 
@@ -59,68 +59,58 @@ export default function CaseStudyPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
-
-        <div className="relative max-w-4xl mx-auto px-6 pt-20 md:pt-28 pb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease }}
+      <PageHero
+        title={study.title}
+        texture={{ name: "glass", position: "100% 100%" }}
+      >
+        <div className="mt-8 space-y-6">
+          {/* Breadcrumb */}
+          <Link
+            href="/case-studies"
+            className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors"
           >
-            {/* Breadcrumb */}
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8"
-            >
-              <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
-              {t("detail.allCaseStudies")}
-            </Link>
+            <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
+            {t("detail.allCaseStudies")}
+          </Link>
 
-            {/* Customer Info */}
-            <div className="flex items-center gap-4 mb-6">
-              <div className="icon-plate w-16 h-16">
-                <Building2 className="w-8 h-8" strokeWidth={1.5} />
+          {/* Customer Info */}
+          <div className="flex items-center gap-4">
+            <div className="icon-plate w-16 h-16">
+              <Building2 className="w-8 h-8" strokeWidth={1.5} />
+            </div>
+            <div>
+              <div className="text-lg font-medium text-strong">
+                {study.customer.name}
               </div>
-              <div>
-                <div className="text-lg font-medium text-strong">
-                  {study.customer.name}
-                </div>
-                <div className="text-muted">
-                  {study.customer.industry} · {study.customer.size}
-                </div>
+              <div className="text-muted">
+                {study.customer.industry} · {study.customer.size}
               </div>
             </div>
+          </div>
 
-            {/* Title */}
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-strong mb-6">
-              {study.title}
-            </h1>
-
-            {/* Products & Timeline */}
-            <div className="flex flex-wrap items-center gap-4">
-              {study.products.map((product) => (
-                <Link
-                  key={product}
-                  href={productLinks[product]}
-                  className={`text-sm px-3 py-1.5 font-medium ${productPillColors[product]}`}
-                >
-                  {productNames[product]}
-                </Link>
-              ))}
-              {study.timeline && (
-                <div className="flex items-center gap-2 text-muted">
-                  <Clock className="w-4 h-4" strokeWidth={1.5} />
-                  {study.timeline}
-                </div>
-              )}
-            </div>
-          </motion.div>
+          {/* Products & Timeline */}
+          <div className="flex flex-wrap items-center gap-4">
+            {study.products.map((product) => (
+              <Link
+                key={product}
+                href={productLinks[product]}
+                className={`text-sm px-3 py-1.5 font-medium ${productPillColors[product]}`}
+              >
+                {productNames[product]}
+              </Link>
+            ))}
+            {study.timeline && (
+              <div className="flex items-center gap-2 text-muted">
+                <Clock className="w-4 h-4" strokeWidth={1.5} />
+                {study.timeline}
+              </div>
+            )}
+          </div>
         </div>
-      </section>
+      </PageHero>
 
       {/* Metrics Grid */}
-      <section className="py-12 px-6">
+      <section className={SECTION}>
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -132,7 +122,7 @@ export default function CaseStudyPage() {
             {study.metrics.map((metric) => (
               <div
                 key={metric.label}
-                className="bg-card shadow-card rounded-pill px-[29px] py-[27px] text-center"
+                className={cn(CARD, "px-[29px] py-[27px] text-center")}
               >
                 <div className="text-kpi text-accent mb-1">
                   {metric.value}
@@ -150,7 +140,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Content */}
-      <section className="py-20 px-6">
+      <section className={SECTION_LILAC}>
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Main Content */}
@@ -215,7 +205,7 @@ export default function CaseStudyPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease }}
-                className="bg-card shadow-card rounded-pill p-8"
+                className={cn(CARD, "p-8")}
               >
                 <h3 className="font-display font-semibold text-strong mb-4">
                   {t("detail.keyHighlights")}
@@ -244,7 +234,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Navigation */}
-      <section className="py-12 px-6">
+      <section className={SECTION}>
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-between items-center">
             {prevStudy ? (
@@ -274,28 +264,11 @@ export default function CaseStudyPage() {
       </section>
 
       {/* CTA */}
-      <section data-theme="dark" className="py-20 px-6 bg-page-tint">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease }}
-          >
-            <TrendingUp className="w-12 h-12 text-muted mx-auto mb-6" strokeWidth={1.5} />
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-strong mb-6">
-              {t("detail.ctaHeading")}
-            </h2>
-            <p className="text-lg text-body mb-10">
-              {t("detail.ctaDescription")}
-            </p>
-            <ButtonLink href="/contact" variant="primary" size="lg">
-              {t("detail.requestPilot")}
-              <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
-            </ButtonLink>
-          </motion.div>
-        </div>
-      </section>
+      <CtaBand
+        heading={t("detail.ctaHeading")}
+        lede={t("detail.ctaDescription")}
+        buttons={[{ label: t("detail.requestPilot"), href: "/contact" }]}
+      />
     </div>
   );
 }
