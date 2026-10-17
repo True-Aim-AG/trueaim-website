@@ -33,7 +33,7 @@ export function CoverCards({ heading, items, tone = "white" }: { heading: string
   const single = items.length === 1;
   return (
     <section className={section(tone)}>
-      <div className={cn("mx-auto max-w-7xl", single && "grid items-center gap-x-[29px] md:grid-cols-2")}>
+      <div className={cn("mx-auto max-w-7xl", single && "grid items-start gap-x-[29px] md:grid-cols-2")}>
         <SectionHead heading={heading} className={cn(single && "md:mb-0")} />
         <ul className={cn("grid grid-cols-1 gap-[29px]", single ? "w-full max-w-[480px] md:justify-self-end" : "md:grid-cols-2")}>
           {items.map((item, index) => (
