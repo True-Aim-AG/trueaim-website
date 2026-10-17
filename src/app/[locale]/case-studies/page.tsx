@@ -30,9 +30,9 @@ function ResultsCard({ study, readLabel }: { study: CaseStudy; readLabel: string
           <Image src={study.customer.logo} alt={study.customer.name} width={600} height={191} className="h-10 w-auto shrink-0" />
         )}
       </div>
+      {/* Fixed columns, so the three labels start on the same line. */}
       <ul className="mt-6 divide-y divide-hairline border-y border-hairline">
         {study.metrics.map((metric) => (
-          {/* Fixed columns, so the three labels start on the same line. */}
           <li key={metric.label} className="grid grid-cols-[1.25rem_9.5rem_minmax(0,1fr)] items-center gap-4 py-3.5">
             <Check strokeWidth={2.5} className="h-5 w-5 text-accent" aria-hidden />
             <span className="font-display text-[24px] font-semibold leading-none text-strong tabular-nums">{metric.value}</span>
