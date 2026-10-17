@@ -48,7 +48,7 @@ export function PageHero({
       )}
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 py-16 md:py-24 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)] lg:items-center lg:gap-20 lg:py-[104px]">
         <div>
-          <h1 className="font-display text-[34px] font-semibold leading-[1.05] text-strong text-balance sm:text-[40px] lg:text-[54px] lg:leading-none">
+          <h1 className="font-display text-[34px] font-bold leading-[1.15] text-strong text-balance sm:text-[40px] lg:text-[54px] lg:leading-[1.1]">
             {title}
           </h1>
           <div className="mt-6">
