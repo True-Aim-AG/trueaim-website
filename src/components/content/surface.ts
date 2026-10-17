@@ -39,7 +39,7 @@ export const SCENE_CARD_HERO =
  * the same lines across the row without fixed heights. The card sets the
  * gap between its own rows; the parent keeps the gap between cards.
  */
-export const CARD_GRID = "grid grid-rows-[subgrid] content-start gap-y-3";
+export const CARD_GRID = "grid grid-rows-subgrid content-start gap-y-3";
 export const ROW_SPAN: Record<number, string> = { 2: "row-span-2", 3: "row-span-3", 4: "row-span-4", 5: "row-span-5" };
 export const CARD_TITLE = "font-display text-[20px] font-semibold leading-[1.3] tracking-[0.01em] text-strong";
 export const CARD_TEXT = "text-[15px] leading-[1.55] text-muted";

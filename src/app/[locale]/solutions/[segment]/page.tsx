@@ -78,7 +78,7 @@ const faqTone: Record<Solution["key"], Tone> = {
   insurers: "white",
   brokers: "white",
   tpas: "white",
-  warranty: "tint",
+  warranty: "white",
   claimsTech: "white",
 };
 
