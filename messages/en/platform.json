@@ -2,11 +2,17 @@
   "platform": {
     "hero": {
       "title": "How the True Aim platform works",
-      "summary": "Until now a claim needed a system of record and a person to assess it. True Aim combines the two and hands your team the finished piece of work: a settled claim, a completed damage report or a benchmarked invoice. Your team keeps the final say, and every step is recorded.",
-      "ctaDemo": "Book a demo"
+      "summary": "True Aim turns the claim file into the finished piece of work: a settled claim, a benchmarked invoice or a completed damage report. AI reads the documents, the decision is calculated from your policy wording and every step is recorded. Your team keeps the final say.",
+      "ctaDemo": "Book a demo",
+      "scene": {
+        "alt": "Three finished outcomes: a settled claim, a benchmarked invoice and a completed damage report",
+        "claimsDecisioning": "A settled claim",
+        "invoiceBenchmarking": "A benchmarked invoice",
+        "damageReporting": "A completed damage report"
+      }
     },
     "outcomes": {
-      "heading": "What you receive",
+      "heading": "Three finished outcomes",
       "items": {
         "claimsDecisioning": {
           "title": "A settled claim",
@@ -76,9 +82,9 @@
       "callout": "Same inputs. Same decision. Every time."
     },
     "fit": {
-      "heading": "It sits above your existing systems",
+      "heading": "True Aim sits above your existing systems",
       "paragraphs": [
-        "True Aim works above your claims and finance systems. True Aim reads from them and writes the results back into them.",
+        "True Aim works above your claims and finance systems, reads from them and writes the results back.",
         "Your thresholds, rules, routing and limits stay in your hands, and you change them yourself."
       ],
       "imageAlt": "A metal lock carrying the True Aim symbol"
@@ -99,7 +105,7 @@
           "answer": "No. True Aim works above the claims and finance systems you already run and writes its results back into them. Screens can mirror the ones your team knows."
         },
         {
-          "question": "Which lines of business does it cover?",
+          "question": "Which lines of business does True Aim cover?",
           "answer": "True Aim is not tied to one line. Motor, property, warranty and liability claims use the same building blocks."
         },
         {
@@ -107,8 +113,8 @@
           "answer": "Per outcome, not per seat. You pay for each settled claim, benchmarked invoice or completed damage report, so costs scale with the value you receive."
         },
         {
-          "question": "Where is our data held?",
-          "answer": "On Microsoft Azure in Switzerland. Hosting, certification and data protection are set out in the Trust Centre."
+          "question": "How is our data protected?",
+          "answer": "True Aim is ISO 27001 and SOC 2 Type II certified. Hosting, certification and data protection are set out in the Trust Centre."
         }
       ]
     },
@@ -121,11 +127,11 @@
       "damageReporting": "Damage Reporting",
       "damageReportingText": "Completed damage reports in minutes.",
       "otus": "Otus, True Aim's claims specialist",
-      "otusText": "An AI-powered expert for every member of your team."
+      "otusText": "An AI-powered expert for every team member."
     },
     "cta": {
       "heading": "Ready to see the finished outcome on your own claims?",
-      "lede": "Book a demo with your own claims, invoices or damage reports and we show you the finished piece of work.",
+      "lede": "Book a demo and we show you a settled claim, a benchmarked invoice and a completed damage report, with the working behind each.",
       "button": "Book a demo"
     }
   }

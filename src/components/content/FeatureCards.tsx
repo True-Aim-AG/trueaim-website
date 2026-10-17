@@ -1,5 +1,9 @@
+import { ArrowRight } from "lucide-react";
 import { BrandIcon, type BrandIconName } from "@/components/brand/BrandIcon";
 import { Link } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
+import { CARD, CARD_HOVER, SECTION, SECTION_LILAC } from "./surface";
+import { SectionHead } from "./SectionHead";
 
 export type FeatureCard = {
   title: string;
@@ -15,61 +19,55 @@ const COLS = {
   4: "md:grid-cols-2 lg:grid-cols-4",
 } as const;
 
-const CARD = "bg-card shadow-card rounded-pill p-8 h-full flex flex-col";
-
 /** Grid of feature cards. A card with an href is one link; otherwise it is plain. */
 export function FeatureCards({
+  cap,
   heading,
   intro,
   headingLevel = "h2",
   columns = 3,
   items,
+  lilac,
 }: {
+  cap?: string;
   heading: string;
   intro?: string;
   headingLevel?: "h2" | "h3";
   columns?: 2 | 3 | 4;
   items: FeatureCard[];
+  lilac?: boolean;
 }) {
-  const Heading = headingLevel;
   const ItemHeading = headingLevel === "h2" ? "h3" : "h4";
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        <Heading className="text-center font-display text-3xl md:text-4xl font-bold text-strong">
-          {heading}
-        </Heading>
-        {intro && (
-          <p className="mt-4 text-lg text-body max-w-2xl mx-auto text-center">{intro}</p>
-        )}
-        <ul className={`mt-12 grid gap-6 grid-cols-1 ${COLS[columns]}`}>
+    <section className={lilac ? SECTION_LILAC : SECTION}>
+      <div className="mx-auto max-w-7xl">
+        <SectionHead cap={cap} heading={heading} headingLevel={headingLevel} lede={intro} />
+        <ul className={cn("grid grid-cols-1 gap-[29px]", COLS[columns])}>
           {items.map((item) => {
             const content = (
               <>
-                {item.icon && (
-                  <div className="icon-plate mb-6">
-                    <BrandIcon name={item.icon} size={40} />
-                  </div>
-                )}
-                <ItemHeading className="font-display text-xl font-bold text-strong mb-3">
+                {item.icon && <BrandIcon name={item.icon} size={40} />}
+                <ItemHeading className="font-display text-[20px] font-semibold leading-[1.3] tracking-[0.01em] text-strong">
                   {item.title}
                 </ItemHeading>
-                <p className="text-sm text-body leading-[1.6]">{item.text}</p>
+                <p className="text-[15px] leading-[1.55] text-muted">{item.text}</p>
                 {item.href && item.linkLabel && (
-                  <span className="mt-auto pt-6 text-sm font-medium text-link">
+                  <span className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-medium text-accent">
                     {item.linkLabel}
+                    <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden />
                   </span>
                 )}
               </>
             );
+            const classes = cn(CARD, "flex h-full flex-col gap-4 p-8");
             return (
               <li key={item.title}>
                 {item.href ? (
-                  <Link href={item.href} className={CARD}>
+                  <Link href={item.href} className={cn(classes, CARD_HOVER, "block")}>
                     {content}
                   </Link>
                 ) : (
-                  <div className={CARD}>{content}</div>
+                  <div className={classes}>{content}</div>
                 )}
               </li>
             );

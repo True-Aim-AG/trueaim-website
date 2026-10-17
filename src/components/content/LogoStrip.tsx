@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { SECTION_TIGHT } from "./surface";
 
 export type StripLogo = {
   src: string;
@@ -10,15 +11,16 @@ export type StripLogo = {
   href?: string;
 };
 
-const LOGO_CLASS = "opacity-85 hover:opacity-100 transition-opacity duration-300 ease-brand";
+const LOGO_CLASS =
+  "w-auto max-w-[360px] opacity-80 grayscale transition-[filter,opacity] duration-300 ease-brand hover:opacity-100 hover:grayscale-0";
 
-/** Caption over a card row of partner or certification logos. */
+/** Caption over a centred row of partner logos, one tone until hovered. A logo with an href opens its page. */
 export function LogoStrip({ caption, logos }: { caption: string; logos: StripLogo[] }) {
   return (
-    <section className="py-16 px-6">
-      <div className="max-w-7xl mx-auto">
-        <p className="text-caption-sm text-subtle text-center mb-8">{caption}</p>
-        <ul className="rounded-pill bg-card shadow-card py-8 px-6 flex flex-wrap items-center justify-center gap-8 md:gap-12">
+    <section className={SECTION_TIGHT}>
+      <div className="mx-auto max-w-7xl">
+        <p className="mb-7 text-center text-caption-sm text-subtle">{caption}</p>
+        <ul className="flex flex-wrap items-center justify-center gap-x-14 gap-y-10">
           {logos.map((logo) => {
             const img = (
               <Image
@@ -27,12 +29,18 @@ export function LogoStrip({ caption, logos }: { caption: string; logos: StripLog
                 width={logo.width}
                 height={logo.height}
                 className={LOGO_CLASS}
-                style={{ height: logo.renderHeight, width: "auto" }}
+                style={{ height: logo.renderHeight }}
               />
             );
             return (
-              <li key={logo.src}>
-                {logo.href ? <Link href={logo.href}>{img}</Link> : img}
+              <li key={logo.src} className="flex items-center">
+                {logo.href ? (
+                  <Link href={logo.href} className="block">
+                    {img}
+                  </Link>
+                ) : (
+                  img
+                )}
               </li>
             );
           })}

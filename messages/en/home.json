@@ -2,9 +2,77 @@
   "home": {
     "hero": {
       "title": "Faster claims, smarter decisions, lower costs",
-      "summary": "True Aim checks every claim against the policy wording, benchmarks every invoice and prepares every damage report, with the calculations shown. Your team receives finished work and keeps the final say: the AI reads and calculates, your adjusters decide. Every step is recorded, so each decision can be explained to a customer, an auditor or a regulator.",
+      "summary": "Every claim assessed against the policy, every invoice benchmarked, every damage report prepared.\n\nAccurate, explainable outcomes in minutes. True Aim reads the documents, calculates the amounts and records every step, and your team keeps the final say. Each decision can be explained to a customer, an auditor or a regulator.",
       "ctaDemo": "Book a demo",
-      "ctaHow": "How it works"
+      "ctaHow": "How it works",
+      "scene": {
+        "alt": "A claim as the adjuster sees it: the lines grouped by outcome, each with its covered amount, and the payout",
+        "title": "Water damage claim",
+        "reference": "Claim 64850",
+        "columns": {
+          "description": "Description",
+          "quantity": "Qty",
+          "claimed": "Claimed",
+          "covered": "Covered"
+        },
+        "groups": [
+          {
+            "kind": "approved",
+            "label": "Covered",
+            "total": "4'086.33",
+            "lines": [
+              {
+                "description": "Replace floor",
+                "quantity": "18 × m²",
+                "claimed": "2'860.00",
+                "covered": "2'860.00"
+              },
+              {
+                "description": "Drying",
+                "quantity": "3 × day",
+                "claimed": "540.00",
+                "covered": "540.00"
+              },
+              {
+                "description": "Plaster and paint",
+                "quantity": "2 × wall",
+                "claimed": "686.33",
+                "covered": "686.33"
+              }
+            ]
+          },
+          {
+            "kind": "denied",
+            "label": "Excluded",
+            "total": "0.00",
+            "lines": [
+              {
+                "description": "Dishwasher, replacement",
+                "quantity": "1 × unit",
+                "claimed": "1'126.30",
+                "covered": "0.00"
+              }
+            ]
+          },
+          {
+            "kind": "referred",
+            "label": "Set aside for review",
+            "total": "321.10",
+            "lines": [
+              {
+                "description": "Hotel",
+                "quantity": "4 × night",
+                "claimed": "642.18",
+                "covered": "321.10"
+              }
+            ]
+          }
+        ],
+        "deductibleLabel": "Deductible",
+        "deductible": "150.00",
+        "payoutLabel": "Payout",
+        "payout": "3'936.33"
+      }
     },
     "benefits": {
       "heading": "How do you benefit?",
@@ -21,7 +89,7 @@
         },
         "damageReporting": {
           "title": "Complete damage reports, prepared for you",
-          "text": "Photographs and documents become a priced estimate and a full scope of work at first notification.",
+          "text": "Photographs and documents become a priced estimate and a full scope of work at first notification, before anyone visits the site.",
           "link": "Damage Reporting"
         }
       }
@@ -78,7 +146,7 @@
       "damageReporting": "Damage Reporting",
       "damageReportingText": "A priced estimate and the full scope of work at first notification.",
       "otus": "Otus, True Aim's claims specialist",
-      "otusText": "An AI-powered expert for every member of your team, with no decision rights.",
+      "otusText": "An AI-powered expert for every team member, with no decision rights.",
       "platform": "How the platform works",
       "platformText": "A claim file goes in, an audited decision comes out.",
       "trust": "Trust Centre",
@@ -86,7 +154,7 @@
     },
     "cta": {
       "heading": "Ready to see True Aim on your own claims?",
-      "lede": "Book a demo and we show you the finished outcome, with the calculations shown and your team in charge.",
+      "lede": "We show you the finished outcome and every calculation behind it.",
       "button": "Book a demo"
     }
   },

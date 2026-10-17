@@ -2,22 +2,33 @@
 
 import { useId, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { Glow } from "@/components/brand/Glow";
+import { SCENE_CARD, SCENE_CARD_HERO } from "@/components/content/surface";
 import { cn } from "@/lib/utils";
+import { HexDot } from "./scenes/marks";
 
-export type OtusPrompt = { id: string; tab: string; prompt: string; answer: string[] };
+export type OtusPrompt = { id: string; tab: string; prompt: string; answer: string[]; actions?: string[] };
 
-/** Example questions to Otus with its answer, switched by tabs. */
+/**
+ * Otus as the prototype draws it: a product card with Otus's name, three
+ * scenarios as tabs, the question and the answer as a short exchange with
+ * the actions Otus offers, and the line on decision rights at the foot.
+ */
 export function OtusPrompts({
   label,
+  subtitle,
+  footer,
   youLabel,
   otusLabel,
   prompts,
+  hero,
 }: {
   label: string;
+  subtitle: string;
+  footer: string;
   youLabel: string;
   otusLabel: string;
   prompts: OtusPrompt[];
+  hero?: boolean;
 }) {
   const baseId = useId();
   const reduced = useReducedMotion();
@@ -43,58 +54,78 @@ export function OtusPrompts({
   if (!current) return null;
 
   return (
-    <div className="relative rounded-pill bg-lilac p-6 md:p-8 overflow-hidden">
-      <Glow variant="soft" size={360} className="absolute -right-24 -top-24 z-0" />
-      <div className="relative z-10">
-        <div role="tablist" aria-label={label} className="flex flex-wrap gap-2 mb-6">
-          {prompts.map((prompt, index) => {
-            const isSelected = index === selected;
-            return (
-              <button
-                key={prompt.id}
-                ref={(node) => {
-                  tabRefs.current[index] = node;
-                }}
-                type="button"
-                role="tab"
-                id={`${baseId}-tab-${prompt.id}`}
-                aria-selected={isSelected}
-                aria-controls={`${baseId}-panel-${prompt.id}`}
-                tabIndex={isSelected ? 0 : -1}
-                onClick={() => setSelected(index)}
-                onKeyDown={onKeyDown}
-                className={cn(
-                  "rounded-pill px-5 py-2.5 text-sm font-medium transition-colors duration-150 ease-brand",
-                  isSelected ? "bg-accent text-on-brand" : "bg-card text-body shadow-card",
-                )}
-              >
-                {prompt.tab}
-              </button>
-            );
-          })}
+    <div role="group" aria-label={label} className={cn(SCENE_CARD, hero && SCENE_CARD_HERO)}>
+      <div className="flex items-center gap-3 border-b border-hairline px-3.5 py-3.5">
+        <HexDot className="h-[18px] w-[18px]" />
+        <div>
+          <p className="font-display text-[15px] font-semibold leading-[1.2] text-strong">{otusLabel}</p>
+          <p className="mt-0.5 text-[12px] text-subtle">{subtitle}</p>
         </div>
-        <motion.div
-          key={current.id}
-          role="tabpanel"
-          id={`${baseId}-panel-${current.id}`}
-          aria-labelledby={`${baseId}-tab-${current.id}`}
-          tabIndex={0}
-          initial={reduced ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-        >
-          <p className="text-caption-sm text-subtle mb-1">{youLabel}</p>
-          <p className="rounded-pill bg-accent-soft px-6 py-4 text-body">{current.prompt}</p>
-          <p className="text-caption-sm text-subtle mb-1 mt-6">{otusLabel}</p>
-          <div className="rounded-pill bg-card shadow-card px-6 py-5 space-y-3">
-            {current.answer.map((paragraph) => (
-              <p key={paragraph} className="text-sm text-body leading-[1.6]">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </motion.div>
       </div>
+      <div role="tablist" aria-label={label} className="flex flex-wrap gap-2 px-3.5 pt-3">
+        {prompts.map((prompt, index) => {
+          const isSelected = index === selected;
+          return (
+            <button
+              key={prompt.id}
+              ref={(node) => {
+                tabRefs.current[index] = node;
+              }}
+              type="button"
+              role="tab"
+              id={`${baseId}-tab-${prompt.id}`}
+              aria-selected={isSelected}
+              aria-controls={`${baseId}-panel-${prompt.id}`}
+              tabIndex={isSelected ? 0 : -1}
+              onClick={() => setSelected(index)}
+              onKeyDown={onKeyDown}
+              className={cn(
+                "rounded-pill px-3.5 py-[9px] text-[12.5px] font-medium leading-none transition-colors duration-150 ease-brand focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-focus",
+                isSelected ? "bg-accent text-on-brand" : "bg-ta-blue-50 text-ta-blue-700 hover:bg-ta-blue-100",
+              )}
+            >
+              {prompt.tab}
+            </button>
+          );
+        })}
+      </div>
+      <motion.div
+        key={current.id}
+        role="tabpanel"
+        id={`${baseId}-panel-${current.id}`}
+        aria-labelledby={`${baseId}-tab-${current.id}`}
+        tabIndex={0}
+        initial={reduced ? false : { opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+        className="flex min-h-[236px] flex-col gap-2.5 px-3.5 py-3.5"
+      >
+        <p className="sr-only">{youLabel}</p>
+        <p className="max-w-[78%] self-end rounded-[18px_18px_4px_18px] bg-accent px-3.5 py-2.5 text-[13px] leading-[1.5] text-on-brand">
+          {current.prompt}
+        </p>
+        <p className="sr-only">{otusLabel}</p>
+        <div className="max-w-[88%] self-start rounded-[18px_18px_18px_4px] bg-page px-3.5 py-3 shadow-[0_0_0_1px_rgba(44,43,42,.06)]">
+          {current.answer.map((paragraph) => (
+            <p key={paragraph} className="text-[13px] leading-[1.5] text-body [&+&]:mt-2">
+              {paragraph}
+            </p>
+          ))}
+          {current.actions && current.actions.length > 0 && (
+            <ul className="mt-2.5 flex flex-wrap gap-1.5">
+              {current.actions.map((action) => (
+                <li
+                  key={action}
+                  className="rounded-pill bg-white px-2.5 py-1.5 text-[11.5px] font-medium leading-none text-ta-blue-700 shadow-[inset_0_0_0_1px_var(--ta-blue-200)]"
+                >
+                  {action}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </motion.div>
+      <p className="border-t border-hairline bg-page px-3.5 py-3 text-[12px] text-muted">{footer}</p>
     </div>
   );
 }

@@ -12,7 +12,6 @@ import {
   LogoStrip,
   RelatedLinks,
   SplitText,
-  StepList,
   Summary,
   breadcrumbListSchema,
   faqPageSchema,
@@ -176,19 +175,7 @@ describe("FeatureCards", () => {
     expect(html.match(/<a /g)).toHaveLength(1);
     expect(html).toContain("Read more");
     expect(html).toContain("<h3");
-    expect(html).toContain('<div class="bg-card shadow-card rounded-pill p-8 h-full flex flex-col">');
-  });
-});
-
-describe("StepList", () => {
-  it("renders an ordered list with numbered items", () => {
-    const html = renderToStaticMarkup(
-      <StepList heading="Steps" steps={[{ title: "One", text: "a" }, { title: "Two", text: "b" }]} />,
-    );
-    expect(html).toContain("<ol");
-    expect(html.match(/<li/g)).toHaveLength(2);
-    expect(html).toContain(">1</span>");
-    expect(html).toContain(">2</span>");
+    expect(html).toContain("rounded-[12px]");
   });
 });
 

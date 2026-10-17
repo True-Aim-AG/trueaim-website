@@ -8,13 +8,16 @@ export { FeatureCards, type FeatureCard } from "./FeatureCards";
 export { KeyFacts, type KeyFact } from "./KeyFacts";
 export { LogoStrip, type StripLogo } from "./LogoStrip";
 export { SplitText, type SplitImage } from "./SplitText";
-export { StepList, type Step } from "./StepList";
 export { ComparisonTable, type ComparisonRow } from "./ComparisonTable";
 export { FaqBlock } from "./FaqBlock";
 export { FaqSection } from "./FaqSection";
-export { PageHero, type HeroButton } from "./PageHero";
+export { PageHero, type HeroButton, type HeroTexture } from "./PageHero";
 export { RelatedLinks, type RelatedLink } from "./RelatedLinks";
+export { SectionHead } from "./SectionHead";
+export { TextSection } from "./TextSection";
+export { FigureSection } from "./FigureSection";
 export { Summary } from "./Summary";
+export { CARD, CARD_HOVER, SCENE_CARD, SCENE_CARD_HERO, SECTION, SECTION_LILAC, SECTION_TIGHT } from "./surface";
 export {
   breadcrumbListSchema,
   faqPageSchema,

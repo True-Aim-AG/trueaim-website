@@ -3,16 +3,19 @@ import {
   FaqSection,
   PageHero,
   RelatedLinks,
+  SECTION,
   type CtaButton,
   type FaqItem,
   type HeroButton,
+  type HeroTexture,
   type RelatedLink,
 } from "@/components/content";
 
 /**
- * Product page template: the hero (H1, summary, buttons, optional visual),
- * the page's own sections as children, then the FAQ, the related links and
- * the closing band. Every string arrives from messages/en/products.json.
+ * Product page template: the hero (H1, summary, buttons, the product scene on
+ * a brand texture), the page's own sections as children, then the FAQ, the
+ * related links and the closing band. Every string arrives from
+ * messages/en/products.json.
  */
 export function ProductTemplate({
   hero,
@@ -21,7 +24,7 @@ export function ProductTemplate({
   related,
   cta,
 }: {
-  hero: { title: string; summary: string; buttons: HeroButton[]; visual?: React.ReactNode };
+  hero: { title: string; summary: string; buttons: HeroButton[]; visual?: React.ReactNode; texture?: HeroTexture };
   children: React.ReactNode;
   faq: { heading: string; items: FaqItem[] };
   related: { heading: string; links: RelatedLink[] };
@@ -29,11 +32,17 @@ export function ProductTemplate({
 }) {
   return (
     <>
-      <PageHero title={hero.title} summary={hero.summary} buttons={hero.buttons} visual={hero.visual} />
+      <PageHero
+        title={hero.title}
+        summary={hero.summary}
+        buttons={hero.buttons}
+        visual={hero.visual}
+        texture={hero.texture}
+      />
       {children}
       <FaqSection heading={faq.heading} faqs={faq.items} />
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className={SECTION}>
+        <div className="mx-auto max-w-7xl">
           <RelatedLinks heading={related.heading} links={related.links} />
         </div>
       </section>

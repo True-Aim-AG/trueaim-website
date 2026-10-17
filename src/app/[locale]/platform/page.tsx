@@ -7,10 +7,11 @@ import {
   FeatureCards,
   PageHero,
   RelatedLinks,
+  SECTION,
   SplitText,
   type FaqItem,
 } from "@/components/content";
-import { ModulesDiagram } from "@/components/products";
+import { ModulesDiagram, OutcomesScene } from "@/components/products";
 import { products } from "@/data/products";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -51,6 +52,14 @@ export default async function PlatformPage({ params }: { params: Promise<{ local
         title={t("hero.title")}
         summary={t("hero.summary")}
         buttons={[{ label: t("hero.ctaDemo"), href: "/contact" }]}
+        texture={{ name: "circ" }}
+        visual={
+          <OutcomesScene
+            alt={t("hero.scene.alt")}
+            items={outcomes.map((outcome) => ({ icon: outcome.icon, title: t(`hero.scene.${outcome.key}`) }))}
+            hero
+          />
+        }
       />
       <FeatureCards
         heading={t("outcomes.heading")}
@@ -89,8 +98,8 @@ export default async function PlatformPage({ params }: { params: Promise<{ local
         lilac
       />
       <FaqSection heading={t("faq.heading")} faqs={faqs} />
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className={SECTION}>
+        <div className="mx-auto max-w-7xl">
           <RelatedLinks
             heading={t("related.heading")}
             links={products.map((product) => ({
