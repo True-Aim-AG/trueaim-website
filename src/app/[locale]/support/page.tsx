@@ -15,7 +15,7 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
         <p className="mt-6 text-sm text-muted"><strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}</p>
       </PageHero>
       <section className={SECTION}>
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl [&>div>section:first-child>h2]:mt-0">
 
           <div>
             <section>

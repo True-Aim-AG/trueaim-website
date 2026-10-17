@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
+import { SECTION } from "@/components/content";
 import {
   FileText,
   Link2,
@@ -40,7 +41,7 @@ export async function DecisionDossier({ variant = "full" }: DecisionDossierProps
   }));
   if (variant === "teaser") {
     return (
-      <section className="py-20 px-6">
+      <section className={SECTION}>
         <div className="max-w-7xl mx-auto">
           <MotionDiv
             initial={{ opacity: 0, y: 30 }}
@@ -112,23 +113,23 @@ export async function DecisionDossier({ variant = "full" }: DecisionDossierProps
 
   // Full variant for technology page
   return (
-    <section id="decision-dossier" className="py-20 px-6">
+    <section id="decision-dossier" className={SECTION}>
       <div className="max-w-7xl mx-auto">
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease }}
-          className="text-center mb-12"
+          className="max-w-3xl mb-12"
         >
-          <Eyebrow className="mb-4 inline-flex items-center gap-2 justify-center">
+          <Eyebrow className="mb-4 inline-flex items-center gap-2">
             <BookOpen className="w-4 h-4" strokeWidth={1.5} />
             {t("fullBadge")}
           </Eyebrow>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-strong mb-4">
             {t("fullTitle")}
           </h2>
-          <p className="text-lg text-body max-w-3xl mx-auto">
+          <p className="text-lg text-body">
             {t("fullDescription")}
           </p>
         </MotionDiv>

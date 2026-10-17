@@ -11,14 +11,21 @@ export const CARD = "rounded-[12px] bg-card shadow-[0_0_0_1px_rgba(44,43,42,.06)
 export const CARD_HOVER =
   "transition-[box-shadow,transform] duration-300 ease-brand hover:-translate-y-[3px] hover:shadow-[0_0_0_1px_rgba(81,81,219,.28),0_14px_28px_-12px_rgba(44,43,42,.18)] focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_var(--focus-ring)]";
 
+/**
+ * Side padding that lines section content up with the nav, hero and footer:
+ * 24px, or on screens wider than 1280px + 48px, whatever centres a 1232px
+ * column (the nav's 1280px box less its own 24px padding each side).
+ */
+export const GUTTER = "px-[max(1.5rem,calc((100%-77rem)/2))]";
+
 /** A plain section: a hairline on top when it follows another plain section. */
-export const SECTION = "sec px-6 py-20 md:py-[120px] [.sec+&]:border-t [.sec+&]:border-hairline";
+export const SECTION = "sec px-[max(1.5rem,calc((100%-77rem)/2))] py-20 md:py-[120px] [.sec+&]:border-t [.sec+&]:border-hairline";
 
 /** A short section (key facts, logos, callouts). */
-export const SECTION_TIGHT = "sec px-6 py-14 md:py-20 [.sec+&]:border-t [.sec+&]:border-hairline";
+export const SECTION_TIGHT = "sec px-[max(1.5rem,calc((100%-77rem)/2))] py-14 md:py-20 [.sec+&]:border-t [.sec+&]:border-hairline";
 
 /** A lilac section carries no hairline of its own. */
-export const SECTION_LILAC = "sec px-6 py-20 md:py-[120px] bg-lilac";
+export const SECTION_LILAC = "sec px-[max(1.5rem,calc((100%-77rem)/2))] py-20 md:py-[120px] bg-lilac";
 
 /** Product-scene chrome: the rounded card the prototype draws its screens in. */
 export const SCENE_CARD =

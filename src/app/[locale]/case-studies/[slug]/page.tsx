@@ -111,7 +111,7 @@ export default function CaseStudyPage() {
 
       {/* Metrics Grid */}
       <section className={SECTION}>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -141,7 +141,7 @@ export default function CaseStudyPage() {
 
       {/* Content */}
       <section className={SECTION_LILAC}>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-12">
@@ -235,7 +235,7 @@ export default function CaseStudyPage() {
 
       {/* Navigation */}
       <section className={SECTION}>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center">
             {prevStudy ? (
               <Link

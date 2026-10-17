@@ -53,7 +53,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-3xl"
           >
             <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-6">
               {t("problem.heading")}
@@ -76,7 +76,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="max-w-3xl mb-16"
           >
             <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-4">
               {t("architecture.heading")}
@@ -192,13 +192,13 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="max-w-3xl mb-12"
           >
             <Eyebrow className="mb-4">{t("control.badge")}</Eyebrow>
             <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-4">
               {t("control.heading")}
             </h2>
-            <p className="text-lg text-body max-w-3xl mx-auto">
+            <p className="text-lg text-body">
               {t("control.subtitle")}
             </p>
           </MotionDiv>
@@ -244,13 +244,13 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
 
       {/* Comparison Table */}
       <section className={SECTION_LILAC}>
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="max-w-3xl mb-12"
           >
             <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-4">
               {t("comparison.heading")}
@@ -295,7 +295,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
 
       {/* Research Partnership */}
       <section className={SECTION}>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

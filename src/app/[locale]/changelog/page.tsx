@@ -108,7 +108,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
         <p className="mt-6 text-sm text-muted"><strong className="text-strong">Last updated:</strong> {LAST_UPDATED}</p>
       </PageHero>
       <section className={SECTION}>
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl [&>div>section:first-child>h2]:mt-0">
 
           <div>
             <p className="text-body leading-[1.6]">

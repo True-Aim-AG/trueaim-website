@@ -153,7 +153,7 @@ export default function VehicleWarrantyCaseStudy() {
 
       {/* Metrics Grid */}
       <section className={SECTION}>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -182,7 +182,7 @@ export default function VehicleWarrantyCaseStudy() {
 
       {/* === FULL ARTICLE CONTENT === */}
       <section className={SECTION_LILAC}>
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-8">
             {/* Main Content */}
             <article className="space-y-16 max-w-3xl">
@@ -1059,7 +1059,7 @@ export default function VehicleWarrantyCaseStudy() {
 
       {/* Navigation */}
       <section className={SECTION}>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center">
             {prevStudy ? (
               <Link

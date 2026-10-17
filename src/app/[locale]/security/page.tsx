@@ -15,7 +15,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
         <p className="mt-6 text-sm text-muted"><strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}</p>
       </PageHero>
       <section className={SECTION}>
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl [&>div>section:first-child>h2]:mt-0">
 
           <div className="bg-lilac rounded-[12px] px-8 py-6 mb-8">
             <p className="text-body leading-[1.6]">
