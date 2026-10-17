@@ -58,7 +58,8 @@ export function PageHero({
           {eyebrow && (
             <p className="mb-5 font-body text-[14px] font-medium uppercase tracking-[0.16em] text-accent">{eyebrow}</p>
           )}
-          <h1 className="font-display text-[34px] font-semibold leading-[1.05] text-strong text-balance sm:text-[40px] lg:text-[54px] lg:leading-none">
+          {/* Set like every other title on the site (SectionHead), one step larger. */}
+          <h1 className="font-display text-[34px] font-bold leading-[1.15] text-strong text-balance md:text-[40px] lg:text-[48px]">
             {title}
           </h1>
           {summary && (
