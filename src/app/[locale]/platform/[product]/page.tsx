@@ -73,8 +73,8 @@ const textures: Record<Product["key"], HeroTexture> = {
   otus: { name: "glass", position: "12% 88%" },
 };
 
-/** Backgrounds alternate down each page; the FAQ takes the tone after the last section here. */
-const faqTone: Record<Product["key"], Tone> = {
+/** Backgrounds alternate down each page; the links block takes the tone after the last section here, the FAQ the other. */
+const nextTone: Record<Product["key"], Tone> = {
   claimsDecisioning: "white",
   invoiceBenchmarking: "tint",
   damageReporting: "tint",
@@ -253,7 +253,7 @@ export default async function ProductPage({ params }: Props) {
         faq={{ heading: faqHeading, items: faqs }}
         related={{ heading: t("common.relatedHeading"), links: related }}
         cta={{ heading: t(`${key}.cta.heading`), lede: t(`${key}.cta.lede`), buttons: ctaButtons }}
-        faqTone={faqTone[key]}
+        nextTone={nextTone[key]}
       >
         {sections(product, t)}
       </ProductTemplate>

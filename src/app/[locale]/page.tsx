@@ -12,7 +12,6 @@ import {
   type Award,
 } from "@/components/content";
 import { ClaimScene, productIcons, type ClaimSceneData } from "@/components/products";
-import { solutions } from "@/data/solutions";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageLocales } from "@/i18n/page-locales";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -116,16 +115,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           description: t(`related.${page.key}Text`),
           href: href(page.href),
           icon: page.icon,
-        }))}
-      />
-      <RelatedLinks
-        heading={t("solutions.heading")}
-        tone="tint"
-        links={solutions.map((solution) => ({
-          title: t(`solutions.${solution.key}`),
-          description: t(`solutions.${solution.key}Text`),
-          href: `/en/solutions/${solution.segment}/`,
-          icon: solution.icon,
         }))}
       />
       <CtaBand heading={t("cta.heading")} lede={t("cta.lede")} buttons={[{ label: t("cta.button"), href: "/contact" }]} />
