@@ -197,6 +197,23 @@
           ]
         }
       },
+      "benefits": {
+        "heading": "What this means for your team",
+        "items": [
+          {
+            "title": "Administration time removed",
+            "text": "Claims are captured, read and filed as they arrive, so your team no longer re-keys details or chases documents."
+          },
+          {
+            "title": "Consistent decisions",
+            "text": "The same facts lead to the same answer, whoever reviews the claim."
+          },
+          {
+            "title": "One record for every party",
+            "text": "Your client, the insurer and the repairer all work from the same claim record, so everyone sees the same status."
+          }
+        ]
+      },
       "faq": [
         {
           "question": "Does True Aim replace the insurer's decision?",
@@ -277,27 +294,6 @@
             "text": "A client's audit question takes minutes, not a project."
           }
         ]
-      },
-      "insurers": {
-        "heading": "How your insurers benefit",
-        "paragraphs": [
-          "Every insurer you serve receives the same standard of work, and can see it for themselves."
-        ],
-        "items": [
-          {
-            "title": "Consistent decisions",
-            "text": "The same facts lead to the same answer, whichever adjuster took the claim."
-          },
-          {
-            "title": "A record they can audit",
-            "text": "Every decision with its clause, its evidence and its author, exported in one click."
-          },
-          {
-            "title": "A lower cost per claim",
-            "text": "Invoices are benchmarked and overcharging is challenged before payment."
-          }
-        ],
-        "imageAlt": "A blue glass cube"
       },
       "faq": [
         {
@@ -395,19 +391,13 @@
         ]
       },
       "story": {
-        "heading": "How NSA Garantie checks motor warranty claims",
+        "heading": "How this works in practice",
         "caseStudy": {
           "cap": "Case study",
           "title": "Motor warranty claims checked line by line against the policy",
           "text": "Five documents per claim, in up to three languages. Every line is now checked against the warranty terms, with the clause behind each decision.",
           "link": "Read the case study",
           "logoAlt": "NSA Garantie"
-        },
-        "start": {
-          "cap": "Your first outcome",
-          "title": "Where to start",
-          "text": "Claims Decisioning, with Invoice Benchmarking for labour times and parts.",
-          "link": "Explore Claims Decisioning"
         }
       },
       "quote": {
@@ -498,9 +488,7 @@
       },
       "team": {
         "heading": "What this means for your team",
-        "paragraphs": [
-          "True Aim adds the decision to your product and leaves the experience to you."
-        ],
+        "paragraphs": [],
         "items": [
           {
             "title": "Works alongside your product",
@@ -511,7 +499,7 @@
             "text": "Policy wording, an industry catalogue or a client's own rules."
           },
           {
-            "title": "A record you can pass on",
+            "title": "A full record, at the click of a button",
             "text": "Every decision carries its rule version, its reasoning and its author."
           }
         ],

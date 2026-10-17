@@ -25,15 +25,17 @@ const TEXTURES: Record<CoverTexture["name"], string> = {
 };
 
 /**
- * Two linked cards, each topped by a brand-texture cover with the hexagon mark
- * and, for a customer story, the customer's logo on a white plate.
+ * Linked cards, each topped by a brand-texture cover with the hexagon mark
+ * and, for a customer story, the customer's logo on a white plate. Two cards
+ * sit under the heading; a single card sits to the right of it.
  */
 export function CoverCards({ heading, items, tone = "white" }: { heading: string; items: CoverCard[]; tone?: Tone }) {
+  const single = items.length === 1;
   return (
     <section className={section(tone)}>
-      <div className="mx-auto max-w-7xl">
-        <SectionHead heading={heading} />
-        <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2">
+      <div className={cn("mx-auto max-w-7xl", single && "grid items-center gap-x-[29px] md:grid-cols-2")}>
+        <SectionHead heading={heading} className={cn(single && "md:mb-0")} />
+        <ul className={cn("grid grid-cols-1 gap-[29px]", !single && "md:grid-cols-2")}>
           {items.map((item, index) => (
             <li key={item.title}>
               <Reveal delay={index * 0.1} className="h-full">

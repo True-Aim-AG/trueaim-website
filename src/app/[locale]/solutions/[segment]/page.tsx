@@ -51,6 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 /** Brand icons for each page's benefit cards, in the order of the copy (V5). */
 const icons: Partial<Record<Solution["key"], BrandIconName[]>> = {
   insurers: ["human-review", "decision", "traceability", "data", "ingestion", "match"],
+  brokers: ["ingestion", "decision", "structure"],
   tpas: ["learning-loop", "rules", "traceability"],
   warranty: ["decision", "quality", "human-review"],
 };
@@ -75,8 +76,8 @@ const textures: Record<Solution["key"], HeroTexture> = {
 /** Backgrounds alternate down each page; the FAQ takes the tone after the page's last section. */
 const faqTone: Record<Solution["key"], Tone> = {
   insurers: "white",
-  brokers: "tint",
-  tpas: "tint",
+  brokers: "white",
+  tpas: "white",
   warranty: "tint",
   claimsTech: "white",
 };
@@ -142,21 +143,17 @@ function sections(solution: Solution, t: Translate) {
         </>
       );
     case "brokers":
-      return helpCards("white");
+      return (
+        <>
+          {benefits("white")}
+          {helpCards("tint")}
+        </>
+      );
     case "tpas":
       return (
         <>
           {benefits("white")}
-          <SplitText
-            heading={t(`${key}.insurers.heading`)}
-            paragraphs={t.raw(`${key}.insurers.paragraphs`) as string[]}
-            image={{ src: "/brand/3d/glass-box.webp", alt: t(`${key}.insurers.imageAlt`), width: 940, height: 900 }}
-            imageSide="left"
-            tone="tint"
-          >
-            <Points items={t.raw(`${key}.insurers.items`) as Point[]} />
-          </SplitText>
-          {helpCards("white")}
+          {helpCards("tint")}
         </>
       );
     case "warranty":
@@ -175,14 +172,6 @@ function sections(solution: Solution, t: Translate) {
                 linkLabel: t(`${key}.story.caseStudy.link`),
                 cover: { name: "glass", position: "12% 88%", size: "190%" },
                 logo: { src: "/partners/nsa-garantie.webp", alt: t(`${key}.story.caseStudy.logoAlt`), width: 600, height: 191 },
-              },
-              {
-                cap: t(`${key}.story.start.cap`),
-                title: t(`${key}.story.start.title`),
-                text: t(`${key}.story.start.text`),
-                href: "/platform/claims-decisioning",
-                linkLabel: t(`${key}.story.start.link`),
-                cover: { name: "circ", position: "95% 30%", size: "190%" },
               },
             ]}
           />
