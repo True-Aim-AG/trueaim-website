@@ -8,11 +8,13 @@ import {
   CtaBand,
   FaqSection,
   FeatureCards,
+  Points,
   PageHero,
   Quote,
   SplitText,
   type FaqItem,
   type FeatureCard,
+  type Point,
   type HeroTexture,
   type Tone,
 } from "@/components/content";
@@ -33,7 +35,6 @@ import { pageMetadata } from "@/lib/seo/metadata";
 
 type Props = { params: Promise<{ locale: string; segment: string }> };
 type Translate = Awaited<ReturnType<typeof getTranslations<"solutionPages">>>;
-type Point = { title: string; text: string };
 
 export const dynamicParams = false;
 
@@ -95,20 +96,6 @@ function visual(solution: Solution, t: Translate) {
     case "claimsTech":
       return <RecordScene data={t.raw(scene) as RecordSceneData} hero />;
   }
-}
-
-/** Short titled points under a split section's paragraphs. */
-function Points({ items }: { items: Point[] }) {
-  return (
-    <ul className="mt-8 space-y-5 border-l-2 border-ta-blue-200 pl-6">
-      {items.map((item) => (
-        <li key={item.title}>
-          <p className="font-display text-[19px] font-semibold leading-[1.3] text-strong">{item.title}</p>
-          <p className="mt-1 text-[16px] leading-[1.55] text-muted">{item.text}</p>
-        </li>
-      ))}
-    </ul>
-  );
 }
 
 function sections(solution: Solution, t: Translate) {

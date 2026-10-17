@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { Shield } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   Awards,
@@ -98,13 +98,18 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         image={{ src: "/brand/3d/lock.webp", alt: t("compliance.imageAlt"), width: 420, height: 420 }}
         tone="tint"
       >
-        <ul className="mt-8 flex flex-wrap items-center gap-[18px]">
-          <li>
-            <Image src="/badges/iso-27001.svg" alt={t("compliance.badgeIso")} width={120} height={120} className="h-[104px] w-auto" />
-          </li>
-          <li>
-            <Image src="/badges/soc-2-type-2.svg" alt={t("compliance.badgeSoc")} width={120} height={120} className="h-[104px] w-auto" />
-          </li>
+        <ul className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-5">
+          {[t("compliance.badgeIso"), t("compliance.badgeSoc")].map((name) => (
+            <li key={name} className="flex items-center gap-4">
+              <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-page text-accent shadow-[0_0_0_1px_rgba(44,43,42,.06)]">
+                <Shield strokeWidth={1.5} className="h-7 w-7" aria-hidden />
+              </span>
+              <span>
+                <span className="block text-[12px] font-medium uppercase tracking-[0.14em] text-accent">{t("compliance.badgeStatus")}</span>
+                <span className="mt-1 block font-display text-[17px] font-semibold leading-[1.35] text-strong">{name}</span>
+              </span>
+            </li>
+          ))}
         </ul>
       </SplitText>
       <RelatedLinks

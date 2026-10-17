@@ -646,19 +646,19 @@
         "heading": "From the first photo\nto a full report",
         "items": [
           {
-            "title": "1. The claim comes in",
+            "title": "The claim comes in",
             "text": "By WhatsApp, email, web form or phone. Missing items are flagged while the customer is still there."
           },
           {
-            "title": "2. The damage is read",
+            "title": "The damage is read",
             "text": "Type of damage, affected area and materials are read from the photographs and priced by region."
           },
           {
-            "title": "3. The work is scoped",
+            "title": "The work is scoped",
             "text": "Every trade needed, from drying and plastering to roofing and glazing, in the order the work must run."
           },
           {
-            "title": "4. Trades are co‑ordinated",
+            "title": "Trades are co‑ordinated",
             "text": "Scoped requests go to the trades you choose. The quotes that come back are checked against the benchmark."
           }
         ]
@@ -685,60 +685,6 @@
         "heading": "See a damage report built from your own photographs",
         "lede": "Book a demo and bring a recent claim.",
         "buttonDemo": "Book a demo"
-      },
-      "scope": {
-        "heading": "The scope of work, in the order the work must run",
-        "scene": {
-          "alt": "The scope of work for a water damage claim: four trades in sequence, each with its task, the days it needs and the state of its quote",
-          "title": "Scope of work",
-          "subtitle": "Claim 62850, water damage, kitchen",
-          "columns": {
-            "trade": "Trade and task",
-            "schedule": "Sequence",
-            "quote": "Quote"
-          },
-          "dayLabel": "days",
-          "totalDays": 10,
-          "rows": [
-            {
-              "trade": "Drying",
-              "task": "Dehumidifiers and air movers",
-              "start": 0,
-              "days": 5,
-              "status": "approved",
-              "quote": "Checked against the benchmark"
-            },
-            {
-              "trade": "Flooring",
-              "task": "Remove and relay laminate, 14 m²",
-              "start": 5,
-              "days": 2,
-              "status": "approved",
-              "quote": "Checked against the benchmark"
-            },
-            {
-              "trade": "Plastering",
-              "task": "Skirting boards, 9 m",
-              "start": 7,
-              "days": 1,
-              "status": "referred",
-              "quote": "Requested, due Friday"
-            },
-            {
-              "trade": "Painting",
-              "task": "Repaint wall, 12 m²",
-              "start": 8,
-              "days": 2,
-              "status": "referred",
-              "quote": "Requested"
-            }
-          ],
-          "footer": {
-            "label": "Estimate",
-            "value": "2'450",
-            "note": "Reserve set at first notification"
-          }
-        }
       }
     },
     "otus": {
@@ -846,7 +792,8 @@
             "title": "Working in your systems",
             "text": "It reads from and acts in your claim system and document store."
           }
-        ]
+        ],
+        "imageAlt": "The True Aim symbol in glass and metal"
       },
       "faqHeading": "Questions about Otus",
       "faq": [

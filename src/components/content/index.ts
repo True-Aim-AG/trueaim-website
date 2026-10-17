@@ -12,6 +12,7 @@ export { LogoStrip, type StripLogo } from "./LogoStrip";
 export { LogoMarquee } from "./LogoMarquee";
 export { Awards, type Award } from "./Awards";
 export { Reveal } from "./Reveal";
+export { Points, type Point } from "./Points";
 export { SplitText, type SplitImage } from "./SplitText";
 export { ComparisonTable, type ComparisonRow } from "./ComparisonTable";
 export { FaqBlock } from "./FaqBlock";

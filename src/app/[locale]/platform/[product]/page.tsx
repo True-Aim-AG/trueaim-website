@@ -7,11 +7,13 @@ import {
   FeatureCards,
   FigureSection,
   KeyFacts,
+  Points,
   SplitText,
   type FaqItem,
   type FeatureCard,
   type HeroTexture,
   type KeyFact,
+  type Point,
   type Tone,
 } from "@/components/content";
 import {
@@ -22,7 +24,6 @@ import {
   OtusPrompts,
   RecordScene,
   ReportScene,
-  ScopeScene,
   productIcons,
   type ClaimSceneData,
   type FlowSceneData,
@@ -31,7 +32,6 @@ import {
   type OtusPrompt,
   type RecordSceneData,
   type ReportSceneData,
-  type ScopeSceneData,
 } from "@/components/products";
 import type { BrandIconName } from "@/components/brand/BrandIcon";
 import { PageSeo } from "@/components/seo/PageSeo";
@@ -62,7 +62,6 @@ const icons: Record<string, BrandIconName[]> = {
   invoiceFeatures: ["data", "structured-data", "match", "document", "control", "learning-loop"],
   damageSteps: ["ingestion", "extraction", "process", "match"],
   otusKeys: ["workflow", "claim", "human-review"],
-  otusFeatures: ["control", "document", "process", "decision", "human-review", "match", "extraction", "data"],
 };
 
 /** The brand texture and crop behind each hero, as the prototype assigns them. */
@@ -77,17 +76,10 @@ const textures: Record<Product["key"], HeroTexture> = {
 const nextTone: Record<Product["key"], Tone> = {
   claimsDecisioning: "tint",
   invoiceBenchmarking: "tint",
-  damageReporting: "white",
+  damageReporting: "tint",
   otus: "white",
 };
 
-/** "4. Trades are co-ordinated" becomes a number and a title, so the number sits left of all the text. */
-function numbered(items: Omit<FeatureCard, "icon">[]): Omit<FeatureCard, "icon">[] {
-  return items.map((item) => {
-    const match = item.title.match(/^(\d+)\.\s+(.*)$/);
-    return match ? { ...item, number: match[1], title: match[2] } : item;
-  });
-}
 
 function withIcons(items: Omit<FeatureCard, "icon">[], names: BrandIconName[]): FeatureCard[] {
   return items.map((item, index) => ({ ...item, icon: names[index] }));
@@ -161,16 +153,16 @@ function sections(product: Product, t: Translate) {
             image={{ src: "/brand/3d/objects-01.webp", alt: t(`${key}.unchecked.imageAlt`), width: 560, height: 420 }}
             tone="tint"
           />
+          <FigureSection heading={t(`${key}.lineBench.heading`)} tone="white">
+            <LineBenchScene data={t.raw(`${key}.lineBench.scene`) as LineBenchSceneData} />
+          </FigureSection>
           <SplitText
             cap={t(`${key}.benchmark.cap`)}
             heading={t(`${key}.benchmark.heading`)}
             paragraphs={t.raw(`${key}.benchmark.paragraphs`) as string[]}
             image={{ src: "/brand/3d/render-05.webp", alt: t(`${key}.benchmark.imageAlt`), width: 560, height: 560 }}
-            tone="white"
+            tone="tint"
           />
-          <FigureSection heading={t(`${key}.lineBench.heading`)} tone="tint">
-            <LineBenchScene data={t.raw(`${key}.lineBench.scene`) as LineBenchSceneData} />
-          </FigureSection>
           <FeatureCards
             heading={t(`${key}.features.heading`)}
             items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], icons.invoiceFeatures)}
@@ -180,28 +172,25 @@ function sections(product: Product, t: Translate) {
       );
     case "damageReporting":
       return (
-        <>
-          <FeatureCards
-            heading={t(`${key}.steps.heading`)}
-            columns={4}
-            items={withIcons(numbered(t.raw(`${key}.steps.items`) as FeatureCard[]), icons.damageSteps)}
-            tone="white"
-          />
-          <FigureSection heading={t(`${key}.scope.heading`)} tone="tint">
-            <ScopeScene data={t.raw(`${key}.scope.scene`) as ScopeSceneData} />
-          </FigureSection>
-        </>
+        <FeatureCards
+          heading={t(`${key}.steps.heading`)}
+          columns={4}
+          items={withIcons(t.raw(`${key}.steps.items`) as FeatureCard[], icons.damageSteps)}
+          tone="white"
+        />
       );
     case "otus":
       return (
         <>
           <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} icons={icons.otusKeys} tone="white" />
-          <FeatureCards
+          <SplitText
             heading={t(`${key}.features.heading`)}
-            columns={4}
-            items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], icons.otusFeatures)}
+            paragraphs={[]}
+            image={{ src: "/brand/3d/symbol.webp", alt: t(`${key}.features.imageAlt`), width: 420, height: 236 }}
             tone="tint"
-          />
+          >
+            <Points items={t.raw(`${key}.features.items`) as Point[]} />
+          </SplitText>
         </>
       );
   }
