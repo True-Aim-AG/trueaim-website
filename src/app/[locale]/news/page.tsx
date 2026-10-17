@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { GridPattern } from "@/components/brand/GridPattern";
-import { Summary } from "@/components/content";
+import { CARD, CARD_HOVER, PageHero, SECTION } from "@/components/content";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
+import { cn } from "@/lib/utils";
 import { newsItems } from "./items";
 
 const PATH = "/news";
@@ -20,40 +20,34 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
   setRequestLocale(locale);
   const t = await getTranslations("news");
   return (
-    <div className="min-h-screen">
+    <>
       <PageSeo locale={locale} path={PATH} template="collection" />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
-        <div className="relative max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-12">
-          <h1 className="font-display text-[40px] font-bold leading-[1.05] text-strong sm:text-[48px] lg:text-[54px] mb-6">
-            {t("index.title")}
-          </h1>
-          <Summary>{t("index.summary")}</Summary>
-        </div>
-      </section>
+      <PageHero title={t("index.title")} summary={t("index.summary")} texture={{ name: "glass", position: "88% 78%" }} />
 
-      {/* Items */}
-      <section className="py-12 px-6">
-        <div className="max-w-4xl mx-auto space-y-6">
-          {newsItems.map((item) => (
-            <Link key={item.slug} href={`/news/${item.slug}`} className="block group">
-              <article className="bg-card shadow-card rounded-pill p-8 transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch">
-                <time dateTime={item.datePublished} className="text-caption-sm text-subtle">
-                  {t(`items.${item.key}.displayDate`)}
-                </time>
-                <h2 className="font-display text-2xl font-bold text-strong mt-3 mb-3">{t(`items.${item.key}.title`)}</h2>
-                <p className="text-body leading-[1.6] mb-4">{t(`items.${item.key}.excerpt`)}</p>
-                <span className="inline-flex items-center gap-2 text-link font-medium">
-                  {t("index.readMore")}
-                  <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
-                </span>
-              </article>
-            </Link>
-          ))}
+      <section className={SECTION}>
+        <div className="mx-auto max-w-7xl">
+          <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3">
+            {newsItems.map((item) => (
+              <li key={item.slug}>
+                <Link href={`/news/${item.slug}`} className={cn(CARD, CARD_HOVER, "flex h-full flex-col gap-4 p-8")}>
+                  <time dateTime={item.datePublished} className="text-[12px] font-medium uppercase tracking-[0.14em] text-accent">
+                    {t(`items.${item.key}.displayDate`)}
+                  </time>
+                  <h2 className="font-display text-[20px] font-semibold leading-[1.3] tracking-[0.01em] text-strong">
+                    {t(`items.${item.key}.title`)}
+                  </h2>
+                  <p className="text-[15px] leading-[1.55] text-muted">{t(`items.${item.key}.excerpt`)}</p>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-medium text-accent">
+                    {t("index.readMore")}
+                    <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
-    </div>
+    </>
   );
 }

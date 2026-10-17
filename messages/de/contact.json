@@ -1,8 +1,7 @@
 {
   "contact": {
     "hero": {
-      "title": "Request a demo",
-      "summary": "Tell True Aim what you would like to see. The team replies within one business day with a time, and the demo runs on your own invoices, claims or damage reports, so you see the finished outcome on your work, not a sample."
+      "title": "Request a demo"
     },
     "form": {
       "heading": "We'll come to you.",
@@ -16,7 +15,7 @@
       "leadSource": "How did you hear about us?",
       "claimsVolume": "Annual claims volume",
       "message": "Anything you would like us to know?",
-      "consent": "I agree that True Aim may contact me about this request.",
+      "consent": "I agree that True Aim may contact me about this request. See our <privacy>privacy policy</privacy>.",
       "required": "*",
       "optional": "(optional)",
       "selectCountry": "Select a country",
@@ -73,17 +72,16 @@
       },
       "submit": "Request a demo",
       "submitting": "Sending",
-      "responseTime": "True Aim usually replies within one business day.",
+      "responseTime": "We usually reply within one business day.",
       "errorGeneric": "Something went wrong. Please try again."
     },
     "success": {
       "heading": "Thank you",
-      "message": "True Aim has your request and will usually reply within one business day.",
+      "message": "We have your request and will reply within one business day.",
       "submitAnother": "Send another request"
     },
-    "sidebar": {
-      "heading": "Prefer email?",
-      "emailUs": "Email us",
+    "aside": {
+      "email": "Prefer email? Write to",
       "emailAddress": "info@trueaim.ai"
     }
   }

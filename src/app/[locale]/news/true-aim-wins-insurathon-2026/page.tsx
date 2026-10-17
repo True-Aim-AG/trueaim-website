@@ -11,33 +11,35 @@ export default async function InsurathonNewsPage({ params }: { params: Promise<{
   const t = await getTranslations("news");
   const key = `items.${item.key}` as const;
   return (
-    <div className="min-h-screen">
-      <article className="max-w-4xl mx-auto px-6 pt-16 md:pt-24 pb-20">
-        <time dateTime={item.datePublished} className="text-caption-sm text-subtle">
-          {t(`${key}.displayDate`)}
-        </time>
-        <h1 className="font-display text-[40px] font-bold leading-[1.05] text-strong sm:text-[48px] lg:text-[54px] mt-4 mb-8">
-          {t(`${key}.title`)}
-        </h1>
-        <div className="space-y-5 text-lg text-body leading-[1.6]">
-          <p>{t(`${key}.p1`)}</p>
-          <p>{t(`${key}.p2`)}</p>
+    <article className="px-6 pb-20 pt-16 md:pb-[120px] md:pt-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="max-w-[74ch]">
+          <time dateTime={item.datePublished} className="font-body text-[14px] font-medium uppercase tracking-[0.16em] text-accent">
+            {t(`${key}.displayDate`)}
+          </time>
+          <h1 className="mt-5 font-display text-[34px] font-semibold leading-[1.05] text-strong text-balance sm:text-[40px] lg:text-[54px] lg:leading-none">
+            {t(`${key}.title`)}
+          </h1>
+          <div className="mt-8 space-y-6 text-[18px] leading-[30px] text-body">
+            <p>{t(`${key}.p1`)}</p>
+            <p>{t(`${key}.p2`)}</p>
+          </div>
+
+          <h2 className="mt-14 font-display text-[24px] font-bold leading-[1.2] text-strong">{t(`${key}.sourceHeading`)}</h2>
+          <p className="mt-3 text-[18px] leading-[30px] text-body">
+            <a href={t(`${key}.sourceUrl`)} target="_blank" rel="noopener noreferrer" className="text-link hover:underline">
+              {t(`${key}.sourceLabel`)}
+            </a>
+          </p>
+
+          <p className="mt-14">
+            <Link href="/news" className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline">
+              <ArrowLeft className="h-4 w-4" strokeWidth={1.5} />
+              {t(`${key}.backToNews`)}
+            </Link>
+          </p>
         </div>
-
-        <h2 className="font-display text-xl font-semibold text-strong mt-12 mb-3">{t(`${key}.sourceHeading`)}</h2>
-        <p className="text-body">
-          <a href={t(`${key}.sourceUrl`)} target="_blank" rel="noopener noreferrer" className="text-link hover:underline">
-            {t(`${key}.sourceLabel`)}
-          </a>
-        </p>
-
-        <p className="mt-12">
-          <Link href="/news" className="inline-flex items-center gap-2 text-link font-medium hover:underline">
-            <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
-            {t(`${key}.backToNews`)}
-          </Link>
-        </p>
-      </article>
-    </div>
+      </div>
+    </article>
   );
 }

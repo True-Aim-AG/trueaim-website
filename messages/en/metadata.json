@@ -69,11 +69,11 @@
     },
     "/trust": {
       "title": "Trust Centre: ISO 27001, SOC 2, GDPR, FADP, DORA | True Aim",
-      "description": "True Aim is certified to ISO 27001 and SOC 2 Type 2 and aligned with the GDPR, the Swiss FADP and DORA. Every claims decision is recorded with the reasoning behind it.",
+      "description": "True Aim is certified to ISO 27001 and SOC 2 Type II and aligned with the GDPR, the Swiss FADP and DORA. Every claims decision is recorded with the reasoning behind it.",
       "h1": "Security and compliance, built in from day one",
       "breadcrumb": "Trust",
       "ogTitle": "Security and compliance at True Aim",
-      "ogDescription": "True Aim is certified to ISO 27001 and SOC 2 Type 2 and aligned with the GDPR, the Swiss FADP and DORA. Every claims decision is recorded with the reasoning behind it.",
+      "ogDescription": "True Aim is certified to ISO 27001 and SOC 2 Type II and aligned with the GDPR, the Swiss FADP and DORA. Every claims decision is recorded with the reasoning behind it.",
       "updated": "2026-10-17"
     },
     "/about": {
@@ -87,11 +87,11 @@
     },
     "/contact": {
       "title": "Request a Demo | True Aim",
-      "description": "Request a demo of True Aim on your own invoices, claims or damage reports. The team replies within one business day.",
+      "description": "Request a demo of True Aim on your own invoices, claims or damage reports. We reply within one business day.",
       "h1": "Request a demo",
       "breadcrumb": "Contact",
       "ogTitle": "Request a demo of True Aim",
-      "ogDescription": "Request a demo of True Aim on your own invoices, claims or damage reports. The team replies within one business day.",
+      "ogDescription": "Request a demo of True Aim on your own invoices, claims or damage reports. We reply within one business day.",
       "updated": "2026-10-17"
     },
     "/impact-estimator": {

@@ -1,8 +1,10 @@
 {
   "caseStudies": {
     "hero": {
+      "eyebrow": "Case studies",
       "title": "Real numbers in practice",
-      "summary": "How claims teams use True Aim on their own claims, and what changed. Each case study names the volume, the languages, the time to results and the accuracy measured, and says how each figure was measured."
+      "summary": "How claims teams use True Aim on their own claims, and what changed. Each study names the volume, the languages, the time to results and the accuracy, and how each figure was measured.",
+      "button": "Request a demo"
     },
     "featured": {
       "badge": "Case study",
@@ -10,7 +12,7 @@
     },
     "cta": {
       "heading": "See True Aim on your own claims",
-      "description": "Bring a batch of your closed claims and the demo shows the finished outcome on them.",
+      "description": "Bring your own invoices, claims or damage reports and the demo shows the finished outcome.",
       "bookDemo": "Request a demo"
     },
     "detail": {

@@ -1,8 +1,10 @@
 {
   "caseStudies": {
     "hero": {
+      "eyebrow": "Case studies",
       "title": "Real numbers in practice",
-      "summary": "How claims teams use True Aim on their own claims, and what changed. Each case study names the volume, the languages, the time to results and the accuracy measured, and says how each figure was measured."
+      "summary": "How claims teams use True Aim on their own claims, and what changed. Each study names the volume, the languages, the time to results and the accuracy, and how each figure was measured.",
+      "button": "Request a demo"
     },
     "featured": {
       "badge": "Case study",
@@ -10,22 +12,22 @@
     },
     "cta": {
       "heading": "See True Aim on your own claims",
-      "description": "Bring a batch of your closed claims and the demo shows the finished outcome on them.",
+      "description": "Bring your own invoices, claims or damage reports and the demo shows the finished outcome.",
       "bookDemo": "Request a demo"
     },
     "detail": {
-      "allCaseStudies": "All Case Studies",
-      "notFound": "Case Study Not Found",
+      "allCaseStudies": "All case studies",
+      "notFound": "Case study not found",
       "viewAll": "View all case studies",
-      "theChallenge": "The Challenge",
-      "theSolution": "The Solution",
-      "keyHighlights": "Key Highlights",
-      "getSimilarResults": "Get Similar Results",
+      "theChallenge": "The challenge",
+      "theSolution": "The solution",
+      "keyHighlights": "Key highlights",
+      "getSimilarResults": "Request a demo",
       "previous": "Previous",
       "next": "Next",
-      "ctaHeading": "Ready to Achieve Similar Results?",
-      "ctaDescription": "Start with a pilot on your closed claims and see the impact for yourself.",
-      "requestPilot": "Book a Demo"
+      "ctaHeading": "See True Aim on your own claims",
+      "ctaDescription": "Bring your own invoices, claims or damage reports and the demo shows the finished outcome.",
+      "requestPilot": "Request a demo"
     },
     "vehicleWarranty": {
       "heroTitle": "Automating Vehicle Warranty Claims with AI Document Intelligence",
@@ -50,7 +52,7 @@
       "failReasons": {
         "genericOcr": {
           "title": "Generic OCR pipelines lack domain depth",
-          "desc": "Swiss repair invoices contain line items in German with part numbers, labor codes, carry-forward subtotals across pages. Standard OCR extracts text but not structured data with coverage implications."
+          "desc": "Swiss repair invoices contain line items in German with part numbers, labour codes, carry-forward subtotals across pages. Standard OCR extracts text but not structured data with coverage implications."
         },
         "singleModel": {
           "title": "Single-model approaches plateau early",
@@ -76,7 +78,7 @@
       },
       "multiTier": {
         "heading": "Coverage Analysis: Multi-Tier Matching",
-        "intro": "Each line item goes through a multi-tier matching pipeline, prioritizing deterministic approaches before falling back to AI:",
+        "intro": "Each line item goes through a multi-tier matching pipeline, prioritising deterministic approaches before falling back to AI:",
         "deterministic": {
           "name": "Deterministic Rules",
           "confidence": "Highest",
@@ -85,7 +87,7 @@
         "keyword": {
           "name": "Keyword Matching",
           "confidence": "High",
-          "desc": "Maps multilingual repair terms to component categories with synonym normalization."
+          "desc": "Maps multilingual repair terms to component categories with synonym normalisation."
         },
         "aiFallback": {
           "name": "AI Fallback",
@@ -120,7 +122,7 @@
           "calcDeductibles": "Calculating deductibles",
           "computeFinal": "Computing final payout"
         },
-        "payoutNote": "Each insurer has specific rules for deductibles, reimbursement tiers, and parts/labor splits that must be matched exactly."
+        "payoutNote": "Each insurer has specific rules for deductibles, reimbursement tiers, and parts/labour splits that must be matched exactly."
       },
       "journey": {
         "heading": "The Implementation Journey: From 18% to 98%",
@@ -139,23 +141,23 @@
         "day5_8": {
           "label": "Days 5-8",
           "title": "Iteration and Refinement",
-          "desc": "60+ evaluation iterations solving increasingly subtle problems: substring matching bugs, labor demotion logic, and part-number normalization across OCR outputs."
+          "desc": "60+ evaluation iterations solving increasingly subtle problems: substring matching bugs, labour demotion logic, and part-number normalisation across OCR outputs."
         },
         "holdout": {
           "label": "Holdout Test",
           "title": "Unseen Data Validation",
           "desc": "30 previously unseen claims revealed failure modes the development set did not cover: causal exclusion clauses, missing document scenarios and sub-component interpretation gaps.",
-          "honest": "The holdout gap (98% vs 77%) is the honest measure of generalization."
+          "honest": "The holdout gap (98% vs 77%) is the honest measure of generalisation."
         }
       },
       "iterationDetails": {
         "title": "Detailed iteration fixes (88% to 98%)",
         "substringBug": "Cross-category substring matching bug:",
         "substringBugDesc": "An EGR valve synonym (\"abgasrueckfuehrung\") contained the substring \"asr\" (anti-slip regulation). The system declared the EGR valve covered under brakes. Fix: symmetric guard requiring exact match when either term is 3 characters or fewer.",
-        "laborDemotion": "Labor demotion over-aggression:",
-        "laborDemotionDesc": "When a part was covered, the associated installation labor should also be covered. Fix: labor promotion logic that inherits coverage from the parent repair.",
-        "partNumber": "Part-number normalization:",
-        "partNumberDesc": "A Mercedes part number was not matched due to spacing differences in OCR extraction. Fix: normalize all part numbers by stripping spaces and special characters before lookup."
+        "laborDemotion": "Labour demotion over-aggression:",
+        "laborDemotionDesc": "When a part was covered, the associated installation labour should also be covered. Fix: labour promotion logic that inherits coverage from the parent repair.",
+        "partNumber": "Part-number normalisation:",
+        "partNumberDesc": "A Mercedes part number was not matched due to spacing differences in OCR extraction. Fix: normalise all part numbers by stripping spaces and special characters before lookup."
       },
       "holdoutAnalysis": {
         "title": "Holdout failure analysis",
@@ -236,7 +238,7 @@
         },
         "lesson2": {
           "title": "The accuracy curve has diminishing returns.",
-          "desc": "18% to 76% took 3 days. 76% to 98% took 4 more days. The holdout gap (98% vs 77%) confirmed that real-world generalization requires significantly more data."
+          "desc": "18% to 76% took 3 days. 76% to 98% took 4 more days. The holdout gap (98% vs 77%) confirmed that real-world generalisation requires significantly more data."
         },
         "lesson3": {
           "title": "The payout formula is harder than the AI.",
@@ -256,8 +258,8 @@
         "conclusion": "The goal is not to replace adjusters but to give them back their time on the 76% of denials that are straightforward lookups, so they can focus their expertise on the 24% that actually require judgment."
       },
       "sidebar": {
-        "keyHighlights": "Key Highlights",
-        "productsUsed": "Products Used",
+        "keyHighlights": "Key highlights",
+        "productsUsed": "Products used",
         "capabilities": "Capabilities",
         "capabilityList": {
           "docProcessing": "Document Processing",
@@ -266,7 +268,7 @@
           "fullProvenance": "Full Provenance",
           "auditReady": "Audit Ready"
         },
-        "getSimilarResults": "Get Similar Results"
+        "getSimilarResults": "Request a demo"
       }
     }
   }

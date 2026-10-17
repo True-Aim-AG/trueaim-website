@@ -1,11 +1,9 @@
-import { Link } from "@/i18n/navigation";
-import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { ArrowRight, Linkedin } from "lucide-react";
-import { ButtonLink } from "@/components/brand/Button";
-import { GridPattern } from "@/components/brand/GridPattern";
-import { StatusPill } from "@/components/brand/StatusPill";
-import { Summary } from "@/components/content";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { BadgeRow, CARD, CARD_HOVER, CtaBand, PageHero, SECTION, SECTION_LILAC, SectionHead } from "@/components/content";
+import { cn } from "@/lib/utils";
 
 const team = ["reuben", "frederic", "alin", "kai", "henrique", "arnaud"] as const;
 
@@ -30,31 +28,45 @@ const adviserImages: Record<(typeof advisers)[number], string | undefined> = {
   dandolo: "/team/dandolo-flumini.jpg",
 };
 
-const partners = ["zhaw", "innosuisse", "yarowa", "swissInsurtechHub"] as const;
+// Yarowa first: the hero names it as the company True Aim was spun out of.
+const partners = ["yarowa", "zhaw", "innosuisse", "swissInsurtechHub"] as const;
 
-const partnerMeta: Record<(typeof partners)[number], { image: string; link: string }> = {
-  zhaw: { image: "/partners/zhaw.webp", link: "/partners/zhaw" },
-  innosuisse: { image: "/partners/innosuisse.webp", link: "/partners/innosuisse" },
-  yarowa: { image: "/partners/yarowa.png", link: "/partners/yarowa" },
-  swissInsurtechHub: { image: "/partners/swiss-insurtech-hub.png", link: "/partners/swissinsurtechhub" },
+const partnerMeta: Record<(typeof partners)[number], { image: string; width: number; height: number; link: string }> = {
+  yarowa: { image: "/partners/yarowa.png", width: 978, height: 273, link: "/partners/yarowa" },
+  zhaw: { image: "/partners/zhaw.webp", width: 160, height: 168, link: "/partners/zhaw" },
+  innosuisse: { image: "/partners/innosuisse.webp", width: 720, height: 487, link: "/partners/innosuisse" },
+  swissInsurtechHub: { image: "/partners/swiss-insurtech-hub.png", width: 376, height: 193, link: "/partners/swissinsurtechhub" },
 };
 
 const awards = ["insurathon", "swissInnovation", "leuchtturm", "ikn"] as const;
 
-const awardMeta: Record<(typeof awards)[number], { image: string; width: number; height: number; darkBg?: boolean }> = {
-  insurathon: { image: "/awards/norton-rose-fulbright.svg", width: 380, height: 42 },
-  swissInnovation: { image: "/awards/swiss-innovation.png", width: 80, height: 80 },
-  leuchtturm: { image: "/awards/digitaler-leuchtturm.png", width: 80, height: 80, darkBg: true },
-  ikn: { image: "/awards/ikn-italy.png", width: 80, height: 80 },
+const awardMeta: Record<(typeof awards)[number], { image: string; width: number; height: number; renderHeight: number; darkPlate?: boolean }> = {
+  insurathon: { image: "/awards/norton-rose-fulbright.svg", width: 380, height: 42, renderHeight: 30 },
+  swissInnovation: { image: "/awards/swiss-innovation.png", width: 171, height: 169, renderHeight: 72 },
+  leuchtturm: { image: "/awards/digitaler-leuchtturm.png", width: 198, height: 132, renderHeight: 56, darkPlate: true },
+  ikn: { image: "/awards/ikn-italy.png", width: 167, height: 151, renderHeight: 72 },
 };
 
-function Initials({ name }: { name: string }) {
+/** A photo, or the initials on a lilac disc where there is no photo yet. */
+function Portrait({ src, name }: { src?: string; name: string }) {
+  if (src) {
+    return <Image src={src} alt={name} width={96} height={96} className="h-24 w-24 rounded-full bg-lilac object-cover" />;
+  }
+  const initials = name
+    .split(" ")
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("");
   return (
-    <div className="w-24 h-24 rounded-full bg-lilac flex items-center justify-center" aria-hidden="true">
-      <span className="text-lg font-bold text-accent">{name.split(" ").map((part) => part[0]).join("")}</span>
+    <div aria-hidden="true" className="grid h-24 w-24 place-items-center rounded-full bg-lilac font-display text-[28px] font-semibold text-ta-blue-700">
+      {initials}
     </div>
   );
 }
+
+const PERSON = cn(CARD, "flex h-full flex-col gap-2.5 p-7");
+const ROLE = "text-[12px] font-medium uppercase tracking-[0.1em] text-accent";
+const NAME = "font-display text-[20px] font-semibold leading-[1.3] text-strong";
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -62,64 +74,65 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const t = await getTranslations("company");
 
   return (
-    <div className="min-h-screen">
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
-        <div className="relative max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-12">
-          <h1 className="font-display text-[40px] font-bold leading-[1.05] text-strong sm:text-[48px] lg:text-[54px] mb-6">
-            {t("hero.title")}
-          </h1>
-          <Summary>{t("hero.p1")}</Summary>
-          <div className="max-w-3xl mt-6 space-y-4 text-body leading-[1.6]">
-            <p>{t("hero.p2")}</p>
-            <p className="font-semibold text-strong">{t("hero.p3")}</p>
-            <p>{t("hero.p4")}</p>
-            <p>{t("hero.p5")}</p>
+    <>
+      <PageHero
+        title={t("hero.title")}
+        summary={t("hero.p1")}
+        buttons={[{ label: t("hero.button"), href: "/contact" }]}
+        texture={{ name: "circ" }}
+        visual={
+          <Image
+            src="/brand/3d/symbol.webp"
+            alt={t("hero.imageAlt")}
+            width={420}
+            height={236}
+            className="mx-auto h-auto w-full max-w-[420px] drop-shadow-[0_30px_40px_rgba(44,43,42,.22)]"
+            priority
+          />
+        }
+      >
+        <div className="mt-5 max-w-[54ch] space-y-5 text-[18px] leading-[1.6] text-body md:text-[20px] md:leading-[1.5]">
+          <p>{t("hero.p2")}</p>
+          <p className="font-semibold text-strong">{t("hero.p3")}</p>
+          <p>{t("hero.p4")}</p>
+          <p>{t("hero.p5")}</p>
+        </div>
+      </PageHero>
+
+      {/* Mission */}
+      <section className={SECTION}>
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-[70ch]">
+            <p className="mb-4 font-body text-[14px] font-medium uppercase tracking-[0.16em] text-accent">{t("mission.label")}</p>
+            <p className="font-display text-[26px] font-semibold leading-[1.3] text-strong text-balance md:text-[32px]">
+              {t("mission.text")}
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Mission */}
-      <section className="bg-lilac py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-caption-sm text-subtle mb-6">{t("mission.label")}</p>
-          <blockquote className="font-display text-2xl md:text-3xl font-semibold leading-[1.3] text-strong">
-            {t("mission.text")}
-          </blockquote>
-        </div>
-      </section>
-
       {/* Team */}
-      <section id="team" className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-10">
-            {t("team.heading")}
-          </h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section id="team" className={SECTION}>
+        <div className="mx-auto max-w-7xl">
+          <SectionHead heading={t("team.heading")} className="mb-10" />
+          <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3">
             {team.map((key) => {
               const name = t(`team.members.${key}.name`);
               const meta = teamMeta[key];
               return (
-                <li key={key} className="rounded-pill bg-card shadow-card p-8">
-                  {meta.image ? (
-                    <div className="w-24 h-24 rounded-full overflow-hidden ring-1 ring-line">
-                      <Image src={meta.image} alt={name} width={96} height={96} className="w-full h-full object-cover" />
-                    </div>
-                  ) : (
-                    <Initials name={name} />
-                  )}
-                  <h3 className="font-display text-xl font-bold text-strong mt-6 mb-1">{name}</h3>
-                  <p className="text-accent font-medium mb-3">{t(`team.members.${key}.title`)}</p>
-                  <p className="text-body leading-[1.6]">{t(`team.members.${key}.bio`)}</p>
+                <li key={key} className={PERSON}>
+                  <Portrait src={meta.image} name={name} />
+                  <p className={cn(ROLE, "mt-2")}>{t(`team.members.${key}.title`)}</p>
+                  <h3 className={NAME}>{name}</h3>
+                  <p className="text-[15px] leading-[1.55] text-muted">{t(`team.members.${key}.bio`)}</p>
                   {meta.linkedin && (
                     <a
                       href={meta.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-4 inline-flex items-center gap-2 text-link hover:underline"
+                      className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-medium text-accent hover:underline"
                     >
-                      <Linkedin strokeWidth={1.5} className="w-5 h-5" />
+                      <Linkedin strokeWidth={1.5} className="h-4 w-4" />
                       {t("team.linkedin")}
                     </a>
                   )}
@@ -131,27 +144,18 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* Advisers */}
-      <section className="bg-lilac py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-10">
-            {t("advisers.heading")}
-          </h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className={SECTION_LILAC}>
+        <div className="mx-auto max-w-7xl">
+          <SectionHead heading={t("advisers.heading")} className="mb-10" />
+          <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3">
             {advisers.map((key) => {
               const name = t(`advisers.members.${key}.name`);
-              const image = adviserImages[key];
               return (
-                <li key={key} className="rounded-pill bg-card shadow-card p-6">
-                  {image ? (
-                    <div className="w-24 h-24 rounded-full overflow-hidden ring-1 ring-line">
-                      <Image src={image} alt={name} width={96} height={96} className="w-full h-full object-cover" />
-                    </div>
-                  ) : (
-                    <Initials name={name} />
-                  )}
-                  <h3 className="font-display text-lg font-bold text-strong mt-4 mb-1">{name}</h3>
-                  <p className="text-sm text-body">{t(`advisers.members.${key}.title`)}</p>
-                  <p className="text-sm text-muted mt-1">{t(`advisers.members.${key}.focus`)}</p>
+                <li key={key} className={PERSON}>
+                  <Portrait src={adviserImages[key]} name={name} />
+                  <h3 className={cn(NAME, "mt-2")}>{name}</h3>
+                  <p className="text-[14px] font-medium leading-[1.45] text-strong">{t(`advisers.members.${key}.title`)}</p>
+                  <p className="text-[15px] leading-[1.55] text-muted">{t(`advisers.members.${key}.focus`)}</p>
                 </li>
               );
             })}
@@ -160,51 +164,29 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* Partners */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-10">
-            {t("partners.heading")}
-          </h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {partners.map((key) => (
-              <li key={key} className="h-full">
-                <Link
-                  href={partnerMeta[key].link}
-                  className="block rounded-pill bg-card shadow-card p-8 h-full transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch"
-                >
-                  <div className="w-14 h-14 rounded-pill bg-ta-neutral-0 shadow-swatch flex items-center justify-center mb-6 p-2">
-                    <Image src={partnerMeta[key].image} alt={t(`partners.items.${key}.name`)} width={40} height={40} className="w-full h-full object-contain" />
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-strong mb-3">{t(`partners.items.${key}.name`)}</h3>
-                  <p className="text-body leading-[1.6]">{t(`partners.items.${key}.description`)}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Awards */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-10">
-            {t("awards.heading")}
-          </h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {awards.map((key) => {
-              const meta = awardMeta[key];
+      <section className={SECTION}>
+        <div className="mx-auto max-w-7xl">
+          <SectionHead heading={t("partners.heading")} className="mb-10" />
+          <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-4">
+            {partners.map((key) => {
+              const meta = partnerMeta[key];
               return (
-                <li key={key} className="rounded-pill bg-card shadow-card p-6 flex items-center gap-5">
-                  <div className={`flex-shrink-0 w-20 h-20 rounded-pill overflow-hidden flex items-center justify-center p-2 shadow-swatch ${meta.darkBg ? "bg-ta-charcoal" : "bg-ta-neutral-0"}`}>
-                    <Image src={meta.image} alt={t(`awards.items.${key}.alt`)} width={meta.width} height={meta.height} className="w-full h-full object-contain" />
-                  </div>
-                  <div className="min-w-0">
-                    <StatusPill tone="approved" emphasis="light" dot={false} size="sm">
-                      {t("awards.winner")}
-                    </StatusPill>
-                    <h3 className="font-display font-semibold text-strong mt-2">{t(`awards.items.${key}.title`)}</h3>
-                    <p className="text-sm text-muted mt-1">{t(`awards.items.${key}.body`)}</p>
-                  </div>
+                <li key={key}>
+                  <Link href={meta.link} className={cn(CARD, CARD_HOVER, "flex h-full flex-col gap-4 p-8")}>
+                    <Image
+                      src={meta.image}
+                      alt={t(`partners.items.${key}.name`)}
+                      width={meta.width}
+                      height={meta.height}
+                      className="h-11 w-auto max-w-[180px] self-start object-contain object-left"
+                    />
+                    <h3 className={NAME}>{t(`partners.items.${key}.name`)}</h3>
+                    <p className="text-[15px] leading-[1.55] text-muted">{t(`partners.items.${key}.description`)}</p>
+                    <span className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-medium text-accent">
+                      {t(`partners.items.${key}.more`)}
+                      <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden />
+                    </span>
+                  </Link>
                 </li>
               );
             })}
@@ -212,29 +194,30 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
+      <BadgeRow
+        heading={t("awards.heading")}
+        items={awards.map((key) => {
+          const meta = awardMeta[key];
+          return {
+            image: { src: meta.image, alt: t(`awards.items.${key}.alt`), width: meta.width, height: meta.height },
+            renderHeight: meta.renderHeight,
+            darkPlate: meta.darkPlate,
+            caption: t("awards.winner"),
+            title: t(`awards.items.${key}.title`),
+            text: t(`awards.items.${key}.body`),
+          };
+        })}
+      />
+
       {/* Location */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-6">
-            {t("location.heading")}
-          </h2>
-          <address className="not-italic text-body leading-[1.6]">{t("location.address")}</address>
+      <section className={SECTION}>
+        <div className="mx-auto max-w-7xl">
+          <SectionHead heading={t("location.heading")} className="mb-6" />
+          <address className="not-italic text-[18px] leading-[30px] text-body">{t("location.address")}</address>
         </div>
       </section>
 
-      {/* CTA */}
-      <section data-theme="dark" className="py-20 px-6 bg-page-tint">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-6">
-            {t("cta.heading")}
-          </h2>
-          <p className="text-lede text-body mb-10">{t("cta.description")}</p>
-          <ButtonLink href="/contact" variant="primary" size="lg">
-            {t("cta.button")}
-            <ArrowRight strokeWidth={1.5} className="w-5 h-5" />
-          </ButtonLink>
-        </div>
-      </section>
-    </div>
+      <CtaBand heading={t("cta.heading")} lede={t("cta.description")} buttons={[{ label: t("cta.button"), href: "/contact" }]} />
+    </>
   );
 }

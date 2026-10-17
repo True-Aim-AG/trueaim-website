@@ -1,13 +1,13 @@
-import { Link } from "@/i18n/navigation";
-import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ArrowRight, Building2, Clock } from "lucide-react";
-import { caseStudies } from "@/data/case-studies";
-import { ButtonLink } from "@/components/brand/Button";
-import { GridPattern } from "@/components/brand/GridPattern";
-import { Summary } from "@/components/content";
 import type { Metadata } from "next";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { CARD, CARD_HOVER, CtaBand, PageHero, SCENE_CARD_HERO, SECTION } from "@/components/content";
 import { PageSeo } from "@/components/seo/PageSeo";
+import { caseStudies, type CaseStudy } from "@/data/case-studies";
 import { pageMetadata } from "@/lib/seo/metadata";
+import { cn } from "@/lib/utils";
 
 // Only finished case studies are listed. The three studies still marked as
 // work in progress keep their URLs but are not shown here (Reuben, 5 Oct 2026).
@@ -18,91 +18,82 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMetadata(locale, "/case-studies");
 }
 
+/** The first study's figures as the hero graphic, in the prototype's results card. */
+function ResultsCard({ study }: { study: CaseStudy }) {
+  return (
+    <div className={cn(CARD, SCENE_CARD_HERO, "p-8")}>
+      <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-accent">{study.customer.name}</p>
+      <p className="mt-1 text-sm text-muted">{study.customer.industry}</p>
+      <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-6">
+        {study.metrics.map((metric) => (
+          <li key={metric.label}>
+            <p className="font-display text-[34px] font-semibold leading-[1.05] text-strong tabular-nums">{metric.value}</p>
+            <p className="mt-1.5 text-[14px] leading-[1.45] text-muted">
+              {metric.label}
+              {metric.improvement ? `, ${metric.improvement}` : ""}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default async function CaseStudiesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("caseStudies");
+  const featured = published[0];
   return (
-    <div className="min-h-screen">
+    <>
       <PageSeo locale={locale} path="/case-studies" template="collection" />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
-        <div className="relative max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-12">
-          <h1 className="font-display text-[40px] font-bold leading-[1.05] text-strong sm:text-[48px] lg:text-[54px] mb-6">
-            {t("hero.title")}
-          </h1>
-          <Summary>{t("hero.summary")}</Summary>
-        </div>
-      </section>
+      <PageHero
+        eyebrow={t("hero.eyebrow")}
+        title={t("hero.title")}
+        summary={t("hero.summary")}
+        buttons={[{ label: t("hero.button"), href: "/contact" }]}
+        texture={{ name: "glass", position: "100% 100%" }}
+        visual={featured ? <ResultsCard study={featured} /> : undefined}
+      />
 
-      {/* Case studies */}
-      <section className="py-12 px-6">
-        <div className="max-w-7xl mx-auto space-y-8">
-          {published.map((study) => (
-            <Link
-              key={study.slug}
-              href={`/case-studies/${study.slug}`}
-              className="block bg-card shadow-card rounded-pill p-8 md:p-10 group transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="icon-plate w-14 h-14">
-                      <Building2 className="w-7 h-7" strokeWidth={1.5} />
-                    </div>
-                    <div>
-                      <div className="font-medium text-strong text-lg">{study.customer.name}</div>
-                      <div className="text-sm text-muted">{study.customer.industry}</div>
-                    </div>
+      <section className={SECTION}>
+        <div className="mx-auto max-w-7xl">
+          <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3">
+            {published.map((study) => (
+              <li key={study.slug}>
+                <Link href={`/case-studies/${study.slug}`} className={cn(CARD, CARD_HOVER, "flex h-full flex-col overflow-hidden")}>
+                  <div
+                    className="relative h-40 bg-cover"
+                    style={{ backgroundImage: "url(/brand/textures/circular-light.webp)", backgroundPosition: "12% 88%" }}
+                  >
+                    {study.customer.logo && (
+                      <Image
+                        src={study.customer.logo}
+                        alt={study.customer.name}
+                        width={600}
+                        height={191}
+                        className="absolute bottom-6 left-7 h-9 w-auto rounded-[6px] bg-white/90 px-3 py-1.5"
+                      />
+                    )}
                   </div>
-
-                  <h2 className="font-display text-2xl md:text-3xl font-bold text-strong mb-4">{study.title}</h2>
-
-                  <p className="text-body leading-[1.6] mb-6">{study.challenge}</p>
-
-                  <div className="flex items-center gap-2 text-sm text-muted mb-6">
-                    <Clock className="w-4 h-4" strokeWidth={1.5} />
-                    {study.timeline}
+                  <div className="flex flex-1 flex-col gap-4 p-8">
+                    <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-accent">{study.customer.industry}</p>
+                    <h2 className="font-display text-[20px] font-semibold leading-[1.3] tracking-[0.01em] text-strong">{study.title}</h2>
+                    <p className="text-[15px] leading-[1.55] text-muted">{study.challenge}</p>
+                    <span className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-medium text-accent">
+                      {t("featured.readFullStudy")}
+                      <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden />
+                    </span>
                   </div>
-
-                  <span className="inline-flex items-center gap-2 text-link font-semibold text-lg">
-                    {t("featured.readFullStudy")}
-                    <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
-                  </span>
-                </div>
-
-                <div className="flex flex-col justify-center">
-                  <dl className="grid grid-cols-2 gap-4">
-                    {study.metrics.map((metric) => (
-                      <div key={metric.label} className="bg-surface-muted rounded-pill px-[29px] py-[27px] text-center">
-                        <dd className="text-kpi text-accent mb-1">{metric.value}</dd>
-                        <dt className="text-xs text-muted">{metric.label}</dt>
-                        {metric.improvement && <dd className="text-[10px] text-subtle mt-1">{metric.improvement}</dd>}
-                      </div>
-                    ))}
-                  </dl>
-                </div>
-              </div>
-            </Link>
-          ))}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      {/* CTA */}
-      <section data-theme="dark" className="py-20 px-6 bg-page-tint">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-strong mb-6">
-            {t("cta.heading")}
-          </h2>
-          <p className="text-lede text-body mb-10 max-w-2xl mx-auto">{t("cta.description")}</p>
-          <ButtonLink href="/contact" variant="primary" size="lg">
-            {t("cta.bookDemo")}
-            <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
-          </ButtonLink>
-        </div>
-      </section>
-    </div>
+      <CtaBand heading={t("cta.heading")} lede={t("cta.description")} buttons={[{ label: t("cta.bookDemo"), href: "/contact" }]} />
+    </>
   );
 }

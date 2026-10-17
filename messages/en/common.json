@@ -14,11 +14,11 @@
       "overview": "Platform overview",
       "overviewDesc": "The four modules and how they fit together",
       "claimsDecisioning": "Claims Decisioning",
-      "claimsDecisioningDesc": "Settled claims in minutes, not weeks",
+      "claimsDecisioningDesc": "The coverage check, from FNOL to settlement",
       "invoiceBenchmarking": "Invoice Benchmarking",
-      "invoiceBenchmarkingDesc": "Never overpay on an invoice again",
+      "invoiceBenchmarkingDesc": "Every invoice line checked against the benchmark",
       "damageReporting": "Damage Reporting",
-      "damageReportingDesc": "Completed damage reports in minutes",
+      "damageReportingDesc": "A priced estimate at first notification",
       "otus": "Otus",
       "otusDesc": "True Aim's claims specialist"
     },
@@ -30,16 +30,14 @@
       "news": "News",
       "newsDesc": "Announcements from True Aim",
       "impactEstimator": "Impact Estimator",
-      "impactEstimatorDesc": "What True Aim could save your team"
+      "impactEstimatorDesc": "The time and cost automation could give back"
     }
   },
   "footer": {
     "logoAlt": "True Aim logo",
-    "tagline": "Swiss Precision. Auditable AI.",
     "company": "Company",
     "resources": "Resources",
     "platform": "Platform",
-    "trust": "Trust",
     "trustCenter": "Trust Centre",
     "legal": "Legal",
     "about": "About",
@@ -63,17 +61,25 @@
     "aiTransparency": "AI transparency",
     "cookies": "Cookie policy",
     "paia": "PAIA manual",
-    "copyright": "© {year} True Aim AG. All rights reserved.",
-    "linkedin": "LinkedIn"
+    "copyright": "© {year} True Aim AG, Metallstrasse 9, 6300 Zug, Switzerland",
+    "linkedin": "LinkedIn",
+    "taglineLines": [
+      "Faster claims.",
+      "Smarter decisions.",
+      "Lower costs.",
+      "Auditable by design."
+    ],
+    "followLinkedin": "Follow us on LinkedIn",
+    "technology": "Technology"
   },
   "cookie": {
-    "title": "Cookie Preferences",
+    "title": "Cookie preferences",
     "description": "We use cookies to improve your experience. Essential cookies are always active. You can choose to enable analytics cookies to help us improve our website.",
     "learnMore": "Learn more",
-    "acceptAll": "Accept All",
+    "acceptAll": "Accept all",
     "decline": "Decline",
-    "managePreferences": "Manage Preferences",
-    "savePreferences": "Save Preferences",
+    "managePreferences": "Manage preferences",
+    "savePreferences": "Save preferences",
     "essential": "Essential",
     "essentialDesc": "Required for the website to function",
     "analytics": "Analytics",

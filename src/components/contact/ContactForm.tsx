@@ -2,13 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Mail, AlertCircle, ChevronDown } from "lucide-react";
-import { StatusPill } from "@/components/brand/StatusPill";
+import { AlertCircle, ChevronDown } from "lucide-react";
 import { Button } from "@/components/brand/Button";
+import { CARD } from "@/components/content/surface";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { hasAnalyticsConsent, pushDataLayer } from "@/lib/consent";
 import { getFirstTouch } from "@/lib/tracking/first-touch";
@@ -32,15 +32,15 @@ const countryKeys = [
   "italy", "netherlands", "belgium", "southAfrica", "spain", "unitedStates", "other",
 ] as const;
 
-// Interest options, sent as interest. The values match the HubSpot form's
-// options; product names are never translated.
+// Interest options, sent as interest, in the site's product order. The values
+// match the HubSpot form's options; product names are never translated.
 const interestKeys = [
-  "invoiceBenchmarking", "claimsDecisioning", "damageReporting", "otus", "other",
+  "claimsDecisioning", "invoiceBenchmarking", "damageReporting", "otus", "other",
 ] as const;
 
 const interestValues: Record<(typeof interestKeys)[number], string> = {
-  invoiceBenchmarking: "invoice_benchmarking",
   claimsDecisioning: "claims_decisioning",
+  invoiceBenchmarking: "invoice_benchmarking",
   damageReporting: "damage_reporting",
   otus: "otus",
   other: "other",
@@ -83,6 +83,22 @@ function createContactSchema(t: (key: string) => string) {
     message: z.string().optional(),
     consent: z.boolean().refine((val) => val === true, t("form.validation.consentRequired")),
   });
+}
+
+// Form controls as the prototype draws them: 8px corners on a neutral field.
+const LABEL = "mb-2 block text-sm font-medium text-strong";
+const FIELD = "w-full rounded-[8px] border border-line-strong bg-ta-neutral-50 px-3.5 py-3 text-base text-body";
+const SELECT = cn(FIELD, "appearance-none pr-12");
+const CHEVRON = "pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-subtle";
+
+function FieldError({ message }: { message?: string }) {
+  if (!message) return null;
+  return (
+    <p className="mt-1.5 flex items-center gap-1 text-sm text-denied-dark">
+      <AlertCircle strokeWidth={1.5} className="h-4 w-4" />
+      {message}
+    </p>
+  );
 }
 
 export function ContactForm() {
@@ -155,150 +171,78 @@ export function ContactForm() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-12">
-      {/* Form */}
-      <motion.div
-        initial={{ opacity: 0, x: -30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+    <div className="grid grid-cols-1 items-start gap-14 lg:grid-cols-[minmax(0,.8fr)_minmax(0,1.2fr)] lg:gap-20">
+      {/* The prototype's form grid: the title and the email line on the left, the form on the right. */}
+      <div>
+        <h2 className="font-display text-[30px] font-bold leading-[1.15] text-strong text-balance md:text-[40px]">
+          {t("form.heading")}
+        </h2>
+        <p className="mt-6 max-w-[42ch] text-[18px] leading-[30px] text-body">
+          {t("aside.email")}{" "}
+          <a href={`mailto:${t("aside.emailAddress")}`} className="font-medium text-accent hover:underline">
+            {t("aside.emailAddress")}
+          </a>
+        </p>
+      </div>
+
+      <div>
         {isSubmitted ? (
-          <div className="rounded-pill bg-card shadow-card p-12 text-center">
-            <StatusPill tone="approved" className="mb-6" />
-            <h2 className="font-display text-2xl font-bold text-strong mb-4">
-              {t("success.heading")}
-            </h2>
-            <p className="text-body mb-6">
-              {t("success.message")}
-            </p>
-            <button
-              onClick={() => setIsSubmitted(false)}
-              className="text-link font-medium hover:underline"
-            >
+          <div className={cn(CARD, "p-10")}>
+            <h3 className="font-display text-[22px] font-semibold leading-[1.3] text-strong">{t("success.heading")}</h3>
+            <p className="mt-3 text-body">{t("success.message")}</p>
+            <button type="button" onClick={() => setIsSubmitted(false)} className="mt-6 text-sm font-medium text-accent hover:underline">
               {t("success.submitAnother")}
             </button>
           </div>
         ) : (
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="rounded-pill bg-card shadow-card p-8"
-          >
-            <h2 className="font-display text-2xl font-bold text-strong mb-6">
-              {t("form.heading")}
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* First Name */}
+          <form onSubmit={handleSubmit(onSubmit)} className={cn(CARD, "p-8 md:p-10")}>
+            <div className="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="contact-firstName" className="block text-caption-sm text-subtle mb-2">
-                  {t("form.firstName")} <span className="normal-case tracking-normal">{t("form.required")}</span>
+                <label htmlFor="contact-firstName" className={LABEL}>
+                  {t("form.firstName")} <span aria-hidden="true">{t("form.required")}</span>
                 </label>
-                <input
-                  {...register("firstName")}
-                  id="contact-firstName"
-                  type="text"
-                  className="w-full px-6 py-3"
-                  placeholder={t("form.placeholders.firstName")}
-                />
-                {errors.firstName && (
-                  <p className="mt-1 text-sm text-denied-dark flex items-center gap-1">
-                    <AlertCircle strokeWidth={1.5} className="w-4 h-4" />
-                    {errors.firstName.message}
-                  </p>
-                )}
+                <input {...register("firstName")} id="contact-firstName" type="text" className={FIELD} placeholder={t("form.placeholders.firstName")} />
+                <FieldError message={errors.firstName?.message} />
               </div>
 
-              {/* Last Name */}
               <div>
-                <label htmlFor="contact-lastName" className="block text-caption-sm text-subtle mb-2">
-                  {t("form.lastName")} <span className="normal-case tracking-normal">{t("form.required")}</span>
+                <label htmlFor="contact-lastName" className={LABEL}>
+                  {t("form.lastName")} <span aria-hidden="true">{t("form.required")}</span>
                 </label>
-                <input
-                  {...register("lastName")}
-                  id="contact-lastName"
-                  type="text"
-                  className="w-full px-6 py-3"
-                  placeholder={t("form.placeholders.lastName")}
-                />
-                {errors.lastName && (
-                  <p className="mt-1 text-sm text-denied-dark flex items-center gap-1">
-                    <AlertCircle strokeWidth={1.5} className="w-4 h-4" />
-                    {errors.lastName.message}
-                  </p>
-                )}
+                <input {...register("lastName")} id="contact-lastName" type="text" className={FIELD} placeholder={t("form.placeholders.lastName")} />
+                <FieldError message={errors.lastName?.message} />
               </div>
 
-              {/* Email */}
               <div className="sm:col-span-2">
-                <label htmlFor="contact-email" className="block text-caption-sm text-subtle mb-2">
-                  {t("form.workEmail")} <span className="normal-case tracking-normal">{t("form.required")}</span>
+                <label htmlFor="contact-email" className={LABEL}>
+                  {t("form.workEmail")} <span aria-hidden="true">{t("form.required")}</span>
                 </label>
-                <input
-                  {...register("email")}
-                  id="contact-email"
-                  type="email"
-                  className="w-full px-6 py-3"
-                  placeholder={t("form.placeholders.email")}
-                />
-                {errors.email && (
-                  <p className="mt-1 text-sm text-denied-dark flex items-center gap-1">
-                    <AlertCircle strokeWidth={1.5} className="w-4 h-4" />
-                    {errors.email.message}
-                  </p>
-                )}
+                <input {...register("email")} id="contact-email" type="email" className={FIELD} placeholder={t("form.placeholders.email")} />
+                <FieldError message={errors.email?.message} />
               </div>
 
-              {/* Company */}
               <div>
-                <label htmlFor="contact-company" className="block text-caption-sm text-subtle mb-2">
-                  {t("form.company")} <span className="normal-case tracking-normal">{t("form.required")}</span>
+                <label htmlFor="contact-company" className={LABEL}>
+                  {t("form.company")} <span aria-hidden="true">{t("form.required")}</span>
                 </label>
-                <input
-                  {...register("company")}
-                  id="contact-company"
-                  type="text"
-                  className="w-full px-6 py-3"
-                  placeholder={t("form.placeholders.company")}
-                />
-                {errors.company && (
-                  <p className="mt-1 text-sm text-denied-dark flex items-center gap-1">
-                    <AlertCircle strokeWidth={1.5} className="w-4 h-4" />
-                    {errors.company.message}
-                  </p>
-                )}
+                <input {...register("company")} id="contact-company" type="text" className={FIELD} placeholder={t("form.placeholders.company")} />
+                <FieldError message={errors.company?.message} />
               </div>
 
-              {/* Job Title */}
               <div>
-                <label htmlFor="contact-jobTitle" className="block text-caption-sm text-subtle mb-2">
-                  {t("form.jobTitle")} <span className="normal-case tracking-normal">{t("form.required")}</span>
+                <label htmlFor="contact-jobTitle" className={LABEL}>
+                  {t("form.jobTitle")} <span aria-hidden="true">{t("form.required")}</span>
                 </label>
-                <input
-                  {...register("jobTitle")}
-                  id="contact-jobTitle"
-                  type="text"
-                  className="w-full px-6 py-3"
-                  placeholder={t("form.placeholders.jobTitle")}
-                />
-                {errors.jobTitle && (
-                  <p className="mt-1 text-sm text-denied-dark flex items-center gap-1">
-                    <AlertCircle strokeWidth={1.5} className="w-4 h-4" />
-                    {errors.jobTitle.message}
-                  </p>
-                )}
+                <input {...register("jobTitle")} id="contact-jobTitle" type="text" className={FIELD} placeholder={t("form.placeholders.jobTitle")} />
+                <FieldError message={errors.jobTitle?.message} />
               </div>
 
-              {/* Country */}
               <div>
-                <label htmlFor="contact-country" className="block text-caption-sm text-subtle mb-2">
-                  {t("form.country")} <span className="normal-case tracking-normal">{t("form.required")}</span>
+                <label htmlFor="contact-country" className={LABEL}>
+                  {t("form.country")} <span aria-hidden="true">{t("form.required")}</span>
                 </label>
                 <div className="relative">
-                  <select
-                    {...register("country")}
-                    id="contact-country"
-                    className="w-full px-6 py-3 pr-12 appearance-none"
-                  >
+                  <select {...register("country")} id="contact-country" className={SELECT}>
                     <option value="">{t("form.selectCountry")}</option>
                     {countryKeys.map((key) => (
                       <option key={key} value={t(`form.countries.${key}`)}>
@@ -306,27 +250,17 @@ export function ContactForm() {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown strokeWidth={1.5} className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-subtle pointer-events-none" />
+                  <ChevronDown strokeWidth={1.5} className={CHEVRON} />
                 </div>
-                {errors.country && (
-                  <p className="mt-1 text-sm text-denied-dark flex items-center gap-1">
-                    <AlertCircle strokeWidth={1.5} className="w-4 h-4" />
-                    {errors.country.message}
-                  </p>
-                )}
+                <FieldError message={errors.country?.message} />
               </div>
 
-              {/* Interest */}
               <div>
-                <label htmlFor="contact-interest" className="block text-caption-sm text-subtle mb-2">
-                  {t("form.interest")} <span className="normal-case tracking-normal">{t("form.required")}</span>
+                <label htmlFor="contact-interest" className={LABEL}>
+                  {t("form.interest")} <span aria-hidden="true">{t("form.required")}</span>
                 </label>
                 <div className="relative">
-                  <select
-                    {...register("interest")}
-                    id="contact-interest"
-                    className="w-full px-6 py-3 pr-12 appearance-none"
-                  >
+                  <select {...register("interest")} id="contact-interest" className={SELECT}>
                     <option value="">{t("form.selectInterest")}</option>
                     {interestKeys.map((key) => (
                       <option key={key} value={interestValues[key]}>
@@ -334,27 +268,17 @@ export function ContactForm() {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown strokeWidth={1.5} className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-subtle pointer-events-none" />
+                  <ChevronDown strokeWidth={1.5} className={CHEVRON} />
                 </div>
-                {errors.interest && (
-                  <p className="mt-1 text-sm text-denied-dark flex items-center gap-1">
-                    <AlertCircle strokeWidth={1.5} className="w-4 h-4" />
-                    {errors.interest.message}
-                  </p>
-                )}
+                <FieldError message={errors.interest?.message} />
               </div>
 
-              {/* How did you hear about us? */}
               <div className="sm:col-span-2">
-                <label htmlFor="contact-heard_about" className="block text-caption-sm text-subtle mb-2">
-                  {t("form.leadSource")} <span className="normal-case tracking-normal">{t("form.required")}</span>
+                <label htmlFor="contact-heard_about" className={LABEL}>
+                  {t("form.leadSource")} <span aria-hidden="true">{t("form.required")}</span>
                 </label>
                 <div className="relative">
-                  <select
-                    {...register("heard_about")}
-                    id="contact-heard_about"
-                    className="w-full px-6 py-3 pr-12 appearance-none"
-                  >
+                  <select {...register("heard_about")} id="contact-heard_about" className={SELECT}>
                     <option value="">{t("form.selectSource")}</option>
                     {heardAboutKeys.map((key) => (
                       <option key={key} value={heardAboutValues[key]}>
@@ -362,130 +286,74 @@ export function ContactForm() {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown strokeWidth={1.5} className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-subtle pointer-events-none" />
+                  <ChevronDown strokeWidth={1.5} className={CHEVRON} />
                 </div>
-                {errors.heard_about && (
-                  <p className="mt-1 text-sm text-denied-dark flex items-center gap-1">
-                    <AlertCircle strokeWidth={1.5} className="w-4 h-4" />
-                    {errors.heard_about.message}
-                  </p>
-                )}
+                <FieldError message={errors.heard_about?.message} />
               </div>
 
-              {/* Claims Volume */}
               <div className="sm:col-span-2">
-                <label htmlFor="contact-claimsVolume" className="block text-caption-sm text-subtle mb-2">
-                  {t("form.claimsVolume")} <span className="text-subtle normal-case tracking-normal">{t("form.optional")}</span>
+                <label htmlFor="contact-claimsVolume" className={LABEL}>
+                  {t("form.claimsVolume")} <span className="font-normal text-subtle">{t("form.optional")}</span>
                 </label>
-                <input
-                  {...register("claimsVolume")}
-                  id="contact-claimsVolume"
-                  type="text"
-                  className="w-full px-6 py-3"
-                  placeholder={t("form.placeholders.claimsVolume")}
-                />
+                <input {...register("claimsVolume")} id="contact-claimsVolume" type="text" className={FIELD} placeholder={t("form.placeholders.claimsVolume")} />
               </div>
 
-              {/* Message */}
               <div className="sm:col-span-2">
-                <label htmlFor="contact-message" className="block text-caption-sm text-subtle mb-2">
-                  {t("form.message")} <span className="text-subtle normal-case tracking-normal">{t("form.optional")}</span>
+                <label htmlFor="contact-message" className={LABEL}>
+                  {t("form.message")} <span className="font-normal text-subtle">{t("form.optional")}</span>
                 </label>
-                <textarea
-                  {...register("message")}
-                  id="contact-message"
-                  rows={4}
-                  className="w-full px-6 py-3 resize-none"
-                  placeholder={t("form.placeholders.message")}
-                />
+                <textarea {...register("message")} id="contact-message" rows={5} className={cn(FIELD, "resize-none")} placeholder={t("form.placeholders.message")} />
               </div>
 
               {/* Honeypot: off screen, out of the tab order and hidden from
                   assistive technology, so only bots fill it. */}
-              <div aria-hidden="true" className="absolute -left-[10000px] w-px h-px overflow-hidden">
+              <div aria-hidden="true" className="absolute -left-[10000px] h-px w-px overflow-hidden">
                 <input ref={honeypotRef} type="text" name="website" tabIndex={-1} autoComplete="off" defaultValue="" />
               </div>
 
-              {/* Consent */}
               <div className="sm:col-span-2">
-                <label className="flex items-start gap-3 cursor-pointer">
-                  <input
-                    {...register("consent")}
-                    type="checkbox"
-                    className="mt-1 w-5 h-5 cursor-pointer"
-                  />
-                  <span className="text-sm text-body">
-                    {t("form.consent")} <span className="text-subtle">{t("form.required")}</span>
+                <label className="flex cursor-pointer items-start gap-3">
+                  <input {...register("consent")} type="checkbox" className="mt-0.5 h-[18px] w-[18px] cursor-pointer" />
+                  <span className="text-sm leading-[1.5] text-body">
+                    {t.rich("form.consent", {
+                      privacy: (chunks) => (
+                        <Link href="/privacy" className="text-accent underline">
+                          {chunks}
+                        </Link>
+                      ),
+                    })}{" "}
+                    <span aria-hidden="true">{t("form.required")}</span>
                   </span>
                 </label>
-                {errors.consent && (
-                  <p className="mt-1 text-sm text-denied-dark flex items-center gap-1">
-                    <AlertCircle strokeWidth={1.5} className="w-4 h-4" />
-                    {errors.consent.message}
-                  </p>
-                )}
+                <FieldError message={errors.consent?.message} />
               </div>
 
-              {/* Error Message */}
               {submitError && (
                 <div className="sm:col-span-2">
-                  <div className="flex items-center gap-2 p-4 rounded-pill bg-denied-light text-denied-dark text-sm">
-                    <AlertCircle strokeWidth={1.5} className="w-5 h-5 flex-shrink-0" />
+                  <div className="flex items-center gap-2 rounded-[8px] bg-denied-light p-4 text-sm text-denied-dark">
+                    <AlertCircle strokeWidth={1.5} className="h-5 w-5 flex-shrink-0" />
                     {submitError}
                   </div>
                 </div>
               )}
 
-              {/* Submit */}
               <div className="sm:col-span-2">
-                <Button
-                  type="submit"
-                  variant="primary"
-                  size="lg"
-                  disabled={isSubmitting}
-                  className={cn("w-full", isSubmitting && "cursor-not-allowed")}
-                >
+                <Button type="submit" variant="primary" size="lg" disabled={isSubmitting} className={cn(isSubmitting && "cursor-not-allowed")}>
                   {isSubmitting ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-on-brand/30 border-t-on-brand rounded-full animate-spin" />
+                      <div className="h-5 w-5 animate-spin rounded-full border-2 border-on-brand/30 border-t-on-brand" />
                       {t("form.submitting")}
                     </>
                   ) : (
                     t("form.submit")
                   )}
                 </Button>
-                <p className="text-xs text-center text-muted mt-3">{t("form.responseTime")}</p>
+                <p className="mt-3.5 text-sm text-muted">{t("form.responseTime")}</p>
               </div>
             </div>
           </form>
         )}
-      </motion.div>
-
-      {/* Contact Info */}
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="space-y-8"
-      >
-        <div className="rounded-pill bg-card shadow-card p-8">
-          <h3 className="font-display text-xl font-bold text-strong mb-6">
-            {t("sidebar.heading")}
-          </h3>
-          <a
-            href="mailto:info@trueaim.ai"
-            className="flex items-center gap-4 p-4 rounded-pill bg-surface-muted transition-colors duration-150 ease-brand hover:bg-accent-soft"
-          >
-            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-pill bg-lilac text-accent">
-              <Mail strokeWidth={1.5} className="w-6 h-6" />
-            </div>
-            <div>
-              <p className="font-medium text-strong">{t("sidebar.emailUs")}</p>
-              <p className="text-body">{t("sidebar.emailAddress")}</p>
-            </div>
-          </a>
-        </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

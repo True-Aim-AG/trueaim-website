@@ -31,23 +31,24 @@ export interface CaseStudy {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "vehicle-warranty-claims",
-    title: "Vehicle Warranty Provider Achieves 98% Decision Accuracy in 7 Days",
+    title: "Motor warranty claims checked line by line against the policy",
     customer: {
-      name: "European Warranty Provider",
-      industry: "Vehicle Warranty Insurance",
+      name: "NSA Garantie",
+      industry: "Motor warranty",
       size: "",
-      isAnonymized: true,
+      logo: "/partners/nsa-garantie.webp",
+      isAnonymized: false,
     },
     challenge:
-      "Each warranty claim required more than 30 minutes of manual cross-referencing across 5 documents in 3 languages, with 14 distinct document types per workflow.",
+      "Five documents per claim, in up to three languages. Every line is now checked against the warranty terms, with the clause behind each decision.",
     solution:
       "Deployed the full True Aim platform for end-to-end claims automation. The document layer handles multilingual document processing and classification. Claims Decisioning combines deterministic rules with AI fallback for accurate coverage matching. The quality check provides assurance with full provenance tracking.",
     products: ["mira", "contextbuilder", "claimeval"],
     metrics: [
-      { label: "Decision Accuracy", value: "98%", improvement: "on development set" },
-      { label: "Time to Results", value: "7 days", improvement: "full pipeline live" },
-      { label: "No-LLM Resolution", value: "80-90%", improvement: "of line items" },
-      { label: "Languages", value: "3", improvement: "DE / FR / IT" },
+      { label: "Decision accuracy", value: "98%", improvement: "on the development set" },
+      { label: "Time to results", value: "7 days", improvement: "full pipeline live" },
+      { label: "Line items settled without a language model", value: "80-90%" },
+      { label: "Languages", value: "3", improvement: "German, French and Italian" },
     ],
     timeline: "7 days from baseline to 98% accuracy",
     highlights: [

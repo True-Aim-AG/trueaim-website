@@ -35,11 +35,9 @@
   },
   "footer": {
     "logoAlt": "Logo True Aim",
-    "tagline": "Precisione svizzera. IA verificabile.",
     "company": "Azienda",
     "resources": "Risorse",
     "platform": "Piattaforma",
-    "trust": "Fiducia",
     "trustCenter": "Trust Center",
     "legal": "Note legali",
     "about": "Chi siamo",
@@ -64,8 +62,16 @@
     "aiTransparency": "Trasparenza IA",
     "cookies": "Politica sui cookie",
     "paia": "Manuale PAIA",
-    "copyright": "© {year} True Aim AG. Tutti i diritti riservati.",
-    "linkedin": "LinkedIn"
+    "copyright": "© {year} True Aim AG, Metallstrasse 9, 6300 Zug, Switzerland",
+    "linkedin": "LinkedIn",
+    "taglineLines": [
+      "Faster claims.",
+      "Smarter decisions.",
+      "Lower costs.",
+      "Auditable by design."
+    ],
+    "followLinkedin": "Seguici su LinkedIn",
+    "technology": "Tecnologia"
   },
   "cookie": {
     "title": "Preferenze sui cookie",

@@ -2,15 +2,17 @@
   "technology": {
     "hero": {
       "title": "How True Aim reads a claim and decides it",
-      "summary": "True Aim separates reading from deciding. Language models read the documents, extract the facts and sort them. A deterministic decision engine then applies the policy wording and the cost rules, so the same claim always gets the same answer and every answer carries its reasoning. This page explains both layers and the controls around them."
+      "summary": "True Aim separates reading from deciding. Language models read the documents and extract the facts. A deterministic decision engine then applies the policy wording and the cost rules, so the same claim always gets the same answer and every answer carries its reasoning.",
+      "button": "Request a demo",
+      "imageAlt": "The True Aim glass box"
     },
     "problem": {
       "heading": "Why a language model alone cannot decide a claim",
       "p1": "Large language models are good at reading. They are also probabilistic: given the same input twice, they can produce different outputs, and they cannot explain a result in the terms a policy or a regulator uses.",
-      "p2": "A claims decision has to be the same tomorrow as today, and it has to say which clause, which figure and which rule led to it. True Aim therefore uses language models where reading is the task and fixed rules where deciding is the task."
+      "p2": "A claims decision must be the same tomorrow as today, and it must name the clause, the figure and the rule behind it. So True Aim uses language models to read and fixed rules to decide."
     },
     "architecture": {
-      "heading": "Two layers, each doing what it does best",
+      "heading": "The two layers",
       "reading": {
         "title": "Reading layer",
         "subtitle": "Language models and extraction",
@@ -39,9 +41,8 @@
       }
     },
     "control": {
-      "eyebrow": "Control",
       "heading": "What keeps a person in control",
-      "subtitle": "Five controls sit around the two layers. Each one exists because a regulated business stays accountable for every decision made in its name.",
+      "subtitle": "Five controls sit around the two layers. A person must always be able to understand, verify and override the result, because a regulated business stays accountable for every decision made in its name.",
       "features": {
         "replayLogs": {
           "title": "Replay",
@@ -63,12 +64,10 @@
           "title": "Confidence scoring",
           "description": "Each extracted field carries a confidence score, so the adjuster sees where the system is sure and where a check adds value."
         }
-      },
-      "philosophyHeading": "The rule behind the controls",
-      "philosophy": "Automation does the reading, the checking and the record-keeping. A person must always be able to understand, verify and override the result, because that is what a regulated business is accountable for."
+      }
     },
     "comparison": {
-      "heading": "What changes compared with a language model alone",
+      "heading": "Compared with a language model alone",
       "caption": "How True Aim's two-layer design compares with a language model used on its own",
       "columns": {
         "capability": "Capability",
@@ -76,10 +75,26 @@
         "trueaim": "True Aim"
       },
       "rows": {
-        "consistency": { "capability": "Decision consistency", "traditional": "Varies between runs", "trueaim": "Deterministic" },
-        "auditTrail": { "capability": "Audit trail", "traditional": "Reconstructed after the fact", "trueaim": "Produced with the decision" },
-        "explainability": { "capability": "Explainability", "traditional": "The model said so", "trueaim": "Traceable to the clause" },
-        "oversight": { "capability": "Human oversight", "traditional": "Added around the model", "trueaim": "Built into the workflow" }
+        "consistency": {
+          "capability": "Decision consistency",
+          "traditional": "Varies between runs",
+          "trueaim": "Deterministic"
+        },
+        "auditTrail": {
+          "capability": "Audit trail",
+          "traditional": "Reconstructed after the fact",
+          "trueaim": "Produced with the decision"
+        },
+        "explainability": {
+          "capability": "Explainability",
+          "traditional": "The model said so",
+          "trueaim": "Traceable to the clause"
+        },
+        "oversight": {
+          "capability": "Human oversight",
+          "traditional": "Added around the model",
+          "trueaim": "Built into the workflow"
+        }
       }
     },
     "research": {
@@ -92,9 +107,18 @@
     },
     "related": {
       "heading": "Read next",
-      "decisionDossier": { "title": "The Decision Dossier", "description": "The record each claims decision produces: inputs, clause, reasoning and sources." },
-      "claimsDecisioning": { "title": "Claims Decisioning", "description": "The automated coverage check, from first notification to settlement." },
-      "trust": { "title": "Trust Centre", "description": "Certifications, the frameworks True Aim is aligned with and the policies behind them." }
+      "decisionDossier": {
+        "title": "The Decision Dossier",
+        "description": "The record each claims decision produces: inputs, clause, reasoning and sources."
+      },
+      "claimsDecisioning": {
+        "title": "Claims Decisioning",
+        "description": "The automated coverage check, from first notification to settlement."
+      },
+      "trust": {
+        "title": "Trust Centre",
+        "description": "Certifications, the frameworks True Aim is aligned with and the policies behind them."
+      }
     },
     "faq": {
       "heading": "Questions about the technology",
@@ -118,8 +142,8 @@
       ]
     },
     "cta": {
-      "heading": "See the two layers on your own claims",
-      "description": "Bring your own invoices, claims or damage reports and the demo shows the finished outcome with the record behind it.",
+      "heading": "See True Aim on your own claims",
+      "description": "Bring your own invoices, claims or damage reports and the demo shows the finished outcome.",
       "button": "Request a demo"
     }
   }

@@ -1,4 +1,8 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { CARD, CARD_HOVER } from "./surface";
+import { SectionHead } from "./SectionHead";
 
 export type RelatedLink = {
   title: string;
@@ -22,27 +26,20 @@ export function RelatedLinks({
   headingLevel?: "h2" | "h3";
   links: RelatedLink[];
 }) {
-  const Heading = headingLevel;
   return (
     <section>
-      <Heading className="mb-6 font-display text-[28px] font-bold text-strong">
-        {heading}
-      </Heading>
-      <ul className="grid gap-6 md:grid-cols-3">
+      <SectionHead heading={heading} headingLevel={headingLevel} className="mb-10" />
+      <ul className="grid gap-[29px] md:grid-cols-3">
         {links.map((link) => (
           <li key={link.href}>
-            <Link
-              href={link.href}
-              className="block h-full bg-card shadow-card rounded-pill p-8 hover:underline"
-            >
-              <span className="block font-display font-semibold text-link">
+            <Link href={link.href} className={cn(CARD, CARD_HOVER, "flex h-full flex-col gap-3 p-8")}>
+              <span className="font-display text-[20px] font-semibold leading-[1.3] tracking-[0.01em] text-strong">
                 {link.title}
               </span>
               {link.description && (
-                <span className="mt-2 block text-sm text-body leading-[1.6]">
-                  {link.description}
-                </span>
+                <span className="text-[15px] leading-[1.55] text-muted">{link.description}</span>
               )}
+              <ArrowRight className="mt-auto h-4 w-4 text-accent" strokeWidth={1.5} aria-hidden />
             </Link>
           </li>
         ))}

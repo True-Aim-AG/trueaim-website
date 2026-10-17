@@ -6,7 +6,9 @@
       "p2": "We are building towards an industry where the answer arrives at the speed of the evidence, where every decision records the facts, the rules and the reasoning behind it and where that record holds up under audit, regulatory review or dispute.",
       "p3": "We call it scalable trust.",
       "p4": "It asks for precision beyond what the market demands today, honesty about which decisions a machine should compute and which require human judgment and the discipline to solve the problems the industry is actually facing.",
-      "p5": "This is the work we have chosen."
+      "p5": "This is the work we have chosen.",
+      "button": "Request a demo",
+      "imageAlt": "The True Aim symbol in glass and metal"
     },
     "mission": {
       "label": "Mission",
@@ -43,39 +45,95 @@
         },
         "arnaud": {
           "name": "Arnaud Terville",
-          "title": "Title to confirm",
-          "bio": "Bio to follow from Reuben."
+          "title": "Sales",
+          "bio": "Enterprise insurance technology experience from Solera, Quantexa and Apple."
         }
       }
     },
     "advisers": {
       "heading": "Advisers",
       "members": {
-        "claudio": { "name": "Claudio Gienal", "title": "Former AXA CEO UK and Ireland", "focus": "Claims operations and insurance transformation" },
-        "kevin": { "name": "Kevin Sartori", "title": "Innosuisse coach", "focus": "Commercial strategy and company building" },
-        "lukas": { "name": "Dr Lukas Lichtensteiger", "title": "ZHAW researcher", "focus": "Technology architecture and scaling" },
-        "dave": { "name": "Dave Stoll", "title": "Former Zurich Insurance CFO, Spain", "focus": "Insurance, fundraising and regulation" },
-        "eric": { "name": "Eric Zielinski", "title": "Wharton, former Bain", "focus": "Strategy and enterprise procurement" },
-        "dandolo": { "name": "Dr Dandolo Flumini", "title": "ZHAW researcher", "focus": "The core decision logic and the research behind it" }
+        "claudio": {
+          "name": "Claudio Gienal",
+          "title": "Former AXA CEO UK and Ireland",
+          "focus": "Claims operations and insurance transformation"
+        },
+        "kevin": {
+          "name": "Kevin Sartori",
+          "title": "Innosuisse coach",
+          "focus": "Commercial strategy and company building"
+        },
+        "lukas": {
+          "name": "Dr Lukas Lichtensteiger",
+          "title": "ZHAW researcher",
+          "focus": "Technology architecture and scaling"
+        },
+        "dave": {
+          "name": "Dave Stoll",
+          "title": "Former Zurich Insurance CFO, Spain",
+          "focus": "Insurance, fundraising and regulation"
+        },
+        "eric": {
+          "name": "Eric Zielinski",
+          "title": "Wharton, former Bain",
+          "focus": "Strategy and enterprise procurement"
+        },
+        "dandolo": {
+          "name": "Dr Dandolo Flumini",
+          "title": "ZHAW researcher",
+          "focus": "The core decision logic and the research behind it"
+        }
       }
     },
     "partners": {
       "heading": "Partners",
       "items": {
-        "zhaw": { "name": "ZHAW", "description": "Zurich University of Applied Sciences. Research partner in a deep tech innovation project supported by Innosuisse." },
-        "innosuisse": { "name": "Innosuisse", "description": "The Swiss Innovation Agency, which supports the innovation project with ZHAW." },
-        "yarowa": { "name": "Yarowa", "description": "Swiss insurance technology company. Strategic investor and partner." },
-        "swissInsurtechHub": { "name": "Swiss InsurTech Hub", "description": "Switzerland's insurance innovation network." }
+        "zhaw": {
+          "name": "ZHAW",
+          "description": "Zurich University of Applied Sciences. Research partner in a deep tech innovation project supported by Innosuisse.",
+          "more": "About the research"
+        },
+        "innosuisse": {
+          "name": "Innosuisse",
+          "description": "The Swiss Innovation Agency, which supports the innovation project with ZHAW.",
+          "more": "About the project"
+        },
+        "yarowa": {
+          "name": "Yarowa",
+          "description": "Swiss insurance technology company. Strategic investor and partner.",
+          "more": "About the partnership"
+        },
+        "swissInsurtechHub": {
+          "name": "Swiss InsurTech Hub",
+          "description": "Switzerland's insurance innovation network. True Aim is a member.",
+          "more": "About the network"
+        }
       }
     },
     "awards": {
       "heading": "Awards",
       "winner": "Winner",
       "items": {
-        "insurathon": { "title": "Insurathon 2026", "body": "Norton Rose Fulbright named True Aim the most innovative InsurTech start-up of 2026.", "alt": "Norton Rose Fulbright" },
-        "swissInnovation": { "title": "Innovationspreis der Schweizer Assekuranz", "body": "Switzerland", "alt": "Innovationspreis der Schweizer Assekuranz" },
-        "leuchtturm": { "title": "Digitaler Leuchtturm Versicherungen", "body": "First place, Germany", "alt": "Digitaler Leuchtturm Versicherungen" },
-        "ikn": { "title": "Miglior InsurTech, IKN Awards", "body": "Italy", "alt": "IKN Awards" }
+        "insurathon": {
+          "title": "Insurathon 2026",
+          "body": "Norton Rose Fulbright named True Aim the most innovative InsurTech start-up of 2026.",
+          "alt": "Norton Rose Fulbright"
+        },
+        "swissInnovation": {
+          "title": "Innovationspreis der Schweizer Assekuranz",
+          "body": "The Swiss insurance industry's innovation prize, awarded to the technology True Aim builds on.",
+          "alt": "Innovationspreis der Schweizer Assekuranz"
+        },
+        "leuchtturm": {
+          "title": "Digitaler Leuchtturm Versicherungen",
+          "body": "Germany's digital lighthouse award for insurance, awarded to the technology True Aim builds on.",
+          "alt": "Digitaler Leuchtturm Versicherungen"
+        },
+        "ikn": {
+          "title": "Miglior InsurTech, IKN Awards",
+          "body": "Best InsurTech at the IKN Insurance Awards, Italy, awarded to the technology True Aim builds on.",
+          "alt": "IKN Awards"
+        }
       }
     },
     "location": {

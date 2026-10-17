@@ -6,7 +6,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemedLogo } from "@/components/brand/Logo";
 import { buttonClasses } from "@/components/brand/Button";
-import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { LanguageSwitcher, LanguageSwitcherMobile } from "@/components/layout/LanguageSwitcher";
 import { useTranslations } from "next-intl";
 
 const platform = [
@@ -162,7 +162,7 @@ export function Navigation() {
               ))}
             </div>
             <div className="flex flex-col gap-3 mt-3 px-1">
-              <LanguageSwitcher />
+              <LanguageSwitcherMobile />
               <Link href="/contact" className={buttonClasses("primary", "md", "w-full")} onClick={() => setMobileMenuOpen(false)}>
                 {t("requestDemo")}
               </Link>
