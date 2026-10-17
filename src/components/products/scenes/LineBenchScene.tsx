@@ -54,7 +54,8 @@ const EASE = [0.4, 0, 0.2, 1] as const;
 export function LineBenchScene({ data }: { data: LineBenchSceneData }) {
   const baseId = useId();
   const reduced = useReducedMotion();
-  const [selected, setSelected] = useState(() => Math.max(0, data.lines.findIndex((line) => line.kind !== "approved")));
+  // Starts on the first line and plays down the list in order.
+  const [selected, setSelected] = useState(0);
   const [auto, setAuto] = useState(true);
 
   useEffect(() => {

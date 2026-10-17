@@ -141,7 +141,7 @@ describe("Product scenes", () => {
     expect(outcomes).toContain("A settled claim");
   });
 
-  it("renders the flow and the record with its timeline, and the benchmark with the first line off range selected", () => {
+  it("renders the flow and the record with its timeline, and the benchmark starting on its first line", () => {
     const flow = renderToStaticMarkup(
       <FlowScene
         data={{
@@ -194,7 +194,7 @@ describe("Product scenes", () => {
       />,
     );
     expect(bench.match(/aria-pressed="true"/g)).toHaveLength(1);
-    expect(bench).toContain("+28%");
-    expect(bench).toContain("40");
+    expect(bench).toContain("0%");
+    expect(bench).not.toContain("+28%");
   });
 });
