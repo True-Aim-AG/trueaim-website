@@ -29,11 +29,11 @@ const groups: Group[] = [
   {
     key: "solutions",
     items: [
-      { key: "insurers", href: "/platform" },
-      { key: "brokers", href: "/platform" },
-      { key: "tpas", href: "/platform" },
-      { key: "warranty", href: "/platform" },
-      { key: "claimsTech", href: "/platform" },
+      { key: "insurers", href: "/solutions/insurers" },
+      { key: "brokers", href: "/solutions/brokers" },
+      { key: "tpas", href: "/solutions/third-party-administrators" },
+      { key: "warranty", href: "/solutions/warranty-providers" },
+      { key: "claimsTech", href: "/solutions/claims-technology-providers" },
     ],
   },
   {
