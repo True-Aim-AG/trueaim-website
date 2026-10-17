@@ -14,8 +14,8 @@ import {
   Server,
   ChevronRight,
 } from "lucide-react";
+import { TextureBackdrop } from "@/components/content";
 import { ButtonLink } from "@/components/brand/Button";
-import { GridPattern } from "@/components/brand/GridPattern";
 import { IntegrationPatternA } from "@/components/diagrams/IntegrationPatternA";
 import { IntegrationPatternB } from "@/components/diagrams/IntegrationPatternB";
 
@@ -174,8 +174,8 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
       </div>
 
       {/* === HERO === */}
-      <section className="relative px-6 pt-20 pb-24 overflow-hidden">
-        <GridPattern className="absolute inset-x-0 top-0 hidden h-[600px] md:block" />
+      <section className="relative px-6 pt-20 pb-24 overflow-hidden border-b border-hairline bg-page-tint">
+        <TextureBackdrop texture={{ name: "circ", position: "72% 18%" }} />
 
         <div className="relative max-w-6xl mx-auto">
           <Link

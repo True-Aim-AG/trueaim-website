@@ -4,16 +4,14 @@ import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowLeft,
   ArrowRight,
-  Calendar,
   CheckCircle,
-  ClipboardCheck,
   Clock,
   ScrollText,
   User,
 } from "lucide-react";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { TextureBackdrop } from "@/components/content";
 import { ButtonLink } from "@/components/brand/Button";
-import { GridPattern } from "@/components/brand/GridPattern";
 import { scorecardQuestions, type ScorecardQuestion } from "./questions";
 import { faqs } from "./faqs";
 
@@ -96,8 +94,8 @@ export default async function AuditabilityScorecardBlogPost({
       <EnglishOnlyBanner />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
+      <section className="relative overflow-hidden border-b border-hairline bg-page-tint">
+        <TextureBackdrop texture={{ name: "circ", position: "72% 18%" }} />
 
         <div className="relative max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
@@ -113,14 +111,6 @@ export default async function AuditabilityScorecardBlogPost({
               <ArrowLeft aria-hidden="true" className="w-4 h-4" strokeWidth={1.5} />
               All Articles
             </Link>
-
-            {/* Category Tag */}
-            <div className="flex items-center gap-3 mb-6">
-              <span className="inline-flex items-center gap-2 rounded-pill bg-accent-soft text-accent px-3 py-1 text-sm font-medium">
-                <ClipboardCheck aria-hidden="true" className="w-4 h-4" strokeWidth={1.5} />
-                Best Practice
-              </span>
-            </div>
 
             {/* Standfirst question */}
             <p className="text-base md:text-lg font-medium text-body mb-3">
@@ -146,10 +136,6 @@ export default async function AuditabilityScorecardBlogPost({
                   <span className="text-body">Reuben John</span>, CEO, True Aim
                   AG
                 </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar aria-hidden="true" className="w-4 h-4" strokeWidth={1.5} />
-                <time dateTime="2026-09-10">10 September 2026</time>
               </div>
               <div className="flex items-center gap-2">
                 <Clock aria-hidden="true" className="w-4 h-4" strokeWidth={1.5} />

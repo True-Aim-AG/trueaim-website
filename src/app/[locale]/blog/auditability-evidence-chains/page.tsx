@@ -5,7 +5,6 @@ import {
   ArrowLeft,
   ArrowRight,
   BookOpen,
-  Calendar,
   Clock,
   CheckCircle,
   FileText,
@@ -16,9 +15,9 @@ import {
   RefreshCw,
 } from "lucide-react";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { TextureBackdrop } from "@/components/content";
 import { ButtonLink } from "@/components/brand/Button";
 import { StatusPill } from "@/components/brand/StatusPill";
-import { GridPattern } from "@/components/brand/GridPattern";
 
 const ease = [0.4, 0, 0.2, 1] as const;
 
@@ -36,8 +35,8 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
     <div className="min-h-screen">
       <EnglishOnlyBanner />
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
+      <section className="relative overflow-hidden border-b border-hairline bg-page-tint">
+        <TextureBackdrop texture={{ name: "circ", position: "50% 50%" }} />
 
         <div className="relative max-w-4xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
@@ -54,14 +53,6 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
               All Articles
             </Link>
 
-            {/* Category Tag */}
-            <div className="flex items-center gap-3 mb-6">
-              <span className="inline-flex items-center gap-2 rounded-pill bg-accent-soft text-accent px-3 py-1 text-sm font-medium">
-                <Shield className="w-4 h-4" strokeWidth={1.5} />
-                Compliance & Governance
-              </span>
-            </div>
-
             {/* Title */}
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-strong mb-6 leading-tight">
               Auditability in Claims AI: Building Evidence Chains That Auditors
@@ -76,10 +67,6 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
 
             {/* Meta */}
             <div className="flex flex-wrap items-center gap-6 text-sm text-subtle">
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" strokeWidth={1.5} />
-                February 2025
-              </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" strokeWidth={1.5} />
                 12 min read
