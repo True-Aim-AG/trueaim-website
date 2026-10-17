@@ -1,8 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { cn } from "@/lib/utils";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
-import { CARD, PageHero, SECTION } from "@/components/content";
+import { PageHero, SECTION } from "@/components/content";
 
 const PUBLISH_DATE = "2026-05-21";
 
@@ -43,7 +42,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
       <section className={SECTION}>
         <div className="max-w-3xl [&>div>section:first-child>h2]:mt-0">
 
-          <div className={cn(CARD, "p-6 md:p-8 mb-8")}>
+          <div className="mb-8">
             <h2 className="font-display text-lg font-semibold text-strong mb-4">Contents</h2>
             <ol className="space-y-1 list-none pl-0">
               {TOC.map((item) => (
