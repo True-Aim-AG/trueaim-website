@@ -1,12 +1,12 @@
 import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
+import { cn } from "@/lib/utils";
+import { CARD, CARD_HOVER, CtaBand, PageHero, SECTION, SECTION_LILAC } from "@/components/content";
 
-import { ArrowRight, Brain, Scale, GraduationCap, AlertTriangle } from "lucide-react";
-import { ButtonLink } from "@/components/brand/Button";
+import { Brain, Scale, GraduationCap, AlertTriangle } from "lucide-react";
 import { BrandIcon, type BrandIconName } from "@/components/brand/BrandIcon";
 import { Eyebrow } from "@/components/brand/Eyebrow";
-import { Glow } from "@/components/brand/Glow";
 import { StatusPill } from "@/components/brand/StatusPill";
 import { DecisionDossier } from "@/components/sections/DecisionDossier";
 
@@ -32,31 +32,21 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
   const t = await getTranslations("technology");
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-24 px-6 overflow-hidden">
-        <div className="relative max-w-7xl mx-auto text-center">
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Eyebrow className="mb-6">{t("hero.badge")}</Eyebrow>
-
-            <h1 className="font-display text-[40px] font-bold leading-[1.05] text-strong sm:text-[48px] lg:text-[54px] mb-6">
-              {t("hero.titleLine1")}
-              <br />
-              <span className="text-accent">{t("hero.titleLine2")}</span>
-            </h1>
-
-            <p className="text-lede text-body max-w-3xl mx-auto">
-              {t("hero.description")}
-            </p>
-          </MotionDiv>
-        </div>
-      </section>
+      <PageHero
+        eyebrow={t("hero.badge")}
+        title={
+          <>
+            {t("hero.titleLine1")}
+            <br />
+            {t("hero.titleLine2")}
+          </>
+        }
+        summary={t("hero.description")}
+        texture={{ name: "glass", position: "72% 18%" }}
+      />
 
       {/* Problem Section */}
-      <section className="py-20 px-6">
+      <section className={SECTION}>
         <div className="max-w-7xl mx-auto">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -79,7 +69,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
       </section>
 
       {/* Architecture Section */}
-      <section className="py-20 px-6">
+      <section className={SECTION_LILAC}>
         <div className="max-w-7xl mx-auto">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -103,7 +93,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-card shadow-card rounded-pill p-8"
+              className={cn(CARD, "p-8")}
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-pill bg-lilac grid place-items-center">
@@ -128,7 +118,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
                 ))}
               </ul>
 
-              <div className="mt-6 p-4 bg-surface-muted rounded-pill">
+              <div className="mt-6 p-4 bg-surface-muted rounded-[12px]">
                 <p className="text-sm text-body">
                   {t("architecture.agentic.description")}
                 </p>
@@ -141,7 +131,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-card shadow-card rounded-pill p-8"
+              className={cn(CARD, "p-8")}
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-pill bg-lilac grid place-items-center">
@@ -166,7 +156,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
                 ))}
               </ul>
 
-              <div className="mt-6 p-4 bg-surface-muted rounded-pill">
+              <div className="mt-6 p-4 bg-surface-muted rounded-[12px]">
                 <p className="text-sm text-body">
                   {t("architecture.deterministic.description")}
                 </p>
@@ -180,7 +170,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-8 bg-accent-soft rounded-pill p-8 text-center"
+            className="mt-8 bg-accent-soft rounded-[12px] p-8 text-center"
           >
             <BrandIcon name="traceability" size={40} className="mx-auto mb-4" />
             <h3 className="font-display text-2xl font-bold mb-2 text-strong">{t("architecture.auditTrail.title")}</h3>
@@ -195,7 +185,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
       <DecisionDossier variant="full" />
 
       {/* Control Layer Section */}
-      <section className="py-20 px-6">
+      <section className={SECTION}>
         <div className="max-w-7xl mx-auto">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -221,7 +211,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card shadow-card rounded-pill p-6 transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch"
+                className={cn(CARD, CARD_HOVER, "p-6")}
               >
                 <div className="w-12 h-12 rounded-pill bg-lilac grid place-items-center mb-4">
                   {feature.icon ? (
@@ -253,7 +243,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
       </section>
 
       {/* Comparison Table */}
-      <section className="py-20 px-6">
+      <section className={SECTION_LILAC}>
         <div className="max-w-5xl mx-auto">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -275,7 +265,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-card shadow-card rounded-pill overflow-hidden"
+            className={cn(CARD, "overflow-hidden")}
           >
             <table className="w-full">
               <thead>
@@ -304,14 +294,14 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
       </section>
 
       {/* Research Partnership */}
-      <section className="py-20 px-6">
+      <section className={SECTION}>
         <div className="max-w-4xl mx-auto">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-card shadow-card rounded-pill p-8 md:p-12 text-center"
+            className={cn(CARD, "p-8 md:p-12 text-center")}
           >
             <div className="w-16 h-16 rounded-pill bg-lilac grid place-items-center mx-auto mb-6">
               <GraduationCap className="w-8 h-8 text-accent" strokeWidth={1.5} />
@@ -326,29 +316,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section data-theme="dark" className="relative overflow-hidden bg-page-tint py-20 px-6">
-        <Glow variant="soft" size={480} className="absolute -right-40 -top-40" />
-        <div className="relative max-w-4xl mx-auto text-center">
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="font-display text-4xl font-bold leading-[1.15] text-strong md:text-[48px] mb-6">
-              {t("cta.heading")}
-            </h2>
-            <p className="text-lg text-body mb-10">
-              {t("cta.description")}
-            </p>
-            <ButtonLink href="/contact" variant="primary" size="lg">
-              {t("cta.button")}
-              <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
-            </ButtonLink>
-          </MotionDiv>
-        </div>
-      </section>
+      <CtaBand heading={t("cta.heading")} lede={t("cta.description")} buttons={[{ label: t("cta.button"), href: "/contact" }]} />
     </div>
   );
 }
