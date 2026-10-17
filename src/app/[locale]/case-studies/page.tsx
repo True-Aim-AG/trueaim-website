@@ -32,8 +32,9 @@ function ResultsCard({ study, readLabel }: { study: CaseStudy; readLabel: string
       </div>
       <ul className="mt-6 divide-y divide-hairline border-y border-hairline">
         {study.metrics.map((metric) => (
-          <li key={metric.label} className="flex items-center gap-4 py-3.5">
-            <Check strokeWidth={2.5} className="h-5 w-5 shrink-0 text-accent" aria-hidden />
+          {/* Fixed columns, so the three labels start on the same line. */}
+          <li key={metric.label} className="grid grid-cols-[1.25rem_9.5rem_minmax(0,1fr)] items-center gap-4 py-3.5">
+            <Check strokeWidth={2.5} className="h-5 w-5 text-accent" aria-hidden />
             <span className="font-display text-[24px] font-semibold leading-none text-strong tabular-nums">{metric.value}</span>
             <span className="text-[14px] leading-[1.45] text-muted">{metric.label}</span>
           </li>

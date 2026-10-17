@@ -21,18 +21,10 @@ import { cn } from "@/lib/utils";
 
 const PATH = "/trust";
 
-// Certifications first, as badges; then the frameworks the controls are
-// aligned with, on the icons the live page uses. The label on each comes
-// from messages/<locale>/trust.json and says only what True Aim holds today.
-// The two badges are drawn in brand style until the certification bodies'
-// own files replace them.
-const badges = [
-  { key: "iso27001", mark: "/brand/marks/badge-iso-27001.svg" },
-  { key: "soc2", mark: "/brand/marks/badge-soc-2-type-ii.svg" },
-  { key: "gdpr" },
-  { key: "fadp" },
-  { key: "dora" },
-] as const;
+// Certifications first, then the frameworks the controls are aligned with,
+// all on the icon the live page uses. The label on each comes from
+// messages/<locale>/trust.json and says only what True Aim holds today.
+const badges = ["iso27001", "soc2", "gdpr", "fadp", "dora"] as const;
 
 const euAiActKeys = [
   "humanOversight",
@@ -84,16 +76,13 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
   const t = await getTranslations("trust");
   const faqs = t.raw("faq.items") as FaqItem[];
 
-  const badgeItems: BadgeItem[] = badges.map((badge) => {
-    const name = t(`badges.items.${badge.key}.name`);
-    const status = t(`badges.items.${badge.key}.status`) as "certified" | "aligned";
+  const badgeItems: BadgeItem[] = badges.map((key) => {
+    const status = t(`badges.items.${key}.status`) as "certified" | "aligned";
     return {
-      image: "mark" in badge ? { src: badge.mark, alt: name, width: 160, height: 160 } : undefined,
-      icon: "mark" in badge ? undefined : <Shield strokeWidth={1.5} className="h-7 w-7" />,
-      renderHeight: 80,
+      icon: <Shield strokeWidth={1.5} className="h-7 w-7" />,
       caption: t(`badges.statusLabels.${status}`),
-      title: name,
-      text: t(`badges.items.${badge.key}.description`),
+      title: t(`badges.items.${key}.name`),
+      text: t(`badges.items.${key}.description`),
     };
   });
 

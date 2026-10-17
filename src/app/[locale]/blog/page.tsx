@@ -41,7 +41,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
       {featuredPost && (
         <section className={SECTION}>
           <div className="max-w-4xl mx-auto">
-            <Eyebrow className="mb-6">Featured Article</Eyebrow>
+            <Eyebrow className="mb-6">Featured</Eyebrow>
 
             <Link href={`/blog/${featuredPost.slug}`} className={ARTICLE}>
               <article>
@@ -74,23 +74,30 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
       {otherPosts.length > 0 && (
         <section className={SECTION_LILAC}>
           <div className="max-w-4xl mx-auto">
-            <Eyebrow className="mb-6">All Articles</Eyebrow>
+            <Eyebrow className="mb-6">All</Eyebrow>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {otherPosts.map((post) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} className={ARTICLE}>
-                  <article>
+                  {/* The read time sits bottom left and the link bottom right on every card. */}
+                  <article className="flex h-full flex-col">
                     <h2 className="font-display text-lg font-bold text-strong mb-3 line-clamp-2">
                       {post.title}
                     </h2>
 
-                    <p className="text-sm text-body leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-sm text-body leading-relaxed mb-6 line-clamp-3">
                       {post.excerpt}
                     </p>
 
-                    <div className="flex items-center gap-2 text-xs text-subtle">
-                      <Clock className="w-3.5 h-3.5" strokeWidth={1.5} />
-                      {post.readTime}
+                    <div className="mt-auto flex flex-wrap items-center justify-between gap-4">
+                      <div className="flex items-center gap-2 text-xs text-subtle">
+                        <Clock className="w-3.5 h-3.5" strokeWidth={1.5} />
+                        {post.readTime}
+                      </div>
+                      <span className="inline-flex items-center gap-2 text-sm text-link font-medium">
+                        Read Article
+                        <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+                      </span>
                     </div>
                   </article>
                 </Link>

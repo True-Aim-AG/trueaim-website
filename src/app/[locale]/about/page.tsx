@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { BadgeRow, CARD, CARD_HOVER, CtaBand, PageHero, SECTION, SECTION_LILAC, SectionHead } from "@/components/content";
 import { cn } from "@/lib/utils";
 
-const team = ["reuben", "frederic", "alin", "kai", "henrique", "arnaud"] as const;
+const team = ["reuben", "frederic", "arnaud", "alin", "kai", "henrique"] as const;
 
 // Photo and LinkedIn profile where True Aim has them; the card shows initials otherwise.
 const teamMeta: Record<(typeof team)[number], { image?: string; linkedin?: string }> = {
