@@ -67,7 +67,7 @@ export default async function PartnersHubPage({
     <>
       <PageSeo locale={locale} path="/partners" template="collection" />
 
-      <PageHero eyebrow={t("subtitle")} title={t("title")} summary={t("intro")} texture={{ name: "circ", position: "72% 18%" }} />
+      <PageHero eyebrow={t("title")} title={t("subtitle")} summary={t("intro")} texture={{ name: "circ", position: "72% 18%" }} />
 
       <section className={SECTION}>
         <div className="mx-auto max-w-7xl">
