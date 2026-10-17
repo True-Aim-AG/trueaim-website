@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { PageHero, SECTION } from "@/components/content";
 
 const PUBLISH_DATE = "2026-05-21";
 
@@ -10,16 +11,13 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <div className="pt-20 md:pt-28 pb-16 px-6">
+      <PageHero title="Security at True Aim" texture={{ name: "circ", position: "12% 88%" }}>
+        <p className="mt-6 text-sm text-muted"><strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}</p>
+      </PageHero>
+      <section className={SECTION}>
         <div className="max-w-3xl mx-auto">
-          <h1 className="mt-3 font-display text-4xl font-bold leading-[1.05] text-strong mb-4">
-            Security at True Aim
-          </h1>
-          <p className="text-sm text-muted mb-8">
-            <strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}
-          </p>
 
-          <div className="bg-lilac rounded-pill px-8 py-6 mb-8">
+          <div className="bg-lilac rounded-[12px] px-8 py-6 mb-8">
             <p className="text-body leading-[1.6]">
               <strong className="text-strong">Report a vulnerability:</strong>{" "}
               <a href="mailto:security@trueaim.ai" className="text-link hover:underline font-medium">
@@ -124,7 +122,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
             </section>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

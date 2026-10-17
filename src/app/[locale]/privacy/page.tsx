@@ -1,6 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { CARD, PageHero, SECTION } from "@/components/content";
 
 const PUBLISH_DATE = "2026-05-21";
 
@@ -27,22 +29,21 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <div className="pt-20 md:pt-28 pb-16 px-6">
+      <PageHero title="Privacy Policy" texture={{ name: "circ", position: "72% 18%" }}>
+        <p className="mt-6 text-sm text-muted">
+          <strong className="text-strong">Effective date:</strong> {PUBLISH_DATE} &nbsp;|&nbsp; <strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}
+        </p>
+        <p className="mt-2 text-sm text-muted">
+          Previous versions:{" "}
+          <Link href="/privacy-legacy" className="text-link hover:underline">
+            v1 (Feb 2026)
+          </Link>
+        </p>
+      </PageHero>
+      <section className={SECTION}>
         <div className="max-w-3xl mx-auto">
-          <h1 className="mt-3 font-display text-4xl font-bold leading-[1.05] text-strong mb-4">
-            Privacy Policy
-          </h1>
-          <p className="text-sm text-muted mb-2">
-            <strong className="text-strong">Effective date:</strong> {PUBLISH_DATE} &nbsp;|&nbsp; <strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}
-          </p>
-          <p className="text-sm text-muted mb-8">
-            Previous versions:{" "}
-            <Link href="/privacy-legacy" className="text-link hover:underline">
-              v1 (Feb 2026)
-            </Link>
-          </p>
 
-          <div className="bg-card shadow-card rounded-pill p-6 md:p-8 mb-8">
+          <div className={cn(CARD, "p-6 md:p-8 mb-8")}>
             <h2 className="font-display text-lg font-semibold text-strong mb-4">Contents</h2>
             <ol className="space-y-1 list-none pl-0">
               {TOC.map((item) => (
@@ -162,7 +163,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             </section>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

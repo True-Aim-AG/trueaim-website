@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { PageHero, SECTION } from "@/components/content";
 import { ButtonLink } from "@/components/brand/Button";
 
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -9,15 +10,12 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <div className="pt-20 md:pt-28 pb-16 px-6">
+      <PageHero title="Privacy Policy (Previous Version)" texture={{ name: "glass", position: "72% 18%" }}>
+        <p className="mt-6 text-sm text-muted">Last updated: 08 February 2026</p>
+      </PageHero>
+      <section className={SECTION}>
         <div className="max-w-3xl mx-auto">
-          <h1 className="mt-3 font-display text-4xl font-bold leading-[1.05] text-strong mb-4">
-            Privacy Policy (Previous Version)
-          </h1>
-          <p className="text-sm text-muted mb-2">
-            Last updated: 08 February 2026
-          </p>
-          <div className="bg-lilac rounded-pill px-8 py-6 mb-8">
+          <div className="bg-lilac rounded-[12px] px-8 py-6 mb-8">
             <p className="text-sm text-body leading-[1.6]">
               This is an archived previous version of our privacy policy. The current policy is at{" "}
               <Link href="/privacy" className="text-link hover:underline font-medium">
@@ -142,7 +140,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

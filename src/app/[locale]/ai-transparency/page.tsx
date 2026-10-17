@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { PageHero, SECTION } from "@/components/content";
 import { ButtonLink } from "@/components/brand/Button";
 
 export default async function AITransparencyPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -8,14 +9,11 @@ export default async function AITransparencyPage({ params }: { params: Promise<{
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <div className="pt-20 md:pt-28 pb-16 px-6">
+      <PageHero title="AI Transparency & Oversight" texture={{ name: "glass", position: "50% 50%" }}>
+        <p className="mt-6 text-sm text-muted">Last updated: 22 February 2026</p>
+      </PageHero>
+      <section className={SECTION}>
         <div className="max-w-3xl mx-auto">
-          <h1 className="mt-3 font-display text-4xl font-bold leading-[1.05] text-strong mb-4">
-            AI Transparency &amp; Oversight
-          </h1>
-          <p className="text-sm text-muted mb-8">
-            Last updated: 22 February 2026
-          </p>
 
           <div>
             <section>
@@ -102,7 +100,7 @@ export default async function AITransparencyPage({ params }: { params: Promise<{
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

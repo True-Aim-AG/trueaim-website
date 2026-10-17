@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { PageHero, SECTION } from "@/components/content";
 
 const PUBLISH_DATE = "2026-05-21";
 
@@ -10,14 +11,11 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <div className="pt-20 md:pt-28 pb-16 px-6">
+      <PageHero title="Customer Support" texture={{ name: "glass", position: "72% 18%" }}>
+        <p className="mt-6 text-sm text-muted"><strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}</p>
+      </PageHero>
+      <section className={SECTION}>
         <div className="max-w-3xl mx-auto">
-          <h1 className="mt-3 font-display text-4xl font-bold leading-[1.05] text-strong mb-4">
-            Customer Support
-          </h1>
-          <p className="text-sm text-muted mb-8">
-            <strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}
-          </p>
 
           <div>
             <section>
@@ -68,7 +66,7 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
             </section>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
