@@ -1,0 +1,528 @@
+{
+  "solutionPages": {
+    "common": {
+      "ctaDemo": "Book a demo",
+      "faqHeading": "Common questions",
+      "helpHeading": "Explore our Solutions",
+      "help": {
+        "claimsDecisioning": {
+          "title": "Claims Decisioning",
+          "text": "An automated coverage check: every claim tested against the policy wording, with the reasoning shown and the payout calculated.",
+          "link": "Explore Claims Decisioning"
+        },
+        "invoiceBenchmarking": {
+          "title": "Invoice Benchmarking",
+          "text": "Every invoice and quote measured against what the work should cost in each region.",
+          "link": "Explore Invoice Benchmarking"
+        },
+        "damageReporting": {
+          "title": "Damage Reporting",
+          "text": "Photographs and documents turned into a priced estimate and a complete scope of work.",
+          "link": "Explore Damage Reporting"
+        },
+        "otus": {
+          "title": "Otus",
+          "text": "Answers for every member of your clients' teams, inside the AI assistant they have already approved.",
+          "link": "Meet Otus"
+        }
+      },
+      "cta": {
+        "heading": "See True Aim on your own claims",
+        "lede": "Bring a recent set of claims, invoices or damage reports, and we will show you the finished outcome.",
+        "button": "Book a demo"
+      }
+    },
+    "insurers": {
+      "hero": {
+        "title": "P&C claims, settled faster",
+        "summary": "True Aim is built for your claims teams. Every claim is assessed against the policy wording, every invoice is benchmarked and every damage report is prepared, each for the right amount. Your adjusters keep the final decision and regain the hours once lost to reading, re-keying and chasing.",
+        "scene": {
+          "alt": "A claim as the adjuster sees it: each line grouped by outcome with its covered amount, and the payout",
+          "title": "Water damage claim",
+          "reference": "Claim 62850",
+          "columns": {
+            "description": "Description",
+            "quantity": "Qty",
+            "claimed": "Claimed",
+            "covered": "Covered"
+          },
+          "groups": [
+            {
+              "kind": "approved",
+              "label": "Covered",
+              "total": "2'860.00",
+              "lines": [
+                {
+                  "description": "Replace floor",
+                  "quantity": "18 × m²",
+                  "claimed": "2'860.00",
+                  "covered": "2'860.00"
+                }
+              ]
+            },
+            {
+              "kind": "denied",
+              "label": "Excluded",
+              "total": "0.00",
+              "lines": [
+                {
+                  "description": "Dishwasher, replacement",
+                  "quantity": "1 × unit",
+                  "claimed": "1'126.30",
+                  "covered": "0.00"
+                }
+              ]
+            },
+            {
+              "kind": "referred",
+              "label": "Set aside for review",
+              "total": "321.10",
+              "lines": [
+                {
+                  "description": "Hotel",
+                  "quantity": "4 × night",
+                  "claimed": "642.18",
+                  "covered": "321.10"
+                }
+              ]
+            }
+          ],
+          "deductibleLabel": "Deductible",
+          "deductible": "150.00",
+          "payoutLabel": "Payout",
+          "payout": "2'710.00"
+        }
+      },
+      "benefits": {
+        "heading": "What this means for your team",
+        "items": [
+          {
+            "title": "Time back for adjusters",
+            "text": "Reading, re-keying and chasing no longer fill their day."
+          },
+          {
+            "title": "Consistent decisions",
+            "text": "The same facts lead to the same answer, whoever reviews the claim."
+          },
+          {
+            "title": "Costs you can explain",
+            "text": "Every amount carries its reason, ready for audit."
+          },
+          {
+            "title": "Earlier reserve estimates",
+            "text": "A damage estimate and a reserve figure from first notification."
+          },
+          {
+            "title": "Fewer status calls",
+            "text": "Customers see their claim progress, so they have less reason to call."
+          },
+          {
+            "title": "Every invoice checked",
+            "text": "Each invoice and quote is tested against your benchmark."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "Which lines of business does True Aim support?",
+          "answer": "True Aim is not tied to a single line. Motor, property, warranty and liability claims are built from the same components, each running on its own policy wording and rules."
+        },
+        {
+          "question": "Who makes the final decision?",
+          "answer": "Your adjusters. True Aim prepares a recommendation with its full reasoning, and a person confirms it. Full automation runs only where you and your regulator permit it."
+        },
+        {
+          "question": "Do we have to replace our claims system?",
+          "answer": "No. True Aim works above the claims and finance systems you already run, reads each claim from them and writes its results back."
+        },
+        {
+          "question": "How is True Aim priced?",
+          "answer": "Per outcome, not per seat. You pay for each settled claim, benchmarked invoice or completed damage report, so costs rise only with the value you receive."
+        }
+      ]
+    },
+    "brokers": {
+      "hero": {
+        "title": "Claims captured and handled from the first call",
+        "summary": "Brokers are often the first call after a loss. With True Aim, P&C claims are captured on first contact, checked against the policy and kept moving, with your client informed at every step and the insurer's decision explained in full, line by line.",
+        "scene": {
+          "alt": "Claims arrive on four channels, merge into one record, and every party is updated from it",
+          "channelsLabel": "Arrives on any channel",
+          "channels": [
+            "WhatsApp",
+            "Email",
+            "Client portal",
+            "Repairer"
+          ],
+          "record": {
+            "title": "One claim record",
+            "fields": [
+              {
+                "label": "Claimant",
+                "value": "A. Meier"
+              },
+              {
+                "label": "Policy",
+                "value": "HOM-2026-8834"
+              },
+              {
+                "label": "Incident",
+                "value": "Water damage, kitchen"
+              },
+              {
+                "label": "Documents",
+                "value": "4 read, 0 missing"
+              }
+            ],
+            "status": "Contextualised"
+          },
+          "partiesLabel": "Every party in the loop",
+          "parties": [
+            {
+              "name": "Customer",
+              "text": "Reference sent, status page live"
+            },
+            {
+              "name": "Broker",
+              "text": "Record shared, nothing to re-key"
+            },
+            {
+              "name": "Repairer",
+              "text": "Estimate requested, due Friday"
+            },
+            {
+              "name": "Adjuster",
+              "text": "Assigned, documents already read"
+            }
+          ]
+        }
+      },
+      "benefits": {
+        "heading": "What this means for your team",
+        "items": [
+          {
+            "title": "Administration time removed",
+            "text": "Claims are captured, read and filed as they arrive, so your team no longer re-keys details or chases documents."
+          },
+          {
+            "title": "Consistent decisions",
+            "text": "The same facts lead to the same answer, whoever reviews the claim."
+          },
+          {
+            "title": "One record for every party",
+            "text": "Your client, the insurer and the repairer all work from the same claim record, so everyone sees the same status."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "Does True Aim replace the insurer's decision?",
+          "answer": "No. The insurer decides. True Aim checks each claim against the policy wording and shows the clause behind every line, so you can explain the outcome to your client with confidence."
+        },
+        {
+          "question": "Through which channels can a claim arrive?",
+          "answer": "WhatsApp, email, phone or a client portal. Documents are read as they arrive and brought together in one claim record."
+        },
+        {
+          "question": "How do we keep our clients informed?",
+          "answer": "Every party works from the same claim record, so your client, the insurer and the repairer each see the current status without anyone chasing by hand."
+        },
+        {
+          "question": "Can we evidence our service levels?",
+          "answer": "Yes. Service levels and binder obligations are tracked step by step and kept on the record, ready for any review."
+        }
+      ]
+    },
+    "tpas": {
+      "hero": {
+        "title": "More claims per adjuster, within every mandate",
+        "summary": "You handle and decide claims on behalf of insurers, within the mandate each one sets. True Aim checks every claim against that insurer's policy wording, benchmarks every invoice and keeps a complete record for each client, so you can take on more volume without adding adjusters.",
+        "scene": {
+          "alt": "A claims work queue with each claim's status and the time left to its service level",
+          "title": "Open claims",
+          "subtitle": "34 open · 5 adjusters · sorted by service level",
+          "tabs": [
+            "All",
+            "My queue",
+            "Urgent"
+          ],
+          "columns": {
+            "claim": "Claim",
+            "status": "Status",
+            "sla": "SLA"
+          },
+          "rows": [
+            {
+              "reference": "CLM-02988",
+              "kind": "Glass",
+              "status": "open",
+              "label": "New",
+              "sla": "4 h"
+            },
+            {
+              "reference": "CLM-02981",
+              "kind": "Property",
+              "status": "open",
+              "label": "In progress",
+              "sla": "2 d"
+            },
+            {
+              "reference": "CLM-02979",
+              "kind": "Motor",
+              "status": "referred",
+              "label": "Awaiting repairer",
+              "sla": "1 d"
+            }
+          ],
+          "totalLabel": "34 open claims",
+          "showingLabel": "Showing 3"
+        }
+      },
+      "benefits": {
+        "heading": "What this means for your team",
+        "items": [
+          {
+            "title": "More claims per adjuster",
+            "text": "Reading, checking and calculating are done before the claim is opened."
+          },
+          {
+            "title": "Every mandate applied exactly",
+            "text": "Each claim is decided within that insurer's wording, limits and mandate."
+          },
+          {
+            "title": "Audits answered from the record",
+            "text": "A client's audit question takes minutes, not a project."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "Can True Aim apply different rules for each insurer?",
+          "answer": "Yes. Each insurer's policy wording, limits and mandate are set up separately, and every claim is decided within the rules of the client it belongs to."
+        },
+        {
+          "question": "Who makes the final decision?",
+          "answer": "Your adjusters, within the mandate the insurer has given you. True Aim prepares the recommendation and its reasoning, and the record shows who confirmed each outcome."
+        },
+        {
+          "question": "How do we answer an insurer's audit?",
+          "answer": "From the record. Every decision carries its clause, its evidence and its author, and the full history of a claim exports as one audit pack."
+        },
+        {
+          "question": "Do we have to change our claims system?",
+          "answer": "No. True Aim works above the systems you already run and writes its results back into them."
+        }
+      ]
+    },
+    "warranty": {
+      "hero": {
+        "title": "Every warranty invoice checked against the terms",
+        "summary": "Built for warranty providers, True Aim splits every garage invoice into parts, labour and fees. Every line is checked against the warranty terms in minutes and benchmarked against what the work should cost, with the reissue request already drafted for the garage.",
+        "scene": {
+          "alt": "A motor warranty claim as the adjuster sees it: parts, labour and a courtesy vehicle, each line checked against the warranty terms",
+          "title": "Motor warranty claim",
+          "reference": "Claim 5964",
+          "columns": {
+            "description": "Description",
+            "quantity": "Qty",
+            "claimed": "Claimed",
+            "covered": "Covered"
+          },
+          "groups": [
+            {
+              "kind": "approved",
+              "label": "Covered",
+              "total": "1'980.00",
+              "lines": [
+                {
+                  "description": "Turbocharger, replacement",
+                  "quantity": "1 × part",
+                  "claimed": "1'980.00",
+                  "covered": "1'980.00"
+                }
+              ]
+            },
+            {
+              "kind": "denied",
+              "label": "Excluded",
+              "total": "0.00",
+              "lines": [
+                {
+                  "description": "Oil and filter",
+                  "quantity": "1 × service",
+                  "claimed": "148.00",
+                  "covered": "0.00"
+                }
+              ]
+            },
+            {
+              "kind": "referred",
+              "label": "Set aside for review",
+              "total": "325.00",
+              "lines": [
+                {
+                  "description": "Courtesy vehicle",
+                  "quantity": "9 × day",
+                  "claimed": "585.00",
+                  "covered": "325.00"
+                }
+              ]
+            }
+          ],
+          "payoutLabel": "Payout",
+          "payout": "2'305.00"
+        }
+      },
+      "benefits": {
+        "heading": "What this means for your team",
+        "items": [
+          {
+            "title": "Line by line, in two minutes",
+            "text": "Parts, labour and fees, each tested against the terms."
+          },
+          {
+            "title": "The right repair",
+            "text": "The proposed repair is checked against the damage, not only against the cover."
+          },
+          {
+            "title": "The garage kept informed",
+            "text": "Refused lines are struck through and a reissue request is drafted."
+          }
+        ]
+      },
+      "story": {
+        "heading": "How this works in practice",
+        "caseStudy": {
+          "cap": "Case study",
+          "title": "Motor warranty claims checked line by line against the policy",
+          "text": "Five documents per claim, in up to three languages. Every line is now checked against the warranty terms, with the clause behind each decision.",
+          "link": "Read the case study",
+          "logoAlt": "NSA Garantie"
+        }
+      },
+      "quote": {
+        "text": "I believed in this automation from day one because it decides nothing we had not already decided ourselves. Our experts wrote the rules and built them into the system, and every answer shows the document and the clause behind it. Routine claims are settled in minutes and my team can focus on the cases where their experience really counts. I can only recommend that every insurer take a close look at this.",
+        "name": "Giuseppe Chiarello",
+        "role": "CEO, NSA Garantie"
+      },
+      "faq": [
+        {
+          "question": "Which documents does True Aim read?",
+          "answer": "The garage invoice or estimate, the warranty terms and the supporting documents that come with each claim, in German, French, Italian, English and more."
+        },
+        {
+          "question": "Is the outcome decided by AI?",
+          "answer": "No. AI reads the documents. Known parts, exclusions and consumables are settled by fixed rules, and every decision links back to the clause and the source page behind it."
+        },
+        {
+          "question": "Who makes the final decision?",
+          "answer": "Your adjusters. True Aim prepares the recommendation and its reasoning, and an adjuster confirms or changes it."
+        },
+        {
+          "question": "Can we work from our own rules rather than the warranty terms?",
+          "answer": "Yes. Industry catalogues and your own business rules work in exactly the same way as the warranty terms."
+        }
+      ]
+    },
+    "claimsTech": {
+      "hero": {
+        "title": "Add the coverage check to the workflow your clients already use",
+        "summary": "You own the workflow, and True Aim takes care of each decision. We work alongside your team to make claims handling simpler inside your platform, with a record of how every decision was reached that you can pass on to your clients.",
+        "scene": {
+          "alt": "The claim record: every action in order with its actor and its hash, and a forensic view grouped by actor",
+          "title": "Claim 62850 Record",
+          "subtitle": "Water damage",
+          "tabs": {
+            "timeline": "Timeline",
+            "forensic": "Forensic view"
+          },
+          "phases": [
+            "Received",
+            "Read",
+            "Checked",
+            "Calculated",
+            "Decided",
+            "Settled"
+          ],
+          "rows": [
+            {
+              "time": "09:14:02",
+              "actor": "agent",
+              "who": "Agent",
+              "text": "Four documents read and classified",
+              "hash": "a7f3"
+            },
+            {
+              "time": "09:14:31",
+              "actor": "engine",
+              "who": "Rules engine",
+              "text": "Each line checked against the wording, clause 4.2 applied",
+              "hash": "b028"
+            },
+            {
+              "time": "09:21:40",
+              "actor": "human",
+              "who": "Adjuster",
+              "text": "Line 5 confirmed, two nights above the cap set aside",
+              "hash": "e5d1"
+            },
+            {
+              "time": "09:21:41",
+              "actor": "engine",
+              "who": "Rules engine",
+              "text": "Record sealed, chain verified",
+              "hash": "c90d"
+            }
+          ],
+          "groups": {
+            "agent": "Agents",
+            "engine": "Rules engine",
+            "human": "Adjuster"
+          },
+          "actions": {
+            "one": "action",
+            "many": "actions"
+          },
+          "exportLabel": "Export audit pack"
+        }
+      },
+      "team": {
+        "heading": "What this means for your team",
+        "paragraphs": [],
+        "items": [
+          {
+            "title": "Works alongside your product",
+            "text": "Connects over an API, so your clients keep the system they know."
+          },
+          {
+            "title": "Any rulebook",
+            "text": "Policy wording, an industry catalogue or a client's own rules."
+          },
+          {
+            "title": "A full record, at the click of a button",
+            "text": "Every decision carries its rule version, its reasoning and its author."
+          }
+        ],
+        "imageAlt": "Interlocking metal rings"
+      },
+      "faq": [
+        {
+          "question": "How does True Aim connect to our platform?",
+          "answer": "Over an API. Your platform sends the claim, True Aim returns the recommendation, its reasoning and the calculated amount, and your clients continue to work in the screens they know."
+        },
+        {
+          "question": "Can each client use its own rules?",
+          "answer": "Yes. Policy wording, industry catalogues and a client's own business rules are set up per client, and every decision records the rule version it applied."
+        },
+        {
+          "question": "Who makes the final decision?",
+          "answer": "Your clients' adjusters. True Aim prepares the recommendation with its full reasoning, and full automation runs only where the client and its regulator permit it."
+        },
+        {
+          "question": "What can we pass on to our clients?",
+          "answer": "The full record of every decision: the inputs, the clauses applied, the calculation and who confirmed the outcome, exported as one audit pack."
+        }
+      ]
+    }
+  }
+}

@@ -1,123 +1,166 @@
 {
-  "hero": {
-    "title": "Versicherungsentscheidungen automatisieren.",
-    "titleHighlight": "Prüfbar durch Design.",
-    "subtitle1": "Policenbedingungen klar und konsistent anwenden.",
-    "subtitle2": "Entwickelt für regulierte Versicherungen.",
-    "subtitle3": "Keine Black Boxes.",
-    "pipelineTitle": "Von Dokumenten zu Entscheidungen in einem Ablauf",
-    "steps": {
-      "ingest": {
-        "label": "Erfassen",
-        "shortDesc": "Eingaben erfassen & validieren",
-        "description": "Dokumente eingegangen per E-Mail, Portal oder Systemexport",
-        "time": "< 10 Sek.",
-        "value": "Manuelles Sortieren und Weiterleiten eliminieren",
-        "automation": "ContextBuilder erfasst und klassifiziert Dokumente automatisch"
-      },
-      "process": {
-        "label": "Verarbeiten",
-        "shortDesc": "Policenlogik & Prüfungen anwenden",
-        "description": "Schlüsseldaten aus Schadendokumenten extrahiert",
-        "time": "15 – 45 Sek.",
-        "value": "Fehler bei der Neueingabe und Datenerfassungskosten reduzieren",
-        "automation": "AI extrahiert Felder mit Nachweisverknüpfung"
-      },
-      "decide": {
-        "label": "Bewerten",
-        "shortDesc": "Ergebnis & Bearbeitung bestätigen",
-        "description": "Deckungsprüfung anhand der Versicherungspolice",
-        "time": "< 5 Sek.",
-        "value": "Konsistente, nachvollziehbare Entscheidungen bei jeder Schadenmeldung",
-        "automation": "MIRA wendet deterministische Policenlogik an"
-      },
-      "execute": {
-        "label": "Ausführen",
-        "shortDesc": "Nächste Schritte auslösen",
-        "description": "Rückstellungen bilden, Zahlung vorbereiten, Kommunikation versenden",
-        "time": "< 10 Sek.",
-        "value": "Schnellere Regulierungszyklen, verbesserte Kundenerfahrung",
-        "automation": "Automatisierte Aufgabenausführung basierend auf der Entscheidung"
-      },
-      "audit": {
-        "label": "Audit",
-        "shortDesc": "Vollständige Nachvollziehbarkeit",
-        "description": "Vollständiger Entscheidungspfad protokolliert",
-        "time": "Sofort",
-        "value": "Prüfungsbereite Audit-Trails ohne manuelle Vorbereitung",
-        "automation": "Decision Dossier wird automatisch erstellt"
+  "home": {
+    "hero": {
+      "title": "Faster claims, smarter decisions, lower costs",
+      "summary": "Every claim assessed against the policy, every invoice benchmarked, every damage report prepared.\n\nAccurate, explainable outcomes in minutes.",
+      "ctaDemo": "Book a demo",
+      "ctaHow": "How it works",
+      "scene": {
+        "alt": "A claim as the adjuster sees it: the lines grouped by outcome, each with its covered amount, and the payout",
+        "title": "Water damage claim",
+        "reference": "Claim 62850",
+        "columns": {
+          "description": "Description",
+          "quantity": "Qty",
+          "claimed": "Claimed",
+          "covered": "Covered"
+        },
+        "groups": [
+          {
+            "kind": "approved",
+            "label": "Covered",
+            "total": "4'086.33",
+            "lines": [
+              {
+                "description": "Replace floor",
+                "quantity": "18 × m²",
+                "claimed": "2'860.00",
+                "covered": "2'860.00"
+              },
+              {
+                "description": "Drying",
+                "quantity": "3 × day",
+                "claimed": "540.00",
+                "covered": "540.00"
+              },
+              {
+                "description": "Plaster and paint",
+                "quantity": "2 × wall",
+                "claimed": "686.33",
+                "covered": "686.33"
+              }
+            ]
+          },
+          {
+            "kind": "denied",
+            "label": "Excluded",
+            "total": "0.00",
+            "lines": [
+              {
+                "description": "Dishwasher, replacement",
+                "quantity": "1 × unit",
+                "claimed": "1'126.30",
+                "covered": "0.00"
+              }
+            ]
+          },
+          {
+            "kind": "referred",
+            "label": "Set aside for review",
+            "total": "321.10",
+            "lines": [
+              {
+                "description": "Hotel",
+                "quantity": "4 × night",
+                "claimed": "642.18",
+                "covered": "321.10"
+              }
+            ]
+          }
+        ],
+        "deductibleLabel": "Deductible",
+        "deductible": "150.00",
+        "payoutLabel": "Payout",
+        "payout": "3'936.33"
       }
     },
-    "legendFully": "Vollautomatisiert",
-    "legendHuman": "Mensch in der Schleife",
-    "ctaDemo": "Demo buchen",
-    "ctaImpact": "Impact-Schätzung erhalten"
-  },
-  "valueProps": {
-    "title": "Schadenautomatisierung, der Regulierungsbehörden vertrauen",
-    "subtitle": "Messbare Ergebnisse ab dem ersten Tag",
-    "upTo": "BIS ZU",
-    "cards": {
-      "speed": {
-        "label": "Schnellere Schadenentscheidungen",
-        "description": "Schadenmeldungen in Sekunden bearbeiten, nicht in Tagen. Dokumente werden erfasst, verstanden und automatisch entschieden.",
-        "proof": "Pilotergebnisse: durchschn. 2,3 s Entscheidungszeit"
-      },
-      "cost": {
-        "label": "Reduktion der Bearbeitungskosten",
-        "description": "Fehler bei der Neueingabe und inkonsistente Interpretationen eliminieren. Gleiche Eingabe, gleiches Ergebnis, jedes Mal.",
-        "proof": "Basierend auf Closed-File-Review-Analyse"
-      },
-      "audit": {
-        "label": "Überprüfbare Entscheidungen",
-        "description": "Jede Entscheidung verweist direkt auf Policenklauseln und Quelldokumente. Entwickelt für die Konformität mit der KI-Verordnung.",
-        "proof": "Vollständige Entscheidungsnachvollziehbarkeit garantiert"
-      },
-      "cx": {
-        "label": "Überlegene Kundenerfahrung",
-        "description": "Sofortige Bestätigung, Echtzeit-Statusupdates und schnellere Auszahlungen. Versicherungsnehmer bei jedem Schritt informiert.",
-        "proof": "Gesamter Schadenlebenszyklus < 60 s"
+    "benefits": {
+      "heading": "How does it work?",
+      "items": {
+        "claimsDecisioning": {
+          "title": "Claims settled in minutes, not weeks",
+          "text": "Every line is checked against the policy wording, the amount calculated and the reason written down, ready for your adjuster to confirm.",
+          "link": "Claims Decisioning"
+        },
+        "invoiceBenchmarking": {
+          "title": "Never overpay on an invoice again",
+          "text": "Every invoice, quote and estimate is benchmarked line by line, with a reissue request drafted for every line that is too high.",
+          "link": "Invoice Benchmarking"
+        },
+        "damageReporting": {
+          "title": "Complete damage reports, prepared for you",
+          "text": "Photographs and documents become a priced estimate and a full scope of work at first notification, before anyone visits the site.",
+          "link": "Damage Reporting"
+        }
+      }
+    },
+    "logos": {
+      "nsa": "NSA Garantie",
+      "yarowa": "Yarowa",
+      "coreGroup": "core Group",
+      "zhaw": "ZHAW Zurich University of Applied Sciences",
+      "swissInsurtechHub": "Swiss InsurTech Hub"
+    },
+    "compliance": {
+      "heading": "Compliant by design",
+      "paragraphs": [
+        "Every decision maps to the clause it rests on, the evidence it used and the person who made it. Your auditors, your regulator and your customers can request the full audit trail at the click of a button.",
+        "True Aim sits alongside the systems you already run. Your data stays yours, and so do your rules, limits and thresholds."
+      ],
+      "imageAlt": "A metal lock carrying the True Aim symbol",
+      "badgeIso": "ISO 27001",
+      "badgeSoc": "SOC 2 Type II",
+      "badgeStatus": "Certified"
+    },
+    "related": {
+      "heading": "Explore True Aim",
+      "claimsDecisioning": "Claims Decisioning",
+      "claimsDecisioningText": "Every line checked against the policy wording, with the calculations shown.",
+      "invoiceBenchmarking": "Invoice Benchmarking",
+      "invoiceBenchmarkingText": "Every invoice, quote and estimate checked against the benchmark.",
+      "damageReporting": "Damage Reporting",
+      "damageReportingText": "A priced estimate and the full scope of work at first notification.",
+      "otus": "Otus, True Aim's claims specialist",
+      "otusText": "An AI-powered expert for every team member, with no decision rights.",
+      "platform": "How the platform works",
+      "platformText": "A claim file goes in, an audited decision comes out.",
+      "trust": "Trust Centre",
+      "trustText": "Hosting, certification and data protection."
+    },
+    "cta": {
+      "heading": "Ready to see True Aim on your own claims?",
+      "lede": "We show you the finished outcome and every calculation behind it.",
+      "button": "Book a demo"
+    },
+    "awards": {
+      "heading": "Award-Winning Technology",
+      "items": {
+        "insurathon": {
+          "alt": "Norton Rose Fulbright",
+          "label": "Winner",
+          "name": "Insurathon 2026",
+          "text": "Norton Rose Fulbright named True Aim the most innovative InsurTech start-up of the year."
+        },
+        "innovationspreis": {
+          "alt": "Innovationspreis der Schweizer Assekuranz",
+          "label": "Winner",
+          "name": "Innovationspreis der Schweizer Assekuranz",
+          "text": "The Swiss insurance industry's innovation prize, awarded to the technology True Aim builds on."
+        },
+        "leuchtturm": {
+          "alt": "Digitaler Leuchtturm Versicherungen",
+          "label": "Winner",
+          "name": "Digitaler Leuchtturm Versicherungen",
+          "text": "Germany's digital lighthouse award for insurance, awarded to the technology True Aim builds on."
+        },
+        "ikn": {
+          "alt": "IKN Insurance Award, Miglior InsurTech",
+          "label": "Winner",
+          "name": "Miglior InsurTech",
+          "text": "The IKN Insurance Award for the best InsurTech in Italy, awarded to the technology True Aim builds on."
+        }
       }
     }
-  },
-  "productsGrid": {
-    "title": "Zweckentwickelte Produkte für exzellente Schadenregulierung",
-    "subtitle": "Eine vollständige Suite für den gesamten Schadenlebenszyklus",
-    "products": {
-      "contextBuilder": {
-        "name": "ContextBuilder",
-        "badge": "Dokumenten-Pipeline",
-        "description": "Verwandeln Sie fragmentierte, unstrukturierte Schadendokumente in hochwertige strukturierte Daten. KI-gestützte Extraktion mit menschlicher Überprüfung gewährleistet saubere Eingaben für deterministische Entscheidungen.",
-        "explore": "ContextBuilder entdecken"
-      },
-      "mira": {
-        "name": "MIRA",
-        "badge": "Entscheidungs-Engine",
-        "description": "Die zentrale deterministische Entscheidungs-Engine. Komplexe Policenbedingungen in automatisierte Entscheidungen umwandeln, die konsistent, reproduzierbar und frei von probabilistischer Inferenz sind.",
-        "explore": "MIRA entdecken"
-      },
-      "decisionDossier": {
-        "name": "Decision Dossier",
-        "badge": "Prüfprotokoll",
-        "description": "Jeder Fall erzeugt ein vollständig nachvollziehbares Prüfprotokoll, das Ergebnisse auf Quellklauseln, Dokumente und Entscheidungspfade zurückführt. Erklärbar, verteidigungsfähig und wiederholbar.",
-        "explore": "Decision Dossier entdecken"
-      },
-      "claimEval": {
-        "name": "ClaimEval",
-        "badge": "Qualitätssicherung",
-        "description": "Qualitätssicherung über Stichproben hinaus skalieren. Entscheidungen über Ihr gesamtes Schadenportfolio automatisch prüfen, um Inkonsistenzen, Prozessabweichungen und Logiklücken zu erkennen.",
-        "explore": "ClaimEval entdecken"
-      }
-    }
-  },
-  "cta": {
-    "title": "Bereit, überprüfbare KI in Aktion zu sehen?",
-    "subtitle": "Buchen Sie eine 30-minütige Demo und erfahren Sie, wie True Aim Ihre Schadenregulierung transformieren kann.",
-    "bookDemo": "Demo buchen",
-    "getImpact": "Impact-Schätzung erhalten",
-    "trustCompliance": "Compliance by Design",
-    "trustSwiss": "Schweizer Datenhosting",
-    "trustEnterprise": "Nach Enterprise-Standards gebaut"
   },
   "decisionDossier": {
     "teaserBadge": "Einzigartig bei True Aim",
@@ -176,42 +219,5 @@
     "mockupConfidenceValue": "98.5%",
     "mockupReplay": "Entscheidung wiederholen",
     "mockupDifferentiator": "<strong>Anders als Black-Box-KI:</strong> Jede True Aim Entscheidung kann wiederholt, erklärt und verteidigt werden."
-  },
-  "processFlow": {
-    "title": "Von Dokumenten zu Entscheidungen in einem Ablauf",
-    "subtitle": "End-to-End Schadenautomatisierung in unter zwei Minuten, mit jedem Schritt vollständig prüfbar",
-    "steps": {
-      "ingest": {
-        "label": "Dokumentenaufnahme",
-        "description": "ContextBuilder erfasst, klassifiziert und strukturiert Schadendokumente automatisch"
-      },
-      "mira": {
-        "label": "Policenlogik (MIRA)",
-        "description": "Deterministische Entscheidungsmaschine wendet exakte Policenbedingungen auf strukturierte Schadendaten an"
-      },
-      "dossier": {
-        "label": "Decision Dossier",
-        "description": "Vollständiger Prüfbericht, der Entscheidungen mit Quellklauseln, Dokumenten und Logikpfaden verknüpft"
-      },
-      "audit": {
-        "label": "Prüfpfad",
-        "description": "Jeder Schritt ist nachvollziehbar, erklärbar und bereit für regulatorische Überprüfung"
-      }
-    }
-  },
-  "socialProof": {
-    "badge": "Bewährte Ergebnisse",
-    "title": "Vertrauen führender Versicherer",
-    "subtitle": "Erfahren Sie, wie Versicherer ihre Schadenregulierung mit messbaren, überprüfbaren Ergebnissen transformieren",
-    "readCaseStudy": "Fallstudie lesen",
-    "viewAllCaseStudies": "Alle Fallstudien ansehen"
-  },
-  "partnerLogos": {
-    "title": "Vertrauenswürdige Partner",
-    "logoAlt": "{name} Logo"
-  },
-  "trustBar": {
-    "title": "Preisgekrönte Technologie",
-    "subtitle": "Anerkannt in der Schweiz, Deutschland und Italien"
   }
 }

@@ -1,123 +1,166 @@
 {
-  "hero": {
-    "title": "Automate Insurance Claim Decisions.",
-    "titleHighlight": "Auditable by Design.",
-    "subtitle1": "Apply policy terms clearly and consistently.",
-    "subtitle2": "Built for regulated insurance.",
-    "subtitle3": "No black boxes.",
-    "pipelineTitle": "From Documents to Decisions in One Flow",
-    "steps": {
-      "ingest": {
-        "label": "Ingest",
-        "shortDesc": "Capture & validate inputs",
-        "description": "Documents received via email, portal or system export",
-        "time": "< 10 sec",
-        "value": "Eliminate manual sorting and routing",
-        "automation": "ContextBuilder auto-ingests and classifies documents"
-      },
-      "process": {
-        "label": "Process",
-        "shortDesc": "Apply policy logic & checks",
-        "description": "Key data pulled from claims documents",
-        "time": "15 \u2013 45 sec",
-        "value": "Reduce re-keying errors and data entry cost",
-        "automation": "AI extracts fields with evidence linking"
-      },
-      "decide": {
-        "label": "Decide",
-        "shortDesc": "Confirm outcome & handling",
-        "description": "Coverage determination against policy",
-        "time": "< 5 sec",
-        "value": "Consistent, defensible decisions on every claim",
-        "automation": "MIRA applies deterministic policy logic"
-      },
-      "execute": {
-        "label": "Execute",
-        "shortDesc": "Trigger next steps",
-        "description": "Set reserves, draft payment, send comms",
-        "time": "< 10 sec",
-        "value": "Faster settlement cycles, improved CX",
-        "automation": "Automated task execution based on decision"
-      },
-      "audit": {
-        "label": "Audit",
-        "shortDesc": "Full traceability",
-        "description": "Complete decision trail logged",
-        "time": "Instant",
-        "value": "Regulator-ready audit trails without manual prep",
-        "automation": "Decision Dossier generated automatically"
+  "home": {
+    "hero": {
+      "title": "Faster claims, smarter decisions, lower costs",
+      "summary": "Every claim assessed against the policy, every invoice benchmarked, every damage report prepared.\n\nAccurate, explainable outcomes in minutes.",
+      "ctaDemo": "Book a demo",
+      "ctaHow": "How it works",
+      "scene": {
+        "alt": "A claim as the adjuster sees it: the lines grouped by outcome, each with its covered amount, and the payout",
+        "title": "Water damage claim",
+        "reference": "Claim 62850",
+        "columns": {
+          "description": "Description",
+          "quantity": "Qty",
+          "claimed": "Claimed",
+          "covered": "Covered"
+        },
+        "groups": [
+          {
+            "kind": "approved",
+            "label": "Covered",
+            "total": "4'086.33",
+            "lines": [
+              {
+                "description": "Replace floor",
+                "quantity": "18 × m²",
+                "claimed": "2'860.00",
+                "covered": "2'860.00"
+              },
+              {
+                "description": "Drying",
+                "quantity": "3 × day",
+                "claimed": "540.00",
+                "covered": "540.00"
+              },
+              {
+                "description": "Plaster and paint",
+                "quantity": "2 × wall",
+                "claimed": "686.33",
+                "covered": "686.33"
+              }
+            ]
+          },
+          {
+            "kind": "denied",
+            "label": "Excluded",
+            "total": "0.00",
+            "lines": [
+              {
+                "description": "Dishwasher, replacement",
+                "quantity": "1 × unit",
+                "claimed": "1'126.30",
+                "covered": "0.00"
+              }
+            ]
+          },
+          {
+            "kind": "referred",
+            "label": "Set aside for review",
+            "total": "321.10",
+            "lines": [
+              {
+                "description": "Hotel",
+                "quantity": "4 × night",
+                "claimed": "642.18",
+                "covered": "321.10"
+              }
+            ]
+          }
+        ],
+        "deductibleLabel": "Deductible",
+        "deductible": "150.00",
+        "payoutLabel": "Payout",
+        "payout": "3'936.33"
       }
     },
-    "legendFully": "Fully Automated",
-    "legendHuman": "Human in the Loop",
-    "ctaDemo": "Book a Demo",
-    "ctaImpact": "Get Impact Estimate"
-  },
-  "valueProps": {
-    "title": "Claims Automation That Regulators Trust",
-    "subtitle": "Measurable results from day one",
-    "upTo": "UP TO",
-    "cards": {
-      "speed": {
-        "label": "Faster claim determinations",
-        "description": "Process claims in seconds, not days. Documents are ingested, understood, and decided automatically.",
-        "proof": "Pilot results: avg 2.3s decision time"
-      },
-      "cost": {
-        "label": "Reduction in handling costs",
-        "description": "Eliminate re-keying errors and inconsistent interpretations. Same input, same output, every time.",
-        "proof": "Based on closed file review analysis"
-      },
-      "audit": {
-        "label": "Auditable decisions",
-        "description": "Every decision links directly to policy clauses and source documents. Built for EU AI Act compliance.",
-        "proof": "Complete decision traceability guaranteed"
-      },
-      "cx": {
-        "label": "Superior customer experience",
-        "description": "Instant acknowledgment, real-time status updates and faster payouts. Policyholders informed at every step.",
-        "proof": "End-to-end claim lifecycle < 60s"
+    "benefits": {
+      "heading": "How does it work?",
+      "items": {
+        "claimsDecisioning": {
+          "title": "Claims settled in minutes, not weeks",
+          "text": "Every line is checked against the policy wording, the amount calculated and the reason written down, ready for your adjuster to confirm.",
+          "link": "Claims Decisioning"
+        },
+        "invoiceBenchmarking": {
+          "title": "Never overpay on an invoice again",
+          "text": "Every invoice, quote and estimate is benchmarked line by line, with a reissue request drafted for every line that is too high.",
+          "link": "Invoice Benchmarking"
+        },
+        "damageReporting": {
+          "title": "Complete damage reports, prepared for you",
+          "text": "Photographs and documents become a priced estimate and a full scope of work at first notification, before anyone visits the site.",
+          "link": "Damage Reporting"
+        }
+      }
+    },
+    "logos": {
+      "nsa": "NSA Garantie",
+      "yarowa": "Yarowa",
+      "coreGroup": "core Group",
+      "zhaw": "ZHAW Zurich University of Applied Sciences",
+      "swissInsurtechHub": "Swiss InsurTech Hub"
+    },
+    "compliance": {
+      "heading": "Compliant by design",
+      "paragraphs": [
+        "Every decision maps to the clause it rests on, the evidence it used and the person who made it. Your auditors, your regulator and your customers can request the full audit trail at the click of a button.",
+        "True Aim sits alongside the systems you already run. Your data stays yours, and so do your rules, limits and thresholds."
+      ],
+      "imageAlt": "A metal lock carrying the True Aim symbol",
+      "badgeIso": "ISO 27001",
+      "badgeSoc": "SOC 2 Type II",
+      "badgeStatus": "Certified"
+    },
+    "related": {
+      "heading": "Explore True Aim",
+      "claimsDecisioning": "Claims Decisioning",
+      "claimsDecisioningText": "Every line checked against the policy wording, with the calculations shown.",
+      "invoiceBenchmarking": "Invoice Benchmarking",
+      "invoiceBenchmarkingText": "Every invoice, quote and estimate checked against the benchmark.",
+      "damageReporting": "Damage Reporting",
+      "damageReportingText": "A priced estimate and the full scope of work at first notification.",
+      "otus": "Otus, True Aim's claims specialist",
+      "otusText": "An AI-powered expert for every team member, with no decision rights.",
+      "platform": "How the platform works",
+      "platformText": "A claim file goes in, an audited decision comes out.",
+      "trust": "Trust Centre",
+      "trustText": "Hosting, certification and data protection."
+    },
+    "cta": {
+      "heading": "Ready to see True Aim on your own claims?",
+      "lede": "We show you the finished outcome and every calculation behind it.",
+      "button": "Book a demo"
+    },
+    "awards": {
+      "heading": "Award-Winning Technology",
+      "items": {
+        "insurathon": {
+          "alt": "Norton Rose Fulbright",
+          "label": "Winner",
+          "name": "Insurathon 2026",
+          "text": "Norton Rose Fulbright named True Aim the most innovative InsurTech start-up of the year."
+        },
+        "innovationspreis": {
+          "alt": "Innovationspreis der Schweizer Assekuranz",
+          "label": "Winner",
+          "name": "Innovationspreis der Schweizer Assekuranz",
+          "text": "The Swiss insurance industry's innovation prize, awarded to the technology True Aim builds on."
+        },
+        "leuchtturm": {
+          "alt": "Digitaler Leuchtturm Versicherungen",
+          "label": "Winner",
+          "name": "Digitaler Leuchtturm Versicherungen",
+          "text": "Germany's digital lighthouse award for insurance, awarded to the technology True Aim builds on."
+        },
+        "ikn": {
+          "alt": "IKN Insurance Award, Miglior InsurTech",
+          "label": "Winner",
+          "name": "Miglior InsurTech",
+          "text": "The IKN Insurance Award for the best InsurTech in Italy, awarded to the technology True Aim builds on."
+        }
       }
     }
-  },
-  "productsGrid": {
-    "title": "Purpose-Built Products for Claims Excellence",
-    "subtitle": "A complete suite designed for the claims lifecycle",
-    "products": {
-      "contextBuilder": {
-        "name": "ContextBuilder",
-        "badge": "Document Pipeline",
-        "description": "Turn fragmented, unstructured claim documents into high-quality structured data. AI-assisted extraction with human-in-the-loop review ensures clean inputs for deterministic decisioning.",
-        "explore": "Explore ContextBuilder"
-      },
-      "mira": {
-        "name": "MIRA",
-        "badge": "Decisioning Engine",
-        "description": "The core deterministic decision engine. Transform complex policy terms and conditions into automated decisions that are consistent, reproducible and free from probabilistic inference.",
-        "explore": "Explore MIRA"
-      },
-      "decisionDossier": {
-        "name": "Decision Dossier",
-        "badge": "Audit Record",
-        "description": "Every case produces a fully traceable audit record linking outcomes back to source clauses, documents and decision paths. Explainable, defensible and replayable.",
-        "explore": "Explore Decision Dossier"
-      },
-      "claimEval": {
-        "name": "ClaimEval",
-        "badge": "Quality Assurance",
-        "description": "Scale quality assurance beyond sampling. Automatically inspect decisions across your full claims portfolio to detect inconsistencies, process deviation and logic gaps.",
-        "explore": "Explore ClaimEval"
-      }
-    }
-  },
-  "cta": {
-    "title": "Ready to See Auditable AI in Action?",
-    "subtitle": "Book a 30-minute demo to see how True Aim can transform your claims operations.",
-    "bookDemo": "Book a Demo",
-    "getImpact": "Get Impact Estimate",
-    "trustCompliance": "Compliance by Design",
-    "trustSwiss": "Swiss data hosting",
-    "trustEnterprise": "Built to enterprise standards"
   },
   "decisionDossier": {
     "teaserBadge": "Unique to True Aim",
@@ -176,42 +219,5 @@
     "mockupConfidenceValue": "98.5%",
     "mockupReplay": "Replay Decision",
     "mockupDifferentiator": "<strong>Unlike black-box AI:</strong> Every True Aim decision can be replayed, explained, defended."
-  },
-  "processFlow": {
-    "title": "From Documents to Decisions in One Flow",
-    "subtitle": "End-to-end claim automation in under two minutes, with every step fully auditable",
-    "steps": {
-      "ingest": {
-        "label": "Document Ingestion",
-        "description": "ContextBuilder captures, classifies and structures claim documents automatically"
-      },
-      "mira": {
-        "label": "Policy Logic (MIRA)",
-        "description": "Deterministic decision engine applies exact policy terms to structured claim data"
-      },
-      "dossier": {
-        "label": "Decision Dossier",
-        "description": "Complete audit record linking decision to source clauses, documents and logic paths"
-      },
-      "audit": {
-        "label": "Audit Trail",
-        "description": "Every step is replayable, explainable and ready for regulatory review"
-      }
-    }
-  },
-  "socialProof": {
-    "badge": "Proven Results",
-    "title": "Trusted by Leading Insurers",
-    "subtitle": "See how insurers are transforming their claims operations with measurable, auditable results",
-    "readCaseStudy": "Read case study",
-    "viewAllCaseStudies": "View All Case Studies"
-  },
-  "partnerLogos": {
-    "title": "Trusted Partners",
-    "logoAlt": "{name} logo"
-  },
-  "trustBar": {
-    "title": "Award-Winning Technology",
-    "subtitle": "Recognised across Switzerland, Germany and Italy"
   }
 }

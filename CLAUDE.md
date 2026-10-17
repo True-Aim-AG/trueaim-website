@@ -54,10 +54,6 @@ docs/                      PRD, design system, review requirements
 - GTM loads from `NEXT_PUBLIC_GTM_ID` after consent; the contact form pushes `form_submit_success` (form_name, page_locale, heard_about) only after `/api/contact` answers 2xx. Never put personal data in the data layer.
 - Page building blocks for Firon's templates (FAQ, summary, breadcrumbs, comparison table, related links, article meta, and their JSON-LD builders) live in `src/components/content/`.
 
-## Demo Embeds
-- ClaimEval, embedded in `products/claimeval/a`: https://claimeval.vercel.app/claims
-- MIRA, preconnected in the locale layout: https://mira-travel-demo.vercel.app/products
-
 ## Quality Standards
 - Lighthouse Performance > 90
 - Mobile-first responsive
