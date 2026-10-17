@@ -39,13 +39,6 @@ const productLinks: Record<string, string> = {
 
 const study = caseStudies.find((cs) => cs.slug === "vehicle-warranty-claims")!;
 
-const currentIndex = caseStudies.findIndex(
-  (cs) => cs.slug === "vehicle-warranty-claims"
-);
-const prevStudy = currentIndex > 0 ? caseStudies[currentIndex - 1] : null;
-const nextStudy =
-  currentIndex < caseStudies.length - 1 ? caseStudies[currentIndex + 1] : null;
-
 const fadeIn = {
   initial: { opacity: 0, y: 20 } as const,
   whileInView: { opacity: 1, y: 0 } as const,
@@ -1053,36 +1046,6 @@ export default function VehicleWarrantyCaseStudy() {
                 </div>
               </motion.div>
             </aside>
-          </div>
-        </div>
-      </section>
-
-      {/* Navigation */}
-      <section className={SECTION}>
-        <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-center">
-            {prevStudy ? (
-              <Link
-                href={`/case-studies/${prevStudy.slug}`}
-                className="flex items-center gap-2 text-muted hover:text-accent transition-colors"
-              >
-                <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
-                <span className="text-sm">{t("detail.previous")}</span>
-              </Link>
-            ) : (
-              <div />
-            )}
-            {nextStudy ? (
-              <Link
-                href={`/case-studies/${nextStudy.slug}`}
-                className="flex items-center gap-2 text-muted hover:text-accent transition-colors"
-              >
-                <span className="text-sm">{t("detail.next")}</span>
-                <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
-              </Link>
-            ) : (
-              <div />
-            )}
           </div>
         </div>
       </section>
