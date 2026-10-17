@@ -5,13 +5,13 @@
   },
   "pages": {
     "/": {
-      "title": "Schadenentscheidungen automatisieren. Auditierbar by Design | True Aim",
-      "description": "Agentische KI mit deterministischer Logik für die Schadenautomatisierung kombinieren. Jede Entscheidung nachvollziehbar, konform mit der KI-Verordnung. Schweizer Präzision trifft überprüfbare KI.",
-      "h1": "Versicherungsentscheidungen automatisieren. Prüfbar durch Design.",
-      "breadcrumb": "Startseite",
-      "ogTitle": "Schadenentscheidungen automatisieren. Auditierbar by Design.",
-      "ogDescription": "Agentische KI mit deterministischer Logik für die Schadenautomatisierung kombinieren. Jede Entscheidung nachvollziehbar, konform mit der KI-Verordnung.",
-      "updated": "2026-10-15"
+      "title": "Faster Claims, Smarter Decisions, Lower Costs | True Aim",
+      "description": "True Aim checks every claim against the policy wording, benchmarks every invoice and prepares every damage report, with the calculations shown. Your team keeps the final say.",
+      "h1": "Faster claims, smarter decisions, lower costs",
+      "breadcrumb": "Home",
+      "ogTitle": "Faster claims, smarter decisions, lower costs",
+      "ogDescription": "True Aim checks every claim against the policy wording, benchmarks every invoice and prepares every damage report, with the calculations shown. Your team keeps the final say.",
+      "updated": "2026-10-17"
     },
     "/technology": {
       "title": "Technologie – Neuro-symbolische KI-Architektur | True Aim",

@@ -1,0 +1,132 @@
+{
+  "platform": {
+    "hero": {
+      "title": "How the True Aim platform works",
+      "summary": "Until now a claim needed a system of record and a person to assess it. True Aim combines the two and hands your team the finished piece of work: a settled claim, a completed damage report or a benchmarked invoice. Your team keeps the final say, and every step is recorded.",
+      "ctaDemo": "Book a demo"
+    },
+    "outcomes": {
+      "heading": "What you receive",
+      "items": {
+        "claimsDecisioning": {
+          "title": "A settled claim",
+          "text": "Every line checked against the policy wording, the amount calculated and the reasoning written down, ready for your adjuster to confirm.",
+          "link": "Claims Decisioning"
+        },
+        "invoiceBenchmarking": {
+          "title": "A benchmarked invoice",
+          "text": "Every line benchmarked, the lines that are too high challenged with the provider and the invoice reissued at the right amount.",
+          "link": "Invoice Benchmarking"
+        },
+        "damageReporting": {
+          "title": "A completed damage report",
+          "text": "A priced estimate and the full scope of work from the customer's photographs and documents, at first notification.",
+          "link": "Damage Reporting"
+        }
+      }
+    },
+    "technology": {
+      "heading": "Two technologies, each doing one job",
+      "paragraphs": [
+        "Calculated decisions. Your policy, catalogue or rulebook becomes a decision tree. Given the facts, the outcome is calculated, not predicted.",
+        "Agents that read. Claims arrive as photographs, PDFs, handwriting and emails, and software agents turn them into facts. Each agent does one small task, so a fault is easy to find and fix where it happened."
+      ],
+      "imageAlt": "Interlocking metal rings"
+    },
+    "diagram": {
+      "heading": "How the modules fit together",
+      "intro": "A claim file goes in. An audited decision comes out. Four modules do the work, and two platform features keep it moving and on the record.",
+      "input": {
+        "name": "The claim file",
+        "text": "Photographs, invoices, estimates, policy documents and emails, from any channel."
+      },
+      "modules": {
+        "claimsDecisioning": {
+          "name": "Claims Decisioning",
+          "text": "Checks every line against the policy wording and calculates the amount."
+        },
+        "invoiceBenchmarking": {
+          "name": "Invoice Benchmarking",
+          "text": "Checks every invoice, quote and estimate against the benchmark."
+        },
+        "damageReporting": {
+          "name": "Damage Reporting",
+          "text": "Turns photographs and documents into a priced estimate and a scope of work."
+        },
+        "otus": {
+          "name": "Otus, True Aim's claims specialist",
+          "text": "Explains, summarises and drafts for your team in every True Aim solution."
+        }
+      },
+      "output": {
+        "name": "An audited decision",
+        "text": "A recommendation with its calculations, evidence and reasons, confirmed by your adjuster and written back into your systems."
+      },
+      "featuresHeading": "Platform features",
+      "features": {
+        "orchestrate": {
+          "name": "Orchestrate",
+          "text": "Brings every claim into one record and keeps the work moving, from first notice to close. Claims are routed on your rules and live workload, reminders go out when your triggers say so, and every party sees the live status."
+        },
+        "prove": {
+          "name": "Prove",
+          "text": "Records every decision with its evidence, the rule in force and who made it. Any change to the record shows. One click exports the full audit pack."
+        }
+      },
+      "callout": "Same inputs. Same decision. Every time."
+    },
+    "fit": {
+      "heading": "It sits above your existing systems",
+      "paragraphs": [
+        "True Aim works above your claims and finance systems. True Aim reads from them and writes the results back into them.",
+        "Your thresholds, rules, routing and limits stay in your hands, and you change them yourself."
+      ],
+      "imageAlt": "A metal lock carrying the True Aim symbol"
+    },
+    "faq": {
+      "heading": "Common questions",
+      "items": [
+        {
+          "question": "Is the outcome predicted by AI?",
+          "answer": "No. AI reads the documents. The decision itself is calculated from your wording or rules, so the same facts always give the same answer."
+        },
+        {
+          "question": "Who makes the final decision?",
+          "answer": "Your team. True Aim prepares the recommendation and the reasoning. Full automation runs only where you and your regulator allow it."
+        },
+        {
+          "question": "Does True Aim replace our claims system?",
+          "answer": "No. True Aim works above the claims and finance systems you already run and writes its results back into them. Screens can mirror the ones your team knows."
+        },
+        {
+          "question": "Which lines of business does it cover?",
+          "answer": "True Aim is not tied to one line. Motor, property, warranty and liability claims use the same building blocks."
+        },
+        {
+          "question": "How is True Aim priced?",
+          "answer": "Per outcome, not per seat. You pay for each settled claim, benchmarked invoice or completed damage report, so costs scale with the value you receive."
+        },
+        {
+          "question": "Where is our data held?",
+          "answer": "On Microsoft Azure in Switzerland. Hosting, certification and data protection are set out in the Trust Centre."
+        }
+      ]
+    },
+    "related": {
+      "heading": "The four modules",
+      "claimsDecisioning": "Claims Decisioning",
+      "claimsDecisioningText": "Claims settled in minutes, not weeks.",
+      "invoiceBenchmarking": "Invoice Benchmarking",
+      "invoiceBenchmarkingText": "Never overpay on an invoice again.",
+      "damageReporting": "Damage Reporting",
+      "damageReportingText": "Completed damage reports in minutes.",
+      "otus": "Otus, True Aim's claims specialist",
+      "otusText": "An AI-powered expert for every member of your team."
+    },
+    "cta": {
+      "heading": "Ready to see the finished outcome on your own claims?",
+      "lede": "Book a demo with your own claims, invoices or damage reports and we show you the finished piece of work.",
+      "button": "Book a demo"
+    }
+  }
+}

@@ -1,24 +1,508 @@
 {
   "productPages": {
-    "related": {
-      "heading": "Other True Aim products",
-      "platform": "How the True Aim platform fits together"
-    },
-    "invoiceBenchmarking": {
-      "name": "Invoice Benchmarking",
-      "summary": "Every invoice, quote and estimate is checked against benchmark data, by business line and by region. Your team sees which lines are too high, by how much and why."
+    "common": {
+      "ctaDemo": "Book a demo",
+      "ctaHow": "How it works",
+      "faqHeading": "Common questions",
+      "relatedHeading": "Other True Aim products",
+      "relatedPlatform": "How the True Aim platform fits together",
+      "relatedPlatformText": "A claim file goes in, an audited decision comes out."
     },
     "claimsDecisioning": {
       "name": "Claims Decisioning",
-      "summary": "True Aim reads the claim, checks every line against the policy wording and prepares a full recommendation with the calculations shown. Your handler receives it and makes the final call."
+      "tagline": "Claims settled in minutes, not weeks.",
+      "hero": {
+        "title": "Claims Decisioning: claims settled in minutes, not weeks",
+        "summary": "True Aim's Claims Decisioning is an automated coverage check, from FNOL to settlement. True Aim reads the claim, checks every line against the policy wording and prepares a full recommendation with the calculations shown. Your adjuster makes the final call, every assumption is on screen and every change records its reason."
+      },
+      "keys": {
+        "heading": "What you get, from first notification to settlement",
+        "items": [
+          {
+            "label": "Same facts, same answer",
+            "text": "The amount is calculated from the wording, so the outcome does not vary by adjuster."
+          },
+          {
+            "label": "A reason on every line",
+            "text": "Each amount quotes the clause or rule behind it."
+          },
+          {
+            "label": "Your team keeps the final decision",
+            "text": "Full automation runs only where you and your regulator allow it."
+          }
+        ]
+      },
+      "features": {
+        "heading": "True Aim handles the documents, the data and the calculations",
+        "items": [
+          {
+            "title": "Every document read",
+            "text": "Invoices, estimates, policies and photographs become structured data."
+          },
+          {
+            "title": "Evidence checked first",
+            "text": "Signatures, metadata and totals are tested before any amount is calculated."
+          },
+          {
+            "title": "Each line against the policy",
+            "text": "Parts, labour and fees are split out, each with its clause."
+          },
+          {
+            "title": "The calculations done",
+            "text": "Excess, limits, caps, liability and betterment, worked through in order."
+          },
+          {
+            "title": "Every figure traced",
+            "text": "Each number links to the place in the document it came from."
+          },
+          {
+            "title": "Every change explained",
+            "text": "When an adjuster overrides a line, the reason is recorded."
+          }
+        ]
+      },
+      "dossier": {
+        "heading": "What is the Decision Dossier?",
+        "paragraphs": [
+          "The Decision Dossier is the record True Aim's Claims Decisioning produces for every claim. It holds the inputs, the clauses applied, the calculation trace, the evidence links and the name of the person who confirmed the outcome.",
+          "Your auditors, your regulator and your customers can see how a decision was reached, a week or a year later. One click exports the full pack."
+        ],
+        "items": [
+          {
+            "title": "Input summary",
+            "text": "The claim as received: documents, parties, timeline and facts."
+          },
+          {
+            "title": "Clauses applied",
+            "text": "The policy clauses and rules used, with their exact text."
+          },
+          {
+            "title": "Calculation trace",
+            "text": "Each step from the facts to the amount, in order."
+          },
+          {
+            "title": "Evidence links",
+            "text": "Every figure linked to the page and line it came from."
+          },
+          {
+            "title": "Who confirmed",
+            "text": "The adjuster who confirmed or changed each line, with the reason."
+          },
+          {
+            "title": "Replay",
+            "text": "The same inputs give the same output, so a decision can be re-run and checked."
+          }
+        ],
+        "card": {
+          "title": "Decision Dossier",
+          "subtitle": "Claim 2026-PR-0418, property, water damage",
+          "status": "Approved",
+          "rows": [
+            {
+              "label": "Clauses applied",
+              "value": "Art. 4.2, Art. 7.1"
+            },
+            {
+              "label": "Evidence",
+              "value": "6 documents linked"
+            },
+            {
+              "label": "Lines checked",
+              "value": "12 of 12"
+            },
+            {
+              "label": "Confirmed by",
+              "value": "Senior adjuster"
+            }
+          ],
+          "exportLabel": "Export audit pack"
+        }
+      },
+      "pricing": {
+        "heading": "Pay per outcome, not per seat",
+        "items": [
+          {
+            "label": "Pay for results",
+            "text": "You pay for each settled claim, not for users or licences."
+          },
+          {
+            "label": "Costs scale with value",
+            "text": "The fee follows the number of claims settled, so costs rise and fall with the work done."
+          },
+          {
+            "label": "Incentives aligned",
+            "text": "True Aim earns only when your team receives a finished decision."
+          }
+        ]
+      },
+      "otus": {
+        "heading": "Otus, True Aim's claims specialist",
+        "paragraphs": [
+          "Otus sits alongside your team inside Claims Decisioning and in every True Aim solution. Adjusters ask in plain language, by voice or text, and get an answer straight away.",
+          "Otus explains each recommendation line by line, drafts letters and summaries, and has no decision rights. Your team decides."
+        ],
+        "link": "About Otus",
+        "imageAlt": "The True Aim symbol in glass and metal"
+      },
+      "faq": [
+        {
+          "question": "Is the outcome predicted by AI?",
+          "answer": "No. Your policy wording, catalogue or rules are turned into a decision tree. The amount is calculated from the facts, so the same facts always give the same answer."
+        },
+        {
+          "question": "Where is AI used?",
+          "answer": "To read the claim. Agents turn photographs, PDFs, handwriting and emails into facts. Each agent has one small task, so each step is visible and a fault is fixed where it happened."
+        },
+        {
+          "question": "Who makes the final decision?",
+          "answer": "Your team. By default True Aim prepares a recommendation with full reasoning for an adjuster to confirm. Full automation is available only where you and your regulator allow it."
+        },
+        {
+          "question": "What happens when something is wrong?",
+          "answer": "Every assumption is on screen and can be changed. Every change records its reason. The fault is fixed at the step where it happened."
+        },
+        {
+          "question": "Can True Aim work from our own rules rather than the policy wording?",
+          "answer": "Yes. Industry catalogues and your own business rules work the same way as policy wording. One example is fair wear and tear rules for vehicles returned at the end of a lease."
+        },
+        {
+          "question": "Does True Aim replace our claims system?",
+          "answer": "No. True Aim's Claims Decisioning works above the claims system you run, reads the claim from it and writes the recommendation back into it."
+        },
+        {
+          "question": "What is the Decision Dossier?",
+          "answer": "The record of every decision: the inputs, the clauses applied, the calculation trace, the evidence links and who confirmed the outcome. It exports as one audit pack."
+        }
+      ],
+      "cta": {
+        "heading": "See the automated coverage check on your own claims",
+        "lede": "Book a demo with your own claims, or start with your own numbers in the Impact Estimator.",
+        "buttonDemo": "Book a demo",
+        "buttonEstimate": "Estimate the impact"
+      }
+    },
+    "invoiceBenchmarking": {
+      "name": "Invoice Benchmarking",
+      "tagline": "Never overpay on an invoice again.",
+      "hero": {
+        "title": "Invoice Benchmarking: never overpay on an invoice again",
+        "summary": "True Aim's Invoice Benchmarking checks every invoice, quote and estimate against benchmark data, by business line and by region. Your team sees which lines are too high, by how much and why, with a reissue request drafted for each of them. Low-value invoices no longer go unchecked, and every saving is recorded line by line."
+      },
+      "keys": {
+        "heading": "Every invoice benchmarked",
+        "items": [
+          {
+            "label": "Every invoice",
+            "text": "Checked against benchmark rates for each business line and region."
+          },
+          {
+            "label": "What matters, first",
+            "text": "Red, amber or green on every line, so reviewers see at once where to look."
+          },
+          {
+            "label": "Fair to every region",
+            "text": "Prices are set by region, so an expensive area is not flagged as overcharging."
+          },
+          {
+            "label": "A record of each saving",
+            "text": "The original amount, the adjusted amount and the reason, line by line."
+          }
+        ]
+      },
+      "benchmark": {
+        "heading": "Low-value invoices no longer go unchecked",
+        "paragraphs": [
+          "Most suppliers and trades publish no price list. Low-value invoices are either sent to an external assessor, which only pays off on large bills, or paid as they are. Most overcharging sits below the threshold for external review.",
+          "In Switzerland, True Aim's benchmark draws on more than 100,000 invoices from property claims, grouped by trade and by region. Where benchmark data exists, True Aim uses it.",
+          "Where it does not, True Aim builds the benchmark from your own invoices or works with partners in your market. The result is the same: a benchmark that fits your region and your trades."
+        ],
+        "imageAlt": "Linked glass rings"
+      },
+      "lineItems": {
+        "heading": "How True Aim benchmarks line by line",
+        "intro": "Click a line to see its deviation from the benchmark and the amount saved. The figures are illustrative.",
+        "labels": {
+          "quantity": "Quantity",
+          "amount": "Amount",
+          "deviation": "Deviation",
+          "saving": "Saved",
+          "status": {
+            "approved": "Approved",
+            "referred": "Referred",
+            "denied": "Denied"
+          }
+        },
+        "items": [
+          {
+            "description": "Remove and dispose of water-damaged flooring, 32 square metres",
+            "quantity": "1",
+            "amount": "1,280",
+            "status": "approved",
+            "deviation": "Within the expected range",
+            "saving": "0",
+            "note": "The rate matches the regional benchmark for this trade. No action needed."
+          },
+          {
+            "description": "Supply and fit laminate flooring, 32 square metres",
+            "quantity": "1",
+            "amount": "2,944",
+            "status": "referred",
+            "deviation": "23% above the expected range",
+            "saving": "540",
+            "note": "The rate per square metre sits above the benchmark for this region. A reissue request is drafted with the expected rate."
+          },
+          {
+            "description": "Site attendance and travel",
+            "quantity": "3",
+            "amount": "690",
+            "status": "denied",
+            "deviation": "Charged three times for one job",
+            "saving": "460",
+            "note": "The benchmark allows one attendance for this scope. Two of the three charges are disputed."
+          }
+        ],
+        "total": {
+          "label": "Amount saved on this invoice",
+          "value": "1,000"
+        }
+      },
+      "features": {
+        "heading": "What this means for your team",
+        "items": [
+          {
+            "title": "A benchmark built for you",
+            "text": "Where benchmark data exists, True Aim uses it. Where it does not, True Aim builds one from your own invoices."
+          },
+          {
+            "title": "Deviation from the benchmark",
+            "text": "How far each line sits from the expected range, not only that it is over."
+          },
+          {
+            "title": "Everything compared",
+            "text": "Every quote for the same job side by side, with a recommended provider and the reasons."
+          },
+          {
+            "title": "Reissue requests drafted",
+            "text": "Disputed lines go into a drafted email and report, ready to send to the provider."
+          },
+          {
+            "title": "Provider scorecards",
+            "text": "Each provider sees their own record on price, turnaround and flag rate."
+          },
+          {
+            "title": "A benchmark that keeps learning",
+            "text": "Accepted invoices feed back in, so the ranges follow today's prices."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "Where does the price data come from?",
+          "answer": "In Switzerland, from more than 100,000 invoices from property claims, grouped by trade and by region. In other markets True Aim works with partners to build the benchmark, or builds it from your own invoices."
+        },
+        {
+          "question": "We only review invoices above a set amount. Why change?",
+          "answer": "Most overcharging sits below the threshold for external review. A fixed fee per invoice makes it worth checking the low-value invoices that nobody opens today."
+        },
+        {
+          "question": "How do we see what it saves?",
+          "answer": "A dashboard shows how many invoices went through, how much was saved on each and what you paid for the platform. The return is visible at any time."
+        },
+        {
+          "question": "Do we have to replace our claims system?",
+          "answer": "No. True Aim's Invoice Benchmarking works alongside the systems you already use and writes the adjusted amounts back into them."
+        }
+      ],
+      "cta": {
+        "heading": "See the benchmark on your own invoices",
+        "lede": "Book a demo with a set of past invoices and we show you what you could have saved.",
+        "buttonDemo": "Book a demo"
+      }
     },
     "damageReporting": {
       "name": "Damage Reporting",
-      "summary": "From the photographs and documents your customer sends, True Aim produces a priced damage estimate and the full scope of work at first notification. Your assessors go on site only where it changes the answer."
+      "tagline": "Completed damage reports in minutes.",
+      "hero": {
+        "title": "Damage Reporting: completed damage reports in minutes",
+        "summary": "True Aim produces a damage estimate and the full scope of work at first notification, from the photographs and documents your customer sends. True Aim's Damage Reporting prices the damage by region and lists every trade and task in the order the work must run. Your assessors go on site only where a visit changes the answer."
+      },
+      "keys": {
+        "heading": "What you receive on day one",
+        "items": [
+          {
+            "label": "An estimate at first notice",
+            "text": "With a reserve figure, before anyone visits the site."
+          },
+          {
+            "label": "The full scope of work",
+            "text": "Every trade and task, in the order the work must run."
+          },
+          {
+            "label": "Checked against the photos",
+            "text": "What the report says is tested against what the pictures show."
+          },
+          {
+            "label": "Clear next steps",
+            "text": "What is confirmed is kept apart from what a person still needs to check."
+          }
+        ]
+      },
+      "steps": {
+        "heading": "How a damage report is produced",
+        "items": [
+          {
+            "title": "The claim comes in",
+            "text": "By WhatsApp, email, web form or phone. Missing items are flagged while the customer is still there."
+          },
+          {
+            "title": "The damage is read",
+            "text": "Type of damage, affected area and materials are read from the photographs and priced by region."
+          },
+          {
+            "title": "The work is scoped",
+            "text": "Every trade needed, from drying and plastering to roofing and glazing, in the order the work must run."
+          },
+          {
+            "title": "Trades are co-ordinated",
+            "text": "Scoped requests go to the trades you choose. The quotes that come back are checked against the benchmark."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "Does True Aim replace our assessors?",
+          "answer": "No. True Aim's Damage Reporting gives your assessors an estimate and a scope on day one, with a note of what still needs checking in person. Site visits go where they change the answer."
+        },
+        {
+          "question": "What does the customer need to send?",
+          "answer": "Photographs, any documents they have and a description in their own words. Details already on the policy are filled in for them."
+        },
+        {
+          "question": "How is the estimate priced?",
+          "answer": "Against what each trade charges in that region, using the same benchmark data as True Aim's Invoice Benchmarking."
+        },
+        {
+          "question": "Can it start from an assessor's report?",
+          "answer": "Yes. A third-party report, cost estimate or appraisal can be the starting point. True Aim's Damage Reporting then works even where you do not run the customer journey yourself."
+        }
+      ],
+      "cta": {
+        "heading": "See a damage report built from your own photographs",
+        "lede": "Book a demo and bring a recent claim.",
+        "buttonDemo": "Book a demo"
+      }
     },
     "otus": {
       "name": "Otus, True Aim's claims specialist",
-      "summary": "Otus sits next to you and brings you the claim, its recommendation and the reasoning that your company already uses. Handlers ask in natural language and get an answer straight away."
+      "tagline": "An AI-powered expert for every member of your team.",
+      "hero": {
+        "title": "Otus, True Aim's claims specialist",
+        "summary": "Otus is True Aim's claims specialist, an AI-powered expert for every member of your team, in every True Aim solution. Otus brings you the claim, its recommendation and the reasoning behind it, in plain language, by voice or text. Otus has no decision rights: Otus explains, summarises and drafts, and your team decides."
+      },
+      "prompts": {
+        "label": "Example conversations with Otus",
+        "youLabel": "You",
+        "otusLabel": "Otus",
+        "items": [
+          {
+            "id": "plan",
+            "tab": "Plan my day",
+            "prompt": "Otus, I need to clear my backlog today. Where do I start?",
+            "answer": [
+              "Four claims are waiting on you. Two have a recommendation ready to confirm, one is missing the repair estimate and one has a response due today.",
+              "Start with the one due today, then confirm the two ready recommendations. I have drafted a reminder to the garage for the missing estimate."
+            ]
+          },
+          {
+            "id": "handover",
+            "tab": "Draft a handover",
+            "prompt": "Draft a handover email for claim 5964 to my colleague in property.",
+            "answer": [
+              "Done. The draft summarises the claim: water damage reported on 3 October, an estimate received and two lines referred for a deviation from the benchmark. The customer is waiting for a decision on the kitchen units.",
+              "Open items and deadlines are listed at the end. The draft is in your mailbox, ready to send."
+            ]
+          },
+          {
+            "id": "explain",
+            "tab": "Explain a decision",
+            "prompt": "Why was line 3 of claim 5964 referred?",
+            "answer": [
+              "Line 3 is the laminate flooring. The rate per square metre sits 23% above the benchmark for the region, so Claims Decisioning referred it rather than approving it.",
+              "The clause and the benchmark range are linked in the dossier. You can approve the line as it stands or send the drafted reissue request."
+            ]
+          }
+        ]
+      },
+      "keys": {
+        "heading": "What Otus brings to your team",
+        "items": [
+          {
+            "label": "In every True Aim solution",
+            "text": "Otus works inside Claims Decisioning, Invoice Benchmarking and Damage Reporting."
+          },
+          {
+            "label": "The whole claim in one conversation",
+            "text": "Claim, customer and policy, with nothing to search for."
+          },
+          {
+            "label": "Answers in plain language",
+            "text": "Why a line was referred, in everyday words, by voice or text."
+          },
+          {
+            "label": "No decision rights",
+            "text": "Otus explains and drafts. Your team decides."
+          }
+        ]
+      },
+      "features": {
+        "heading": "What adjusters use Otus for",
+        "items": [
+          {
+            "title": "Getting up to speed",
+            "text": "A short briefing on any claim, with nothing to search for."
+          },
+          {
+            "title": "Handovers",
+            "text": "A summary of the claim so far, for holiday cover or a new adjuster."
+          },
+          {
+            "title": "Letters and emails",
+            "text": "Drafts to customers, repairers and colleagues, with the full claim in view."
+          },
+          {
+            "title": "Planning the day",
+            "text": "What needs action now and which deadlines are close."
+          },
+          {
+            "title": "Explaining a decision",
+            "text": "Why a line was referred and which clause applies, in plain words."
+          },
+          {
+            "title": "Working in your systems",
+            "text": "Otus reads from and acts in your claim system and document store."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "Does Otus change any decision?",
+          "answer": "No. Otus has no decision rights. Otus explains, summarises and drafts, and that is also why Otus clears risk and compliance faster."
+        },
+        {
+          "question": "Where does Otus work?",
+          "answer": "In every True Aim solution. Otus sits on top of Claims Decisioning, Invoice Benchmarking and Damage Reporting and explains each recommendation line by line."
+        },
+        {
+          "question": "Which languages does Otus speak?",
+          "answer": "Adjusters can speak or type in any language."
+        }
+      ],
+      "cta": {
+        "heading": "Meet Otus on your own claims",
+        "lede": "Book a demo and see Otus explain a recommendation line by line.",
+        "buttonDemo": "Book a demo",
+        "buttonClaims": "Claims Decisioning"
+      }
     }
   }
 }

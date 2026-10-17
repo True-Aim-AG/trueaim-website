@@ -1,20 +1,30 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { ButtonLink } from "@/components/brand/Button";
 import { GridPattern } from "@/components/brand/GridPattern";
+import { Summary } from "@/components/content/Summary";
 
 const ease = [0.4, 0, 0.2, 1] as const;
 
 /**
- * Home hero, transcribed from the design system's marketing "Example" frame:
- * page tint, structured grid top-right, ~540px copy column, and the dimensional Glass Box render
- * from the brand guidelines (custom graphics, dimensional) on the right.
+ * Home hero from the design system's marketing "Example" frame: page tint,
+ * structured grid top right, the copy column (H1, summary, two buttons) and
+ * the dimensional Glass Box render on the right. Copy arrives as props from
+ * messages/<locale>/home.json.
  */
-export function Hero() {
-  const t = useTranslations("hero");
+export function Hero({
+  title,
+  summary,
+  ctaDemo,
+  ctaHow,
+}: {
+  title: string;
+  summary: string;
+  ctaDemo: string;
+  ctaHow: string;
+}) {
   const reduce = useReducedMotion();
   const fade = (delay: number) =>
     reduce
@@ -25,27 +35,25 @@ export function Hero() {
     <section className="relative overflow-hidden">
       <GridPattern className="absolute right-0 top-0 hidden h-[760px] w-[746px] lg:block" />
 
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-16 pt-20 md:pt-28 lg:min-h-[640px] lg:grid-cols-[minmax(0,560px)_1fr] lg:gap-8 lg:pb-24 lg:pt-[120px]">
-        {/* Copy column */}
-        <div className="max-w-[560px]">
-          <motion.h1 {...fade(0.05)} className="font-display text-[40px] font-bold leading-[1.05] text-strong sm:text-[48px] lg:text-[54px] lg:leading-none">
-            {t("title")}
-            <br />
-            {t("titleHighlight")}
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-16 pt-20 md:pt-28 lg:min-h-[640px] lg:grid-cols-[minmax(0,600px)_1fr] lg:gap-8 lg:pb-24 lg:pt-[120px]">
+        <div className="max-w-[600px]">
+          <motion.h1
+            {...fade(0.05)}
+            className="font-display text-[40px] font-bold leading-[1.05] text-strong sm:text-[48px] lg:text-[54px] lg:leading-none"
+          >
+            {title}
           </motion.h1>
 
-          <motion.p {...fade(0.15)} className="mt-[26px] max-w-[480px] text-lede text-body">
-            {t("subtitle1")}
-            <br />
-            {t("subtitle2")} {t("subtitle3")}
-          </motion.p>
+          <motion.div {...fade(0.15)} className="mt-[26px]">
+            <Summary>{summary}</Summary>
+          </motion.div>
 
           <motion.div {...fade(0.25)} className="mt-10 flex flex-col gap-3.5 sm:flex-row">
             <ButtonLink href="/contact" variant="primary" size="lg">
-              {t("ctaDemo")}
+              {ctaDemo}
             </ButtonLink>
-            <ButtonLink href="/impact-estimator" variant="secondary" size="lg">
-              {t("ctaImpact")}
+            <ButtonLink href="/platform" variant="secondary" size="lg">
+              {ctaHow}
             </ButtonLink>
           </motion.div>
         </div>

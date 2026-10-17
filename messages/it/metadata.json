@@ -5,13 +5,13 @@
   },
   "pages": {
     "/": {
-      "title": "Automatizza le decisioni sui sinistri. Verificabile per progettazione | True Aim",
-      "description": "Combinare l'IA agentica con la logica deterministica per l'automazione dei sinistri. Ogni decisione tracciabile, conforme ai requisiti del Regolamento sull'IA. Precisione svizzera e IA verificabile.",
-      "h1": "Automatizza le decisioni sui sinistri assicurativi. Verificabile per progettazione.",
+      "title": "Faster Claims, Smarter Decisions, Lower Costs | True Aim",
+      "description": "True Aim checks every claim against the policy wording, benchmarks every invoice and prepares every damage report, with the calculations shown. Your team keeps the final say.",
+      "h1": "Faster claims, smarter decisions, lower costs",
       "breadcrumb": "Home",
-      "ogTitle": "Automatizza le decisioni sui sinistri. Verificabile per progettazione.",
-      "ogDescription": "Combinare l'IA agentica con la logica deterministica per l'automazione dei sinistri. Ogni decisione tracciabile, conforme ai requisiti del Regolamento sull'IA.",
-      "updated": "2026-10-15"
+      "ogTitle": "Faster claims, smarter decisions, lower costs",
+      "ogDescription": "True Aim checks every claim against the policy wording, benchmarks every invoice and prepares every damage report, with the calculations shown. Your team keeps the final say.",
+      "updated": "2026-10-17"
     },
     "/technology": {
       "title": "Tecnologia – Architettura IA neuro-simbolica | True Aim",

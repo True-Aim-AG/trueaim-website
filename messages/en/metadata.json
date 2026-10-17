@@ -5,58 +5,58 @@
   },
   "pages": {
     "/": {
-      "title": "Auditable AI for Insurance Claim Decisions | True Aim",
-      "description": "True Aim combines agentic AI with deterministic logic to automate insurance claim decisions. Every decision is traceable and aligned with the EU AI Act.",
-      "h1": "Automate Insurance Claim Decisions. Auditable by Design.",
+      "title": "Faster Claims, Smarter Decisions, Lower Costs | True Aim",
+      "description": "True Aim checks every claim against the policy wording, benchmarks every invoice and prepares every damage report, with the calculations shown. Your team keeps the final say.",
+      "h1": "Faster claims, smarter decisions, lower costs",
       "breadcrumb": "Home",
-      "ogTitle": "Automate insurance claim decisions. Auditable by design.",
-      "ogDescription": "True Aim combines agentic AI with deterministic logic to automate insurance claim decisions. Every decision is traceable and aligned with the EU AI Act.",
-      "updated": "2026-10-15"
+      "ogTitle": "Faster claims, smarter decisions, lower costs",
+      "ogDescription": "True Aim checks every claim against the policy wording, benchmarks every invoice and prepares every damage report, with the calculations shown. Your team keeps the final say.",
+      "updated": "2026-10-17"
     },
     "/platform": {
-      "title": "Platform Overview: Claims AI for Insurers | True Aim",
-      "description": "The True Aim platform: AI-assisted claims processing for insurers, brokers and the wider insurance value chain, with its capabilities, users and workflow fit.",
-      "h1": "The True Aim Platform — Product Overview",
+      "title": "How the True Aim Platform Works | True Aim",
+      "description": "A claim file goes in, an audited decision comes out. How True Aim's four modules, Orchestrate and Prove fit together, with your team keeping the final say.",
+      "h1": "How the True Aim platform works",
       "breadcrumb": "Platform",
-      "ogTitle": "The True Aim platform",
-      "ogDescription": "AI-assisted claims processing for insurers, brokers and the wider insurance value chain, with its capabilities, users and workflow fit.",
-      "updated": "2026-10-15"
+      "ogTitle": "How the True Aim platform works",
+      "ogDescription": "A claim file goes in, an audited decision comes out. How True Aim's four modules, Orchestrate and Prove fit together, with your team keeping the final say.",
+      "updated": "2026-10-17"
     },
     "/platform/invoice-benchmarking": {
-      "title": "Invoice Benchmarking: Check Every Claims Invoice | True Aim",
-      "description": "Check every invoice, quote and estimate against benchmark data by trade and region, and see which lines are too high and why.",
-      "h1": "Invoice Benchmarking",
+      "title": "Invoice Benchmarking: Never Overpay on an Invoice | True Aim",
+      "description": "Every invoice, quote and estimate checked against benchmark data by trade and region. See which lines are too high, by how much and why, with the saving recorded line by line.",
+      "h1": "Invoice Benchmarking: never overpay on an invoice again",
       "breadcrumb": "Invoice Benchmarking",
       "ogTitle": "Invoice Benchmarking by True Aim",
-      "ogDescription": "Check every invoice, quote and estimate against benchmark data by trade and region, and see which lines are too high and why.",
-      "updated": "2026-10-15"
+      "ogDescription": "Every invoice, quote and estimate checked against benchmark data by trade and region. See which lines are too high, by how much and why.",
+      "updated": "2026-10-17"
     },
     "/platform/claims-decisioning": {
-      "title": "Claims Decisioning: Every Line Checked | True Aim",
-      "description": "Every line of a claim checked against the policy wording, with the amount calculated and the reason recorded. A full recommendation in about two minutes.",
-      "h1": "Claims Decisioning",
+      "title": "Claims Decisioning: Automated Coverage Check | True Aim",
+      "description": "True Aim's Claims Decisioning checks every line of a claim against the policy wording, calculates the amount and records the reason. A full recommendation in minutes, from FNOL to settlement.",
+      "h1": "Claims Decisioning: claims settled in minutes, not weeks",
       "breadcrumb": "Claims Decisioning",
       "ogTitle": "Claims Decisioning by True Aim",
-      "ogDescription": "Every line of a claim checked against the policy wording, with the amount calculated and the reason recorded. A full recommendation in about two minutes.",
-      "updated": "2026-10-15"
+      "ogDescription": "Every line of a claim checked against the policy wording, the amount calculated and the reason recorded. A full recommendation in minutes, from FNOL to settlement.",
+      "updated": "2026-10-17"
     },
     "/platform/damage-reporting": {
-      "title": "Damage Reporting: Priced Estimates from Photos | True Aim",
-      "description": "A priced damage estimate and full scope of work from the customer's photographs and documents, at first notification.",
-      "h1": "Damage Reporting",
+      "title": "Damage Reporting: Priced Estimates at First Notification | True Aim",
+      "description": "A damage estimate and the full scope of work at first notification, from the customer's photographs and documents. Assessors go on site only where a visit changes the answer.",
+      "h1": "Damage Reporting: completed damage reports in minutes",
       "breadcrumb": "Damage Reporting",
       "ogTitle": "Damage Reporting by True Aim",
-      "ogDescription": "A priced damage estimate and full scope of work from the customer's photographs and documents, at first notification.",
-      "updated": "2026-10-15"
+      "ogDescription": "A damage estimate and the full scope of work at first notification, from the customer's photographs and documents.",
+      "updated": "2026-10-17"
     },
     "/platform/otus": {
       "title": "Otus, True Aim's Claims Specialist | True Aim",
-      "description": "Ask anything about a claim, in the AI assistant your company has already approved. Otus explains each decision in plain language.",
+      "description": "Otus is an AI-powered expert for every member of your claims team. Otus explains each recommendation in plain language, drafts and summarises, and has no decision rights.",
       "h1": "Otus, True Aim's claims specialist",
       "breadcrumb": "Otus",
       "ogTitle": "Otus, True Aim's claims specialist",
-      "ogDescription": "Ask anything about a claim, in the AI assistant your company has already approved. Otus explains each decision in plain language.",
-      "updated": "2026-10-15"
+      "ogDescription": "An AI-powered expert for every member of your claims team. Otus explains each recommendation in plain language and has no decision rights.",
+      "updated": "2026-10-17"
     },
     "/technology": {
       "title": "Neuro-Symbolic AI Architecture for Claims | True Aim",
