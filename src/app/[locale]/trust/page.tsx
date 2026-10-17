@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, MapPin, Shield } from "lucide-react";
+import { ArrowRight, Check, MapPin, Shield } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import {
@@ -8,7 +8,6 @@ import {
   CARD_HOVER,
   CtaBand,
   FaqSection,
-  FeatureCards,
   PageHero,
   SECTION_LILAC,
   SectionHead,
@@ -123,16 +122,25 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
       {/* Sections alternate: white, lilac, white, lilac. */}
       <BadgeRow heading={t("badges.heading")} items={badgeItems} />
 
-      <FeatureCards
-        heading={t("euAiAct.heading")}
-        intro={t("euAiAct.intro")}
-        columns={3}
-        items={euAiActKeys.map((key) => ({
-          title: t(`euAiAct.features.${key}.requirement`),
-          text: t(`euAiAct.features.${key}.description`),
-        }))}
-        lilac
-      />
+      {/* EU AI Act: the live page's panels, each with a blue tick. */}
+      <section className={SECTION_LILAC}>
+        <div className="mx-auto max-w-7xl">
+          <SectionHead heading={t("euAiAct.heading")} lede={t("euAiAct.intro")} />
+          <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3">
+            {euAiActKeys.map((key) => (
+              <li key={key} className={cn(CARD, "flex h-full flex-col gap-3 p-8")}>
+                <div className="flex items-start gap-3">
+                  <Check strokeWidth={2.5} className="mt-1 h-5 w-5 shrink-0 text-accent" aria-hidden />
+                  <h3 className="font-display text-[20px] font-semibold leading-[1.3] tracking-[0.01em] text-strong">
+                    {t(`euAiAct.features.${key}.requirement`)}
+                  </h3>
+                </div>
+                <p className="pl-8 text-[15px] leading-[1.55] text-muted">{t(`euAiAct.features.${key}.description`)}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       <SplitText
         heading={t("humanInLoop.heading")}
