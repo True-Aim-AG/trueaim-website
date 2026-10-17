@@ -29,7 +29,8 @@ export function PageHero({
   children,
 }: {
   eyebrow?: string;
-  title: string;
+  /** The H1, as a string or as two lines (text, <br />, text). */
+  title: React.ReactNode;
   summary?: string;
   buttons?: HeroButton[];
   visual?: React.ReactNode;
