@@ -13,7 +13,7 @@ export { StepList, type Step } from "./StepList";
 export { ComparisonTable, type ComparisonRow } from "./ComparisonTable";
 export { FaqBlock } from "./FaqBlock";
 export { FaqSection } from "./FaqSection";
-export { PageHero, type HeroButton, type HeroTexture } from "./PageHero";
+export { PageHero, TextureBackdrop, type HeroButton, type HeroTexture } from "./PageHero";
 export { RelatedLinks, type RelatedLink } from "./RelatedLinks";
 export { SectionHead } from "./SectionHead";
 export { Summary } from "./Summary";
