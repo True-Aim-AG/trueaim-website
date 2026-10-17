@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { BrandIcon, type BrandIconName } from "@/components/brand/BrandIcon";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { CARD, CARD_HOVER, SECTION, SECTION_LILAC } from "./surface";
+import { CARD, CARD_HOVER, CARD_ICON_SLOT, CARD_TEXT, CARD_TITLE, section, type Tone } from "./surface";
 import { Reveal } from "./Reveal";
 import { SectionHead } from "./SectionHead";
 
@@ -20,7 +20,7 @@ const COLS = {
   4: "md:grid-cols-2 lg:grid-cols-4",
 } as const;
 
-/** Grid of feature cards. A card with an href is one link; otherwise it is plain. */
+/** Grid of cards whose rows line up: icon, title, text, link. A card with an href is one link. */
 export function FeatureCards({
   cap,
   heading,
@@ -28,7 +28,7 @@ export function FeatureCards({
   headingLevel = "h2",
   columns = 3,
   items,
-  lilac,
+  tone = "white",
 }: {
   cap?: string;
   heading: string;
@@ -36,22 +36,21 @@ export function FeatureCards({
   headingLevel?: "h2" | "h3";
   columns?: 2 | 3 | 4;
   items: FeatureCard[];
-  lilac?: boolean;
+  tone?: Tone;
 }) {
   const ItemHeading = headingLevel === "h2" ? "h3" : "h4";
+  const withIcons = items.some((item) => item.icon);
   return (
-    <section className={lilac ? SECTION_LILAC : SECTION}>
+    <section className={section(tone)}>
       <div className="mx-auto max-w-7xl">
         <SectionHead cap={cap} heading={heading} headingLevel={headingLevel} lede={intro} />
         <ul className={cn("grid grid-cols-1 gap-[29px]", COLS[columns])}>
           {items.map((item, index) => {
             const content = (
               <>
-                {item.icon && <BrandIcon name={item.icon} size={40} />}
-                <ItemHeading className="font-display text-[20px] font-semibold leading-[1.3] tracking-[0.01em] text-strong">
-                  {item.title}
-                </ItemHeading>
-                <p className="text-[15px] leading-[1.55] text-muted">{item.text}</p>
+                {withIcons && <div className={CARD_ICON_SLOT}>{item.icon && <BrandIcon name={item.icon} size={40} />}</div>}
+                <ItemHeading className={CARD_TITLE}>{item.title}</ItemHeading>
+                <p className={CARD_TEXT}>{item.text}</p>
                 {item.href && item.linkLabel && (
                   <span className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-medium text-accent">
                     {item.linkLabel}

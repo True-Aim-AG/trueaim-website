@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import { SECTION_TIGHT } from "./surface";
+import { section, type Tone } from "./surface";
 import type { StripLogo } from "./LogoStrip";
 
 const LOGO_CLASS =
@@ -14,7 +14,7 @@ const LOGO_CLASS =
  * row is repeated so the loop has no seam; the copy is hidden from assistive
  * technology, which reads the first row only. Still under reduced motion.
  */
-export function LogoMarquee({ logos, duration = 38 }: { logos: StripLogo[]; duration?: number }) {
+export function LogoMarquee({ logos, duration = 38, tone = "white" }: { logos: StripLogo[]; duration?: number; tone?: Tone }) {
   const reduced = useReducedMotion();
   const row = (hidden: boolean) => (
     <ul aria-hidden={hidden || undefined} className="flex shrink-0 items-center gap-20 pr-20">
@@ -44,7 +44,7 @@ export function LogoMarquee({ logos, duration = 38 }: { logos: StripLogo[]; dura
     </ul>
   );
   return (
-    <section className={SECTION_TIGHT}>
+    <section className={section(tone, true)}>
       <div
         className="mx-auto max-w-7xl overflow-hidden"
         style={{

@@ -8,11 +8,10 @@ import {
   LogoMarquee,
   PageHero,
   RelatedLinks,
-  SECTION,
   SplitText,
   type Award,
 } from "@/components/content";
-import { ClaimScene, type ClaimSceneData } from "@/components/products";
+import { ClaimScene, productIcons, type ClaimSceneData } from "@/components/products";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageLocales } from "@/i18n/page-locales";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -23,9 +22,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const outcomes = [
-  { key: "claimsDecisioning", href: "/platform/claims-decisioning", icon: "decision" },
-  { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking", icon: "match" },
-  { key: "damageReporting", href: "/platform/damage-reporting", icon: "document" },
+  { key: "claimsDecisioning", href: "/platform/claims-decisioning" },
+  { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking" },
+  { key: "damageReporting", href: "/platform/damage-reporting" },
 ] as const;
 
 /** The organisers' marks for the awards, in the order of the copy. */
@@ -37,12 +36,12 @@ const awardMarks = [
 ] as const;
 
 const relatedPages = [
-  { key: "claimsDecisioning", href: "/platform/claims-decisioning" },
-  { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking" },
-  { key: "damageReporting", href: "/platform/damage-reporting" },
-  { key: "otus", href: "/platform/otus" },
-  { key: "platform", href: "/platform" },
-  { key: "trust", href: "/trust" },
+  { key: "claimsDecisioning", href: "/platform/claims-decisioning", icon: productIcons.claimsDecisioning },
+  { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking", icon: productIcons.invoiceBenchmarking },
+  { key: "damageReporting", href: "/platform/damage-reporting", icon: productIcons.damageReporting },
+  { key: "otus", href: "/platform/otus", icon: productIcons.otus },
+  { key: "platform", href: "/platform", icon: "workflow" },
+  { key: "trust", href: "/trust", icon: "control" },
 ] as const;
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
@@ -77,13 +76,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         items={outcomes.map((outcome) => ({
           title: t(`benefits.items.${outcome.key}.title`),
           text: t(`benefits.items.${outcome.key}.text`),
-          icon: outcome.icon,
+          icon: productIcons[outcome.key],
           href: outcome.href,
           linkLabel: t(`benefits.items.${outcome.key}.link`),
         }))}
+        tone="white"
       />
-      <Awards heading={t("awards.heading")} items={awards} />
+      <Awards heading={t("awards.heading")} items={awards} tone="tint" />
       <LogoMarquee
+        tone="white"
         logos={[
           { src: "/partners/nsa-garantie.webp", alt: t("logos.nsa"), width: 600, height: 191, renderHeight: 72, href: "/case-studies/vehicle-warranty-claims" },
           { src: "/partners/yarowa.png", alt: t("logos.yarowa"), width: 978, height: 273, renderHeight: 52, href: "/partners/yarowa" },
@@ -96,7 +97,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         heading={t("compliance.heading")}
         paragraphs={t.raw("compliance.paragraphs") as string[]}
         image={{ src: "/brand/3d/lock.webp", alt: t("compliance.imageAlt"), width: 420, height: 420 }}
-        lilac
+        tone="tint"
       >
         <ul className="mt-8 flex flex-wrap items-center gap-[18px]">
           <li>
@@ -107,18 +108,16 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </li>
         </ul>
       </SplitText>
-      <section className={SECTION}>
-        <div className="mx-auto max-w-7xl">
-          <RelatedLinks
-            heading={t("related.heading")}
-            links={relatedPages.map((page) => ({
-              title: t(`related.${page.key}`),
-              description: t(`related.${page.key}Text`),
-              href: href(page.href),
-            }))}
-          />
-        </div>
-      </section>
+      <RelatedLinks
+        heading={t("related.heading")}
+        tone="white"
+        links={relatedPages.map((page) => ({
+          title: t(`related.${page.key}`),
+          description: t(`related.${page.key}Text`),
+          href: href(page.href),
+          icon: page.icon,
+        }))}
+      />
       <CtaBand heading={t("cta.heading")} lede={t("cta.lede")} buttons={[{ label: t("cta.button"), href: "/contact" }]} />
     </>
   );

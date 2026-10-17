@@ -7,11 +7,10 @@ import {
   FeatureCards,
   PageHero,
   RelatedLinks,
-  SECTION,
   SplitText,
   type FaqItem,
 } from "@/components/content";
-import { ModulesDiagram, OutcomesScene } from "@/components/products";
+import { ModulesDiagram, OutcomesScene, productIcons } from "@/components/products";
 import { products } from "@/data/products";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -22,9 +21,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const outcomes = [
-  { key: "claimsDecisioning", href: "/platform/claims-decisioning", icon: "decision" },
-  { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking", icon: "match" },
-  { key: "damageReporting", href: "/platform/damage-reporting", icon: "document" },
+  { key: "claimsDecisioning", href: "/platform/claims-decisioning" },
+  { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking" },
+  { key: "damageReporting", href: "/platform/damage-reporting" },
 ] as const;
 
 const features = ["orchestrate", "prove"] as const;
@@ -56,7 +55,7 @@ export default async function PlatformPage({ params }: { params: Promise<{ local
         visual={
           <OutcomesScene
             alt={t("hero.scene.alt")}
-            items={outcomes.map((outcome) => ({ icon: outcome.icon, title: t(`hero.scene.${outcome.key}`) }))}
+            items={outcomes.map((outcome) => ({ icon: productIcons[outcome.key], title: t(`hero.scene.${outcome.key}`) }))}
             hero
           />
         }
@@ -66,15 +65,17 @@ export default async function PlatformPage({ params }: { params: Promise<{ local
         items={outcomes.map((outcome) => ({
           title: t(`outcomes.items.${outcome.key}.title`),
           text: t(`outcomes.items.${outcome.key}.text`),
-          icon: outcome.icon,
+          icon: productIcons[outcome.key],
           href: outcome.href,
           linkLabel: t(`outcomes.items.${outcome.key}.link`),
         }))}
+        tone="white"
       />
       <SplitText
         heading={t("technology.heading")}
         paragraphs={t.raw("technology.paragraphs") as string[]}
         image={{ src: "/brand/3d/render-04.webp", alt: t("technology.imageAlt"), width: 560, height: 560 }}
+        tone="tint"
       />
       <ModulesDiagram
         heading={t("diagram.heading")}
@@ -88,28 +89,27 @@ export default async function PlatformPage({ params }: { params: Promise<{ local
         output={{ name: t("diagram.output.name"), text: t("diagram.output.text") }}
         featuresHeading={t("diagram.featuresHeading")}
         features={featureList.map((feature) => ({ name: feature.name, text: feature.description }))}
+        tone="white"
       />
-      <Callout text={t("diagram.callout")} />
+      <Callout text={t("diagram.callout")} tone="tint" />
       <SplitText
         heading={t("fit.heading")}
         paragraphs={t.raw("fit.paragraphs") as string[]}
         image={{ src: "/brand/3d/lock.webp", alt: t("fit.imageAlt"), width: 420, height: 420 }}
         imageSide="left"
-        lilac
+        tone="white"
       />
-      <FaqSection heading={t("faq.heading")} faqs={faqs} />
-      <section className={SECTION}>
-        <div className="mx-auto max-w-7xl">
-          <RelatedLinks
-            heading={t("related.heading")}
-            links={products.map((product) => ({
-              title: t(`related.${product.key}`),
-              description: t(`related.${product.key}Text`),
-              href: `/${locale}/platform/${product.slug}/`,
-            }))}
-          />
-        </div>
-      </section>
+      <FaqSection heading={t("faq.heading")} faqs={faqs} tone="tint" />
+      <RelatedLinks
+        heading={t("related.heading")}
+        tone="white"
+        links={products.map((product) => ({
+          title: t(`related.${product.key}`),
+          description: t(`related.${product.key}Text`),
+          href: `/${locale}/platform/${product.slug}/`,
+          icon: productIcons[product.key],
+        }))}
+      />
       <CtaBand heading={t("cta.heading")} lede={t("cta.lede")} buttons={[{ label: t("cta.button"), href: "/contact" }]} />
     </>
   );

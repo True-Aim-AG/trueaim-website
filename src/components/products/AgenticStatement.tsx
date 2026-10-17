@@ -1,13 +1,14 @@
 import Image from "next/image";
 import { Reveal } from "@/components/content/Reveal";
+import { section, type Tone } from "@/components/content/surface";
 
-/** One centred statement under the owl, on the dark band so the owl shines. */
-export function AgenticStatement({ heading }: { heading: string }) {
+/** One centred statement under the True Aim symbol in glass and metal. */
+export function AgenticStatement({ heading, tone = "white" }: { heading: string; tone?: Tone }) {
   return (
-    <section data-theme="dark" className="bg-page-tint px-6 py-20 md:py-[120px]">
+    <section className={section(tone)}>
       <Reveal className="mx-auto flex max-w-7xl flex-col items-center text-center">
-        <Image src="/brand/3d/owl.png" alt="" width={864} height={1350} className="h-auto w-[200px] md:w-[260px]" />
-        <h2 className="mt-6 font-display text-[30px] font-bold leading-[1.15] text-strong text-balance md:text-[40px]">
+        <Image src="/brand/3d/symbol.webp" alt="" width={420} height={236} className="h-auto w-[260px] md:w-[320px]" />
+        <h2 className="mt-8 font-display text-[30px] font-bold leading-[1.15] text-strong text-balance md:text-[40px]">
           {heading}
         </h2>
       </Reveal>

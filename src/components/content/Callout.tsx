@@ -1,11 +1,12 @@
 import { Reveal } from "./Reveal";
+import { section, type Tone } from "./surface";
 
-/** One statement, centred and set in True Aim Blue on the pale blue surface. */
-export function Callout({ text }: { text: string }) {
+/** One statement, centred, in the heading colour. */
+export function Callout({ text, tone = "tint" }: { text: string; tone?: Tone }) {
   return (
-    <section className="sec bg-ta-blue-50 px-6 py-14 md:py-20">
+    <section className={section(tone, true)}>
       <Reveal>
-        <p className="mx-auto max-w-[70ch] text-center font-display text-[22px] font-medium leading-[1.4] text-ta-blue-600 text-balance md:text-[26px]">
+        <p className="mx-auto max-w-[70ch] text-center font-display text-[22px] font-medium leading-[1.4] text-strong text-balance md:text-[26px]">
           {text}
         </p>
       </Reveal>

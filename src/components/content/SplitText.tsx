@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/brand/Button";
 import { cn } from "@/lib/utils";
 import { Reveal } from "./Reveal";
-import { SECTION, SECTION_LILAC } from "./surface";
+import { section, type Tone } from "./surface";
 
 export type SplitImage = { src: string; alt: string; width: number; height: number };
 
@@ -19,7 +19,7 @@ export function SplitText({
   visual,
   imageSide = "right",
   link,
-  lilac,
+  tone = "white",
   children,
 }: {
   cap?: string;
@@ -30,7 +30,7 @@ export function SplitText({
   visual?: React.ReactNode;
   imageSide?: "left" | "right";
   link?: { href: string; label: string };
-  lilac?: boolean;
+  tone?: Tone;
   children?: React.ReactNode;
 }) {
   const Heading = headingLevel;
@@ -45,7 +45,7 @@ export function SplitText({
     />
   ));
   return (
-    <section className={lilac ? SECTION_LILAC : SECTION}>
+    <section className={section(tone)}>
       <div
         className={cn(
           "mx-auto grid max-w-7xl items-center gap-14",

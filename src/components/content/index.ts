@@ -20,7 +20,7 @@ export { SectionHead } from "./SectionHead";
 export { TextSection } from "./TextSection";
 export { FigureSection } from "./FigureSection";
 export { Summary } from "./Summary";
-export { CARD, CARD_HOVER, SCENE_CARD, SCENE_CARD_HERO, SECTION, SECTION_LILAC, SECTION_TIGHT } from "./surface";
+export { CARD, CARD_HOVER, SCENE_CARD, SCENE_CARD_HERO, SECTION, SECTION_LILAC, SECTION_TIGHT, section, type Tone } from "./surface";
 export {
   breadcrumbListSchema,
   faqPageSchema,

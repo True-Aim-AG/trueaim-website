@@ -1,7 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { SectionHead } from "@/components/content/SectionHead";
-import { CARD, CARD_HOVER, SECTION } from "@/components/content/surface";
+import { CARD, CARD_HOVER, section, type Tone } from "@/components/content/surface";
 import { cn } from "@/lib/utils";
 
 export type DiagramNode = { name: string; text: string; href?: string };
@@ -19,6 +19,7 @@ export function ModulesDiagram({
   output,
   features,
   featuresHeading,
+  tone = "white",
 }: {
   heading: string;
   intro?: string;
@@ -27,9 +28,10 @@ export function ModulesDiagram({
   output: DiagramNode;
   features: DiagramNode[];
   featuresHeading: string;
+  tone?: Tone;
 }) {
   return (
-    <section className={SECTION}>
+    <section className={section(tone)}>
       <div className="max-w-7xl mx-auto">
         <SectionHead heading={heading} lede={intro} />
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,2.4fr)_auto_minmax(0,1fr)] lg:items-center">

@@ -13,6 +13,7 @@ import {
   type FeatureCard,
   type HeroTexture,
   type KeyFact,
+  type Tone,
 } from "@/components/content";
 import {
   AgenticStatement,
@@ -23,6 +24,7 @@ import {
   OtusPrompts,
   RecordScene,
   ReportScene,
+  productIcons,
   type ClaimSceneData,
   type FlowSceneData,
   type InvoiceSceneData,
@@ -71,6 +73,14 @@ const textures: Record<Product["key"], HeroTexture> = {
   otus: { name: "glass", position: "12% 88%" },
 };
 
+/** Backgrounds alternate down each page; the FAQ takes the tone after the last section here. */
+const faqTone: Record<Product["key"], Tone> = {
+  claimsDecisioning: "white",
+  invoiceBenchmarking: "tint",
+  damageReporting: "tint",
+  otus: "tint",
+};
+
 function withIcons(items: Omit<FeatureCard, "icon">[], names: BrandIconName[]): FeatureCard[] {
   return items.map((item, index) => ({ ...item, icon: names[index] }));
 }
@@ -104,24 +114,25 @@ function sections(product: Product, t: Translate) {
     case "claimsDecisioning":
       return (
         <>
-          <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} icons={icons.claimsKeys} />
-          <Callout text={t(`${key}.callout`)} />
+          <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} icons={icons.claimsKeys} tone="white" />
+          <Callout text={t(`${key}.callout`)} tone="tint" />
           <FeatureCards
             heading={t(`${key}.features.heading`)}
             items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], icons.claimsFeatures)}
+            tone="white"
           />
           <SplitText
             cap={t(`${key}.technology.cap`)}
             heading={t(`${key}.technology.heading`)}
             paragraphs={t.raw(`${key}.technology.paragraphs`) as string[]}
             image={{ src: "/brand/3d/render-04.webp", alt: t(`${key}.technology.imageAlt`), width: 560, height: 560 }}
-            lilac
+            tone="tint"
           />
-          <FigureSection heading={t(`${key}.flow.heading`)}>
+          <FigureSection heading={t(`${key}.flow.heading`)} tone="white">
             <FlowScene data={t.raw(`${key}.flow.scene`) as FlowSceneData} />
           </FigureSection>
-          <KeyFacts heading={t(`${key}.routing.heading`)} items={t.raw(`${key}.routing.items`) as KeyFact[]} icons={icons.claimsRouting} />
-          <FigureSection id="decision-dossier" heading={t(`${key}.record.heading`)}>
+          <KeyFacts heading={t(`${key}.routing.heading`)} items={t.raw(`${key}.routing.items`) as KeyFact[]} icons={icons.claimsRouting} tone="tint" />
+          <FigureSection id="decision-dossier" heading={t(`${key}.record.heading`)} tone="white">
             <RecordScene data={t.raw(`${key}.record.scene`) as RecordSceneData} />
           </FigureSection>
           <SplitText
@@ -130,32 +141,34 @@ function sections(product: Product, t: Translate) {
             paragraphs={t.raw(`${key}.otus.paragraphs`) as string[]}
             image={{ src: "/brand/3d/symbol.webp", alt: t(`${key}.otus.imageAlt`), width: 420, height: 236 }}
             link={{ href: "/platform/otus", label: t(`${key}.otus.link`) }}
-            lilac
+            tone="tint"
           />
         </>
       );
     case "invoiceBenchmarking":
       return (
         <>
-          <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} icons={icons.invoiceKeys} />
+          <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} icons={icons.invoiceKeys} tone="white" />
           <SplitText
             heading={t(`${key}.unchecked.heading`)}
             paragraphs={t.raw(`${key}.unchecked.paragraphs`) as string[]}
             image={{ src: "/brand/3d/objects-01.webp", alt: t(`${key}.unchecked.imageAlt`), width: 560, height: 420 }}
-            lilac
+            tone="tint"
           />
           <SplitText
             cap={t(`${key}.benchmark.cap`)}
             heading={t(`${key}.benchmark.heading`)}
             paragraphs={t.raw(`${key}.benchmark.paragraphs`) as string[]}
             image={{ src: "/brand/3d/render-05.webp", alt: t(`${key}.benchmark.imageAlt`), width: 560, height: 560 }}
+            tone="white"
           />
-          <FigureSection heading={t(`${key}.lineBench.heading`)} lilac>
+          <FigureSection heading={t(`${key}.lineBench.heading`)} tone="tint">
             <LineBenchScene data={t.raw(`${key}.lineBench.scene`) as LineBenchSceneData} />
           </FigureSection>
           <FeatureCards
             heading={t(`${key}.features.heading`)}
             items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], icons.invoiceFeatures)}
+            tone="white"
           />
         </>
       );
@@ -166,20 +179,20 @@ function sections(product: Product, t: Translate) {
           heading={t(`${key}.steps.heading`)}
           columns={4}
           items={withIcons(t.raw(`${key}.steps.items`) as FeatureCard[], icons.damageSteps)}
-          lilac
+          tone="white"
         />
       );
     case "otus":
       return (
         <>
-          <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} icons={icons.otusKeys} />
+          <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} icons={icons.otusKeys} tone="white" />
           <FeatureCards
             heading={t(`${key}.features.heading`)}
             columns={4}
             items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], icons.otusFeatures)}
-            lilac
+            tone="tint"
           />
-          <AgenticStatement heading={t(`${key}.agentic.heading`)} />
+          <AgenticStatement heading={t(`${key}.agentic.heading`)} tone="white" />
         </>
       );
   }
@@ -201,6 +214,7 @@ export default async function ProductPage({ params }: Props) {
       title: t(`${other.key}.name`),
       description: t(`${other.key}.tagline`),
       href: `/${locale}/platform/${other.slug}/`,
+      icon: productIcons[other.key],
     }));
 
   // Hero buttons as the prototype sets them: the estimator only where the page is about the coverage check.
@@ -239,6 +253,7 @@ export default async function ProductPage({ params }: Props) {
         faq={{ heading: faqHeading, items: faqs }}
         related={{ heading: t("common.relatedHeading"), links: related }}
         cta={{ heading: t(`${key}.cta.heading`), lede: t(`${key}.cta.lede`), buttons: ctaButtons }}
+        faqTone={faqTone[key]}
       >
         {sections(product, t)}
       </ProductTemplate>
