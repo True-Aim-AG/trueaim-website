@@ -12,6 +12,7 @@ import {
 } from "@/components/content";
 import { ModulesDiagram, OutcomesScene, productIcons } from "@/components/products";
 import { products } from "@/data/products";
+import { solutions } from "@/data/solutions";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
 
@@ -108,6 +109,16 @@ export default async function PlatformPage({ params }: { params: Promise<{ local
           description: t(`related.${product.key}Text`),
           href: `/${locale}/platform/${product.slug}/`,
           icon: productIcons[product.key],
+        }))}
+      />
+      <RelatedLinks
+        heading={t("solutions.heading")}
+        tone="tint"
+        links={solutions.map((solution) => ({
+          title: t(`solutions.${solution.key}`),
+          description: t(`solutions.${solution.key}Text`),
+          href: `/en/solutions/${solution.segment}/`,
+          icon: solution.icon,
         }))}
       />
       <CtaBand heading={t("cta.heading")} lede={t("cta.lede")} buttons={[{ label: t("cta.button"), href: "/contact" }]} />

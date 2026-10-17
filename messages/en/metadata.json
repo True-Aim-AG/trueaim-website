@@ -58,6 +58,51 @@
       "ogDescription": "An AI-powered expert for every team member. Otus explains each recommendation in plain language and has no decision rights.",
       "updated": "2026-10-17"
     },
+    "/solutions/insurers": {
+      "title": "P&C Claims Settled Faster, for Insurers | True Aim",
+      "description": "Faster property and casualty claims and fairer costs. Every claim assessed against the policy wording, every invoice benchmarked and every damage report prepared, with your adjusters deciding.",
+      "h1": "P&C claims, settled faster",
+      "breadcrumb": "Insurers",
+      "ogTitle": "True Aim for insurers",
+      "ogDescription": "Every claim assessed against the policy wording, every invoice benchmarked and every damage report prepared, with your adjusters deciding.",
+      "updated": "2026-10-17"
+    },
+    "/solutions/brokers": {
+      "title": "Claims Handled from the First Call, for Brokers | True Aim",
+      "description": "Capture the claim on first contact, check it against the policy wording and keep your client informed at every step, with the insurer's decision explained line by line.",
+      "h1": "Claims captured and handled from the first call",
+      "breadcrumb": "Brokers",
+      "ogTitle": "True Aim for brokers",
+      "ogDescription": "Capture the claim on first contact, check it against the policy wording and keep your client informed at every step.",
+      "updated": "2026-10-17"
+    },
+    "/solutions/third-party-administrators": {
+      "title": "More Claims per Adjuster, for TPAs | True Aim",
+      "description": "Handle and decide more claims for every insurer you serve, within each mandate, with every invoice benchmarked and a complete record for each client.",
+      "h1": "More claims per adjuster, within every mandate",
+      "breadcrumb": "Third-party administrators",
+      "ogTitle": "True Aim for third-party administrators",
+      "ogDescription": "Handle and decide more claims for every insurer you serve, within each mandate, with a complete record for each client.",
+      "updated": "2026-10-17"
+    },
+    "/solutions/warranty-providers": {
+      "title": "Warranty Invoices Checked Against the Terms | True Aim",
+      "description": "Every garage invoice split into parts, labour and fees, checked against the warranty terms in minutes and benchmarked against what the work should cost.",
+      "h1": "Every warranty invoice checked against the terms",
+      "breadcrumb": "Warranty providers",
+      "ogTitle": "True Aim for warranty providers",
+      "ogDescription": "Every garage invoice split into parts, labour and fees and checked against the warranty terms in minutes.",
+      "updated": "2026-10-17"
+    },
+    "/solutions/claims-technology-providers": {
+      "title": "Claims Decisions Inside Your Platform | True Aim",
+      "description": "Add the automated coverage check to the platform your clients already use, with a record of how every decision was reached that you can pass on.",
+      "h1": "Add the coverage check to the workflow your clients already use",
+      "breadcrumb": "Claims technology providers",
+      "ogTitle": "True Aim for claims technology providers",
+      "ogDescription": "Add the automated coverage check to the platform your clients already use, with a record of every decision.",
+      "updated": "2026-10-17"
+    },
     "/technology": {
       "title": "Neuro-Symbolic AI Architecture for Claims | True Aim",
       "description": "True Aim combines agentic AI execution with deterministic decision-making, built for regulated insurance and EU AI Act compliance. Not a black box.",

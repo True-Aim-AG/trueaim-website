@@ -126,6 +126,19 @@
       "trust": "Trust Centre",
       "trustText": "Hosting, certification and data protection."
     },
+    "solutions": {
+      "heading": "Solutions for your organisation",
+      "insurers": "Insurers",
+      "insurersText": "P&C claims, settled faster.",
+      "brokers": "Brokers",
+      "brokersText": "Claims captured and handled from the first call.",
+      "tpas": "Third-party administrators",
+      "tpasText": "More claims per adjuster, within every mandate.",
+      "warranty": "Warranty providers",
+      "warrantyText": "Every warranty invoice checked against the terms.",
+      "claimsTech": "Claims technology providers",
+      "claimsTechText": "The coverage check inside your platform."
+    },
     "cta": {
       "heading": "Ready to see True Aim on your own claims?",
       "lede": "We show you the finished outcome and every calculation behind it.",

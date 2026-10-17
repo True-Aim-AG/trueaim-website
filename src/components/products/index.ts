@@ -8,6 +8,7 @@ export {
   InvoiceScene,
   LineBenchScene,
   OutcomesScene,
+  QueueScene,
   RecordScene,
   ReportScene,
   type ClaimSceneData,
@@ -15,6 +16,7 @@ export {
   type InvoiceSceneData,
   type LineBenchSceneData,
   type OutcomeItem,
+  type QueueSceneData,
   type RecordSceneData,
   type ReportSceneData,
 } from "./scenes";

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Download } from "lucide-react";
-import { SCENE_CARD } from "@/components/content/surface";
+import { SCENE_CARD, SCENE_CARD_HERO } from "@/components/content/surface";
 import { cn } from "@/lib/utils";
 import { HexCheck } from "./marks";
 
@@ -17,7 +17,8 @@ export type RecordSceneData = {
   rows: { time: string; actor: RecordActor; who: string; text: string; hash: string }[];
   groups: Record<RecordActor, string>;
   actions: { one: string; many: string };
-  verified: string;
+  /** The chain check line; left out where the page does not show it. */
+  verified?: string;
   exportLabel: string;
 };
 
@@ -36,10 +37,10 @@ const GROUP_EDGE: Record<RecordActor, string> = {
 const ORDER: RecordActor[] = ["agent", "engine", "human"];
 
 /** The claim record: every action in order with its actor and its hash, and a forensic view grouped by actor. */
-export function RecordScene({ data }: { data: RecordSceneData }) {
+export function RecordScene({ data, hero }: { data: RecordSceneData; hero?: boolean }) {
   const [view, setView] = useState<"time" | "actor">("time");
   return (
-    <div role="group" aria-label={data.alt} className={SCENE_CARD}>
+    <div role="group" aria-label={data.alt} className={cn(SCENE_CARD, hero && SCENE_CARD_HERO)}>
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-hairline bg-surface-muted px-3.5 py-3">
         <div>
           <p className="font-display text-[15px] font-semibold leading-[1.2] text-strong">{data.title}</p>
@@ -122,10 +123,12 @@ export function RecordScene({ data }: { data: RecordSceneData }) {
           })}
         </div>
       )}
-      <p className="flex items-center gap-2 px-3.5 py-2.5 text-[12px] text-approved-dark">
-        <HexCheck className="h-[18px] w-[18px]" />
-        <span>{data.verified}</span>
-      </p>
+      {data.verified && (
+        <p className="flex items-center gap-2 px-3.5 py-2.5 text-[12px] text-approved-dark">
+          <HexCheck className="h-[18px] w-[18px]" />
+          <span>{data.verified}</span>
+        </p>
+      )}
       <div className="flex items-center justify-end border-t border-hairline bg-page px-3.5 py-3">
         <span className="inline-flex items-center gap-2 rounded-pill bg-white px-3 py-1.5 text-[12px] font-medium text-ta-blue-700 shadow-[inset_0_0_0_1px_var(--ta-blue-200)]">
           <Download className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden />

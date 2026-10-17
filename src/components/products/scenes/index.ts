@@ -8,5 +8,6 @@ export { OutcomesScene, type OutcomeItem } from "./OutcomesScene";
 export { FlowScene, type FlowSceneData } from "./FlowScene";
 export { RecordScene, type RecordSceneData } from "./RecordScene";
 export { LineBenchScene, type LineBenchSceneData } from "./LineBenchScene";
+export { QueueScene, type QueueSceneData } from "./QueueScene";
 export { SceneCard } from "./SceneCard";
 export { HexCheck, HexDot, type Outcome } from "./marks";

@@ -10,8 +10,9 @@ export type ClaimSceneData = {
   reference: string;
   columns: { description: string; quantity: string; claimed: string; covered: string };
   groups: { kind: Outcome; label: string; total: string; lines: ClaimLine[] }[];
-  deductibleLabel: string;
-  deductible: string;
+  /** Left out where the cover has no deductible, as on a warranty claim. */
+  deductibleLabel?: string;
+  deductible?: string;
   payoutLabel: string;
   payout: string;
 };
@@ -46,8 +47,12 @@ export function ClaimScene({ data, hero }: { data: ClaimSceneData; hero?: boolea
         ))}
       </div>
       <div className="grid grid-cols-[1fr_auto] items-baseline gap-x-4 gap-y-1.5 border-t border-hairline bg-page px-3.5 py-3.5">
-        <span className="text-muted">{data.deductibleLabel}</span>
-        <span className="text-right font-medium tabular-nums text-strong">{data.deductible}</span>
+        {data.deductible && (
+          <>
+            <span className="text-muted">{data.deductibleLabel}</span>
+            <span className="text-right font-medium tabular-nums text-strong">{data.deductible}</span>
+          </>
+        )}
         <span className="pt-1 font-display text-[20px] font-semibold leading-[1.1] text-strong">{data.payoutLabel}</span>
         <span className="pt-1 text-right font-display text-[20px] font-semibold leading-[1.1] tabular-nums text-strong">
           {data.payout}

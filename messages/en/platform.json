@@ -129,6 +129,19 @@
       "otus": "Otus, True Aim's claims specialist",
       "otusText": "An AI-powered expert for every team member."
     },
+    "solutions": {
+      "heading": "Solutions for your organisation",
+      "insurers": "Insurers",
+      "insurersText": "P&C claims, settled faster.",
+      "brokers": "Brokers",
+      "brokersText": "Claims captured and handled from the first call.",
+      "tpas": "Third-party administrators",
+      "tpasText": "More claims per adjuster, within every mandate.",
+      "warranty": "Warranty providers",
+      "warrantyText": "Every warranty invoice checked against the terms.",
+      "claimsTech": "Claims technology providers",
+      "claimsTechText": "The coverage check inside your platform."
+    },
     "cta": {
       "heading": "Ready to see the finished outcome on your own claims?",
       "lede": "Book a demo and we show you a settled claim, a benchmarked invoice and a completed damage report, with the working behind each.",

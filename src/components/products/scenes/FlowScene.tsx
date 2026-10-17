@@ -13,9 +13,9 @@ export type FlowSceneData = {
 const LAB = "mb-3 text-[10.5px] font-medium uppercase tracking-[.12em] text-subtle";
 
 /** Claims arrive on four channels, merge into one record, and every party is updated from it. */
-export function FlowScene({ data }: { data: FlowSceneData }) {
+export function FlowScene({ data, hero }: { data: FlowSceneData; hero?: boolean }) {
   return (
-    <SceneCard alt={data.alt}>
+    <SceneCard alt={data.alt} hero={hero}>
       <div className="grid items-center gap-3.5 p-3.5 sm:grid-cols-[minmax(0,.9fr)_minmax(0,1.1fr)_minmax(0,1.15fr)] sm:gap-[18px]">
         <div>
           <p className={LAB}>{data.channelsLabel}</p>

@@ -3,12 +3,15 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 /**
- * Guards for the launch copy of the home, platform and product pages (chunk C):
+ * Guards for the launch copy of the home, platform, product and solutions pages (chunk C):
  * no retired product name, no dash used for rhythm, "adjuster" not "handler",
  * a summary of 40 to 60 words under every H1, and FAQ rows that can feed FAQPage.
  */
 const LOCALES = ["en", "de", "fr", "it"];
 const NAMESPACES = ["home", "platform", "products"];
+/** Namespaces that exist in English only until their translations land. */
+const ENGLISH_ONLY = ["solutions"];
+const ENGLISH = [...NAMESPACES, ...ENGLISH_ONLY];
 const RETIRED = /mira|contextbuilder|claimeval|claimpilot/i;
 const DASHES = /[–—]| - /;
 
@@ -47,14 +50,22 @@ describe("launch copy", () => {
     }
   }
 
+  for (const namespace of ENGLISH_ONLY) {
+    it(`en/${namespace}.json names no retired product and uses no dash for rhythm`, () => {
+      const text = read("en", namespace);
+      expect(text).not.toMatch(RETIRED);
+      expect(text).not.toMatch(DASHES);
+    });
+  }
+
   it("says adjuster, not handler, in the English copy", () => {
-    for (const namespace of NAMESPACES) {
+    for (const namespace of ENGLISH) {
       expect(read("en", namespace)).not.toMatch(/\bhandlers?\b/i);
     }
   });
 
   it("puts a summary of 40 to 60 words under every H1", () => {
-    for (const namespace of NAMESPACES) {
+    for (const namespace of ENGLISH) {
       const summaries = find(JSON.parse(read("en", namespace)), "summary") as string[];
       expect(summaries.length).toBeGreaterThan(0);
       for (const summary of summaries) {
@@ -70,6 +81,7 @@ describe("launch copy", () => {
       ...(find(JSON.parse(read("en", "home")), "items").flat() as unknown[]),
       ...(find(JSON.parse(read("en", "platform")), "items").flat() as unknown[]),
       ...(find(JSON.parse(read("en", "products")), "faq").flat() as unknown[]),
+      ...(find(JSON.parse(read("en", "solutions")), "faq").flat() as unknown[]),
     ].filter((row): row is { question: string; answer: string } => !!row && typeof row === "object" && "question" in row);
     expect(rows.length).toBeGreaterThanOrEqual(20);
     for (const row of rows) {
@@ -79,7 +91,7 @@ describe("launch copy", () => {
   });
 
   it("keeps every English string free of exclamation marks and emoji", () => {
-    for (const namespace of NAMESPACES) {
+    for (const namespace of ENGLISH) {
       for (const text of strings(JSON.parse(read("en", namespace)))) {
         expect(text, text).not.toMatch(/!/);
         expect(text, text).not.toMatch(/[\u{1F300}-\u{1FAFF}]/u);
