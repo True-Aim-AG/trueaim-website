@@ -4,7 +4,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { products, findProduct, type Product } from "@/data/products";
 import { ProductTemplate } from "@/components/templates/ProductTemplate";
 import {
-  Callout,
   FeatureCards,
   FigureSection,
   KeyFacts,
@@ -16,7 +15,6 @@ import {
   type Tone,
 } from "@/components/content";
 import {
-  AgenticStatement,
   ClaimScene,
   FlowScene,
   InvoiceScene,
@@ -24,6 +22,7 @@ import {
   OtusPrompts,
   RecordScene,
   ReportScene,
+  ScopeScene,
   productIcons,
   type ClaimSceneData,
   type FlowSceneData,
@@ -32,6 +31,7 @@ import {
   type OtusPrompt,
   type RecordSceneData,
   type ReportSceneData,
+  type ScopeSceneData,
 } from "@/components/products";
 import type { BrandIconName } from "@/components/brand/BrandIcon";
 import { PageSeo } from "@/components/seo/PageSeo";
@@ -61,7 +61,7 @@ const icons: Record<string, BrandIconName[]> = {
   invoiceKeys: ["document", "quality", "structure", "traceability"],
   invoiceFeatures: ["data", "structured-data", "match", "document", "control", "learning-loop"],
   damageSteps: ["ingestion", "extraction", "process", "match"],
-  otusKeys: ["workflow", "claim", "human-review", "control"],
+  otusKeys: ["workflow", "claim", "human-review"],
   otusFeatures: ["control", "document", "process", "decision", "human-review", "match", "extraction", "data"],
 };
 
@@ -75,11 +75,19 @@ const textures: Record<Product["key"], HeroTexture> = {
 
 /** Backgrounds alternate down each page; the links block takes the tone after the last section here, the FAQ the other. */
 const nextTone: Record<Product["key"], Tone> = {
-  claimsDecisioning: "white",
+  claimsDecisioning: "tint",
   invoiceBenchmarking: "tint",
-  damageReporting: "tint",
-  otus: "tint",
+  damageReporting: "white",
+  otus: "white",
 };
+
+/** "4. Trades are co-ordinated" becomes a number and a title, so the number sits left of all the text. */
+function numbered(items: Omit<FeatureCard, "icon">[]): Omit<FeatureCard, "icon">[] {
+  return items.map((item) => {
+    const match = item.title.match(/^(\d+)\.\s+(.*)$/);
+    return match ? { ...item, number: match[1], title: match[2] } : item;
+  });
+}
 
 function withIcons(items: Omit<FeatureCard, "icon">[], names: BrandIconName[]): FeatureCard[] {
   return items.map((item, index) => ({ ...item, icon: names[index] }));
@@ -98,7 +106,6 @@ function visual(product: Product, t: Translate) {
       return (
         <OtusPrompts
           label={t("otus.prompts.label")}
-          footer={t("otus.prompts.footer")}
           youLabel={t("otus.prompts.youLabel")}
           otusLabel={t("otus.prompts.otusLabel")}
           prompts={t.raw("otus.prompts.items") as OtusPrompt[]}
@@ -115,24 +122,23 @@ function sections(product: Product, t: Translate) {
       return (
         <>
           <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} icons={icons.claimsKeys} tone="white" />
-          <Callout text={t(`${key}.callout`)} tone="tint" />
           <FeatureCards
             heading={t(`${key}.features.heading`)}
             items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], icons.claimsFeatures)}
-            tone="white"
+            tone="tint"
           />
           <SplitText
             cap={t(`${key}.technology.cap`)}
             heading={t(`${key}.technology.heading`)}
             paragraphs={t.raw(`${key}.technology.paragraphs`) as string[]}
             image={{ src: "/brand/3d/render-04.webp", alt: t(`${key}.technology.imageAlt`), width: 560, height: 560 }}
-            tone="tint"
+            tone="white"
           />
-          <FigureSection heading={t(`${key}.flow.heading`)} tone="white">
+          <FigureSection heading={t(`${key}.flow.heading`)} tone="tint">
             <FlowScene data={t.raw(`${key}.flow.scene`) as FlowSceneData} />
           </FigureSection>
-          <KeyFacts heading={t(`${key}.routing.heading`)} items={t.raw(`${key}.routing.items`) as KeyFact[]} icons={icons.claimsRouting} tone="tint" />
-          <FigureSection id="decision-dossier" heading={t(`${key}.record.heading`)} tone="white">
+          <KeyFacts heading={t(`${key}.routing.heading`)} items={t.raw(`${key}.routing.items`) as KeyFact[]} icons={icons.claimsRouting} tone="white" />
+          <FigureSection id="decision-dossier" heading={t(`${key}.record.heading`)} tone="tint">
             <RecordScene data={t.raw(`${key}.record.scene`) as RecordSceneData} />
           </FigureSection>
           <SplitText
@@ -141,7 +147,7 @@ function sections(product: Product, t: Translate) {
             paragraphs={t.raw(`${key}.otus.paragraphs`) as string[]}
             image={{ src: "/brand/3d/symbol.webp", alt: t(`${key}.otus.imageAlt`), width: 420, height: 236 }}
             link={{ href: "/platform/otus", label: t(`${key}.otus.link`) }}
-            tone="tint"
+            tone="white"
           />
         </>
       );
@@ -174,13 +180,17 @@ function sections(product: Product, t: Translate) {
       );
     case "damageReporting":
       return (
-        <FeatureCards
-          cap={t(`${key}.steps.cap`)}
-          heading={t(`${key}.steps.heading`)}
-          columns={4}
-          items={withIcons(t.raw(`${key}.steps.items`) as FeatureCard[], icons.damageSteps)}
-          tone="white"
-        />
+        <>
+          <FeatureCards
+            heading={t(`${key}.steps.heading`)}
+            columns={4}
+            items={withIcons(numbered(t.raw(`${key}.steps.items`) as FeatureCard[]), icons.damageSteps)}
+            tone="white"
+          />
+          <FigureSection heading={t(`${key}.scope.heading`)} tone="tint">
+            <ScopeScene data={t.raw(`${key}.scope.scene`) as ScopeSceneData} />
+          </FigureSection>
+        </>
       );
     case "otus":
       return (
@@ -192,7 +202,6 @@ function sections(product: Product, t: Translate) {
             items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], icons.otusFeatures)}
             tone="tint"
           />
-          <AgenticStatement heading={t(`${key}.agentic.heading`)} tone="white" />
         </>
       );
   }

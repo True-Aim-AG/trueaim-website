@@ -31,8 +31,8 @@ export function LogoMarquee({ logos, duration = 38, tone = "white" }: { logos: S
         );
         return (
           <li key={logo.src} className="flex items-center">
-            {logo.href && !hidden ? (
-              <Link href={logo.href} className="block">
+            {logo.href ? (
+              <Link href={logo.href} className="block" tabIndex={hidden ? -1 : undefined}>
                 {img}
               </Link>
             ) : (

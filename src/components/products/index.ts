@@ -11,6 +11,7 @@ export {
   QueueScene,
   RecordScene,
   ReportScene,
+  ScopeScene,
   type ClaimSceneData,
   type FlowSceneData,
   type InvoiceSceneData,
@@ -19,4 +20,5 @@ export {
   type QueueSceneData,
   type RecordSceneData,
   type ReportSceneData,
+  type ScopeSceneData,
 } from "./scenes";

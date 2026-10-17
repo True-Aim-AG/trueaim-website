@@ -98,7 +98,6 @@
           }
         ]
       },
-      "callout": "Same inputs. Same decision. Every time.",
       "features": {
         "heading": "We handle the documents, the data and the calculations",
         "items": [
@@ -644,8 +643,7 @@
         }
       },
       "steps": {
-        "cap": "How it works",
-        "heading": "From first photo to a report your team can use",
+        "heading": "From the first photo\nto a full report",
         "items": [
           {
             "title": "1. The claim comes in",
@@ -660,7 +658,7 @@
             "text": "Every trade needed, from drying and plastering to roofing and glazing, in the order the work must run."
           },
           {
-            "title": "4. Trades are co-ordinated",
+            "title": "4. Trades are co‑ordinated",
             "text": "Scoped requests go to the trades you choose. The quotes that come back are checked against the benchmark."
           }
         ]
@@ -687,6 +685,60 @@
         "heading": "See a damage report built from your own photographs",
         "lede": "Book a demo and bring a recent claim.",
         "buttonDemo": "Book a demo"
+      },
+      "scope": {
+        "heading": "The scope of work, in the order the work must run",
+        "scene": {
+          "alt": "The scope of work for a water damage claim: four trades in sequence, each with its task, the days it needs and the state of its quote",
+          "title": "Scope of work",
+          "subtitle": "Claim 62850, water damage, kitchen",
+          "columns": {
+            "trade": "Trade and task",
+            "schedule": "Sequence",
+            "quote": "Quote"
+          },
+          "dayLabel": "days",
+          "totalDays": 10,
+          "rows": [
+            {
+              "trade": "Drying",
+              "task": "Dehumidifiers and air movers",
+              "start": 0,
+              "days": 5,
+              "status": "approved",
+              "quote": "Checked against the benchmark"
+            },
+            {
+              "trade": "Flooring",
+              "task": "Remove and relay laminate, 14 m²",
+              "start": 5,
+              "days": 2,
+              "status": "approved",
+              "quote": "Checked against the benchmark"
+            },
+            {
+              "trade": "Plastering",
+              "task": "Skirting boards, 9 m",
+              "start": 7,
+              "days": 1,
+              "status": "referred",
+              "quote": "Requested, due Friday"
+            },
+            {
+              "trade": "Painting",
+              "task": "Repaint wall, 12 m²",
+              "start": 8,
+              "days": 2,
+              "status": "referred",
+              "quote": "Requested"
+            }
+          ],
+          "footer": {
+            "label": "Estimate",
+            "value": "2'450",
+            "note": "Reserve set at first notification"
+          }
+        }
       }
     },
     "otus": {
@@ -698,7 +750,6 @@
       },
       "prompts": {
         "label": "Otus: pick a scenario and see the answer",
-        "footer": "No decision rights: Otus explains, drafts and plans. Your team decides.",
         "youLabel": "You",
         "otusLabel": "Otus",
         "items": [
@@ -757,15 +808,11 @@
           {
             "label": "Answers in plain language",
             "text": "Why a line was refused, in everyday words, with the clause."
-          },
-          {
-            "label": "No decision rights",
-            "text": "It explains and drafts. Your team decides."
           }
         ]
       },
       "features": {
-        "heading": "What your team uses it for",
+        "heading": "What Otus brings to your team",
         "items": [
           {
             "title": "Planning the day",
@@ -821,9 +868,6 @@
         "lede": "Book a demo and see Otus explain a recommendation line by line.",
         "buttonDemo": "Book a demo",
         "buttonClaims": "Claims Decisioning"
-      },
-      "agentic": {
-        "heading": "A unified, agentic system"
       }
     }
   }

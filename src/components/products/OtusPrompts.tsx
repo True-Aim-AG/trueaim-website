@@ -25,7 +25,7 @@ export function OtusPrompts({
   hero,
 }: {
   label: string;
-  footer: string;
+  footer?: string;
   youLabel: string;
   otusLabel: string;
   prompts: OtusPrompt[];
@@ -135,7 +135,7 @@ export function OtusPrompts({
           )}
         </div>
       </motion.div>
-      <p className="border-t border-hairline bg-page px-3.5 py-3 text-[12px] text-muted">{footer}</p>
+      {footer && <p className="border-t border-hairline bg-page px-3.5 py-3 text-[12px] text-muted">{footer}</p>}
     </div>
   );
 }

@@ -163,6 +163,7 @@ function sections(solution: Solution, t: Translate) {
           <CoverCards
             heading={t(`${key}.story.heading`)}
             tone="tint"
+            aside={<Quote text={t(`${key}.quote.text`)} name={t(`${key}.quote.name`)} role={t(`${key}.quote.role`)} inline />}
             items={[
               {
                 cap: t(`${key}.story.caseStudy.cap`),
@@ -175,7 +176,6 @@ function sections(solution: Solution, t: Translate) {
               },
             ]}
           />
-          <Quote text={t(`${key}.quote.text`)} name={t(`${key}.quote.name`)} role={t(`${key}.quote.role`)} tone="white" />
         </>
       );
     case "claimsTech":

@@ -29,13 +29,27 @@ const TEXTURES: Record<CoverTexture["name"], string> = {
  * and, for a customer story, the customer's logo on a white plate. Two cards
  * sit under the heading; a single card sits to the right of it, narrower and with a shorter cover.
  */
-export function CoverCards({ heading, items, tone = "white" }: { heading: string; items: CoverCard[]; tone?: Tone }) {
+export function CoverCards({
+  heading,
+  items,
+  tone = "white",
+  aside,
+}: {
+  heading: string;
+  items: CoverCard[];
+  tone?: Tone;
+  /** Rendered under the heading, in the left column beside a single card. */
+  aside?: React.ReactNode;
+}) {
   const single = items.length === 1;
   return (
     <section className={section(tone)}>
       <div className={cn("mx-auto max-w-7xl", single && "grid items-start gap-x-[29px] md:grid-cols-2")}>
-        <SectionHead heading={heading} className={cn(single && "md:mb-0")} />
-        <ul className={cn("grid grid-cols-1 gap-[29px]", single ? "w-full max-w-[480px] md:justify-self-end" : "md:grid-cols-2")}>
+        <div>
+          <SectionHead heading={heading} className={cn(single && aside && "mb-10", single && !aside && "md:mb-0")} />
+          {aside}
+        </div>
+        <ul className={cn("grid grid-cols-1 gap-[29px]", single ? "w-full max-w-[560px] md:justify-self-end" : "md:grid-cols-2")}>
           {items.map((item, index) => (
             <li key={item.title}>
               <Reveal delay={index * 0.1} className="h-full">
