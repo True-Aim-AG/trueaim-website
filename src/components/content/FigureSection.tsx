@@ -1,29 +1,29 @@
 import { cn } from "@/lib/utils";
-import { SECTION } from "./surface";
+import { Reveal } from "./Reveal";
+import { SECTION, SECTION_LILAC } from "./surface";
 import { SectionHead } from "./SectionHead";
 
-/** A product scene at full width under its heading, with an optional note beneath it. */
+/** A product scene at the full content width under its heading. */
 export function FigureSection({
   id,
   cap,
   heading,
   headingLevel = "h2",
-  note,
+  lilac,
   children,
 }: {
   id?: string;
   cap?: string;
   heading: string;
   headingLevel?: "h2" | "h3";
-  note?: string;
+  lilac?: boolean;
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className={cn(SECTION, id && "scroll-mt-24")}>
+    <section id={id} className={cn(lilac ? SECTION_LILAC : SECTION, id && "scroll-mt-24")}>
       <div className="mx-auto max-w-7xl">
         <SectionHead cap={cap} heading={heading} headingLevel={headingLevel} />
-        <div className="mx-auto max-w-[900px]">{children}</div>
-        {note && <p className="mt-[30px] max-w-[74ch] text-[14px] leading-[1.55] text-muted">{note}</p>}
+        <Reveal delay={0.1}>{children}</Reveal>
       </div>
     </section>
   );

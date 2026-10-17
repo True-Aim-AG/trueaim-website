@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ButtonLink } from "@/components/brand/Button";
 import { cn } from "@/lib/utils";
+import { Reveal } from "./Reveal";
 import { SECTION, SECTION_LILAC } from "./surface";
 
 export type SplitImage = { src: string; alt: string; width: number; height: number };
@@ -51,7 +52,7 @@ export function SplitText({
           art && "lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)] lg:gap-20",
         )}
       >
-        <div className={cn("max-w-[70ch]", imageSide === "left" && art && "lg:order-2")}>
+        <Reveal className={cn("max-w-[70ch]", imageSide === "left" && art && "lg:order-2")}>
           {cap && <p className="mb-4 text-caption-sm text-accent">{cap}</p>}
           <Heading className="font-display text-[30px] font-bold leading-[1.15] text-strong text-balance md:text-[40px]">
             {heading}
@@ -69,11 +70,14 @@ export function SplitText({
               </ButtonLink>
             </div>
           )}
-        </div>
+        </Reveal>
         {art && (
-          <div className={cn("relative grid min-h-[320px] place-items-center", imageSide === "left" && "lg:order-1")}>
+          <Reveal
+            delay={0.15}
+            className={cn("relative grid min-h-[320px] place-items-center", imageSide === "left" && "lg:order-1")}
+          >
             {art}
-          </div>
+          </Reveal>
         )}
       </div>
     </section>

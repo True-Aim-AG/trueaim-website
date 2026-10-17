@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/components/brand/Button";
+import { Reveal } from "./Reveal";
 
 export type CtaButton = { label: string; href: string; variant?: "primary" | "on-dark" };
 
@@ -14,7 +15,7 @@ export function CtaBand({
 }) {
   return (
     <section data-theme="dark" className="bg-page-tint px-6 py-20 md:py-[120px]">
-      <div className="mx-auto max-w-7xl">
+      <Reveal className="mx-auto max-w-7xl">
         <div className="mb-10 max-w-[70ch]">
           <h2 className="font-display text-[30px] font-bold leading-[1.15] text-strong text-balance md:text-[40px]">
             {heading}
@@ -33,7 +34,7 @@ export function CtaBand({
             </ButtonLink>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

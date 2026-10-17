@@ -50,7 +50,6 @@ describe("OtusPrompts", () => {
     const html = renderToStaticMarkup(
       <OtusPrompts
         label="Example prompts"
-        subtitle="In every True Aim solution"
         footer="No decision rights."
         youLabel="You"
         otusLabel="Otus"

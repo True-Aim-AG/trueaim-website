@@ -1,3 +1,4 @@
+export { AgenticStatement } from "./AgenticStatement";
 export { ModulesDiagram, type DiagramNode } from "./ModulesDiagram";
 export { OtusPrompts, type OtusPrompt } from "./OtusPrompts";
 export {

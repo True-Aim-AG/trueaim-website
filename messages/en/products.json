@@ -4,20 +4,18 @@
       "ctaDemo": "Book a demo",
       "ctaEstimate": "Estimate the impact",
       "faqHeading": "Common questions",
-      "relatedHeading": "Other True Aim products",
-      "relatedPlatform": "How the True Aim platform fits together",
-      "relatedPlatformText": "A claim file goes in, an audited decision comes out."
+      "relatedHeading": "More about our Platform"
     },
     "claimsDecisioning": {
       "name": "Claims Decisioning",
       "tagline": "Claims settled in minutes, not weeks.",
       "hero": {
         "title": "Claims Decisioning: claims settled in minutes, not weeks",
-        "summary": "True Aim's Claims Decisioning is an automated coverage check, from FNOL to settlement. True Aim checks the policy terms against the facts of the case and says whether the claim should be approved or denied. Where it is approved, the amount owed is calculated line by line, and your adjuster makes the final call.",
+        "summary": "Claims Decisioning is an automated coverage check, from FNOL to settlement. We check the policy terms against the facts of the case and say whether the claim should be approved or denied. Where it is approved, the amount owed is calculated line by line, and your adjuster makes the final call.",
         "scene": {
           "alt": "A claim as the adjuster sees it: the lines grouped by outcome, each with its covered amount, and the payout",
           "title": "Water damage claim",
-          "reference": "Claim 64850",
+          "reference": "Claim 62850",
           "columns": {
             "description": "Description",
             "quantity": "Qty",
@@ -102,7 +100,7 @@
       },
       "callout": "Same inputs. Same decision. Every time.",
       "features": {
-        "heading": "True Aim handles the documents, the data and the calculations",
+        "heading": "We handle the documents, the data and the calculations",
         "items": [
           {
             "title": "Every document read",
@@ -140,8 +138,7 @@
         "imageAlt": "Interlocking metal rings"
       },
       "flow": {
-        "heading": "Every claim moving, from first notice to close",
-        "note": "Claims arrive from any channel and become one complete record. Routing, reminders and status updates run on your rules, so every party is always in the loop and nothing is chased by hand.",
+        "heading": "Every claim moving, from FNOL to settlement",
         "scene": {
           "alt": "Claims arrive on four channels, merge into one record, and every party is updated from it",
           "channelsLabel": "Arrives on any channel",
@@ -217,11 +214,10 @@
       },
       "record": {
         "heading": "A full record of every decision",
-        "note": "Every step is stored with its evidence, the rule in force and who made it. Each entry is hashed, so any later change shows. Switch to the forensic view to see the record by actor. One click exports the full record for your auditor or regulator.",
         "scene": {
           "alt": "The claim record: every action in order with its actor and its hash, and a forensic view grouped by actor",
-          "title": "Claim record",
-          "subtitle": "Claim 64850, water damage",
+          "title": "Claim 62850 Record",
+          "subtitle": "Water damage",
           "tabs": {
             "timeline": "Timeline",
             "forensic": "Forensic view"
@@ -301,24 +297,6 @@
         "link": "About Otus",
         "imageAlt": "The True Aim symbol in glass and metal"
       },
-      "pricing": {
-        "cap": "Pricing",
-        "heading": "Pay per outcome, not per seat",
-        "items": [
-          {
-            "label": "Pay for results",
-            "text": "You pay for each settled claim, not for users or licences."
-          },
-          {
-            "label": "Costs scale with value",
-            "text": "The fee follows the number of claims settled, so costs rise and fall with the work done."
-          },
-          {
-            "label": "Incentives aligned",
-            "text": "True Aim earns only when your team receives a finished decision."
-          }
-        ]
-      },
       "faq": [
         {
           "question": "Is the outcome predicted by AI?",
@@ -337,7 +315,7 @@
           "answer": "Every assumption is on screen and can be changed. Every change records its reason. The fault is fixed at the step where it happened."
         },
         {
-          "question": "Can True Aim work from our own rules rather than the policy wording?",
+          "question": "Can we work from our own rules rather than the policy wording?",
           "answer": "Yes. Industry catalogues and your own business rules work the same way as policy wording. One example is fair wear and tear rules for vehicles returned at the end of a lease."
         },
         {
@@ -345,7 +323,7 @@
           "answer": "DORA, the EU AI Act and national rules including FINMA, BaFin, the NAIC and POPIA. The forensic view of the claim record shows every action by actor, so accountability is visible for every decision."
         },
         {
-          "question": "Does True Aim replace our claims system?",
+          "question": "Does it replace our claims system?",
           "answer": "No. True Aim's Claims Decisioning works above the claims system you run, reads the claim from it and writes the recommendation back into it."
         },
         {
@@ -365,7 +343,7 @@
       "tagline": "Never overpay on an invoice again.",
       "hero": {
         "title": "Invoice Benchmarking: never overpay on an invoice again",
-        "summary": "True Aim's Invoice Benchmarking checks every invoice, quote and estimate against benchmark data, by business line and by region. Your team sees which lines are too high, by how much and why, with a reissue request drafted for each of them. Low-value invoices no longer go unchecked, and every saving is recorded line by line.",
+        "summary": "Every invoice, quote and estimate is checked against the benchmark, by business line and by region. Your team sees which lines are too high, by how much and why, with the reissue request already drafted. Lower-value invoices no longer go unchecked, and every saving is recorded line by line.",
         "scene": {
           "alt": "An invoice with every line coloured against the benchmark, and a reissue request drafted for the line that is too high",
           "title": "Invoice INV-2204",
@@ -448,7 +426,7 @@
         ]
       },
       "unchecked": {
-        "heading": "Low-value invoices no longer go unchecked",
+        "heading": "Lower-value invoices no longer go unchecked",
         "paragraphs": [
           "Most suppliers and trades publish no price list. Small invoices are either sent to an external assessor, which only pays off on large bills, or paid as they are.",
           "A fixed fee per invoice makes it worth checking every invoice, including the small ones nobody opens today."
@@ -462,14 +440,14 @@
           "Depending on your market, True Aim provides a proprietary benchmark from day one or builds a benchmark engine from your own data.",
           "In Switzerland the benchmark draws on more than 100,000 property-claim invoices. In other markets True Aim builds it with local partners and from the data you already hold.",
           "Either way, every line is tested against what the work should cost for that trade in that region. The benchmark keeps learning from the invoices you accept."
-        ]
+        ],
+        "imageAlt": "An arrow in the centre of a metal target"
       },
       "lineBench": {
         "heading": "How True Aim benchmarks line by line",
-        "note": "Each line is placed against the expected range for its trade and region. A line above the range is marked, the expected amount is shown and the reissue request is drafted. Click a line to see its deviation from the benchmark and the amount saved.",
         "scene": {
           "alt": "Three invoice lines, one expanded to show how far it sits above the expected range for its trade and region",
-          "label": "Invoice INV-2204, three of five lines",
+          "label": "Invoice INV-2204",
           "rangeLabel": "Expected range",
           "axis": {
             "low": "Lower",
@@ -497,16 +475,16 @@
               "status": "In range",
               "amount": "715.00",
               "range": "Expected for this trade in this region: 650.00 to 780.00",
-              "position": 52,
+              "position": 51,
               "marker": "+1%",
               "foot": [
                 {
-                  "label": "Deviation",
-                  "value": "Within the expected range"
+                  "label": "Median",
+                  "value": "708.00"
                 },
                 {
-                  "label": "Saved",
-                  "value": "0.00"
+                  "label": "Deviation",
+                  "value": "Within the expected range"
                 }
               ]
             },
@@ -516,11 +494,11 @@
               "status": "28% above expected",
               "amount": "1'840.00",
               "range": "Expected for this trade in this region: 1'320.00 to 1'560.00",
-              "position": 72,
+              "position": 76,
               "marker": "+28%",
               "foot": [
                 {
-                  "label": "Bring in line",
+                  "label": "Median",
                   "value": "1'440.00"
                 },
                 {
@@ -541,16 +519,16 @@
               "status": "In range",
               "amount": "210.00",
               "range": "Expected for this trade in this region: 190.00 to 230.00",
-              "position": 48,
-              "marker": "0%",
+              "position": 46,
+              "marker": "-3%",
               "foot": [
+                {
+                  "label": "Median",
+                  "value": "216.00"
+                },
                 {
                   "label": "Deviation",
                   "value": "Within the expected range"
-                },
-                {
-                  "label": "Saved",
-                  "value": "0.00"
                 }
               ]
             }
@@ -586,24 +564,6 @@
           }
         ]
       },
-      "pricing": {
-        "cap": "Pricing",
-        "heading": "Pay per outcome, not per seat",
-        "items": [
-          {
-            "label": "Pay for results",
-            "text": "You pay for each invoice benchmarked, not for users or licences."
-          },
-          {
-            "label": "Costs scale with value",
-            "text": "The fee follows the number of invoices checked, so costs rise and fall with the work done."
-          },
-          {
-            "label": "Incentives aligned",
-            "text": "True Aim earns only when your team receives a benchmarked invoice."
-          }
-        ]
-      },
       "faq": [
         {
           "question": "Where does the price data come from?",
@@ -633,7 +593,7 @@
       "tagline": "Completed damage reports in minutes.",
       "hero": {
         "title": "Damage Reporting: completed damage reports in minutes",
-        "summary": "True Aim produces a damage estimate and the full scope of work at first notification, from the photographs and documents your customer sends. True Aim's Damage Reporting prices the damage by region and lists every trade and task in the order the work must run. Your assessors go on site only where a visit changes the answer.",
+        "summary": "Produce a damage estimate and the full scope of work at first notification, from the photographs and documents your customer sends. Price the damage by region and list every trade and task in the order the work must run. Send assessors on site only where a visit changes the answer.",
         "scene": {
           "alt": "Four photographs become a priced damage report and scope of work on day one",
           "photosLabel": "4 photographs received",
@@ -683,27 +643,6 @@
           "estimate": "2'450"
         }
       },
-      "keys": {
-        "heading": "Receive an estimate on day one",
-        "items": [
-          {
-            "label": "An estimate at first notice",
-            "text": "With a reserve figure, before anyone visits the site."
-          },
-          {
-            "label": "The full scope of work",
-            "text": "Every trade and task, in the order the work must run."
-          },
-          {
-            "label": "Checked against the photos",
-            "text": "What the report says is tested against what the pictures show."
-          },
-          {
-            "label": "Clear next steps",
-            "text": "What is confirmed is kept apart from what a person still needs to check."
-          }
-        ]
-      },
       "steps": {
         "cap": "How it works",
         "heading": "From first photo to a report your team can use",
@@ -723,24 +662,6 @@
           {
             "title": "4. Trades are co-ordinated",
             "text": "Scoped requests go to the trades you choose. The quotes that come back are checked against the benchmark."
-          }
-        ]
-      },
-      "pricing": {
-        "cap": "Pricing",
-        "heading": "Pay per outcome, not per seat",
-        "items": [
-          {
-            "label": "Pay for results",
-            "text": "You pay for each completed damage report, not for users or licences."
-          },
-          {
-            "label": "Costs scale with value",
-            "text": "The fee follows the number of reports completed, so costs rise and fall with the work done."
-          },
-          {
-            "label": "Incentives aligned",
-            "text": "True Aim earns only when your team receives a finished report."
           }
         ]
       },
@@ -777,7 +698,6 @@
       },
       "prompts": {
         "label": "Otus: pick a scenario and see the answer",
-        "subtitle": "In your claims system, your mailbox and every True Aim solution",
         "footer": "No decision rights: Otus explains, drafts and plans. Your team decides.",
         "youLabel": "You",
         "otusLabel": "Otus",
@@ -788,10 +708,10 @@
             "prompt": "Otus, I need to clear my backlog today. Where do I start?",
             "answer": [
               "You have 14 open claims. Six are ready to confirm: the recommendation is complete and nothing is missing, about 20 minutes in total. Three are waiting on repairers, reminders went out at 08:30. Two need documents from the customer, chased this morning.",
-              "That leaves three for your judgment: 64850 (hotel nights above the cap), 64812 (disputed cause) and 64799 (two estimates far apart). Start with those three while you are fresh, then confirm the six."
+              "That leaves three for your judgment: 62850 (hotel nights above the cap), 64812 (disputed cause) and 64799 (two estimates far apart). Start with those three while you are fresh, then confirm the six."
             ],
             "actions": [
-              "Open 64850",
+              "Open 62850",
               "Show the six"
             ]
           },
@@ -811,7 +731,7 @@
           {
             "id": "explain",
             "tab": "Explain a decision",
-            "prompt": "Why was line 4 on claim 64850 excluded? The customer is asking.",
+            "prompt": "Why was line 4 on claim 62850 excluded? The customer is asking.",
             "answer": [
               "Line 4 is the dishwasher replacement, 1'126.30. The policy covers the damage the water caused, not the appliance that caused it: clause 4.2, excluded causes. The invoice and the plumber's report both name the dishwasher as the source of the leak.",
               "Here is a reply to the customer in plain language, quoting the clause. Nothing is sent until you send it."
@@ -901,6 +821,9 @@
         "lede": "Book a demo and see Otus explain a recommendation line by line.",
         "buttonDemo": "Book a demo",
         "buttonClaims": "Claims Decisioning"
+      },
+      "agentic": {
+        "heading": "A unified, agentic system"
       }
     }
   }

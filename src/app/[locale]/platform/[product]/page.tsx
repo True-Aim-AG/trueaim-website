@@ -9,13 +9,13 @@ import {
   FigureSection,
   KeyFacts,
   SplitText,
-  TextSection,
   type FaqItem,
   type FeatureCard,
   type HeroTexture,
   type KeyFact,
 } from "@/components/content";
 import {
+  AgenticStatement,
   ClaimScene,
   FlowScene,
   InvoiceScene,
@@ -51,12 +51,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return pageMetadata(locale, `/platform/${product.slug}`);
 }
 
-/** Brand icons for each page's cards, in the order of the copy (the prototype's assignment). */
-const featureIcons: Record<Product["key"], BrandIconName[]> = {
-  claimsDecisioning: ["document", "quality", "decision", "logic", "traceability", "control"],
-  invoiceBenchmarking: ["data", "structured-data", "match", "document", "control", "learning-loop"],
-  damageReporting: ["ingestion", "extraction", "process", "match"],
-  otus: ["control", "document", "process", "decision", "human-review", "match", "extraction", "data"],
+/** Brand icons for each page's cards, in the order of the copy. */
+const icons: Record<string, BrandIconName[]> = {
+  claimsKeys: ["logic", "rule-applied", "human-review"],
+  claimsFeatures: ["document", "quality", "decision", "logic", "traceability", "control"],
+  claimsRouting: ["structure", "workflow", "process", "human-review"],
+  invoiceKeys: ["document", "quality", "structure", "traceability"],
+  invoiceFeatures: ["data", "structured-data", "match", "document", "control", "learning-loop"],
+  damageSteps: ["ingestion", "extraction", "process", "match"],
+  otusKeys: ["workflow", "claim", "human-review", "control"],
+  otusFeatures: ["control", "document", "process", "decision", "human-review", "match", "extraction", "data"],
 };
 
 /** The brand texture and crop behind each hero, as the prototype assigns them. */
@@ -67,8 +71,8 @@ const textures: Record<Product["key"], HeroTexture> = {
   otus: { name: "glass", position: "12% 88%" },
 };
 
-function withIcons(items: Omit<FeatureCard, "icon">[], icons: BrandIconName[]): FeatureCard[] {
-  return items.map((item, index) => ({ ...item, icon: icons[index] }));
+function withIcons(items: Omit<FeatureCard, "icon">[], names: BrandIconName[]): FeatureCard[] {
+  return items.map((item, index) => ({ ...item, icon: names[index] }));
 }
 
 function visual(product: Product, t: Translate) {
@@ -84,7 +88,6 @@ function visual(product: Product, t: Translate) {
       return (
         <OtusPrompts
           label={t("otus.prompts.label")}
-          subtitle={t("otus.prompts.subtitle")}
           footer={t("otus.prompts.footer")}
           youLabel={t("otus.prompts.youLabel")}
           otusLabel={t("otus.prompts.otusLabel")}
@@ -95,29 +98,17 @@ function visual(product: Product, t: Translate) {
   }
 }
 
-function pricing(key: Product["key"], t: Translate) {
-  return (
-    <KeyFacts
-      cap={t(`${key}.pricing.cap`)}
-      heading={t(`${key}.pricing.heading`)}
-      items={t.raw(`${key}.pricing.items`) as KeyFact[]}
-    />
-  );
-}
-
 function sections(product: Product, t: Translate) {
   const key = product.key;
-  const keys = <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} />;
-
   switch (key) {
     case "claimsDecisioning":
       return (
         <>
-          {keys}
+          <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} icons={icons.claimsKeys} />
           <Callout text={t(`${key}.callout`)} />
           <FeatureCards
             heading={t(`${key}.features.heading`)}
-            items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], featureIcons[key])}
+            items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], icons.claimsFeatures)}
           />
           <SplitText
             cap={t(`${key}.technology.cap`)}
@@ -126,11 +117,11 @@ function sections(product: Product, t: Translate) {
             image={{ src: "/brand/3d/render-04.webp", alt: t(`${key}.technology.imageAlt`), width: 560, height: 560 }}
             lilac
           />
-          <FigureSection heading={t(`${key}.flow.heading`)} note={t(`${key}.flow.note`)}>
+          <FigureSection heading={t(`${key}.flow.heading`)}>
             <FlowScene data={t.raw(`${key}.flow.scene`) as FlowSceneData} />
           </FigureSection>
-          <KeyFacts heading={t(`${key}.routing.heading`)} items={t.raw(`${key}.routing.items`) as KeyFact[]} />
-          <FigureSection id="decision-dossier" heading={t(`${key}.record.heading`)} note={t(`${key}.record.note`)}>
+          <KeyFacts heading={t(`${key}.routing.heading`)} items={t.raw(`${key}.routing.items`) as KeyFact[]} icons={icons.claimsRouting} />
+          <FigureSection id="decision-dossier" heading={t(`${key}.record.heading`)}>
             <RecordScene data={t.raw(`${key}.record.scene`) as RecordSceneData} />
           </FigureSection>
           <SplitText
@@ -141,58 +132,54 @@ function sections(product: Product, t: Translate) {
             link={{ href: "/platform/otus", label: t(`${key}.otus.link`) }}
             lilac
           />
-          {pricing(key, t)}
         </>
       );
     case "invoiceBenchmarking":
       return (
         <>
-          {keys}
+          <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} icons={icons.invoiceKeys} />
           <SplitText
             heading={t(`${key}.unchecked.heading`)}
             paragraphs={t.raw(`${key}.unchecked.paragraphs`) as string[]}
             image={{ src: "/brand/3d/objects-01.webp", alt: t(`${key}.unchecked.imageAlt`), width: 560, height: 420 }}
             lilac
           />
-          <TextSection
+          <SplitText
             cap={t(`${key}.benchmark.cap`)}
             heading={t(`${key}.benchmark.heading`)}
             paragraphs={t.raw(`${key}.benchmark.paragraphs`) as string[]}
+            image={{ src: "/brand/3d/render-05.webp", alt: t(`${key}.benchmark.imageAlt`), width: 560, height: 560 }}
           />
-          <FigureSection heading={t(`${key}.lineBench.heading`)} note={t(`${key}.lineBench.note`)}>
+          <FigureSection heading={t(`${key}.lineBench.heading`)} lilac>
             <LineBenchScene data={t.raw(`${key}.lineBench.scene`) as LineBenchSceneData} />
           </FigureSection>
           <FeatureCards
             heading={t(`${key}.features.heading`)}
-            items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], featureIcons[key])}
+            items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], icons.invoiceFeatures)}
           />
-          {pricing(key, t)}
         </>
       );
     case "damageReporting":
       return (
-        <>
-          {keys}
-          <FeatureCards
-            cap={t(`${key}.steps.cap`)}
-            heading={t(`${key}.steps.heading`)}
-            columns={4}
-            items={withIcons(t.raw(`${key}.steps.items`) as FeatureCard[], featureIcons[key])}
-            lilac
-          />
-          {pricing(key, t)}
-        </>
+        <FeatureCards
+          cap={t(`${key}.steps.cap`)}
+          heading={t(`${key}.steps.heading`)}
+          columns={4}
+          items={withIcons(t.raw(`${key}.steps.items`) as FeatureCard[], icons.damageSteps)}
+          lilac
+        />
       );
     case "otus":
       return (
         <>
-          {keys}
+          <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} icons={icons.otusKeys} />
           <FeatureCards
             heading={t(`${key}.features.heading`)}
             columns={4}
-            items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], featureIcons[key])}
+            items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], icons.otusFeatures)}
             lilac
           />
+          <AgenticStatement heading={t(`${key}.agentic.heading`)} />
         </>
       );
   }
@@ -208,16 +195,13 @@ export default async function ProductPage({ params }: Props) {
   const faqs = t.raw(`${key}.faq`) as FaqItem[];
   const faqHeading = t.has(`${key}.faqHeading`) ? t(`${key}.faqHeading`) : t("common.faqHeading");
 
-  const related = [
-    ...products
-      .filter((other) => other.slug !== product.slug)
-      .map((other) => ({
-        title: t(`${other.key}.name`),
-        description: t(`${other.key}.tagline`),
-        href: `/${locale}/platform/${other.slug}/`,
-      })),
-    { title: t("common.relatedPlatform"), description: t("common.relatedPlatformText"), href: `/${locale}/platform/` },
-  ];
+  const related = products
+    .filter((other) => other.slug !== product.slug)
+    .map((other) => ({
+      title: t(`${other.key}.name`),
+      description: t(`${other.key}.tagline`),
+      href: `/${locale}/platform/${other.slug}/`,
+    }));
 
   // Hero buttons as the prototype sets them: the estimator only where the page is about the coverage check.
   const buttons =

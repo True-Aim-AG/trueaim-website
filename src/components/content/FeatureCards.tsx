@@ -3,6 +3,7 @@ import { BrandIcon, type BrandIconName } from "@/components/brand/BrandIcon";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { CARD, CARD_HOVER, SECTION, SECTION_LILAC } from "./surface";
+import { Reveal } from "./Reveal";
 import { SectionHead } from "./SectionHead";
 
 export type FeatureCard = {
@@ -43,7 +44,7 @@ export function FeatureCards({
       <div className="mx-auto max-w-7xl">
         <SectionHead cap={cap} heading={heading} headingLevel={headingLevel} lede={intro} />
         <ul className={cn("grid grid-cols-1 gap-[29px]", COLS[columns])}>
-          {items.map((item) => {
+          {items.map((item, index) => {
             const content = (
               <>
                 {item.icon && <BrandIcon name={item.icon} size={40} />}
@@ -62,13 +63,15 @@ export function FeatureCards({
             const classes = cn(CARD, "flex h-full flex-col gap-4 p-8");
             return (
               <li key={item.title}>
-                {item.href ? (
-                  <Link href={item.href} className={cn(classes, CARD_HOVER, "block")}>
-                    {content}
-                  </Link>
-                ) : (
-                  <div className={classes}>{content}</div>
-                )}
+                <Reveal delay={index * 0.1} className="h-full">
+                  {item.href ? (
+                    <Link href={item.href} className={cn(classes, CARD_HOVER, "block")}>
+                      {content}
+                    </Link>
+                  ) : (
+                    <div className={classes}>{content}</div>
+                  )}
+                </Reveal>
               </li>
             );
           })}

@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
+  Awards,
   CtaBand,
-  FaqSection,
   FeatureCards,
-  LogoStrip,
+  LogoMarquee,
   PageHero,
   RelatedLinks,
   SECTION,
   SplitText,
-  type FaqItem,
+  type Award,
 } from "@/components/content";
 import { ClaimScene, type ClaimSceneData } from "@/components/products";
 import { PageSeo } from "@/components/seo/PageSeo";
@@ -28,6 +28,14 @@ const outcomes = [
   { key: "damageReporting", href: "/platform/damage-reporting", icon: "document" },
 ] as const;
 
+/** The organisers' marks for the awards, in the order of the copy. */
+const awardMarks = [
+  { key: "insurathon", src: "/awards/norton-rose-fulbright.svg", width: 380, height: 42 },
+  { key: "innovationspreis", src: "/awards/swiss-innovation.png", width: 171, height: 169 },
+  { key: "leuchtturm", src: "/awards/digitaler-leuchtturm.png", width: 198, height: 132 },
+  { key: "ikn", src: "/awards/ikn-italy.png", width: 167, height: 151 },
+] as const;
+
 const relatedPages = [
   { key: "claimsDecisioning", href: "/platform/claims-decisioning" },
   { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking" },
@@ -41,13 +49,19 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "home" });
-  const faqs = t.raw("faq.items") as FaqItem[];
   // Final URLs for the related links: an English-only page is linked under /en/ from every locale.
   const href = (path: string) => `/${pageLocales(path).includes(locale) ? locale : "en"}${path}/`;
+  const awards: Award[] = awardMarks.map((mark) => ({
+    ...mark,
+    alt: t(`awards.items.${mark.key}.alt`),
+    label: t(`awards.items.${mark.key}.label`),
+    name: t(`awards.items.${mark.key}.name`),
+    text: t(`awards.items.${mark.key}.text`),
+  }));
 
   return (
     <>
-      <PageSeo locale={locale} path="/" template="home" faqs={faqs} />
+      <PageSeo locale={locale} path="/" template="home" />
       <PageHero
         title={t("hero.title")}
         summary={t("hero.summary")}
@@ -68,8 +82,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           linkLabel: t(`benefits.items.${outcome.key}.link`),
         }))}
       />
-      <LogoStrip
-        caption={t("logos.caption")}
+      <Awards heading={t("awards.heading")} items={awards} />
+      <LogoMarquee
         logos={[
           { src: "/partners/nsa-garantie.webp", alt: t("logos.nsa"), width: 600, height: 191, renderHeight: 72, href: "/case-studies/vehicle-warranty-claims" },
           { src: "/partners/yarowa.png", alt: t("logos.yarowa"), width: 978, height: 273, renderHeight: 52, href: "/partners/yarowa" },
@@ -86,14 +100,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       >
         <ul className="mt-8 flex flex-wrap items-center gap-[18px]">
           <li>
-            <Image src="/badges/iso-27001.png" alt={t("compliance.badgeIso")} width={120} height={120} className="h-[104px] w-auto" />
+            <Image src="/badges/iso-27001.svg" alt={t("compliance.badgeIso")} width={120} height={120} className="h-[104px] w-auto" />
           </li>
           <li>
-            <Image src="/badges/soc-2-type-2.png" alt={t("compliance.badgeSoc")} width={120} height={120} className="h-[104px] w-auto" />
+            <Image src="/badges/soc-2-type-2.svg" alt={t("compliance.badgeSoc")} width={120} height={120} className="h-[104px] w-auto" />
           </li>
         </ul>
       </SplitText>
-      <FaqSection heading={t("faq.heading")} faqs={faqs} />
       <section className={SECTION}>
         <div className="mx-auto max-w-7xl">
           <RelatedLinks

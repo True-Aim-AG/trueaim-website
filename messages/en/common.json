@@ -29,6 +29,74 @@
       "productDesc": "The True Aim Platform",
       "blog": "Blog",
       "blogDesc": "Insights and updates"
+    },
+    "platform": "Platform",
+    "solutions": "Solutions",
+    "menu": {
+      "claimsDecisioning": {
+        "name": "Claims Decisioning",
+        "desc": "Claims settled in minutes, not weeks"
+      },
+      "invoiceBenchmarking": {
+        "name": "Invoice Benchmarking",
+        "desc": "Never overpay on an invoice again"
+      },
+      "damageReporting": {
+        "name": "Damage Reporting",
+        "desc": "Completed damage reports in minutes"
+      },
+      "otus": {
+        "name": "Otus",
+        "desc": "An AI-powered expert for every team member"
+      },
+      "insurers": {
+        "name": "Insurers",
+        "desc": "Property and casualty claims"
+      },
+      "brokers": {
+        "name": "Brokers",
+        "desc": "Claims captured from the first call"
+      },
+      "tpas": {
+        "name": "Third-party administrators",
+        "desc": "More claims per adjuster, within mandate"
+      },
+      "warranty": {
+        "name": "Warranty providers",
+        "desc": "Every invoice against the terms"
+      },
+      "claimsTech": {
+        "name": "Claims technology providers",
+        "desc": "Decisions inside your platform"
+      },
+      "caseStudies": {
+        "name": "Case studies",
+        "desc": "Results from claims teams"
+      },
+      "blog": {
+        "name": "Blog",
+        "desc": "Claims, evidence and regulation"
+      },
+      "impactEstimator": {
+        "name": "Impact Estimator",
+        "desc": "Calculate unlocked value"
+      },
+      "trustCenter": {
+        "name": "Trust Centre",
+        "desc": "Security, certification and data"
+      },
+      "about": {
+        "name": "About",
+        "desc": "Who we are and who we work with"
+      },
+      "partners": {
+        "name": "Partners",
+        "desc": "Clients, partners and research"
+      },
+      "contact": {
+        "name": "Contact",
+        "desc": "Request a demo or ask a question"
+      }
     }
   },
   "footer": {
@@ -44,7 +112,6 @@
     "contact": "Contact",
     "caseStudies": "Case Studies",
     "impactEstimator": "Impact Estimator",
-    "trustCenter": "Trust Center",
     "blog": "Blog",
     "invoiceBenchmarking": "Invoice Benchmarking",
     "claimsDecisioning": "Claims Decisioning",
@@ -61,7 +128,7 @@
     "aiTransparency": "AI Transparency",
     "cookies": "Cookie Policy",
     "paia": "PAIA Manual",
-    "copyright": "\u00a9 {year} True Aim AG. All rights reserved.",
+    "copyright": "© {year} True Aim AG. All rights reserved.",
     "linkedin": "LinkedIn"
   },
   "cookie": {

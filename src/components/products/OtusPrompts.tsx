@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { SCENE_CARD, SCENE_CARD_HERO } from "@/components/content/surface";
 import { cn } from "@/lib/utils";
@@ -8,14 +8,16 @@ import { HexDot } from "./scenes/marks";
 
 export type OtusPrompt = { id: string; tab: string; prompt: string; answer: string[]; actions?: string[] };
 
+const ROTATE_MS = 4000;
+
 /**
  * Otus as the prototype draws it: a product card with Otus's name, three
  * scenarios as tabs, the question and the answer as a short exchange with
- * the actions Otus offers, and the line on decision rights at the foot.
+ * the actions Otus offers, and the line on decision rights at the foot. The
+ * scenarios rotate on their own until the visitor picks one.
  */
 export function OtusPrompts({
   label,
-  subtitle,
   footer,
   youLabel,
   otusLabel,
@@ -23,7 +25,6 @@ export function OtusPrompts({
   hero,
 }: {
   label: string;
-  subtitle: string;
   footer: string;
   youLabel: string;
   otusLabel: string;
@@ -33,11 +34,23 @@ export function OtusPrompts({
   const baseId = useId();
   const reduced = useReducedMotion();
   const [selected, setSelected] = useState(0);
+  const [auto, setAuto] = useState(true);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const current = prompts[selected];
 
-  const move = (to: number) => {
+  useEffect(() => {
+    if (!auto || reduced || prompts.length < 2) return;
+    const timer = window.setInterval(() => setSelected((index) => (index + 1) % prompts.length), ROTATE_MS);
+    return () => window.clearInterval(timer);
+  }, [auto, reduced, prompts.length]);
+
+  const pick = (to: number) => {
+    setAuto(false);
     setSelected(to);
+  };
+
+  const move = (to: number) => {
+    pick(to);
     tabRefs.current[to]?.focus();
   };
 
@@ -57,10 +70,7 @@ export function OtusPrompts({
     <div role="group" aria-label={label} className={cn(SCENE_CARD, hero && SCENE_CARD_HERO)}>
       <div className="flex items-center gap-3 border-b border-hairline px-3.5 py-3.5">
         <HexDot className="h-[18px] w-[18px]" />
-        <div>
-          <p className="font-display text-[15px] font-semibold leading-[1.2] text-strong">{otusLabel}</p>
-          <p className="mt-0.5 text-[12px] text-subtle">{subtitle}</p>
-        </div>
+        <p className="font-display text-[15px] font-semibold leading-[1.2] text-strong">{otusLabel}</p>
       </div>
       <div role="tablist" aria-label={label} className="flex flex-wrap gap-2 px-3.5 pt-3">
         {prompts.map((prompt, index) => {
@@ -77,10 +87,10 @@ export function OtusPrompts({
               aria-selected={isSelected}
               aria-controls={`${baseId}-panel-${prompt.id}`}
               tabIndex={isSelected ? 0 : -1}
-              onClick={() => setSelected(index)}
+              onClick={() => pick(index)}
               onKeyDown={onKeyDown}
               className={cn(
-                "rounded-pill px-3.5 py-[9px] text-[12.5px] font-medium leading-none transition-colors duration-150 ease-brand focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-focus",
+                "rounded-pill px-3.5 py-[9px] text-[12.5px] font-medium leading-none transition-colors duration-300 ease-brand focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-focus",
                 isSelected ? "bg-accent text-on-brand" : "bg-ta-blue-50 text-ta-blue-700 hover:bg-ta-blue-100",
               )}
             >

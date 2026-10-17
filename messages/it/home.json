@@ -2,13 +2,13 @@
   "home": {
     "hero": {
       "title": "Faster claims, smarter decisions, lower costs",
-      "summary": "Every claim assessed against the policy, every invoice benchmarked, every damage report prepared.\n\nAccurate, explainable outcomes in minutes. True Aim reads the documents, calculates the amounts and records every step, and your team keeps the final say. Each decision can be explained to a customer, an auditor or a regulator.",
+      "summary": "Every claim assessed against the policy, every invoice benchmarked, every damage report prepared.\n\nAccurate, explainable outcomes in minutes.",
       "ctaDemo": "Book a demo",
       "ctaHow": "How it works",
       "scene": {
         "alt": "A claim as the adjuster sees it: the lines grouped by outcome, each with its covered amount, and the payout",
         "title": "Water damage claim",
-        "reference": "Claim 64850",
+        "reference": "Claim 62850",
         "columns": {
           "description": "Description",
           "quantity": "Qty",
@@ -75,7 +75,7 @@
       }
     },
     "benefits": {
-      "heading": "How do you benefit?",
+      "heading": "How does it work?",
       "items": {
         "claimsDecisioning": {
           "title": "Claims settled in minutes, not weeks",
@@ -95,7 +95,6 @@
       }
     },
     "logos": {
-      "caption": "Clients, partners and research",
       "nsa": "NSA Garantie",
       "yarowa": "Yarowa",
       "coreGroup": "core Group",
@@ -111,31 +110,6 @@
       "imageAlt": "A metal lock carrying the True Aim symbol",
       "badgeIso": "ISO 27001",
       "badgeSoc": "SOC 2 Type II"
-    },
-    "faq": {
-      "heading": "Common questions",
-      "items": [
-        {
-          "question": "Who makes the final decision on a claim?",
-          "answer": "Your team. True Aim prepares the recommendation, the calculations and the reasoning for an adjuster to confirm. Full automation runs only where you and your regulator allow it."
-        },
-        {
-          "question": "Does True Aim replace the systems we already run?",
-          "answer": "No. True Aim works above your claims and finance systems, reads from them and writes the results back into them."
-        },
-        {
-          "question": "What does True Aim need from us to start?",
-          "answer": "Your policy wording or rules and a sample of past claims. True Aim's team configures the decision logic with yours before anything runs on live claims."
-        },
-        {
-          "question": "How is True Aim priced?",
-          "answer": "Per outcome, not per seat. You pay for each settled claim, benchmarked invoice or completed damage report, so costs scale with the value you receive."
-        },
-        {
-          "question": "Which claims can True Aim handle?",
-          "answer": "Motor, property, warranty and liability claims use the same building blocks. A claim can start from the customer's own photographs or from an assessor's report, an estimate or an invoice."
-        }
-      ]
     },
     "related": {
       "heading": "Explore True Aim",
@@ -156,6 +130,35 @@
       "heading": "Ready to see True Aim on your own claims?",
       "lede": "We show you the finished outcome and every calculation behind it.",
       "button": "Book a demo"
+    },
+    "awards": {
+      "heading": "Award-Winning Technology",
+      "items": {
+        "insurathon": {
+          "alt": "Norton Rose Fulbright",
+          "label": "Winner",
+          "name": "Insurathon 2026",
+          "text": "Norton Rose Fulbright named True Aim the most innovative InsurTech start-up of the year."
+        },
+        "innovationspreis": {
+          "alt": "Innovationspreis der Schweizer Assekuranz",
+          "label": "Winner",
+          "name": "Innovationspreis der Schweizer Assekuranz",
+          "text": "The Swiss insurance industry's innovation prize, awarded to the technology True Aim builds on."
+        },
+        "leuchtturm": {
+          "alt": "Digitaler Leuchtturm Versicherungen",
+          "label": "Winner",
+          "name": "Digitaler Leuchtturm Versicherungen",
+          "text": "Germany's digital lighthouse award for insurance, awarded to the technology True Aim builds on."
+        },
+        "ikn": {
+          "alt": "IKN Insurance Award, Miglior InsurTech",
+          "label": "Winner",
+          "name": "Miglior InsurTech",
+          "text": "The IKN Insurance Award for the best InsurTech in Italy, awarded to the technology True Aim builds on."
+        }
+      }
     }
   },
   "decisionDossier": {
