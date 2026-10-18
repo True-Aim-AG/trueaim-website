@@ -1,12 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import {
   ArrowLeft,
   ArrowRight,
-  Building2,
   Clock,
   CheckCircle,
   Quote,
@@ -97,6 +97,16 @@ export default function VehicleWarrantyCaseStudy() {
         title="Automating Vehicle Warranty Claims with AI Document Intelligence"
         summary="Multilingual, Auditable Warranty Adjudication"
         texture={{ name: "glass", position: "100% 100%" }}
+        visual={
+          <Image
+            src={study.customer.logo!}
+            alt={`${study.customer.name} logo`}
+            width={600}
+            height={191}
+            priority
+            className="mx-auto h-auto w-full max-w-[340px]"
+          />
+        }
       >
         <div className="mt-8 space-y-6">
           {/* Breadcrumb */}
@@ -107,21 +117,6 @@ export default function VehicleWarrantyCaseStudy() {
             <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
             {t("detail.allCaseStudies")}
           </Link>
-
-          {/* Customer Info */}
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-[12px] bg-lilac grid place-items-center text-accent">
-              <Building2 className="w-8 h-8" strokeWidth={1.5} />
-            </div>
-            <div>
-              <div className="text-lg font-medium text-strong">
-                {study.customer.name}
-              </div>
-              <div className="text-muted">
-                {study.customer.industry} · {study.customer.size}
-              </div>
-            </div>
-          </div>
 
           {/* Products & Timeline */}
           <div className="flex flex-wrap items-center gap-4">
@@ -152,7 +147,7 @@ export default function VehicleWarrantyCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4"
           >
             {study.metrics.map((metric) => (
               <div key={metric.label} className={cn(CARD, "px-[29px] py-[27px] text-center")}>
