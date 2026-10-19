@@ -49,14 +49,17 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Where data is processed</h2>
               <p className="text-body leading-[1.6]">
-                All customer data is stored and processed on Microsoft Azure in the Switzerland North region. We do not transfer customer data outside Switzerland for routine processing.
+                Customer data at rest is stored on Microsoft Azure in the Switzerland North region. Hosting and AI inference stay in Switzerland, the EEA or the UK; exceptions are listed on our{" "}
+                <Link href="/sub-processors" className="text-link hover:underline">sub-processor page</Link>.
               </p>
             </section>
 
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Sub-processors</h2>
               <p className="text-body leading-[1.6]">
-                We use a limited set of Microsoft Azure services for hosting, AI inference, and operational telemetry, plus Google Workspace (for business email) and Slack (for internal team communication). The current list is provided to customers as Schedule 2 to our Data Processing Agreement. We notify customers in advance of changes. Internal-only tools (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed.
+                We use a limited set of Microsoft Azure services for hosting, AI inference, and operational telemetry, plus Google Workspace (for business email), Slack (for internal team communication) and Sentry (technical error logs only). The current list is published at{" "}
+                <Link href="/sub-processors" className="text-link hover:underline">trueaim.ai/sub-processors</Link>{" "}
+                as Schedule 2 to our Data Processing Agreement. We notify customers in advance of changes. Internal-only tools (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed.
               </p>
             </section>
 

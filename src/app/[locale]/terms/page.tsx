@@ -68,7 +68,7 @@ export default async function TermsPage({ params }: { params: Promise<{ locale: 
           <section>
             <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">8. Third-party links</h2>
             <p className="text-body leading-[1.6]">
-              This website may contain links to third-party websites or services, including scheduling tools. True Aim AG is not responsible for the content, availability or practices of third-party sites and does not endorse them.
+              This website may contain links to third-party websites or services. True Aim AG is not responsible for the content, availability or practices of third-party sites and does not endorse them.
             </p>
           </section>
 

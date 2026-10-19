@@ -4,8 +4,8 @@ import { getTranslations } from "next-intl/server";
 import { Logo } from "@/components/brand/Logo";
 import { CookieSettingsButton } from "@/components/layout/CookieSettingsButton";
 
-// The columns mirror the navigation. The sub-processor list stays at
-// /sub-processors for contracts and is not linked from here.
+// The columns mirror the navigation. The legal links include the sub-processor
+// list, which the DPA requires to be reachable from the footer (REQ-SP-004).
 const columns = [
   {
     titleKey: "platform",
@@ -39,6 +39,7 @@ const columns = [
 const legal = [
   { nameKey: "privacy", href: "/privacy" },
   { nameKey: "terms", href: "/terms" },
+  { nameKey: "subProcessors", href: "/sub-processors" },
   { nameKey: "cookies", href: "/cookies" },
   { nameKey: "paia", href: "/paia" },
   { nameKey: "aiTransparency", href: "/ai-transparency" },
