@@ -97,7 +97,8 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
 
     const body = await page.locator('body').innerText();
     expect(body).not.toMatch(/30[ -]days?/i);
-    expect(body).not.toMatch(/server-side/i);
+    await expect(microsoft).toContainText('processor-to-processor module');
+    await expect(page.locator('section#sentry')).toContainText('As a second layer, Sentry also removes sensitive fields by name');
   });
 
   test('version history table is present', async ({ page }) => {

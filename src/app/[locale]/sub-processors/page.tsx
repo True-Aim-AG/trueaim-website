@@ -53,7 +53,7 @@ const MICROSOFT: SubProcessor = {
   access:
     "Authorised Company staff, through the Company’s Azure tenant. Microsoft personnel can access data only as the Microsoft Products and Services Data Protection Addendum (Microsoft DPA) permits, for example to provide support.",
   transfers:
-    "For any transfer out of the EU, the EEA, the UK or Switzerland, the Microsoft DPA incorporates the 2021 EU Standard Contractual Clauses. Microsoft is also certified under the EU-U.S. Data Privacy Framework and the Swiss-U.S. Data Privacy Framework.",
+    "For any transfer out of the EU, the EEA, the UK or Switzerland, the Microsoft DPA of 22 May 2026 incorporates the 2021 EU Standard Contractual Clauses, processor-to-processor module, between Microsoft Ireland Operations Limited and Microsoft Corporation. Microsoft commits to follow Swiss data protection law for Personal Data from Switzerland. Microsoft is also certified under the EU-U.S. Data Privacy Framework and the Swiss-U.S. Data Privacy Framework.",
   exception: {
     title: "Exception: Azure OpenAI abuse monitoring",
     body: (
@@ -127,7 +127,7 @@ const SENTRY: SubProcessor = {
     "Functional Software, Inc. d/b/a Sentry, 45 Fremont Street, 8th Floor, San Francisco, CA 94105, United States",
   service: "Error and performance monitoring for the Platform.",
   data:
-    "No client Personal Data by design. Before an error event leaves the Platform, an allowlist filter drops everything except technical metadata: exception type and stack trace, route, status code, request ID and tenant identifier. Sending of personal data, request bodies, local variables and session replay are all off.",
+    "No client Personal Data by design. Before an error event leaves the Platform, an allowlist filter drops everything except technical metadata: exception type and stack trace, route, status code, request ID and tenant identifier. Sending of personal data, request bodies, local variables and session replay are all off. As a second layer, Sentry also removes sensitive fields by name on its side when it receives an event.",
   location:
     "Error events are stored in the European Union (Frankfurt, Germany). Account and configuration metadata is stored in the United States.",
   access:
@@ -157,7 +157,7 @@ const VERSION_HISTORY = [
     version: "1.3",
     date: EFFECTIVE_DATE,
     summary:
-      "Split the list into two groups. Added access and transfer basis for every sub-processor. Stated the Azure OpenAI abuse monitoring exception. Described the Sentry filtering that keeps client Personal Data out of error events.",
+      "Split the list into two groups. Added access and transfer basis for every sub-processor. Stated the Azure OpenAI abuse monitoring exception. Named the Microsoft transfer module. Described the two Sentry filters that keep client Personal Data out of error events.",
   },
   {
     version: "1.2",
