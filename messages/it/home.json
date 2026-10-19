@@ -110,7 +110,8 @@
       "imageAlt": "A metal lock carrying the True Aim symbol",
       "badgeIso": "ISO 27001",
       "badgeSoc": "SOC 2 Type II",
-      "badgeStatus": "Certified"
+      "badgeIsoStatus": "Certified",
+      "badgeSocStatus": "Audit window completed, report pending"
     },
     "related": {
       "heading": "Explore True Aim",

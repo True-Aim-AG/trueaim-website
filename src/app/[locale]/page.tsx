@@ -99,13 +99,16 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         tone="tint"
       >
         <ul className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-5">
-          {[t("compliance.badgeIso"), t("compliance.badgeSoc")].map((name) => (
+          {[
+            { name: t("compliance.badgeIso"), status: t("compliance.badgeIsoStatus") },
+            { name: t("compliance.badgeSoc"), status: t("compliance.badgeSocStatus") },
+          ].map(({ name, status }) => (
             <li key={name} className="flex items-center gap-4">
               <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-page text-accent shadow-[0_0_0_1px_rgba(44,43,42,.06)]">
                 <Shield strokeWidth={1.5} className="h-7 w-7" aria-hidden />
               </span>
               <span>
-                <span className="block text-[12px] font-medium uppercase tracking-[0.14em] text-accent">{t("compliance.badgeStatus")}</span>
+                <span className="block text-[12px] font-medium uppercase tracking-[0.14em] text-accent">{status}</span>
                 <span className="mt-1 block font-display text-[17px] font-semibold leading-[1.35] text-strong">{name}</span>
               </span>
             </li>
