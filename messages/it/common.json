@@ -29,6 +29,74 @@
       "productDesc": "La piattaforma True Aim",
       "blog": "Blog",
       "blogDesc": "Approfondimenti e aggiornamenti"
+    },
+    "platform": "Platform",
+    "solutions": "Solutions",
+    "menu": {
+      "claimsDecisioning": {
+        "name": "Claims Decisioning",
+        "desc": "Sinistri liquidati in minuti, non in settimane"
+      },
+      "invoiceBenchmarking": {
+        "name": "Invoice Benchmarking",
+        "desc": "Mai più una fattura pagata troppo"
+      },
+      "damageReporting": {
+        "name": "Damage Reporting",
+        "desc": "Perizie dei danni complete in pochi minuti"
+      },
+      "otus": {
+        "name": "Otus",
+        "desc": "Lo specialista sinistri di True Aim"
+      },
+      "insurers": {
+        "name": "Insurers",
+        "desc": "Property and casualty claims"
+      },
+      "brokers": {
+        "name": "Brokers",
+        "desc": "Claims captured from the first call"
+      },
+      "tpas": {
+        "name": "Third-party administrators",
+        "desc": "More claims per adjuster, within mandate"
+      },
+      "warranty": {
+        "name": "Warranty providers",
+        "desc": "Every invoice against the terms"
+      },
+      "claimsTech": {
+        "name": "Claims technology providers",
+        "desc": "Decisions inside your platform"
+      },
+      "caseStudies": {
+        "name": "Casi di studio",
+        "desc": "Storie di successo dei clienti"
+      },
+      "blog": {
+        "name": "Blog",
+        "desc": "Approfondimenti e aggiornamenti"
+      },
+      "impactEstimator": {
+        "name": "Impact Estimator",
+        "desc": "Esplora il valore potenziale"
+      },
+      "trustCenter": {
+        "name": "Trust Center",
+        "desc": "Sicurezza e conformità"
+      },
+      "about": {
+        "name": "About",
+        "desc": "Who we are and who we work with"
+      },
+      "partners": {
+        "name": "Partners",
+        "desc": "Clients, partners and research"
+      },
+      "contact": {
+        "name": "Contact",
+        "desc": "Request a demo or ask a question"
+      }
     }
   },
   "footer": {
@@ -44,7 +112,6 @@
     "contact": "Contatti",
     "caseStudies": "Casi di studio",
     "impactEstimator": "Impact Estimator",
-    "trustCenter": "Trust Center",
     "blog": "Blog",
     "invoiceBenchmarking": "Invoice Benchmarking",
     "claimsDecisioning": "Claims Decisioning",

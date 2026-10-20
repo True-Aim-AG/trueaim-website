@@ -1,16 +1,31 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import {
   ArticleMeta,
   Breadcrumbs,
+  Callout,
   ComparisonTable,
+  CtaBand,
   FaqBlock,
+  FeatureCards,
+  KeyFacts,
+  LogoStrip,
   RelatedLinks,
+  SplitText,
   Summary,
   breadcrumbListSchema,
   faqPageSchema,
   personSchema,
 } from "@/components/content";
+
+// next-intl's navigation cannot load under Vitest's Node resolver, so Link becomes a plain anchor.
+vi.mock("@/i18n/navigation", async () => {
+  const { createElement } = await import("react");
+  return {
+    Link: ({ href, children, ...rest }: { href: string; children?: React.ReactNode }) =>
+      createElement("a", { href, ...rest }, children),
+  };
+});
 
 const faqs = [
   { question: "How does the Decision Dossier record each decision?", answer: "Every step is logged with its clause." },
@@ -126,5 +141,102 @@ describe("Summary, RelatedLinks and ArticleMeta", () => {
       jobTitle: "B",
       sameAs: ["https://www.linkedin.com/in/a"],
     });
+  });
+});
+
+describe("KeyFacts", () => {
+  const items = [
+    { label: "Swiss", text: "Built in Zurich." },
+    { label: "Auditable", text: "Every step is logged." },
+  ];
+
+  it("renders every label and text under the requested heading level", () => {
+    const html = renderToStaticMarkup(<KeyFacts heading="Key facts" items={items} />);
+    expect(html).toContain("<h2");
+    for (const item of items) {
+      expect(html).toContain(item.label);
+      expect(html).toContain(item.text);
+    }
+    expect(renderToStaticMarkup(<KeyFacts heading="Key facts" headingLevel="h3" items={items} />)).toContain("<h3");
+  });
+});
+
+describe("FeatureCards", () => {
+  it("renders a link when href is set and a div otherwise", () => {
+    const html = renderToStaticMarkup(
+      <FeatureCards
+        heading="Features"
+        items={[
+          { title: "Linked", text: "A", href: "/platform/otus", linkLabel: "Read more" },
+          { title: "Plain", text: "B" },
+        ]}
+      />,
+    );
+    expect(html.match(/<a /g)).toHaveLength(1);
+    expect(html).toContain("Read more");
+    expect(html).toContain("<h3");
+    expect(html).toContain("rounded-[12px]");
+  });
+});
+
+describe("SplitText", () => {
+  it("renders paragraphs, the image with dimensions and children", () => {
+    const html = renderToStaticMarkup(
+      <SplitText
+        heading="Split"
+        paragraphs={["First paragraph.", "Second paragraph."]}
+        image={{ src: "/x.png", alt: "Alt text", width: 380, height: 300 }}
+      >
+        <span>Child badge</span>
+      </SplitText>,
+    );
+    expect(html).toContain("First paragraph.");
+    expect(html).toContain("Second paragraph.");
+    expect(html).toContain('alt="Alt text"');
+    expect(html).toContain('width="380"');
+    expect(html).toContain('height="300"');
+    expect(html).toContain("Child badge");
+  });
+});
+
+describe("Callout", () => {
+  it("renders the text", () => {
+    expect(renderToStaticMarkup(<Callout text="A glass box you can audit." />)).toContain("A glass box you can audit.");
+  });
+});
+
+describe("CtaBand", () => {
+  it("renders a dark band with one or two links", () => {
+    const one = renderToStaticMarkup(<CtaBand heading="Talk to us" buttons={[{ label: "Book", href: "/contact" }]} />);
+    expect(one).toContain('data-theme="dark"');
+    expect(one.match(/<a /g)).toHaveLength(1);
+    const two = renderToStaticMarkup(
+      <CtaBand
+        heading="Talk to us"
+        lede="Lede"
+        buttons={[{ label: "Book", href: "/contact" }, { label: "Read", href: "/platform" }]}
+      />,
+    );
+    expect(two.match(/<a /g)).toHaveLength(2);
+  });
+});
+
+describe("LogoStrip", () => {
+  it("renders each logo with alt, width and height", () => {
+    const html = renderToStaticMarkup(
+      <LogoStrip
+        caption="Trusted"
+        logos={[
+          { src: "/a.png", alt: "Logo A", width: 200, height: 80, renderHeight: 40 },
+          { src: "/b.png", alt: "Logo B", width: 100, height: 100, renderHeight: 48, href: "/partners" },
+        ]}
+      />,
+    );
+    expect(html.match(/<img/g)).toHaveLength(2);
+    expect(html).toContain('alt="Logo A"');
+    expect(html).toContain('alt="Logo B"');
+    expect(html).toContain('width="200"');
+    expect(html).toContain('height="80"');
+    expect(html.match(/<a /g)).toHaveLength(1);
   });
 });
