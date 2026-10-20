@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.2](https://github.com/True-Aim-AG/trueaim-website/compare/v1.18.1...v1.18.2) (2026-10-20)
+
+
+### Bug Fixes
+
+* hotfix from v1.18.1: sub-processor list v1.3 matches the classification note of 19 October ([#7](https://github.com/True-Aim-AG/trueaim-website/pull/7))
+
 ## [1.18.1](https://github.com/True-Aim-AG/trueaim-website/compare/v1.18.0...v1.18.1) (2026-10-14)
 
 
