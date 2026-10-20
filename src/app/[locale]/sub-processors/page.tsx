@@ -12,8 +12,8 @@ export const generateStaticParams = englishOnlyStaticParams;
 // Set both to the day this version goes live. Clause 9.2 of the DPA requires the
 // list updated before a new sub-processor begins processing, with written notice.
 const VERSION = "1.3";
-const EFFECTIVE_DATE = "2026-10-19";
-const LAST_UPDATED = "2026-10-19";
+const EFFECTIVE_DATE = "2026-10-20";
+const LAST_UPDATED = "2026-10-20";
 
 type SubProcessor = {
   id: string;
@@ -49,7 +49,7 @@ const MICROSOFT: SubProcessor = {
   data:
     "All categories of Personal Data listed in clause 4: identification data, policy and claim references, claim-related data (including Sensitive Personal Data where the claim requires it) and financial data. Also platform telemetry (request metadata) and authorised-user account data.",
   location:
-    "All data at rest is stored in Switzerland North (Zurich), and document processing runs there too. AI model inference runs inside the Microsoft EU Data Boundary (the EU and EFTA states, including Switzerland) and stores no data outside Switzerland North. Azure OpenAI abuse monitoring is an exception for who can access data; see below.",
+    "All data at rest is stored in Switzerland North (Zurich), with backups in Switzerland West (Geneva). Document processing runs in Switzerland North. AI model inference runs in Switzerland North, with a fallback in the Microsoft EU Data Boundary (the EU and EFTA states) until March 2027, and stores no data outside Switzerland North. Azure OpenAI abuse monitoring is an exception for who can access data; see below.",
   access:
     "Authorised Company staff, through the Company’s Azure tenant. Microsoft personnel can access data only as the Microsoft Products and Services Data Protection Addendum (Microsoft DPA) permits, for example to provide support.",
   transfers:
@@ -61,12 +61,12 @@ const MICROSOFT: SubProcessor = {
         <p>
           Microsoft runs abuse monitoring on Azure OpenAI, and it is on for the Company’s resource.
           Microsoft can keep prompts and outputs that its systems flag for review. It stores them in
-          the Azure geography of the resource, which is Switzerland. Microsoft publishes no
-          retention period for this data.
+          Switzerland North, the Azure region of the resource. Microsoft publishes no retention
+          period for this data.
         </p>
         <p className="mt-3">
           Review is automated by default. Authorised Microsoft employees review flagged content
-          only when automated review is not confident or not available. Microsoft commits to
+          only when the automated review is not confident. Microsoft commits to
           reviewers located in the EEA for deployments in the EEA only. It makes no such commitment
           for Switzerland, so these reviewers can be located outside Switzerland, the EEA and the
           UK. This is the exception to the Company’s commitment that hosting and inference stay in
@@ -127,9 +127,9 @@ const SENTRY: SubProcessor = {
     "Functional Software, Inc. d/b/a Sentry, 45 Fremont Street, 8th Floor, San Francisco, CA 94105, United States",
   service: "Error and performance monitoring for the Platform.",
   data:
-    "No client Personal Data by design. Before an error event leaves the Platform, an allowlist filter drops everything except technical metadata: exception type and stack trace, route, status code, request ID and tenant identifier. Sending of personal data, request bodies, local variables and session replay are all off. As a second layer, Sentry also removes sensitive fields by name on its side when it receives an event.",
+    "The Platform removes client data from each error report before the report leaves the Platform. Sentry receives only error types, page routes and technical IDs, including an internal user number with no name or email. As a second layer, Sentry also removes sensitive fields by name on its side when it receives an event.",
   location:
-    "Error events are stored in the European Union (Frankfurt, Germany). Account and configuration metadata is stored in the United States.",
+    "Error reports are stored in the European Union (Frankfurt, Germany). Account data in the United States covers only True Aim staff logins.",
   access:
     "Authorised Company staff with Sentry accounts. Sentry staff access data remotely for support and operations from the United States, Austria, Canada and the Netherlands.",
   transfers:
@@ -145,9 +145,9 @@ const GROUPS: SubProcessorGroup[] = [
   },
   {
     id: "group-b",
-    title: "Group B: Technical logs only",
+    title: "Group B: Receives technical error reports only",
     intro:
-      "This sub-processor receives technical logs only. It receives no client Personal Data by design.",
+      "This sub-processor receives technical error reports only, from which the Platform removes client data.",
     members: [SENTRY],
   },
 ];
@@ -157,7 +157,7 @@ const VERSION_HISTORY = [
     version: "1.3",
     date: EFFECTIVE_DATE,
     summary:
-      "Split the list into two groups. Added access and transfer basis for every sub-processor. Stated the Azure OpenAI abuse monitoring exception. Named the Microsoft transfer module. Described the two Sentry filters that keep client Personal Data out of error events.",
+      "Split the list into two groups. Added access and transfer basis for every sub-processor. Stated where Azure keeps backups and runs AI inference, and the Azure OpenAI abuse monitoring exception. Named the Microsoft transfer module. Corrected the Sentry entry: the Platform removes client data from each error report before it leaves the Platform.",
   },
   {
     version: "1.2",
@@ -249,7 +249,7 @@ export default async function SubProcessorsPage({ params }: { params: Promise<{ 
           <p className="text-body leading-[1.6] mt-4">
             True Aim keeps hosting and AI inference in Switzerland, the EEA or the UK. Any exception
             is stated on this page under the sub-processor it concerns. Group A sub-processors
-            process client Personal Data. The Group B sub-processor receives technical logs only.
+            process client Personal Data. The Group B sub-processor receives technical error reports only.
           </p>
 
           {GROUPS.map((group) => (
