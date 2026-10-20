@@ -127,7 +127,7 @@ const SENTRY: SubProcessor = {
     "Functional Software, Inc. d/b/a Sentry, 45 Fremont Street, 8th Floor, San Francisco, CA 94105, United States",
   service: "Error and performance monitoring for the Platform.",
   data:
-    "Since the Platform release of 19 October 2026 (v0.23.0), the Platform removes client data from each error report before the report leaves the Platform. Sentry receives only error types, page routes and technical IDs, including an internal user number with no name or email. Error reports sent before 19 October 2026 can contain client data. We keep them for error analysis and delete them by 31 December 2026. As a second layer, Sentry also removes sensitive fields by name on its side when it receives an event.",
+    "The Platform removes client data from each error report before the report leaves the Platform. Sentry receives only error types, page routes and technical IDs, including an internal user number with no name or email. As a second layer, Sentry also removes sensitive fields by name on its side when it receives an event.",
   location:
     "Error reports are stored in the European Union (Frankfurt, Germany). Account data in the United States covers only True Aim staff logins.",
   access:
@@ -157,7 +157,7 @@ const VERSION_HISTORY = [
     version: "1.3",
     date: EFFECTIVE_DATE,
     summary:
-      "Split the list into two groups. Added access and transfer basis for every sub-processor. Stated where Azure keeps backups and runs AI inference, and the Azure OpenAI abuse monitoring exception. Named the Microsoft transfer module. Corrected the Sentry entry: the Platform removes client data from error reports since 19 October 2026, and older reports are deleted by 31 December 2026.",
+      "Split the list into two groups. Added access and transfer basis for every sub-processor. Stated where Azure keeps backups and runs AI inference, and the Azure OpenAI abuse monitoring exception. Named the Microsoft transfer module. Corrected the Sentry entry: the Platform removes client data from each error report before it leaves the Platform.",
   },
   {
     version: "1.2",
