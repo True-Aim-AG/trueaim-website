@@ -11,7 +11,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
     <div className="min-h-screen">
       <EnglishOnlyBanner />
       <PageHero title="Cookie Policy" texture={{ name: "circ", position: "88% 78%" }}>
-        <p className="mt-6 text-sm text-muted">Last updated: 08 February 2026</p>
+        <p className="mt-6 text-sm text-muted">Last updated: 19 October 2026</p>
       </PageHero>
       <section className={SECTION}>
         <div className="max-w-3xl [&>div>section:first-child>h2]:mt-0">
@@ -34,14 +34,22 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
           <section>
             <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">3. How we use cookies</h2>
             <p className="text-body leading-[1.6]">
-              We use cookies for the following purposes. Essential cookies are required for the website to function properly and cannot be disabled. They support core functionality such as page navigation, form submission and security. Analytics cookies help us understand how visitors use our website, such as which pages are visited most often and how users move through the site. This information is used to improve website performance and usability. Analytics data is aggregated and does not directly identify individual users. Marketing cookies may be used to support communications and outreach, including understanding the effectiveness of campaigns and content. These cookies may be set by third-party platforms.
+              We use cookies for the following purposes. Essential cookies are required for the website to function properly and cannot be disabled. They support core functionality such as page navigation, form submission and security. Analytics cookies help us understand how visitors use our website, such as which pages are visited most often and how users move through the site. This information is used to improve website performance and usability. Analytics data is aggregated and does not directly identify individual users. We set no marketing or advertising cookies.
             </p>
           </section>
 
           <section>
             <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">4. Cookies used on this website</h2>
             <p className="text-body leading-[1.6]">
-              We may use cookies and similar technologies in connection with website analytics, contact and demo request forms, calendar booking links and consent management tools. The specific cookies used may change over time as we improve our website and services.
+              No cookie is set before you make a choice in the cookie banner. The cookies and similar technologies on this website are:
+            </p>
+            <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
+              <li><strong className="text-strong">Consent choice</strong> (set by this website in your browser&rsquo;s local storage, not a cookie): remembers whether you accepted or declined analytics cookies.</li>
+              <li><strong className="text-strong">Google Analytics 4, loaded through Google Tag Manager</strong> (<code>_ga</code>, <code>_ga_*</code>): set only after you accept analytics cookies; measure page views and interactions.</li>
+              <li><strong className="text-strong">HubSpot</strong> (<code>hubspotutk</code>, <code>__hstc</code>, <code>__hssc</code>, <code>__hssrc</code>): set only after you accept analytics cookies; recognise returning visitors and link contact form submissions to visits.</li>
+            </ul>
+            <p className="text-body leading-[1.6] mt-3">
+              Firon Marketing LLC, the agency that works on our website performance, has access to our Google Tag Manager and Google Analytics accounts and sets no cookies of its own. This list is updated when we add or remove a service.
             </p>
           </section>
 
@@ -55,7 +63,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
           <section>
             <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">6. Data protection and international access</h2>
             <p className="text-body leading-[1.6]">
-              Our primary data hosting and security infrastructure is based in Switzerland. Where cookies involve the processing of personal data, such processing is handled in accordance with applicable Swiss data protection law and, where relevant, EU data protection standards. For more information on how we handle personal data, please see our{" "}
+              Cookie data is processed by Google Ireland Limited and HubSpot Ireland Limited (EU data centre in Germany). Where processing occurs outside the EU, it relies on Standard Contractual Clauses. For more information on how we handle personal data, please see our{" "}
               <Link href="/privacy" className="text-link hover:underline">
                 Privacy Policy
               </Link>.

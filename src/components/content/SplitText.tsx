@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { ButtonLink } from "@/components/brand/Button";
 import { cn } from "@/lib/utils";
-import { SECTION, SECTION_LILAC } from "./surface";
+import { Reveal } from "./Reveal";
+import { section, type Tone } from "./surface";
 
 export type SplitImage = { src: string; alt: string; width: number; height: number };
 
@@ -10,6 +11,7 @@ const FEATHER = "radial-gradient(115% 105% at 50% 42%, #000 52%, transparent 100
 
 /** Text beside an optional image or graphic. Children render under the paragraphs. */
 export function SplitText({
+  cap,
   heading,
   headingLevel = "h2",
   paragraphs,
@@ -17,9 +19,10 @@ export function SplitText({
   visual,
   imageSide = "right",
   link,
-  lilac,
+  tone = "white",
   children,
 }: {
+  cap?: string;
   heading: string;
   headingLevel?: "h2" | "h3";
   paragraphs: string[];
@@ -27,7 +30,7 @@ export function SplitText({
   visual?: React.ReactNode;
   imageSide?: "left" | "right";
   link?: { href: string; label: string };
-  lilac?: boolean;
+  tone?: Tone;
   children?: React.ReactNode;
 }) {
   const Heading = headingLevel;
@@ -42,14 +45,15 @@ export function SplitText({
     />
   ));
   return (
-    <section className={lilac ? SECTION_LILAC : SECTION}>
+    <section className={section(tone)}>
       <div
         className={cn(
           "mx-auto grid max-w-7xl items-center gap-14",
           art && "lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)] lg:gap-20",
         )}
       >
-        <div className={cn("max-w-[70ch]", imageSide === "left" && art && "lg:order-2")}>
+        <Reveal className={cn("max-w-[70ch]", imageSide === "left" && art && "lg:order-2")}>
+          {cap && <p className="mb-4 text-caption-sm text-accent">{cap}</p>}
           <Heading className="font-display text-[30px] font-bold leading-[1.15] text-strong text-balance md:text-[40px]">
             {heading}
           </Heading>
@@ -66,11 +70,14 @@ export function SplitText({
               </ButtonLink>
             </div>
           )}
-        </div>
+        </Reveal>
         {art && (
-          <div className={cn("relative grid min-h-[320px] place-items-center", imageSide === "left" && "lg:order-1")}>
+          <Reveal
+            delay={0.15}
+            className={cn("relative grid min-h-[320px] place-items-center", imageSide === "left" && "lg:order-1")}
+          >
             {art}
-          </div>
+          </Reveal>
         )}
       </div>
     </section>

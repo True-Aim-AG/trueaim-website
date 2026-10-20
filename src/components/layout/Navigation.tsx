@@ -9,52 +9,77 @@ import { buttonClasses } from "@/components/brand/Button";
 import { LanguageSwitcher, LanguageSwitcherMobile } from "@/components/layout/LanguageSwitcher";
 import { useTranslations } from "next-intl";
 
-type DropdownKey = "platform" | "resources" | "company";
-type DropdownItem = { nameKey: string; href: string; descKey: string };
+/**
+ * The four groups of the V5 prototype: Platform, Solutions, Resources and
+ * Company, each a drop-down with a name and a line per entry. Labels and
+ * lines come from messages/<locale>/common.json under "nav".
+ */
+type Group = { key: "platform" | "solutions" | "resources" | "company"; items: { key: string; href: string }[] };
 
-// The drop-downs of the V5 prototype. Solutions follows once its pages exist.
-const dropdowns: Record<DropdownKey, DropdownItem[]> = {
-  platform: [
-    { nameKey: "platformDropdown.overview", href: "/platform", descKey: "platformDropdown.overviewDesc" },
-    { nameKey: "platformDropdown.claimsDecisioning", href: "/platform/claims-decisioning", descKey: "platformDropdown.claimsDecisioningDesc" },
-    { nameKey: "platformDropdown.invoiceBenchmarking", href: "/platform/invoice-benchmarking", descKey: "platformDropdown.invoiceBenchmarkingDesc" },
-    { nameKey: "platformDropdown.damageReporting", href: "/platform/damage-reporting", descKey: "platformDropdown.damageReportingDesc" },
-    { nameKey: "platformDropdown.otus", href: "/platform/otus", descKey: "platformDropdown.otusDesc" },
-  ],
-  resources: [
-    { nameKey: "resourcesDropdown.caseStudies", href: "/case-studies", descKey: "resourcesDropdown.caseStudiesDesc" },
-    { nameKey: "resourcesDropdown.blog", href: "/blog", descKey: "resourcesDropdown.blogDesc" },
-    { nameKey: "resourcesDropdown.impactEstimator", href: "/impact-estimator", descKey: "resourcesDropdown.impactEstimatorDesc" },
-    { nameKey: "resourcesDropdown.trustCenter", href: "/trust", descKey: "resourcesDropdown.trustCenterDesc" },
-  ],
-  company: [
-    { nameKey: "companyDropdown.about", href: "/about", descKey: "companyDropdown.aboutDesc" },
-    { nameKey: "companyDropdown.partners", href: "/partners", descKey: "companyDropdown.partnersDesc" },
-    { nameKey: "companyDropdown.contact", href: "/contact", descKey: "companyDropdown.contactDesc" },
-  ],
-};
+const groups: Group[] = [
+  {
+    key: "platform",
+    items: [
+      { key: "claimsDecisioning", href: "/platform/claims-decisioning" },
+      { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking" },
+      { key: "damageReporting", href: "/platform/damage-reporting" },
+      { key: "otus", href: "/platform/otus" },
+    ],
+  },
+  {
+    key: "solutions",
+    items: [
+      { key: "insurers", href: "/solutions/insurers" },
+      { key: "brokers", href: "/solutions/brokers" },
+      { key: "tpas", href: "/solutions/third-party-administrators" },
+      { key: "warranty", href: "/solutions/warranty-providers" },
+      { key: "claimsTech", href: "/solutions/claims-technology-providers" },
+    ],
+  },
+  {
+    key: "resources",
+    items: [
+      { key: "caseStudies", href: "/case-studies" },
+      { key: "blog", href: "/blog" },
+      { key: "impactEstimator", href: "/impact-estimator" },
+      { key: "trustCenter", href: "/trust" },
+    ],
+  },
+  {
+    key: "company",
+    items: [
+      { key: "about", href: "/about" },
+      { key: "partners", href: "/partners" },
+      { key: "contact", href: "/contact" },
+    ],
+  },
+];
 
-const navigation: DropdownKey[] = ["platform", "resources", "company"];
+type Translate = ReturnType<typeof useTranslations<"nav">>;
 
-function Dropdown({ open, items, t }: { open: boolean; items: DropdownItem[]; t: ReturnType<typeof useTranslations<"nav">> }) {
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const name = (t: Translate, key: string) => t(`menu.${key}.name` as any);
+const desc = (t: Translate, key: string) => t(`menu.${key}.desc` as any);
+/* eslint-enable @typescript-eslint/no-explicit-any */
+
+function Dropdown({ open, group, right, t }: { open: boolean; group: Group; right: boolean; t: Translate }) {
   return (
     <div
       className={cn(
-        "absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-[opacity,transform,visibility] duration-150 ease-brand",
-        open ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1",
+        "absolute top-full pt-3 transition-[opacity,transform,visibility] duration-150 ease-brand",
+        right ? "right-[-24px]" : "left-[-24px]",
+        open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1.5 opacity-0",
       )}
     >
-      <div className="nav-dropdown rounded-pill p-3 min-w-[264px]">
-        {items.map((item) => (
+      <div className="min-w-[390px] rounded-[12px] border border-line bg-white p-3 shadow-card">
+        {group.items.map((item) => (
           <Link
-            key={item.nameKey}
+            key={item.key}
             href={item.href}
-            className="block rounded-pill px-6 py-3 transition-colors duration-150 ease-brand hover:bg-accent-soft group/item"
+            className="block rounded-[8px] px-4 py-3.5 transition-colors duration-150 ease-brand hover:bg-ta-blue-50"
           >
-            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-            <div className="font-medium text-strong">{t(item.nameKey as any)}</div>
-            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-            <div className="text-sm text-muted">{t(item.descKey as any)}</div>
+            <span className="block font-medium text-strong">{name(t, item.key)}</span>
+            <span className="mt-1 block text-sm text-muted">{desc(t, item.key)}</span>
           </Link>
         ))}
       </div>
@@ -65,52 +90,56 @@ function Dropdown({ open, items, t }: { open: boolean; items: DropdownItem[]; t:
 export function Navigation() {
   const t = useTranslations("nav");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<DropdownKey | null>(null);
+  const [openKey, setOpenKey] = useState<Group["key"] | null>(null);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[60] nav-header border-b border-hairline" data-menu-open={mobileMenuOpen ? "true" : "false"}>
       <nav className="max-w-7xl mx-auto px-6">
-        <div className="flex h-[75px] items-center justify-between">
-          {/* Logo: horizontal dark lock-up, clear space = symbol height */}
+        <div className="flex h-[78px] items-center justify-between">
           <Link href="/" className="flex items-center py-2" aria-label={t("logoAlt")}>
             <ThemedLogo kind="horizontal" height={34} priority />
           </Link>
 
-          {/* Desktop navigation */}
-          <div className="hidden md:flex items-center gap-9">
-            {navigation.map((key) => (
-              <div
-                key={key}
-                className="relative"
-                onMouseEnter={() => setOpenDropdown(key)}
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
-                <button
-                  type="button"
-                  className="flex items-center gap-1 text-button text-body transition-colors duration-150 ease-brand hover:text-accent"
-                  aria-expanded={openDropdown === key}
-                  onClick={() => setOpenDropdown((open) => (open === key ? null : key))}
+          {/* Desktop navigation: the four groups */}
+          <div className="hidden items-center gap-8 md:flex">
+            {groups.map((group, index) => {
+              const open = openKey === group.key;
+              return (
+                <div
+                  key={group.key}
+                  className="relative"
+                  onMouseEnter={() => setOpenKey(group.key)}
+                  onMouseLeave={() => setOpenKey((current) => (current === group.key ? null : current))}
                 >
-                  {t(key)}
-                  <ChevronDown
-                    strokeWidth={1.5}
-                    className={cn("w-4 h-4 transition-transform duration-150 ease-brand", openDropdown === key && "rotate-180")}
-                  />
-                </button>
-                <Dropdown open={openDropdown === key} items={dropdowns[key]} t={t} />
-              </div>
-            ))}
+                  <button
+                    type="button"
+                    className={cn(
+                      "flex items-center gap-1.5 py-7 text-button text-body transition-colors duration-150 ease-brand hover:text-accent",
+                      open && "text-accent",
+                    )}
+                    aria-haspopup="true"
+                    aria-expanded={open}
+                    onClick={() => setOpenKey(open ? null : group.key)}
+                  >
+                    {t(group.key)}
+                    <ChevronDown
+                      strokeWidth={1.5}
+                      className={cn("h-4 w-4 transition-transform duration-150 ease-brand", open && "rotate-180")}
+                    />
+                  </button>
+                  <Dropdown open={open} group={group} right={index >= groups.length - 2} t={t} />
+                </div>
+              );
+            })}
           </div>
 
-          {/* CTA + language */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden items-center gap-3 md:flex">
             <LanguageSwitcher />
             <Link href="/contact" className={buttonClasses("primary", "sm")}>
-              {t("requestDemo")}
+              {t("bookDemo")}
             </Link>
           </div>
 
-          {/* Mobile menu button */}
           <button
             type="button"
             className="md:hidden p-2 -mr-2 text-body hover:text-strong transition-colors"
@@ -122,29 +151,29 @@ export function Navigation() {
           </button>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile menu: the same four groups as a panel */}
         <div className={cn("md:hidden overflow-hidden transition-[max-height] duration-300 ease-brand", mobileMenuOpen ? "max-h-[80vh] overflow-y-auto" : "max-h-0")}>
-          <div className="flex flex-col gap-1 pb-6 pt-2">
-            {navigation.map((key, index) => (
-              <div key={key} className={cn("py-2", index > 0 && "border-t border-hairline")}>
-                <div className={cn("text-caption-sm text-subtle px-4 mb-2", index > 0 && "mt-2")}>{t(key)}</div>
-                {dropdowns[key].map((item) => (
+          <div className="flex flex-col pb-6 pt-2">
+            {groups.map((group) => (
+              <div key={group.key} className="py-2 [&+&]:border-t [&+&]:border-hairline">
+                <div className="mb-1 mt-2 px-4 text-caption-sm text-accent">{t(group.key)}</div>
+                {group.items.map((item) => (
                   <Link
-                    key={item.nameKey}
+                    key={item.key}
                     href={item.href}
-                    className="block rounded-pill px-4 py-2.5 text-body hover:bg-accent-soft hover:text-accent transition-colors"
+                    className="block border-b border-hairline px-4 py-3 last:border-b-0"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                    {t(item.nameKey as any)}
+                    <span className="block font-medium text-strong">{name(t, item.key)}</span>
+                    <span className="block text-sm text-muted">{desc(t, item.key)}</span>
                   </Link>
                 ))}
               </div>
             ))}
-            <div className="flex flex-col gap-3 mt-3 px-1">
+            <div className="mt-3 flex flex-col gap-3 px-1">
               <LanguageSwitcherMobile />
               <Link href="/contact" className={buttonClasses("primary", "md", "w-full")} onClick={() => setMobileMenuOpen(false)}>
-                {t("requestDemo")}
+                {t("bookDemo")}
               </Link>
             </div>
           </div>

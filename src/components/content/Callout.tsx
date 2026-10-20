@@ -1,12 +1,15 @@
-import { SECTION_TIGHT } from "./surface";
+import { Reveal } from "./Reveal";
+import { section, type Tone } from "./surface";
 
-/** One statement, centred and set in True Aim Blue, as the prototype sets every quote line. */
-export function Callout({ text }: { text: string }) {
+/** One statement, centred, in the heading colour. */
+export function Callout({ text, tone = "tint" }: { text: string; tone?: Tone }) {
   return (
-    <section className={SECTION_TIGHT}>
-      <p className="mx-auto max-w-[70ch] text-center font-display text-[22px] font-medium leading-[1.4] text-ta-blue-600 text-balance md:text-[26px]">
-        {text}
-      </p>
+    <section className={section(tone, true)}>
+      <Reveal>
+        <p className="mx-auto max-w-[70ch] text-center font-display text-[22px] font-medium leading-[1.4] text-strong text-balance md:text-[26px]">
+          {text}
+        </p>
+      </Reveal>
     </section>
   );
 }

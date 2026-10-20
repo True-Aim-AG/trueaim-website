@@ -80,8 +80,6 @@ export default async function LocaleLayout({ children, params }: Props) {
       <head>
         {/* Consent Mode v2 defaults, before anything else: all four signals denied. */}
         {analyticsConfigured && <script dangerouslySetInnerHTML={{ __html: consentDefaultScript }} />}
-        <link rel="preconnect" href="https://mira-travel-demo.vercel.app" />
-        <link rel="preconnect" href="https://claimeval.vercel.app" />
         {/* No preconnect to Google or HubSpot: a connection before consent is already a request. */}
       </head>
       <body className={`${interTight.variable} ${ibmPlexSans.variable} antialiased`}>

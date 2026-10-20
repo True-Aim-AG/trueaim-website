@@ -118,8 +118,8 @@ describe("buildPageGraph", () => {
       (node) => node["@type"] === "ItemList",
     ) as { itemListElement: { item: { "@id": string } }[] };
     expect(list.itemListElement.map((element) => element.item["@id"])).toEqual([
-      "https://trueaim.ai/en/platform/invoice-benchmarking/#software",
       "https://trueaim.ai/en/platform/claims-decisioning/#software",
+      "https://trueaim.ai/en/platform/invoice-benchmarking/#software",
       "https://trueaim.ai/en/platform/damage-reporting/#software",
       "https://trueaim.ai/en/platform/otus/#software",
     ]);

@@ -1,46 +1,104 @@
 {
   "nav": {
-    "platform": "Piattaforma",
-    "technology": "Tecnologia",
-    "trust": "Fiducia",
+    "products": "Prodotti",
     "resources": "Risorse",
-    "about": "Chi siamo",
+    "technology": "Tecnologia",
+    "company": "Azienda",
     "contact": "Contatti",
-    "requestDemo": "Richiedi una demo",
+    "bookDemo": "Prenota una demo",
     "logoAlt": "Logo True Aim",
     "toggleMenu": "Apri/chiudi menu",
-    "languageLabel": "Lingua",
-    "platformDropdown": {
-      "overview": "Panoramica della piattaforma",
-      "overviewDesc": "I quattro moduli e come si integrano",
-      "claimsDecisioning": "Claims Decisioning",
-      "claimsDecisioningDesc": "Claims settled in minutes, not weeks",
+    "productsDropdown": {
       "invoiceBenchmarking": "Invoice Benchmarking",
-      "invoiceBenchmarkingDesc": "Never overpay on an invoice again",
+      "invoiceBenchmarkingDesc": "Mai più una fattura pagata troppo",
+      "claimsDecisioning": "Claims Decisioning",
+      "claimsDecisioningDesc": "Sinistri liquidati in minuti, non in settimane",
       "damageReporting": "Damage Reporting",
-      "damageReportingDesc": "Completed damage reports in minutes",
+      "damageReportingDesc": "Perizie dei danni complete in pochi minuti",
       "otus": "Otus",
-      "otusDesc": "An AI-powered expert for every team member"
+      "otusDesc": "Lo specialista sinistri di True Aim"
     },
     "resourcesDropdown": {
       "caseStudies": "Casi di studio",
-      "caseStudiesDesc": "Risultati dei team sinistri",
-      "blog": "Blog",
-      "blogDesc": "Sinistri, evidenze e regolamentazione",
+      "caseStudiesDesc": "Storie di successo dei clienti",
       "impactEstimator": "Impact Estimator",
-      "impactEstimatorDesc": "Calculate unlocked value",
+      "impactEstimatorDesc": "Esplora il valore potenziale",
       "trustCenter": "Trust Center",
-      "trustCenterDesc": "Security, certification and data"
+      "trustCenterDesc": "Sicurezza e conformità",
+      "product": "Panoramica del prodotto",
+      "productDesc": "La piattaforma True Aim",
+      "blog": "Blog",
+      "blogDesc": "Approfondimenti e aggiornamenti"
     },
-    "company": "Azienda",
-    "companyDropdown": {
-      "about": "Chi siamo",
-      "aboutDesc": "Who we are and who we work with",
-      "partners": "Partner",
-      "partnersDesc": "Clients, partners and research",
-      "contact": "Contatti",
-      "contactDesc": "Request a demo or ask a question"
-    }
+    "platform": "Platform",
+    "solutions": "Solutions",
+    "menu": {
+      "claimsDecisioning": {
+        "name": "Claims Decisioning",
+        "desc": "Sinistri liquidati in minuti, non in settimane"
+      },
+      "invoiceBenchmarking": {
+        "name": "Invoice Benchmarking",
+        "desc": "Mai più una fattura pagata troppo"
+      },
+      "damageReporting": {
+        "name": "Damage Reporting",
+        "desc": "Perizie dei danni complete in pochi minuti"
+      },
+      "otus": {
+        "name": "Otus",
+        "desc": "Lo specialista sinistri di True Aim"
+      },
+      "insurers": {
+        "name": "Insurers",
+        "desc": "Property and casualty claims"
+      },
+      "brokers": {
+        "name": "Brokers",
+        "desc": "Claims captured from the first call"
+      },
+      "tpas": {
+        "name": "Third-party administrators",
+        "desc": "More claims per adjuster, within mandate"
+      },
+      "warranty": {
+        "name": "Warranty providers",
+        "desc": "Every invoice against the terms"
+      },
+      "claimsTech": {
+        "name": "Claims technology providers",
+        "desc": "Decisions inside your platform"
+      },
+      "caseStudies": {
+        "name": "Casi di studio",
+        "desc": "Storie di successo dei clienti"
+      },
+      "blog": {
+        "name": "Blog",
+        "desc": "Approfondimenti e aggiornamenti"
+      },
+      "impactEstimator": {
+        "name": "Impact Estimator",
+        "desc": "Esplora il valore potenziale"
+      },
+      "trustCenter": {
+        "name": "Trust Center",
+        "desc": "Sicurezza e conformità"
+      },
+      "about": {
+        "name": "About",
+        "desc": "Who we are and who we work with"
+      },
+      "partners": {
+        "name": "Partners",
+        "desc": "Clients, partners and research"
+      },
+      "contact": {
+        "name": "Contact",
+        "desc": "Request a demo or ask a question"
+      }
+    },
+    "languageLabel": "Lingua"
   },
   "footer": {
     "logoAlt": "Logo True Aim",

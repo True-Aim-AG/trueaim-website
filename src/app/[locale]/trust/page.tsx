@@ -141,7 +141,7 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
         heading={t("dataResidency.heading")}
         paragraphs={[t("dataResidency.description")]}
         visual={<ResidencyVisual label={t("dataResidency.mapLabel")} />}
-        lilac
+        tone="tint"
       >
         <ul className={cn(CARD, "mt-8 divide-y divide-hairline")}>
           {residencyKeys.map((key) => (

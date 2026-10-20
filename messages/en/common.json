@@ -1,46 +1,104 @@
 {
   "nav": {
-    "platform": "Platform",
-    "technology": "Technology",
-    "trust": "Trust",
+    "products": "Products",
     "resources": "Resources",
-    "about": "About",
+    "technology": "Technology",
+    "company": "Company",
     "contact": "Contact",
-    "requestDemo": "Request a demo",
-    "logoAlt": "True Aim logo",
+    "bookDemo": "Book a Demo",
+    "logoAlt": "True Aim Logo",
     "toggleMenu": "Toggle menu",
-    "languageLabel": "Language",
-    "platformDropdown": {
-      "overview": "Platform overview",
-      "overviewDesc": "The four modules and how they fit together",
-      "claimsDecisioning": "Claims Decisioning",
-      "claimsDecisioningDesc": "Claims settled in minutes, not weeks",
+    "productsDropdown": {
       "invoiceBenchmarking": "Invoice Benchmarking",
       "invoiceBenchmarkingDesc": "Never overpay on an invoice again",
+      "claimsDecisioning": "Claims Decisioning",
+      "claimsDecisioningDesc": "Settled claims in minutes, not weeks",
       "damageReporting": "Damage Reporting",
       "damageReportingDesc": "Completed damage reports in minutes",
       "otus": "Otus",
-      "otusDesc": "An AI-powered expert for every team member"
+      "otusDesc": "True Aim's claims specialist"
     },
     "resourcesDropdown": {
-      "caseStudies": "Case studies",
-      "caseStudiesDesc": "Results from claims teams",
-      "blog": "Blog",
-      "blogDesc": "Claims, evidence and regulation",
+      "caseStudies": "Case Studies",
+      "caseStudiesDesc": "Customer success stories",
       "impactEstimator": "Impact Estimator",
-      "impactEstimatorDesc": "Calculate unlocked value",
-      "trustCenter": "Trust Centre",
-      "trustCenterDesc": "Security, certification and data"
+      "impactEstimatorDesc": "Explore potential value",
+      "trustCenter": "Trust Center",
+      "trustCenterDesc": "Security & compliance",
+      "product": "Product Overview",
+      "productDesc": "The True Aim Platform",
+      "blog": "Blog",
+      "blogDesc": "Insights and updates"
     },
-    "company": "Company",
-    "companyDropdown": {
-      "about": "About",
-      "aboutDesc": "Who we are and who we work with",
-      "partners": "Partners",
-      "partnersDesc": "Clients, partners and research",
-      "contact": "Contact",
-      "contactDesc": "Request a demo or ask a question"
-    }
+    "platform": "Platform",
+    "solutions": "Solutions",
+    "menu": {
+      "claimsDecisioning": {
+        "name": "Claims Decisioning",
+        "desc": "Claims settled in minutes, not weeks"
+      },
+      "invoiceBenchmarking": {
+        "name": "Invoice Benchmarking",
+        "desc": "Never overpay on an invoice again"
+      },
+      "damageReporting": {
+        "name": "Damage Reporting",
+        "desc": "Completed damage reports in minutes"
+      },
+      "otus": {
+        "name": "Otus",
+        "desc": "An AI-powered expert for every team member"
+      },
+      "insurers": {
+        "name": "Insurers",
+        "desc": "Property and casualty claims"
+      },
+      "brokers": {
+        "name": "Brokers",
+        "desc": "Claims captured from the first call"
+      },
+      "tpas": {
+        "name": "Third-party administrators",
+        "desc": "More claims per adjuster, within mandate"
+      },
+      "warranty": {
+        "name": "Warranty providers",
+        "desc": "Every invoice against the terms"
+      },
+      "claimsTech": {
+        "name": "Claims technology providers",
+        "desc": "Decisions inside your platform"
+      },
+      "caseStudies": {
+        "name": "Case studies",
+        "desc": "Results from claims teams"
+      },
+      "blog": {
+        "name": "Blog",
+        "desc": "Claims, evidence and regulation"
+      },
+      "impactEstimator": {
+        "name": "Impact Estimator",
+        "desc": "Calculate unlocked value"
+      },
+      "trustCenter": {
+        "name": "Trust Centre",
+        "desc": "Security, certification and data"
+      },
+      "about": {
+        "name": "About",
+        "desc": "Who we are and who we work with"
+      },
+      "partners": {
+        "name": "Partners",
+        "desc": "Clients, partners and research"
+      },
+      "contact": {
+        "name": "Contact",
+        "desc": "Request a demo or ask a question"
+      }
+    },
+    "languageLabel": "Language"
   },
   "footer": {
     "logoAlt": "True Aim logo",
@@ -81,13 +139,13 @@
     "partners": "Partners"
   },
   "cookie": {
-    "title": "Cookie preferences",
+    "title": "Cookie Preferences",
     "description": "We use cookies to improve your experience. Essential cookies are always active. You can choose to enable analytics cookies to help us improve our website.",
     "learnMore": "Learn more",
-    "acceptAll": "Accept all",
+    "acceptAll": "Accept All",
     "decline": "Decline",
-    "managePreferences": "Manage preferences",
-    "savePreferences": "Save preferences",
+    "managePreferences": "Manage Preferences",
+    "savePreferences": "Save Preferences",
     "essential": "Essential",
     "essentialDesc": "Required for the website to function",
     "analytics": "Analytics",

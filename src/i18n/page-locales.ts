@@ -17,6 +17,7 @@ export const englishOnlyPaths = [
   "/privacy",
   "/privacy-legacy",
   "/security",
+  "/solutions",
   "/sub-processors",
   "/support",
   "/terms",

@@ -5,13 +5,13 @@
   },
   "pages": {
     "/": {
-      "title": "Automatisez les décisions de sinistres. Auditable par conception | True Aim",
-      "description": "Combiner l'IA agentique avec la logique déterministe pour l'automatisation des sinistres. Chaque décision traçable, conforme aux exigences du Règlement sur l'IA. Précision suisse et IA auditable.",
-      "h1": "Automatisez les décisions de sinistres. Auditable par conception.",
-      "breadcrumb": "Accueil",
-      "ogTitle": "Automatisez les décisions de sinistres. Auditable par conception.",
-      "ogDescription": "Combiner l'IA agentique avec la logique déterministe pour l'automatisation des sinistres. Chaque décision traçable, conforme aux exigences du Règlement sur l'IA.",
-      "updated": "2026-10-15"
+      "title": "Faster Claims, Smarter Decisions, Lower Costs | True Aim",
+      "description": "Every claim assessed against the policy, every invoice benchmarked, every damage report prepared. Accurate, explainable outcomes in minutes. Your team keeps the final say.",
+      "h1": "Faster claims, smarter decisions, lower costs",
+      "breadcrumb": "Home",
+      "ogTitle": "Faster claims, smarter decisions, lower costs",
+      "ogDescription": "Every claim assessed against the policy, every invoice benchmarked, every damage report prepared. Accurate, explainable outcomes in minutes. Your team keeps the final say.",
+      "updated": "2026-10-17"
     },
     "/technology": {
       "title": "Technologie – Architecture IA neuro-symbolique | True Aim",

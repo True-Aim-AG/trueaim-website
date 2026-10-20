@@ -14,6 +14,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
       ...(await import(`../../messages/${locale}/common.json`)).default,
       ...(await import(`../../messages/${locale}/home.json`)).default,
       ...(await import(`../../messages/${locale}/products.json`)).default,
+      ...(await import(`../../messages/${locale}/platform.json`)).default,
+      // English only: the solutions pages export under /en/ alone (page-locales.ts).
+      ...(locale === "en" ? (await import("../../messages/en/solutions.json")).default : {}),
       ...(await import(`../../messages/${locale}/company.json`)).default,
       ...(await import(`../../messages/${locale}/technology.json`)).default,
       ...(await import(`../../messages/${locale}/contact.json`)).default,

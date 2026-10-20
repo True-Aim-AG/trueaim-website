@@ -1,5 +1,6 @@
 import { lstat, readdir, rename, mkdir, access, readFile, writeFile } from "node:fs/promises";
 import { resolve, join } from "node:path";
+import { buildRedirects, MAX_CONFIG_BYTES } from "./build-redirects.mjs";
 
 const out = resolve("out");
 
@@ -137,38 +138,14 @@ for (const path of metadataFiles) {
     repairedMetadataFiles++;
   }
 }
-// English lived at the root until October 2026, so every old unprefixed URL
-// gets a real 301 to its /en/ page. Static Web Apps cannot capture a wildcard
-// path into a redirect target, so one route per page is generated here.
-// Static Web Apps treats /x and /x/ as the same pattern and rejects a config
-// that lists both, so only the bare form is written. Renamed pages are
-// handled by the redirect map, not here.
-let redirectRoutes = 0;
-const englishPages = [];
-async function collectPages(directory, prefix = "") {
-  for (const entry of (await readdir(directory, { withFileTypes: true })).sort((a, b) => a.name.localeCompare(b.name))) {
-    if (!entry.isDirectory()) continue;
-    const pagePath = prefix + "/" + entry.name;
-    if (await exists(join(directory, entry.name, "index.html"))) englishPages.push(pagePath);
-    await collectPages(join(directory, entry.name), pagePath);
-  }
-}
-await collectPages(join(out, "en"));
-const existingRoutes = new Set(config.routes.map((route) => route.route.replace(/\/+$/, "") || "/"));
-for (const pagePath of englishPages) {
-  if (existingRoutes.has(pagePath)) continue;
-  config.routes.push({ route: pagePath, redirect: "/en" + pagePath + "/", statusCode: 301 });
-  redirectRoutes++;
-}
-const serializedConfig = JSON.stringify(config) + "\n";
-const configBytes = Buffer.byteLength(serializedConfig, "utf8");
-const maxConfigBytes = 16 * 1024;
-console.log(`Added ${redirectRoutes} legacy English redirect routes for ${englishPages.length} pages.`);
-console.log(`SWA configuration size: ${configBytes} bytes (limit: ${maxConfigBytes} bytes).`);
-if (configBytes > maxConfigBytes) {
-  throw new Error(`staticwebapp.config.json exceeds 16 KB: ${configBytes} bytes`);
-}
-await writeFile(join(out, "staticwebapp.config.json"), serializedConfig);
+// Every redirect (old unprefixed English URLs, renamed and retired pages, old
+// image URLs) is a row of redirects/redirects.csv. build-redirects.mjs writes
+// one bare-form route per row and fails the build on a bad row or a config
+// over 16 KB.
+const redirects = buildRedirects(resolve("redirects", "redirects.csv"), config, out);
+console.log(`Added ${redirects.routes.length} redirect routes from redirects/redirects.csv.`);
+console.log(`SWA configuration size: ${redirects.bytes} bytes (limit: ${MAX_CONFIG_BYTES} bytes).`);
+await writeFile(join(out, "staticwebapp.config.json"), redirects.serialised);
 // The Static Web Apps deploy action refuses an app folder without a root
 // index.html. The "/" route above answers first with a 301 to /en/, so this
 // file only serves a client that somehow bypasses the route.

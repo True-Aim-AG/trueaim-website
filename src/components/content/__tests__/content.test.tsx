@@ -163,25 +163,6 @@ describe("KeyFacts", () => {
   });
 });
 
-describe("BadgeRow", () => {
-  it("renders each mark with its caption, title and text", () => {
-    const html = renderToStaticMarkup(
-      <BadgeRow
-        heading="Certified and aligned"
-        items={[
-          { image: { src: "/a.svg", alt: "ISO 27001", width: 120, height: 120 }, caption: "Certified", title: "ISO 27001" },
-          { image: { src: "/b.svg", alt: "Award", width: 380, height: 42 }, caption: "Winner", title: "Insurathon 2026", text: "Named by Norton Rose Fulbright." },
-        ]}
-      />,
-    );
-    expect(html).toContain("<h2");
-    expect(html.match(/<img/g)).toHaveLength(2);
-    expect(html).toContain("Certified");
-    expect(html).toContain("Winner");
-    expect(html).toContain("Named by Norton Rose Fulbright.");
-  });
-});
-
 describe("FeatureCards", () => {
   it("renders a link when href is set and a div otherwise", () => {
     const html = renderToStaticMarkup(
@@ -197,18 +178,6 @@ describe("FeatureCards", () => {
     expect(html).toContain("Read more");
     expect(html).toContain("<h3");
     expect(html).toContain("rounded-[12px]");
-  });
-});
-
-describe("StepList", () => {
-  it("renders an ordered list with numbered items", () => {
-    const html = renderToStaticMarkup(
-      <StepList heading="Steps" steps={[{ title: "One", text: "a" }, { title: "Two", text: "b" }]} />,
-    );
-    expect(html).toContain("<ol");
-    expect(html.match(/<li/g)).toHaveLength(2);
-    expect(html).toContain(">1</span>");
-    expect(html).toContain(">2</span>");
   });
 });
 
@@ -271,5 +240,36 @@ describe("LogoStrip", () => {
     expect(html).toContain('width="200"');
     expect(html).toContain('height="80"');
     expect(html.match(/<a /g)).toHaveLength(1);
+  });
+});
+
+describe("BadgeRow", () => {
+  it("renders each mark with its caption, title and text", () => {
+    const html = renderToStaticMarkup(
+      <BadgeRow
+        heading="Certified and aligned"
+        items={[
+          { image: { src: "/a.svg", alt: "ISO 27001", width: 120, height: 120 }, caption: "Certified", title: "ISO 27001" },
+          { image: { src: "/b.svg", alt: "Award", width: 380, height: 42 }, caption: "Winner", title: "Insurathon 2026", text: "Named by Norton Rose Fulbright." },
+        ]}
+      />,
+    );
+    expect(html).toContain("<h2");
+    expect(html.match(/<img/g)).toHaveLength(2);
+    expect(html).toContain("Certified");
+    expect(html).toContain("Winner");
+    expect(html).toContain("Named by Norton Rose Fulbright.");
+  });
+});
+
+describe("StepList", () => {
+  it("renders an ordered list with numbered items", () => {
+    const html = renderToStaticMarkup(
+      <StepList heading="Steps" steps={[{ title: "One", text: "a" }, { title: "Two", text: "b" }]} />,
+    );
+    expect(html).toContain("<ol");
+    expect(html.match(/<li/g)).toHaveLength(2);
+    expect(html).toContain(">1</span>");
+    expect(html).toContain(">2</span>");
   });
 });

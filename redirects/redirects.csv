@@ -1,0 +1,129 @@
+old_url,new_url,status,note
+/ai-transparency/,/en/ai-transparency/,301,English lived at the root until October 2026
+/blog/,/en/blog/,301,English lived at the root until October 2026
+/blog/ai-claims-auditability-scorecard/,/en/blog/ai-claims-auditability-scorecard/,301,English lived at the root until October 2026
+/blog/ai-claims-handling-eu-ai-act-high-risk/,/en/blog/ai-claims-handling-eu-ai-act-high-risk/,301,English lived at the root until October 2026
+/blog/auditability-evidence-chains/,/en/blog/auditability-evidence-chains/,301,English lived at the root until October 2026
+/blog/build-vs-buy-idp-vendors/,/en/blog/build-vs-buy-idp-vendors/,301,English lived at the root until October 2026
+/blog/integration-playbook/,/en/blog/integration-playbook/,301,English lived at the root until October 2026
+/blog/where-the-language-model-does-not-belong/,/en/blog/where-the-language-model-does-not-belong/,301,English lived at the root until October 2026
+/blog/why-claims-ai-pilots-stall/,/en/blog/why-claims-ai-pilots-stall/,301,English lived at the root until October 2026
+/case-studies/,/en/case-studies/,301,English lived at the root until October 2026
+/case-studies/european-health-insurer/,/en/case-studies/european-health-insurer/,301,English lived at the root until October 2026
+/case-studies/motor-claims-pilot/,/en/case-studies/motor-claims-pilot/,301,English lived at the root until October 2026
+/case-studies/swiss-travel-insurer/,/en/case-studies/swiss-travel-insurer/,301,English lived at the root until October 2026
+/case-studies/vehicle-warranty-claims/,/en/case-studies/vehicle-warranty-claims/,301,English lived at the root until October 2026
+/changelog/,/en/changelog/,301,English lived at the root until October 2026
+/contact/,/en/contact/,301,English lived at the root until October 2026
+/cookies/,/en/cookies/,301,English lived at the root until October 2026
+/ethics/,/en/ethics/,301,English lived at the root until October 2026
+/impact-estimator/,/en/impact-estimator/,301,English lived at the root until October 2026
+/paia/,/en/paia/,301,English lived at the root until October 2026
+/partners/,/en/partners/,301,English lived at the root until October 2026
+/partners/innosuisse/,/en/partners/innosuisse/,301,English lived at the root until October 2026
+/partners/swissinsurtechhub/,/en/partners/swissinsurtechhub/,301,English lived at the root until October 2026
+/partners/yarowa/,/en/partners/yarowa/,301,English lived at the root until October 2026
+/partners/zhaw/,/en/partners/zhaw/,301,English lived at the root until October 2026
+/privacy-legacy/,/en/privacy-legacy/,301,English lived at the root until October 2026
+/privacy/,/en/privacy/,301,English lived at the root until October 2026
+/security/,/en/security/,301,English lived at the root until October 2026
+/sub-processors/,/en/sub-processors/,301,English lived at the root until October 2026
+/support/,/en/support/,301,English lived at the root until October 2026
+/technology/,/en/technology/,301,English lived at the root until October 2026
+/terms/,/en/terms/,301,English lived at the root until October 2026
+/trust/,/en/trust/,301,English lived at the root until October 2026
+/product/,/en/platform/,301,Old root URL of a renamed page (URL-LIST section 2)
+/company/,/en/about/,301,Old root URL of a renamed page (URL-LIST section 2)
+/products/mira/,/en/platform/claims-decisioning/,301,Old root URL of a renamed page (URL-LIST section 2)
+/products/contextbuilder/,/en/platform/,301,Old root URL of a retired page (URL-LIST section 3)
+/products/claimeval/,/en/platform/,301,Old root URL of a retired page (URL-LIST section 3)
+/products/claimeval/a/,/en/platform/,301,Old root URL of a retired demo variant (URL-LIST section 3)
+/products/claimeval/b/,/en/platform/,301,Old root URL of a retired demo variant (URL-LIST section 3)
+/en/product/,/en/platform/,301,Product overview renamed Platform overview (URL-LIST section 2)
+/de/product/,/en/platform/,301,Product overview renamed Platform overview (URL-LIST section 2)
+/fr/product/,/en/platform/,301,Product overview renamed Platform overview (URL-LIST section 2)
+/it/product/,/en/platform/,301,Product overview renamed Platform overview (URL-LIST section 2)
+/en/company/,/en/about/,301,Company renamed About (URL-LIST section 2)
+/de/company/,/de/about/,301,Company renamed About (URL-LIST section 2)
+/fr/company/,/fr/about/,301,Company renamed About (URL-LIST section 2)
+/it/company/,/it/about/,301,Company renamed About (URL-LIST section 2)
+/en/products/mira/,/en/platform/claims-decisioning/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
+/de/products/mira/,/en/platform/claims-decisioning/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
+/fr/products/mira/,/en/platform/claims-decisioning/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
+/it/products/mira/,/en/platform/claims-decisioning/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
+/en/products/contextbuilder/,/en/platform/,301,ContextBuilder retired; its function is part of the platform (URL-LIST section 3)
+/de/products/contextbuilder/,/en/platform/,301,ContextBuilder retired; its function is part of the platform (URL-LIST section 3)
+/fr/products/contextbuilder/,/en/platform/,301,ContextBuilder retired; its function is part of the platform (URL-LIST section 3)
+/it/products/contextbuilder/,/en/platform/,301,ContextBuilder retired; its function is part of the platform (URL-LIST section 3)
+/en/products/claimeval/,/en/platform/,301,ClaimEval retired; no successor product (URL-LIST section 3)
+/de/products/claimeval/,/en/platform/,301,ClaimEval retired; no successor product (URL-LIST section 3)
+/fr/products/claimeval/,/en/platform/,301,ClaimEval retired; no successor product (URL-LIST section 3)
+/it/products/claimeval/,/en/platform/,301,ClaimEval retired; no successor product (URL-LIST section 3)
+/en/products/claimeval/a/,/en/platform/,301,ClaimEval demo variant retired (URL-LIST section 3)
+/en/products/claimeval/b/,/en/platform/,301,ClaimEval demo variant retired (URL-LIST section 3)
+/de/ai-transparency/,/en/ai-transparency/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/ai-transparency/,/en/ai-transparency/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/ai-transparency/,/en/ai-transparency/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/blog/,/en/blog/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/blog/,/en/blog/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/blog/,/en/blog/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/blog/ai-claims-auditability-scorecard/,/en/blog/ai-claims-auditability-scorecard/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/blog/ai-claims-auditability-scorecard/,/en/blog/ai-claims-auditability-scorecard/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/blog/ai-claims-auditability-scorecard/,/en/blog/ai-claims-auditability-scorecard/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/blog/ai-claims-handling-eu-ai-act-high-risk/,/en/blog/ai-claims-handling-eu-ai-act-high-risk/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/blog/ai-claims-handling-eu-ai-act-high-risk/,/en/blog/ai-claims-handling-eu-ai-act-high-risk/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/blog/ai-claims-handling-eu-ai-act-high-risk/,/en/blog/ai-claims-handling-eu-ai-act-high-risk/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/blog/auditability-evidence-chains/,/en/blog/auditability-evidence-chains/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/blog/auditability-evidence-chains/,/en/blog/auditability-evidence-chains/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/blog/auditability-evidence-chains/,/en/blog/auditability-evidence-chains/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/blog/build-vs-buy-idp-vendors/,/en/blog/build-vs-buy-idp-vendors/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/blog/build-vs-buy-idp-vendors/,/en/blog/build-vs-buy-idp-vendors/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/blog/build-vs-buy-idp-vendors/,/en/blog/build-vs-buy-idp-vendors/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/blog/integration-playbook/,/en/blog/integration-playbook/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/blog/integration-playbook/,/en/blog/integration-playbook/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/blog/integration-playbook/,/en/blog/integration-playbook/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/blog/where-the-language-model-does-not-belong/,/en/blog/where-the-language-model-does-not-belong/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/blog/where-the-language-model-does-not-belong/,/en/blog/where-the-language-model-does-not-belong/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/blog/where-the-language-model-does-not-belong/,/en/blog/where-the-language-model-does-not-belong/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/blog/why-claims-ai-pilots-stall/,/en/blog/why-claims-ai-pilots-stall/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/blog/why-claims-ai-pilots-stall/,/en/blog/why-claims-ai-pilots-stall/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/blog/why-claims-ai-pilots-stall/,/en/blog/why-claims-ai-pilots-stall/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/changelog/,/en/changelog/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/changelog/,/en/changelog/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/changelog/,/en/changelog/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/cookies/,/en/cookies/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/cookies/,/en/cookies/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/cookies/,/en/cookies/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/ethics/,/en/ethics/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/ethics/,/en/ethics/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/ethics/,/en/ethics/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/paia/,/en/paia/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/paia/,/en/paia/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/paia/,/en/paia/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/privacy/,/en/privacy/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/privacy/,/en/privacy/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/privacy/,/en/privacy/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/privacy-legacy/,/en/privacy-legacy/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/privacy-legacy/,/en/privacy-legacy/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/privacy-legacy/,/en/privacy-legacy/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/security/,/en/security/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/security/,/en/security/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/security/,/en/security/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/sub-processors/,/en/sub-processors/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/sub-processors/,/en/sub-processors/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/sub-processors/,/en/sub-processors/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/support/,/en/support/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/support/,/en/support/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/support/,/en/support/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/de/terms/,/en/terms/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/fr/terms/,/en/terms/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/it/terms/,/en/terms/,301,Untranslated English copy withdrawn (URL-LIST section 3)
+/opengraph-image.png,/en/opengraph-image.png,301,Old Open Graph image; shared links keep a card
+/products/mira/opengraph-image.png,/en/opengraph-image.png,301,Old Open Graph image; shared links keep a card
+/products/contextbuilder/opengraph-image.png,/en/opengraph-image.png,301,Old Open Graph image; shared links keep a card
+/products/claimeval/opengraph-image.png,/en/opengraph-image.png,301,Old Open Graph image; shared links keep a card
+/dpa,/en/sub-processors/,301,Old DPA short link
+/de/dpa,/en/sub-processors/,301,Old DPA short link; the sub-processor list is English only
+/fr/dpa,/en/sub-processors/,301,Old DPA short link; the sub-processor list is English only
+/it/dpa,/en/sub-processors/,301,Old DPA short link; the sub-processor list is English only
+/contact-card.html,/contact-card/,301,Static contact card moved to a folder index

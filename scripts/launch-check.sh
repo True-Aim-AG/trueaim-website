@@ -62,7 +62,7 @@ if [ "$MODE" = "production" ]; then
 fi
 
 # Files keep their URL (trailingSlash: auto)
-for path in /robots.txt /sitemap.xml /favicon.ico /llms.txt; do
+for path in /robots.txt /sitemap.xml /favicon.ico /llms.txt /.well-known/security.txt; do
   expect_status "$BASE$path" 200
 done
 chunk="$(curl -s --max-time 20 "$BASE/en/" | grep -oE '/_next/static/[^"]+\.js' | head -1)"

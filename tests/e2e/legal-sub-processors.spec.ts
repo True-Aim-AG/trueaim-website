@@ -7,7 +7,7 @@
  * Covers the legal changes requested by NRF via Reuben (2026-08-16):
  *   - REQ-SP-001: /sub-processors renders at the exact URL required by the DPA
  *   - REQ-SP-002: document metadata (version, effective date, last updated, legal basis)
- *   - REQ-SP-003: all four sub-processors are listed with their four fields
+ *   - REQ-SP-003: all four sub-processors are listed in two groups with their six fields
  *   - REQ-SP-004: the page is reachable from the footer Legal column
  *   - REQ-SP-005: the DPA page is gone and /dpa redirects to /sub-processors
  *   - REQ-SP-006: the archived DPA downloads are no longer publicly served
@@ -40,7 +40,7 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
       await expect(meta.locator('dt', { hasText: new RegExp(`^${label}$`) })).toBeVisible();
     }
 
-    await expect(meta.getByText('1.2', { exact: true })).toBeVisible();
+    await expect(meta.getByText('1.3', { exact: true })).toBeVisible();
     await expect(
       meta.getByText('Swiss FADP Art. 9; GDPR Art. 28', { exact: true })
     ).toBeVisible();
@@ -55,7 +55,14 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
     ).toBeVisible();
   });
 
-  test('all four sub-processors are listed with all four fields', async ({ page }) => {
+  test('all four sub-processors are listed in two groups with all six fields', async ({ page }) => {
+    await expect(page.locator('section#group-a > h2')).toContainText('Group A');
+    await expect(page.locator('section#group-b > h2')).toContainText('Group B');
+    for (const id of ['microsoft', 'google', 'slack']) {
+      await expect(page.locator(`section#group-a section#${id}`)).toBeVisible();
+    }
+    await expect(page.locator('section#group-b section#sentry')).toBeVisible();
+
     const entities = [
       { id: 'microsoft', name: 'Microsoft Ireland Operations Ltd' },
       { id: 'google', name: 'Google Ireland Limited' },
@@ -66,9 +73,9 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
     for (const entity of entities) {
       const section = page.locator(`section#${entity.id}`);
       await expect(section).toBeVisible();
-      await expect(section.getByRole('heading', { level: 2 })).toContainText(entity.name);
+      await expect(section.getByRole('heading', { level: 3 }).first()).toContainText(entity.name);
 
-      for (const field of ['Entity', 'Service', 'Personal Data Affected', 'Location']) {
+      for (const field of ['Entity', 'Service', 'Personal Data Affected', 'Location', 'Access', 'Transfer Basis']) {
         await expect(section.getByText(field, { exact: true })).toBeVisible();
       }
     }
@@ -80,10 +87,25 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
     await expect(page.locator('section#slack')).toContainText('Slack EU data residency');
   });
 
+  test('abuse monitoring exception is stated and no unsupported claims remain', async ({ page }) => {
+    const microsoft = page.locator('section#microsoft');
+    await expect(
+      microsoft.getByRole('heading', { name: 'Exception: Azure OpenAI abuse monitoring' })
+    ).toBeVisible();
+    await expect(microsoft).toContainText('Microsoft publishes no retention period');
+    await expect(microsoft).toContainText('It makes no such commitment for Switzerland');
+
+    const body = await page.locator('body').innerText();
+    expect(body).not.toMatch(/30[ -]days?/i);
+    await expect(microsoft).toContainText('processor-to-processor module');
+    await expect(page.locator('section#sentry')).toContainText('As a second layer, Sentry also removes sensitive fields by name');
+  });
+
   test('version history table is present', async ({ page }) => {
     const history = page.locator('section#version-history');
     await expect(history.getByRole('heading', { name: 'Version History' })).toBeVisible();
     await expect(history.locator('table')).toBeVisible();
+    await expect(history).toContainText('1.3');
     await expect(history).toContainText('1.2');
     await expect(history).toContainText('1.1');
     await expect(history).toContainText('1.0');

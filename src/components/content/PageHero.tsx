@@ -38,7 +38,7 @@ export function TextureBackdrop({ texture }: { texture: HeroTexture }) {
  * brand graphic in the second column. A brand texture is the surface, with a
  * light veil so the copy reads; without a texture the page gradient shows.
  * Children render under the summary, for a hero that carries more than one
- * paragraph (the About page).
+ * paragraph (the About page) or a date line (the legal pages).
  */
 export function PageHero({
   eyebrow,
@@ -66,8 +66,7 @@ export function PageHero({
           {eyebrow && (
             <p className="mb-5 font-body text-[14px] font-medium uppercase tracking-[0.16em] text-accent">{eyebrow}</p>
           )}
-          {/* Set like every other title on the site (SectionHead), one step larger. */}
-          <h1 className="font-display text-[34px] font-bold leading-[1.15] text-strong text-balance md:text-[40px] lg:text-[48px]">
+          <h1 className="font-display text-[34px] font-bold leading-[1.15] text-strong text-balance sm:text-[40px] lg:text-[54px] lg:leading-[1.1]">
             {title}
           </h1>
           {summary && (
