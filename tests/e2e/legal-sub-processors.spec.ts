@@ -3,7 +3,7 @@
  *
  * v1.1 (2026-09-24) restores the page removed on 2026-09-16 and adds Sentry.
  * v1.2 (2026-10-14) corrects the Sentry storage, access and data facts.
- * v1.3 (2026-10-20) groups the list and states that Sentry receives no client data since 19 October 2026.
+ * v1.3 (2026-10-20) groups the list and states that the Platform removes client data from Sentry error reports.
  *
  * Covers the legal changes requested by NRF via Reuben (2026-08-16):
  *   - REQ-SP-001: /sub-processors renders at the exact URL required by the DPA
@@ -101,8 +101,8 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
     await expect(microsoft).toContainText('processor-to-processor module');
     await expect(page.locator('section#sentry')).toContainText('As a second layer, Sentry also removes sensitive fields by name');
     await expect(page.locator('section#group-b > h2')).toContainText('Receives technical error reports only');
-    await expect(page.locator('section#sentry')).toContainText('(v0.23.0)');
-    await expect(page.locator('section#sentry')).toContainText('delete them by 31 December 2026');
+    await expect(page.locator('section#sentry')).toContainText('removes client data from each error report');
+    expect(body).not.toMatch(/19 October|31 December|v0\.23\.0/);
     await expect(microsoft).toContainText('backups in Switzerland West');
     await expect(microsoft).toContainText('until March 2027');
     expect(body).not.toMatch(/not group/i);

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.3](https://github.com/True-Aim-AG/trueaim-website/compare/v1.18.1...v1.18.3) (2026-10-20)
+
+
+### Bug Fixes
+
+* sub-processor list v1.3: the Sentry entry states no release date and no deletion date. Supersedes 1.18.2, which was never deployed.
+
 ## [1.18.2](https://github.com/True-Aim-AG/trueaim-website/compare/v1.18.1...v1.18.2) (2026-10-20)
 
 
