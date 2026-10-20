@@ -172,7 +172,7 @@ export function CookieBanner() {
                   <Button variant="primary" size="sm" onClick={handleAcceptAll}>
                     {t("acceptAll")}
                   </Button>
-                  <Button variant="secondary" size="sm" onClick={handleDecline}>
+                  <Button variant="primary" size="sm" onClick={handleDecline}>
                     {t("decline")}
                   </Button>
                   <Button

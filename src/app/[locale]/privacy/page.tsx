@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 
 const PUBLISH_DATE = "2026-05-21";
+const LAST_UPDATED = "2026-10-19";
 
 type TocItem = { id: string; label: string };
 
@@ -33,7 +34,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             Privacy Policy
           </h1>
           <p className="text-sm text-muted mb-2">
-            <strong className="text-strong">Effective date:</strong> {PUBLISH_DATE} &nbsp;|&nbsp; <strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}
+            <strong className="text-strong">Effective date:</strong> {PUBLISH_DATE} &nbsp;|&nbsp; <strong className="text-strong">Last updated:</strong> {LAST_UPDATED}
           </p>
           <p className="text-sm text-muted mb-8">
             Previous versions:{" "}
@@ -77,7 +78,8 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 <li><strong className="text-strong">Claims data submitted by Tenants:</strong> claim narratives, claimant identifiers, dates of loss, policy numbers, uploaded documents.</li>
                 <li><strong className="text-strong">Derived data:</strong> structured data extracted from uploaded documents by our document intelligence and language model components.</li>
                 <li><strong className="text-strong">Usage and telemetry:</strong> application logs, audit trail entries, request metadata, operational metrics.</li>
-                <li><strong className="text-strong">Website data:</strong> IP address, browser metadata, pages visited (collected via standard server logs and, where applicable, cookies as described in our Cookie Notice).</li>
+                <li><strong className="text-strong">Website data:</strong> IP address, browser metadata and pages visited, collected through standard server logs and, only after you accept analytics cookies, through Google Tag Manager and Google Analytics 4 as described in our Cookie Policy.</li>
+                <li><strong className="text-strong">Contact form data:</strong> the details you enter in the form, together with attribution fields the website records with your submission: the page you first landed on, the referring site, campaign parameters (UTM) and your answer to &ldquo;how did you hear about us&rdquo;. This data is sent to HubSpot, our CRM, and a copy is written to a spreadsheet in our Google Workspace, which notifies our team by email (see section 5).</li>
               </ul>
             </section>
 
@@ -98,17 +100,30 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section id="sub-processors" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">5. Sub-processors and disclosures</h2>
               <p className="text-body leading-[1.6]">
-                We host the Service on Microsoft Azure in Switzerland North. The operative list of our active sub-processors, including the service each provides, the categories of personal data affected and the processing location, is maintained as Schedule 2 to our customer Data Processing Agreement and is available to customers on request.
+                We host the Service on Microsoft Azure in Switzerland North. The operative list of our active sub-processors, including the service each provides, the categories of personal data affected and the processing location, is published at{" "}
+                <Link href="/sub-processors" className="text-link hover:underline">
+                  trueaim.ai/sub-processors
+                </Link>{" "}
+                as Schedule 2 to our customer Data Processing Agreement.
               </p>
               <p className="text-body leading-[1.6] mt-3">
                 Tools used internally (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed there. We do not disclose personal data to other third parties except as required by law or with explicit Tenant instruction.
               </p>
+              <p className="text-body leading-[1.6] mt-3">
+                This website uses the following services. None of them receives Tenant or claims data through this website.
+              </p>
+              <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
+                <li><strong className="text-strong">Google Tag Manager and Google Analytics 4</strong> (Google Ireland Limited): loaded only after you accept analytics cookies; measure page views and interactions; GA4 does not log or store IP addresses; no personal data is placed in the data layer.</li>
+                <li><strong className="text-strong">HubSpot</strong> (HubSpot Ireland Limited, hosted in HubSpot&rsquo;s EU data centre in Germany): receives contact form submissions, including the attribution fields listed in section 2, and, only after you accept analytics cookies, records your visits to this website.</li>
+                <li><strong className="text-strong">Google Workspace</strong> (Google Ireland Limited): a spreadsheet in our Google Workspace receives a copy of each contact form submission and sends an email notification to our team.</li>
+                <li><strong className="text-strong">Firon Marketing LLC</strong>: the agency that works on our website performance, with access to Google Tag Manager, Google Analytics and Google Search Console; it has no access to customer or Tenant data.</li>
+              </ul>
             </section>
 
             <section id="transfers" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">6. International transfers</h2>
               <p className="text-body leading-[1.6]">
-                Personal data is stored in Switzerland. Where processing occurs outside Switzerland or the EU/EEA, we rely on Standard Contractual Clauses and equivalent safeguards.
+                Personal data processed in the Service is stored in Switzerland. Contact form data is stored in the European Union, in HubSpot&rsquo;s EU data centre and in our Google Workspace. Where processing occurs outside Switzerland, the EU or the EEA, including transfers to the United States, we rely on the EU-U.S. and Swiss-U.S. Data Privacy Frameworks or on Standard Contractual Clauses. Our sub-processor list states the location and transfer basis for each provider.
               </p>
             </section>
 
@@ -118,8 +133,8 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 We protect personal data using administrative, technical, and physical controls including encryption in transit and at rest, network segregation, least-privilege access, multi-factor authentication, and continuous monitoring. Our security posture is described in further detail at{" "}
                 <Link href="/security" className="text-link hover:underline">
                   trueaim.ai/security
-                </Link>{" "}
-                and in our SOC 2 report (available under NDA).
+                </Link>
+                .
               </p>
             </section>
 
