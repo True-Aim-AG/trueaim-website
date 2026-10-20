@@ -89,16 +89,18 @@ environment the run will deploy to.
   one H1, a skipped heading level, an unsized image, JSON-LD that does not
   parse, or a wrong `<html lang>`.
 - `scripts/post-export.mjs` puts every page at
-  `<path>/index.html`, renames the Open Graph images to `.png`, and adds a
-  301 route for every old unprefixed English URL, and writes a root `index.html`
-  placeholder because the deploy action refuses an app folder without one (the
-  `/` route answers first with the 301). The export lands in `out/`.
+  `<path>/index.html`, renames the Open Graph images to `.png`, adds one
+  route per row of `redirects/redirects.csv` (see "Redirects" below), and
+  writes a root `index.html` placeholder because the deploy action refuses an
+  app folder without one (the `/` route answers first with the 301). The
+  export lands in `out/`.
 - URL shape: every locale is prefixed, English included (`/en/products/mira/`,
   `/de/products/mira/`), with a trailing slash on every page (Static Web Apps
   `trailingSlash: auto` redirects `/x` to `/x/` for folders and leaves files such
   as `/favicon.ico` alone; `always` would redirect every file too, which broke
   every asset on staging on 13 Oct). `/` redirects to `/en/`. Old unprefixed English
-  URLs 301 to their `/en/` page; renamed pages belong in the redirect map.
+  URLs and renamed or retired pages 301 to their final page in one hop; every
+  such redirect is a row of `redirects/redirects.csv`.
 - Azure Static Web Apps serves the site directly, with no CDN or edge in
   front. `trueaim.ai` is the production site's default domain, so
   `www.trueaim.ai` and the `*.azurestaticapps.net` hostname answer a 301 to
@@ -116,6 +118,24 @@ environment the run will deploy to.
   a catch-all route under `output: "export"`. Three tests in
   `tests/e2e/i18n.spec.ts` still assert a locale-specific `<html lang>` on
   404 and fail for this reason.
+
+## Redirects
+
+`redirects/redirects.csv` is the only source of redirects: one row per old
+URL (`old_url,new_url,status,note`), and `scripts/build-redirects.mjs` writes
+the matching Static Web Apps routes into the exported config during
+`npm run build`. To add a redirect, open a pull request that adds a row to the
+CSV and nothing else; never edit `public/staticwebapp.config.json` for a
+redirect. Write `old_url` as the URL was served (pages with their trailing
+slash), `new_url` as the final page with its trailing slash, `status` 301
+(410 or 404 with an empty `new_url` for a page that is gone), and a short
+note without quotes. The build fails on a duplicate `old_url` (with or
+without the slash), a chain (a `new_url` that is itself redirected), a status
+outside 301, 410 and 404, a `new_url` missing from the export, an `old_url`
+that still exists as a page, or a config over 16 KB, and it prints the config
+size. The platform drops query strings on every 301, so campaign links must
+use the final URL. `scripts/launch-check.sh` proves every row on a live host
+in one hop.
 
 ## Local checks
 
@@ -141,7 +161,7 @@ curl -so /dev/null -w '%{http_code}' localhost:4280/en/nope/   # 404
 
 Against a live host, `scripts/launch-check.sh` runs the scriptable part of
 Firon's launch checklist (redirects, 404, files, noindex, robots.txt,
-sitemap, and every row of `redirects/redirects.csv` once it exists):
+sitemap, and every row of `redirects/redirects.csv`):
 
 ```bash
 scripts/launch-check.sh https://staging.trueaim.ai --staging
