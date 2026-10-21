@@ -245,7 +245,16 @@
       "breadcrumb": "Blog",
       "ogTitle": "The True Aim blog",
       "ogDescription": "Articles on auditable AI, claims automation, AI regulation in insurance and taking claims AI from pilot to production.",
-      "updated": "2026-10-15"
+      "updated": "2026-10-22"
+    },
+    "/blog/architectural-transparency-agentic-claims-operation": {
+      "title": "Architectural Transparency and the Rise of the Agentic Claims Operation | True Aim",
+      "description": "A claim has never existed within the four walls of a single enterprise. Legacy automation stopped at internal borders. Transparency becomes an architectural guarantee.",
+      "h1": "Time Back Is the Easy Part",
+      "breadcrumb": "Time back is the easy part",
+      "ogTitle": "Time Back Is the Easy Part: Architectural Transparency and the Rise of the Agentic Claims Operation",
+      "ogDescription": "A claim has never existed within the four walls of a single enterprise. Legacy automation stopped at internal borders. Transparency becomes an architectural guarantee.",
+      "updated": "2026-10-22"
     },
     "/blog/where-the-language-model-does-not-belong": {
       "title": "Rules or Model? Where AI Belongs in a Claim Decision | True Aim",
