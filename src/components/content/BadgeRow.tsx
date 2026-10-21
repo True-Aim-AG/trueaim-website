@@ -28,12 +28,12 @@ const LG_COLS: Record<number, string> = {
 /**
  * Credentials as the prototype's badge row: one rounded panel divided by
  * hairlines, the mark, a caption such as "Certified" or "Winner", the name
- * and one line under it. Each cell is a grid with fixed rows for the mark
- * and the title, so the lines sit level across the row.
+ * and one line under it. Each cell takes its four rows from the list's grid
+ * (subgrid), so caption, title and text sit level across the row even when
+ * one caption or title wraps.
  */
 export function BadgeRow({ heading, items, lilac }: { heading: string; items: BadgeItem[]; lilac?: boolean }) {
   const lg = LG_COLS[Math.min(Math.max(items.length, 1), 5)];
-  const withText = items.some((item) => item.text);
   return (
     <section className={lilac ? SECTION_LILAC : SECTION_TIGHT}>
       <div className="mx-auto max-w-7xl">
@@ -42,7 +42,7 @@ export function BadgeRow({ heading, items, lilac }: { heading: string; items: Ba
           {items.map((item) => (
             <li
               key={item.title}
-              className="grid grid-rows-[80px_auto_auto_auto] border-hairline px-7 py-7 border-t first:border-t-0 sm:[&:nth-child(2)]:border-t-0 sm:even:border-l lg:border-t-0 lg:border-l lg:first:border-l-0"
+              className="row-span-4 grid grid-rows-subgrid border-hairline px-7 py-7 border-t first:border-t-0 sm:[&:nth-child(2)]:border-t-0 sm:even:border-l lg:border-t-0 lg:border-l lg:first:border-l-0"
             >
               <div className={cn("flex h-20 items-center", item.darkPlate && "w-fit rounded-[8px] bg-ta-charcoal px-3")}>
                 {item.image ? (
@@ -59,7 +59,7 @@ export function BadgeRow({ heading, items, lilac }: { heading: string; items: Ba
                 )}
               </div>
               <p className="mt-4 min-h-[1.3em] text-[12px] font-medium uppercase tracking-[0.14em] text-accent">{item.caption}</p>
-              <h3 className={cn("mt-2 font-display text-[17px] font-semibold leading-[1.35] text-strong", withText && "min-h-[2.7em]")}>
+              <h3 className="mt-2 font-display text-[17px] font-semibold leading-[1.35] text-strong">
                 {item.title}
               </h3>
               {item.text && <p className="mt-1.5 text-[14px] leading-[1.5] text-muted">{item.text}</p>}
