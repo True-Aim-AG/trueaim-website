@@ -236,7 +236,7 @@
     "tpas": {
       "hero": {
         "title": "More claims per adjuster, within every mandate",
-        "summary": "You handle and decide claims on behalf of insurers, within the mandate each one sets. True Aim checks every claim against that insurer's policy wording, benchmarks every invoice and keeps a complete record for each client, so you can take on more volume without adding adjusters.",
+        "summary": "True Aim acts as your agentic orchestration layer, computing coverage line-by-line against each insurer's specific wording. We test every invoice against empirical market benchmarks and preserve every outcome with line-level provenance. Eliminating the navigation tax frees your adjusters for critical judgement, giving your portfolio the room to scale.",
         "scene": {
           "alt": "A claims work queue with each claim's status and the time left to its service level",
           "title": "Open claims",
@@ -317,7 +317,7 @@
     "warranty": {
       "hero": {
         "title": "Every warranty invoice checked against the terms",
-        "summary": "Built for warranty providers, True Aim splits every garage invoice into parts, labour and fees. Every line is checked against the warranty terms in minutes and benchmarked against what the work should cost, with the reissue request already drafted for the garage.",
+        "summary": "True Aim breaks invoices down to the line item, validating parts, labour and fees against warranty terms and regional benchmarks in real time. Any discrepancy triggers a ready-to-send reissue request with the exact lines identified, turning costly disputes into fast, objective reconciliations.",
         "scene": {
           "alt": "A motor warranty claim as the adjuster sees it: parts, labour and a courtesy vehicle, each line checked against the warranty terms",
           "title": "Motor warranty claim",

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { buttonClasses } from "@/components/brand/Button";
+import { ButtonLink } from "@/components/brand/Button";
 import { CtaBand, PageHero, SECTION } from "@/components/content";
 import { cn } from "@/lib/utils";
 
@@ -32,9 +32,9 @@ export default async function ImpactEstimatorPage({ params }: { params: Promise<
         }
       >
         <div className="mt-10">
-          <a href="#estimator" className={buttonClasses("primary", "lg")}>
+          <ButtonLink href="#estimator" external size="lg">
             {t("hero.button")}
-          </a>
+          </ButtonLink>
         </div>
       </PageHero>
 

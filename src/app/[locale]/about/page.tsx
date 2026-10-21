@@ -14,7 +14,7 @@ const teamMeta: Record<(typeof team)[number], { image?: string; linkedin?: strin
   alin: { image: "/team/alin-koppandi.webp" },
   kai: { image: "/team/kai-praschma.webp" },
   henrique: { image: "/team/henrique-ferreira.webp", linkedin: "https://www.linkedin.com/in/henriquemf213" },
-  arnaud: {},
+  arnaud: { image: "/team/arnaud-terville.webp" },
 };
 
 const advisers = ["claudio", "kevin", "lukas", "dave", "eric", "dandolo"] as const;
@@ -43,7 +43,7 @@ const awards = ["insurathon", "swissInnovation", "leuchtturm", "ikn"] as const;
 const awardMeta: Record<(typeof awards)[number], { image: string; width: number; height: number; renderHeight: number; darkPlate?: boolean }> = {
   insurathon: { image: "/awards/norton-rose-fulbright.svg", width: 380, height: 42, renderHeight: 30 },
   swissInnovation: { image: "/awards/swiss-innovation.png", width: 171, height: 169, renderHeight: 72 },
-  leuchtturm: { image: "/awards/digitaler-leuchtturm.png", width: 198, height: 132, renderHeight: 56, darkPlate: true },
+  leuchtturm: { image: "/awards/digitaler-leuchtturm.png", width: 198, height: 132, renderHeight: 56 },
   ikn: { image: "/awards/ikn-italy.png", width: 167, height: 151, renderHeight: 72 },
 };
 

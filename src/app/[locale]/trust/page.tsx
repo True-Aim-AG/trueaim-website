@@ -79,7 +79,9 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
   const badgeItems: BadgeItem[] = badges.map((key) => {
     const status = t(`badges.items.${key}.status`) as "certified" | "pending" | "aligned";
     return {
-      icon: <Shield strokeWidth={1.5} className="h-7 w-7" />,
+      ...(key === "iso27001"
+        ? { image: { src: "/brand/marks/iso-27001-certified.svg", alt: t(`badges.items.${key}.name`), width: 160, height: 160 } }
+        : { icon: <Shield strokeWidth={1.5} className="h-7 w-7" /> }),
       caption: t(`badges.statusLabels.${status}`),
       title: t(`badges.items.${key}.name`),
       text: t(`badges.items.${key}.description`),
