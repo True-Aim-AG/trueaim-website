@@ -1,29 +1,23 @@
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight, BookOpen, Calendar, ClipboardCheck, Clock, Gavel, GitBranch, Shield, Scale, BarChart3 } from "lucide-react";
+import { ArrowRight, BookOpen, Clock } from "lucide-react";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 import { Eyebrow } from "@/components/brand/Eyebrow";
 import { ButtonLink } from "@/components/brand/Button";
-import { GridPattern } from "@/components/brand/GridPattern";
+import { CARD, CARD_HOVER, PageHero, SECTION, SECTION_LILAC } from "@/components/content";
 import { blogPosts } from "@/lib/blog-posts";
 import type { Metadata } from "next";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
-
-const iconBySlug: Record<string, typeof BarChart3> = {
-  "where-the-language-model-does-not-belong": GitBranch,
-  "ai-claims-auditability-scorecard": ClipboardCheck,
-  "ai-claims-handling-eu-ai-act-high-risk": Gavel,
-  "why-claims-ai-pilots-stall": BarChart3,
-  "auditability-evidence-chains": Shield,
-  "build-vs-buy-idp-vendors": Scale,
-};
+import { cn } from "@/lib/utils";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const metadata = pageMetadata(locale, "/blog");
   return { ...metadata, alternates: { ...metadata.alternates, types: { "application/rss+xml": "https://trueaim.ai/feed.xml" } } };
 }
+
+const ARTICLE = cn(CARD, CARD_HOVER, "block h-full p-8");
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -32,43 +26,25 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
   const otherPosts = blogPosts.filter((post) => !post.featured);
 
   return (
-    <div className="min-h-screen">
+    <>
       <EnglishOnlyBanner />
       <PageSeo locale={locale} path="/blog" template="collection" />
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
-        <div className="relative max-w-4xl mx-auto text-center px-6 pt-20 md:pt-28 pb-16">
-          <Eyebrow className="mb-4">Insights &amp; Technical Deep Dives</Eyebrow>
 
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-strong mb-6">
-            Blog
-          </h1>
-
-          <p className="text-lede text-body max-w-2xl mx-auto">
-            Exploring AI, automation, regulation and the practical challenges of operating in regulated industries.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Blog"
+        title="Insights and technical deep dives"
+        summary="Exploring AI, automation, regulation and the practical challenges of operating in regulated industries."
+        texture={{ name: "circ", position: "88% 78%" }}
+      />
 
       {/* Featured Post */}
       {featuredPost && (
-        <section className="py-12 px-6">
+        <section className={SECTION}>
           <div className="max-w-4xl mx-auto">
-            <Eyebrow className="mb-6">Featured Article</Eyebrow>
+            <Eyebrow className="mb-6">Featured</Eyebrow>
 
-            <Link href={`/blog/${featuredPost.slug}`} className="block group">
-              <article className="bg-card shadow-card rounded-pill p-8 transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="inline-flex items-center gap-2 rounded-pill bg-accent-soft text-accent px-3 py-1 text-sm font-medium">
-                    {(() => {
-                      const Icon = iconBySlug[featuredPost.slug] ?? BookOpen;
-                      return <Icon className="w-4 h-4" strokeWidth={1.5} />;
-                    })()}
-                    {featuredPost.category}
-                  </span>
-                </div>
-
+            <Link href={`/blog/${featuredPost.slug}`} className={ARTICLE}>
+              <article>
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-strong mb-4">
                   {featuredPost.title}
                 </h2>
@@ -78,32 +54,15 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
                 </p>
 
                 <div className="flex flex-wrap items-center justify-between gap-4">
-                  <div className="flex items-center gap-4 text-sm text-subtle">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4" strokeWidth={1.5} />
-                      {featuredPost.displayDate}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4" strokeWidth={1.5} />
-                      {featuredPost.readTime}
-                    </div>
+                  <div className="flex items-center gap-2 text-sm text-subtle">
+                    <Clock className="w-4 h-4" strokeWidth={1.5} />
+                    {featuredPost.readTime}
                   </div>
 
                   <span className="inline-flex items-center gap-2 text-link font-medium">
                     Read Article
                     <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
                   </span>
-                </div>
-
-                <div className="flex flex-wrap gap-2 mt-6 pt-6 border-t border-hairline">
-                  {featuredPost.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-3 py-1 rounded-pill bg-accent-soft text-accent"
-                    >
-                      {tag}
-                    </span>
-                  ))}
                 </div>
               </article>
             </Link>
@@ -113,40 +72,32 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
 
       {/* Other Posts */}
       {otherPosts.length > 0 && (
-        <section className="py-12 px-6">
+        <section className={SECTION_LILAC}>
           <div className="max-w-4xl mx-auto">
-            <Eyebrow className="mb-6">All Articles</Eyebrow>
+            <Eyebrow className="mb-6">All</Eyebrow>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {otherPosts.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="block group"
-                >
-                  <article className="bg-card shadow-card rounded-pill p-8 h-full transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="inline-flex items-center gap-1.5 rounded-pill bg-accent-soft text-accent px-3 py-1 text-xs font-medium">
-                        {(() => {
-                          const Icon = iconBySlug[post.slug] ?? BookOpen;
-                          return <Icon className="w-3 h-3" strokeWidth={1.5} />;
-                        })()}
-                        {post.category}
-                      </span>
-                    </div>
-
+                <Link key={post.slug} href={`/blog/${post.slug}`} className={ARTICLE}>
+                  {/* The read time sits bottom left and the link bottom right on every card. */}
+                  <article className="flex h-full flex-col">
                     <h2 className="font-display text-lg font-bold text-strong mb-3 line-clamp-2">
                       {post.title}
                     </h2>
 
-                    <p className="text-sm text-body leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-sm text-body leading-relaxed mb-6 line-clamp-3">
                       {post.excerpt}
                     </p>
 
-                    <div className="flex items-center gap-3 text-xs text-subtle">
-                      <span>{post.displayDate}</span>
-                      <span>&middot;</span>
-                      <span>{post.readTime}</span>
+                    <div className="mt-auto flex flex-wrap items-center justify-between gap-4">
+                      <div className="flex items-center gap-2 text-xs text-subtle">
+                        <Clock className="w-3.5 h-3.5" strokeWidth={1.5} />
+                        {post.readTime}
+                      </div>
+                      <span className="inline-flex items-center gap-2 text-sm text-link font-medium">
+                        Read Article
+                        <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+                      </span>
                     </div>
                   </article>
                 </Link>
@@ -156,70 +107,18 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
         </section>
       )}
 
-      {/* Topics Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-display text-2xl font-bold text-strong mb-8 text-center">
-            <span className="block">Topics We Cover</span>
-            <span className="block text-base font-normal text-muted mt-2">(and more)</span>
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-card shadow-card rounded-pill p-6">
-              <h3 className="font-display font-semibold text-strong mb-2">
-                Auditable AI
-              </h3>
-              <p className="text-sm text-muted">
-                How to build AI systems that can be explained, traced and
-                defended in regulated environments.
-              </p>
-            </div>
-
-            <div className="bg-card shadow-card rounded-pill p-6">
-              <h3 className="font-display font-semibold text-strong mb-2">
-                Claims Automation
-              </h3>
-              <p className="text-sm text-muted">
-                Best practices for automating insurance claims while maintaining
-                quality and compliance.
-              </p>
-            </div>
-
-            <div className="bg-card shadow-card rounded-pill p-6">
-              <h3 className="font-display font-semibold text-strong mb-2">
-                Regulatory Compliance
-              </h3>
-              <p className="text-sm text-muted">
-                Navigating FINMA, EU AI Act, and other regulatory requirements
-                for AI in insurance.
-              </p>
-            </div>
-
-            <div className="bg-card shadow-card rounded-pill p-6">
-              <h3 className="font-display font-semibold text-strong mb-2">
-                Technical Architecture
-              </h3>
-              <p className="text-sm text-muted">
-                Deep dives into hybrid AI architectures, document processing
-                and decision systems.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Newsletter CTA */}
-      <section data-theme="dark" className="py-20 px-6 bg-page-tint">
-        <div className="max-w-2xl mx-auto text-center">
-          <BookOpen className="w-12 h-12 text-muted mx-auto mb-6" strokeWidth={1.5} />
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-strong mb-4">
+      <section data-theme="dark" className="bg-page-tint px-6 py-20 md:py-[120px]">
+        <div className="mx-auto max-w-7xl">
+          <BookOpen className="w-12 h-12 text-muted mb-6" strokeWidth={1.5} />
+          <h2 className="font-display text-[30px] font-bold leading-[1.15] text-strong text-balance md:text-[40px] mb-4">
             Want More Insights?
           </h2>
-          <p className="text-body mb-8">
+          <p className="mt-6 max-w-[62ch] text-[18px] leading-[30px] text-body mb-8">
             Get in touch to discuss how auditable AI can work for your
             organization.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4">
             <ButtonLink href="/contact" variant="primary" size="lg">
               Get in Touch
               <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
@@ -230,6 +129,6 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

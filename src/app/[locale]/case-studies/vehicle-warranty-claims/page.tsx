@@ -1,16 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import {
   ArrowLeft,
   ArrowRight,
-  Building2,
   Clock,
   CheckCircle,
   Quote,
-  TrendingUp,
   FileText,
   Search,
   Layers,
@@ -27,7 +26,8 @@ import { caseStudies } from "@/data/case-studies";
 import { productPillColors, productNames } from "@/lib/product-styles";
 import { ButtonLink } from "@/components/brand/Button";
 import { StatusPill } from "@/components/brand/StatusPill";
-import { GridPattern } from "@/components/brand/GridPattern";
+import { CARD, CtaBand, PageHero, SECTION, SECTION_LILAC } from "@/components/content";
+import { cn } from "@/lib/utils";
 
 const ease = [0.4, 0, 0.2, 1] as const;
 
@@ -38,13 +38,6 @@ const productLinks: Record<string, string> = {
 };
 
 const study = caseStudies.find((cs) => cs.slug === "vehicle-warranty-claims")!;
-
-const currentIndex = caseStudies.findIndex(
-  (cs) => cs.slug === "vehicle-warranty-claims"
-);
-const prevStudy = currentIndex > 0 ? caseStudies[currentIndex - 1] : null;
-const nextStudy =
-  currentIndex < caseStudies.length - 1 ? caseStudies[currentIndex + 1] : null;
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 } as const,
@@ -78,7 +71,7 @@ function ExpandableSection({
   defaultOpen?: boolean;
 }) {
   return (
-    <details open={defaultOpen} className="group bg-card shadow-card rounded-pill overflow-hidden">
+    <details open={defaultOpen} className={cn(CARD, "group overflow-hidden")}>
       <summary className="w-full flex cursor-pointer list-none items-center justify-between p-5 text-left hover:bg-surface-muted transition-colors [&::-webkit-details-marker]:hidden">
         <span className="font-semibold text-sm text-strong">
           {title}
@@ -100,79 +93,64 @@ export default function VehicleWarrantyCaseStudy() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
-
-        <div className="relative max-w-4xl mx-auto px-6 pt-20 md:pt-28 pb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease }}
+      <PageHero
+        title="Automating Vehicle Warranty Claims with AI Document Intelligence"
+        summary="Multilingual, Auditable Warranty Adjudication"
+        texture={{ name: "glass", position: "100% 100%" }}
+        visual={
+          <Image
+            src={study.customer.logo!}
+            alt={`${study.customer.name} logo`}
+            width={600}
+            height={191}
+            priority
+            className="mx-auto h-auto w-full max-w-[340px]"
+          />
+        }
+      >
+        <div className="mt-8 space-y-6">
+          {/* Breadcrumb */}
+          <Link
+            href="/case-studies"
+            className="inline-flex items-center gap-2 py-2 text-muted hover:text-accent transition-colors"
           >
-            {/* Breadcrumb */}
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center gap-2 py-2 text-muted hover:text-accent transition-colors mb-8"
-            >
-              <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
-              {t("detail.allCaseStudies")}
-            </Link>
+            <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
+            {t("detail.allCaseStudies")}
+          </Link>
 
-            {/* Customer Info */}
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-pill bg-lilac grid place-items-center text-accent">
-                <Building2 className="w-8 h-8" strokeWidth={1.5} />
-              </div>
-              <div>
-                <div className="text-lg font-medium text-strong">
-                  {study.customer.name}
-                </div>
-                <div className="text-muted">
-                  {study.customer.industry} · {study.customer.size}
-                </div>
-              </div>
-            </div>
-
-            {/* Title */}
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-strong mb-4">
-              Automating Vehicle Warranty Claims with AI Document Intelligence
-            </h1>
-            <p className="text-xl md:text-2xl text-accent font-semibold mb-6">
-              Multilingual, Auditable Warranty Adjudication
-            </p>
-
-            {/* Products & Timeline */}
-            <div className="flex flex-wrap items-center gap-4">
-              {study.products.map((product) => (
-                <Link
-                  key={product}
-                  href={productLinks[product]}
-                  className={`text-sm px-3 py-1.5 font-medium ${productPillColors[product]}`}
-                >
-                  {productNames[product]}
-                </Link>
-              ))}
+          {/* Products & Timeline */}
+          <div className="flex flex-wrap items-center gap-4">
+            {study.products.map((product) => (
+              <Link
+                key={product}
+                href={productLinks[product]}
+                className={`text-sm px-3 py-1.5 font-medium ${productPillColors[product]}`}
+              >
+                {productNames[product]}
+              </Link>
+            ))}
+            {study.timeline && (
               <div className="flex items-center gap-2 text-muted">
                 <Clock className="w-4 h-4" strokeWidth={1.5} />
                 {study.timeline}
               </div>
-            </div>
-          </motion.div>
+            )}
+          </div>
         </div>
-      </section>
+      </PageHero>
 
       {/* Metrics Grid */}
-      <section className="py-12 px-6">
-        <div className="max-w-4xl mx-auto">
+      <section className={SECTION}>
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4"
           >
             {study.metrics.map((metric) => (
-              <div key={metric.label} className="bg-card shadow-card rounded-pill px-[29px] py-[27px] text-center">
+              <div key={metric.label} className={cn(CARD, "px-[29px] py-[27px] text-center")}>
                 <div className="text-kpi text-accent mb-1">
                   {metric.value}
                 </div>
@@ -191,8 +169,8 @@ export default function VehicleWarrantyCaseStudy() {
       </section>
 
       {/* === FULL ARTICLE CONTENT === */}
-      <section className="py-12 px-6">
-        <div className="max-w-5xl mx-auto">
+      <section className={SECTION_LILAC}>
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-8">
             {/* Main Content */}
             <article className="space-y-16 max-w-3xl">
@@ -210,9 +188,9 @@ export default function VehicleWarrantyCaseStudy() {
                     tiers, mileage caps and component exclusion lists.
                   </p>
                   <p>
-                    True Aim deployed the full product stack: ContextBuilder for document ingestion
-                    and structured extraction, MIRA for hybrid deterministic and AI coverage matching,
-                    and ClaimEval for quality assurance with full provenance tracking. A multi-tier
+                    True Aim deployed the full platform: the document layer for document ingestion
+                    and structured extraction, Claims Decisioning for hybrid deterministic and AI coverage
+                    matching, and the quality check with full provenance tracking. A multi-tier
                     matching architecture routes 80%-90% of line items through deterministic rules
                     and keyword matching with zero LLM cost, reserving AI reasoning for genuinely
                     ambiguous cases. Within seven days and through multiple evaluation iterations,
@@ -272,7 +250,7 @@ export default function VehicleWarrantyCaseStudy() {
                     ].map((stat) => (
                       <div
                         key={stat.label}
-                        className="bg-surface-muted rounded-pill p-4 text-center"
+                        className="bg-surface-muted rounded-[12px] p-4 text-center"
                       >
                         <div className="text-lg font-display font-bold tabular-nums text-accent">
                           {stat.value}
@@ -290,7 +268,7 @@ export default function VehicleWarrantyCaseStudy() {
                     ].map((stat) => (
                       <div
                         key={stat.label}
-                        className="bg-surface-muted rounded-pill p-4 text-center"
+                        className="bg-surface-muted rounded-[12px] p-4 text-center"
                       >
                         <div className="text-lg font-display font-bold tabular-nums text-accent">
                           {stat.value}
@@ -341,7 +319,7 @@ export default function VehicleWarrantyCaseStudy() {
                   ].map((item) => (
                     <div
                       key={item.title}
-                      className="bg-card shadow-card rounded-pill p-6 flex gap-4"
+                      className={cn(CARD, "p-6 flex gap-4")}
                     >
                       <item.icon className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                       <div>
@@ -388,7 +366,7 @@ export default function VehicleWarrantyCaseStudy() {
                   ].map((s) => (
                     <div
                       key={s.stage}
-                      className="bg-surface-muted rounded-pill p-3 text-center"
+                      className="bg-surface-muted rounded-[12px] p-3 text-center"
                     >
                       <s.icon className="w-5 h-5 text-accent mx-auto mb-1" strokeWidth={1.5} />
                       <div className="text-[10px] text-subtle uppercase tracking-wider">
@@ -432,7 +410,7 @@ export default function VehicleWarrantyCaseStudy() {
                   ].map((tier) => (
                     <div
                       key={tier.name}
-                      className="bg-card shadow-card rounded-pill p-6"
+                      className={cn(CARD, "p-6")}
                     >
                       <div className="flex items-center justify-between mb-2 gap-3">
                         <span className="font-semibold text-sm text-strong">
@@ -568,7 +546,7 @@ export default function VehicleWarrantyCaseStudy() {
                       but unreliable results: hallucinated part names, invented
                       coverage rules, inconsistent calculations.
                     </p>
-                    <div className="bg-surface-muted rounded-pill p-3 mt-3 text-xs text-body">
+                    <div className="bg-surface-muted rounded-[12px] p-3 mt-3 text-xs text-body">
                       <span className="font-medium text-strong">
                         Key insight:
                       </span>{" "}
@@ -660,7 +638,7 @@ export default function VehicleWarrantyCaseStudy() {
                     <h3 className="font-display font-semibold text-xl mt-10 mb-3">
                       Initial Evaluation Set
                     </h3>
-                    <div className="bg-card shadow-card rounded-pill overflow-hidden overflow-x-auto">
+                    <div className={cn(CARD, "overflow-hidden overflow-x-auto")}>
                       <table className="w-full text-sm min-w-[400px]">
                         <tbody>
                           {[
@@ -696,7 +674,7 @@ export default function VehicleWarrantyCaseStudy() {
                     <h3 className="font-display font-semibold text-xl mt-10 mb-3">
                       Holdout Set
                     </h3>
-                    <div className="bg-card shadow-card rounded-pill overflow-hidden overflow-x-auto">
+                    <div className={cn(CARD, "overflow-hidden overflow-x-auto")}>
                       <table className="w-full text-sm min-w-[400px]">
                         <tbody>
                           {[
@@ -732,7 +710,7 @@ export default function VehicleWarrantyCaseStudy() {
                     {processingStats.map((item) => (
                       <div
                         key={item.label}
-                        className="bg-surface-muted rounded-pill p-3 text-center"
+                        className="bg-surface-muted rounded-[12px] p-3 text-center"
                       >
                         {item.check ? (
                           <CheckCircle className="w-5 h-5 mx-auto text-accent" strokeWidth={1.5} />
@@ -781,7 +759,7 @@ export default function VehicleWarrantyCaseStudy() {
                   ].map((item) => (
                     <div
                       key={item.title}
-                      className="bg-surface-muted rounded-pill p-3 text-xs text-body"
+                      className="bg-surface-muted rounded-[12px] p-3 text-xs text-body"
                     >
                       <span className="font-medium text-strong">
                         {item.title}:
@@ -888,9 +866,9 @@ export default function VehicleWarrantyCaseStudy() {
                   ].map((challenge) => (
                     <div
                       key={challenge.title}
-                      className="bg-card shadow-card rounded-pill p-6 flex gap-4"
+                      className={cn(CARD, "p-6 flex gap-4")}
                     >
-                      <div className="w-10 h-10 rounded-pill bg-lilac grid place-items-center text-accent flex-shrink-0">
+                      <div className="w-10 h-10 rounded-[12px] bg-lilac grid place-items-center text-accent flex-shrink-0">
                         <challenge.icon className="w-5 h-5" strokeWidth={1.5} />
                       </div>
                       <div>
@@ -935,7 +913,7 @@ export default function VehicleWarrantyCaseStudy() {
                 <div className="space-y-3">
                   <ExpandableSection title="Detailed iteration fixes (88% to 98%)">
                     <div className="space-y-3">
-                      <div className="bg-surface-muted rounded-pill p-3 text-xs text-body">
+                      <div className="bg-surface-muted rounded-[12px] p-3 text-xs text-body">
                         <span className="font-medium text-strong">
                           Cross-category substring matching bug:
                         </span>{" "}
@@ -945,7 +923,7 @@ export default function VehicleWarrantyCaseStudy() {
                         under brakes. Fix: symmetric guard requiring exact match
                         when either term is 3 characters or fewer.
                       </div>
-                      <div className="bg-surface-muted rounded-pill p-3 text-xs text-body">
+                      <div className="bg-surface-muted rounded-[12px] p-3 text-xs text-body">
                         <span className="font-medium text-strong">
                           Labor demotion over-aggression:
                         </span>{" "}
@@ -953,7 +931,7 @@ export default function VehicleWarrantyCaseStudy() {
                         labor should also be covered. Fix: labor promotion logic
                         that inherits coverage from the parent repair.
                       </div>
-                      <div className="bg-surface-muted rounded-pill p-3 text-xs text-body">
+                      <div className="bg-surface-muted rounded-[12px] p-3 text-xs text-body">
                         <span className="font-medium text-strong">
                           Part-number normalization:
                         </span>{" "}
@@ -1000,7 +978,7 @@ export default function VehicleWarrantyCaseStudy() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease }}
-                className="bg-card shadow-card rounded-pill p-8"
+                className={cn(CARD, "p-8")}
               >
                 <h3 className="font-display font-semibold text-strong mb-4">
                   {t("detail.keyHighlights")}
@@ -1067,59 +1045,12 @@ export default function VehicleWarrantyCaseStudy() {
         </div>
       </section>
 
-      {/* Navigation */}
-      <section className="py-12 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex justify-between items-center">
-            {prevStudy ? (
-              <Link
-                href={`/case-studies/${prevStudy.slug}`}
-                className="flex items-center gap-2 text-muted hover:text-accent transition-colors"
-              >
-                <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
-                <span className="text-sm">{t("detail.previous")}</span>
-              </Link>
-            ) : (
-              <div />
-            )}
-            {nextStudy ? (
-              <Link
-                href={`/case-studies/${nextStudy.slug}`}
-                className="flex items-center gap-2 text-muted hover:text-accent transition-colors"
-              >
-                <span className="text-sm">{t("detail.next")}</span>
-                <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
-              </Link>
-            ) : (
-              <div />
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section data-theme="dark" className="py-20 px-6 bg-page-tint">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease }}
-          >
-            <TrendingUp className="w-12 h-12 text-muted mx-auto mb-6" strokeWidth={1.5} />
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-strong mb-6">
-              {t("detail.ctaHeading")}
-            </h2>
-            <p className="text-lg text-body mb-10">
-              {t("detail.ctaDescription")}
-            </p>
-            <ButtonLink href="/contact" variant="primary" size="lg">
-              {t("detail.requestPilot")}
-              <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
-            </ButtonLink>
-          </motion.div>
-        </div>
-      </section>
+      <CtaBand
+        heading={t("detail.ctaHeading")}
+        lede={t("detail.ctaDescription")}
+        buttons={[{ label: t("detail.requestPilot"), href: "/contact" }]}
+      />
     </div>
   );
 }

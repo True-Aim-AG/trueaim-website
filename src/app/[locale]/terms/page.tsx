@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { PageHero, SECTION } from "@/components/content";
 import { ButtonLink } from "@/components/brand/Button";
 
 export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -8,14 +9,11 @@ export default async function TermsPage({ params }: { params: Promise<{ locale: 
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <div className="pt-20 md:pt-28 pb-16 px-6">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="mt-3 font-display text-4xl font-bold leading-[1.05] text-strong mb-4">
-          Terms of Use
-        </h1>
-        <p className="text-sm text-muted mb-8">
-          Last updated: 08 February 2026
-        </p>
+      <PageHero title="Terms of Use" texture={{ name: "glass", position: "100% 100%" }}>
+        <p className="mt-6 text-sm text-muted">Last updated: 08 February 2026</p>
+      </PageHero>
+      <section className={SECTION}>
+        <div className="max-w-3xl [&>div>section:first-child>h2]:mt-0">
 
         <div>
           <section>
@@ -70,7 +68,7 @@ export default async function TermsPage({ params }: { params: Promise<{ locale: 
           <section>
             <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">8. Third-party links</h2>
             <p className="text-body leading-[1.6]">
-              This website may contain links to third-party websites or services, including scheduling tools. True Aim AG is not responsible for the content, availability or practices of third-party sites and does not endorse them.
+              This website may contain links to third-party websites or services. True Aim AG is not responsible for the content, availability or practices of third-party sites and does not endorse them.
             </p>
           </section>
 
@@ -123,7 +121,7 @@ export default async function TermsPage({ params }: { params: Promise<{ locale: 
           </div>
         </div>
       </div>
-      </div>
+      </section>
     </div>
   );
 }

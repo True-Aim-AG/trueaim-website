@@ -12,6 +12,19 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "architectural-transparency-agentic-claims-operation",
+    title:
+      "Time Back Is the Easy Part: Architectural Transparency and the Rise of the Agentic Claims Operation",
+    excerpt:
+      "A claim has never existed within the four walls of a single enterprise. Legacy automation stopped at internal borders, accelerating discrete desks while stranding the wider ecosystem in an administrative standstill.",
+    publishedIso: "2026-10-22T00:00:00.000Z",
+    displayDate: "October 2026",
+    readTime: "8 min read",
+    category: "Operating Model",
+    tags: ["Claims AI", "Agentic AI", "Auditability", "Price Integrity"],
+    featured: true,
+  },
+  {
     slug: "where-the-language-model-does-not-belong",
     title:
       "Where the Language Model Does Not Belong: Designing Defensible AI in Claims Operations",
@@ -22,7 +35,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 min read",
     category: "Technical Architecture",
     tags: ["Claims AI", "Decision Trees", "Language Models", "Auditability"],
-    featured: true,
   },
   {
     slug: "ai-claims-auditability-scorecard",

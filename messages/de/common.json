@@ -97,15 +97,14 @@
         "name": "Contact",
         "desc": "Request a demo or ask a question"
       }
-    }
+    },
+    "languageLabel": "Sprache"
   },
   "footer": {
     "logoAlt": "True Aim Logo",
-    "tagline": "Schweizer Präzision. Überprüfbare KI.",
     "company": "Unternehmen",
     "resources": "Ressourcen",
-    "products": "Produkte",
-    "trust": "Vertrauen",
+    "platform": "Plattform",
     "trustCenter": "Trust Center",
     "legal": "Rechtliches",
     "about": "Über uns",
@@ -113,6 +112,7 @@
     "caseStudies": "Fallstudien",
     "impactEstimator": "Impact Estimator",
     "blog": "Blog",
+    "platformOverview": "Plattformübersicht",
     "invoiceBenchmarking": "Invoice Benchmarking",
     "claimsDecisioning": "Claims Decisioning",
     "damageReporting": "Damage Reporting",
@@ -128,8 +128,16 @@
     "aiTransparency": "KI-Transparenz",
     "cookies": "Cookie-Richtlinie",
     "paia": "PAIA-Handbuch",
-    "copyright": "© {year} True Aim AG. Alle Rechte vorbehalten.",
-    "linkedin": "LinkedIn"
+    "copyright": "© {year} True Aim AG, Metallstrasse 9, 6300 Zug, Switzerland",
+    "linkedin": "LinkedIn",
+    "taglineLines": [
+      "Faster claims.",
+      "Smarter decisions.",
+      "Lower costs.",
+      "Auditable by design."
+    ],
+    "followLinkedin": "Folgen Sie uns auf LinkedIn",
+    "partners": "Partner"
   },
   "cookie": {
     "title": "Cookie-Einstellungen",

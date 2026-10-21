@@ -1,100 +1,91 @@
 {
   "contact": {
     "hero": {
-      "badge": "Kontaktieren Sie uns",
-      "titleLine1": "Lassen Sie uns sprechen",
-      "titleLine2": "Schadenautomatisierung",
-      "description": "Ob Sie Optionen erkunden oder bereit für ein Pilotprojekt sind, wir zeigen Ihnen gerne, was überprüfbare KI leisten kann."
+      "title": "Request a demo",
+      "summary": "Tell us about your claims operation and we will show you True Aim on your own invoices, claims and damage reports."
     },
     "form": {
-      "heading": "Demo buchen",
-      "firstName": "Vorname",
-      "lastName": "Nachname",
-      "workEmail": "Geschäftliche E-Mail",
-      "company": "Unternehmen",
-      "jobTitle": "Berufsbezeichnung",
-      "country": "Land",
-      "interest": "Was interessiert Sie?",
-      "leadSource": "Wie haben Sie von uns erfahren?",
-      "claimsVolume": "Jährliches Schadenvolumen",
-      "message": "Erzählen Sie uns von Ihren Anforderungen",
-      "consent": "Ich stimme zu, Mitteilungen von True Aim zu erhalten",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "workEmail": "Work email",
+      "company": "Company",
+      "jobTitle": "Job title",
+      "country": "Country",
+      "interest": "What would you like to talk about?",
+      "leadSource": "How did you hear about us?",
+      "claimsVolume": "Annual claims volume",
+      "message": "Anything you would like us to know?",
+      "consent": "I agree that True Aim may contact me about this request. See our <privacy>privacy policy</privacy>.",
       "required": "*",
-      "optional": "(Optional)",
-      "selectCountry": "Land auswählen",
-      "selectInterest": "Interesse auswählen",
-      "selectSource": "Quelle auswählen",
+      "optional": "(optional)",
+      "selectCountry": "Select a country",
+      "selectInterest": "Select a topic",
+      "selectSource": "Select a source",
       "placeholders": {
-        "firstName": "Max",
-        "lastName": "Mustermann",
-        "email": "max.mustermann@firma.com",
-        "company": "Firmenname",
-        "jobTitle": "Leiter Schadenregulierung",
-        "claimsVolume": "z. B. 50.000 Schadenmeldungen/Jahr",
-        "message": "Welche Herausforderungen haben Sie bei der Schadenbearbeitung?"
+        "firstName": "First name",
+        "lastName": "Last name",
+        "email": "name@company.com",
+        "company": "Company name",
+        "jobTitle": "Head of Claims Operations",
+        "claimsVolume": "For example 50,000 claims a year",
+        "message": "Which claims, invoices or reports would you like to see handled?"
       },
       "countries": {
-        "switzerland": "Schweiz",
-        "germany": "Deutschland",
-        "austria": "Österreich",
-        "unitedKingdom": "Vereinigtes Königreich",
-        "france": "Frankreich",
-        "italy": "Italien",
-        "netherlands": "Niederlande",
-        "belgium": "Belgien",
-        "southAfrica": "Südafrika",
-        "spain": "Spanien",
-        "unitedStates": "Vereinigte Staaten",
-        "other": "Andere"
+        "switzerland": "Switzerland",
+        "germany": "Germany",
+        "austria": "Austria",
+        "unitedKingdom": "United Kingdom",
+        "france": "France",
+        "italy": "Italy",
+        "netherlands": "Netherlands",
+        "belgium": "Belgium",
+        "southAfrica": "South Africa",
+        "spain": "Spain",
+        "unitedStates": "United States",
+        "other": "Other"
       },
       "interests": {
         "invoiceBenchmarking": "Invoice Benchmarking",
         "claimsDecisioning": "Claims Decisioning",
         "damageReporting": "Damage Reporting",
-        "otus": "Otus",
-        "other": "Etwas anderes / Noch nicht sicher"
+        "otus": "Otus, our AI agent",
+        "other": "Something else"
       },
       "leadSources": {
-        "aiAssistant": "KI-Assistent wie ChatGPT oder Perplexity",
-        "searchEngine": "Suchmaschine",
+        "aiAssistant": "AI assistant such as ChatGPT or Perplexity",
+        "searchEngine": "Search engine",
         "linkedin": "LinkedIn",
-        "referral": "Empfehlung",
-        "industryEvent": "Branchenveranstaltung",
-        "other": "Andere"
+        "referral": "Referral",
+        "industryEvent": "Industry event",
+        "other": "Other"
       },
       "validation": {
-        "firstNameRequired": "Vorname ist erforderlich",
-        "lastNameRequired": "Nachname ist erforderlich",
-        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
-        "companyRequired": "Unternehmen ist erforderlich",
-        "jobTitleRequired": "Berufsbezeichnung ist erforderlich",
-        "countryRequired": "Bitte wählen Sie ein Land aus",
-        "interestRequired": "Bitte wählen Sie Ihr Interesse aus",
-        "consentRequired": "Sie müssen dem Erhalt von Mitteilungen zustimmen",
-        "heardAboutRequired": "Bitte geben Sie an, wie Sie von uns erfahren haben"
+        "firstNameRequired": "First name is required",
+        "lastNameRequired": "Last name is required",
+        "emailInvalid": "Please enter a valid email address",
+        "companyRequired": "Company is required",
+        "jobTitleRequired": "Job title is required",
+        "countryRequired": "Please select a country",
+        "interestRequired": "Please select a topic",
+        "consentRequired": "Please agree so that True Aim may contact you",
+        "heardAboutRequired": "Please tell us how you heard about us"
       },
-      "submit": "Demo buchen",
-      "submitting": "Wird gesendet...",
-      "responseTime": "Wir antworten in der Regel innerhalb eines Werktages.",
-      "errorGeneric": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+      "submit": "Request a demo",
+      "submitting": "Sending",
+      "errorGeneric": "Something went wrong. Please try again."
     },
     "success": {
-      "heading": "Vielen Dank!",
-      "message": "Wir haben Ihre Anfrage erhalten. Wir antworten in der Regel innerhalb eines Werktages.",
-      "submitAnother": "Weitere Anfrage senden"
+      "heading": "Thank you",
+      "message": "We have your request and will reply within one business day.",
+      "submitAnother": "Send another request"
     },
-    "sidebar": {
-      "alternativeContact": "Alternativer Kontakt",
-      "emailUs": "Schreiben Sie uns",
+    "aside": {
+      "emailLabel": "Email",
       "emailAddress": "info@trueaim.ai",
-      "bookCall": "30-minütiges Gespräch buchen",
-      "headquarters": "Hauptsitz",
-      "address": {
-        "street": "Metallstrasse 9",
-        "city": "6300 Zug",
-        "country": "Schweiz"
-      },
-      "mapLabel": "Zug, Schweiz"
+      "linkedinLabel": "LinkedIn",
+      "linkedinText": "True Aim on LinkedIn",
+      "officeLabel": "Office",
+      "address": "True Aim AG, Metallstrasse 9, 6300 Zug, Switzerland"
     }
   }
 }

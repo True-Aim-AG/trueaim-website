@@ -2,6 +2,8 @@ import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { CARD, PageHero, SECTION } from "@/components/content";
+import { cn } from "@/lib/utils";
 import { englishOnlyStaticParams } from "@/i18n/page-locales";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -210,25 +212,25 @@ export default async function SubProcessorsPage({ params }: { params: Promise<{ 
     <div className="min-h-screen">
       <EnglishOnlyBanner />
       <PageSeo locale={locale} path="/sub-processors" template="page" />
-      <div className="pt-20 md:pt-28 pb-16 px-6">
-        <div className="max-w-3xl mx-auto">
-          <p className="text-sm text-muted">Schedule 2 to Data Processing Agreement</p>
-          <h1 className="mt-3 font-display text-4xl font-bold leading-[1.05] text-strong mb-6">
-            List of Sub-Processors
-          </h1>
-
-          <dl className="grid grid-cols-[max-content_1fr] gap-x-6 gap-y-2 text-sm mb-8">
-            <dt className="text-muted">Version</dt>
-            <dd className="text-strong font-medium">{VERSION}</dd>
-            <dt className="text-muted">Effective date</dt>
-            <dd className="text-strong font-medium">{EFFECTIVE_DATE}</dd>
-            <dt className="text-muted">Last updated</dt>
-            <dd className="text-strong font-medium">{LAST_UPDATED}</dd>
-            <dt className="text-muted">Legal basis</dt>
-            <dd className="text-strong font-medium">Swiss FADP Art. 9; GDPR Art. 28</dd>
-          </dl>
-
-          <div className="bg-card shadow-card rounded-pill p-6 md:p-8 mb-8">
+      <PageHero
+        eyebrow="Schedule 2 to Data Processing Agreement"
+        title="List of Sub-Processors"
+        texture={{ name: "circ", position: "72% 18%" }}
+      >
+        <dl className="mt-6 grid grid-cols-[max-content_1fr] gap-x-6 gap-y-2 text-sm">
+          <dt className="text-muted">Version</dt>
+          <dd className="text-strong font-medium">{VERSION}</dd>
+          <dt className="text-muted">Effective date</dt>
+          <dd className="text-strong font-medium">{EFFECTIVE_DATE}</dd>
+          <dt className="text-muted">Last updated</dt>
+          <dd className="text-strong font-medium">{LAST_UPDATED}</dd>
+          <dt className="text-muted">Legal basis</dt>
+          <dd className="text-strong font-medium">Swiss FADP Art. 9; GDPR Art. 28</dd>
+        </dl>
+      </PageHero>
+      <section className={SECTION}>
+        <div className="max-w-3xl [&>div>section:first-child>h2]:mt-0">
+          <div className={cn(CARD, "p-6 md:p-8 mb-8")}>
             <h2 className="font-display text-lg font-semibold text-strong mb-4">Contents</h2>
             <ol className="space-y-1 list-none pl-0">
               {TOC.map((item) => (
@@ -315,7 +317,7 @@ export default async function SubProcessorsPage({ params }: { params: Promise<{ 
             True Aim AG · Metallstrasse 9, 6300 Zug, Switzerland · CHE-325.128.066
           </p>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

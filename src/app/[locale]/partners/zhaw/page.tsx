@@ -2,12 +2,12 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { ArrowRight, ExternalLink, GraduationCap, Brain, Users, FlaskConical } from "lucide-react";
 import { PartnerOutboundLink } from "@/components/partners/PartnerOutboundLink";
-import { Eyebrow } from "@/components/brand/Eyebrow";
 import { ButtonLink } from "@/components/brand/Button";
-import { GridPattern } from "@/components/brand/GridPattern";
 import type { Metadata } from "next";
+import { CARD, PageHero, SCENE_CARD_HERO, SECTION, SECTION_LILAC } from "@/components/content";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
+import { cn } from "@/lib/utils";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -19,55 +19,38 @@ export default async function ZHAWPage({ params }: { params: Promise<{ locale: s
   setRequestLocale(locale);
   const t = await getTranslations("partners.zhaw");
   return (
-    <div className="min-h-screen">
+    <>
       <PageSeo locale={locale} path="/partners/zhaw" template="partner" partner={{ name: "ZHAW Zurich University of Applied Sciences" }} />
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
-        <div className="relative max-w-7xl mx-auto text-center px-6 pt-20 md:pt-28 pb-16">
-          <Eyebrow className="inline-flex items-center gap-2 mb-6">
-            <GraduationCap strokeWidth={1.5} className="w-4 h-4" />
-            {t("hero.badge")}
-          </Eyebrow>
-
-          <div className="flex justify-center mb-8">
-            <div className="rounded-pill bg-ta-neutral-0 p-6 shadow-swatch">
-              <Image
-                src="/partners/zhaw-logo.png"
-                alt="ZHAW logo"
-                width={160}
-                height={120}
-                className="object-contain"
-              />
-            </div>
-          </div>
-
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-strong mb-6">
+      {/* Hero */}
+      <PageHero
+        eyebrow={t("hero.badge")}
+        title={
+          <>
             {t("hero.titleLine1")}
             <br />
-            <span className="text-accent">{t("hero.titleLine2")}</span>
-          </h1>
-
-          <div className="text-lede text-body max-w-3xl mx-auto space-y-4">
-            <p>
-              {t("hero.description1")}
-            </p>
-            <p>
-              {t("hero.description2")}
-            </p>
+            {t("hero.titleLine2")}
+          </>
+        }
+        summary={t("hero.description1")}
+        texture={{ name: "circ", position: "12% 88%" }}
+        visual={
+          <div className={cn(CARD, SCENE_CARD_HERO, "grid min-h-[260px] place-items-center p-10")}>
+            <Image src="/partners/zhaw-logo.png" alt="ZHAW logo" width={160} height={120} className="h-auto w-full max-w-[280px] object-contain" />
           </div>
-        </div>
-      </section>
+        }
+      >
+        <p className="mt-5 max-w-[54ch] text-[18px] leading-[1.6] text-body md:text-[20px] md:leading-[1.5]">{t("hero.description2")}</p>
+      </PageHero>
 
       {/* Research Focus */}
-      <section className="py-20 px-6">
+      <section className={SECTION}>
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-3xl font-bold text-strong mb-12 text-center">
+          <h2 className="font-display text-[30px] font-bold leading-[1.15] text-strong mb-14 md:text-[40px]">
             {t("research.heading")}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="rounded-pill bg-card p-8 shadow-card transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch">
+            <div className="rounded-[12px] bg-card shadow-[0_0_0_1px_rgba(44,43,42,.06),var(--shadow-card)] p-8">
               <div className="icon-plate w-14 h-14 mb-6">
                 <Brain strokeWidth={1.5} className="w-7 h-7" />
               </div>
@@ -79,7 +62,7 @@ export default async function ZHAWPage({ params }: { params: Promise<{ locale: s
               </p>
             </div>
 
-            <div className="rounded-pill bg-card p-8 shadow-card transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch">
+            <div className="rounded-[12px] bg-card shadow-[0_0_0_1px_rgba(44,43,42,.06),var(--shadow-card)] p-8">
               <div className="icon-plate w-14 h-14 mb-6">
                 <FlaskConical strokeWidth={1.5} className="w-7 h-7" />
               </div>
@@ -91,7 +74,7 @@ export default async function ZHAWPage({ params }: { params: Promise<{ locale: s
               </p>
             </div>
 
-            <div className="rounded-pill bg-card p-8 shadow-card transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch">
+            <div className="rounded-[12px] bg-card shadow-[0_0_0_1px_rgba(44,43,42,.06),var(--shadow-card)] p-8">
               <div className="icon-plate w-14 h-14 mb-6">
                 <GraduationCap strokeWidth={1.5} className="w-7 h-7" />
               </div>
@@ -103,7 +86,7 @@ export default async function ZHAWPage({ params }: { params: Promise<{ locale: s
               </p>
             </div>
 
-            <div className="rounded-pill bg-card p-8 shadow-card transition-[transform,box-shadow] duration-300 ease-brand hover:-translate-y-0.5 hover:shadow-swatch">
+            <div className="rounded-[12px] bg-card shadow-[0_0_0_1px_rgba(44,43,42,.06),var(--shadow-card)] p-8">
               <div className="icon-plate w-14 h-14 mb-6">
                 <Users strokeWidth={1.5} className="w-7 h-7" />
               </div>
@@ -119,9 +102,9 @@ export default async function ZHAWPage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* Institution Details */}
-      <section className="py-20 px-6">
+      <section className={SECTION_LILAC}>
         <div className="max-w-4xl mx-auto">
-          <div className="rounded-pill bg-card p-8 shadow-card md:p-12">
+          <div className="rounded-[12px] bg-card shadow-[0_0_0_1px_rgba(44,43,42,.06),var(--shadow-card)] p-8 md:p-12">
             <h2 className="font-display text-2xl font-bold text-strong mb-6">{t("researchGroup.heading")}</h2>
 
             <div className="space-y-6 text-body">
@@ -134,7 +117,7 @@ export default async function ZHAWPage({ params }: { params: Promise<{ locale: s
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
-                <div className="rounded-pill bg-surface-muted p-6 text-center">
+                <div className="rounded-[12px] bg-surface-muted p-6 text-center">
                   <div className="flex justify-center mb-3">
                     <Image
                       src="/team/dandolo-flumini.jpg"
@@ -149,7 +132,7 @@ export default async function ZHAWPage({ params }: { params: Promise<{ locale: s
                     {t("researchGroup.dandolo.bio")}
                   </p>
                 </div>
-                <div className="rounded-pill bg-surface-muted p-6 text-center">
+                <div className="rounded-[12px] bg-surface-muted p-6 text-center">
                   <div className="flex justify-center mb-3">
                     <Image
                       src="/team/lukas-lichtensteiger.jpg"
@@ -182,15 +165,15 @@ export default async function ZHAWPage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* CTA Section */}
-      <section data-theme="dark" className="py-20 px-6 bg-page-tint">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-strong mb-6">
+      <section data-theme="dark" className="bg-page-tint px-6 py-20 md:py-[120px]">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="font-display text-[30px] font-bold leading-[1.15] text-strong text-balance md:text-[40px] mb-6">
             {t("cta.heading")}
           </h2>
-          <p className="text-lede text-body mb-10 max-w-2xl mx-auto">
+          <p className="mt-6 max-w-[62ch] text-[18px] leading-[30px] text-body mb-10">
             {t("cta.description")}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4">
             <ButtonLink href="/technology" variant="primary" size="lg">
               {t("cta.exploreTech")}
               <ArrowRight strokeWidth={1.5} className="w-5 h-5" />
@@ -201,6 +184,6 @@ export default async function ZHAWPage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

@@ -5,17 +5,14 @@ import {
   ArrowLeft,
   ArrowRight,
   Calculator,
-  Calendar,
   CheckCircle,
   Clock,
-  GitBranch,
   ScrollText,
   User,
 } from "lucide-react";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 import { ButtonLink } from "@/components/brand/Button";
-import { GridPattern } from "@/components/brand/GridPattern";
-import { FaqBlock } from "@/components/content";
+import { FaqBlock, TextureBackdrop } from "@/components/content";
 import { operations } from "./operations";
 import { faqs } from "./faqs";
 
@@ -230,8 +227,8 @@ export default async function LanguageModelBoundaryBlogPost({
       <EnglishOnlyBanner />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
+      <section className="relative overflow-hidden border-b border-hairline bg-page-tint">
+        <TextureBackdrop texture={{ name: "circ", position: "88% 78%" }} />
 
         <div className="relative max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
@@ -247,14 +244,6 @@ export default async function LanguageModelBoundaryBlogPost({
               <ArrowLeft aria-hidden="true" className="w-4 h-4" strokeWidth={1.5} />
               All Articles
             </Link>
-
-            {/* Category Tag */}
-            <div className="flex items-center gap-3 mb-6">
-              <span className="inline-flex items-center gap-2 rounded-pill bg-accent-soft text-accent px-3 py-1 text-sm font-medium">
-                <GitBranch aria-hidden="true" className="w-4 h-4" strokeWidth={1.5} />
-                Technical Architecture
-              </span>
-            </div>
 
             {/* Title */}
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-strong mb-6 leading-tight">
@@ -274,10 +263,6 @@ export default async function LanguageModelBoundaryBlogPost({
                   <span className="text-body">Reuben John</span>, CEO and
                   Co-Founder of True Aim
                 </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar aria-hidden="true" className="w-4 h-4" strokeWidth={1.5} />
-                <time dateTime="2026-10-06">6 October 2026</time>
               </div>
               <div className="flex items-center gap-2">
                 <Clock aria-hidden="true" className="w-4 h-4" strokeWidth={1.5} />

@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { PageHero, SECTION } from "@/components/content";
 import { ButtonLink } from "@/components/brand/Button";
 
 export default async function CookiesPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -9,14 +10,11 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <div className="pt-20 md:pt-28 pb-16 px-6">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="mt-3 font-display text-4xl font-bold leading-[1.05] text-strong mb-4">
-          Cookie Policy
-        </h1>
-        <p className="text-sm text-muted mb-8">
-          Last updated: 19 October 2026
-        </p>
+      <PageHero title="Cookie Policy" texture={{ name: "circ", position: "88% 78%" }}>
+        <p className="mt-6 text-sm text-muted">Last updated: 19 October 2026</p>
+      </PageHero>
+      <section className={SECTION}>
+        <div className="max-w-3xl [&>div>section:first-child>h2]:mt-0">
 
         <div>
           <section>
@@ -100,7 +98,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
           </div>
         </div>
       </div>
-      </div>
+      </section>
     </div>
   );
 }

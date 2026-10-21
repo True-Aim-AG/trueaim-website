@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { PageHero, SECTION } from "@/components/content";
 import { Eyebrow } from "@/components/brand/Eyebrow";
 
 const LAST_UPDATED = "2026-05-20";
@@ -103,14 +104,11 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <div className="pt-20 md:pt-28 pb-16 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="mt-3 font-display text-4xl font-bold leading-[1.05] text-strong mb-4">
-            Changelog
-          </h1>
-          <p className="text-sm text-muted mb-8">
-            <strong className="text-strong">Last updated:</strong> {LAST_UPDATED}
-          </p>
+      <PageHero title="Changelog" texture={{ name: "glass", position: "100% 100%" }}>
+        <p className="mt-6 text-sm text-muted"><strong className="text-strong">Last updated:</strong> {LAST_UPDATED}</p>
+      </PageHero>
+      <section className={SECTION}>
+        <div className="max-w-3xl [&>div>section:first-child>h2]:mt-0">
 
           <div>
             <p className="text-body leading-[1.6]">
@@ -151,7 +149,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

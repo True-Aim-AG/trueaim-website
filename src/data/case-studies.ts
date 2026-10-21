@@ -31,30 +31,25 @@ export interface CaseStudy {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "vehicle-warranty-claims",
-    title: "Vehicle Warranty Provider Achieves 98% Decision Accuracy in 7 Days",
+    title: "Motor warranty claims checked line by line against the policy",
     customer: {
-      name: "European Warranty Provider",
-      industry: "Vehicle Warranty Insurance",
+      name: "NSA Garantie",
+      industry: "Motor warranty",
       size: "",
-      isAnonymized: true,
+      logo: "/partners/nsa-garantie.webp",
+      isAnonymized: false,
     },
     challenge:
-      "Each warranty claim required more than 30 minutes of manual cross-referencing across 5 documents in 3 languages, with 14 distinct document types per workflow.",
+      "Five documents per claim, in up to three languages. Every line is now checked against the warranty terms, with the clause behind each decision.",
     solution:
-      "Deployed the full True Aim stack for end-to-end claims automation. ContextBuilder handles multilingual document processing and classification. MIRA's hybrid decisioning combines deterministic rules with AI fallback for accurate coverage matching. ClaimEval provides quality assurance with full provenance tracking.",
+      "Deployed the full True Aim platform for end-to-end claims automation. The document layer handles multilingual document processing and classification. Claims Decisioning combines deterministic rules with AI fallback for accurate coverage matching. The quality check provides assurance with full provenance tracking.",
     products: ["mira", "contextbuilder", "claimeval"],
     metrics: [
-      { label: "Decision Accuracy", value: "98%", improvement: "on development set" },
-      { label: "Time to Results", value: "7 days", improvement: "full pipeline live" },
-      { label: "No-LLM Resolution", value: "80-90%", improvement: "of line items" },
-      { label: "Languages", value: "3", improvement: "DE / FR / IT" },
+      { label: "Decision accuracy", value: "98%" },
+      { label: "Line items settled deterministically", value: "80-90%" },
+      { label: "English, German, French, Italian and more", value: "Multilingual" },
     ],
-    timeline: "7 days from baseline to 98% accuracy",
-    quote: {
-      text: "The business logic matters more than the AI. Matching the insurer's payout calculations requires working closely with adjusters and walking through real claims to ensure the logic reflects how decisions are actually made.",
-      author: "Lead Engineer",
-      role: "True Aim",
-    },
+    timeline: "",
     highlights: [
       "Near-100% document classification accuracy",
       "Comprehensive field extraction with confidence scoring",
@@ -77,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Manual claims processing was taking an average of 45 minutes per claim, with inconsistent decisions across handlers and lengthy audit preparation times.",
     solution:
-      "Deployed MIRA for coverage determination and ContextBuilder for document processing. Integrated with existing claims management system via API.",
+      "Deployed Claims Decisioning for coverage determination and the document layer for document processing. Integrated with the existing claims management system via API.",
     products: ["mira", "contextbuilder"],
     metrics: [
       { label: "Processing Speed", value: "92%", improvement: "faster" },
@@ -111,7 +106,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "High volume of routine claims requiring manual review, leading to significant handling costs and delayed customer payouts.",
     solution:
-      "Implemented full True Aim stack: ContextBuilder for medical document processing, MIRA for coverage decisions and ClaimEval for quality assurance.",
+      "Implemented the full True Aim platform: the document layer for medical document processing, Claims Decisioning for coverage decisions and the quality check for assurance.",
     products: ["mira", "contextbuilder", "claimeval"],
     metrics: [
       { label: "Cost Reduction", value: "71%", improvement: "handling costs" },
@@ -121,7 +116,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     timeline: "12 weeks phased rollout",
     quote: {
-      text: "ClaimEval alone paid for the entire implementation by identifying leakage we didn't know existed.",
+      text: "The quality check alone paid for the entire implementation by identifying leakage we didn't know existed.",
       author: "CFO",
       role: "European Health Insurer",
     },
@@ -145,7 +140,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Growing claims backlog during peak periods, with inconsistent liability decisions leading to customer complaints and regulatory concerns.",
     solution:
-      "Deployed MIRA for liability determination with human-in-the-loop for complex cases. ContextBuilder handles damage assessment documents.",
+      "Deployed Claims Decisioning for liability determination with a person in the loop for complex cases. The document layer handles damage assessment documents.",
     products: ["mira", "contextbuilder"],
     metrics: [
       { label: "Backlog Cleared", value: "100%", improvement: "eliminated" },

@@ -2,13 +2,12 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { TextureBackdrop } from "@/components/content";
 import { ButtonLink } from "@/components/brand/Button";
-import { GridPattern } from "@/components/brand/GridPattern";
 import {
   ArrowLeft,
   ArrowRight,
   BookOpen,
-  Calendar,
   Clock,
   CheckCircle,
   AlertTriangle,
@@ -36,8 +35,8 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
     <div className="min-h-screen">
       <EnglishOnlyBanner />
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
+      <section className="relative overflow-hidden border-b border-hairline bg-page-tint">
+        <TextureBackdrop texture={{ name: "circ", position: "12% 88%" }} />
 
         <div className="relative max-w-4xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
@@ -54,14 +53,6 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
               All Articles
             </Link>
 
-            {/* Category Tag */}
-            <div className="flex items-center gap-3 mb-6">
-              <span className="inline-flex items-center gap-2 rounded-pill bg-accent-soft text-accent px-3 py-1 text-sm font-medium">
-                <Scale className="w-4 h-4" strokeWidth={1.5} />
-                Vendor Evaluation
-              </span>
-            </div>
-
             {/* Title */}
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-strong mb-6 leading-tight">
               Build vs Buy: What to Demand from IDP Vendors
@@ -75,10 +66,6 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
 
             {/* Meta */}
             <div className="flex flex-wrap items-center gap-6 text-sm text-subtle">
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" strokeWidth={1.5} />
-                February 2025
-              </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" strokeWidth={1.5} />
                 15 min read

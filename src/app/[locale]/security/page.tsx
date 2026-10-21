@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
+import { PageHero, SECTION } from "@/components/content";
 
 const PUBLISH_DATE = "2026-05-21";
 
@@ -10,16 +11,13 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <div className="pt-20 md:pt-28 pb-16 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="mt-3 font-display text-4xl font-bold leading-[1.05] text-strong mb-4">
-            Security at True Aim
-          </h1>
-          <p className="text-sm text-muted mb-8">
-            <strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}
-          </p>
+      <PageHero title="Security at True Aim" texture={{ name: "circ", position: "12% 88%" }}>
+        <p className="mt-6 text-sm text-muted"><strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}</p>
+      </PageHero>
+      <section className={SECTION}>
+        <div className="max-w-3xl [&>div>section:first-child>h2]:mt-0">
 
-          <div className="bg-lilac rounded-pill px-8 py-6 mb-8">
+          <div className="bg-lilac rounded-[12px] px-8 py-6 mb-8">
             <p className="text-body leading-[1.6]">
               <strong className="text-strong">Report a vulnerability:</strong>{" "}
               <a href="mailto:security@trueaim.ai" className="text-link hover:underline font-medium">
@@ -34,16 +32,16 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
 
           <div>
             <p className="text-body leading-[1.6]">
-              True Aim AG operates a claims-processing platform for insurers, brokers, and any entity in the insurance value chain handling or processing claims. Security is a core requirement of our Service, and our customers entrust us with personal data of their policyholders. This page describes our security program at a high level. For full audit-grade evidence (SOC 2 Type II report when issued, ISO 27001 certificate when issued, sub-processor list, Data Processing Agreement), contact{" "}
+              True Aim AG operates a claims-processing platform for insurers, brokers, and any entity in the insurance value chain handling or processing claims. Security is a core requirement of our Service, and our customers entrust us with personal data of their policyholders. This page describes our security program at a high level. For full audit-grade evidence (SOC 2 Type II report once issued, ISO 27001 certificate, sub-processor list, Data Processing Agreement), contact{" "}
               <a href="mailto:security@trueaim.ai" className="text-link hover:underline">security@trueaim.ai</a>. These are available under NDA.
             </p>
 
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Compliance frameworks</h2>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2">
-                <li><strong className="text-strong">ISO 27001:2022</strong>: readiness assessment complete, certification audit in progress.</li>
-                <li><strong className="text-strong">SOC 2 Type II</strong>: control implementation complete, observation period in progress.</li>
-                <li><strong className="text-strong">Swiss FADP</strong> and <strong className="text-strong">GDPR</strong>: aligned as data processor for customer data, pending formal certification as part of our SOC 2 and ISO 27001 audits.</li>
+                <li><strong className="text-strong">ISO/IEC 27001:2022</strong>: certified by A-LIGN, certificate ISMS-TR-090426, issued 4 September 2026, valid until 4 September 2029.</li>
+                <li><strong className="text-strong">SOC 2 Type II</strong>: audit window 1 May to 31 July 2026 completed, report pending.</li>
+                <li><strong className="text-strong">Swiss FADP</strong> and <strong className="text-strong">GDPR</strong>: aligned as data processor for customer data.</li>
                 <li><strong className="text-strong">EU AI Act</strong>: AI Technical File maintained for the ClaimPilot platform; current readiness is documented and tracked.</li>
               </ul>
             </section>
@@ -51,14 +49,17 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Where data is processed</h2>
               <p className="text-body leading-[1.6]">
-                All customer data is stored and processed on Microsoft Azure in the Switzerland North region. We do not transfer customer data outside Switzerland for routine processing.
+                Customer data at rest is stored on Microsoft Azure in the Switzerland North region. Hosting and AI inference stay in Switzerland, the EEA or the UK; exceptions are listed on our{" "}
+                <Link href="/sub-processors" className="text-link hover:underline">sub-processor page</Link>.
               </p>
             </section>
 
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Sub-processors</h2>
               <p className="text-body leading-[1.6]">
-                We use a limited set of Microsoft Azure services for hosting, AI inference, and operational telemetry, plus Google Workspace (for business email) and Slack (for internal team communication). The current list is provided to customers as Schedule 2 to our Data Processing Agreement. We notify customers in advance of changes. Internal-only tools (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed.
+                We use a limited set of Microsoft Azure services for hosting, AI inference, and operational telemetry, plus Google Workspace (for business email), Slack (for internal team communication) and Sentry (technical error logs only). The current list is published at{" "}
+                <Link href="/sub-processors" className="text-link hover:underline">trueaim.ai/sub-processors</Link>{" "}
+                as Schedule 2 to our Data Processing Agreement. We notify customers in advance of changes. Internal-only tools (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed.
               </p>
             </section>
 
@@ -124,7 +125,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
             </section>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

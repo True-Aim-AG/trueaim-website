@@ -6,6 +6,7 @@ describe("blogPosts", () => {
     const slugs = blogPosts.map((p) => p.slug).sort();
     expect(slugs).toEqual([
       "ai-claims-auditability-scorecard",
+      "architectural-transparency-agentic-claims-operation",
       "ai-claims-handling-eu-ai-act-high-risk",
       "auditability-evidence-chains",
       "build-vs-buy-idp-vendors",
