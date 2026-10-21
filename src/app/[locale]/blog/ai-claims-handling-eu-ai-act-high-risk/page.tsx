@@ -847,7 +847,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                       href="/platform/claims-decisioning"
                       className="underline hover:no-underline"
                     >
-                      MIRA
+                      Claims Decisioning
                     </Link>{" "}
                     is built to do: agentic document understanding on the input
                     side, deterministic logic on the decision side and a record
@@ -1196,7 +1196,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
               </ButtonLink>
               <ButtonLink href="/platform/claims-decisioning" variant="on-dark" size="lg">
-                Explore MIRA
+                Explore Claims Decisioning
               </ButtonLink>
             </div>
           </MotionDiv>

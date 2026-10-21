@@ -13,7 +13,7 @@
     },
     "architecture": {
       "heading": "Separation of Concerns",
-      "subtitle": "Two layers, each optimized for what it does best",
+      "subtitle": "Two layers, each optimised for what it does best",
       "agentic": {
         "title": "Agentic AI",
         "subtitle": "Flexible and adaptive",

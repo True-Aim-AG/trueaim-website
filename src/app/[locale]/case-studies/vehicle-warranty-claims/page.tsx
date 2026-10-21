@@ -236,7 +236,7 @@ export default function VehicleWarrantyCaseStudy() {
                     <span className="font-semibold text-strong">
                       the part is not covered by the policy
                     </span>{" "}
-                    - a deterministic lookup, not a judgment call.
+                    - a deterministic lookup, not a judgement call.
                   </p>
                 </div>
 
@@ -304,7 +304,7 @@ export default function VehicleWarrantyCaseStudy() {
                     {
                       icon: AlertTriangle,
                       title: "Generic OCR pipelines lack domain depth",
-                      desc: "Swiss repair invoices contain line items in German with part numbers, labor codes, carry-forward subtotals across pages. Standard OCR extracts text but not structured data with coverage implications.",
+                      desc: "Swiss repair invoices contain line items in German with part numbers, labour codes, carry-forward subtotals across pages. Standard OCR extracts text but not structured data with coverage implications.",
                     },
                     {
                       icon: AlertTriangle,
@@ -385,7 +385,7 @@ export default function VehicleWarrantyCaseStudy() {
                 </h3>
                 <p className="text-sm text-body leading-[1.6] mb-4">
                   Each line item goes through a multi-tier matching pipeline,
-                  prioritizing deterministic approaches before falling back to AI:
+                  prioritising deterministic approaches before falling back to AI:
                 </p>
                 <div className="space-y-3 mb-6">
                   {[
@@ -399,7 +399,7 @@ export default function VehicleWarrantyCaseStudy() {
                       name: "Keyword Matching",
                       tone: "progress" as const,
                       confidence: "High confidence",
-                      desc: "Maps multilingual repair terms to component categories with synonym normalization.",
+                      desc: "Maps multilingual repair terms to component categories with synonym normalisation.",
                     },
                     {
                       name: "AI Fallback",
@@ -516,7 +516,7 @@ export default function VehicleWarrantyCaseStudy() {
                     </ul>
                     <p className="text-sm text-body mt-3">
                       Each insurer has specific rules for deductibles,
-                      reimbursement tiers, and parts/labor splits that must be
+                      reimbursement tiers, and parts/labour splits that must be
                       matched exactly.
                     </p>
                   </ExpandableSection>
@@ -552,7 +552,7 @@ export default function VehicleWarrantyCaseStudy() {
                       </span>{" "}
                       LLMs are good at language understanding but bad at
                       deterministic business rules. The architecture had to
-                      separate judgment from precision.
+                      separate judgement from precision.
                     </div>
                   </div>
 
@@ -593,8 +593,8 @@ export default function VehicleWarrantyCaseStudy() {
                     </h3>
                     <p className="text-sm text-body leading-[1.6]">
                       60+ evaluation iterations solving increasingly subtle
-                      problems: substring matching bugs, labor demotion logic,
-                      and part-number normalization across OCR outputs.
+                      problems: substring matching bugs, labour demotion logic,
+                      and part-number normalisation across OCR outputs.
                     </p>
                   </div>
 
@@ -777,8 +777,8 @@ export default function VehicleWarrantyCaseStudy() {
                   {[
                     {
                       num: "1",
-                      title: "Deterministic checks beat LLM judgment for structured rules.",
-                      desc: "76% of claim denials are \"part not covered\" - a lookup, not a judgment call. The screening pipeline handles these with 100% confidence and zero LLM cost.",
+                      title: "Deterministic checks beat LLM judgement for structured rules.",
+                      desc: "76% of claim denials are \"part not covered\" - a lookup, not a judgement call. The screening pipeline handles these with 100% confidence and zero LLM cost.",
                     },
                     {
                       num: "2",
@@ -833,7 +833,7 @@ export default function VehicleWarrantyCaseStudy() {
                     The goal is not to replace adjusters but to give them back
                     their time on the 76% of denials that are straightforward
                     lookups, so they can focus their expertise on the 24% that
-                    actually require judgment.
+                    actually require judgement.
                   </p>
                 </div>
 
@@ -925,15 +925,15 @@ export default function VehicleWarrantyCaseStudy() {
                       </div>
                       <div className="bg-surface-muted rounded-[12px] p-3 text-xs text-body">
                         <span className="font-medium text-strong">
-                          Labor demotion over-aggression:
+                          Labour demotion over-aggression:
                         </span>{" "}
                         When a part was covered, the associated installation
-                        labor should also be covered. Fix: labor promotion logic
+                        labour should also be covered. Fix: labour promotion logic
                         that inherits coverage from the parent repair.
                       </div>
                       <div className="bg-surface-muted rounded-[12px] p-3 text-xs text-body">
                         <span className="font-medium text-strong">
-                          Part-number normalization:
+                          Part-number normalisation:
                         </span>{" "}
                         A Mercedes part number{" "}
                         <code className="bg-surface-muted rounded-pill px-2 py-0.5 text-strong">

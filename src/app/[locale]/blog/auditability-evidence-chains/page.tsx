@@ -184,7 +184,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
                     </span>
                     . Claims automation isn&apos;t explicitly listed as
                     high-risk, but transparency obligations apply. EIOPA
-                    emphasizes governance and risk management aligned with
+                    emphasises governance and risk management aligned with
                     existing insurance regulation.
                   </p>
                 </div>
@@ -633,7 +633,7 @@ Timestamp: [ISO timestamp]`}</pre>
                 <div className="bg-card shadow-card rounded-pill p-8">
                   <p className="text-sm text-body leading-[1.6] mb-6">
                     Building audit-ready AI systems requires commitment to four foundational principles.
-                    The specific implementation will vary by organization, but these principles remain constant.
+                    The specific implementation will vary by organisation, but these principles remain constant.
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

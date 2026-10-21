@@ -112,7 +112,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
 
           <div>
             <p className="text-body leading-[1.6]">
-              Public release history of the True Aim Platform. Each entry summarizes user-visible features, reliability improvements, fixes, and security or compliance work shipped in that release.
+              Public release history of the True Aim Platform. Each entry summarises user-visible features, reliability improvements, fixes, and security or compliance work shipped in that release.
             </p>
 
             {RELEASES.map((release, index) => (

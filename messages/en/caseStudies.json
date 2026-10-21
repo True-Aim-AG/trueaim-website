@@ -37,7 +37,7 @@
       "problemP2": "Processing takes 15-30 minutes per claim. Multiply that by hundreds of claims per month.",
       "problemP3Start": "76% of denied claims fail for a single reason: ",
       "problemP3Emphasis": "the part is not covered by the policy",
-      "problemP3End": " - a deterministic lookup, not a judgment call.",
+      "problemP3End": " - a deterministic lookup, not a judgement call.",
       "stats": {
         "approvalDenial": "Approval-to-denial split",
         "avgPayout": "Avg approved payout",
@@ -131,7 +131,7 @@
           "title": "Baseline and Architecture",
           "desc": "The initial LLM-only approach produced plausible-sounding but unreliable results: hallucinated part names, invented coverage rules, inconsistent calculations.",
           "insight": "Key insight:",
-          "insightText": "LLMs are good at language understanding but bad at deterministic business rules. The architecture had to separate judgment from precision."
+          "insightText": "LLMs are good at language understanding but bad at deterministic business rules. The architecture had to separate judgement from precision."
         },
         "day3_5": {
           "label": "Days 3-5",
@@ -233,8 +233,8 @@
       "lessons": {
         "heading": "What We Learned",
         "lesson1": {
-          "title": "Deterministic checks beat LLM judgment for structured rules.",
-          "desc": "76% of claim denials are \"part not covered\" - a lookup, not a judgment call. The screening pipeline handles these with 100% confidence and zero LLM cost."
+          "title": "Deterministic checks beat LLM judgement for structured rules.",
+          "desc": "76% of claim denials are \"part not covered\" - a lookup, not a judgement call. The screening pipeline handles these with 100% confidence and zero LLM cost."
         },
         "lesson2": {
           "title": "The accuracy curve has diminishing returns.",
@@ -255,7 +255,7 @@
         "step2": "Integrated with insurer's policy management API for real-time status checks",
         "step3": "Implemented causal exclusion reasoning for cascading-damage denials",
         "step4": "Deployed production triage: auto-reject high-confidence denials, auto-approve simple approvals, route edge cases for human review",
-        "conclusion": "The goal is not to replace adjusters but to give them back their time on the 76% of denials that are straightforward lookups, so they can focus their expertise on the 24% that actually require judgment."
+        "conclusion": "The goal is not to replace adjusters but to give them back their time on the 76% of denials that are straightforward lookups, so they can focus their expertise on the 24% that actually require judgement."
       },
       "sidebar": {
         "keyHighlights": "Key highlights",

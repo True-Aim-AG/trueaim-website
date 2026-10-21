@@ -360,12 +360,12 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                   </h4>
                   <ul className="text-sm text-body space-y-1">
                     <li>
-                      • License fees (per claim, per document, or platform)
+                      • Licence fees (per claim, per document, or platform)
                     </li>
                     <li>
                       • Integration effort (typically 3-6 months, not 3-6 weeks)
                     </li>
-                    <li>• Ongoing optimization (you&apos;ll still need to tune)</li>
+                    <li>• Ongoing optimisation (you&apos;ll still need to tune)</li>
                     <li>
                       • Vendor dependency (what if they pivot, fail, or get
                       acquired?)
@@ -735,7 +735,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                     {
                       num: "1",
                       title: "Define must-haves vs nice-to-haves",
-                      desc: "Auditability is non-negotiable. Automatic optimization is not.",
+                      desc: "Auditability is non-negotiable. Automatic optimisation is not.",
                     },
                     {
                       num: "2",
