@@ -14,8 +14,11 @@ import {
 } from "@/components/content";
 import { ClaimScene, productIcons, type ClaimSceneData } from "@/components/products";
 import { PageSeo } from "@/components/seo/PageSeo";
-import { pageLocales } from "@/i18n/page-locales";
+import { englishOnlyStaticParams, pageLocales } from "@/i18n/page-locales";
 import { pageMetadata } from "@/lib/seo/metadata";
+
+// English only until the translation lands; see src/i18n/page-locales.ts.
+export const generateStaticParams = englishOnlyStaticParams;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

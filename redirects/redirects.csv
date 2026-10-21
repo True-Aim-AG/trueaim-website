@@ -44,9 +44,9 @@ old_url,new_url,status,note
 /fr/product/,/en/platform/,301,Product overview renamed Platform overview (URL-LIST section 2)
 /it/product/,/en/platform/,301,Product overview renamed Platform overview (URL-LIST section 2)
 /en/company/,/en/about/,301,Company renamed About (URL-LIST section 2)
-/de/company/,/de/about/,301,Company renamed About (URL-LIST section 2)
-/fr/company/,/fr/about/,301,Company renamed About (URL-LIST section 2)
-/it/company/,/it/about/,301,Company renamed About (URL-LIST section 2)
+/de/company/,/en/about/,301,Company renamed About; English until the translation lands
+/fr/company/,/en/about/,301,Company renamed About; English until the translation lands
+/it/company/,/en/about/,301,Company renamed About; English until the translation lands
 /en/products/mira/,/en/platform/claims-decisioning/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
 /de/products/mira/,/en/platform/claims-decisioning/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
 /fr/products/mira/,/en/platform/claims-decisioning/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
@@ -127,3 +127,51 @@ old_url,new_url,status,note
 /fr/dpa,/en/sub-processors/,301,Old DPA short link; the sub-processor list is English only
 /it/dpa,/en/sub-processors/,301,Old DPA short link; the sub-processor list is English only
 /contact-card.html,/contact-card/,301,Static contact card moved to a folder index
+/de/,/en/,301,Untranslated English copy withdrawn until the translation lands
+/de/about/,/en/about/,301,Untranslated English copy withdrawn until the translation lands
+/de/case-studies/,/en/case-studies/,301,Untranslated English copy withdrawn until the translation lands
+/de/case-studies/european-health-insurer/,/en/case-studies/european-health-insurer/,301,Untranslated English copy withdrawn until the translation lands
+/de/case-studies/motor-claims-pilot/,/en/case-studies/motor-claims-pilot/,301,Untranslated English copy withdrawn until the translation lands
+/de/case-studies/swiss-travel-insurer/,/en/case-studies/swiss-travel-insurer/,301,Untranslated English copy withdrawn until the translation lands
+/de/case-studies/vehicle-warranty-claims/,/en/case-studies/vehicle-warranty-claims/,301,Untranslated English copy withdrawn until the translation lands
+/de/contact/,/en/contact/,301,Untranslated English copy withdrawn until the translation lands
+/de/impact-estimator/,/en/impact-estimator/,301,Untranslated English copy withdrawn until the translation lands
+/de/partners/,/en/partners/,301,Untranslated English copy withdrawn until the translation lands
+/de/partners/innosuisse/,/en/partners/innosuisse/,301,Untranslated English copy withdrawn until the translation lands
+/de/partners/swissinsurtechhub/,/en/partners/swissinsurtechhub/,301,Untranslated English copy withdrawn until the translation lands
+/de/partners/yarowa/,/en/partners/yarowa/,301,Untranslated English copy withdrawn until the translation lands
+/de/partners/zhaw/,/en/partners/zhaw/,301,Untranslated English copy withdrawn until the translation lands
+/de/technology/,/en/technology/,301,Untranslated English copy withdrawn until the translation lands
+/de/trust/,/en/trust/,301,Untranslated English copy withdrawn until the translation lands
+/fr/,/en/,301,Untranslated English copy withdrawn until the translation lands
+/fr/about/,/en/about/,301,Untranslated English copy withdrawn until the translation lands
+/fr/case-studies/,/en/case-studies/,301,Untranslated English copy withdrawn until the translation lands
+/fr/case-studies/european-health-insurer/,/en/case-studies/european-health-insurer/,301,Untranslated English copy withdrawn until the translation lands
+/fr/case-studies/motor-claims-pilot/,/en/case-studies/motor-claims-pilot/,301,Untranslated English copy withdrawn until the translation lands
+/fr/case-studies/swiss-travel-insurer/,/en/case-studies/swiss-travel-insurer/,301,Untranslated English copy withdrawn until the translation lands
+/fr/case-studies/vehicle-warranty-claims/,/en/case-studies/vehicle-warranty-claims/,301,Untranslated English copy withdrawn until the translation lands
+/fr/contact/,/en/contact/,301,Untranslated English copy withdrawn until the translation lands
+/fr/impact-estimator/,/en/impact-estimator/,301,Untranslated English copy withdrawn until the translation lands
+/fr/partners/,/en/partners/,301,Untranslated English copy withdrawn until the translation lands
+/fr/partners/innosuisse/,/en/partners/innosuisse/,301,Untranslated English copy withdrawn until the translation lands
+/fr/partners/swissinsurtechhub/,/en/partners/swissinsurtechhub/,301,Untranslated English copy withdrawn until the translation lands
+/fr/partners/yarowa/,/en/partners/yarowa/,301,Untranslated English copy withdrawn until the translation lands
+/fr/partners/zhaw/,/en/partners/zhaw/,301,Untranslated English copy withdrawn until the translation lands
+/fr/technology/,/en/technology/,301,Untranslated English copy withdrawn until the translation lands
+/fr/trust/,/en/trust/,301,Untranslated English copy withdrawn until the translation lands
+/it/,/en/,301,Untranslated English copy withdrawn until the translation lands
+/it/about/,/en/about/,301,Untranslated English copy withdrawn until the translation lands
+/it/case-studies/,/en/case-studies/,301,Untranslated English copy withdrawn until the translation lands
+/it/case-studies/european-health-insurer/,/en/case-studies/european-health-insurer/,301,Untranslated English copy withdrawn until the translation lands
+/it/case-studies/motor-claims-pilot/,/en/case-studies/motor-claims-pilot/,301,Untranslated English copy withdrawn until the translation lands
+/it/case-studies/swiss-travel-insurer/,/en/case-studies/swiss-travel-insurer/,301,Untranslated English copy withdrawn until the translation lands
+/it/case-studies/vehicle-warranty-claims/,/en/case-studies/vehicle-warranty-claims/,301,Untranslated English copy withdrawn until the translation lands
+/it/contact/,/en/contact/,301,Untranslated English copy withdrawn until the translation lands
+/it/impact-estimator/,/en/impact-estimator/,301,Untranslated English copy withdrawn until the translation lands
+/it/partners/,/en/partners/,301,Untranslated English copy withdrawn until the translation lands
+/it/partners/innosuisse/,/en/partners/innosuisse/,301,Untranslated English copy withdrawn until the translation lands
+/it/partners/swissinsurtechhub/,/en/partners/swissinsurtechhub/,301,Untranslated English copy withdrawn until the translation lands
+/it/partners/yarowa/,/en/partners/yarowa/,301,Untranslated English copy withdrawn until the translation lands
+/it/partners/zhaw/,/en/partners/zhaw/,301,Untranslated English copy withdrawn until the translation lands
+/it/technology/,/en/technology/,301,Untranslated English copy withdrawn until the translation lands
+/it/trust/,/en/trust/,301,Untranslated English copy withdrawn until the translation lands
