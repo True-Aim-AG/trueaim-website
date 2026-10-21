@@ -7,7 +7,7 @@ True Aim builds AI-powered decisioning software for insurance claims. Our hybrid
 ## Company
 
 - Name: True Aim AG
-- Location: Zurich, Switzerland
+- Location: Zug, Switzerland
 - Industry: InsurTech / AI
 - Website: https://trueaim.ai
 - Contact: https://trueaim.ai/en/contact/
