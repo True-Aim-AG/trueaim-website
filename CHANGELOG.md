@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.1](https://github.com/True-Aim-AG/trueaim-website/compare/v1.19.0...v1.19.1) (2026-10-22)
+
+
+### Bug Fixes
+
+* post-launch hotfixes for contact page, nav dropdowns, alignment and trust badges ([#12](https://github.com/True-Aim-AG/trueaim-website/issues/12)) ([86842be](https://github.com/True-Aim-AG/trueaim-website/commit/86842beb5396f3e525f26d5e92cf6b377e03a1ca))
+
 ## [1.19.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.18.1...v1.19.0) (2026-10-22)
 
 
