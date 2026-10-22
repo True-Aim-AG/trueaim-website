@@ -106,9 +106,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-[70ch] text-center">
             <h2 className="font-display text-[30px] font-bold leading-[1.15] text-accent md:text-[40px]">{t("mission.label")}</h2>
-            <p className="mt-6 font-display text-[24px] font-semibold leading-[1.35] text-strong text-balance md:text-[30px]">
-              {t("mission.text")}
-            </p>
+            <blockquote className="mt-6">
+              <p className="font-display text-[24px] font-semibold italic leading-[1.35] text-strong text-balance md:text-[30px]">
+                <span className="text-accent">&ldquo;</span>
+                {t("mission.text")}
+                <span className="text-accent">&rdquo;</span>
+              </p>
+              <footer className="mt-6 text-[16px] font-medium text-muted">{t("mission.attribution")}</footer>
+            </blockquote>
           </div>
         </div>
       </section>
