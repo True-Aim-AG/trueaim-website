@@ -88,6 +88,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <LogoMarquee
         tone="white"
         logos={[
+          { src: "/awards/norton-rose-fulbright.svg", alt: t("logos.nortonRoseFulbright"), width: 380, height: 42, renderHeight: 30 },
           { src: "/partners/nsa-garantie.webp", alt: t("logos.nsa"), width: 600, height: 191, renderHeight: 72, href: "/case-studies/vehicle-warranty-claims" },
           { src: "/partners/yarowa.png", alt: t("logos.yarowa"), width: 978, height: 273, renderHeight: 52, href: "/partners/yarowa" },
           { src: "/partners/core-group.webp", alt: t("logos.coreGroup"), width: 395, height: 225, renderHeight: 92 },
@@ -107,8 +108,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             { name: t("compliance.badgeSoc"), status: t("compliance.badgeSocStatus") },
           ].map(({ name, status }) => (
             <li key={name} className="flex items-center gap-4">
-              <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-page text-accent shadow-[0_0_0_1px_rgba(44,43,42,.06)]">
-                <ShieldTick strokeWidth={1.5} className="h-7 w-7" aria-hidden />
+              <span className="grid h-[72px] w-[72px] shrink-0 place-items-center rounded-full bg-page text-accent shadow-[0_0_0_1px_rgba(44,43,42,.06)]">
+                <ShieldTick strokeWidth={1.5} className="h-9 w-9" aria-hidden />
               </span>
               <span>
                 <span className="block text-[12px] font-medium uppercase tracking-[0.14em] text-accent">{status}</span>
