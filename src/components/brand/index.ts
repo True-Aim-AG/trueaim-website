@@ -10,3 +10,4 @@ export type { StatusTone } from "./StatusPill";
 export { Button, ButtonLink, buttonClasses } from "./Button";
 export type { ButtonVariant, ButtonSize } from "./Button";
 export { Eyebrow } from "./Eyebrow";
+export { ShieldTick } from "./ShieldTick";

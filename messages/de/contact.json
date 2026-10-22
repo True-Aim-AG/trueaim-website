@@ -75,7 +75,7 @@
       "errorGeneric": "Something went wrong. Please try again."
     },
     "success": {
-      "heading": "Thanks for getting in touch",
+      "heading": "Thanks for getting in touch!",
       "message": "We've received your request and someone from our team will be in touch soon.",
       "submitAnother": "Send another request"
     },

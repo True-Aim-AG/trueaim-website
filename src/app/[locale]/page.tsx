@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { Shield } from "lucide-react";
+import { ShieldTick } from "@/components/brand";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   Awards,
@@ -104,17 +103,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       >
         <ul className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-5">
           {[
-            { name: t("compliance.badgeIso"), status: t("compliance.badgeIsoStatus"), badge: "/brand/marks/iso-27001-certified.svg" },
+            { name: t("compliance.badgeIso"), status: t("compliance.badgeIsoStatus") },
             { name: t("compliance.badgeSoc"), status: t("compliance.badgeSocStatus") },
-          ].map(({ name, status, badge }) => (
+          ].map(({ name, status }) => (
             <li key={name} className="flex items-center gap-4">
-              {badge ? (
-                <Image src={badge} alt="" width={160} height={160} className="h-14 w-14 shrink-0" />
-              ) : (
-                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-page text-accent shadow-[0_0_0_1px_rgba(44,43,42,.06)]">
-                  <Shield strokeWidth={1.5} className="h-7 w-7" aria-hidden />
-                </span>
-              )}
+              <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-page text-accent shadow-[0_0_0_1px_rgba(44,43,42,.06)]">
+                <ShieldTick strokeWidth={1.5} className="h-7 w-7" aria-hidden />
+              </span>
               <span>
                 <span className="block text-[12px] font-medium uppercase tracking-[0.14em] text-accent">{status}</span>
                 <span className="mt-1 block font-display text-[17px] font-semibold leading-[1.35] text-strong">{name}</span>
