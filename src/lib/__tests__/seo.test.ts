@@ -32,13 +32,14 @@ describe("pageMetadata", () => {
 
   it("builds a self-referencing canonical with a trailing slash", () => {
     expect(pageMetadata("en", "/platform/otus").alternates?.canonical).toBe("https://trueaim.ai/en/platform/otus/");
-    expect(pageMetadata("de", "/technology").alternates?.canonical).toBe("https://trueaim.ai/de/technology/");
+    expect(pageMetadata("en", "/technology").alternates?.canonical).toBe("https://trueaim.ai/en/technology/");
     expect(pageMetadata("en", "/").alternates?.canonical).toBe("https://trueaim.ai/en/");
   });
 
   it("lists hreflang for the locales the page exists in, plus x-default", () => {
     expect(Object.keys(pageMetadata("en", "/blog").alternates?.languages ?? {})).toEqual(["en", "x-default"]);
-    expect(Object.keys(pageMetadata("fr", "/trust").alternates?.languages ?? {})).toEqual(["en", "de", "fr", "it", "x-default"]);
+    // Every page is English only until the translations land (src/i18n/page-locales.ts).
+    expect(Object.keys(pageMetadata("en", "/trust").alternates?.languages ?? {})).toEqual(["en", "x-default"]);
   });
 
   it("indexes by default and honours noindex", () => {
@@ -151,7 +152,7 @@ describe("check-metadata sources", () => {
 
   it("fails on a duplicate description", () => {
     const broken = clone();
-    broken.de.pages["/trust"].description = broken.de.pages["/technology"].description;
-    expect(checkSources(broken)).toContain("de /trust: same description as /technology");
+    broken.en.pages["/trust"].description = broken.en.pages["/technology"].description;
+    expect(checkSources(broken)).toContain("en /trust: same description as /technology");
   });
 });

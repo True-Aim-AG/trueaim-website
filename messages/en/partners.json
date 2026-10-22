@@ -32,7 +32,7 @@
         "heading": "See Our Products in Action",
         "description": "Discover how our partnership delivers auditable claims automation to insurers.",
         "learnProducts": "Learn About Our Products",
-        "bookDemo": "Book a Demo"
+        "bookDemo": "Request a demo"
       }
     },
     "innosuisse": {
@@ -71,7 +71,7 @@
         "heading": "Learn More About Our Technology",
         "description": "Discover how Innosuisse-backed innovation powers our claims decisioning engine.",
         "exploreTech": "Explore Our Technology",
-        "bookDemo": "Book a Demo"
+        "bookDemo": "Request a demo"
       }
     },
     "zhaw": {
@@ -106,7 +106,7 @@
         "description": "The research is hosted within ZHAW's <schoolOfEngineering>School of Engineering</schoolOfEngineering>, specifically the <init>Institute of Applied Information Technology (InIT)</init> and the <cai>Centre for Artificial Intelligence (CAI)</cai>.",
         "dandolo": {
           "name": "Dr. Dandolo Flumini",
-          "bio": "Original developer of the MIRA technology. PhD in Mathematics and Computer Science. Leads True Aim's Innosuisse-funded Innovation Project."
+          "bio": "Original developer of the technology behind Claims Decisioning. PhD in Mathematics and Computer Science. Leads True Aim's Innosuisse-funded Innovation Project."
         },
         "lukas": {
           "name": "Dr. Lukas Lichtensteiger",
@@ -118,7 +118,7 @@
         "heading": "See the Research in Action",
         "description": "Discover how our ZHAW-rooted technology delivers auditable claims decisions.",
         "exploreTech": "Explore Our Technology",
-        "bookDemo": "Book a Demo"
+        "bookDemo": "Request a demo"
       }
     },
     "swissInsurtechHub": {
@@ -153,7 +153,7 @@
         "heading": "See Our Products in Action",
         "description": "Discover how our partnerships deliver auditable claims automation to insurers.",
         "learnProducts": "Learn About Our Products",
-        "bookDemo": "Book a Demo"
+        "bookDemo": "Request a demo"
       }
     },
     "hub": {

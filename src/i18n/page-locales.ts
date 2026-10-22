@@ -4,15 +4,22 @@ import { routing } from "./routing";
  * Pages that exist in English only. A prefix covers the page and everything below it.
  * These pages export under /en/ only, the language switcher offers English only on them,
  * and links to them from a German, French or Italian page go to the English URL.
- * A page leaves this list when its translation lands (chunk 11).
+ * A page leaves this list when its translation lands (chunk 11). Until then its German,
+ * French and Italian URLs redirect to English (redirects/redirects.csv).
  */
 export const englishOnlyPaths = [
+  "/",
+  "/about",
   "/ai-transparency",
   "/blog",
+  "/case-studies",
   "/changelog",
+  "/contact",
   "/cookies",
   "/ethics",
+  "/impact-estimator",
   "/paia",
+  "/partners",
   "/platform",
   "/privacy",
   "/privacy-legacy",
@@ -20,7 +27,9 @@ export const englishOnlyPaths = [
   "/solutions",
   "/sub-processors",
   "/support",
+  "/technology",
   "/terms",
+  "/trust",
 ];
 
 /** Locales a page exists in, for a path without the locale prefix ("/blog/x", "/technology#a"). */

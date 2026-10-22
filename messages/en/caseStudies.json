@@ -30,244 +30,163 @@
       "requestPilot": "Request a demo"
     },
     "vehicleWarranty": {
-      "heroTitle": "Automating Vehicle Warranty Claims with AI Document Intelligence",
-      "heroSubtitle": "From 18% to 98% Decision Accuracy in 7 Days",
-      "theProblem": "The Problem",
-      "problemP1": "A vehicle warranty claim lands on an adjuster's desk: five documents, three languages, a cost estimate with 30 line items, a policy with coverage tiers, mileage-dependent reimbursement rates and component exclusion lists.",
-      "problemP2": "Processing takes 15-30 minutes per claim. Multiply that by hundreds of claims per month.",
-      "problemP3Start": "76% of denied claims fail for a single reason: ",
-      "problemP3Emphasis": "the part is not covered by the policy",
-      "problemP3End": " - a deterministic lookup, not a judgment call.",
-      "stats": {
-        "approvalDenial": "Approval-to-denial split",
-        "avgPayout": "Avg approved payout",
-        "vehicleBrands": "Vehicle brands represented",
-        "docTypes": "Distinct document types",
-        "avgDocs": "Avg documents per claim"
-      },
-      "whyExistingFail": "Why Existing Approaches Fall Short",
-      "whyExistingFailIntro": "Most document processing tools extract text from PDFs - that gets you 10% of the way. The real challenge is",
-      "whyExistingFailEmphasis": "cross-document reasoning",
-      "whyExistingFailIntroEnd": ": a cost estimate means nothing without the policy, a mileage reading means nothing without the coverage cap.",
-      "failReasons": {
-        "genericOcr": {
-          "title": "Generic OCR pipelines lack domain depth",
-          "desc": "Swiss repair invoices contain line items in German with part numbers, labour codes, carry-forward subtotals across pages. Standard OCR extracts text but not structured data with coverage implications."
+      "eyebrow": "CASE STUDY  ·  NSA AND TRUE AIM",
+      "title": "The same claims decisions, made in a fraction of the time.",
+      "summary": "How NSA transferred the reasoning and decisioning of its claims experts into True Aim software and reduced the work on a complex claim by 86%.",
+      "facts": [
+        {
+          "label": "Company",
+          "value": "NSA Services SA, Baar"
         },
-        "singleModel": {
-          "title": "Single-model approaches plateau early",
-          "desc": "Sending an entire claim to an LLM produces inconsistent results - hallucinated part names, invented coverage rules, unreliable financial calculations. Baseline LLM-only accuracy: 18%."
+        {
+          "label": "Business",
+          "value": "Vehicle warranties for over 25 years"
         },
-        "ruleBased": {
-          "title": "Rule-based systems cannot scale to vocabulary",
-          "desc": "Thousands of part names across multiple languages. A \"Wasserpumpe\" in German is a \"pompe à eau\" in French. Pure keyword matching breaks on the first synonym it has not seen."
+        {
+          "label": "Markets",
+          "value": "Switzerland, Germany, Austria and other European countries"
+        },
+        {
+          "label": "Languages",
+          "value": "German, French, Italian and English"
         }
+      ],
+      "startingPoint": {
+        "heading": "The starting point",
+        "text": "NSA assesses many thousands of vehicle warranty claims every year. Every claim requires a careful coverage check, and that requires real expertise. The administration around it takes longer than the decision itself. A claim arrives as up to five documents, across around 50 vehicle brands and 14 document types. Every item and its price is filed, labelled and re-keyed into the claims system by hand.",
+        "calloutValue": "7 days",
+        "calloutText": "from True Aim’s first test on real NSA claim files to a working system in the hands of NSA’s claims team."
       },
-      "hybridSolution": "The solution requires a",
-      "hybridArchitecture": "hybrid architecture",
-      "hybridSolutionEnd": ": deterministic rules where they work, keyword matching for known vocabulary and LLM reasoning as a calibrated fallback - each layer with explicit confidence scoring and provenance tracking.",
-      "architectureTitle": "The Architecture: A Multi-Stage Pipeline",
-      "architectureIntro": "An end-to-end claims processing pipeline moves raw documents through five stages, each with quality gates and audit logging.",
-      "stages": {
-        "ingestion": "Ingestion",
-        "classification": "Classification",
-        "extraction": "Extraction",
-        "screening": "Screening",
-        "qaReview": "QA Review",
-        "stageLabel": "Stage"
+      "solution": {
+        "heading": "What the solution does",
+        "intro": "NSA’s claims experts set out exactly how they decide a claim. True Aim hard-coded those rules into its decision engine and tested them against real NSA claims. The engine now makes the routine decisions the way the experts would, records the reason for each one and refers anything requiring judgement to a person.",
+        "items": [
+          {
+            "title": "Reads the documents.",
+            "desc": "Every labour and parts item is captured with its price, directly from the repair estimate. Nothing is filed, labelled or re-keyed by hand."
+          },
+          {
+            "title": "Decides coverage.",
+            "desc": "NSA’s own rules are applied line by line, with the policy clause recorded behind every decision."
+          },
+          {
+            "title": "Drafts the response.",
+            "desc": "The customer response is returned ready for review."
+          },
+          {
+            "title": "Refers judgement calls.",
+            "desc": "Anything outside the rules goes to an expert, with the file already prepared."
+          }
+        ]
       },
-      "multiTier": {
-        "heading": "Coverage Analysis: Multi-Tier Matching",
-        "intro": "Each line item goes through a multi-tier matching pipeline, prioritising deterministic approaches before falling back to AI:",
-        "deterministic": {
-          "name": "Deterministic Rules",
-          "confidence": "Highest",
-          "desc": "Exact matches for known items, exclusions, and consumables. Zero ambiguity, instant resolution."
-        },
-        "keyword": {
-          "name": "Keyword Matching",
-          "confidence": "High",
-          "desc": "Maps multilingual repair terms to component categories with synonym normalisation."
-        },
-        "aiFallback": {
-          "name": "AI Fallback",
-          "confidence": "Moderate",
-          "desc": "LLM with structured prompts for genuinely ambiguous items that require contextual reasoning."
-        },
-        "confidenceLabel": "confidence"
+      "claimTypes": {
+        "heading": "Two kinds of claim",
+        "intro": "A claim is not a single unit of work, so the saving is not uniform.",
+        "simple": "A <b>simple claim</b> involves one part, one cause and one clear answer. NSA’s experts can decide it quickly. The time is consumed by the administration around it.",
+        "complex": "A <b>complex claim</b> carries several parts and labour items, and each line has to be tested against the policy: included, excluded, wear, pre-existing or outside the term. That is where the expert hours are spent, and that is where the engine contributes most.",
+        "mix": "NSA’s book of claims comprises 73% simple claims and 27% complex claims."
       },
-      "expandable": {
-        "ingestionTitle": "Stage details: Ingestion, Classification & Extraction",
-        "stage1Title": "Stage 1: Document Ingestion",
-        "stage1Desc": "Pluggable ingestion layer supporting multiple OCR providers for production workloads. Each page extracted independently with position tracking for full provenance.",
-        "stage2Title": "Stage 2: Document Classification",
-        "stage2Desc": "AI-powered router classifies documents by type with language-specific cues across German, French, and Italian. Near-100% classification accuracy.",
-        "stage3Title": "Stage 3: Structured Field Extraction",
-        "stage3Desc": "Domain-specific extractors handle comprehensive field sets for warranty policies. Cost estimate extractors handle multi-page documents with carry-forward subtotals and total validation. Every field carries a confidence score, provenance and quality gate verdict.",
-        "screeningTitle": "Stage details: Deterministic screening checks",
-        "screeningIntro": "The screening pipeline runs multiple deterministic checks covering policy validity, coverage eligibility, and compliance requirements. Each check produces one of three verdicts:",
-        "hardFail": "Hard fail",
-        "hardFailDesc": "Blocks automation, requires human review",
-        "softCheck": "Soft check",
-        "softCheckDesc": "Flags for attention but doesn't block",
-        "conditional": "Conditional",
-        "conditionalDesc": "Outcome depends on additional context",
-        "screeningNote": "Checks cover areas like policy status, coverage dates, mileage limits, component eligibility, and exclusion patterns.",
-        "payoutTitle": "Payout calculation approach",
-        "payoutIntro": "The payout calculation follows insurer-specific business rules, typically including:",
-        "payoutItems": {
-          "sumCovered": "Summing covered items",
-          "applyCaps": "Applying coverage caps and reimbursement rates",
-          "addTaxes": "Adding applicable taxes",
-          "calcDeductibles": "Calculating deductibles",
-          "computeFinal": "Computing final payout"
-        },
-        "payoutNote": "Each insurer has specific rules for deductibles, reimbursement tiers, and parts/labour splits that must be matched exactly."
+      "keyResults": {
+        "heading": "Key results"
       },
-      "journey": {
-        "heading": "The Implementation Journey: From 18% to 98%",
-        "day1_3": {
-          "label": "Days 1-3",
-          "title": "Baseline and Architecture",
-          "desc": "The initial LLM-only approach produced plausible-sounding but unreliable results: hallucinated part names, invented coverage rules, inconsistent calculations.",
-          "insight": "Key insight:",
-          "insightText": "LLMs are good at language understanding but bad at deterministic business rules. The architecture had to separate judgment from precision."
-        },
-        "day3_5": {
-          "label": "Days 3-5",
-          "title": "Screening + Coverage Pipeline",
-          "desc": "The deterministic screening pipeline and multi-tier coverage matching drove the biggest single improvement. Rule-based checks alone caught most denials correctly."
-        },
-        "day5_8": {
-          "label": "Days 5-8",
-          "title": "Iteration and Refinement",
-          "desc": "60+ evaluation iterations solving increasingly subtle problems: substring matching bugs, labour demotion logic, and part-number normalisation across OCR outputs."
-        },
-        "holdout": {
-          "label": "Holdout Test",
-          "title": "Unseen Data Validation",
-          "desc": "30 previously unseen claims revealed failure modes the development set did not cover: causal exclusion clauses, missing document scenarios and sub-component interpretation gaps.",
-          "honest": "The holdout gap (98% vs 77%) is the honest measure of generalisation."
-        }
+      "timeSaving": {
+        "heading": "Time saving per claim",
+        "columns": [
+          [
+            "Simple claims",
+            "Before"
+          ],
+          [
+            "Simple claims",
+            "True Aim"
+          ],
+          [
+            "Complex claims",
+            "Before"
+          ],
+          [
+            "Complex claims",
+            "True Aim"
+          ]
+        ],
+        "rows": [
+          [
+            "Document handling, filing, labelling and re-keying",
+            "16 min",
+            "under 1 min*",
+            "23 min",
+            "3 min"
+          ],
+          [
+            "Coverage analysis and policy checking",
+            "6 min",
+            "2 min",
+            "27 min",
+            "4 min"
+          ],
+          [
+            "Writing the response to the customer",
+            "7 min",
+            "2 min",
+            "13 min",
+            "2 min"
+          ]
+        ],
+        "total": [
+          "Total handling time",
+          "29 min",
+          "5 min",
+          "63 min",
+          "9 min"
+        ],
+        "footnote": "*Document capture is fully automated, from the moment a claim arrives through the online form or by email. The time shown is the expert’s confirmation of items the engine flags for verification, typically a low-quality scan, a handwritten amendment on an estimate or a part description that does not match a known catalogue entry. On a clean file there is nothing to review.",
+        "summary": "That is <b>83% less work on a simple claim</b> and <b>86% less on a complex one</b>. Document review takes a little longer on a complex claim because there are more documents and more line items, so more items are surfaced for confirmation. Every line not flagged already carries its decision and the policy clause supporting it."
       },
-      "iterationDetails": {
-        "title": "Detailed iteration fixes (88% to 98%)",
-        "substringBug": "Cross-category substring matching bug:",
-        "substringBugDesc": "An EGR valve synonym (\"abgasrueckfuehrung\") contained the substring \"asr\" (anti-slip regulation). The system declared the EGR valve covered under brakes. Fix: symmetric guard requiring exact match when either term is 3 characters or fewer.",
-        "laborDemotion": "Labour demotion over-aggression:",
-        "laborDemotionDesc": "When a part was covered, the associated installation labour should also be covered. Fix: labour promotion logic that inherits coverage from the parent repair.",
-        "partNumber": "Part-number normalisation:",
-        "partNumberDesc": "A Mercedes part number was not matched due to spacing differences in OCR extraction. Fix: normalise all part numbers by stripping spaces and special characters before lookup."
+      "book": {
+        "heading": "What that means across the book of claims",
+        "columns": [
+          "Before",
+          "With True Aim",
+          "Change"
+        ],
+        "rows": [
+          [
+            "Handling time on an average claim",
+            "38 min",
+            "6 min",
+            "84% less"
+          ],
+          [
+            "Time to answer a claim, start to finish",
+            "59 min",
+            "27 min",
+            "54% faster"
+          ]
+        ],
+        "total": [
+          "Claim volume the same team can assess",
+          "baseline",
+          "118% higher",
+          "+118%"
+        ],
+        "basis": "<b>Basis.</b> Weighted on NSA’s claim mix of 73% simple and 27% complex. Time to answer a claim covers the full process including follow-ups and handovers, which True Aim does not change."
       },
-      "holdoutAnalysis": {
-        "title": "Holdout failure analysis",
-        "causal": {
-          "title": "Causal exclusion clauses",
-          "desc": "A turbocharger is covered, but if the turbo failed because the engine (not covered) failed first, the policy denies coverage. The system does not reason about failure chains."
-        },
-        "missingDocs": {
-          "title": "Missing documents",
-          "desc": "One claim was denied because the policy premium was not paid. This information lives in the insurer's internal system, not in any processable document."
-        },
-        "subComponent": {
-          "title": "Sub-component interpretation gaps",
-          "desc": "A DPF sensor is functionally part of the exhaust system. The policy covers exhausts but only lists specific sub-components. The adjuster approved by interpreting the sensor as an exhaust sub-component."
-        },
-        "excludedDominance": {
-          "title": "Excluded-component dominance",
-          "desc": "A claim for a hose repair (excluded) was approved because a minor bolt (CHF 3.70, covered) was also on the invoice."
-        }
+      "expertise": {
+        "title": "More time for expertise.",
+        "text": "Experts spend their day on the claims where the answer is a judgement rather than a lookup."
       },
-      "showMore": "Show more details",
-      "showLess": "Show less",
-      "technicalChallenges": {
-        "heading": "Technical Challenges",
-        "multiLang": {
-          "title": "Multi-Language Processing",
-          "desc": "Language-aware classification and extraction across German, French and Italian. Comparable approval rates with no measurable language bias."
-        },
-        "auditability": {
-          "title": "Auditability and Compliance",
-          "desc": "Full provenance chain: every extracted field links to its source document and page. Every coverage decision includes match method, confidence score and explanation."
-        },
-        "payoutPrecision": {
-          "title": "Payout Formula Precision",
-          "desc": "Order-of-operations errors in financial calculations can cause significant overpayment. Finding them requires walking through calculations claim by claim with adjusters."
-        },
-        "costControl": {
-          "title": "Cost Control",
-          "desc": "Deterministic rules and keyword matching handle the majority of items with zero LLM cost. Token usage monitoring with configurable thresholds prevents runaway costs."
-        }
+      "sameDecision": {
+        "heading": "The same decision, every time",
+        "text": "True Aim assesses every claim against the same rules and with the same care, whatever the time of day or the workload. Two identical claims receive the same answer. Every decision records the document, the page and the policy clause it rests on, so any claim can be explained later."
       },
-      "orderOfOps": {
-        "title": "Order-of-operations lesson",
-        "intro": "When applying degraded reimbursement rates, the order of operations matters:",
-        "wrong": "Wrong:",
-        "wrongDesc": "Apply rate after VAT and deductible calculations",
-        "correct": "Correct:",
-        "correctDesc": "Apply rate to covered amount first, then add VAT and subtract deductible",
-        "note": "A single operation-order error can cause significant overpayment. Finding these bugs requires walking through calculations with adjusters."
+      "collaboration": {
+        "heading": "The collaboration",
+        "text": "True Aim moved from the first test to a working system in seven days. NSA’s experts handed over their rules directly and saw them operating in the system the same week.",
+        "next": "<b>Next:</b> further claim categories, more line items and document types, wider vehicle brand coverage and the move from pilot scope into the standard claims process."
       },
-      "results": {
-        "heading": "Results",
-        "evalSet": "Initial Evaluation Set",
-        "holdoutSet": "Holdout Set",
-        "metrics": {
-          "decisionAccuracy": "Decision accuracy",
-          "approvedCorrect": "Approved claims correctly identified",
-          "deniedCorrect": "Denied claims correctly identified",
-          "falseReject": "False reject rate",
-          "falseApprove": "False approve rate"
-        },
-        "processingChars": {
-          "multipleDocTypes": "Multiple document types",
-          "multiBrand": "Multi-brand support",
-          "deterministicScreening": "Deterministic screening",
-          "multiTierMatching": "Multi-tier matching",
-          "comprehensiveKeywords": "Comprehensive keywords",
-          "fullFieldExtraction": "Full field extraction",
-          "languagesSupported": "Languages supported",
-          "extensiveTestCoverage": "Extensive test coverage"
-        }
-      },
-      "lessons": {
-        "heading": "What We Learned",
-        "lesson1": {
-          "title": "Deterministic checks beat LLM judgment for structured rules.",
-          "desc": "76% of claim denials are \"part not covered\" - a lookup, not a judgment call. The screening pipeline handles these with 100% confidence and zero LLM cost."
-        },
-        "lesson2": {
-          "title": "The accuracy curve has diminishing returns.",
-          "desc": "18% to 76% took 3 days. 76% to 98% took 4 more days. The holdout gap (98% vs 77%) confirmed that real-world generalisation requires significantly more data."
-        },
-        "lesson3": {
-          "title": "The payout formula is harder than the AI.",
-          "desc": "Getting the financial calculation to match the insurer's exact formula requires sitting with an adjuster and walking through calculations by hand. No amount of prompt engineering solves a business logic bug."
-        },
-        "lesson4": {
-          "title": "Provenance tracking is non-negotiable.",
-          "desc": "In a regulated industry, every extracted value and coverage decision must trace back to a source document. Fundamental to trust and compliance."
-        }
-      },
-      "nextSteps": {
-        "heading": "Next Steps Taken",
-        "step1": "Expanded on ground truth dataset",
-        "step2": "Integrated with insurer's policy management API for real-time status checks",
-        "step3": "Implemented causal exclusion reasoning for cascading-damage denials",
-        "step4": "Deployed production triage: auto-reject high-confidence denials, auto-approve simple approvals, route edge cases for human review",
-        "conclusion": "The goal is not to replace adjusters but to give them back their time on the 76% of denials that are straightforward lookups, so they can focus their expertise on the 24% that actually require judgment."
-      },
+      "method": "Based on time measurements of every process step on real NSA claims, both in the current process and in tests with True Aim, split by claim complexity. Claim mix is NSA’s own. Figures are rounded to the nearest minute.",
       "sidebar": {
-        "keyHighlights": "Key highlights",
         "productsUsed": "Products used",
-        "capabilities": "Capabilities",
-        "capabilityList": {
-          "docProcessing": "Document Processing",
-          "hybridAi": "Hybrid AI",
-          "multilingual": "Multilingual",
-          "fullProvenance": "Full Provenance",
-          "auditReady": "Audit Ready"
-        },
         "getSimilarResults": "Request a demo"
       }
     }

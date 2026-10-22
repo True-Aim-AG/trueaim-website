@@ -394,16 +394,16 @@
         "heading": "How this works in practice",
         "caseStudy": {
           "cap": "Case study",
-          "title": "Motor warranty claims checked line by line against the policy",
-          "text": "Five documents per claim, in up to three languages. Every line is now checked against the warranty terms, with the clause behind each decision.",
+          "title": "The same claims decisions, made in a fraction of the time.",
+          "text": "How NSA transferred the reasoning and decisioning of its claims experts into True Aim software and reduced the work on a complex claim by 86%.",
           "link": "Read the case study",
-          "logoAlt": "NSA Garantie"
+          "logoAlt": "NSA Services SA"
         }
       },
       "quote": {
-        "text": "I believed in this automation from day one because it decides nothing we had not already decided ourselves. Our experts wrote the rules and built them into the system, and every answer shows the document and the clause behind it. Routine claims are settled in minutes and my team can focus on the cases where their experience really counts. I can only recommend that every insurer take a close look at this.",
+        "text": "I was sceptical about letting software decide claims. What changed my mind is that it decides nothing we had not already decided ourselves. Our experts wrote the rules, True Aim built them into the system and every answer shows the document and the clause behind it. Our harder claims used to take an expert the better part of an hour. They now come back in minutes, with the reasoning attached. I would tell any insurer or warranty provider to look at this seriously.",
         "name": "Giuseppe Chiarello",
-        "role": "CEO, NSA Garantie"
+        "role": "CEO, NSA Services SA"
       },
       "faq": [
         {

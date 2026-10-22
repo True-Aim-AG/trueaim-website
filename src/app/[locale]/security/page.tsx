@@ -42,7 +42,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
                 <li><strong className="text-strong">ISO/IEC 27001:2022</strong>: certified by A-LIGN, certificate ISMS-TR-090426, issued 4 September 2026, valid until 4 September 2029.</li>
                 <li><strong className="text-strong">SOC 2 Type II</strong>: audit window 1 May to 31 July 2026 completed, report pending.</li>
                 <li><strong className="text-strong">Swiss FADP</strong> and <strong className="text-strong">GDPR</strong>: aligned as data processor for customer data.</li>
-                <li><strong className="text-strong">EU AI Act</strong>: AI Technical File maintained for the ClaimPilot platform; current readiness is documented and tracked.</li>
+                <li><strong className="text-strong">EU AI Act</strong>: AI Technical File maintained for Claims Decisioning; current readiness is documented and tracked.</li>
               </ul>
             </section>
 

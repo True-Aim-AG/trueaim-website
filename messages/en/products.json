@@ -705,7 +705,7 @@
             "prompt": "Otus, I need to clear my backlog today. Where do I start?",
             "answer": [
               "You have 14 open claims. Six are ready to confirm: the recommendation is complete and nothing is missing, about 20 minutes in total. Three are waiting on repairers, reminders went out at 08:30. Two need documents from the customer, chased this morning.",
-              "That leaves three for your judgment: 62850 (hotel nights above the cap), 64812 (disputed cause) and 64799 (two estimates far apart). Start with those three while you are fresh, then confirm the six."
+              "That leaves three for your judgement: 62850 (hotel nights above the cap), 64812 (disputed cause) and 64799 (two estimates far apart). Start with those three while you are fresh, then confirm the six."
             ],
             "actions": [
               "Open 62850",

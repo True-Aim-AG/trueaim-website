@@ -116,7 +116,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
           </h2>
           <p className="mt-6 max-w-[62ch] text-[18px] leading-[30px] text-body mb-8">
             Get in touch to discuss how auditable AI can work for your
-            organization.
+            organisation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <ButtonLink href="/contact" variant="primary" size="lg">

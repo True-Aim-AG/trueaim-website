@@ -392,7 +392,7 @@ export default async function AuditabilityScorecardBlogPost({
                 <div className="mt-6 border-l-2 border-ta-blue pl-6">
                   <p className="text-body-lg text-strong">
                     That is what it means for compliance to be built in from the
-                    first claim. The judgment stays with you. The arithmetic,
+                    first claim. The judgement stays with you. The arithmetic,
                     the wording and the evidence no longer need to.
                   </p>
                 </div>
@@ -426,7 +426,7 @@ export default async function AuditabilityScorecardBlogPost({
                 <p className="text-body leading-[1.6]">
                   The scorecard applies to any system, including ours.{" "}
                   <Link href="/trust" className="text-link underline underline-offset-2">
-                    Our Trust Center
+                    Our Trust Centre
                   </Link>{" "}
                   sets out how True Aim answers each of these questions, and we
                   welcome the conversation.
@@ -738,7 +738,7 @@ export default async function AuditabilityScorecardBlogPost({
 
                 <div className="mt-8 pt-6 border-t border-hairline">
                   <ButtonLink href="/trust" variant="primary" size="lg" className="w-full rounded-lg! whitespace-normal text-center">
-                    How we answer this in our Trust Center
+                    How we answer this in our Trust Centre
                     <ArrowRight aria-hidden="true" className="w-5 h-5 flex-shrink-0" strokeWidth={1.5} />
                   </ButtonLink>
                 </div>
@@ -769,7 +769,7 @@ export default async function AuditabilityScorecardBlogPost({
                 <ArrowRight aria-hidden="true" className="w-5 h-5" strokeWidth={1.5} />
               </ButtonLink>
               <ButtonLink href="/trust" variant="on-dark" size="lg">
-                Trust Center
+                Trust Centre
               </ButtonLink>
             </div>
           </MotionDiv>

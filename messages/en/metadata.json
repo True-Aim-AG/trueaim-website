@@ -185,13 +185,13 @@
       "updated": "2026-10-15"
     },
     "/case-studies/vehicle-warranty-claims": {
-      "title": "Vehicle Warranty Claims Automation Case Study | True Aim",
-      "description": "A European warranty provider automated multilingual vehicle warranty claims with True Aim: 98% decision accuracy, with most line items resolved without an LLM.",
-      "h1": "Automating Vehicle Warranty Claims with AI Document Intelligence",
+      "title": "The same claims decisions, made in a fraction of the time. | True Aim",
+      "description": "How NSA transferred the reasoning and decisioning of its claims experts into True Aim software and reduced the work on a complex claim by 86%.",
+      "h1": "The same claims decisions, made in a fraction of the time.",
       "breadcrumb": "Vehicle warranty claims",
-      "ogTitle": "Automating vehicle warranty claims with AI document intelligence",
-      "ogDescription": "98% decision accuracy on multilingual vehicle warranty claims, with most line items resolved without an LLM.",
-      "updated": "2026-10-15"
+      "ogTitle": "The same claims decisions, made in a fraction of the time.",
+      "ogDescription": "How NSA transferred the reasoning and decisioning of its claims experts into True Aim software and reduced the work on a complex claim by 86%.",
+      "updated": "2026-10-22"
     },
     "/partners": {
       "title": "Our Partners in Research and Insurance | True Aim",

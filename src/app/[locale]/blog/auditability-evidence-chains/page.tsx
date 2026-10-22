@@ -100,11 +100,11 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
                 </div>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  We learned this the hard way. Our claims automation system
-                  went through 47 evaluation iterations, improving from 18% to
-                  98% accuracy. Every decision has a complete audit trail.
-                  Here&apos;s the architecture that makes it possible, and the
-                  regulatory requirements it satisfies.
+                  This reflects our own deployment experience. In our work
+                  with NSA Services SA, every decision records the source
+                  document, the page and the policy clause on which it rests.
+                  The sections below describe the architecture behind this and
+                  the regulatory requirements it meets.
                 </p>
               </MotionDiv>
 
@@ -184,7 +184,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
                     </span>
                     . Claims automation isn&apos;t explicitly listed as
                     high-risk, but transparency obligations apply. EIOPA
-                    emphasizes governance and risk management aligned with
+                    emphasises governance and risk management aligned with
                     existing insurance regulation.
                   </p>
                 </div>
@@ -436,8 +436,8 @@ Timestamp: [ISO timestamp]`}</pre>
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  From our 47 evaluation iterations, here are failures that
-                  regulators will catch:
+                  The following failures, identified in our own testing, are
+                  those regulators are most likely to detect:
                 </p>
 
                 <div className="space-y-4 mb-8">
@@ -633,7 +633,7 @@ Timestamp: [ISO timestamp]`}</pre>
                 <div className="bg-card shadow-card rounded-pill p-8">
                   <p className="text-sm text-body leading-[1.6] mb-6">
                     Building audit-ready AI systems requires commitment to four foundational principles.
-                    The specific implementation will vary by organization, but these principles remain constant.
+                    The specific implementation will vary by organisation, but these principles remain constant.
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -746,8 +746,8 @@ Timestamp: [ISO timestamp]`}</pre>
                 </div>
 
                 <p className="mt-6 text-sm text-subtle italic">
-                  Based on internal research from 47 evaluation iterations (18%
-                  → 98% accuracy) and regulatory analysis of FINMA Guidance
+                  Based on True Aim&apos;s deployment experience in vehicle
+                  warranty claims and regulatory analysis of FINMA Guidance
                   08/2024, EU AI Act, and EIOPA governance frameworks.
                 </p>
               </MotionDiv>

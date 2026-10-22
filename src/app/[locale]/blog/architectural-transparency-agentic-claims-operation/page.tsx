@@ -776,7 +776,7 @@ export default async function ArchitecturalTransparencyBlogPost({
 
                 <div className="mt-8 pt-6 border-t border-hairline">
                   <ButtonLink href="/trust" variant="primary" size="sm" className="w-full">
-                    Explore our Trust Center
+                    Explore our Trust Centre
                     <ArrowRight aria-hidden="true" className="w-4 h-4 flex-shrink-0" strokeWidth={1.5} />
                   </ButtonLink>
                 </div>

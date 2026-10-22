@@ -5,7 +5,7 @@
     "technology": "Technology",
     "company": "Company",
     "contact": "Contact",
-    "bookDemo": "Book a Demo",
+    "bookDemo": "Request a demo",
     "logoAlt": "True Aim Logo",
     "toggleMenu": "Toggle menu",
     "productsDropdown": {
@@ -23,7 +23,7 @@
       "caseStudiesDesc": "Customer success stories",
       "impactEstimator": "Impact Estimator",
       "impactEstimatorDesc": "Explore potential value",
-      "trustCenter": "Trust Center",
+      "trustCenter": "Trust Centre",
       "trustCenterDesc": "Security & compliance",
       "product": "Product Overview",
       "productDesc": "The True Aim Platform",

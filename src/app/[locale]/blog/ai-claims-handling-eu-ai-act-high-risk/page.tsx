@@ -795,14 +795,9 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                   of a decision that runs on deterministic rules rather than a
                   model, the less of it needs explaining under a comparative
                   standard, because the rule <em>is</em> the explanation. On a
-                  European vehicle warranty programme we route{" "}
-                  <Link
-                    href="/case-studies/vehicle-warranty-claims"
-                    className="text-link hover:underline"
-                  >
-                    80 to 90% of line items through deterministic logic
-                  </Link>
-                  , with the model confined to document understanding. That is
+                  European vehicle warranty programme we apply the client&apos;s
+                  coverage rules to each line item and limit the model to
+                  reading the documents. That is
                   an architectural choice with a compliance dividend, not a
                   compliance measure bolted on afterwards.
                 </p>
@@ -847,7 +842,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                       href="/platform/claims-decisioning"
                       className="underline hover:no-underline"
                     >
-                      MIRA
+                      Claims Decisioning
                     </Link>{" "}
                     is built to do: agentic document understanding on the input
                     side, deterministic logic on the decision side and a record
@@ -998,11 +993,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                       href="/case-studies/vehicle-warranty-claims"
                       className="font-display font-medium text-link hover:underline"
                     >
-                      Vehicle warranty provider achieves 98% decision accuracy
-                      in 7 days
+                      The same claims decisions, made in a fraction of the time.
                     </Link>
                     <p className="text-sm text-subtle mt-1">
-                      The programme the deterministic-routing figure comes from.
+                      The vehicle warranty programme referenced above.
                     </p>
                   </div>
                 </div>
@@ -1196,7 +1190,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
               </ButtonLink>
               <ButtonLink href="/platform/claims-decisioning" variant="on-dark" size="lg">
-                Explore MIRA
+                Explore Claims Decisioning
               </ButtonLink>
             </div>
           </MotionDiv>

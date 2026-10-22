@@ -1,83 +1,60 @@
-# True Aim — Full Documentation for LLMs
+# True Aim: Full Documentation for LLMs
 
-> Neuro-symbolic AI for auditable insurance claims decisions. Swiss precision meets compliant automation.
+> Faster claims, smarter decisions, lower costs. Every claim assessed against the policy, every invoice benchmarked, every damage report prepared. Accurate, explainable outcomes in minutes.
 
 ## Company Overview
 
-True Aim AG is a Swiss InsurTech company headquartered in Zurich, Switzerland. We build AI-powered decisioning software for insurance claims processing. Our hybrid neuro-symbolic approach combines the adaptability of agentic AI with the precision of deterministic logic, delivering compliant, explainable decisions at scale—every outcome traceable to the source.
+True Aim AG is a Swiss company based in Zug, Switzerland. True Aim is spun out of Yarowa, Switzerland's leading insurtech, and supported by Innosuisse, the innovation arm of the Swiss government, on the strength of the technology it has built.
 
+Mission: to bring scalable trust to claims decisions. Every decision fast enough to matter, accurate enough to rely on and proven whenever it is questioned.
 
-### Awards & Recognition
+True Aim works for insurers, brokers, third-party administrators, warranty providers and claims technology providers.
 
-- Switzerland: Innovationspreis der Schweizer Assekuranz
-- Germany: Digitale Leuchtturm Versicherungen — 1. Rang
-- Italy: Miglior InsurTech — IKN Awards
+### Awards
 
-### Partners & Ecosystem
+- Insurathon 2026: Norton Rose Fulbright named True Aim the most innovative InsurTech start-up of 2026.
+- Innovationspreis der Schweizer Assekuranz: the Swiss insurance industry's innovation prize, awarded to the technology True Aim builds on.
+- Digitaler Leuchtturm Versicherungen: Germany's digital lighthouse award for insurance, awarded to the technology True Aim builds on.
+- Miglior InsurTech, IKN Awards: Best InsurTech at the IKN Insurance Awards, Italy, awarded to the technology True Aim builds on.
 
-- Innosuisse (Swiss Innovation Agency): R&D funding partner
-- ZHAW (Zurich University of Applied Sciences): Research collaboration
-- Yarowa AG: Swiss InsurTech platform with enterprise distribution and 100+ insurer relationships
+### Partners
+
+- Yarowa: True Aim's origin and distribution partner
+- Innosuisse: Swiss Innovation Agency
+- ZHAW, Zurich University of Applied Sciences: research partner
+- Swiss InsurTech Hub
 
 ---
 
-## Products
+## Platform
 
-### MIRA — Neuro-Symbolic Decisioning Engine
+**URL:** https://trueaim.ai/en/platform/
+
+True Aim turns the claim file into the finished piece of work: a settled claim, a benchmarked invoice or a completed damage report. AI reads the documents, the decision is calculated from your policy wording and every step is recorded. Your team keeps the final say.
+
+### Claims Decisioning
 
 **URL:** https://trueaim.ai/en/platform/claims-decisioning/
-**Demo:** https://mira-travel-demo.vercel.app/products
 
-MIRA is the world's first neuro-symbolic engine purpose-built for insurance claims decisioning. It transforms complex policy terms and conditions into automated, fully-deterministic claim decisions.
+Claims Decisioning is an automated coverage check, from FNOL to settlement. True Aim checks the policy terms against the facts of the case and says whether the claim should be approved or denied. Where it is approved, the amount owed is calculated line by line, and the adjuster makes the final call. Each decision is recorded in the Decision Dossier: the inputs, the policy wording applied and the reasoning.
 
-**How MIRA works:**
-1. Policy terms and conditions are encoded into deterministic logic rules
-2. Claim data is structured and validated
-3. The deterministic engine evaluates each claim against the encoded rules
-4. Every decision is traceable to the specific policy clause that triggered it
+### Invoice Benchmarking
 
-**Key capabilities:**
-- Automated claims decisioning with full auditability
-- Deterministic outcomes: same input always produces the same output
-- Direct linkage between decisions and policy clauses
-- Compliant with EU AI Act requirements for high-risk AI systems
-- Up to 89% faster claim determinations
-- Up to 68% reduction in handling costs
+**URL:** https://trueaim.ai/en/platform/invoice-benchmarking/
 
-### ContextBuilder — Claims Document Pipeline
+Every invoice, quote and estimate is checked against the benchmark, by business line and by region. The claims team sees which lines are too high, by how much and why, with the reissue request already drafted. Lower-value invoices no longer go unchecked, and every saving is recorded line by line.
 
-**URL:** https://trueaim.ai/en/platform/
-**Source:** https://github.com/Fr3nn3r/AgenticContextBuilder
+### Damage Reporting
 
-ContextBuilder transforms messy, unstructured claim documents into structured, trusted data ready for automated decisioning.
+**URL:** https://trueaim.ai/en/platform/damage-reporting/
 
-**How ContextBuilder works:**
-1. Documents arrive via email, portal, or system export
-2. AI extracts, classifies, and structures claim data
-3. Automated quality gates verify data integrity
-4. Human review is triggered only when needed
-5. Structured data is ready for MIRA decisioning
+Damage Reporting produces a damage estimate and the full scope of work at first notification, from the photographs and documents the customer sends. It prices the damage by region and lists every trade and task in the order the work must run. Assessors go on site only where a visit changes the answer.
 
-**Key capabilities:**
-- AI-powered document ingestion and extraction
-- Automated classification and structuring
-- Quality gates with human-in-the-loop when needed
-- 97% accuracy in document processing
-- 97% document coverage
-- Supports multiple input formats and channels
+### Otus, True Aim's claims specialist
 
-### ClaimEval — Claims Quality Assurance
+**URL:** https://trueaim.ai/en/platform/otus/
 
-**URL:** https://trueaim.ai/en/platform/
-
-ClaimEval scales quality assurance beyond traditional sampling methods, running consistent inspections across entire claims portfolios.
-
-**Key capabilities:**
-- Portfolio-wide QA inspections (not just sampling)
-- Consistent evaluation criteria across all claims
-- Intelligent risk scoring to prioritize human effort
-- Exception surfacing for claims requiring attention
-- Audit trail for all QA activities
+Otus is an AI-powered expert for every team member, in every True Aim solution. Ask Otus anything about a claim, by voice or text, and the answer comes from the claim, the policy and the record. Otus drafts, explains and plans, and has no decision rights: the team decides.
 
 ---
 
@@ -94,37 +71,27 @@ True Aim's technology is not probabilistic and not a black box. Our hybrid appro
 
 This combination ensures that while AI handles the messy, unstructured parts of claims processing, every actual decision is made by deterministic, auditable logic.
 
-### End-to-End Claims Workflow
-
-1. **Ingest:** Documents arrive via email, portal, or system export. AI transforms them into machine-readable data.
-2. **Process:** ContextBuilder extracts, classifies, and structures claim data with automated quality gates.
-3. **Decide:** MIRA's deterministic logic computes coverage, calculates costs, and produces a decision.
-4. **Act:** Automated outputs include reserve setting, payment drafts, and customer communications.
-5. **Audit:** Every step is logged. Every decision is traceable. Complete evidence trail.
-
 ---
 
-## Compliance & Trust
+## Security and Compliance
 
 **URL:** https://trueaim.ai/en/trust/
 
-True Aim's architecture is designed for regulatory compliance:
-
-- **EU AI Act:** Deterministic decisioning aligns with requirements for high-risk AI systems in insurance
-- **GDPR:** Architecture aligned with EU data protection regulation
-- **Swiss FADP:** Compliant with Swiss Federal Act on Data Protection
-- **Auditability:** Every decision links to specific policy clauses and source documents
-- **Transparency:** Full decision trails available for regulatory inspection
+- ISO 27001: certified.
+- SOC 2 Type II: audit window completed, report pending.
+- GDPR, Swiss FADP and DORA: aligned.
+- Every decision records the facts, the policy wording applied and the reasoning, so it can be reconstructed under audit, regulatory review or dispute.
 
 ---
 
-## Key Metrics
+## Results
 
-- Up to 89% faster claim determinations
-- Up to 68% reduction in handling costs
-- 100% auditable decisions
-- 97% document processing accuracy
-- 97% document coverage
+From the vehicle warranty case study with NSA Services SA (https://trueaim.ai/en/case-studies/vehicle-warranty-claims/):
+
+- 86% less expert time on a complex claim
+- 83% less expert time on a simple claim
+- 118% more claims handled by the same team
+- 32 min saved on every claim
 
 ---
 
@@ -133,6 +100,7 @@ True Aim's architecture is designed for regulatory compliance:
 **Index:** https://trueaim.ai/en/blog/
 **RSS:** https://trueaim.ai/feed.xml
 
+- [Time Back Is the Easy Part: Architectural Transparency and the Rise of the Agentic Claims Operation](https://trueaim.ai/en/blog/architectural-transparency-agentic-claims-operation/) (22 October 2026, Reuben John, CEO): A claim has never existed within the four walls of a single enterprise: policyholder, intermediary, carrier, repairer and adjuster each hold a fragment of the record. The case for one shared claim record under role-gated entitlements, where every decision carries line-level provenance and transparency between organisations ceases to be a courtesy and becomes an architectural guarantee.
 - [Where the Language Model Does Not Belong: Designing Defensible AI in Claims Operations](https://trueaim.ai/en/blog/where-the-language-model-does-not-belong/) (6 October 2026, Reuben John, CEO): A claim decision is a chain of three kinds of steps: reading, computing and judging. Computing belongs to rules. A model earns its place in reading and, marked as probabilistic, in judging. The record keeps the boundary visible on every step.
 - [The AI Claims Auditability Scorecard](https://trueaim.ai/en/blog/ai-claims-auditability-scorecard/) (10 September 2026, Reuben John, CEO): Twelve questions every claims leader should be able to answer about AI operating in their name, in four groups: provenance, reconstruction, human judgement and continuity, with the standard and how True Aim meets it under each.
 - [AI Claims Handling Is Not High-Risk Under the EU AI Act. Here Is What Binds It Instead.](https://trueaim.ai/en/blog/ai-claims-handling-eu-ai-act-high-risk/) (28 July 2026): Claims handling is absent from Annex III. GDPR Article 22 binds it anyway.
