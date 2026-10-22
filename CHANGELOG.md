@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.19.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.18.1...v1.19.0) (2026-10-22)
+
+
+### Features
+
+* build every redirect from redirects/redirects.csv ([#1](https://github.com/True-Aim-AG/trueaim-website/issues/1)) ([734b618](https://github.com/True-Aim-AG/trueaim-website/commit/734b6185847c74ac29d5708349b8d39b2e8de23f))
+* home, platform, product and solutions pages from the V5 prototype ([#3](https://github.com/True-Aim-AG/trueaim-website/issues/3)) ([9ab936f](https://github.com/True-Aim-AG/trueaim-website/commit/9ab936f728e50efb90298834a4e0d3fd8d0e9662))
+* launch build: crawling, tracking, content components and build checks ([#27](https://github.com/True-Aim-AG/trueaim-website/issues/27)) ([44f9d62](https://github.com/True-Aim-AG/trueaim-website/commit/44f9d629c908faf61653b08abf9ce0fc3c0eb6e0))
+* page inventory for launch ([#29](https://github.com/True-Aim-AG/trueaim-website/issues/29)) ([12add85](https://github.com/True-Aim-AG/trueaim-website/commit/12add855dce3c6daa035ac2b688b57a641823895))
+* per-page metadata source and JSON-LD graph by [@id](https://github.com/id) ([#31](https://github.com/True-Aim-AG/trueaim-website/issues/31)) ([a6fb8eb](https://github.com/True-Aim-AG/trueaim-website/commit/a6fb8ebfdcd0a9e4908a791cee78993d94b12792))
+* trust, about, contact, partners, blog, case studies, estimator, navigation and footer on the V5 design ([#4](https://github.com/True-Aim-AG/trueaim-website/issues/4)) ([3381c00](https://github.com/True-Aim-AG/trueaim-website/commit/3381c0010072af61e5ee7ef349380d5f6e7ad67b))
+
+
+### Bug Fixes
+
+* drop the in-browser www redirect now that Azure answers www with a 301 ([#30](https://github.com/True-Aim-AG/trueaim-website/issues/30)) ([978004c](https://github.com/True-Aim-AG/trueaim-website/commit/978004cfbdfa0b701827c2c389939fa616c61164))
+* English only until the translations land, plus pre-release copy fixes ([#10](https://github.com/True-Aim-AG/trueaim-website/issues/10)) ([132764b](https://github.com/True-Aim-AG/trueaim-website/commit/132764bb51d8b6c9895283d82ba875b0d49bc198))
+* ISO badge, level badge text, Arnaud's photo, Leuchtturm logo, estimator button and two solutions summaries ([#9](https://github.com/True-Aim-AG/trueaim-website/issues/9)) ([ad647ce](https://github.com/True-Aim-AG/trueaim-website/commit/ad647cea3f20756b353d2e3e992d9b5ebb857ecc))
+* name the tracking parties in the privacy and cookie pages ([#2](https://github.com/True-Aim-AG/trueaim-website/issues/2)) ([10e042d](https://github.com/True-Aim-AG/trueaim-website/commit/10e042db0ad3c2705655dfe39ace477cf50f3cc6))
+* sub-processor list in two groups with access, transfer basis and the abuse monitoring exception ([#5](https://github.com/True-Aim-AG/trueaim-website/issues/5)) ([87a0af2](https://github.com/True-Aim-AG/trueaim-website/commit/87a0af210772854e17a3d85f12e626c0fe90e617))
+* sub-processor list v1.3 matches the classification note of 19 October ([#7](https://github.com/True-Aim-AG/trueaim-website/issues/7)) ([d718c9c](https://github.com/True-Aim-AG/trueaim-website/commit/d718c9c00a90e5911883a213d5b29585dec58b3d))
+
 ## [1.18.1](https://github.com/True-Aim-AG/trueaim-website/compare/v1.18.0...v1.18.1) (2026-10-14)
 
 
