@@ -14,7 +14,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
         <p className="mt-6 text-sm text-muted">Last updated: 19 October 2026</p>
       </PageHero>
       <section className={SECTION}>
-        <div className="max-w-3xl [&>div>section:first-child>h2]:mt-0">
+        <div className="mx-auto max-w-[1232px] [&>*]:max-w-3xl [&>div>section:first-child>h2]:mt-0">
 
         <div>
           <section>

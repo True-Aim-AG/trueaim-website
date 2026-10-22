@@ -75,15 +75,13 @@
       "errorGeneric": "Something went wrong. Please try again."
     },
     "success": {
-      "heading": "Thank you",
-      "message": "We have your request and will reply within one business day.",
+      "heading": "Thanks for getting in touch",
+      "message": "We've received your request and someone from our team will be in touch soon.",
       "submitAnother": "Send another request"
     },
     "aside": {
-      "emailLabel": "Email",
-      "emailAddress": "info@trueaim.ai",
       "linkedinLabel": "LinkedIn",
-      "linkedinText": "True Aim on LinkedIn",
+      "linkedinText": "True Aim",
       "officeLabel": "Office",
       "address": "True Aim AG, Metallstrasse 9, 6300 Zug, Switzerland"
     }

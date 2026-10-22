@@ -62,12 +62,11 @@ const name = (t: Translate, key: string) => t(`menu.${key}.name` as any);
 const desc = (t: Translate, key: string) => t(`menu.${key}.desc` as any);
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
-function Dropdown({ open, group, right, t }: { open: boolean; group: Group; right: boolean; t: Translate }) {
+function Dropdown({ open, group, t }: { open: boolean; group: Group; t: Translate }) {
   return (
     <div
       className={cn(
-        "absolute top-full pt-3 transition-[opacity,transform,visibility] duration-150 ease-brand",
-        right ? "right-[-24px]" : "left-[-24px]",
+        "absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-[opacity,transform,visibility] duration-150 ease-brand",
         open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1.5 opacity-0",
       )}
     >
@@ -102,7 +101,7 @@ export function Navigation() {
 
           {/* Desktop navigation: the four groups */}
           <div className="hidden items-center gap-8 md:flex">
-            {groups.map((group, index) => {
+            {groups.map((group) => {
               const open = openKey === group.key;
               return (
                 <div
@@ -127,7 +126,7 @@ export function Navigation() {
                       className={cn("h-4 w-4 transition-transform duration-150 ease-brand", open && "rotate-180")}
                     />
                   </button>
-                  <Dropdown open={open} group={group} right={index >= groups.length - 2} t={t} />
+                  <Dropdown open={open} group={group} t={t} />
                 </div>
               );
             })}
