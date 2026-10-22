@@ -146,25 +146,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                       The Gap in Practice
                     </h3>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="text-center p-4 bg-surface-muted rounded-pill">
-                      <div className="text-kpi text-accent mb-1">
-                        98%
-                      </div>
-                      <div className="text-sm text-muted">
-                        Development set accuracy
-                      </div>
-                    </div>
-                    <div className="text-center p-4 bg-surface-muted rounded-pill">
-                      <div className="text-kpi text-denied-dark mb-1">
-                        76.7%
-                      </div>
-                      <div className="text-sm text-muted">
-                        Holdout set accuracy
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-sm text-muted mt-4">
+                  <p className="text-sm text-muted">
                     That gap was not caused by randomness. It exposed missing
                     coverage logic, vocabulary gaps, and structural extraction
                     weaknesses.
@@ -208,11 +190,11 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                       </div>
                     </div>
                     <p className="text-sm text-body leading-[1.6]">
-                      We initially modelled 5 coverage categories. Production
-                      required 13. When additional categories entered the
+                      We initially modelled fewer coverage categories than
+                      production required. When additional categories entered the
                       pipeline the system produced confident but incorrect
                       outputs. After expanding coverage logic accuracy improved
-                      by 34 percentage points in a single iteration.
+                      substantially within a single iteration.
                     </p>
                     <div className="mt-4 p-3 bg-lilac rounded-pill">
                       <p className="text-sm font-medium text-accent">
@@ -297,8 +279,8 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                       materially affect leakage and audit exposure.
                     </p>
                     <p className="text-xs text-subtle">
-                      In early iterations our false approve rate was 44%.
-                      Reducing it below 5% required structured domain expansion,
+                      Reducing the false approve rate to an acceptable level
+                      required structured domain expansion,
                       vocabulary refinement, and threshold calibration.
                     </p>
                   </div>
@@ -349,7 +331,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  We constructed a 50-claim holdout dataset stratified by
+                  We built a holdout dataset stratified by
                   outcome, value, language, and structural complexity. A senior
                   adjuster labelled each claim. That dataset was quarantined and
                   never used for tuning.
@@ -407,30 +389,6 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                     <h3 className="font-display font-semibold text-strong">
                       Results
                     </h3>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                    <div className="text-center p-3 bg-surface-muted rounded-pill">
-                      <div className="text-kpi text-accent">
-                        47
-                      </div>
-                      <div className="text-xs text-muted">
-                        Iterations
-                      </div>
-                    </div>
-                    <div className="text-center p-3 bg-surface-muted rounded-pill">
-                      <div className="text-kpi text-denied-dark">18%</div>
-                      <div className="text-xs text-muted">
-                        Starting accuracy
-                      </div>
-                    </div>
-                    <div className="text-center p-3 bg-surface-muted rounded-pill">
-                      <div className="text-kpi text-approved-dark">
-                        98%
-                      </div>
-                      <div className="text-xs text-muted">
-                        Final accuracy
-                      </div>
-                    </div>
                   </div>
                   <p className="text-sm text-body">
                     The largest single improvement resulted from expanding
@@ -506,7 +464,6 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                     "Track false approvals, false denials, and refer rate",
                     "Domain modelling drives more improvement than model changes",
                     "Asymmetric confidence thresholds protect against financial risk",
-                    "47 iterations: 18% to 98% on holdout set",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />

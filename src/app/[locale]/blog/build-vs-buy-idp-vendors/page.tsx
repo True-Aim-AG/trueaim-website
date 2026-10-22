@@ -112,11 +112,11 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                 </p>
 
                 <p className="text-body leading-[1.6]">
-                  We&apos;ve worked through 47 evaluation iterations on a claims
-                  automation pipeline, watching accuracy climb from 18% to 98%.
-                  Along the way, we documented every failure mode, every false
-                  assumption, and every hard-won lesson. Here&apos;s how to
-                  evaluate claims AI vendors without getting fooled by demos.
+                  In our deployment with NSA Services SA, True Aim moved from
+                  first test to a working system in seven days and reduced
+                  expert time on complex claims by 86%. The framework below
+                  sets out how to assess claims AI vendors on evidence rather
+                  than demonstrations.
                 </p>
               </MotionDiv>
 
@@ -162,7 +162,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                       {
                         title:
                           "You're prepared for 12-18 months before production",
-                        desc: "That's realistic. Our 47 iterations took 2 months of focused work.",
+                        desc: "This is a realistic timeline for an in-house build.",
                       },
                     ].map((item) => (
                       <li key={item.title} className="flex items-start gap-3">
@@ -194,8 +194,9 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                         </span>
                         <p className="text-sm text-body mt-1">
                           You&apos;ll hit the same accuracy ceiling everyone
-                          else does. Our baseline LLM-only approach achieved 18%
-                          accuracy. Not 80%. Not 60%. Eighteen percent.
+                          else does. A general-purpose language model will not
+                          apply your policy terms reliably without a defined
+                          rule set.
                         </p>
                       </div>
                     </div>
@@ -332,8 +333,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                         </span>
                         <p className="text-sm text-body mt-1">
                           Ask: accuracy on what? Their test set or your
-                          documents? Our 98% accuracy came with 36% payout
-                          accuracy. Decision accuracy ≠ business accuracy.
+                          documents? Decision accuracy ≠ business accuracy.
                         </p>
                       </div>
                     </div>
@@ -781,8 +781,8 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
 
                 <p className="mt-6 text-sm text-subtle italic">
                   True Aim AG builds auditable AI systems for Swiss and EU
-                  regulated markets. We&apos;ve learned these lessons the hard
-                  way, 47 iterations worth.
+                  regulated markets. This framework reflects our deployment
+                  experience.
                 </p>
               </MotionDiv>
             </div>

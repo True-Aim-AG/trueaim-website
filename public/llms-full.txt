@@ -86,11 +86,12 @@ This combination ensures that while AI handles the messy, unstructured parts of 
 
 ## Results
 
-From the vehicle warranty case study with NSA Garantie (https://trueaim.ai/en/case-studies/vehicle-warranty-claims/):
+From the vehicle warranty case study with NSA Services SA (https://trueaim.ai/en/case-studies/vehicle-warranty-claims/):
 
-- 98% decision accuracy
-- 80 to 90% of line items settled deterministically
-- Multilingual claims: English, German, French, Italian and more
+- 86% less expert time on a complex claim
+- 83% less expert time on a simple claim
+- 118% more claims handled by the same team
+- 32 min saved on every claim
 
 ---
 

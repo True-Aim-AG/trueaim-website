@@ -31,33 +31,32 @@ export interface CaseStudy {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "vehicle-warranty-claims",
-    title: "Motor warranty claims checked line by line against the policy",
+    title: "The same claims decisions, made in a fraction of the time.",
     customer: {
-      name: "NSA Garantie",
+      name: "NSA Services SA",
       industry: "Motor warranty",
       size: "",
       logo: "/partners/nsa-garantie.webp",
       isAnonymized: false,
     },
     challenge:
-      "Five documents per claim, in up to three languages. Every line is now checked against the warranty terms, with the clause behind each decision.",
+      "How NSA transferred the reasoning and decisioning of its claims experts into True Aim software and reduced the work on a complex claim by 86%.",
     solution:
-      "Deployed the full True Aim platform for end-to-end claims automation. The document layer handles multilingual document processing and classification. Claims Decisioning combines deterministic rules with AI fallback for accurate coverage matching. The quality check provides assurance with full provenance tracking.",
+      "NSA’s claims experts set out exactly how they decide a claim. True Aim hard-coded those rules into its decision engine and tested them against real NSA claims. The engine now makes the routine decisions the way the experts would, records the reason for each one and refers anything requiring judgement to a person.",
     products: ["mira", "contextbuilder", "claimeval"],
     metrics: [
-      { label: "Decision accuracy", value: "98%" },
-      { label: "Line items settled deterministically", value: "80-90%" },
-      { label: "English, German, French, Italian and more", value: "Multilingual" },
+      { label: "less expert time on a complex claim", value: "86%" },
+      { label: "less expert time on a simple claim", value: "83%" },
+      { label: "more claims handled by the same team", value: "118%" },
+      { label: "saved on every claim", value: "32 min" },
     ],
     timeline: "",
-    highlights: [
-      "Near-100% document classification accuracy",
-      "Comprehensive field extraction with confidence scoring",
-      "Full provenance chain from decision back to source document",
-      "Multi-tier coverage matching combining deterministic and AI approaches",
-      "Multilingual support across German, French, and Italian",
-      "Extensive automated test coverage",
-    ],
+    quote: {
+      text: "I was sceptical about letting software decide claims. What changed my mind is that it decides nothing we had not already decided ourselves. Our experts wrote the rules, True Aim built them into the system and every answer shows the document and the clause behind it. Our harder claims used to take an expert the better part of an hour. They now come back in minutes, with the reasoning attached. I would tell any insurer or warranty provider to look at this seriously.",
+      author: "Giuseppe Chiarello",
+      role: "CEO, NSA Services SA",
+    },
+    highlights: [],
   },
   {
     slug: "swiss-travel-insurer",
