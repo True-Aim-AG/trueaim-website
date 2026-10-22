@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { AlertCircle, Check, ChevronDown, Linkedin, Mail, MapPin } from "lucide-react";
+import { AlertCircle, Check, ChevronDown, Linkedin, MapPin } from "lucide-react";
 import { Button } from "@/components/brand/Button";
 import { CARD } from "@/components/content/surface";
 import { Link } from "@/i18n/navigation";
@@ -173,19 +173,8 @@ export function ContactForm() {
 
   return (
     <div className="grid grid-cols-1 items-start gap-14 lg:grid-cols-[minmax(0,.8fr)_minmax(0,1.2fr)] lg:gap-20">
-      {/* The other ways in: email, LinkedIn and the office. */}
+      {/* The other ways in: LinkedIn and the office. */}
       <ul className="space-y-7">
-        <li className="flex items-start gap-4">
-          <span className={CHANNEL_ICON}>
-            <Mail strokeWidth={1.5} className="h-5 w-5" />
-          </span>
-          <div>
-            <p className="text-sm font-medium text-strong">{t("aside.emailLabel")}</p>
-            <a href={`mailto:${t("aside.emailAddress")}`} className="mt-0.5 block text-[18px] font-medium text-accent hover:underline">
-              {t("aside.emailAddress")}
-            </a>
-          </div>
-        </li>
         <li className="flex items-start gap-4">
           <span className={CHANNEL_ICON}>
             <Linkedin strokeWidth={1.5} className="h-5 w-5" />

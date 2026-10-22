@@ -99,7 +99,8 @@
       "yarowa": "Yarowa",
       "coreGroup": "core Group",
       "zhaw": "ZHAW Zurich University of Applied Sciences",
-      "swissInsurtechHub": "Swiss InsurTech Hub"
+      "swissInsurtechHub": "Swiss InsurTech Hub",
+      "nortonRoseFulbright": "Norton Rose Fulbright"
     },
     "compliance": {
       "heading": "Compliant by design",
@@ -111,7 +112,7 @@
       "badgeIso": "ISO 27001",
       "badgeSoc": "SOC 2 Type II",
       "badgeIsoStatus": "Certified",
-      "badgeSocStatus": "Audit window completed, report pending"
+      "badgeSocStatus": "Certified"
     },
     "related": {
       "heading": "Explore True Aim",

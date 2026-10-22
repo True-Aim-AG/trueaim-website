@@ -106,7 +106,7 @@ export default function VehicleWarrantyCaseStudy() {
 
       {/* === FULL ARTICLE CONTENT === */}
       <section className={SECTION_LILAC}>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1232px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-8">
             {/* Main Content */}
             <article className="space-y-16 max-w-3xl">

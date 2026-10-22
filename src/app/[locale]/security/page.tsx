@@ -15,7 +15,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
         <p className="mt-6 text-sm text-muted"><strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}</p>
       </PageHero>
       <section className={SECTION}>
-        <div className="max-w-3xl [&>div>section:first-child>h2]:mt-0">
+        <div className="mx-auto max-w-[1232px] [&>*]:max-w-3xl [&>div>section:first-child>h2]:mt-0">
 
           <div className="bg-lilac rounded-[12px] px-8 py-6 mb-8">
             <p className="text-body leading-[1.6]">
@@ -40,7 +40,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Compliance frameworks</h2>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2">
                 <li><strong className="text-strong">ISO/IEC 27001:2022</strong>: certified by A-LIGN, certificate ISMS-TR-090426, issued 4 September 2026, valid until 4 September 2029.</li>
-                <li><strong className="text-strong">SOC 2 Type II</strong>: audit window 1 May to 31 July 2026 completed, report pending.</li>
+                <li><strong className="text-strong">SOC 2 Type II</strong>: certified, covering the audit window from 1 May to 31 July 2026.</li>
                 <li><strong className="text-strong">Swiss FADP</strong> and <strong className="text-strong">GDPR</strong>: aligned as data processor for customer data.</li>
                 <li><strong className="text-strong">EU AI Act</strong>: AI Technical File maintained for Claims Decisioning; current readiness is documented and tracked.</li>
               </ul>

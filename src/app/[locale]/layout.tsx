@@ -18,6 +18,7 @@ import { analyticsConfigured, consentDefaultScript } from "@/lib/consent";
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
   subsets: ["latin"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 

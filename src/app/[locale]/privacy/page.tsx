@@ -41,7 +41,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
         </p>
       </PageHero>
       <section className={SECTION}>
-        <div className="max-w-3xl [&>div>section:first-child>h2]:mt-0">
+        <div className="mx-auto max-w-[1232px] [&>*]:max-w-3xl [&>div>section:first-child>h2]:mt-0">
 
           <div className="mb-8">
             <h2 className="font-display text-lg font-semibold text-strong mb-4">Contents</h2>
