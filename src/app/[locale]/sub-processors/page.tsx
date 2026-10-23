@@ -13,9 +13,9 @@ export const generateStaticParams = englishOnlyStaticParams;
 
 // Set both to the day this version goes live. Clause 9.2 of the DPA requires the
 // list updated before a new sub-processor begins processing, with written notice.
-const VERSION = "1.3";
-const EFFECTIVE_DATE = "2026-10-20";
-const LAST_UPDATED = "2026-10-20";
+const VERSION = "1.4";
+const EFFECTIVE_DATE = "2026-10-23";
+const LAST_UPDATED = "2026-10-23";
 
 type SubProcessor = {
   id: string;
@@ -40,6 +40,8 @@ const MS_ABUSE_MONITORING =
   "https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/abuse-monitoring";
 const MS_DATA_PRIVACY =
   "https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/openai/data-privacy";
+
+const GOOGLE_CLOUD_SUBPROCESSORS = "https://cloud.google.com/terms/subprocessors";
 
 const MICROSOFT: SubProcessor = {
   id: "microsoft",
@@ -88,6 +90,30 @@ const MICROSOFT: SubProcessor = {
       </>
     ),
   },
+};
+
+const GOOGLE_CLOUD: SubProcessor = {
+  id: "google-cloud",
+  name: "Google Cloud EMEA Limited",
+  entity: "Google Cloud EMEA Limited, 70 Sir John Rogerson’s Quay, Dublin 2, Ireland",
+  service:
+    "AI inference with Google’s Gemini models on Google Cloud (Vertex AI), as an alternative model provider next to Azure OpenAI.",
+  data: "The same claim documents and claim data that the Platform sends to Azure OpenAI.",
+  location: "European Union. Google stores and processes the data in the EU.",
+  access: (
+    <>
+      Google staff can access the data for maintenance and support from the countries listed at{" "}
+      <a href={GOOGLE_CLOUD_SUBPROCESSORS} className="text-link hover:underline">
+        cloud.google.com/terms/subprocessors
+      </a>
+      . External support companies see data only if True Aim shares it in a support case. Abuse
+      monitoring is on: Google logs prompts that its safety filters flag and keeps them for up to 90
+      days in the EU. Authorised Google employees can review them. Google does not state where these
+      reviewers are. Google does not use the data to train models.
+    </>
+  ),
+  transfers:
+    "Google Cloud Data Processing Addendum of 8 June 2026, which covers the Swiss FADP, with the EU Standard Contractual Clauses. Google LLC is also certified under the EU-US and Swiss-US Data Privacy Frameworks.",
 };
 
 const GOOGLE: SubProcessor = {
@@ -143,7 +169,7 @@ const GROUPS: SubProcessorGroup[] = [
     id: "group-a",
     title: "Group A: Processes client Personal Data",
     intro: "These sub-processors process client Personal Data to deliver the Platform and the services.",
-    members: [MICROSOFT, GOOGLE, SLACK],
+    members: [MICROSOFT, GOOGLE_CLOUD, GOOGLE, SLACK],
   },
   {
     id: "group-b",
@@ -156,8 +182,14 @@ const GROUPS: SubProcessorGroup[] = [
 
 const VERSION_HISTORY = [
   {
-    version: "1.3",
+    version: "1.4",
     date: EFFECTIVE_DATE,
+    summary:
+      "Added Google Cloud EMEA Limited (Gemini models on Google Cloud) to Group A as an alternative AI inference provider.",
+  },
+  {
+    version: "1.3",
+    date: "2026-10-20",
     summary:
       "Split the list into two groups. Added access and transfer basis for every sub-processor. Stated where Azure keeps backups and runs AI inference, and the Azure OpenAI abuse monitoring exception. Named the Microsoft transfer module. Corrected the Sentry entry: the Platform removes client data from each error report before it leaves the Platform.",
   },
