@@ -4,11 +4,12 @@
  * v1.1 (2026-09-24) restores the page removed on 2026-09-16 and adds Sentry.
  * v1.2 (2026-10-14) corrects the Sentry storage, access and data facts.
  * v1.3 (2026-10-20) groups the list and states that the Platform removes client data from Sentry error reports.
+ * v1.4 (2026-10-23) adds Google Cloud EMEA Limited (Gemini inference) to Group A.
  *
  * Covers the legal changes requested by NRF via Reuben (2026-08-16):
  *   - REQ-SP-001: /sub-processors renders at the exact URL required by the DPA
  *   - REQ-SP-002: document metadata (version, effective date, last updated, legal basis)
- *   - REQ-SP-003: all four sub-processors are listed in two groups with their six fields
+ *   - REQ-SP-003: all five sub-processors are listed in two groups with their six fields
  *   - REQ-SP-004: the page is reachable from the footer Legal column
  *   - REQ-SP-005: the DPA page is gone and /dpa redirects to /sub-processors
  *   - REQ-SP-006: the archived DPA downloads are no longer publicly served
@@ -41,7 +42,7 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
       await expect(meta.locator('dt', { hasText: new RegExp(`^${label}$`) })).toBeVisible();
     }
 
-    await expect(meta.getByText('1.3', { exact: true })).toBeVisible();
+    await expect(meta.getByText('1.4', { exact: true })).toBeVisible();
     await expect(
       meta.getByText('Swiss FADP Art. 9; GDPR Art. 28', { exact: true })
     ).toBeVisible();
@@ -56,16 +57,17 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
     ).toBeVisible();
   });
 
-  test('all four sub-processors are listed in two groups with all six fields', async ({ page }) => {
+  test('all five sub-processors are listed in two groups with all six fields', async ({ page }) => {
     await expect(page.locator('section#group-a > h2')).toContainText('Group A');
     await expect(page.locator('section#group-b > h2')).toContainText('Group B');
-    for (const id of ['microsoft', 'google', 'slack']) {
+    for (const id of ['microsoft', 'google-cloud', 'google', 'slack']) {
       await expect(page.locator(`section#group-a section#${id}`)).toBeVisible();
     }
     await expect(page.locator('section#group-b section#sentry')).toBeVisible();
 
     const entities = [
       { id: 'microsoft', name: 'Microsoft Ireland Operations Ltd' },
+      { id: 'google-cloud', name: 'Google Cloud EMEA Limited' },
       { id: 'google', name: 'Google Ireland Limited' },
       { id: 'sentry', name: 'Functional Software, Inc. d/b/a Sentry' },
       { id: 'slack', name: 'Slack Technologies Limited' },
@@ -86,6 +88,16 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
     await expect(page.locator('section#google')).toContainText('European Union');
     await expect(page.locator('section#sentry')).toContainText('European Union (Frankfurt, Germany)');
     await expect(page.locator('section#slack')).toContainText('Slack EU data residency');
+  });
+
+  test('Google Cloud entry links to the Google sub-processor list and names no country', async ({ page }) => {
+    const googleCloud = page.locator('section#google-cloud');
+    await expect(
+      googleCloud.locator('a[href="https://cloud.google.com/terms/subprocessors"]')
+    ).toBeVisible();
+    await expect(googleCloud).toContainText('up to 90 days in the EU');
+    const text = await googleCloud.innerText();
+    expect(text).not.toMatch(/United States|India|Japan/);
   });
 
   test('abuse monitoring exception is stated and no unsupported claims remain', async ({ page }) => {
@@ -112,6 +124,7 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
     const history = page.locator('section#version-history');
     await expect(history.getByRole('heading', { name: 'Version History' })).toBeVisible();
     await expect(history.locator('table')).toBeVisible();
+    await expect(history).toContainText('1.4');
     await expect(history).toContainText('1.3');
     await expect(history).toContainText('1.2');
     await expect(history).toContainText('1.1');
