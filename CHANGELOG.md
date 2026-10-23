@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.20.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.19.1...v1.20.0) (2026-10-23)
+
+
+### Features
+
+* sub-processor list v1.4, add Google Cloud EMEA Limited (Gemini) to Group A ([#14](https://github.com/True-Aim-AG/trueaim-website/issues/14)) ([f5cef3b](https://github.com/True-Aim-AG/trueaim-website/commit/f5cef3bac76ffd91e51a3082c0c6b74fe536b2d2))
+
 ## [1.19.1](https://github.com/True-Aim-AG/trueaim-website/compare/v1.19.0...v1.19.1) (2026-10-22)
 
 
