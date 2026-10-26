@@ -106,6 +106,21 @@ describe("buildPageGraph", () => {
     expect(software?.publisher).toEqual({ "@id": ORGANIZATION_ID });
   });
 
+  it("names Otus with its descriptor in the product schema", () => {
+    const software = nodes(buildPageGraph({ locale: "en", path: "/platform/otus", template: "product" })).find(
+      (node) => node["@type"] === "SoftwareApplication",
+    );
+    expect(software?.name).toBe("Otus, True Aim's claims specialist");
+  });
+
+  it("names each product with the True Aim brand as alternateName", () => {
+    const software = nodes(buildPageGraph({ locale: "en", path: "/platform/claims-decisioning", template: "product" })).find(
+      (node) => node["@type"] === "SoftwareApplication",
+    );
+    expect(software?.name).toBe("Claims Decisioning");
+    expect(software?.alternateName).toBe("True Aim Claims Decisioning");
+  });
+
   it("builds FAQPage from the same array the page renders", () => {
     const faqs = [{ question: "Q?", answer: "A." }];
     const faq = nodes(buildPageGraph({ locale: "en", path: "/platform/otus", template: "product", faqs })).find(

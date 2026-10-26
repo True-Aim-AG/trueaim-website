@@ -174,7 +174,8 @@ export function buildPageGraph(input: PageGraphInput) {
       graph.push({
         "@type": "SoftwareApplication",
         "@id": ids.software,
-        name: page.breadcrumb,
+        name: page.schemaName ?? page.breadcrumb,
+        alternateName: `True Aim ${page.breadcrumb}`,
         description: page.description,
         url,
         applicationCategory: "BusinessApplication",

@@ -2,7 +2,7 @@ import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import { cn } from "@/lib/utils";
-import { CARD, CARD_HOVER, CtaBand, PageHero, SECTION, SECTION_LILAC } from "@/components/content";
+import { CARD, CARD_HOVER, CtaBand, FaqSection, PageHero, SECTION, SECTION_LILAC, type FaqItem } from "@/components/content";
 
 import { Brain, Scale, GraduationCap, AlertTriangle } from "lucide-react";
 import { BrandIcon, type BrandIconName } from "@/components/brand/BrandIcon";
@@ -315,6 +315,8 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
           </MotionDiv>
         </div>
       </section>
+
+      <FaqSection heading={t("faq.heading")} faqs={t.raw("faq.items") as FaqItem[]} />
 
       <CtaBand heading={t("cta.heading")} lede={t("cta.description")} buttons={[{ label: t("cta.button"), href: "/contact" }]} />
     </div>

@@ -114,6 +114,35 @@
       "heading": "See our Technology in Action",
       "description": "Book a demo to understand how our neuro-symbolic architecture can work for your claims operations.",
       "button": "Book a demo"
+    },
+    "faq": {
+      "heading": "Questions about our technology",
+      "items": [
+        {
+          "question": "What does neuro-symbolic AI mean at True Aim?",
+          "answer": "True Aim combines two layers. Agentic AI uses machine learning to read documents, extract data, classify and orchestrate the workflow. A deterministic decision engine then applies encoded coverage rules, policy logic and cost calculations to produce the decision."
+        },
+        {
+          "question": "Why doesn't a large language model make the claims decision?",
+          "answer": "Large language models are probabilistic: the same input can produce different outputs, and they cannot explain their reasoning in terms regulators understand. True Aim uses machine learning to read and structure the documents and leaves the decision to encoded rules."
+        },
+        {
+          "question": "Does the same claim always get the same decision?",
+          "answer": "Yes. The decision engine is deterministic. Replay logs let you re-run any decision with the same inputs and get identical outputs."
+        },
+        {
+          "question": "How is a decision explained to a regulator or auditor?",
+          "answer": "Every field traces to its source document, and every coverage decision is mapped to specific policy clause IDs, so you can see exactly which rules applied and why."
+        },
+        {
+          "question": "When does a person review a claim?",
+          "answer": "You set the thresholds. High-value and edge cases route to experts automatically, unusual patterns are flagged for manual inspection, and field-level confidence scores show where a human check adds value."
+        },
+        {
+          "question": "Who does True Aim develop its technology with?",
+          "answer": "Parts of the technology are developed with ZHAW (Zurich University of Applied Sciences) and advanced through an Innosuisse-funded research programme."
+        }
+      ]
     }
   }
 }
