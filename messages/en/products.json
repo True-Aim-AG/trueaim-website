@@ -4,14 +4,14 @@
       "ctaDemo": "Book a demo",
       "ctaEstimate": "Estimate the impact",
       "faqHeading": "Common questions",
-      "relatedHeading": "Explore our platform"
+      "relatedHeading": "Explore our solutions"
     },
     "claimsDecisioning": {
-      "name": "Claims Decisioning",
+      "name": "Automated Coverage Check",
       "tagline": "Claims settled in minutes, not weeks.",
       "hero": {
-        "title": "Claims Decisioning: claims settled in minutes, not weeks",
-        "summary": "Claims Decisioning is an automated coverage check, from FNOL to settlement. We check the policy terms against the facts of the case and say whether the claim should be approved or denied. Where it is approved, the amount owed is calculated line by line, and your adjuster makes the final call.",
+        "title": "Automated Coverage Check: claims settled in minutes, not weeks",
+        "summary": "We check the policy terms against the facts of the case and recommend whether the claim should be approved or denied. Where it is approved, the amount owed is calculated line by line, and your adjuster makes the final call.",
         "scene": {
           "alt": "A claim as the adjuster sees it: the lines grouped by outcome, each with its covered amount, and the payout",
           "title": "Water damage claim",
@@ -132,7 +132,7 @@
         "heading": "Calculated, not predicted",
         "paragraphs": [
           "Your policy wording, catalogue or rulebook is configured into a deterministic decision tree. Given the facts of the case, the outcome is calculated from the wording. The same facts always give the same answer, and the answer can be explained clause by clause.",
-          "Agents do the reading. Photographs, PDFs, handwriting and emails become the facts the decision tree needs. Each agent does one small task, so a fault is easy to find and fix at the step where it happened."
+          "Agents do the reading. Photographs, PDFs, handwriting and emails become the facts the decision tree needs. Each agent does one small task, ensuring expertise at every stage of the process."
         ],
         "imageAlt": "Interlocking metal rings"
       },
@@ -323,7 +323,7 @@
         },
         {
           "question": "Does it replace our claims system?",
-          "answer": "No. True Aim's Claims Decisioning works above the claims system you run, reads the claim from it and writes the recommendation back into it."
+          "answer": "No. True Aim's Automated Coverage Check sits above the claims or ERP system you run, reads the claim from it and writes the recommendation back into it."
         },
         {
           "question": "What is the Decision Dossier?",
@@ -803,7 +803,7 @@
         },
         {
           "question": "What does it need to work?",
-          "answer": "It works on top of Claims Decisioning, Invoice Benchmarking and Damage Reporting, where it can explain each recommendation line by line."
+          "answer": "It works on top of Automated Coverage Check, Invoice Benchmarking and Damage Reporting, where it can explain each recommendation line by line."
         },
         {
           "question": "Which languages does it speak?",
@@ -814,7 +814,7 @@
         "heading": "Meet Otus on your own claims",
         "lede": "Book a demo and see Otus explain a recommendation line by line.",
         "buttonDemo": "Book a demo",
-        "buttonClaims": "Claims Decisioning"
+        "buttonClaims": "Automated Coverage Check"
       }
     }
   }

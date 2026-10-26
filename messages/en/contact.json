@@ -46,7 +46,7 @@
       },
       "interests": {
         "invoiceBenchmarking": "Invoice Benchmarking",
-        "claimsDecisioning": "Claims Decisioning",
+        "claimsDecisioning": "Automated Coverage Check",
         "damageReporting": "Damage Reporting",
         "otus": "Otus, our AI agent",
         "other": "Something else"

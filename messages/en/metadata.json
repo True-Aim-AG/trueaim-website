@@ -14,12 +14,12 @@
       "updated": "2026-10-17"
     },
     "/platform": {
-      "title": "How the True Aim Platform Works | True Aim",
-      "description": "A claim file goes in, an audited decision comes out. How True Aim's four modules, Orchestrate and Prove fit together, with your team keeping the final say.",
-      "h1": "How the True Aim platform works",
+      "title": "How Our Platform Works | True Aim",
+      "description": "A claim file is ingested. An audited decision tree is produced. How our solutions, Orchestrate and Prove fit together, with your team keeping the final say.",
+      "h1": "How our platform works",
       "breadcrumb": "Platform",
-      "ogTitle": "How the True Aim platform works",
-      "ogDescription": "A claim file goes in, an audited decision comes out. How True Aim's four modules, Orchestrate and Prove fit together, with your team keeping the final say.",
+      "ogTitle": "How our platform works",
+      "ogDescription": "A claim file is ingested. An audited decision tree is produced. How our solutions, Orchestrate and Prove fit together, with your team keeping the final say.",
       "updated": "2026-10-17"
     },
     "/platform/invoice-benchmarking": {
@@ -32,12 +32,12 @@
       "updated": "2026-10-17"
     },
     "/platform/claims-decisioning": {
-      "title": "Claims Decisioning: Automated Coverage Check | True Aim",
-      "description": "True Aim's Claims Decisioning checks every line of a claim against the policy wording, calculates the amount and records the reason. A full recommendation in minutes, from FNOL to settlement.",
-      "h1": "Claims Decisioning: claims settled in minutes, not weeks",
-      "breadcrumb": "Claims Decisioning",
-      "ogTitle": "Claims Decisioning by True Aim",
-      "ogDescription": "Every line of a claim checked against the policy wording, the amount calculated and the reason recorded. A full recommendation in minutes, from FNOL to settlement.",
+      "title": "Automated Coverage Check: Claims Settled in Minutes | True Aim",
+      "description": "True Aim's Automated Coverage Check checks every line of a claim against the policy wording, calculates the amount and records the reason. A full recommendation in minutes.",
+      "h1": "Automated Coverage Check: claims settled in minutes, not weeks",
+      "breadcrumb": "Automated Coverage Check",
+      "ogTitle": "Automated Coverage Check by True Aim",
+      "ogDescription": "Every line of a claim checked against the policy wording, the amount calculated and the reason recorded. A full recommendation in minutes.",
       "updated": "2026-10-17"
     },
     "/platform/damage-reporting": {
@@ -114,11 +114,11 @@
     },
     "/trust": {
       "title": "Trust Centre: ISO 27001, SOC 2, GDPR, FADP, DORA | True Aim",
-      "description": "True Aim is certified to ISO 27001 and SOC 2 Type II, and aligned with the GDPR, the Swiss FADP and DORA. Every claims decision is recorded with the reasoning behind it.",
+      "description": "True Aim is certified to ISO 27001, audited for SOC 2 Type II, and aligned with the GDPR, the Swiss FADP and DORA. Every claims decision is recorded with the reasoning behind it.",
       "h1": "Security and compliance, built in from day one",
       "breadcrumb": "Trust",
       "ogTitle": "Security and compliance at True Aim",
-      "ogDescription": "True Aim is certified to ISO 27001 and SOC 2 Type II, and aligned with the GDPR, the Swiss FADP and DORA. Every claims decision is recorded with the reasoning behind it.",
+      "ogDescription": "True Aim is certified to ISO 27001, audited for SOC 2 Type II, and aligned with the GDPR, the Swiss FADP and DORA. Every claims decision is recorded with the reasoning behind it.",
       "updated": "2026-10-17"
     },
     "/about": {
@@ -185,11 +185,11 @@
       "updated": "2026-10-15"
     },
     "/case-studies/vehicle-warranty-claims": {
-      "title": "The same claims decisions, made in a fraction of the time. | True Aim",
+      "title": "The same claim decisions, made in a fraction of the time. | True Aim",
       "description": "How NSA transferred the reasoning and decisioning of its claims experts into True Aim software and reduced the work on a complex claim by 86%.",
-      "h1": "The same claims decisions, made in a fraction of the time.",
+      "h1": "The same claim decisions, made in a fraction of the time.",
       "breadcrumb": "Vehicle warranty claims",
-      "ogTitle": "The same claims decisions, made in a fraction of the time.",
+      "ogTitle": "The same claim decisions, made in a fraction of the time.",
       "ogDescription": "How NSA transferred the reasoning and decisioning of its claims experts into True Aim software and reduced the work on a complex claim by 86%.",
       "updated": "2026-10-22"
     },
@@ -210,6 +210,15 @@
       "ogTitle": "Innosuisse-funded innovation partner",
       "ogDescription": "True Aim's core technology is supported by a competitive research grant from Innosuisse, Switzerland's national innovation agency.",
       "updated": "2026-10-15"
+    },
+    "/partners/nortonrosefulbright": {
+      "title": "Norton Rose Fulbright Strategic Partner | True Aim",
+      "description": "True Aim is a strategic partner of Norton Rose Fulbright, the global law firm that crowned True Aim the most innovative InsurTech in the world at the Insurathon 2026.",
+      "h1": "Norton Rose Fulbright Strategic Partner",
+      "breadcrumb": "Norton Rose Fulbright",
+      "ogTitle": "Norton Rose Fulbright strategic partner",
+      "ogDescription": "True Aim is a strategic partner of Norton Rose Fulbright, which crowned True Aim the most innovative InsurTech in the world at the Insurathon 2026.",
+      "updated": "2026-10-26"
     },
     "/partners/swissinsurtechhub": {
       "title": "Swiss InsurTech Hub Strategic Partner | True Aim",
@@ -250,9 +259,9 @@
     "/blog/architectural-transparency-agentic-claims-operation": {
       "title": "Architectural Transparency and the Rise of the Agentic Claims Operation | True Aim",
       "description": "A claim has never existed within the four walls of a single enterprise. Legacy automation stopped at internal borders. Transparency becomes an architectural guarantee.",
-      "h1": "Time Back Is the Easy Part",
-      "breadcrumb": "Time back is the easy part",
-      "ogTitle": "Time Back Is the Easy Part: Architectural Transparency and the Rise of the Agentic Claims Operation",
+      "h1": "The Problem with Automating Claims in Silos",
+      "breadcrumb": "The problem with automating claims in silos",
+      "ogTitle": "The Problem with Automating Claims in Silos: Architectural Transparency and the Rise of the Agentic Claims Operation",
       "ogDescription": "A claim has never existed within the four walls of a single enterprise. Legacy automation stopped at internal borders. Transparency becomes an architectural guarantee.",
       "updated": "2026-10-22"
     },
@@ -333,7 +342,7 @@
       "title": "AI Transparency and Oversight | True Aim",
       "description": "How True Aim designs and uses artificial intelligence in its products, including human oversight mechanisms and data handling principles.",
       "h1": "AI Transparency & Oversight",
-      "breadcrumb": "AI transparency",
+      "breadcrumb": "AI Transparency",
       "ogTitle": "AI transparency and oversight at True Aim",
       "ogDescription": "How True Aim designs and uses artificial intelligence in its products, including human oversight and data handling.",
       "updated": "2026-10-15"
@@ -369,7 +378,7 @@
       "title": "Privacy Policy | True Aim",
       "description": "How True Aim AG collects, uses and protects personal data under the Swiss FADP and GDPR, including processor roles, sub-processors, retention and your rights.",
       "h1": "Privacy Policy",
-      "breadcrumb": "Privacy policy",
+      "breadcrumb": "Privacy Policy",
       "ogTitle": "True Aim privacy policy",
       "ogDescription": "How True Aim AG collects, uses and protects personal data under the Swiss FADP and GDPR.",
       "updated": "2026-10-15"
@@ -388,21 +397,22 @@
       "title": "Cookie Policy | True Aim",
       "description": "Which cookies the True Aim website uses, what each one is for and how to manage your cookie preferences.",
       "h1": "Cookie Policy",
-      "breadcrumb": "Cookie policy",
+      "breadcrumb": "Cookie Policy",
       "ogTitle": "True Aim cookie policy",
       "ogDescription": "Which cookies the True Aim website uses, what each one is for and how to manage your cookie preferences.",
       "updated": "2026-10-15"
     },
     "/terms": {
       "title": "Terms of Use | True Aim",
-      "description": "The terms governing use of the True Aim website and of True Aim AG's AI-powered claims decisioning services.",
+      "description": "The terms governing use of the True Aim website and of True Aim AG's AI-powered claims services.",
       "h1": "Terms of Use",
       "breadcrumb": "Terms of use",
       "ogTitle": "True Aim terms of use",
-      "ogDescription": "The terms governing use of the True Aim website and of True Aim AG's AI-powered claims decisioning services.",
+      "ogDescription": "The terms governing use of the True Aim website and of True Aim AG's AI-powered claims services.",
       "updated": "2026-10-15"
     },
     "/sub-processors": {
+      "robots": "noindex",
       "title": "List of Sub-Processors | True Aim",
       "description": "Schedule 2 to the True Aim AG Data Processing Agreement: every sub-processor that handles personal data, with service, data categories and location.",
       "h1": "List of Sub-Processors",
@@ -415,7 +425,7 @@
       "title": "PAIA Manual | True Aim",
       "description": "True Aim AG's manual under the Promotion of Access to Information Act (PAIA), with the compliance documentation the Act requires.",
       "h1": "PAIA Manual",
-      "breadcrumb": "PAIA manual",
+      "breadcrumb": "PAIA Manual",
       "ogTitle": "True Aim PAIA manual",
       "ogDescription": "True Aim AG's manual under the Promotion of Access to Information Act (PAIA).",
       "updated": "2026-10-15"

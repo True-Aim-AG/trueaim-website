@@ -71,7 +71,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Manual claims processing was taking an average of 45 minutes per claim, with inconsistent decisions across handlers and lengthy audit preparation times.",
     solution:
-      "Deployed Claims Decisioning for coverage determination and the document layer for document processing. Integrated with the existing claims management system via API.",
+      "Deployed Automated Coverage Check for coverage determination and the document layer for document processing. Integrated with the existing claims management system via API.",
     products: ["mira", "contextbuilder"],
     metrics: [
       { label: "Processing Speed", value: "92%", improvement: "faster" },
@@ -105,7 +105,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "High volume of routine claims requiring manual review, leading to significant handling costs and delayed customer payouts.",
     solution:
-      "Implemented the full True Aim platform: the document layer for medical document processing, Claims Decisioning for coverage decisions and the quality check for assurance.",
+      "Implemented the full True Aim platform: the document layer for medical document processing, Automated Coverage Check for coverage decisions and the quality check for assurance.",
     products: ["mira", "contextbuilder", "claimeval"],
     metrics: [
       { label: "Cost Reduction", value: "71%", improvement: "handling costs" },
@@ -139,7 +139,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Growing claims backlog during peak periods, with inconsistent liability decisions leading to customer complaints and regulatory concerns.",
     solution:
-      "Deployed Claims Decisioning for liability determination with a person in the loop for complex cases. The document layer handles damage assessment documents.",
+      "Deployed Automated Coverage Check for liability determination with a person in the loop for complex cases. The document layer handles damage assessment documents.",
     products: ["mira", "contextbuilder"],
     metrics: [
       { label: "Backlog Cleared", value: "100%", improvement: "eliminated" },

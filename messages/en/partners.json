@@ -64,12 +64,12 @@
       "grantDetails": {
         "label": "Innovation Funding",
         "title": "Innosuisse Innovation Project Funding",
-        "description": "Non-dilutive funding from the Swiss Confederation to advance neuro-symbolic AI for deterministic claims decisioning in regulated industries.",
+        "description": "Non-dilutive funding from the Swiss Confederation to advance neuro-symbolic AI for deterministic coverage decisions in regulated industries.",
         "visitLink": "Visit Innosuisse"
       },
       "cta": {
         "heading": "Learn More About Our Technology",
-        "description": "Discover how Innosuisse-backed innovation powers our claims decisioning engine.",
+        "description": "Discover how Innosuisse-backed innovation powers the engine behind Automated Coverage Check.",
         "exploreTech": "Explore Our Technology",
         "bookDemo": "Request a demo"
       }
@@ -106,7 +106,7 @@
         "description": "The research is hosted within ZHAW's <schoolOfEngineering>School of Engineering</schoolOfEngineering>, specifically the <init>Institute of Applied Information Technology (InIT)</init> and the <cai>Centre for Artificial Intelligence (CAI)</cai>.",
         "dandolo": {
           "name": "Dr. Dandolo Flumini",
-          "bio": "Original developer of the technology behind Claims Decisioning. PhD in Mathematics and Computer Science. Leads True Aim's Innosuisse-funded Innovation Project."
+          "bio": "Original developer of the technology behind Automated Coverage Check. PhD in Mathematics and Computer Science. Leads True Aim's Innosuisse-funded Innovation Project."
         },
         "lukas": {
           "name": "Dr. Lukas Lichtensteiger",
@@ -156,7 +156,42 @@
         "bookDemo": "Request a demo"
       }
     },
-    "hub": {
+    "nortonRoseFulbright":   {
+    "hero": {
+      "badge": "Strategic Partner",
+      "titleLine1": "Norton Rose Fulbright",
+      "titleLine2": "Strategic Partner",
+      "description1": "Norton Rose Fulbright is a global law firm with one of the largest insurance practices in the world, advising insurers, reinsurers and intermediaries on regulation, claims and technology across more than 50 offices. Through the Insurathon, the firm brings insurers together with the InsurTech teams it considers worth watching.",
+      "description2": "True Aim was invited to take part in the Insurathon 2026 and was crowned the most innovative InsurTech in the world for 2026. The relationship that followed gives True Aim a partner that understands how claims decisions are examined, and a route to the insurers the firm advises.",
+      "visitLink": "Visit Norton Rose Fulbright"
+    },
+    "strengths": {
+      "heading": "Partnership Strengths",
+      "recognition": {
+        "title": "Independent Recognition",
+        "description": "The Insurathon jury assessed True Aim against InsurTech teams from around the world and crowned it the most innovative for 2026. An independent verdict from a firm that advises the industry every day."
+      },
+      "regulatory": {
+        "title": "Regulatory Depth",
+        "description": "Norton Rose Fulbright advises insurers on the rules that govern claims decisions in Switzerland, the EU, the UK and beyond. That view informs how True Aim keeps every decision explainable and defensible."
+      },
+      "reach": {
+        "title": "Industry Reach",
+        "description": "A global client base of insurers, reinsurers and intermediaries, and a convening role in the sector. The partnership opens doors that a technology company cannot open on its own."
+      },
+      "vision": {
+        "title": "Aligned Vision",
+        "description": "Both Norton Rose Fulbright and True Aim hold that AI in claims has to stand up to scrutiny. Compliance built in from day one, and a record for every decision, is the standard the partnership is built on."
+      }
+    },
+    "cta": {
+      "heading": "See Our Products in Action",
+      "description": "Discover how our partnerships deliver auditable claims automation to insurers.",
+      "learnProducts": "Learn About Our Products",
+      "bookDemo": "Request a demo"
+    }
+  },
+  "hub": {
       "title": "Partners",
       "subtitle": "The innovative ecosystem behind True Aim",
       "intro": "True Aim is built on the strengths of Swiss insurance, research, and federal innovation institutions. Each partner contributes domain depth, capital, or research that shapes how we build auditable AI.",
@@ -172,7 +207,10 @@
       },
       "swissInsurtechHub": {
         "tagline": "Swiss insurtech ecosystem and reach"
-      }
+      },
+    "nortonRoseFulbright": {
+      "tagline": "Insurathon 2026 winner, global insurance law"
+    }
     }
   }
 }

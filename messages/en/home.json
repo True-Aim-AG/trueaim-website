@@ -80,7 +80,7 @@
         "claimsDecisioning": {
           "title": "Claims settled in minutes, not weeks",
           "text": "Every line is checked against the policy wording, the amount calculated and the reason written down, ready for your adjuster to confirm.",
-          "link": "Claims Decisioning"
+          "link": "Automated Coverage Check"
         },
         "invoiceBenchmarking": {
           "title": "Never overpay on an invoice again",
@@ -112,11 +112,11 @@
       "badgeIso": "ISO 27001",
       "badgeSoc": "SOC 2 Type II",
       "badgeIsoStatus": "Certified",
-      "badgeSocStatus": "Certified"
+      "badgeSocStatus": "Audited"
     },
     "related": {
-      "heading": "Explore True Aim",
-      "claimsDecisioning": "Claims Decisioning",
+      "heading": "Explore our solutions",
+      "claimsDecisioning": "Automated Coverage Check",
       "claimsDecisioningText": "Every line checked against the policy wording, with the calculations shown.",
       "invoiceBenchmarking": "Invoice Benchmarking",
       "invoiceBenchmarkingText": "Every invoice, quote and estimate checked against the benchmark.",
@@ -125,9 +125,7 @@
       "otus": "Otus, True Aim's claims specialist",
       "otusText": "An AI-powered expert for every team member, with no decision rights.",
       "platform": "How the platform works",
-      "platformText": "A claim file goes in, an audited decision comes out.",
-      "trust": "Trust Centre",
-      "trustText": "Hosting, certification and data protection."
+      "platformText": "A claim file is ingested. An audited decision tree is produced."
     },
     "cta": {
       "heading": "Ready to see True Aim on your own claims?",
@@ -141,7 +139,7 @@
           "alt": "Norton Rose Fulbright",
           "label": "Winner",
           "name": "Insurathon 2026",
-          "text": "Norton Rose Fulbright named True Aim the most innovative InsurTech start-up of the year."
+          "text": "Norton Rose Fulbright crowned True Aim the most innovative InsurTech in the world for 2026."
         },
         "innovationspreis": {
           "alt": "Innovationspreis der Schweizer Assekuranz",
