@@ -38,7 +38,7 @@ export function RelatedLinks({
     <section className={tone ? section(tone, true) : undefined}>
       <div className={cn(tone && "mx-auto max-w-7xl")}>
         <SectionHead heading={heading} headingLevel={headingLevel} className="mb-8" />
-        <ul className="grid gap-6 md:grid-cols-3">
+        <ul className={cn("grid gap-6", links.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2")}>
           {links.map((link) => (
             <li key={link.href} className={cn(CARD, CARD_GRID, CARD_HOVER, ROW_SPAN[rows], "relative p-7")}>
               {withIcons && <span className="flex h-10 items-center">{link.icon && <BrandIcon name={link.icon} size={40} />}</span>}
