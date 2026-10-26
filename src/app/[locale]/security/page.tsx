@@ -40,26 +40,23 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Compliance frameworks</h2>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2">
                 <li><strong className="text-strong">ISO/IEC 27001:2022</strong>: certified by A-LIGN, certificate ISMS-TR-090426, issued 4 September 2026, valid until 4 September 2029.</li>
-                <li><strong className="text-strong">SOC 2 Type II</strong>: certified, covering the audit window from 1 May to 31 July 2026.</li>
+                <li><strong className="text-strong">SOC 2 Type II</strong>: audited, covering the audit window from 1 May to 31 July 2026; the final report has been issued.</li>
                 <li><strong className="text-strong">Swiss FADP</strong> and <strong className="text-strong">GDPR</strong>: aligned as data processor for customer data.</li>
-                <li><strong className="text-strong">EU AI Act</strong>: AI Technical File maintained for Claims Decisioning; current readiness is documented and tracked.</li>
+                <li><strong className="text-strong">EU AI Act</strong>: AI Technical File maintained for Automated Coverage Check; current readiness is documented and tracked.</li>
               </ul>
             </section>
 
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Where data is processed</h2>
               <p className="text-body leading-[1.6]">
-                Customer data at rest is stored on Microsoft Azure in the Switzerland North region. Hosting and AI inference stay in Switzerland, the EEA or the UK; exceptions are listed on our{" "}
-                <Link href="/sub-processors" className="text-link hover:underline">sub-processor page</Link>.
+                Customer data at rest is stored on Microsoft Azure in the Switzerland North region. Hosting and AI inference stay in Switzerland, the EEA or the UK; exceptions are listed in the sub-processor list, Schedule 2 to our Data Processing Agreement.
               </p>
             </section>
 
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Sub-processors</h2>
               <p className="text-body leading-[1.6]">
-                We use a limited set of Microsoft Azure services for hosting, AI inference, and operational telemetry, plus Google Workspace (for business email), Slack (for internal team communication) and Sentry (technical error logs only). The current list is published at{" "}
-                <Link href="/sub-processors" className="text-link hover:underline">trueaim.ai/sub-processors</Link>{" "}
-                as Schedule 2 to our Data Processing Agreement. We notify customers in advance of changes. Internal-only tools (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed.
+                We use a limited set of Microsoft Azure services for hosting, AI inference, and operational telemetry, plus Google Workspace (for business email), Slack (for internal team communication) and Sentry (technical error logs only). The current list forms Schedule 2 to our Data Processing Agreement and is available on request. We notify customers in advance of changes. Internal-only tools (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed.
               </p>
             </section>
 

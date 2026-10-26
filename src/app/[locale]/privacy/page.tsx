@@ -100,14 +100,10 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section id="sub-processors" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">5. Sub-processors and disclosures</h2>
               <p className="text-body leading-[1.6]">
-                We host the Service on Microsoft Azure in Switzerland North. The operative list of our active sub-processors, including the service each provides, the categories of personal data affected and the processing location, is published at{" "}
-                <Link href="/sub-processors" className="text-link hover:underline">
-                  trueaim.ai/sub-processors
-                </Link>{" "}
-                as Schedule 2 to our customer Data Processing Agreement.
+                We host the Service on Microsoft Azure in Switzerland North. The operative list of our active sub-processors, including the service each provides, the categories of personal data affected and the processing location, is published as Schedule 2 to our customer Data Processing Agreement, which is available on request.
               </p>
               <p className="text-body leading-[1.6] mt-3">
-                Tools used internally (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed there. We do not disclose personal data to other third parties except as required by law or with explicit Tenant instruction.
+                Tools used internally (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed in it. We do not disclose personal data to other third parties except as required by law or with explicit Tenant instruction.
               </p>
               <p className="text-body leading-[1.6] mt-3">
                 This website uses the following services. None of them receives Tenant or claims data through this website.

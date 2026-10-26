@@ -10,7 +10,7 @@
  *   - REQ-SP-001: /sub-processors renders at the exact URL required by the DPA
  *   - REQ-SP-002: document metadata (version, effective date, last updated, legal basis)
  *   - REQ-SP-003: all five sub-processors are listed in two groups with their six fields
- *   - REQ-SP-004: the page is reachable from the footer Legal column
+ *   - REQ-SP-004: the page is not linked from the footer (reachable by direct URL only)
  *   - REQ-SP-005: the DPA page is gone and /dpa redirects to /sub-processors
  *   - REQ-SP-006: the archived DPA downloads are no longer publicly served
  *
@@ -142,12 +142,11 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
 });
 
 test.describe('REQ-SP-004: Footer Legal column', () => {
-  test('footer links to the sub-processors page', async ({ page }) => {
+  test('footer does not link to the sub-processors page', async ({ page }) => {
     await page.goto(BASE_URL);
     const footer = page.locator('footer');
     const link = footer.getByRole('link', { name: 'List of Sub-Processors' });
-    await expect(link).toBeVisible();
-    await expect(link).toHaveAttribute('href', '/sub-processors');
+    await expect(link).toHaveCount(0);
   });
 
   test('footer no longer links to the DPA', async ({ page }) => {

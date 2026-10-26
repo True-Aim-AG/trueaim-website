@@ -39,7 +39,6 @@ const columns = [
 const legal = [
   { nameKey: "privacy", href: "/privacy" },
   { nameKey: "terms", href: "/terms" },
-  { nameKey: "subProcessors", href: "/sub-processors" },
   { nameKey: "cookies", href: "/cookies" },
   { nameKey: "paia", href: "/paia" },
   { nameKey: "aiTransparency", href: "/ai-transparency" },
