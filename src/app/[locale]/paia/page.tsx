@@ -9,7 +9,7 @@ export default async function PAIAPage({ params }: { params: Promise<{ locale: s
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <PageHero title="PAIA Manual" texture={{ name: "circ", position: "50% 50%" }}>
+      <PageHero compact title="PAIA Manual" texture={{ name: "circ", position: "50% 50%" }}>
         <p className="mt-6 text-sm text-muted">Last updated: 08 February 2026</p>
       </PageHero>
       <section className={SECTION}>

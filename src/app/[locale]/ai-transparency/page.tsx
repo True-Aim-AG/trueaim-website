@@ -9,7 +9,7 @@ export default async function AITransparencyPage({ params }: { params: Promise<{
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <PageHero title="AI Transparency & Oversight" texture={{ name: "glass", position: "50% 50%" }}>
+      <PageHero compact title="AI Transparency & Oversight" texture={{ name: "glass", position: "50% 50%" }}>
         <p className="mt-6 text-sm text-muted">Last updated: 22 February 2026</p>
       </PageHero>
       <section className={SECTION}>

@@ -104,7 +104,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <PageHero title="Changelog" texture={{ name: "glass", position: "100% 100%" }}>
+      <PageHero compact title="Changelog" texture={{ name: "glass", position: "100% 100%" }}>
         <p className="mt-6 text-sm text-muted"><strong className="text-strong">Last updated:</strong> {LAST_UPDATED}</p>
       </PageHero>
       <section className={SECTION}>

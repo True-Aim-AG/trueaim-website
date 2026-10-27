@@ -10,7 +10,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <PageHero title="Cookie Policy" texture={{ name: "circ", position: "88% 78%" }}>
+      <PageHero compact title="Cookie Policy" texture={{ name: "circ", position: "88% 78%" }}>
         <p className="mt-6 text-sm text-muted">Last updated: 19 October 2026</p>
       </PageHero>
       <section className={SECTION}>

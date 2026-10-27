@@ -21,7 +21,7 @@ const advisers = ["claudio", "kevin", "dave", "lukas", "eric", "dandolo"] as con
 
 const adviserMeta: Record<(typeof advisers)[number], { image?: string; linkedin: string }> = {
   claudio: { image: "/team/claudio.png", linkedin: "https://www.linkedin.com/in/claudio-g-48073a/" },
-  kevin: { linkedin: "https://www.linkedin.com/in/sartorikevin/" },
+  kevin: { image: "/team/kevin-sartori.webp", linkedin: "https://www.linkedin.com/in/sartorikevin/" },
   dave: { image: "/team/dave.png", linkedin: "https://www.linkedin.com/in/dave-stoll-07905967/" },
   lukas: { image: "/team/lukas-lichtensteiger.jpg", linkedin: "https://www.linkedin.com/in/lukas-lichtensteiger-7b348a8/" },
   eric: { image: "/team/eric.png", linkedin: "https://www.linkedin.com/in/ericzielinski/" },
@@ -38,10 +38,11 @@ const partnerMeta: Record<(typeof partners)[number], { image: string; width: num
   swissInsurtechHub: { image: "/partners/swiss-insurtech-hub.png", width: 376, height: 193, link: "/partners/swissinsurtechhub" },
 };
 
-const awards = ["insurathon", "swissInnovation", "leuchtturm", "ikn"] as const;
+const awards = ["insurathon", "fif", "ikn", "swissInnovation", "leuchtturm"] as const;
 
 const awardMeta: Record<(typeof awards)[number], { image: string; width: number; height: number; renderHeight: number; darkPlate?: boolean }> = {
   insurathon: { image: "/awards/norton-rose-fulbright.svg", width: 380, height: 42, renderHeight: 30 },
+  fif: { image: "/awards/fif-portugal.png", width: 518, height: 231, renderHeight: 56 },
   swissInnovation: { image: "/awards/swiss-innovation.png", width: 171, height: 169, renderHeight: 72 },
   leuchtturm: { image: "/awards/digitaler-leuchtturm.png", width: 198, height: 132, renderHeight: 56 },
   ikn: { image: "/awards/ikn-italy.png", width: 167, height: 151, renderHeight: 72 },
@@ -80,6 +81,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         title={t("hero.title")}
         summary={t("hero.p1")}
         texture={{ name: "circ" }}
+        wideCopy
         visual={
           <Image
             src="/brand/3d/symbol.webp"
@@ -91,7 +93,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           />
         }
       >
-        <div className="mt-5 max-w-[54ch] space-y-5 text-[18px] leading-[1.6] text-body md:text-[20px] md:leading-[1.5]">
+        <div className="mt-5 max-w-[78ch] space-y-5 text-[18px] leading-[1.6] text-body md:text-[20px] md:leading-[1.5]">
           <p>{t("hero.p2")}</p>
           <p className="font-semibold text-strong">{t("hero.p3")}</p>
           <p>{t("hero.p4")}</p>
@@ -209,6 +211,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <BadgeRow
         heading={t("awards.heading")}
         lilac
+        threeTwo
         items={awards.map((key) => {
           const meta = awardMeta[key];
           return {

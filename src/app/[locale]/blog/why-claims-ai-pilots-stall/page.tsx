@@ -27,6 +27,16 @@ const fadeIn = {
   transition: { duration: 0.6, ease } as const,
 };
 
+// Short labels for the "On this page" panel; the H2s carry the full headings.
+const sections: { id: string; heading: string }[] = [
+  { id: "the-accuracy-illusion", heading: "The Accuracy Illusion" },
+  { id: "what-changes-between-demo-and-production", heading: "What Changes Between Demo and Production" },
+  { id: "the-three-metrics-that-matter", heading: "The Three Metrics That Matter" },
+  { id: "what-moves-a-pilot-forward", heading: "What Moves a Pilot Forward" },
+  { id: "operational-takeaway", heading: "Operational Takeaway" },
+  { id: "key-takeaways", heading: "Key takeaways" },
+];
+
 export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -34,10 +44,10 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
     <div className="min-h-screen">
       <EnglishOnlyBanner />
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-hairline bg-page-tint">
+      <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
         <TextureBackdrop texture={{ name: "circ", position: "50% 50%" }} />
 
-        <div className="relative max-w-4xl mx-auto px-6 pt-20 md:pt-28 pb-16">
+        <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -65,7 +75,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
             </p>
 
             {/* Meta */}
-            <div className="flex flex-wrap items-center gap-6 text-sm text-subtle">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-muted">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" strokeWidth={1.5} />
                 10 min read
@@ -81,10 +91,10 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
 
       {/* Article Content */}
       <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-12">
             {/* Main Content */}
-            <div className="lg:col-span-3 max-w-3xl space-y-12">
+            <article className="min-w-0 max-w-3xl space-y-12">
               {/* Introduction */}
               <MotionDiv {...fadeIn}>
                 <div className="border-l-2 border-ta-blue pl-6 mb-8">
@@ -107,7 +117,10 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
 
               {/* The Accuracy Illusion */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="the-accuracy-illusion"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   The Accuracy Illusion
                 </h2>
 
@@ -163,7 +176,10 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
 
               {/* What Changes Between Demo and Production */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="what-changes-between-demo-and-production"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   What Changes Between Demo and Production
                 </h2>
 
@@ -256,7 +272,10 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
 
               {/* The Three Metrics That Matter */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="the-three-metrics-that-matter"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   The Three Metrics That Matter
                 </h2>
 
@@ -318,7 +337,10 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
 
               {/* What Moves a Pilot Forward */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="what-moves-a-pilot-forward"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   What Moves a Pilot Forward
                 </h2>
 
@@ -398,7 +420,10 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
 
               {/* Operational Takeaway */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="operational-takeaway"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Operational Takeaway
                 </h2>
 
@@ -440,10 +465,39 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                   structure evaluation and iteration.
                 </p>
               </MotionDiv>
-            </div>
+
+              {/* Key takeaways */}
+              <MotionDiv {...fadeIn}>
+                <h2
+                  id="key-takeaways"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
+                  Key Takeaways
+                </h2>
+
+                <div className="bg-card shadow-card rounded-pill p-8">
+                  <ul className="space-y-4">
+                    {[
+                      "Dev set accuracy masks production gaps",
+                      "Holdout sets reveal real performance",
+                      "Track false approvals, false denials, and refer rate",
+                      "Domain modelling drives more improvement than model changes",
+                      "Asymmetric confidence thresholds protect against financial risk",
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle aria-hidden="true" className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                        <span className="text-sm text-body leading-[1.6]">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </MotionDiv>
+            </article>
 
             {/* Sidebar */}
-            <div className="lg:col-span-1">
+            <aside aria-label="Article navigation">
               <MotionDiv
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -451,57 +505,32 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                 transition={{ duration: 0.6, ease }}
                 className="bg-card shadow-card rounded-pill p-8"
               >
-                <h3 className="font-display font-semibold text-strong mb-4">
-                  Key Takeaways
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    "Dev set accuracy masks production gaps",
-                    "Holdout sets reveal real performance",
-                    "Track false approvals, false denials, and refer rate",
-                    "Domain modelling drives more improvement than model changes",
-                    "Asymmetric confidence thresholds protect against financial risk",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                      <span className="text-sm text-body">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-8 pt-6 border-t border-hairline">
-                  <h4 className="text-caption-sm text-subtle mb-3">
-                    Related Topics
-                  </h4>
-                  <div className="flex flex-wrap gap-1.5">
-                    {[
-                      "Claims AI",
-                      "Production Readiness",
-                      "Evaluation",
-                      "Accuracy",
-                      "Holdout Sets",
-                      "Domain Modelling",
-                    ].map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-3 py-1 rounded-pill bg-accent-soft text-accent"
-                      >
-                        {tag}
-                      </span>
+                <h2 className="font-display font-semibold text-strong mb-4">
+                  On this page
+                </h2>
+                <nav aria-label="On this page">
+                  <ol role="list" className="space-y-2.5 list-none p-0">
+                    {sections.map((section) => (
+                      <li key={section.id}>
+                        <a
+                          href={`#${section.id}`}
+                          className="block text-sm leading-snug text-body hover:text-accent transition-colors"
+                        >
+                          {section.heading}
+                        </a>
+                      </li>
                     ))}
-                  </div>
-                </div>
+                  </ol>
+                </nav>
 
                 <div className="mt-8 pt-6 border-t border-hairline">
-                  <ButtonLink href="/contact" variant="primary" className="w-full">
-                    Talk to Us
-                    <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+                  <ButtonLink href="/trust" variant="primary" size="sm" className="w-full">
+                    Explore our Trust Centre
+                    <ArrowRight aria-hidden="true" className="w-4 h-4 flex-shrink-0" strokeWidth={1.5} />
                   </ButtonLink>
                 </div>
               </MotionDiv>
-            </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -521,7 +550,6 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <ButtonLink href="/contact" variant="primary" size="lg">
                 Get in Touch
-                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
               </ButtonLink>
               <ButtonLink href="/case-studies/vehicle-warranty-claims" variant="on-dark" size="lg">
                 See It in Action

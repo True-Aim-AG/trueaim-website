@@ -28,6 +28,18 @@ const fadeIn = {
   transition: { duration: 0.6, ease } as const,
 };
 
+// Short labels for the "On this page" panel; the H2s carry the full headings.
+const sections: { id: string; heading: string }[] = [
+  { id: "what-regulators-actually-want", heading: "What Regulators Actually Want" },
+  { id: "the-evidence-chain-architecture", heading: "The Evidence Chain Architecture" },
+  { id: "quality-gates-the-audit-checkpoint", heading: "Quality Gates: The Audit Checkpoint" },
+  { id: "failure-modes-that-break-audit-trails", heading: "Failure Modes That Break Audit Trails" },
+  { id: "regulatory-mapping-quick-reference", heading: "Regulatory Mapping Quick Reference" },
+  { id: "core-principles-for-auditable-ai", heading: "Core Principles for Auditable AI" },
+  { id: "next-steps", heading: "Next Steps" },
+  { id: "key-takeaways", heading: "Key takeaways" },
+];
+
 export default async function AuditabilityBlogPost({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -35,10 +47,10 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
     <div className="min-h-screen">
       <EnglishOnlyBanner />
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-hairline bg-page-tint">
+      <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
         <TextureBackdrop texture={{ name: "circ", position: "50% 50%" }} />
 
-        <div className="relative max-w-4xl mx-auto px-6 pt-20 md:pt-28 pb-16">
+        <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,7 +78,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
             </p>
 
             {/* Meta */}
-            <div className="flex flex-wrap items-center gap-6 text-sm text-subtle">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-muted">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" strokeWidth={1.5} />
                 12 min read
@@ -82,10 +94,10 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
 
       {/* Article Content */}
       <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-12">
             {/* Main Content */}
-            <div className="lg:col-span-3 max-w-3xl space-y-12">
+            <article className="min-w-0 max-w-3xl space-y-12">
               {/* Introduction */}
               <MotionDiv {...fadeIn}>
                 <div className="border-l-2 border-ta-blue pl-6 mb-8">
@@ -110,7 +122,10 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
 
               {/* What Regulators Actually Want */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="what-regulators-actually-want"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   What Regulators Actually Want
                 </h2>
 
@@ -221,7 +236,10 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
 
               {/* The Evidence Chain Architecture */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="the-evidence-chain-architecture"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   The Evidence Chain Architecture
                 </h2>
 
@@ -335,7 +353,10 @@ Timestamp: [ISO timestamp]`}</pre>
 
               {/* Quality Gates */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="quality-gates-the-audit-checkpoint"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Quality Gates: The Audit Checkpoint
                 </h2>
 
@@ -431,7 +452,10 @@ Timestamp: [ISO timestamp]`}</pre>
 
               {/* Failure Modes */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="failure-modes-that-break-audit-trails"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Failure Modes That Break Audit Trails
                 </h2>
 
@@ -546,7 +570,10 @@ Timestamp: [ISO timestamp]`}</pre>
 
               {/* Regulatory Mapping */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="regulatory-mapping-quick-reference"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Regulatory Mapping Quick Reference
                 </h2>
 
@@ -626,7 +653,10 @@ Timestamp: [ISO timestamp]`}</pre>
 
               {/* Core Principles */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="core-principles-for-auditable-ai"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Core Principles for Auditable AI
                 </h2>
 
@@ -690,7 +720,10 @@ Timestamp: [ISO timestamp]`}</pre>
 
               {/* Next Steps */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="next-steps"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Next Steps
                 </h2>
 
@@ -751,10 +784,40 @@ Timestamp: [ISO timestamp]`}</pre>
                   08/2024, EU AI Act, and EIOPA governance frameworks.
                 </p>
               </MotionDiv>
-            </div>
+
+              {/* Key takeaways */}
+              <MotionDiv {...fadeIn}>
+                <h2
+                  id="key-takeaways"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
+                  Key Takeaways
+                </h2>
+
+                <div className="bg-card shadow-card rounded-pill p-8">
+                  <ul className="space-y-4">
+                    {[
+                      "Three-layer evidence chain architecture",
+                      "Field-to-source provenance tracking",
+                      "Decision audit trail with input hashing",
+                      "Human override capture with required justification",
+                      "Quality gates that satisfy auditors",
+                      "FINMA & EU AI Act compliance mapping",
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle aria-hidden="true" className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                        <span className="text-sm text-body leading-[1.6]">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </MotionDiv>
+            </article>
 
             {/* Sidebar */}
-            <div className="lg:col-span-1">
+            <aside aria-label="Article navigation">
               <MotionDiv
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -762,58 +825,32 @@ Timestamp: [ISO timestamp]`}</pre>
                 transition={{ duration: 0.6, ease }}
                 className="bg-card shadow-card rounded-pill p-8"
               >
-                <h3 className="font-display font-semibold text-strong mb-4">
-                  Key Takeaways
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    "Three-layer evidence chain architecture",
-                    "Field-to-source provenance tracking",
-                    "Decision audit trail with input hashing",
-                    "Human override capture with required justification",
-                    "Quality gates that satisfy auditors",
-                    "FINMA & EU AI Act compliance mapping",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                      <span className="text-sm text-body">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-8 pt-6 border-t border-hairline">
-                  <h4 className="text-caption-sm text-subtle mb-3">
-                    Related Topics
-                  </h4>
-                  <div className="flex flex-wrap gap-1.5">
-                    {[
-                      "Auditability",
-                      "FINMA",
-                      "EU AI Act",
-                      "Claims AI",
-                      "Compliance",
-                      "Evidence Chains",
-                    ].map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-3 py-1 rounded-pill bg-accent-soft text-accent"
-                      >
-                        {tag}
-                      </span>
+                <h2 className="font-display font-semibold text-strong mb-4">
+                  On this page
+                </h2>
+                <nav aria-label="On this page">
+                  <ol role="list" className="space-y-2.5 list-none p-0">
+                    {sections.map((section) => (
+                      <li key={section.id}>
+                        <a
+                          href={`#${section.id}`}
+                          className="block text-sm leading-snug text-body hover:text-accent transition-colors"
+                        >
+                          {section.heading}
+                        </a>
+                      </li>
                     ))}
-                  </div>
-                </div>
+                  </ol>
+                </nav>
 
                 <div className="mt-8 pt-6 border-t border-hairline">
-                  <ButtonLink href="/contact" variant="primary" className="w-full">
-                    Talk to Us
-                    <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+                  <ButtonLink href="/trust" variant="primary" size="sm" className="w-full">
+                    Explore our Trust Centre
+                    <ArrowRight aria-hidden="true" className="w-4 h-4 flex-shrink-0" strokeWidth={1.5} />
                   </ButtonLink>
                 </div>
               </MotionDiv>
-            </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -833,7 +870,6 @@ Timestamp: [ISO timestamp]`}</pre>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <ButtonLink href="/contact" variant="primary" size="lg">
                 Get in Touch
-                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
               </ButtonLink>
               <ButtonLink href="/case-studies/vehicle-warranty-claims" variant="on-dark" size="lg">
                 See It in Action

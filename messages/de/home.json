@@ -75,7 +75,7 @@
       }
     },
     "benefits": {
-      "heading": "How does it work?",
+      "heading": "What True Aim delivers",
       "items": {
         "claimsDecisioning": {
           "title": "Claims settled in minutes, not weeks",
@@ -143,22 +143,28 @@
           "name": "Insurathon 2026",
           "text": "Norton Rose Fulbright named True Aim the most innovative InsurTech start-up of the year."
         },
+        "fif": {
+          "alt": "FIF Portugal",
+          "label": "Winner",
+          "name": "Rising Star of the Year 2026",
+          "text": "Rising Star of the Year at the 5th Ibero-American Insurtech Forum, hosted by FIF Portugal in Lisbon."
+        },
         "innovationspreis": {
           "alt": "Innovationspreis der Schweizer Assekuranz",
           "label": "Winner",
-          "name": "Innovationspreis der Schweizer Assekuranz",
+          "name": "Innovationspreis der Schweizer Assekuranz 2022",
           "text": "The Swiss insurance industry's innovation prize, awarded to the technology True Aim builds on."
         },
         "leuchtturm": {
           "alt": "Digitaler Leuchtturm Versicherungen",
           "label": "Winner",
-          "name": "Digitaler Leuchtturm Versicherungen",
+          "name": "Digitaler Leuchtturm Versicherungen 2022",
           "text": "Germany's digital lighthouse award for insurance, awarded to the technology True Aim builds on."
         },
         "ikn": {
           "alt": "IKN Insurance Award, Miglior InsurTech",
           "label": "Winner",
-          "name": "Miglior InsurTech",
+          "name": "Miglior InsurTech 2024",
           "text": "The IKN Insurance Award for the best InsurTech in Italy, awarded to the technology True Aim builds on."
         }
       }

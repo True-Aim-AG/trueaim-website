@@ -29,7 +29,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <PageHero title="Privacy Policy" texture={{ name: "circ", position: "72% 18%" }}>
+      <PageHero compact title="Privacy Policy" texture={{ name: "circ", position: "72% 18%" }}>
         <p className="mt-6 text-sm text-muted">
           <strong className="text-strong">Effective date:</strong> {PUBLISH_DATE} &nbsp;|&nbsp; <strong className="text-strong">Last updated:</strong> {LAST_UPDATED}
         </p>

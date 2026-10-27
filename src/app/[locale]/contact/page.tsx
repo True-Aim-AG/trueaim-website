@@ -8,7 +8,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const t = await getTranslations("contact");
   return (
     <>
-      <PageHero title={t("hero.title")} summary={t("hero.summary")} texture={{ name: "glass" }} />
+      <PageHero compact title={t("hero.title")} summary={t("hero.summary")} texture={{ name: "glass" }} />
       <section className={SECTION}>
         <div className="mx-auto max-w-7xl">
           <ContactForm />

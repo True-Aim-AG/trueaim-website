@@ -33,9 +33,10 @@ const outcomes = [
 /** The organisers' marks for the awards, in the order of the copy. */
 const awardMarks = [
   { key: "insurathon", src: "/awards/norton-rose-fulbright.svg", width: 380, height: 42 },
+  { key: "fif", src: "/awards/fif-portugal.png", width: 518, height: 231 },
+  { key: "ikn", src: "/awards/ikn-italy.png", width: 167, height: 151 },
   { key: "innovationspreis", src: "/awards/swiss-innovation.png", width: 171, height: 169 },
   { key: "leuchtturm", src: "/awards/digitaler-leuchtturm.png", width: 198, height: 132 },
-  { key: "ikn", src: "/awards/ikn-italy.png", width: 167, height: 151 },
 ] as const;
 
 const relatedPages = [
