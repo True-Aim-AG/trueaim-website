@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.21.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.20.0...v1.21.0) (2026-10-27)
+
+
+### Features
+
+* copy and design fixes from the October website reviews ([#16](https://github.com/True-Aim-AG/trueaim-website/issues/16)) ([9025ba0](https://github.com/True-Aim-AG/trueaim-website/commit/9025ba02221cecd0ad4aacebd41cfe9ea670fc61))
+
 ## [1.20.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.19.1...v1.20.0) (2026-10-23)
 
 
