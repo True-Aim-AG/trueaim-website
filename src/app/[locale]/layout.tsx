@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "insurance claims",
     "EU AI Act compliance",
     "auditable AI",
-    "claims decisioning",
+    "automated coverage check",
   ],
   authors: [{ name: "True Aim" }],
   manifest: "/site.webmanifest",

@@ -13,7 +13,6 @@ import {
   type FeatureCard,
   type HeroTexture,
   type KeyFact,
-  type Point,
   type Tone,
 } from "@/components/content";
 import {
@@ -55,13 +54,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 /** Brand icons for each page's cards, in the order of the copy. */
 const icons: Record<string, BrandIconName[]> = {
-  claimsKeys: ["logic", "rule-applied", "human-review"],
   claimsFeatures: ["document", "quality", "decision", "logic", "traceability", "control"],
-  claimsRouting: ["structure", "workflow", "process", "human-review"],
   invoiceKeys: ["document", "quality", "structure", "traceability"],
   invoiceFeatures: ["data", "structured-data", "match", "document", "control", "learning-loop"],
+  otusFeatures: ["workflow", "process", "document", "decision", "learning-loop", "match", "extraction", "structure"],
   damageSteps: ["ingestion", "extraction", "process", "match"],
-  otusKeys: ["workflow", "claim", "human-review"],
 };
 
 /** The brand texture and crop behind each hero, as the prototype assigns them. */
@@ -113,7 +110,9 @@ function sections(product: Product, t: Translate) {
     case "claimsDecisioning":
       return (
         <>
-          <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} icons={icons.claimsKeys} tone="white" />
+          <SplitText heading={t(`${key}.keys.heading`)} paragraphs={[]} image={{ src: "/brand/3d/target.webp", alt: t(`${key}.keys.heading`), width: 640, height: 640 }} imageSide="right" align="left" tone="white">
+            <Points items={(t.raw(`${key}.keys.items`) as KeyFact[]).map((item) => ({ title: item.label, text: item.text }))} align="left" />
+          </SplitText>
           <FeatureCards
             heading={t(`${key}.features.heading`)}
             items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], icons.claimsFeatures)}
@@ -124,12 +123,16 @@ function sections(product: Product, t: Translate) {
             heading={t(`${key}.technology.heading`)}
             paragraphs={t.raw(`${key}.technology.paragraphs`) as string[]}
             image={{ src: "/brand/3d/render-04.webp", alt: t(`${key}.technology.imageAlt`), width: 560, height: 560 }}
+            imageSide="left"
+            align="right"
             tone="white"
           />
           <FigureSection heading={t(`${key}.flow.heading`)} tone="tint">
             <FlowScene data={t.raw(`${key}.flow.scene`) as FlowSceneData} />
           </FigureSection>
-          <KeyFacts heading={t(`${key}.routing.heading`)} items={t.raw(`${key}.routing.items`) as KeyFact[]} icons={icons.claimsRouting} tone="white" />
+          <SplitText heading={t(`${key}.routing.heading`)} paragraphs={[]} image={{ src: "/brand/3d/shield.webp", alt: t(`${key}.routing.heading`), width: 600, height: 600 }} imageSide="right" align="left" tone="white">
+            <Points items={(t.raw(`${key}.routing.items`) as KeyFact[]).map((item) => ({ title: item.label, text: item.text }))} align="left" />
+          </SplitText>
           <FigureSection id="decision-dossier" heading={t(`${key}.record.heading`)} tone="tint">
             <RecordScene data={t.raw(`${key}.record.scene`) as RecordSceneData} />
           </FigureSection>
@@ -138,6 +141,8 @@ function sections(product: Product, t: Translate) {
             heading={t(`${key}.otus.heading`)}
             paragraphs={t.raw(`${key}.otus.paragraphs`) as string[]}
             image={{ src: "/brand/3d/symbol.webp", alt: t(`${key}.otus.imageAlt`), width: 420, height: 236 }}
+            imageSide="left"
+            align="right"
             link={{ href: "/platform/otus", label: t(`${key}.otus.link`) }}
             tone="white"
           />
@@ -151,6 +156,8 @@ function sections(product: Product, t: Translate) {
             heading={t(`${key}.unchecked.heading`)}
             paragraphs={t.raw(`${key}.unchecked.paragraphs`) as string[]}
             image={{ src: "/brand/3d/objects-01.webp", alt: t(`${key}.unchecked.imageAlt`), width: 560, height: 420 }}
+            imageSide="left"
+            align="right"
             tone="tint"
           />
           <FigureSection heading={t(`${key}.lineBench.heading`)} tone="white">
@@ -182,15 +189,15 @@ function sections(product: Product, t: Translate) {
     case "otus":
       return (
         <>
-          <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} icons={icons.otusKeys} tone="white" />
-          <SplitText
-            heading={t(`${key}.features.heading`)}
-            paragraphs={[]}
-            image={{ src: "/brand/3d/symbol.webp", alt: t(`${key}.features.imageAlt`), width: 420, height: 236 }}
-            tone="tint"
-          >
-            <Points items={t.raw(`${key}.features.items`) as Point[]} />
+          <SplitText heading={t(`${key}.keys.heading`)} paragraphs={[]} image={{ src: "/brand/3d/symbol.webp", alt: t(`${key}.features.imageAlt`), width: 420, height: 236 }} imageSide="right" align="left" tone="white">
+            <Points items={(t.raw(`${key}.keys.items`) as KeyFact[]).map((item) => ({ title: item.label, text: item.text }))} align="left" />
           </SplitText>
+          <FeatureCards
+            heading={t(`${key}.features.heading`)}
+            columns={4}
+            items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], icons.otusFeatures)}
+            tone="tint"
+          />
         </>
       );
   }

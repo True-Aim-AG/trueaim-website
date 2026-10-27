@@ -11,21 +11,21 @@ const team = ["reuben", "frederic", "arnaud", "alin", "kai", "henrique"] as cons
 const teamMeta: Record<(typeof team)[number], { image?: string; linkedin?: string }> = {
   reuben: { image: "/team/reuben-john.webp", linkedin: "https://www.linkedin.com/in/reubenj/" },
   frederic: { image: "/team/frederic-brunner.webp", linkedin: "https://www.linkedin.com/in/frdbrunner/" },
-  alin: { image: "/team/alin-koppandi.webp" },
-  kai: { image: "/team/kai-praschma.webp" },
+  alin: { image: "/team/alin-koppandi.webp", linkedin: "https://www.linkedin.com/in/alinkoppandi/" },
+  kai: { image: "/team/kai-praschma.webp", linkedin: "https://www.linkedin.com/in/kai-praschma/" },
   henrique: { image: "/team/henrique-ferreira.webp", linkedin: "https://www.linkedin.com/in/henriquemf213" },
-  arnaud: { image: "/team/arnaud-terville.webp" },
+  arnaud: { image: "/team/arnaud-terville.webp", linkedin: "https://www.linkedin.com/in/arnaudterville/" },
 };
 
-const advisers = ["claudio", "kevin", "lukas", "dave", "eric", "dandolo"] as const;
+const advisers = ["claudio", "kevin", "dave", "lukas", "eric", "dandolo"] as const;
 
-const adviserImages: Record<(typeof advisers)[number], string | undefined> = {
-  claudio: "/team/claudio.png",
-  kevin: undefined,
-  lukas: "/team/lukas-lichtensteiger.jpg",
-  dave: "/team/dave.png",
-  eric: "/team/eric.png",
-  dandolo: "/team/dandolo-flumini.jpg",
+const adviserMeta: Record<(typeof advisers)[number], { image?: string; linkedin: string }> = {
+  claudio: { image: "/team/claudio.png", linkedin: "https://www.linkedin.com/in/claudio-g-48073a/" },
+  kevin: { linkedin: "https://www.linkedin.com/in/sartorikevin/" },
+  dave: { image: "/team/dave.png", linkedin: "https://www.linkedin.com/in/dave-stoll-07905967/" },
+  lukas: { image: "/team/lukas-lichtensteiger.jpg", linkedin: "https://www.linkedin.com/in/lukas-lichtensteiger-7b348a8/" },
+  eric: { image: "/team/eric.png", linkedin: "https://www.linkedin.com/in/ericzielinski/" },
+  dandolo: { image: "/team/dandolo-flumini.jpg", linkedin: "https://www.linkedin.com/in/dandolo-flumini-a7971157/" },
 };
 
 // Yarowa first: the hero names it as the company True Aim was spun out of.
@@ -50,7 +50,7 @@ const awardMeta: Record<(typeof awards)[number], { image: string; width: number;
 /** A photo, or the initials on a lilac disc where there is no photo yet. */
 function Portrait({ src, name }: { src?: string; name: string }) {
   if (src) {
-    return <Image src={src} alt={name} width={96} height={96} className="h-24 w-24 rounded-full bg-lilac object-cover" />;
+    return <Image src={src} alt={name} width={96} height={96} className="h-24 w-24 rounded-full bg-lilac object-cover grayscale" />;
   }
   const initials = name
     .split(" ")
@@ -67,7 +67,7 @@ function Portrait({ src, name }: { src?: string; name: string }) {
 const PERSON = cn(CARD, "flex h-full flex-col gap-2.5 p-7");
 const ROLE = "text-[12px] font-medium uppercase tracking-[0.1em] text-accent";
 const NAME = "font-display text-[20px] font-semibold leading-[1.3] text-strong";
-const GRID = "grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3";
+const GRID = "grid auto-rows-fr grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3";
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -129,8 +129,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               return (
                 <li key={key} className={PERSON}>
                   <Portrait src={meta.image} name={name} />
-                  <p className={cn(ROLE, "mt-2")}>{t(`team.members.${key}.title`)}</p>
-                  <h3 className={NAME}>{name}</h3>
+                  <h3 className={cn(NAME, "mt-2")}>{name}</h3>
+                  <p className={ROLE}>{t(`team.members.${key}.title`)}</p>
                   <p className="text-[15px] leading-[1.55] text-muted">{t(`team.members.${key}.bio`)}</p>
                   {meta.linkedin && (
                     <a
@@ -152,12 +152,22 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <ul className={GRID}>
             {advisers.map((key) => {
               const name = t(`advisers.members.${key}.name`);
+              const meta = adviserMeta[key];
               return (
                 <li key={key} className={PERSON}>
-                  <Portrait src={adviserImages[key]} name={name} />
+                  <Portrait src={meta.image} name={name} />
                   <h3 className={cn(NAME, "mt-2")}>{name}</h3>
-                  <p className="text-[14px] font-medium leading-[1.45] text-strong">{t(`advisers.members.${key}.title`)}</p>
-                  <p className="text-[15px] leading-[1.55] text-muted">{t(`advisers.members.${key}.focus`)}</p>
+                  <p className={ROLE}>{t(`advisers.members.${key}.title`)}</p>
+                  <p className="text-[15px] leading-[1.55] text-muted">{t(`advisers.members.${key}.bio`)}</p>
+                  <a
+                    href={meta.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-medium text-accent hover:underline"
+                  >
+                    <Linkedin strokeWidth={1.5} className="h-4 w-4" />
+                    {t("team.linkedin")}
+                  </a>
                 </li>
               );
             })}

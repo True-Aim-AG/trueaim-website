@@ -12,7 +12,7 @@ True Aim works for insurers, brokers, third-party administrators, warranty provi
 
 ### Awards
 
-- Insurathon 2026: Norton Rose Fulbright named True Aim the most innovative InsurTech start-up of 2026.
+- Insurathon 2026: Norton Rose Fulbright crowned True Aim the most innovative InsurTech in the world for 2026.
 - Innovationspreis der Schweizer Assekuranz: the Swiss insurance industry's innovation prize, awarded to the technology True Aim builds on.
 - Digitaler Leuchtturm Versicherungen: Germany's digital lighthouse award for insurance, awarded to the technology True Aim builds on.
 - Miglior InsurTech, IKN Awards: Best InsurTech at the IKN Insurance Awards, Italy, awarded to the technology True Aim builds on.
@@ -22,6 +22,7 @@ True Aim works for insurers, brokers, third-party administrators, warranty provi
 - Yarowa: True Aim's origin and distribution partner
 - Innosuisse: Swiss Innovation Agency
 - ZHAW, Zurich University of Applied Sciences: research partner
+- Norton Rose Fulbright: strategic partner; crowned True Aim the most innovative InsurTech in the world at the Insurathon 2026 (https://trueaim.ai/en/partners/nortonrosefulbright/)
 - Swiss InsurTech Hub
 
 ---
@@ -30,13 +31,13 @@ True Aim works for insurers, brokers, third-party administrators, warranty provi
 
 **URL:** https://trueaim.ai/en/platform/
 
-True Aim turns the claim file into the finished piece of work: a settled claim, a benchmarked invoice or a completed damage report. AI reads the documents, the decision is calculated from your policy wording and every step is recorded. Your team keeps the final say.
+We turn the claim file into the finished piece of work: a settled claim, a benchmarked invoice or a completed damage report. AI reads the documents, the decision is calculated from your policy wording and every step is recorded. Your team keeps the final say.
 
-### Claims Decisioning
+### Automated Coverage Check
 
 **URL:** https://trueaim.ai/en/platform/claims-decisioning/
 
-Claims Decisioning is an automated coverage check, from FNOL to settlement. True Aim checks the policy terms against the facts of the case and says whether the claim should be approved or denied. Where it is approved, the amount owed is calculated line by line, and the adjuster makes the final call. Each decision is recorded in the Decision Dossier: the inputs, the policy wording applied and the reasoning.
+True Aim checks the policy terms against the facts of the case and recommends whether the claim should be approved or denied. Where it is approved, the amount owed is calculated line by line, and the adjuster makes the final call. Each decision is recorded in the Decision Dossier: the inputs, the policy wording applied and the reasoning.
 
 ### Invoice Benchmarking
 
@@ -78,7 +79,7 @@ This combination ensures that while AI handles the messy, unstructured parts of 
 **URL:** https://trueaim.ai/en/trust/
 
 - ISO 27001: certified.
-- SOC 2 Type II: audit window completed, report pending.
+- SOC 2 Type II: audited (audit window 1 May to 31 July 2026, final report issued).
 - GDPR, Swiss FADP and DORA: aligned.
 - Every decision records the facts, the policy wording applied and the reasoning, so it can be reconstructed under audit, regulatory review or dispute.
 
@@ -100,7 +101,7 @@ From the vehicle warranty case study with NSA Services SA (https://trueaim.ai/en
 **Index:** https://trueaim.ai/en/blog/
 **RSS:** https://trueaim.ai/feed.xml
 
-- [Time Back Is the Easy Part: Architectural Transparency and the Rise of the Agentic Claims Operation](https://trueaim.ai/en/blog/architectural-transparency-agentic-claims-operation/) (22 October 2026, Reuben John, CEO): A claim has never existed within the four walls of a single enterprise: policyholder, intermediary, carrier, repairer and adjuster each hold a fragment of the record. The case for one shared claim record under role-gated entitlements, where every decision carries line-level provenance and transparency between organisations ceases to be a courtesy and becomes an architectural guarantee.
+- [The Problem with Automating Claims in Silos: Architectural Transparency and the Rise of the Agentic Claims Operation](https://trueaim.ai/en/blog/architectural-transparency-agentic-claims-operation/) (22 October 2026, Reuben John, CEO): A claim has never existed within the four walls of a single enterprise: policyholder, intermediary, carrier, repairer and adjuster each hold a fragment of the record. The case for one shared claim record under role-gated entitlements, where every decision carries line-level provenance and transparency between organisations ceases to be a courtesy and becomes an architectural guarantee.
 - [Where the Language Model Does Not Belong: Designing Defensible AI in Claims Operations](https://trueaim.ai/en/blog/where-the-language-model-does-not-belong/) (6 October 2026, Reuben John, CEO): A claim decision is a chain of three kinds of steps: reading, computing and judging. Computing belongs to rules. A model earns its place in reading and, marked as probabilistic, in judging. The record keeps the boundary visible on every step.
 - [The AI Claims Auditability Scorecard](https://trueaim.ai/en/blog/ai-claims-auditability-scorecard/) (10 September 2026, Reuben John, CEO): Twelve questions every claims leader should be able to answer about AI operating in their name, in four groups: provenance, reconstruction, human judgement and continuity, with the standard and how True Aim meets it under each.
 - [AI Claims Handling Is Not High-Risk Under the EU AI Act. Here Is What Binds It Instead.](https://trueaim.ai/en/blog/ai-claims-handling-eu-ai-act-high-risk/) (28 July 2026): Claims handling is absent from Annex III. GDPR Article 22 binds it anyway.
@@ -124,7 +125,7 @@ From the vehicle warranty case study with NSA Services SA (https://trueaim.ai/en
 - Products:
   - Platform overview: https://trueaim.ai/en/platform/
   - Invoice Benchmarking: https://trueaim.ai/en/platform/invoice-benchmarking/
-  - Claims Decisioning: https://trueaim.ai/en/platform/claims-decisioning/
+  - Automated Coverage Check: https://trueaim.ai/en/platform/claims-decisioning/
   - Damage Reporting: https://trueaim.ai/en/platform/damage-reporting/
   - Otus, True Aim's claims specialist: https://trueaim.ai/en/platform/otus/
 - Technology: https://trueaim.ai/en/technology/
@@ -137,4 +138,3 @@ From the vehicle warranty case study with NSA Services SA (https://trueaim.ai/en
 - Privacy Policy: https://trueaim.ai/en/privacy/
 - Terms of Service: https://trueaim.ai/en/terms/
 - Cookie Policy: https://trueaim.ai/en/cookies/
-- List of Sub-Processors: https://trueaim.ai/en/sub-processors/

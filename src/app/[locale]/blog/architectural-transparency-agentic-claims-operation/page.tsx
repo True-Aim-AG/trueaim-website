@@ -309,7 +309,7 @@ export default async function ArchitecturalTransparencyBlogPost({
 
             {/* Title */}
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-strong mb-6 leading-tight">
-              Time Back Is the Easy Part
+              The Problem with Automating Claims in Silos
             </h1>
 
             {/* Subtitle */}

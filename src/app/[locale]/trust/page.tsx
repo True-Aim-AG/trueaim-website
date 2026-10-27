@@ -78,10 +78,10 @@ export default async function TrustPage({ params }: { params: Promise<{ locale: 
   const faqs = t.raw("faq.items") as FaqItem[];
 
   const badgeItems: BadgeItem[] = badges.map((key) => {
-    const status = t(`badges.items.${key}.status`) as "certified" | "pending" | "aligned";
+    const status = t(`badges.items.${key}.status`) as "certified" | "audited" | "pending" | "aligned";
     return {
       icon:
-        status === "certified" ? <ShieldTick strokeWidth={1.5} className="h-7 w-7" /> : <Shield strokeWidth={1.5} className="h-7 w-7" />,
+        status === "certified" || status === "audited" ? <ShieldTick strokeWidth={1.5} className="h-7 w-7" /> : <Shield strokeWidth={1.5} className="h-7 w-7" />,
       caption: t(`badges.statusLabels.${status}`),
       title: t(`badges.items.${key}.name`),
       text: t(`badges.items.${key}.description`),

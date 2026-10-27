@@ -11,7 +11,7 @@
     "productsDropdown": {
       "invoiceBenchmarking": "Invoice Benchmarking",
       "invoiceBenchmarkingDesc": "Never overpay on an invoice again",
-      "claimsDecisioning": "Claims Decisioning",
+      "claimsDecisioning": "Automated Coverage Check",
       "claimsDecisioningDesc": "Settled claims in minutes, not weeks",
       "damageReporting": "Damage Reporting",
       "damageReportingDesc": "Completed damage reports in minutes",
@@ -34,7 +34,7 @@
     "solutions": "Solutions",
     "menu": {
       "claimsDecisioning": {
-        "name": "Claims Decisioning",
+        "name": "Automated Coverage Check",
         "desc": "Claims settled in minutes, not weeks"
       },
       "invoiceBenchmarking": {
@@ -114,19 +114,18 @@
     "blog": "Blog",
     "platformOverview": "Platform overview",
     "invoiceBenchmarking": "Invoice Benchmarking",
-    "claimsDecisioning": "Claims Decisioning",
+    "claimsDecisioning": "Automated Coverage Check",
     "damageReporting": "Damage Reporting",
     "otus": "Otus",
     "security": "Security",
     "ethics": "Ethics & Reporting",
     "support": "Support",
     "changelog": "Changelog",
-    "privacy": "Privacy policy",
+    "privacy": "Privacy Policy",
     "terms": "Terms of service",
-    "subProcessors": "List of Sub-Processors",
-    "aiTransparency": "AI transparency",
-    "cookies": "Cookie policy",
-    "paia": "PAIA manual",
+    "aiTransparency": "AI Transparency",
+    "cookies": "Cookie Policy",
+    "paia": "PAIA Manual",
     "copyright": "© {year} True Aim AG, Metallstrasse 9, 6300 Zug, Switzerland",
     "linkedin": "LinkedIn",
     "taglineLines": [

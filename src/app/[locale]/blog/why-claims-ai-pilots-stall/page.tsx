@@ -184,9 +184,6 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                         <h3 className="font-display font-semibold text-strong">
                           Coverage Complexity
                         </h3>
-                        <p className="text-sm text-muted">
-                          5 modelled categories vs 13 required in production
-                        </p>
                       </div>
                     </div>
                     <p className="text-sm text-body leading-[1.6]">

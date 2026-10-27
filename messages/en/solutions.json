@@ -3,12 +3,12 @@
     "common": {
       "ctaDemo": "Book a demo",
       "faqHeading": "Common questions",
-      "helpHeading": "Explore our Solutions",
+      "helpHeading": "Explore our solutions",
       "help": {
         "claimsDecisioning": {
-          "title": "Claims Decisioning",
+          "title": "Automated Coverage Check",
           "text": "An automated coverage check: every claim tested against the policy wording, with the reasoning shown and the payout calculated.",
-          "link": "Explore Claims Decisioning"
+          "link": "Explore Automated Coverage Check"
         },
         "invoiceBenchmarking": {
           "title": "Invoice Benchmarking",
@@ -133,7 +133,7 @@
         },
         {
           "question": "Do we have to replace our claims system?",
-          "answer": "No. True Aim works above the claims and finance systems you already run, reads each claim from them and writes its results back."
+          "answer": "No. True Aim sits above the claims or ERP system you already run, reads each claim from it and writes its results back."
         },
         {
           "question": "How is True Aim priced?",
@@ -394,7 +394,7 @@
         "heading": "How this works in practice",
         "caseStudy": {
           "cap": "Case study",
-          "title": "The same claims decisions, made in a fraction of the time.",
+          "title": "The same claim decisions, made in a fraction of the time.",
           "text": "How NSA transferred the reasoning and decisioning of its claims experts into True Aim software and reduced the work on a complex claim by 86%.",
           "link": "Read the case study",
           "logoAlt": "NSA Services SA"

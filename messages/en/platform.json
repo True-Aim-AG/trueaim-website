@@ -1,8 +1,8 @@
 {
   "platform": {
     "hero": {
-      "title": "How the True Aim platform works",
-      "summary": "True Aim turns the claim file into the finished piece of work: a settled claim, a benchmarked invoice or a completed damage report. AI reads the documents, the decision is calculated from your policy wording and every step is recorded. Your team keeps the final say.",
+      "title": "How our platform works",
+      "summary": "We turn the claim file into the finished piece of work: a settled claim, a benchmarked invoice or a completed damage report. AI reads the documents, the decision is calculated from your policy wording and every step is recorded. Your team keeps the final say.",
       "ctaDemo": "Book a demo",
       "scene": {
         "alt": "Three finished outcomes: a settled claim, a benchmarked invoice and a completed damage report",
@@ -17,7 +17,7 @@
         "claimsDecisioning": {
           "title": "A settled claim",
           "text": "Every line checked against the policy wording, the amount calculated and the reasoning written down, ready for your adjuster to confirm.",
-          "link": "Claims Decisioning"
+          "link": "Automated Coverage Check"
         },
         "invoiceBenchmarking": {
           "title": "A benchmarked invoice",
@@ -35,20 +35,20 @@
       "heading": "Two technologies, each doing one job",
       "paragraphs": [
         "Calculated decisions. Your policy, catalogue or rulebook becomes a decision tree. Given the facts, the outcome is calculated, not predicted.",
-        "Agents that read. Claims arrive as photographs, PDFs, handwriting and emails, and software agents turn them into facts. Each agent does one small task, so a fault is easy to find and fix where it happened."
+        "Agents that can read. Claims arrive as photographs, PDFs, handwriting and emails, and software agents turn them into facts. Each agent does one small task, ensuring expertise at every stage of the process."
       ],
       "imageAlt": "Interlocking metal rings"
     },
     "diagram": {
-      "heading": "How the modules fit together",
-      "intro": "A claim file goes in. An audited decision comes out. Four modules do the work, and two platform features keep it moving and on the record.",
+      "heading": "How our solutions fit together",
+      "intro": "A claim file is ingested. An audited decision tree is produced. Our solutions do the work, and two platform features keep it moving and on the record.",
       "input": {
         "name": "The claim file",
         "text": "Photographs, invoices, estimates, policy documents and emails, from any channel."
       },
       "modules": {
         "claimsDecisioning": {
-          "name": "Claims Decisioning",
+          "name": "Automated Coverage Check",
           "text": "Checks every line against the policy wording and calculates the amount."
         },
         "invoiceBenchmarking": {
@@ -84,7 +84,7 @@
     "fit": {
       "heading": "True Aim sits above your existing systems",
       "paragraphs": [
-        "True Aim works above your claims and finance systems, reads from them and writes the results back.",
+        "True Aim sits above your claims or ERP system, reads from it and writes the results back.",
         "Your thresholds, rules, routing and limits stay in your hands, and you change them yourself."
       ],
       "imageAlt": "A metal lock carrying the True Aim symbol"
@@ -102,7 +102,7 @@
         },
         {
           "question": "Does True Aim replace our claims system?",
-          "answer": "No. True Aim works above the claims and finance systems you already run and writes its results back into them. Screens can mirror the ones your team knows."
+          "answer": "No. True Aim sits above the claims or ERP system you already run and writes its results back into it. Screens can mirror the ones your team knows."
         },
         {
           "question": "Which lines of business does True Aim cover?",
@@ -114,13 +114,13 @@
         },
         {
           "question": "How is our data protected?",
-          "answer": "True Aim is certified to ISO 27001 and SOC 2 Type II. Hosting, certification and data protection are set out in the Trust Centre."
+          "answer": "True Aim is certified to ISO 27001 and audited for SOC 2 Type II. Hosting, certification and data protection are set out in the Trust Centre."
         }
       ]
     },
     "related": {
-      "heading": "The four modules",
-      "claimsDecisioning": "Claims Decisioning",
+      "heading": "Explore our solutions",
+      "claimsDecisioning": "Automated Coverage Check",
       "claimsDecisioningText": "Claims settled in minutes, not weeks.",
       "invoiceBenchmarking": "Invoice Benchmarking",
       "invoiceBenchmarkingText": "Never overpay on an invoice again.",

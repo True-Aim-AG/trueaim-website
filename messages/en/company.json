@@ -15,77 +15,77 @@
       "attribution": "Reuben John, CEO of True Aim"
     },
     "team": {
-      "heading": "Our team",
-      "linkedin": "LinkedIn",
-      "members": {
-        "reuben": {
-          "name": "Reuben John",
-          "title": "Co-founder and CEO",
-          "bio": "Lawyer and operator. Reuben has led operational and regulatory projects across Europe and Africa, from market expansion to compliance programmes for multinational clients. He runs the company, its strategy and its commercial work."
-        },
-        "frederic": {
-          "name": "Frederic Brunner",
-          "title": "Co-founder and CTO",
-          "bio": "More than 30 years in software and 20 in enterprise automation, including at Zurich Insurance. Frederic leads the technology and the engineering work."
-        },
-        "alin": {
-          "name": "Alin Koppandi",
-          "title": "Senior AI Engineer",
-          "bio": "Builds the True Aim platform, from document reading to the decision engine and the record behind each decision."
-        },
-        "kai": {
-          "name": "Kai Praschma",
-          "title": "AI Solutions Specialist",
-          "bio": "Builds the automation that runs True Aim's operations and client delivery, and turns research into the tools, content and systems the team works with every day."
-        },
-        "henrique": {
-          "name": "Henrique Ferreira",
-          "title": "Implementation Specialist",
-          "bio": "Guides claims teams from first conversation to a running platform, shaping each deployment around their own claims, invoices and damage reports."
-        },
-        "arnaud": {
-          "name": "Arnaud Terville",
-          "title": "Commercial Lead",
-          "bio": "Brings enterprise insurance technology experience from Solera, Quantexa and Apple, where he helped multinational organisations adopt new platforms at scale. At True Aim he leads the commercial relationships that bring the platform into claims operations."
-        }
+    "heading": "Our Core Team",
+    "linkedin": "LinkedIn",
+    "members": {
+      "reuben": {
+        "name": "Reuben John",
+        "title": "Co-founder and CEO",
+        "bio": "As CEO, Reuben leads True Aim’s strategy, commercial growth and investor relations. He spent seven years as DACH Managing Director of a global tax technology company, growing the business across the region, and before that practised corporate and commercial law."
+      },
+      "frederic": {
+        "name": "Frédéric Brunner",
+        "title": "Co-founder and CTO",
+        "bio": "A software engineer for more than 25 years, Fred began his career in the aerospace industry, focusing on data science. He has spent the last 15 years building enterprise claims systems as an enterprise architect at Zurich Insurance as well as at Guidewire."
+      },
+      "arnaud": {
+        "name": "Arnaud Terville",
+        "title": "Sales Director",
+        "bio": "Arnaud brings nearly two decades of business development and go-to-market experience in the insurtech space. Formerly at Solera, Tractable and Quantexa (and before that Apple and Adobe), he now leads True Aim’s enterprise sales and partnerships."
+      },
+      "alin": {
+        "name": "Alin Koppandi",
+        "title": "Senior AI Engineer",
+        "bio": "A senior engineer specialising in agentic AI, Alin leads the agent layer and the data pipeline that power the True Aim platform. He turns the latest advances in AI into reliable, secure production systems that claims teams can trust every single day."
+      },
+      "kai": {
+        "name": "Kai Praschma",
+        "title": "AI Solutions Specialist",
+        "bio": "Kai builds the automation that runs True Aim’s operations and client delivery. Working closely with the CEO across strategy, commercial and go-to-market, he turns research into the tools, content and systems the whole team relies on every day."
+      },
+      "henrique": {
+        "name": "Henrique Ferreira",
+        "title": "Solutions Executive",
+        "bio": "Henrique guides claims teams from the very first conversation to a running platform. He shapes each deployment around the client’s own claims, invoices and damage reports, so every team sees real results on its own data from the very first week."
       }
-    },
-    "advisers": {
-      "heading": "Advisers",
-      "members": {
-        "claudio": {
-          "name": "Claudio Gienal",
-          "title": "Former AXA CEO UK and Ireland",
-          "focus": "Claims operations and insurance transformation"
-        },
-        "kevin": {
-          "name": "Kevin Sartori",
-          "title": "Innosuisse coach",
-          "focus": "Commercial strategy and company building"
-        },
-        "lukas": {
-          "name": "Dr Lukas Lichtensteiger",
-          "title": "ZHAW researcher",
-          "focus": "Technology architecture and scaling"
-        },
-        "dave": {
-          "name": "Dave Stoll",
-          "title": "Former Zurich Insurance CFO, Spain",
-          "focus": "Insurance, fundraising and regulation"
-        },
-        "eric": {
-          "name": "Eric Zielinski",
-          "title": "Wharton, former Bain",
-          "focus": "Strategy and enterprise procurement"
-        },
-        "dandolo": {
-          "name": "Dr Dandolo Flumini",
-          "title": "ZHAW researcher",
-          "focus": "The core decision logic and the research behind it"
-        }
+    }
+  },
+  "advisers": {
+    "heading": "Advisory Board",
+    "members": {
+      "claudio": {
+        "name": "Claudio Gienal",
+        "title": "Insurance transformation",
+        "bio": "Currently Chief Transformation Officer at AXA Group. Formerly CEO of AXA UK and Ireland, Group Chief Strategy Officer at Zurich and CEO of Zurich Life Switzerland. He began his career at Accenture and McKinsey before moving into the insurance industry."
+      },
+      "kevin": {
+        "name": "Kevin Sartori",
+        "title": "Company building and scaling",
+        "bio": "Co-founder and former co-CEO of Auterion, the ETH Zurich spin-out now valued at more than USD 1.2 billion. Currently a board member at Pionix and a mentor with Project Switzerland. Master in Robotics from ETH Zurich, MBA from UC Berkeley and ex-BCG."
+      },
+      "dave": {
+        "name": "Dave Stoll",
+        "title": "Insurance, innovation and strategy",
+        "bio": "Formerly CFO of Zurich Insurance Spain, Dave brings deep expertise across insurance, finance, innovation and strategy, from steering a national insurer’s finances to backing new insurtech ventures. Currently Director at vertX IQ and founder of doppo."
+      },
+      "lukas": {
+        "name": "Dr Lukas Lichtensteiger",
+        "title": "Technology architecture and AI",
+        "bio": "Harvard graduate with an MSc in theoretical physics and a PhD in AI and robotics. Currently a lecturer at ZHAW, where he heads the Medical Complex Systems Group. A serial founder whose start-up Siltectra was sold to Infineon for EUR 124 million."
+      },
+      "eric": {
+        "name": "Eric Zielinski",
+        "title": "Go-to-market and scaling",
+        "bio": "Currently leading go-to-market and expansion at Prosper AI, the a16z-backed start-up, where he has been instrumental in shaping its revenue expansion strategy. Formerly a consultant at Bain & Company, with an MBA from Wharton, and a US military veteran."
+      },
+      "dandolo": {
+        "name": "Dr Dandolo Flumini",
+        "title": "Decision logic and mathematics",
+        "bio": "Mathematician with a PhD summa cum laude from the University of Bern, specialising in logic and theoretical computer science. Researcher at ZHAW and the original architect of MIRA, the award-winning decision technology now used by True Aim."
       }
-    },
-    "partners": {
+    }
+  },
+  "partners": {
       "heading": "Partners",
       "items": {
         "zhaw": {
@@ -116,7 +116,7 @@
       "items": {
         "insurathon": {
           "title": "Insurathon 2026",
-          "body": "Norton Rose Fulbright named True Aim the most innovative InsurTech start-up of 2026.",
+          "body": "Norton Rose Fulbright crowned True Aim the most innovative InsurTech in the world for 2026.",
           "alt": "Norton Rose Fulbright"
         },
         "swissInnovation": {

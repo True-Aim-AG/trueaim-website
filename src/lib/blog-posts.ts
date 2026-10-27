@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "architectural-transparency-agentic-claims-operation",
     title:
-      "Time Back Is the Easy Part: Architectural Transparency and the Rise of the Agentic Claims Operation",
+      "The Problem with Automating Claims in Silos: Architectural Transparency and the Rise of the Agentic Claims Operation",
     excerpt:
       "A claim has never existed within the four walls of a single enterprise. Legacy automation stopped at internal borders, accelerating discrete desks while stranding the wider ecosystem in an administrative standstill.",
     publishedIso: "2026-10-22T00:00:00.000Z",

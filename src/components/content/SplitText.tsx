@@ -18,6 +18,7 @@ export function SplitText({
   image,
   visual,
   imageSide = "right",
+  align = "left",
   link,
   tone = "white",
   children,
@@ -29,6 +30,8 @@ export function SplitText({
   image?: SplitImage;
   visual?: React.ReactNode;
   imageSide?: "left" | "right";
+  /** Right-aligned copy reads towards a graphic on the left. */
+  align?: "left" | "right";
   link?: { href: string; label: string };
   tone?: Tone;
   children?: React.ReactNode;
@@ -52,7 +55,7 @@ export function SplitText({
           art && "lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)] lg:gap-20",
         )}
       >
-        <Reveal className={cn("max-w-[70ch]", imageSide === "left" && art && "lg:order-2")}>
+        <Reveal className={cn("max-w-[70ch]", imageSide === "left" && art && "lg:order-2", align === "right" && "lg:ml-auto lg:text-right")}>
           {cap && <p className="mb-4 text-caption-sm text-accent">{cap}</p>}
           <Heading className="font-display text-[30px] font-bold leading-[1.15] text-strong text-balance md:text-[40px]">
             {heading}
@@ -64,7 +67,7 @@ export function SplitText({
           </div>
           {children}
           {link && (
-            <div className="mt-9">
+            <div className={cn("mt-9", align === "right" && "lg:flex lg:justify-end")}>
               <ButtonLink href={link.href} variant="primary" size="lg">
                 {link.label}
               </ButtonLink>
