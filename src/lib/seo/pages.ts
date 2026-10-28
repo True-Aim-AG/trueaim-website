@@ -15,6 +15,8 @@ export type PageEntry = {
   h1: string;
   /** Short name of the page in breadcrumb trails. */
   breadcrumb: string;
+  /** Product name in the JSON-LD when it differs from the breadcrumb (Otus carries its descriptor). */
+  schemaName?: string;
   ogTitle: string;
   ogDescription: string;
   /** Absolute image URL; the default social card when absent. */
