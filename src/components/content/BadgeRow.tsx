@@ -30,42 +30,54 @@ const LG_COLS: Record<number, string> = {
  * hairlines, the mark, a caption such as "Certified" or "Winner", the name
  * and one line under it. Each cell takes its four rows from the list's grid
  * (subgrid), so caption, title and text sit level across the row even when
- * one caption or title wraps.
+ * one caption or title wraps. `threeTwo` sets five items as three over two
+ * on desktop: two panels, the bottom pair centred at the same cell width.
  */
-export function BadgeRow({ heading, items, lilac }: { heading: string; items: BadgeItem[]; lilac?: boolean }) {
+export function BadgeRow({ heading, items, lilac, threeTwo }: { heading: string; items: BadgeItem[]; lilac?: boolean; threeTwo?: boolean }) {
+  const split = threeTwo && items.length === 5;
   const lg = LG_COLS[Math.min(Math.max(items.length, 1), 5)];
+  const renderList = (list: BadgeItem[], cols: string) => (
+    <ul className={cn("grid grid-cols-1 sm:grid-cols-2", cols, CARD)}>
+      {list.map((item) => (
+        <li
+          key={item.title}
+          className="row-span-4 grid grid-rows-subgrid border-hairline px-7 py-7 border-t first:border-t-0 sm:[&:nth-child(2)]:border-t-0 sm:even:border-l lg:border-t-0 lg:border-l lg:first:border-l-0"
+        >
+          <div className={cn("flex h-20 items-center", item.darkPlate && "w-fit rounded-[8px] bg-ta-charcoal px-3")}>
+            {item.image ? (
+              <Image
+                src={item.image.src}
+                alt={item.image.alt}
+                width={item.image.width}
+                height={item.image.height}
+                className="w-auto max-w-full object-contain object-left"
+                style={{ height: item.renderHeight ?? 72 }}
+              />
+            ) : (
+              <span className="grid h-14 w-14 place-items-center rounded-full bg-lilac text-accent">{item.icon}</span>
+            )}
+          </div>
+          <p className="mt-4 min-h-[1.3em] text-[12px] font-medium uppercase tracking-[0.14em] text-accent">{item.caption}</p>
+          <h3 className="mt-2 font-display text-[17px] font-semibold leading-[1.35] text-strong">
+            {item.title}
+          </h3>
+          {item.text && <p className="mt-1.5 text-[14px] leading-[1.5] text-muted">{item.text}</p>}
+        </li>
+      ))}
+    </ul>
+  );
   return (
     <section className={lilac ? SECTION_LILAC : SECTION_TIGHT}>
       <div className="mx-auto max-w-7xl">
         <SectionHead heading={heading} className="mb-10" />
-        <ul className={cn("grid grid-cols-1 sm:grid-cols-2", lg, CARD)}>
-          {items.map((item) => (
-            <li
-              key={item.title}
-              className="row-span-4 grid grid-rows-subgrid border-hairline px-7 py-7 border-t first:border-t-0 sm:[&:nth-child(2)]:border-t-0 sm:even:border-l lg:border-t-0 lg:border-l lg:first:border-l-0"
-            >
-              <div className={cn("flex h-20 items-center", item.darkPlate && "w-fit rounded-[8px] bg-ta-charcoal px-3")}>
-                {item.image ? (
-                  <Image
-                    src={item.image.src}
-                    alt={item.image.alt}
-                    width={item.image.width}
-                    height={item.image.height}
-                    className="w-auto max-w-full object-contain object-left"
-                    style={{ height: item.renderHeight ?? 72 }}
-                  />
-                ) : (
-                  <span className="grid h-14 w-14 place-items-center rounded-full bg-lilac text-accent">{item.icon}</span>
-                )}
-              </div>
-              <p className="mt-4 min-h-[1.3em] text-[12px] font-medium uppercase tracking-[0.14em] text-accent">{item.caption}</p>
-              <h3 className="mt-2 font-display text-[17px] font-semibold leading-[1.35] text-strong">
-                {item.title}
-              </h3>
-              {item.text && <p className="mt-1.5 text-[14px] leading-[1.5] text-muted">{item.text}</p>}
-            </li>
-          ))}
-        </ul>
+        {split ? (
+          <div className="space-y-6">
+            {renderList(items.slice(0, 3), "lg:grid-cols-3")}
+            {renderList(items.slice(3), "lg:mx-auto lg:w-2/3 lg:grid-cols-2")}
+          </div>
+        ) : (
+          renderList(items, lg)
+        )}
       </div>
     </section>
   );

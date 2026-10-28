@@ -121,7 +121,6 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
           <div className="flex flex-col sm:flex-row gap-4">
             <ButtonLink href="/contact" variant="primary" size="lg">
               Get in Touch
-              <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
             </ButtonLink>
             <ButtonLink href="/case-studies" variant="on-dark" size="lg">
               View Case Studies

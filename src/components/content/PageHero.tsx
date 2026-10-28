@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { ButtonLink } from "@/components/brand/Button";
 import { Summary } from "./Summary";
 
@@ -39,6 +40,9 @@ export function TextureBackdrop({ texture }: { texture: HeroTexture }) {
  * light veil so the copy reads; without a texture the page gradient shows.
  * Children render under the summary, for a hero that carries more than one
  * paragraph (the About page) or a date line (the legal pages).
+ * Every hero has the same height on desktop, so pages within a section line
+ * up; `compact` gives the legal, contact and blog pages a shorter shared
+ * height, and `wideCopy` widens the copy column for a long hero (About).
  */
 export function PageHero({
   eyebrow,
@@ -47,6 +51,8 @@ export function PageHero({
   buttons = [],
   visual,
   texture,
+  compact = false,
+  wideCopy = false,
   children,
 }: {
   eyebrow?: string;
@@ -56,12 +62,20 @@ export function PageHero({
   buttons?: HeroButton[];
   visual?: React.ReactNode;
   texture?: HeroTexture;
+  compact?: boolean;
+  wideCopy?: boolean;
   children?: React.ReactNode;
 }) {
   return (
     <section className="relative overflow-hidden border-b border-hairline bg-page-tint">
       {texture && <TextureBackdrop texture={texture} />}
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 py-16 md:py-24 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)] lg:items-center lg:gap-20 lg:py-[104px]">
+      <div
+        className={cn(
+          "relative mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 py-16 md:py-24 lg:items-center lg:py-[104px]",
+          wideCopy ? "lg:grid-cols-[minmax(0,1.5fr)_minmax(0,.5fr)] lg:gap-12" : "lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)] lg:gap-20",
+          compact ? "lg:min-h-[360px]" : "lg:min-h-[720px]",
+        )}
+      >
         <div>
           {eyebrow && (
             <p className="mb-5 font-body text-[14px] font-medium uppercase tracking-[0.16em] text-accent">{eyebrow}</p>
@@ -70,7 +84,7 @@ export function PageHero({
             {title}
           </h1>
           {summary && (
-            <div className="mt-6">
+            <div className={cn("mt-6", wideCopy && "[&>*]:max-w-[78ch]")}>
               <Summary>{summary}</Summary>
             </div>
           )}

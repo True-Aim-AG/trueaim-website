@@ -3,12 +3,10 @@ import { Link } from "@/i18n/navigation";
 import { MotionDiv } from "@/components/ui/MotionDiv";
 import {
   ArrowLeft,
-  ArrowRight,
   CheckCircle,
   Clock,
   ScrollText,
-  User,
-} from "lucide-react";
+  User, ArrowRight } from "lucide-react";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 import { TextureBackdrop } from "@/components/content";
 import { ButtonLink } from "@/components/brand/Button";
@@ -32,15 +30,6 @@ const sections: { id: string; heading: string }[] = [
   { id: "continuity", heading: "Continuity" },
   { id: "the-principle", heading: "The principle behind True Aim" },
   { id: "using-the-scorecard", heading: "How to use the scorecard" },
-];
-
-const topics = [
-  "Auditability",
-  "Best Practice",
-  "Decision Provenance",
-  "Human Oversight",
-  "FINMA",
-  "Claims AI",
 ];
 
 /**
@@ -94,10 +83,10 @@ export default async function AuditabilityScorecardBlogPost({
       <EnglishOnlyBanner />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-hairline bg-page-tint">
+      <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
         <TextureBackdrop texture={{ name: "circ", position: "72% 18%" }} />
 
-        <div className="relative max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
+        <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -721,25 +710,9 @@ export default async function AuditabilityScorecardBlogPost({
                 </nav>
 
                 <div className="mt-8 pt-6 border-t border-hairline">
-                  <h3 className="text-caption-sm text-subtle mb-3">
-                    Related Topics
-                  </h3>
-                  <div className="flex flex-wrap gap-1.5">
-                    {topics.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-3 py-1 rounded-pill bg-accent-soft text-accent"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-hairline">
-                  <ButtonLink href="/trust" variant="primary" size="lg" className="w-full rounded-lg! whitespace-normal text-center">
-                    How we answer this in our Trust Centre
-                    <ArrowRight aria-hidden="true" className="w-5 h-5 flex-shrink-0" strokeWidth={1.5} />
+                  <ButtonLink href="/trust" variant="primary" size="sm" className="w-full">
+                    Explore our Trust Centre
+                    <ArrowRight aria-hidden="true" className="w-4 h-4 flex-shrink-0" strokeWidth={1.5} />
                   </ButtonLink>
                 </div>
               </MotionDiv>
@@ -766,7 +739,6 @@ export default async function AuditabilityScorecardBlogPost({
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <ButtonLink href="/contact" variant="primary" size="lg">
                 Get in Touch
-                <ArrowRight aria-hidden="true" className="w-5 h-5" strokeWidth={1.5} />
               </ButtonLink>
               <ButtonLink href="/trust" variant="on-dark" size="lg">
                 Trust Centre

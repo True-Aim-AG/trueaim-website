@@ -28,6 +28,18 @@ const fadeIn = {
   transition: { duration: 0.6, ease } as const,
 };
 
+// Short labels for the "On this page" panel; the H2s carry the full headings.
+const sections: { id: string; heading: string }[] = [
+  { id: "the-wrong-question", heading: "The Wrong Question" },
+  { id: "when-to-build", heading: "When to Build" },
+  { id: "when-to-buy", heading: "When to Buy" },
+  { id: "the-vendor-evaluation-framework", heading: "The Vendor Evaluation Framework" },
+  { id: "the-demo-checklist", heading: "The Demo Checklist" },
+  { id: "the-hybrid-path", heading: "The Hybrid Path" },
+  { id: "next-steps", heading: "Next Steps" },
+  { id: "key-takeaways", heading: "Key takeaways" },
+];
+
 export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -35,10 +47,10 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
     <div className="min-h-screen">
       <EnglishOnlyBanner />
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-hairline bg-page-tint">
+      <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
         <TextureBackdrop texture={{ name: "circ", position: "12% 88%" }} />
 
-        <div className="relative max-w-4xl mx-auto px-6 pt-20 md:pt-28 pb-16">
+        <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -65,7 +77,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
             </p>
 
             {/* Meta */}
-            <div className="flex flex-wrap items-center gap-6 text-sm text-subtle">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-muted">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" strokeWidth={1.5} />
                 15 min read
@@ -81,13 +93,16 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
 
       {/* Article Content */}
       <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-12">
             {/* Main Content */}
-            <div className="lg:col-span-3 max-w-3xl space-y-12">
+            <article className="min-w-0 max-w-3xl space-y-12">
               {/* The Wrong Question */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="the-wrong-question"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   The Wrong Question
                 </h2>
 
@@ -126,7 +141,10 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                   <div className="w-10 h-10 rounded-pill bg-lilac grid place-items-center text-accent">
                     <Wrench className="w-5 h-5" strokeWidth={1.5} />
                   </div>
-                  <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong">
+                  <h2
+                    id="when-to-build"
+                    className="font-display text-[28px] md:text-[32px] font-bold text-strong scroll-mt-24"
+                  >
                     When to Build
                   </h2>
                 </div>
@@ -255,7 +273,10 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                   <div className="w-10 h-10 rounded-pill bg-lilac grid place-items-center text-accent">
                     <ShoppingCart className="w-5 h-5" strokeWidth={1.5} />
                   </div>
-                  <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong">
+                  <h2
+                    id="when-to-buy"
+                    className="font-display text-[28px] md:text-[32px] font-bold text-strong scroll-mt-24"
+                  >
                     When to Buy
                   </h2>
                 </div>
@@ -380,7 +401,10 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                   <div className="w-10 h-10 rounded-pill bg-lilac grid place-items-center text-accent">
                     <ClipboardList className="w-5 h-5" strokeWidth={1.5} />
                   </div>
-                  <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong">
+                  <h2
+                    id="the-vendor-evaluation-framework"
+                    className="font-display text-[28px] md:text-[32px] font-bold text-strong scroll-mt-24"
+                  >
                     The Vendor Evaluation Framework
                   </h2>
                 </div>
@@ -610,7 +634,10 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                   <div className="w-10 h-10 rounded-pill bg-lilac grid place-items-center text-accent">
                     <Target className="w-5 h-5" strokeWidth={1.5} />
                   </div>
-                  <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong">
+                  <h2
+                    id="the-demo-checklist"
+                    className="font-display text-[28px] md:text-[32px] font-bold text-strong scroll-mt-24"
+                  >
                     The Demo Checklist
                   </h2>
                 </div>
@@ -673,7 +700,10 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                   <div className="w-10 h-10 rounded-pill bg-lilac grid place-items-center text-accent">
                     <Building className="w-5 h-5" strokeWidth={1.5} />
                   </div>
-                  <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong">
+                  <h2
+                    id="the-hybrid-path"
+                    className="font-display text-[28px] md:text-[32px] font-bold text-strong scroll-mt-24"
+                  >
                     The Hybrid Path
                   </h2>
                 </div>
@@ -726,7 +756,10 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
 
               {/* Next Steps */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="next-steps"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Next Steps
                 </h2>
 
@@ -785,10 +818,40 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                   experience.
                 </p>
               </MotionDiv>
-            </div>
+
+              {/* Key takeaways */}
+              <MotionDiv {...fadeIn}>
+                <h2
+                  id="key-takeaways"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
+                  Key Takeaways
+                </h2>
+
+                <div className="bg-card shadow-card rounded-pill p-8">
+                  <ul className="space-y-4">
+                    {[
+                      "Build for strategic capability, not cost savings",
+                      "Buy for speed-to-market, not simplicity",
+                      "5-category vendor evaluation framework",
+                      "Demo checklist: before, during, after",
+                      "The hybrid path: buy commodity, build differentiation",
+                      "Auditability is non-negotiable",
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle aria-hidden="true" className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                        <span className="text-sm text-body leading-[1.6]">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </MotionDiv>
+            </article>
 
             {/* Sidebar */}
-            <div className="lg:col-span-1">
+            <aside aria-label="Article navigation">
               <MotionDiv
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -796,58 +859,32 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                 transition={{ duration: 0.6, ease }}
                 className="bg-card shadow-card rounded-pill p-8"
               >
-                <h3 className="font-display font-semibold text-strong mb-4">
-                  Key Takeaways
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    "Build for strategic capability, not cost savings",
-                    "Buy for speed-to-market, not simplicity",
-                    "5-category vendor evaluation framework",
-                    "Demo checklist: before, during, after",
-                    "The hybrid path: buy commodity, build differentiation",
-                    "Auditability is non-negotiable",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                      <span className="text-sm text-body">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-8 pt-6 border-t border-hairline">
-                  <h4 className="text-caption-sm text-subtle mb-3">
-                    Related Topics
-                  </h4>
-                  <div className="flex flex-wrap gap-1.5">
-                    {[
-                      "Vendor Evaluation",
-                      "Build vs Buy",
-                      "IDP",
-                      "Claims AI",
-                      "Insurance",
-                      "Due Diligence",
-                    ].map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-3 py-1 rounded-pill bg-accent-soft text-accent"
-                      >
-                        {tag}
-                      </span>
+                <h2 className="font-display font-semibold text-strong mb-4">
+                  On this page
+                </h2>
+                <nav aria-label="On this page">
+                  <ol role="list" className="space-y-2.5 list-none p-0">
+                    {sections.map((section) => (
+                      <li key={section.id}>
+                        <a
+                          href={`#${section.id}`}
+                          className="block text-sm leading-snug text-body hover:text-accent transition-colors"
+                        >
+                          {section.heading}
+                        </a>
+                      </li>
                     ))}
-                  </div>
-                </div>
+                  </ol>
+                </nav>
 
                 <div className="mt-8 pt-6 border-t border-hairline">
-                  <ButtonLink href="/contact" variant="primary" className="w-full">
-                    Talk to Us
-                    <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+                  <ButtonLink href="/trust" variant="primary" size="sm" className="w-full">
+                    Explore our Trust Centre
+                    <ArrowRight aria-hidden="true" className="w-4 h-4 flex-shrink-0" strokeWidth={1.5} />
                   </ButtonLink>
                 </div>
               </MotionDiv>
-            </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -867,7 +904,6 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <ButtonLink href="/contact" variant="primary" size="lg">
                 Get in Touch
-                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
               </ButtonLink>
               <ButtonLink href="/blog/auditability-evidence-chains" variant="on-dark" size="lg">
                 Read: Auditability in Claims AI

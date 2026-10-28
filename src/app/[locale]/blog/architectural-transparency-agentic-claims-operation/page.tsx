@@ -41,15 +41,6 @@ const sections: { id: string; heading: string }[] = [
   { id: "core-takeaways", heading: "Core takeaways" },
 ];
 
-const topics = [
-  "Claims AI",
-  "Agentic AI",
-  "Shared Claim Record",
-  "Auditability",
-  "Price Integrity",
-  "Operating Model",
-];
-
 type NumberedItem = { title: string; body: string };
 type BulletItem = { lead?: string; text: string };
 
@@ -289,10 +280,10 @@ export default async function ArchitecturalTransparencyBlogPost({
       <EnglishOnlyBanner />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-hairline bg-page-tint">
+      <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
         <TextureBackdrop texture={{ name: "circ", position: "88% 78%" }} />
 
-        <div className="relative max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
+        <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -759,22 +750,6 @@ export default async function ArchitecturalTransparencyBlogPost({
                 </nav>
 
                 <div className="mt-8 pt-6 border-t border-hairline">
-                  <h3 className="text-caption-sm text-muted mb-3">
-                    Related Topics
-                  </h3>
-                  <div className="flex flex-wrap gap-1.5">
-                    {topics.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-3 py-1 rounded-pill bg-accent-soft text-accent"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-hairline">
                   <ButtonLink href="/trust" variant="primary" size="sm" className="w-full">
                     Explore our Trust Centre
                     <ArrowRight aria-hidden="true" className="w-4 h-4 flex-shrink-0" strokeWidth={1.5} />
@@ -805,7 +780,6 @@ export default async function ArchitecturalTransparencyBlogPost({
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <ButtonLink href="/contact" variant="primary" size="lg">
                 Get in Touch
-                <ArrowRight aria-hidden="true" className="w-5 h-5" strokeWidth={1.5} />
               </ButtonLink>
               <ButtonLink href="/impact-estimator" variant="on-dark" size="lg">
                 <Calculator aria-hidden="true" className="w-5 h-5" strokeWidth={1.5} />

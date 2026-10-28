@@ -20,8 +20,8 @@ export type CoverCard = {
 };
 
 const TEXTURES: Record<CoverTexture["name"], string> = {
-  glass: "/brand/textures/glass-box-vivid.webp",
-  circ: "/brand/textures/circular-light.webp",
+  glass: "/brand/textures/glass-box-vivid-section.webp",
+  circ: "/brand/textures/circular-light-section.webp",
 };
 
 /**

@@ -1,6 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
-import { ArrowRight, Award, Globe, Scale, Handshake } from "lucide-react";
+import { Award, Globe, Scale, Handshake } from "lucide-react";
 import { PartnerOutboundLink } from "@/components/partners/PartnerOutboundLink";
 import { ButtonLink } from "@/components/brand/Button";
 import type { Metadata } from "next";
@@ -123,7 +123,6 @@ export default async function NortonRoseFulbrightPage({ params }: { params: Prom
           <div className="flex flex-col sm:flex-row gap-4">
             <ButtonLink href="/platform/claims-decisioning" variant="primary" size="lg">
               {t("cta.learnProducts")}
-              <ArrowRight strokeWidth={1.5} className="w-5 h-5" />
             </ButtonLink>
             <ButtonLink href="/contact" variant="on-dark" size="lg">
               {t("cta.bookDemo")}

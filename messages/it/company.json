@@ -119,18 +119,23 @@
           "body": "Norton Rose Fulbright named True Aim the most innovative InsurTech start-up of 2026.",
           "alt": "Norton Rose Fulbright"
         },
+        "fif": {
+          "title": "Rising Star of the Year 2026",
+          "body": "Rising Star of the Year at the 5th Ibero-American Insurtech Forum, hosted by FIF Portugal in Lisbon.",
+          "alt": "FIF Portugal"
+        },
         "swissInnovation": {
-          "title": "Innovationspreis der Schweizer Assekuranz",
+          "title": "Innovationspreis der Schweizer Assekuranz 2022",
           "body": "The Swiss insurance industry's innovation prize, awarded to the technology True Aim builds on.",
           "alt": "Innovationspreis der Schweizer Assekuranz"
         },
         "leuchtturm": {
-          "title": "Digitaler Leuchtturm Versicherungen",
+          "title": "Digitaler Leuchtturm Versicherungen 2022",
           "body": "Germany's digital lighthouse award for insurance, awarded to the technology True Aim builds on.",
           "alt": "Digitaler Leuchtturm Versicherungen"
         },
         "ikn": {
-          "title": "Miglior InsurTech, IKN Awards",
+          "title": "Miglior InsurTech 2024",
           "body": "Best InsurTech at the IKN Insurance Awards, Italy, awarded to the technology True Aim builds on.",
           "alt": "IKN Awards"
         }

@@ -1,6 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
-import { ArrowRight, ExternalLink, Award, Shield, Landmark, Microscope } from "lucide-react";
+import { ExternalLink, Award, Shield, Landmark, Microscope } from "lucide-react";
 import { PartnerOutboundLink } from "@/components/partners/PartnerOutboundLink";
 import { ButtonLink } from "@/components/brand/Button";
 import type { Metadata } from "next";
@@ -132,7 +132,6 @@ export default async function InnosuissePage({ params }: { params: Promise<{ loc
           <div className="flex flex-col sm:flex-row gap-4">
             <ButtonLink href="/technology" variant="primary" size="lg">
               {t("cta.exploreTech")}
-              <ArrowRight strokeWidth={1.5} className="w-5 h-5" />
             </ButtonLink>
             <ButtonLink href="/contact" variant="on-dark" size="lg">
               {t("cta.bookDemo")}

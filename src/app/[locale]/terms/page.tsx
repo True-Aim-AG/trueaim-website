@@ -9,7 +9,7 @@ export default async function TermsPage({ params }: { params: Promise<{ locale: 
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <PageHero title="Terms of Use" texture={{ name: "glass", position: "100% 100%" }}>
+      <PageHero compact title="Terms of Use" texture={{ name: "glass", position: "100% 100%" }}>
         <p className="mt-6 text-sm text-muted">Last updated: 08 February 2026</p>
       </PageHero>
       <section className={SECTION}>

@@ -127,13 +127,21 @@ const faqs: { q: string; a: React.ReactNode }[] = [
   },
 ];
 
-const sidebarTakeaways = [
-  "Claims handling is absent from Annex III",
-  "The Digital Omnibus deferral changes nothing for claims",
-  "GDPR Article 22 has bound claims decisions since 2018",
-  "Article 6(3) profiling override applies to life and health only",
-  "EIOPA expects explainability under existing sectoral law",
-  "Policy is not evidence: 61% have policies, 24% could prove them",
+// Short labels for the "On this page" panel; the H2s carry the full headings.
+const sections: { id: string; heading: string }[] = [
+  { id: "is-ai-claims-handling-high-risk-under-the-eu-ai", heading: "Is AI claims handling high-risk under the EU AI Act?" },
+  { id: "four-terms-that-decide-the-answer", heading: "Four terms that decide the answer" },
+  { id: "if-you-do-have-an-annex-iii-system-profiling-clo", heading: "If you do have an Annex III system, profiling closes the exit" },
+  { id: "which-regime-actually-binds-a-european-claims-op", heading: "Which regime actually binds a European claims operation?" },
+  { id: "does-gdpr-article-22-apply-to-an-automated-claim", heading: "Does GDPR Article 22 apply to an automated claims decision?" },
+  { id: "where-the-sector-supervisor-sits", heading: "Where the sector supervisor sits" },
+  { id: "what-does-it-cost-to-be-unable-to-explain-a-deci", heading: "What does it cost to be unable to explain a decision?" },
+  { id: "the-gap-that-will-actually-catch-carriers", heading: "The gap that will actually catch carriers" },
+  { id: "why-the-2027-date-does-not-help", heading: "Why the 2027 date does not help" },
+  { id: "the-test-worth-running-this-week", heading: "The test worth running this week" },
+  { id: "key-takeaways", heading: "Key takeaways" },
+  { id: "frequently-asked-questions", heading: "Frequently asked questions" },
+  { id: "related-reading", heading: "Related reading" },
 ];
 
 export default async function EUAIActClaimsBlogPost({ params }: { params: Promise<{ locale: string }> }) {
@@ -143,10 +151,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
     <div className="min-h-screen">
       <EnglishOnlyBanner />
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-hairline bg-page-tint">
+      <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
         <TextureBackdrop texture={{ name: "circ", position: "88% 78%" }} />
 
-        <div className="relative max-w-4xl mx-auto px-6 pt-20 md:pt-28 pb-16">
+        <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -175,7 +183,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
             </p>
 
             {/* Meta */}
-            <div className="flex flex-wrap items-center gap-6 text-sm text-subtle">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-muted">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" strokeWidth={1.5} />
                 12 min read
@@ -191,10 +199,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
       {/* Article Content */}
       <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-12">
             {/* Main Content */}
-            <div className="lg:col-span-3 max-w-3xl space-y-12">
+            <article className="min-w-0 max-w-3xl space-y-12">
               {/* The short answer */}
               <MotionDiv {...fadeIn}>
                 <div className="bg-card shadow-card rounded-pill p-8 mb-8">
@@ -283,7 +291,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
               {/* Is AI claims handling high-risk */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="is-ai-claims-handling-high-risk-under-the-eu-ai"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Is AI claims handling high-risk under the EU AI Act?
                 </h2>
 
@@ -385,7 +396,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
               {/* Four terms */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="four-terms-that-decide-the-answer"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Four terms that decide the answer
                 </h2>
 
@@ -425,7 +439,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
               {/* Profiling closes the exit */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="if-you-do-have-an-annex-iii-system-profiling-clo"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   If you do have an Annex III system, profiling closes the exit
                 </h2>
 
@@ -479,7 +496,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
               {/* Which regime binds */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="which-regime-actually-binds-a-european-claims-op"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Which regime actually binds a European claims operation?
                 </h2>
 
@@ -530,7 +550,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
               {/* Article 22 */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="does-gdpr-article-22-apply-to-an-automated-claim"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Does GDPR Article 22 apply to an automated claims decision?
                 </h2>
 
@@ -626,7 +649,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
               {/* EIOPA */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="where-the-sector-supervisor-sits"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Where the sector supervisor sits
                 </h2>
 
@@ -671,7 +697,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
               {/* Cost of not explaining */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="what-does-it-cost-to-be-unable-to-explain-a-deci"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   What does it cost to be unable to explain a decision?
                 </h2>
 
@@ -696,7 +725,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
               {/* The gap */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="the-gap-that-will-actually-catch-carriers"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   The gap that will actually catch carriers
                 </h2>
 
@@ -753,7 +785,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
               {/* Why 2027 does not help */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="why-the-2027-date-does-not-help"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Why the 2027 date does not help
                 </h2>
 
@@ -805,7 +840,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
               {/* The test */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="the-test-worth-running-this-week"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   The test worth running this week
                 </h2>
 
@@ -853,7 +891,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
               {/* Key takeaways */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="key-takeaways"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Key takeaways
                 </h2>
 
@@ -937,7 +978,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
               {/* FAQ */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="frequently-asked-questions"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Frequently asked questions
                 </h2>
 
@@ -960,7 +1004,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
               {/* Related reading */}
               <MotionDiv {...fadeIn}>
-                <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
+                <h2
+                  id="related-reading"
+                  className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
+                >
                   Related reading
                 </h2>
 
@@ -1111,10 +1158,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                   own systems with qualified counsel.
                 </p>
               </MotionDiv>
-            </div>
+            </article>
 
             {/* Sidebar */}
-            <div className="lg:col-span-1">
+            <aside aria-label="Article navigation">
               <MotionDiv
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -1122,52 +1169,32 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 transition={{ duration: 0.6, ease }}
                 className="bg-card shadow-card rounded-pill p-8"
               >
-                <h3 className="font-display font-semibold text-strong mb-4">
-                  Key Takeaways
-                </h3>
-                <ul className="space-y-3">
-                  {sidebarTakeaways.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <CheckCircle
-                        className="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
-                        strokeWidth={1.5}
-                      />
-                      <span className="text-sm text-body">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-8 pt-6 border-t border-hairline">
-                  <h4 className="text-caption-sm text-subtle mb-3">
-                    Related Topics
-                  </h4>
-                  <div className="flex flex-wrap gap-1.5">
-                    {[
-                      "EU AI Act",
-                      "Annex III",
-                      "GDPR Article 22",
-                      "EIOPA",
-                      "Claims AI",
-                      "Governance",
-                    ].map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-3 py-1 rounded-pill bg-accent-soft text-accent"
-                      >
-                        {tag}
-                      </span>
+                <h2 className="font-display font-semibold text-strong mb-4">
+                  On this page
+                </h2>
+                <nav aria-label="On this page">
+                  <ol role="list" className="space-y-2.5 list-none p-0">
+                    {sections.map((section) => (
+                      <li key={section.id}>
+                        <a
+                          href={`#${section.id}`}
+                          className="block text-sm leading-snug text-body hover:text-accent transition-colors"
+                        >
+                          {section.heading}
+                        </a>
+                      </li>
                     ))}
-                  </div>
-                </div>
+                  </ol>
+                </nav>
 
                 <div className="mt-8 pt-6 border-t border-hairline">
-                  <ButtonLink href="/contact" variant="primary" className="w-full">
-                    Talk to Us
-                    <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+                  <ButtonLink href="/trust" variant="primary" size="sm" className="w-full">
+                    Explore our Trust Centre
+                    <ArrowRight aria-hidden="true" className="w-4 h-4 flex-shrink-0" strokeWidth={1.5} />
                   </ButtonLink>
                 </div>
               </MotionDiv>
-            </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -1187,7 +1214,6 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <ButtonLink href="/contact" variant="primary" size="lg">
                 Get in Touch
-                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
               </ButtonLink>
               <ButtonLink href="/platform/claims-decisioning" variant="on-dark" size="lg">
                 Explore Automated Coverage Check

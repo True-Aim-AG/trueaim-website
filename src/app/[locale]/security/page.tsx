@@ -11,7 +11,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <PageHero title="Security at True Aim" texture={{ name: "circ", position: "12% 88%" }}>
+      <PageHero compact title="Security at True Aim" texture={{ name: "circ", position: "12% 88%" }}>
         <p className="mt-6 text-sm text-muted"><strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}</p>
       </PageHero>
       <section className={SECTION}>

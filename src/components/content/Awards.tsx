@@ -16,13 +16,20 @@ export type Award = {
 
 /** The awards row: each award as a card with the organiser's mark, the label, the award and one line on it. Rows line up across the cards. */
 export function Awards({ heading, items, tone = "tint" }: { heading: string; items: Award[]; tone?: Tone }) {
+  // Five awards sit three over two, the bottom pair centred at the same card width.
+  const threeTwo = items.length === 5;
   return (
     <section className={section(tone)}>
       <div className="mx-auto max-w-7xl">
         <SectionHead heading={heading} />
-        <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-4">
+        <ul className={cn("grid grid-cols-1 gap-[29px] md:grid-cols-2", threeTwo ? "md:grid-cols-6" : "lg:grid-cols-4")}>
           {items.map((item, index) => (
-            <Reveal key={item.name} as="li" delay={index * 0.1} className={cn(CARD, CARD_GRID, "row-span-4 p-8")}>
+            <Reveal
+              key={item.name}
+              as="li"
+              delay={index * 0.1}
+              className={cn(CARD, CARD_GRID, "row-span-4 p-8", threeTwo && "md:col-span-2", threeTwo && index === 3 && "md:col-start-2")}
+            >
               <div className="flex h-14 items-center">
                 <Image
                   src={item.src}

@@ -74,7 +74,7 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ lo
                 <Link href={`/case-studies/${study.slug}`} className={cn(CARD, CARD_HOVER, "flex h-full flex-col overflow-hidden")}>
                   <div
                     className="relative h-32 bg-cover"
-                    style={{ backgroundImage: "url(/brand/textures/circular-light.webp)", backgroundPosition: "12% 88%" }}
+                    style={{ backgroundImage: "url(/brand/textures/circular-light-section.webp)", backgroundPosition: "12% 88%" }}
                   >
                     {study.customer.logo && (
                       <Image

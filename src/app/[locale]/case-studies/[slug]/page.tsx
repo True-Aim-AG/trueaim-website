@@ -59,10 +59,10 @@ export default function CaseStudyPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden lg:flex lg:min-h-[720px] lg:items-center">
         <GridPattern className="absolute right-0 top-0 hidden h-[600px] w-[746px] lg:block" />
 
-        <div className="relative max-w-4xl mx-auto px-6 pt-20 md:pt-28 pb-16">
+        <div className="relative w-full max-w-4xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -291,7 +291,6 @@ export default function CaseStudyPage() {
             </p>
             <ButtonLink href="/contact" variant="primary" size="lg">
               {t("detail.requestPilot")}
-              <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
             </ButtonLink>
           </motion.div>
         </div>

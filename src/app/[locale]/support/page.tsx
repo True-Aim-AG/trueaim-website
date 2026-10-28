@@ -11,7 +11,7 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       <EnglishOnlyBanner />
-      <PageHero title="Customer Support" texture={{ name: "glass", position: "72% 18%" }}>
+      <PageHero compact title="Customer Support" texture={{ name: "glass", position: "72% 18%" }}>
         <p className="mt-6 text-sm text-muted"><strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}</p>
       </PageHero>
       <section className={SECTION}>

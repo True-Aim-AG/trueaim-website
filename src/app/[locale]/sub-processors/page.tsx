@@ -244,7 +244,7 @@ export default async function SubProcessorsPage({ params }: { params: Promise<{ 
     <div className="min-h-screen">
       <EnglishOnlyBanner />
       <PageSeo locale={locale} path="/sub-processors" template="page" />
-      <PageHero
+      <PageHero compact
         eyebrow="Schedule 2 to Data Processing Agreement"
         title="List of Sub-Processors"
         texture={{ name: "circ", position: "72% 18%" }}
