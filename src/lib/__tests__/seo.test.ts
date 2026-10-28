@@ -117,8 +117,8 @@ describe("buildPageGraph", () => {
     const software = nodes(buildPageGraph({ locale: "en", path: "/platform/claims-decisioning", template: "product" })).find(
       (node) => node["@type"] === "SoftwareApplication",
     );
-    expect(software?.name).toBe("Claims Decisioning");
-    expect(software?.alternateName).toBe("True Aim Claims Decisioning");
+    expect(software?.name).toBe("Automated Coverage Check");
+    expect(software?.alternateName).toBe("True Aim Automated Coverage Check");
   });
 
   it("builds FAQPage from the same array the page renders", () => {
