@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.22.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.21.0...v1.22.0) (2026-10-28)
+
+
+### Features
+
+* award addition and polishing from the 27 October website review ([3a80aab](https://github.com/True-Aim-AG/trueaim-website/commit/3a80aabb8ffe8f4d34ced7a4a0981bc322043280))
+* award addition and polishing from the 27 October website review ([aa6940f](https://github.com/True-Aim-AG/trueaim-website/commit/aa6940fa83c9336f6f2ab4f3eb0e9e7d28013292))
+
+
+### Bug Fixes
+
+* SEO test expects the current product name, Automated Coverage Check ([db80d4d](https://github.com/True-Aim-AG/trueaim-website/commit/db80d4d91715dc7916ea9a38acce5874be17d4dd))
+* SEO test expects the current product name, Automated Coverage Check ([197ca5b](https://github.com/True-Aim-AG/trueaim-website/commit/197ca5bc1d399e0b1c18fd8a4936c0e41bbbc845))
+
 ## [1.21.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.20.0...v1.21.0) (2026-10-27)
 
 
