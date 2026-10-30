@@ -52,9 +52,9 @@ export const caseStudies: CaseStudy[] = [
     ],
     timeline: "",
     quote: {
-      text: "I was sceptical about letting software decide claims. What changed my mind is that it decides nothing we had not already decided ourselves. Our experts wrote the rules, True Aim built them into the system and every answer shows the document and the clause behind it. Our harder claims used to take an expert the better part of an hour. They now come back in minutes, with the reasoning attached. I would tell any insurer or warranty provider to look at this seriously.",
-      author: "Giuseppe Chiarello",
-      role: "CEO, NSA Services SA",
+      text: "I believed in this automation from day one, because it decides nothing we had not already decided ourselves. Our experts wrote the rules, True Aim built them into the system, and every answer shows the document and the clause behind it. Routine claims are settled in minutes, and my team can focus on the cases where their experience really counts. I can only recommend that every insurer take a close look at this.",
+      author: "Stefano Venditti",
+      role: "Team Leader Claims & Project Manager, NSA Services SA",
     },
     highlights: [],
   },
