@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.22.1](https://github.com/True-Aim-AG/trueaim-website/compare/v1.22.0...v1.22.1) (2026-10-30)
+
+
+### Bug Fixes
+
+* replace NSA quote with Stefano Venditti's approved wording ([22f1848](https://github.com/True-Aim-AG/trueaim-website/commit/22f18485351dd567748e9d90ebe289982bbad682))
+
 ## [1.22.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.21.0...v1.22.0) (2026-10-28)
 
 
