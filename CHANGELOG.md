@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.22.2](https://github.com/True-Aim-AG/trueaim-website/compare/v1.22.1...v1.22.2) (2026-10-30)
+
+
+### Bug Fixes
+
+* credit the NSA quote to Giuseppe Chiarello, CEO ([#24](https://github.com/True-Aim-AG/trueaim-website/issues/24)) ([a08b9ee](https://github.com/True-Aim-AG/trueaim-website/commit/a08b9ee3e4cfa6fcd5d9c15fdd4b2ff1eaa8c620))
+
 ## [1.22.1](https://github.com/True-Aim-AG/trueaim-website/compare/v1.22.0...v1.22.1) (2026-10-30)
 
 
