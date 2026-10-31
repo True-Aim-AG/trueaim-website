@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 import { PageHero, SECTION } from "@/components/content";
 
-const PUBLISH_DATE = "2026-05-21";
+const PUBLISH_DATE = "2026-10-31";
 
 export default async function SecurityPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -56,7 +56,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Sub-processors</h2>
               <p className="text-body leading-[1.6]">
-                We use a limited set of Microsoft Azure services for hosting, AI inference, and operational telemetry, plus Google Workspace (for business email), Slack (for internal team communication) and Sentry (technical error logs only). The current list forms Schedule 2 to our Data Processing Agreement and is available on request. We notify customers in advance of changes. Internal-only tools (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed.
+                We use a limited set of Microsoft Azure services for hosting, AI inference, and operational telemetry, plus Google Cloud (Gemini models for AI inference in the EU), Google Workspace (for business email), Slack (for internal team communication) and Sentry (technical error logs only). The current list forms Schedule 2 to our Data Processing Agreement and is available on request. We notify customers in advance of changes. Internal-only tools (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed.
               </p>
             </section>
 
