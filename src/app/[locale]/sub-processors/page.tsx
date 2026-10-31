@@ -13,9 +13,9 @@ export const generateStaticParams = englishOnlyStaticParams;
 
 // Set both to the day this version goes live. Clause 9.2 of the DPA requires the
 // list updated before a new sub-processor begins processing, with written notice.
-const VERSION = "1.4";
-const EFFECTIVE_DATE = "2026-10-23";
-const LAST_UPDATED = "2026-10-23";
+const VERSION = "1.5";
+const EFFECTIVE_DATE = "2026-10-31";
+const LAST_UPDATED = "2026-10-31";
 
 type SubProcessor = {
   id: string;
@@ -42,6 +42,8 @@ const MS_DATA_PRIVACY =
   "https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/openai/data-privacy";
 
 const GOOGLE_CLOUD_SUBPROCESSORS = "https://cloud.google.com/terms/subprocessors";
+const GOOGLE_ABUSE_MONITORING =
+  "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/abuse-monitoring";
 
 const MICROSOFT: SubProcessor = {
   id: "microsoft",
@@ -53,7 +55,7 @@ const MICROSOFT: SubProcessor = {
   data:
     "All categories of Personal Data listed in clause 4: identification data, policy and claim references, claim-related data (including Sensitive Personal Data where the claim requires it) and financial data. Also platform telemetry (request metadata) and authorised-user account data.",
   location:
-    "All data at rest is stored in Switzerland North (Zurich), with backups in Switzerland West (Geneva). Document processing runs in Switzerland North. AI model inference runs in Switzerland North, with a fallback in the Microsoft EU Data Boundary (the EU and EFTA states) until March 2027, and stores no data outside Switzerland North. Azure OpenAI abuse monitoring is an exception for who can access data; see below.",
+    "All data at rest is stored in Switzerland North (Zurich), with backups in Switzerland West (Geneva). Document processing runs in Switzerland North. AI model inference runs in Switzerland and the European Union, and stores no data outside Switzerland North. Azure OpenAI abuse monitoring is an exception for who can access data; see below.",
   access:
     "Authorised Company staff, through the Company’s Azure tenant. Microsoft personnel can access data only as the Microsoft Products and Services Data Protection Addendum (Microsoft DPA) permits, for example to provide support.",
   transfers:
@@ -106,14 +108,38 @@ const GOOGLE_CLOUD: SubProcessor = {
       <a href={GOOGLE_CLOUD_SUBPROCESSORS} className="text-link hover:underline">
         cloud.google.com/terms/subprocessors
       </a>
-      . External support companies see data only if True Aim shares it in a support case. Abuse
-      monitoring is on: Google logs prompts that its safety filters flag and keeps them for up to 90
-      days in the EU. Authorised Google employees can review them. Google does not state where these
-      reviewers are. Google does not use the data to train models.
+      . External support companies see data only if True Aim shares it in a support case. Vertex AI
+      abuse monitoring is an exception for who can access data; see below.
     </>
   ),
   transfers:
     "Google Cloud Data Processing Addendum of 8 June 2026, which covers the Swiss FADP, with the EU Standard Contractual Clauses. Google LLC is also certified under the EU-US and Swiss-US Data Privacy Frameworks.",
+  exception: {
+    title: "Exception: Vertex AI abuse monitoring",
+    body: (
+      <>
+        <p>
+          Google runs abuse monitoring on Gemini models in Vertex AI, and it is on for the Company’s
+          Google Cloud project. Google stores a prompt only when its automated safety classifiers
+          flag possible abuse. It keeps the prompt for up to 90 days, in the region selected for the
+          project, which is in the European Union.
+        </p>
+        <p className="mt-3">
+          Authorised Google employees may review flagged prompts. Google does not state where these
+          reviewers are located, so they can be located outside Switzerland, the EEA and the UK.
+          This is the exception to the Company’s commitment that hosting and inference stay in
+          Switzerland, the EEA or the UK.
+        </p>
+        <p className="mt-3">
+          Google does not use this data to train or fine-tune models. Source:{" "}
+          <a href={GOOGLE_ABUSE_MONITORING} className="text-link hover:underline">
+            Vertex AI abuse monitoring
+          </a>{" "}
+          (Google Cloud documentation, October 2026).
+        </p>
+      </>
+    ),
+  },
 };
 
 const GOOGLE: SubProcessor = {
@@ -182,8 +208,14 @@ const GROUPS: SubProcessorGroup[] = [
 
 const VERSION_HISTORY = [
   {
-    version: "1.4",
+    version: "1.5",
     date: EFFECTIVE_DATE,
+    summary:
+      "Stated that Microsoft Azure runs AI model inference in Switzerland and the European Union, and removed the EU fallback and its March 2027 end date. Added the Vertex AI abuse monitoring exception to the Google Cloud EMEA Limited entry.",
+  },
+  {
+    version: "1.4",
+    date: "2026-10-23",
     summary:
       "Added Google Cloud EMEA Limited (Gemini models on Google Cloud) to Group A as an alternative AI inference provider.",
   },
