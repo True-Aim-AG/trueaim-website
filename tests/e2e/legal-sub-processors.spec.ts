@@ -121,7 +121,7 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
     await expect(page.locator('section#sentry')).toContainText('removes client data from each error report');
     expect(body).not.toMatch(/19 October|31 December|v0\.23\.0/);
     await expect(microsoft).toContainText('backups in Switzerland West');
-    await expect(microsoft).toContainText('AI model inference runs in Switzerland and the European Union');
+    await expect(microsoft).toContainText('AI model inference runs in Switzerland and the European Union.');
     expect(await microsoft.innerText()).not.toMatch(/March 2027|fallback|EU Data Boundary/);
     expect(body).not.toMatch(/not group/i);
   });

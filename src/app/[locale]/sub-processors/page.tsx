@@ -55,7 +55,7 @@ const MICROSOFT: SubProcessor = {
   data:
     "All categories of Personal Data listed in clause 4: identification data, policy and claim references, claim-related data (including Sensitive Personal Data where the claim requires it) and financial data. Also platform telemetry (request metadata) and authorised-user account data.",
   location:
-    "All data at rest is stored in Switzerland North (Zurich), with backups in Switzerland West (Geneva). Document processing runs in Switzerland North. AI model inference runs in Switzerland and the European Union, and stores no data outside Switzerland North. Azure OpenAI abuse monitoring is an exception for who can access data; see below.",
+    "All data at rest is stored in Switzerland North (Zurich), with backups in Switzerland West (Geneva). Document processing runs in Switzerland North. AI model inference runs in Switzerland and the European Union. It runs through the Company’s Azure OpenAI resource in Switzerland North and stores no data outside Switzerland North. Azure OpenAI abuse monitoring is an exception for who can access data; see below.",
   access:
     "Authorised Company staff, through the Company’s Azure tenant. Microsoft personnel can access data only as the Microsoft Products and Services Data Protection Addendum (Microsoft DPA) permits, for example to provide support.",
   transfers:

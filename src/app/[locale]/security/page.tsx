@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 import { PageHero, SECTION } from "@/components/content";
 
-const PUBLISH_DATE = "2026-05-21";
+const PUBLISH_DATE = "2026-10-31";
 
 export default async function SecurityPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
