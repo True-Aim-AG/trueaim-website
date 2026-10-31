@@ -211,7 +211,7 @@ const VERSION_HISTORY = [
     version: "1.5",
     date: EFFECTIVE_DATE,
     summary:
-      "Stated that Microsoft Azure runs AI model inference in Switzerland and the European Union, and removed the EU fallback and its March 2027 end date. Added the Vertex AI abuse monitoring exception to the Google Cloud EMEA Limited entry.",
+      "Stated that Microsoft Azure runs AI model inference in Switzerland and the European Union, with no end date. Added the Vertex AI abuse monitoring exception to the Google Cloud EMEA Limited entry.",
   },
   {
     version: "1.4",
