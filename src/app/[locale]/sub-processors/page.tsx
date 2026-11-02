@@ -13,9 +13,9 @@ export const generateStaticParams = englishOnlyStaticParams;
 
 // Set both to the day this version goes live. Clause 9.2 of the DPA requires the
 // list updated before a new sub-processor begins processing, with written notice.
-const VERSION = "1.5";
-const EFFECTIVE_DATE = "2026-10-31";
-const LAST_UPDATED = "2026-10-31";
+const VERSION = "1.6";
+const EFFECTIVE_DATE = "2026-11-02";
+const LAST_UPDATED = "2026-11-02";
 
 type SubProcessor = {
   id: string;
@@ -47,15 +47,15 @@ const GOOGLE_ABUSE_MONITORING =
 
 const MICROSOFT: SubProcessor = {
   id: "microsoft",
-  name: "Microsoft Ireland Operations Ltd",
+  name: "Microsoft Ireland Operations Limited",
   entity:
-    "Microsoft Ireland Operations Ltd, One Microsoft Place, South County Business Park, Leopardstown, Dublin 18, Ireland",
+    "Microsoft Ireland Operations Limited, One Microsoft Place, South County Business Park, Leopardstown, Dublin 18, Ireland",
   service:
     "Cloud infrastructure and hosting (Microsoft Azure), deployed in the Company’s Azure tenant. This covers compute, database, storage, AI model inference (Azure OpenAI), document processing, key management, monitoring and networking.",
   data:
-    "All categories of Personal Data listed in clause 4: identification data, policy and claim references, claim-related data (including Sensitive Personal Data where the claim requires it) and financial data. Also platform telemetry (request metadata) and authorised-user account data.",
+    "All categories of Personal Data listed in Schedule 3 of the DPA: identification data, policy and claim references, claim-related data (including Sensitive Personal Data where the claim requires it) and financial data. Also platform telemetry (request metadata) and authorised-user account data.",
   location:
-    "All data at rest is stored in Switzerland North (Zurich), with backups in Switzerland West (Geneva). Document processing runs in Switzerland North. AI model inference runs in Switzerland and the European Union. It runs through the Company’s Azure OpenAI resource in Switzerland North and stores no data outside Switzerland North. Azure OpenAI abuse monitoring is an exception for who can access data; see below.",
+    "All data at rest is stored in Switzerland North (Zurich), with backups in Switzerland West (Geneva). Document processing runs in Switzerland North. AI model inference runs through the Company’s Azure OpenAI resource in Switzerland North. Inference may be processed in Switzerland or the EU. Prompts and outputs are not stored outside Switzerland North. Azure OpenAI abuse monitoring is an exception for who can access data; see below.",
   access:
     "Authorised Company staff, through the Company’s Azure tenant. Microsoft personnel can access data only as the Microsoft Products and Services Data Protection Addendum (Microsoft DPA) permits, for example to provide support.",
   transfers:
@@ -208,8 +208,14 @@ const GROUPS: SubProcessorGroup[] = [
 
 const VERSION_HISTORY = [
   {
-    version: "1.5",
+    version: "1.6",
     date: EFFECTIVE_DATE,
+    summary:
+      "Clarified the Microsoft entry: the Personal Data categories refer to Schedule 3 of the DPA, the location states that inference may be processed in Switzerland or the EU while prompts and outputs are not stored outside Switzerland North, and the entity is named Microsoft Ireland Operations Limited throughout.",
+  },
+  {
+    version: "1.5",
+    date: "2026-10-31",
     summary:
       "Stated that Microsoft Azure runs AI model inference in Switzerland and the European Union, with no end date. Added the Vertex AI abuse monitoring exception to the Google Cloud EMEA Limited entry.",
   },
