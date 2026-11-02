@@ -129,11 +129,12 @@ describe("buildPageGraph", () => {
     expect(faq?.mainEntity).toEqual([{ "@type": "Question", name: "Q?", acceptedAnswer: { "@type": "Answer", text: "A." } }]);
   });
 
-  it("lists the four products on the platform page by their @ids", () => {
+  it("lists the five products on the platform page by their @ids", () => {
     const list = nodes(buildPageGraph({ locale: "en", path: "/platform", template: "platform" })).find(
       (node) => node["@type"] === "ItemList",
     ) as { itemListElement: { item: { "@id": string } }[] };
     expect(list.itemListElement.map((element) => element.item["@id"])).toEqual([
+      "https://trueaim.ai/en/platform/data-extraction/#software",
       "https://trueaim.ai/en/platform/claims-decisioning/#software",
       "https://trueaim.ai/en/platform/invoice-benchmarking/#software",
       "https://trueaim.ai/en/platform/damage-reporting/#software",

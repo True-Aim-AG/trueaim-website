@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { products, findProduct, type Product } from "@/data/products";
 import { ProductTemplate } from "@/components/templates/ProductTemplate";
 import {
+  Callout,
   FeatureCards,
   FigureSection,
   KeyFacts,
@@ -18,6 +19,7 @@ import {
 import {
   ClaimScene,
   FlowScene,
+  HeroLoop,
   InvoiceScene,
   LineBenchScene,
   OtusPrompts,
@@ -26,6 +28,7 @@ import {
   productIcons,
   type ClaimSceneData,
   type FlowSceneData,
+  type HeroLoopData,
   type InvoiceSceneData,
   type LineBenchSceneData,
   type OtusPrompt,
@@ -54,6 +57,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 /** Brand icons for each page's cards, in the order of the copy. */
 const icons: Record<string, BrandIconName[]> = {
+  extractionKeys: ["ingestion", "structure", "structured-data", "traceability"],
+  extractionSteps: ["ingestion", "extraction", "match", "structured-data"],
+  extractionFeatures: ["quality", "match", "document", "data", "traceability", "learning-loop"],
   claimsFeatures: ["document", "quality", "decision", "logic", "traceability", "control"],
   invoiceKeys: ["document", "quality", "structure", "traceability"],
   invoiceFeatures: ["data", "structured-data", "match", "document", "control", "learning-loop"],
@@ -63,6 +69,7 @@ const icons: Record<string, BrandIconName[]> = {
 
 /** The brand texture and crop behind each hero, as the prototype assigns them. */
 const textures: Record<Product["key"], HeroTexture> = {
+  dataExtraction: { name: "glass", position: "72% 18%" },
   claimsDecisioning: { name: "circ", position: "72% 18%" },
   invoiceBenchmarking: { name: "glass", position: "72% 18%" },
   damageReporting: { name: "circ", position: "12% 88%" },
@@ -71,6 +78,7 @@ const textures: Record<Product["key"], HeroTexture> = {
 
 /** Backgrounds alternate down each page; the links block takes the tone after the last section here, the FAQ the other. */
 const nextTone: Record<Product["key"], Tone> = {
+  dataExtraction: "white",
   claimsDecisioning: "tint",
   invoiceBenchmarking: "tint",
   damageReporting: "tint",
@@ -85,6 +93,24 @@ function withIcons(items: Omit<FeatureCard, "icon">[], names: BrandIconName[]): 
 function visual(product: Product, t: Translate) {
   const key = product.key;
   switch (key) {
+    case "dataExtraction":
+      return (
+        <HeroLoop
+          data={t.raw(`${key}.hero.scene`) as HeroLoopData}
+          desktop={{
+            src: "/media/data-extraction/hero-loop",
+            poster: "/media/data-extraction/hero-poster.webp",
+            width: 1080,
+            height: 900,
+          }}
+          phone={{
+            src: "/media/data-extraction/hero-loop-phone",
+            poster: "/media/data-extraction/hero-poster-phone.webp",
+            width: 720,
+            height: 840,
+          }}
+        />
+      );
     case "claimsDecisioning":
       return <ClaimScene data={t.raw(`${key}.hero.scene`) as ClaimSceneData} hero />;
     case "invoiceBenchmarking":
@@ -107,6 +133,38 @@ function visual(product: Product, t: Translate) {
 function sections(product: Product, t: Translate) {
   const key = product.key;
   switch (key) {
+    case "dataExtraction":
+      return (
+        <>
+          <KeyFacts heading={t(`${key}.keys.heading`)} items={t.raw(`${key}.keys.items`) as KeyFact[]} icons={icons.extractionKeys} tone="white" />
+          <SplitText
+            heading={t(`${key}.locked.heading`)}
+            paragraphs={t.raw(`${key}.locked.paragraphs`) as string[]}
+            image={{ src: "/brand/3d/objects-01.webp", alt: t(`${key}.locked.imageAlt`), width: 560, height: 420 }}
+            imageSide="left"
+            align="right"
+            tone="tint"
+          />
+          <FeatureCards
+            heading={t(`${key}.steps.heading`)}
+            columns={4}
+            items={withIcons(t.raw(`${key}.steps.items`) as FeatureCard[], icons.extractionSteps)}
+            tone="white"
+          />
+          <SplitText
+            heading={t(`${key}.systems.heading`)}
+            paragraphs={t.raw(`${key}.systems.paragraphs`) as string[]}
+            image={{ src: "/brand/3d/glass-box.webp", alt: t(`${key}.systems.imageAlt`), width: 560, height: 536 }}
+            tone="tint"
+          />
+          <FeatureCards
+            heading={t(`${key}.features.heading`)}
+            items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], icons.extractionFeatures)}
+            tone="white"
+          />
+          <Callout text={t(`${key}.otus.text`)} link={{ href: "/platform/otus", label: t(`${key}.otus.link`) }} tone="tint" />
+        </>
+      );
     case "claimsDecisioning":
       return (
         <>
@@ -253,6 +311,7 @@ export default async function ProductPage({ params }: Props) {
           summary: t(`${key}.hero.summary`),
           buttons,
           visual: visual(product, t),
+          visualWidth: key === "dataExtraction" ? 680 : undefined,
           texture: textures[key],
         }}
         faq={{ heading: faqHeading, items: faqs }}

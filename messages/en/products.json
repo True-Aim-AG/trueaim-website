@@ -6,6 +6,151 @@
       "faqHeading": "Common questions",
       "relatedHeading": "Explore our solutions"
     },
+    "dataExtraction": {
+      "name": "Data Extraction",
+      "tagline": "Your claims data, ready for AI.",
+      "hero": {
+        "title": "Data Extraction: your claims data, ready for AI",
+        "summary": "Most of what an insurer knows about a claim sits in PDFs, scans, photographs, emails and legacy systems. True Aim reads it, extracts it, puts it in context and builds one structured database. Your teams and your AI can then search every claim, compare every document and act on what they find.",
+        "scene": {
+          "alt": "An interactive graph of synthetic claims data. Claims, policies, parties, suppliers, documents, invoices, invoice lines and damage photos are linked by the relationships True Aim has extracted.",
+          "viewsLabel": "Arrange the graph",
+          "views": {
+            "claim": "By claim",
+            "supplier": "By supplier",
+            "policy": "By policy",
+            "documentType": "By document type"
+          },
+          "types": {
+            "claim": "Claim",
+            "policy": "Policy",
+            "party": "Party",
+            "supplier": "Supplier",
+            "document": "Document",
+            "invoice": "Invoice",
+            "invoiceLine": "Invoice line",
+            "photo": "Damage photo",
+            "group": "Group"
+          },
+          "source": "Read from {document}, page {page}",
+          "mismatch": "Flagged for review: same amount and date as {other}",
+          "pause": "Pause animation",
+          "play": "Play animation"
+        }
+      },
+      "keys": {
+        "heading": "Every document read",
+        "items": [
+          {
+            "label": "Every source",
+            "text": "PDFs, scans, photographs, handwriting, emails and records in your existing systems."
+          },
+          {
+            "label": "Put in context",
+            "text": "Each value is linked to the policy, claim, party and supplier it belongs to."
+          },
+          {
+            "label": "One database",
+            "text": "Information that lived in separate files and systems, stitched together and searchable."
+          },
+          {
+            "label": "Traceable to the page",
+            "text": "Every value links back to the document and page it was read from."
+          }
+        ]
+      },
+      "locked": {
+        "heading": "Claims knowledge locked in static files",
+        "paragraphs": [
+          "Claims teams hold years of evidence that no system can search. Invoices, reports, estimates and correspondence sit as files, read once and then archived. AI can only work with what it can find. True Aim turns that archive into data, across P&C and short-term insurance, motor, property, warranty and third-party administration."
+        ],
+        "imageAlt": "Claims documents archived as static files"
+      },
+      "steps": {
+        "heading": "From the first document to usable data",
+        "items": [
+          {
+            "title": "The documents come in",
+            "text": "From any channel or straight from your claims and document systems."
+          },
+          {
+            "title": "The information is read",
+            "text": "Names, dates, amounts, line items, parts, trades and damage details are extracted."
+          },
+          {
+            "title": "The context is added",
+            "text": "Each value is matched to its claim, policy, party and supplier, then checked against the others."
+          },
+          {
+            "title": "The data is ready",
+            "text": "Structured, searchable and available to your teams, to True Aim and to your own AI."
+          }
+        ]
+      },
+      "systems": {
+        "heading": "Your systems, your data",
+        "paragraphs": [
+          "True Aim sits above your existing claims and ERP systems. It reads from them and writes structured results back. You don't need to replace anything to start. The data stays yours, with the rules and access you set. Every extracted value keeps its source, so anyone reviewing it can check the original in one click."
+        ],
+        "imageAlt": "Your existing systems, with True Aim above them"
+      },
+      "features": {
+        "heading": "What this means for your team",
+        "items": [
+          {
+            "title": "Fraud and inconsistency surfaced",
+            "text": "Conflicting dates, repeated invoices and amounts that don't match are flagged for review. Your team decides what happens next."
+          },
+          {
+            "title": "Consistent pricing",
+            "text": "We build internal benchmarks from your own history, so the same work is priced the same way every time."
+          },
+          {
+            "title": "Faster damage reports",
+            "text": "Photos and documents feed straight into a priced estimate and scope of work."
+          },
+          {
+            "title": "Search across every claim",
+            "text": "Find patterns across suppliers, regions and lines of business that no single file shows."
+          },
+          {
+            "title": "Every value traceable",
+            "text": "Each figure keeps its source document and page, ready for audit."
+          },
+          {
+            "title": "Ready for your own AI",
+            "text": "Clean, structured claims data that your other tools and models can use."
+          }
+        ]
+      },
+      "otus": {
+        "text": "Data Extraction gives Otus, True Aim's claims specialist, everything it needs to deliver its best in your environment.",
+        "link": "Meet Otus"
+      },
+      "faq": [
+        {
+          "question": "Which documents can True Aim read?",
+          "answer": "Typed and scanned PDFs, photographs, handwriting, emails and records held in claims and ERP systems. That covers invoices, estimates, reports, forms and correspondence."
+        },
+        {
+          "question": "How do we know the data is right?",
+          "answer": "Every value links back to the page it came from. Values that conflict or fall outside expected ranges are flagged for a person to check rather than passed on."
+        },
+        {
+          "question": "Does True Aim decide whether a claim is fraudulent?",
+          "answer": "No. True Aim surfaces inconsistencies and patterns worth a closer look. Your team reviews them and decides."
+        },
+        {
+          "question": "Do we have to replace our claims system?",
+          "answer": "No. True Aim works alongside your existing systems, reads from them and writes results back."
+        }
+      ],
+      "cta": {
+        "heading": "Test it on your own documents",
+        "lede": "See what True Aim extracts from your files, with every value traced to its source.",
+        "buttonDemo": "Book a demo"
+      }
+    },
     "claimsDecisioning": {
       "name": "Automated Coverage Check",
       "tagline": "Claims settled in minutes, not weeks.",

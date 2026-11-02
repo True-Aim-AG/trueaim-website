@@ -26,7 +26,10 @@ const outcomes = [
   { key: "damageReporting", href: "/platform/damage-reporting" },
 ] as const;
 
-const features = ["orchestrate", "prove"] as const;
+/** The outcome cards lead with Data Extraction; the hero scene keeps the three it was drawn with. */
+const outcomeCards = [{ key: "dataExtraction", href: "/platform/data-extraction" }, ...outcomes] as const;
+
+const features =["orchestrate", "prove"] as const;
 
 export default async function PlatformPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -62,7 +65,7 @@ export default async function PlatformPage({ params }: { params: Promise<{ local
       />
       <FeatureCards
         heading={t("outcomes.heading")}
-        items={outcomes.map((outcome) => ({
+        items={outcomeCards.map((outcome) => ({
           title: t(`outcomes.items.${outcome.key}.title`),
           text: t(`outcomes.items.${outcome.key}.text`),
           icon: productIcons[outcome.key],

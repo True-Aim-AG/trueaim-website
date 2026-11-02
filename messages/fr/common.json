@@ -33,6 +33,10 @@
     "platform": "Platform",
     "solutions": "Solutions",
     "menu": {
+      "dataExtraction": {
+        "name": "Data Extraction",
+        "desc": "Vos données de sinistres, prêtes pour l'IA"
+      },
       "claimsDecisioning": {
         "name": "Claims Decisioning",
         "desc": "Des sinistres réglés en minutes, pas en semaines"
@@ -113,6 +117,7 @@
     "impactEstimator": "Impact Estimator",
     "blog": "Blog",
     "platformOverview": "Aperçu de la plateforme",
+    "dataExtraction": "Data Extraction",
     "invoiceBenchmarking": "Invoice Benchmarking",
     "claimsDecisioning": "Claims Decisioning",
     "damageReporting": "Damage Reporting",
