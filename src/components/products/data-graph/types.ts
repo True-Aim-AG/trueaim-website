@@ -7,14 +7,20 @@
 
 export type GraphNodeType =
   | "claim"
+  | "lossEvent"
+  | "exposure"
   | "policy"
-  | "party"
-  | "supplier"
-  | "document"
+  | "policyholder"
+  | "broker"
+  | "insurer"
+  | "adjuster"
+  | "agent"
+  | "lossAssessment"
+  | "scopeOfWork"
+  | "decision"
   | "invoice"
-  | "invoiceLine"
-  | "photo"
-  | "group";
+  | "document"
+  | "photo";
 
 /**
  * The group a node reads in. The scene draws one shape per family

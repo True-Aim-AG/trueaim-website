@@ -384,7 +384,10 @@ function useIconAtlas(ref: RefObject<HTMLDivElement | null>): IconAtlas | null {
         .replaceAll("currentColor", "#ffffff");
       return new Promise<void>((resolve) => {
         const image = new Image();
-        image.onload = () => {
+        // Drawn once decoded, not merely loaded: Edge defers the decode of
+        // an image that is not in the page, and a glyph drawn before it is
+        // ready leaves its cell blank.
+        const draw = () => {
           const column = index % ATLAS_COLUMNS;
           const row = Math.floor(index / ATLAS_COLUMNS);
           context.drawImage(
@@ -397,8 +400,8 @@ function useIconAtlas(ref: RefObject<HTMLDivElement | null>): IconAtlas | null {
           cell.set(key, index);
           resolve();
         };
-        image.onerror = () => resolve();
         image.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(markup)}`;
+        image.decode().then(draw, () => resolve());
       });
     });
     void Promise.all(loads).then(() => {

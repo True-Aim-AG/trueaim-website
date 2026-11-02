@@ -13,24 +13,23 @@
         "title": "Data Extraction: your claims data, ready for AI",
         "summary": "Most of what an insurer knows about a claim sits in PDFs, scans, photographs, emails and legacy systems. True Aim reads it, extracts it, puts it in context and builds one structured database. Your teams and your AI can then search every claim, compare every document and act on what they find.",
         "scene": {
-          "alt": "An interactive graph of synthetic claims data. Claims, policies, parties, suppliers, documents, invoices, invoice lines and damage photos are linked by the relationships True Aim has extracted.",
-          "viewsLabel": "Arrange the graph",
-          "views": {
-            "claim": "By claim",
-            "supplier": "By supplier",
-            "policy": "By policy",
-            "documentType": "By document type"
-          },
+          "alt": "A looping film of a graph of synthetic claims data. It opens on one property claim and its linked records, then lays them out in columns around the claim, the insurer and the building exposure in turn, showing the policyholder, broker, policy, loss assessments, scopes of works by trade, invoices, documents and damage photos True Aim has extracted.",
           "types": {
             "claim": "Claim",
-            "policy": "Policy",
-            "party": "Party",
-            "supplier": "Supplier",
-            "document": "Document",
+            "lossEvent": "Loss event",
+            "exposure": "Exposure",
+            "policy": "Policy snapshot",
+            "policyholder": "Policyholder",
+            "broker": "Broker",
+            "insurer": "Insurer",
+            "adjuster": "Claims adjuster",
+            "agent": "AI claims specialist",
+            "lossAssessment": "Loss assessment",
+            "scopeOfWork": "Scope of works",
+            "decision": "Settlement decision",
             "invoice": "Invoice",
-            "invoiceLine": "Invoice line",
-            "photo": "Damage photo",
-            "group": "Group"
+            "document": "Document",
+            "photo": "Damage photo"
           },
           "source": "Read from {document}, page {page}",
           "mismatch": "Flagged for review: same amount and date as {other}",
@@ -92,7 +91,7 @@
         "paragraphs": [
           "True Aim sits above your existing claims and ERP systems. It reads from them and writes structured results back. You don't need to replace anything to start. The data stays yours, with the rules and access you set. Every extracted value keeps its source, so anyone reviewing it can check the original in one click."
         ],
-        "imageAlt": "Your existing systems, with True Aim above them"
+        "imageAlt": "A lock: your data stays yours"
       },
       "features": {
         "heading": "What this means for your team",
@@ -102,7 +101,7 @@
             "text": "Conflicting dates, repeated invoices and amounts that don't match are flagged for review. Your team decides what happens next."
           },
           {
-            "title": "Consistent pricing",
+            "title": "Consistent supplier pricing",
             "text": "We build internal benchmarks from your own history, so the same work is priced the same way every time."
           },
           {
@@ -124,7 +123,7 @@
         ]
       },
       "otus": {
-        "text": "Data Extraction gives Otus, True Aim's claims specialist, everything it needs to deliver its best in your environment.",
+        "text": "Data Extraction gives Otus, our AI claims specialist, everything it needs to deliver its best in your environment.",
         "link": "Meet Otus"
       },
       "faq": [

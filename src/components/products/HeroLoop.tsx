@@ -26,8 +26,9 @@ const noSubscription = () => () => undefined;
 const matchesDesktop = () => window.matchMedia(DESKTOP_QUERY).matches;
 
 /**
- * The Data Extraction hero: a silent, looping film of the claims graph being
- * arranged by claim, supplier, policy and document type. It autoplays on
+ * The Data Extraction hero: a silent, looping film of the claims graph, from
+ * the ring around one claim into the Node view around the claim, the insurer
+ * and an exposure, and back. It autoplays on
  * landing; under reduced motion it stays on the poster until the visitor
  * presses play. The toggle lets anyone pause it (WCAG 2.2.2).
  *

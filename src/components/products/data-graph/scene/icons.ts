@@ -1,45 +1,74 @@
 import {
-  Building2,
+  Bot,
+  Briefcase,
+  Building,
+  Calculator,
+  CloudLightning,
+  Construction,
+  Fan,
   FileImage,
   FileStack,
   FileText,
-  Layers,
-  ListChecks,
+  Gavel,
+  Grid2x2,
+  Hammer,
+  Headset,
   type LucideIcon,
+  PaintRoller,
   Receipt,
   ScrollText,
+  ShieldCheck,
   User,
+  Warehouse,
+  Wrench,
 } from "lucide-react";
 
-import type { GraphNode, GraphNodeType } from "../types";
+import type { CraftKey, GraphNode, GraphNodeType } from "../types";
 
 /**
  * Which glyph a node wears on its shape (the prototype's decision 120): one per
- * node type, from the prototype's own icon set where it has the type (claim,
- * policy, party, firm, paper, photo, quote), and the fact glyph for an
- * extracted invoice line.
+ * node type, from the prototype's own icon set, with a scope of works split
+ * by its trade.
  *
  * `iconKeyOf` is pure, so the engine can key its icon atlas without React;
  * `NODE_ICONS` holds the lucide component for each key, which `GraphScene`
  * rasterises.
  */
 
-export const NODE_ICONS = {
+const TYPE_ICONS = {
   claim: FileStack,
+  lossEvent: CloudLightning,
+  exposure: ShieldCheck,
   policy: ScrollText,
-  party: User,
-  supplier: Building2,
-  document: FileText,
+  policyholder: User,
+  broker: Briefcase,
+  insurer: Building,
+  adjuster: Headset,
+  agent: Bot,
+  lossAssessment: Calculator,
+  scopeOfWork: Hammer,
+  decision: Gavel,
   invoice: Receipt,
-  invoiceLine: ListChecks,
+  document: FileText,
   photo: FileImage,
-  group: Layers,
 } as const satisfies Record<GraphNodeType, LucideIcon>;
+
+const CRAFT_ICONS = {
+  scaffolding: Construction,
+  roofer: Warehouse,
+  carpenter: Hammer,
+  drying: Fan,
+  finishes: PaintRoller,
+  flooring: Grid2x2,
+  plumber: Wrench,
+} as const satisfies Record<CraftKey, LucideIcon>;
+
+export const NODE_ICONS = { ...TYPE_ICONS, ...CRAFT_ICONS };
 
 export type IconKey = keyof typeof NODE_ICONS;
 
 export const ICON_KEYS = Object.keys(NODE_ICONS) as readonly IconKey[];
 
 export function iconKeyOf(node: GraphNode): IconKey {
-  return node.type;
+  return node.type === "scopeOfWork" && node.craft ? node.craft : node.type;
 }

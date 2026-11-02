@@ -2,8 +2,8 @@ import { Color, PerspectiveCamera } from "three";
 import { describe, expect, it } from "vitest";
 
 import en from "../../../../../messages/en/products.json";
-import { CLAIM_VIEW_CONFIG } from "../config";
-import { buildGraph, FLAGGED, HUBS, VIEWS } from "../sample-data";
+import { CLAIM_VIEW_CONFIG, NODE_VIEW_CONFIG } from "../config";
+import { buildGraph, FLAGGED, MAIN_CLAIM } from "../sample-data";
 import { SceneEngine } from "../scene/engine";
 
 const scene = en.productPages.dataExtraction.hero.scene;
@@ -13,9 +13,9 @@ describe("data graph sample data", () => {
   const graph = buildGraph(words, false);
   const ids = new Set(graph.nodes.map((node) => node.id));
 
-  it("has 35 to 50 nodes of every type, with one main claim", () => {
-    expect(graph.nodes.length).toBeGreaterThanOrEqual(35);
-    expect(graph.nodes.length).toBeLessThanOrEqual(50);
+  it("has 25 to 40 nodes of every type, with one main claim", () => {
+    expect(graph.nodes.length).toBeGreaterThanOrEqual(25);
+    expect(graph.nodes.length).toBeLessThanOrEqual(40);
     expect(new Set(graph.nodes.map((node) => node.type))).toEqual(new Set(Object.keys(scene.types)));
     expect(graph.nodes.filter((node) => node.tier === 0)).toHaveLength(1);
   });
@@ -38,19 +38,19 @@ describe("data graph sample data", () => {
   });
 
   it("words every extracted value with its source", () => {
-    const line = graph.nodes.find((node) => node.type === "invoiceLine");
-    expect(line?.hover.status).toMatch(/^Read from .+\.pdf, page \d$/);
+    const invoice = graph.nodes.find((node) => node.type === "invoice" && !FLAGGED.includes(node.id));
+    expect(invoice?.hover.status).toMatch(/^Read from .+\.pdf, page \d$/);
   });
 
-  it("keeps every hub and type in the lighter phone graph", () => {
+  it("keeps the claim, the flagged pair and every type in the lighter phone graph", () => {
     const phone = buildGraph(words, true);
     const phoneIds = new Set(phone.nodes.map((node) => node.id));
     expect(phone.nodes.length).toBeLessThan(graph.nodes.length);
-    for (const view of VIEWS) expect(phoneIds.has(HUBS[view])).toBe(true);
+    for (const id of [MAIN_CLAIM, ...FLAGGED]) expect(phoneIds.has(id)).toBe(true);
     expect(new Set(phone.nodes.map((node) => node.type)).size).toBe(Object.keys(scene.types).length);
   });
 
-  it("is arranged by the ported engine around each hub with finite seats", () => {
+  it("is arranged by the ported engine, ring and Node view, with finite seats", () => {
     const engine = new SceneEngine();
     const white = new Color(1, 1, 1);
     engine.setPalette({
@@ -67,12 +67,18 @@ describe("data graph sample data", () => {
       glyphLight: white,
       glyphDark: new Color(0, 0, 0),
     });
-    engine.setConfig(CLAIM_VIEW_CONFIG, "ring");
     engine.sync(graph.nodes, graph.edges);
     const camera = new PerspectiveCamera(32, 1.2, 0.5, 3000);
     camera.position.set(0, 0, 120);
-    for (const view of VIEWS) {
-      const framed = engine.focusOn(HUBS[view], camera, 600, 500, null, { instant: true });
+    const steps = [
+      [CLAIM_VIEW_CONFIG, "ring", MAIN_CLAIM],
+      [NODE_VIEW_CONFIG, "node", MAIN_CLAIM],
+      [NODE_VIEW_CONFIG, "node", "party:bergwald"],
+      [NODE_VIEW_CONFIG, "node", "exposure:building"],
+    ] as const;
+    for (const [config, layout, id] of steps) {
+      engine.setConfig(config, layout);
+      const framed = engine.focusOn(id, camera, 600, 500, null, { instant: true });
       expect(framed).not.toBeNull();
       for (let i = 0; i < 5; i++) engine.frame(camera, null, 1 / 60, 600, 500);
       const seats = engine.focusPlace()?.seats ?? {};

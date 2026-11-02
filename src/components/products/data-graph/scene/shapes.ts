@@ -56,7 +56,9 @@ export function buildShapes(): Record<NodeShape, ShapeSpec> {
       new RoundedBoxGeometry(1, 1, 1, 3, 0.16),
       new Euler(0.42, 0.62, 0),
     ),
-    octahedron: spec(new OctahedronGeometry(1, 0), new Euler(0.24, 0.52, 0)),
+    // Tipped toward the reader only: a turn about the vertical as well left
+    // its outline a sheared hexagon, which read as a skewed, oblong diamond.
+    octahedron: spec(new OctahedronGeometry(1, 0), new Euler(0.24, 0, 0)),
     // The work stands upright, tipped toward the reader so its top shows.
     cylinder: spec(
       new CylinderGeometry(0.62, 0.62, 1.2, 40, 1),

@@ -58,6 +58,8 @@ export const NODE_CENTRE_LABEL = 1.35;
 /** A family larger than this takes more than one column. */
 const MAX_ROWS = 12;
 const FRAME_MARGIN_PX = 36;
+/** Between the canvas's left edge and the selection's sphere or name. */
+const CENTRE_EDGE_PX = 14;
 /** Between a sphere's edge and its label: the engine's value. */
 const LABEL_GAP_PX = 6;
 /** Between the selection's sphere and the first column, where link tags sit. */
@@ -142,8 +144,18 @@ export function arrangeNode(
       W * LAYER_SHARE,
       layerWidths.reduce((sum, w) => sum + w + layerGap, 0),
     );
-    const centreX = -W / 2 + W / 6;
     const centreR = input.centre.radiusPx * zoom;
+    // In the left third, but never so near the edge that its name, centred
+    // under it, runs off a narrow canvas.
+    const centreX = Math.max(
+      -W / 2 + W / 6,
+      -W / 2 +
+        CENTRE_EDGE_PX +
+        Math.max(
+          centreR,
+          (input.centre.labelW * boostOf(input.centre, zoom)) / 2,
+        ),
+    );
     const start = Math.max(
       -W / 2 + W / 3 + gap / 2,
       centreX + centreR + TAG_ROOM_PX * params.ringRadius,

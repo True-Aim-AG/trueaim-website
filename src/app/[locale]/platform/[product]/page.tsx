@@ -154,7 +154,7 @@ function sections(product: Product, t: Translate) {
           <SplitText
             heading={t(`${key}.systems.heading`)}
             paragraphs={t.raw(`${key}.systems.paragraphs`) as string[]}
-            image={{ src: "/brand/3d/glass-box.webp", alt: t(`${key}.systems.imageAlt`), width: 560, height: 536 }}
+            image={{ src: "/brand/3d/lock.webp", alt: t(`${key}.systems.imageAlt`), width: 420, height: 420 }}
             tone="tint"
           />
           <FeatureCards

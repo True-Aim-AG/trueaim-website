@@ -304,6 +304,9 @@ function shallowEqual(a: object, b: object): boolean {
  * name, and the orbit turning about the main node wherever it is.
  */
 export const CLAIM_VIEW_OVERRIDES: GraphConfigOverrides = {
+  // Two links out: the ring stays a tight picture of the claim, without a
+  // scatter of faint records around it.
+  layout: { hopsShown: 2 },
   nodes: { mask: 60, detailLine: true },
   depth: { fogIntensity: 60 },
   camera: { pivot: "centre" },
@@ -314,9 +317,35 @@ export const CLAIM_VIEW_CONFIG: GraphConfig = withOverrides(
   CLAIM_VIEW_OVERRIDES,
 );
 
-/** Below the `md` breakpoint: smaller names, no detail line, two links out. */
+/** Below the `md` breakpoint: smaller names, no detail line, one link out. */
 export const PHONE_VIEW_CONFIG: GraphConfig = withOverrides(
   DEFAULT_GRAPH_CONFIG,
   CLAIM_VIEW_OVERRIDES,
-  { labels: { sizePx: 11 }, nodes: { detailLine: false }, layout: { hopsShown: 2 } },
+  { labels: { sizePx: 11 }, nodes: { detailLine: false }, layout: { hopsShown: 1 } },
+);
+
+/**
+ * The prototype's Node view (`presets.ts`): the selection large in the left
+ * third, its links in columns beside it, moving a little slower.
+ */
+export const NODE_VIEW_OVERRIDES: GraphConfigOverrides = {
+  motion: { transitionMs: 900, easing: "inOutCubic", staggerMs: 160 },
+  // Two links out, so the column behind keeps clear of the names on the
+  // plane in a hero-sized canvas.
+  layout: { hopsShown: 2 },
+};
+
+export const NODE_VIEW_CONFIG: GraphConfig = withOverrides(
+  DEFAULT_GRAPH_CONFIG,
+  NODE_VIEW_OVERRIDES,
+);
+
+/**
+ * The Node view below the `md` breakpoint: the phone's smaller names, and
+ * only the selection's own links, since a column behind them has no room.
+ */
+export const PHONE_NODE_VIEW_CONFIG: GraphConfig = withOverrides(
+  DEFAULT_GRAPH_CONFIG,
+  NODE_VIEW_OVERRIDES,
+  { labels: { sizePx: 11 }, layout: { hopsShown: 1 } },
 );
