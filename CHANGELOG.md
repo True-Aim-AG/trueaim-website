@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.22.4](https://github.com/True-Aim-AG/trueaim-website/compare/v1.22.3...v1.22.4) (2026-11-02)
+
+
+### Bug Fixes
+
+* clarify the Microsoft entry on the sub-processor list ([#29](https://github.com/True-Aim-AG/trueaim-website/issues/29)) ([9f1fc25](https://github.com/True-Aim-AG/trueaim-website/commit/9f1fc25a3d0d2de1ebb1cfaa12893d3db3563aee))
+
+## [1.22.3](https://github.com/True-Aim-AG/trueaim-website/compare/v1.22.2...v1.22.3) (2026-10-31)
+
+
+### Bug Fixes
+
+* state AI inference in Switzerland and the EU on the sub-processor list ([#26](https://github.com/True-Aim-AG/trueaim-website/issues/26)) ([59a55ce](https://github.com/True-Aim-AG/trueaim-website/commit/59a55ce8be95b8410403979bb0875d63866089bc))
+
 ## [1.22.2](https://github.com/True-Aim-AG/trueaim-website/compare/v1.22.1...v1.22.2) (2026-10-30)
 
 

@@ -5,6 +5,8 @@
  * v1.2 (2026-10-14) corrects the Sentry storage, access and data facts.
  * v1.3 (2026-10-20) groups the list and states that the Platform removes client data from Sentry error reports.
  * v1.4 (2026-10-23) adds Google Cloud EMEA Limited (Gemini inference) to Group A.
+ * v1.5 (2026-10-31) states inference in Switzerland and the EU and adds the Vertex AI abuse monitoring exception.
+ * v1.6 (2026-11-02) clarifies the Microsoft entry: Schedule 3 reference, inference and storage wording, entity name.
  *
  * Covers the legal changes requested by NRF via Reuben (2026-08-16):
  *   - REQ-SP-001: /sub-processors renders at the exact URL required by the DPA
@@ -42,7 +44,7 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
       await expect(meta.locator('dt', { hasText: new RegExp(`^${label}$`) })).toBeVisible();
     }
 
-    await expect(meta.getByText('1.4', { exact: true })).toBeVisible();
+    await expect(meta.getByText('1.6', { exact: true })).toBeVisible();
     await expect(
       meta.getByText('Swiss FADP Art. 9; GDPR Art. 28', { exact: true })
     ).toBeVisible();
@@ -66,7 +68,7 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
     await expect(page.locator('section#group-b section#sentry')).toBeVisible();
 
     const entities = [
-      { id: 'microsoft', name: 'Microsoft Ireland Operations Ltd' },
+      { id: 'microsoft', name: 'Microsoft Ireland Operations Limited' },
       { id: 'google-cloud', name: 'Google Cloud EMEA Limited' },
       { id: 'google', name: 'Google Ireland Limited' },
       { id: 'sentry', name: 'Functional Software, Inc. d/b/a Sentry' },
@@ -95,7 +97,11 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
     await expect(
       googleCloud.locator('a[href="https://cloud.google.com/terms/subprocessors"]')
     ).toBeVisible();
-    await expect(googleCloud).toContainText('up to 90 days in the EU');
+    await expect(
+      googleCloud.getByRole('heading', { name: 'Exception: Vertex AI abuse monitoring' })
+    ).toBeVisible();
+    await expect(googleCloud).toContainText('up to 90 days, in the region selected for the project');
+    await expect(googleCloud).toContainText('does not use this data to train or fine-tune models');
     const text = await googleCloud.innerText();
     expect(text).not.toMatch(/United States|India|Japan/);
   });
@@ -116,7 +122,11 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
     await expect(page.locator('section#sentry')).toContainText('removes client data from each error report');
     expect(body).not.toMatch(/19 October|31 December|v0\.23\.0/);
     await expect(microsoft).toContainText('backups in Switzerland West');
-    await expect(microsoft).toContainText('until March 2027');
+    await expect(microsoft).toContainText('Inference may be processed in Switzerland or the EU.');
+    await expect(microsoft).toContainText('Prompts and outputs are not stored outside Switzerland North.');
+    await expect(microsoft).toContainText('listed in Schedule 3 of the DPA');
+    expect(await microsoft.innerText()).not.toMatch(/Operations Ltd|stores no data outside/);
+    expect(await microsoft.innerText()).not.toMatch(/March 2027|fallback|EU Data Boundary/);
     expect(body).not.toMatch(/not group/i);
   });
 
@@ -124,6 +134,8 @@ test.describe('REQ-SP-001/002/003: List of Sub-Processors page', () => {
     const history = page.locator('section#version-history');
     await expect(history.getByRole('heading', { name: 'Version History' })).toBeVisible();
     await expect(history.locator('table')).toBeVisible();
+    await expect(history).toContainText('1.6');
+    await expect(history).toContainText('1.5');
     await expect(history).toContainText('1.4');
     await expect(history).toContainText('1.3');
     await expect(history).toContainText('1.2');
