@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.22.4](https://github.com/True-Aim-AG/trueaim-website/compare/v1.22.3...v1.22.4) (2026-11-02)
+
+
+### Bug Fixes
+
+* clarify the Microsoft entry on the sub-processor list ([#29](https://github.com/True-Aim-AG/trueaim-website/issues/29)) ([9f1fc25](https://github.com/True-Aim-AG/trueaim-website/commit/9f1fc25a3d0d2de1ebb1cfaa12893d3db3563aee))
+
 ## [1.22.3](https://github.com/True-Aim-AG/trueaim-website/compare/v1.22.2...v1.22.3) (2026-10-31)
 
 
