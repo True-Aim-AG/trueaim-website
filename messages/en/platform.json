@@ -12,8 +12,13 @@
       }
     },
     "outcomes": {
-      "heading": "Three finished outcomes",
+      "heading": "Four finished outcomes",
       "items": {
+        "dataExtraction": {
+          "title": "A searchable claims database",
+          "text": "Every document read, every value put in context and traced to its page, stored as one database your teams and your AI can use.",
+          "link": "Data Extraction"
+        },
         "claimsDecisioning": {
           "title": "A settled claim",
           "text": "Every line checked against the policy wording, the amount calculated and the reasoning written down, ready for your adjuster to confirm.",
@@ -47,6 +52,10 @@
         "text": "Photographs, invoices, estimates, policy documents and emails, from any channel."
       },
       "modules": {
+        "dataExtraction": {
+          "name": "Data Extraction",
+          "text": "Reads every document and builds one structured, searchable database."
+        },
         "claimsDecisioning": {
           "name": "Automated Coverage Check",
           "text": "Checks every line against the policy wording and calculates the amount."
@@ -120,6 +129,8 @@
     },
     "related": {
       "heading": "Explore our solutions",
+      "dataExtraction": "Data Extraction",
+      "dataExtractionText": "Your claims data, ready for AI.",
       "claimsDecisioning": "Automated Coverage Check",
       "claimsDecisioningText": "Claims settled in minutes, not weeks.",
       "invoiceBenchmarking": "Invoice Benchmarking",

@@ -33,6 +33,10 @@
     "platform": "Platform",
     "solutions": "Solutions",
     "menu": {
+      "dataExtraction": {
+        "name": "Data Extraction",
+        "desc": "Your claims data, ready for AI"
+      },
       "claimsDecisioning": {
         "name": "Automated Coverage Check",
         "desc": "Claims settled in minutes, not weeks"
@@ -113,6 +117,7 @@
     "impactEstimator": "Impact Estimator",
     "blog": "Blog",
     "platformOverview": "Platform overview",
+    "dataExtraction": "Data Extraction",
     "invoiceBenchmarking": "Invoice Benchmarking",
     "claimsDecisioning": "Automated Coverage Check",
     "damageReporting": "Damage Reporting",

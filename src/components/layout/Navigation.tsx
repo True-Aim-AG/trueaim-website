@@ -20,6 +20,7 @@ const groups: Group[] = [
   {
     key: "platform",
     items: [
+      { key: "dataExtraction", href: "/platform/data-extraction" },
       { key: "claimsDecisioning", href: "/platform/claims-decisioning" },
       { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking" },
       { key: "damageReporting", href: "/platform/damage-reporting" },

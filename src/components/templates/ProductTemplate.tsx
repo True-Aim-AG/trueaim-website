@@ -26,7 +26,7 @@ export function ProductTemplate({
   cta,
   nextTone = "tint",
 }: {
-  hero: { title: string; summary: string; buttons: HeroButton[]; visual?: React.ReactNode; texture?: HeroTexture };
+  hero: { title: string; summary: string; buttons: HeroButton[]; visual?: React.ReactNode; visualWidth?: number; texture?: HeroTexture };
   children: React.ReactNode;
   faq: { heading: string; items: FaqItem[] };
   related: { heading: string; links: RelatedLink[] };
@@ -40,6 +40,7 @@ export function ProductTemplate({
         summary={hero.summary}
         buttons={hero.buttons}
         visual={hero.visual}
+        visualWidth={hero.visualWidth}
         texture={hero.texture}
       />
       {children}

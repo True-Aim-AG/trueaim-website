@@ -50,6 +50,7 @@ export function PageHero({
   summary,
   buttons = [],
   visual,
+  visualWidth,
   texture,
   compact = false,
   wideCopy = false,
@@ -61,6 +62,8 @@ export function PageHero({
   summary?: string;
   buttons?: HeroButton[];
   visual?: React.ReactNode;
+  /** The visual column's maximum width in pixels, where the default 600 is too narrow. */
+  visualWidth?: number;
   texture?: HeroTexture;
   compact?: boolean;
   wideCopy?: boolean;
@@ -72,9 +75,14 @@ export function PageHero({
       <div
         className={cn(
           "relative mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 py-16 md:py-24 lg:items-center lg:py-[104px]",
-          wideCopy ? "lg:grid-cols-[minmax(0,1.5fr)_minmax(0,.5fr)] lg:gap-12" : "lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)] lg:gap-20",
+          wideCopy
+            ? "lg:grid-cols-[minmax(0,1.5fr)_minmax(0,.5fr)] lg:gap-12"
+            : visualWidth
+              ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,var(--hero-visual))] lg:gap-12"
+              : "lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)] lg:gap-20",
           compact ? "lg:min-h-[360px]" : "lg:min-h-[720px]",
         )}
+        style={visualWidth ? ({ "--hero-visual": `${visualWidth}px` } as React.CSSProperties) : undefined}
       >
         <div>
           {eyebrow && (
@@ -104,7 +112,14 @@ export function PageHero({
             </div>
           )}
         </div>
-        {visual && <div className="relative mx-auto w-full max-w-[600px] lg:mx-0 lg:justify-self-end">{visual}</div>}
+        {visual && (
+          <div
+            className="relative mx-auto w-full max-w-[600px] lg:mx-0 lg:justify-self-end"
+            style={visualWidth ? { maxWidth: visualWidth } : undefined}
+          >
+            {visual}
+          </div>
+        )}
       </div>
     </section>
   );

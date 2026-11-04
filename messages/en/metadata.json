@@ -31,6 +31,15 @@
       "ogDescription": "Every invoice, quote and estimate checked against benchmark data by trade and region. See which lines are too high, by how much and why.",
       "updated": "2026-10-17"
     },
+    "/platform/data-extraction": {
+      "title": "Data Extraction: Claims Data Ready for AI | True Aim",
+      "description": "Claims information read from documents, photos, emails and legacy systems, put in context and stored as one searchable database your AI can use.",
+      "h1": "Data Extraction: your claims data, ready for AI",
+      "breadcrumb": "Data Extraction",
+      "ogTitle": "Data Extraction by True Aim",
+      "ogDescription": "Claims information read from documents, photos, emails and legacy systems, put in context and stored as one searchable database your AI can use.",
+      "updated": "2026-10-30"
+    },
     "/platform/claims-decisioning": {
       "title": "Automated Coverage Check: Claims Settled in Minutes | True Aim",
       "description": "True Aim's Automated Coverage Check checks every line of a claim against the policy wording, calculates the amount and records the reason. A full recommendation in minutes.",
