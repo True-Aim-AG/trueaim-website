@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.23.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.22.4...v1.23.0) (2026-11-04)
+
+
+### Features
+
+* add the Data Extraction platform page ([#28](https://github.com/True-Aim-AG/trueaim-website/issues/28)) ([795d107](https://github.com/True-Aim-AG/trueaim-website/commit/795d107154ab77297c124bb537c14ba8fcb6953e))
+
 ## [1.22.4](https://github.com/True-Aim-AG/trueaim-website/compare/v1.22.3...v1.22.4) (2026-11-02)
 
 
