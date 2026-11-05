@@ -1,7 +1,17 @@
 {
   "site": {
     "name": "True Aim",
-    "breadcrumbLabel": "Fil d'Ariane"
+    "breadcrumbLabel": "Fil d’Ariane"
   },
-  "pages": {}
+  "pages": {
+    "/": {
+      "title": "Sinistres vite réglés, décisions éclairées, coûts réduits | True Aim",
+      "description": "Sinistres évalués selon la police, factures comparées aux prix de référence, rapports préparés. Résultats explicables en minutes. Votre équipe a le dernier mot.",
+      "h1": "Des sinistres réglés plus vite, des décisions plus éclairées, des coûts plus bas",
+      "breadcrumb": "Accueil",
+      "ogTitle": "Des sinistres réglés plus vite, des décisions plus éclairées, des coûts plus bas",
+      "ogDescription": "Sinistres évalués selon la police, factures comparées aux prix de référence, rapports préparés. Résultats explicables en minutes. Votre équipe a le dernier mot.",
+      "updated": "2026-11-05"
+    }
+  }
 }

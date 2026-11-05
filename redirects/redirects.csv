@@ -127,7 +127,6 @@ old_url,new_url,status,note
 /fr/dpa,/en/sub-processors/,301,Old DPA short link; the sub-processor list is English only
 /it/dpa,/en/sub-processors/,301,Old DPA short link; the sub-processor list is English only
 /contact-card.html,/contact-card/,301,Static contact card moved to a folder index
-/de/,/en/,301,Untranslated English copy withdrawn until the translation lands
 /de/about/,/en/about/,301,Untranslated English copy withdrawn until the translation lands
 /de/case-studies/,/en/case-studies/,301,Untranslated English copy withdrawn until the translation lands
 /de/case-studies/european-health-insurer/,/en/case-studies/european-health-insurer/,301,Untranslated English copy withdrawn until the translation lands
@@ -143,7 +142,6 @@ old_url,new_url,status,note
 /de/partners/zhaw/,/en/partners/zhaw/,301,Untranslated English copy withdrawn until the translation lands
 /de/technology/,/en/technology/,301,Untranslated English copy withdrawn until the translation lands
 /de/trust/,/en/trust/,301,Untranslated English copy withdrawn until the translation lands
-/fr/,/en/,301,Untranslated English copy withdrawn until the translation lands
 /fr/about/,/en/about/,301,Untranslated English copy withdrawn until the translation lands
 /fr/case-studies/,/en/case-studies/,301,Untranslated English copy withdrawn until the translation lands
 /fr/case-studies/european-health-insurer/,/en/case-studies/european-health-insurer/,301,Untranslated English copy withdrawn until the translation lands
@@ -159,7 +157,6 @@ old_url,new_url,status,note
 /fr/partners/zhaw/,/en/partners/zhaw/,301,Untranslated English copy withdrawn until the translation lands
 /fr/technology/,/en/technology/,301,Untranslated English copy withdrawn until the translation lands
 /fr/trust/,/en/trust/,301,Untranslated English copy withdrawn until the translation lands
-/it/,/en/,301,Untranslated English copy withdrawn until the translation lands
 /it/about/,/en/about/,301,Untranslated English copy withdrawn until the translation lands
 /it/case-studies/,/en/case-studies/,301,Untranslated English copy withdrawn until the translation lands
 /it/case-studies/european-health-insurer/,/en/case-studies/european-health-insurer/,301,Untranslated English copy withdrawn until the translation lands

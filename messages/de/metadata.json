@@ -3,5 +3,15 @@
     "name": "True Aim",
     "breadcrumbLabel": "Navigationspfad"
   },
-  "pages": {}
+  "pages": {
+    "/": {
+      "title": "Schadenregulierung: schneller, klüger, kostengünstiger | True Aim",
+      "description": "Jeder Schaden auf Deckung geprüft, jede Rechnung mit Referenzpreisen verglichen, jeder Bericht erstellt. Erklärbare Ergebnisse in Minuten. Ihr Team entscheidet.",
+      "h1": "Schnellere Schadenregulierung, klügere Entscheidungen, geringere Kosten",
+      "breadcrumb": "Startseite",
+      "ogTitle": "Schnellere Schadenregulierung, klügere Entscheidungen, geringere Kosten",
+      "ogDescription": "Jeder Schaden auf Deckung geprüft, jede Rechnung mit Referenzpreisen verglichen, jeder Bericht erstellt. Erklärbare Ergebnisse in Minuten. Ihr Team entscheidet.",
+      "updated": "2026-11-05"
+    }
+  }
 }

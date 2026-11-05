@@ -3,5 +3,15 @@
     "name": "True Aim",
     "breadcrumbLabel": "Percorso di navigazione"
   },
-  "pages": {}
+  "pages": {
+    "/": {
+      "title": "Liquidazioni rapide, decisioni intelligenti, costi ridotti | True Aim",
+      "description": "Ogni sinistro valutato sulla polizza, ogni fattura confrontata, ogni rapporto preparato. Esiti precisi e spiegabili in minuti. La decisione finale è vostra.",
+      "h1": "Liquidazioni più rapide, decisioni più intelligenti, costi più bassi",
+      "breadcrumb": "Home",
+      "ogTitle": "Liquidazioni più rapide, decisioni più intelligenti, costi più bassi",
+      "ogDescription": "Ogni sinistro valutato sulla polizza, ogni fattura confrontata, ogni rapporto preparato. Esiti precisi e spiegabili in minuti. La decisione finale è vostra.",
+      "updated": "2026-11-05"
+    }
+  }
 }

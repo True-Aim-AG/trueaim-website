@@ -8,7 +8,6 @@ import { routing } from "./routing";
  * French and Italian URLs redirect to English (redirects/redirects.csv).
  */
 export const englishOnlyPaths = [
-  "/",
   "/about",
   "/ai-transparency",
   "/blog",
