@@ -11,7 +11,7 @@ Sections 1 to 3 are rules. Sections 4 to 9 are term tables. Section 10 lists the
 ## 1. Standing rules
 
 1. **Variants.** German: ß where German spelling uses it (Maßnahme, gemäß, größer), Selbstbeteiligung not Selbstbehalt, Kostenvoranschlag not Offerte. French: franchise, devis, courriel is not needed, e-mail is fine. Italian: standard Italian, no regional terms.
-2. **Address.** German Sie, French vous, Italian voi when speaking to the organisation. Italian button labels use the tu imperative that Italian corporate sites use (Richiedi una demo, Scopri di più). See decision 2.
+2. **Address.** German Sie, French vous, Italian voi when speaking to the organisation. Italian buttons and link labels use the tu imperative that Italian corporate sites use (Richiedi una demo, Scopri di più, Seguici). Menu descriptors and every other sentence are voi (Richiedete una demo o fate una domanda). See decision 2.
 3. **Not translated.** Product names, True Aim (always two words, never "the platform"), Decision Dossier, Trust Center, Otus, Blog, Changelog, standards and law acronyms, partner and client names. Full list in section 4.
 4. **English technical terms.** Kept where the industry keeps them (API, Dashboard in German and Italian, Workflow, LLM, Audit Trail in Italian). The table in section 6 decides term by term. When in doubt use the native word.
 5. **Headlines, taglines, CTA labels and section labels may be transcreated**: same meaning, same promise, adapted form. Body copy, FAQ answers, trust and security copy, and metadata descriptions are translated sentence by sentence.
@@ -37,7 +37,7 @@ Sections 1 to 3 are rules. Sections 4 to 9 are term tables. Section 10 lists the
 
 Anna's brand guidelines: confident, transparent, reassuring. Precise claims with proof, no exaggeration. Not a black box, not a generic AI startup, not futuristic, not playful.
 
-- **German.** Sober, concrete, Sie. German B2B insurance readers distrust superlatives more than English readers do. Prefer the verb to the noun chain where the sentence allows it. Industry compounds without the Fugen-s, as the German insurance industry writes them: Schadenfall, Schadenmeldung, Schadenregulierung, Schadenbearbeitung.
+- **German.** Sober, concrete, Sie. German B2B insurance readers distrust superlatives more than English readers do. Prefer the verb to the noun chain where the sentence allows it. Industry compounds without the Fugen-s, as the German insurance industry writes them: Schadenfall, Schadenmeldung, Schadenregulierung, Schadenbearbeitung. Never compound the brand name with a noun ("True Aim Plattform", "True Aim Logo" are spelling errors): write "die Plattform von True Aim", "das Logo von True Aim". "Check against" is "anhand ... prüfen" or "mit ... abgleichen", never "gegen ... prüfen".
 - **French.** Formal, precise, vous. Avoid the anglicisms French insurers avoid: traitement des sinistres, not claims management. Keep the English product names, which read as names, not as anglicisms.
 - **Italian.** Professional, direct, voi. Italian B2B copy accepts more English (audit trail, dashboard, workflow, compliance) than French does; use it where the Italian insurance press does.
 
@@ -58,7 +58,7 @@ These are the lines Anna's guidelines fix in English. Each has exactly one rende
 | Every claim decided in minutes, defensible for years. | Jeder Schaden in Minuten entschieden, über Jahre belastbar. | Chaque sinistre décidé en minutes, défendable pendant des années. | Ogni sinistro deciso in minuti, difendibile per anni. |
 | Swiss Precision. Auditable AI. (footer) | Schweizer Präzision. Prüfbare KI. | Précision suisse. IA auditable. | Precisione svizzera. IA verificabile. |
 
-Worked example of headline transcreation. Home H1 "Faster claims, smarter decisions, lower costs". A literal German "Schnellere Schäden" means faster damage, so the noun has to change: "Schnellere Regulierung, bessere Entscheidungen, geringere Kosten". French: "Des sinistres réglés plus vite, des décisions plus sûres, des coûts plus bas". Italian: "Sinistri più rapidi, decisioni più solide, costi più bassi". Every headline gets this treatment and a note.
+Worked example of headline transcreation. Home H1 "Faster claims, smarter decisions, lower costs". A literal German "Schnellere Schäden" means faster damage, so the noun has to change: "Schnellere Regulierung, bessere Entscheidungen, geringere Kosten". French: "Des sinistres réglés plus vite, des décisions plus éclairées, des coûts plus bas" ("éclairées" is the French for well-informed decisions; "plus sûres" would say safer). Italian: "Liquidazioni più rapide, decisioni più intelligenti, costi più bassi" ("sinistri più rapidi" would mean the losses happen faster). Every headline gets this treatment and a note.
 
 ---
 
@@ -101,7 +101,7 @@ Worked example of headline transcreation. Home H1 "Faster claims, smarter decisi
 | property (line) | Sach; Gebäude- und Hausratschaden | habitation; dommages aux biens | property; danni ai beni | Italian industry uses the English "property" for the line. |
 | liability | Haftpflicht (the line); Haftung (legal) | responsabilité civile; responsabilité | responsabilità civile; responsabilità | |
 | policy | Police, Versicherungspolice; the contract: Vertrag | police (d’assurance); contrat | polizza | |
-| policy wording | Versicherungsbedingungen; Policenwortlaut | conditions générales; libellé de la police | condizioni di polizza; testo di polizza | What the adjuster checks against. |
+| policy wording | Versicherungsbedingungen; Policenwortlaut | conditions de la police; libellé de la police | condizioni di polizza; testo di polizza | What the adjuster checks against. French "conditions générales" alone would exclude the particular conditions. |
 | clause, article | Klausel, Art. | clause, art. | clausola, art. | |
 | coverage | Deckung; Versicherungsschutz | couverture; garantie | copertura | |
 | covered / not covered | gedeckt / nicht gedeckt | couvert / non couvert | coperto / non coperto | |
@@ -125,7 +125,7 @@ Worked example of headline transcreation. Home H1 "Faster claims, smarter decisi
 | benchmark (noun), reference price | Referenzpreis; Vergleichswert | prix de référence | prezzo di riferimento | |
 | expected (price) | erwartet; Referenzpreis | attendu; prix de référence | atteso; prezzo di riferimento | |
 | damage report | Schadenbericht | rapport de dommages | rapporto danni | Never Gutachten, rapport d’expertise, perizia: those are signed expert appraisals, a stronger claim. The current it files use perizie. |
-| repair estimate, estimate (document) | Kostenvoranschlag | devis de réparation | preventivo di riparazione | |
+| repair estimate, estimate (document) | Kostenvoranschlag | devis de réparation; chiffrage when it stands beside devis in a list | preventivo di riparazione | "A priced estimate" is simply Kostenvoranschlag, devis chiffré, preventivo quantificato. |
 | estimate (the Impact Estimator sense) | Schätzung | estimation | stima | |
 | scope of work | Reparaturumfang; Leistungsumfang | étendue des travaux | ambito dei lavori | |
 | photographs and documents | Fotos und Dokumente | photos et documents | foto e documenti | |
@@ -147,10 +147,12 @@ Worked example of headline transcreation. Home H1 "Faster claims, smarter decisi
 | Approved / Referred / Denied (design-system vocabulary) | Genehmigt / Zur Prüfung / Abgelehnt | Approuvé / À examiner / Refusé | Approvato / Da esaminare / Respinto | Decision 7. |
 | In progress / Disabled / Help | In Bearbeitung / Deaktiviert / Hilfe | En cours / Désactivé / Aide | In corso / Disattivato / Aiuto | |
 | evidence | Nachweise; Belege | preuves; pièces justificatives | prove; evidenze | |
-| evidence chain | Nachweiskette | chaîne de preuves | catena delle prove | |
+| evidence chain, evidence trail | Nachweiskette | chaîne de preuves | catena delle prove | |
 | audit trail | Prüfpfad | piste d’audit | audit trail (masculine: l’audit trail) | |
 | record; claim record | Akte; Schadenakte | dossier; dossier sinistre | fascicolo; fascicolo sinistro | "One record for every party": Eine Akte für alle Beteiligten / Un seul dossier pour toutes les parties / Un unico fascicolo per tutte le parti |
 | decision record | Entscheidungsprotokoll | relevé de décision | registro della decisione | |
+| claim reference (number) | Schadennummer | référence du sinistre | riferimento sinistro | |
+| repatriation (travel) | Rücktransport | rapatriement | rimpatrio | Not Rückführung, which means deportation in Germany. |
 | explainable; explainability | erklärbar; Erklärbarkeit | explicable; explicabilité | spiegabile; spiegabilità | |
 | auditable | prüfbar | auditable | verificabile | |
 | traceable; traceability | nachvollziehbar; Nachvollziehbarkeit | traçable; traçabilité | tracciabile; tracciabilità | |
@@ -235,7 +237,7 @@ Worked example of headline transcreation. Home H1 "Faster claims, smarter decisi
 | Results from claims teams (descriptor) | Ergebnisse aus Schadenteams | Résultats d’équipes sinistres | Risultati dei team sinistri |
 | Claims, evidence and regulation (descriptor) | Schäden, Nachweise und Regulatorik | Sinistres, preuves et réglementation | Sinistri, prove e regolamentazione |
 | Impact Estimator | Potenzialrechner | Estimateur d’impact | Stima dell’impatto |
-| Calculate unlocked value (descriptor) | Einsparpotenzial berechnen | Calculez la valeur libérée | Calcolate il valore sbloccato |
+| Calculate unlocked value (descriptor) | Einsparpotenzial berechnen | Calculez la valeur libérée | Quantificate il potenziale |
 | Trust Centre | Trust Center | Trust Center | Trust Center |
 | Security, certification and data (descriptor) | Sicherheit, Zertifizierung und Daten | Sécurité, certification et données | Sicurezza, certificazioni e dati |
 | Company | Unternehmen | Entreprise | Azienda |
