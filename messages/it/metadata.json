@@ -12,6 +12,106 @@
       "ogTitle": "Liquidazioni più rapide, decisioni più intelligenti, costi più bassi",
       "ogDescription": "Ogni sinistro valutato sulla polizza, ogni fattura confrontata, ogni rapporto preparato. Esiti precisi e spiegabili in minuti. La decisione finale è vostra.",
       "updated": "2026-11-05"
+    },
+    "/platform": {
+      "title": "Come funziona la nostra piattaforma | True Aim",
+      "description": "Un fascicolo sinistro entra, ne esce un albero decisionale sottoposto ad audit. Come si integrano le soluzioni, Orchestrate e Prove. Decide il vostro team.",
+      "h1": "Come funziona la nostra piattaforma",
+      "breadcrumb": "Piattaforma",
+      "ogTitle": "Come funziona la nostra piattaforma",
+      "ogDescription": "Un fascicolo sinistro entra, ne esce un albero decisionale sottoposto ad audit. Come si integrano le soluzioni, Orchestrate e Prove. Decide il vostro team.",
+      "updated": "2026-11-05"
+    },
+    "/platform/data-extraction": {
+      "title": "Data Extraction: dati sinistri pronti per l’IA | True Aim",
+      "description": "Informazioni sui sinistri lette da documenti, foto, e-mail e sistemi legacy, messe in contesto e salvate in un database consultabile che la vostra IA può usare.",
+      "h1": "Data Extraction: i vostri dati sinistri, pronti per l’IA",
+      "breadcrumb": "Data Extraction",
+      "ogTitle": "Data Extraction di True Aim",
+      "ogDescription": "Informazioni sui sinistri lette da documenti, foto, e-mail e sistemi legacy, messe in contesto e salvate in un database consultabile che la vostra IA può usare.",
+      "updated": "2026-11-05"
+    },
+    "/platform/claims-decisioning": {
+      "title": "Automated Coverage Check: sinistri liquidati in minuti | True Aim",
+      "description": "Ogni voce di un sinistro verificata rispetto alle condizioni di polizza, l’importo calcolato e la motivazione annotata. Una raccomandazione completa in minuti.",
+      "h1": "Automated Coverage Check: sinistri liquidati in minuti, non in settimane",
+      "breadcrumb": "Automated Coverage Check",
+      "ogTitle": "Automated Coverage Check di True Aim",
+      "ogDescription": "Ogni voce di un sinistro verificata rispetto alle condizioni di polizza, l’importo calcolato e la motivazione annotata. Una raccomandazione completa in minuti.",
+      "updated": "2026-11-05"
+    },
+    "/platform/invoice-benchmarking": {
+      "title": "Invoice Benchmarking: mai più fatture pagate troppo | True Aim",
+      "description": "Ogni fattura, offerta e preventivo confrontato con i dati di riferimento per categoria di lavori e regione. Quali voci sono troppo alte, di quanto e perché.",
+      "h1": "Invoice Benchmarking: mai più una fattura pagata troppo",
+      "breadcrumb": "Invoice Benchmarking",
+      "ogTitle": "Invoice Benchmarking di True Aim",
+      "ogDescription": "Ogni fattura, offerta e preventivo confrontato con i dati di riferimento per categoria di lavori e regione. Quali voci sono troppo alte, di quanto e perché.",
+      "updated": "2026-11-05"
+    },
+    "/platform/damage-reporting": {
+      "title": "Damage Reporting: rapporti danni fin dalla denuncia | True Aim",
+      "description": "Stima del danno e ambito dei lavori già alla denuncia di sinistro, dalle foto del cliente. I periti vanno sul posto solo dove una visita cambia la risposta.",
+      "h1": "Damage Reporting: rapporti danni completi in pochi minuti",
+      "breadcrumb": "Damage Reporting",
+      "ogTitle": "Damage Reporting di True Aim",
+      "ogDescription": "Stima del danno e ambito dei lavori già alla denuncia di sinistro, dalle foto del cliente. I periti vanno sul posto solo dove una visita cambia la risposta.",
+      "updated": "2026-11-05"
+    },
+    "/platform/otus": {
+      "title": "Otus, lo specialista sinistri di True Aim | True Aim",
+      "description": "Un esperto basato sull’IA per ogni membro del team, in ogni soluzione True Aim. Spiega ogni raccomandazione in linguaggio semplice e non ha potere decisionale.",
+      "h1": "Otus, lo specialista sinistri di True Aim",
+      "breadcrumb": "Otus",
+      "schemaName": "Otus, lo specialista sinistri di True Aim",
+      "ogTitle": "Otus, lo specialista sinistri di True Aim",
+      "ogDescription": "Un esperto basato sull’IA per ogni membro del team, in ogni soluzione True Aim. Spiega ogni raccomandazione in linguaggio semplice e non ha potere decisionale.",
+      "updated": "2026-11-05"
+    },
+    "/technology": {
+      "title": "Architettura di IA neuro-simbolica per i sinistri | True Aim",
+      "description": "True Aim unisce agenti IA a un processo decisionale deterministico, costruito per l’assicurazione regolamentata e l’AI Act. Non una scatola nera.",
+      "h1": "IA neuro-simbolica: l’architettura di cui le autorità di vigilanza si fidano",
+      "breadcrumb": "Tecnologia",
+      "ogTitle": "IA neuro-simbolica: l’architettura di cui le autorità di vigilanza si fidano",
+      "ogDescription": "True Aim unisce agenti IA a un processo decisionale deterministico, costruito per l’assicurazione regolamentata e l’AI Act. Non una scatola nera.",
+      "updated": "2026-11-05"
+    },
+    "/trust": {
+      "title": "Trust Center: ISO 27001, SOC 2, GDPR, LPD, DORA | True Aim",
+      "description": "Certificato ISO 27001, audit SOC 2 Type II, allineato a GDPR, LPD svizzera e DORA. Ogni decisione su un sinistro è registrata con il suo ragionamento.",
+      "h1": "Sicurezza e conformità, integrate fin dal primo giorno",
+      "breadcrumb": "Fiducia",
+      "ogTitle": "Sicurezza e conformità in True Aim",
+      "ogDescription": "Certificato ISO 27001, audit SOC 2 Type II, allineato a GDPR, LPD svizzera e DORA. Ogni decisione su un sinistro è registrata con il suo ragionamento.",
+      "updated": "2026-11-05"
+    },
+    "/about": {
+      "title": "Chi siamo: fiducia scalabile per le decisioni sui sinistri | True Aim",
+      "description": "Azienda svizzera che costruisce tecnologia per i sinistri in cui ogni decisione registra fatti, regole e ragionamento. Team, advisory board, partner e premi.",
+      "h1": "Fiducia scalabile",
+      "breadcrumb": "Chi siamo",
+      "ogTitle": "Chi è True Aim",
+      "ogDescription": "Azienda svizzera che costruisce tecnologia per i sinistri in cui ogni decisione registra fatti, regole e ragionamento. Team, advisory board, partner e premi.",
+      "updated": "2026-11-05"
+    },
+    "/contact": {
+      "title": "Richiedete una demo | True Aim",
+      "description": "Richiedete una demo di True Aim sulle vostre fatture, sui vostri sinistri o sui vostri rapporti danni.",
+      "h1": "Richiedete una demo",
+      "breadcrumb": "Contatti",
+      "ogTitle": "Richiedete una demo di True Aim",
+      "ogDescription": "Richiedete una demo di True Aim sulle vostre fatture, sui vostri sinistri o sui vostri rapporti danni.",
+      "updated": "2026-11-05"
+    },
+    "/impact-estimator": {
+      "title": "Stima dell’impatto: automatizzare le decisioni sui sinistri | True Aim",
+      "description": "Inserite volume di sinistri e tempo di gestione per vedere il tempo e i costi che True Aim potrebbe restituirvi, con ipotesi prudenti e il metodo di calcolo.",
+      "h1": "Stimate l’impatto dell’automazione delle decisioni sui sinistri",
+      "breadcrumb": "Stima dell’impatto",
+      "ogTitle": "Stimate l’impatto dell’automazione delle decisioni sui sinistri",
+      "ogDescription": "Inserite volume di sinistri e tempo di gestione per vedere il tempo e i costi che True Aim potrebbe restituirvi, con ipotesi prudenti e il metodo di calcolo.",
+      "updated": "2026-11-05"
     }
   }
 }

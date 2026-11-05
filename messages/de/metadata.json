@@ -12,6 +12,106 @@
       "ogTitle": "Schnellere Schadenregulierung, klügere Entscheidungen, geringere Kosten",
       "ogDescription": "Jeder Schaden auf Deckung geprüft, jede Rechnung mit Referenzpreisen verglichen, jeder Bericht erstellt. Erklärbare Ergebnisse in Minuten. Ihr Team entscheidet.",
       "updated": "2026-11-05"
+    },
+    "/platform": {
+      "title": "So funktioniert unsere Plattform | True Aim",
+      "description": "Eine Schadenakte wird eingelesen, ein auditierter Entscheidungsbaum entsteht. Wie unsere Lösungen, Orchestrate und Prove zusammenspielen. Ihr Team entscheidet.",
+      "h1": "So funktioniert unsere Plattform",
+      "breadcrumb": "Plattform",
+      "ogTitle": "So funktioniert unsere Plattform",
+      "ogDescription": "Eine Schadenakte wird eingelesen, ein auditierter Entscheidungsbaum entsteht. Wie unsere Lösungen, Orchestrate und Prove zusammenspielen. Ihr Team entscheidet.",
+      "updated": "2026-11-05"
+    },
+    "/platform/data-extraction": {
+      "title": "Data Extraction: Schadendaten, bereit für KI | True Aim",
+      "description": "Schadendaten aus Dokumenten, Fotos, E-Mails und Altsystemen gelesen, in den Zusammenhang gestellt und als durchsuchbare Datenbank für Ihre KI gespeichert.",
+      "h1": "Data Extraction: Ihre Schadendaten, bereit für KI",
+      "breadcrumb": "Data Extraction",
+      "ogTitle": "Data Extraction von True Aim",
+      "ogDescription": "Schadendaten aus Dokumenten, Fotos, E-Mails und Altsystemen gelesen, in den Zusammenhang gestellt und als durchsuchbare Datenbank für Ihre KI gespeichert.",
+      "updated": "2026-11-05"
+    },
+    "/platform/claims-decisioning": {
+      "title": "Automated Coverage Check: Schäden in Minuten reguliert | True Aim",
+      "description": "Jede Position eines Schadens anhand der Versicherungsbedingungen geprüft, der Betrag berechnet, der Grund festgehalten. Eine vollständige Empfehlung in Minuten.",
+      "h1": "Automated Coverage Check: Schäden in Minuten statt Wochen reguliert",
+      "breadcrumb": "Automated Coverage Check",
+      "ogTitle": "Automated Coverage Check von True Aim",
+      "ogDescription": "Jede Position eines Schadens anhand der Versicherungsbedingungen geprüft, der Betrag berechnet, der Grund festgehalten. Eine vollständige Empfehlung in Minuten.",
+      "updated": "2026-11-05"
+    },
+    "/platform/invoice-benchmarking": {
+      "title": "Invoice Benchmarking: nie wieder zu viel zahlen | True Aim",
+      "description": "Jede Rechnung, jedes Angebot, jeder Kostenvoranschlag mit Referenzdaten je Gewerk und Region abgeglichen. Zu hohe Positionen, um wie viel und warum.",
+      "h1": "Invoice Benchmarking: nie wieder zu viel für eine Rechnung zahlen",
+      "breadcrumb": "Invoice Benchmarking",
+      "ogTitle": "Invoice Benchmarking von True Aim",
+      "ogDescription": "Jede Rechnung, jedes Angebot, jeder Kostenvoranschlag mit Referenzdaten je Gewerk und Region abgeglichen. Zu hohe Positionen, um wie viel und warum.",
+      "updated": "2026-11-05"
+    },
+    "/platform/damage-reporting": {
+      "title": "Damage Reporting: Schadenberichte bei der Schadenmeldung | True Aim",
+      "description": "Kostenvoranschlag und Reparaturumfang bei der Schadenmeldung, aus Fotos und Dokumenten des Kunden. Gutachter nur dort, wo ein Besuch das Ergebnis ändert.",
+      "h1": "Damage Reporting: fertige Schadenberichte in Minuten",
+      "breadcrumb": "Damage Reporting",
+      "ogTitle": "Damage Reporting von True Aim",
+      "ogDescription": "Kostenvoranschlag und Reparaturumfang bei der Schadenmeldung, aus Fotos und Dokumenten des Kunden. Gutachter nur dort, wo ein Besuch das Ergebnis ändert.",
+      "updated": "2026-11-05"
+    },
+    "/platform/otus": {
+      "title": "Otus, der Schadenspezialist von True Aim | True Aim",
+      "description": "KI-Experte für jedes Teammitglied, in jeder Lösung von True Aim. Erklärt jede Empfehlung verständlich, entwirft und fasst zusammen. Ohne Entscheidungsbefugnis.",
+      "h1": "Otus, der Schadenspezialist von True Aim",
+      "breadcrumb": "Otus",
+      "schemaName": "Otus, der Schadenspezialist von True Aim",
+      "ogTitle": "Otus, der Schadenspezialist von True Aim",
+      "ogDescription": "KI-Experte für jedes Teammitglied, in jeder Lösung von True Aim. Erklärt jede Empfehlung verständlich, entwirft und fasst zusammen. Ohne Entscheidungsbefugnis.",
+      "updated": "2026-11-05"
+    },
+    "/technology": {
+      "title": "Neurosymbolische KI-Architektur für Schäden | True Aim",
+      "description": "True Aim verbindet KI-Agenten mit deterministischer Entscheidungsfindung, gebaut für regulierte Versicherer und den EU AI Act. Keine Blackbox.",
+      "h1": "Neurosymbolische KI: die Architektur, der Aufsichtsbehörden vertrauen",
+      "breadcrumb": "Technologie",
+      "ogTitle": "Neurosymbolische KI: die Architektur, der Aufsichtsbehörden vertrauen",
+      "ogDescription": "True Aim verbindet KI-Agenten mit deterministischer Entscheidungsfindung, gebaut für regulierte Versicherer und den EU AI Act. Keine Blackbox.",
+      "updated": "2026-11-05"
+    },
+    "/trust": {
+      "title": "Trust Center: ISO 27001, SOC 2, DSGVO, DSG, DORA | True Aim",
+      "description": "Nach ISO 27001 zertifiziert, nach SOC 2 Type II auditiert, an DSGVO, Schweizer DSG und DORA ausgerichtet. Jede Schadenentscheidung mit Begründung protokolliert.",
+      "h1": "Sicherheit und Compliance, eingebaut vom ersten Tag an",
+      "breadcrumb": "Trust",
+      "ogTitle": "Sicherheit und Compliance bei True Aim",
+      "ogDescription": "Nach ISO 27001 zertifiziert, nach SOC 2 Type II auditiert, an DSGVO, Schweizer DSG und DORA ausgerichtet. Jede Schadenentscheidung mit Begründung protokolliert.",
+      "updated": "2026-11-05"
+    },
+    "/about": {
+      "title": "Über True Aim: skalierbares Vertrauen für Schäden | True Aim",
+      "description": "Schweizer Unternehmen für Schadentechnologie, bei der jede Entscheidung Fakten, Regeln und Begründung festhält. Team, Beirat, Partner und Auszeichnungen.",
+      "h1": "Skalierbares Vertrauen",
+      "breadcrumb": "Über uns",
+      "ogTitle": "Über True Aim",
+      "ogDescription": "Schweizer Unternehmen für Schadentechnologie, bei der jede Entscheidung Fakten, Regeln und Begründung festhält. Team, Beirat, Partner und Auszeichnungen.",
+      "updated": "2026-11-05"
+    },
+    "/contact": {
+      "title": "Demo anfragen | True Aim",
+      "description": "Fragen Sie eine Demo von True Aim an Ihren eigenen Rechnungen, Schäden oder Schadenberichten an.",
+      "h1": "Demo anfragen",
+      "breadcrumb": "Kontakt",
+      "ogTitle": "Demo von True Aim anfragen",
+      "ogDescription": "Fragen Sie eine Demo von True Aim an Ihren eigenen Rechnungen, Schäden oder Schadenberichten an.",
+      "updated": "2026-11-05"
+    },
+    "/impact-estimator": {
+      "title": "Potenzialrechner: automatisierte Schadenentscheidungen | True Aim",
+      "description": "Schadenvolumen und Bearbeitungszeit eingeben und sehen, welche Zeit und Kosten True Aim zurückgeben könnte, vorsichtig gerechnet, jede Zahl mit Rechenweg.",
+      "h1": "Schätzen Sie das Potenzial automatisierter Schadenentscheidungen",
+      "breadcrumb": "Potenzialrechner",
+      "ogTitle": "Schätzen Sie das Potenzial automatisierter Schadenentscheidungen",
+      "ogDescription": "Schadenvolumen und Bearbeitungszeit eingeben und sehen, welche Zeit und Kosten True Aim zurückgeben könnte, vorsichtig gerechnet, jede Zahl mit Rechenweg.",
+      "updated": "2026-11-05"
     }
   }
 }

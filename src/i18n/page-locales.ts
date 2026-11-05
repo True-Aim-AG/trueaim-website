@@ -8,27 +8,21 @@ import { routing } from "./routing";
  * French and Italian URLs redirect to English (redirects/redirects.csv).
  */
 export const englishOnlyPaths = [
-  "/about",
   "/ai-transparency",
   "/blog",
   "/case-studies",
   "/changelog",
-  "/contact",
   "/cookies",
   "/ethics",
-  "/impact-estimator",
   "/paia",
   "/partners",
-  "/platform",
   "/privacy",
   "/privacy-legacy",
   "/security",
   "/solutions",
   "/sub-processors",
   "/support",
-  "/technology",
   "/terms",
-  "/trust",
 ];
 
 /** Locales a page exists in, for a path without the locale prefix ("/blog/x", "/technology#a"). */

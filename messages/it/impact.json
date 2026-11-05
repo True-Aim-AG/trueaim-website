@@ -1,91 +1,91 @@
 {
   "impact": {
     "hero": {
-      "eyebrow": "Impact Estimator",
-      "title": "Estimate the impact of automating claim decisions",
-      "summary": "See the unlocked value of automating claims decisions with True Aim. Adjust the inputs to match your operation.",
-      "button": "Unlock potential value",
-      "imageAlt": "An arrow in the centre of a metal target"
+      "eyebrow": "Stima dell’impatto",
+      "title": "Stimate l’impatto dell’automazione delle decisioni sui sinistri",
+      "summary": "Guardate il valore che l’automazione delle decisioni sui sinistri con True Aim può liberare. Regolate gli input in base alla vostra operatività.",
+      "button": "Calcola il valore potenziale",
+      "imageAlt": "Una freccia al centro di un bersaglio di metallo"
     },
     "cta": {
-      "heading": "See True Aim on your own claims",
-      "description": "Bring your own invoices, claims or damage reports and the demo shows the finished outcome.",
-      "bookDemo": "Request a demo"
+      "heading": "Guardate True Aim sui vostri sinistri",
+      "description": "Portate le vostre fatture, i vostri sinistri o i vostri rapporti danni e la demo mostra il risultato finito.",
+      "bookDemo": "Richiedi una demo"
     },
     "calculator": {
       "inputPanel": {
-        "title": "Your claims operation",
-        "subtitle": "Adjust the values to match your situation.",
-        "currency": "Currency",
-        "claimsVolume": "Annual claims volume:",
-        "claimsVolumeUnit": "claims a year",
-        "handlingTime": "Average handling time per claim:",
-        "handlingTimeUnit": "minutes",
-        "handlingTimeHint": "Use a typical claim without unusual complexity, one that is eligible for straight-through or assisted processing.",
-        "automationLevel": "Automation in place today",
+        "title": "La vostra gestione dei sinistri",
+        "subtitle": "Regolate i valori in base alla vostra situazione.",
+        "currency": "Valuta",
+        "claimsVolume": "Volume annuo di sinistri:",
+        "claimsVolumeUnit": "sinistri all’anno",
+        "handlingTime": "Tempo medio di gestione per sinistro:",
+        "handlingTimeUnit": "minuti",
+        "handlingTimeHint": "Considerate un sinistro tipico senza complessità particolari, idoneo alla gestione automatica o assistita.",
+        "automationLevel": "Automazione già in uso",
         "rangeMin": {
-          "claims": "10,000",
-          "claimsMax": "1,000,000",
+          "claims": "10.000",
+          "claimsMax": "1.000.000",
           "timeMin": "5 min",
           "timeMax": "180 min"
         }
       },
       "results": {
         "mainImpact": {
-          "label": "Estimated annual impact, cautious",
-          "sublabel": "Based on pilot-scale assumptions.",
-          "reductionSuffix": "% lower claims handling cost"
+          "label": "Impatto annuo stimato, prudente",
+          "sublabel": "Sulla base di ipotesi su scala pilota.",
+          "reductionSuffix": "% in meno sui costi di gestione dei sinistri"
         },
         "breakdown": {
           "capacity": {
-            "title": "Capacity unlocked",
-            "description": "Fewer touches per claim, shorter handling time"
+            "title": "Capacità liberata",
+            "description": "Meno interventi per sinistro, tempi di gestione più brevi"
           },
           "rework": {
-            "title": "Rework avoided",
-            "description": "Fewer reopens, appeals and corrections"
+            "title": "Rilavorazioni evitate",
+            "description": "Meno riaperture, ricorsi e correzioni"
           }
         },
         "metrics": {
-          "workingDaysSaved": "Working days saved a year",
-          "fteEquivalent": "Capacity unlocked, full-time equivalents",
-          "fteNote": "Time given back to your team, not a reduction in headcount."
+          "workingDaysSaved": "Giorni di lavoro risparmiati all’anno",
+          "fteEquivalent": "Capacità liberata, in equivalenti a tempo pieno",
+          "fteNote": "Tempo restituito al vostro team, non una riduzione del personale."
         },
         "assumptions": {
-          "toggle": "How this is calculated",
-          "howWeCalculate": "How the estimate is calculated",
-          "currentHandlingCost": "Current handling cost",
-          "currentHandlingCostFormula": "= Handling time x Cost per minute x Claims volume",
-          "capacityUnlocked": "Capacity unlocked",
-          "capacityUnlockedFormula": "= Current handling cost less the handling cost after automation, where an automated claim takes 36 seconds of review and each remaining manual claim takes half the current handling time",
-          "reworkAvoided": "Rework avoided",
-          "reworkAvoidedFormula": "= Rework claims x Handling time x Rework multiplier x Cost per minute",
-          "grossSavings": "Gross savings",
-          "grossSavingsFormula": "= Capacity + Rework",
-          "workingDaysFormula": "Working days saved = Hours saved ÷ 10",
-          "workingDaysUnit": "days",
-          "conservativeEstimate": "Conservative estimate",
-          "conservativeEstimateFormula": "= Gross savings x 75% sensitivity adjustment",
-          "keyAssumptions": "Key assumptions",
-          "assumption1": "Savings apply only to eligible claim categories",
-          "assumption2": "No immediate headcount reduction assumed",
-          "assumption3": "Savings reflect reduced handling effort and rework",
-          "assumption4": "75% sensitivity adjustment applied to all projections",
-          "assumption5": "Cost per minute comes from True Aim's assumed fully loaded adjuster cost per year: CHF 95,000, EUR 55,000, USD 70,000 or ZAR 420,000, depending on the currency selected.",
-          "breakdownTitle": "The breakdown",
+          "toggle": "Come viene calcolato",
+          "howWeCalculate": "Come viene calcolata la stima",
+          "currentHandlingCost": "Costo di gestione attuale",
+          "currentHandlingCostFormula": "= Tempo di gestione x Costo al minuto x Volume di sinistri",
+          "capacityUnlocked": "Capacità liberata",
+          "capacityUnlockedFormula": "= Costo di gestione attuale meno il costo di gestione dopo l’automazione, dove un sinistro automatizzato richiede 36 secondi di revisione e ogni sinistro manuale rimanente la metà del tempo di gestione attuale",
+          "reworkAvoided": "Rilavorazioni evitate",
+          "reworkAvoidedFormula": "= Sinistri rilavorati x Tempo di gestione x Moltiplicatore di rilavorazione x Costo al minuto",
+          "grossSavings": "Risparmio lordo",
+          "grossSavingsFormula": "= Capacità + Rilavorazioni",
+          "workingDaysFormula": "Giorni di lavoro risparmiati = Ore risparmiate ÷ 10",
+          "workingDaysUnit": "giorni",
+          "conservativeEstimate": "Stima prudente",
+          "conservativeEstimateFormula": "= Risparmio lordo x aggiustamento prudenziale del 75%",
+          "keyAssumptions": "Ipotesi principali",
+          "assumption1": "I risparmi si applicano solo alle categorie di sinistri idonee",
+          "assumption2": "Nessuna riduzione immediata del personale ipotizzata",
+          "assumption3": "I risparmi riflettono il minore sforzo di gestione e le minori rilavorazioni",
+          "assumption4": "Aggiustamento prudenziale del 75% applicato a tutte le proiezioni",
+          "assumption5": "Il costo al minuto deriva dal costo pieno annuo di un liquidatore ipotizzato da True Aim: 95.000 CHF, 55.000 EUR, 70.000 USD o 420.000 ZAR, a seconda della valuta selezionata.",
+          "breakdownTitle": "Il dettaglio",
           "breakdownRows": {
-            "annualVolume": "Annual claims volume",
-            "automatedClaims": "Claims decided with True Aim",
-            "manualClaims": "Claims that still need a person",
-            "capacityGross": "Capacity savings, gross",
-            "reworkGross": "Rework avoided, gross",
-            "sensitivityAdjustment": "Caution adjustment, 25% off",
-            "grossAnnualImpact": "Annual impact, cautious"
+            "annualVolume": "Volume annuo di sinistri",
+            "automatedClaims": "Sinistri decisi con True Aim",
+            "manualClaims": "Sinistri che richiedono ancora una persona",
+            "capacityGross": "Risparmio di capacità, lordo",
+            "reworkGross": "Rilavorazioni evitate, lordo",
+            "sensitivityAdjustment": "Aggiustamento prudenziale, 25% in meno",
+            "grossAnnualImpact": "Impatto annuo, prudente"
           },
-          "importantNotes": "Important notes",
-          "note1": "All figures shown represent gross operational impact and do not take into account the cost of True Aim's services.",
-          "note2": "Pricing is not included and is agreed per contract.",
-          "note3": "The estimator is based on data from real insurance claims and case studies with insurers."
+          "importantNotes": "Note importanti",
+          "note1": "Tutte le cifre mostrate rappresentano l’impatto operativo lordo e non tengono conto del costo dei servizi di True Aim.",
+          "note2": "Il prezzo non è incluso e viene concordato per contratto.",
+          "note3": "Lo stimatore si basa su dati di sinistri assicurativi reali e su casi studio con assicuratori."
         }
       }
     }

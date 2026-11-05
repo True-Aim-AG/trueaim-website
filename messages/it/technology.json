@@ -2,28 +2,28 @@
   "technology": {
     "hero": {
       "badge": "La nostra tecnologia",
-      "titleLine1": "AI neuro-simbolica: L'architettura",
-      "titleLine2": "di cui i regolatori si fidano",
-      "description": "Non probabilistica. Non una scatola nera. Il nostro approccio ibrido combina l'esecuzione AI agentica con il processo decisionale deterministico, progettato specificamente per le industrie regolamentate."
+      "titleLine1": "IA neuro-simbolica: l’architettura",
+      "titleLine2": "di cui le autorità di vigilanza si fidano",
+      "description": "Non probabilistica. Non una scatola nera. Il nostro approccio ibrido unisce l’esecuzione tramite agenti IA a un processo decisionale deterministico, costruito appositamente per i settori regolamentati."
     },
     "problem": {
-      "heading": "I limiti dell'AI probabilistica nelle decisioni regolamentate",
-      "description": "I grandi modelli linguistici sono potenti, ma sono probabilistici. Con lo stesso input due volte, potrebbero produrre risultati diversi. Non possono spiegare il loro ragionamento in termini comprensibili per i regolatori.",
+      "heading": "I limiti dell’IA probabilistica nelle decisioni regolamentate",
+      "description": "I modelli linguistici di grandi dimensioni sono potenti, ma probabilistici. Dato lo stesso input due volte, possono produrre output diversi. Non sanno spiegare il loro ragionamento in termini che le autorità di vigilanza comprendono.",
       "emphasis": "Per le decisioni sui sinistri, questo è inaccettabile."
     },
     "architecture": {
       "heading": "Separazione delle responsabilità",
-      "subtitle": "Due livelli, ciascuno ottimizzato per ciò che fa meglio",
+      "subtitle": "Due livelli, ciascuno costruito per ciò che fa meglio",
       "agentic": {
-        "title": "AI agentica",
-        "subtitle": "Flessibile e adattiva",
+        "title": "Agenti IA",
+        "subtitle": "Flessibili e adattivi",
         "capabilities": {
-          "docReading": "Lettura documenti",
-          "dataExtraction": "Estrazione dati",
+          "docReading": "Lettura dei documenti",
+          "dataExtraction": "Estrazione dei dati",
           "classification": "Classificazione",
           "orchestration": "Orchestrazione"
         },
-        "description": "Utilizza il machine learning per gestire dati non strutturati, comprendere il contesto e orchestrare workflow complessi."
+        "description": "Usa l’apprendimento automatico per gestire dati non strutturati, comprendere il contesto e orchestrare flussi di lavoro complessi."
       },
       "deterministic": {
         "title": "Motore decisionale deterministico",
@@ -32,51 +32,51 @@
           "coverageRules": "Regole di copertura",
           "policyLogic": "Logica di polizza",
           "costCalculation": "Calcolo dei costi",
-          "decisionOutput": "Output decisionale"
+          "decisionOutput": "Esito della decisione"
         },
-        "description": "Applica regole codificate per produrre decisioni coerenti e spiegabili ogni volta."
+        "description": "Applica regole codificate per produrre decisioni coerenti e spiegabili, ogni volta."
       },
       "auditTrail": {
-        "title": "Traccia di audit completa",
-        "description": "Ogni campo è tracciabile fino ai documenti fonte. Ogni decisione è tracciabile fino alle condizioni di polizza. Trasparenza totale per regolatori e auditor."
+        "title": "Audit trail completo",
+        "description": "Ogni campo risale ai documenti di origine. Ogni decisione risale alle condizioni di polizza. Piena trasparenza per autorità di vigilanza e revisori."
       }
     },
     "control": {
-      "badge": "Controllo enterprise",
+      "badge": "Controllo aziendale",
       "heading": "Il livello di controllo",
-      "subtitle": "Automazione con supervisione. Ogni funzionalità è progettata per mantenere il controllo umano dove conta.",
+      "subtitle": "Automazione con supervisione. Ogni funzione è progettata perché le persone mantengano il controllo dove conta.",
       "features": {
         "replayLogs": {
-          "title": "Registri di replay",
-          "description": "Rieseguite qualsiasi decisione con gli stessi input e otterrete risultati identici. Ogni esecuzione è deterministica e riproducibile."
+          "title": "Log di riproduzione",
+          "description": "Rieseguite qualsiasi decisione con gli stessi input e ottenete output identici. Ogni esecuzione è deterministica e riproducibile."
         },
         "ruleTraceability": {
           "title": "Tracciabilità delle regole",
-          "description": "Ogni decisione sulla copertura è mappata a specifici ID di clausole di polizza. Vedete esattamente quali regole si sono attivate e perché."
+          "description": "Ogni decisione di copertura è mappata a identificativi precisi delle clausole di polizza. Vedete esattamente quali regole si sono attivate e perché."
         },
         "approvalGates": {
-          "title": "Livelli di approvazione",
-          "description": "Configurate le soglie per l'escalation alla revisione umana. I casi ad alto valore o i casi limite vengono automaticamente indirizzati agli esperti."
+          "title": "Soglie di approvazione",
+          "description": "Configurate le soglie per il passaggio alla revisione umana. Gli importi elevati e i casi limite vengono instradati automaticamente agli esperti."
         },
         "exceptionRouting": {
           "title": "Instradamento delle eccezioni",
-          "description": "Instradamento automatico basato sul punteggio di complessità del sinistro. I pattern insoliti vengono segnalati per l'ispezione manuale."
+          "description": "Instradamento automatico in base al punteggio di complessità del sinistro. Gli schemi insoliti vengono segnalati per un controllo manuale."
         },
         "confidenceScoring": {
           "title": "Punteggio di confidenza",
-          "description": "Indicatori di certezza a livello di campo mostrano dove il sistema è sicuro e dove la revisione umana aggiunge valore."
+          "description": "Indicatori di certezza a livello di campo mostrano dove il sistema è sicuro e dove una revisione umana aggiunge valore."
         }
       },
-      "philosophy": "L'AI dovrebbe gestire il lavoro pesante, ma gli umani devono sempre poter comprendere, verificare e sovrascrivere. Ogni controllo esiste perché le industrie regolamentate lo richiedono.",
+      "philosophy": "L’IA deve fare il lavoro pesante, ma le persone devono sempre poter comprendere, verificare e intervenire. Ogni controllo esiste perché i settori regolamentati lo richiedono.",
       "philosophyHeading": "La nostra filosofia",
       "philosophyPrefix": "La nostra filosofia:"
     },
     "comparison": {
-      "heading": "Non un'altra scatola nera",
-      "subtitle": "Scoprite come True Aim si confronta con gli approcci AI tradizionali",
+      "heading": "Non un’altra scatola nera",
+      "subtitle": "Come True Aim si confronta con gli approcci di IA tradizionali",
       "columns": {
         "capability": "Capacità",
-        "traditional": "AI tradizionale",
+        "traditional": "IA tradizionale",
         "trueaim": "True Aim"
       },
       "rows": {
@@ -86,17 +86,17 @@
           "trueaim": "Deterministica"
         },
         "auditTrail": {
-          "capability": "Traccia di audit",
+          "capability": "Audit trail",
           "traditional": "Parziale",
-          "trueaim": "Completa"
+          "trueaim": "Completo"
         },
         "explainability": {
           "capability": "Spiegabilità",
-          "traditional": "\"Il modello ha detto così\"",
+          "traditional": "«Lo ha detto il modello»",
           "trueaim": "Tracciabile fino alla clausola"
         },
         "euAiAct": {
-          "capability": "Conforme al Regolamento sull'IA",
+          "capability": "Pronto per l’AI Act",
           "traditional": "Incerto",
           "trueaim": "Sì"
         }
@@ -104,16 +104,45 @@
     },
     "research": {
       "heading": "Partnership di ricerca",
-      "descriptionStart": "Parti della nostra tecnologia sono sviluppate in collaborazione con la",
+      "descriptionStart": "Parte della nostra tecnologia viene sviluppata in collaborazione con la",
       "zhawName": "ZHAW",
-      "descriptionMiddle": "(Scuola universitaria professionale di Zurigo) e avanzate attraverso un programma di ricerca finanziato da",
+      "descriptionMiddle": "(Università di scienze applicate di Zurigo) e approfondita in un programma di ricerca finanziato da",
       "innosuisseName": "Innosuisse",
-      "descriptionEnd": ", riconosciuto attraverso il quadro nazionale di innovazione della Svizzera."
+      "descriptionEnd": ", riconosciuto nel quadro nazionale svizzero dell’innovazione."
     },
     "cta": {
-      "heading": "Scoprite la nostra tecnologia in azione",
-      "description": "Prenotate una demo per capire come la nostra architettura neuro-simbolica può funzionare per le vostre operazioni di gestione sinistri.",
+      "heading": "Guardate la nostra tecnologia in azione",
+      "description": "Prenotate una demo per capire come la nostra architettura neuro-simbolica può lavorare nella vostra gestione dei sinistri.",
       "button": "Prenota una demo"
+    },
+    "faq": {
+      "heading": "Domande sulla nostra tecnologia",
+      "items": [
+        {
+          "question": "Cosa significa IA neuro-simbolica in True Aim?",
+          "answer": "True Aim unisce due livelli. Gli agenti IA usano l’apprendimento automatico per leggere i documenti, estrarre i dati, classificare e orchestrare il flusso di lavoro. Un motore decisionale deterministico applica poi regole di copertura codificate, logica di polizza e calcoli dei costi per produrre la decisione."
+        },
+        {
+          "question": "Perché la decisione sul sinistro non la prende un modello linguistico di grandi dimensioni?",
+          "answer": "I modelli linguistici di grandi dimensioni sono probabilistici: lo stesso input può produrre output diversi, e non sanno spiegare il loro ragionamento in termini che le autorità di vigilanza comprendono. True Aim usa l’apprendimento automatico per leggere e strutturare i documenti e lascia la decisione a regole codificate."
+        },
+        {
+          "question": "Lo stesso sinistro riceve sempre la stessa decisione?",
+          "answer": "Sì. Il motore decisionale è deterministico. I log di riproduzione permettono di rieseguire qualsiasi decisione con gli stessi input e ottenere output identici."
+        },
+        {
+          "question": "Come viene spiegata una decisione a un’autorità di vigilanza o a un revisore?",
+          "answer": "Ogni campo risale al suo documento di origine, e ogni decisione di copertura è mappata a identificativi precisi delle clausole di polizza, così vedete esattamente quali regole si sono applicate e perché."
+        },
+        {
+          "question": "Quando una persona esamina un sinistro?",
+          "answer": "Le soglie le stabilite voi. Gli importi elevati e i casi limite vengono instradati automaticamente agli esperti, gli schemi insoliti vengono segnalati per un controllo manuale, e i punteggi di confidenza a livello di campo mostrano dove un controllo umano aggiunge valore."
+        },
+        {
+          "question": "Con chi sviluppa True Aim la sua tecnologia?",
+          "answer": "Parte della tecnologia viene sviluppata con la ZHAW (Università di scienze applicate di Zurigo) e approfondita in un programma di ricerca finanziato da Innosuisse."
+        }
+      ]
     }
   }
 }
