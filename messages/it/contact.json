@@ -18,9 +18,9 @@
       "consent": "Accetto che True Aim mi contatti in merito a questa richiesta. Consultate la nostra <privacy>informativa sulla privacy</privacy>.",
       "required": "*",
       "optional": "(facoltativo)",
-      "selectCountry": "Selezionate un paese",
-      "selectInterest": "Selezionate un argomento",
-      "selectSource": "Selezionate una fonte",
+      "selectCountry": "Seleziona un paese",
+      "selectInterest": "Seleziona un argomento",
+      "selectSource": "Seleziona una fonte",
       "placeholders": {
         "firstName": "Nome",
         "lastName": "Cognome",

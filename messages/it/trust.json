@@ -39,7 +39,7 @@
       "statusLabels": {
         "certified": "Certificato",
         "audited": "Audit completato",
-        "pending": "Periodo di audit concluso, rapporto in attesa",
+        "pending": "Periodo di audit concluso, in attesa del rapporto",
         "aligned": "Allineato"
       }
     },
@@ -53,7 +53,7 @@
         },
         "transparency": {
           "requirement": "Trasparenza",
-          "description": "Ogni decisione tracciabile fino alle clausole di polizza e ai documenti di origine specifici."
+          "description": "Ogni decisione tracciabile fino alle specifiche clausole di polizza e ai documenti di origine."
         },
         "technicalDocumentation": {
           "requirement": "Documentazione tecnica",
@@ -89,17 +89,17 @@
           "description": "Ospitate i vostri dati entro i confini svizzeri, protetti dalle leggi svizzere sulla privacy."
         },
         "euProcessingZones": {
-          "title": "Elaborazione in Svizzera e nel SEE",
+          "title": "Trattamento in Svizzera e nel SEE",
           "description": "Hosting e inferenza IA restano in Svizzera, nel SEE o nel Regno Unito."
         },
         "noThirdCountry": {
           "title": "Trasferimenti dichiarati",
-          "description": "Qualsiasi elaborazione al di fuori di Svizzera, SEE o Regno Unito è elencata nella lista dei sub-responsabili del trattamento, allegato 2 del nostro accordo sul trattamento dei dati, con la sua base giuridica."
+          "description": "Qualsiasi trattamento al di fuori di Svizzera, SEE o Regno Unito è riportato nell’elenco dei sub-responsabili del trattamento, allegato 2 del nostro accordo sul trattamento dei dati, con la sua base giuridica."
         }
       }
     },
     "documents": {
-      "heading": "Politiche e documenti",
+      "heading": "Policy e documenti",
       "items": {
         "privacy": {
           "title": "Informativa sulla privacy"
@@ -136,8 +136,8 @@
       ]
     },
     "cta": {
-      "heading": "Guardate True Aim sui vostri sinistri",
-      "description": "Portate le vostre fatture, i vostri sinistri o i vostri rapporti danni e la demo mostra il risultato finito.",
+      "heading": "Vedete True Aim all’opera sui vostri sinistri",
+      "description": "Portate le vostre fatture, i vostri sinistri o i vostri rapporti danni e la demo mostra il risultato finale.",
       "button": "Richiedi una demo"
     }
   }

@@ -79,20 +79,20 @@
     },
     "/trust": {
       "title": "Trust Center: ISO 27001, SOC 2, GDPR, LPD, DORA | True Aim",
-      "description": "Certificato ISO 27001, audit SOC 2 Type II, allineato a GDPR, LPD svizzera e DORA. Ogni decisione su un sinistro è registrata con il suo ragionamento.",
+      "description": "True Aim: certificata ISO 27001, audit SOC 2 Type II, allineata a GDPR, LPD svizzera e DORA. Ogni decisione su un sinistro è registrata con il suo ragionamento.",
       "h1": "Sicurezza e conformità, integrate fin dal primo giorno",
-      "breadcrumb": "Fiducia",
+      "breadcrumb": "Trust Center",
       "ogTitle": "Sicurezza e conformità in True Aim",
-      "ogDescription": "Certificato ISO 27001, audit SOC 2 Type II, allineato a GDPR, LPD svizzera e DORA. Ogni decisione su un sinistro è registrata con il suo ragionamento.",
+      "ogDescription": "True Aim: certificata ISO 27001, audit SOC 2 Type II, allineata a GDPR, LPD svizzera e DORA. Ogni decisione su un sinistro è registrata con il suo ragionamento.",
       "updated": "2026-11-05"
     },
     "/about": {
       "title": "Chi siamo: fiducia scalabile per le decisioni sui sinistri | True Aim",
-      "description": "Azienda svizzera che costruisce tecnologia per i sinistri in cui ogni decisione registra fatti, regole e ragionamento. Team, advisory board, partner e premi.",
+      "description": "True Aim, azienda svizzera: tecnologia per i sinistri in cui ogni decisione registra fatti, regole e ragionamento. Team, advisory board, partner e premi.",
       "h1": "Fiducia scalabile",
       "breadcrumb": "Chi siamo",
       "ogTitle": "Chi è True Aim",
-      "ogDescription": "Azienda svizzera che costruisce tecnologia per i sinistri in cui ogni decisione registra fatti, regole e ragionamento. Team, advisory board, partner e premi.",
+      "ogDescription": "True Aim, azienda svizzera: tecnologia per i sinistri in cui ogni decisione registra fatti, regole e ragionamento. Team, advisory board, partner e premi.",
       "updated": "2026-11-05"
     },
     "/contact": {
@@ -111,6 +111,150 @@
       "breadcrumb": "Stima dell’impatto",
       "ogTitle": "Stimate l’impatto dell’automazione delle decisioni sui sinistri",
       "ogDescription": "Inserite volume di sinistri e tempo di gestione per vedere il tempo e i costi che True Aim potrebbe restituirvi, con ipotesi prudenti e il metodo di calcolo.",
+      "updated": "2026-11-05"
+    },
+    "/case-studies": {
+      "title": "Casi studio: numeri reali nella pratica | True Aim",
+      "description": "Come i team sinistri usano True Aim sui propri sinistri, e cosa è cambiato: volume, lingue, tempo per arrivare ai risultati e accuratezza misurata.",
+      "h1": "Numeri reali nella pratica",
+      "breadcrumb": "Casi studio",
+      "ogTitle": "Numeri reali nella pratica",
+      "ogDescription": "Come i team sinistri usano True Aim sui propri sinistri, e cosa è cambiato: volume, lingue, tempo per arrivare ai risultati e accuratezza misurata.",
+      "updated": "2026-11-05"
+    },
+    "/case-studies/vehicle-warranty-claims": {
+      "title": "Le stesse decisioni sui sinistri, in una frazione del tempo | True Aim",
+      "description": "Come NSA ha trasferito il ragionamento e le decisioni dei suoi esperti sinistri nel software True Aim e ha ridotto dell’86% il lavoro su un sinistro complesso.",
+      "h1": "Le stesse decisioni sui sinistri, in una frazione del tempo.",
+      "breadcrumb": "Sinistri di garanzia auto",
+      "ogTitle": "Le stesse decisioni sui sinistri, in una frazione del tempo.",
+      "ogDescription": "Come NSA ha trasferito il ragionamento e le decisioni dei suoi esperti sinistri nel software True Aim e ha ridotto dell’86% il lavoro su un sinistro complesso.",
+      "updated": "2026-11-05"
+    },
+    "/case-studies/swiss-travel-insurer": {
+      "title": "Assicuratore viaggi: sinistri gestiti il 92% più in fretta | True Aim",
+      "description": "Assicuratore viaggi svizzero: decisioni da 45 minuti a 2,3 secondi con True Aim, il 92% più in fretta, 78% di elaborazione automatica.",
+      "h1": "Un assicuratore viaggi svizzero gestisce i sinistri il 92% più in fretta",
+      "breadcrumb": "Assicuratore viaggi svizzero",
+      "ogTitle": "Un assicuratore viaggi svizzero gestisce i sinistri il 92% più in fretta",
+      "ogDescription": "Decisioni sui sinistri ridotte da 45 minuti a 2,3 secondi, con il 78% di elaborazione automatica.",
+      "updated": "2026-11-05"
+    },
+    "/case-studies/european-health-insurer": {
+      "title": "Assicuratore sanitario: costi di gestione ridotti del 71% | True Aim",
+      "description": "Assicuratore sanitario europeo: costi di gestione ridotti del 71% con True Aim, 65% senza intervento, 99,2% di accuratezza e leakage prima nascosto individuato.",
+      "h1": "Un assicuratore sanitario europeo riduce i costi di gestione del 71%",
+      "breadcrumb": "Assicuratore sanitario europeo",
+      "ogTitle": "Un assicuratore sanitario europeo riduce i costi di gestione del 71%",
+      "ogDescription": "65% di elaborazione senza intervento, 99,2% di accuratezza delle decisioni e leakage prima nascosto individuato.",
+      "updated": "2026-11-05"
+    },
+    "/case-studies/motor-claims-pilot": {
+      "title": "Pilota sinistri auto: dall’arretrato al tempo reale | True Aim",
+      "description": "Assicuratore auto britannico: arretrato smaltito con True Aim, decisione da 2 giorni a meno di 5 minuti, 45% di ricorsi in meno, 100% di coerenza.",
+      "h1": "Pilota sinistri auto: dall’arretrato all’elaborazione in tempo reale",
+      "breadcrumb": "Pilota sinistri auto",
+      "ogTitle": "Pilota sinistri auto: dall’arretrato all’elaborazione in tempo reale",
+      "ogDescription": "Tempo di decisione da 2 giorni a meno di 5 minuti, con il 45% di ricorsi in meno e il 100% di coerenza.",
+      "updated": "2026-11-05"
+    },
+    "/partners": {
+      "title": "I nostri partner nella ricerca e nell’assicurazione | True Aim",
+      "description": "True Aim lavora con Innosuisse, la ZHAW, Yarowa AG e lo Swiss InsurTech Hub su ricerca, finanziamento e innovazione assicurativa in Svizzera.",
+      "h1": "L’ecosistema innovativo dietro True Aim",
+      "breadcrumb": "Partner",
+      "ogTitle": "I partner di True Aim",
+      "ogDescription": "Innosuisse, ZHAW, Yarowa AG e Swiss InsurTech Hub: ricerca, finanziamento e innovazione assicurativa in Svizzera.",
+      "updated": "2026-11-05"
+    },
+    "/partners/yarowa": {
+      "title": "Yarowa AG, partner strategico | True Aim",
+      "description": "True Aim AG è uno spin-off di Yarowa AG, piattaforma InsurTech svizzera che gestisce i processi assicurativi centrali in ambienti fortemente regolamentati.",
+      "h1": "Yarowa AG Partner strategico",
+      "breadcrumb": "Yarowa AG",
+      "ogTitle": "Yarowa AG, partner strategico",
+      "ogDescription": "True Aim AG è uno spin-off di Yarowa AG, piattaforma InsurTech svizzera che gestisce i processi assicurativi centrali in ambienti fortemente regolamentati.",
+      "updated": "2026-11-05"
+    },
+    "/partners/innosuisse": {
+      "title": "Partner per l’innovazione finanziato da Innosuisse | True Aim",
+      "description": "La tecnologia di base di True Aim è sostenuta da una sovvenzione di ricerca assegnata su base competitiva da Innosuisse, l’agenzia svizzera per l’innovazione.",
+      "h1": "Finanziato da Innosuisse: partner per l’innovazione",
+      "breadcrumb": "Innosuisse",
+      "ogTitle": "Partner per l’innovazione finanziato da Innosuisse",
+      "ogDescription": "La tecnologia di base di True Aim è sostenuta da una sovvenzione di ricerca assegnata su base competitiva da Innosuisse, l’agenzia svizzera per l’innovazione.",
+      "updated": "2026-11-05"
+    },
+    "/partners/zhaw": {
+      "title": "Partnership di ricerca con la ZHAW | True Aim",
+      "description": "Parte della tecnologia di True Aim viene sviluppata con la ZHAW, Università di scienze applicate di Zurigo, con il sostegno di Innosuisse.",
+      "h1": "Partnership di ricerca con la ZHAW",
+      "breadcrumb": "ZHAW",
+      "ogTitle": "Partnership di ricerca con la ZHAW",
+      "ogDescription": "Parte della tecnologia di True Aim viene sviluppata con la ZHAW, Università di scienze applicate di Zurigo, con il sostegno di Innosuisse.",
+      "updated": "2026-11-05"
+    },
+    "/partners/swissinsurtechhub": {
+      "title": "Swiss InsurTech Hub, partner strategico | True Aim",
+      "description": "True Aim è partner strategico dello Swiss InsurTech Hub, la rete svizzera per l’innovazione assicurativa che riunisce assicuratori, start-up e partner tech.",
+      "h1": "Swiss InsurTech Hub Partner strategico",
+      "breadcrumb": "Swiss InsurTech Hub",
+      "ogTitle": "Swiss InsurTech Hub, partner strategico",
+      "ogDescription": "True Aim è partner strategico dello Swiss InsurTech Hub, la rete svizzera per l’innovazione assicurativa che riunisce assicuratori, start-up e partner tech.",
+      "updated": "2026-11-05"
+    },
+    "/partners/nortonrosefulbright": {
+      "title": "Norton Rose Fulbright, partner strategico | True Aim",
+      "description": "True Aim è partner strategico di Norton Rose Fulbright, lo studio legale globale che l’ha proclamata l’InsurTech più innovativa al mondo all’Insurathon 2026.",
+      "h1": "Norton Rose Fulbright Partner strategico",
+      "breadcrumb": "Norton Rose Fulbright",
+      "ogTitle": "Norton Rose Fulbright, partner strategico",
+      "ogDescription": "True Aim è partner strategico di Norton Rose Fulbright, lo studio legale globale che l’ha proclamata l’InsurTech più innovativa al mondo all’Insurathon 2026.",
+      "updated": "2026-11-05"
+    },
+    "/solutions/insurers": {
+      "title": "Sinistri rami danni liquidati prima, per assicuratori | True Aim",
+      "description": "Sinistri rami danni più rapidi e costi più equi. Ogni sinistro valutato sulla polizza, ogni fattura confrontata, ogni rapporto preparato. Decide il vostro team.",
+      "h1": "Sinistri rami danni, liquidati più in fretta",
+      "breadcrumb": "Assicuratori",
+      "ogTitle": "True Aim per gli assicuratori",
+      "ogDescription": "Sinistri rami danni più rapidi e costi più equi. Ogni sinistro valutato sulla polizza, ogni fattura confrontata, ogni rapporto preparato. Decide il vostro team.",
+      "updated": "2026-11-05"
+    },
+    "/solutions/brokers": {
+      "title": "Sinistri gestiti dalla prima chiamata, per i broker | True Aim",
+      "description": "Acquisite il sinistro al primo contatto, verificatelo sulla polizza e tenete informato il cliente, con la decisione dell’assicuratore spiegata voce per voce.",
+      "h1": "Sinistri acquisiti e gestiti fin dalla prima chiamata",
+      "breadcrumb": "Broker",
+      "ogTitle": "True Aim per i broker",
+      "ogDescription": "Acquisite il sinistro al primo contatto, verificatelo sulla polizza e tenete informato il cliente, con la decisione dell’assicuratore spiegata voce per voce.",
+      "updated": "2026-11-05"
+    },
+    "/solutions/third-party-administrators": {
+      "title": "Più sinistri per liquidatore, per i TPA | True Aim",
+      "description": "Gestite e decidete più sinistri per ogni assicuratore, nei limiti di ogni mandato, con ogni fattura confrontata e un fascicolo completo per ogni cliente.",
+      "h1": "Più sinistri per liquidatore, nei limiti di ogni mandato",
+      "breadcrumb": "TPA",
+      "ogTitle": "True Aim per i TPA",
+      "ogDescription": "Gestite e decidete più sinistri per ogni assicuratore, nei limiti di ogni mandato, con ogni fattura confrontata e un fascicolo completo per ogni cliente.",
+      "updated": "2026-11-05"
+    },
+    "/solutions/warranty-providers": {
+      "title": "Fatture di garanzia verificate rispetto alle condizioni | True Aim",
+      "description": "Ogni fattura dell’officina scomposta in ricambi, manodopera e spese, verificata sulle condizioni di garanzia e confrontata con il costo atteso del lavoro.",
+      "h1": "Ogni fattura di garanzia verificata rispetto alle condizioni",
+      "breadcrumb": "Fornitori di garanzie",
+      "ogTitle": "True Aim per i fornitori di garanzie",
+      "ogDescription": "Ogni fattura dell’officina scomposta in ricambi, manodopera e spese, verificata sulle condizioni di garanzia e confrontata con il costo atteso del lavoro.",
+      "updated": "2026-11-05"
+    },
+    "/solutions/claims-technology-providers": {
+      "title": "Decisioni sui sinistri dentro la vostra piattaforma | True Aim",
+      "description": "Aggiungete la verifica automatica della copertura alla piattaforma che i vostri clienti già usano, con un registro di ogni decisione che potete trasmettere.",
+      "h1": "Aggiungete la verifica della copertura al workflow che i vostri clienti già usano",
+      "breadcrumb": "Fornitori di tecnologie sinistri",
+      "ogTitle": "True Aim per i fornitori di tecnologie sinistri",
+      "ogDescription": "Aggiungete la verifica automatica della copertura alla piattaforma che i vostri clienti già usano, con un registro di ogni decisione che potete trasmettere.",
       "updated": "2026-11-05"
     }
   }

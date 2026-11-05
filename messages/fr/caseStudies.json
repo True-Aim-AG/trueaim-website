@@ -1,274 +1,217 @@
 {
   "caseStudies": {
     "hero": {
-      "eyebrow": "Case studies",
-      "title": "Real numbers in practice",
-      "summary": "How claims teams use True Aim on their own claims, and what changed. Each study names the volume, the languages, the time to results and the accuracy, and how each figure was measured.",
-      "button": "Request a demo"
+      "eyebrow": "Études de cas",
+      "title": "Des chiffres réels, en pratique",
+      "summary": "Comment des équipes sinistres utilisent True Aim sur leurs propres sinistres, et ce qui a changé. Chaque étude indique le volume, les langues, le délai d’obtention des résultats et l’exactitude, et la façon dont chaque chiffre a été mesuré.",
+      "button": "Demander une démo"
     },
     "featured": {
-      "badge": "Case study",
-      "readFullStudy": "Read the case study"
+      "badge": "Étude de cas",
+      "readFullStudy": "Lire l’étude de cas"
     },
     "cta": {
-      "heading": "See True Aim on your own claims",
-      "description": "Bring your own invoices, claims or damage reports and the demo shows the finished outcome.",
-      "bookDemo": "Request a demo"
+      "heading": "Voyez True Aim sur vos propres sinistres",
+      "description": "Apportez vos propres factures, sinistres ou rapports de dommages et la démo montre le résultat final.",
+      "bookDemo": "Demander une démo"
     },
     "detail": {
-      "allCaseStudies": "Toutes les etudes de cas",
-      "notFound": "Etude de cas introuvable",
-      "viewAll": "Voir toutes les etudes de cas",
-      "theChallenge": "Le defi",
+      "allCaseStudies": "Toutes les études de cas",
+      "notFound": "Étude de cas introuvable",
+      "viewAll": "Voir toutes les études de cas",
+      "theChallenge": "Le défi",
       "theSolution": "La solution",
-      "keyHighlights": "Points cles",
-      "getSimilarResults": "Obtenir des resultats similaires",
-      "previous": "Precedent",
+      "keyHighlights": "Points clés",
+      "getSimilarResults": "Demander une démo",
+      "previous": "Précédent",
       "next": "Suivant",
-      "ctaHeading": "Pret a obtenir des resultats similaires ?",
-      "ctaDescription": "Commencez par un pilote sur vos sinistres clotures et constatez l'impact par vous-meme.",
-      "requestPilot": "Réserver une démo"
+      "ctaHeading": "Voyez True Aim sur vos propres sinistres",
+      "ctaDescription": "Apportez vos propres factures, sinistres ou rapports de dommages et la démo montre le résultat final.",
+      "requestPilot": "Demander une démo"
+    },
+    "studies": {
+      "vehicle-warranty-claims": {
+        "title": "Les mêmes décisions sur les sinistres, en une fraction du temps.",
+        "customer": {
+          "industry": "Garantie automobile",
+          "size": ""
+        },
+        "challenge": "Comment NSA a transféré le raisonnement et les décisions de ses experts sinistres dans le logiciel True Aim et réduit de 86 % le travail sur un sinistre complexe.",
+        "solution": "Les experts sinistres de NSA ont décrit exactement comment ils décident d’un sinistre. True Aim a codé ces règles en dur dans son moteur de décision et les a testées sur de vrais sinistres NSA. Le moteur prend désormais les décisions de routine comme les experts le feraient, consigne le motif de chacune et transmet à une personne tout ce qui demande un jugement.",
+        "metrics": [
+          { "label": "de temps d’expert en moins sur un sinistre complexe", "value": "86 %" },
+          { "label": "de temps d’expert en moins sur un sinistre simple", "value": "83 %" },
+          { "label": "de sinistres en plus traités par la même équipe", "value": "118 %" },
+          { "label": "économisées sur chaque sinistre", "value": "32 min" }
+        ],
+        "timeline": "",
+        "quote": {
+          "text": "J’ai cru en cette automatisation dès le premier jour, parce qu’elle ne décide rien que nous n’ayons déjà décidé nous-mêmes. Nos experts ont écrit les règles, True Aim les a intégrées au système, et chaque réponse montre le document et la clause qui la fondent. Les sinistres de routine sont réglés en minutes, et mon équipe peut se concentrer sur les cas où son expérience compte vraiment. Je ne peux que recommander à chaque assureur d’y regarder de près.",
+          "author": "Giuseppe Chiarello",
+          "role": "CEO, NSA Services SA"
+        },
+        "highlights": []
+      },
+      "swiss-travel-insurer": {
+        "title": "Un assureur voyage suisse traite ses sinistres 92 % plus vite",
+        "customer": {
+          "name": "Assureur voyage suisse",
+          "industry": "Assurance voyage",
+          "size": "plus de 50 000 sinistres/an"
+        },
+        "challenge": "Le traitement manuel des sinistres prenait en moyenne 45 minutes par sinistre, avec des décisions incohérentes d’un gestionnaire à l’autre et de longs délais de préparation des audits.",
+        "solution": "Déploiement de l’Automated Coverage Check pour la détermination de la couverture et de la couche documentaire pour le traitement des documents. Intégration au système de gestion des sinistres existant par API.",
+        "metrics": [
+          { "label": "Vitesse de traitement", "value": "92 %", "improvement": "plus rapide" },
+          { "label": "Temps de décision moyen", "value": "2,3 s", "improvement": "contre 45 min" },
+          { "label": "Taux de traitement automatique", "value": "78 %", "improvement": "sans intervention" },
+          { "label": "Temps de préparation des audits", "value": "95 %", "improvement": "de réduction" }
+        ],
+        "timeline": "8 semaines jusqu’à la production",
+        "quote": {
+          "text": "Les gains de cohérence et de vitesse ont dépassé nos attentes. Plus important encore, nous pouvons désormais rattacher chaque décision au texte de la police.",
+          "author": "Directeur des opérations sinistres",
+          "role": "Assureur voyage suisse"
+        },
+        "highlights": [
+          "3 500 sinistres traités pendant le pilote",
+          "Aucun incident de conformité après le déploiement",
+          "Piste d’audit complète pour chaque décision",
+          "Intégration sans heurts aux systèmes historiques"
+        ]
+      },
+      "european-health-insurer": {
+        "title": "Un assureur santé européen réduit ses coûts de traitement de 71 %",
+        "customer": {
+          "name": "Assureur santé européen",
+          "industry": "Assurance santé",
+          "size": "plus de 200 000 sinistres/an"
+        },
+        "challenge": "Un volume élevé de sinistres de routine exigeant un examen manuel, d’où des coûts de traitement importants et des indemnisations retardées pour les clients.",
+        "solution": "Mise en place de la plateforme True Aim complète : la couche documentaire pour le traitement des documents médicaux, l’Automated Coverage Check pour les décisions de couverture et le contrôle qualité pour l’assurance.",
+        "metrics": [
+          { "label": "Réduction des coûts", "value": "71 %", "improvement": "coûts de traitement" },
+          { "label": "Taux sans intervention", "value": "65 %", "improvement": "entièrement automatisé" },
+          { "label": "Exactitude", "value": "99,2 %", "improvement": "exactitude des décisions" },
+          { "label": "Fuites détectées", "value": "2,3 %", "improvement": "identifiées" }
+        ],
+        "timeline": "Déploiement progressif sur 12 semaines",
+        "quote": {
+          "text": "Le contrôle qualité a, à lui seul, financé toute la mise en œuvre en identifiant des fuites dont nous ignorions l’existence.",
+          "author": "CFO",
+          "role": "Assureur santé européen"
+        },
+        "highlights": [
+          "Déployé dans 3 pays",
+          "Prise en charge de documents multilingues",
+          "100 % de contrôle qualité contre 5 % d’échantillonnage",
+          "Nette amélioration de la détection des fraudes"
+        ]
+      },
+      "motor-claims-pilot": {
+        "title": "Pilote sinistres auto : du retard au traitement en temps réel",
+        "customer": {
+          "name": "Assureur auto britannique",
+          "industry": "Assurance auto",
+          "size": "plus de 100 000 sinistres/an"
+        },
+        "challenge": "Un retard croissant de sinistres en période de pointe, avec des décisions de responsabilité incohérentes entraînant des réclamations clients et des inquiétudes réglementaires.",
+        "solution": "Déploiement de l’Automated Coverage Check pour la détermination de la responsabilité, avec une personne dans la boucle pour les cas complexes. La couche documentaire traite les documents d’évaluation des dommages.",
+        "metrics": [
+          { "label": "Retard résorbé", "value": "100 %", "improvement": "éliminé" },
+          { "label": "Temps de décision", "value": "< 5 min", "improvement": "contre 2 jours" },
+          { "label": "Cohérence", "value": "100 %", "improvement": "déterministe" },
+          { "label": "Recours en baisse", "value": "45 %", "improvement": "moins de litiges" }
+        ],
+        "timeline": "6 semaines de pilote, 4 semaines de production",
+        "highlights": [
+          "Période de pointe gérée sans heures supplémentaires",
+          "Meilleurs scores de satisfaction client",
+          "Moins de questions du régulateur",
+          "Temps de formation des nouveaux gestionnaires divisé par deux"
+        ]
+      }
     },
     "vehicleWarranty": {
-      "heroTitle": "Automatisation des reclamations de garantie vehicule avec l'intelligence documentaire AI",
-      "heroSubtitle": "De 18% a 98% de precision decisionnelle en 7 jours",
-      "theProblem": "Le probleme",
-      "problemP1": "Une reclamation de garantie vehicule arrive sur le bureau d'un gestionnaire : cinq documents, trois langues, un devis avec 30 postes, une police avec des niveaux de couverture, des taux de remboursement lies au kilometrage et des listes d'exclusion de composants.",
-      "problemP2": "Le traitement prend 15 a 30 minutes par sinistre. Multipliez cela par des centaines de sinistres par mois.",
-      "problemP3Start": "76% des sinistres refuses echouent pour une seule raison : ",
-      "problemP3Emphasis": "la piece n'est pas couverte par la police",
-      "problemP3End": " - une recherche deterministe, pas une decision de jugement.",
-      "stats": {
-        "approvalDenial": "Ratio approbation/refus",
-        "avgPayout": "Paiement moyen approuve",
-        "vehicleBrands": "Marques de vehicules representees",
-        "docTypes": "Types de documents distincts",
-        "avgDocs": "Moy. de documents par sinistre"
+      "eyebrow": "ÉTUDE DE CAS  ·  NSA ET TRUE AIM",
+      "title": "Les mêmes décisions sur les sinistres, en une fraction du temps.",
+      "summary": "Comment NSA a transféré le raisonnement et les décisions de ses experts sinistres dans le logiciel True Aim et réduit de 86 % le travail sur un sinistre complexe.",
+      "facts": [
+        { "label": "Entreprise", "value": "NSA Services SA, Baar" },
+        { "label": "Activité", "value": "Garanties automobiles depuis plus de 25 ans" },
+        { "label": "Marchés", "value": "Suisse, Allemagne, Autriche et autres pays européens" },
+        { "label": "Langues", "value": "Allemand, français, italien et anglais" }
+      ],
+      "startingPoint": {
+        "heading": "Le point de départ",
+        "text": "NSA évalue plusieurs milliers de sinistres de garantie automobile chaque année. Chaque sinistre exige une vérification de couverture attentive, qui demande une réelle expertise. L’administratif qui l’entoure prend plus de temps que la décision elle-même. Un sinistre arrive sous la forme de cinq documents au plus, pour une cinquantaine de marques de véhicules et 14 types de documents. Chaque poste et son prix sont classés, étiquetés et ressaisis à la main dans le système de gestion des sinistres.",
+        "calloutValue": "7 jours",
+        "calloutText": "entre le premier test de True Aim sur de vrais dossiers de sinistres NSA et un système en production entre les mains de l’équipe sinistres de NSA."
       },
-      "whyExistingFail": "Pourquoi les approches existantes echouent",
-      "whyExistingFailIntro": "La plupart des outils de traitement documentaire extraient du texte des PDFs, ce qui ne couvre que 10% du chemin. Le veritable defi est",
-      "whyExistingFailEmphasis": "le raisonnement inter-documents",
-      "whyExistingFailIntroEnd": " : un devis n'a aucun sens sans la police, un releve kilometrique n'a aucun sens sans le plafond de couverture.",
-      "failReasons": {
-        "genericOcr": {
-          "title": "Les pipelines OCR generiques manquent de profondeur sectorielle",
-          "desc": "Les factures de reparation suisses contiennent des postes en allemand avec des numeros de pieces, des codes de main-d'oeuvre et des sous-totaux reportes sur plusieurs pages. L'OCR standard extrait du texte mais pas des donnees structurees avec des implications de couverture."
-        },
-        "singleModel": {
-          "title": "Les approches a modele unique plafonnent rapidement",
-          "desc": "Envoyer un sinistre entier a un LLM produit des resultats inconsistants : des noms de pieces hallucines, des regles de couverture inventees, des calculs financiers peu fiables. Precision de base avec LLM seul : 18%."
-        },
-        "ruleBased": {
-          "title": "Les systemes a base de regles ne scalent pas avec le vocabulaire",
-          "desc": "Des milliers de noms de pieces dans plusieurs langues. Une \"Wasserpumpe\" en allemand est une \"pompe a eau\" en francais. Le matching par mots-cles pur echoue au premier synonyme non repertorie."
-        }
+      "solution": {
+        "heading": "Ce que fait la solution",
+        "intro": "Les experts sinistres de NSA ont décrit exactement comment ils décident d’un sinistre. True Aim a codé ces règles en dur dans son moteur de décision et les a testées sur de vrais sinistres NSA. Le moteur prend désormais les décisions de routine comme les experts le feraient, consigne le motif de chacune et transmet à une personne tout ce qui demande un jugement.",
+        "items": [
+          { "title": "Il lit les documents.", "desc": "Chaque poste de main-d’œuvre et de pièces est saisi avec son prix, directement depuis le devis de réparation. Rien n’est classé, étiqueté ni ressaisi à la main." },
+          { "title": "Il décide de la couverture.", "desc": "Les propres règles de NSA sont appliquées ligne par ligne, avec la clause de police consignée derrière chaque décision." },
+          { "title": "Il rédige la réponse.", "desc": "La réponse au client est renvoyée prête pour relecture." },
+          { "title": "Il transmet les cas de jugement.", "desc": "Tout ce qui sort des règles va à un expert, avec le dossier déjà préparé." }
+        ]
       },
-      "hybridSolution": "La solution necessite une",
-      "hybridArchitecture": "architecture hybride",
-      "hybridSolutionEnd": " : des regles deterministes la ou elles fonctionnent, du matching par mots-cles pour le vocabulaire connu et du raisonnement LLM comme solution de repli calibree, chaque couche avec un scoring de confiance explicite et un suivi de provenance.",
-      "architectureTitle": "L'architecture : un pipeline multi-etapes",
-      "architectureIntro": "Un pipeline de traitement des sinistres de bout en bout fait passer les documents bruts par cinq etapes, chacune avec des controles de qualite et une journalisation d'audit.",
-      "stages": {
-        "ingestion": "Ingestion",
-        "classification": "Classification",
-        "extraction": "Extraction",
-        "screening": "Filtrage",
-        "qaReview": "Revue QA",
-        "stageLabel": "Etape"
+      "claimTypes": {
+        "heading": "Deux types de sinistres",
+        "intro": "Un sinistre n’est pas une unité de travail unique, l’économie n’est donc pas uniforme.",
+        "simple": "Un <b>sinistre simple</b> comporte une pièce, une cause et une réponse claire. Les experts de NSA peuvent le décider rapidement. Le temps est absorbé par l’administratif qui l’entoure.",
+        "complex": "Un <b>sinistre complexe</b> comporte plusieurs pièces et postes de main-d’œuvre, et chaque ligne doit être confrontée à la police : incluse, exclue, usure, préexistante ou hors période. C’est là que se consomment les heures d’expert, et c’est là que le moteur apporte le plus.",
+        "mix": "Le portefeuille de sinistres de NSA se compose de 73 % de sinistres simples et de 27 % de sinistres complexes."
       },
-      "multiTier": {
-        "heading": "Analyse de couverture : matching multi-niveaux",
-        "intro": "Chaque poste passe par un pipeline de matching multi-niveaux, priorisant les approches deterministes avant de recourir a l'AI :",
-        "deterministic": {
-          "name": "Regles deterministes",
-          "confidence": "Maximale",
-          "desc": "Correspondances exactes pour les elements connus, les exclusions et les consommables. Zero ambiguite, resolution instantanee."
-        },
-        "keyword": {
-          "name": "Matching par mots-cles",
-          "confidence": "Elevee",
-          "desc": "Associe les termes de reparation multilingues aux categories de composants avec normalisation des synonymes."
-        },
-        "aiFallback": {
-          "name": "AI en repli",
-          "confidence": "Moderee",
-          "desc": "LLM avec des prompts structures pour les elements veritablement ambigus necessitant un raisonnement contextuel."
-        },
-        "confidenceLabel": "confiance"
+      "keyResults": {
+        "heading": "Résultats clés"
       },
-      "expandable": {
-        "ingestionTitle": "Details des etapes : ingestion, classification & extraction",
-        "stage1Title": "Etape 1 : Ingestion des documents",
-        "stage1Desc": "Couche d'ingestion modulaire supportant plusieurs fournisseurs OCR pour les charges de production. Chaque page est extraite independamment avec suivi de position pour une provenance complete.",
-        "stage2Title": "Etape 2 : Classification des documents",
-        "stage2Desc": "Routeur alimente par l'AI classifiant les documents par type avec des indices linguistiques specifiques en allemand, francais et italien. Precision de classification proche de 100%.",
-        "stage3Title": "Etape 3 : Extraction structuree des champs",
-        "stage3Desc": "Des extracteurs specialises traitent des ensembles complets de champs pour les polices de garantie. Les extracteurs de devis gerent les documents multi-pages avec des sous-totaux reportes et une validation des totaux. Chaque champ porte un score de confiance, une provenance et un verdict de controle qualite.",
-        "screeningTitle": "Details des etapes : controles de filtrage deterministes",
-        "screeningIntro": "Le pipeline de filtrage execute plusieurs controles deterministes couvrant la validite de la police, l'eligibilite a la couverture et les exigences de conformite. Chaque controle produit l'un des trois verdicts :",
-        "hardFail": "Echec bloquant",
-        "hardFailDesc": "Bloque l'automatisation, necessite une revision humaine",
-        "softCheck": "Alerte souple",
-        "softCheckDesc": "Signale pour attention mais ne bloque pas",
-        "conditional": "Conditionnel",
-        "conditionalDesc": "Le resultat depend d'un contexte supplementaire",
-        "screeningNote": "Les controles couvrent des domaines tels que le statut de la police, les dates de couverture, les limites de kilometrage, l'eligibilite des composants et les schemas d'exclusion.",
-        "payoutTitle": "Approche de calcul du paiement",
-        "payoutIntro": "Le calcul du paiement suit les regles metier specifiques a l'assureur, incluant generalement :",
-        "payoutItems": {
-          "sumCovered": "Sommation des elements couverts",
-          "applyCaps": "Application des plafonds de couverture et des taux de remboursement",
-          "addTaxes": "Ajout des taxes applicables",
-          "calcDeductibles": "Calcul des franchises",
-          "computeFinal": "Calcul du paiement final"
-        },
-        "payoutNote": "Chaque assureur a des regles specifiques pour les franchises, les niveaux de remboursement et la repartition pieces/main-d'oeuvre qui doivent etre respectees exactement."
+      "timeSaving": {
+        "heading": "Gain de temps par sinistre",
+        "columns": [
+          ["Sinistres simples", "Avant"],
+          ["Sinistres simples", "True Aim"],
+          ["Sinistres complexes", "Avant"],
+          ["Sinistres complexes", "True Aim"]
+        ],
+        "rows": [
+          ["Traitement des documents, classement, étiquetage et ressaisie", "16 min", "moins de 1 min*", "23 min", "3 min"],
+          ["Analyse de couverture et vérification de la police", "6 min", "2 min", "27 min", "4 min"],
+          ["Rédaction de la réponse au client", "7 min", "2 min", "13 min", "2 min"]
+        ],
+        "total": ["Temps de traitement total", "29 min", "5 min", "63 min", "9 min"],
+        "footnote": "*La saisie des documents est entièrement automatisée, dès l’arrivée du sinistre par le formulaire en ligne ou par e-mail. Le temps indiqué correspond à la confirmation par l’expert des éléments que le moteur signale pour vérification, typiquement un scan de mauvaise qualité, une modification manuscrite sur un devis ou une désignation de pièce qui ne correspond à aucune entrée de catalogue connue. Sur un dossier propre, il n’y a rien à vérifier.",
+        "summary": "Soit <b>83 % de travail en moins sur un sinistre simple</b> et <b>86 % de moins sur un sinistre complexe</b>. La relecture des documents prend un peu plus de temps sur un sinistre complexe, car il y a plus de documents et plus de lignes, donc plus d’éléments présentés pour confirmation. Chaque ligne non signalée porte déjà sa décision et la clause de police qui la fonde."
       },
-      "journey": {
-        "heading": "Le parcours d'implementation : de 18% a 98%",
-        "day1_3": {
-          "label": "Jours 1-3",
-          "title": "Baseline et architecture",
-          "desc": "L'approche initiale uniquement LLM a produit des resultats plausibles mais peu fiables : des noms de pieces hallucines, des regles de couverture inventees, des calculs inconsistants.",
-          "insight": "Constat cle :",
-          "insightText": "Les LLMs excellent en comprehension linguistique mais echouent sur les regles metier deterministes. L'architecture devait separer le jugement de la precision."
-        },
-        "day3_5": {
-          "label": "Jours 3-5",
-          "title": "Pipeline de filtrage + couverture",
-          "desc": "Le pipeline de filtrage deterministe et le matching de couverture multi-niveaux ont produit la plus grande amelioration unitaire. Les controles bases sur les regles ont a eux seuls detecte correctement la plupart des refus."
-        },
-        "day5_8": {
-          "label": "Jours 5-8",
-          "title": "Iteration et raffinement",
-          "desc": "Plus de 60 iterations d'evaluation resolvant des problemes de plus en plus subtils : bugs de matching de sous-chaines, logique de retrogradation de main-d'oeuvre et normalisation des numeros de pieces sur les sorties OCR."
-        },
-        "holdout": {
-          "label": "Test holdout",
-          "title": "Validation sur donnees inedites",
-          "desc": "30 sinistres jamais vus ont revele des modes de defaillance que le jeu de developpement ne couvrait pas : clauses d'exclusion causale, scenarios de documents manquants et lacunes d'interpretation des sous-composants.",
-          "honest": "L'ecart holdout (98% vs 77%) est la mesure honnete de la generalisation."
-        }
+      "book": {
+        "heading": "Ce que cela représente sur l’ensemble du portefeuille",
+        "columns": ["Avant", "Avec True Aim", "Évolution"],
+        "rows": [
+          ["Temps de traitement d’un sinistre moyen", "38 min", "6 min", "84 % de moins"],
+          ["Délai de réponse à un sinistre, de bout en bout", "59 min", "27 min", "54 % plus rapide"]
+        ],
+        "total": ["Volume de sinistres que la même équipe peut évaluer", "référence", "118 % de plus", "+118 %"],
+        "basis": "<b>Base.</b> Pondéré selon le mix de sinistres de NSA, 73 % simples et 27 % complexes. Le délai de réponse couvre l’ensemble du processus, y compris les relances et les passations, que True Aim ne modifie pas."
       },
-      "iterationDetails": {
-        "title": "Corrections detaillees des iterations (88% a 98%)",
-        "substringBug": "Bug de matching de sous-chaines inter-categories :",
-        "substringBugDesc": "Un synonyme de vanne EGR (\"abgasrueckfuehrung\") contenait la sous-chaine \"asr\" (regulation anti-patinage). Le systeme declarait la vanne EGR couverte sous les freins. Correction : garde symetrique exigeant une correspondance exacte lorsque l'un des termes fait 3 caracteres ou moins.",
-        "laborDemotion": "Sur-agressivite de la retrogradation de main-d'oeuvre :",
-        "laborDemotionDesc": "Lorsqu'une piece etait couverte, la main-d'oeuvre d'installation associee devait aussi etre couverte. Correction : logique de promotion de la main-d'oeuvre heritant la couverture de la reparation parente.",
-        "partNumber": "Normalisation des numeros de pieces :",
-        "partNumberDesc": "Un numero de piece Mercedes n'etait pas reconnu en raison de differences d'espacement dans l'extraction OCR. Correction : normaliser tous les numeros de pieces en supprimant les espaces et caracteres speciaux avant la recherche."
+      "expertise": {
+        "title": "Plus de temps pour l’expertise.",
+        "text": "Les experts passent leur journée sur les sinistres où la réponse est un jugement plutôt qu’une consultation."
       },
-      "holdoutAnalysis": {
-        "title": "Analyse des echecs holdout",
-        "causal": {
-          "title": "Clauses d'exclusion causale",
-          "desc": "Un turbocompresseur est couvert, mais si le turbo a casse parce que le moteur (non couvert) a casse en premier, la police refuse la couverture. Le systeme ne raisonne pas sur les chaines de defaillance."
-        },
-        "missingDocs": {
-          "title": "Documents manquants",
-          "desc": "Un sinistre a ete refuse car la prime de la police n'avait pas ete payee. Cette information se trouve dans le systeme interne de l'assureur, pas dans un document traitable."
-        },
-        "subComponent": {
-          "title": "Lacunes d'interpretation des sous-composants",
-          "desc": "Un capteur DPF fait fonctionnellement partie du systeme d'echappement. La police couvre les echappements mais ne liste que des sous-composants specifiques. Le gestionnaire a approuve en interpretant le capteur comme un sous-composant d'echappement."
-        },
-        "excludedDominance": {
-          "title": "Dominance des composants exclus",
-          "desc": "Un sinistre pour une reparation de flexible (exclu) a ete approuve parce qu'un boulon mineur (CHF 3.70, couvert) figurait egalement sur la facture."
-        }
+      "sameDecision": {
+        "heading": "La même décision, à chaque fois",
+        "text": "True Aim évalue chaque sinistre selon les mêmes règles et avec le même soin, quelle que soit l’heure ou la charge de travail. Deux sinistres identiques reçoivent la même réponse. Chaque décision consigne le document, la page et la clause de police sur lesquels elle repose, de sorte que tout sinistre peut être expliqué plus tard."
       },
-      "showMore": "Afficher plus de details",
-      "showLess": "Afficher moins",
-      "technicalChallenges": {
-        "heading": "Defis techniques",
-        "multiLang": {
-          "title": "Traitement multilingue",
-          "desc": "Classification et extraction tenant compte de la langue en allemand, francais et italien. Taux d'approbation comparables sans biais linguistique mesurable."
-        },
-        "auditability": {
-          "title": "Auditabilite et conformite",
-          "desc": "Chaine de provenance complete : chaque champ extrait est lie a son document source et a sa page. Chaque decision de couverture inclut la methode de matching, le score de confiance et l'explication."
-        },
-        "payoutPrecision": {
-          "title": "Precision de la formule de paiement",
-          "desc": "Les erreurs d'ordre des operations dans les calculs financiers peuvent causer des surpaiements significatifs. Les trouver necessite de parcourir les calculs sinistre par sinistre avec les gestionnaires."
-        },
-        "costControl": {
-          "title": "Maitrise des couts",
-          "desc": "Les regles deterministes et le matching par mots-cles traitent la majorite des elements sans cout LLM. Le suivi de la consommation de tokens avec des seuils configurables empeche les couts incontroles."
-        }
+      "collaboration": {
+        "heading": "La collaboration",
+        "text": "True Aim est passé du premier test à un système en production en sept jours. Les experts de NSA ont transmis leurs règles directement et les ont vues fonctionner dans le système la même semaine.",
+        "next": "<b>Prochaine étape :</b> d’autres catégories de sinistres, davantage de lignes et de types de documents, une couverture plus large des marques de véhicules et le passage du périmètre pilote au processus sinistres standard."
       },
-      "orderOfOps": {
-        "title": "Lecon sur l'ordre des operations",
-        "intro": "Lors de l'application de taux de remboursement degrades, l'ordre des operations est determinant :",
-        "wrong": "Incorrect :",
-        "wrongDesc": "Appliquer le taux apres les calculs de TVA et de franchise",
-        "correct": "Correct :",
-        "correctDesc": "Appliquer le taux au montant couvert d'abord, puis ajouter la TVA et soustraire la franchise",
-        "note": "Une seule erreur d'ordre des operations peut causer un surpaiement significatif. Trouver ces bugs necessite de parcourir les calculs avec les gestionnaires."
-      },
-      "results": {
-        "heading": "Resultats",
-        "evalSet": "Jeu d'evaluation initial",
-        "holdoutSet": "Jeu holdout",
-        "metrics": {
-          "decisionAccuracy": "Precision decisionnelle",
-          "approvedCorrect": "Sinistres approuves correctement identifies",
-          "deniedCorrect": "Sinistres refuses correctement identifies",
-          "falseReject": "Taux de faux refus",
-          "falseApprove": "Taux de fausses approbations"
-        },
-        "processingChars": {
-          "multipleDocTypes": "Plusieurs types de documents",
-          "multiBrand": "Support multi-marques",
-          "deterministicScreening": "Filtrage deterministe",
-          "multiTierMatching": "Matching multi-niveaux",
-          "comprehensiveKeywords": "Mots-cles exhaustifs",
-          "fullFieldExtraction": "Extraction complete des champs",
-          "languagesSupported": "Langues supportees",
-          "extensiveTestCoverage": "Couverture de test etendue"
-        }
-      },
-      "lessons": {
-        "heading": "Ce que nous avons appris",
-        "lesson1": {
-          "title": "Les controles deterministes surpassent le jugement LLM pour les regles structurees.",
-          "desc": "76% des refus de sinistres sont \"piece non couverte\" - une recherche, pas un jugement. Le pipeline de filtrage les traite avec 100% de confiance et zero cout LLM."
-        },
-        "lesson2": {
-          "title": "La courbe de precision a des rendements decroissants.",
-          "desc": "De 18% a 76% a pris 3 jours. De 76% a 98% a pris 4 jours de plus. L'ecart holdout (98% vs 77%) a confirme que la generalisation en conditions reelles necessite significativement plus de donnees."
-        },
-        "lesson3": {
-          "title": "La formule de paiement est plus difficile que l'AI.",
-          "desc": "Faire correspondre le calcul financier a la formule exacte de l'assureur necessite de s'asseoir avec un gestionnaire et de parcourir les calculs a la main. Aucun prompt engineering ne resout un bug de logique metier."
-        },
-        "lesson4": {
-          "title": "Le suivi de provenance est non negociable.",
-          "desc": "Dans un secteur reglemente, chaque valeur extraite et chaque decision de couverture doit etre tracable jusqu'a un document source. Fondamental pour la confiance et la conformite."
-        }
-      },
-      "nextSteps": {
-        "heading": "Prochaines etapes realisees",
-        "step1": "Extension du jeu de donnees de verite terrain",
-        "step2": "Integration avec l'API de gestion des polices de l'assureur pour des verifications de statut en temps reel",
-        "step3": "Implementation du raisonnement d'exclusion causale pour les refus de dommages en cascade",
-        "step4": "Deploiement du triage en production : refus automatique des refus a haute confiance, approbation automatique des cas simples, acheminement des cas limites vers une revision humaine",
-        "conclusion": "L'objectif n'est pas de remplacer les gestionnaires mais de leur rendre leur temps sur les 76% de refus qui sont des recherches simples, afin qu'ils puissent concentrer leur expertise sur les 24% qui necessitent reellement un jugement."
-      },
+      "method": "D’après des mesures de temps de chaque étape du processus sur de vrais sinistres NSA, dans le processus actuel comme dans les tests avec True Aim, ventilées par complexité du sinistre. Le mix de sinistres est celui de NSA. Les chiffres sont arrondis à la minute.",
       "sidebar": {
-        "keyHighlights": "Points cles",
-        "productsUsed": "Produits utilises",
-        "capabilities": "Capacites",
-        "capabilityList": {
-          "docProcessing": "Traitement documentaire",
-          "hybridAi": "AI hybride",
-          "multilingual": "Multilingue",
-          "fullProvenance": "Provenance complete",
-          "auditReady": "Pret pour l'audit"
-        },
-        "getSimilarResults": "Obtenir des resultats similaires"
+        "productsUsed": "Produits utilisés",
+        "getSimilarResults": "Demander une démo"
       }
     }
   }

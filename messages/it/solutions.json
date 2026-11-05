@@ -1,0 +1,528 @@
+{
+  "solutionPages": {
+    "common": {
+      "ctaDemo": "Prenota una demo",
+      "faqHeading": "Domande frequenti",
+      "helpHeading": "Scoprite le nostre soluzioni",
+      "help": {
+        "claimsDecisioning": {
+          "title": "Automated Coverage Check",
+          "text": "Una verifica automatica della copertura: ogni sinistro controllato rispetto alle condizioni di polizza, con il ragionamento visibile e l’indennizzo calcolato.",
+          "link": "Scopri Automated Coverage Check"
+        },
+        "invoiceBenchmarking": {
+          "title": "Invoice Benchmarking",
+          "text": "Ogni fattura e ogni offerta misurate rispetto a quanto il lavoro dovrebbe costare in ciascuna regione.",
+          "link": "Scopri Invoice Benchmarking"
+        },
+        "damageReporting": {
+          "title": "Damage Reporting",
+          "text": "Foto e documenti trasformati in un preventivo quantificato e in un ambito completo dei lavori.",
+          "link": "Scopri Damage Reporting"
+        },
+        "otus": {
+          "title": "Otus",
+          "text": "Risposte per ogni membro dei team dei vostri clienti, dentro l’assistente IA che hanno già approvato.",
+          "link": "Scopri Otus"
+        }
+      },
+      "cta": {
+        "heading": "Vedete True Aim all’opera sui vostri sinistri",
+        "lede": "Portate una serie recente di sinistri, fatture o rapporti danni, e vi mostreremo il risultato finale.",
+        "button": "Prenota una demo"
+      }
+    },
+    "insurers": {
+      "hero": {
+        "title": "Sinistri rami danni, liquidati più in fretta",
+        "summary": "True Aim è costruito per i vostri team sinistri. Ogni sinistro viene valutato rispetto alle condizioni di polizza, ogni fattura confrontata con i prezzi di riferimento e ogni rapporto danni preparato, ciascuno per l’importo corretto. I vostri liquidatori mantengono la decisione finale e recuperano le ore prima perse a leggere, reinserire dati e sollecitare.",
+        "scene": {
+          "alt": "Un sinistro come lo vede il liquidatore: ogni voce raggruppata per esito con il suo importo coperto, e l’indennizzo",
+          "title": "Sinistro danno da acqua",
+          "reference": "Sinistro 62850",
+          "columns": {
+            "description": "Descrizione",
+            "quantity": "Q.tà",
+            "claimed": "Richiesto",
+            "covered": "Coperto"
+          },
+          "groups": [
+            {
+              "kind": "approved",
+              "label": "Coperto",
+              "total": "2.860,00",
+              "lines": [
+                {
+                  "description": "Sostituzione pavimento",
+                  "quantity": "18 × m²",
+                  "claimed": "2.860,00",
+                  "covered": "2.860,00"
+                }
+              ]
+            },
+            {
+              "kind": "denied",
+              "label": "Escluso",
+              "total": "0,00",
+              "lines": [
+                {
+                  "description": "Lavastoviglie, sostituzione",
+                  "quantity": "1 × pezzo",
+                  "claimed": "1.126,30",
+                  "covered": "0,00"
+                }
+              ]
+            },
+            {
+              "kind": "referred",
+              "label": "In attesa di esame",
+              "total": "321,10",
+              "lines": [
+                {
+                  "description": "Hotel",
+                  "quantity": "4 × notte",
+                  "claimed": "642,18",
+                  "covered": "321,10"
+                }
+              ]
+            }
+          ],
+          "deductibleLabel": "Franchigia",
+          "deductible": "150,00",
+          "payoutLabel": "Indennizzo",
+          "payout": "2.710,00"
+        }
+      },
+      "benefits": {
+        "heading": "Cosa significa per il vostro team",
+        "items": [
+          {
+            "title": "Tempo restituito ai liquidatori",
+            "text": "Leggere, reinserire dati e sollecitare non riempiono più la loro giornata."
+          },
+          {
+            "title": "Decisioni coerenti",
+            "text": "Gli stessi fatti portano alla stessa risposta, chiunque esamini il sinistro."
+          },
+          {
+            "title": "Costi che potete spiegare",
+            "text": "Ogni importo porta la sua motivazione, pronta per l’audit."
+          },
+          {
+            "title": "Stime di riserva più tempestive",
+            "text": "Una stima del danno e un importo di riserva già alla denuncia di sinistro."
+          },
+          {
+            "title": "Meno chiamate per avere notizie",
+            "text": "I clienti vedono l’avanzamento del loro sinistro e hanno meno motivi per chiamare."
+          },
+          {
+            "title": "Ogni fattura controllata",
+            "text": "Ogni fattura e ogni offerta vengono confrontate con il vostro riferimento."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "Quali rami supporta True Aim?",
+          "answer": "True Aim non è legato a un solo ramo. I sinistri auto, property, garanzia e responsabilità civile sono costruiti con gli stessi componenti, ciascuno con le proprie condizioni di polizza e le proprie regole."
+        },
+        {
+          "question": "Chi prende la decisione finale?",
+          "answer": "I vostri liquidatori. True Aim prepara una raccomandazione con il ragionamento completo, e una persona la conferma. L’automazione completa opera solo dove voi e la vostra autorità di vigilanza lo permettete."
+        },
+        {
+          "question": "Dobbiamo sostituire il nostro sistema sinistri?",
+          "answer": "No. True Aim si colloca sopra il sistema sinistri o ERP che già utilizzate, ne legge ogni sinistro e riporta i risultati nel sistema."
+        },
+        {
+          "question": "Come viene fatturato True Aim?",
+          "answer": "Per risultato, non per utente. Pagate ogni sinistro liquidato, ogni fattura confrontata con il riferimento o ogni rapporto danni completo, così i costi crescono solo con il valore che ricevete."
+        }
+      ]
+    },
+    "brokers": {
+      "hero": {
+        "title": "Sinistri acquisiti e gestiti fin dalla prima chiamata",
+        "summary": "Il broker è spesso la prima chiamata dopo un danno. Con True Aim, i sinistri rami danni vengono acquisiti al primo contatto, verificati rispetto alla polizza e tenuti in movimento, con il vostro cliente informato a ogni passaggio e la decisione dell’assicuratore spiegata per intero, voce per voce.",
+        "scene": {
+          "alt": "I sinistri arrivano da quattro canali, confluiscono in un unico fascicolo, e ogni parte viene aggiornata da lì",
+          "channelsLabel": "Arriva da qualsiasi canale",
+          "channels": [
+            "WhatsApp",
+            "E-mail",
+            "Portale clienti",
+            "Riparatore"
+          ],
+          "record": {
+            "title": "Un unico fascicolo sinistro",
+            "fields": [
+              {
+                "label": "Richiedente",
+                "value": "A. Meier"
+              },
+              {
+                "label": "Polizza",
+                "value": "HOM-2026-8834"
+              },
+              {
+                "label": "Evento",
+                "value": "Danno da acqua, cucina"
+              },
+              {
+                "label": "Documenti",
+                "value": "4 letti, 0 mancanti"
+              }
+            ],
+            "status": "Contestualizzato"
+          },
+          "partiesLabel": "Ogni parte informata",
+          "parties": [
+            {
+              "name": "Cliente",
+              "text": "Riferimento inviato, pagina di stato attiva"
+            },
+            {
+              "name": "Broker",
+              "text": "Fascicolo condiviso, niente da reinserire"
+            },
+            {
+              "name": "Riparatore",
+              "text": "Preventivo richiesto, atteso venerdì"
+            },
+            {
+              "name": "Liquidatore",
+              "text": "Assegnato, documenti già letti"
+            }
+          ]
+        }
+      },
+      "benefits": {
+        "heading": "Cosa significa per il vostro team",
+        "items": [
+          {
+            "title": "Tempo amministrativo eliminato",
+            "text": "I sinistri vengono acquisiti, letti e archiviati appena arrivano, così il vostro team non reinserisce più i dati né sollecita i documenti."
+          },
+          {
+            "title": "Decisioni coerenti",
+            "text": "Gli stessi fatti portano alla stessa risposta, chiunque esamini il sinistro."
+          },
+          {
+            "title": "Un unico fascicolo per tutte le parti",
+            "text": "Il vostro cliente, l’assicuratore e il riparatore lavorano tutti sullo stesso fascicolo sinistro, così tutti vedono lo stesso stato."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "True Aim sostituisce la decisione dell’assicuratore?",
+          "answer": "No. Decide l’assicuratore. True Aim verifica ogni sinistro rispetto alle condizioni di polizza e mostra la clausola dietro ogni voce, così potete spiegare l’esito al vostro cliente con sicurezza."
+        },
+        {
+          "question": "Attraverso quali canali può arrivare un sinistro?",
+          "answer": "WhatsApp, e-mail, telefono o un portale clienti. I documenti vengono letti appena arrivano e riuniti in un unico fascicolo sinistro."
+        },
+        {
+          "question": "Come teniamo informati i nostri clienti?",
+          "answer": "Ogni parte lavora sullo stesso fascicolo sinistro, così il vostro cliente, l’assicuratore e il riparatore vedono ciascuno lo stato attuale senza che nessuno debba sollecitare a mano."
+        },
+        {
+          "question": "Possiamo documentare i nostri livelli di servizio?",
+          "answer": "Sì. I livelli di servizio e gli obblighi previsti dalle convenzioni vengono tracciati passo dopo passo e registrati nel fascicolo, pronti per qualsiasi verifica."
+        }
+      ]
+    },
+    "tpas": {
+      "hero": {
+        "title": "Più sinistri per liquidatore, nei limiti di ogni mandato",
+        "summary": "True Aim agisce come il vostro livello di orchestrazione agentica e calcola la copertura voce per voce rispetto alle condizioni specifiche di ogni assicuratore. Verifichiamo ogni fattura rispetto a riferimenti di mercato empirici e conserviamo ogni esito con la provenienza a livello di voce. Senza il tempo perso a navigare tra i sistemi, i vostri liquidatori si dedicano ai giudizi che contano, e il vostro portafoglio ha spazio per crescere.",
+        "scene": {
+          "alt": "Una coda di lavoro con lo stato di ogni sinistro e il tempo rimanente prima del suo livello di servizio",
+          "title": "Sinistri aperti",
+          "subtitle": "34 aperti · 5 liquidatori · ordinati per livello di servizio",
+          "tabs": [
+            "Tutti",
+            "La mia coda",
+            "Urgenti"
+          ],
+          "columns": {
+            "claim": "Sinistro",
+            "status": "Stato",
+            "sla": "SLA"
+          },
+          "rows": [
+            {
+              "reference": "CLM-02988",
+              "kind": "Cristalli",
+              "status": "open",
+              "label": "Nuovo",
+              "sla": "4 h"
+            },
+            {
+              "reference": "CLM-02981",
+              "kind": "Property",
+              "status": "open",
+              "label": "In corso",
+              "sla": "2 g"
+            },
+            {
+              "reference": "CLM-02979",
+              "kind": "Auto",
+              "status": "referred",
+              "label": "In attesa del riparatore",
+              "sla": "1 g"
+            }
+          ],
+          "totalLabel": "34 sinistri aperti",
+          "showingLabel": "3 visualizzati"
+        }
+      },
+      "benefits": {
+        "heading": "Cosa significa per il vostro team",
+        "items": [
+          {
+            "title": "Più sinistri per liquidatore",
+            "text": "Lettura, verifica e calcolo sono fatti prima che il sinistro venga aperto."
+          },
+          {
+            "title": "Ogni mandato applicato alla lettera",
+            "text": "Ogni sinistro viene deciso entro le condizioni, i limiti e il mandato dell’assicuratore interessato."
+          },
+          {
+            "title": "Audit risolti dal fascicolo",
+            "text": "La domanda di audit di un cliente richiede minuti, non un progetto."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "True Aim può applicare regole diverse per ogni assicuratore?",
+          "answer": "Sì. Le condizioni di polizza, i limiti e il mandato di ogni assicuratore vengono configurati separatamente, e ogni sinistro viene deciso secondo le regole del cliente a cui appartiene."
+        },
+        {
+          "question": "Chi prende la decisione finale?",
+          "answer": "I vostri liquidatori, nei limiti del mandato che l’assicuratore vi ha conferito. True Aim prepara la raccomandazione e il suo ragionamento, e il fascicolo mostra chi ha confermato ogni esito."
+        },
+        {
+          "question": "Come rispondiamo all’audit di un assicuratore?",
+          "answer": "Dal fascicolo. Ogni decisione porta la sua clausola, le sue prove e il suo autore, e la storia completa di un sinistro si esporta come un unico audit pack."
+        },
+        {
+          "question": "Dobbiamo cambiare il nostro sistema sinistri?",
+          "answer": "No. True Aim lavora sopra i sistemi che già utilizzate e riporta i risultati nel sistema."
+        }
+      ]
+    },
+    "warranty": {
+      "hero": {
+        "title": "Ogni fattura di garanzia verificata rispetto alle condizioni",
+        "summary": "True Aim scompone le fatture fino alla singola voce e convalida in tempo reale ricambi, manodopera e spese rispetto alle condizioni di garanzia e ai riferimenti regionali. Ogni discrepanza genera una richiesta di riemissione pronta da inviare, con le voci interessate identificate con precisione, trasformando dispute costose in riconciliazioni rapide e oggettive.",
+        "scene": {
+          "alt": "Un sinistro di garanzia auto come lo vede il liquidatore: ricambi, manodopera e un’auto di cortesia, ogni voce verificata rispetto alle condizioni di garanzia",
+          "title": "Sinistro garanzia auto",
+          "reference": "Sinistro 5964",
+          "columns": {
+            "description": "Descrizione",
+            "quantity": "Q.tà",
+            "claimed": "Richiesto",
+            "covered": "Coperto"
+          },
+          "groups": [
+            {
+              "kind": "approved",
+              "label": "Coperto",
+              "total": "1.980,00",
+              "lines": [
+                {
+                  "description": "Turbocompressore, sostituzione",
+                  "quantity": "1 × pezzo",
+                  "claimed": "1.980,00",
+                  "covered": "1.980,00"
+                }
+              ]
+            },
+            {
+              "kind": "denied",
+              "label": "Escluso",
+              "total": "0,00",
+              "lines": [
+                {
+                  "description": "Olio e filtro",
+                  "quantity": "1 × tagliando",
+                  "claimed": "148,00",
+                  "covered": "0,00"
+                }
+              ]
+            },
+            {
+              "kind": "referred",
+              "label": "In attesa di esame",
+              "total": "325,00",
+              "lines": [
+                {
+                  "description": "Auto di cortesia",
+                  "quantity": "9 × giorno",
+                  "claimed": "585,00",
+                  "covered": "325,00"
+                }
+              ]
+            }
+          ],
+          "payoutLabel": "Indennizzo",
+          "payout": "2.305,00"
+        }
+      },
+      "benefits": {
+        "heading": "Cosa significa per il vostro team",
+        "items": [
+          {
+            "title": "Voce per voce, in due minuti",
+            "text": "Ricambi, manodopera e spese, ciascuno verificato rispetto alle condizioni."
+          },
+          {
+            "title": "La riparazione giusta",
+            "text": "La riparazione proposta viene verificata rispetto al danno, non solo rispetto alla copertura."
+          },
+          {
+            "title": "L’officina resta informata",
+            "text": "Le voci rifiutate vengono barrate e una richiesta di riemissione viene redatta."
+          }
+        ]
+      },
+      "story": {
+        "heading": "Come funziona nella pratica",
+        "caseStudy": {
+          "cap": "Caso studio",
+          "title": "Le stesse decisioni sui sinistri, in una frazione del tempo.",
+          "text": "Come NSA ha trasferito il ragionamento e le decisioni dei suoi esperti sinistri nel software True Aim e ha ridotto dell’86% il lavoro su un sinistro complesso.",
+          "link": "Leggi il caso studio",
+          "logoAlt": "NSA Services SA"
+        }
+      },
+      "quote": {
+        "text": "Ho creduto in questa automazione fin dal primo giorno, perché non decide nulla che non avessimo già deciso noi. I nostri esperti hanno scritto le regole, True Aim le ha integrate nel sistema, e ogni risposta mostra il documento e la clausola su cui si basa. I sinistri di routine vengono liquidati in minuti, e il mio team può concentrarsi sui casi in cui la sua esperienza conta davvero. Posso solo raccomandare a ogni assicuratore di guardarci da vicino.",
+        "name": "Giuseppe Chiarello",
+        "role": "CEO, NSA Services SA"
+      },
+      "faq": [
+        {
+          "question": "Quali documenti legge True Aim?",
+          "answer": "La fattura o il preventivo dell’officina, le condizioni di garanzia e i documenti a supporto che accompagnano ogni sinistro, in tedesco, francese, italiano, inglese e altre lingue."
+        },
+        {
+          "question": "L’esito è deciso dall’IA?",
+          "answer": "No. L’IA legge i documenti. Ricambi noti, esclusioni e materiali di consumo vengono liquidati con regole fisse, e ogni decisione rimanda alla clausola e alla pagina di origine su cui si basa."
+        },
+        {
+          "question": "Chi prende la decisione finale?",
+          "answer": "I vostri liquidatori. True Aim prepara la raccomandazione e il suo ragionamento, e un liquidatore la conferma o la modifica."
+        },
+        {
+          "question": "Possiamo lavorare con le nostre regole invece che con le condizioni di garanzia?",
+          "answer": "Sì. I cataloghi di settore e le vostre regole aziendali funzionano esattamente come le condizioni di garanzia."
+        }
+      ]
+    },
+    "claimsTech": {
+      "hero": {
+        "title": "Aggiungete la verifica della copertura al workflow che i vostri clienti già usano",
+        "summary": "Il workflow è vostro, e True Aim si occupa di ogni decisione. Lavoriamo insieme al vostro team per rendere più semplice la gestione dei sinistri dentro la vostra piattaforma, con un registro di come è stata presa ogni decisione che potete trasmettere ai vostri clienti.",
+        "scene": {
+          "alt": "Il fascicolo sinistro: ogni azione in ordine con il suo attore e il suo hash, e una vista forense raggruppata per attore",
+          "title": "Fascicolo del sinistro 62850",
+          "subtitle": "Danno da acqua",
+          "tabs": {
+            "timeline": "Cronologia",
+            "forensic": "Vista forense"
+          },
+          "phases": [
+            "Ricevuto",
+            "Letto",
+            "Verificato",
+            "Calcolato",
+            "Deciso",
+            "Liquidato"
+          ],
+          "rows": [
+            {
+              "time": "09:14:02",
+              "actor": "agent",
+              "who": "Agente",
+              "text": "Quattro documenti letti e classificati",
+              "hash": "a7f3"
+            },
+            {
+              "time": "09:14:31",
+              "actor": "engine",
+              "who": "Motore di regole",
+              "text": "Ogni voce verificata rispetto alle condizioni, clausola 4.2 applicata",
+              "hash": "b028"
+            },
+            {
+              "time": "09:21:40",
+              "actor": "human",
+              "who": "Liquidatore",
+              "text": "Voce 5 confermata, due notti oltre il massimale messe in attesa",
+              "hash": "e5d1"
+            },
+            {
+              "time": "09:21:41",
+              "actor": "engine",
+              "who": "Motore di regole",
+              "text": "Fascicolo sigillato, catena verificata",
+              "hash": "c90d"
+            }
+          ],
+          "groups": {
+            "agent": "Agenti",
+            "engine": "Motore di regole",
+            "human": "Liquidatore"
+          },
+          "actions": {
+            "one": "azione",
+            "many": "azioni"
+          },
+          "exportLabel": "Esporta audit pack"
+        }
+      },
+      "team": {
+        "heading": "Cosa significa per il vostro team",
+        "paragraphs": [],
+        "items": [
+          {
+            "title": "Lavora accanto al vostro prodotto",
+            "text": "Si collega tramite API, così i vostri clienti mantengono il sistema che conoscono."
+          },
+          {
+            "title": "Qualsiasi insieme di regole",
+            "text": "Condizioni di polizza, un catalogo di settore o le regole proprie di un cliente."
+          },
+          {
+            "title": "Un registro completo, con un clic",
+            "text": "Ogni decisione porta la versione della regola, il suo ragionamento e il suo autore."
+          }
+        ],
+        "imageAlt": "Anelli di metallo intrecciati"
+      },
+      "faq": [
+        {
+          "question": "Come si collega True Aim alla nostra piattaforma?",
+          "answer": "Tramite API. La vostra piattaforma invia il sinistro, True Aim restituisce la raccomandazione, il suo ragionamento e l’importo calcolato, e i vostri clienti continuano a lavorare nelle schermate che conoscono."
+        },
+        {
+          "question": "Ogni cliente può usare le proprie regole?",
+          "answer": "Sì. Condizioni di polizza, cataloghi di settore e regole aziendali proprie di un cliente vengono configurati per cliente, e ogni decisione registra la versione della regola che ha applicato."
+        },
+        {
+          "question": "Chi prende la decisione finale?",
+          "answer": "I liquidatori dei vostri clienti. True Aim prepara la raccomandazione con il ragionamento completo, e l’automazione completa opera solo dove il cliente e la sua autorità di vigilanza lo permettono."
+        },
+        {
+          "question": "Cosa possiamo trasmettere ai nostri clienti?",
+          "answer": "Il registro completo di ogni decisione: gli input, le clausole applicate, il calcolo e chi ha confermato l’esito, esportato come un unico audit pack."
+        }
+      ]
+    }
+  }
+}

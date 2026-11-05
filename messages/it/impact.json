@@ -3,13 +3,13 @@
     "hero": {
       "eyebrow": "Stima dell’impatto",
       "title": "Stimate l’impatto dell’automazione delle decisioni sui sinistri",
-      "summary": "Guardate il valore che l’automazione delle decisioni sui sinistri con True Aim può liberare. Regolate gli input in base alla vostra operatività.",
+      "summary": "Scoprite il valore che l’automazione delle decisioni sui sinistri con True Aim può liberare. Regolate gli input in base alla vostra operatività.",
       "button": "Calcola il valore potenziale",
       "imageAlt": "Una freccia al centro di un bersaglio di metallo"
     },
     "cta": {
-      "heading": "Guardate True Aim sui vostri sinistri",
-      "description": "Portate le vostre fatture, i vostri sinistri o i vostri rapporti danni e la demo mostra il risultato finito.",
+      "heading": "Vedete True Aim all’opera sui vostri sinistri",
+      "description": "Portate le vostre fatture, i vostri sinistri o i vostri rapporti danni e la demo mostra il risultato finale.",
       "bookDemo": "Richiedi una demo"
     },
     "calculator": {
@@ -43,7 +43,7 @@
           },
           "rework": {
             "title": "Rilavorazioni evitate",
-            "description": "Meno riaperture, ricorsi e correzioni"
+            "description": "Meno riaperture, contestazioni e correzioni"
           }
         },
         "metrics": {
@@ -71,7 +71,7 @@
           "assumption2": "Nessuna riduzione immediata del personale ipotizzata",
           "assumption3": "I risparmi riflettono il minore sforzo di gestione e le minori rilavorazioni",
           "assumption4": "Aggiustamento prudenziale del 75% applicato a tutte le proiezioni",
-          "assumption5": "Il costo al minuto deriva dal costo pieno annuo di un liquidatore ipotizzato da True Aim: 95.000 CHF, 55.000 EUR, 70.000 USD o 420.000 ZAR, a seconda della valuta selezionata.",
+          "assumption5": "Il costo al minuto deriva dal costo pieno annuo di un liquidatore, ipotizzato da True Aim in 95.000 CHF, 55.000 EUR, 70.000 USD o 420.000 ZAR, a seconda della valuta selezionata.",
           "breakdownTitle": "Il dettaglio",
           "breakdownRows": {
             "annualVolume": "Volume annuo di sinistri",
@@ -85,7 +85,7 @@
           "importantNotes": "Note importanti",
           "note1": "Tutte le cifre mostrate rappresentano l’impatto operativo lordo e non tengono conto del costo dei servizi di True Aim.",
           "note2": "Il prezzo non è incluso e viene concordato per contratto.",
-          "note3": "Lo stimatore si basa su dati di sinistri assicurativi reali e su casi studio con assicuratori."
+          "note3": "Lo strumento di stima si basa su dati di sinistri assicurativi reali e su casi studio con assicuratori."
         }
       }
     }

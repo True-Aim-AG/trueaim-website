@@ -23,7 +23,7 @@
         "gdpr": {
           "name": "DSGVO",
           "status": "aligned",
-          "description": "Architektur, ausgerichtet an der EU-Datenschutzverordnung."
+          "description": "Architektur, ausgerichtet an der Datenschutz-Grundverordnung (DSGVO)."
         },
         "fadp": {
           "name": "Schweizer DSG",
@@ -76,7 +76,7 @@
     "humanInLoop": {
       "heading": "Der Mensch bleibt eingebunden",
       "p1": "Standardmäßig bereitet True Aim eine Empfehlung vor, die eine Person bestätigt. Vollautomatisierung läuft nur dort, wo Sie und Ihre Aufsichtsbehörde es zulassen.",
-      "p2": "Jede Entscheidung wird mit ihrer Klausel, ihren Nachweisen und ihrem Urheber protokolliert, so dass die Frage eines Prüfers oder einer Aufsichtsbehörde allein aus dem Protokoll beantwortet wird.",
+      "p2": "Jede Entscheidung wird mit ihrer Klausel, ihren Nachweisen und ihrem Bearbeiter protokolliert, so dass die Frage eines Prüfers oder einer Aufsichtsbehörde allein aus dem Protokoll beantwortet wird.",
       "imageAlt": "Schild aus Glas und Metall mit dem Symbol von True Aim"
     },
     "dataResidency": {
@@ -122,11 +122,11 @@
       "heading": "Fragen zu Sicherheit und Compliance",
       "items": [
         {
-          "question": "Welche Zertifizierungen hält True Aim?",
-          "answer": "True Aim ist nach ISO/IEC 27001:2022 durch A-LIGN zertifiziert (September 2026). True Aim hat außerdem sein SOC 2 Type II Audit für den Prüfzeitraum vom 1. Mai bis 31. Juli 2026 abgeschlossen und hält den Abschlussbericht. Seine Kontrollen sind an der DSGVO, dem Schweizer DSG und DORA ausgerichtet."
+          "question": "Welche Zertifizierungen hat True Aim?",
+          "answer": "True Aim ist nach ISO/IEC 27001:2022 durch A-LIGN zertifiziert (September 2026). True Aim hat außerdem sein SOC 2 Type II Audit für den Prüfzeitraum vom 1. Mai bis 31. Juli 2026 abgeschlossen, und der Abschlussbericht liegt vor. Seine Kontrollen sind an der DSGVO, dem Schweizer DSG und DORA ausgerichtet."
         },
         {
-          "question": "Entscheidet True Aim Schäden ohne eine Person?",
+          "question": "Entscheidet True Aim Schäden ohne menschliche Beteiligung?",
           "answer": "Standardmäßig nicht. True Aim bereitet eine Empfehlung mit den Fakten, den Regeln und der Begründung vor, und eine Person bestätigt sie. Vollautomatisierung läuft nur für die Schadenarten, bei denen Sie und Ihre Aufsichtsbehörde es zulassen."
         },
         {
@@ -136,7 +136,7 @@
       ]
     },
     "cta": {
-      "heading": "Sehen Sie True Aim an Ihren eigenen Schäden",
+      "heading": "Sehen Sie True Aim mit Ihren eigenen Schäden",
       "description": "Bringen Sie Ihre eigenen Rechnungen, Schäden oder Schadenberichte mit, und die Demo zeigt das fertige Ergebnis.",
       "button": "Demo anfragen"
     }

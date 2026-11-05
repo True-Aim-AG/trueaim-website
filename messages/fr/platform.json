@@ -2,17 +2,17 @@
   "platform": {
     "hero": {
       "title": "Comment fonctionne notre plateforme",
-      "summary": "Nous transformons le dossier sinistre en résultat fini : un sinistre réglé, une facture comparée aux prix de référence ou un rapport de dommages complet. L’IA lit les documents, la décision est calculée à partir des conditions de votre police et chaque étape est consignée. Votre équipe garde le dernier mot.",
+      "summary": "Nous transformons le dossier sinistre en résultat final : un sinistre réglé, une facture comparée aux prix de référence ou un rapport de dommages complet. L’IA lit les documents, la décision est calculée à partir des conditions de votre police et chaque étape est consignée. Votre équipe garde le dernier mot.",
       "ctaDemo": "Réserver une démo",
       "scene": {
-        "alt": "Trois résultats finis : un sinistre réglé, une facture comparée aux prix de référence et un rapport de dommages complet",
+        "alt": "Trois résultats finaux : un sinistre réglé, une facture comparée aux prix de référence et un rapport de dommages complet",
         "claimsDecisioning": "Un sinistre réglé",
         "invoiceBenchmarking": "Une facture comparée aux prix de référence",
         "damageReporting": "Un rapport de dommages complet"
       }
     },
     "outcomes": {
-      "heading": "Quatre résultats finis",
+      "heading": "Quatre résultats finaux",
       "items": {
         "dataExtraction": {
           "title": "Une base de données sinistres interrogeable",
@@ -141,7 +141,7 @@
       "otusText": "Un expert IA pour chaque membre de l’équipe."
     },
     "cta": {
-      "heading": "Prêt à voir le résultat fini sur vos propres sinistres ?",
+      "heading": "Prêt à voir le résultat final sur vos propres sinistres ?",
       "lede": "Réservez une démo et nous vous montrons un sinistre réglé, une facture comparée aux prix de référence et un rapport de dommages complet, avec, pour chacun, le détail du calcul.",
       "button": "Réserver une démo"
     }

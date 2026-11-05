@@ -2,7 +2,7 @@
   "contact": {
     "hero": {
       "title": "Demander une démo",
-      "summary": "Parlez-nous de votre gestion des sinistres et nous vous montrons True Aim sur vos propres factures, sinistres et rapports de dommages."
+      "summary": "Parlez-nous de votre gestion des sinistres et nous vous montrerons True Aim sur vos propres factures, sinistres et rapports de dommages."
     },
     "form": {
       "firstName": "Prénom",
@@ -14,7 +14,7 @@
       "interest": "De quoi souhaitez-vous parler ?",
       "leadSource": "Comment avez-vous entendu parler de nous ?",
       "claimsVolume": "Volume annuel de sinistres",
-      "message": "Quelque chose que vous souhaitez nous dire ?",
+      "message": "Souhaitez-vous nous préciser quelque chose ?",
       "consent": "J’accepte que True Aim me contacte au sujet de cette demande. Voir notre <privacy>politique de confidentialité</privacy>.",
       "required": "*",
       "optional": "(facultatif)",
@@ -77,7 +77,7 @@
     "success": {
       "heading": "Merci de nous avoir contactés !",
       "message": "Nous avons bien reçu votre demande et un membre de notre équipe vous contactera prochainement.",
-      "submitAnother": "Envoyer une autre demande"
+      "submitAnother": "Nouvelle demande"
     },
     "aside": {
       "linkedinLabel": "LinkedIn",

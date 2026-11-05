@@ -8,7 +8,7 @@
     },
     "problem": {
       "heading": "Les limites de l’IA probabiliste dans les décisions réglementées",
-      "description": "Les grands modèles de langage sont puissants, mais probabilistes. Face à la même entrée deux fois, ils peuvent produire des résultats différents. Ils ne peuvent pas expliquer leur raisonnement dans des termes que les autorités de contrôle comprennent.",
+      "description": "Les grands modèles de langage sont puissants, mais probabilistes. Soumis deux fois à la même entrée, ils peuvent produire des résultats différents. Ils ne peuvent pas expliquer leur raisonnement dans des termes que les autorités de contrôle comprennent.",
       "emphasis": "Pour des décisions sur des sinistres, c’est inacceptable."
     },
     "architecture": {
@@ -23,7 +23,7 @@
           "classification": "Classification",
           "orchestration": "Orchestration"
         },
-        "description": "Utilise l’apprentissage automatique pour traiter les données non structurées, comprendre le contexte et orchestrer des flux de travail complexes."
+        "description": "Utilisent l’apprentissage automatique pour traiter les données non structurées, comprendre le contexte et orchestrer des flux de travail complexes."
       },
       "deterministic": {
         "title": "Moteur de décision déterministe",
@@ -42,7 +42,7 @@
       }
     },
     "control": {
-      "badge": "Contrôle d’entreprise",
+      "badge": "Contrôle de niveau entreprise",
       "heading": "La couche de contrôle",
       "subtitle": "L’automatisation sous supervision. Chaque fonction est conçue pour que l’humain garde la main là où cela compte.",
       "features": {
@@ -52,22 +52,22 @@
         },
         "ruleTraceability": {
           "title": "Traçabilité des règles",
-          "description": "Chaque décision de couverture est rattachée à des identifiants de clauses précis. Voyez exactement quelles règles se sont déclenchées et pourquoi."
+          "description": "Chaque décision de couverture est rattachée à des identifiants de clauses de police précis. Voyez exactement quelles règles se sont déclenchées et pourquoi."
         },
         "approvalGates": {
           "title": "Seuils d’approbation",
-          "description": "Configurez les seuils de remontée vers un examen humain. Les montants élevés et les cas limites sont automatiquement dirigés vers des experts."
+          "description": "Configurez les seuils de remontée vers un examen humain. Les montants élevés et les cas limites sont automatiquement dirigés vers des spécialistes."
         },
         "exceptionRouting": {
           "title": "Routage des exceptions",
-          "description": "Routage automatique selon le score de complexité du sinistre. Les schémas inhabituels sont signalés pour une inspection manuelle."
+          "description": "Routage automatique selon le score de complexité du sinistre. Les schémas inhabituels sont signalés pour une vérification manuelle."
         },
         "confidenceScoring": {
           "title": "Score de confiance",
           "description": "Des indicateurs de certitude au niveau de chaque champ montrent où le système est sûr et où un examen humain apporte de la valeur."
         }
       },
-      "philosophy": "L’IA doit porter le gros du travail, mais l’humain doit toujours pouvoir comprendre, vérifier et reprendre la main. Chaque contrôle existe parce que les secteurs réglementés l’exigent.",
+      "philosophy": "L’IA doit faire le gros du travail, mais l’humain doit toujours pouvoir comprendre, vérifier et reprendre la main. Chaque contrôle existe parce que les secteurs réglementés l’exigent.",
       "philosophyHeading": "Notre philosophie",
       "philosophyPrefix": "Notre philosophie :"
     },
@@ -75,7 +75,7 @@
       "heading": "Pas une boîte noire de plus",
       "subtitle": "Comment True Aim se compare aux approches d’IA traditionnelles",
       "columns": {
-        "capability": "Capacité",
+        "capability": "Critère",
         "traditional": "IA traditionnelle",
         "trueaim": "True Aim"
       },
@@ -96,7 +96,7 @@
           "trueaim": "Traçable jusqu’à la clause"
         },
         "euAiAct": {
-          "capability": "Prêt pour l’AI Act",
+          "capability": "Prêt pour l’AI Act (règlement européen sur l’IA)",
           "traditional": "Incertain",
           "trueaim": "Oui"
         }
@@ -119,7 +119,7 @@
       "heading": "Questions sur notre technologie",
       "items": [
         {
-          "question": "Que signifie IA neuro-symbolique chez True Aim ?",
+          "question": "Que signifie « IA neuro-symbolique » chez True Aim ?",
           "answer": "True Aim associe deux couches. Des agents IA utilisent l’apprentissage automatique pour lire les documents, extraire les données, classer et orchestrer le flux de travail. Un moteur de décision déterministe applique ensuite les règles de couverture encodées, la logique de la police et les calculs de coûts pour produire la décision."
         },
         {
@@ -132,11 +132,11 @@
         },
         {
           "question": "Comment une décision est-elle expliquée à une autorité de contrôle ou à un auditeur ?",
-          "answer": "Chaque champ remonte à son document source, et chaque décision de couverture est rattachée à des identifiants de clauses précis, de sorte que vous voyez exactement quelles règles se sont appliquées et pourquoi."
+          "answer": "Chaque champ remonte à son document source, et chaque décision de couverture est rattachée à des identifiants de clauses de police précis, de sorte que vous voyez exactement quelles règles se sont appliquées et pourquoi."
         },
         {
           "question": "Quand une personne examine-t-elle un sinistre ?",
-          "answer": "Vous fixez les seuils. Les montants élevés et les cas limites sont dirigés automatiquement vers des experts, les schémas inhabituels sont signalés pour une inspection manuelle, et les scores de confiance au niveau de chaque champ montrent où un contrôle humain apporte de la valeur."
+          "answer": "Vous fixez les seuils. Les montants élevés et les cas limites sont dirigés automatiquement vers des spécialistes, les schémas inhabituels sont signalés pour une vérification manuelle, et les scores de confiance au niveau de chaque champ montrent où un contrôle humain apporte de la valeur."
         },
         {
           "question": "Avec qui True Aim développe-t-il sa technologie ?",

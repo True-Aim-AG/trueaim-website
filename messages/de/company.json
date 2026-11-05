@@ -3,7 +3,7 @@
     "hero": {
       "title": "Skalierbares Vertrauen",
       "p1": "True Aim ist ein Schweizer Unternehmen, hervorgegangen aus Yarowa, dem führenden Insurtech der Schweiz, und gefördert von Innosuisse, der Innovationsagentur des Schweizer Bundes, auf der Grundlage der Technologie, die wir gebaut haben.",
-      "p2": "Wir arbeiten auf eine Branche hin, in der die Antwort so schnell kommt wie die Nachweise, in der jede Entscheidung die Fakten, die Regeln und die Begründung dahinter festhält und in der dieses Protokoll jeder Prüfung, aufsichtsrechtlichen Überprüfung und jedem Streitfall standhält.",
+      "p2": "Wir arbeiten auf eine Branche hin, in der die Antwort so schnell kommt wie die Nachweise, in der jede Entscheidung die Fakten, die Regeln und die Begründung dahinter protokolliert und in der dieses Protokoll jeder Prüfung, aufsichtsrechtlichen Überprüfung und jedem Streitfall standhält.",
       "p3": "Wir nennen das skalierbares Vertrauen.",
       "p4": "Es verlangt eine Präzision, die über das hinausgeht, was der Markt heute fordert, Ehrlichkeit darüber, welche Entscheidungen eine Maschine berechnen sollte und welche menschliches Urteil brauchen, und die Disziplin, die Probleme zu lösen, vor denen die Branche tatsächlich steht.",
       "p5": "Das ist die Arbeit, für die wir uns entschieden haben.",
@@ -26,12 +26,12 @@
         "frederic": {
           "name": "Frédéric Brunner",
           "title": "Mitgründer und CTO",
-          "bio": "Fred ist seit mehr als 25 Jahren Softwareingenieur und begann seine Laufbahn in der Luft- und Raumfahrtindustrie mit Schwerpunkt Data Science. Die letzten 15 Jahre hat er als Enterprise Architect bei der Zurich Versicherung und bei Guidewire Schadensysteme für Großunternehmen gebaut."
+          "bio": "Fred ist seit mehr als 25 Jahren Softwareingenieur und begann seine Laufbahn in der Luft- und Raumfahrtindustrie mit Schwerpunkt Data Science. Die letzten 15 Jahre hat er als Enterprise Architect bei Zurich Insurance und bei Guidewire Schadensysteme für Großunternehmen gebaut."
         },
         "arnaud": {
           "name": "Arnaud Terville",
           "title": "Sales Director",
-          "bio": "Arnaud bringt fast zwei Jahrzehnte Erfahrung in Geschäftsentwicklung und Markteinführung im Insurtech-Bereich mit. Zuvor bei Solera, Tractable und Quantexa (und davor bei Apple und Adobe), leitet er heute den Enterprise-Vertrieb und die Partnerschaften von True Aim."
+          "bio": "Arnaud bringt fast zwei Jahrzehnte Erfahrung in Geschäftsentwicklung und Go-to-Market im Insurtech-Bereich mit. Zuvor bei Solera, Tractable und Quantexa (und davor bei Apple und Adobe), leitet er heute den Enterprise-Vertrieb und die Partnerschaften von True Aim."
         },
         "alin": {
           "name": "Alin Koppandi",
@@ -41,7 +41,7 @@
         "kai": {
           "name": "Kai Praschma",
           "title": "AI Solutions Specialist",
-          "bio": "Kai baut die Automatisierung, die den Betrieb und die Kundenprojekte von True Aim trägt. In enger Zusammenarbeit mit dem CEO in Strategie, Vertrieb und Markteinführung macht er aus Forschung die Werkzeuge, Inhalte und Systeme, auf die sich das ganze Team jeden Tag verlässt."
+          "bio": "Kai baut die Automatisierung, die den Betrieb und die Kundenprojekte von True Aim trägt. In enger Zusammenarbeit mit dem CEO in Strategie, Vertrieb und Go-to-Market macht er aus Forschung die Werkzeuge, Inhalte und Systeme, auf die sich das ganze Team jeden Tag verlässt."
         },
         "henrique": {
           "name": "Henrique Ferreira",
@@ -61,12 +61,12 @@
         "kevin": {
           "name": "Kevin Sartori",
           "title": "Unternehmensaufbau und Skalierung",
-          "bio": "Mitgründer und ehemaliger Co-CEO von Auterion, dem Spin-off der ETH Zürich, das heute mit mehr als 1,2 Milliarden USD bewertet wird. Derzeit Verwaltungsrat bei Pionix und Mentor bei Project Switzerland. Master in Robotik der ETH Zürich, MBA der UC Berkeley und ehemals BCG."
+          "bio": "Mitgründer und ehemaliger Co-CEO von Auterion, dem Spin-off der ETH Zürich, das heute mit mehr als 1,2 Milliarden USD bewertet wird. Derzeit Board-Mitglied bei Pionix und Mentor bei Project Switzerland. Master in Robotik der ETH Zürich, MBA der UC Berkeley und ehemals BCG."
         },
         "dave": {
           "name": "Dave Stoll",
           "title": "Versicherung, Innovation und Strategie",
-          "bio": "Als ehemaliger CFO von Zurich Insurance Spanien bringt Dave tiefe Erfahrung in Versicherung, Finanzen, Innovation und Strategie mit, von der Steuerung der Finanzen eines nationalen Versicherers bis zur Unterstützung neuer Insurtech-Unternehmen. Derzeit Director bei vertX IQ und Gründer von doppo."
+          "bio": "Als ehemaliger CFO von Zurich Insurance Spanien bringt Dave umfassende Erfahrung in Versicherung, Finanzen, Innovation und Strategie mit, von der Steuerung der Finanzen eines nationalen Versicherers bis zur Unterstützung neuer Insurtech-Unternehmen. Derzeit Director bei vertX IQ und Gründer von doppo."
         },
         "lukas": {
           "name": "Dr. Lukas Lichtensteiger",
@@ -142,7 +142,7 @@
       }
     },
     "cta": {
-      "heading": "Sehen Sie True Aim an Ihren eigenen Schäden",
+      "heading": "Sehen Sie True Aim mit Ihren eigenen Schäden",
       "description": "Bringen Sie Ihre eigenen Rechnungen, Schäden oder Schadenberichte mit, und die Demo zeigt das fertige Ergebnis.",
       "button": "Demo anfragen"
     }

@@ -2,8 +2,8 @@
   "company": {
     "hero": {
       "title": "La confiance à grande échelle",
-      "p1": "True Aim est une entreprise suisse, issue de Yarowa, la première insurtech de Suisse, et soutenue par Innosuisse, l’agence pour l’innovation de la Confédération suisse, sur la base de la technologie que nous avons construite.",
-      "p2": "Nous construisons un secteur où la réponse arrive à la vitesse des preuves, où chaque décision consigne les faits, les règles et le raisonnement qui la fondent, et où ce dossier résiste à l’audit, au contrôle réglementaire ou au litige.",
+      "p1": "True Aim est une entreprise suisse, issue de Yarowa, la principale insurtech de Suisse, et soutenue par Innosuisse, l’agence pour l’innovation de la Confédération suisse, sur la base de la technologie que nous avons construite.",
+      "p2": "Nous œuvrons pour un secteur où la réponse arrive à la vitesse des preuves, où chaque décision consigne les faits, les règles et le raisonnement qui la fondent, et où ce dossier résiste à l’audit, au contrôle réglementaire ou au litige.",
       "p3": "Nous appelons cela la confiance à grande échelle.",
       "p4": "Cela exige une précision au-delà de ce que le marché demande aujourd’hui, de l’honnêteté sur les décisions qu’une machine doit calculer et celles qui requièrent un jugement humain, et la discipline de résoudre les problèmes que le secteur rencontre réellement.",
       "p5": "C’est le travail que nous avons choisi.",
@@ -26,12 +26,12 @@
         "frederic": {
           "name": "Frédéric Brunner",
           "title": "Cofondateur et CTO",
-          "bio": "Ingénieur logiciel depuis plus de 25 ans, Fred a commencé sa carrière dans l’industrie aérospatiale, axée sur la science des données. Il a passé les 15 dernières années à construire des systèmes de gestion des sinistres pour grandes entreprises comme architecte d’entreprise chez Zurich Insurance et chez Guidewire."
+          "bio": "Ingénieur logiciel depuis plus de 25 ans, Fred a commencé sa carrière dans l’industrie aérospatiale, où il s’est consacré à la science des données. Il a passé les 15 dernières années à construire des systèmes de gestion des sinistres pour grandes entreprises comme architecte d’entreprise chez Zurich Insurance et chez Guidewire."
         },
         "arnaud": {
           "name": "Arnaud Terville",
           "title": "Directeur commercial",
-          "bio": "Arnaud apporte près de vingt ans d’expérience en développement commercial et en mise sur le marché dans l’insurtech. Passé par Solera, Tractable et Quantexa (et auparavant Apple et Adobe), il dirige aujourd’hui les ventes grands comptes et les partenariats de True Aim."
+          "bio": "Arnaud apporte près de vingt ans d’expérience en développement commercial et en go-to-market dans l’insurtech. Passé par Solera, Tractable et Quantexa (et auparavant Apple et Adobe), il dirige aujourd’hui les ventes grands comptes et les partenariats de True Aim."
         },
         "alin": {
           "name": "Alin Koppandi",
@@ -41,7 +41,7 @@
         "kai": {
           "name": "Kai Praschma",
           "title": "Spécialiste solutions IA",
-          "bio": "Kai construit l’automatisation qui fait tourner les opérations et la livraison client de True Aim. En étroite collaboration avec le CEO sur la stratégie, le commercial et la mise sur le marché, il transforme la recherche en outils, contenus et systèmes sur lesquels toute l’équipe s’appuie chaque jour."
+          "bio": "Kai construit l’automatisation qui fait tourner les opérations et les déploiements clients de True Aim. En étroite collaboration avec le CEO sur la stratégie, le commercial et le go-to-market, il transforme la recherche en outils, contenus et systèmes sur lesquels toute l’équipe s’appuie chaque jour."
         },
         "henrique": {
           "name": "Henrique Ferreira",
@@ -61,7 +61,7 @@
         "kevin": {
           "name": "Kevin Sartori",
           "title": "Création et croissance d’entreprises",
-          "bio": "Cofondateur et ancien co-CEO d’Auterion, la spin-off de l’ETH Zurich aujourd’hui valorisée à plus de 1,2 milliard de dollars (USD). Actuellement membre du conseil d’administration de Pionix et mentor chez Project Switzerland. Master en robotique de l’ETH Zurich, MBA de l’UC Berkeley et ancien du BCG."
+          "bio": "Cofondateur et ancien co-CEO d’Auterion, la spin-off de l’ETH Zurich aujourd’hui valorisée à plus de 1,2 milliard USD. Actuellement membre du conseil d’administration de Pionix et mentor chez Project Switzerland. Master en robotique de l’ETH Zurich, MBA de l’UC Berkeley et ancien du BCG."
         },
         "dave": {
           "name": "Dave Stoll",
@@ -71,17 +71,17 @@
         "lukas": {
           "name": "Dr Lukas Lichtensteiger",
           "title": "Architecture technologique et IA",
-          "bio": "Diplômé de Harvard avec un MSc en physique théorique et un doctorat en IA et robotique. Actuellement enseignant à la ZHAW, où il dirige le Medical Complex Systems Group. Fondateur en série, dont la start-up Siltectra a été vendue à Infineon pour 124 millions d’euros."
+          "bio": "Diplômé de Harvard avec un MSc en physique théorique et un doctorat en IA et robotique. Actuellement enseignant à la ZHAW, où il dirige le Medical Complex Systems Group. Entrepreneur en série : sa start-up Siltectra a été vendue à Infineon pour 124 millions d’euros."
         },
         "eric": {
           "name": "Eric Zielinski",
           "title": "Go-to-market et croissance",
-          "bio": "Dirige actuellement le go-to-market et l’expansion chez Prosper AI, la start-up soutenue par a16z, où il a joué un rôle déterminant dans la stratégie de croissance du chiffre d’affaires. Ancien consultant chez Bain & Company, titulaire d’un MBA de Wharton et ancien militaire de l’armée américaine."
+          "bio": "Il dirige actuellement le go-to-market et l’expansion chez Prosper AI, la start-up soutenue par a16z, où il a joué un rôle déterminant dans la stratégie de croissance du chiffre d’affaires. Ancien consultant chez Bain & Company, titulaire d’un MBA de Wharton et ancien militaire de l’armée américaine."
         },
         "dandolo": {
           "name": "Dr Dandolo Flumini",
           "title": "Logique de décision et mathématiques",
-          "bio": "Mathématicien titulaire d’un doctorat summa cum laude de l’Université de Berne, spécialisé en logique et en informatique théorique. Chercheur à la ZHAW et architecte d’origine de MIRA, la technologie de décision primée qu’utilise aujourd’hui True Aim."
+          "bio": "Mathématicien titulaire d’un doctorat summa cum laude de l’Université de Berne, spécialisé en logique et en informatique théorique. Chercheur à la ZHAW et architecte initial de MIRA, la technologie de décision primée qu’utilise aujourd’hui True Aim."
         }
       }
     },
@@ -136,14 +136,14 @@
         },
         "ikn": {
           "title": "Miglior InsurTech 2024",
-          "body": "Meilleure InsurTech aux IKN Insurance Awards en Italie, décerné à la technologie sur laquelle True Aim s’appuie.",
+          "body": "Meilleure InsurTech aux IKN Insurance Awards en Italie, titre décerné à la technologie sur laquelle True Aim s’appuie.",
           "alt": "IKN Awards"
         }
       }
     },
     "cta": {
       "heading": "Voyez True Aim sur vos propres sinistres",
-      "description": "Apportez vos propres factures, sinistres ou rapports de dommages et la démo montre le résultat fini.",
+      "description": "Apportez vos propres factures, sinistres ou rapports de dommages et la démo montre le résultat final.",
       "button": "Demander une démo"
     }
   }

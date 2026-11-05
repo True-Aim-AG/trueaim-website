@@ -4,12 +4,12 @@
       "eyebrow": "Estimateur d’impact",
       "title": "Estimez l’impact de l’automatisation des décisions sur les sinistres",
       "summary": "Voyez la valeur que libère l’automatisation des décisions sur les sinistres avec True Aim. Ajustez les entrées à votre activité.",
-      "button": "Calculer la valeur potentielle",
+      "button": "Calculer le potentiel",
       "imageAlt": "Une flèche au centre d’une cible en métal"
     },
     "cta": {
       "heading": "Voyez True Aim sur vos propres sinistres",
-      "description": "Apportez vos propres factures, sinistres ou rapports de dommages et la démo montre le résultat fini.",
+      "description": "Apportez vos propres factures, sinistres ou rapports de dommages et la démo montre le résultat final.",
       "bookDemo": "Demander une démo"
     },
     "calculator": {
@@ -32,7 +32,7 @@
       },
       "results": {
         "mainImpact": {
-          "label": "Impact annuel estimé, prudent",
+          "label": "Impact annuel estimé (hypothèse prudente)",
           "sublabel": "Sur la base d’hypothèses à l’échelle d’un pilote.",
           "reductionSuffix": " % de coûts de traitement des sinistres en moins"
         },
@@ -52,12 +52,12 @@
           "fteNote": "Du temps rendu à votre équipe, pas une réduction d’effectifs."
         },
         "assumptions": {
-          "toggle": "Comment c’est calculé",
+          "toggle": "Mode de calcul",
           "howWeCalculate": "Comment l’estimation est calculée",
           "currentHandlingCost": "Coût de traitement actuel",
           "currentHandlingCostFormula": "= Temps de traitement x Coût par minute x Volume de sinistres",
           "capacityUnlocked": "Capacité libérée",
-          "capacityUnlockedFormula": "= Coût de traitement actuel moins le coût de traitement après automatisation, un sinistre automatisé demandant 36 secondes de vérification et chaque sinistre manuel restant la moitié du temps de traitement actuel",
+          "capacityUnlockedFormula": "= Coût de traitement actuel moins le coût de traitement après automatisation, où un sinistre automatisé demande 36 secondes de vérification et où chaque sinistre encore traité manuellement demande la moitié du temps de traitement actuel",
           "reworkAvoided": "Reprises évitées",
           "reworkAvoidedFormula": "= Sinistres repris x Temps de traitement x Multiplicateur de reprise x Coût par minute",
           "grossSavings": "Économies brutes",
@@ -71,7 +71,7 @@
           "assumption2": "Aucune réduction d’effectifs immédiate n’est supposée",
           "assumption3": "Les économies reflètent la baisse de l’effort de traitement et des reprises",
           "assumption4": "Ajustement de prudence de 75 % appliqué à toutes les projections",
-          "assumption5": "Le coût par minute découle du coût complet annuel d’un gestionnaire retenu par True Aim : 95 000 CHF, 55 000 EUR, 70 000 USD ou 420 000 ZAR, selon la devise choisie.",
+          "assumption5": "Le coût par minute découle de l’hypothèse de True Aim pour le coût annuel complet d’un gestionnaire sinistres : 95 000 CHF, 55 000 EUR, 70 000 USD ou 420 000 ZAR, selon la devise choisie.",
           "breakdownTitle": "Le détail",
           "breakdownRows": {
             "annualVolume": "Volume annuel de sinistres",
@@ -80,11 +80,11 @@
             "capacityGross": "Économies de capacité, brutes",
             "reworkGross": "Reprises évitées, brutes",
             "sensitivityAdjustment": "Ajustement de prudence, 25 % en moins",
-            "grossAnnualImpact": "Impact annuel, prudent"
+            "grossAnnualImpact": "Impact annuel (hypothèse prudente)"
           },
           "importantNotes": "Remarques importantes",
           "note1": "Tous les chiffres présentés représentent l’impact opérationnel brut et ne tiennent pas compte du coût des services de True Aim.",
-          "note2": "La tarification n’est pas incluse et se convient par contrat.",
+          "note2": "La tarification n’est pas incluse et est convenue par contrat.",
           "note3": "L’estimateur s’appuie sur des données issues de sinistres d’assurance réels et d’études de cas menées avec des assureurs."
         }
       }

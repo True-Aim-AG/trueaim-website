@@ -18,12 +18,12 @@
         "title": "KI-Agenten",
         "subtitle": "Flexibel und anpassungsfähig",
         "capabilities": {
-          "docReading": "Dokumente lesen",
-          "dataExtraction": "Daten extrahieren",
-          "classification": "Klassifizieren",
-          "orchestration": "Orchestrieren"
+          "docReading": "Dokumentenerfassung",
+          "dataExtraction": "Datenextraktion",
+          "classification": "Klassifizierung",
+          "orchestration": "Orchestrierung"
         },
-        "description": "Nutzt maschinelles Lernen, um unstrukturierte Daten zu verarbeiten, Zusammenhänge zu verstehen und komplexe Abläufe zu orchestrieren."
+        "description": "Nutzt maschinelles Lernen, um unstrukturierte Daten zu verarbeiten, Zusammenhänge zu verstehen und komplexe Workflows zu orchestrieren."
       },
       "deterministic": {
         "title": "Deterministische Entscheidungs-Engine",
@@ -47,7 +47,7 @@
       "subtitle": "Automatisierung mit Aufsicht. Jede Funktion ist so gebaut, dass Menschen dort die Kontrolle behalten, wo es darauf ankommt.",
       "features": {
         "replayLogs": {
-          "title": "Wiederholungsprotokolle",
+          "title": "Replay-Protokolle",
           "description": "Führen Sie jede Entscheidung mit denselben Eingaben erneut aus und erhalten Sie identische Ergebnisse. Jede Ausführung ist deterministisch und reproduzierbar."
         },
         "ruleTraceability": {
@@ -56,7 +56,7 @@
         },
         "approvalGates": {
           "title": "Freigabeschwellen",
-          "description": "Legen Sie Schwellenwerte fest, ab denen eine menschliche Prüfung erfolgt. Hohe Beträge und Grenzfälle gehen automatisch an Fachleute."
+          "description": "Legen Sie Schwellenwerte fest, ab denen eine menschliche Prüfung erfolgt. Fälle mit hohen Beträgen oder Grenzfälle gehen automatisch an Fachleute."
         },
         "exceptionRouting": {
           "title": "Weiterleitung von Ausnahmen",
@@ -64,10 +64,10 @@
         },
         "confidenceScoring": {
           "title": "Konfidenzbewertung",
-          "description": "Sicherheitsindikatoren auf Feldebene zeigen, wo das System sicher ist und wo eine menschliche Prüfung einen Mehrwert bringt."
+          "description": "Konfidenzwerte auf Feldebene zeigen, wo das System sicher ist und wo eine menschliche Prüfung einen Mehrwert bringt."
         }
       },
-      "philosophy": "KI soll die schwere Arbeit übernehmen, aber Menschen müssen jederzeit verstehen, prüfen und übersteuern können. Jede Kontrolle existiert, weil regulierte Branchen sie verlangen.",
+      "philosophy": "KI soll die schwere Arbeit übernehmen, aber Menschen müssen jederzeit verstehen, prüfen und außer Kraft setzen können. Jede Kontrolle existiert, weil regulierte Branchen sie verlangen.",
       "philosophyHeading": "Unsere Philosophie",
       "philosophyPrefix": "Unsere Philosophie:"
     },
@@ -75,7 +75,7 @@
       "heading": "Keine weitere Blackbox",
       "subtitle": "So schneidet True Aim im Vergleich zu herkömmlichen KI-Ansätzen ab",
       "columns": {
-        "capability": "Fähigkeit",
+        "capability": "Kriterium",
         "traditional": "Herkömmliche KI",
         "trueaim": "True Aim"
       },
@@ -96,7 +96,7 @@
           "trueaim": "Bis zur Klausel nachvollziehbar"
         },
         "euAiAct": {
-          "capability": "Bereit für den EU AI Act",
+          "capability": "Bereit für den EU AI Act (KI-Verordnung)",
           "traditional": "Unklar",
           "trueaim": "Ja"
         }
@@ -108,7 +108,7 @@
       "zhawName": "ZHAW",
       "descriptionMiddle": "(Zürcher Hochschule für Angewandte Wissenschaften) und werden in einem von",
       "innosuisseName": "Innosuisse",
-      "descriptionEnd": "geförderten Forschungsprogramm weiterentwickelt, anerkannt im Rahmen der nationalen Innovationsförderung der Schweiz."
+      "descriptionEnd": " geförderten Forschungsprogramm weiterentwickelt, anerkannt im Rahmen der nationalen Innovationsförderung der Schweiz."
     },
     "cta": {
       "heading": "Sehen Sie unsere Technologie im Einsatz",
@@ -120,7 +120,7 @@
       "items": [
         {
           "question": "Was bedeutet neurosymbolische KI bei True Aim?",
-          "answer": "True Aim verbindet zwei Schichten. KI-Agenten nutzen maschinelles Lernen, um Dokumente zu lesen, Daten zu extrahieren, zu klassifizieren und den Ablauf zu orchestrieren. Eine deterministische Entscheidungs-Engine wendet dann kodierte Deckungsregeln, Policenlogik und Kostenberechnungen an und erzeugt die Entscheidung."
+          "answer": "True Aim verbindet zwei Schichten. KI-Agenten nutzen maschinelles Lernen, um Dokumente zu lesen, Daten zu extrahieren, zu klassifizieren und den Workflow zu orchestrieren. Eine deterministische Entscheidungs-Engine wendet dann kodierte Deckungsregeln, Policenlogik und Kostenberechnungen an und erzeugt die Entscheidung."
         },
         {
           "question": "Warum trifft kein großes Sprachmodell die Schadenentscheidung?",
@@ -128,7 +128,7 @@
         },
         {
           "question": "Erhält derselbe Schaden immer dieselbe Entscheidung?",
-          "answer": "Ja. Die Entscheidungs-Engine ist deterministisch. Mit den Wiederholungsprotokollen führen Sie jede Entscheidung mit denselben Eingaben erneut aus und erhalten identische Ergebnisse."
+          "answer": "Ja. Die Entscheidungs-Engine ist deterministisch. Mit den Replay-Protokollen führen Sie jede Entscheidung mit denselben Eingaben erneut aus und erhalten identische Ergebnisse."
         },
         {
           "question": "Wie wird eine Entscheidung einer Aufsichtsbehörde oder einem Prüfer erklärt?",
@@ -136,7 +136,7 @@
         },
         {
           "question": "Wann prüft eine Person einen Schaden?",
-          "answer": "Sie legen die Schwellenwerte fest. Hohe Beträge und Grenzfälle gehen automatisch an Fachleute, ungewöhnliche Muster werden zur manuellen Prüfung markiert, und Konfidenzwerte auf Feldebene zeigen, wo eine menschliche Prüfung einen Mehrwert bringt."
+          "answer": "Sie legen die Schwellenwerte fest. Fälle mit hohen Beträgen oder Grenzfälle gehen automatisch an Fachleute, ungewöhnliche Muster werden zur manuellen Prüfung markiert, und Konfidenzwerte auf Feldebene zeigen, wo eine menschliche Prüfung einen Mehrwert bringt."
         },
         {
           "question": "Mit wem entwickelt True Aim seine Technologie?",

@@ -2,7 +2,7 @@
   "company": {
     "hero": {
       "title": "Fiducia scalabile",
-      "p1": "True Aim è un’azienda svizzera, nata come spin-off di Yarowa, la principale insurtech svizzera, e sostenuta da Innosuisse, l’agenzia per l’innovazione della Confederazione svizzera, sulla forza della tecnologia che abbiamo costruito.",
+      "p1": "True Aim è un’azienda svizzera, nata come spin-off di Yarowa, la principale insurtech svizzera, e sostenuta da Innosuisse, l’agenzia per l’innovazione della Confederazione svizzera, in virtù della tecnologia che abbiamo costruito.",
       "p2": "Lavoriamo per un settore in cui la risposta arriva alla velocità delle prove, in cui ogni decisione registra i fatti, le regole e il ragionamento che la sostengono, e in cui quel registro resiste all’audit, al controllo dell’autorità di vigilanza o al contenzioso.",
       "p3": "La chiamiamo fiducia scalabile.",
       "p4": "Richiede una precisione oltre quella che il mercato chiede oggi, onestà su quali decisioni una macchina debba calcolare e quali richiedano il giudizio umano, e la disciplina di risolvere i problemi che il settore affronta davvero.",
@@ -11,7 +11,7 @@
     },
     "mission": {
       "label": "Missione",
-      "text": "Portare fiducia scalabile alle decisioni sui sinistri. Ogni decisione abbastanza rapida da contare, abbastanza accurata da farvi affidamento e dimostrata ogni volta che viene messa in discussione.",
+      "text": "Portare fiducia scalabile alle decisioni sui sinistri. Ogni decisione abbastanza rapida da contare, abbastanza accurata da poterci fare affidamento e dimostrata ogni volta che viene messa in discussione.",
       "attribution": "Reuben John, CEO di True Aim"
     },
     "team": {
@@ -21,7 +21,7 @@
         "reuben": {
           "name": "Reuben John",
           "title": "Cofondatore e CEO",
-          "bio": "Reuben guida la strategia, la crescita commerciale e le relazioni con gli investitori di True Aim. Ha trascorso sette anni come Managing Director DACH di un’azienda globale di tecnologia fiscale, facendone crescere il business nella regione, e in precedenza esercitava come avvocato in diritto societario e commerciale."
+          "bio": "Reuben guida la strategia, la crescita commerciale e le relazioni con gli investitori di True Aim. Ha trascorso sette anni come Managing Director DACH di un’azienda globale di tecnologia fiscale, facendone crescere il business nella regione, e in precedenza ha esercitato come avvocato in diritto societario e commerciale."
         },
         "frederic": {
           "name": "Frédéric Brunner",
@@ -30,7 +30,7 @@
         },
         "arnaud": {
           "name": "Arnaud Terville",
-          "title": "Direttore commerciale",
+          "title": "Sales Director",
           "bio": "Arnaud porta quasi vent’anni di esperienza in sviluppo commerciale e go-to-market nell’insurtech. In precedenza in Solera, Tractable e Quantexa (e prima ancora in Apple e Adobe), oggi guida le vendite enterprise e le partnership di True Aim."
         },
         "alin": {
@@ -41,7 +41,7 @@
         "kai": {
           "name": "Kai Praschma",
           "title": "AI Solutions Specialist",
-          "bio": "Kai costruisce l’automazione che fa funzionare le operazioni e la consegna ai clienti di True Aim. Lavorando a stretto contatto con il CEO su strategia, commerciale e go-to-market, trasforma la ricerca negli strumenti, nei contenuti e nei sistemi su cui tutto il team fa affidamento ogni giorno."
+          "bio": "Kai costruisce l’automazione che fa funzionare le operazioni di True Aim e l’erogazione dei servizi ai clienti. Lavorando a stretto contatto con il CEO su strategia, commerciale e go-to-market, trasforma la ricerca negli strumenti, nei contenuti e nei sistemi su cui tutto il team fa affidamento ogni giorno."
         },
         "henrique": {
           "name": "Henrique Ferreira",
@@ -56,12 +56,12 @@
         "claudio": {
           "name": "Claudio Gienal",
           "title": "Trasformazione assicurativa",
-          "bio": "Attualmente Chief Transformation Officer del Gruppo AXA. In precedenza CEO di AXA UK and Ireland, Group Chief Strategy Officer di Zurich e CEO di Zurich Life Svizzera. Ha iniziato la carriera in Accenture e McKinsey prima di passare al settore assicurativo."
+          "bio": "Attualmente Chief Transformation Officer del Gruppo AXA. In precedenza CEO di AXA UK and Ireland, Group Chief Strategy Officer di Zurich e CEO di Zurich Life Switzerland. Ha iniziato la carriera in Accenture e McKinsey prima di passare al settore assicurativo."
         },
         "kevin": {
           "name": "Kevin Sartori",
           "title": "Costruzione e crescita di aziende",
-          "bio": "Cofondatore ed ex co-CEO di Auterion, lo spin-off dell’ETH di Zurigo oggi valutato oltre 1,2 miliardi di USD. Attualmente membro del consiglio di amministrazione di Pionix e mentore di Project Switzerland. Master in robotica all’ETH di Zurigo, MBA alla UC Berkeley ed ex BCG."
+          "bio": "Cofondatore ed ex co-CEO di Auterion, lo spin-off dell’ETH di Zurigo oggi valutato oltre 1,2 miliardi di USD. Attualmente membro del consiglio di amministrazione di Pionix e mentore presso Project Switzerland. Master in robotica all’ETH di Zurigo, MBA alla UC Berkeley ed ex BCG."
         },
         "dave": {
           "name": "Dave Stoll",
@@ -81,7 +81,7 @@
         "dandolo": {
           "name": "Dr. Dandolo Flumini",
           "title": "Logica decisionale e matematica",
-          "bio": "Matematico con un dottorato summa cum laude all’Università di Berna, specializzato in logica e informatica teorica. Ricercatore alla ZHAW e architetto originario di MIRA, la premiata tecnologia decisionale oggi usata da True Aim."
+          "bio": "Matematico con un dottorato summa cum laude all’Università di Berna, specializzato in logica e informatica teorica. Ricercatore alla ZHAW e primo architetto di MIRA, la premiata tecnologia decisionale oggi usata da True Aim."
         }
       }
     },
@@ -91,22 +91,22 @@
         "zhaw": {
           "name": "ZHAW",
           "description": "Università di scienze applicate di Zurigo. Partner di ricerca in un progetto di innovazione deep tech sostenuto da Innosuisse.",
-          "more": "Sulla ricerca"
+          "more": "Scopri la ricerca"
         },
         "innosuisse": {
           "name": "Innosuisse",
           "description": "L’Agenzia svizzera per la promozione dell’innovazione, che sostiene il progetto di innovazione con la ZHAW.",
-          "more": "Sul progetto"
+          "more": "Scopri il progetto"
         },
         "yarowa": {
           "name": "Yarowa",
           "description": "Azienda svizzera di tecnologia assicurativa. Investitore strategico e partner.",
-          "more": "Sulla partnership"
+          "more": "Scopri la partnership"
         },
         "swissInsurtechHub": {
           "name": "Swiss InsurTech Hub",
           "description": "La rete dell’innovazione assicurativa svizzera. True Aim ne è membro.",
-          "more": "Sulla rete"
+          "more": "Scopri la rete"
         }
       }
     },
@@ -142,8 +142,8 @@
       }
     },
     "cta": {
-      "heading": "Guardate True Aim sui vostri sinistri",
-      "description": "Portate le vostre fatture, i vostri sinistri o i vostri rapporti danni e la demo mostra il risultato finito.",
+      "heading": "Vedete True Aim all’opera sui vostri sinistri",
+      "description": "Portate le vostre fatture, i vostri sinistri o i vostri rapporti danni e la demo mostra il risultato finale.",
       "button": "Richiedi una demo"
     }
   }

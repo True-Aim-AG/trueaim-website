@@ -8,7 +8,7 @@
       "imageAlt": "Ein Pfeil in der Mitte einer Zielscheibe aus Metall"
     },
     "cta": {
-      "heading": "Sehen Sie True Aim an Ihren eigenen Schäden",
+      "heading": "Sehen Sie True Aim mit Ihren eigenen Schäden",
       "description": "Bringen Sie Ihre eigenen Rechnungen, Schäden oder Schadenberichte mit, und die Demo zeigt das fertige Ergebnis.",
       "bookDemo": "Demo anfragen"
     },
@@ -21,7 +21,7 @@
         "claimsVolumeUnit": "Schäden pro Jahr",
         "handlingTime": "Durchschnittliche Bearbeitungszeit pro Schaden:",
         "handlingTimeUnit": "Minuten",
-        "handlingTimeHint": "Nehmen Sie einen typischen Schaden ohne besondere Komplexität, der für eine Dunkel- oder assistierte Verarbeitung in Frage kommt.",
+        "handlingTimeHint": "Nehmen Sie einen typischen Schaden ohne besondere Komplexität, der für eine Dunkelverarbeitung oder eine assistierte Verarbeitung in Frage kommt.",
         "automationLevel": "Heute bereits automatisiert",
         "rangeMin": {
           "claims": "10.000",
@@ -39,7 +39,7 @@
         "breakdown": {
           "capacity": {
             "title": "Freigesetzte Kapazität",
-            "description": "Weniger Berührungspunkte pro Schaden, kürzere Bearbeitungszeit"
+            "description": "Weniger manuelle Bearbeitungsschritte pro Schaden, kürzere Bearbeitungszeit"
           },
           "rework": {
             "title": "Vermiedene Nacharbeit",
@@ -65,12 +65,12 @@
           "workingDaysFormula": "Eingesparte Arbeitstage = Eingesparte Stunden ÷ 10",
           "workingDaysUnit": "Tage",
           "conservativeEstimate": "Vorsichtige Schätzung",
-          "conservativeEstimateFormula": "= Bruttoeinsparung x 75 % Vorsichtsabschlag",
+          "conservativeEstimateFormula": "= Bruttoeinsparung x 75 % Vorsichtsfaktor",
           "keyAssumptions": "Wesentliche Annahmen",
           "assumption1": "Einsparungen gelten nur für geeignete Schadenkategorien",
           "assumption2": "Kein unmittelbarer Stellenabbau angenommen",
           "assumption3": "Einsparungen spiegeln geringeren Bearbeitungsaufwand und weniger Nacharbeit wider",
-          "assumption4": "Vorsichtsabschlag von 75 % auf alle Prognosen angewandt",
+          "assumption4": "Vorsichtsfaktor von 75 % auf alle Prognosen angewandt (Abschlag von 25 %)",
           "assumption5": "Die Kosten pro Minute leiten sich aus den von True Aim angenommenen Vollkosten eines Sachbearbeiters pro Jahr ab: 95.000 CHF, 55.000 EUR, 70.000 USD oder 420.000 ZAR, je nach gewählter Währung.",
           "breakdownTitle": "Die Aufschlüsselung",
           "breakdownRows": {
