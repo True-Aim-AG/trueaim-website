@@ -123,39 +123,39 @@
       "updated": "2026-11-05"
     },
     "/case-studies/vehicle-warranty-claims": {
-      "title": "Les mêmes décisions sinistres, en une fraction du temps | True Aim",
-      "description": "Comment NSA a transféré les décisions de ses experts sinistres dans le logiciel True Aim et réduit de 86 % le travail sur un sinistre complexe.",
+      "title": "Mêmes décisions sur les sinistres, en une fraction du temps | True Aim",
+      "description": "Comment NSA a transféré le raisonnement et la prise de décision de ses spécialistes dans True Aim et réduit de 86 % le travail sur un sinistre complexe.",
       "h1": "Les mêmes décisions sur les sinistres, en une fraction du temps.",
       "breadcrumb": "Sinistres de garantie automobile",
       "ogTitle": "Les mêmes décisions sur les sinistres, en une fraction du temps.",
-      "ogDescription": "Comment NSA a transféré les décisions de ses experts sinistres dans le logiciel True Aim et réduit de 86 % le travail sur un sinistre complexe.",
+      "ogDescription": "Comment NSA a transféré le raisonnement et la prise de décision de ses spécialistes dans True Aim et réduit de 86 % le travail sur un sinistre complexe.",
       "updated": "2026-11-05"
     },
     "/case-studies/swiss-travel-insurer": {
       "title": "Assureur voyage suisse : sinistres traités 92 % plus vite | True Aim",
-      "description": "Un assureur voyage suisse a ramené ses décisions sinistres de 45 minutes à 2,3 secondes avec True Aim : 92 % plus vite, avec 78 % de traitement automatique.",
+      "description": "Un assureur voyage suisse a ramené ses décisions sur les sinistres de 45 minutes à 2,3 secondes avec True Aim : 92 % plus vite, 78 % de traitement automatique.",
       "h1": "Un assureur voyage suisse traite ses sinistres 92 % plus vite",
       "breadcrumb": "Assureur voyage suisse",
       "ogTitle": "Un assureur voyage suisse traite ses sinistres 92 % plus vite",
-      "ogDescription": "Décisions sinistres ramenées de 45 minutes à 2,3 secondes, avec 78 % de traitement automatique.",
+      "ogDescription": "Décisions sur les sinistres ramenées de 45 minutes à 2,3 secondes, avec 78 % de traitement automatique.",
       "updated": "2026-11-05"
     },
     "/case-studies/european-health-insurer": {
       "title": "Un assureur santé réduit ses coûts de traitement de 71 % | True Aim",
-      "description": "Un assureur santé européen a réduit ses coûts de traitement de 71 % avec True Aim : 65 % sans intervention, 99,2 % d’exactitude, fuites invisibles détectées.",
+      "description": "Un assureur santé européen a réduit ses coûts de traitement de 71 % avec True Aim : 65 % sans intervention, 99,2 % d’exactitude, surpaiements cachés détectés.",
       "h1": "Un assureur santé européen réduit ses coûts de traitement de 71 %",
       "breadcrumb": "Assureur santé européen",
       "ogTitle": "Un assureur santé européen réduit ses coûts de traitement de 71 %",
-      "ogDescription": "65 % sans intervention, 99,2 % d’exactitude des décisions et des fuites jusque-là invisibles détectées.",
+      "ogDescription": "65 % sans intervention, 99,2 % d’exactitude des décisions et des surpaiements jusque-là invisibles détectés.",
       "updated": "2026-11-05"
     },
     "/case-studies/motor-claims-pilot": {
       "title": "Sinistres auto : du retard au temps réel | True Aim",
-      "description": "Un assureur auto britannique a résorbé son retard avec True Aim : décision en moins de 5 minutes contre 2 jours, 45 % de recours en moins, 100 % de cohérence.",
+      "description": "Un assureur auto britannique a résorbé son retard avec True Aim : décision en moins de 5 minutes contre 2 jours, 45 % de litiges en moins, 100 % de cohérence.",
       "h1": "Pilote sinistres auto : du retard au traitement en temps réel",
       "breadcrumb": "Pilote sinistres auto",
       "ogTitle": "Pilote sinistres auto : du retard au traitement en temps réel",
-      "ogDescription": "Décision en moins de 5 minutes au lieu de 2 jours, avec 45 % de recours en moins et 100 % de cohérence.",
+      "ogDescription": "Décision en moins de 5 minutes au lieu de 2 jours, avec 45 % de litiges en moins et 100 % de cohérence.",
       "updated": "2026-11-05"
     },
     "/partners": {
@@ -170,7 +170,7 @@
     "/partners/yarowa": {
       "title": "Yarowa AG, partenaire stratégique | True Aim",
       "description": "True Aim AG est une spin-off de Yarowa AG, plateforme InsurTech suisse qui opère sur les processus centraux de l’assurance dans des environnements réglementés.",
-      "h1": "Yarowa AG Partenaire stratégique",
+      "h1": "Yarowa AG, partenaire stratégique",
       "breadcrumb": "Yarowa AG",
       "ogTitle": "Yarowa AG, partenaire stratégique",
       "ogDescription": "True Aim AG est une spin-off de Yarowa AG, plateforme InsurTech suisse qui opère sur les processus centraux de l’assurance dans des environnements réglementés.",
@@ -179,7 +179,7 @@
     "/partners/innosuisse": {
       "title": "Partenaire d’innovation financé par Innosuisse | True Aim",
       "description": "La technologie de base de True Aim est soutenue par une subvention de recherche attribuée sur concours par Innosuisse, l’agence suisse pour l’innovation.",
-      "h1": "Financé par Innosuisse : partenaire d’innovation",
+      "h1": "Partenaire d’innovation financé par Innosuisse",
       "breadcrumb": "Innosuisse",
       "ogTitle": "Partenaire d’innovation financé par Innosuisse",
       "ogDescription": "La technologie de base de True Aim est soutenue par une subvention de recherche attribuée sur concours par Innosuisse, l’agence suisse pour l’innovation.",
@@ -196,65 +196,92 @@
     },
     "/partners/swissinsurtechhub": {
       "title": "Swiss InsurTech Hub, partenaire stratégique | True Aim",
-      "description": "True Aim est partenaire stratégique du Swiss InsurTech Hub, le réseau suisse de l’innovation en assurance qui réunit assureurs, start-ups et partenaires tech.",
-      "h1": "Swiss InsurTech Hub Partenaire stratégique",
+      "description": "True Aim est partenaire stratégique du Swiss InsurTech Hub, réseau suisse d’innovation en assurance qui réunit assureurs, start-ups et acteurs technologiques.",
+      "h1": "Swiss InsurTech Hub, partenaire stratégique",
       "breadcrumb": "Swiss InsurTech Hub",
       "ogTitle": "Swiss InsurTech Hub, partenaire stratégique",
-      "ogDescription": "True Aim est partenaire stratégique du Swiss InsurTech Hub, le réseau suisse de l’innovation en assurance qui réunit assureurs, start-ups et partenaires tech.",
+      "ogDescription": "True Aim est partenaire stratégique du Swiss InsurTech Hub, réseau suisse d’innovation en assurance qui réunit assureurs, start-ups et acteurs technologiques.",
       "updated": "2026-11-05"
     },
     "/partners/nortonrosefulbright": {
       "title": "Norton Rose Fulbright, partenaire stratégique | True Aim",
-      "description": "True Aim est partenaire stratégique de Norton Rose Fulbright, le cabinet mondial qui a désigné True Aim InsurTech la plus innovante à l’Insurathon 2026.",
-      "h1": "Norton Rose Fulbright Partenaire stratégique",
+      "description": "Partenaire stratégique de True Aim, le cabinet d’avocats mondial Norton Rose Fulbright l’a désignée InsurTech la plus innovante au monde à l’Insurathon 2026.",
+      "h1": "Norton Rose Fulbright, partenaire stratégique",
       "breadcrumb": "Norton Rose Fulbright",
       "ogTitle": "Norton Rose Fulbright, partenaire stratégique",
-      "ogDescription": "True Aim est partenaire stratégique de Norton Rose Fulbright, le cabinet mondial qui a désigné True Aim InsurTech la plus innovante à l’Insurathon 2026.",
+      "ogDescription": "Partenaire stratégique de True Aim, le cabinet d’avocats mondial Norton Rose Fulbright l’a désignée InsurTech la plus innovante au monde à l’Insurathon 2026.",
       "updated": "2026-11-05"
     },
     "/solutions/insurers": {
       "title": "Sinistres IARD réglés plus vite, pour les assureurs | True Aim",
-      "description": "Sinistres IARD plus rapides, coûts plus justes. Chaque sinistre évalué selon la police, chaque facture comparée, chaque rapport préparé. Vos équipes décident.",
+      "description": "Sinistres IARD réglés plus vite, coûts plus justes. Chaque sinistre évalué selon la police, chaque facture comparée, chaque rapport prêt. Vos équipes décident.",
       "h1": "Sinistres IARD, réglés plus vite",
       "breadcrumb": "Assureurs",
       "ogTitle": "True Aim pour les assureurs",
-      "ogDescription": "Sinistres IARD plus rapides, coûts plus justes. Chaque sinistre évalué selon la police, chaque facture comparée, chaque rapport préparé. Vos équipes décident.",
+      "ogDescription": "Sinistres IARD réglés plus vite, coûts plus justes. Chaque sinistre évalué selon la police, chaque facture comparée, chaque rapport prêt. Vos équipes décident.",
       "updated": "2026-11-05"
     },
     "/solutions/brokers": {
       "title": "Sinistres traités dès le premier appel, pour les courtiers | True Aim",
-      "description": "Saisissez le sinistre au premier contact, vérifiez-le selon la police et tenez votre client informé, la décision de l’assureur expliquée ligne par ligne.",
+      "description": "Saisissez le sinistre au premier contact, vérifiez-le selon la police et informez votre client à chaque étape, décision de l’assureur expliquée ligne par ligne.",
       "h1": "Des sinistres saisis et traités dès le premier appel",
       "breadcrumb": "Courtiers",
       "ogTitle": "True Aim pour les courtiers",
-      "ogDescription": "Saisissez le sinistre au premier contact, vérifiez-le selon la police et tenez votre client informé, la décision de l’assureur expliquée ligne par ligne.",
+      "ogDescription": "Saisissez le sinistre au premier contact, vérifiez-le selon la police et informez votre client à chaque étape, décision de l’assureur expliquée ligne par ligne.",
       "updated": "2026-11-05"
     },
     "/solutions/third-party-administrators": {
       "title": "Davantage de sinistres par gestionnaire, pour les TPA | True Aim",
-      "description": "Traitez et décidez davantage de sinistres pour chaque assureur, dans le cadre de chaque mandat, chaque facture comparée et un dossier complet par client.",
+      "description": "Traitez et tranchez davantage de sinistres pour chaque assureur, dans le cadre de chaque mandat, chaque facture comparée et un dossier complet par client.",
       "h1": "Davantage de sinistres par gestionnaire, dans le cadre de chaque mandat",
       "breadcrumb": "Gestionnaires délégués",
       "ogTitle": "True Aim pour les gestionnaires délégués",
-      "ogDescription": "Traitez et décidez davantage de sinistres pour chaque assureur, dans le cadre de chaque mandat, chaque facture comparée et un dossier complet par client.",
+      "ogDescription": "Traitez et tranchez davantage de sinistres pour chaque assureur, dans le cadre de chaque mandat, chaque facture comparée et un dossier complet par client.",
       "updated": "2026-11-05"
     },
     "/solutions/warranty-providers": {
       "title": "Factures de garantie confrontées aux conditions | True Aim",
-      "description": "Chaque facture de garage décomposée en pièces, main-d’œuvre et frais, confrontée aux conditions de garantie et comparée à ce que le travail devrait coûter.",
+      "description": "Chaque facture de garage décomposée en pièces, main-d’œuvre et frais, confrontée en minutes aux conditions de garantie et comparée au coût attendu du travail.",
       "h1": "Chaque facture de garantie confrontée aux conditions",
       "breadcrumb": "Prestataires de garantie",
       "ogTitle": "True Aim pour les prestataires de garantie",
-      "ogDescription": "Chaque facture de garage décomposée en pièces, main-d’œuvre et frais, confrontée aux conditions de garantie et comparée à ce que le travail devrait coûter.",
+      "ogDescription": "Chaque facture de garage décomposée en pièces, main-d’œuvre et frais, confrontée en minutes aux conditions de garantie et comparée au coût attendu du travail.",
       "updated": "2026-11-05"
     },
     "/solutions/claims-technology-providers": {
-      "title": "Des décisions sinistres dans votre plateforme | True Aim",
+      "title": "Des décisions sur les sinistres dans votre plateforme | True Aim",
       "description": "Ajoutez la vérification de couverture à la plateforme que vos clients utilisent déjà, avec un dossier retraçant chaque décision, que vous pouvez transmettre.",
       "h1": "Ajoutez la vérification de couverture au flux de travail que vos clients utilisent déjà",
       "breadcrumb": "Éditeurs de solutions sinistres",
       "ogTitle": "True Aim pour les éditeurs de solutions sinistres",
       "ogDescription": "Ajoutez la vérification de couverture à la plateforme que vos clients utilisent déjà, avec un dossier retraçant chaque décision, que vous pouvez transmettre.",
+      "updated": "2026-11-05"
+    },
+    "/privacy": {
+      "title": "Politique de confidentialité | True Aim",
+      "description": "Comment True Aim AG collecte, utilise et protège les données personnelles selon la LPD suisse et le RGPD : rôles, sous-traitants, conservation et vos droits.",
+      "h1": "Politique de confidentialité",
+      "breadcrumb": "Politique de confidentialité",
+      "ogTitle": "Politique de confidentialité",
+      "ogDescription": "Comment True Aim AG collecte, utilise et protège les données personnelles selon la LPD suisse et le RGPD : rôles, sous-traitants, conservation et vos droits.",
+      "updated": "2026-11-05"
+    },
+    "/terms": {
+      "title": "Conditions d’utilisation | True Aim",
+      "description": "Les conditions régissant l’utilisation du site web de True Aim et des services sinistres fondés sur l’IA de True Aim AG.",
+      "h1": "Conditions d’utilisation",
+      "breadcrumb": "Conditions d’utilisation",
+      "ogTitle": "Conditions d’utilisation",
+      "ogDescription": "Les conditions régissant l’utilisation du site web de True Aim et des services sinistres fondés sur l’IA de True Aim AG.",
+      "updated": "2026-11-05"
+    },
+    "/cookies": {
+      "title": "Politique relative aux cookies | True Aim",
+      "description": "Quels cookies le site web de True Aim utilise, à quoi sert chacun d’eux et comment gérer vos préférences en matière de cookies.",
+      "h1": "Politique relative aux cookies",
+      "breadcrumb": "Politique relative aux cookies",
+      "ogTitle": "Politique relative aux cookies",
+      "ogDescription": "Quels cookies le site web de True Aim utilise, à quoi sert chacun d’eux et comment gérer vos préférences en matière de cookies.",
       "updated": "2026-11-05"
     }
   }

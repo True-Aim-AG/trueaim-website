@@ -255,7 +255,7 @@
           },
           {
             "title": "Jede Position anhand der Police",
-            "text": "Teile, Arbeitskosten und Gebühren werden getrennt ausgewiesen, jede mit ihrer Klausel."
+            "text": "Ersatzteile, Arbeitskosten und Gebühren werden getrennt ausgewiesen, jede mit ihrer Klausel."
           },
           {
             "title": "Die Berechnungen erledigt",
@@ -284,7 +284,7 @@
         "heading": "Jeder Schaden in Bewegung, von der Schadenmeldung bis zur Regulierung",
         "scene": {
           "alt": "Schäden kommen über vier Kanäle an, laufen in einer Akte zusammen, und alle Beteiligten werden daraus auf dem Laufenden gehalten",
-          "channelsLabel": "Kommt über jeden Kanal an",
+          "channelsLabel": "Eingang über jeden Kanal",
           "channels": [
             "WhatsApp",
             "E-Mail",
@@ -317,7 +317,7 @@
           "parties": [
             {
               "name": "Kunde",
-              "text": "Referenz gesendet, Statusseite aktiv"
+              "text": "Schadennummer gesendet, Statusseite aktiv"
             },
             {
               "name": "Makler",

@@ -3,10 +3,10 @@
     "yarowa": {
       "hero": {
         "badge": "Strategischer Partner",
-        "titleLine1": "Yarowa AG",
-        "titleLine2": "Strategischer Partner",
-        "description1": "Die Yarowa AG ist eine Schweizer InsurTech-Plattform mit tiefen Wurzeln in der Versicherungsbranche, die in stark regulierten Umgebungen zentrale Versicherungsprozesse im großen Maßstab betreibt. Ihre Plattform ist geprägt von Jahren enger Zusammenarbeit mit Versicherern und vom Einsatz im echten Produktivbetrieb.",
-        "description2": "Die True Aim AG ist ein Spin-off von Yarowa, gegründet mit dem klaren Fokus auf prüfbare, regulierungsreife KI für Versicherer. Sie verbindet bewährte Branchenerfahrung mit eigens gebauter Technologie für den transparenten Einsatz in großen Unternehmen.",
+        "titleLine1": "Yarowa AG,",
+        "titleLine2": "strategischer Partner",
+        "description1": "Die Yarowa AG ist eine Schweizer InsurTech-Plattform mit tiefen Wurzeln in der Versicherungsbranche. Sie betreibt zentrale Versicherungsprozesse im großen Maßstab in stark regulierten Umgebungen. Ihre Plattform ist geprägt von Jahren enger Zusammenarbeit mit Versicherern und vom Einsatz im echten Produktivbetrieb.",
+        "description2": "Die True Aim AG ist ein Spin-off von Yarowa, gegründet mit dem klaren Fokus auf prüfbare, regulatorisch belastbare KI für Versicherer. Sie verbindet bewährte Branchenerfahrung mit eigens gebauter Technologie für den transparenten Einsatz in großen Unternehmen.",
         "visitYarowa": "Yarowa besuchen"
       },
       "strengths": {
@@ -17,21 +17,21 @@
         },
         "delivery": {
           "title": "Erfahrung in der Einführung bei Großunternehmen",
-          "description": "Yarowa bringt tiefe Erfahrung in der Einführung bei Großunternehmen mit. Von der Beschaffung bis zur Implementierung verkürzt ihre Methodik die Zeit bis zum Nutzen für Versicherer."
+          "description": "Yarowa bringt fundierte Erfahrung in der Einführung bei Großunternehmen mit. Von der Beschaffung bis zur Implementierung verkürzt ihre Methodik die Zeit bis zum Nutzen für Versicherer."
         },
         "platform": {
           "title": "Schweizer InsurTech-Plattform",
-          "description": "Eine Technologieplattform mit Sitz in der Schweiz, eigens für die Versicherungsbranche gebaut. Infrastruktur und Marktwissen von Yarowa ergänzen die Entscheidungsfähigkeiten von True Aim."
+          "description": "Eine Technologieplattform mit Sitz in der Schweiz, eigens für die Versicherungsbranche gebaut. Infrastruktur und Marktwissen von Yarowa ergänzen die Entscheidungstechnologie von True Aim."
         },
         "vision": {
           "title": "Gemeinsame Vision",
-          "description": "True Aim und Yarowa teilen die Überzeugung, dass die Versicherungsbranche transparente, prüfbare Technologie braucht. Diese strategische Übereinstimmung trägt unseren gemeinsamen Marktauftritt."
+          "description": "True Aim und Yarowa teilen die Überzeugung, dass die Versicherungsbranche transparente, prüfbare Technologie braucht. Diese strategische Übereinstimmung prägt unseren gemeinsamen Vertriebsansatz."
         }
       },
       "cta": {
         "heading": "Sehen Sie unsere Produkte im Einsatz",
         "description": "Erfahren Sie, wie unsere Partnerschaft Versicherern prüfbare Schadenautomatisierung liefert.",
-        "learnProducts": "Mehr über unsere Produkte",
+        "learnProducts": "Produkte entdecken",
         "bookDemo": "Demo anfragen"
       }
     },
@@ -40,21 +40,21 @@
         "badge": "Innovationspartner des Bundes",
         "titleLine1": "Von Innosuisse gefördert:",
         "titleLine2": "Innovationspartner",
-        "description1": "Die Kerntechnologie von True Aim wird durch einen im Wettbewerb vergebenen Forschungsbeitrag von Innosuisse, der Schweizerischen Agentur für Innovationsförderung, unterstützt. Der Beitrag ist eine formelle Bestätigung auf nationaler Ebene für den technischen Ansatz und das Forschungsprogramm hinter der Arbeit von True Aim an prüfbarer KI.",
-        "description2": "Die Förderung unterstützt angewandte Forschung an transparenten, kontrollierbaren und regulierungsreifen KI-Systemen für stark regulierte Branchen, mit klarem Fokus auf messbaren Ergebnissen und dem Einsatz in der Praxis."
+        "description1": "Die Kerntechnologie von True Aim wird durch eine im Wettbewerb vergebene Forschungsförderung von Innosuisse, der Schweizerischen Agentur für Innovationsförderung, unterstützt. Die Förderung ist eine formelle Bestätigung auf nationaler Ebene für den technischen Ansatz und das Forschungsprogramm hinter der Arbeit von True Aim an prüfbarer KI.",
+        "description2": "Die Förderung unterstützt angewandte Forschung an transparenten, kontrollierbaren und regulatorisch belastbaren KI-Systemen für stark regulierte Branchen, mit klarem Fokus auf messbaren Ergebnissen und dem Einsatz in der Praxis."
       },
       "keyPoints": {
         "govValidation": {
           "title": "Offizielle Bestätigung des Bundes",
-          "description": "Innosuisse ist die offizielle Innovationsagentur der Schweizerischen Eidgenossenschaft und verleiht Forschungs- und Entwicklungsprojekten mit kommerziellem Potenzial die Unterstützung des Bundes."
+          "description": "Innosuisse ist die offizielle Innovationsagentur der Schweizerischen Eidgenossenschaft und fördert im Auftrag des Bundes Forschungs- und Entwicklungsprojekte mit kommerziellem Potenzial."
         },
         "excellence": {
           "title": "Im Wettbewerb bestanden",
-          "description": "Innosuisse-Beiträge werden nach strengen Auswahlkriterien vergeben. Die Förderung belegt den technischen Wert und die Marktfähigkeit des neurosymbolischen Ansatzes von True Aim."
+          "description": "Innosuisse-Fördermittel werden nach strengen Auswahlkriterien vergeben. Die Förderung belegt den technischen Wert und die Marktfähigkeit des neurosymbolischen Ansatzes von True Aim."
         },
         "priority": {
           "title": "Nationale strategische Priorität",
-          "description": "Der Beitrag spiegelt das nationale Engagement der Schweiz für vertrauenswürdige KI in regulierten Branchen wider. True Aim steht an der Spitze dieser Initiative."
+          "description": "Die Förderung spiegelt das nationale Engagement der Schweiz für vertrauenswürdige KI in regulierten Branchen wider. True Aim gehört zu den Vorreitern dieser Initiative."
         },
         "zhawCollab": {
           "title": "Zusammenarbeit mit der ZHAW",
@@ -70,7 +70,7 @@
       "cta": {
         "heading": "Mehr über unsere Technologie",
         "description": "Erfahren Sie, wie die von Innosuisse geförderte Innovation die Engine hinter dem Automated Coverage Check antreibt.",
-        "exploreTech": "Unsere Technologie entdecken",
+        "exploreTech": "Technologie entdecken",
         "bookDemo": "Demo anfragen"
       }
     },
@@ -80,13 +80,13 @@
         "titleLine1": "Forschungspartnerschaft",
         "titleLine2": "mit der ZHAW",
         "description1": "Teile der Technologie von True Aim entstehen in Zusammenarbeit mit der ZHAW Zürcher Hochschule für Angewandte Wissenschaften, einer der führenden Hochschulen für angewandte Forschung in der Schweiz, anerkannt für Deep-Tech-Forschung in KI, Data Science und Engineering mit starkem Fokus auf den Einsatz in der Praxis.",
-        "description2": "Die Arbeit wird durch Innovationsförderung von Innosuisse unterstützt, mit der ZHAW als formellem Forschungspartner und True Aim als Umsetzungspartner aus der Industrie, um transparente und regulierungsreife neurosymbolische KI für stark regulierte Branchen voranzubringen."
+        "description2": "Die Arbeit wird durch Innovationsförderung von Innosuisse unterstützt, mit der ZHAW als formellem Forschungspartner und True Aim als Umsetzungspartner aus der Industrie, um transparente und regulatorisch belastbare neurosymbolische KI für stark regulierte Branchen voranzubringen."
       },
       "research": {
         "heading": "Forschungsschwerpunkte",
         "neuroSymbolic": {
           "title": "Neurosymbolische KI",
-          "description": "Die Flexibilität neuronaler Netze verbunden mit der Präzision symbolischen Schließens. Unsere Forschung zielt darauf, KI-Entscheidungen deterministisch und vollständig erklärbar zu machen."
+          "description": "Die Flexibilität neuronaler Netze verbunden mit der Präzision symbolischen Schließens. Unsere Forschung zielt darauf ab, KI-Entscheidungen deterministisch und vollständig erklärbar zu machen."
         },
         "logicExtraction": {
           "title": "Logikextraktion und Automatisierung",
@@ -94,7 +94,7 @@
         },
         "deterministic": {
           "title": "Deterministische Entscheidungsfindung",
-          "description": "Sicherstellen, dass identische Eingaben immer identische Ergebnisse liefern, mit vollständiger Nachvollziehbarkeit von der Entscheidung bis zum Quelltext. Entscheidend für die Einhaltung regulatorischer Anforderungen."
+          "description": "Sicherstellen, dass identische Eingaben immer identische Ergebnisse liefern, mit vollständiger Nachvollziehbarkeit von der Entscheidung bis zur zugrunde liegenden Textstelle. Entscheidend für die Einhaltung regulatorischer Anforderungen."
         },
         "applied": {
           "title": "Angewandte Industrieforschung",
@@ -117,17 +117,17 @@
       "cta": {
         "heading": "Sehen Sie die Forschung im Einsatz",
         "description": "Erfahren Sie, wie unsere an der ZHAW verwurzelte Technologie prüfbare Schadenentscheidungen liefert.",
-        "exploreTech": "Unsere Technologie entdecken",
+        "exploreTech": "Technologie entdecken",
         "bookDemo": "Demo anfragen"
       }
     },
     "swissInsurtechHub": {
       "hero": {
         "badge": "Strategischer Partner",
-        "titleLine1": "Swiss InsurTech Hub",
-        "titleLine2": "Strategischer Partner",
+        "titleLine1": "Swiss InsurTech Hub,",
+        "titleLine2": "strategischer Partner",
         "description1": "Der Swiss InsurTech Hub ist das führende Netzwerk für Versicherungsinnovation in der Schweiz und bringt Versicherer, Start-ups und Technologiepartner zusammen, um die digitale Transformation der Branche zu beschleunigen. Die Plattform fördert Zusammenarbeit, Wissensaustausch und den Zugang zu einem breiten Ökosystem vorausdenkender Organisationen.",
-        "description2": "Die True Aim AG ist Mitglied des Swiss InsurTech Hub, trägt aktiv zur Weiterentwicklung prüfbarer, regulierungsreifer KI in der Versicherung bei und arbeitet mit führenden Marktteilnehmern daran, die Zukunft der Schadenautomatisierung und Entscheidungsfindung zu gestalten.",
+        "description2": "Die True Aim AG ist Mitglied des Swiss InsurTech Hub, trägt aktiv zur Weiterentwicklung prüfbarer, regulatorisch belastbarer KI in der Versicherungsbranche bei und arbeitet mit führenden Marktteilnehmern daran, die Zukunft der Schadenautomatisierung und Entscheidungsfindung zu gestalten.",
         "visitLink": "Swiss InsurTech Hub besuchen"
       },
       "strengths": {
@@ -152,16 +152,16 @@
       "cta": {
         "heading": "Sehen Sie unsere Produkte im Einsatz",
         "description": "Erfahren Sie, wie unsere Partnerschaften Versicherern prüfbare Schadenautomatisierung liefern.",
-        "learnProducts": "Mehr über unsere Produkte",
+        "learnProducts": "Produkte entdecken",
         "bookDemo": "Demo anfragen"
       }
     },
     "nortonRoseFulbright": {
       "hero": {
         "badge": "Strategischer Partner",
-        "titleLine1": "Norton Rose Fulbright",
-        "titleLine2": "Strategischer Partner",
-        "description1": "Norton Rose Fulbright ist eine globale Anwaltskanzlei mit einer der größten Versicherungspraxen der Welt und berät Versicherer, Rückversicherer und Vermittler zu Regulierung, Schäden und Technologie an mehr als 50 Standorten. Mit dem Insurathon bringt die Kanzlei Versicherer mit den InsurTech-Teams zusammen, die sie für beachtenswert hält.",
+        "titleLine1": "Norton Rose Fulbright,",
+        "titleLine2": "strategischer Partner",
+        "description1": "Norton Rose Fulbright ist eine globale Anwaltskanzlei mit einer der weltweit größten Praxisgruppen für Versicherungsrecht und berät Versicherer, Rückversicherer und Vermittler zu Aufsichtsrecht, Schäden und Technologie an mehr als 50 Standorten. Mit dem Insurathon bringt die Kanzlei Versicherer mit den InsurTech-Teams zusammen, die sie für beachtenswert hält.",
         "description2": "True Aim wurde zur Teilnahme am Insurathon 2026 eingeladen und zum innovativsten InsurTech der Welt gekürt. Anschließend hat Norton Rose Fulbright direkt in True Aim investiert.",
         "visitLink": "Norton Rose Fulbright besuchen"
       },
@@ -187,7 +187,7 @@
       "cta": {
         "heading": "Sehen Sie unsere Produkte im Einsatz",
         "description": "Erfahren Sie, wie unsere Partnerschaften Versicherern prüfbare Schadenautomatisierung liefern.",
-        "learnProducts": "Mehr über unsere Produkte",
+        "learnProducts": "Produkte entdecken",
         "bookDemo": "Demo anfragen"
       }
     },
@@ -206,7 +206,7 @@
         "tagline": "Zusammenarbeit in der angewandten Forschung"
       },
       "swissInsurtechHub": {
-        "tagline": "Schweizer Insurtech-Ökosystem und Reichweite"
+        "tagline": "Schweizer InsurTech-Ökosystem und Reichweite"
       },
       "nortonRoseFulbright": {
         "tagline": "Gewinner des Insurathon 2026, globales Versicherungsrecht"

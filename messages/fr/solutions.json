@@ -12,7 +12,7 @@
         },
         "invoiceBenchmarking": {
           "title": "Invoice Benchmarking",
-          "text": "Chaque facture et chaque devis mesurés à ce que le travail devrait coûter dans chaque région.",
+          "text": "Chaque facture et chaque devis comparés à ce que le travail devrait coûter dans chaque région.",
           "link": "Découvrir Invoice Benchmarking"
         },
         "damageReporting": {
@@ -125,7 +125,7 @@
       "faq": [
         {
           "question": "Quelles branches True Aim prend-il en charge ?",
-          "answer": "True Aim n’est lié à aucune branche. Les sinistres auto, habitation, garantie et responsabilité civile sont construits à partir des mêmes composants, chacun fonctionnant avec ses propres conditions de police et ses propres règles."
+          "answer": "True Aim n’est pas limité à une seule branche. Les sinistres auto, habitation, garantie et responsabilité civile sont construits à partir des mêmes composants, chacun fonctionnant avec ses propres conditions de police et ses propres règles."
         },
         {
           "question": "Qui prend la décision finale ?",
@@ -137,14 +137,14 @@
         },
         {
           "question": "Comment True Aim est-il facturé ?",
-          "answer": "Par résultat, pas par utilisateur. Vous payez chaque sinistre réglé, chaque facture comparée aux prix de référence ou chaque rapport de dommages complet, de sorte que les coûts n’augmentent qu’avec la valeur que vous recevez."
+          "answer": "Par résultat, pas par utilisateur. Vous payez chaque sinistre réglé, chaque facture comparée aux prix de référence ou chaque rapport de dommages établi, de sorte que les coûts n’augmentent qu’avec la valeur que vous recevez."
         }
       ]
     },
     "brokers": {
       "hero": {
         "title": "Des sinistres saisis et traités dès le premier appel",
-        "summary": "Le courtier est souvent le premier appel après un sinistre. Avec True Aim, les sinistres IARD sont saisis au premier contact, vérifiés au regard de la police et maintenus en mouvement, votre client étant informé à chaque étape et la décision de l’assureur expliquée en détail, ligne par ligne.",
+        "summary": "Le courtier est souvent le premier interlocuteur après un sinistre. Avec True Aim, les sinistres IARD sont saisis au premier contact, vérifiés au regard de la police et suivis sans interruption, votre client étant informé à chaque étape et la décision de l’assureur expliquée en détail, ligne par ligne.",
         "scene": {
           "alt": "Les sinistres arrivent par quatre canaux, fusionnent dans un dossier unique, et chaque partie est tenue informée à partir de celui-ci",
           "channelsLabel": "Arrive par n’importe quel canal",
@@ -201,8 +201,8 @@
         "heading": "Ce que cela change pour votre équipe",
         "items": [
           {
-            "title": "Le temps administratif supprimé",
-            "text": "Les sinistres sont saisis, lus et classés à leur arrivée, de sorte que votre équipe ne ressaisit plus de données et ne réclame plus de documents."
+            "title": "Fini le temps administratif",
+            "text": "Les sinistres sont saisis, lus et classés à leur arrivée, de sorte que votre équipe ne ressaisit plus de données et ne relance plus pour obtenir des documents."
           },
           {
             "title": "Des décisions cohérentes",
@@ -225,7 +225,7 @@
         },
         {
           "question": "Comment tenons-nous nos clients informés ?",
-          "answer": "Chaque partie travaille sur le même dossier sinistre, de sorte que votre client, l’assureur et le réparateur voient chacun le statut actuel sans que personne n’ait à relancer à la main."
+          "answer": "Chaque partie travaille sur le même dossier sinistre, de sorte que votre client, l’assureur et le réparateur voient chacun le statut actuel sans que personne n’ait à relancer manuellement."
         },
         {
           "question": "Pouvons-nous justifier nos niveaux de service ?",
@@ -236,9 +236,9 @@
     "tpas": {
       "hero": {
         "title": "Davantage de sinistres par gestionnaire, dans le cadre de chaque mandat",
-        "summary": "True Aim agit comme votre couche d’orchestration agentique et calcule la couverture ligne par ligne au regard des conditions propres à chaque assureur. Nous confrontons chaque facture à des références de marché empiriques et conservons chaque résultat avec sa provenance au niveau de la ligne. Sans le temps perdu à naviguer entre les systèmes, vos gestionnaires se consacrent aux jugements qui comptent, et votre portefeuille a la place de grandir.",
+        "summary": "True Aim agit comme votre couche d’orchestration agentique et calcule la couverture ligne par ligne au regard des conditions propres à chaque assureur. Nous confrontons chaque facture à des références de marché empiriques et conservons chaque résultat avec sa provenance au niveau de la ligne. Sans le temps perdu à naviguer entre les systèmes, vos gestionnaires se consacrent aux jugements qui comptent, et votre portefeuille peut croître.",
         "scene": {
-          "alt": "Une file de sinistres avec le statut de chacun et le temps restant avant son niveau de service",
+          "alt": "Une file de sinistres avec le statut de chacun et le temps restant avant l’échéance de son niveau de service",
           "title": "Sinistres ouverts",
           "subtitle": "34 ouverts · 5 gestionnaires · triés par niveau de service",
           "tabs": [
@@ -287,7 +287,7 @@
           },
           {
             "title": "Chaque mandat appliqué à la lettre",
-            "text": "Chaque sinistre est décidé dans les conditions, les limites et le mandat de l’assureur concerné."
+            "text": "Chaque sinistre est décidé dans le cadre des conditions, des plafonds et du mandat de l’assureur concerné."
           },
           {
             "title": "Des audits traités à partir du dossier",
@@ -395,13 +395,13 @@
         "caseStudy": {
           "cap": "Étude de cas",
           "title": "Les mêmes décisions sur les sinistres, en une fraction du temps.",
-          "text": "Comment NSA a transféré le raisonnement et les décisions de ses experts sinistres dans le logiciel True Aim et réduit de 86 % le travail sur un sinistre complexe.",
+          "text": "Comment NSA a transféré le raisonnement et la prise de décision de ses spécialistes sinistres dans le logiciel True Aim et réduit de 86 % le travail sur un sinistre complexe.",
           "link": "Lire l’étude de cas",
           "logoAlt": "NSA Services SA"
         }
       },
       "quote": {
-        "text": "J’ai cru en cette automatisation dès le premier jour, parce qu’elle ne décide rien que nous n’ayons déjà décidé nous-mêmes. Nos experts ont écrit les règles, True Aim les a intégrées au système, et chaque réponse montre le document et la clause qui la fondent. Les sinistres de routine sont réglés en minutes, et mon équipe peut se concentrer sur les cas où son expérience compte vraiment. Je ne peux que recommander à chaque assureur d’y regarder de près.",
+        "text": "J’ai cru en cette automatisation dès le premier jour, parce qu’elle ne décide rien que nous n’ayons déjà décidé nous-mêmes. Nos experts ont écrit les règles, True Aim les a intégrées au système, et chaque réponse montre le document et la clause qui la fondent. Les sinistres de routine sont réglés en quelques minutes, et mon équipe peut se concentrer sur les cas où son expérience compte vraiment. Je ne peux que recommander à chaque assureur d’y regarder de près.",
         "name": "Giuseppe Chiarello",
         "role": "CEO, NSA Services SA"
       },
@@ -427,14 +427,14 @@
     "claimsTech": {
       "hero": {
         "title": "Ajoutez la vérification de couverture au flux de travail que vos clients utilisent déjà",
-        "summary": "Le flux de travail est le vôtre, et True Aim prend en charge chaque décision. Nous travaillons avec votre équipe pour simplifier la gestion des sinistres dans votre plateforme, avec un dossier retraçant la façon dont chaque décision a été prise, que vous pouvez transmettre à vos clients.",
+        "summary": "Le flux de travail est le vôtre, et True Aim prend en charge chaque décision. Nous travaillons avec votre équipe pour simplifier le traitement des sinistres dans votre plateforme, avec un dossier retraçant la façon dont chaque décision a été prise, que vous pouvez transmettre à vos clients.",
         "scene": {
-          "alt": "Le dossier sinistre : chaque action dans l’ordre avec son acteur et son hachage, et une vue forensique groupée par acteur",
+          "alt": "Le dossier sinistre : chaque action dans l’ordre avec son acteur et son hachage, et une vue par acteur",
           "title": "Dossier du sinistre 62850",
           "subtitle": "Dégât des eaux",
           "tabs": {
             "timeline": "Chronologie",
-            "forensic": "Vue forensique"
+            "forensic": "Vue par acteur"
           },
           "phases": [
             "Reçu",

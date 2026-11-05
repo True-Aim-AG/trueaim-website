@@ -36,8 +36,8 @@
           "industry": "Garanzia auto",
           "size": ""
         },
-        "challenge": "Come NSA ha trasferito il ragionamento e le decisioni dei suoi esperti sinistri nel software True Aim e ha ridotto dell’86% il lavoro su un sinistro complesso.",
-        "solution": "Gli esperti sinistri di NSA hanno descritto esattamente come decidono un sinistro. True Aim ha codificato quelle regole nel suo motore decisionale e le ha testate su sinistri NSA reali. Il motore ora prende le decisioni di routine come farebbero gli esperti, registra la motivazione di ciascuna e rimanda a una persona tutto ciò che richiede un giudizio.",
+        "challenge": "Come NSA ha trasferito il ragionamento e il processo decisionale dei suoi esperti sinistri nel software True Aim e ha ridotto dell’86% il lavoro su un sinistro complesso.",
+        "solution": "Gli esperti sinistri di NSA hanno descritto esattamente come decidono un sinistro. True Aim ha codificato quelle regole nel suo motore decisionale e le ha testate su sinistri NSA reali. Il motore ora prende le decisioni di routine come farebbero gli esperti, registra la motivazione di ciascuna e affida a una persona tutto ciò che richiede un giudizio.",
         "metrics": [
           { "label": "di tempo degli esperti in meno su un sinistro complesso", "value": "86%" },
           { "label": "di tempo degli esperti in meno su un sinistro semplice", "value": "83%" },
@@ -46,14 +46,14 @@
         ],
         "timeline": "",
         "quote": {
-          "text": "Ho creduto in questa automazione fin dal primo giorno, perché non decide nulla che non avessimo già deciso noi. I nostri esperti hanno scritto le regole, True Aim le ha integrate nel sistema, e ogni risposta mostra il documento e la clausola su cui si basa. I sinistri di routine vengono liquidati in minuti, e il mio team può concentrarsi sui casi in cui la sua esperienza conta davvero. Posso solo raccomandare a ogni assicuratore di guardarci da vicino.",
+          "text": "Ho creduto in questa automazione fin dal primo giorno, perché non decide nulla che non avessimo già deciso noi. I nostri esperti hanno scritto le regole, True Aim le ha integrate nel sistema, e ogni risposta mostra il documento e la clausola su cui si basa. I sinistri di routine vengono liquidati in minuti, e il mio team può concentrarsi sui casi in cui la sua esperienza conta davvero. Posso solo consigliare a ogni assicuratore di esaminare da vicino questa soluzione.",
           "author": "Giuseppe Chiarello",
           "role": "CEO, NSA Services SA"
         },
         "highlights": []
       },
       "swiss-travel-insurer": {
-        "title": "Un assicuratore viaggi svizzero gestisce i sinistri il 92% più in fretta",
+        "title": "Un assicuratore viaggi svizzero gestisce i sinistri il 92% più rapidamente",
         "customer": {
           "name": "Assicuratore viaggi svizzero",
           "industry": "Assicurazione viaggi",
@@ -67,9 +67,9 @@
           { "label": "Tasso di elaborazione automatica", "value": "78%", "improvement": "senza intervento" },
           { "label": "Tempo di preparazione degli audit", "value": "95%", "improvement": "di riduzione" }
         ],
-        "timeline": "8 settimane fino alla produzione",
+        "timeline": "8 settimane alla messa in produzione",
         "quote": {
-          "text": "I miglioramenti in coerenza e velocità hanno superato le nostre aspettative. Ancora più importante, ora possiamo ricondurre ogni decisione al testo della polizza.",
+          "text": "I miglioramenti in coerenza e velocità hanno superato le nostre aspettative. Soprattutto, ora possiamo ricondurre ogni decisione al testo della polizza.",
           "author": "Direttore operazioni sinistri",
           "role": "Assicuratore viaggi svizzero"
         },
@@ -88,7 +88,7 @@
           "size": "oltre 200.000 sinistri/anno"
         },
         "challenge": "Un volume elevato di sinistri di routine che richiedevano revisione manuale, con costi di gestione significativi e indennizzi ai clienti in ritardo.",
-        "solution": "Implementazione della piattaforma True Aim completa: il livello documentale per l’elaborazione dei documenti medici, l’Automated Coverage Check per le decisioni di copertura e il controllo qualità come garanzia.",
+        "solution": "Implementazione della piattaforma True Aim completa: il livello documentale per l’elaborazione dei documenti medici, l’Automated Coverage Check per le decisioni di copertura e il controllo qualità come verifica finale.",
         "metrics": [
           { "label": "Riduzione dei costi", "value": "71%", "improvement": "costi di gestione" },
           { "label": "Tasso senza intervento", "value": "65%", "improvement": "completamente automatizzato" },
@@ -97,7 +97,7 @@
         ],
         "timeline": "Rollout graduale in 12 settimane",
         "quote": {
-          "text": "Il solo controllo qualità ha ripagato l’intera implementazione, individuando leakage di cui non sapevamo l’esistenza.",
+          "text": "Il solo controllo qualità ha ripagato l’intera implementazione, individuando leakage di cui ignoravamo l’esistenza.",
           "author": "CFO",
           "role": "Assicuratore sanitario europeo"
         },
@@ -105,23 +105,23 @@
           "Implementato in 3 paesi",
           "Supporto di documenti multilingue",
           "100% di controllo qualità contro il 5% a campione",
-          "Netto miglioramento nel rilevamento delle frodi"
+          "Miglioramento significativo nel rilevamento delle frodi"
         ]
       },
       "motor-claims-pilot": {
-        "title": "Pilota sinistri auto: dall’arretrato all’elaborazione in tempo reale",
+        "title": "Progetto pilota sinistri auto: dall’arretrato all’elaborazione in tempo reale",
         "customer": {
           "name": "Assicuratore auto britannico",
           "industry": "Assicurazione auto",
           "size": "oltre 100.000 sinistri/anno"
         },
-        "challenge": "Un arretrato di sinistri in crescita nei periodi di punta, con decisioni sulla responsabilità incoerenti che portavano a reclami dei clienti e a preoccupazioni dell’autorità di vigilanza.",
+        "challenge": "Un arretrato di sinistri in crescita nei periodi di punta, con decisioni incoerenti sulla responsabilità che portavano a reclami dei clienti e a criticità sul piano regolamentare.",
         "solution": "Implementazione dell’Automated Coverage Check per la determinazione della responsabilità, con una persona nel processo per i casi complessi. Il livello documentale gestisce i documenti di valutazione del danno.",
         "metrics": [
           { "label": "Arretrato smaltito", "value": "100%", "improvement": "eliminato" },
           { "label": "Tempo di decisione", "value": "< 5 min", "improvement": "da 2 giorni" },
           { "label": "Coerenza", "value": "100%", "improvement": "deterministica" },
-          { "label": "Ricorsi ridotti", "value": "45%", "improvement": "meno contenziosi" }
+          { "label": "Ricorsi ridotti", "value": "45%", "improvement": "meno contestazioni" }
         ],
         "timeline": "6 settimane di pilota, 4 settimane di produzione",
         "highlights": [
@@ -135,7 +135,7 @@
     "vehicleWarranty": {
       "eyebrow": "CASO STUDIO  ·  NSA E TRUE AIM",
       "title": "Le stesse decisioni sui sinistri, in una frazione del tempo.",
-      "summary": "Come NSA ha trasferito il ragionamento e le decisioni dei suoi esperti sinistri nel software True Aim e ha ridotto dell’86% il lavoro su un sinistro complesso.",
+      "summary": "Come NSA ha trasferito il ragionamento e il processo decisionale dei suoi esperti sinistri nel software True Aim e ha ridotto dell’86% il lavoro su un sinistro complesso.",
       "facts": [
         { "label": "Azienda", "value": "NSA Services SA, Baar" },
         { "label": "Attività", "value": "Garanzie auto da oltre 25 anni" },
@@ -144,25 +144,25 @@
       ],
       "startingPoint": {
         "heading": "Il punto di partenza",
-        "text": "NSA valuta molte migliaia di sinistri di garanzia auto ogni anno. Ogni sinistro richiede un’attenta verifica della copertura, e questa richiede vera competenza. L’amministrazione intorno al sinistro richiede più tempo della decisione stessa. Un sinistro arriva come un massimo di cinque documenti, su circa 50 marche di veicoli e 14 tipi di documento. Ogni voce e il suo prezzo vengono archiviati, etichettati e reinseriti a mano nel sistema sinistri.",
+        "text": "NSA valuta molte migliaia di sinistri di garanzia auto ogni anno. Ogni sinistro richiede un’attenta verifica della copertura, e questa richiede vera competenza. L’amministrazione intorno al sinistro richiede più tempo della decisione stessa. Un sinistro arriva sotto forma di cinque documenti al massimo, su circa 50 marche di veicoli e 14 tipi di documento. Ogni voce e il suo prezzo vengono archiviati, etichettati e reinseriti a mano nel sistema sinistri.",
         "calloutValue": "7 giorni",
         "calloutText": "dal primo test di True Aim su fascicoli sinistri NSA reali a un sistema funzionante nelle mani del team sinistri di NSA."
       },
       "solution": {
         "heading": "Cosa fa la soluzione",
-        "intro": "Gli esperti sinistri di NSA hanno descritto esattamente come decidono un sinistro. True Aim ha codificato quelle regole nel suo motore decisionale e le ha testate su sinistri NSA reali. Il motore ora prende le decisioni di routine come farebbero gli esperti, registra la motivazione di ciascuna e rimanda a una persona tutto ciò che richiede un giudizio.",
+        "intro": "Gli esperti sinistri di NSA hanno descritto esattamente come decidono un sinistro. True Aim ha codificato quelle regole nel suo motore decisionale e le ha testate su sinistri NSA reali. Il motore ora prende le decisioni di routine come farebbero gli esperti, registra la motivazione di ciascuna e affida a una persona tutto ciò che richiede un giudizio.",
         "items": [
           { "title": "Legge i documenti.", "desc": "Ogni voce di manodopera e di ricambi viene acquisita con il suo prezzo, direttamente dal preventivo di riparazione. Nulla viene archiviato, etichettato o reinserito a mano." },
           { "title": "Decide la copertura.", "desc": "Le regole di NSA vengono applicate voce per voce, con la clausola di polizza registrata dietro ogni decisione." },
           { "title": "Redige la risposta.", "desc": "La risposta al cliente torna pronta per la revisione." },
-          { "title": "Rimanda i casi di giudizio.", "desc": "Tutto ciò che esce dalle regole va a un esperto, con il fascicolo già preparato." }
+          { "title": "Affida all’esperto i casi discrezionali.", "desc": "Tutto ciò che esce dalle regole va a un esperto, con il fascicolo già preparato." }
         ]
       },
       "claimTypes": {
         "heading": "Due tipi di sinistro",
-        "intro": "Un sinistro non è un’unità di lavoro uniforme, quindi il risparmio non è uniforme.",
-        "simple": "Un <b>sinistro semplice</b> riguarda un ricambio, una causa e una risposta chiara. Gli esperti di NSA possono deciderlo in fretta. Il tempo viene assorbito dall’amministrazione intorno al sinistro.",
-        "complex": "Un <b>sinistro complesso</b> comprende più ricambi e voci di manodopera, e ogni riga va verificata rispetto alla polizza: inclusa, esclusa, usura, preesistente o fuori durata. È lì che si spendono le ore degli esperti, ed è lì che il motore contribuisce di più.",
+        "intro": "Un sinistro non è un’unità di lavoro standard, quindi il risparmio non è uniforme.",
+        "simple": "Un <b>sinistro semplice</b> riguarda un ricambio, una causa e una risposta chiara. Gli esperti di NSA possono deciderlo rapidamente. Il tempo viene assorbito dall’amministrazione intorno al sinistro.",
+        "complex": "Un <b>sinistro complesso</b> comprende più ricambi e voci di manodopera, e ogni riga va verificata rispetto alla polizza: inclusa, esclusa, usura, preesistente o fuori dal periodo di garanzia. È lì che si spendono le ore degli esperti, ed è lì che il motore contribuisce di più.",
         "mix": "Il portafoglio sinistri di NSA è composto per il 73% da sinistri semplici e per il 27% da sinistri complessi."
       },
       "keyResults": {
@@ -179,11 +179,11 @@
         "rows": [
           ["Gestione dei documenti, archiviazione, etichettatura e reinserimento", "16 min", "meno di 1 min*", "23 min", "3 min"],
           ["Analisi della copertura e verifica della polizza", "6 min", "2 min", "27 min", "4 min"],
-          ["Scrittura della risposta al cliente", "7 min", "2 min", "13 min", "2 min"]
+          ["Redazione della risposta al cliente", "7 min", "2 min", "13 min", "2 min"]
         ],
         "total": ["Tempo di gestione totale", "29 min", "5 min", "63 min", "9 min"],
         "footnote": "*L’acquisizione dei documenti è completamente automatizzata, dal momento in cui un sinistro arriva tramite il modulo online o per e-mail. Il tempo indicato è la conferma da parte dell’esperto delle voci che il motore segnala per la verifica, in genere una scansione di bassa qualità, una modifica a mano su un preventivo o una descrizione di ricambio che non corrisponde a nessuna voce di catalogo nota. Su un fascicolo pulito non c’è nulla da rivedere.",
-        "summary": "Si tratta dell’<b>83% di lavoro in meno su un sinistro semplice</b> e dell’<b>86% in meno su uno complesso</b>. La revisione dei documenti richiede un po’ più tempo su un sinistro complesso perché ci sono più documenti e più voci, quindi più elementi vengono presentati per la conferma. Ogni voce non segnalata porta già la sua decisione e la clausola di polizza che la sostiene."
+        "summary": "Si tratta dell’<b>83% di lavoro in meno su un sinistro semplice</b> e dell’<b>86% in meno su uno complesso</b>. La revisione dei documenti richiede un po’ più di tempo su un sinistro complesso perché ci sono più documenti e più voci, quindi più elementi vengono presentati per la conferma. Ogni voce non segnalata porta già la sua decisione e la clausola di polizza che la sostiene."
       },
       "book": {
         "heading": "Cosa significa sull’intero portafoglio sinistri",
@@ -192,12 +192,12 @@
           ["Tempo di gestione di un sinistro medio", "38 min", "6 min", "84% in meno"],
           ["Tempo per rispondere a un sinistro, dall’inizio alla fine", "59 min", "27 min", "54% più rapido"]
         ],
-        "total": ["Volume di sinistri che lo stesso team può valutare", "base", "118% in più", "+118%"],
-        "basis": "<b>Base.</b> Ponderato sul mix di sinistri di NSA, 73% semplici e 27% complessi. Il tempo per rispondere a un sinistro copre l’intero processo, compresi solleciti e passaggi di consegne, che True Aim non cambia."
+        "total": ["Volume di sinistri che lo stesso team può valutare", "riferimento", "118% in più", "+118%"],
+        "basis": "<b>Base di calcolo.</b> Ponderato sul mix di sinistri di NSA, 73% semplici e 27% complessi. Il tempo per rispondere a un sinistro copre l’intero processo, compresi solleciti e passaggi di consegne, che True Aim non cambia."
       },
       "expertise": {
         "title": "Più tempo per la competenza.",
-        "text": "Gli esperti passano la giornata sui sinistri in cui la risposta è un giudizio e non una consultazione."
+        "text": "Gli esperti passano la giornata sui sinistri in cui la risposta è un giudizio e non una semplice verifica."
       },
       "sameDecision": {
         "heading": "La stessa decisione, ogni volta",
@@ -206,7 +206,7 @@
       "collaboration": {
         "heading": "La collaborazione",
         "text": "True Aim è passata dal primo test a un sistema funzionante in sette giorni. Gli esperti di NSA hanno consegnato direttamente le loro regole e le hanno viste operare nel sistema nella stessa settimana.",
-        "next": "<b>Prossimo passo:</b> altre categorie di sinistri, più voci e tipi di documento, una copertura più ampia delle marche di veicoli e il passaggio dal perimetro pilota al processo sinistri standard."
+        "next": "<b>Prossimo passo:</b> altre categorie di sinistri, più voci e tipi di documento, un numero maggiore di marche di veicoli e il passaggio dal perimetro pilota al processo sinistri standard."
       },
       "method": "Basato su misurazioni dei tempi di ogni fase del processo su sinistri NSA reali, sia nel processo attuale sia nei test con True Aim, suddivise per complessità del sinistro. Il mix di sinistri è quello di NSA. Le cifre sono arrotondate al minuto.",
       "sidebar": {

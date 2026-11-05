@@ -36,8 +36,8 @@
           "industry": "Garantie automobile",
           "size": ""
         },
-        "challenge": "Comment NSA a transféré le raisonnement et les décisions de ses experts sinistres dans le logiciel True Aim et réduit de 86 % le travail sur un sinistre complexe.",
-        "solution": "Les experts sinistres de NSA ont décrit exactement comment ils décident d’un sinistre. True Aim a codé ces règles en dur dans son moteur de décision et les a testées sur de vrais sinistres NSA. Le moteur prend désormais les décisions de routine comme les experts le feraient, consigne le motif de chacune et transmet à une personne tout ce qui demande un jugement.",
+        "challenge": "Comment NSA a transféré le raisonnement et la prise de décision de ses spécialistes sinistres dans le logiciel True Aim et réduit de 86 % le travail sur un sinistre complexe.",
+        "solution": "Les spécialistes sinistres de NSA ont décrit exactement comment ils décident d’un sinistre. True Aim a codé ces règles en dur dans son moteur de décision et les a testées sur de vrais sinistres NSA. Le moteur prend désormais les décisions de routine comme les experts le feraient, consigne le motif de chacune et transmet à une personne tout ce qui demande un jugement.",
         "metrics": [
           { "label": "de temps d’expert en moins sur un sinistre complexe", "value": "86 %" },
           { "label": "de temps d’expert en moins sur un sinistre simple", "value": "83 %" },
@@ -46,7 +46,7 @@
         ],
         "timeline": "",
         "quote": {
-          "text": "J’ai cru en cette automatisation dès le premier jour, parce qu’elle ne décide rien que nous n’ayons déjà décidé nous-mêmes. Nos experts ont écrit les règles, True Aim les a intégrées au système, et chaque réponse montre le document et la clause qui la fondent. Les sinistres de routine sont réglés en minutes, et mon équipe peut se concentrer sur les cas où son expérience compte vraiment. Je ne peux que recommander à chaque assureur d’y regarder de près.",
+          "text": "J’ai cru en cette automatisation dès le premier jour, parce qu’elle ne décide rien que nous n’ayons déjà décidé nous-mêmes. Nos experts ont écrit les règles, True Aim les a intégrées au système, et chaque réponse montre le document et la clause qui la fondent. Les sinistres de routine sont réglés en quelques minutes, et mon équipe peut se concentrer sur les cas où son expérience compte vraiment. Je ne peux que recommander à chaque assureur d’y regarder de près.",
           "author": "Giuseppe Chiarello",
           "role": "CEO, NSA Services SA"
         },
@@ -88,16 +88,16 @@
           "size": "plus de 200 000 sinistres/an"
         },
         "challenge": "Un volume élevé de sinistres de routine exigeant un examen manuel, d’où des coûts de traitement importants et des indemnisations retardées pour les clients.",
-        "solution": "Mise en place de la plateforme True Aim complète : la couche documentaire pour le traitement des documents médicaux, l’Automated Coverage Check pour les décisions de couverture et le contrôle qualité pour l’assurance.",
+        "solution": "Mise en place de la plateforme True Aim complète : la couche documentaire pour le traitement des documents médicaux, l’Automated Coverage Check pour les décisions de couverture et le contrôle qualité comme vérification finale.",
         "metrics": [
           { "label": "Réduction des coûts", "value": "71 %", "improvement": "coûts de traitement" },
           { "label": "Taux sans intervention", "value": "65 %", "improvement": "entièrement automatisé" },
           { "label": "Exactitude", "value": "99,2 %", "improvement": "exactitude des décisions" },
-          { "label": "Fuites détectées", "value": "2,3 %", "improvement": "identifiées" }
+          { "label": "Surpaiements détectés", "value": "2,3 %", "improvement": "identifiés" }
         ],
         "timeline": "Déploiement progressif sur 12 semaines",
         "quote": {
-          "text": "Le contrôle qualité a, à lui seul, financé toute la mise en œuvre en identifiant des fuites dont nous ignorions l’existence.",
+          "text": "Le contrôle qualité a, à lui seul, financé toute la mise en œuvre en identifiant des surpaiements dont nous ignorions l’existence.",
           "author": "CFO",
           "role": "Assureur santé européen"
         },
@@ -115,19 +115,19 @@
           "industry": "Assurance auto",
           "size": "plus de 100 000 sinistres/an"
         },
-        "challenge": "Un retard croissant de sinistres en période de pointe, avec des décisions de responsabilité incohérentes entraînant des réclamations clients et des inquiétudes réglementaires.",
+        "challenge": "Un retard de traitement croissant en période de pointe, avec des décisions de responsabilité incohérentes entraînant des réclamations clients et des inquiétudes réglementaires.",
         "solution": "Déploiement de l’Automated Coverage Check pour la détermination de la responsabilité, avec une personne dans la boucle pour les cas complexes. La couche documentaire traite les documents d’évaluation des dommages.",
         "metrics": [
           { "label": "Retard résorbé", "value": "100 %", "improvement": "éliminé" },
           { "label": "Temps de décision", "value": "< 5 min", "improvement": "contre 2 jours" },
           { "label": "Cohérence", "value": "100 %", "improvement": "déterministe" },
-          { "label": "Recours en baisse", "value": "45 %", "improvement": "moins de litiges" }
+          { "label": "Contestations en baisse", "value": "45 %", "improvement": "moins de litiges" }
         ],
         "timeline": "6 semaines de pilote, 4 semaines de production",
         "highlights": [
           "Période de pointe gérée sans heures supplémentaires",
           "Meilleurs scores de satisfaction client",
-          "Moins de questions du régulateur",
+          "Moins de demandes de l’autorité de contrôle",
           "Temps de formation des nouveaux gestionnaires divisé par deux"
         ]
       }
@@ -135,7 +135,7 @@
     "vehicleWarranty": {
       "eyebrow": "ÉTUDE DE CAS  ·  NSA ET TRUE AIM",
       "title": "Les mêmes décisions sur les sinistres, en une fraction du temps.",
-      "summary": "Comment NSA a transféré le raisonnement et les décisions de ses experts sinistres dans le logiciel True Aim et réduit de 86 % le travail sur un sinistre complexe.",
+      "summary": "Comment NSA a transféré le raisonnement et la prise de décision de ses spécialistes sinistres dans le logiciel True Aim et réduit de 86 % le travail sur un sinistre complexe.",
       "facts": [
         { "label": "Entreprise", "value": "NSA Services SA, Baar" },
         { "label": "Activité", "value": "Garanties automobiles depuis plus de 25 ans" },
@@ -146,23 +146,23 @@
         "heading": "Le point de départ",
         "text": "NSA évalue plusieurs milliers de sinistres de garantie automobile chaque année. Chaque sinistre exige une vérification de couverture attentive, qui demande une réelle expertise. L’administratif qui l’entoure prend plus de temps que la décision elle-même. Un sinistre arrive sous la forme de cinq documents au plus, pour une cinquantaine de marques de véhicules et 14 types de documents. Chaque poste et son prix sont classés, étiquetés et ressaisis à la main dans le système de gestion des sinistres.",
         "calloutValue": "7 jours",
-        "calloutText": "entre le premier test de True Aim sur de vrais dossiers de sinistres NSA et un système en production entre les mains de l’équipe sinistres de NSA."
+        "calloutText": "entre le premier test de True Aim sur de vrais dossiers de sinistres NSA et un système opérationnel entre les mains de l’équipe sinistres de NSA."
       },
       "solution": {
         "heading": "Ce que fait la solution",
-        "intro": "Les experts sinistres de NSA ont décrit exactement comment ils décident d’un sinistre. True Aim a codé ces règles en dur dans son moteur de décision et les a testées sur de vrais sinistres NSA. Le moteur prend désormais les décisions de routine comme les experts le feraient, consigne le motif de chacune et transmet à une personne tout ce qui demande un jugement.",
+        "intro": "Les spécialistes sinistres de NSA ont décrit exactement comment ils décident d’un sinistre. True Aim a codé ces règles en dur dans son moteur de décision et les a testées sur de vrais sinistres NSA. Le moteur prend désormais les décisions de routine comme les experts le feraient, consigne le motif de chacune et transmet à une personne tout ce qui demande un jugement.",
         "items": [
           { "title": "Il lit les documents.", "desc": "Chaque poste de main-d’œuvre et de pièces est saisi avec son prix, directement depuis le devis de réparation. Rien n’est classé, étiqueté ni ressaisi à la main." },
           { "title": "Il décide de la couverture.", "desc": "Les propres règles de NSA sont appliquées ligne par ligne, avec la clause de police consignée derrière chaque décision." },
           { "title": "Il rédige la réponse.", "desc": "La réponse au client est renvoyée prête pour relecture." },
-          { "title": "Il transmet les cas de jugement.", "desc": "Tout ce qui sort des règles va à un expert, avec le dossier déjà préparé." }
+          { "title": "Il transmet les cas qui demandent un jugement.", "desc": "Tout ce qui sort des règles va à un spécialiste, avec le dossier déjà préparé." }
         ]
       },
       "claimTypes": {
         "heading": "Deux types de sinistres",
         "intro": "Un sinistre n’est pas une unité de travail unique, l’économie n’est donc pas uniforme.",
-        "simple": "Un <b>sinistre simple</b> comporte une pièce, une cause et une réponse claire. Les experts de NSA peuvent le décider rapidement. Le temps est absorbé par l’administratif qui l’entoure.",
-        "complex": "Un <b>sinistre complexe</b> comporte plusieurs pièces et postes de main-d’œuvre, et chaque ligne doit être confrontée à la police : incluse, exclue, usure, préexistante ou hors période. C’est là que se consomment les heures d’expert, et c’est là que le moteur apporte le plus.",
+        "simple": "Un <b>sinistre simple</b> comporte une pièce, une cause et une réponse claire. Les spécialistes de NSA peuvent trancher rapidement. Le temps est absorbé par l’administratif qui l’entoure.",
+        "complex": "Un <b>sinistre complexe</b> comporte plusieurs pièces et postes de main-d’œuvre, et chaque ligne doit être confrontée à la police : incluse, exclue, usure, préexistante ou hors période de garantie. C’est là que passent les heures de spécialiste, et c’est là que le moteur apporte le plus.",
         "mix": "Le portefeuille de sinistres de NSA se compose de 73 % de sinistres simples et de 27 % de sinistres complexes."
       },
       "keyResults": {
@@ -182,7 +182,7 @@
           ["Rédaction de la réponse au client", "7 min", "2 min", "13 min", "2 min"]
         ],
         "total": ["Temps de traitement total", "29 min", "5 min", "63 min", "9 min"],
-        "footnote": "*La saisie des documents est entièrement automatisée, dès l’arrivée du sinistre par le formulaire en ligne ou par e-mail. Le temps indiqué correspond à la confirmation par l’expert des éléments que le moteur signale pour vérification, typiquement un scan de mauvaise qualité, une modification manuscrite sur un devis ou une désignation de pièce qui ne correspond à aucune entrée de catalogue connue. Sur un dossier propre, il n’y a rien à vérifier.",
+        "footnote": "*La capture des documents est entièrement automatisée, dès l’arrivée du sinistre par le formulaire en ligne ou par e-mail. Le temps indiqué correspond à la confirmation par le spécialiste des éléments que le moteur signale pour vérification, typiquement un scan de mauvaise qualité, une modification manuscrite sur un devis ou une désignation de pièce qui ne correspond à aucune entrée de catalogue connue. Sur un dossier propre, il n’y a rien à vérifier.",
         "summary": "Soit <b>83 % de travail en moins sur un sinistre simple</b> et <b>86 % de moins sur un sinistre complexe</b>. La relecture des documents prend un peu plus de temps sur un sinistre complexe, car il y a plus de documents et plus de lignes, donc plus d’éléments présentés pour confirmation. Chaque ligne non signalée porte déjà sa décision et la clause de police qui la fonde."
       },
       "book": {
@@ -193,11 +193,11 @@
           ["Délai de réponse à un sinistre, de bout en bout", "59 min", "27 min", "54 % plus rapide"]
         ],
         "total": ["Volume de sinistres que la même équipe peut évaluer", "référence", "118 % de plus", "+118 %"],
-        "basis": "<b>Base.</b> Pondéré selon le mix de sinistres de NSA, 73 % simples et 27 % complexes. Le délai de réponse couvre l’ensemble du processus, y compris les relances et les passations, que True Aim ne modifie pas."
+        "basis": "<b>Base de calcul.</b> Pondéré selon le mix de sinistres de NSA, 73 % simples et 27 % complexes. Le délai de réponse couvre l’ensemble du processus, y compris les relances et les passations, que True Aim ne modifie pas."
       },
       "expertise": {
         "title": "Plus de temps pour l’expertise.",
-        "text": "Les experts passent leur journée sur les sinistres où la réponse est un jugement plutôt qu’une consultation."
+        "text": "Les spécialistes passent leur journée sur les sinistres où la réponse est un jugement plutôt qu’une simple vérification."
       },
       "sameDecision": {
         "heading": "La même décision, à chaque fois",
@@ -205,7 +205,7 @@
       },
       "collaboration": {
         "heading": "La collaboration",
-        "text": "True Aim est passé du premier test à un système en production en sept jours. Les experts de NSA ont transmis leurs règles directement et les ont vues fonctionner dans le système la même semaine.",
+        "text": "True Aim est passé du premier test à un système opérationnel en sept jours. Les experts de NSA ont transmis leurs règles directement et les ont vues fonctionner dans le système la même semaine.",
         "next": "<b>Prochaine étape :</b> d’autres catégories de sinistres, davantage de lignes et de types de documents, une couverture plus large des marques de véhicules et le passage du périmètre pilote au processus sinistres standard."
       },
       "method": "D’après des mesures de temps de chaque étape du processus sur de vrais sinistres NSA, dans le processus actuel comme dans les tests avec True Aim, ventilées par complexité du sinistre. Le mix de sinistres est celui de NSA. Les chiffres sont arrondis à la minute.",

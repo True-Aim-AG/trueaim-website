@@ -27,7 +27,7 @@
         }
       },
       "cta": {
-        "heading": "Sehen Sie True Aim mit Ihren eigenen Schäden",
+        "heading": "Erleben Sie True Aim an Ihren eigenen Schadenfällen",
         "lede": "Bringen Sie aktuelle Schäden, Rechnungen oder Schadenberichte mit, und wir zeigen Ihnen das fertige Ergebnis.",
         "button": "Demo buchen"
       }
@@ -144,10 +144,10 @@
     "brokers": {
       "hero": {
         "title": "Schäden vom ersten Anruf an erfasst und bearbeitet",
-        "summary": "Makler sind nach einem Schaden oft der erste Anruf. Mit True Aim werden Sach-, Kfz- und Haftpflichtschäden beim ersten Kontakt erfasst, anhand der Police geprüft und in Bewegung gehalten, mit Ihrem Kunden bei jedem Schritt informiert und der Entscheidung des Versicherers vollständig erklärt, Position für Position.",
+        "summary": "Makler sind nach einem Schaden oft die erste Anlaufstelle. Mit True Aim werden Sach-, Kfz- und Haftpflichtschäden beim ersten Kontakt erfasst, anhand der Police geprüft und in Bewegung gehalten. Ihr Kunde ist bei jedem Schritt informiert, und die Entscheidung des Versicherers wird vollständig erklärt, Position für Position.",
         "scene": {
           "alt": "Schäden kommen über vier Kanäle an, laufen in einer Akte zusammen, und alle Beteiligten werden daraus auf dem Laufenden gehalten",
-          "channelsLabel": "Kommt über jeden Kanal an",
+          "channelsLabel": "Eingang über jeden Kanal",
           "channels": [
             "WhatsApp",
             "E-Mail",
@@ -180,7 +180,7 @@
           "parties": [
             {
               "name": "Kunde",
-              "text": "Referenz gesendet, Statusseite aktiv"
+              "text": "Schadennummer gesendet, Statusseite aktiv"
             },
             {
               "name": "Makler",
@@ -201,8 +201,8 @@
         "heading": "Was das für Ihr Team bedeutet",
         "items": [
           {
-            "title": "Verwaltungszeit entfällt",
-            "text": "Schäden werden erfasst, gelesen und abgelegt, sobald sie eintreffen. Ihr Team gibt keine Angaben mehr neu ein und fasst keinen Dokumenten mehr nach."
+            "title": "Verwaltungsaufwand entfällt",
+            "text": "Schäden werden erfasst, gelesen und abgelegt, sobald sie eintreffen. Ihr Team gibt keine Angaben mehr neu ein und muss keinen Dokumenten mehr hinterherlaufen."
           },
           {
             "title": "Konsistente Entscheidungen",
@@ -229,14 +229,14 @@
         },
         {
           "question": "Können wir unsere Servicelevel nachweisen?",
-          "answer": "Ja. Servicelevel und Pflichten aus Rahmenverträgen werden Schritt für Schritt verfolgt und in der Akte festgehalten, bereit für jede Überprüfung."
+          "answer": "Ja. Servicelevel und Pflichten aus Deckungsvollmachten werden Schritt für Schritt verfolgt und in der Akte festgehalten, bereit für jede Überprüfung."
         }
       ]
     },
     "tpas": {
       "hero": {
         "title": "Mehr Schäden pro Sachbearbeiter, im Rahmen jedes Mandats",
-        "summary": "True Aim ist Ihre agentenbasierte Orchestrierungsschicht und berechnet die Deckung Position für Position anhand der Bedingungen jedes einzelnen Versicherers. Wir prüfen jede Rechnung anhand empirischer Marktreferenzen und halten jedes Ergebnis mit Herkunftsnachweis auf Positionsebene fest. Ohne den Aufwand des Hin- und Herwechselns zwischen Systemen bleibt Ihren Sachbearbeitern Zeit für das entscheidende Urteil, und Ihr Portfolio hat Raum zu wachsen.",
+        "summary": "True Aim ist Ihre agentenbasierte Orchestrierungsschicht und berechnet die Deckung Position für Position anhand der Bedingungen jedes einzelnen Versicherers. Wir prüfen jede Rechnung anhand empirischer Marktreferenzen und halten jedes Ergebnis mit Herkunftsnachweis auf Positionsebene fest. Ohne den Aufwand des Hin- und Herwechselns zwischen Systemen bleibt Ihren Sachbearbeitern Zeit für die Beurteilungen, auf die es ankommt, und Ihr Portfolio hat Raum zu wachsen.",
         "scene": {
           "alt": "Eine Arbeitsliste mit dem Status jedes Schadens und der verbleibenden Zeit bis zu seinem Servicelevel",
           "title": "Offene Schäden",
@@ -264,14 +264,14 @@
               "kind": "Sach",
               "status": "open",
               "label": "In Bearbeitung",
-              "sla": "2 T."
+              "sla": "2 Tage"
             },
             {
               "reference": "CLM-02979",
               "kind": "Kfz",
               "status": "referred",
-              "label": "Wartet auf Reparaturbetrieb",
-              "sla": "1 T."
+              "label": "Wartet auf Werkstatt",
+              "sla": "1 Tag"
             }
           ],
           "totalLabel": "34 offene Schäden",
@@ -290,8 +290,8 @@
             "text": "Jeder Schaden wird innerhalb der Bedingungen, Limits und des Mandats des jeweiligen Versicherers entschieden."
           },
           {
-            "title": "Prüfungen aus der Akte beantwortet",
-            "text": "Die Prüfungsfrage eines Kunden dauert Minuten, nicht ein Projekt."
+            "title": "Audits aus der Akte beantwortet",
+            "text": "Die Auditfrage eines Kunden braucht Minuten, kein Projekt."
           }
         ]
       },
@@ -305,7 +305,7 @@
           "answer": "Ihre Sachbearbeiter, im Rahmen des Mandats, das der Versicherer Ihnen erteilt hat. True Aim bereitet die Empfehlung und ihre Begründung vor, und die Akte zeigt, wer jedes Ergebnis bestätigt hat."
         },
         {
-          "question": "Wie beantworten wir die Prüfung eines Versicherers?",
+          "question": "Wie beantworten wir ein Audit des Versicherers?",
           "answer": "Aus der Akte. Jede Entscheidung trägt ihre Klausel, ihre Nachweise und ihren Bearbeiter, und die vollständige Historie eines Schadens wird als ein Prüfpaket exportiert."
         },
         {
@@ -317,9 +317,9 @@
     "warranty": {
       "hero": {
         "title": "Jede Garantierechnung anhand der Bedingungen geprüft",
-        "summary": "True Aim zerlegt Rechnungen bis auf die Position und prüft Teile, Arbeitskosten und Gebühren in Echtzeit anhand der Garantiebedingungen und regionaler Referenzpreise. Jede Abweichung löst eine versandfertige Aufforderung zur Neuausstellung aus, in der die betroffenen Positionen genau benannt sind. So werden teure Streitfälle zu schnellen, sachlichen Abstimmungen.",
+        "summary": "True Aim zerlegt Rechnungen bis auf die Position und prüft Ersatzteile, Arbeitskosten und Gebühren in Echtzeit anhand der Garantiebedingungen und regionaler Referenzpreise. Jede Abweichung löst eine versandfertige Aufforderung zur Neuausstellung aus, in der die betroffenen Positionen genau benannt sind. So werden teure Streitfälle zu schnellen, sachlichen Abstimmungen.",
         "scene": {
-          "alt": "Ein Kfz-Garantieschaden, wie der Sachbearbeiter ihn sieht: Teile, Arbeitskosten und ein Ersatzfahrzeug, jede Position anhand der Garantiebedingungen geprüft",
+          "alt": "Ein Kfz-Garantieschaden, wie der Sachbearbeiter ihn sieht: Ersatzteile, Arbeitskosten und ein Ersatzfahrzeug, jede Position anhand der Garantiebedingungen geprüft",
           "title": "Kfz-Garantieschaden",
           "reference": "Schaden 5964",
           "columns": {
@@ -378,11 +378,11 @@
         "items": [
           {
             "title": "Position für Position, in zwei Minuten",
-            "text": "Teile, Arbeitskosten und Gebühren, jeweils anhand der Bedingungen geprüft."
+            "text": "Ersatzteile, Arbeitskosten und Gebühren, jeweils anhand der Bedingungen geprüft."
           },
           {
             "title": "Die richtige Reparatur",
-            "text": "Die vorgeschlagene Reparatur wird am Schaden geprüft, nicht nur an der Deckung."
+            "text": "Die vorgeschlagene Reparatur wird anhand des Schadens geprüft, nicht nur anhand der Deckung."
           },
           {
             "title": "Die Werkstatt bleibt informiert",
@@ -395,13 +395,13 @@
         "caseStudy": {
           "cap": "Fallstudie",
           "title": "Dieselben Schadenentscheidungen, in einem Bruchteil der Zeit.",
-          "text": "Wie NSA die Überlegungen und Entscheidungen seiner Schadenexperten in die Software von True Aim übertrug und den Aufwand für einen komplexen Schaden um 86 % senkte.",
+          "text": "Wie NSA die Entscheidungslogik seiner Schadenexperten in die Software von True Aim übertrug und den Aufwand für einen komplexen Schaden um 86 % senkte.",
           "link": "Fallstudie lesen",
           "logoAlt": "NSA Services SA"
         }
       },
       "quote": {
-        "text": "Ich habe vom ersten Tag an an diese Automatisierung geglaubt, weil sie nichts entscheidet, was wir nicht schon selbst entschieden hatten. Unsere Experten haben die Regeln geschrieben, True Aim hat sie ins System gebaut, und jede Antwort zeigt das Dokument und die Klausel dahinter. Routineschäden werden in Minuten reguliert, und mein Team kann sich auf die Fälle konzentrieren, in denen seine Erfahrung wirklich zählt. Ich kann jedem Versicherer nur empfehlen, sich das genau anzusehen.",
+        "text": "Ich habe an diese Automatisierung vom ersten Tag an geglaubt, weil sie nichts entscheidet, was wir nicht schon selbst entschieden hatten. Unsere Experten haben die Regeln geschrieben, True Aim hat sie ins System gebaut, und jede Antwort zeigt das Dokument und die Klausel dahinter. Routineschäden werden in Minuten reguliert, und mein Team kann sich auf die Fälle konzentrieren, in denen seine Erfahrung wirklich zählt. Ich kann jedem Versicherer nur empfehlen, sich das genau anzusehen.",
         "name": "Giuseppe Chiarello",
         "role": "CEO, NSA Services SA"
       },
@@ -427,7 +427,7 @@
     "claimsTech": {
       "hero": {
         "title": "Die Deckungsprüfung im Workflow, den Ihre Kunden schon nutzen",
-        "summary": "Der Workflow gehört Ihnen, und True Aim übernimmt jede Entscheidung. Wir arbeiten mit Ihrem Team zusammen, um die Schadenbearbeitung in Ihrer Plattform einfacher zu machen, mit einem Protokoll, wie jede Entscheidung zustande kam, das Sie an Ihre Kunden weitergeben können.",
+        "summary": "Der Workflow gehört Ihnen, und True Aim bereitet jede Entscheidung vor. Wir arbeiten mit Ihrem Team zusammen, um die Schadenbearbeitung in Ihrer Plattform einfacher zu machen, mit einem Protokoll, wie jede Entscheidung zustande kam, das Sie an Ihre Kunden weitergeben können.",
         "scene": {
           "alt": "Die Schadenakte: jede Aktion in ihrer Reihenfolge mit Akteur und Hash, und eine forensische Ansicht nach Akteur gruppiert",
           "title": "Akte zu Schaden 62850",

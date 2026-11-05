@@ -42,11 +42,11 @@
     },
     "/platform/invoice-benchmarking": {
       "title": "Invoice Benchmarking: mai più fatture pagate troppo | True Aim",
-      "description": "Ogni fattura, offerta e preventivo confrontato con i dati di riferimento per categoria di lavori e regione. Quali voci sono troppo alte, di quanto e perché.",
+      "description": "Ogni fattura, preventivo e stima confrontato con i dati di riferimento per categoria di lavori e regione. Quali voci sono troppo alte, di quanto e perché.",
       "h1": "Invoice Benchmarking: mai più una fattura pagata troppo",
       "breadcrumb": "Invoice Benchmarking",
       "ogTitle": "Invoice Benchmarking di True Aim",
-      "ogDescription": "Ogni fattura, offerta e preventivo confrontato con i dati di riferimento per categoria di lavori e regione. Quali voci sono troppo alte, di quanto e perché.",
+      "ogDescription": "Ogni fattura, preventivo e stima confrontato con i dati di riferimento per categoria di lavori e regione. Quali voci sono troppo alte, di quanto e perché.",
       "updated": "2026-11-05"
     },
     "/platform/damage-reporting": {
@@ -124,20 +124,20 @@
     },
     "/case-studies/vehicle-warranty-claims": {
       "title": "Le stesse decisioni sui sinistri, in una frazione del tempo | True Aim",
-      "description": "Come NSA ha trasferito il ragionamento e le decisioni dei suoi esperti sinistri nel software True Aim e ha ridotto dell’86% il lavoro su un sinistro complesso.",
+      "description": "Come NSA ha trasferito il ragionamento e il processo decisionale dei suoi esperti sinistri in True Aim e ha ridotto dell’86% il lavoro su un sinistro complesso.",
       "h1": "Le stesse decisioni sui sinistri, in una frazione del tempo.",
       "breadcrumb": "Sinistri di garanzia auto",
       "ogTitle": "Le stesse decisioni sui sinistri, in una frazione del tempo.",
-      "ogDescription": "Come NSA ha trasferito il ragionamento e le decisioni dei suoi esperti sinistri nel software True Aim e ha ridotto dell’86% il lavoro su un sinistro complesso.",
+      "ogDescription": "Come NSA ha trasferito il ragionamento e il processo decisionale dei suoi esperti sinistri in True Aim e ha ridotto dell’86% il lavoro su un sinistro complesso.",
       "updated": "2026-11-05"
     },
     "/case-studies/swiss-travel-insurer": {
-      "title": "Assicuratore viaggi: sinistri gestiti il 92% più in fretta | True Aim",
-      "description": "Assicuratore viaggi svizzero: decisioni da 45 minuti a 2,3 secondi con True Aim, il 92% più in fretta, 78% di elaborazione automatica.",
-      "h1": "Un assicuratore viaggi svizzero gestisce i sinistri il 92% più in fretta",
+      "title": "Assicuratore viaggi: sinistri gestiti il 92% più rapidamente | True Aim",
+      "description": "Assicuratore viaggi svizzero: decisioni da 45 minuti a 2,3 secondi con True Aim, il 92% più rapidamente, 78% di elaborazione automatica.",
+      "h1": "Un assicuratore viaggi svizzero gestisce i sinistri il 92% più rapidamente",
       "breadcrumb": "Assicuratore viaggi svizzero",
-      "ogTitle": "Un assicuratore viaggi svizzero gestisce i sinistri il 92% più in fretta",
-      "ogDescription": "Decisioni sui sinistri ridotte da 45 minuti a 2,3 secondi, con il 78% di elaborazione automatica.",
+      "ogTitle": "Un assicuratore viaggi svizzero gestisce i sinistri il 92% più rapidamente",
+      "ogDescription": "Assicuratore viaggi svizzero: decisioni da 45 minuti a 2,3 secondi con True Aim, il 92% più rapidamente, 78% di elaborazione automatica.",
       "updated": "2026-11-05"
     },
     "/case-studies/european-health-insurer": {
@@ -150,16 +150,16 @@
       "updated": "2026-11-05"
     },
     "/case-studies/motor-claims-pilot": {
-      "title": "Pilota sinistri auto: dall’arretrato al tempo reale | True Aim",
-      "description": "Assicuratore auto britannico: arretrato smaltito con True Aim, decisione da 2 giorni a meno di 5 minuti, 45% di ricorsi in meno, 100% di coerenza.",
-      "h1": "Pilota sinistri auto: dall’arretrato all’elaborazione in tempo reale",
-      "breadcrumb": "Pilota sinistri auto",
-      "ogTitle": "Pilota sinistri auto: dall’arretrato all’elaborazione in tempo reale",
-      "ogDescription": "Tempo di decisione da 2 giorni a meno di 5 minuti, con il 45% di ricorsi in meno e il 100% di coerenza.",
+      "title": "Progetto pilota sinistri auto: dall’arretrato al tempo reale | True Aim",
+      "description": "Assicuratore auto britannico: intero arretrato smaltito con True Aim, decisione da 2 giorni a meno di 5 minuti, 45% di ricorsi in meno, 100% di coerenza.",
+      "h1": "Progetto pilota sinistri auto: dall’arretrato all’elaborazione in tempo reale",
+      "breadcrumb": "Progetto pilota sinistri auto",
+      "ogTitle": "Progetto pilota sinistri auto: dall’arretrato all’elaborazione in tempo reale",
+      "ogDescription": "Assicuratore auto britannico: intero arretrato smaltito con True Aim, decisione da 2 giorni a meno di 5 minuti, 45% di ricorsi in meno, 100% di coerenza.",
       "updated": "2026-11-05"
     },
     "/partners": {
-      "title": "I nostri partner nella ricerca e nell’assicurazione | True Aim",
+      "title": "I nostri partner nella ricerca e nel settore assicurativo | True Aim",
       "description": "True Aim lavora con Innosuisse, la ZHAW, Yarowa AG e lo Swiss InsurTech Hub su ricerca, finanziamento e innovazione assicurativa in Svizzera.",
       "h1": "L’ecosistema innovativo dietro True Aim",
       "breadcrumb": "Partner",
@@ -169,11 +169,11 @@
     },
     "/partners/yarowa": {
       "title": "Yarowa AG, partner strategico | True Aim",
-      "description": "True Aim AG è uno spin-off di Yarowa AG, piattaforma InsurTech svizzera che gestisce i processi assicurativi centrali in ambienti fortemente regolamentati.",
-      "h1": "Yarowa AG Partner strategico",
+      "description": "True Aim AG è uno spin-off di Yarowa AG, piattaforma InsurTech svizzera che gestisce su larga scala i workflow assicurativi core in ambienti regolamentati.",
+      "h1": "Yarowa AG, partner strategico",
       "breadcrumb": "Yarowa AG",
       "ogTitle": "Yarowa AG, partner strategico",
-      "ogDescription": "True Aim AG è uno spin-off di Yarowa AG, piattaforma InsurTech svizzera che gestisce i processi assicurativi centrali in ambienti fortemente regolamentati.",
+      "ogDescription": "True Aim AG è uno spin-off di Yarowa AG, piattaforma InsurTech svizzera che gestisce su larga scala i workflow assicurativi core in ambienti regolamentati.",
       "updated": "2026-11-05"
     },
     "/partners/innosuisse": {
@@ -196,38 +196,38 @@
     },
     "/partners/swissinsurtechhub": {
       "title": "Swiss InsurTech Hub, partner strategico | True Aim",
-      "description": "True Aim è partner strategico dello Swiss InsurTech Hub, la rete svizzera per l’innovazione assicurativa che riunisce assicuratori, start-up e partner tech.",
-      "h1": "Swiss InsurTech Hub Partner strategico",
+      "description": "True Aim è partner strategico dello Swiss InsurTech Hub, rete svizzera per l’innovazione assicurativa che riunisce assicuratori, start-up e partner tecnologici.",
+      "h1": "Swiss InsurTech Hub, partner strategico",
       "breadcrumb": "Swiss InsurTech Hub",
       "ogTitle": "Swiss InsurTech Hub, partner strategico",
-      "ogDescription": "True Aim è partner strategico dello Swiss InsurTech Hub, la rete svizzera per l’innovazione assicurativa che riunisce assicuratori, start-up e partner tech.",
+      "ogDescription": "True Aim è partner strategico dello Swiss InsurTech Hub, rete svizzera per l’innovazione assicurativa che riunisce assicuratori, start-up e partner tecnologici.",
       "updated": "2026-11-05"
     },
     "/partners/nortonrosefulbright": {
       "title": "Norton Rose Fulbright, partner strategico | True Aim",
       "description": "True Aim è partner strategico di Norton Rose Fulbright, lo studio legale globale che l’ha proclamata l’InsurTech più innovativa al mondo all’Insurathon 2026.",
-      "h1": "Norton Rose Fulbright Partner strategico",
+      "h1": "Norton Rose Fulbright, partner strategico",
       "breadcrumb": "Norton Rose Fulbright",
       "ogTitle": "Norton Rose Fulbright, partner strategico",
       "ogDescription": "True Aim è partner strategico di Norton Rose Fulbright, lo studio legale globale che l’ha proclamata l’InsurTech più innovativa al mondo all’Insurathon 2026.",
       "updated": "2026-11-05"
     },
     "/solutions/insurers": {
-      "title": "Sinistri rami danni liquidati prima, per assicuratori | True Aim",
-      "description": "Sinistri rami danni più rapidi e costi più equi. Ogni sinistro valutato sulla polizza, ogni fattura confrontata, ogni rapporto preparato. Decide il vostro team.",
-      "h1": "Sinistri rami danni, liquidati più in fretta",
+      "title": "Sinistri rami danni liquidati prima, per gli assicuratori | True Aim",
+      "description": "Liquidazioni più rapide, costi più equi. Ogni sinistro valutato sulla polizza, ogni fattura confrontata, ogni rapporto preparato. Decidono i vostri liquidatori.",
+      "h1": "Sinistri rami danni, liquidati più rapidamente",
       "breadcrumb": "Assicuratori",
       "ogTitle": "True Aim per gli assicuratori",
-      "ogDescription": "Sinistri rami danni più rapidi e costi più equi. Ogni sinistro valutato sulla polizza, ogni fattura confrontata, ogni rapporto preparato. Decide il vostro team.",
+      "ogDescription": "Liquidazioni più rapide, costi più equi. Ogni sinistro valutato sulla polizza, ogni fattura confrontata, ogni rapporto preparato. Decidono i vostri liquidatori.",
       "updated": "2026-11-05"
     },
     "/solutions/brokers": {
       "title": "Sinistri gestiti dalla prima chiamata, per i broker | True Aim",
-      "description": "Acquisite il sinistro al primo contatto, verificatelo sulla polizza e tenete informato il cliente, con la decisione dell’assicuratore spiegata voce per voce.",
+      "description": "Sinistro acquisito al primo contatto, verificato sulla polizza, il vostro cliente informato a ogni passo e decisione dell’assicuratore spiegata voce per voce.",
       "h1": "Sinistri acquisiti e gestiti fin dalla prima chiamata",
       "breadcrumb": "Broker",
       "ogTitle": "True Aim per i broker",
-      "ogDescription": "Acquisite il sinistro al primo contatto, verificatelo sulla polizza e tenete informato il cliente, con la decisione dell’assicuratore spiegata voce per voce.",
+      "ogDescription": "Sinistro acquisito al primo contatto, verificato sulla polizza, il vostro cliente informato a ogni passo e decisione dell’assicuratore spiegata voce per voce.",
       "updated": "2026-11-05"
     },
     "/solutions/third-party-administrators": {
@@ -241,11 +241,11 @@
     },
     "/solutions/warranty-providers": {
       "title": "Fatture di garanzia verificate rispetto alle condizioni | True Aim",
-      "description": "Ogni fattura dell’officina scomposta in ricambi, manodopera e spese, verificata sulle condizioni di garanzia e confrontata con il costo atteso del lavoro.",
+      "description": "Ogni fattura dell’officina scomposta in ricambi, manodopera e spese, verificata in minuti sulle condizioni di garanzia e confrontata con i prezzi di mercato.",
       "h1": "Ogni fattura di garanzia verificata rispetto alle condizioni",
       "breadcrumb": "Fornitori di garanzie",
       "ogTitle": "True Aim per i fornitori di garanzie",
-      "ogDescription": "Ogni fattura dell’officina scomposta in ricambi, manodopera e spese, verificata sulle condizioni di garanzia e confrontata con il costo atteso del lavoro.",
+      "ogDescription": "Ogni fattura dell’officina scomposta in ricambi, manodopera e spese, verificata in minuti sulle condizioni di garanzia e confrontata con i prezzi di mercato.",
       "updated": "2026-11-05"
     },
     "/solutions/claims-technology-providers": {
@@ -255,6 +255,33 @@
       "breadcrumb": "Fornitori di tecnologie sinistri",
       "ogTitle": "True Aim per i fornitori di tecnologie sinistri",
       "ogDescription": "Aggiungete la verifica automatica della copertura alla piattaforma che i vostri clienti già usano, con un registro di ogni decisione che potete trasmettere.",
+      "updated": "2026-11-05"
+    },
+    "/privacy": {
+      "title": "Informativa sulla privacy | True Aim",
+      "description": "Come True Aim AG raccoglie, usa e protegge i dati personali secondo la LPD svizzera e il GDPR: ruoli, sub-responsabili, conservazione e i vostri diritti.",
+      "h1": "Informativa sulla privacy",
+      "breadcrumb": "Informativa sulla privacy",
+      "ogTitle": "Informativa sulla privacy",
+      "ogDescription": "Come True Aim AG raccoglie, usa e protegge i dati personali secondo la LPD svizzera e il GDPR: ruoli, sub-responsabili, conservazione e i vostri diritti.",
+      "updated": "2026-11-05"
+    },
+    "/terms": {
+      "title": "Termini di utilizzo | True Aim",
+      "description": "I termini che regolano l’utilizzo del sito web di True Aim e dei servizi per i sinistri basati sull’IA di True Aim AG.",
+      "h1": "Termini di utilizzo",
+      "breadcrumb": "Termini di utilizzo",
+      "ogTitle": "Termini di utilizzo",
+      "ogDescription": "I termini che regolano l’utilizzo del sito web di True Aim e dei servizi per i sinistri basati sull’IA di True Aim AG.",
+      "updated": "2026-11-05"
+    },
+    "/cookies": {
+      "title": "Informativa sui cookie | True Aim",
+      "description": "Quali cookie utilizza il sito web di True Aim, a cosa serve ciascuno e come gestire le vostre preferenze sui cookie.",
+      "h1": "Informativa sui cookie",
+      "breadcrumb": "Informativa sui cookie",
+      "ogTitle": "Informativa sui cookie",
+      "ogDescription": "Quali cookie utilizza il sito web di True Aim, a cosa serve ciascuno e come gestire le vostre preferenze sui cookie.",
       "updated": "2026-11-05"
     }
   }

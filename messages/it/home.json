@@ -84,7 +84,7 @@
         },
         "invoiceBenchmarking": {
           "title": "Mai più una fattura pagata troppo",
-          "text": "Ogni fattura, offerta e preventivo viene confrontato voce per voce con i prezzi di riferimento, con una richiesta di riemissione già redatta per ogni voce troppo alta.",
+          "text": "Ogni fattura, preventivo e stima viene confrontato voce per voce con i prezzi di riferimento, con una richiesta di riemissione già redatta per ogni voce troppo alta.",
           "link": "Invoice Benchmarking"
         },
         "damageReporting": {
@@ -119,7 +119,7 @@
       "claimsDecisioning": "Automated Coverage Check",
       "claimsDecisioningText": "Ogni voce verificata rispetto alle condizioni di polizza, con tutti i calcoli visibili.",
       "invoiceBenchmarking": "Invoice Benchmarking",
-      "invoiceBenchmarkingText": "Ogni fattura, offerta e preventivo confrontato con il prezzo di riferimento.",
+      "invoiceBenchmarkingText": "Ogni fattura, preventivo e stima confrontato con il prezzo di riferimento.",
       "damageReporting": "Damage Reporting",
       "damageReportingText": "Un preventivo quantificato e l’ambito completo dei lavori alla denuncia di sinistro.",
       "otus": "Otus, lo specialista sinistri di True Aim",

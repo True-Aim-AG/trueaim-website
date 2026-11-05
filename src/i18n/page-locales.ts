@@ -11,15 +11,12 @@ export const englishOnlyPaths = [
   "/ai-transparency",
   "/blog",
   "/changelog",
-  "/cookies",
   "/ethics",
   "/paia",
-  "/privacy",
   "/privacy-legacy",
   "/security",
   "/sub-processors",
   "/support",
-  "/terms",
 ];
 
 /** Locales a page exists in, for a path without the locale prefix ("/blog/x", "/technology#a"). */

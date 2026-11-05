@@ -91,18 +91,12 @@ old_url,new_url,status,note
 /de/changelog/,/en/changelog/,301,Untranslated English copy withdrawn (URL-LIST section 3)
 /fr/changelog/,/en/changelog/,301,Untranslated English copy withdrawn (URL-LIST section 3)
 /it/changelog/,/en/changelog/,301,Untranslated English copy withdrawn (URL-LIST section 3)
-/de/cookies/,/en/cookies/,301,Untranslated English copy withdrawn (URL-LIST section 3)
-/fr/cookies/,/en/cookies/,301,Untranslated English copy withdrawn (URL-LIST section 3)
-/it/cookies/,/en/cookies/,301,Untranslated English copy withdrawn (URL-LIST section 3)
 /de/ethics/,/en/ethics/,301,Untranslated English copy withdrawn (URL-LIST section 3)
 /fr/ethics/,/en/ethics/,301,Untranslated English copy withdrawn (URL-LIST section 3)
 /it/ethics/,/en/ethics/,301,Untranslated English copy withdrawn (URL-LIST section 3)
 /de/paia/,/en/paia/,301,Untranslated English copy withdrawn (URL-LIST section 3)
 /fr/paia/,/en/paia/,301,Untranslated English copy withdrawn (URL-LIST section 3)
 /it/paia/,/en/paia/,301,Untranslated English copy withdrawn (URL-LIST section 3)
-/de/privacy/,/en/privacy/,301,Untranslated English copy withdrawn (URL-LIST section 3)
-/fr/privacy/,/en/privacy/,301,Untranslated English copy withdrawn (URL-LIST section 3)
-/it/privacy/,/en/privacy/,301,Untranslated English copy withdrawn (URL-LIST section 3)
 /de/privacy-legacy/,/en/privacy-legacy/,301,Untranslated English copy withdrawn (URL-LIST section 3)
 /fr/privacy-legacy/,/en/privacy-legacy/,301,Untranslated English copy withdrawn (URL-LIST section 3)
 /it/privacy-legacy/,/en/privacy-legacy/,301,Untranslated English copy withdrawn (URL-LIST section 3)
@@ -115,9 +109,6 @@ old_url,new_url,status,note
 /de/support/,/en/support/,301,Untranslated English copy withdrawn (URL-LIST section 3)
 /fr/support/,/en/support/,301,Untranslated English copy withdrawn (URL-LIST section 3)
 /it/support/,/en/support/,301,Untranslated English copy withdrawn (URL-LIST section 3)
-/de/terms/,/en/terms/,301,Untranslated English copy withdrawn (URL-LIST section 3)
-/fr/terms/,/en/terms/,301,Untranslated English copy withdrawn (URL-LIST section 3)
-/it/terms/,/en/terms/,301,Untranslated English copy withdrawn (URL-LIST section 3)
 /opengraph-image.png,/en/opengraph-image.png,301,Old Open Graph image; shared links keep a card
 /products/mira/opengraph-image.png,/en/opengraph-image.png,301,Old Open Graph image; shared links keep a card
 /products/contextbuilder/opengraph-image.png,/en/opengraph-image.png,301,Old Open Graph image; shared links keep a card

@@ -3,7 +3,7 @@
     "hero": {
       "eyebrow": "Fallstudien",
       "title": "Echte Zahlen aus der Praxis",
-      "summary": "Wie Schadenteams True Aim an ihren eigenen Schäden einsetzen und was sich verändert hat. Jede Studie nennt das Volumen, die Sprachen, die Zeit bis zu den Ergebnissen und die Genauigkeit, und wie jede Zahl gemessen wurde.",
+      "summary": "Wie Schadenteams True Aim bei ihren eigenen Schäden einsetzen und was sich verändert hat. Jede Studie nennt das Volumen, die Sprachen, die Zeit bis zu den Ergebnissen und die Genauigkeit, und wie jede Zahl gemessen wurde.",
       "button": "Demo anfragen"
     },
     "featured": {
@@ -11,7 +11,7 @@
       "readFullStudy": "Fallstudie lesen"
     },
     "cta": {
-      "heading": "Sehen Sie True Aim mit Ihren eigenen Schäden",
+      "heading": "Erleben Sie True Aim an Ihren eigenen Schadenfällen",
       "description": "Bringen Sie Ihre eigenen Rechnungen, Schäden oder Schadenberichte mit, und die Demo zeigt das fertige Ergebnis.",
       "bookDemo": "Demo anfragen"
     },
@@ -25,7 +25,7 @@
       "getSimilarResults": "Demo anfragen",
       "previous": "Zurück",
       "next": "Weiter",
-      "ctaHeading": "Sehen Sie True Aim mit Ihren eigenen Schäden",
+      "ctaHeading": "Erleben Sie True Aim an Ihren eigenen Schadenfällen",
       "ctaDescription": "Bringen Sie Ihre eigenen Rechnungen, Schäden oder Schadenberichte mit, und die Demo zeigt das fertige Ergebnis.",
       "requestPilot": "Demo anfragen"
     },
@@ -36,8 +36,8 @@
           "industry": "Kfz-Garantie",
           "size": ""
         },
-        "challenge": "Wie NSA die Überlegungen und Entscheidungen seiner Schadenexperten in die Software von True Aim übertrug und den Aufwand für einen komplexen Schaden um 86 % senkte.",
-        "solution": "Die Schadenexperten von NSA legten genau fest, wie sie einen Schaden entscheiden. True Aim kodierte diese Regeln fest in seine Entscheidungs-Engine und testete sie an echten NSA-Schäden. Die Engine trifft die Routineentscheidungen jetzt so, wie es die Experten tun würden, hält den Grund für jede Entscheidung fest und leitet alles, was Urteilsvermögen verlangt, an eine Person weiter.",
+        "challenge": "Wie NSA die Entscheidungslogik seiner Schadenexperten in die Software von True Aim übertrug und den Aufwand für einen komplexen Schaden um 86 % senkte.",
+        "solution": "Die Schadenexperten von NSA legten genau fest, wie sie einen Schaden entscheiden. True Aim baute diese Regeln fest in seine Entscheidungs-Engine ein und testete sie an echten NSA-Schäden. Die Engine trifft die Routineentscheidungen jetzt so, wie es die Experten tun würden, hält den Grund für jede Entscheidung fest und leitet alles, was Urteilsvermögen verlangt, an eine Person weiter.",
         "metrics": [
           { "label": "weniger Expertenzeit pro komplexem Schaden", "value": "86 %" },
           { "label": "weniger Expertenzeit pro einfachem Schaden", "value": "83 %" },
@@ -46,7 +46,7 @@
         ],
         "timeline": "",
         "quote": {
-          "text": "Ich habe vom ersten Tag an an diese Automatisierung geglaubt, weil sie nichts entscheidet, was wir nicht schon selbst entschieden hatten. Unsere Experten haben die Regeln geschrieben, True Aim hat sie ins System gebaut, und jede Antwort zeigt das Dokument und die Klausel dahinter. Routineschäden werden in Minuten reguliert, und mein Team kann sich auf die Fälle konzentrieren, in denen seine Erfahrung wirklich zählt. Ich kann jedem Versicherer nur empfehlen, sich das genau anzusehen.",
+          "text": "Ich habe an diese Automatisierung vom ersten Tag an geglaubt, weil sie nichts entscheidet, was wir nicht schon selbst entschieden hatten. Unsere Experten haben die Regeln geschrieben, True Aim hat sie ins System gebaut, und jede Antwort zeigt das Dokument und die Klausel dahinter. Routineschäden werden in Minuten reguliert, und mein Team kann sich auf die Fälle konzentrieren, in denen seine Erfahrung wirklich zählt. Ich kann jedem Versicherer nur empfehlen, sich das genau anzusehen.",
           "author": "Giuseppe Chiarello",
           "role": "CEO, NSA Services SA"
         },
@@ -59,15 +59,15 @@
           "industry": "Reiseversicherung",
           "size": "über 50.000 Schäden/Jahr"
         },
-        "challenge": "Die manuelle Schadenbearbeitung dauerte im Durchschnitt 45 Minuten pro Schaden, mit uneinheitlichen Entscheidungen zwischen den Sachbearbeitern und langen Vorbereitungszeiten für Prüfungen.",
+        "challenge": "Die manuelle Schadenbearbeitung dauerte im Durchschnitt 45 Minuten pro Schaden, mit uneinheitlichen Entscheidungen zwischen den Sachbearbeitern und langen Vorbereitungszeiten für Audits.",
         "solution": "Automated Coverage Check für die Deckungsentscheidung und die Dokumentenschicht für die Dokumentenverarbeitung eingeführt. Über API in das bestehende Schadensystem integriert.",
         "metrics": [
           { "label": "Bearbeitungsgeschwindigkeit", "value": "92 %", "improvement": "schneller" },
           { "label": "Ø Entscheidungszeit", "value": "2,3 s", "improvement": "statt 45 Min." },
           { "label": "Dunkelverarbeitungsquote", "value": "78 %", "improvement": "ohne manuellen Eingriff" },
-          { "label": "Vorbereitungszeit für Prüfungen", "value": "95 %", "improvement": "weniger" }
+          { "label": "Audit-Vorbereitung", "value": "95 %", "improvement": "weniger" }
         ],
-        "timeline": "8 Wochen bis zur Produktion",
+        "timeline": "8 Wochen bis zum Produktivbetrieb",
         "quote": {
           "text": "Die Verbesserungen bei Konsistenz und Geschwindigkeit haben unsere Erwartungen übertroffen. Noch wichtiger: Wir können jetzt jede Entscheidung bis zum Policentext zurückverfolgen.",
           "author": "Leiter Schadenbetrieb",
@@ -93,11 +93,11 @@
           { "label": "Kostensenkung", "value": "71 %", "improvement": "Bearbeitungskosten" },
           { "label": "Quote ohne manuellen Eingriff", "value": "65 %", "improvement": "vollständig automatisiert" },
           { "label": "Genauigkeit", "value": "99,2 %", "improvement": "Entscheidungsgenauigkeit" },
-          { "label": "Aufgedecktes Leakage", "value": "2,3 %", "improvement": "identifiziert" }
+          { "label": "Leakage aufgedeckt", "value": "2,3 %", "improvement": "vermeidbare Mehrzahlungen" }
         ],
         "timeline": "12 Wochen stufenweise Einführung",
         "quote": {
-          "text": "Die Qualitätsprüfung allein hat die gesamte Einführung bezahlt, indem sie Leakage aufgedeckt hat, von dem wir nichts wussten.",
+          "text": "Die Qualitätsprüfung allein hat die gesamte Einführung refinanziert, indem sie Leakage aufgedeckt hat, von dem wir nichts wussten.",
           "author": "CFO",
           "role": "Europäischer Krankenversicherer"
         },
@@ -109,14 +109,14 @@
         ]
       },
       "motor-claims-pilot": {
-        "title": "Kfz-Pilot: vom Rückstand zur Bearbeitung in Echtzeit",
+        "title": "Pilot Kfz-Schäden: vom Rückstand zur Bearbeitung in Echtzeit",
         "customer": {
           "name": "Britischer Kfz-Versicherer",
           "industry": "Kfz-Versicherung",
           "size": "über 100.000 Schäden/Jahr"
         },
         "challenge": "Wachsender Schadenrückstand in Spitzenzeiten und uneinheitliche Haftungsentscheidungen, die zu Kundenbeschwerden und aufsichtsrechtlichen Bedenken führten.",
-        "solution": "Automated Coverage Check für die Haftungsentscheidung eingeführt, mit einer Person im Prozess für komplexe Fälle. Die Dokumentenschicht verarbeitet die Unterlagen zur Schadenbewertung.",
+        "solution": "Automated Coverage Check für die Haftungsentscheidung eingeführt, komplexe Fälle entscheidet ein Sachbearbeiter. Die Dokumentenschicht verarbeitet die Unterlagen zur Schadenbewertung.",
         "metrics": [
           { "label": "Rückstand abgebaut", "value": "100 %", "improvement": "vollständig" },
           { "label": "Entscheidungszeit", "value": "< 5 Min.", "improvement": "statt 2 Tagen" },
@@ -135,7 +135,7 @@
     "vehicleWarranty": {
       "eyebrow": "FALLSTUDIE  ·  NSA UND TRUE AIM",
       "title": "Dieselben Schadenentscheidungen, in einem Bruchteil der Zeit.",
-      "summary": "Wie NSA die Überlegungen und Entscheidungen seiner Schadenexperten in die Software von True Aim übertrug und den Aufwand für einen komplexen Schaden um 86 % senkte.",
+      "summary": "Wie NSA die Entscheidungslogik seiner Schadenexperten in die Software von True Aim übertrug und den Aufwand für einen komplexen Schaden um 86 % senkte.",
       "facts": [
         { "label": "Unternehmen", "value": "NSA Services SA, Baar" },
         { "label": "Geschäft", "value": "Fahrzeuggarantien seit über 25 Jahren" },
@@ -144,16 +144,16 @@
       ],
       "startingPoint": {
         "heading": "Die Ausgangslage",
-        "text": "NSA prüft jedes Jahr viele tausend Fahrzeuggarantieschäden. Jeder Schaden verlangt eine sorgfältige Deckungsprüfung, und die verlangt echtes Fachwissen. Die Verwaltung rund um den Schaden dauert länger als die Entscheidung selbst. Ein Schaden kommt als bis zu fünf Dokumente an, über rund 50 Fahrzeugmarken und 14 Dokumenttypen. Jede Position und ihr Preis werden von Hand abgelegt, beschriftet und neu ins Schadensystem eingegeben.",
+        "text": "NSA prüft jedes Jahr viele tausend Fahrzeuggarantieschäden. Jeder Schaden verlangt eine sorgfältige Deckungsprüfung, und die verlangt echtes Fachwissen. Die Verwaltung rund um den Schaden dauert länger als die Entscheidung selbst. Ein Schaden geht als bis zu fünf Dokumente ein, verteilt auf rund 50 Fahrzeugmarken und 14 Dokumenttypen. Jede Position und ihr Preis werden von Hand abgelegt, gekennzeichnet und neu ins Schadensystem eingegeben.",
         "calloutValue": "7 Tage",
         "calloutText": "vom ersten Test von True Aim an echten NSA-Schadenakten bis zum laufenden System in den Händen des NSA-Schadenteams."
       },
       "solution": {
         "heading": "Was die Lösung tut",
-        "intro": "Die Schadenexperten von NSA legten genau fest, wie sie einen Schaden entscheiden. True Aim kodierte diese Regeln fest in seine Entscheidungs-Engine und testete sie an echten NSA-Schäden. Die Engine trifft die Routineentscheidungen jetzt so, wie es die Experten tun würden, hält den Grund für jede Entscheidung fest und leitet alles, was Urteilsvermögen verlangt, an eine Person weiter.",
+        "intro": "Die Schadenexperten von NSA legten genau fest, wie sie einen Schaden entscheiden. True Aim baute diese Regeln fest in seine Entscheidungs-Engine ein und testete sie an echten NSA-Schäden. Die Engine trifft die Routineentscheidungen jetzt so, wie es die Experten tun würden, hält den Grund für jede Entscheidung fest und leitet alles, was Urteilsvermögen verlangt, an eine Person weiter.",
         "items": [
-          { "title": "Liest die Dokumente.", "desc": "Jede Arbeits- und Teileposition wird mit ihrem Preis direkt aus dem Kostenvoranschlag erfasst. Nichts wird von Hand abgelegt, beschriftet oder neu eingegeben." },
-          { "title": "Entscheidet die Deckung.", "desc": "Die eigenen Regeln von NSA werden Position für Position angewandt, mit der Policenklausel hinter jeder Entscheidung." },
+          { "title": "Liest die Dokumente.", "desc": "Jede Arbeits- und Teileposition wird mit ihrem Preis direkt aus dem Kostenvoranschlag erfasst. Nichts wird von Hand abgelegt, gekennzeichnet oder neu eingegeben." },
+          { "title": "Entscheidet die Deckung.", "desc": "Die eigenen Regeln von NSA werden Position für Position angewandt, und zu jeder Entscheidung wird die Policenklausel festgehalten." },
           { "title": "Entwirft die Antwort.", "desc": "Die Antwort an den Kunden kommt fertig zur Prüfung zurück." },
           { "title": "Leitet Ermessensfälle weiter.", "desc": "Alles außerhalb der Regeln geht an einen Experten, mit bereits vorbereiteter Akte." }
         ]
@@ -161,9 +161,9 @@
       "claimTypes": {
         "heading": "Zwei Arten von Schäden",
         "intro": "Ein Schaden ist keine einheitliche Arbeitseinheit, also ist auch die Einsparung nicht einheitlich.",
-        "simple": "Ein <b>einfacher Schaden</b> umfasst ein Teil, eine Ursache und eine klare Antwort. Die Experten von NSA können ihn schnell entscheiden. Die Zeit geht für die Verwaltung rund um den Schaden drauf.",
+        "simple": "Ein <b>einfacher Schaden</b> umfasst ein Teil, eine Ursache und eine klare Antwort. Die Experten von NSA können ihn schnell entscheiden. Die Zeit entfällt auf die Verwaltung rund um den Schaden.",
         "complex": "Ein <b>komplexer Schaden</b> umfasst mehrere Teile- und Arbeitspositionen, und jede Position muss anhand der Police geprüft werden: eingeschlossen, ausgeschlossen, Verschleiß, Vorschaden oder außerhalb der Laufzeit. Dort fallen die Expertenstunden an, und dort trägt die Engine am meisten bei.",
-        "mix": "Das Schadenbuch von NSA besteht aus 73 % einfachen und 27 % komplexen Schäden."
+        "mix": "Das Schadenaufkommen von NSA besteht zu 73 % aus einfachen und zu 27 % aus komplexen Schäden."
       },
       "keyResults": {
         "heading": "Wesentliche Ergebnisse"
@@ -177,7 +177,7 @@
           ["Komplexe Schäden", "True Aim"]
         ],
         "rows": [
-          ["Dokumente bearbeiten, ablegen, beschriften und neu eingeben", "16 Min.", "unter 1 Min.*", "23 Min.", "3 Min."],
+          ["Dokumente bearbeiten, ablegen, kennzeichnen und neu eingeben", "16 Min.", "unter 1 Min.*", "23 Min.", "3 Min."],
           ["Deckungsanalyse und Policenprüfung", "6 Min.", "2 Min.", "27 Min.", "4 Min."],
           ["Antwort an den Kunden schreiben", "7 Min.", "2 Min.", "13 Min.", "2 Min."]
         ],
@@ -186,7 +186,7 @@
         "summary": "Das sind <b>83 % weniger Aufwand bei einem einfachen Schaden</b> und <b>86 % weniger bei einem komplexen</b>. Die Dokumentenprüfung dauert bei einem komplexen Schaden etwas länger, weil es mehr Dokumente und mehr Positionen gibt und daher mehr Positionen zur Bestätigung vorgelegt werden. Jede nicht markierte Position trägt bereits ihre Entscheidung und die Policenklausel, die sie stützt."
       },
       "book": {
-        "heading": "Was das über das gesamte Schadenbuch bedeutet",
+        "heading": "Was das für das gesamte Schadenaufkommen bedeutet",
         "columns": ["Vorher", "Mit True Aim", "Veränderung"],
         "rows": [
           ["Bearbeitungszeit eines durchschnittlichen Schadens", "38 Min.", "6 Min.", "84 % weniger"],
@@ -208,7 +208,7 @@
         "text": "True Aim kam in sieben Tagen vom ersten Test zum laufenden System. Die Experten von NSA übergaben ihre Regeln direkt und sahen sie noch in derselben Woche im System arbeiten.",
         "next": "<b>Als Nächstes:</b> weitere Schadenkategorien, mehr Positionen und Dokumenttypen, eine breitere Abdeckung von Fahrzeugmarken und der Schritt vom Pilotumfang in den Standardprozess der Schadenbearbeitung."
       },
-      "method": "Basierend auf Zeitmessungen jedes Prozessschritts an echten NSA-Schäden, sowohl im heutigen Prozess als auch in Tests mit True Aim, aufgeteilt nach Komplexität des Schadens. Der Schadenmix ist der von NSA. Die Zahlen sind auf ganze Minuten gerundet.",
+      "method": "Grundlage sind Zeitmessungen jedes Prozessschritts an echten NSA-Schäden, sowohl im heutigen Prozess als auch in Tests mit True Aim, aufgeteilt nach Komplexität des Schadens. Der Schadenmix ist der von NSA. Die Zahlen sind auf ganze Minuten gerundet.",
       "sidebar": {
         "productsUsed": "Eingesetzte Produkte",
         "getSimilarResults": "Demo anfragen"

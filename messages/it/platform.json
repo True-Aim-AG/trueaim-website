@@ -62,7 +62,7 @@
         },
         "invoiceBenchmarking": {
           "name": "Invoice Benchmarking",
-          "text": "Confronta ogni fattura, offerta e preventivo con il prezzo di riferimento."
+          "text": "Confronta ogni fattura, preventivo e stima con il prezzo di riferimento."
         },
         "damageReporting": {
           "name": "Damage Reporting",
@@ -85,7 +85,7 @@
         },
         "prove": {
           "name": "Prove",
-          "text": "Registra ogni decisione con le sue prove, la regola in vigore e chi l’ha presa. Ogni modifica al fascicolo è visibile. Con un clic si esporta il pacchetto di audit completo."
+          "text": "Registra ogni decisione con le sue prove, la regola in vigore e chi l’ha presa. Ogni modifica al fascicolo è visibile. Con un clic si esporta il dossier di audit completo."
         }
       },
       "callout": "Stessi dati. Stessa decisione. Ogni volta."

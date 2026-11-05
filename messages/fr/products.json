@@ -358,12 +358,12 @@
       "record": {
         "heading": "Un dossier complet pour chaque décision",
         "scene": {
-          "alt": "Le dossier sinistre : chaque action dans l’ordre avec son acteur et son hachage, et une vue forensique groupée par acteur",
+          "alt": "Le dossier sinistre : chaque action dans l’ordre avec son acteur et son hachage, et une vue par acteur",
           "title": "Dossier du sinistre 62850",
           "subtitle": "Dégât des eaux",
           "tabs": {
             "timeline": "Chronologie",
-            "forensic": "Vue forensique"
+            "forensic": "Vue par acteur"
           },
           "phases": [
             "Reçu",
@@ -463,7 +463,7 @@
         },
         {
           "question": "À quelles réglementations le dossier est-il rattaché ?",
-          "answer": "DORA, l’AI Act (règlement européen sur l’IA) et les règles nationales, dont celles de la FINMA, de la BaFin et de la NAIC, et la POPIA. La vue forensique du dossier sinistre montre chaque action par acteur, de sorte que la responsabilité est visible pour chaque décision."
+          "answer": "DORA, l’AI Act (règlement européen sur l’IA) et les règles nationales, dont celles de la FINMA, de la BaFin et de la NAIC, et la POPIA. La vue par acteur du dossier sinistre montre chaque action par acteur, de sorte que la responsabilité est visible pour chaque décision."
         },
         {
           "question": "Remplace-t-il notre système de gestion des sinistres ?",

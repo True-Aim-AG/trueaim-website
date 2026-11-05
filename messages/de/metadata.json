@@ -115,24 +115,24 @@
     },
     "/case-studies": {
       "title": "Fallstudien: echte Zahlen aus der Praxis | True Aim",
-      "description": "Wie Schadenteams True Aim mit ihren eigenen Schäden einsetzen und was sich verändert hat: Volumen, Sprachen, Zeit bis zum Ergebnis und gemessene Genauigkeit.",
+      "description": "Wie Schadenteams True Aim bei ihren eigenen Schäden einsetzen und was sich verändert hat: Volumen, Sprachen, Zeit bis zum Ergebnis und gemessene Genauigkeit.",
       "h1": "Echte Zahlen aus der Praxis",
       "breadcrumb": "Fallstudien",
       "ogTitle": "Echte Zahlen aus der Praxis",
-      "ogDescription": "Wie Schadenteams True Aim mit ihren eigenen Schäden einsetzen und was sich verändert hat: Volumen, Sprachen, Zeit bis zum Ergebnis und gemessene Genauigkeit.",
+      "ogDescription": "Wie Schadenteams True Aim bei ihren eigenen Schäden einsetzen und was sich verändert hat: Volumen, Sprachen, Zeit bis zum Ergebnis und gemessene Genauigkeit.",
       "updated": "2026-11-05"
     },
     "/case-studies/vehicle-warranty-claims": {
       "title": "Dieselben Schadenentscheidungen, in einem Bruchteil der Zeit | True Aim",
-      "description": "Wie NSA die Entscheidungen seiner Schadenexperten in die Software von True Aim übertrug und den Aufwand für einen komplexen Schaden um 86 % senkte.",
+      "description": "Wie NSA die Entscheidungslogik seiner Schadenexperten in die Software von True Aim übertrug und den Aufwand für einen komplexen Schaden um 86 % senkte.",
       "h1": "Dieselben Schadenentscheidungen, in einem Bruchteil der Zeit.",
       "breadcrumb": "Fahrzeuggarantieschäden",
       "ogTitle": "Dieselben Schadenentscheidungen, in einem Bruchteil der Zeit.",
-      "ogDescription": "Wie NSA die Entscheidungen seiner Schadenexperten in die Software von True Aim übertrug und den Aufwand für einen komplexen Schaden um 86 % senkte.",
+      "ogDescription": "Wie NSA die Entscheidungslogik seiner Schadenexperten in die Software von True Aim übertrug und den Aufwand für einen komplexen Schaden um 86 % senkte.",
       "updated": "2026-11-05"
     },
     "/case-studies/swiss-travel-insurer": {
-      "title": "Reiseversicherer bearbeitet Schäden 92 % schneller | True Aim",
+      "title": "Schweizer Reiseversicherer bearbeitet Schäden 92 % schneller | True Aim",
       "description": "Ein Schweizer Reiseversicherer verkürzte Schadenentscheidungen mit True Aim von 45 Minuten auf 2,3 Sekunden: 92 % schneller, mit 78 % Dunkelverarbeitung.",
       "h1": "Schweizer Reiseversicherer bearbeitet Schäden 92 % schneller",
       "breadcrumb": "Schweizer Reiseversicherer",
@@ -150,12 +150,12 @@
       "updated": "2026-11-05"
     },
     "/case-studies/motor-claims-pilot": {
-      "title": "Kfz-Pilot: vom Rückstand zur Echtzeit | True Aim",
-      "description": "Britischer Kfz-Versicherer: Schadenrückstand mit True Aim abgebaut, Entscheidung in unter 5 Minuten statt 2 Tagen, 45 % weniger Einsprüche, 100 % Konsistenz.",
-      "h1": "Kfz-Pilot: vom Rückstand zur Bearbeitung in Echtzeit",
-      "breadcrumb": "Kfz-Pilot",
-      "ogTitle": "Kfz-Pilot: vom Rückstand zur Bearbeitung in Echtzeit",
-      "ogDescription": "Entscheidungszeit von 2 Tagen auf unter 5 Minuten, mit 45 % weniger Einsprüchen und 100 % Konsistenz.",
+      "title": "Pilot Kfz-Schäden: vom Rückstand zur Echtzeit | True Aim",
+      "description": "Britischer Kfz-Versicherer: Rückstand mit True Aim komplett abgebaut, Entscheidung in unter 5 Minuten statt 2 Tagen, 45 % weniger Einsprüche, 100 % Konsistenz.",
+      "h1": "Pilot Kfz-Schäden: vom Rückstand zur Bearbeitung in Echtzeit",
+      "breadcrumb": "Pilot Kfz-Schäden",
+      "ogTitle": "Pilot Kfz-Schäden: vom Rückstand zur Bearbeitung in Echtzeit",
+      "ogDescription": "Entscheidungszeit von 2 Tagen auf unter 5 Minuten verkürzt, mit 45 % weniger Einsprüchen und 100 % Konsistenz.",
       "updated": "2026-11-05"
     },
     "/partners": {
@@ -170,7 +170,7 @@
     "/partners/yarowa": {
       "title": "Yarowa AG, strategischer Partner | True Aim",
       "description": "True Aim AG ist ein Spin-off der Yarowa AG, einer Schweizer InsurTech-Plattform, die zentrale Versicherungsprozesse in stark regulierten Umgebungen betreibt.",
-      "h1": "Yarowa AG Strategischer Partner",
+      "h1": "Yarowa AG, strategischer Partner",
       "breadcrumb": "Yarowa AG",
       "ogTitle": "Yarowa AG, strategischer Partner",
       "ogDescription": "True Aim AG ist ein Spin-off der Yarowa AG, einer Schweizer InsurTech-Plattform, die zentrale Versicherungsprozesse in stark regulierten Umgebungen betreibt.",
@@ -178,11 +178,11 @@
     },
     "/partners/innosuisse": {
       "title": "Von Innosuisse geförderter Innovationspartner | True Aim",
-      "description": "Die Kerntechnologie von True Aim wird durch einen im Wettbewerb vergebenen Forschungsbeitrag von Innosuisse, der Schweizer Innovationsagentur, unterstützt.",
+      "description": "Die Kerntechnologie von True Aim wird durch eine im Wettbewerb vergebene Forschungsförderung von Innosuisse, der Schweizer Innovationsagentur, unterstützt.",
       "h1": "Von Innosuisse gefördert: Innovationspartner",
       "breadcrumb": "Innosuisse",
       "ogTitle": "Von Innosuisse geförderter Innovationspartner",
-      "ogDescription": "Die Kerntechnologie von True Aim wird durch einen im Wettbewerb vergebenen Forschungsbeitrag von Innosuisse, der Schweizer Innovationsagentur, unterstützt.",
+      "ogDescription": "Die Kerntechnologie von True Aim wird durch eine im Wettbewerb vergebene Forschungsförderung von Innosuisse, der Schweizer Innovationsagentur, unterstützt.",
       "updated": "2026-11-05"
     },
     "/partners/zhaw": {
@@ -197,7 +197,7 @@
     "/partners/swissinsurtechhub": {
       "title": "Swiss InsurTech Hub, strategischer Partner | True Aim",
       "description": "True Aim ist strategischer Partner des Swiss InsurTech Hub, des Netzwerks für Versicherungsinnovation aus Versicherern, Start-ups und Technologiepartnern.",
-      "h1": "Swiss InsurTech Hub Strategischer Partner",
+      "h1": "Swiss InsurTech Hub, strategischer Partner",
       "breadcrumb": "Swiss InsurTech Hub",
       "ogTitle": "Swiss InsurTech Hub, strategischer Partner",
       "ogDescription": "True Aim ist strategischer Partner des Swiss InsurTech Hub, des Netzwerks für Versicherungsinnovation aus Versicherern, Start-ups und Technologiepartnern.",
@@ -206,28 +206,28 @@
     "/partners/nortonrosefulbright": {
       "title": "Norton Rose Fulbright, strategischer Partner | True Aim",
       "description": "True Aim ist strategischer Partner von Norton Rose Fulbright, der Kanzlei, die True Aim beim Insurathon 2026 zum innovativsten InsurTech der Welt kürte.",
-      "h1": "Norton Rose Fulbright Strategischer Partner",
+      "h1": "Norton Rose Fulbright, strategischer Partner",
       "breadcrumb": "Norton Rose Fulbright",
       "ogTitle": "Norton Rose Fulbright, strategischer Partner",
       "ogDescription": "True Aim ist strategischer Partner von Norton Rose Fulbright, der Kanzlei, die True Aim beim Insurathon 2026 zum innovativsten InsurTech der Welt kürte.",
       "updated": "2026-11-05"
     },
     "/solutions/insurers": {
-      "title": "Sach- und Kfz-Schäden schneller reguliert, für Versicherer | True Aim",
-      "description": "Schnellere Sach-, Kfz- und Haftpflichtschäden, fairere Kosten. Jeder Schaden anhand der Police geprüft, jede Rechnung abgeglichen, jeder Bericht vorbereitet.",
+      "title": "Kompositschäden schneller reguliert, für Versicherer | True Aim",
+      "description": "Schnellere Regulierung von Sach-, Kfz- und Haftpflichtschäden, fairere Kosten. Jeder Schaden anhand der Bedingungen geprüft, Ihre Sachbearbeiter entscheiden.",
       "h1": "Sach-, Kfz- und Haftpflichtschäden, schneller reguliert",
       "breadcrumb": "Versicherer",
       "ogTitle": "True Aim für Versicherer",
-      "ogDescription": "Schnellere Sach-, Kfz- und Haftpflichtschäden, fairere Kosten. Jeder Schaden anhand der Police geprüft, jede Rechnung abgeglichen, jeder Bericht vorbereitet.",
+      "ogDescription": "Jeder Schaden anhand der Bedingungen geprüft, jede Rechnung abgeglichen, jeder Schadenbericht vorbereitet, und Ihre Sachbearbeiter entscheiden.",
       "updated": "2026-11-05"
     },
     "/solutions/brokers": {
       "title": "Schäden vom ersten Anruf an bearbeitet, für Makler | True Aim",
-      "description": "Den Schaden beim ersten Kontakt erfassen, anhand der Police prüfen und den Kunden bei jedem Schritt informieren. Entscheidung erklärt, Position für Position.",
+      "description": "Schaden beim ersten Kontakt erfassen, anhand der Police prüfen, den Kunden laufend informieren. Entscheidung des Versicherers erklärt, Position für Position.",
       "h1": "Schäden vom ersten Anruf an erfasst und bearbeitet",
       "breadcrumb": "Makler",
       "ogTitle": "True Aim für Makler",
-      "ogDescription": "Den Schaden beim ersten Kontakt erfassen, anhand der Police prüfen und den Kunden bei jedem Schritt informieren. Entscheidung erklärt, Position für Position.",
+      "ogDescription": "Schaden beim ersten Kontakt erfassen, anhand der Police prüfen, den Kunden laufend informieren. Entscheidung des Versicherers erklärt, Position für Position.",
       "updated": "2026-11-05"
     },
     "/solutions/third-party-administrators": {
@@ -241,11 +241,11 @@
     },
     "/solutions/warranty-providers": {
       "title": "Garantierechnungen anhand der Bedingungen geprüft | True Aim",
-      "description": "Jede Rechnung in Teile, Arbeitskosten und Gebühren zerlegt, in Minuten anhand der Garantiebedingungen geprüft und mit Referenzpreisen abgeglichen.",
+      "description": "Jede Werkstattrechnung in Teile, Arbeitskosten und Gebühren zerlegt, in Minuten anhand der Garantiebedingungen geprüft und mit Referenzpreisen abgeglichen.",
       "h1": "Jede Garantierechnung anhand der Bedingungen geprüft",
       "breadcrumb": "Garantieanbieter",
       "ogTitle": "True Aim für Garantieanbieter",
-      "ogDescription": "Jede Rechnung in Teile, Arbeitskosten und Gebühren zerlegt, in Minuten anhand der Garantiebedingungen geprüft und mit Referenzpreisen abgeglichen.",
+      "ogDescription": "Jede Werkstattrechnung in Teile, Arbeitskosten und Gebühren zerlegt, in Minuten anhand der Garantiebedingungen geprüft und mit Referenzpreisen abgeglichen.",
       "updated": "2026-11-05"
     },
     "/solutions/claims-technology-providers": {
@@ -255,6 +255,33 @@
       "breadcrumb": "Anbieter von Schadensoftware",
       "ogTitle": "True Aim für Anbieter von Schadensoftware",
       "ogDescription": "Die automatisierte Deckungsprüfung in der Plattform, die Ihre Kunden schon nutzen, mit einem Protokoll jeder Entscheidung, das Sie weitergeben können.",
+      "updated": "2026-11-05"
+    },
+    "/privacy": {
+      "title": "Datenschutzerklärung | True Aim",
+      "description": "Wie True Aim AG personenbezogene Daten nach Schweizer DSG und DSGVO erhebt, nutzt und schützt: Rollen, Unterauftragsverarbeiter, Aufbewahrung, Ihre Rechte.",
+      "h1": "Datenschutzerklärung",
+      "breadcrumb": "Datenschutzerklärung",
+      "ogTitle": "Datenschutzerklärung",
+      "ogDescription": "Wie True Aim AG personenbezogene Daten nach Schweizer DSG und DSGVO erhebt, nutzt und schützt: Rollen, Unterauftragsverarbeiter, Aufbewahrung, Ihre Rechte.",
+      "updated": "2026-11-05"
+    },
+    "/terms": {
+      "title": "Nutzungsbedingungen | True Aim",
+      "description": "Die Bedingungen für die Nutzung der Website von True Aim und der KI-gestützten Schadenservices der True Aim AG.",
+      "h1": "Nutzungsbedingungen",
+      "breadcrumb": "Nutzungsbedingungen",
+      "ogTitle": "Nutzungsbedingungen",
+      "ogDescription": "Die Bedingungen für die Nutzung der Website von True Aim und der KI-gestützten Schadenservices der True Aim AG.",
+      "updated": "2026-11-05"
+    },
+    "/cookies": {
+      "title": "Cookie-Richtlinie | True Aim",
+      "description": "Welche Cookies die Website von True Aim verwendet, wofür jedes einzelne dient und wie Sie Ihre Cookie-Einstellungen verwalten.",
+      "h1": "Cookie-Richtlinie",
+      "breadcrumb": "Cookie-Richtlinie",
+      "ogTitle": "Cookie-Richtlinie",
+      "ogDescription": "Welche Cookies die Website von True Aim verwendet, wofür jedes einzelne dient und wie Sie Ihre Cookie-Einstellungen verwalten.",
       "updated": "2026-11-05"
     }
   }

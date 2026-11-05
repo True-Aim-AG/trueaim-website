@@ -427,7 +427,7 @@
             "many": "azioni"
           },
           "verified": "Catena verificata, 6 hash su 6 corrispondono",
-          "exportLabel": "Esporta audit pack"
+          "exportLabel": "Esporta dossier audit"
         }
       },
       "otus": {
@@ -471,7 +471,7 @@
         },
         {
           "question": "Che cos’è il Decision Dossier?",
-          "answer": "Il registro di ogni decisione: gli input, le clausole applicate, la traccia del calcolo, i collegamenti alle prove e chi ha confermato l’esito. Si esporta come un unico pacchetto di audit."
+          "answer": "Il registro di ogni decisione: gli input, le clausole applicate, la traccia del calcolo, i collegamenti alle prove e chi ha confermato l’esito. Si esporta come un unico dossier di audit."
         }
       ],
       "cta": {
@@ -486,7 +486,7 @@
       "tagline": "Mai più una fattura pagata troppo.",
       "hero": {
         "title": "Invoice Benchmarking: mai più una fattura pagata troppo",
-        "summary": "Ogni fattura, offerta e preventivo viene confrontato con il prezzo di riferimento, per ramo e per regione. Il vostro team vede quali voci sono troppo alte, di quanto e perché, con la richiesta di riemissione già redatta. Le fatture di importo minore non passano più senza controllo, e ogni risparmio viene registrato voce per voce.",
+        "summary": "Ogni fattura, preventivo e stima viene confrontato con il prezzo di riferimento, per ramo e per regione. Il vostro team vede quali voci sono troppo alte, di quanto e perché, con la richiesta di riemissione già redatta. Le fatture di importo minore non passano più senza controllo, e ogni risparmio viene registrato voce per voce.",
         "scene": {
           "alt": "Una fattura con ogni voce colorata rispetto al prezzo di riferimento, e una richiesta di riemissione redatta per la voce troppo alta",
           "title": "Fattura INV-2204",
@@ -691,7 +691,7 @@
           },
           {
             "title": "Tutto a confronto",
-            "text": "Ogni offerta per lo stesso lavoro fianco a fianco, con un fornitore consigliato e le motivazioni."
+            "text": "Ogni preventivo per lo stesso lavoro fianco a fianco, con un fornitore consigliato e le motivazioni."
           },
           {
             "title": "Richieste di riemissione redatte",
@@ -803,7 +803,7 @@
           },
           {
             "title": "Gli artigiani vengono coordinati",
-            "text": "Le richieste, con l’ambito dei lavori già definito, partono verso gli artigiani che scegliete. Le offerte che tornano vengono confrontate con il riferimento."
+            "text": "Le richieste, con l’ambito dei lavori già definito, partono verso gli artigiani che scegliete. I preventivi che tornano vengono confrontati con il riferimento."
           }
         ]
       },
@@ -943,7 +943,7 @@
       "faq": [
         {
           "question": "Otus modifica qualche decisione?",
-          "answer": "No. Per impostazione predefinita non ha potere decisionale. Spiega, riassume e redige. È anche per questo che supera più in fretta le verifiche di rischio e compliance."
+          "answer": "No. Per impostazione predefinita non ha potere decisionale. Spiega, riassume e redige. È anche per questo che supera più rapidamente le verifiche di rischio e compliance."
         },
         {
           "question": "Di cosa ha bisogno per funzionare?",
