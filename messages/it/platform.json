@@ -1,1 +1,149 @@
-{}
+{
+  "platform": {
+    "hero": {
+      "title": "Come funziona la nostra piattaforma",
+      "summary": "Trasformiamo il fascicolo sinistro nel lavoro finito: un sinistro liquidato, una fattura confrontata con i prezzi di riferimento o un rapporto danni completo. L’IA legge i documenti, la decisione viene calcolata in base alle condizioni della vostra polizza e ogni passaggio viene registrato. L’ultima parola resta al vostro team.",
+      "ctaDemo": "Prenota una demo",
+      "scene": {
+        "alt": "Tre risultati pronti: un sinistro liquidato, una fattura confrontata con i prezzi di riferimento e un rapporto danni completo",
+        "claimsDecisioning": "Un sinistro liquidato",
+        "invoiceBenchmarking": "Una fattura confrontata con il riferimento",
+        "damageReporting": "Un rapporto danni completo"
+      }
+    },
+    "outcomes": {
+      "heading": "Quattro risultati pronti",
+      "items": {
+        "dataExtraction": {
+          "title": "Un database sinistri consultabile",
+          "text": "Ogni documento letto, ogni valore messo in contesto e tracciato fino alla sua pagina, il tutto salvato in un unico database che i vostri team e la vostra IA possono usare.",
+          "link": "Data Extraction"
+        },
+        "claimsDecisioning": {
+          "title": "Un sinistro liquidato",
+          "text": "Ogni voce verificata rispetto alle condizioni di polizza, l’importo calcolato e il ragionamento messo per iscritto, pronti per la conferma del vostro liquidatore.",
+          "link": "Automated Coverage Check"
+        },
+        "invoiceBenchmarking": {
+          "title": "Una fattura confrontata con il riferimento",
+          "text": "Ogni voce confrontata con i prezzi di riferimento, le voci troppo alte contestate al fornitore e la fattura riemessa per l’importo corretto.",
+          "link": "Invoice Benchmarking"
+        },
+        "damageReporting": {
+          "title": "Un rapporto danni completo",
+          "text": "Un preventivo quantificato e l’ambito completo dei lavori dalle foto e dai documenti del cliente, già alla denuncia di sinistro.",
+          "link": "Damage Reporting"
+        }
+      }
+    },
+    "technology": {
+      "heading": "Due tecnologie, ciascuna con un solo compito",
+      "paragraphs": [
+        "Decisioni calcolate. La vostra polizza, il vostro catalogo o le vostre regole interne diventano un albero decisionale. Dati i fatti, l’esito viene calcolato, non previsto.",
+        "Agenti che sanno leggere. I sinistri arrivano come foto, PDF, scrittura a mano ed e-mail, e agenti software li trasformano in fatti. Ogni agente svolge un piccolo compito, così la competenza è garantita in ogni fase del processo."
+      ],
+      "imageAlt": "Anelli di metallo intrecciati"
+    },
+    "diagram": {
+      "heading": "Come si integrano le nostre soluzioni",
+      "intro": "Un fascicolo sinistro viene acquisito. Ne risulta un albero decisionale sottoposto ad audit. Le nostre soluzioni fanno il lavoro, e due funzioni della piattaforma lo tengono in movimento e ne tengono traccia.",
+      "input": {
+        "name": "Il fascicolo sinistro",
+        "text": "Foto, fatture, preventivi, documenti di polizza ed e-mail, da qualsiasi canale."
+      },
+      "modules": {
+        "dataExtraction": {
+          "name": "Data Extraction",
+          "text": "Legge ogni documento e costruisce un unico database strutturato e consultabile."
+        },
+        "claimsDecisioning": {
+          "name": "Automated Coverage Check",
+          "text": "Verifica ogni voce rispetto alle condizioni di polizza e calcola l’importo."
+        },
+        "invoiceBenchmarking": {
+          "name": "Invoice Benchmarking",
+          "text": "Confronta ogni fattura, offerta e preventivo con il prezzo di riferimento."
+        },
+        "damageReporting": {
+          "name": "Damage Reporting",
+          "text": "Trasforma foto e documenti in un preventivo quantificato e in un ambito dei lavori."
+        },
+        "otus": {
+          "name": "Otus, lo specialista sinistri di True Aim",
+          "text": "Spiega, riassume e redige testi per il vostro team in ogni soluzione True Aim."
+        }
+      },
+      "output": {
+        "name": "Una decisione sottoposta ad audit",
+        "text": "Una raccomandazione con i suoi calcoli, le sue prove e le sue motivazioni, confermata dal vostro liquidatore e riportata nei vostri sistemi."
+      },
+      "featuresHeading": "Funzioni della piattaforma",
+      "features": {
+        "orchestrate": {
+          "name": "Orchestrate",
+          "text": "Crea un unico fascicolo per ogni sinistro e tiene il lavoro in movimento, dalla denuncia alla chiusura. I sinistri vengono assegnati secondo le vostre regole e il carico di lavoro del momento, i solleciti partono quando i vostri trigger lo prevedono e ogni parte vede lo stato in tempo reale."
+        },
+        "prove": {
+          "name": "Prove",
+          "text": "Registra ogni decisione con le sue prove, la regola in vigore e chi l’ha presa. Ogni modifica al fascicolo è visibile. Con un clic si esporta il pacchetto di audit completo."
+        }
+      },
+      "callout": "Stessi dati. Stessa decisione. Ogni volta."
+    },
+    "fit": {
+      "heading": "True Aim si colloca sopra i vostri sistemi esistenti",
+      "paragraphs": [
+        "True Aim si colloca sopra il vostro sistema sinistri o ERP, ne legge i dati e riporta i risultati nel sistema.",
+        "Le vostre soglie, regole, assegnazioni e limiti restano nelle vostre mani, e li modificate voi stessi."
+      ],
+      "imageAlt": "Un lucchetto di metallo con il simbolo True Aim"
+    },
+    "faq": {
+      "heading": "Domande frequenti",
+      "items": [
+        {
+          "question": "L’esito è previsto dall’IA?",
+          "answer": "No. L’IA legge i documenti. La decisione in sé viene calcolata in base alle vostre condizioni o alle vostre regole, così gli stessi fatti danno sempre la stessa risposta."
+        },
+        {
+          "question": "Chi prende la decisione finale?",
+          "answer": "Il vostro team. True Aim prepara la raccomandazione e il ragionamento. L’automazione completa opera solo dove voi e la vostra autorità di vigilanza lo consentite."
+        },
+        {
+          "question": "True Aim sostituisce il nostro sistema sinistri?",
+          "answer": "No. True Aim si colloca sopra il sistema sinistri o ERP che già utilizzate e riporta i suoi risultati nel sistema. Le schermate possono rispecchiare quelle che il vostro team conosce."
+        },
+        {
+          "question": "Quali rami copre True Aim?",
+          "answer": "True Aim non è legato a un solo ramo. I sinistri auto, property, garanzia e responsabilità civile usano gli stessi elementi di base."
+        },
+        {
+          "question": "Come viene fatturato True Aim?",
+          "answer": "Per risultato, non per utente. Pagate ogni sinistro liquidato, ogni fattura confrontata con il riferimento o ogni rapporto danni completo, così i costi crescono con il valore che ricevete."
+        },
+        {
+          "question": "Come sono protetti i nostri dati?",
+          "answer": "True Aim è certificato ISO 27001 e sottoposto ad audit SOC 2 Type II. Hosting, certificazioni e protezione dei dati sono descritti nel Trust Center."
+        }
+      ]
+    },
+    "related": {
+      "heading": "Scoprite le nostre soluzioni",
+      "dataExtraction": "Data Extraction",
+      "dataExtractionText": "I vostri dati sinistri, pronti per l’IA.",
+      "claimsDecisioning": "Automated Coverage Check",
+      "claimsDecisioningText": "Sinistri liquidati in minuti, non in settimane.",
+      "invoiceBenchmarking": "Invoice Benchmarking",
+      "invoiceBenchmarkingText": "Mai più una fattura pagata troppo.",
+      "damageReporting": "Damage Reporting",
+      "damageReportingText": "Rapporti danni completi in pochi minuti.",
+      "otus": "Otus, lo specialista sinistri di True Aim",
+      "otusText": "Un esperto basato sull’IA per ogni membro del team."
+    },
+    "cta": {
+      "heading": "Pronti a vedere il lavoro finito sui vostri sinistri?",
+      "lede": "Prenotate una demo e vi mostriamo un sinistro liquidato, una fattura confrontata con il riferimento e un rapporto danni completo, con il calcolo dietro ciascuno.",
+      "button": "Prenota una demo"
+    }
+  }
+}
