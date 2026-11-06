@@ -384,6 +384,34 @@
       "ogTitle": "Développer ou acheter : ce qu’il faut exiger des fournisseurs d’IDP",
       "ogDescription": "Un cadre d’évaluation pour les assureurs : quand développer l’automatisation des sinistres, quand l’acheter et comment juger les fournisseurs objectivement.",
       "updated": "2026-11-05"
+    },
+    "/blog/ai-claims-auditability-scorecard": {
+      "title": "12 questions avant de confier un sinistre à une IA | True Aim",
+      "description": "Douze questions qui montrent si un système d’IA sinistres peut rendre compte de chacune de ses décisions, et comment True Aim répond à chacune.",
+      "h1": "La grille d’évaluation de l’auditabilité de l’IA sinistres",
+      "breadcrumb": "La grille d’évaluation de l’auditabilité",
+      "ogTitle": "La grille d’évaluation de l’auditabilité de l’IA sinistres",
+      "ogDescription": "Douze questions qui montrent si un système d’IA sinistres peut rendre compte de chacune de ses décisions, et comment True Aim répond à chacune.",
+      "updated": "2026-11-05"
+    },
+    "/blog/auditability-evidence-chains": {
+      "title": "Auditabilité de l’IA sinistres : les chaînes de preuves | True Aim",
+      "description": "Une IA sinistres avec des pistes d’audit conformes à la FINMA et à l’AI Act : provenance du champ à la source, pistes de décision et interventions capturées.",
+      "h1": "Auditabilité de l’IA sinistres : construire des chaînes de preuves que les auditeurs acceptent vraiment",
+      "breadcrumb": "Des chaînes de preuves que les auditeurs acceptent",
+      "ogTitle": "Auditabilité de l’IA sinistres : construire des chaînes de preuves que les auditeurs acceptent vraiment",
+      "ogDescription": "Construire une IA sinistres avec des pistes d’audit conformes à la FINMA et à l’AI Act.",
+      "updated": "2026-11-05"
+    },
+    "/blog/architectural-transparency-agentic-claims-operation": {
+      "title": "Transparence architecturale et organisation sinistres agentique | True Aim",
+      "description": "Un sinistre n’a jamais tenu dans une seule entreprise. L’automatisation d’hier s’arrêtait aux frontières internes. La transparence devient une garantie architecturale.",
+      "h1": "Le problème de l’automatisation des sinistres en silos",
+      "breadcrumb": "L’automatisation des sinistres en silos",
+      "ogTitle": "Le problème de l’automatisation des sinistres en silos : transparence architecturale et essor de l’organisation sinistres agentique",
+      "ogDescription": "Un sinistre n’a jamais tenu dans une seule entreprise. L’automatisation d’hier s’arrêtait aux frontières internes. La transparence devient une garantie architecturale.",
+      "updated": "2026-11-05",
+      "ogImage": "https://trueaim.ai/en/blog/architectural-transparency-agentic-claims-operation/opengraph-image"
     }
   }
 }

@@ -384,6 +384,34 @@
       "ogTitle": "Sviluppare o acquistare: cosa esigere dai fornitori di IDP",
       "ogDescription": "Un quadro di valutazione per i team assicurativi: quando sviluppare l’automazione dei sinistri, quando acquistarla e come valutare i fornitori oggettivamente.",
       "updated": "2026-11-05"
+    },
+    "/blog/ai-claims-auditability-scorecard": {
+      "title": "12 domande prima di affidare un sinistro a un’IA | True Aim",
+      "description": "Dodici domande che mostrano se un sistema di IA per i sinistri può rendere conto di ogni decisione che prende, e come True Aim risponde a ciascuna.",
+      "h1": "La scorecard di verificabilità dell’IA per i sinistri",
+      "breadcrumb": "La scorecard di verificabilità",
+      "ogTitle": "La scorecard di verificabilità dell’IA per i sinistri",
+      "ogDescription": "Dodici domande che mostrano se un sistema di IA per i sinistri può rendere conto di ogni decisione che prende, e come True Aim risponde a ciascuna.",
+      "updated": "2026-11-05"
+    },
+    "/blog/auditability-evidence-chains": {
+      "title": "Verificabilità dell’IA per i sinistri: le catene delle prove | True Aim",
+      "description": "Un’IA per i sinistri con audit trail conformi a FINMA e AI Act: provenienza dal campo alla fonte, tracce decisionali e interventi umani registrati.",
+      "h1": "Verificabilità dell’IA per i sinistri: costruire catene delle prove che i revisori accettano davvero",
+      "breadcrumb": "Catene delle prove che i revisori accettano",
+      "ogTitle": "Verificabilità dell’IA per i sinistri: costruire catene delle prove che i revisori accettano davvero",
+      "ogDescription": "Come costruire un’IA per i sinistri con audit trail conformi a FINMA e AI Act.",
+      "updated": "2026-11-05"
+    },
+    "/blog/architectural-transparency-agentic-claims-operation": {
+      "title": "Trasparenza architetturale e gestione sinistri agentica | True Aim",
+      "description": "Un sinistro non è mai vissuto entro le mura di una sola impresa. L’automazione tradizionale si fermava ai confini interni. La trasparenza diventa garanzia architetturale.",
+      "h1": "Il problema dell’automazione dei sinistri a compartimenti stagni",
+      "breadcrumb": "L’automazione dei sinistri a compartimenti stagni",
+      "ogTitle": "Il problema dell’automazione dei sinistri a compartimenti stagni: trasparenza architetturale e ascesa della gestione sinistri agentica",
+      "ogDescription": "Un sinistro non è mai vissuto entro le mura di una sola impresa. L’automazione tradizionale si fermava ai confini interni. La trasparenza diventa garanzia architetturale.",
+      "updated": "2026-11-05",
+      "ogImage": "https://trueaim.ai/en/blog/architectural-transparency-agentic-claims-operation/opengraph-image"
     }
   }
 }

@@ -384,6 +384,34 @@
       "ogTitle": "Build vs. Buy: Was Sie von IDP-Anbietern verlangen sollten",
       "ogDescription": "Ein Bewertungsraster für Versicherungsteams: wann Schadenautomatisierung selbst entwickeln, wann kaufen und wie Sie Anbieter objektiv beurteilen.",
       "updated": "2026-11-05"
+    },
+    "/blog/ai-claims-auditability-scorecard": {
+      "title": "12 Fragen, bevor Sie einer KI einen Schadenfall anvertrauen | True Aim",
+      "description": "Zwölf Fragen, die zeigen, ob ein KI-System für Schadenfälle jede seiner Entscheidungen belegen kann, und wie True Aim jede davon beantwortet.",
+      "h1": "Die Prüfbarkeits-Scorecard für KI in der Schadenbearbeitung",
+      "breadcrumb": "Die Prüfbarkeits-Scorecard",
+      "ogTitle": "Die Prüfbarkeits-Scorecard für KI in der Schadenbearbeitung",
+      "ogDescription": "Zwölf Fragen, die zeigen, ob ein KI-System für Schadenfälle jede seiner Entscheidungen belegen kann, und wie True Aim jede davon beantwortet.",
+      "updated": "2026-11-05"
+    },
+    "/blog/auditability-evidence-chains": {
+      "title": "Prüfbarkeit von Schaden-KI: Nachweisketten | True Aim",
+      "description": "Schaden-KI mit Prüfpfaden, die FINMA und EU AI Act genügen: Herkunftsnachweis vom Feld zur Quelle, Entscheidungspfade und erfasste menschliche Übersteuerungen.",
+      "h1": "Prüfbarkeit von Schaden-KI: Nachweisketten, die Prüfer tatsächlich akzeptieren",
+      "breadcrumb": "Nachweisketten, die Prüfer akzeptieren",
+      "ogTitle": "Prüfbarkeit von Schaden-KI: Nachweisketten, die Prüfer tatsächlich akzeptieren",
+      "ogDescription": "Wie Sie Schaden-KI mit Prüfpfaden bauen, die FINMA und EU AI Act genügen.",
+      "updated": "2026-11-05"
+    },
+    "/blog/architectural-transparency-agentic-claims-operation": {
+      "title": "Transparenz als Architektur: die agentische Schadenorganisation | True Aim",
+      "description": "Ein Schadenfall existierte nie innerhalb eines einzelnen Unternehmens. Alte Automatisierung endete an internen Grenzen. Transparenz wird zur architektonischen Garantie.",
+      "h1": "Das Problem mit der Schadenautomatisierung in Silos",
+      "breadcrumb": "Schadenautomatisierung in Silos",
+      "ogTitle": "Das Problem mit der Schadenautomatisierung in Silos: Architektonische Transparenz und der Aufstieg der agentischen Schadenorganisation",
+      "ogDescription": "Ein Schadenfall existierte nie innerhalb eines einzelnen Unternehmens. Alte Automatisierung endete an internen Grenzen. Transparenz wird zur architektonischen Garantie.",
+      "updated": "2026-11-05",
+      "ogImage": "https://trueaim.ai/en/blog/architectural-transparency-agentic-claims-operation/opengraph-image"
     }
   }
 }
