@@ -1,1 +1,965 @@
-{}
+{
+  "productPages": {
+    "common": {
+      "ctaDemo": "Prenota una demo",
+      "ctaEstimate": "Stima l’impatto",
+      "faqHeading": "Domande frequenti",
+      "relatedHeading": "Scoprite le nostre soluzioni"
+    },
+    "dataExtraction": {
+      "name": "Data Extraction",
+      "tagline": "I vostri dati sinistri, pronti per l’IA.",
+      "hero": {
+        "title": "Data Extraction: i vostri dati sinistri, pronti per l’IA",
+        "summary": "Gran parte di ciò che un assicuratore sa di un sinistro sta in PDF, scansioni, foto, e-mail e sistemi legacy. True Aim li legge, ne estrae le informazioni, le mette in contesto e costruisce un unico database strutturato. I vostri team e la vostra IA possono così cercare in ogni sinistro, confrontare ogni documento e agire su ciò che trovano.",
+        "scene": {
+          "alt": "Un filmato in loop di un grafo di dati sinistri sintetici. Si apre su un sinistro property e i suoi record collegati, poi li dispone in colonne intorno al sinistro, all’assicuratore e all’edificio assicurato a turno, mostrando contraente, broker, polizza, valutazioni del danno, ambiti dei lavori per categoria, fatture, documenti e foto dei danni che True Aim ha estratto.",
+          "types": {
+            "claim": "Sinistro",
+            "lossEvent": "Evento",
+            "exposure": "Rischio assicurato",
+            "policy": "Snapshot della polizza",
+            "policyholder": "Contraente",
+            "broker": "Broker",
+            "insurer": "Assicuratore",
+            "adjuster": "Liquidatore",
+            "agent": "Specialista sinistri IA",
+            "lossAssessment": "Valutazione del danno",
+            "scopeOfWork": "Ambito dei lavori",
+            "decision": "Decisione di liquidazione",
+            "invoice": "Fattura",
+            "document": "Documento",
+            "photo": "Foto del danno"
+          },
+          "source": "Letto da {document}, pagina {page}",
+          "mismatch": "Segnalato per la revisione: stesso importo e stessa data di {other}",
+          "pause": "Metti in pausa l’animazione",
+          "play": "Avvia l’animazione"
+        }
+      },
+      "keys": {
+        "heading": "Ogni documento letto",
+        "items": [
+          {
+            "label": "Ogni fonte",
+            "text": "PDF, scansioni, foto, scrittura a mano, e-mail e record nei vostri sistemi esistenti."
+          },
+          {
+            "label": "Messo in contesto",
+            "text": "Ogni valore è collegato alla polizza, al sinistro, alla parte e al fornitore a cui appartiene."
+          },
+          {
+            "label": "Un unico database",
+            "text": "Informazioni che vivevano in file e sistemi separati, ricucite insieme e consultabili."
+          },
+          {
+            "label": "Tracciabile fino alla pagina",
+            "text": "Ogni valore rimanda al documento e alla pagina da cui è stato letto."
+          }
+        ]
+      },
+      "locked": {
+        "heading": "Conoscenza sui sinistri bloccata in file statici",
+        "paragraphs": [
+          "I team sinistri possiedono anni di prove che nessun sistema può consultare. Fatture, rapporti, preventivi e corrispondenza restano file, letti una volta e poi archiviati. L’IA può lavorare solo con ciò che riesce a trovare. True Aim trasforma quell’archivio in dati, nei rami danni, auto, property, garanzie e TPA."
+        ],
+        "imageAlt": "Documenti sinistri archiviati come file statici"
+      },
+      "steps": {
+        "heading": "Dal primo documento ai dati utilizzabili",
+        "items": [
+          {
+            "title": "I documenti arrivano",
+            "text": "Da qualsiasi canale o direttamente dai vostri sistemi sinistri e documentali."
+          },
+          {
+            "title": "Le informazioni vengono lette",
+            "text": "Nomi, date, importi, voci, ricambi, categorie di lavori e dettagli del danno vengono estratti."
+          },
+          {
+            "title": "Il contesto viene aggiunto",
+            "text": "Ogni valore viene abbinato al suo sinistro, alla sua polizza, alla sua parte e al suo fornitore, poi confrontato con gli altri."
+          },
+          {
+            "title": "I dati sono pronti",
+            "text": "Strutturati, consultabili e disponibili per i vostri team, per True Aim e per la vostra IA."
+          }
+        ]
+      },
+      "systems": {
+        "heading": "I vostri sistemi, i vostri dati",
+        "paragraphs": [
+          "True Aim si colloca sopra i vostri sistemi sinistri ed ERP esistenti. Ne legge i dati e riporta risultati strutturati nel sistema. Non dovete sostituire nulla per iniziare. I dati restano vostri, con le regole e gli accessi che stabilite voi. Ogni valore estratto conserva la sua fonte, così chi lo verifica può controllare l’originale con un clic."
+        ],
+        "imageAlt": "Un lucchetto: i vostri dati restano vostri"
+      },
+      "features": {
+        "heading": "Cosa significa per il vostro team",
+        "items": [
+          {
+            "title": "Frodi e incoerenze fatte emergere",
+            "text": "Date contraddittorie, fatture ripetute e importi che non corrispondono vengono segnalati per la revisione. Il vostro team decide cosa succede dopo."
+          },
+          {
+            "title": "Prezzi dei fornitori coerenti",
+            "text": "Costruiamo riferimenti interni dal vostro storico, così lo stesso lavoro viene prezzato allo stesso modo ogni volta."
+          },
+          {
+            "title": "Rapporti danni più rapidi",
+            "text": "Foto e documenti alimentano direttamente un preventivo quantificato e un ambito dei lavori."
+          },
+          {
+            "title": "Ricerca su ogni sinistro",
+            "text": "Trovate schemi tra fornitori, regioni e rami che nessun singolo file mostra."
+          },
+          {
+            "title": "Ogni valore tracciabile",
+            "text": "Ogni cifra conserva il documento di origine e la pagina, pronta per l’audit."
+          },
+          {
+            "title": "Pronti per la vostra IA",
+            "text": "Dati sinistri puliti e strutturati che i vostri altri strumenti e modelli possono usare."
+          }
+        ]
+      },
+      "otus": {
+        "text": "Data Extraction dà a Otus, il nostro specialista sinistri IA, tutto ciò di cui ha bisogno per dare il meglio nel vostro ambiente.",
+        "link": "Scopri Otus"
+      },
+      "faq": [
+        {
+          "question": "Quali documenti può leggere True Aim?",
+          "answer": "PDF nativi e scansionati, foto, scrittura a mano, e-mail e record dei sistemi sinistri ed ERP. Questo copre fatture, preventivi, rapporti, moduli e corrispondenza."
+        },
+        {
+          "question": "Come sappiamo che i dati sono corretti?",
+          "answer": "Ogni valore rimanda alla pagina da cui proviene. I valori in contraddizione o fuori dagli intervalli attesi vengono segnalati perché una persona li controlli, invece di essere trasmessi."
+        },
+        {
+          "question": "True Aim decide se un sinistro è fraudolento?",
+          "answer": "No. True Aim fa emergere incoerenze e schemi che meritano uno sguardo più attento. Il vostro team li esamina e decide."
+        },
+        {
+          "question": "Dobbiamo sostituire il nostro sistema sinistri?",
+          "answer": "No. True Aim lavora accanto ai vostri sistemi esistenti, ne legge i dati e riporta i risultati nel sistema."
+        }
+      ],
+      "cta": {
+        "heading": "Provatelo sui vostri documenti",
+        "lede": "Scoprite cosa True Aim estrae dai vostri file, con ogni valore tracciato fino alla sua fonte.",
+        "buttonDemo": "Prenota una demo"
+      }
+    },
+    "claimsDecisioning": {
+      "name": "Automated Coverage Check",
+      "tagline": "Sinistri liquidati in minuti, non in settimane.",
+      "hero": {
+        "title": "Automated Coverage Check: sinistri liquidati in minuti, non in settimane",
+        "summary": "Verifichiamo le condizioni di polizza rispetto ai fatti del caso e raccomandiamo se il sinistro vada accolto o respinto. Se viene accolto, l’importo dovuto viene calcolato voce per voce, e il vostro liquidatore prende la decisione finale.",
+        "scene": {
+          "alt": "Un sinistro come lo vede il liquidatore: le voci raggruppate per esito, ciascuna con l’importo coperto, e l’indennizzo",
+          "title": "Sinistro danno da acqua",
+          "reference": "Sinistro 62850",
+          "columns": {
+            "description": "Descrizione",
+            "quantity": "Q.tà",
+            "claimed": "Richiesto",
+            "covered": "Coperto"
+          },
+          "groups": [
+            {
+              "kind": "approved",
+              "label": "Coperto",
+              "total": "4.086,33",
+              "lines": [
+                {
+                  "description": "Sostituzione pavimento",
+                  "quantity": "18 × m²",
+                  "claimed": "2.860,00",
+                  "covered": "2.860,00"
+                },
+                {
+                  "description": "Asciugatura",
+                  "quantity": "3 × giorno",
+                  "claimed": "540,00",
+                  "covered": "540,00"
+                },
+                {
+                  "description": "Intonaco e pittura",
+                  "quantity": "2 × parete",
+                  "claimed": "686,33",
+                  "covered": "686,33"
+                }
+              ]
+            },
+            {
+              "kind": "denied",
+              "label": "Escluso",
+              "total": "0,00",
+              "lines": [
+                {
+                  "description": "Lavastoviglie, sostituzione",
+                  "quantity": "1 × pezzo",
+                  "claimed": "1.126,30",
+                  "covered": "0,00"
+                }
+              ]
+            },
+            {
+              "kind": "referred",
+              "label": "In attesa di esame",
+              "total": "321,10",
+              "lines": [
+                {
+                  "description": "Hotel",
+                  "quantity": "4 × notte",
+                  "claimed": "642,18",
+                  "covered": "321,10"
+                }
+              ]
+            }
+          ],
+          "deductibleLabel": "Franchigia",
+          "deductible": "150,00",
+          "payoutLabel": "Indennizzo",
+          "payout": "3.936,33"
+        }
+      },
+      "keys": {
+        "heading": "Un sinistro liquidato in meno di 2 minuti",
+        "items": [
+          {
+            "label": "Stessi fatti, stessa risposta",
+            "text": "L’importo viene calcolato in base alle condizioni, quindi non cambia da un liquidatore all’altro."
+          },
+          {
+            "label": "Una motivazione su ogni voce",
+            "text": "Ogni importo cita la clausola o la regola che lo sostiene."
+          },
+          {
+            "label": "La decisione finale resta al vostro team",
+            "text": "L’automazione completa opera solo dove voi e la vostra autorità di vigilanza lo consentite."
+          }
+        ]
+      },
+      "features": {
+        "heading": "Ci occupiamo dei documenti, dei dati e dei calcoli",
+        "items": [
+          {
+            "title": "Ogni documento letto",
+            "text": "Fatture, preventivi, polizze e foto diventano dati strutturati."
+          },
+          {
+            "title": "Prove verificate per prime",
+            "text": "Firme, metadati e cifre vengono controllati prima di calcolare qualsiasi importo."
+          },
+          {
+            "title": "Ogni voce rispetto alla polizza",
+            "text": "Ricambi, manodopera e spese vengono separati, ciascuno con la sua clausola."
+          },
+          {
+            "title": "I calcoli eseguiti",
+            "text": "Franchigia, massimali, limiti, responsabilità e migliorie, elaborati nell’ordine giusto."
+          },
+          {
+            "title": "Ogni cifra tracciata",
+            "text": "Ogni numero rimanda al punto del documento da cui proviene."
+          },
+          {
+            "title": "Ogni modifica spiegata",
+            "text": "Quando un liquidatore modifica una voce, la motivazione viene registrata."
+          }
+        ]
+      },
+      "technology": {
+        "cap": "La tecnologia",
+        "heading": "Calcolato, non previsto",
+        "paragraphs": [
+          "Le condizioni della vostra polizza, il vostro catalogo o le vostre regole interne vengono configurati in un albero decisionale deterministico. Dati i fatti del caso, l’esito viene calcolato in base alle condizioni. Gli stessi fatti danno sempre la stessa risposta, e la risposta si può spiegare clausola per clausola.",
+          "A leggere sono gli agenti. Foto, PDF, scrittura a mano ed e-mail diventano i fatti di cui l’albero decisionale ha bisogno. Ogni agente svolge un piccolo compito, così la competenza è garantita in ogni fase del processo."
+        ],
+        "imageAlt": "Anelli di metallo intrecciati"
+      },
+      "flow": {
+        "heading": "Ogni sinistro avanza, dalla denuncia alla liquidazione",
+        "scene": {
+          "alt": "I sinistri arrivano da quattro canali, confluiscono in un unico fascicolo, e ogni parte viene aggiornata da lì",
+          "channelsLabel": "Arriva da qualsiasi canale",
+          "channels": [
+            "WhatsApp",
+            "E-mail",
+            "Portale clienti",
+            "Riparatore"
+          ],
+          "record": {
+            "title": "Un unico fascicolo sinistro",
+            "fields": [
+              {
+                "label": "Richiedente",
+                "value": "A. Meier"
+              },
+              {
+                "label": "Polizza",
+                "value": "HOM-2026-8834"
+              },
+              {
+                "label": "Evento",
+                "value": "Danno da acqua, cucina"
+              },
+              {
+                "label": "Documenti",
+                "value": "4 letti, 0 mancanti"
+              }
+            ],
+            "status": "Contestualizzato"
+          },
+          "partiesLabel": "Ogni parte informata",
+          "parties": [
+            {
+              "name": "Cliente",
+              "text": "Riferimento inviato, pagina di stato attiva"
+            },
+            {
+              "name": "Broker",
+              "text": "Fascicolo condiviso, niente da reinserire"
+            },
+            {
+              "name": "Riparatore",
+              "text": "Preventivo richiesto, atteso venerdì"
+            },
+            {
+              "name": "Liquidatore",
+              "text": "Assegnato, documenti già letti"
+            }
+          ]
+        }
+      },
+      "routing": {
+        "heading": "Meno lavoro amministrativo per ogni sinistro",
+        "items": [
+          {
+            "label": "Un fascicolo per sinistro",
+            "text": "Denuncia, foto, polizza e dati di sistema in un unico posto."
+          },
+          {
+            "label": "Assegnazione automatica",
+            "text": "I sinistri vanno al liquidatore giusto secondo le vostre regole e il carico di lavoro del momento."
+          },
+          {
+            "label": "Niente solleciti a mano",
+            "text": "I solleciti partono quando i vostri trigger lo prevedono."
+          },
+          {
+            "label": "Ogni parte informata",
+            "text": "Cliente, broker e riparatore vedono ciascuno lo stato in tempo reale."
+          }
+        ]
+      },
+      "record": {
+        "heading": "Un registro completo di ogni decisione",
+        "scene": {
+          "alt": "Il fascicolo sinistro: ogni azione in ordine con il suo attore e il suo hash, e una vista forense raggruppata per attore",
+          "title": "Fascicolo del sinistro 62850",
+          "subtitle": "Danno da acqua",
+          "tabs": {
+            "timeline": "Cronologia",
+            "forensic": "Vista forense"
+          },
+          "phases": [
+            "Ricevuto",
+            "Letto",
+            "Verificato",
+            "Calcolato",
+            "Deciso",
+            "Liquidato"
+          ],
+          "rows": [
+            {
+              "time": "09:14:02",
+              "actor": "agent",
+              "who": "Agente",
+              "text": "Quattro documenti letti e classificati",
+              "hash": "a7f3"
+            },
+            {
+              "time": "09:14:19",
+              "actor": "agent",
+              "who": "Agente",
+              "text": "Controllo di integrità delle prove superato",
+              "hash": "4c19"
+            },
+            {
+              "time": "09:14:31",
+              "actor": "engine",
+              "who": "Motore di regole",
+              "text": "Ogni voce verificata rispetto alle condizioni, clausola 4.2 applicata",
+              "hash": "b028"
+            },
+            {
+              "time": "09:14:33",
+              "actor": "engine",
+              "who": "Motore di regole",
+              "text": "Indennizzo calcolato: 3.936,33",
+              "hash": "3f6a"
+            },
+            {
+              "time": "09:21:40",
+              "actor": "human",
+              "who": "Liquidatore",
+              "text": "Voce 5 confermata, due notti oltre il massimale messe in attesa",
+              "hash": "e5d1"
+            },
+            {
+              "time": "09:21:41",
+              "actor": "engine",
+              "who": "Motore di regole",
+              "text": "Fascicolo sigillato, catena verificata",
+              "hash": "c90d"
+            }
+          ],
+          "groups": {
+            "agent": "Agenti",
+            "engine": "Motore di regole",
+            "human": "Liquidatore"
+          },
+          "actions": {
+            "one": "azione",
+            "many": "azioni"
+          },
+          "verified": "Catena verificata, 6 hash su 6 corrispondono",
+          "exportLabel": "Esporta dossier audit"
+        }
+      },
+      "otus": {
+        "cap": "Otus",
+        "heading": "Un esperto basato sull’IA per ogni membro del team",
+        "paragraphs": [
+          "Otus affianca ogni persona del vostro team. Spiega qualsiasi decisione voce per voce, redige la lettera o il passaggio di consegne e pianifica la giornata, a partire dal sinistro, dalla polizza e dal fascicolo.",
+          "I liquidatori chiedono in linguaggio semplice, a voce o per iscritto, e ottengono subito una risposta. Non ha potere decisionale: decide il vostro team."
+        ],
+        "link": "Scopri Otus",
+        "imageAlt": "Il simbolo True Aim in vetro e metallo"
+      },
+      "faq": [
+        {
+          "question": "L’esito è previsto dall’IA?",
+          "answer": "No. Le condizioni della vostra polizza, il vostro catalogo o le vostre regole vengono trasformati in un albero decisionale. L’importo viene calcolato a partire dai fatti, così gli stessi fatti danno sempre la stessa risposta."
+        },
+        {
+          "question": "Dove viene usata l’IA?",
+          "answer": "Per leggere il sinistro. Gli agenti trasformano foto, PDF, scrittura a mano ed e-mail in fatti. A ogni agente è assegnato un piccolo compito, così ogni passaggio è chiaramente visibile."
+        },
+        {
+          "question": "Chi prende la decisione finale?",
+          "answer": "Il vostro team. Per impostazione predefinita, True Aim prepara una raccomandazione con il ragionamento completo perché una persona la confermi. L’automazione completa è disponibile solo dove voi e la vostra autorità di vigilanza lo consentite."
+        },
+        {
+          "question": "Cosa succede quando qualcosa è sbagliato?",
+          "answer": "Ogni ipotesi è a schermo e può essere modificata. Ogni modifica registra la sua motivazione. L’errore viene corretto nel passaggio in cui si è verificato."
+        },
+        {
+          "question": "Possiamo lavorare con le nostre regole invece che con le condizioni di polizza?",
+          "answer": "Sì. I cataloghi di settore e le vostre regole aziendali funzionano allo stesso modo delle condizioni di polizza. Un esempio sono le regole sull’usura normale per i veicoli restituiti a fine leasing."
+        },
+        {
+          "question": "A quali normative è mappato il registro?",
+          "answer": "DORA, l’AI Act (regolamento europeo sull’IA) e le norme nazionali, tra cui FINMA, BaFin, NAIC e POPIA. La vista forense del fascicolo sinistro mostra ogni azione per attore, così la responsabilità è visibile per ogni decisione."
+        },
+        {
+          "question": "Sostituisce il nostro sistema sinistri?",
+          "answer": "No. L’Automated Coverage Check di True Aim si colloca sopra il sistema sinistri o ERP che utilizzate, ne legge il sinistro e vi riporta la raccomandazione."
+        },
+        {
+          "question": "Che cos’è il Decision Dossier?",
+          "answer": "Il registro di ogni decisione: gli input, le clausole applicate, la traccia del calcolo, i collegamenti alle prove e chi ha confermato l’esito. Si esporta come un unico dossier di audit."
+        }
+      ],
+      "cta": {
+        "heading": "Scoprite la verifica automatica della copertura sui vostri sinistri",
+        "lede": "Prenotate una demo con i vostri sinistri, oppure iniziate con i vostri numeri nella Stima dell’impatto.",
+        "buttonDemo": "Prenota una demo",
+        "buttonEstimate": "Stima l’impatto"
+      }
+    },
+    "invoiceBenchmarking": {
+      "name": "Invoice Benchmarking",
+      "tagline": "Mai più una fattura pagata troppo.",
+      "hero": {
+        "title": "Invoice Benchmarking: mai più una fattura pagata troppo",
+        "summary": "Ogni fattura, preventivo e stima viene confrontato con il prezzo di riferimento, per ramo e per regione. Il vostro team vede quali voci sono troppo alte, di quanto e perché, con la richiesta di riemissione già redatta. Le fatture di importo minore non passano più senza controllo, e ogni risparmio viene registrato voce per voce.",
+        "scene": {
+          "alt": "Una fattura con ogni voce colorata rispetto al prezzo di riferimento, e una richiesta di riemissione redatta per la voce troppo alta",
+          "title": "Fattura INV-2204",
+          "subtitle": "Carrosserie Nord, Lausanne",
+          "count": "5 voci",
+          "lines": [
+            {
+              "kind": "denied",
+              "description": "Verniciatura completa",
+              "amount": "1.840,00"
+            },
+            {
+              "kind": "referred",
+              "description": "Pannello, porta posteriore",
+              "amount": "620,00"
+            },
+            {
+              "kind": "approved",
+              "description": "Manodopera, 6,5 h",
+              "amount": "715,00"
+            },
+            {
+              "kind": "approved",
+              "description": "Ricambi, clip paraurti",
+              "amount": "48,00"
+            },
+            {
+              "kind": "approved",
+              "description": "Materiali di verniciatura",
+              "amount": "210,00"
+            }
+          ],
+          "totalLabel": "Totale fattura",
+          "total": "3.433,00",
+          "summaryLabel": "Rispetto al riferimento",
+          "action": {
+            "title": "Richiesta di riemissione redatta",
+            "text": "Verniciatura completa: 1.840,00 contro 1.440,00 attesi",
+            "saveLabel": "Risparmio",
+            "save": "400"
+          },
+          "rows": [
+            {
+              "kind": "approved",
+              "label": "Nella norma",
+              "count": "3 voci"
+            },
+            {
+              "kind": "referred",
+              "label": "Da verificare",
+              "count": "1 voce"
+            },
+            {
+              "kind": "denied",
+              "label": "Sopra il riferimento",
+              "count": "1 voce"
+            }
+          ]
+        }
+      },
+      "keys": {
+        "heading": "Ogni fattura confrontata con il riferimento",
+        "items": [
+          {
+            "label": "Ogni fattura",
+            "text": "Confrontata con le tariffe di riferimento di ogni ramo e regione."
+          },
+          {
+            "label": "Ciò che conta, in evidenza",
+            "text": "Rosso, giallo o verde su ogni voce, così chi revisiona vede subito cosa richiede attenzione."
+          },
+          {
+            "label": "Equo per ogni regione",
+            "text": "I prezzi sono definiti per regione, così i prezzi di una zona costosa non vengono segnalati come eccessivi."
+          },
+          {
+            "label": "Ogni risparmio registrato",
+            "text": "L’importo originale, l’importo rettificato e la motivazione, voce per voce."
+          }
+        ]
+      },
+      "unchecked": {
+        "heading": "Le fatture di importo minore non passano più senza controllo",
+        "paragraphs": [
+          "La maggior parte dei fornitori e degli artigiani non pubblica alcun listino. Le fatture piccole o vengono inviate a un perito esterno, che conviene solo per gli importi elevati, o vengono pagate così come sono.",
+          "Una tariffa fissa per fattura rende conveniente controllare ogni fattura, comprese quelle piccole che oggi nessuno apre."
+        ],
+        "imageAlt": "Anelli di vetro collegati"
+      },
+      "benchmark": {
+        "cap": "Definire il riferimento",
+        "heading": "I nostri dati, o un motore costruito dai vostri",
+        "paragraphs": [
+          "A seconda del vostro mercato, True Aim fornisce dati di riferimento propri fin dal primo giorno oppure costruisce un motore di riferimento dai vostri dati.",
+          "In Svizzera il riferimento si basa su oltre 100.000 fatture di sinistri property. In altri mercati True Aim lo costruisce con partner locali e dai dati che già possedete.",
+          "In entrambi i casi, ogni voce viene confrontata con quanto quel lavoro dovrebbe costare per quella categoria in quella regione. Il riferimento continua a imparare dalle fatture che accettate."
+        ],
+        "imageAlt": "Una freccia al centro di un bersaglio di metallo"
+      },
+      "lineBench": {
+        "heading": "Come True Aim confronta voce per voce",
+        "scene": {
+          "alt": "Tre voci di fattura, una espansa per mostrare quanto si colloca sopra l’intervallo atteso per la sua categoria e la sua regione",
+          "label": "Fattura INV-2204",
+          "rangeLabel": "Intervallo atteso",
+          "axis": {
+            "low": "Più basso",
+            "high": "Più alto"
+          },
+          "bars": [
+            10,
+            18,
+            30,
+            48,
+            68,
+            86,
+            96,
+            86,
+            68,
+            48,
+            30,
+            18,
+            10
+          ],
+          "lines": [
+            {
+              "kind": "approved",
+              "description": "Manodopera, 6,5 h",
+              "status": "Nella norma",
+              "amount": "715,00",
+              "range": "Atteso per questa categoria in questa regione: da 650,00 a 780,00",
+              "position": 51,
+              "marker": "+1%",
+              "foot": [
+                {
+                  "label": "Mediana",
+                  "value": "708,00"
+                },
+                {
+                  "label": "Scostamento",
+                  "value": "Entro l’intervallo atteso"
+                }
+              ]
+            },
+            {
+              "kind": "denied",
+              "description": "Verniciatura completa",
+              "status": "28% sopra il valore atteso",
+              "amount": "1.840,00",
+              "range": "Atteso per questa categoria in questa regione: da 1.320,00 a 1.560,00",
+              "position": 76,
+              "marker": "+28%",
+              "foot": [
+                {
+                  "label": "Mediana",
+                  "value": "1.440,00"
+                },
+                {
+                  "label": "Richiesta di riemissione",
+                  "value": "Redatta",
+                  "ok": true
+                },
+                {
+                  "label": "Risparmiato",
+                  "value": "400,00",
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "kind": "approved",
+              "description": "Materiali di verniciatura",
+              "status": "Nella norma",
+              "amount": "210,00",
+              "range": "Atteso per questa categoria in questa regione: da 190,00 a 230,00",
+              "position": 46,
+              "marker": "-3%",
+              "foot": [
+                {
+                  "label": "Mediana",
+                  "value": "216,00"
+                },
+                {
+                  "label": "Scostamento",
+                  "value": "Entro l’intervallo atteso"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "features": {
+        "heading": "Cosa significa per il vostro team",
+        "items": [
+          {
+            "title": "Un riferimento costruito per voi",
+            "text": "Dove esistono dati di riferimento, True Aim li usa. Dove non esistono, True Aim ne costruisce uno dai vostri dati."
+          },
+          {
+            "title": "Scostamento dal riferimento",
+            "text": "Quanto ogni voce si discosta dall’intervallo atteso, non solo il fatto che lo superi."
+          },
+          {
+            "title": "Tutto a confronto",
+            "text": "Ogni preventivo per lo stesso lavoro fianco a fianco, con un fornitore consigliato e le motivazioni."
+          },
+          {
+            "title": "Richieste di riemissione redatte",
+            "text": "Le voci contestate finiscono in un’e-mail e in un rapporto già redatti, pronti da inviare al fornitore."
+          },
+          {
+            "title": "Scorecard dei fornitori",
+            "text": "Ogni fornitore vede il proprio storico su prezzo, tempi e tasso di segnalazioni."
+          },
+          {
+            "title": "Un riferimento che continua a imparare",
+            "text": "Le fatture accettate rientrano nel riferimento, così gli intervalli seguono i prezzi di oggi."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "Da dove vengono i dati sui prezzi?",
+          "answer": "In Svizzera, da oltre 100.000 fatture di sinistri property, raggruppate per categoria di lavori e per regione. In altri mercati True Aim lavora con partner per costruire il riferimento dai vostri dati."
+        },
+        {
+          "question": "Controlliamo solo le fatture sopra un certo importo. Perché cambiare?",
+          "answer": "La maggior parte dei sovrapprezzi sta sotto la soglia della perizia esterna. Una tariffa fissa per fattura rende conveniente controllare le fatture di importo minore che oggi nessuno apre."
+        },
+        {
+          "question": "Come vediamo quanto fa risparmiare?",
+          "answer": "Una dashboard mostra quante fatture sono passate, quanto è stato risparmiato su ciascuna e quanto avete pagato per la piattaforma. Il ritorno è visibile in ogni momento."
+        },
+        {
+          "question": "Dobbiamo sostituire il nostro sistema sinistri?",
+          "answer": "No. L’Invoice Benchmarking di True Aim lavora accanto ai sistemi che già utilizzate e riporta gli importi rettificati nel sistema."
+        }
+      ],
+      "cta": {
+        "heading": "Dimostratelo sulle vostre fatture",
+        "lede": "Inviateci una serie di fatture passate e vi mostriamo quanto avreste risparmiato. Oppure lasciate che costruiamo il vostro riferimento e lo testiamo sulle prossime fatture in arrivo.",
+        "buttonDemo": "Prenota una demo"
+      }
+    },
+    "damageReporting": {
+      "name": "Damage Reporting",
+      "tagline": "Rapporti danni completi in pochi minuti.",
+      "hero": {
+        "title": "Damage Reporting: rapporti danni completi in pochi minuti",
+        "summary": "Producete una stima del danno e l’ambito completo dei lavori già alla denuncia di sinistro, dalle foto e dai documenti che il vostro cliente invia. Prezzate il danno per regione ed elencate ogni categoria di lavori e ogni attività nell’ordine in cui i lavori devono procedere. Mandate i periti sul posto solo dove una visita cambia la risposta.",
+        "scene": {
+          "alt": "Quattro foto diventano un rapporto danni quantificato e un ambito dei lavori il primo giorno",
+          "photosLabel": "4 foto ricevute",
+          "files": [
+            {
+              "name": "kitchen_01.jpg",
+              "meta": "2,4 MB, letta"
+            },
+            {
+              "name": "kitchen_02.jpg",
+              "meta": "2,1 MB, letta"
+            },
+            {
+              "name": "floor_03.jpg",
+              "meta": "1,8 MB, letta"
+            },
+            {
+              "name": "wall_04.jpg",
+              "meta": "2,6 MB, letta"
+            }
+          ],
+          "title": "Rapporto danni",
+          "subtitle": "Danno da acqua, cucina. Ambito dei lavori",
+          "lines": [
+            {
+              "item": "Pavimento, laminato",
+              "quantity": "14 m²",
+              "amount": "1.260"
+            },
+            {
+              "item": "Battiscopa",
+              "quantity": "9 m",
+              "amount": "210"
+            },
+            {
+              "item": "Attrezzatura di asciugatura",
+              "quantity": "5 giorni",
+              "amount": "640"
+            },
+            {
+              "item": "Parete, ritinteggiatura",
+              "quantity": "12 m²",
+              "amount": "340"
+            }
+          ],
+          "estimateLabel": "Preventivo",
+          "estimate": "2.450"
+        }
+      },
+      "steps": {
+        "heading": "Dalla prima foto\nal rapporto completo",
+        "items": [
+          {
+            "title": "Il sinistro arriva",
+            "text": "Via WhatsApp, e-mail, modulo web o telefono. Gli elementi mancanti vengono segnalati mentre il cliente è ancora in linea."
+          },
+          {
+            "title": "Il danno viene letto",
+            "text": "Tipo di danno, area interessata e materiali vengono letti dalle foto e prezzati per regione."
+          },
+          {
+            "title": "I lavori vengono definiti",
+            "text": "Ogni categoria di lavori necessaria, dall’asciugatura e dall’intonacatura fino alle coperture e ai serramenti, nell’ordine in cui i lavori devono procedere."
+          },
+          {
+            "title": "Gli artigiani vengono coordinati",
+            "text": "Le richieste, con l’ambito dei lavori già definito, partono verso gli artigiani che scegliete. I preventivi che tornano vengono confrontati con il riferimento."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "True Aim sostituisce i nostri periti?",
+          "answer": "No. Il Damage Reporting di True Aim dà ai vostri periti una stima e un ambito dei lavori il primo giorno, con una nota su ciò che va ancora verificato di persona. I sopralluoghi vanno dove cambiano la risposta."
+        },
+        {
+          "question": "Cosa deve inviare il cliente?",
+          "answer": "Foto, i documenti che ha e una descrizione con parole sue. I dettagli già presenti in polizza vengono compilati al posto suo."
+        },
+        {
+          "question": "Come viene prezzata la stima?",
+          "answer": "In base alle tariffe praticate da ogni categoria di artigiani in quella regione, con gli stessi dati di riferimento dell’Invoice Benchmarking di True Aim."
+        },
+        {
+          "question": "True Aim può partire da una perizia?",
+          "answer": "Sì. Un rapporto di terzi, un preventivo o una perizia possono essere il punto di partenza. Il Damage Reporting di True Aim funziona quindi anche dove non gestite voi stessi il percorso del cliente."
+        }
+      ],
+      "cta": {
+        "heading": "Scoprite un rapporto danni costruito dalle vostre foto",
+        "lede": "Prenotate una demo e portate un sinistro recente.",
+        "buttonDemo": "Prenota una demo"
+      }
+    },
+    "otus": {
+      "name": "Otus, lo specialista sinistri di True Aim",
+      "tagline": "Un esperto basato sull’IA per ogni membro del team.",
+      "hero": {
+        "title": "Otus, lo specialista sinistri di True Aim",
+        "summary": "Otus è un esperto basato sull’IA per ogni membro del team, in ogni soluzione True Aim. Chiedete a Otus qualsiasi cosa su un sinistro, a voce o per iscritto, e la risposta arriva dal sinistro, dalla polizza e dal fascicolo. Otus redige, spiega e pianifica, e non ha potere decisionale: decide il vostro team."
+      },
+      "prompts": {
+        "label": "Otus: scegliete uno scenario e guardate la risposta",
+        "youLabel": "Tu",
+        "otusLabel": "Otus",
+        "items": [
+          {
+            "id": "plan",
+            "tab": "Pianificare la giornata",
+            "prompt": "Otus, oggi devo smaltire l’arretrato. Da dove comincio?",
+            "answer": [
+              "Hai 14 sinistri aperti. Sei sono pronti per la conferma: la raccomandazione è completa e non manca nulla, circa 20 minuti in totale. Tre aspettano i riparatori, i solleciti sono partiti alle 08:30. Due hanno bisogno di documenti dal cliente, sollecitati stamattina.",
+              "Ne restano tre per il tuo giudizio: 62850 (notti in hotel oltre il massimale), 64812 (causa contestata) e 64799 (due preventivi molto distanti). Inizia da questi tre finché sei fresco, poi conferma i sei."
+            ],
+            "actions": [
+              "Apri 62850",
+              "Mostra i sei"
+            ]
+          },
+          {
+            "id": "handover",
+            "tab": "Passare un sinistro",
+            "prompt": "Redigi un’e-mail di passaggio di consegne per il sinistro 5964 al mio collega del ramo property.",
+            "answer": [
+              "Bozza pronta. Oggetto: Passaggio di consegne, sinistro 5964, garanzia auto, J. Odermatt. Cosa è successo: denunciato il 3 ottobre, cinque documenti letti, turbocompressore e manodopera accolti, olio e filtro esclusi ai sensi della clausola 2.4, auto di cortesia messa in attesa al massimale di cinque giorni.",
+              "Cosa resta aperto: la fattura rivista dell’officina è attesa venerdì. Prossimo passo: confermare i giorni di cortesia appena arriva. Il fascicolo completo è collegato."
+            ],
+            "actions": [
+              "Invia da Gmail",
+              "Copia"
+            ]
+          },
+          {
+            "id": "explain",
+            "tab": "Spiegare una decisione",
+            "prompt": "Perché la voce 4 del sinistro 62850 è stata esclusa? Il cliente lo chiede.",
+            "answer": [
+              "La voce 4 è la sostituzione della lavastoviglie, 1.126,30. La polizza copre il danno causato dall’acqua, non l’apparecchio che lo ha causato: clausola 4.2, cause escluse. La fattura e il rapporto dell’idraulico indicano entrambi la lavastoviglie come origine della perdita.",
+              "Ecco una risposta al cliente in linguaggio semplice, con la citazione della clausola. Nulla viene inviato finché non lo invii tu."
+            ],
+            "actions": [
+              "Apri la bozza",
+              "Mostra la clausola 4.2"
+            ]
+          }
+        ]
+      },
+      "keys": {
+        "heading": "Un collega per tutti",
+        "items": [
+          {
+            "label": "In qualsiasi strumento",
+            "text": "Il vostro sistema sinistri, la vostra casella di posta e ogni soluzione True Aim."
+          },
+          {
+            "label": "Gestisce l’intero sinistro",
+            "text": "Sinistro, cliente e polizza, tutto in una sola conversazione."
+          },
+          {
+            "label": "Risponde in linguaggio semplice",
+            "text": "Perché una voce è stata rifiutata, con parole di tutti i giorni e con la clausola."
+          }
+        ]
+      },
+      "features": {
+        "heading": "Cosa porta Otus al vostro team",
+        "items": [
+          {
+            "title": "Pianificare la giornata",
+            "text": "Cosa richiede un’azione adesso, cosa aspetta altri e quali scadenze sono vicine."
+          },
+          {
+            "title": "Passaggi di consegne",
+            "text": "Un riepilogo del sinistro fino a oggi, per una sostituzione ferie o un nuovo liquidatore, in un unico messaggio."
+          },
+          {
+            "title": "Lettere ed e-mail",
+            "text": "Bozze per clienti, riparatori e colleghi, con l’intero sinistro sotto gli occhi."
+          },
+          {
+            "title": "Spiegare una decisione",
+            "text": "Perché una voce è stata rifiutata e quale clausola si applica, pronto da inviare al cliente."
+          },
+          {
+            "title": "Mettersi al passo",
+            "text": "Un breve briefing su qualsiasi sinistro, senza nulla da cercare."
+          },
+          {
+            "title": "Controllare una fattura",
+            "text": "Quali voci superano il riferimento e cosa dice la richiesta di riemissione."
+          },
+          {
+            "title": "Leggere un rapporto danni",
+            "text": "Cosa mostrano le foto, cosa è prezzato e cosa richiede ancora un sopralluogo."
+          },
+          {
+            "title": "Lavorare nei vostri sistemi",
+            "text": "Legge e agisce nel vostro sistema sinistri e nel vostro archivio documentale."
+          }
+        ],
+        "imageAlt": "Il simbolo True Aim in vetro e metallo"
+      },
+      "faqHeading": "Domande su Otus",
+      "faq": [
+        {
+          "question": "Otus modifica qualche decisione?",
+          "answer": "No. Per impostazione predefinita non ha potere decisionale. Spiega, riassume e redige. È anche per questo che supera più rapidamente le verifiche di rischio e compliance."
+        },
+        {
+          "question": "Di cosa ha bisogno per funzionare?",
+          "answer": "Lavora sopra Automated Coverage Check, Invoice Benchmarking e Damage Reporting, dove può spiegare ogni raccomandazione voce per voce."
+        },
+        {
+          "question": "Quali lingue parla?",
+          "answer": "I liquidatori possono parlare o scrivere in qualsiasi lingua."
+        }
+      ],
+      "cta": {
+        "heading": "Incontrate Otus sui vostri sinistri",
+        "lede": "Prenotate una demo e guardate Otus spiegare una raccomandazione voce per voce.",
+        "buttonDemo": "Prenota una demo",
+        "buttonClaims": "Automated Coverage Check"
+      }
+    }
+  }
+}

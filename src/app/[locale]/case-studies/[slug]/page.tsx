@@ -13,8 +13,8 @@ import {
   Quote,
   TrendingUp,
 } from "lucide-react";
-import { getCaseStudy, caseStudies } from "@/data/case-studies";
-import { productPillColors, productNames } from "@/lib/product-styles";
+import { getCaseStudy, caseStudies, localizeCaseStudy, type CaseStudy, type CaseStudyCopy } from "@/data/case-studies";
+import { productPillColors } from "@/lib/product-styles";
 import { ButtonLink } from "@/components/brand/Button";
 import { GridPattern } from "@/components/brand/GridPattern";
 
@@ -30,7 +30,11 @@ export default function CaseStudyPage() {
   const t = useTranslations("caseStudies");
   const params = useParams();
   const slug = params.slug as string;
-  const study = getCaseStudy(slug);
+  // The locale's copy for a study lives under caseStudies.studies.<slug>; the data file keeps the English.
+  const localize = (cs: CaseStudy) =>
+    localizeCaseStudy(cs, t.has(`studies.${cs.slug}`) ? (t.raw(`studies.${cs.slug}`) as CaseStudyCopy) : undefined);
+  const base = getCaseStudy(slug);
+  const study = base ? localize(base) : undefined;
 
   if (!study) {
     return (
@@ -52,9 +56,9 @@ export default function CaseStudyPage() {
 
   // Find next and previous case studies
   const currentIndex = caseStudies.findIndex((cs) => cs.slug === slug);
-  const prevStudy = currentIndex > 0 ? caseStudies[currentIndex - 1] : null;
+  const prevStudy = currentIndex > 0 ? localize(caseStudies[currentIndex - 1]) : null;
   const nextStudy =
-    currentIndex < caseStudies.length - 1 ? caseStudies[currentIndex + 1] : null;
+    currentIndex < caseStudies.length - 1 ? localize(caseStudies[currentIndex + 1]) : null;
 
   return (
     <div className="min-h-screen">
@@ -105,7 +109,7 @@ export default function CaseStudyPage() {
                   href={productLinks[product]}
                   className={`text-sm px-3 py-1.5 font-medium ${productPillColors[product]}`}
                 >
-                  {productNames[product]}
+                  {t(`detail.productNames.${product}`)}
                 </Link>
               ))}
               {study.timeline && (

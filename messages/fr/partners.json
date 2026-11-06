@@ -2,176 +2,214 @@
   "partners": {
     "yarowa": {
       "hero": {
-        "badge": "Partenaire strategique",
-        "titleLine1": "Yarowa AG",
-        "titleLine2": "Partenaire strategique",
-        "description1": "Yarowa AG est une plateforme InsurTech suisse profondement ancree dans le secteur de l'assurance, operant a grande echelle sur les processus d'assurance essentiels dans des environnements hautement reglementes. Sa plateforme a ete faconnee par des annees de collaboration etroite avec les assureurs et une utilisation reelle en production.",
-        "description2": "True Aim AG est une societe issue de Yarowa, creee pour se concentrer specifiquement sur l'AI auditable et conforme aux reglementations pour l'assurance, combinant une expertise sectorielle eprouvee avec une technologie concue pour un deploiement entreprise transparent.",
+        "badge": "Partenaire stratégique",
+        "titleLine1": "Yarowa AG,",
+        "titleLine2": "partenaire stratégique",
+        "description1": "Yarowa AG est une plateforme InsurTech suisse profondément ancrée dans le secteur de l’assurance, qui opère à grande échelle sur les processus centraux de l’assurance dans des environnements fortement réglementés. Sa plateforme est le fruit d’années de collaboration étroite avec les assureurs et d’une utilisation réelle en production.",
+        "description2": "True Aim AG est une spin-off de Yarowa, créée pour se consacrer spécifiquement à une IA auditable et prête pour la réglementation dans l’assurance, en associant une expertise sectorielle éprouvée à une technologie conçue pour un déploiement transparent en entreprise.",
         "visitYarowa": "Visiter Yarowa"
       },
       "strengths": {
-        "heading": "Forces du partenariat",
+        "heading": "Les atouts du partenariat",
         "distribution": {
           "title": "Distribution directe aux assureurs",
-          "description": "Acces a un reseau etabli de relations avec les assureurs en Suisse et en Europe. Un canal de distribution eprouve pour les logiciels d'entreprise."
+          "description": "Accès à un réseau établi de relations avec des assureurs en Suisse et en Europe. Un canal de distribution éprouvé pour les logiciels d’entreprise."
         },
         "delivery": {
-          "title": "Experience de livraison entreprise",
-          "description": "Yarowa apporte une profonde experience de livraison entreprise. De l'approvisionnement a l'implementation, leur methodologie accelere le delai de rentabilite pour les clients assureurs."
+          "title": "Expérience du déploiement en entreprise",
+          "description": "Yarowa apporte une solide expérience du déploiement en entreprise. De l’achat à la mise en œuvre, sa méthodologie raccourcit le délai de création de valeur pour les assureurs clients."
         },
         "platform": {
           "title": "Plateforme InsurTech suisse",
-          "description": "Une plateforme technologique basee en Suisse, concue pour le secteur de l'assurance. L'infrastructure et la connaissance du marche de Yarowa completent les capacites decisionnelles de True Aim."
+          "description": "Une plateforme technologique basée en Suisse et conçue pour le secteur de l’assurance. L’infrastructure et la connaissance du marché de Yarowa complètent les capacités de décision de True Aim."
         },
         "vision": {
-          "title": "Vision commune",
-          "description": "True Aim et Yarowa partagent la conviction que l'assurance a besoin d'une technologie transparente et auditable. Cet alignement strategique guide notre approche commune de mise sur le marche."
+          "title": "Une vision partagée",
+          "description": "True Aim et Yarowa partagent la conviction que l’assurance a besoin d’une technologie transparente et auditable. Cet alignement stratégique guide notre approche commune du marché."
         }
       },
       "cta": {
-        "heading": "Decouvrez nos produits en action",
-        "description": "Decouvrez comment notre partenariat fournit une automatisation auditable des sinistres aux assureurs.",
-        "learnProducts": "Decouvrir nos produits",
-        "bookDemo": "Reserver une demo"
+        "heading": "Voyez nos produits à l’œuvre",
+        "description": "Découvrez comment notre partenariat apporte aux assureurs une automatisation auditable des sinistres.",
+        "learnProducts": "Voir nos produits",
+        "bookDemo": "Demander une démo"
       }
     },
     "innosuisse": {
       "hero": {
-        "badge": "Partenaire d'innovation federal",
-        "titleLine1": "Finance par Innosuisse",
-        "titleLine2": "Partenaire d'innovation",
-        "description1": "La technologie fondamentale de True Aim est soutenue par une subvention de recherche competitive accordee par Innosuisse, l'agence nationale d'innovation de la Suisse. La subvention reflete une validation formelle au niveau national de l'approche technique et du programme de recherche derriere le travail de True Aim dans le domaine de l'AI auditable.",
-        "description2": "Le financement soutient la recherche appliquee sur des systemes d'AI transparents, controlables et conformes aux reglementations pour les industries hautement reglementees, avec un accent clair sur les resultats mesurables et le deploiement reel."
+        "badge": "Partenaire fédéral pour l’innovation",
+        "titleLine1": "Partenaire d’innovation",
+        "titleLine2": "financé par Innosuisse",
+        "description1": "La technologie de base de True Aim est soutenue par une subvention de recherche attribuée sur concours par Innosuisse, l’agence nationale suisse pour l’innovation. Cette subvention reflète une validation formelle, au niveau national, de l’approche technique et du programme de recherche qui sous-tendent le travail de True Aim sur l’IA auditable.",
+        "description2": "Le financement soutient la recherche appliquée sur des systèmes d’IA transparents, contrôlables et prêts pour la réglementation, destinés aux secteurs fortement réglementés, avec un accent clair sur des résultats mesurables et un déploiement en conditions réelles."
       },
       "keyPoints": {
         "govValidation": {
-          "title": "Validation gouvernementale officielle",
-          "description": "Innosuisse est l'agence officielle d'innovation de la Confederation suisse, fournissant un soutien federal pour les projets de recherche et developpement a potentiel commercial."
+          "title": "Validation officielle de la Confédération",
+          "description": "Innosuisse est l’agence officielle pour l’innovation de la Confédération suisse ; elle apporte le soutien fédéral aux projets de recherche et développement à potentiel commercial."
         },
         "excellence": {
-          "title": "Excellence competitive",
-          "description": "Les subventions Innosuisse sont attribuees selon des criteres de selection rigoureux. L'obtention du financement demontre le merite technique et la viabilite commerciale de l'approche neuro-symbolic de True Aim."
+          "title": "Sélection sur concours",
+          "description": "Les subventions Innosuisse sont attribuées selon des critères de sélection rigoureux. Obtenir ce financement démontre la valeur technique et la viabilité commerciale de l’approche neuro-symbolique de True Aim."
         },
         "priority": {
-          "title": "Priorite strategique nationale",
-          "description": "La subvention reflete l'engagement national de la Suisse a faire progresser une AI digne de confiance dans les industries reglementees. True Aim est a l'avant-garde de cette initiative."
+          "title": "Priorité stratégique nationale",
+          "description": "La subvention reflète l’engagement national de la Suisse en faveur d’une IA digne de confiance dans les secteurs réglementés. True Aim est à l’avant-garde de cette initiative."
         },
         "zhawCollab": {
-          "title": "Collaboration ZHAW",
-          "description": "Le programme de recherche est mene en partenariat avec la ZHAW (School of Engineering, Institut d'informatique appliquee, Centre pour l'AI) et est dirige par Dr. Dandolo Flumini."
+          "title": "Collaboration avec la ZHAW",
+          "description": "Le programme de recherche est mené en partenariat avec la ZHAW (School of Engineering, Institute of Applied Information Technology, Centre for AI) et dirigé par le Dr Dandolo Flumini."
         }
       },
       "grantDetails": {
-        "label": "Financement de l'innovation",
-        "title": "Financement de projet d'innovation Innosuisse",
-        "description": "Financement non dilutif de la Confederation suisse pour faire progresser l'AI neuro-symbolic pour la prise de decision deterministe en matiere de sinistres dans les industries reglementees.",
+        "label": "Financement de l’innovation",
+        "title": "Financement de projet d’innovation Innosuisse",
+        "description": "Financement non dilutif de la Confédération suisse pour faire progresser l’IA neuro-symbolique appliquée aux décisions de couverture déterministes dans les secteurs réglementés.",
         "visitLink": "Visiter Innosuisse"
       },
       "cta": {
         "heading": "En savoir plus sur notre technologie",
-        "description": "Decouvrez comment l'innovation soutenue par Innosuisse alimente notre moteur de decision en matiere de sinistres.",
-        "exploreTech": "Explorer notre technologie",
-        "bookDemo": "Reserver une demo"
+        "description": "Découvrez comment l’innovation soutenue par Innosuisse alimente le moteur de l’Automated Coverage Check.",
+        "exploreTech": "Voir la technologie",
+        "bookDemo": "Demander une démo"
       }
     },
     "zhaw": {
       "hero": {
         "badge": "Partenaire de recherche",
         "titleLine1": "Partenariat de recherche",
-        "titleLine2": "ZHAW",
-        "description1": "Une partie de la technologie innovante de True Aim est developpee en collaboration avec la ZHAW Haute ecole zurichoise de sciences appliquees, l'une des principales universites de recherche appliquee de Suisse, reconnue pour sa recherche de pointe en AI, data science et ingenierie avec un fort accent sur le deploiement reel.",
-        "description2": "Les travaux sont soutenus par le financement d'innovation Innosuisse, la ZHAW etant le partenaire de recherche formel et True Aim le partenaire d'implementation industrielle, faisant progresser l'AI neuro-symbolic transparente et conforme aux reglementations pour les industries hautement reglementees."
+        "titleLine2": "avec la ZHAW",
+        "description1": "Une partie de la technologie de True Aim est développée en collaboration avec la ZHAW, Haute école zurichoise des sciences appliquées, l’une des premières hautes écoles de recherche appliquée de Suisse, reconnue pour sa recherche deep tech en IA, en science des données et en ingénierie, avec un fort accent sur le déploiement en conditions réelles.",
+        "description2": "Ces travaux sont soutenus par un financement d’innovation d’Innosuisse, la ZHAW étant le partenaire de recherche officiel et True Aim le partenaire industriel chargé de la mise en œuvre, afin de faire progresser une IA neuro-symbolique transparente et prête pour la réglementation dans les secteurs fortement réglementés."
       },
       "research": {
-        "heading": "Domaines de recherche",
+        "heading": "Axes de recherche",
         "neuroSymbolic": {
-          "title": "Neuro-Symbolic AI",
-          "description": "Combiner la flexibilite des reseaux neuronaux avec la precision du raisonnement symbolique. Notre recherche se concentre sur la production de decisions AI deterministes et entierement explicables."
+          "title": "IA neuro-symbolique",
+          "description": "Associer la souplesse des réseaux de neurones à la précision du raisonnement symbolique. Nos recherches visent à rendre les décisions de l’IA déterministes et entièrement explicables."
         },
         "logicExtraction": {
-          "title": "Extraction de logique & automatisation",
-          "description": "Developpement de methodes pour extraire la logique formelle des documents de police d'assurance en langage naturel et la transformer en regles de decision calculables."
+          "title": "Extraction de logique et automatisation",
+          "description": "Développer des méthodes pour extraire la logique formelle des documents de police rédigés en langage naturel et la transformer en règles de décision calculables."
         },
         "deterministic": {
-          "title": "Prise de decision deterministe",
-          "description": "Garantir que des entrees identiques produisent toujours des sorties identiques, avec une tracabilite complete de la decision au texte source. Essentiel pour la conformite reglementaire."
+          "title": "Décision déterministe",
+          "description": "Garantir que des entrées identiques produisent toujours des résultats identiques, avec une traçabilité complète de la décision jusqu’au texte source. Essentiel pour la conformité réglementaire."
         },
         "applied": {
-          "title": "Recherche industrielle appliquee",
-          "description": "Faire le pont entre la recherche academique et les operations d'assurance reelles. Tester et valider les approches par rapport aux donnees reelles de sinistres et aux documents de police d'assurance."
+          "title": "Recherche industrielle appliquée",
+          "description": "Faire le lien entre la recherche académique et les opérations réelles des assureurs. Tester et valider les approches sur de vraies données de sinistres et de vrais documents de police."
         }
       },
       "researchGroup": {
-        "heading": "A propos du groupe de recherche",
-        "description": "La recherche est hebergee au sein de la <schoolOfEngineering>School of Engineering</schoolOfEngineering> de la ZHAW, plus precisement au sein de l'<init>Institut d'informatique appliquee (InIT)</init> et du <cai>Centre pour l'intelligence artificielle (CAI)</cai>.",
+        "heading": "À propos du groupe de recherche",
+        "description": "La recherche est hébergée au sein de la <schoolOfEngineering>School of Engineering</schoolOfEngineering> de la ZHAW, plus précisément à l’<init>Institute of Applied Information Technology (InIT)</init> et au <cai>Centre for Artificial Intelligence (CAI)</cai>.",
         "dandolo": {
-          "name": "Dr. Dandolo Flumini",
-          "bio": "Developpeur originel de la technologie MIRA. PhD en mathematiques et informatique. Dirige le projet d'innovation finance par Innosuisse de True Aim."
+          "name": "Dr Dandolo Flumini",
+          "bio": "Développeur initial de la technologie derrière l’Automated Coverage Check. Doctorat en mathématiques et en informatique. Dirige le projet d’innovation de True Aim financé par Innosuisse."
         },
         "lukas": {
-          "name": "Dr. Lukas Lichtensteiger",
-          "bio": "Diplome de Harvard, entrepreneur en serie et CTO. Chercheur ZHAW en AI et robotique. Conseiller technique de True Aim."
+          "name": "Dr Lukas Lichtensteiger",
+          "bio": "Ancien de Harvard, entrepreneur en série et CTO. Chercheur à la ZHAW en IA et en robotique. Conseiller technique de True Aim."
         },
         "visitLink": "Visiter la ZHAW"
       },
       "cta": {
-        "heading": "Voyez la recherche en action",
-        "description": "Decouvrez comment notre technologie issue de la ZHAW fournit des decisions de sinistres auditables.",
-        "exploreTech": "Explorer notre technologie",
-        "bookDemo": "Reserver une demo"
+        "heading": "Voyez la recherche à l’œuvre",
+        "description": "Découvrez comment notre technologie issue de la ZHAW produit des décisions auditables sur les sinistres.",
+        "exploreTech": "Voir la technologie",
+        "bookDemo": "Demander une démo"
       }
     },
     "swissInsurtechHub": {
       "hero": {
-        "badge": "Partenaire strategique",
-        "titleLine1": "Swiss InsurTech Hub",
-        "titleLine2": "Partenaire strategique",
-        "description1": "Le Swiss InsurTech Hub est le reseau suisse de reference pour l'innovation dans l'assurance. Il reunit assureurs, start-ups et partenaires technologiques afin d'accelerer la transformation numerique du secteur. La plateforme favorise la collaboration, le partage de connaissances et l'acces a un vaste ecosysteme d'organisations tournees vers l'avenir.",
-        "description2": "True Aim AG est membre du Swiss InsurTech Hub et contribue activement au developpement d'une AI auditable et conforme aux exigences reglementaires dans l'assurance. Nous collaborons avec les acteurs majeurs du secteur pour faconner l'avenir de l'automatisation et de la decision sinistre.",
+        "badge": "Partenaire stratégique",
+        "titleLine1": "Swiss InsurTech Hub,",
+        "titleLine2": "partenaire stratégique",
+        "description1": "Le Swiss InsurTech Hub est le premier réseau suisse dédié à l’innovation en assurance ; il réunit assureurs, start-ups et partenaires technologiques pour accélérer la transformation numérique du secteur. La plateforme favorise la collaboration, le partage de connaissances et l’accès à un large écosystème d’organisations tournées vers l’avenir.",
+        "description2": "True Aim AG est membre du Swiss InsurTech Hub, contribue activement au développement d’une IA auditable et prête pour la réglementation dans l’assurance, et travaille avec les principaux acteurs du secteur pour façonner l’avenir de l’automatisation et de la décision en matière de sinistres.",
         "visitLink": "Visiter le Swiss InsurTech Hub"
       },
       "strengths": {
-        "heading": "Forces du partenariat",
+        "heading": "Les atouts du partenariat",
         "ecosystem": {
-          "title": "Acces a l'ecosysteme",
-          "description": "Acces a un large reseau d'assureurs, de partenaires et d'innovateurs en Suisse et en Europe. Une plateforme solide pour la collaboration, les partenariats et la visibilite sur le marche."
+          "title": "Accès à l’écosystème",
+          "description": "Accès à un large réseau d’assureurs, de partenaires et d’innovateurs en Suisse et en Europe. Une plateforme solide pour la collaboration, les partenariats et la visibilité sur le marché."
         },
         "collaboration": {
           "title": "Collaboration sectorielle",
-          "description": "Facilite la collaboration entre acteurs etablis et fournisseurs technologiques emergents. Permet un engagement concret sur des cas d'usage reels et des initiatives d'innovation."
+          "description": "Facilite la collaboration entre acteurs établis et nouveaux fournisseurs de technologie. Permet un engagement concret sur des cas d’usage réels et des initiatives d’innovation."
         },
         "platform": {
-          "title": "Plateforme d'innovation",
-          "description": "Une plateforme suisse reconnue, dediee au developpement de l'innovation dans l'assurance. Soutient l'echange de savoir, le leadership d'opinion et l'alignement du secteur."
+          "title": "Plateforme d’innovation",
+          "description": "Une plateforme suisse reconnue, dédiée à l’innovation en assurance. Soutient l’échange de connaissances, le leadership d’opinion et l’alignement du secteur."
         },
         "vision": {
-          "title": "Vision partagee",
-          "description": "True Aim et le Swiss InsurTech Hub partagent la meme ambition : faire progresser une technologie d'assurance moderne, transparente et conforme. Cet alignement soutient une innovation durable et une adoption responsable de l'AI."
+          "title": "Une vision partagée",
+          "description": "True Aim et le Swiss InsurTech Hub partagent la volonté de faire progresser une technologie d’assurance moderne, transparente et conforme. Cet alignement soutient l’innovation à long terme et une adoption responsable de l’IA."
         }
       },
       "cta": {
-        "heading": "Decouvrez nos produits en action",
-        "description": "Decouvrez comment nos partenariats offrent aux assureurs une automatisation des sinistres auditable.",
-        "learnProducts": "Decouvrir nos produits",
-        "bookDemo": "Reserver une demo"
+        "heading": "Voyez nos produits à l’œuvre",
+        "description": "Découvrez comment nos partenariats apportent aux assureurs une automatisation auditable des sinistres.",
+        "learnProducts": "Voir nos produits",
+        "bookDemo": "Demander une démo"
+      }
+    },
+    "nortonRoseFulbright": {
+      "hero": {
+        "badge": "Partenaire stratégique",
+        "titleLine1": "Norton Rose Fulbright,",
+        "titleLine2": "partenaire stratégique",
+        "description1": "Norton Rose Fulbright est un cabinet d’avocats mondial doté de l’une des plus grandes pratiques en assurance au monde ; il conseille assureurs, réassureurs et intermédiaires sur la réglementation, les sinistres et la technologie dans plus de 50 bureaux. Avec l’Insurathon, le cabinet met les assureurs en relation avec les équipes InsurTech qu’il juge dignes d’attention.",
+        "description2": "True Aim a été invitée à participer à l’Insurathon 2026 et a été désignée InsurTech la plus innovante au monde, après quoi Norton Rose Fulbright a investi directement dans True Aim.",
+        "visitLink": "Visiter Norton Rose Fulbright"
+      },
+      "strengths": {
+        "heading": "Les atouts du partenariat",
+        "recognition": {
+          "title": "Une reconnaissance indépendante",
+          "description": "Le jury de l’Insurathon a évalué True Aim face à des équipes InsurTech du monde entier et l’a désignée la plus innovante de 2026. Un verdict indépendant, rendu par un cabinet qui conseille le secteur chaque jour."
+        },
+        "regulatory": {
+          "title": "Expertise réglementaire",
+          "description": "Norton Rose Fulbright conseille les assureurs sur les règles qui régissent les décisions sur les sinistres en Suisse, dans l’UE, au Royaume-Uni et au-delà. Ce regard nourrit la façon dont True Aim garde chaque décision explicable et défendable."
+        },
+        "reach": {
+          "title": "Portée sectorielle",
+          "description": "Une clientèle mondiale d’assureurs, de réassureurs et d’intermédiaires, et un rôle fédérateur dans le secteur. Le partenariat ouvre des portes qu’une entreprise technologique ne peut pas ouvrir seule."
+        },
+        "vision": {
+          "title": "Une vision partagée",
+          "description": "Norton Rose Fulbright et True Aim considèrent tous deux que l’IA appliquée aux sinistres doit résister à l’examen. La conformité intégrée dès le premier jour et un relevé pour chaque décision : c’est la norme sur laquelle repose le partenariat."
+        }
+      },
+      "cta": {
+        "heading": "Voyez nos produits à l’œuvre",
+        "description": "Découvrez comment nos partenariats apportent aux assureurs une automatisation auditable des sinistres.",
+        "learnProducts": "Voir nos produits",
+        "bookDemo": "Demander une démo"
       }
     },
     "hub": {
       "title": "Partenaires",
-      "subtitle": "L'ecosysteme innovant derriere True Aim",
-      "intro": "True Aim s'appuie sur les forces de l'assurance suisse, de la recherche et des institutions federales d'innovation. Chaque partenaire apporte une expertise sectorielle, du capital ou des travaux de recherche qui faconnent notre IA auditable.",
+      "subtitle": "L’écosystème d’innovation derrière True Aim",
+      "intro": "True Aim s’appuie sur les forces de l’assurance suisse, de la recherche et des institutions fédérales d’innovation. Chaque partenaire apporte une expertise métier, du capital ou de la recherche qui façonnent notre manière de construire une IA auditable.",
       "viewPartner": "Voir le partenaire",
       "yarowa": {
-        "tagline": "Partenaire strategique et societe mere de True Aim"
+        "tagline": "Partenaire stratégique et maison mère de True Aim"
       },
       "innosuisse": {
-        "tagline": "Financement et certification federale d'innovation"
+        "tagline": "Financement fédéral de l’innovation et validation"
       },
       "zhaw": {
-        "tagline": "Collaboration en recherche appliquee"
+        "tagline": "Collaboration en recherche appliquée"
       },
       "swissInsurtechHub": {
-        "tagline": "Ecosysteme et portee de l'insurtech suisse"
+        "tagline": "Écosystème insurtech suisse et portée"
+      },
+      "nortonRoseFulbright": {
+        "tagline": "Lauréate de l’Insurathon 2026, droit mondial de l’assurance"
       }
     }
   }

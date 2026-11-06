@@ -3,5 +3,443 @@
     "name": "True Aim",
     "breadcrumbLabel": "Percorso di navigazione"
   },
-  "pages": {}
+  "pages": {
+    "/": {
+      "title": "Liquidazioni rapide, decisioni intelligenti, costi ridotti | True Aim",
+      "description": "Ogni sinistro valutato sulla polizza, ogni fattura confrontata, ogni rapporto preparato. Esiti precisi e spiegabili in minuti. La decisione finale è vostra.",
+      "h1": "Liquidazioni più rapide, decisioni più intelligenti, costi più bassi",
+      "breadcrumb": "Home",
+      "ogTitle": "Liquidazioni più rapide, decisioni più intelligenti, costi più bassi",
+      "ogDescription": "Ogni sinistro valutato sulla polizza, ogni fattura confrontata, ogni rapporto preparato. Esiti precisi e spiegabili in minuti. La decisione finale è vostra.",
+      "updated": "2026-11-05"
+    },
+    "/platform": {
+      "title": "Come funziona la nostra piattaforma | True Aim",
+      "description": "Un fascicolo sinistro entra, ne esce un albero decisionale sottoposto ad audit. Come si integrano le soluzioni, Orchestrate e Prove. Decide il vostro team.",
+      "h1": "Come funziona la nostra piattaforma",
+      "breadcrumb": "Piattaforma",
+      "ogTitle": "Come funziona la nostra piattaforma",
+      "ogDescription": "Un fascicolo sinistro entra, ne esce un albero decisionale sottoposto ad audit. Come si integrano le soluzioni, Orchestrate e Prove. Decide il vostro team.",
+      "updated": "2026-11-05"
+    },
+    "/platform/data-extraction": {
+      "title": "Data Extraction: dati sinistri pronti per l’IA | True Aim",
+      "description": "Informazioni sui sinistri lette da documenti, foto, e-mail e sistemi legacy, messe in contesto e salvate in un database consultabile che la vostra IA può usare.",
+      "h1": "Data Extraction: i vostri dati sinistri, pronti per l’IA",
+      "breadcrumb": "Data Extraction",
+      "ogTitle": "Data Extraction di True Aim",
+      "ogDescription": "Informazioni sui sinistri lette da documenti, foto, e-mail e sistemi legacy, messe in contesto e salvate in un database consultabile che la vostra IA può usare.",
+      "updated": "2026-11-05"
+    },
+    "/platform/claims-decisioning": {
+      "title": "Automated Coverage Check: sinistri liquidati in minuti | True Aim",
+      "description": "Ogni voce di un sinistro verificata rispetto alle condizioni di polizza, l’importo calcolato e la motivazione annotata. Una raccomandazione completa in minuti.",
+      "h1": "Automated Coverage Check: sinistri liquidati in minuti, non in settimane",
+      "breadcrumb": "Automated Coverage Check",
+      "ogTitle": "Automated Coverage Check di True Aim",
+      "ogDescription": "Ogni voce di un sinistro verificata rispetto alle condizioni di polizza, l’importo calcolato e la motivazione annotata. Una raccomandazione completa in minuti.",
+      "updated": "2026-11-05"
+    },
+    "/platform/invoice-benchmarking": {
+      "title": "Invoice Benchmarking: mai più fatture pagate troppo | True Aim",
+      "description": "Ogni fattura, preventivo e stima confrontato con i dati di riferimento per categoria di lavori e regione. Quali voci sono troppo alte, di quanto e perché.",
+      "h1": "Invoice Benchmarking: mai più una fattura pagata troppo",
+      "breadcrumb": "Invoice Benchmarking",
+      "ogTitle": "Invoice Benchmarking di True Aim",
+      "ogDescription": "Ogni fattura, preventivo e stima confrontato con i dati di riferimento per categoria di lavori e regione. Quali voci sono troppo alte, di quanto e perché.",
+      "updated": "2026-11-05"
+    },
+    "/platform/damage-reporting": {
+      "title": "Damage Reporting: rapporti danni fin dalla denuncia | True Aim",
+      "description": "Stima del danno e ambito dei lavori già alla denuncia di sinistro, dalle foto del cliente. I periti vanno sul posto solo dove una visita cambia la risposta.",
+      "h1": "Damage Reporting: rapporti danni completi in pochi minuti",
+      "breadcrumb": "Damage Reporting",
+      "ogTitle": "Damage Reporting di True Aim",
+      "ogDescription": "Stima del danno e ambito dei lavori già alla denuncia di sinistro, dalle foto del cliente. I periti vanno sul posto solo dove una visita cambia la risposta.",
+      "updated": "2026-11-05"
+    },
+    "/platform/otus": {
+      "title": "Otus, lo specialista sinistri di True Aim | True Aim",
+      "description": "Un esperto basato sull’IA per ogni membro del team, in ogni soluzione True Aim. Spiega ogni raccomandazione in linguaggio semplice e non ha potere decisionale.",
+      "h1": "Otus, lo specialista sinistri di True Aim",
+      "breadcrumb": "Otus",
+      "schemaName": "Otus, lo specialista sinistri di True Aim",
+      "ogTitle": "Otus, lo specialista sinistri di True Aim",
+      "ogDescription": "Un esperto basato sull’IA per ogni membro del team, in ogni soluzione True Aim. Spiega ogni raccomandazione in linguaggio semplice e non ha potere decisionale.",
+      "updated": "2026-11-05"
+    },
+    "/technology": {
+      "title": "Architettura di IA neuro-simbolica per i sinistri | True Aim",
+      "description": "True Aim unisce agenti IA a un processo decisionale deterministico, costruito per l’assicurazione regolamentata e l’AI Act. Non una scatola nera.",
+      "h1": "IA neuro-simbolica: l’architettura di cui le autorità di vigilanza si fidano",
+      "breadcrumb": "Tecnologia",
+      "ogTitle": "IA neuro-simbolica: l’architettura di cui le autorità di vigilanza si fidano",
+      "ogDescription": "True Aim unisce agenti IA a un processo decisionale deterministico, costruito per l’assicurazione regolamentata e l’AI Act. Non una scatola nera.",
+      "updated": "2026-11-05"
+    },
+    "/trust": {
+      "title": "Trust Center: ISO 27001, SOC 2, GDPR, LPD, DORA | True Aim",
+      "description": "True Aim: certificata ISO 27001, audit SOC 2 Type II, allineata a GDPR, LPD svizzera e DORA. Ogni decisione su un sinistro è registrata con il suo ragionamento.",
+      "h1": "Sicurezza e conformità, integrate fin dal primo giorno",
+      "breadcrumb": "Trust Center",
+      "ogTitle": "Sicurezza e conformità in True Aim",
+      "ogDescription": "True Aim: certificata ISO 27001, audit SOC 2 Type II, allineata a GDPR, LPD svizzera e DORA. Ogni decisione su un sinistro è registrata con il suo ragionamento.",
+      "updated": "2026-11-05"
+    },
+    "/about": {
+      "title": "Chi siamo: fiducia scalabile per le decisioni sui sinistri | True Aim",
+      "description": "True Aim, azienda svizzera: tecnologia per i sinistri in cui ogni decisione registra fatti, regole e ragionamento. Team, advisory board, partner e premi.",
+      "h1": "Fiducia scalabile",
+      "breadcrumb": "Chi siamo",
+      "ogTitle": "Chi è True Aim",
+      "ogDescription": "True Aim, azienda svizzera: tecnologia per i sinistri in cui ogni decisione registra fatti, regole e ragionamento. Team, advisory board, partner e premi.",
+      "updated": "2026-11-05"
+    },
+    "/contact": {
+      "title": "Richiedete una demo | True Aim",
+      "description": "Richiedete una demo di True Aim sulle vostre fatture, sui vostri sinistri o sui vostri rapporti danni.",
+      "h1": "Richiedete una demo",
+      "breadcrumb": "Contatti",
+      "ogTitle": "Richiedete una demo di True Aim",
+      "ogDescription": "Richiedete una demo di True Aim sulle vostre fatture, sui vostri sinistri o sui vostri rapporti danni.",
+      "updated": "2026-11-05"
+    },
+    "/impact-estimator": {
+      "title": "Stima dell’impatto: automatizzare le decisioni sui sinistri | True Aim",
+      "description": "Inserite volume di sinistri e tempo di gestione per vedere il tempo e i costi che True Aim potrebbe restituirvi, con ipotesi prudenti e il metodo di calcolo.",
+      "h1": "Stimate l’impatto dell’automazione delle decisioni sui sinistri",
+      "breadcrumb": "Stima dell’impatto",
+      "ogTitle": "Stimate l’impatto dell’automazione delle decisioni sui sinistri",
+      "ogDescription": "Inserite volume di sinistri e tempo di gestione per vedere il tempo e i costi che True Aim potrebbe restituirvi, con ipotesi prudenti e il metodo di calcolo.",
+      "updated": "2026-11-05"
+    },
+    "/case-studies": {
+      "title": "Casi studio: numeri reali nella pratica | True Aim",
+      "description": "Come i team sinistri usano True Aim sui propri sinistri, e cosa è cambiato: volume, lingue, tempo per arrivare ai risultati e accuratezza misurata.",
+      "h1": "Numeri reali nella pratica",
+      "breadcrumb": "Casi studio",
+      "ogTitle": "Numeri reali nella pratica",
+      "ogDescription": "Come i team sinistri usano True Aim sui propri sinistri, e cosa è cambiato: volume, lingue, tempo per arrivare ai risultati e accuratezza misurata.",
+      "updated": "2026-11-05"
+    },
+    "/case-studies/vehicle-warranty-claims": {
+      "title": "Le stesse decisioni sui sinistri, in una frazione del tempo | True Aim",
+      "description": "Come NSA ha trasferito il ragionamento e il processo decisionale dei suoi esperti sinistri in True Aim e ha ridotto dell’86% il lavoro su un sinistro complesso.",
+      "h1": "Le stesse decisioni sui sinistri, in una frazione del tempo.",
+      "breadcrumb": "Sinistri di garanzia auto",
+      "ogTitle": "Le stesse decisioni sui sinistri, in una frazione del tempo.",
+      "ogDescription": "Come NSA ha trasferito il ragionamento e il processo decisionale dei suoi esperti sinistri in True Aim e ha ridotto dell’86% il lavoro su un sinistro complesso.",
+      "updated": "2026-11-05"
+    },
+    "/case-studies/swiss-travel-insurer": {
+      "title": "Assicuratore viaggi: sinistri gestiti il 92% più rapidamente | True Aim",
+      "description": "Assicuratore viaggi svizzero: decisioni da 45 minuti a 2,3 secondi con True Aim, il 92% più rapidamente, 78% di elaborazione automatica.",
+      "h1": "Un assicuratore viaggi svizzero gestisce i sinistri il 92% più rapidamente",
+      "breadcrumb": "Assicuratore viaggi svizzero",
+      "ogTitle": "Un assicuratore viaggi svizzero gestisce i sinistri il 92% più rapidamente",
+      "ogDescription": "Assicuratore viaggi svizzero: decisioni da 45 minuti a 2,3 secondi con True Aim, il 92% più rapidamente, 78% di elaborazione automatica.",
+      "updated": "2026-11-05"
+    },
+    "/case-studies/european-health-insurer": {
+      "title": "Assicuratore sanitario: costi di gestione ridotti del 71% | True Aim",
+      "description": "Assicuratore sanitario europeo: costi di gestione ridotti del 71% con True Aim, 65% senza intervento, 99,2% di accuratezza e leakage prima nascosto individuato.",
+      "h1": "Un assicuratore sanitario europeo riduce i costi di gestione del 71%",
+      "breadcrumb": "Assicuratore sanitario europeo",
+      "ogTitle": "Un assicuratore sanitario europeo riduce i costi di gestione del 71%",
+      "ogDescription": "65% di elaborazione senza intervento, 99,2% di accuratezza delle decisioni e leakage prima nascosto individuato.",
+      "updated": "2026-11-05"
+    },
+    "/case-studies/motor-claims-pilot": {
+      "title": "Progetto pilota sinistri auto: dall’arretrato al tempo reale | True Aim",
+      "description": "Assicuratore auto britannico: intero arretrato smaltito con True Aim, decisione da 2 giorni a meno di 5 minuti, 45% di ricorsi in meno, 100% di coerenza.",
+      "h1": "Progetto pilota sinistri auto: dall’arretrato all’elaborazione in tempo reale",
+      "breadcrumb": "Progetto pilota sinistri auto",
+      "ogTitle": "Progetto pilota sinistri auto: dall’arretrato all’elaborazione in tempo reale",
+      "ogDescription": "Assicuratore auto britannico: intero arretrato smaltito con True Aim, decisione da 2 giorni a meno di 5 minuti, 45% di ricorsi in meno, 100% di coerenza.",
+      "updated": "2026-11-05"
+    },
+    "/partners": {
+      "title": "I nostri partner nella ricerca e nel settore assicurativo | True Aim",
+      "description": "True Aim lavora con Innosuisse, la ZHAW, Yarowa AG e lo Swiss InsurTech Hub su ricerca, finanziamento e innovazione assicurativa in Svizzera.",
+      "h1": "L’ecosistema innovativo dietro True Aim",
+      "breadcrumb": "Partner",
+      "ogTitle": "I partner di True Aim",
+      "ogDescription": "Innosuisse, ZHAW, Yarowa AG e Swiss InsurTech Hub: ricerca, finanziamento e innovazione assicurativa in Svizzera.",
+      "updated": "2026-11-05"
+    },
+    "/partners/yarowa": {
+      "title": "Yarowa AG, partner strategico | True Aim",
+      "description": "True Aim AG è uno spin-off di Yarowa AG, piattaforma InsurTech svizzera che gestisce su larga scala i workflow assicurativi core in ambienti regolamentati.",
+      "h1": "Yarowa AG, partner strategico",
+      "breadcrumb": "Yarowa AG",
+      "ogTitle": "Yarowa AG, partner strategico",
+      "ogDescription": "True Aim AG è uno spin-off di Yarowa AG, piattaforma InsurTech svizzera che gestisce su larga scala i workflow assicurativi core in ambienti regolamentati.",
+      "updated": "2026-11-05"
+    },
+    "/partners/innosuisse": {
+      "title": "Partner per l’innovazione finanziato da Innosuisse | True Aim",
+      "description": "La tecnologia di base di True Aim è sostenuta da una sovvenzione di ricerca assegnata su base competitiva da Innosuisse, l’agenzia svizzera per l’innovazione.",
+      "h1": "Finanziato da Innosuisse: partner per l’innovazione",
+      "breadcrumb": "Innosuisse",
+      "ogTitle": "Partner per l’innovazione finanziato da Innosuisse",
+      "ogDescription": "La tecnologia di base di True Aim è sostenuta da una sovvenzione di ricerca assegnata su base competitiva da Innosuisse, l’agenzia svizzera per l’innovazione.",
+      "updated": "2026-11-05"
+    },
+    "/partners/zhaw": {
+      "title": "Partnership di ricerca con la ZHAW | True Aim",
+      "description": "Parte della tecnologia di True Aim viene sviluppata con la ZHAW, Università di scienze applicate di Zurigo, con il sostegno di Innosuisse.",
+      "h1": "Partnership di ricerca con la ZHAW",
+      "breadcrumb": "ZHAW",
+      "ogTitle": "Partnership di ricerca con la ZHAW",
+      "ogDescription": "Parte della tecnologia di True Aim viene sviluppata con la ZHAW, Università di scienze applicate di Zurigo, con il sostegno di Innosuisse.",
+      "updated": "2026-11-05"
+    },
+    "/partners/swissinsurtechhub": {
+      "title": "Swiss InsurTech Hub, partner strategico | True Aim",
+      "description": "True Aim è partner strategico dello Swiss InsurTech Hub, rete svizzera per l’innovazione assicurativa che riunisce assicuratori, start-up e partner tecnologici.",
+      "h1": "Swiss InsurTech Hub, partner strategico",
+      "breadcrumb": "Swiss InsurTech Hub",
+      "ogTitle": "Swiss InsurTech Hub, partner strategico",
+      "ogDescription": "True Aim è partner strategico dello Swiss InsurTech Hub, rete svizzera per l’innovazione assicurativa che riunisce assicuratori, start-up e partner tecnologici.",
+      "updated": "2026-11-05"
+    },
+    "/partners/nortonrosefulbright": {
+      "title": "Norton Rose Fulbright, partner strategico | True Aim",
+      "description": "True Aim è partner strategico di Norton Rose Fulbright, lo studio legale globale che l’ha proclamata l’InsurTech più innovativa al mondo all’Insurathon 2026.",
+      "h1": "Norton Rose Fulbright, partner strategico",
+      "breadcrumb": "Norton Rose Fulbright",
+      "ogTitle": "Norton Rose Fulbright, partner strategico",
+      "ogDescription": "True Aim è partner strategico di Norton Rose Fulbright, lo studio legale globale che l’ha proclamata l’InsurTech più innovativa al mondo all’Insurathon 2026.",
+      "updated": "2026-11-05"
+    },
+    "/solutions/insurers": {
+      "title": "Sinistri rami danni liquidati prima, per gli assicuratori | True Aim",
+      "description": "Liquidazioni più rapide, costi più equi. Ogni sinistro valutato sulla polizza, ogni fattura confrontata, ogni rapporto preparato. Decidono i vostri liquidatori.",
+      "h1": "Sinistri rami danni, liquidati più rapidamente",
+      "breadcrumb": "Assicuratori",
+      "ogTitle": "True Aim per gli assicuratori",
+      "ogDescription": "Liquidazioni più rapide, costi più equi. Ogni sinistro valutato sulla polizza, ogni fattura confrontata, ogni rapporto preparato. Decidono i vostri liquidatori.",
+      "updated": "2026-11-05"
+    },
+    "/solutions/brokers": {
+      "title": "Sinistri gestiti dalla prima chiamata, per i broker | True Aim",
+      "description": "Sinistro acquisito al primo contatto, verificato sulla polizza, il vostro cliente informato a ogni passo e decisione dell’assicuratore spiegata voce per voce.",
+      "h1": "Sinistri acquisiti e gestiti fin dalla prima chiamata",
+      "breadcrumb": "Broker",
+      "ogTitle": "True Aim per i broker",
+      "ogDescription": "Sinistro acquisito al primo contatto, verificato sulla polizza, il vostro cliente informato a ogni passo e decisione dell’assicuratore spiegata voce per voce.",
+      "updated": "2026-11-05"
+    },
+    "/solutions/third-party-administrators": {
+      "title": "Più sinistri per liquidatore, per i TPA | True Aim",
+      "description": "Gestite e decidete più sinistri per ogni assicuratore, nei limiti di ogni mandato, con ogni fattura confrontata e un fascicolo completo per ogni cliente.",
+      "h1": "Più sinistri per liquidatore, nei limiti di ogni mandato",
+      "breadcrumb": "TPA",
+      "ogTitle": "True Aim per i TPA",
+      "ogDescription": "Gestite e decidete più sinistri per ogni assicuratore, nei limiti di ogni mandato, con ogni fattura confrontata e un fascicolo completo per ogni cliente.",
+      "updated": "2026-11-05"
+    },
+    "/solutions/warranty-providers": {
+      "title": "Fatture di garanzia verificate rispetto alle condizioni | True Aim",
+      "description": "Ogni fattura dell’officina scomposta in ricambi, manodopera e spese, verificata in minuti sulle condizioni di garanzia e confrontata con i prezzi di mercato.",
+      "h1": "Ogni fattura di garanzia verificata rispetto alle condizioni",
+      "breadcrumb": "Fornitori di garanzie",
+      "ogTitle": "True Aim per i fornitori di garanzie",
+      "ogDescription": "Ogni fattura dell’officina scomposta in ricambi, manodopera e spese, verificata in minuti sulle condizioni di garanzia e confrontata con i prezzi di mercato.",
+      "updated": "2026-11-05"
+    },
+    "/solutions/claims-technology-providers": {
+      "title": "Decisioni sui sinistri dentro la vostra piattaforma | True Aim",
+      "description": "Aggiungete la verifica automatica della copertura alla piattaforma che i vostri clienti già usano, con un registro di ogni decisione che potete trasmettere.",
+      "h1": "Aggiungete la verifica della copertura al workflow che i vostri clienti già usano",
+      "breadcrumb": "Fornitori di tecnologie sinistri",
+      "ogTitle": "True Aim per i fornitori di tecnologie sinistri",
+      "ogDescription": "Aggiungete la verifica automatica della copertura alla piattaforma che i vostri clienti già usano, con un registro di ogni decisione che potete trasmettere.",
+      "updated": "2026-11-05"
+    },
+    "/privacy": {
+      "title": "Informativa sulla privacy | True Aim",
+      "description": "Come True Aim AG raccoglie, usa e protegge i dati personali secondo la LPD svizzera e il GDPR: ruoli, sub-responsabili, conservazione e i vostri diritti.",
+      "h1": "Informativa sulla privacy",
+      "breadcrumb": "Informativa sulla privacy",
+      "ogTitle": "Informativa sulla privacy",
+      "ogDescription": "Come True Aim AG raccoglie, usa e protegge i dati personali secondo la LPD svizzera e il GDPR: ruoli, sub-responsabili, conservazione e i vostri diritti.",
+      "updated": "2026-11-05"
+    },
+    "/terms": {
+      "title": "Termini di utilizzo | True Aim",
+      "description": "I termini che regolano l’utilizzo del sito web di True Aim e dei servizi per i sinistri basati sull’IA di True Aim AG.",
+      "h1": "Termini di utilizzo",
+      "breadcrumb": "Termini di utilizzo",
+      "ogTitle": "Termini di utilizzo",
+      "ogDescription": "I termini che regolano l’utilizzo del sito web di True Aim e dei servizi per i sinistri basati sull’IA di True Aim AG.",
+      "updated": "2026-11-05"
+    },
+    "/cookies": {
+      "title": "Informativa sui cookie | True Aim",
+      "description": "Quali cookie utilizza il sito web di True Aim, a cosa serve ciascuno e come gestire le vostre preferenze sui cookie.",
+      "h1": "Informativa sui cookie",
+      "breadcrumb": "Informativa sui cookie",
+      "ogTitle": "Informativa sui cookie",
+      "ogDescription": "Quali cookie utilizza il sito web di True Aim, a cosa serve ciascuno e come gestire le vostre preferenze sui cookie.",
+      "updated": "2026-11-05"
+    },
+    "/paia": {
+      "title": "Manuale PAIA | True Aim",
+      "description": "Il manuale di True Aim AG ai sensi del Promotion of Access to Information Act (PAIA) sudafricano, con la documentazione di conformità richiesta dalla legge.",
+      "h1": "Manuale PAIA",
+      "breadcrumb": "Manuale PAIA",
+      "ogTitle": "Manuale PAIA",
+      "ogDescription": "Il manuale di True Aim AG ai sensi del Promotion of Access to Information Act (PAIA) sudafricano, con la documentazione di conformità richiesta dalla legge.",
+      "updated": "2026-11-05"
+    },
+    "/security": {
+      "title": "Programma di sicurezza | True Aim",
+      "description": "Il programma di sicurezza di True Aim: framework di conformità, residenza dei dati, cifratura, controllo degli accessi e divulgazione responsabile.",
+      "h1": "La sicurezza in True Aim",
+      "breadcrumb": "Sicurezza",
+      "ogTitle": "La sicurezza in True Aim",
+      "ogDescription": "Il programma di sicurezza di True Aim: framework di conformità, residenza dei dati, cifratura, controllo degli accessi, monitoraggio, gestione delle vulnerabilità e divulgazione responsabile.",
+      "updated": "2026-11-05"
+    },
+    "/ai-transparency": {
+      "title": "Trasparenza e sorveglianza dell’IA | True Aim",
+      "description": "Come True Aim progetta e utilizza l’intelligenza artificiale nei suoi prodotti, compresi i meccanismi di sorveglianza umana e i principi di gestione dei dati.",
+      "h1": "Trasparenza e sorveglianza dell’IA",
+      "breadcrumb": "Trasparenza dell’IA",
+      "ogTitle": "Trasparenza e sorveglianza dell’IA",
+      "ogDescription": "Come True Aim progetta e utilizza l’intelligenza artificiale nei suoi prodotti, compresi i meccanismi di sorveglianza umana e i principi di gestione dei dati.",
+      "updated": "2026-11-05"
+    },
+    "/ethics": {
+      "title": "Etica e segnalazioni confidenziali | True Aim",
+      "description": "Un canale confidenziale per segnalare a True Aim preoccupazioni etiche, condotte scorrette o problemi di sicurezza, anche in forma anonima e senza ritorsioni.",
+      "h1": "Etica e segnalazioni confidenziali",
+      "breadcrumb": "Etica",
+      "ogTitle": "Etica e segnalazioni confidenziali",
+      "ogDescription": "Un canale confidenziale per segnalare a True Aim preoccupazioni etiche, condotte scorrette o problemi di sicurezza e privacy, con segnalazione anonima e impegno contro le ritorsioni.",
+      "updated": "2026-11-05"
+    },
+    "/support": {
+      "title": "Supporto clienti | True Aim",
+      "description": "Come contattare l’supporto clienti di True Aim: orari, tempi di risposta per gravità e canali di contatto per vendite, privacy, sicurezza ed etica.",
+      "h1": "Supporto clienti",
+      "breadcrumb": "Supporto",
+      "ogTitle": "Supporto clienti",
+      "ogDescription": "Come contattare l’supporto clienti di True Aim: orari, tempi di risposta per gravità e canali di contatto per vendite, privacy, sicurezza ed etica.",
+      "updated": "2026-11-05"
+    },
+    "/sub-processors": {
+      "title": "Elenco dei sub-responsabili | True Aim",
+      "description": "Allegato 2 dell’accordo sul trattamento dei dati di True Aim AG: tutti i sub-responsabili, con servizio, categorie di dati e localizzazione.",
+      "h1": "Elenco dei sub-responsabili",
+      "breadcrumb": "Sub-responsabili",
+      "ogTitle": "Elenco dei sub-responsabili di True Aim",
+      "ogDescription": "Allegato 2 dell’accordo sul trattamento dei dati di True Aim AG: tutti i sub-responsabili che trattano dati personali.",
+      "updated": "2026-11-05",
+      "robots": "noindex"
+    },
+    "/changelog": {
+      "title": "Changelog e cronologia delle release della piattaforma | True Aim",
+      "description": "Cronologia pubblica delle release della piattaforma True Aim: nuove funzionalità, correzioni e miglioramenti di sicurezza, elencati per release.",
+      "h1": "Changelog",
+      "breadcrumb": "Changelog",
+      "ogTitle": "Changelog della piattaforma True Aim",
+      "ogDescription": "Cronologia pubblica delle release della piattaforma True Aim: nuove funzionalità, correzioni e miglioramenti di sicurezza, elencati per release.",
+      "updated": "2026-11-05"
+    },
+    "/privacy-legacy": {
+      "title": "Informativa sulla privacy, versione precedente | True Aim",
+      "description": "La versione precedente dell’informativa sulla privacy di True Aim AG, conservata per riferimento. L’informativa attuale: trueaim.ai/it/privacy/.",
+      "h1": "Informativa sulla privacy (versione precedente)",
+      "breadcrumb": "Informativa sulla privacy (versione precedente)",
+      "ogTitle": "Informativa sulla privacy di True Aim, versione precedente",
+      "ogDescription": "La versione precedente dell’informativa sulla privacy di True Aim AG, conservata per riferimento.",
+      "updated": "2026-11-05",
+      "robots": "noindex"
+    },
+    "/blog/why-claims-ai-pilots-stall": {
+      "title": "Perché i progetti pilota di IA per i sinistri si bloccano | True Aim",
+      "description": "Molti progetti pilota di IA per i sinistri riportano un’accuratezza elevata ma non arrivano mai in produzione. La causa: disciplina di misurazione e realismo.",
+      "h1": "Perché i progetti pilota di IA per i sinistri si bloccano prima di essere pronti per la produzione",
+      "breadcrumb": "Perché i progetti pilota di IA si bloccano",
+      "ogTitle": "Perché i progetti pilota di IA per i sinistri si bloccano prima di essere pronti per la produzione",
+      "ogDescription": "Molti progetti pilota di IA per i sinistri riportano un’accuratezza elevata ma non arrivano mai in produzione. La causa: disciplina di misurazione e realismo.",
+      "updated": "2026-11-05"
+    },
+    "/blog/where-the-language-model-does-not-belong": {
+      "title": "Regole o modello? Il posto dell’IA in un sinistro | True Aim",
+      "description": "Decidere un sinistro è leggere, calcolare e giudicare. Dove un modello linguistico ha posto, dove devono valere le regole e come il fascicolo mostra il confine.",
+      "h1": "Dove il modello linguistico non ha posto",
+      "breadcrumb": "Dove il modello linguistico non ha posto",
+      "ogTitle": "Dove il modello linguistico non ha posto: progettare un’IA difendibile per la gestione dei sinistri",
+      "ogDescription": "Decidere un sinistro è leggere, calcolare e giudicare. Dove un modello linguistico ha posto, dove devono valere le regole e come il fascicolo mostra il confine.",
+      "updated": "2026-11-05"
+    },
+    "/blog/build-vs-buy-idp-vendors": {
+      "title": "Sviluppare o acquistare: cosa esigere dai fornitori di IDP | True Aim",
+      "description": "Un quadro di valutazione per i team assicurativi: quando sviluppare l’automazione dei sinistri, quando acquistarla e come valutare i fornitori oggettivamente.",
+      "h1": "Sviluppare o acquistare: cosa esigere dai fornitori di IDP",
+      "breadcrumb": "Sviluppare o acquistare",
+      "ogTitle": "Sviluppare o acquistare: cosa esigere dai fornitori di IDP",
+      "ogDescription": "Un quadro di valutazione per i team assicurativi: quando sviluppare l’automazione dei sinistri, quando acquistarla e come valutare i fornitori oggettivamente.",
+      "updated": "2026-11-05"
+    },
+    "/blog/ai-claims-auditability-scorecard": {
+      "title": "12 domande prima di affidare un sinistro a un’IA | True Aim",
+      "description": "Dodici domande che mostrano se un sistema di IA per i sinistri può rendere conto di ogni decisione che prende, e come True Aim risponde a ciascuna.",
+      "h1": "La scorecard di verificabilità dell’IA per i sinistri",
+      "breadcrumb": "La scorecard di verificabilità",
+      "ogTitle": "La scorecard di verificabilità dell’IA per i sinistri",
+      "ogDescription": "Dodici domande che mostrano se un sistema di IA per i sinistri può rendere conto di ogni decisione che prende, e come True Aim risponde a ciascuna.",
+      "updated": "2026-11-05"
+    },
+    "/blog/auditability-evidence-chains": {
+      "title": "Verificabilità dell’IA per i sinistri: le catene delle prove | True Aim",
+      "description": "Un’IA per i sinistri con audit trail conformi a FINMA e AI Act: provenienza dal campo alla fonte, tracce decisionali e interventi umani registrati.",
+      "h1": "Verificabilità dell’IA per i sinistri: costruire catene delle prove che i revisori accettano davvero",
+      "breadcrumb": "Catene delle prove che i revisori accettano",
+      "ogTitle": "Verificabilità dell’IA per i sinistri: costruire catene delle prove che i revisori accettano davvero",
+      "ogDescription": "Come costruire un’IA per i sinistri con audit trail conformi a FINMA e AI Act.",
+      "updated": "2026-11-05"
+    },
+    "/blog/architectural-transparency-agentic-claims-operation": {
+      "title": "Trasparenza architetturale e gestione sinistri agentica | True Aim",
+      "description": "Un sinistro non vive mai dentro una sola impresa. L’automazione tradizionale si fermava ai confini interni. La trasparenza diventa garanzia architetturale.",
+      "h1": "Il problema dell’automazione dei sinistri a compartimenti stagni",
+      "breadcrumb": "L’automazione dei sinistri a compartimenti stagni",
+      "ogTitle": "Il problema dell’automazione dei sinistri a compartimenti stagni: trasparenza architetturale e ascesa della gestione sinistri agentica",
+      "ogDescription": "Un sinistro non vive mai dentro una sola impresa. L’automazione tradizionale si fermava ai confini interni. La trasparenza diventa garanzia architetturale.",
+      "updated": "2026-11-05",
+      "ogImage": "https://trueaim.ai/en/blog/architectural-transparency-agentic-claims-operation/opengraph-image"
+    },
+    "/blog/ai-claims-handling-eu-ai-act-high-risk": {
+      "title": "L’IA nei sinistri è ad alto rischio secondo l’AI Act? | True Aim",
+      "description": "I sinistri sono assenti dall’allegato III. L’articolo 22 del GDPR li vincola. Solo il 24% degli assicuratori supererebbe un audit di governance in 90 giorni.",
+      "h1": "La gestione dei sinistri con IA non è ad alto rischio secondo l’AI Act europeo. Ecco cosa la vincola invece.",
+      "breadcrumb": "La gestione dei sinistri con IA e l’AI Act",
+      "ogTitle": "La gestione dei sinistri con IA non è ad alto rischio secondo l’AI Act europeo. Ecco cosa la vincola invece.",
+      "ogDescription": "I sinistri sono assenti dall’allegato III. L’articolo 22 del GDPR li vincola. Solo il 24% degli assicuratori supererebbe un audit di governance in 90 giorni.",
+      "updated": "2026-11-05"
+    },
+    "/blog/integration-playbook": {
+      "title": "Playbook di integrazione | True Aim",
+      "description": "Come True Aim si inserisce nei paesaggi esistenti, quali pattern di integrazione usiamo e come si svolge una prima integrazione in quattro-sei settimane.",
+      "h1": "Il playbook di integrazione True Aim.",
+      "breadcrumb": "Playbook di integrazione",
+      "ogTitle": "Il playbook di integrazione True Aim",
+      "ogDescription": "Come True Aim si inserisce nei paesaggi esistenti e come si svolge una prima integrazione in quattro-sei settimane.",
+      "updated": "2026-11-05",
+      "robots": "noindex, nofollow"
+    },
+    "/blog": {
+      "title": "Blog: IA verificabile nei sinistri | True Aim",
+      "description": "Articoli di True Aim su IA verificabile, automazione dei sinistri, regolamentazione dell’IA nelle assicurazioni e il passaggio dal pilota alla produzione.",
+      "h1": "Approfondimenti e analisi tecniche",
+      "breadcrumb": "Blog",
+      "ogTitle": "Il blog di True Aim",
+      "ogDescription": "Articoli su IA verificabile, automazione dei sinistri, regolamentazione dell’IA nelle assicurazioni e il passaggio dal pilota alla produzione.",
+      "updated": "2026-11-05"
+    }
+  }
 }

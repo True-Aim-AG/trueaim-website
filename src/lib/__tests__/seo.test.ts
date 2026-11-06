@@ -37,9 +37,9 @@ describe("pageMetadata", () => {
   });
 
   it("lists hreflang for the locales the page exists in, plus x-default", () => {
-    expect(Object.keys(pageMetadata("en", "/blog").alternates?.languages ?? {})).toEqual(["en", "x-default"]);
-    // Every page is English only until the translations land (src/i18n/page-locales.ts).
-    expect(Object.keys(pageMetadata("en", "/trust").alternates?.languages ?? {})).toEqual(["en", "x-default"]);
+    // Every page exists in all four languages since the translations landed (src/i18n/page-locales.ts).
+    expect(Object.keys(pageMetadata("en", "/blog").alternates?.languages ?? {})).toEqual(["en", "de", "fr", "it", "x-default"]);
+    expect(Object.keys(pageMetadata("en", "/trust").alternates?.languages ?? {})).toEqual(["en", "de", "fr", "it", "x-default"]);
   });
 
   it("indexes by default and honours noindex", () => {

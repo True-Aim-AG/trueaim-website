@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
-import { englishOnlyStaticParams } from "@/i18n/page-locales";
-
-// English only until the translation lands; see src/i18n/page-locales.ts.
-export const generateStaticParams = englishOnlyStaticParams;
 
 const PATH = "/contact";
 

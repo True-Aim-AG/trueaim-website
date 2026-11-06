@@ -1,1 +1,965 @@
-{}
+{
+  "productPages": {
+    "common": {
+      "ctaDemo": "Demo buchen",
+      "ctaEstimate": "Potenzial berechnen",
+      "faqHeading": "Häufige Fragen",
+      "relatedHeading": "Unsere Lösungen entdecken"
+    },
+    "dataExtraction": {
+      "name": "Data Extraction",
+      "tagline": "Ihre Schadendaten, bereit für KI.",
+      "hero": {
+        "title": "Data Extraction: Ihre Schadendaten, bereit für KI",
+        "summary": "Das meiste, was ein Versicherer über einen Schaden weiß, steckt in PDFs, Scans, Fotos, E-Mails und Altsystemen. True Aim liest es, extrahiert es, stellt es in seinen Zusammenhang und baut daraus eine strukturierte Datenbank. Ihre Teams und Ihre KI können dann jeden Schaden durchsuchen, jedes Dokument vergleichen und nach dem handeln, was sie finden.",
+        "scene": {
+          "alt": "Ein Film in Endlosschleife mit einem Graphen synthetischer Schadendaten. Er beginnt bei einem Gebäudeschaden und seinen verknüpften Datensätzen, ordnet sie dann nacheinander in Spalten um den Schaden, den Versicherer und das versicherte Gebäude an und zeigt Versicherungsnehmer, Makler, Police, Schadenbewertungen, Leistungsumfänge je Gewerk, Rechnungen, Dokumente und Schadenfotos, die True Aim extrahiert hat.",
+          "types": {
+            "claim": "Schaden",
+            "lossEvent": "Schadenereignis",
+            "exposure": "Versichertes Risiko",
+            "policy": "Policenstand",
+            "policyholder": "Versicherungsnehmer",
+            "broker": "Makler",
+            "insurer": "Versicherer",
+            "adjuster": "Schadensachbearbeiter",
+            "agent": "KI-Schadenspezialist",
+            "lossAssessment": "Schadenbewertung",
+            "scopeOfWork": "Leistungsumfang",
+            "decision": "Regulierungsentscheidung",
+            "invoice": "Rechnung",
+            "document": "Dokument",
+            "photo": "Schadenfoto"
+          },
+          "source": "Gelesen aus {document}, Seite {page}",
+          "mismatch": "Zur Prüfung markiert: gleicher Betrag und gleiches Datum wie {other}",
+          "pause": "Animation anhalten",
+          "play": "Animation abspielen"
+        }
+      },
+      "keys": {
+        "heading": "Jedes Dokument gelesen",
+        "items": [
+          {
+            "label": "Jede Quelle",
+            "text": "PDFs, Scans, Fotos, Handschrift, E-Mails und Datensätze in Ihren bestehenden Systemen."
+          },
+          {
+            "label": "In den Zusammenhang gestellt",
+            "text": "Jeder Wert ist mit der Police, dem Schaden, der Partei und dem Dienstleister verknüpft, zu denen er gehört."
+          },
+          {
+            "label": "Eine Datenbank",
+            "text": "Informationen, die in getrennten Dateien und Systemen lagen, zusammengeführt und durchsuchbar."
+          },
+          {
+            "label": "Bis auf die Seite zurückverfolgbar",
+            "text": "Jeder Wert verweist auf das Dokument und die Seite, aus denen er gelesen wurde."
+          }
+        ]
+      },
+      "locked": {
+        "heading": "Schadenwissen, eingeschlossen in statischen Dateien",
+        "paragraphs": [
+          "Schadenteams besitzen Nachweise aus vielen Jahren, die kein System durchsuchen kann. Rechnungen, Berichte, Kostenvoranschläge und Korrespondenz liegen als Dateien vor, einmal gelesen und dann archiviert. KI kann nur mit dem arbeiten, was sie findet. True Aim macht aus diesem Archiv Daten, in der Schaden- und Unfallversicherung ebenso wie bei Kfz, Sach, Garantie und Schadendienstleistern."
+        ],
+        "imageAlt": "Schadendokumente, archiviert als statische Dateien"
+      },
+      "steps": {
+        "heading": "Vom ersten Dokument zu nutzbaren Daten",
+        "items": [
+          {
+            "title": "Die Dokumente kommen an",
+            "text": "Aus jedem Kanal oder direkt aus Ihren Schaden- und Dokumentensystemen."
+          },
+          {
+            "title": "Die Informationen werden gelesen",
+            "text": "Namen, Datumsangaben, Beträge, Positionen, Teile, Gewerke und Schadendetails werden extrahiert."
+          },
+          {
+            "title": "Der Zusammenhang wird ergänzt",
+            "text": "Jeder Wert wird seinem Schaden, seiner Police, seiner Partei und seinem Dienstleister zugeordnet und dann mit den anderen abgeglichen."
+          },
+          {
+            "title": "Die Daten sind bereit",
+            "text": "Strukturiert, durchsuchbar und verfügbar für Ihre Teams, für True Aim und für Ihre eigene KI."
+          }
+        ]
+      },
+      "systems": {
+        "heading": "Ihre Systeme, Ihre Daten",
+        "paragraphs": [
+          "True Aim setzt auf Ihren bestehenden Schaden- und ERP-Systemen auf. Es liest daraus und schreibt strukturierte Ergebnisse zurück. Sie müssen nichts ersetzen, um anzufangen. Die Daten bleiben Ihre Daten, mit den Regeln und Zugriffsrechten, die Sie festlegen. Jeder extrahierte Wert behält seine Quelle, so dass jeder Prüfende das Original mit einem Klick nachsehen kann."
+        ],
+        "imageAlt": "Ein Schloss: Ihre Daten bleiben Ihre Daten"
+      },
+      "features": {
+        "heading": "Was das für Ihr Team bedeutet",
+        "items": [
+          {
+            "title": "Betrug und Widersprüche sichtbar gemacht",
+            "text": "Widersprüchliche Datumsangaben, doppelte Rechnungen und Beträge, die nicht zusammenpassen, werden zur Prüfung markiert. Ihr Team entscheidet, was als Nächstes geschieht."
+          },
+          {
+            "title": "Einheitliche Preise je Dienstleister",
+            "text": "Wir bauen interne Referenzwerte aus Ihrer eigenen Historie, so dass gleiche Arbeit jedes Mal gleich bepreist wird."
+          },
+          {
+            "title": "Schnellere Schadenberichte",
+            "text": "Fotos und Dokumente fließen direkt in einen Kostenvoranschlag und einen Reparaturumfang."
+          },
+          {
+            "title": "Suche über alle Schäden",
+            "text": "Muster über Dienstleister, Regionen und Sparten hinweg finden, die keine einzelne Datei zeigt."
+          },
+          {
+            "title": "Jeder Wert nachvollziehbar",
+            "text": "Jede Zahl behält ihr Quelldokument und ihre Seite, bereit für die Prüfung."
+          },
+          {
+            "title": "Bereit für Ihre eigene KI",
+            "text": "Saubere, strukturierte Schadendaten, die Ihre anderen Werkzeuge und Modelle nutzen können."
+          }
+        ]
+      },
+      "otus": {
+        "text": "Data Extraction gibt Otus, unserem KI-Schadenspezialisten, alles, was er braucht, um in Ihrer Umgebung sein Bestes zu geben.",
+        "link": "Otus kennenlernen"
+      },
+      "faq": [
+        {
+          "question": "Welche Dokumente kann True Aim lesen?",
+          "answer": "Digitale und gescannte PDFs, Fotos, Handschrift, E-Mails und Datensätze aus Schaden- und ERP-Systemen. Das umfasst Rechnungen, Kostenvoranschläge, Berichte, Formulare und Korrespondenz."
+        },
+        {
+          "question": "Woher wissen wir, dass die Daten stimmen?",
+          "answer": "Jeder Wert verweist auf die Seite, aus der er stammt. Werte, die sich widersprechen oder außerhalb des erwarteten Rahmens liegen, werden zur Prüfung durch eine Person markiert, statt weitergereicht zu werden."
+        },
+        {
+          "question": "Entscheidet True Aim, ob ein Schaden betrügerisch ist?",
+          "answer": "Nein. True Aim macht Widersprüche und Muster sichtbar, die einen genaueren Blick verdienen. Ihr Team prüft sie und entscheidet."
+        },
+        {
+          "question": "Müssen wir unser Schadensystem ersetzen?",
+          "answer": "Nein. True Aim arbeitet mit Ihren bestehenden Systemen zusammen, liest daraus und schreibt Ergebnisse zurück."
+        }
+      ],
+      "cta": {
+        "heading": "Testen Sie es an Ihren eigenen Dokumenten",
+        "lede": "Sehen Sie, was True Aim aus Ihren Dateien extrahiert, mit jedem Wert bis zur Quelle zurückverfolgt.",
+        "buttonDemo": "Demo buchen"
+      }
+    },
+    "claimsDecisioning": {
+      "name": "Automated Coverage Check",
+      "tagline": "Schäden in Minuten statt Wochen reguliert.",
+      "hero": {
+        "title": "Automated Coverage Check: Schäden in Minuten statt Wochen reguliert",
+        "summary": "Wir prüfen die Versicherungsbedingungen anhand des Sachverhalts und empfehlen, ob der Schaden anerkannt oder abgelehnt werden sollte. Wird er anerkannt, berechnen wir den geschuldeten Betrag Position für Position, und Ihr Sachbearbeiter trifft die endgültige Entscheidung.",
+        "scene": {
+          "alt": "Ein Schaden, wie der Sachbearbeiter ihn sieht: die Positionen nach Ergebnis gruppiert, jede mit ihrem gedeckten Betrag, und die Auszahlung",
+          "title": "Wasserschaden",
+          "reference": "Schaden 62850",
+          "columns": {
+            "description": "Beschreibung",
+            "quantity": "Menge",
+            "claimed": "Gefordert",
+            "covered": "Gedeckt"
+          },
+          "groups": [
+            {
+              "kind": "approved",
+              "label": "Gedeckt",
+              "total": "4.086,33",
+              "lines": [
+                {
+                  "description": "Boden ersetzen",
+                  "quantity": "18 × m²",
+                  "claimed": "2.860,00",
+                  "covered": "2.860,00"
+                },
+                {
+                  "description": "Trocknung",
+                  "quantity": "3 × Tag",
+                  "claimed": "540,00",
+                  "covered": "540,00"
+                },
+                {
+                  "description": "Verputzen und Streichen",
+                  "quantity": "2 × Wand",
+                  "claimed": "686,33",
+                  "covered": "686,33"
+                }
+              ]
+            },
+            {
+              "kind": "denied",
+              "label": "Ausgeschlossen",
+              "total": "0,00",
+              "lines": [
+                {
+                  "description": "Geschirrspüler, Ersatz",
+                  "quantity": "1 × Stück",
+                  "claimed": "1.126,30",
+                  "covered": "0,00"
+                }
+              ]
+            },
+            {
+              "kind": "referred",
+              "label": "Zur Prüfung zurückgestellt",
+              "total": "321,10",
+              "lines": [
+                {
+                  "description": "Hotel",
+                  "quantity": "4 × Nacht",
+                  "claimed": "642,18",
+                  "covered": "321,10"
+                }
+              ]
+            }
+          ],
+          "deductibleLabel": "Selbstbeteiligung",
+          "deductible": "150,00",
+          "payoutLabel": "Auszahlung",
+          "payout": "3.936,33"
+        }
+      },
+      "keys": {
+        "heading": "Ein regulierter Schaden in unter 2 Minuten",
+        "items": [
+          {
+            "label": "Gleiche Fakten, gleiche Antwort",
+            "text": "Der Betrag wird aus den Bedingungen berechnet und hängt nicht vom Sachbearbeiter ab."
+          },
+          {
+            "label": "Eine Begründung zu jeder Position",
+            "text": "Jeder Betrag nennt die Klausel oder Regel, auf der er beruht."
+          },
+          {
+            "label": "Die endgültige Entscheidung bleibt bei Ihrem Team",
+            "text": "Vollautomatisierung läuft nur dort, wo Sie und Ihre Aufsichtsbehörde es zulassen."
+          }
+        ]
+      },
+      "features": {
+        "heading": "Wir übernehmen die Dokumente, die Daten und die Berechnungen",
+        "items": [
+          {
+            "title": "Jedes Dokument gelesen",
+            "text": "Rechnungen, Kostenvoranschläge, Policen und Fotos werden zu strukturierten Daten."
+          },
+          {
+            "title": "Nachweise zuerst geprüft",
+            "text": "Unterschriften, Metadaten und Zahlen werden geprüft, bevor ein Betrag berechnet wird."
+          },
+          {
+            "title": "Jede Position anhand der Police",
+            "text": "Ersatzteile, Arbeitskosten und Gebühren werden getrennt ausgewiesen, jede mit ihrer Klausel."
+          },
+          {
+            "title": "Die Berechnungen erledigt",
+            "text": "Selbstbeteiligung, Limits, Höchstgrenzen, Haftung und Neu-für-alt, in der richtigen Reihenfolge durchgerechnet."
+          },
+          {
+            "title": "Jede Zahl nachvollziehbar",
+            "text": "Jede Zahl verweist auf die Stelle im Dokument, aus der sie stammt."
+          },
+          {
+            "title": "Jede Änderung begründet",
+            "text": "Wenn ein Sachbearbeiter eine Position manuell ändert, wird der Grund festgehalten."
+          }
+        ]
+      },
+      "technology": {
+        "cap": "Die Technologie",
+        "heading": "Berechnet, nicht vorhergesagt",
+        "paragraphs": [
+          "Ihre Versicherungsbedingungen, Ihr Katalog oder Ihr Regelwerk wird als deterministischer Entscheidungsbaum konfiguriert. Aus dem Sachverhalt wird das Ergebnis anhand der Bedingungen berechnet. Dieselben Fakten ergeben immer dieselbe Antwort, und die Antwort lässt sich Klausel für Klausel erklären.",
+          "Agenten übernehmen das Lesen. Fotos, PDFs, Handschrift und E-Mails werden zu den Fakten, die der Entscheidungsbaum braucht. Jeder Agent erledigt eine kleine Aufgabe, so dass an jeder Stelle des Prozesses Fachwissen am Werk ist."
+        ],
+        "imageAlt": "Ineinandergreifende Metallringe"
+      },
+      "flow": {
+        "heading": "Jeder Schaden in Bewegung, von der Schadenmeldung bis zur Regulierung",
+        "scene": {
+          "alt": "Schäden kommen über vier Kanäle an, laufen in einer Akte zusammen, und alle Beteiligten werden daraus auf dem Laufenden gehalten",
+          "channelsLabel": "Eingang über jeden Kanal",
+          "channels": [
+            "WhatsApp",
+            "E-Mail",
+            "Kundenportal",
+            "Reparaturbetrieb"
+          ],
+          "record": {
+            "title": "Eine Schadenakte",
+            "fields": [
+              {
+                "label": "Anspruchsteller",
+                "value": "A. Meier"
+              },
+              {
+                "label": "Police",
+                "value": "HOM-2026-8834"
+              },
+              {
+                "label": "Ereignis",
+                "value": "Wasserschaden, Küche"
+              },
+              {
+                "label": "Dokumente",
+                "value": "4 gelesen, 0 fehlen"
+              }
+            ],
+            "status": "Kontextualisiert"
+          },
+          "partiesLabel": "Alle Beteiligten eingebunden",
+          "parties": [
+            {
+              "name": "Kunde",
+              "text": "Schadennummer gesendet, Statusseite aktiv"
+            },
+            {
+              "name": "Makler",
+              "text": "Akte geteilt, nichts neu einzugeben"
+            },
+            {
+              "name": "Reparaturbetrieb",
+              "text": "Kostenvoranschlag angefordert, fällig Freitag"
+            },
+            {
+              "name": "Sachbearbeiter",
+              "text": "Zugewiesen, Dokumente bereits gelesen"
+            }
+          ]
+        }
+      },
+      "routing": {
+        "heading": "Weniger Verwaltungsaufwand rund um jeden Schaden",
+        "items": [
+          {
+            "label": "Eine Akte pro Schaden",
+            "text": "Meldung, Fotos, Police und Systemdaten an einem Ort."
+          },
+          {
+            "label": "Automatische Zuweisung",
+            "text": "Schäden gehen nach Ihren Regeln und der aktuellen Auslastung an den richtigen Sachbearbeiter."
+          },
+          {
+            "label": "Kein Nachfassen von Hand",
+            "text": "Erinnerungen gehen hinaus, wenn Ihre Auslöser es vorsehen."
+          },
+          {
+            "label": "Alle Beteiligten eingebunden",
+            "text": "Kunde, Makler und Reparaturbetrieb sehen jeweils den aktuellen Status."
+          }
+        ]
+      },
+      "record": {
+        "heading": "Ein vollständiges Protokoll jeder Entscheidung",
+        "scene": {
+          "alt": "Die Schadenakte: jede Aktion in ihrer Reihenfolge mit Akteur und Hash, und eine forensische Ansicht nach Akteur gruppiert",
+          "title": "Akte zu Schaden 62850",
+          "subtitle": "Wasserschaden",
+          "tabs": {
+            "timeline": "Zeitleiste",
+            "forensic": "Forensische Ansicht"
+          },
+          "phases": [
+            "Eingegangen",
+            "Gelesen",
+            "Geprüft",
+            "Berechnet",
+            "Entschieden",
+            "Reguliert"
+          ],
+          "rows": [
+            {
+              "time": "09:14:02",
+              "actor": "agent",
+              "who": "Agent",
+              "text": "Vier Dokumente gelesen und klassifiziert",
+              "hash": "a7f3"
+            },
+            {
+              "time": "09:14:19",
+              "actor": "agent",
+              "who": "Agent",
+              "text": "Integritätsprüfung der Nachweise bestanden",
+              "hash": "4c19"
+            },
+            {
+              "time": "09:14:31",
+              "actor": "engine",
+              "who": "Regel-Engine",
+              "text": "Jede Position anhand der Bedingungen geprüft, Klausel 4.2 angewandt",
+              "hash": "b028"
+            },
+            {
+              "time": "09:14:33",
+              "actor": "engine",
+              "who": "Regel-Engine",
+              "text": "Auszahlung berechnet: 3.936,33",
+              "hash": "3f6a"
+            },
+            {
+              "time": "09:21:40",
+              "actor": "human",
+              "who": "Sachbearbeiter",
+              "text": "Position 5 bestätigt, zwei Nächte über der Höchstgrenze zurückgestellt",
+              "hash": "e5d1"
+            },
+            {
+              "time": "09:21:41",
+              "actor": "engine",
+              "who": "Regel-Engine",
+              "text": "Akte versiegelt, Kette verifiziert",
+              "hash": "c90d"
+            }
+          ],
+          "groups": {
+            "agent": "Agenten",
+            "engine": "Regel-Engine",
+            "human": "Sachbearbeiter"
+          },
+          "actions": {
+            "one": "Aktion",
+            "many": "Aktionen"
+          },
+          "verified": "Kette verifiziert, 6 von 6 Hashes stimmen überein",
+          "exportLabel": "Prüfpaket exportieren"
+        }
+      },
+      "otus": {
+        "cap": "Otus",
+        "heading": "Ein KI-gestützter Experte für jedes Teammitglied",
+        "paragraphs": [
+          "Otus steht jeder Person in Ihrem Team zur Seite. Er erklärt jede Entscheidung Position für Position, entwirft das Schreiben oder die Übergabe und plant den Tag, aus dem Schaden, der Police und der Akte.",
+          "Sachbearbeiter fragen in Alltagssprache, gesprochen oder getippt, und erhalten sofort eine Antwort. Er hat keine Entscheidungsbefugnis: Ihr Team entscheidet."
+        ],
+        "link": "Über Otus",
+        "imageAlt": "Das Symbol von True Aim in Glas und Metall"
+      },
+      "faq": [
+        {
+          "question": "Wird das Ergebnis von KI vorhergesagt?",
+          "answer": "Nein. Ihre Versicherungsbedingungen, Ihr Katalog oder Ihre Regeln werden in einen Entscheidungsbaum übersetzt. Der Betrag wird aus den Fakten berechnet, so dass dieselben Fakten immer dieselbe Antwort ergeben."
+        },
+        {
+          "question": "Wo kommt KI zum Einsatz?",
+          "answer": "Beim Lesen des Schadens. Agenten machen aus Fotos, PDFs, Handschrift und E-Mails Fakten. Jeder Agent hat eine kleine Aufgabe, so dass jeder Schritt klar sichtbar ist."
+        },
+        {
+          "question": "Wer trifft die endgültige Entscheidung?",
+          "answer": "Ihr Team. Standardmäßig bereitet True Aim eine Empfehlung mit vollständiger Begründung vor, die eine Person bestätigt. Vollautomatisierung ist nur dort verfügbar, wo Sie und Ihre Aufsichtsbehörde es zulassen."
+        },
+        {
+          "question": "Was passiert, wenn etwas nicht stimmt?",
+          "answer": "Jede Annahme ist auf dem Bildschirm sichtbar und kann geändert werden. Jede Änderung hält ihren Grund fest. Der Fehler wird an dem Schritt behoben, an dem er entstanden ist."
+        },
+        {
+          "question": "Können wir mit unseren eigenen Regeln statt mit den Versicherungsbedingungen arbeiten?",
+          "answer": "Ja. Branchenkataloge und Ihre eigenen Geschäftsregeln funktionieren genauso wie Versicherungsbedingungen. Ein Beispiel sind Regeln zur normalen Abnutzung bei Fahrzeugen, die am Ende eines Leasings zurückgegeben werden."
+        },
+        {
+          "question": "Welchen Vorschriften ist das Protokoll zugeordnet?",
+          "answer": "DORA, dem EU AI Act (KI-Verordnung) und nationalen Vorschriften, darunter FINMA, BaFin, NAIC und POPIA. Die forensische Ansicht der Schadenakte zeigt jede Aktion nach Akteur, so dass die Verantwortung für jede Entscheidung sichtbar ist."
+        },
+        {
+          "question": "Ersetzt es unser Schadensystem?",
+          "answer": "Nein. Der Automated Coverage Check von True Aim setzt auf dem Schaden- oder ERP-System auf, das Sie betreiben, liest den Schaden daraus und schreibt die Empfehlung dorthin zurück."
+        },
+        {
+          "question": "Was ist das Decision Dossier?",
+          "answer": "Das Protokoll jeder Entscheidung: die Eingaben, die angewandten Klauseln, der Rechenweg, die Nachweisverknüpfungen und wer das Ergebnis bestätigt hat. Es wird als ein Prüfpaket exportiert."
+        }
+      ],
+      "cta": {
+        "heading": "Sehen Sie die automatisierte Deckungsprüfung mit Ihren eigenen Schäden",
+        "lede": "Buchen Sie eine Demo mit Ihren eigenen Schäden, oder beginnen Sie mit Ihren eigenen Zahlen im Potenzialrechner.",
+        "buttonDemo": "Demo buchen",
+        "buttonEstimate": "Potenzial berechnen"
+      }
+    },
+    "invoiceBenchmarking": {
+      "name": "Invoice Benchmarking",
+      "tagline": "Nie wieder zu viel für eine Rechnung zahlen.",
+      "hero": {
+        "title": "Invoice Benchmarking: nie wieder zu viel für eine Rechnung zahlen",
+        "summary": "Jede Rechnung, jedes Angebot und jeder Kostenvoranschlag wird mit Referenzpreisen abgeglichen, nach Sparte und nach Region. Ihr Team sieht, welche Positionen zu hoch sind, um wie viel und warum. Die Aufforderung zur Neuausstellung ist bereits vorformuliert. Rechnungen mit niedrigeren Beträgen bleiben nicht länger ungeprüft, und jede Einsparung wird Position für Position festgehalten.",
+        "scene": {
+          "alt": "Eine Rechnung, bei der jede Position im Vergleich zum Referenzpreis farblich markiert ist, und eine vorformulierte Aufforderung zur Neuausstellung für die zu hohe Position",
+          "title": "Rechnung INV-2204",
+          "subtitle": "Carrosserie Nord, Lausanne",
+          "count": "5 Positionen",
+          "lines": [
+            {
+              "kind": "denied",
+              "description": "Komplettlackierung",
+              "amount": "1.840,00"
+            },
+            {
+              "kind": "referred",
+              "description": "Türblech hinten",
+              "amount": "620,00"
+            },
+            {
+              "kind": "approved",
+              "description": "Arbeitskosten, 6,5 h",
+              "amount": "715,00"
+            },
+            {
+              "kind": "approved",
+              "description": "Teile, Stoßfängerclips",
+              "amount": "48,00"
+            },
+            {
+              "kind": "approved",
+              "description": "Lackmaterial",
+              "amount": "210,00"
+            }
+          ],
+          "totalLabel": "Rechnungsbetrag",
+          "total": "3.433,00",
+          "summaryLabel": "Gegenüber dem Referenzpreis",
+          "action": {
+            "title": "Korrekturanfrage entworfen",
+            "text": "Komplettlackierung: 1.840,00 gegenüber 1.440,00 erwartet",
+            "saveLabel": "Einsparung",
+            "save": "400"
+          },
+          "rows": [
+            {
+              "kind": "approved",
+              "label": "Im Rahmen",
+              "count": "3 Positionen"
+            },
+            {
+              "kind": "referred",
+              "label": "Prüfen",
+              "count": "1 Position"
+            },
+            {
+              "kind": "denied",
+              "label": "Über Referenzpreis",
+              "count": "1 Position"
+            }
+          ]
+        }
+      },
+      "keys": {
+        "heading": "Jede Rechnung abgeglichen",
+        "items": [
+          {
+            "label": "Jede Rechnung",
+            "text": "Abgeglichen mit Referenzpreisen für jede Sparte und Region."
+          },
+          {
+            "label": "Das Wesentliche sichtbar",
+            "text": "Rot, Gelb oder Grün auf jeder Position, so dass Prüfende sofort sehen, was Aufmerksamkeit braucht."
+          },
+          {
+            "label": "Fair für jede Region",
+            "text": "Referenzpreise gelten je Region, so dass Rechnungen aus einer teuren Gegend nicht als überhöht markiert werden."
+          },
+          {
+            "label": "Jede Einsparung festgehalten",
+            "text": "Der ursprüngliche Betrag, der angepasste Betrag und der Grund, Position für Position."
+          }
+        ]
+      },
+      "unchecked": {
+        "heading": "Rechnungen mit niedrigeren Beträgen bleiben nicht länger ungeprüft",
+        "paragraphs": [
+          "Die meisten Dienstleister und Gewerke veröffentlichen keine Preisliste. Kleine Rechnungen gehen entweder an eine externe Prüfung, die sich nur bei großen Beträgen lohnt, oder werden bezahlt, wie sie sind.",
+          "Ein Festpreis pro Rechnung macht es lohnend, jede Rechnung zu prüfen, auch die kleinen, die heute niemand öffnet."
+        ],
+        "imageAlt": "Verbundene Glasringe"
+      },
+      "benchmark": {
+        "cap": "Die Referenz festlegen",
+        "heading": "Unsere Daten oder eine Engine aus Ihren eigenen",
+        "paragraphs": [
+          "Je nach Markt stellt True Aim vom ersten Tag an eigene Referenzdaten bereit oder baut aus Ihren eigenen Daten eine Referenz-Engine.",
+          "In der Schweiz stützen sich die Referenzdaten auf mehr als 100.000 Rechnungen aus Sachschäden. In anderen Märkten baut True Aim sie mit lokalen Partnern und aus den Daten auf, die Sie bereits besitzen.",
+          "In jedem Fall wird jede Position daran gemessen, was die Arbeit für dieses Gewerk in dieser Region kosten sollte. Die Referenz lernt weiter aus den Rechnungen, die Sie akzeptieren."
+        ],
+        "imageAlt": "Ein Pfeil in der Mitte einer Zielscheibe aus Metall"
+      },
+      "lineBench": {
+        "heading": "So gleicht True Aim Position für Position ab",
+        "scene": {
+          "alt": "Drei Rechnungspositionen, eine davon aufgeklappt, um zu zeigen, wie weit sie über der erwarteten Spanne für ihr Gewerk und ihre Region liegt",
+          "label": "Rechnung INV-2204",
+          "rangeLabel": "Erwartete Spanne",
+          "axis": {
+            "low": "Niedriger",
+            "high": "Höher"
+          },
+          "bars": [
+            10,
+            18,
+            30,
+            48,
+            68,
+            86,
+            96,
+            86,
+            68,
+            48,
+            30,
+            18,
+            10
+          ],
+          "lines": [
+            {
+              "kind": "approved",
+              "description": "Arbeitskosten, 6,5 h",
+              "status": "Im Rahmen",
+              "amount": "715,00",
+              "range": "Erwartet für dieses Gewerk in dieser Region: 650,00 bis 780,00",
+              "position": 51,
+              "marker": "+1 %",
+              "foot": [
+                {
+                  "label": "Median",
+                  "value": "708,00"
+                },
+                {
+                  "label": "Abweichung",
+                  "value": "Innerhalb der erwarteten Spanne"
+                }
+              ]
+            },
+            {
+              "kind": "denied",
+              "description": "Komplettlackierung",
+              "status": "28 % über dem Erwartungswert",
+              "amount": "1.840,00",
+              "range": "Erwartet für dieses Gewerk in dieser Region: 1.320,00 bis 1.560,00",
+              "position": 76,
+              "marker": "+28 %",
+              "foot": [
+                {
+                  "label": "Median",
+                  "value": "1.440,00"
+                },
+                {
+                  "label": "Korrekturanfrage",
+                  "value": "Vorformuliert",
+                  "ok": true
+                },
+                {
+                  "label": "Eingespart",
+                  "value": "400,00",
+                  "ok": true
+                }
+              ]
+            },
+            {
+              "kind": "approved",
+              "description": "Lackmaterial",
+              "status": "Im Rahmen",
+              "amount": "210,00",
+              "range": "Erwartet für dieses Gewerk in dieser Region: 190,00 bis 230,00",
+              "position": 46,
+              "marker": "-3 %",
+              "foot": [
+                {
+                  "label": "Median",
+                  "value": "216,00"
+                },
+                {
+                  "label": "Abweichung",
+                  "value": "Innerhalb der erwarteten Spanne"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "features": {
+        "heading": "Was das für Ihr Team bedeutet",
+        "items": [
+          {
+            "title": "Eine Referenz, die zu Ihnen passt",
+            "text": "Wo Referenzdaten vorhanden sind, nutzt True Aim sie. Wo nicht, baut True Aim sie aus Ihren eigenen Daten auf."
+          },
+          {
+            "title": "Abweichung vom Referenzpreis",
+            "text": "Wie weit jede Position von der erwarteten Spanne entfernt liegt, nicht nur, dass sie darüber liegt."
+          },
+          {
+            "title": "Alles im Vergleich",
+            "text": "Jedes Angebot für dieselbe Arbeit nebeneinander, mit einem empfohlenen Dienstleister und den Gründen."
+          },
+          {
+            "title": "Korrekturanfragen entworfen",
+            "text": "Beanstandete Positionen fließen in eine vorformulierte E-Mail und einen Bericht, bereit zum Versand an den Dienstleister."
+          },
+          {
+            "title": "Scorecards je Dienstleister",
+            "text": "Jeder Dienstleister sieht seine eigene Bilanz bei Preis, Bearbeitungszeit und Beanstandungsquote."
+          },
+          {
+            "title": "Eine Referenz, die weiterlernt",
+            "text": "Akzeptierte Rechnungen fließen zurück, so dass die Spannen den aktuellen Preisen folgen."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "Woher stammen die Preisdaten?",
+          "answer": "In der Schweiz aus mehr als 100.000 Rechnungen aus Sachschäden, gruppiert nach Gewerk und Region. In anderen Märkten arbeitet True Aim mit Partnern zusammen, um die Referenz aus Ihren eigenen Daten aufzubauen."
+        },
+        {
+          "question": "Wir prüfen nur Rechnungen über einem bestimmten Betrag. Warum etwas ändern?",
+          "answer": "Der größte Teil der Überzahlungen liegt unterhalb der Schwelle für die externe Prüfung. Ein Festpreis pro Rechnung macht es lohnend, die kleinen Rechnungen zu prüfen, die heute niemand öffnet."
+        },
+        {
+          "question": "Wie sehen wir, was es einspart?",
+          "answer": "Ein Dashboard zeigt, wie viele Rechnungen durchgelaufen sind, wie viel bei jeder eingespart wurde und was Sie für die Plattform bezahlt haben. Der Ertrag ist jederzeit sichtbar."
+        },
+        {
+          "question": "Müssen wir unser Schadensystem ersetzen?",
+          "answer": "Nein. Invoice Benchmarking von True Aim arbeitet mit den Systemen zusammen, die Sie bereits nutzen, und schreibt die angepassten Beträge dorthin zurück."
+        }
+      ],
+      "cta": {
+        "heading": "Beweisen Sie es an Ihren eigenen Rechnungen",
+        "lede": "Schicken Sie uns einen Satz früherer Rechnungen, und wir zeigen Ihnen, was Sie gespart hätten. Oder lassen Sie uns Ihre Referenz aufbauen und an den nächsten eingehenden Rechnungen testen.",
+        "buttonDemo": "Demo buchen"
+      }
+    },
+    "damageReporting": {
+      "name": "Damage Reporting",
+      "tagline": "Fertige Schadenberichte in Minuten.",
+      "hero": {
+        "title": "Damage Reporting: fertige Schadenberichte in Minuten",
+        "summary": "Erstellen Sie schon bei der Schadenmeldung einen Kostenvoranschlag und den vollständigen Reparaturumfang, aus den Fotos und Dokumenten, die Ihr Kunde schickt. Bepreisen Sie den Schaden nach Region und listen Sie jedes Gewerk und jede Aufgabe in der Reihenfolge auf, in der die Arbeit laufen muss. Schicken Sie Gutachter nur dann vor Ort, wenn ein Besuch das Ergebnis verändert.",
+        "scene": {
+          "alt": "Vier Fotos werden am ersten Tag zu einem bepreisten Schadenbericht und Reparaturumfang",
+          "photosLabel": "4 Fotos eingegangen",
+          "files": [
+            {
+              "name": "kitchen_01.jpg",
+              "meta": "2,4 MB, gelesen"
+            },
+            {
+              "name": "kitchen_02.jpg",
+              "meta": "2,1 MB, gelesen"
+            },
+            {
+              "name": "floor_03.jpg",
+              "meta": "1,8 MB, gelesen"
+            },
+            {
+              "name": "wall_04.jpg",
+              "meta": "2,6 MB, gelesen"
+            }
+          ],
+          "title": "Schadenbericht",
+          "subtitle": "Wasserschaden, Küche. Reparaturumfang",
+          "lines": [
+            {
+              "item": "Bodenbelag, Laminat",
+              "quantity": "14 m²",
+              "amount": "1.260"
+            },
+            {
+              "item": "Sockelleisten",
+              "quantity": "9 m",
+              "amount": "210"
+            },
+            {
+              "item": "Trocknungsgeräte",
+              "quantity": "5 Tage",
+              "amount": "640"
+            },
+            {
+              "item": "Wand, Neuanstrich",
+              "quantity": "12 m²",
+              "amount": "340"
+            }
+          ],
+          "estimateLabel": "Kostenvoranschlag",
+          "estimate": "2.450"
+        }
+      },
+      "steps": {
+        "heading": "Vom ersten Foto\nzum vollständigen Bericht",
+        "items": [
+          {
+            "title": "Der Schaden kommt an",
+            "text": "Per WhatsApp, E-Mail, Webformular oder Telefon. Fehlendes wird markiert, solange der Kunde noch da ist."
+          },
+          {
+            "title": "Der Schaden wird gelesen",
+            "text": "Schadenart, betroffene Fläche und Materialien werden aus den Fotos gelesen und nach Region bepreist."
+          },
+          {
+            "title": "Die Arbeit wird festgelegt",
+            "text": "Jedes benötigte Gewerk, von Trocknung und Verputzen bis Dacharbeiten und Verglasung, in der Reihenfolge, in der die Arbeit laufen muss."
+          },
+          {
+            "title": "Die Gewerke werden koordiniert",
+            "text": "Konkrete Anfragen gehen an die Betriebe, die Sie auswählen. Die eingehenden Angebote werden mit dem Referenzpreis abgeglichen."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "Ersetzt True Aim unsere Gutachter?",
+          "answer": "Nein. Damage Reporting von True Aim gibt Ihren Gutachtern am ersten Tag einen Kostenvoranschlag und einen Reparaturumfang, mit einem Hinweis darauf, was noch vor Ort geprüft werden muss. Ortsbesuche finden dort statt, wo sie das Ergebnis verändern."
+        },
+        {
+          "question": "Was muss der Kunde schicken?",
+          "answer": "Fotos, vorhandene Dokumente und eine Beschreibung in eigenen Worten. Angaben, die bereits in der Police stehen, werden für ihn ausgefüllt."
+        },
+        {
+          "question": "Wie werden die Preise im Kostenvoranschlag ermittelt?",
+          "answer": "Anhand dessen, was jedes Gewerk in dieser Region verlangt, mit denselben Referenzdaten wie Invoice Benchmarking von True Aim."
+        },
+        {
+          "question": "Kann True Aim von einem Gutachterbericht ausgehen?",
+          "answer": "Ja. Ein Bericht Dritter, ein Kostenvoranschlag oder ein Gutachten kann der Ausgangspunkt sein. Damage Reporting von True Aim funktioniert dann auch dort, wo Sie den Kundenprozess nicht selbst betreiben."
+        }
+      ],
+      "cta": {
+        "heading": "Sehen Sie einen Schadenbericht aus Ihren eigenen Fotos",
+        "lede": "Buchen Sie eine Demo und bringen Sie einen aktuellen Schaden mit.",
+        "buttonDemo": "Demo buchen"
+      }
+    },
+    "otus": {
+      "name": "Otus, der Schadenspezialist von True Aim",
+      "tagline": "Ein KI-gestützter Experte für jedes Teammitglied.",
+      "hero": {
+        "title": "Otus, der Schadenspezialist von True Aim",
+        "summary": "Otus ist ein KI-gestützter Experte für jedes Teammitglied, in jeder Lösung von True Aim. Fragen Sie Otus alles zu einem Schaden, per Sprache oder Text, und die Antwort kommt aus dem Schaden, der Police und der Akte. Otus entwirft, erklärt und plant und hat keine Entscheidungsbefugnis: Ihr Team entscheidet."
+      },
+      "prompts": {
+        "label": "Otus: wählen Sie ein Szenario und sehen Sie die Antwort",
+        "youLabel": "Sie",
+        "otusLabel": "Otus",
+        "items": [
+          {
+            "id": "plan",
+            "tab": "Meinen Tag planen",
+            "prompt": "Otus, ich muss heute meinen Rückstand abarbeiten. Wo fange ich an?",
+            "answer": [
+              "Sie haben 14 offene Schäden. Sechs sind bereit zur Bestätigung: Die Empfehlung ist vollständig und nichts fehlt, insgesamt etwa 20 Minuten. Drei warten auf Reparaturbetriebe, Erinnerungen gingen um 8:30 Uhr hinaus. Zwei brauchen Dokumente vom Kunden, heute Morgen nachgefasst.",
+              "Bleiben drei für Ihr Urteil: 62850 (Hotelnächte über der Höchstgrenze), 64812 (strittige Ursache) und 64799 (zwei Kostenvoranschläge weit auseinander). Beginnen Sie mit diesen drei, solange Sie frisch sind, und bestätigen Sie dann die sechs."
+            ],
+            "actions": [
+              "62850 öffnen",
+              "Die sechs anzeigen"
+            ]
+          },
+          {
+            "id": "handover",
+            "tab": "Einen Schaden übergeben",
+            "prompt": "Entwirf eine Übergabe-E-Mail für Schaden 5964 an meinen Kollegen in der Sachsparte.",
+            "answer": [
+              "Entwurf fertig. Betreff: Übergabe, Schaden 5964, Kfz-Garantie, J. Odermatt. Was bisher geschah: gemeldet am 3. Oktober, fünf Dokumente gelesen, Turbolader und Arbeitskosten anerkannt, Öl und Filter nach Klausel 2.4 ausgeschlossen, Ersatzfahrzeug an der Fünf-Tage-Grenze zurückgestellt.",
+              "Was offen ist: Die überarbeitete Rechnung der Werkstatt ist am Freitag fällig. Nächster Schritt: die Tage des Ersatzfahrzeugs bestätigen, sobald sie da ist. Die vollständige Akte ist verlinkt."
+            ],
+            "actions": [
+              "Aus Gmail senden",
+              "Kopieren"
+            ]
+          },
+          {
+            "id": "explain",
+            "tab": "Eine Entscheidung erklären",
+            "prompt": "Warum wurde Position 4 bei Schaden 62850 ausgeschlossen? Der Kunde fragt nach.",
+            "answer": [
+              "Position 4 ist der Ersatz des Geschirrspülers, 1.126,30. Die Police deckt den Schaden, den das Wasser verursacht hat, nicht das Gerät, das ihn verursacht hat: Klausel 4.2, ausgeschlossene Ursachen. Die Rechnung und der Bericht des Installateurs nennen beide den Geschirrspüler als Quelle des Lecks.",
+              "Hier ist eine Antwort an den Kunden in verständlicher Sprache, mit Zitat der Klausel. Nichts wird gesendet, bevor Sie es senden."
+            ],
+            "actions": [
+              "Entwurf öffnen",
+              "Klausel 4.2 anzeigen"
+            ]
+          }
+        ]
+      },
+      "keys": {
+        "heading": "Ein Kollege für alle",
+        "items": [
+          {
+            "label": "In jedem Tool",
+            "text": "Ihr Schadensystem, Ihr Postfach und jede Lösung von True Aim."
+          },
+          {
+            "label": "Behandelt den ganzen Schaden",
+            "text": "Schaden, Kunde und Police, alles in einem Gespräch."
+          },
+          {
+            "label": "Antwortet in verständlicher Sprache",
+            "text": "Warum eine Position abgelehnt wurde, in Alltagsworten, mit der Klausel."
+          }
+        ]
+      },
+      "features": {
+        "heading": "Was Otus Ihrem Team bringt",
+        "items": [
+          {
+            "title": "Den Tag planen",
+            "text": "Was jetzt zu tun ist, was auf andere wartet und welche Fristen bald ablaufen."
+          },
+          {
+            "title": "Übergaben",
+            "text": "Eine Zusammenfassung des bisherigen Verlaufs, für die Urlaubsvertretung oder einen neuen Sachbearbeiter, in einer Nachricht."
+          },
+          {
+            "title": "Schreiben und E-Mails",
+            "text": "Entwürfe an Kunden, Reparaturbetriebe und Kollegen, mit dem vollständigen Schaden im Blick."
+          },
+          {
+            "title": "Eine Entscheidung erklären",
+            "text": "Warum eine Position abgelehnt wurde und welche Klausel gilt, bereit zum Versand an den Kunden."
+          },
+          {
+            "title": "Auf den Stand kommen",
+            "text": "Ein kurzes Briefing zu jedem Schaden, ohne etwas suchen zu müssen."
+          },
+          {
+            "title": "Eine Rechnung prüfen",
+            "text": "Welche Positionen über dem Referenzpreis liegen und was die Aufforderung zur Neuausstellung sagt."
+          },
+          {
+            "title": "Einen Schadenbericht lesen",
+            "text": "Was die Fotos zeigen, was bepreist ist und was noch einen Besuch braucht."
+          },
+          {
+            "title": "In Ihren Systemen arbeiten",
+            "text": "Er liest aus Ihrem Schadensystem und Dokumentenspeicher und handelt darin."
+          }
+        ],
+        "imageAlt": "Das Symbol von True Aim in Glas und Metall"
+      },
+      "faqHeading": "Fragen zu Otus",
+      "faq": [
+        {
+          "question": "Ändert Otus irgendeine Entscheidung?",
+          "answer": "Nein. Standardmäßig hat er keine Entscheidungsbefugnis. Er erklärt, fasst zusammen und entwirft. Genau deshalb kommt er auch schneller durch Risiko- und Compliance-Prüfungen."
+        },
+        {
+          "question": "Was braucht er, um zu arbeiten?",
+          "answer": "Er setzt auf Automated Coverage Check, Invoice Benchmarking und Damage Reporting auf und erklärt dort jede Empfehlung Position für Position."
+        },
+        {
+          "question": "Welche Sprachen spricht er?",
+          "answer": "Sachbearbeiter können in jeder Sprache sprechen oder schreiben."
+        }
+      ],
+      "cta": {
+        "heading": "Lernen Sie Otus mit Ihren eigenen Schäden kennen",
+        "lede": "Buchen Sie eine Demo und sehen Sie, wie Otus eine Empfehlung Position für Position erklärt.",
+        "buttonDemo": "Demo buchen",
+        "buttonClaims": "Automated Coverage Check"
+      }
+    }
+  }
+}

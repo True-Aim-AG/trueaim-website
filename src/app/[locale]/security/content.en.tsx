@@ -1,0 +1,126 @@
+import { setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { PageHero, SECTION } from "@/components/content";
+
+const PUBLISH_DATE = "2026-10-31";
+
+export default async function SecurityPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  return (
+    <div className="min-h-screen">
+      <PageHero compact title="Security at True Aim" texture={{ name: "circ", position: "12% 88%" }}>
+        <p className="mt-6 text-sm text-muted"><strong className="text-strong">Last updated:</strong> {PUBLISH_DATE}</p>
+      </PageHero>
+      <section className={SECTION}>
+        <div className="mx-auto max-w-[1232px] [&>*]:max-w-3xl [&>div>section:first-child>h2]:mt-0">
+
+          <div className="bg-lilac rounded-[12px] px-8 py-6 mb-8">
+            <p className="text-body leading-[1.6]">
+              <strong className="text-strong">Report a vulnerability:</strong>{" "}
+              <a href="mailto:security@trueaim.ai" className="text-link hover:underline font-medium">
+                security@trueaim.ai
+              </a>
+              . We acknowledge reports within 5 business days. See{" "}
+              <a href="#responsible-disclosure" className="text-link hover:underline">
+                Responsible disclosure
+              </a>.
+            </p>
+          </div>
+
+          <div>
+            <p className="text-body leading-[1.6]">
+              True Aim AG operates a claims-processing platform for insurers, brokers, and any entity in the insurance value chain handling or processing claims. Security is a core requirement of our Service, and our customers entrust us with personal data of their policyholders. This page describes our security program at a high level. For full audit-grade evidence (SOC 2 Type II report once issued, ISO 27001 certificate, sub-processor list, Data Processing Agreement), contact{" "}
+              <a href="mailto:security@trueaim.ai" className="text-link hover:underline">security@trueaim.ai</a>. These are available under NDA.
+            </p>
+
+            <section>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Compliance frameworks</h2>
+              <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2">
+                <li><strong className="text-strong">ISO/IEC 27001:2022</strong>: certified by A-LIGN, certificate ISMS-TR-090426, issued 4 September 2026, valid until 4 September 2029.</li>
+                <li><strong className="text-strong">SOC 2 Type II</strong>: audited, covering the audit window from 1 May to 31 July 2026; the final report has been issued.</li>
+                <li><strong className="text-strong">Swiss FADP</strong> and <strong className="text-strong">GDPR</strong>: aligned as data processor for customer data.</li>
+                <li><strong className="text-strong">EU AI Act</strong>: AI Technical File maintained for Automated Coverage Check; current readiness is documented and tracked.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Where data is processed</h2>
+              <p className="text-body leading-[1.6]">
+                Customer data at rest is stored on Microsoft Azure in the Switzerland North region. Hosting and AI inference stay in Switzerland, the EEA or the UK; exceptions are listed in the sub-processor list, Schedule 2 to our Data Processing Agreement.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Sub-processors</h2>
+              <p className="text-body leading-[1.6]">
+                We use a limited set of Microsoft Azure services for hosting, AI inference, and operational telemetry, plus Google Cloud (Gemini models for AI inference in the EU), Google Workspace (for business email), Slack (for internal team communication) and Sentry (technical error logs only). The current list forms Schedule 2 to our Data Processing Agreement and is available on request. We notify customers in advance of changes. Internal-only tools (source control, CI/CD, CRM) that do not process Tenant production data are not customer sub-processors and are not listed.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Encryption</h2>
+              <p className="text-body leading-[1.6]">
+                All data is encrypted in transit (TLS 1.2 or above) and at rest (AES-256 via Azure platform encryption). Application secrets are stored in Azure Key Vault with soft-delete and purge protection enabled.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Access control</h2>
+              <p className="text-body leading-[1.6]">
+                Access to customer data is restricted to authorised True Aim personnel on a least-privilege, need-to-know basis, enforced through role-based access controls and Azure Managed Identities. Multi-factor authentication is enforced for all employee accounts.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Monitoring and incident response</h2>
+              <p className="text-body leading-[1.6]">
+                We operate continuous logging, alerting, and monitoring on the production environment via Microsoft Defender for Cloud and Azure Monitor. We maintain a documented incident response procedure. Customers will be notified of confirmed security incidents affecting their data without undue delay and in accordance with our Data Processing Agreement.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Vulnerability management</h2>
+              <p className="text-body leading-[1.6]">
+                We monitor our software dependencies and infrastructure for known vulnerabilities through automated scanning and Microsoft Defender. Findings are triaged against documented severity SLAs. We engage third-party penetration testers on a recurring basis.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Personnel security</h2>
+              <p className="text-body leading-[1.6]">
+                All personnel undergo background screening, accept confidentiality obligations, and complete security and privacy awareness training.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Business continuity</h2>
+              <p className="text-body leading-[1.6]">
+                Customer data is backed up on a regular schedule, with documented restore procedures. We test our disaster recovery procedures periodically.
+              </p>
+            </section>
+
+            <section id="responsible-disclosure" className="scroll-mt-24">
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Responsible disclosure</h2>
+              <p className="text-body leading-[1.6]">
+                If you believe you have found a security vulnerability in our Service or in this website, please report it to{" "}
+                <a href="mailto:security@trueaim.ai" className="text-link hover:underline">security@trueaim.ai</a>. We commit to acknowledging your report within 5 business days and to working with you in good faith to investigate and remediate verified issues. We will not pursue legal action against researchers who follow this disclosure process, act in good faith, and do not access, modify, or delete data beyond what is necessary to demonstrate a vulnerability. See also our{" "}
+                <Link href="/ethics" className="text-link hover:underline">Ethics &amp; Reporting</Link>{" "}
+                channel for non-security misconduct.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Contact</h2>
+              <p className="text-body leading-[1.6]">
+                For security-related questions:{" "}
+                <a href="mailto:security@trueaim.ai" className="text-link hover:underline">security@trueaim.ai</a>. For privacy and data-protection enquiries:{" "}
+                <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a>.
+              </p>
+            </section>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

@@ -1,0 +1,528 @@
+{
+  "solutionPages": {
+    "common": {
+      "ctaDemo": "Demo buchen",
+      "faqHeading": "Häufige Fragen",
+      "helpHeading": "Unsere Lösungen entdecken",
+      "help": {
+        "claimsDecisioning": {
+          "title": "Automated Coverage Check",
+          "text": "Eine automatisierte Deckungsprüfung: Jeder Schaden wird anhand der Versicherungsbedingungen geprüft, mit offengelegter Begründung und berechneter Auszahlung.",
+          "link": "Automated Coverage Check entdecken"
+        },
+        "invoiceBenchmarking": {
+          "title": "Invoice Benchmarking",
+          "text": "Jede Rechnung und jedes Angebot daran gemessen, was die Arbeit in der jeweiligen Region kosten sollte.",
+          "link": "Invoice Benchmarking entdecken"
+        },
+        "damageReporting": {
+          "title": "Damage Reporting",
+          "text": "Fotos und Dokumente werden zu einem Kostenvoranschlag und einem vollständigen Reparaturumfang.",
+          "link": "Damage Reporting entdecken"
+        },
+        "otus": {
+          "title": "Otus",
+          "text": "Antworten für jedes Mitglied der Teams Ihrer Kunden, im KI-Assistenten, den sie bereits freigegeben haben.",
+          "link": "Otus kennenlernen"
+        }
+      },
+      "cta": {
+        "heading": "Erleben Sie True Aim an Ihren eigenen Schadenfällen",
+        "lede": "Bringen Sie aktuelle Schäden, Rechnungen oder Schadenberichte mit, und wir zeigen Ihnen das fertige Ergebnis.",
+        "button": "Demo buchen"
+      }
+    },
+    "insurers": {
+      "hero": {
+        "title": "Sach-, Kfz- und Haftpflichtschäden, schneller reguliert",
+        "summary": "True Aim ist für Ihre Schadenteams gebaut. Jeder Schaden wird anhand der Versicherungsbedingungen geprüft, jede Rechnung mit Referenzpreisen abgeglichen und jeder Schadenbericht vorbereitet, jeweils in der richtigen Höhe. Ihre Sachbearbeiter behalten die endgültige Entscheidung und gewinnen die Stunden zurück, die bisher für Lesen, Neueingabe und Nachfassen verloren gingen.",
+        "scene": {
+          "alt": "Ein Schaden, wie der Sachbearbeiter ihn sieht: jede Position nach Ergebnis gruppiert mit ihrem gedeckten Betrag, und die Auszahlung",
+          "title": "Wasserschaden",
+          "reference": "Schaden 62850",
+          "columns": {
+            "description": "Beschreibung",
+            "quantity": "Menge",
+            "claimed": "Gefordert",
+            "covered": "Gedeckt"
+          },
+          "groups": [
+            {
+              "kind": "approved",
+              "label": "Gedeckt",
+              "total": "2.860,00",
+              "lines": [
+                {
+                  "description": "Boden ersetzen",
+                  "quantity": "18 × m²",
+                  "claimed": "2.860,00",
+                  "covered": "2.860,00"
+                }
+              ]
+            },
+            {
+              "kind": "denied",
+              "label": "Ausgeschlossen",
+              "total": "0,00",
+              "lines": [
+                {
+                  "description": "Geschirrspüler, Ersatz",
+                  "quantity": "1 × Stück",
+                  "claimed": "1.126,30",
+                  "covered": "0,00"
+                }
+              ]
+            },
+            {
+              "kind": "referred",
+              "label": "Zur Prüfung zurückgestellt",
+              "total": "321,10",
+              "lines": [
+                {
+                  "description": "Hotel",
+                  "quantity": "4 × Nacht",
+                  "claimed": "642,18",
+                  "covered": "321,10"
+                }
+              ]
+            }
+          ],
+          "deductibleLabel": "Selbstbeteiligung",
+          "deductible": "150,00",
+          "payoutLabel": "Auszahlung",
+          "payout": "2.710,00"
+        }
+      },
+      "benefits": {
+        "heading": "Was das für Ihr Team bedeutet",
+        "items": [
+          {
+            "title": "Zeit zurück für Sachbearbeiter",
+            "text": "Lesen, Neueingabe und Nachfassen füllen nicht länger ihren Tag."
+          },
+          {
+            "title": "Konsistente Entscheidungen",
+            "text": "Dieselben Fakten führen zur selben Antwort, wer auch immer den Schaden prüft."
+          },
+          {
+            "title": "Kosten, die Sie erklären können",
+            "text": "Jeder Betrag trägt seine Begründung, bereit für die Prüfung."
+          },
+          {
+            "title": "Frühere Reserveschätzungen",
+            "text": "Eine Schadenschätzung und ein Reservewert schon bei der Schadenmeldung."
+          },
+          {
+            "title": "Weniger Statusanrufe",
+            "text": "Kunden sehen den Fortschritt ihres Schadens und haben weniger Grund anzurufen."
+          },
+          {
+            "title": "Jede Rechnung geprüft",
+            "text": "Jede Rechnung und jedes Angebot wird anhand Ihrer Referenzpreise geprüft."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "Welche Sparten unterstützt True Aim?",
+          "answer": "True Aim ist nicht an eine einzelne Sparte gebunden. Kfz-, Sach-, Garantie- und Haftpflichtschäden sind aus denselben Bausteinen gebaut, jeweils mit eigenen Versicherungsbedingungen und Regeln."
+        },
+        {
+          "question": "Wer trifft die endgültige Entscheidung?",
+          "answer": "Ihre Sachbearbeiter. True Aim bereitet eine Empfehlung mit vollständiger Begründung vor, und eine Person bestätigt sie. Vollautomatisierung läuft nur dort, wo Sie und Ihre Aufsichtsbehörde es erlauben."
+        },
+        {
+          "question": "Müssen wir unser Schadensystem ersetzen?",
+          "answer": "Nein. True Aim setzt auf dem Schaden- oder ERP-System auf, das Sie bereits betreiben, liest jeden Schaden daraus und schreibt seine Ergebnisse zurück."
+        },
+        {
+          "question": "Wie wird True Aim abgerechnet?",
+          "answer": "Pro Ergebnis, nicht pro Nutzer. Sie zahlen für jeden regulierten Schaden, jede abgeglichene Rechnung oder jeden fertigen Schadenbericht, so dass die Kosten nur mit dem Nutzen steigen, den Sie erhalten."
+        }
+      ]
+    },
+    "brokers": {
+      "hero": {
+        "title": "Schäden vom ersten Anruf an erfasst und bearbeitet",
+        "summary": "Makler sind nach einem Schaden oft die erste Anlaufstelle. Mit True Aim werden Sach-, Kfz- und Haftpflichtschäden beim ersten Kontakt erfasst, anhand der Police geprüft und in Bewegung gehalten. Ihr Kunde ist bei jedem Schritt informiert, und die Entscheidung des Versicherers wird vollständig erklärt, Position für Position.",
+        "scene": {
+          "alt": "Schäden kommen über vier Kanäle an, laufen in einer Akte zusammen, und alle Beteiligten werden daraus auf dem Laufenden gehalten",
+          "channelsLabel": "Eingang über jeden Kanal",
+          "channels": [
+            "WhatsApp",
+            "E-Mail",
+            "Kundenportal",
+            "Reparaturbetrieb"
+          ],
+          "record": {
+            "title": "Eine Schadenakte",
+            "fields": [
+              {
+                "label": "Anspruchsteller",
+                "value": "A. Meier"
+              },
+              {
+                "label": "Police",
+                "value": "HOM-2026-8834"
+              },
+              {
+                "label": "Ereignis",
+                "value": "Wasserschaden, Küche"
+              },
+              {
+                "label": "Dokumente",
+                "value": "4 gelesen, 0 fehlen"
+              }
+            ],
+            "status": "Kontextualisiert"
+          },
+          "partiesLabel": "Alle Beteiligten eingebunden",
+          "parties": [
+            {
+              "name": "Kunde",
+              "text": "Schadennummer gesendet, Statusseite aktiv"
+            },
+            {
+              "name": "Makler",
+              "text": "Akte geteilt, nichts neu einzugeben"
+            },
+            {
+              "name": "Reparaturbetrieb",
+              "text": "Kostenvoranschlag angefordert, fällig Freitag"
+            },
+            {
+              "name": "Sachbearbeiter",
+              "text": "Zugewiesen, Dokumente bereits gelesen"
+            }
+          ]
+        }
+      },
+      "benefits": {
+        "heading": "Was das für Ihr Team bedeutet",
+        "items": [
+          {
+            "title": "Verwaltungsaufwand entfällt",
+            "text": "Schäden werden erfasst, gelesen und abgelegt, sobald sie eintreffen. Ihr Team gibt keine Angaben mehr neu ein und muss keinen Dokumenten mehr hinterherlaufen."
+          },
+          {
+            "title": "Konsistente Entscheidungen",
+            "text": "Dieselben Fakten führen zur selben Antwort, wer auch immer den Schaden prüft."
+          },
+          {
+            "title": "Eine Akte für alle Beteiligten",
+            "text": "Ihr Kunde, der Versicherer und der Reparaturbetrieb arbeiten alle mit derselben Schadenakte, so dass jeder denselben Status sieht."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "Ersetzt True Aim die Entscheidung des Versicherers?",
+          "answer": "Nein. Der Versicherer entscheidet. True Aim prüft jeden Schaden anhand der Versicherungsbedingungen und zeigt die Klausel hinter jeder Position, so dass Sie Ihrem Kunden das Ergebnis sicher erklären können."
+        },
+        {
+          "question": "Über welche Kanäle kann ein Schaden eingehen?",
+          "answer": "WhatsApp, E-Mail, Telefon oder ein Kundenportal. Dokumente werden gelesen, sobald sie eintreffen, und in einer Schadenakte zusammengeführt."
+        },
+        {
+          "question": "Wie halten wir unsere Kunden auf dem Laufenden?",
+          "answer": "Alle Beteiligten arbeiten mit derselben Schadenakte, so dass Ihr Kunde, der Versicherer und der Reparaturbetrieb jeweils den aktuellen Status sehen, ohne dass jemand von Hand nachfasst."
+        },
+        {
+          "question": "Können wir unsere Servicelevel nachweisen?",
+          "answer": "Ja. Servicelevel und Pflichten aus Deckungsvollmachten werden Schritt für Schritt verfolgt und in der Akte festgehalten, bereit für jede Überprüfung."
+        }
+      ]
+    },
+    "tpas": {
+      "hero": {
+        "title": "Mehr Schäden pro Sachbearbeiter, im Rahmen jedes Mandats",
+        "summary": "True Aim ist Ihre agentenbasierte Orchestrierungsschicht und berechnet die Deckung Position für Position anhand der Bedingungen jedes einzelnen Versicherers. Wir prüfen jede Rechnung anhand empirischer Marktreferenzen und halten jedes Ergebnis mit Herkunftsnachweis auf Positionsebene fest. Ohne den Aufwand des Hin- und Herwechselns zwischen Systemen bleibt Ihren Sachbearbeitern Zeit für die Beurteilungen, auf die es ankommt, und Ihr Portfolio hat Raum zu wachsen.",
+        "scene": {
+          "alt": "Eine Arbeitsliste mit dem Status jedes Schadens und der verbleibenden Zeit bis zu seinem Servicelevel",
+          "title": "Offene Schäden",
+          "subtitle": "34 offen · 5 Sachbearbeiter · nach Servicelevel sortiert",
+          "tabs": [
+            "Alle",
+            "Meine Liste",
+            "Dringend"
+          ],
+          "columns": {
+            "claim": "Schaden",
+            "status": "Status",
+            "sla": "SLA"
+          },
+          "rows": [
+            {
+              "reference": "CLM-02988",
+              "kind": "Glas",
+              "status": "open",
+              "label": "Neu",
+              "sla": "4 h"
+            },
+            {
+              "reference": "CLM-02981",
+              "kind": "Sach",
+              "status": "open",
+              "label": "In Bearbeitung",
+              "sla": "2 Tage"
+            },
+            {
+              "reference": "CLM-02979",
+              "kind": "Kfz",
+              "status": "referred",
+              "label": "Wartet auf Werkstatt",
+              "sla": "1 Tag"
+            }
+          ],
+          "totalLabel": "34 offene Schäden",
+          "showingLabel": "3 angezeigt"
+        }
+      },
+      "benefits": {
+        "heading": "Was das für Ihr Team bedeutet",
+        "items": [
+          {
+            "title": "Mehr Schäden pro Sachbearbeiter",
+            "text": "Lesen, Prüfen und Berechnen sind erledigt, bevor der Schaden geöffnet wird."
+          },
+          {
+            "title": "Jedes Mandat exakt angewandt",
+            "text": "Jeder Schaden wird innerhalb der Bedingungen, Limits und des Mandats des jeweiligen Versicherers entschieden."
+          },
+          {
+            "title": "Audits aus der Akte beantwortet",
+            "text": "Die Auditfrage eines Kunden braucht Minuten, kein Projekt."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "Kann True Aim für jeden Versicherer andere Regeln anwenden?",
+          "answer": "Ja. Versicherungsbedingungen, Limits und Mandat jedes Versicherers werden getrennt eingerichtet, und jeder Schaden wird innerhalb der Regeln des Kunden entschieden, zu dem er gehört."
+        },
+        {
+          "question": "Wer trifft die endgültige Entscheidung?",
+          "answer": "Ihre Sachbearbeiter, im Rahmen des Mandats, das der Versicherer Ihnen erteilt hat. True Aim bereitet die Empfehlung und ihre Begründung vor, und die Akte zeigt, wer jedes Ergebnis bestätigt hat."
+        },
+        {
+          "question": "Wie beantworten wir ein Audit des Versicherers?",
+          "answer": "Aus der Akte. Jede Entscheidung trägt ihre Klausel, ihre Nachweise und ihren Bearbeiter, und die vollständige Historie eines Schadens wird als ein Prüfpaket exportiert."
+        },
+        {
+          "question": "Müssen wir unser Schadensystem wechseln?",
+          "answer": "Nein. True Aim setzt auf den Systemen auf, die Sie bereits betreiben, und schreibt seine Ergebnisse dorthin zurück."
+        }
+      ]
+    },
+    "warranty": {
+      "hero": {
+        "title": "Jede Garantierechnung anhand der Bedingungen geprüft",
+        "summary": "True Aim zerlegt Rechnungen bis auf die Position und prüft Ersatzteile, Arbeitskosten und Gebühren in Echtzeit anhand der Garantiebedingungen und regionaler Referenzpreise. Jede Abweichung löst eine versandfertige Aufforderung zur Neuausstellung aus, in der die betroffenen Positionen genau benannt sind. So werden teure Streitfälle zu schnellen, sachlichen Abstimmungen.",
+        "scene": {
+          "alt": "Ein Kfz-Garantieschaden, wie der Sachbearbeiter ihn sieht: Ersatzteile, Arbeitskosten und ein Ersatzfahrzeug, jede Position anhand der Garantiebedingungen geprüft",
+          "title": "Kfz-Garantieschaden",
+          "reference": "Schaden 5964",
+          "columns": {
+            "description": "Beschreibung",
+            "quantity": "Menge",
+            "claimed": "Gefordert",
+            "covered": "Gedeckt"
+          },
+          "groups": [
+            {
+              "kind": "approved",
+              "label": "Gedeckt",
+              "total": "1.980,00",
+              "lines": [
+                {
+                  "description": "Turbolader, Ersatz",
+                  "quantity": "1 × Teil",
+                  "claimed": "1.980,00",
+                  "covered": "1.980,00"
+                }
+              ]
+            },
+            {
+              "kind": "denied",
+              "label": "Ausgeschlossen",
+              "total": "0,00",
+              "lines": [
+                {
+                  "description": "Öl und Filter",
+                  "quantity": "1 × Service",
+                  "claimed": "148,00",
+                  "covered": "0,00"
+                }
+              ]
+            },
+            {
+              "kind": "referred",
+              "label": "Zur Prüfung zurückgestellt",
+              "total": "325,00",
+              "lines": [
+                {
+                  "description": "Ersatzfahrzeug",
+                  "quantity": "9 × Tag",
+                  "claimed": "585,00",
+                  "covered": "325,00"
+                }
+              ]
+            }
+          ],
+          "payoutLabel": "Auszahlung",
+          "payout": "2.305,00"
+        }
+      },
+      "benefits": {
+        "heading": "Was das für Ihr Team bedeutet",
+        "items": [
+          {
+            "title": "Position für Position, in zwei Minuten",
+            "text": "Ersatzteile, Arbeitskosten und Gebühren, jeweils anhand der Bedingungen geprüft."
+          },
+          {
+            "title": "Die richtige Reparatur",
+            "text": "Die vorgeschlagene Reparatur wird anhand des Schadens geprüft, nicht nur anhand der Deckung."
+          },
+          {
+            "title": "Die Werkstatt bleibt informiert",
+            "text": "Abgelehnte Positionen werden durchgestrichen, und eine Aufforderung zur Neuausstellung wird vorformuliert."
+          }
+        ]
+      },
+      "story": {
+        "heading": "So funktioniert das in der Praxis",
+        "caseStudy": {
+          "cap": "Fallstudie",
+          "title": "Dieselben Schadenentscheidungen, in einem Bruchteil der Zeit.",
+          "text": "Wie NSA die Entscheidungslogik seiner Schadenexperten in die Software von True Aim übertrug und den Aufwand für einen komplexen Schaden um 86 % senkte.",
+          "link": "Fallstudie lesen",
+          "logoAlt": "NSA Services SA"
+        }
+      },
+      "quote": {
+        "text": "Ich habe an diese Automatisierung vom ersten Tag an geglaubt, weil sie nichts entscheidet, was wir nicht schon selbst entschieden hatten. Unsere Experten haben die Regeln geschrieben, True Aim hat sie ins System gebaut, und jede Antwort zeigt das Dokument und die Klausel dahinter. Routineschäden werden in Minuten reguliert, und mein Team kann sich auf die Fälle konzentrieren, in denen seine Erfahrung wirklich zählt. Ich kann jedem Versicherer nur empfehlen, sich das genau anzusehen.",
+        "name": "Giuseppe Chiarello",
+        "role": "CEO, NSA Services SA"
+      },
+      "faq": [
+        {
+          "question": "Welche Dokumente liest True Aim?",
+          "answer": "Die Werkstattrechnung oder den Kostenvoranschlag, die Garantiebedingungen und die Unterlagen, die mit jedem Schaden eingehen, auf Deutsch, Französisch, Italienisch, Englisch und in weiteren Sprachen."
+        },
+        {
+          "question": "Wird das Ergebnis von KI entschieden?",
+          "answer": "Nein. KI liest die Dokumente. Bekannte Teile, Ausschlüsse und Verbrauchsmaterialien werden nach festen Regeln entschieden, und jede Entscheidung verweist auf die Klausel und die Quellseite dahinter."
+        },
+        {
+          "question": "Wer trifft die endgültige Entscheidung?",
+          "answer": "Ihre Sachbearbeiter. True Aim bereitet die Empfehlung und ihre Begründung vor, und ein Sachbearbeiter bestätigt oder ändert sie."
+        },
+        {
+          "question": "Können wir mit unseren eigenen Regeln statt mit den Garantiebedingungen arbeiten?",
+          "answer": "Ja. Branchenkataloge und Ihre eigenen Geschäftsregeln funktionieren genauso wie die Garantiebedingungen."
+        }
+      ]
+    },
+    "claimsTech": {
+      "hero": {
+        "title": "Die Deckungsprüfung im Workflow, den Ihre Kunden schon nutzen",
+        "summary": "Der Workflow gehört Ihnen, und True Aim bereitet jede Entscheidung vor. Wir arbeiten mit Ihrem Team zusammen, um die Schadenbearbeitung in Ihrer Plattform einfacher zu machen, mit einem Protokoll, wie jede Entscheidung zustande kam, das Sie an Ihre Kunden weitergeben können.",
+        "scene": {
+          "alt": "Die Schadenakte: jede Aktion in ihrer Reihenfolge mit Akteur und Hash, und eine forensische Ansicht nach Akteur gruppiert",
+          "title": "Akte zu Schaden 62850",
+          "subtitle": "Wasserschaden",
+          "tabs": {
+            "timeline": "Zeitleiste",
+            "forensic": "Forensische Ansicht"
+          },
+          "phases": [
+            "Eingegangen",
+            "Gelesen",
+            "Geprüft",
+            "Berechnet",
+            "Entschieden",
+            "Reguliert"
+          ],
+          "rows": [
+            {
+              "time": "09:14:02",
+              "actor": "agent",
+              "who": "Agent",
+              "text": "Vier Dokumente gelesen und klassifiziert",
+              "hash": "a7f3"
+            },
+            {
+              "time": "09:14:31",
+              "actor": "engine",
+              "who": "Regel-Engine",
+              "text": "Jede Position anhand der Bedingungen geprüft, Klausel 4.2 angewandt",
+              "hash": "b028"
+            },
+            {
+              "time": "09:21:40",
+              "actor": "human",
+              "who": "Sachbearbeiter",
+              "text": "Position 5 bestätigt, zwei Nächte über der Höchstgrenze zurückgestellt",
+              "hash": "e5d1"
+            },
+            {
+              "time": "09:21:41",
+              "actor": "engine",
+              "who": "Regel-Engine",
+              "text": "Akte versiegelt, Kette verifiziert",
+              "hash": "c90d"
+            }
+          ],
+          "groups": {
+            "agent": "Agenten",
+            "engine": "Regel-Engine",
+            "human": "Sachbearbeiter"
+          },
+          "actions": {
+            "one": "Aktion",
+            "many": "Aktionen"
+          },
+          "exportLabel": "Prüfpaket exportieren"
+        }
+      },
+      "team": {
+        "heading": "Was das für Ihr Team bedeutet",
+        "paragraphs": [],
+        "items": [
+          {
+            "title": "Arbeitet mit Ihrem Produkt zusammen",
+            "text": "Angebunden über eine API, so dass Ihre Kunden das System behalten, das sie kennen."
+          },
+          {
+            "title": "Jedes Regelwerk",
+            "text": "Versicherungsbedingungen, ein Branchenkatalog oder die eigenen Regeln eines Kunden."
+          },
+          {
+            "title": "Ein vollständiges Protokoll, per Klick",
+            "text": "Jede Entscheidung trägt ihre Regelversion, ihre Begründung und ihren Bearbeiter."
+          }
+        ],
+        "imageAlt": "Ineinandergreifende Metallringe"
+      },
+      "faq": [
+        {
+          "question": "Wie verbindet sich True Aim mit unserer Plattform?",
+          "answer": "Über eine API. Ihre Plattform sendet den Schaden, True Aim liefert die Empfehlung, ihre Begründung und den berechneten Betrag zurück, und Ihre Kunden arbeiten weiter in den Masken, die sie kennen."
+        },
+        {
+          "question": "Kann jeder Kunde eigene Regeln nutzen?",
+          "answer": "Ja. Versicherungsbedingungen, Branchenkataloge und die eigenen Geschäftsregeln eines Kunden werden pro Kunde eingerichtet, und jede Entscheidung hält die angewandte Regelversion fest."
+        },
+        {
+          "question": "Wer trifft die endgültige Entscheidung?",
+          "answer": "Die Sachbearbeiter Ihrer Kunden. True Aim bereitet die Empfehlung mit vollständiger Begründung vor, und Vollautomatisierung läuft nur dort, wo der Kunde und seine Aufsichtsbehörde es erlauben."
+        },
+        {
+          "question": "Was können wir an unsere Kunden weitergeben?",
+          "answer": "Das vollständige Protokoll jeder Entscheidung: die Eingaben, die angewandten Klauseln, die Berechnung und wer das Ergebnis bestätigt hat, exportiert als ein Prüfpaket."
+        }
+      ]
+    }
+  }
+}

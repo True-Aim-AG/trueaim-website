@@ -5,13 +5,13 @@
     "technology": "Technologie",
     "company": "Entreprise",
     "contact": "Contact",
-    "bookDemo": "Réserver une démo",
+    "bookDemo": "Demander une démo",
     "logoAlt": "Logo True Aim",
-    "toggleMenu": "Ouvrir/fermer le menu",
+    "toggleMenu": "Ouvrir ou fermer le menu",
     "productsDropdown": {
       "invoiceBenchmarking": "Invoice Benchmarking",
-      "invoiceBenchmarkingDesc": "Ne payez plus jamais une facture trop cher",
-      "claimsDecisioning": "Claims Decisioning",
+      "invoiceBenchmarkingDesc": "Ne plus jamais surpayer une facture",
+      "claimsDecisioning": "Automated Coverage Check",
       "claimsDecisioningDesc": "Des sinistres réglés en minutes, pas en semaines",
       "damageReporting": "Damage Reporting",
       "damageReportingDesc": "Des rapports de dommages complets en quelques minutes",
@@ -20,30 +20,30 @@
     },
     "resourcesDropdown": {
       "caseStudies": "Études de cas",
-      "caseStudiesDesc": "Témoignages de réussite clients",
-      "impactEstimator": "Impact Estimator",
+      "caseStudiesDesc": "Réussites de nos clients",
+      "impactEstimator": "Estimateur d’impact",
       "impactEstimatorDesc": "Explorez la valeur potentielle",
       "trustCenter": "Trust Center",
-      "trustCenterDesc": "Sécurité & conformité",
-      "product": "Aperçu du produit",
+      "trustCenterDesc": "Sécurité et conformité",
+      "product": "Vue d’ensemble des produits",
       "productDesc": "La plateforme True Aim",
       "blog": "Blog",
       "blogDesc": "Analyses et actualités"
     },
-    "platform": "Platform",
+    "platform": "Plateforme",
     "solutions": "Solutions",
     "menu": {
       "dataExtraction": {
         "name": "Data Extraction",
-        "desc": "Vos données de sinistres, prêtes pour l'IA"
+        "desc": "Vos données sinistres, prêtes pour l’IA"
       },
       "claimsDecisioning": {
-        "name": "Claims Decisioning",
+        "name": "Automated Coverage Check",
         "desc": "Des sinistres réglés en minutes, pas en semaines"
       },
       "invoiceBenchmarking": {
         "name": "Invoice Benchmarking",
-        "desc": "Ne payez plus jamais une facture trop cher"
+        "desc": "Ne plus jamais surpayer une facture"
       },
       "damageReporting": {
         "name": "Damage Reporting",
@@ -51,55 +51,55 @@
       },
       "otus": {
         "name": "Otus",
-        "desc": "Le spécialiste sinistres de True Aim"
+        "desc": "Un expert IA pour chaque membre de l’équipe"
       },
       "insurers": {
-        "name": "Insurers",
-        "desc": "Property and casualty claims"
+        "name": "Assureurs",
+        "desc": "Sinistres IARD"
       },
       "brokers": {
-        "name": "Brokers",
-        "desc": "Claims captured from the first call"
+        "name": "Courtiers",
+        "desc": "Des sinistres saisis dès le premier appel"
       },
       "tpas": {
-        "name": "Third-party administrators",
-        "desc": "More claims per adjuster, within mandate"
+        "name": "Gestionnaires délégués (TPA)",
+        "desc": "Davantage de sinistres par gestionnaire, dans le cadre du mandat"
       },
       "warranty": {
-        "name": "Warranty providers",
-        "desc": "Every invoice against the terms"
+        "name": "Prestataires de garantie",
+        "desc": "Chaque facture confrontée aux conditions de garantie"
       },
       "claimsTech": {
-        "name": "Claims technology providers",
-        "desc": "Decisions inside your platform"
+        "name": "Éditeurs de solutions sinistres",
+        "desc": "Des décisions dans votre plateforme"
       },
       "caseStudies": {
         "name": "Études de cas",
-        "desc": "Témoignages de réussite clients"
+        "desc": "Résultats d’équipes sinistres"
       },
       "blog": {
         "name": "Blog",
-        "desc": "Analyses et actualités"
+        "desc": "Sinistres, preuves et réglementation"
       },
       "impactEstimator": {
-        "name": "Impact Estimator",
-        "desc": "Explorez la valeur potentielle"
+        "name": "Estimateur d’impact",
+        "desc": "Calculez la valeur libérée"
       },
       "trustCenter": {
         "name": "Trust Center",
-        "desc": "Sécurité & conformité"
+        "desc": "Sécurité, certification et données"
       },
       "about": {
-        "name": "About",
-        "desc": "Who we are and who we work with"
+        "name": "À propos",
+        "desc": "Qui nous sommes et avec qui nous travaillons"
       },
       "partners": {
-        "name": "Partners",
-        "desc": "Clients, partners and research"
+        "name": "Partenaires",
+        "desc": "Clients, partenaires et recherche"
       },
       "contact": {
         "name": "Contact",
-        "desc": "Request a demo or ask a question"
+        "desc": "Demander une démo ou poser une question"
       }
     },
     "languageLabel": "Langue"
@@ -114,48 +114,46 @@
     "about": "À propos",
     "contact": "Contact",
     "caseStudies": "Études de cas",
-    "impactEstimator": "Impact Estimator",
+    "impactEstimator": "Estimateur d’impact",
     "blog": "Blog",
-    "platformOverview": "Aperçu de la plateforme",
+    "platformOverview": "Vue d’ensemble de la plateforme",
     "dataExtraction": "Data Extraction",
     "invoiceBenchmarking": "Invoice Benchmarking",
-    "claimsDecisioning": "Claims Decisioning",
+    "claimsDecisioning": "Automated Coverage Check",
     "damageReporting": "Damage Reporting",
     "otus": "Otus",
     "security": "Sécurité",
-    "ethics": "Éthique & signalements",
-    "product": "Aperçu du produit",
-    "support": "Support",
-    "changelog": "Journal des modifications",
+    "ethics": "Éthique et signalement",
+    "support": "Assistance",
+    "changelog": "Changelog",
     "privacy": "Politique de confidentialité",
-    "terms": "Conditions d'utilisation",
-    "subProcessors": "Liste des sous-traitants",
-    "aiTransparency": "Transparence IA",
+    "terms": "Conditions d’utilisation",
+    "aiTransparency": "Transparence de l’IA",
     "cookies": "Politique relative aux cookies",
     "paia": "Manuel PAIA",
-    "copyright": "© {year} True Aim AG, Metallstrasse 9, 6300 Zug, Switzerland",
+    "copyright": "© {year} True Aim AG, Metallstrasse 9, 6300 Zug, Suisse",
     "linkedin": "LinkedIn",
     "taglineLines": [
-      "Faster claims.",
-      "Smarter decisions.",
-      "Lower costs.",
-      "Auditable by design."
+      "Des sinistres réglés plus vite.",
+      "Des décisions plus éclairées.",
+      "Des coûts plus bas.",
+      "Auditable dès la conception."
     ],
     "followLinkedin": "Suivez-nous",
     "partners": "Partenaires"
   },
   "cookie": {
     "title": "Préférences en matière de cookies",
-    "description": "Nous utilisons des cookies pour améliorer votre expérience. Les cookies essentiels sont toujours actifs. Vous pouvez choisir d'activer les cookies d'analyse pour nous aider à améliorer notre site web.",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience. Les cookies essentiels sont toujours actifs. Vous pouvez activer les cookies d’analyse pour nous aider à améliorer notre site.",
     "learnMore": "En savoir plus",
     "acceptAll": "Tout accepter",
     "decline": "Refuser",
     "managePreferences": "Gérer les préférences",
     "savePreferences": "Enregistrer les préférences",
     "essential": "Essentiels",
-    "essentialDesc": "Nécessaires au fonctionnement du site web",
+    "essentialDesc": "Nécessaires au fonctionnement du site",
     "analytics": "Analyse",
     "analyticsDesc": "Nous aident à comprendre comment les visiteurs utilisent notre site"
   },
-  "skipToContent": "Accéder au contenu principal"
+  "skipToContent": "Aller au contenu principal"
 }

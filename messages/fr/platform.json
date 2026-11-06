@@ -1,1 +1,149 @@
-{}
+{
+  "platform": {
+    "hero": {
+      "title": "Comment fonctionne notre plateforme",
+      "summary": "Nous transformons le dossier sinistre en résultat final : un sinistre réglé, une facture comparée aux prix de référence ou un rapport de dommages complet. L’IA lit les documents, la décision est calculée à partir des conditions de votre police et chaque étape est consignée. Votre équipe garde le dernier mot.",
+      "ctaDemo": "Réserver une démo",
+      "scene": {
+        "alt": "Trois résultats finaux : un sinistre réglé, une facture comparée aux prix de référence et un rapport de dommages complet",
+        "claimsDecisioning": "Un sinistre réglé",
+        "invoiceBenchmarking": "Une facture comparée aux prix de référence",
+        "damageReporting": "Un rapport de dommages complet"
+      }
+    },
+    "outcomes": {
+      "heading": "Quatre résultats finaux",
+      "items": {
+        "dataExtraction": {
+          "title": "Une base de données sinistres interrogeable",
+          "text": "Chaque document lu, chaque valeur mise en contexte et tracée jusqu’à sa page, le tout stocké dans une base de données unique que vos équipes et votre IA peuvent utiliser.",
+          "link": "Data Extraction"
+        },
+        "claimsDecisioning": {
+          "title": "Un sinistre réglé",
+          "text": "Chaque ligne vérifiée au regard des conditions de la police, le montant calculé et le raisonnement consigné, prêts à être confirmés par votre gestionnaire.",
+          "link": "Automated Coverage Check"
+        },
+        "invoiceBenchmarking": {
+          "title": "Une facture comparée aux prix de référence",
+          "text": "Chaque ligne comparée aux prix de référence, les lignes trop élevées contestées auprès du prestataire et la facture réémise au bon montant.",
+          "link": "Invoice Benchmarking"
+        },
+        "damageReporting": {
+          "title": "Un rapport de dommages complet",
+          "text": "Un devis chiffré et l’étendue complète des travaux à partir des photos et des documents du client, dès la déclaration de sinistre.",
+          "link": "Damage Reporting"
+        }
+      }
+    },
+    "technology": {
+      "heading": "Deux technologies, une tâche chacune",
+      "paragraphs": [
+        "Des décisions calculées. Votre police, votre catalogue ou votre référentiel de règles devient un arbre de décision. À partir des faits, le résultat est calculé, pas prédit.",
+        "Des agents qui savent lire. Les sinistres arrivent sous forme de photos, de PDF, d’écriture manuscrite et d’e-mails, et des agents logiciels les transforment en faits. Chaque agent accomplit une petite tâche, ce qui garantit l’expertise à chaque étape du processus."
+      ],
+      "imageAlt": "Anneaux métalliques entrelacés"
+    },
+    "diagram": {
+      "heading": "Comment nos solutions s’articulent",
+      "intro": "Un dossier sinistre entre. Un arbre de décision audité en ressort. Nos solutions font le travail, et deux fonctions de la plateforme le font avancer et le consignent.",
+      "input": {
+        "name": "Le dossier sinistre",
+        "text": "Photos, factures, devis, polices d’assurance et e-mails, quel que soit le canal."
+      },
+      "modules": {
+        "dataExtraction": {
+          "name": "Data Extraction",
+          "text": "Lit chaque document et construit une base de données structurée et interrogeable."
+        },
+        "claimsDecisioning": {
+          "name": "Automated Coverage Check",
+          "text": "Vérifie chaque ligne au regard des conditions de la police et calcule le montant."
+        },
+        "invoiceBenchmarking": {
+          "name": "Invoice Benchmarking",
+          "text": "Compare chaque facture, devis et chiffrage aux prix de référence."
+        },
+        "damageReporting": {
+          "name": "Damage Reporting",
+          "text": "Transforme photos et documents en devis chiffré et en étendue des travaux."
+        },
+        "otus": {
+          "name": "Otus, le spécialiste sinistres de True Aim",
+          "text": "Explique, résume et rédige pour votre équipe dans chaque solution True Aim."
+        }
+      },
+      "output": {
+        "name": "Une décision auditée",
+        "text": "Une recommandation avec ses calculs, ses preuves et ses motifs, confirmée par votre gestionnaire et réinjectée dans vos systèmes."
+      },
+      "featuresHeading": "Fonctions de la plateforme",
+      "features": {
+        "orchestrate": {
+          "name": "Orchestrate",
+          "text": "Réunit chaque sinistre dans un dossier unique et fait avancer le travail, de la déclaration à la clôture. Les sinistres sont affectés selon vos règles et la charge de travail du moment, les rappels partent quand vos déclencheurs le prévoient et chaque partie voit le statut en temps réel."
+        },
+        "prove": {
+          "name": "Prove",
+          "text": "Consigne chaque décision avec ses preuves, la règle en vigueur et la personne qui l’a prise. Toute modification du dossier est visible. Un clic exporte le dossier d’audit complet."
+        }
+      },
+      "callout": "Mêmes données. Même décision. À chaque fois."
+    },
+    "fit": {
+      "heading": "True Aim se place au-dessus de vos systèmes existants",
+      "paragraphs": [
+        "True Aim se place au-dessus de votre système de gestion des sinistres ou de votre ERP, y lit les données et y réinjecte les résultats.",
+        "Vos seuils, règles, affectations et limites restent entre vos mains, et vous les modifiez vous-même."
+      ],
+      "imageAlt": "Un cadenas en métal portant le symbole True Aim"
+    },
+    "faq": {
+      "heading": "Questions fréquentes",
+      "items": [
+        {
+          "question": "Le résultat est-il prédit par l’IA ?",
+          "answer": "Non. L’IA lit les documents. La décision elle-même est calculée à partir de vos conditions ou de vos règles, de sorte que les mêmes faits donnent toujours la même réponse."
+        },
+        {
+          "question": "Qui prend la décision finale ?",
+          "answer": "Votre équipe. True Aim prépare la recommandation et le raisonnement. L’automatisation complète ne s’applique que là où vous et votre autorité de contrôle l’autorisez."
+        },
+        {
+          "question": "True Aim remplace-t-il notre système de gestion des sinistres ?",
+          "answer": "Non. True Aim se place au-dessus du système de gestion des sinistres ou de l’ERP que vous utilisez déjà et y réinjecte ses résultats. Les écrans peuvent reproduire ceux que votre équipe connaît."
+        },
+        {
+          "question": "Quelles branches True Aim couvre-t-il ?",
+          "answer": "True Aim n’est pas limité à une seule branche. Les sinistres auto, habitation, garantie et responsabilité civile utilisent les mêmes briques."
+        },
+        {
+          "question": "Comment True Aim est-il facturé ?",
+          "answer": "Par résultat, pas par utilisateur. Vous payez chaque sinistre réglé, chaque facture comparée aux prix de référence ou chaque rapport de dommages établi, de sorte que les coûts suivent la valeur que vous recevez."
+        },
+        {
+          "question": "Comment nos données sont-elles protégées ?",
+          "answer": "True Aim est certifié ISO 27001 et audité SOC 2 Type II. L’hébergement, la certification et la protection des données sont décrits dans le Trust Center."
+        }
+      ]
+    },
+    "related": {
+      "heading": "Découvrez nos solutions",
+      "dataExtraction": "Data Extraction",
+      "dataExtractionText": "Vos données sinistres, prêtes pour l’IA.",
+      "claimsDecisioning": "Automated Coverage Check",
+      "claimsDecisioningText": "Des sinistres réglés en minutes, pas en semaines.",
+      "invoiceBenchmarking": "Invoice Benchmarking",
+      "invoiceBenchmarkingText": "Ne plus jamais surpayer une facture.",
+      "damageReporting": "Damage Reporting",
+      "damageReportingText": "Des rapports de dommages complets en quelques minutes.",
+      "otus": "Otus, le spécialiste sinistres de True Aim",
+      "otusText": "Un expert IA pour chaque membre de l’équipe."
+    },
+    "cta": {
+      "heading": "Prêt à voir le résultat final sur vos propres sinistres ?",
+      "lede": "Réservez une démo et nous vous montrons un sinistre réglé, une facture comparée aux prix de référence et un rapport de dommages complet, avec, pour chacun, le détail du calcul.",
+      "button": "Réserver une démo"
+    }
+  }
+}
