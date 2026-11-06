@@ -408,8 +408,8 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                 </p>
 
                 <DiagramFigure
-                  diagram={<IntegrationPatternA />}
-                  figureLabel="Abb. \1"
+                  diagram={<IntegrationPatternA locale="de" />}
+                  figureLabel="Abb. A"
                   caption="Muster A: dokumentgetriebene komplexe Schadenentscheidungen."
                 />
 
@@ -437,8 +437,8 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                 </p>
 
                 <DiagramFigure
-                  diagram={<IntegrationPatternB />}
-                  figureLabel="Abb. \1"
+                  diagram={<IntegrationPatternB locale="de" />}
+                  figureLabel="Abb. B"
                   caption="Muster B: Orchestrierung mehrerer Quellen mit SLA-Workflow."
                 />
 

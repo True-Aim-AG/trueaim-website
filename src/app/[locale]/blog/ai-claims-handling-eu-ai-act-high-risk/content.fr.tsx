@@ -146,7 +146,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
-        <TextureBackdrop texture={{ name: "circ", position: "88 % 78 %" }} />
+        <TextureBackdrop texture={{ name: "circ", position: "88% 78%" }} />
 
         <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv

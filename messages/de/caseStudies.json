@@ -22,6 +22,11 @@
       "theChallenge": "Die Herausforderung",
       "theSolution": "Die Lösung",
       "keyHighlights": "Wesentliche Punkte",
+      "productNames": {
+        "mira": "Automated Coverage Check",
+        "contextbuilder": "Dokumentenauswertung",
+        "claimeval": "Qualitätsprüfung"
+      },
       "getSimilarResults": "Demo anfragen",
       "previous": "Zurück",
       "next": "Weiter",

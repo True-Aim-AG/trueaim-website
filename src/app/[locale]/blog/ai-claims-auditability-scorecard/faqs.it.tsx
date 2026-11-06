@@ -24,7 +24,7 @@ export const faqs: Faq[] = [
   {
     question: "Cosa rende verificabile una decisione di IA su un sinistro?",
     answer:
-      "Quattro proprietà. Ogni valore usato dalla decisione risale al documento di origine e alla pagina. La decisione può essere ricostruita in seguito, perché le regole, la versione della polizza e il modello che l’hanno prodotta sono registrati sulla decisione stessa. Una persona con l’autorità di cambiare l’esito l’ha esaminata con le prove davanti. E il fascicolo ha manomissioni rilevabili, è esportabile e viene conservato per tutto il tempo richiesto dagli obblighi dell’organizzazione.",
+      "Quattro proprietà. Ogni valore usato dalla decisione risale al documento di origine e alla pagina. La decisione può essere ricostruita in seguito, perché le regole, la versione della polizza e il modello che l’hanno prodotta sono registrati sulla decisione stessa. Una persona con l’autorità di cambiare l’esito l’ha esaminata con le prove davanti. E il fascicolo rende rilevabile ogni manomissione, è esportabile e viene conservato per tutto il tempo richiesto dagli obblighi dell’organizzazione.",
   },
   {
     question:

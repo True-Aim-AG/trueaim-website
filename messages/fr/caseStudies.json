@@ -22,6 +22,11 @@
       "theChallenge": "Le défi",
       "theSolution": "La solution",
       "keyHighlights": "Points clés",
+      "productNames": {
+        "mira": "Automated Coverage Check",
+        "contextbuilder": "Lecture de documents",
+        "claimeval": "Contrôle qualité"
+      },
       "getSimilarResults": "Demander une démo",
       "previous": "Précédent",
       "next": "Suivant",

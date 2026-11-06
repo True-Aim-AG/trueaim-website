@@ -23,6 +23,11 @@
         "handlingTimeUnit": "minutes",
         "handlingTimeHint": "Use a typical claim without unusual complexity, one that is eligible for straight-through or assisted processing.",
         "automationLevel": "Automation in place today",
+        "automationOptions": {
+          "none": "No current automation",
+          "some": "Basic rules or triage in place",
+          "significant": "Established workflow automation"
+        },
         "rangeMin": {
           "claims": "10,000",
           "claimsMax": "1,000,000",

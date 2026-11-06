@@ -22,6 +22,11 @@
       "theChallenge": "The challenge",
       "theSolution": "The solution",
       "keyHighlights": "Key highlights",
+      "productNames": {
+        "mira": "Automated Coverage Check",
+        "contextbuilder": "Document reading",
+        "claimeval": "Quality check"
+      },
       "getSimilarResults": "Request a demo",
       "previous": "Previous",
       "next": "Next",

@@ -14,7 +14,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { getCaseStudy, caseStudies, localizeCaseStudy, type CaseStudy, type CaseStudyCopy } from "@/data/case-studies";
-import { productPillColors, productNames } from "@/lib/product-styles";
+import { productPillColors } from "@/lib/product-styles";
 import { ButtonLink } from "@/components/brand/Button";
 import { GridPattern } from "@/components/brand/GridPattern";
 
@@ -109,7 +109,7 @@ export default function CaseStudyPage() {
                   href={productLinks[product]}
                   className={`text-sm px-3 py-1.5 font-medium ${productPillColors[product]}`}
                 >
-                  {productNames[product]}
+                  {t(`detail.productNames.${product}`)}
                 </Link>
               ))}
               {study.timeline && (

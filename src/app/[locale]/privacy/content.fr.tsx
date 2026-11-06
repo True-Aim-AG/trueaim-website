@@ -150,7 +150,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section id="automated" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">10. Décisions automatisées</h2>
               <p className="text-body leading-[1.6]">
-                Le Service prend en charge un traitement des sinistres avec intervention humaine. Les résultats de notre intelligence documentaire et de nos modèles de langage sont des recommandations adressées aux opérateurs du Tenant ; les décisions finales sont prises par le personnel autorisé du Tenant. True Aim ne prend à l’égard des utilisateurs finaux aucune décision exclusivement automatisée produisant des effets juridiques ou les affectant de manière similaire.
+                Le Service prend en charge un traitement des sinistres avec intervention humaine. Les résultats de notre intelligence documentaire et de nos modèles de langage sont des recommandations adressées aux opérateurs du Tenant ; les décisions finales sont prises par le personnel autorisé du Tenant. True Aim ne prend à l’égard des utilisateurs finaux aucune décision exclusivement automatisée produisant des effets juridiques les concernant ou les affectant de manière significative de façon similaire.
               </p>
             </section>
 

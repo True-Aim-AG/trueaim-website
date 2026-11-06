@@ -84,7 +84,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section id="lawful-bases" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">3. Basi giuridiche del trattamento (GDPR / LPD svizzera)</h2>
               <p className="text-body leading-[1.6]">
-                Esecuzione del contratto, interesse legittimo a gestire e proteggere il Servizio, consenso ove richiesto e obbligo di legge.
+                Esecuzione del contratto, legittimo interesse a gestire e proteggere il Servizio, consenso ove richiesto e obbligo di legge.
               </p>
             </section>
 

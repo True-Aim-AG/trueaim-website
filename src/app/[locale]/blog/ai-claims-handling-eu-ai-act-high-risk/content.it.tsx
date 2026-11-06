@@ -627,7 +627,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Provenienza a livello di campo, log decisionali con manomissioni rilevabili e registrazioni decisionali versionate e riproducibili sono proprietà architetturali. Si determinano quando la pipeline viene progettata e non possono essere aggiunte dopo, perché un log scritto senza provenienza non può esserne arricchito in seguito. La decisione che registrava è perduta.
+                  Provenienza a livello di campo, log decisionali che rendono rilevabile ogni manomissione e registrazioni decisionali versionate e riproducibili sono proprietà architetturali. Si determinano quando la pipeline viene progettata e non possono essere aggiunte dopo, perché un log scritto senza provenienza non può esserne arricchito in seguito. La decisione che registrava è perduta.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">

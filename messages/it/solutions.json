@@ -317,7 +317,7 @@
     "warranty": {
       "hero": {
         "title": "Ogni fattura di garanzia verificata rispetto alle condizioni",
-        "summary": "True Aim scompone le fatture fino alla singola voce e validazione in tempo reale ricambi, manodopera e spese rispetto alle condizioni di garanzia e ai riferimenti regionali. Ogni discrepanza genera una richiesta di riemissione pronta da inviare, con le voci interessate identificate con precisione, trasformando dispute costose in riconciliazioni rapide e oggettive.",
+        "summary": "True Aim scompone le fatture fino alla singola voce e valida in tempo reale ricambi, manodopera e spese rispetto alle condizioni di garanzia e ai prezzi di riferimento regionali. Ogni discrepanza genera una richiesta di riemissione pronta da inviare, con le voci interessate identificate con precisione, trasformando dispute costose in riconciliazioni rapide e oggettive.",
         "scene": {
           "alt": "Un sinistro di garanzia auto come lo vede il liquidatore: ricambi, manodopera e un’auto di cortesia, ogni voce verificata rispetto alle condizioni di garanzia",
           "title": "Sinistro garanzia auto",

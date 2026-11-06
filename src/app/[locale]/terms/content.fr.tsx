@@ -24,7 +24,7 @@ export default async function TermsPage({ params }: { params: Promise<{ locale: 
           <section>
             <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">2. Acceptation des présentes conditions</h2>
             <p className="text-body leading-[1.6]">
-              En accédant à ce site web ou en l’utilisant, vous acceptez les présentes conditions d’utilisation. Si vous ne les acceptez pas, vous ne devez pas utiliser le site.
+              En accédant à ce site web ou en l’utilisant, vous acceptez les présentes conditions d’utilisation. Si vous ne les acceptez pas, vous ne devriez pas utiliser le site.
             </p>
           </section>
 

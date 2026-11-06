@@ -6,11 +6,5 @@ export const productPillColors: Record<string, string> = {
   claimeval: "rounded-pill bg-accent-soft text-accent",
 };
 
-// The case-study data keeps its internal keys; the labels use the current
-// product names (MIRA became Automated Coverage Check; ContextBuilder and ClaimEval
-// are functions of the platform, not products).
-export const productNames: Record<string, string> = {
-  mira: "Automated Coverage Check",
-  contextbuilder: "Document reading",
-  claimeval: "Quality check",
-};
+// The case-study data keeps its internal keys (mira, contextbuilder, claimeval);
+// the pill labels come from messages/<locale>/caseStudies.json (detail.productNames).

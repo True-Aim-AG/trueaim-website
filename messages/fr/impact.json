@@ -23,6 +23,11 @@
         "handlingTimeUnit": "minutes",
         "handlingTimeHint": "Prenez un sinistre typique sans complexité particulière, éligible au traitement automatique ou assisté.",
         "automationLevel": "Automatisation déjà en place",
+        "automationOptions": {
+          "none": "Aucune automatisation actuelle",
+          "some": "Règles simples ou triage en place",
+          "significant": "Automatisation des flux de travail établie"
+        },
         "rangeMin": {
           "claims": "10 000",
           "claimsMax": "1 000 000",
