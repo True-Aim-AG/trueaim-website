@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const outcomes = [
-  { key: "claimsDecisioning", href: "/platform/claims-decisioning" },
+  { key: "claimsDecisioning", href: "/platform/automated-coverage-check" },
   { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking" },
   { key: "damageReporting", href: "/platform/damage-reporting" },
 ] as const;
@@ -40,7 +40,7 @@ const awardMarks = [
 ] as const;
 
 const relatedPages = [
-  { key: "claimsDecisioning", href: "/platform/claims-decisioning", icon: productIcons.claimsDecisioning },
+  { key: "claimsDecisioning", href: "/platform/automated-coverage-check", icon: productIcons.claimsDecisioning },
   { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking", icon: productIcons.invoiceBenchmarking },
   { key: "damageReporting", href: "/platform/damage-reporting", icon: productIcons.damageReporting },
   { key: "otus", href: "/platform/otus", icon: productIcons.otus },

@@ -21,7 +21,7 @@ const groups: Group[] = [
     key: "platform",
     items: [
       { key: "dataExtraction", href: "/platform/data-extraction" },
-      { key: "claimsDecisioning", href: "/platform/claims-decisioning" },
+      { key: "claimsDecisioning", href: "/platform/automated-coverage-check" },
       { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking" },
       { key: "damageReporting", href: "/platform/damage-reporting" },
       { key: "otus", href: "/platform/otus" },

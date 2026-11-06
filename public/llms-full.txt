@@ -35,7 +35,7 @@ We turn the claim file into the finished piece of work: a settled claim, a bench
 
 ### Automated Coverage Check
 
-**URL:** https://trueaim.ai/en/platform/claims-decisioning/
+**URL:** https://trueaim.ai/en/platform/automated-coverage-check/
 
 True Aim checks the policy terms against the facts of the case and recommends whether the claim should be approved or denied. Where it is approved, the amount owed is calculated line by line, and the adjuster makes the final call. Each decision is recorded in the Decision Dossier: the inputs, the policy wording applied and the reasoning.
 
@@ -125,7 +125,7 @@ From the vehicle warranty case study with NSA Services SA (https://trueaim.ai/en
 - Products:
   - Platform overview: https://trueaim.ai/en/platform/
   - Invoice Benchmarking: https://trueaim.ai/en/platform/invoice-benchmarking/
-  - Automated Coverage Check: https://trueaim.ai/en/platform/claims-decisioning/
+  - Automated Coverage Check: https://trueaim.ai/en/platform/automated-coverage-check/
   - Damage Reporting: https://trueaim.ai/en/platform/damage-reporting/
   - Otus, True Aim's claims specialist: https://trueaim.ai/en/platform/otus/
 - Technology: https://trueaim.ai/en/technology/
