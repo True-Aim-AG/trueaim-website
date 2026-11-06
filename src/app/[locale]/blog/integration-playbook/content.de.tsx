@@ -29,11 +29,11 @@ const fadeIn = {
 const principles = [
   {
     title: "Ergebnis zuerst, Integration rückwärts.",
-    body: "Wir gehen vom Geschäftsergebnis aus und arbeiten uns rückwärts zur Integrationsoberfläche vor. Minimale Integrationsoberfläche für maximalen Geschäftsnutzen, keine Abdeckung um ihrer selbst willen.",
+    body: "Wir gehen vom Geschäftsergebnis aus und arbeiten uns rückwärts zur Integrationsschnittstelle vor. Minimale Integrationsschnittstelle für maximalen Geschäftsnutzen, keine Abdeckung um ihrer selbst willen.",
   },
   {
     title: "Die Systeme dort abholen, wo sie stehen.",
-    body: "Wir passen uns an die verfügbaren Schnittstellen des Kunden an: APIs, Dateiablagen, Queues, Event-Streams oder in engen Fällen die Legacy-Oberfläche selbst. Wir erzwingen keine Passform.",
+    body: "Wir passen uns an die verfügbaren Schnittstellen des Kunden an: APIs, Dateiablagen, Queues, Event-Streams oder in engen Fällen die Legacy-Oberfläche selbst. Wir erzwingen nichts.",
   },
   {
     title: "Mit uns geteilte Daten verlassen unsere Infrastruktur nicht.",
@@ -45,7 +45,7 @@ const principles = [
   },
   {
     title: "Lesen sparsam, Schreiben bewusst.",
-    body: "Wir holen, was wir für die Aufgabe brauchen. In Führungssysteme schreiben wir erst zurück, wenn ein Mensch freigegeben hat.",
+    body: "Wir holen, was wir für die Aufgabe brauchen. In die datenführenden Systeme schreiben wir erst zurück, wenn ein Mensch freigegeben hat.",
   },
   {
     title: "Jede Aktion protokolliert, gehasht, wiederholbar.",
@@ -59,14 +59,14 @@ const patterns = [
     name: "Sicherer Batch über gemeinsamen Speicher",
     when:
       "Der Kunde kann Dokumente und strukturierte Payloads an einem Speicherort ablegen, auf den wir beide Zugriff haben, und der Anwendungsfall verträgt Batch-Latenz.",
-    how: "We pick up inputs on a schedule or on arrival, process inside our environment, and write outputs back to a return location. Typically one structured file per case plus a processing log. Carried by Pattern A below.",
+    how: "Wir holen die Eingaben nach Zeitplan oder bei Eingang ab, verarbeiten sie in unserer Umgebung und schreiben die Ergebnisse an einen Rückgabeort zurück. Typischerweise eine strukturierte Datei pro Fall plus ein Verarbeitungsprotokoll. Umgesetzt in Muster A unten.",
   },
   {
     icon: Workflow,
     name: "Workflow-Orchestrierung über heterogene Backends",
     when:
       "Die Daten des Kunden liegen in mehreren Systemen (CRM, Dokumentablagen, relationale Datenbanken, Dumps, Messaging), und der Workflow braucht eine einheitliche Oberfläche für die Nutzer.",
-    how: "An orchestration backend reads from the relevant sources, the True Aim UI hosts the user workflow, and on completion we write a standard return artifact for ingestion back into the legacy systems. Carried by Pattern B below.",
+    how: "Ein Orchestrierungs-Backend liest aus den relevanten Quellen, die Oberfläche von True Aim trägt den Nutzer-Workflow, und nach Abschluss schreiben wir ein standardisiertes Rückgabeartefakt für die Rückübernahme in die Legacy-Systeme. Umgesetzt in Muster B unten.",
   },
   {
     icon: Plug,
@@ -95,12 +95,12 @@ const phases = [
   {
     label: "Phase 01",
     title: "Woche null: Discovery",
-    goal: "Das Zielbetriebsmodell für den ersten Anwendungsfall verstehen, die beteiligten Systeme, die Datenformen und den Risikorahmen.",
+    goal: "Das Zielbetriebsmodell für den ersten Anwendungsfall verstehen, die beteiligten Systeme, die Datenstrukturen und den Risikorahmen.",
     time: "Fachlicher Verantwortlicher für den Anwendungsfall, ein Engineering-Lead, ein Operations-Lead. Etwa zwei bis drei Arbeitssitzungen.",
     outputs: [
       "Definition des Anwendungsfalls mit messbarem Geschäftsergebnis",
       "Systeminventar und Schnittstellenverfügbarkeit (API, Datei, Queue, nur UI)",
-      "Beispiele für Datenformen (Schadenfall, Police, Dokumenttypen)",
+      "Beispiele für Datenstrukturen (Schadenfall, Police, Dokumenttypen)",
       "Authentifizierungs- und Netzwerkmodell",
       "Human-in-the-Loop-Checkpoints und Risikoschwellen",
       "Prüf- und Compliance-Anforderungen (DORA, EU AI Act, interne Kontrollen)",
@@ -113,7 +113,7 @@ const phases = [
     time: "Geplante Checkpoints am Ende von Woche eins (Schnittstellenverträge), Woche zwei (erster End-to-End-Durchlauf), Woche vier (Nutzerabnahme).",
     outputs: [
       "Funktionierende Integration in einer für den Kunden zugänglichen Umgebung",
-      "Schnittstellenverträge (Request-/Response-Formen, Fehlersemantik, Retry-Policy)",
+      "Schnittstellenverträge (Request-/Response-Strukturen, Fehlersemantik, Retry-Policy)",
       "Betriebs-Runbook (Deployment, Rollback, On-Call-Eskalation)",
       "Spezifikation des Prüfprotokolls (was erfasst wird, wo es gespeichert wird, wie darauf zugegriffen wird)",
       "Testdatensatz und Replay-Harness",
@@ -125,7 +125,7 @@ const phases = [
     goal: "Den Anwendungsfall hinter einer kontrollierten Rampe in die Produktion bringen, dann auf benachbarte Anwendungsfälle ausweiten.",
     time: "Rampe nach Schadenart, dann nach Volumenanteil, wobei die Human-in-the-Loop-Abdeckung breit beginnt und sich mit wachsender Konfidenz verengt.",
     outputs: [
-      "Jeder weitere Anwendungsfall nutzt die in Woche null gebaute Integrationsoberfläche wieder, sodass die Grenzkosten des zweiten und dritten Anwendungsfalls deutlich unter denen des ersten liegen.",
+      "Jeder weitere Anwendungsfall nutzt die in Woche null gebaute Integrationsschnittstelle wieder, sodass die Grenzkosten des zweiten und dritten Anwendungsfalls deutlich unter denen des ersten liegen.",
     ],
   },
 ];
@@ -139,7 +139,7 @@ const commitments = [
   {
     icon: FileSignature,
     title: "Prüfpfad",
-    body: "Jede Aktion (Modellaufruf, Prompt, Modellversion, Tokenzahl, menschliche Übersteuerung, Systemaufruf) wird auf Ebene des einzelnen Schadenfalls erfasst, kryptografisch gehasht, mit Zeitstempel versehen und exportierbar. Das erfüllt die Anforderungen an operative Resilienz nach DORA und die Transparenzpflichten des EU AI Act.",
+    body: "Jede Aktion (Modellaufruf, Prompt, Modellversion, Tokenzahl, menschliche Übersteuerung, Systemaufruf) wird auf Ebene des einzelnen Schadenfalls erfasst, kryptografisch gehasht, mit Zeitstempel versehen und exportierbar. Das erfüllt die Anforderungen an die digitale operationale Resilienz nach DORA und die Transparenzpflichten des EU AI Act.",
   },
   {
     icon: Server,
@@ -222,7 +222,7 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                 { label: "Muster", value: "5" },
                 { label: "Phasen", value: "3" },
                 { label: "Erste Integration", value: "4–6 Wo." },
-                { label: "Datenresidenz", value: "In-tenant" },
+                { label: "Datenresidenz", value: "Im Mandanten" },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -291,9 +291,9 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
 
                 <div className="space-y-6 max-w-3xl">
                   <p className="text-body-lg text-strong font-light">
-                    True Aim integriert sich mit Kernsystemen von Versicherern, Dokumentplattformen, KI-Anbietern und Kommunikationskanälen über eine kleine Menge gut verstandener Muster. Wir gehen vom Geschäftsergebnis aus und arbeiten uns rückwärts zur Integrationsoberfläche vor. Das Ziel ist{" "}
+                    True Aim integriert sich in Kernsysteme von Versicherern, Dokumentplattformen, KI-Anbietern und Kommunikationskanälen über eine kleine Menge gut verstandener Muster. Wir gehen vom Geschäftsergebnis aus und arbeiten uns rückwärts zur Integrationsschnittstelle vor. Das Ziel ist{" "}
                     <span className="font-medium text-accent">
-                      der kleinste Integrations-Fußabdruck, der den Nutzen liefert
+                      der kleinste Integrationsschnittstelle, der den Nutzen liefert
                     </span>
                     , keine Abdeckung um ihrer selbst willen.
                   </p>
@@ -400,18 +400,7 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                 </h3>
 
                 <p className="text-body leading-[1.6] max-w-3xl mb-5">
-                  Documents arrive on a customer-owned storage location. A True
-                  Aim batch reader, running inside our Azure environment, pulls
-                  them on a schedule. Complex claims decisioning and key data
-                  extraction run on our side. A small number of external
-                  enrichment calls (parts lookup, geolocation) are made for
-                  specific use cases. A single policy lookup against the
-                  customer&apos;s ERP provides coverage context. Users complete
-                  review inside the True Aim platform. On approval, we push one
-                  structured JSON file per claim with the decision, plus a
-                  processing log capturing metadata, model versions, and any
-                  errors, back to a return location in the customer&apos;s
-                  infrastructure.
+                  Dokumente gehen an einem Speicherort des Kunden ein. Ein Batch-Reader von True Aim, der in unserer Azure-Umgebung läuft, holt sie nach Zeitplan ab. Komplexe Schadenentscheidungen und die Extraktion der Schlüsseldaten laufen auf unserer Seite. Eine kleine Zahl externer Anreicherungsaufrufe (Teilesuche, Geolokalisierung) erfolgt für bestimmte Anwendungsfälle. Eine einzelne Policenabfrage im ERP des Kunden liefert den Deckungskontext. Die Nutzer schließen die Prüfung in der Plattform von True Aim ab. Nach Freigabe übergeben wir pro Schadenfall eine strukturierte JSON-Datei mit der Entscheidung sowie ein Verarbeitungsprotokoll mit Metadaten, Modellversionen und etwaigen Fehlern an einen Rückgabeort in der Infrastruktur des Kunden.
                 </p>
 
                 <p className="text-body leading-[1.6] max-w-3xl mb-10 italic">
@@ -420,16 +409,12 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
 
                 <DiagramFigure
                   diagram={<IntegrationPatternA />}
-                  figureLabel="Fig. A"
+                  figureLabel="Abb. \1"
                   caption="Muster A: dokumentgetriebene komplexe Schadenentscheidungen."
                 />
 
                 <ProvesCallout>
-                  We can run an end-to-end decisioning pipeline with a minimal
-                  integration surface (two storage locations and one ERP API),
-                  keep customer data inside our environment, and return a
-                  clean, structured artifact that the customer can ingest
-                  however they want.
+                  Wir können eine durchgängige Entscheidungspipeline mit minimaler Integrationsschnittstelle betreiben (zwei Speicherorte und eine ERP-API), Kundendaten in unserer Umgebung halten und ein sauberes, strukturiertes Ergebnis zurückliefern, das der Kunde auf beliebigem Weg übernehmen kann.
                 </ProvesCallout>
               </MotionDiv>
 
@@ -453,15 +438,12 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
 
                 <DiagramFigure
                   diagram={<IntegrationPatternB />}
-                  figureLabel="Fig. B"
+                  figureLabel="Abb. \1"
                   caption="Muster B: Orchestrierung mehrerer Quellen mit SLA-Workflow."
                 />
 
                 <ProvesCallout>
-                  We can stand up a working surface across a fragmented backend
-                  landscape without forcing the customer into a heavy
-                  synchronous API build, and we can return outcomes through
-                  whatever channel the receiving system actually supports.
+                  Wir können eine funktionierende Arbeitsoberfläche über eine fragmentierte Backend-Landschaft aufsetzen, ohne den Kunden in einen aufwendigen synchronen API-Aufbau zu zwingen, und Ergebnisse über jeden Kanal zurückliefern, den das empfangende System tatsächlich unterstützt.
                 </ProvesCallout>
               </MotionDiv>
             </article>
@@ -499,17 +481,17 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                         <PhaseField
                           label={
                             idx === 2
-                              ? "How"
+                              ? "Vorgehen"
                               : idx === 0
-                              ? "Customer time"
-                              : "Customer time"
+                              ? "Aufwand Kunde"
+                              : "Aufwand Kunde"
                           }
                           value={phase.time}
                         />
 
                         <div>
                           <div className="text-caption-sm text-subtle mb-3">
-                            {idx === 2 ? "Outcome" : "Outputs"}
+                            {idx === 2 ? "Ergebnis" : "Lieferergebnisse"}
                           </div>
                           <ul className="space-y-2.5">
                             {phase.outputs.map((o) => (

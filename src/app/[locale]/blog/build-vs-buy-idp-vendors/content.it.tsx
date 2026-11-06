@@ -241,7 +241,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                       • Tempo degli esperti di dominio per etichettatura e validazione (circa 20 ore-persona per una ground truth di 50 sinistri)
                     </li>
                     <li>
-                      • Manutenzione continua: i modelli derivano, i formati dei documenti cambiano
+                      • Manutenzione continua: i modelli vanno in deriva, i formati dei documenti cambiano
                     </li>
                     <li>• Costo opportunità di non rilasciare prima</li>
                   </ul>
@@ -442,7 +442,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                   </div>
                   <p className="text-xs text-muted mt-4">
                     <strong className="text-denied-dark">Segnali d’allarme:</strong>{" "}
-                    «La nostra accuratezza è del 99%» senza spiegare la metodologia di holdout. Noi abbiamo tracciato 14 modalità di errore distinte tra matching, estrazione, logica di copertura e calcolo.
+                    «La nostra accuratezza è del 99%» senza spiegare la metodologia di holdout. Noi abbiamo tracciato 14 modalità di errore distinte tra abbinamento, estrazione, logica di copertura e calcolo.
                   </p>
                 </div>
 

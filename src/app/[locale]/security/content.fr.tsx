@@ -39,8 +39,8 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2">
                 <li><strong className="text-strong">ISO/IEC 27001:2022</strong> : certifié par A-LIGN, certificat ISMS-TR-090426, délivré le 4 septembre 2026, valable jusqu’au 4 septembre 2029.</li>
                 <li><strong className="text-strong">SOC 2 Type II</strong> : audité, couvrant la période du 1er mai au 31 juillet 2026 ; le rapport final a été émis.</li>
-                <li><strong className="text-strong">LPD suisse</strong> and <strong className="text-strong">GDPR</strong> : aligné en qualité de sous-traitant pour les données des clients.</li>
-                <li><strong className="text-strong">AI Act</strong> : dossier technique IA (AI Technical File) tenu pour Automated Coverage Check ; l’état de préparation actuel est documenté et suivi.</li>
+                <li><strong className="text-strong">LPD suisse</strong> et <strong className="text-strong">RGPD</strong> : aligné en qualité de sous-traitant pour les données des clients.</li>
+                <li><strong className="text-strong">AI Act</strong> (règlement européen sur l’IA) : dossier technique IA (AI Technical File) tenu à jour pour Automated Coverage Check ; l’état de préparation actuel est documenté et suivi.</li>
               </ul>
             </section>
 
@@ -52,16 +52,16 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
             </section>
 
             <section>
-              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Sub-processors</h2>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Sous-traitants ultérieurs</h2>
               <p className="text-body leading-[1.6]">
-                Nous utilisons un ensemble limité de services Microsoft Azure pour l’hébergement, l’inférence IA et la télémétrie opérationnelle, ainsi que Google Cloud (modèles Gemini pour l’inférence IA dans l’UE), Google Workspace (messagerie professionnelle), Slack (communication interne de l’équipe) et Sentry (journaux d’erreurs techniques uniquement). La liste actuelle constitue l’annexe 2 de notre accord de traitement des données et est disponible sur demande. Nous informons les clients à l’avance de tout changement. Les outils strictement internes (gestion du code source, CI/CD, CRM) qui ne traitent pas de données de production des Tenants ne sont pas des sous-traitants ultérieurs au sens de nos clients et ne sont pas listés.
+                Nous utilisons un ensemble limité de services Microsoft Azure pour l’hébergement, l’inférence IA et la télémétrie opérationnelle, ainsi que Google Cloud (modèles Gemini pour l’inférence IA dans l’UE), Google Workspace (messagerie professionnelle), Slack (communication interne de l’équipe) et Sentry (journaux d’erreurs techniques uniquement). La liste actuelle constitue l’annexe 2 de notre accord de traitement des données et est disponible sur demande. Nous informons les clients à l’avance de tout changement. Les outils strictement internes (gestion du code source, CI/CD, CRM) qui ne traitent pas de données de production des Tenants ne sont pas des sous-traitants ultérieurs vis-à-vis de nos clients et ne sont pas listés.
               </p>
             </section>
 
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Chiffrement</h2>
               <p className="text-body leading-[1.6]">
-                Toutes les données sont chiffrées en transit (TLS 1.2 ou supérieur) et au repos (AES-256 via le chiffrement de la plateforme Azure). Les secrets applicatifs sont stockés dans Azure Key Vault, avec suppression douce et protection contre la purge activées.
+                Toutes les données sont chiffrées en transit (TLS 1.2 ou supérieur) et au repos (AES-256 via le chiffrement de la plateforme Azure). Les secrets applicatifs sont stockés dans Azure Key Vault, avec suppression réversible (soft delete) et protection contre la purge activées.
               </p>
             </section>
 
@@ -75,7 +75,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Surveillance et réponse aux incidents</h2>
               <p className="text-body leading-[1.6]">
-                Nous exploitons une journalisation, des alertes et une surveillance continues de l’environnement de production via Microsoft Defender for Cloud et Azure Monitor. Nous disposons d’une procédure documentée de réponse aux incidents. Les clients sont informés des incidents de sécurité confirmés affectant leurs données sans retard injustifié et conformément à notre accord de traitement des données.
+                Nous exploitons une journalisation, des alertes et une surveillance continues de l’environnement de production via Microsoft Defender for Cloud et Azure Monitor. Nous disposons d’une procédure documentée de réponse aux incidents. Les clients sont informés des incidents de sécurité confirmés affectant leurs données dans les meilleurs délais et conformément à notre accord de traitement des données.
               </p>
             </section>
 
@@ -104,7 +104,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Divulgation responsable</h2>
               <p className="text-body leading-[1.6]">
                 Si vous pensez avoir découvert une vulnérabilité de sécurité dans notre Service ou sur ce site web, veuillez la signaler à{" "}
-                <a href="mailto:security@trueaim.ai" className="text-link hover:underline">security@trueaim.ai</a>. Nous nous engageons à accuser réception de votre signalement sous 5 jours ouvrés et à collaborer avec vous de bonne foi pour analyser et corriger les problèmes vérifiés. Nous n’engagerons aucune action en justice contre les chercheurs qui suivent ce processus de divulgation, agissent de bonne foi et ne consultent, modifient ou suppriment pas de données au-delà de ce qui est nécessaire pour démontrer une vulnérabilité. Voir aussi notre canal{" "}
+                <a href="mailto:security@trueaim.ai" className="text-link hover:underline">security@trueaim.ai</a>. Nous nous engageons à accuser réception de votre signalement sous 5 jours ouvrés et à collaborer avec vous de bonne foi pour analyser et corriger les problèmes vérifiés. Nous n’engagerons aucune action en justice contre les chercheurs qui suivent ce processus de divulgation, agissent de bonne foi et ne consultent, ne modifient ni ne suppriment aucune donnée au-delà de ce qui est nécessaire pour démontrer une vulnérabilité. Voir aussi notre canal{" "}
                 <Link href="/ethics" className="text-link hover:underline">Éthique et signalement</Link>{" "}
                 pour les manquements sans lien avec la sécurité.
               </p>

@@ -51,7 +51,7 @@ const partyViews: BulletItem[] = [
     text: "L’assicurato segue in tempo reale l’acquisizione delle prove, osservando direttamente a schermo quali documenti sono verificati e quali requisiti restano aperti.",
   },
   {
-    text: "L’intermediario monitora il consumo di capacità, i limiti del binder e le metriche SLA in tempo reale senza inviare richieste di stato.",
+    text: "L’intermediario monitora il consumo di capacità, i limiti del binder e le metriche SLA in tempo reale senza inviare richieste di aggiornamento sullo stato.",
   },
   {
     text: "Il fornitore specializzato invia preventivi voce per voce e riceve una convalida immediata e deterministica rispetto alle condizioni di copertura.",
@@ -117,7 +117,7 @@ const pillars = [
 
 const judgementWork: BulletItem[] = [
   {
-    lead: "L’arbitrato dei casi limite:",
+    lead: "La decisione sui casi limite:",
     text: "Intervenire in eventi dannosi catastrofici, ambigui o giuridicamente sensibili, dove l’empatia umana e la discrezionalità contestuale determinano l’esito.",
   },
   {
@@ -126,14 +126,14 @@ const judgementWork: BulletItem[] = [
   },
   {
     lead: "L’ottimizzazione sistemica delle regole:",
-    text: "Agire come ingegnere interno delle operazioni, analizzando gli schemi strutturali degli interventi per individuare dove le linee guida di sottoscrizione o le regole automatizzate sono ambigue, obsolete o troppo restrittive.",
+    text: "Agire come ingegnere interno delle operazioni, analizzando gli schemi strutturali delle deroghe manuali per individuare dove le linee guida di sottoscrizione o le regole automatizzate sono ambigue, obsolete o troppo restrittive.",
   },
 ];
 
 const controls: BulletItem[] = [
   {
     lead: "La partecipazione all’ecosistema richiede valore reale:",
-    text: "Riparatori esterni e TPA non adotteranno il workbench di un assicuratore se funziona come un portale di sorveglianza digitale. Il fascicolo condiviso ha successo solo quando i partner esterni ne ricavano un’utilità tangibile: approvazioni automatizzate voce per voce, autorizzazioni di pagamento entro la giornata e requisiti inequivocabili.",
+    text: "Riparatori esterni e gestori sinistri in outsourcing (TPA) non adotteranno il workbench di un assicuratore se funziona come un portale di sorveglianza digitale. Il fascicolo condiviso ha successo solo quando i partner esterni ne ricavano un’utilità tangibile: approvazioni automatizzate voce per voce, autorizzazioni di pagamento entro la giornata e requisiti inequivocabili.",
   },
   {
     lead: "Progettazione architetturale delle autorizzazioni:",
@@ -141,7 +141,7 @@ const controls: BulletItem[] = [
   },
   {
     lead: "Rigore delle distribuzioni:",
-    text: "Il confronto algoritmico dei prezzi è affidabile solo quanto il set di dati sottostante. I prezzi di riferimento devono essere calcolati da fatture empiriche, segmentate rigorosamente per settore, categoria e micro-mercato regionale.",
+    text: "Il confronto algoritmico dei prezzi è affidabile solo quanto il set di dati sottostante. I prezzi di riferimento devono essere calcolati da dati di fattura reali, segmentate rigorosamente per settore, categoria e micro-mercato regionale.",
   },
   {
     lead: "Sovranità dell’autorità delegata:",
@@ -159,12 +159,12 @@ const roadmap: NumberedItem[] = [
     body: "Formulare le politiche di accesso ai dati per ciascun gruppo di stakeholder (assicurato, broker, liquidatore e fornitore terzo) prima di distribuire una sola interfaccia.",
   },
   {
-    title: "Avviare un pilota circoscritto",
+    title: "Avviare un progetto pilota circoscritto",
     body: "Portare una sola rete di partner e una sola linea di business su un fascicolo condiviso. Misurare in novanta giorni il volume di richieste in uscita, i tempi di gestione delle fatture e il tasso di liquidazioni contestate.",
   },
   {
     title: "Imporre la motivazione in linguaggio semplice",
-    body: "Vietare la registrazione di decisioni prive di motivazioni chiare in linguaggio semplice. Un log di sistema senza motivazione esplicita è solo scarico digitale, non una difesa legale.",
+    body: "Vietare la registrazione di decisioni prive di motivazioni chiare in linguaggio semplice. Un log di sistema senza motivazione esplicita è solo rumore digitale, non una difesa legale.",
   },
   {
     title: "Reinvestire il dividendo del giudizio",
@@ -336,14 +336,14 @@ export default async function ArchitecturalTransparencyBlogPost({
                     Sintesi
                   </h2>
                   <p className="text-body leading-[1.6]">
-                    Un sinistro non è mai esistito entro le quattro mura di una sola impresa. Assicurato, sottoscrittore, delegato, riparatore specializzato e perito forense detengono ciascuno frammenti sovrani di una verità non condivisa. L’automazione tradizionale si fermava ai confini interni, accelerando singole postazioni e lasciando l’ecosistema più ampio in una paralisi amministrativa. La strada da seguire non è un altro chatbot puntuale né una casella di posta automatizzata. È un sistema operativo agentico ancorato a un fascicolo unificato, che orchestra l’esecuzione tra più parti sotto autorizzazioni matematiche, con ogni atto discrezionale registrato con provenienza a livello di riga. La trasparenza cessa di essere una cortesia. Diventa una garanzia architetturale.
+                    Un sinistro non è mai esistito entro le quattro mura di una sola impresa. Assicurato, sottoscrittore, intermediario con delega, riparatore specializzato e perito forense detengono ciascuno frammenti sovrani di una verità non condivisa. L’automazione tradizionale si fermava ai confini interni, accelerando singole postazioni e lasciando l’ecosistema più ampio in una paralisi amministrativa. La strada da seguire non è un altro chatbot puntuale né una casella di posta automatizzata. È un sistema operativo agentico ancorato a un fascicolo unificato, che orchestra l’esecuzione tra più parti sotto autorizzazioni matematiche, con ogni atto discrezionale registrato con provenienza a livello di riga. La trasparenza cessa di essere una cortesia. Diventa una garanzia architetturale.
                   </p>
                 </div>
 
                 <PullQuote>L’automazione tradizionale dei sinistri è morta.</PullQuote>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Nell’ultimo decennio la suite assicurativa aziendale è stata venduta su una sola metrica: la velocità. Acquisizione più rapida, riconoscimento ottico più rapido, triage più rapido. Miliardi dopo, gli assicuratori hanno costruito postazioni ultraveloci intrappolate in reti profondamente lente.
+                  Nell’ultimo decennio la suite assicurativa aziendale è stata venduta su una sola metrica: la velocità. Acquisizione più rapida, riconoscimento ottico più rapido, triage più rapido. Dopo miliardi di investimenti, gli assicuratori hanno costruito postazioni ultraveloci intrappolate in reti profondamente lente.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
@@ -379,12 +379,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 <ClaimChainDiagram />
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Because no participant possesses the complete factual matrix,
-                  each organisation maintains its own defensive shadow file.
-                  The claim is dismantled, translated and reassembled at every
-                  border it crosses. Status is negotiated over telephone lines.
-                  Quotations cross corporate firewalls as static PDFs.
-                  Approvals return as unindexed correspondence.
+                  Poiché nessun partecipante possiede la matrice fattuale completa, ogni organizzazione tiene il proprio fascicolo ombra difensivo. Il sinistro viene smontato, tradotto e riassemblato a ogni confine che attraversa. Lo stato si negozia per telefono. I preventivi attraversano i firewall aziendali come PDF statici. Le approvazioni tornano come corrispondenza non indicizzata.
                 </p>
 
                 <p className="text-body leading-[1.6]">
@@ -424,7 +419,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 <NumberedList items={decisionRecord} className="mb-5" />
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Se un liquidatore umano annulla una determinazione automatizzata, l’architettura impone una giustificazione esplicita e motivata.
+                  Se un liquidatore umano modifica una determinazione automatizzata, l’architettura impone una giustificazione esplicita e motivata.
                 </p>
 
                 <p className="text-body leading-[1.6]">
@@ -432,7 +427,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 </p>
 
                 <PullQuote>
-                  Non una scatola nera. Una scatola di vetro: verificabile fin dalla progettazione, verificabile crittograficamente e aperta a ogni stakeholder legittimo della catena del valore.
+                  Non una scatola nera. Una scatola di vetro: verificabile fin dalla progettazione, dimostrabile crittograficamente e aperta a ogni stakeholder legittimo della catena del valore.
                 </PullQuote>
               </MotionDiv>
 
@@ -512,11 +507,11 @@ export default async function ArchitecturalTransparencyBlogPost({
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Il discorso prevalente sull’IA aziendale si concentra sulla riduzione del lavoro. Quella tesi fraintende la natura del rischio professionale.
+                  Il discorso prevalente sull’IA aziendale si concentra sulla riduzione della forza lavoro. Quella tesi fraintende la natura del rischio professionale.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  True Aim non sostituisce il professionista dei sinistri; dissolve l’impalcatura amministrativa che gli impediva di esercitare il proprio mestiere. Delegando la lettura dei documenti, la traduzione in dati strutturati, la verifica di base dei prezzi e la comunicazione dello stato a un sistema operativo agentico sottostante, i liquidatori recuperano la loro settimana di lavoro per i compiti che richiedono un ragionamento strategico ad alta posta:
+                  True Aim non sostituisce il professionista dei sinistri; dissolve l’impalcatura amministrativa che gli impediva di esercitare il proprio mestiere. Delegando la lettura dei documenti, la traduzione in dati strutturati, la verifica di base dei prezzi e la comunicazione dello stato a un sistema operativo agentico sottostante, i liquidatori recuperano la loro settimana di lavoro per i compiti che richiedono un ragionamento strategico ad alta posta in gioco:
                 </p>
 
                 <BulletList items={judgementWork} className="mb-5" />

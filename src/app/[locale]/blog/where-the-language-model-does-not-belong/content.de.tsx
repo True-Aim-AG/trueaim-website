@@ -76,7 +76,7 @@ const summaryPoints: BulletItem[] = [
   },
   {
     lead: "Rechnen gehört ausschließlich den Regeln:",
-    text: "Limits, Selbstbeteiligungen, Abzüge und Mitversicherungsquoten zu berechnen, hat genau eine richtige Antwort. Ein Modell kann nur eine wahrscheinliche liefern.",
+    text: "Deckungssummen, Selbstbeteiligungen und Mitversicherungsquoten zu berechnen, hat genau eine richtige Antwort. Ein Modell kann nur eine wahrscheinliche liefern.",
   },
   {
     lead: "Urteilen darf ein Modell nutzen, sofern es als solches gekennzeichnet ist:",
@@ -241,7 +241,7 @@ export default async function LanguageModelBoundaryBlogPost({
 
             {/* Subtitle */}
             <p className="text-lede text-body mb-8">
-              Verteidigungsfähige KI für die Schadenbearbeitung gestalten
+              Belastbare KI für die Schadenbearbeitung gestalten
             </p>
 
             {/* Meta */}
@@ -283,7 +283,7 @@ export default async function LanguageModelBoundaryBlogPost({
 
                 <div className="border-l-2 border-ta-blue pl-6">
                   <p className="text-body-lg text-strong">
-                    Die entscheidende Designfrage lautet nicht „Regeln oder Modelle“. Sie lautet, die Grenze zwischen beiden auf jedem Schritt der Akte sichtbar zu halten.
+                    Die entscheidende Designfrage lautet nicht „Regeln oder Modelle“. Es geht darum, die Grenze zwischen beiden bei jedem Schritt in der Akte sichtbar zu halten.
                   </p>
                 </div>
               </MotionDiv>
@@ -333,7 +333,7 @@ export default async function LanguageModelBoundaryBlogPost({
                 </p>
 
                 <p className="text-body leading-[1.6]">
-                  Selbstbeteiligungen, Abzüge, Schwellenwerte, Obergrenzen, Limits, Haftungsquoten, Mitversicherung und Neu-für-Alt-Abzüge sind alle Rechnen. Keines davon braucht ein Modell.
+                  Selbstbeteiligungen, Schwellenwerte, Obergrenzen, Deckungssummen, Haftungsquoten, Mitversicherung und Neu-für-Alt-Abzüge sind alle Rechnen. Keines davon braucht ein Modell.
                 </p>
               </MotionDiv>
 

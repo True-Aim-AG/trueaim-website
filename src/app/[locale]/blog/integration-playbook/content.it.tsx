@@ -29,7 +29,7 @@ const fadeIn = {
 const principles = [
   {
     title: "Prima il risultato, poi l’integrazione a ritroso.",
-    body: "Partiamo dal risultato di business e procediamo a ritroso verso la superficie di integrazione. Superficie di integrazione minima per il massimo valore di business, non copertura per il suo stesso bene.",
+    body: "Partiamo dal risultato di business e procediamo a ritroso verso la superficie di integrazione. Superficie di integrazione minima per il massimo valore di business, non copertura fine a se stessa.",
   },
   {
     title: "Incontrare i sistemi dove si trovano.",
@@ -49,7 +49,7 @@ const principles = [
   },
   {
     title: "Ogni azione registrata, con hash, riproducibile.",
-    body: "Allineato a DORA e pronto per l’AI Act europeo. Ogni prompt, versione del modello, conteggio dei token e intervento umano è registrato a livello di singolo sinistro.",
+    body: "Allineato a DORA e pronto per l’AI Act europeo (regolamento europeo sull’IA). Ogni prompt, versione del modello, conteggio dei token e intervento umano è registrato a livello di singolo sinistro.",
   },
 ];
 
@@ -59,14 +59,14 @@ const patterns = [
     name: "Batch sicuro tramite storage condiviso",
     when:
       "Il cliente può depositare documenti e payload strutturati in una posizione di storage a cui entrambi abbiamo accesso, e il caso d’uso tollera la latenza del batch.",
-    how: "We pick up inputs on a schedule or on arrival, process inside our environment, and write outputs back to a return location. Typically one structured file per case plus a processing log. Carried by Pattern A below.",
+    how: "Preleviamo gli input a intervalli programmati o all’arrivo, li elaboriamo nel nostro ambiente e scriviamo gli output in una posizione di ritorno. Di norma un file strutturato per caso più un log di elaborazione. Realizzato dal Pattern A qui sotto.",
   },
   {
     icon: Workflow,
     name: "Orchestrazione dei workflow su backend eterogenei",
     when:
       "I dati del cliente risiedono in più sistemi (CRM, archivi documentali, database relazionali, dump, messaggistica) e il workflow ha bisogno di una superficie unificata per gli utenti.",
-    how: "An orchestration backend reads from the relevant sources, the True Aim UI hosts the user workflow, and on completion we write a standard return artifact for ingestion back into the legacy systems. Carried by Pattern B below.",
+    how: "Un backend di orchestrazione legge dalle sorgenti pertinenti, l’interfaccia True Aim ospita il workflow utente e, al completamento, scriviamo un artefatto di ritorno standard da reimportare nei sistemi legacy. Realizzato dal Pattern B qui sotto.",
   },
   {
     icon: Plug,
@@ -139,7 +139,7 @@ const commitments = [
   {
     icon: FileSignature,
     title: "Audit trail",
-    body: "Ogni azione (invocazione del modello, prompt, versione del modello, conteggio dei token, intervento umano, chiamata di sistema) è registrata a livello di singolo sinistro, con hash crittografico, marca temporale ed esportabile. Questo soddisfa i requisiti di resilienza operativa di DORA e gli obblighi di trasparenza dell’AI Act europeo.",
+    body: "Ogni azione (invocazione del modello, prompt, versione del modello, conteggio dei token, intervento umano, chiamata di sistema) è registrata a livello di singolo sinistro, con hash crittografico e marca temporale, ed esportabile. Questo soddisfa i requisiti di resilienza operativa di DORA e gli obblighi di trasparenza dell’AI Act europeo.",
   },
   {
     icon: Server,
@@ -153,7 +153,7 @@ const tableOfContents = [
   { num: "02", label: "Principi di integrazione", anchor: "principles" },
   { num: "03", label: "Pattern che usiamo", anchor: "patterns" },
   { num: "04", label: "Pattern nella pratica", anchor: "practice" },
-  { num: "05", label: "Come consegniamo", anchor: "deliver" },
+  { num: "05", label: "Come realizziamo l’integrazione", anchor: "deliver" },
   { num: "06", label: "Impegni", anchor: "commitments" },
 ];
 
@@ -211,7 +211,7 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
             </h1>
 
             <p className="text-xl md:text-2xl text-body leading-relaxed max-w-3xl mb-16">
-              Come ci inseriamo nei paesaggi esistenti, quali pattern usiamo e come si svolge una prima integrazione.
+              Come ci inseriamo negli ambienti IT esistenti, quali pattern usiamo e come si svolge una prima integrazione.
             </p>
           </MotionDiv>
 
@@ -222,7 +222,7 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                 { label: "Pattern", value: "5" },
                 { label: "Fasi", value: "3" },
                 { label: "Prima integrazione", value: "4–6 sett." },
-                { label: "Residenza dei dati", value: "In-tenant" },
+                { label: "Residenza dei dati", value: "Nel tenant" },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -295,7 +295,7 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                     <span className="font-medium text-accent">
                       la più piccola impronta di integrazione che produce il valore
                     </span>
-                    , non la copertura per il suo stesso bene.
+                    , non la copertura fine a se stessa.
                   </p>
 
                   <p className="text-body leading-[1.6]">
@@ -400,18 +400,7 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                 </h3>
 
                 <p className="text-body leading-[1.6] max-w-3xl mb-5">
-                  Documents arrive on a customer-owned storage location. A True
-                  Aim batch reader, running inside our Azure environment, pulls
-                  them on a schedule. Complex claims decisioning and key data
-                  extraction run on our side. A small number of external
-                  enrichment calls (parts lookup, geolocation) are made for
-                  specific use cases. A single policy lookup against the
-                  customer&apos;s ERP provides coverage context. Users complete
-                  review inside the True Aim platform. On approval, we push one
-                  structured JSON file per claim with the decision, plus a
-                  processing log capturing metadata, model versions, and any
-                  errors, back to a return location in the customer&apos;s
-                  infrastructure.
+                  I documenti arrivano in una posizione di storage di proprietà del cliente. Un lettore batch True Aim, in esecuzione nel nostro ambiente Azure, li preleva a intervalli programmati. Le decisioni complesse sui sinistri e l’estrazione dei dati chiave avvengono dal nostro lato. Un piccolo numero di chiamate esterne di arricchimento (ricerca ricambi, geolocalizzazione) viene effettuato per casi d’uso specifici. Una singola consultazione della polizza nell’ERP del cliente fornisce il contesto di copertura. Gli utenti completano la revisione nella piattaforma True Aim. All’approvazione, scriviamo un file JSON strutturato per sinistro con la decisione, più un log di elaborazione con metadati, versioni dei modelli ed eventuali errori, in una posizione di ritorno nell’infrastruttura del cliente.
                 </p>
 
                 <p className="text-body leading-[1.6] max-w-3xl mb-10 italic">
@@ -425,11 +414,7 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                 />
 
                 <ProvesCallout>
-                  We can run an end-to-end decisioning pipeline with a minimal
-                  integration surface (two storage locations and one ERP API),
-                  keep customer data inside our environment, and return a
-                  clean, structured artifact that the customer can ingest
-                  however they want.
+                  Possiamo eseguire una pipeline decisionale end-to-end con una superficie di integrazione minima (due posizioni di storage e un’API ERP), mantenere i dati del cliente nel nostro ambiente e restituire un artefatto pulito e strutturato che il cliente può acquisire nel modo che preferisce.
                 </ProvesCallout>
               </MotionDiv>
 
@@ -458,10 +443,7 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                 />
 
                 <ProvesCallout>
-                  We can stand up a working surface across a fragmented backend
-                  landscape without forcing the customer into a heavy
-                  synchronous API build, and we can return outcomes through
-                  whatever channel the receiving system actually supports.
+                  Possiamo mettere in piedi una superficie di lavoro funzionante su un paesaggio backend frammentato senza costringere il cliente a una pesante costruzione di API sincrone, e restituire gli esiti attraverso qualsiasi canale il sistema ricevente supporti effettivamente.
                 </ProvesCallout>
               </MotionDiv>
             </article>
@@ -469,7 +451,7 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
             {/* === 05 HOW WE DELIVER === */}
             <article id="deliver" className="scroll-mt-24">
               <MotionDiv {...fadeIn}>
-                <SectionHeader num="05" eyebrow="Come consegniamo" />
+                <SectionHeader num="05" eyebrow="Come realizziamo l’integrazione" />
 
                 <p className="text-body leading-[1.6] max-w-2xl mb-12">
                   Una prima integrazione si svolge in tre fasi. Il pattern si ripete per ogni caso d’uso successivo, con tempi più brevi man mano che la conoscenza lato cliente si consolida.
@@ -499,17 +481,17 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                         <PhaseField
                           label={
                             idx === 2
-                              ? "How"
+                              ? "Come"
                               : idx === 0
-                              ? "Customer time"
-                              : "Customer time"
+                              ? "Tempo richiesto al cliente"
+                              : "Tempo richiesto al cliente"
                           }
                           value={phase.time}
                         />
 
                         <div>
                           <div className="text-caption-sm text-subtle mb-3">
-                            {idx === 2 ? "Outcome" : "Outputs"}
+                            {idx === 2 ? "Risultato" : "Output"}
                           </div>
                           <ul className="space-y-2.5">
                             {phase.outputs.map((o) => (
@@ -581,15 +563,15 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                     style={{ fontSize: "clamp(2rem, 4.5vw, 3.25rem)" }}
                   >
                     Volete esaminare tutto questo <br className="hidden md:block" />
-                    rispetto al vostro paesaggio?
+                    rispetto al vostro ambiente IT?
                   </h2>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <ButtonLink href="/contact" variant="primary" size="md">
-                      Avvia una sessione di discovery
+                      Avvia la discovery
                       <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
                     </ButtonLink>
                     <ButtonLink href="/technology" variant="secondary" size="md">
-                      Come funziona la tecnologia
+                      Come funziona
                     </ButtonLink>
                   </div>
                 </div>

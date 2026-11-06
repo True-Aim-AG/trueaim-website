@@ -31,7 +31,7 @@ const sections: { id: string; heading: string }[] = [
   { id: "the-accuracy-illusion", heading: "L’illusione dell’accuratezza" },
   { id: "what-changes-between-demo-and-production", heading: "Cosa cambia tra demo e produzione" },
   { id: "the-three-metrics-that-matter", heading: "Le tre metriche che contano" },
-  { id: "what-moves-a-pilot-forward", heading: "Cosa fa avanzare un pilota" },
+  { id: "what-moves-a-pilot-forward", heading: "Cosa fa avanzare un progetto pilota" },
   { id: "operational-takeaway", heading: "Conclusione operativa" },
   { id: "key-takeaways", heading: "Punti chiave" },
 ];
@@ -62,12 +62,12 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
 
             {/* Title */}
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-strong mb-6 leading-tight">
-              Perché i piloti di IA per i sinistri si bloccano prima di essere pronti per la produzione
+              Perché i progetti pilota di IA per i sinistri si bloccano prima di essere pronti per la produzione
             </h1>
 
             {/* Subtitle */}
             <p className="text-lede text-body mb-8">
-              Molti piloti di IA per i sinistri riportano un’accuratezza intorno al 95%. Mesi dopo, non sono ancora in produzione. La causa di fondo sta nella disciplina di misurazione e nel realismo rispetto alla produzione.
+              Molti progetti pilota di IA per i sinistri riportano un’accuratezza intorno al 95%. Mesi dopo, non sono ancora in produzione. La causa di fondo sta nella disciplina di misurazione e nel realismo rispetto alla produzione.
             </p>
 
             {/* Meta */}
@@ -100,7 +100,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                 </div>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Nei primi piloti l’accuratezza riportata viene spesso calcolata su dati di sviluppo. Si tratta di sinistri su cui il sistema è già stato messo a punto durante la configurazione. Valutata su dati di produzione mai visti, l’accuratezza scende spesso intorno al 70%. La differenza tra questi due numeri determina se un sistema può essere messo in produzione in sicurezza.
+                  Nei primi progetti pilota l’accuratezza riportata viene spesso calcolata su dati di sviluppo. Si tratta di sinistri su cui il sistema è già stato messo a punto durante la configurazione. Valutata su dati di produzione mai visti, l’accuratezza scende spesso al 70-80%. La differenza tra questi due numeri determina se un sistema può essere messo in produzione in sicurezza.
                 </p>
               </MotionDiv>
 
@@ -118,7 +118,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  La maggior parte dei piloti si basa su set di sviluppo selezionati. Questi set sono utili per mettere a punto prompt, regole e pipeline di estrazione. Non sono rappresentativi dell’intera variabilità della produzione.
+                  La maggior parte dei progetti pilota si basa su set di sviluppo selezionati. Questi set sono utili per mettere a punto prompt, regole e pipeline di estrazione. Non sono rappresentativi dell’intera variabilità della produzione.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
@@ -146,7 +146,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
 
                 <div className="bg-lilac rounded-pill px-8 py-6">
                   <p className="text-sm font-medium text-accent">
-                    Un pilota misurato solo su dati di sviluppo crea fiducia. Un pilota misurato su un set di holdout crea chiarezza.
+                    Un progetto pilota misurato solo su dati di sviluppo crea fiducia. Un progetto pilota misurato su un set di holdout crea chiarezza.
                   </p>
                 </div>
               </MotionDiv>
@@ -178,7 +178,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                       </div>
                     </div>
                     <p className="text-sm text-body leading-[1.6]">
-                      Inizialmente avevamo modellato meno categorie di copertura di quante la produzione richiedesse. Quando nuove categorie sono entrate nella pipeline, il sistema ha prodotto risultati sicuri ma errati. Dopo l’estensione della logica di copertura, l’accuratezza è migliorata sensibilmente in una sola iterazione.
+                      Inizialmente avevamo modellato meno categorie di copertura di quante la produzione richiedesse. Quando nuove categorie sono entrate nella pipeline, il sistema ha prodotto risultati ad alta confidenza ma errati. Dopo l’estensione della logica di copertura, l’accuratezza è migliorata sensibilmente in una sola iterazione.
                     </p>
                     <div className="mt-4 p-3 bg-lilac rounded-pill">
                       <p className="text-sm font-medium text-accent">
@@ -229,7 +229,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                 </div>
 
                 <p className="text-body leading-[1.6] mt-6">
-                  Sono realtà operative ordinarie, non casi limite rari. Se un pilota non è stato messo alla prova in queste condizioni, l’accuratezza riportata è solo parzialmente informativa.
+                  Sono realtà operative ordinarie, non casi limite rari. Se un progetto pilota non è stato messo alla prova in queste condizioni, l’accuratezza riportata è solo parzialmente informativa.
                 </p>
               </MotionDiv>
 
@@ -280,7 +280,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
 
                 <div className="bg-lilac rounded-pill px-8 py-6">
                   <p className="text-sm text-body leading-[1.6]">
-                    Prima di avviare le discussioni sulla produzione, chiedete ai fornitori queste tre metriche, misurate su un set di holdout correttamente definito e suddivise per tipo di sinistro e lingua. Se non sono in grado di fornire questo livello di dettaglio, il pilota non ha ancora raggiunto la maturità operativa.
+                    Prima di avviare le discussioni sulla produzione, chiedete ai fornitori queste tre metriche, misurate su un set di holdout correttamente definito e suddivise per tipo di sinistro e lingua. Se non sono in grado di fornire questo livello di dettaglio, il progetto pilota non ha ancora raggiunto la maturità operativa.
                   </p>
                 </div>
               </MotionDiv>
@@ -291,7 +291,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                   id="what-moves-a-pilot-forward"
                   className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
                 >
-                  Cosa fa avanzare un pilota
+                  Cosa fa avanzare un progetto pilota
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
@@ -363,7 +363,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Molti piloti di IA per i sinistri si bloccano perché vengono misurati con ottimismo e sviluppati in modo incrementale senza una valutazione strutturata. Superare il plateau del 70-80% richiede:
+                  Molti progetti pilota di IA per i sinistri si bloccano perché vengono misurati con ottimismo e sviluppati in modo incrementale senza una valutazione strutturata. Superare il plateau del 70-80% richiede:
                 </p>
 
                 <div className="space-y-3 mb-8">
@@ -390,7 +390,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                 </div>
 
                 <p className="mt-6 text-body leading-[1.6]">
-                  Se state valutando un pilota o preparando la messa in produzione e volete confrontare il vostro approccio con un quadro di holdout strutturato, siamo disponibili a condividere come strutturiamo valutazione e iterazione.
+                  Se state valutando un progetto pilota o preparando la messa in produzione e volete confrontare il vostro approccio con un quadro di holdout strutturato, siamo disponibili a condividere come strutturiamo valutazione e iterazione.
                 </p>
               </MotionDiv>
 
@@ -469,10 +469,10 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
           <MotionDiv {...fadeIn}>
             <BarChart3 className="w-12 h-12 text-muted mx-auto mb-6" strokeWidth={1.5} />
             <h2 className="font-display text-3xl md:text-4xl font-bold text-strong mb-6">
-              Pronti ad andare oltre il pilota?
+              Pronti ad andare oltre il progetto pilota?
             </h2>
             <p className="text-lg text-body mb-10">
-              Possiamo aiutarvi a strutturare quadri di valutazione che trasformano i piloti in sistemi pronti per la produzione.
+              Possiamo aiutarvi a strutturare quadri di valutazione che trasformano i progetti pilota in sistemi pronti per la produzione.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <ButtonLink href="/contact" variant="primary" size="lg">

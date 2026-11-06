@@ -42,7 +42,7 @@ type BulletItem = { lead?: string; text: string };
 const modelJobs: NumberedItem[] = [
   {
     title: "Extraction des documents et des preuves (Lecture)",
-    body: "Les règles ne savent pas lire une photographie ni une note manuscrite. Les agents fondés sur des modèles de langage, si. Transformer des preuves non structurées en faits structurés est le travail qui leur convient le mieux. La discipline consiste à garder chaque agent étroit. Un agent qui ne fait qu’extraire est bien plus facile à vérifier qu’un agent qui lit, extrait, trie et explique en une seule passe.",
+    body: "Les règles ne savent pas lire une photographie ni une note manuscrite. Les agents fondés sur des modèles de langage, si. Transformer des preuves non structurées en faits structurés est le travail qui leur convient le mieux. La discipline consiste à cantonner chaque agent à un périmètre étroit. Un agent qui ne fait qu’extraire est bien plus facile à vérifier qu’un agent qui lit, extrait, trie et explique en une seule passe.",
   },
   {
     title: "Résolution marquée des ambiguïtés (Jugement)",
@@ -76,7 +76,7 @@ const summaryPoints: BulletItem[] = [
   },
   {
     lead: "Le calcul revient strictement aux règles :",
-    text: "Calculer les limites, les franchises, les abattements et les répartitions de coassurance a exactement une bonne réponse. Un modèle ne peut en proposer qu’une probable.",
+    text: "Calculer les limites, les franchises et les répartitions de coassurance a exactement une bonne réponse. Un modèle ne peut en proposer qu’une probable.",
   },
   {
     lead: "Le jugement peut faire appel à un modèle, à condition d’être marqué comme tel :",
@@ -113,7 +113,7 @@ const handovers: BulletItem[] = [
 const engineParts: BulletItem[] = [
   {
     lead: "Arbres de décision déterministes :",
-    text: "Les conditions de police, les catalogues et les référentiels de règles sont convertis en arbres de décision. À partir des faits, le résultat est calculé plutôt que prédit. Mêmes entrées, même décision, à chaque fois.",
+    text: "Les conditions de la police, les catalogues et les référentiels de règles sont convertis en arbres de décision. À partir des faits, le résultat est calculé plutôt que prédit. Mêmes entrées, même décision, à chaque fois.",
   },
   {
     lead: "Agents spécialisés par tâche :",
@@ -333,7 +333,7 @@ export default async function LanguageModelBoundaryBlogPost({
                 </p>
 
                 <p className="text-body leading-[1.6]">
-                  Franchises, abattements, seuils, plafonds, limites, partages de responsabilité, coassurance et vétusté relèvent tous du calcul. Aucun n’a besoin d’un modèle.
+                  Franchises, seuils, plafonds, limites, partages de responsabilité, coassurance et plus-value (betterment) relèvent tous du calcul. Aucun n’a besoin d’un modèle.
                 </p>
               </MotionDiv>
 
@@ -437,7 +437,7 @@ export default async function LanguageModelBoundaryBlogPost({
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Chaque sinistre clos est relu : par le gestionnaire avant validation, par le client quand un résultat est contesté ou par un auditeur un an plus tard. Tous posent la même question : comment en est-on arrivé là ?
+                  Chaque sinistre clos est relu : par le gestionnaire avant validation, par le client quand un résultat est contesté ou par un auditeur un an plus tard. Tous posent la même question : comment ce résultat a-t-il été obtenu ?
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">

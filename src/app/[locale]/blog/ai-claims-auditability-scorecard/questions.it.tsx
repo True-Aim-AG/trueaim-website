@@ -41,7 +41,7 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Quali parti della decisione sono state calcolate da regole e quali prodotte da un modello, e il fascicolo mostra la differenza?",
     plainAnswer:
-      "Quanto maggiore è la parte di una decisione che si basa su logica deterministica, tanto meno c’è da spiegare in seguito, perché la regola è la spiegazione. Lo standard è un fascicolo che mostra, riga per riga, quali parti sono state calcolate dal testo e quali prodotte da un modello, così che il giudizio non venga mai confuso con l’aritmetica. True Aim converte una polizza, un catalogo o un regolamento in un albero decisionale. Dove le regole coprono i fatti, l’esito è calcolato, non previsto, e gli stessi input producono sempre la stessa decisione. Gli agenti leggono le prove non strutturate, le fotografie, i PDF, la scrittura a mano, le e-mail e il testo libero, e le trasformano nei fatti strutturati di cui il motore ha bisogno. Ogni agente svolge un solo compito ristretto, così quando qualcosa è sbagliato è subito chiaro dove, e viene corretto in quel punto. Dove una voce è davvero ambigua e nessuna regola la risolve, un modello esegue il matching e il fascicolo marca quella riga come probabilistica.",
+      "Quanto maggiore è la parte di una decisione che si basa su logica deterministica, tanto meno c’è da spiegare in seguito, perché la regola è la spiegazione. Lo standard è un fascicolo che mostra, riga per riga, quali parti sono state calcolate dal testo e quali prodotte da un modello, così che il giudizio non venga mai confuso con l’aritmetica. True Aim converte una polizza, un catalogo o un regolamento in un albero decisionale. Dove le regole coprono i fatti, l’esito è calcolato, non previsto, e gli stessi input producono sempre la stessa decisione. Gli agenti leggono le prove non strutturate, le fotografie, i PDF, la scrittura a mano, le e-mail e il testo libero, e le trasformano nei fatti strutturati di cui il motore ha bisogno. Ogni agente svolge un solo compito ristretto, così quando qualcosa è sbagliato è subito chiaro dove, e viene corretto in quel punto. Dove una voce è davvero ambigua e nessuna regola la risolve, un modello esegue l’abbinamento e il fascicolo marca quella riga come probabilistica.",
     body: (
       <>
         <p>
@@ -49,7 +49,7 @@ export const scorecardQuestions: ScorecardQuestion[] = [
           la spiegazione. Lo standard è un fascicolo che mostra, riga per riga, quali parti sono state calcolate dal testo e quali prodotte da un modello, così che il giudizio non venga mai confuso con l’aritmetica.
         </p>
         <p>
-          True Aim converte una polizza, un catalogo o un regolamento in un albero decisionale. Dove le regole coprono i fatti, l’esito è calcolato, non previsto, e gli stessi input producono sempre la stessa decisione. Gli agenti leggono le prove non strutturate, le fotografie, i PDF, la scrittura a mano, le e-mail e il testo libero, e le trasformano nei fatti strutturati di cui il motore ha bisogno. Ogni agente svolge un solo compito ristretto, così quando qualcosa è sbagliato è subito chiaro dove, e viene corretto in quel punto. Dove una voce è davvero ambigua e nessuna regola la risolve, un modello esegue il matching e il fascicolo marca quella riga come probabilistica.
+          True Aim converte una polizza, un catalogo o un regolamento in un albero decisionale. Dove le regole coprono i fatti, l’esito è calcolato, non previsto, e gli stessi input producono sempre la stessa decisione. Gli agenti leggono le prove non strutturate, le fotografie, i PDF, la scrittura a mano, le e-mail e il testo libero, e le trasformano nei fatti strutturati di cui il motore ha bisogno. Ogni agente svolge un solo compito ristretto, così quando qualcosa è sbagliato è subito chiaro dove, e viene corretto in quel punto. Dove una voce è davvero ambigua e nessuna regola la risolve, un modello esegue l’abbinamento e il fascicolo marca quella riga come probabilistica.
         </p>
       </>
     ),
@@ -142,7 +142,7 @@ export const scorecardQuestions: ScorecardQuestion[] = [
   {
     group: "Human judgement",
     question:
-      "Quando un liquidatore annulla la decisione del sistema, la motivazione viene registrata, e qualcuno ne trae insegnamento?",
+      "Quando un liquidatore si discosta dalla decisione del sistema, la motivazione viene registrata, e qualcuno ne trae insegnamento?",
     plainAnswer:
       "Gli interventi umani sono il segnale di qualità più prezioso che un’organizzazione sinistri possiede. Ognuno è un caso in cui una persona esperta non era d’accordo con il sistema, e la motivazione viene registrata e studiata oppure va perduta. Lo standard è una motivazione obbligatoria per ogni intervento e una routine che la legge. True Aim richiede una motivazione per ogni modifica umana e segnala separatamente le liquidazioni per cortesia commerciale, così un pagamento fuori copertura non addestra mai il modello. Le decisioni umane e automatizzate sono conteggiate fianco a fianco nel fascicolo sinistro, il che dà all’organizzazione al tempo stesso un audit trail pulito e dati di addestramento puliti.",
     body: (
@@ -178,14 +178,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Come si comporta il sistema su sinistri che non ha mai visto, e cosa è cambiato dopo l’ultimo test di questo tipo?",
     plainAnswer:
-      "Un’accuratezza misurata sui sinistri su cui un sistema è stato messo a punto misura la familiarità, non la competenza. Lo standard è un test su sinistri che il sistema non ha mai visto, etichettati da un liquidatore esperto, con le modalità di errore annotate e il rimedio registrato. In True Aim, trenta sinistri mai visti hanno fatto emergere modalità di errore che il set di sviluppo non aveva coperto, ed è esattamente a questo che serve un test del genere. Colmare il divario ha richiesto più ground truth e, per la formula di liquidazione, sedersi con un liquidatore e rifare i calcoli a mano. Nessun prompt engineering corregge un errore di logica di business. È quel lavoro a decidere se un pilota arriva in produzione.",
+      "Un’accuratezza misurata sui sinistri su cui un sistema è stato messo a punto misura la familiarità, non la competenza. Lo standard è un test su sinistri che il sistema non ha mai visto, etichettati da un liquidatore esperto, con le modalità di errore annotate e il rimedio registrato. In True Aim, trenta sinistri mai visti hanno fatto emergere modalità di errore che il set di sviluppo non aveva coperto, ed è esattamente a questo che serve un test del genere. Colmare il divario ha richiesto più ground truth e, per la formula di liquidazione, sedersi con un liquidatore e rifare i calcoli a mano. Nessun prompt engineering corregge un errore di logica di business. È quel lavoro a decidere se un progetto pilota arriva in produzione.",
     body: (
       <>
         <p>
           Un’accuratezza misurata sui sinistri su cui un sistema è stato messo a punto misura la familiarità, non la competenza. Lo standard è un test su sinistri che il sistema non ha mai visto, etichettati da un liquidatore esperto, con le modalità di errore annotate e il rimedio registrato.
         </p>
         <p>
-          In True Aim, trenta sinistri mai visti hanno fatto emergere modalità di errore che il set di sviluppo non aveva coperto, ed è esattamente a questo che serve un test del genere. Colmare il divario ha richiesto più ground truth e, per la formula di liquidazione, sedersi con un liquidatore e rifare i calcoli a mano. Nessun prompt engineering corregge un errore di logica di business. È quel lavoro a decidere se un pilota arriva in produzione.
+          In True Aim, trenta sinistri mai visti hanno fatto emergere modalità di errore che il set di sviluppo non aveva coperto, ed è esattamente a questo che serve un test del genere. Colmare il divario ha richiesto più ground truth e, per la formula di liquidazione, sedersi con un liquidatore e rifare i calcoli a mano. Nessun prompt engineering corregge un errore di logica di business. È quel lavoro a decidere se un progetto pilota arriva in produzione.
         </p>
       </>
     ),

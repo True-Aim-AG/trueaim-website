@@ -20,7 +20,7 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">So erreichen Sie uns</h2>
               <p className="text-body leading-[1.6]">
                 Für Produktsupport schreiben Sie an{" "}
-                <a href="mailto:support@trueaim.ai" className="text-link hover:underline">support@trueaim.ai</a>. Bitte nennen Sie den Namen Ihres Mandanten, den betroffenen Nutzer, eine Beschreibung des Problems sowie Screenshots oder Fehlermeldungen.
+                <a href="mailto:support@trueaim.ai" className="text-link hover:underline">support@trueaim.ai</a>. Bitte nennen Sie den Namen Ihres Mandanten, den betroffenen Nutzer, eine Beschreibung des Problems sowie etwaige Screenshots oder Fehlermeldungen.
               </p>
             </section>
 

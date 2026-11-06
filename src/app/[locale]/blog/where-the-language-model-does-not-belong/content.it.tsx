@@ -42,11 +42,11 @@ type BulletItem = { lead?: string; text: string };
 const modelJobs: NumberedItem[] = [
   {
     title: "Estrazione da documenti e prove (Lettura)",
-    body: "Le regole non sanno leggere una fotografia o una nota scritta a mano. Gli agenti basati su modelli linguistici sì. Trasformare prove non strutturate in fatti strutturati è il lavoro che riesce loro meglio. La disciplina sta nel mantenere ogni agente ristretto. Un agente che si limita a estrarre è molto più facile da controllare di uno che legge, estrae, ordina e spiega in un unico passaggio.",
+    body: "Le regole non sanno leggere una fotografia o una nota scritta a mano. Gli agenti basati su modelli linguistici sì. Trasformare prove non strutturate in fatti strutturati è il lavoro che riesce loro meglio. La disciplina sta nel mantenere ogni agente circoscritto a un compito. Un agente che si limita a estrarre è molto più facile da controllare di uno che legge, estrae, ordina e spiega in un unico passaggio.",
   },
   {
     title: "Risoluzione marcata delle ambiguità (Giudizio)",
-    body: "Quando una voce è davvero ambigua e nessuna regola la risolve, un modello può occuparsi del matching. Ciò che lo rende accettabile è l’etichetta. Il fascicolo marca quella riga come probabilistica anziché deterministica, così un revisore vede esattamente quali parti della decisione hanno richiesto giudizio e dove guardare per prime.",
+    body: "Quando una voce è davvero ambigua e nessuna regola la risolve, un modello può occuparsi dell’abbinamento. Ciò che lo rende accettabile è l’etichetta. Il fascicolo marca quella riga come probabilistica anziché deterministica, così un revisore vede esattamente quali parti della decisione hanno richiesto giudizio e dove guardare per prime.",
   },
 ];
 
@@ -61,7 +61,7 @@ const claimSteps: NumberedItem[] = [
   },
   {
     title: "Giudizio",
-    body: "Dove una voce di fattura non corrisponde nettamente a nessuna regola, un modello esegue il matching e solo quella riga porta un’etichetta probabilistica. Le righe intorno restano deterministiche.",
+    body: "Dove una voce di fattura non corrisponde nettamente a nessuna regola, un modello esegue l’abbinamento e solo quella riga porta un’etichetta probabilistica. Le righe intorno restano deterministiche.",
   },
   {
     title: "Revisione umana",
@@ -102,11 +102,11 @@ const handovers: BulletItem[] = [
   },
   {
     lead: "Passaggio 2: ambiguità reale.",
-    text: "Dove una voce di fattura non corrisponde nettamente a nessuna voce di catalogo, un modello esegue il matching e il fascicolo la marca come probabilistica. Il giudizio sta accanto all’aritmetica, chiaramente etichettato.",
+    text: "Dove una voce di fattura non corrisponde nettamente a nessuna voce di catalogo, un modello esegue l’abbinamento e il fascicolo la marca come probabilistica. Il giudizio sta accanto all’aritmetica, chiaramente etichettato.",
   },
   {
     lead: "Passaggio 3: soglie definite dall’assicuratore.",
-    text: "Le soglie su importo del sinistro, scostamento dagli esiti attesi o livelli di confidenza sono fissate dall’assicuratore. Un sinistro che supera una soglia viene indirizzato a un liquidatore, che vede i fatti, la clausola applicata e ogni ipotesi fatta. Se un’ipotesi non tiene, il liquidatore la annulla e l’esito viene ricalcolato.",
+    text: "Le soglie su importo del sinistro, scostamento dagli esiti attesi o livelli di confidenza sono fissate dall’assicuratore. Un sinistro che supera una soglia viene indirizzato a un liquidatore, che vede i fatti, la clausola applicata e ogni ipotesi fatta. Se un’ipotesi non tiene, il liquidatore la corregge e l’esito viene ricalcolato.",
   },
 ];
 
@@ -120,7 +120,7 @@ const engineParts: BulletItem[] = [
     text: "Gli agenti leggono fotografie, PDF, scrittura a mano, e-mail e testo libero per estrarre fatti strutturati. Ogni agente svolge un solo compito ristretto.",
   },
   {
-    lead: "Matching con modello etichettato:",
+    lead: "Abbinamento con modello etichettato:",
     text: "Dove una voce è davvero ambigua, un modello la abbina e marca quella riga come probabilistica nel fascicolo.",
   },
   {

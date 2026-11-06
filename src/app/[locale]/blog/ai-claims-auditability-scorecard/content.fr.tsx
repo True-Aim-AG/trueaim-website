@@ -82,7 +82,7 @@ export default async function AuditabilityScorecardBlogPost({
 
       {/* Hero Section */}
       <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
-        <TextureBackdrop texture={{ name: "circ", position: "72% 18%" }} />
+        <TextureBackdrop texture={{ name: "circ", position: "72 % 18 %" }} />
 
         <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
@@ -158,7 +158,7 @@ export default async function AuditabilityScorecardBlogPost({
                       <span aria-hidden="true" className="text-accent mt-1">&bull;</span>
                       <span>
                         <strong className="text-strong">
-                          Les échéances « haut risque » de l’AI Act européen ont été reportées à décembre 2027.
+                          Les échéances « haut risque » de l’AI Act (règlement européen sur l’IA) ont été reportées à décembre 2027.
                         </strong>{" "}
                         La gestion des sinistres n’a jamais figuré sur cette liste, et le RGPD encadre les décisions automatisées depuis 2018.
                       </span>
@@ -187,7 +187,7 @@ export default async function AuditabilityScorecardBlogPost({
                         <strong className="text-strong">
                           Seuls 24 % des dirigeants d’assurance sont très confiants
                         </strong>{" "}
-                        de pouvoir passer une revue indépendante de la gouvernance et des contrôles de l’IA, avec des preuves centralisées, dans les 90 prochains jours. La confiance n’est pas une preuve.
+                        de pouvoir réussir une revue indépendante de la gouvernance et des contrôles de l’IA, avec des preuves centralisées, dans les 90 prochains jours. La confiance n’est pas une preuve.
                       </span>
                     </li>
                   </ul>
@@ -214,7 +214,7 @@ export default async function AuditabilityScorecardBlogPost({
 
                 <p className="text-body leading-[1.6] mb-5">
                   L’enquête AI Impact Survey 2026 de Grant Thornton, menée auprès de 950 dirigeants dont 100 dans l’assurance, a révélé que seuls{" "}
-                  <strong className="text-strong">24%</strong> sont très confiants de pouvoir passer une revue indépendante de la gouvernance et des contrôles de l’IA, avec des preuves centralisées, dans les 90 prochains jours. À cette taille d’échantillon, le chiffre est indicatif, mais la direction est claire, et l’écart est un problème de documentation avant d’être un problème de modélisation.
+                  <strong className="text-strong">24 %</strong> sont très confiants de pouvoir réussir une revue indépendante de la gouvernance et des contrôles de l’IA, avec des preuves centralisées, dans les 90 prochains jours. À cette taille d’échantillon, le chiffre est indicatif, mais la direction est claire, et l’écart est un problème de documentation avant d’être un problème de modélisation.
                 </p>
 
                 <p className="text-body leading-[1.6]">
@@ -248,7 +248,7 @@ export default async function AuditabilityScorecardBlogPost({
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-8">
-                  La reconstruction est ce qui distingue être prêt pour un audit et se préparer à un audit. La préparation est un exercice qui commence quand l’examen est annoncé. La disponibilité est une propriété que le système possède pendant qu’il fonctionne, ou qu’il n’a pas du tout. Seule la seconde peut répondre à une question sur un sinistre clos il y a dix-huit mois.
+                  La reconstruction est ce qui distingue le fait d’être prêt pour un audit du fait de s’y préparer. La préparation est un exercice qui commence quand l’examen est annoncé. Être prêt est une propriété que le système possède pendant qu’il fonctionne, ou qu’il n’a pas du tout. Seule la seconde peut répondre à une question sur un sinistre clos il y a dix-huit mois.
                 </p>
 
                 <QuestionGroup group="Reconstruction" />
@@ -327,7 +327,7 @@ export default async function AuditabilityScorecardBlogPost({
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Le test que nous soumettrions à tout conseil d’administration est simple. Si un régulateur demandait demain à parcourir une décision automatisée sur un sinistre, ligne par ligne, pourriez-vous le faire ?
+                  Le test que nous soumettrions à tout conseil d’administration est simple. Si une autorité de contrôle demandait demain à parcourir une décision automatisée sur un sinistre, ligne par ligne, pourriez-vous le faire ?
                 </p>
 
                 <p className="text-body leading-[1.6]">
@@ -386,7 +386,7 @@ export default async function AuditabilityScorecardBlogPost({
                         <strong className="text-strong">
                           Faites du jugement humain un véritable contrôle.
                         </strong>{" "}
-                        Le réviseur voit les preuves, détient l’autorité de changer le résultat, et chaque intervention est consignée avec son motif.
+                        Le réviseur voit les preuves, détient l’autorité de changer le résultat, et chaque dérogation est consignée avec son motif.
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -410,7 +410,7 @@ export default async function AuditabilityScorecardBlogPost({
                       />
                       <span className="text-sm text-body leading-[1.6]">
                         <strong className="text-strong">
-                          Gardez la maîtrise des enregistrements.
+                          Gardez la maîtrise des dossiers.
                         </strong>{" "}
                         Toute altération détectable, export en un clic et conservation alignée sur vos propres obligations.
                       </span>

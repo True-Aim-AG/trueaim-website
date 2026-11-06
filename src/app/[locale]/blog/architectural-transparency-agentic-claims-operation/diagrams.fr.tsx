@@ -65,16 +65,16 @@ export function ClaimChainDiagram() {
 
 const views: { name: string; items: string[] }[] = [
   { name: "Poste assureur", items: ["Audit ligne par ligne", "Conformité réglementaire"] },
-  { name: "Vue intermédiaire", items: ["Seuil du binder", "Télémétrie du portefeuille"] },
+  { name: "Vue de l’intermédiaire", items: ["Seuil de délégation", "Télémétrie du portefeuille"] },
   { name: "Nœud chaîne de prestataires", items: ["Test des prix en direct", "Validation en temps réel"] },
 ];
 
 export function SharedRecordDiagram() {
   return (
-    <Figure label="Un dossier sinistre unifié au service du poste assureur, de la vue intermédiaire et du nœud de la chaîne de prestataires">
+    <Figure label="Un dossier sinistre unifié au service du poste assureur, de la vue de l’intermédiaire et du nœud de la chaîne de prestataires">
       <div className={`${focal} mx-auto max-w-xs`}>
         <div>Dossier sinistre unifié</div>
-        <div className="text-sm font-normal opacity-90">(État &amp; provenance)</div>
+        <div className="text-sm font-normal opacity-90">(État et provenance)</div>
       </div>
       <Branch />
       <div className="md:hidden">
@@ -102,7 +102,7 @@ export function SharedRecordDiagram() {
 }
 
 const outcomes: { test: string; result: string; note?: string }[] = [
-  { test: "Dans le σ attendu", result: "Auto-Cleared" },
+  { test: "Dans le σ attendu", result: "Validé automatiquement" },
   { test: "Écart positif", result: "Signalé avec delta", note: "(motif consigné)" },
   { test: "Données non structurées", result: "Réservé au jugement d’un gestionnaire senior" },
 ];
@@ -115,7 +115,7 @@ export function PriceEngineDiagram() {
       <div className={`${focal} mx-auto max-w-md`}>
         <div>Moteur de prix agentique : modèles de distribution régionaux</div>
         <div className="text-sm font-normal opacity-90">
-          (Test empirique de variance par métier &amp; code postal)
+          (Test empirique de variance par métier et code postal)
         </div>
       </div>
       <Branch />

@@ -33,7 +33,7 @@ const principles = [
   },
   {
     title: "Rejoindre les systèmes là où ils sont.",
-    body: "Nous nous adaptons aux interfaces disponibles chez le client : API, dépôts de fichiers, files d’attente, flux d’événements ou, dans des cas étroits, l’interface legacy elle-même. Nous ne forçons pas l’ajustement.",
+    body: "Nous nous adaptons aux interfaces disponibles chez le client : API, dépôts de fichiers, files d’attente, flux d’événements ou, dans des cas étroits, l’interface historique elle-même. Nous ne forçons pas l’ajustement.",
   },
   {
     title: "Les données partagées avec nous ne quittent pas notre infrastructure.",
@@ -58,15 +58,15 @@ const patterns = [
     icon: Archive,
     name: "Lots sécurisés via un stockage partagé",
     when:
-      "Le client peut déposer des documents et des charges structurées à un emplacement de stockage auquel nous avons tous deux accès, et le cas d’usage tolère la latence du traitement par lots.",
-    how: "We pick up inputs on a schedule or on arrival, process inside our environment, and write outputs back to a return location. Typically one structured file per case plus a processing log. Carried by Pattern A below.",
+      "Le client peut déposer des documents et des données structurées à un emplacement de stockage auquel nous avons tous deux accès, et le cas d’usage tolère la latence du traitement par lots.",
+    how: "Nous récupérons les entrées selon un calendrier ou à l’arrivée, les traitons dans notre environnement et écrivons les sorties à un emplacement de retour. Typiquement un fichier structuré par dossier plus un journal de traitement. Porté par le schéma A ci-dessous.",
   },
   {
     icon: Workflow,
-    name: "Orchestration de workflows sur des backends hétérogènes",
+    name: "Orchestration de flux de travail sur des backends hétérogènes",
     when:
-      "Les données du client vivent dans plusieurs systèmes (CRM, dépôts documentaires, bases relationnelles, dumps, messagerie) et le workflow a besoin d’une surface unifiée pour les utilisateurs.",
-    how: "An orchestration backend reads from the relevant sources, the True Aim UI hosts the user workflow, and on completion we write a standard return artifact for ingestion back into the legacy systems. Carried by Pattern B below.",
+      "Les données du client vivent dans plusieurs systèmes (CRM, dépôts documentaires, bases relationnelles, dumps, messagerie) et le flux de travail a besoin d’une surface unifiée pour les utilisateurs.",
+    how: "Un backend d’orchestration lit les sources pertinentes, l’interface True Aim héberge le flux de travail utilisateur et, à la clôture, nous écrivons un artefact de retour standard pour réintégration dans les systèmes historiques. Porté par le schéma B ci-dessous.",
   },
   {
     icon: Plug,
@@ -84,10 +84,10 @@ const patterns = [
   },
   {
     icon: MousePointer2,
-    name: "Saisie de données pilotée par navigateur dans des interfaces legacy",
+    name: "Saisie de données pilotée par navigateur dans des interfaces historiques",
     when:
-      "Un workflow étroit et à forte valeur pour lequel aucune API n’existe et dont la construction ne se justifie pas.",
-    how: "Une automatisation isolée effectue la saisie directement dans l’interface legacy pour le compte d’un opérateur. Nous réservons ce schéma aux cas où la valeur justifie clairement l’empreinte opérationnelle. Ce n’est pas un défaut.",
+      "Un flux de travail étroit et à forte valeur pour lequel aucune API n’existe et dont la construction ne se justifie pas.",
+    how: "Une automatisation isolée effectue la saisie directement dans l’interface historique pour le compte d’un opérateur. Nous réservons ce schéma aux cas où la valeur justifie clairement l’empreinte opérationnelle. Ce n’est pas l’option par défaut.",
   },
 ];
 
@@ -96,7 +96,7 @@ const phases = [
     label: "Phase 01",
     title: "Semaine zéro : découverte",
     goal: "Comprendre le modèle opérationnel cible du premier cas d’usage, les systèmes impliqués, les formes de données et l’enveloppe de risque.",
-    time: "Le responsable métier du cas d’usage, un lead ingénierie, un lead opérations. Environ deux à trois sessions de travail.",
+    time: "Le responsable métier du cas d’usage, un responsable ingénierie, un responsable opérations. Environ deux à trois sessions de travail.",
     outputs: [
       "Définition du cas d’usage avec un résultat métier mesurable",
       "Inventaire des systèmes et disponibilité des interfaces (API, fichier, file, UI seule)",
@@ -133,8 +133,8 @@ const phases = [
 const commitments = [
   {
     icon: ShieldCheck,
-    title: "Human-in-the-loop",
-    body: "Chaque décision conséquente passe par un point de contrôle configurable. Le client choisit ce qui est automatique, ce qui est revu et ce qui est approuvé. Nous ne déployons pas d’agents opérant hors de cette enveloppe.",
+    title: "L’humain dans la boucle",
+    body: "Chaque décision lourde de conséquences passe par un point de contrôle configurable. Le client choisit ce qui est automatique, ce qui est revu et ce qui est approuvé. Nous ne déployons pas d’agents opérant hors de cette enveloppe.",
   },
   {
     icon: FileSignature,
@@ -222,7 +222,7 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                 { label: "Schémas", value: "5" },
                 { label: "Phases", value: "3" },
                 { label: "Première intégration", value: "4–6 sem." },
-                { label: "Localisation des données", value: "In-tenant" },
+                { label: "Localisation des données", value: "Chez le client" },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -299,7 +299,7 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                   </p>
 
                   <p className="text-body leading-[1.6]">
-                    Les données client partagées avec nous restent dans notre infrastructure. Nous n’envoyons pas de données client à des fournisseurs de modèles tiers. Chaque action du système est journalisée, hachée et rejouable. Chaque décision conséquente passe par un point de contrôle humain que le client configure.
+                    Les données client partagées avec nous restent dans notre infrastructure. Nous n’envoyons pas de données client à des fournisseurs de modèles tiers. Chaque action du système est journalisée, hachée et rejouable. Chaque décision lourde de conséquences passe par un point de contrôle humain que le client configure.
                   </p>
 
                   <p className="text-body leading-[1.6]">
@@ -400,18 +400,7 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                 </h3>
 
                 <p className="text-body leading-[1.6] max-w-3xl mb-5">
-                  Documents arrive on a customer-owned storage location. A True
-                  Aim batch reader, running inside our Azure environment, pulls
-                  them on a schedule. Complex claims decisioning and key data
-                  extraction run on our side. A small number of external
-                  enrichment calls (parts lookup, geolocation) are made for
-                  specific use cases. A single policy lookup against the
-                  customer&apos;s ERP provides coverage context. Users complete
-                  review inside the True Aim platform. On approval, we push one
-                  structured JSON file per claim with the decision, plus a
-                  processing log capturing metadata, model versions, and any
-                  errors, back to a return location in the customer&apos;s
-                  infrastructure.
+                  Les documents arrivent à un emplacement de stockage appartenant au client. Un lecteur par lots True Aim, exécuté dans notre environnement Azure, les récupère selon un calendrier. La décision sur les sinistres complexes et l’extraction des données clés tournent de notre côté. Un petit nombre d’appels d’enrichissement externes (recherche de pièces, géolocalisation) sont effectués pour des cas d’usage précis. Une consultation unique de la police dans l’ERP du client fournit le contexte de couverture. Les utilisateurs réalisent la revue dans la plateforme True Aim. À l’approbation, nous déposons un fichier JSON structuré par sinistre avec la décision, plus un journal de traitement contenant les métadonnées, les versions de modèle et les erreurs éventuelles, à un emplacement de retour dans l’infrastructure du client.
                 </p>
 
                 <p className="text-body leading-[1.6] max-w-3xl mb-10 italic">
@@ -425,11 +414,7 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                 />
 
                 <ProvesCallout>
-                  We can run an end-to-end decisioning pipeline with a minimal
-                  integration surface (two storage locations and one ERP API),
-                  keep customer data inside our environment, and return a
-                  clean, structured artifact that the customer can ingest
-                  however they want.
+                  Nous pouvons faire tourner un pipeline de décision de bout en bout avec une surface d’intégration minimale (deux emplacements de stockage et une API ERP), garder les données client dans notre environnement et renvoyer un artefact propre et structuré que le client peut ingérer comme il le souhaite.
                 </ProvesCallout>
               </MotionDiv>
 
@@ -440,28 +425,25 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                 </div>
                 <h3 className="font-display text-3xl md:text-4xl font-bold text-strong mb-6 leading-tight">
                   Orchestration multi-sources
-                  <br className="hidden md:block" /> avec workflow SLA.
+                  <br className="hidden md:block" /> avec flux de travail SLA.
                 </h3>
 
                 <p className="text-body leading-[1.6] max-w-3xl mb-5">
-                  Les données de travail du client vivent dans plusieurs systèmes : un CRM, Google Workspace, une base Postgres, des dumps SQL périodiques d’assureurs en amont et un canal WhatsApp pour les communications clients entrantes. Un backend d’orchestration True Aim (n8n) lit chaque source et assemble des dossiers sinistres de travail. Les utilisateurs réalisent le workflow de traitement des sinistres dans l’interface True Aim, qui suit les communications et les SLA sur tout le cycle de vie. À la clôture, True Aim génère un fichier plat standard pour réintégration dans les divers systèmes legacy des assureurs.
+                  Les données de travail du client vivent dans plusieurs systèmes : un CRM, Google Workspace, une base Postgres, des dumps SQL périodiques d’assureurs en amont et un canal WhatsApp pour les communications clients entrantes. Un backend d’orchestration True Aim (n8n) lit chaque source et assemble des dossiers sinistres de travail. Les utilisateurs réalisent le flux de travail de traitement des sinistres dans l’interface True Aim, qui suit les communications et les SLA sur tout le cycle de vie. À la clôture, True Aim génère un fichier plat standard pour réintégration dans les divers systèmes historiques des assureurs.
                 </p>
 
                 <p className="text-body leading-[1.6] max-w-3xl mb-10">
-                  Pour un petit nombre de workflows à forte valeur où aucune API n’existe côté récepteur, une intégration par navigateur effectue la saisie directement dans l’interface de l’assureur. Nous réservons ce schéma aux cas où la valeur justifie clairement l’empreinte opérationnelle.
+                  Pour un petit nombre de flux de travail à forte valeur où aucune API n’existe côté récepteur, une intégration par navigateur effectue la saisie directement dans l’interface de l’assureur. Nous réservons ce schéma aux cas où la valeur justifie clairement l’empreinte opérationnelle.
                 </p>
 
                 <DiagramFigure
                   diagram={<IntegrationPatternB />}
                   figureLabel="Fig. B"
-                  caption="Schéma B : orchestration multi-sources avec workflow SLA."
+                  caption="Schéma B : orchestration multi-sources avec flux de travail SLA."
                 />
 
                 <ProvesCallout>
-                  We can stand up a working surface across a fragmented backend
-                  landscape without forcing the customer into a heavy
-                  synchronous API build, and we can return outcomes through
-                  whatever channel the receiving system actually supports.
+                  Nous pouvons mettre en place une surface de travail fonctionnelle sur un paysage backend fragmenté sans imposer au client la construction lourde d’une API synchrone, et renvoyer les résultats par le canal que le système récepteur prend réellement en charge.
                 </ProvesCallout>
               </MotionDiv>
             </article>
@@ -499,17 +481,17 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                         <PhaseField
                           label={
                             idx === 2
-                              ? "How"
+                              ? "Comment"
                               : idx === 0
-                              ? "Customer time"
-                              : "Customer time"
+                              ? "Temps client"
+                              : "Temps client"
                           }
                           value={phase.time}
                         />
 
                         <div>
                           <div className="text-caption-sm text-subtle mb-3">
-                            {idx === 2 ? "Outcome" : "Outputs"}
+                            {idx === 2 ? "Résultat" : "Livrables"}
                           </div>
                           <ul className="space-y-2.5">
                             {phase.outputs.map((o) => (

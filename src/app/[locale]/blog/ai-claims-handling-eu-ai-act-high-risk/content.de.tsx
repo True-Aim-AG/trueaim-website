@@ -32,19 +32,19 @@ const annexRows: [string, string][] = [
   ],
   [
     "",
-    "Produktgestaltung in der Lebensversicherung, soweit sie nicht zur Risikobewertung oder Preisgestaltung im Einzelfall verwendet wird",
+    "Produktgestaltung in der Lebensversicherung, soweit sie nicht zur Risikobewertung oder Preisbildung im Einzelfall verwendet wird",
   ],
 ];
 
 const regimeRows: [string, string, string][] = [
   [
     "EU AI Act, Hochrisiko-Kapitel (Anhang III)",
-    "Risikobewertung und Preisgestaltung in der Lebens- und Krankenversicherung. Nicht die Schadenbearbeitung.",
+    "Risikobewertung und Preisbildung in der Lebens- und Krankenversicherung. Nicht die Schadenbearbeitung.",
     "Verschoben auf den 2. Dezember 2027 für eigenständige Systeme; 2. August 2028 für KI in regulierten Produkten",
   ],
   [
-    "DSGVO Artikel 22",
-    "Entscheidungen, die ausschließlich auf automatisierter Verarbeitung beruhen und rechtliche oder ähnlich erhebliche Wirkung entfalten, etwa ein abgelehnter oder gekürzter Anspruch",
+    "Art. 22 DSGVO",
+    "Entscheidungen, die ausschließlich auf automatisierter Verarbeitung beruhen und rechtliche oder ähnlich erhebliche Wirkung entfalten, etwa eine abgelehnte oder gekürzte Schadenleistung",
     "25. Mai 2018",
   ],
   [
@@ -66,22 +66,22 @@ const regimeRows: [string, string, string][] = [
 
 const governanceStats: { value: string; label: string }[] = [
   {
-    value: "61%",
+    value: "61 %",
     label:
-      "der Führungskräfte in der Versicherungsbranche geben an, dass ihre Verwaltungsräte KI-Governance-Richtlinien festgelegt haben.",
+      "der Führungskräfte in der Versicherungsbranche geben an, dass ihre Vorstände KI-Governance-Richtlinien festgelegt haben.",
   },
   {
-    value: "68%",
+    value: "68 %",
     label:
       "geben an, dass ihre KI-Kontrollen existieren, die Nachweise aber über Teams und Werkzeuge verstreut sind.",
   },
   {
-    value: "24%",
+    value: "24 %",
     label:
       "sind sehr zuversichtlich, innerhalb von 90 Tagen eine unabhängige Prüfung der KI-Governance zu bestehen.",
   },
   {
-    value: "44%",
+    value: "44 %",
     label:
       "geben an, dass Governance- oder Compliance-Probleme zum Scheitern oder zur Minderleistung von KI-Projekten beigetragen haben.",
   },
@@ -90,11 +90,11 @@ const governanceStats: { value: string; label: string }[] = [
 const faqs: { q: string; a: React.ReactNode }[] = [
   {
     q: "Ist KI in der Schadenbearbeitung nach dem EU AI Act hochriskant?",
-    a: "Nein. Anhang III führt die Schadenbearbeitung nicht auf. Nummer 5 Buchstabe c erfasst nur Risikobewertung und Preisgestaltung in der Lebens- und Krankenversicherung. Die Entwurfsleitlinien der Kommission zur Einstufung vom 19. Mai 2026 nennen das Schadenmanagement als Beispiel für ein System außerhalb dieser Nummer, selbst bei Krankenversicherungsprodukten. Eine Schadenorganisation in Kfz, Sach, Garantie oder Gewerbe fällt nicht unter das Hochrisiko-Regime, unterliegt aber weiterhin dem Datenschutzrecht und dem sektoralen Versicherungsrecht.",
+    a: "Nein. Anhang III führt die Schadenbearbeitung nicht auf. Nummer 5 Buchstabe c erfasst nur Risikobewertung und Preisbildung in der Lebens- und Krankenversicherung. Die Entwurfsleitlinien der Kommission zur Einstufung vom 19. Mai 2026 nennen das Schadenmanagement als Beispiel für ein System außerhalb dieser Nummer, selbst bei Krankenversicherungsprodukten. Eine Schadenorganisation in Kfz, Sach, Garantie oder Gewerbe fällt nicht unter das Hochrisiko-Regime, unterliegt aber weiterhin dem Datenschutzrecht und dem sektoralen Versicherungsrecht.",
   },
   {
     q: "Ist KI in der Schadenbearbeitung in der Krankenversicherung hochriskant?",
-    a: "Nein. Die Krankenversicherung ist der schärfste Test der Regel, denn das Underwriting in dieser Sparte ist hochriskant. Die Entwurfsleitlinien der Kommission ordnen das Schadenmanagement auch dort außerhalb von Nummer 5 Buchstabe c ein, mit der Begründung, dass die Prüfung eines Anspruchs anhand der Policenbedingungen oder die Ermittlung des zu zahlenden Betrags etwas anderes ist als Risikobewertung oder Preisgestaltung.",
+    a: "Nein. Die Krankenversicherung ist der schärfste Test der Regel, denn das Underwriting in dieser Sparte ist hochriskant. Die Entwurfsleitlinien der Kommission ordnen das Schadenmanagement auch dort außerhalb von Nummer 5 Buchstabe c ein, mit der Begründung, dass die Prüfung eines Anspruchs anhand der Policenbedingungen oder die Ermittlung des zu zahlenden Betrags etwas anderes ist als Risikobewertung oder Preisbildung.",
   },
   {
     q: "Gilt die Verschiebung auf Dezember 2027 für die Schadenbearbeitung?",
@@ -105,8 +105,8 @@ const faqs: { q: string; a: React.ReactNode }[] = [
     a: "Sie hat die Hochrisiko-Pflichten des AI Act verschoben. Eigenständige Systeme nach Anhang III rücken vom 2. August 2026 auf den 2. Dezember 2027. KI in regulierten Produkten vom 2. August 2027 auf den 2. August 2028. Sie wurde am 24. Juli 2026 veröffentlicht und trat am 27. Juli 2026 in Kraft.",
   },
   {
-    q: "Gilt DSGVO Artikel 22 für eine automatisierte Schadenentscheidung?",
-    a: "Ja, wo die DSGVO das anwendbare Regime ist. Artikel 22 beschränkt Entscheidungen, die ausschließlich auf automatisierter Verarbeitung beruhen und rechtliche oder ähnlich erhebliche Wirkung entfalten. Ein abgelehnter oder gekürzter Anspruch erreicht diese Schwelle. Er gilt seit dem 25. Mai 2018 und blieb von der Verschiebung des AI Act unberührt. Unternehmen außerhalb der EU unterliegen der entsprechenden Bestimmung ihres eigenen Regimes, etwa dem revidierten Schweizer Datenschutzgesetz.",
+    q: "Gilt Art. 22 DSGVO für eine automatisierte Schadenentscheidung?",
+    a: "Ja, wo die DSGVO das anwendbare Regime ist. Artikel 22 beschränkt Entscheidungen, die ausschließlich auf automatisierter Verarbeitung beruhen und rechtliche oder ähnlich erhebliche Wirkung entfalten. Eine abgelehnte oder gekürzte Schadenleistung erreicht diese Schwelle. Er gilt seit dem 25. Mai 2018 und blieb von der Verschiebung des AI Act unberührt. Unternehmen außerhalb der EU unterliegen der entsprechenden Bestimmung ihres eigenen Regimes, etwa dem revidierten Schweizer Datenschutzgesetz.",
   },
   {
     q: "Was gilt als bedeutsame menschliche Beteiligung?",
@@ -116,11 +116,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
     q: "Was müssen Sie über die Logik einer automatisierten Entscheidung offenlegen?",
     a: (
       <>
-        In <em>Dun &amp; Bradstreet Austria</em> (C-203/22) the CJEU required the
-        procedure and principles actually applied, communicated concisely and
-        intelligibly, including how the outcome would differ had the data been
-        different. Supplying the algorithm itself does not discharge the duty. A
-        trade secret does not permit a blanket refusal.
+        In <em>Dun &amp; Bradstreet Austria</em> (C-203/22) verlangte der EuGH das tatsächlich angewandte Verfahren und die Grundsätze, knapp und verständlich mitgeteilt, einschließlich der Frage, wie das Ergebnis bei anderen Daten ausgefallen wäre. Die Herausgabe des Algorithmus selbst erfüllt die Pflicht nicht. Ein Geschäftsgeheimnis erlaubt keine pauschale Verweigerung.
       </>
     ),
   },
@@ -132,7 +128,7 @@ const sections: { id: string; heading: string }[] = [
   { id: "four-terms-that-decide-the-answer", heading: "Vier Begriffe, die die Antwort bestimmen" },
   { id: "if-you-do-have-an-annex-iii-system-profiling-clo", heading: "Wer ein Anhang-III-System hat: Profiling schließt den Ausweg" },
   { id: "which-regime-actually-binds-a-european-claims-op", heading: "Welches Regime bindet eine europäische Schadenorganisation wirklich?" },
-  { id: "does-gdpr-article-22-apply-to-an-automated-claim", heading: "Gilt DSGVO Artikel 22 für eine automatisierte Schadenentscheidung?" },
+  { id: "does-gdpr-article-22-apply-to-an-automated-claim", heading: "Gilt Art. 22 DSGVO für eine automatisierte Schadenentscheidung?" },
   { id: "where-the-sector-supervisor-sits", heading: "Wo die Sektoraufsicht steht" },
   { id: "what-does-it-cost-to-be-unable-to-explain-a-deci", heading: "Was kostet es, eine Entscheidung nicht erklären zu können?" },
   { id: "the-gap-that-will-actually-catch-carriers", heading: "Die Lücke, an der Versicherer wirklich scheitern werden" },
@@ -150,7 +146,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
-        <TextureBackdrop texture={{ name: "circ", position: "88% 78%" }} />
+        <TextureBackdrop texture={{ name: "circ", position: "88 % 78 %" }} />
 
         <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
@@ -174,7 +170,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
             {/* Subtitle */}
             <p className="text-lede text-body mb-8">
-              Die Schadenbearbeitung fehlt in Anhang III. DSGVO Artikel 22 bindet sie trotzdem. Nur 24 % der Versicherer geben an, in 90 Tagen eine Governance-Prüfung bestehen zu können.
+              Die Schadenbearbeitung fehlt in Anhang III. Art. 22 DSGVO bindet sie trotzdem. Nur 24 % der Versicherer geben an, in 90 Tagen eine Governance-Prüfung bestehen zu können.
             </p>
 
             {/* Meta */}
@@ -212,7 +208,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                           Die Schadenbearbeitung steht nicht in Anhang III.
                         </strong>{" "}
                         Die eigenen Entwurfsleitlinien der Kommission zur Einstufung nennen das Schadenmanagement als Beispiel für ein System außerhalb von Nummer 5 Buchstabe c, und sie verwenden die Krankenversicherung, die eine Sparte, in der das Underwriting{" "}
-                        <em>tatsächlich</em> hochriskant ist, um den Punkt zu machen.
+                        <em>tatsächlich</em> hochriskant ist, um das zu verdeutlichen.
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -228,9 +224,9 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                       <span className="text-accent mt-1">&bull;</span>
                       <span>
                         <strong className="text-strong">
-                          DSGVO Artikel 22 ist das, was bindet
+                          Art. 22 DSGVO ist das, was bindet
                         </strong>
-                        . Er gilt seit dem 25. Mai 2018. Ein abgelehnter oder gekürzter Anspruch fällt eindeutig darunter. Schweizer und britische Unternehmen unterliegen ihren eigenen Gegenstücken.
+                        . Er gilt seit dem 25. Mai 2018. Eine abgelehnte oder gekürzte Schadenleistung fällt eindeutig darunter. Schweizer und britische Unternehmen unterliegen ihren eigenen Gegenstücken.
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -255,7 +251,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </div>
 
                 <p className="text-body-lg text-strong mb-6">
-                  Am 24. Juli 2026 wurde der Digitale Omnibus zu KI als Verordnung (EU) 2026/1744 im Amtsblatt veröffentlicht. Er trat drei Tage später in Kraft. Die Hochrisiko-Pflichten für eigenständige Anhang-III-Systeme rücken vom 2. August 2026 auf den 2. Dezember 2027. Für KI in regulierten Produkten vom 2. August 2027 auf den 2. August 2028.
+                  Am 24. Juli 2026 wurde der Digitale Omnibus zu KI als Verordnung (EU) 2026/1744 im Amtsblatt veröffentlicht. Er trat drei Tage später in Kraft. Die Hochrisiko-Pflichten des EU AI Act (KI-Verordnung) für eigenständige Anhang-III-Systeme rücken vom 2. August 2026 auf den 2. Dezember 2027. Für KI in regulierten Produkten vom 2. August 2027 auf den 2. August 2028.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
@@ -283,13 +279,13 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 <p className="text-body leading-[1.6] mb-5">
                   Nummer 5 des Anhangs III betrifft den Zugang zu wesentlichen privaten und öffentlichen Diensten. Sie nennt vier Dinge: die Bewertung des Anspruchs auf wesentliche öffentliche Unterstützungsleistungen, soweit durch oder im Auftrag von Behörden; die Bewertung der Kreditwürdigkeit oder die Ermittlung einer Bonitätsbewertung, ausgenommen Systeme zur Aufdeckung von Finanzbetrug;{" "}
                   <strong className="text-strong">
-                    die Risikobewertung und Preisgestaltung in Bezug auf natürliche Personen im Fall von Lebens- und Krankenversicherungen
+                    die Risikobewertung und Preisbildung in Bezug auf natürliche Personen im Fall von Lebens- und Krankenversicherungen
                   </strong>
                   ; und die Bewertung, Einstufung und Weiterleitung von Notrufen.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Risikobewertung und Preisgestaltung in der Lebens- und Krankenversicherung sind erfasst. Die Schadenbearbeitung in Kfz, Sach, Garantie und Gewerbe ist es nicht.
+                  Risikobewertung und Preisbildung in der Lebens- und Krankenversicherung sind erfasst. Die Schadenbearbeitung in Kfz, Sach, Garantie und Gewerbe ist es nicht.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-6">
@@ -333,7 +329,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
                 <blockquote className="border-l-2 border-ta-blue pl-6 mb-6">
                   <p className="text-body-lg text-strong italic">
-                    Diese Anwendungsfälle unterscheiden sich von der Durchführung einer Risikobewertung oder Preisgestaltung, auch wenn ihr Ergebnis den Genuss der Krankenversicherung beeinflussen kann.
+                    Diese Anwendungsfälle unterscheiden sich von der Durchführung einer Risikobewertung oder Preisbildung, auch wenn ihr Ergebnis die Inanspruchnahme der Krankenversicherungsleistungen beeinflussen kann.
                   </p>
                 </blockquote>
 
@@ -343,7 +339,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </p>
 
                 <p className="text-body leading-[1.6]">
-                  Das ist die Antwort auf die Frage. Es ist auch der Punkt, an dem die meisten Lesarten aufhören und an dem die beiden Dinge beginnen, die Ihr Risiko tatsächlich bestimmen. Es sind verschiedene Fragen für verschiedene Systeme. Sie zu vermischen, ist der Grund, warum Compliance-Pläne scheitern.
+                  Das ist die Antwort auf die Frage. Es ist auch der Punkt, an dem die meisten Analysen aufhören und an dem die beiden Dinge beginnen, die Ihr Risiko tatsächlich bestimmen. Es sind verschiedene Fragen für verschiedene Systeme. Sie zu vermischen, ist der Grund, warum Compliance-Pläne scheitern.
                 </p>
               </MotionDiv>
 
@@ -363,13 +359,13 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                   </p>
                   <p className="text-sm text-body leading-[1.6]">
                     <strong className="text-strong">Profiling.</strong>{" "}
-                    Die automatisierte Bewertung persönlicher Aspekte einer natürlichen Person: wirtschaftliche Lage, Gesundheit, Zuverlässigkeit, Verhalten. Der AI Act entlehnt den Begriff der DSGVO. In Artikel 6 Absatz 3 hat er entscheidendes Gewicht.
+                    Die automatisierte Bewertung persönlicher Aspekte einer natürlichen Person: wirtschaftliche Lage, Gesundheit, Zuverlässigkeit, Verhalten. Der EU AI Act entlehnt den Begriff aus der DSGVO. In Artikel 6 Absatz 3 hat er entscheidendes Gewicht.
                   </p>
                   <p className="text-sm text-body leading-[1.6]">
                     <strong className="text-strong">
                       Eine ausschließlich automatisierte Entscheidung.
                     </strong>{" "}
-                    Nach DSGVO Artikel 22 eine Entscheidung ohne bedeutsame menschliche Beteiligung, die rechtliche oder ähnlich erhebliche Wirkung entfaltet. Ein Mensch, der das Ergebnis in der Praxis nicht umstoßen kann, trifft die Entscheidung nicht mit.
+                    Nach Art. 22 DSGVO eine Entscheidung ohne bedeutsame menschliche Beteiligung, die rechtliche oder ähnlich erhebliche Wirkung entfaltet. Ein Mensch, der das Ergebnis in der Praxis nicht umstoßen kann, trifft die Entscheidung nicht mit.
                   </p>
                   <p className="text-sm text-body leading-[1.6]">
                     <strong className="text-strong">Prüfungsbereitschaft.</strong>{" "}
@@ -388,7 +384,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Das gilt für Risikobewertung und Preisgestaltung in der Lebens- und Krankenversicherung, nicht für die Schadenbearbeitung. Wenn Sie solche Systeme betreiben, lesen Sie weiter. Wenn nicht, springen Sie zum nächsten Abschnitt, denn Artikel 6 Absatz 3 hat Ihnen nichts zu sagen.
+                  Das gilt für Risikobewertung und Preisbildung in der Lebens- und Krankenversicherung, nicht für die Schadenbearbeitung. Wenn Sie solche Systeme betreiben, lesen Sie weiter. Wenn nicht, springen Sie zum nächsten Abschnitt, denn Artikel 6 Absatz 3 hat Ihnen nichts zu sagen.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
@@ -425,7 +421,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
                 <div className="bg-card shadow-card rounded-pill p-8 mb-8">
                   <h3 className="text-caption-sm text-subtle mb-4">
-                    Was eine Schadenorganisation erreicht und ab wann
+                    Was auf eine Schadenorganisation zukommt und ab wann
                   </h3>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
@@ -461,7 +457,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </div>
 
                 <p className="text-body leading-[1.6]">
-                  Das Muster ist das, was die Leute erwischt. Das Instrument, auf das sich alle vorbereiten, ist das, das sie nicht erreicht. Das Instrument, das sie erreicht, ist seit acht Jahren in Kraft.
+                  Genau an diesem Muster scheitern viele. Das Instrument, auf das sich alle vorbereiten, ist das, das sie nicht erreicht. Das Instrument, das sie erreicht, ist seit acht Jahren in Kraft.
                 </p>
               </MotionDiv>
 
@@ -471,7 +467,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                   id="does-gdpr-article-22-apply-to-an-automated-claim"
                   className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
                 >
-                  Gilt DSGVO Artikel 22 für eine automatisierte Schadenentscheidung?
+                  Gilt Art. 22 DSGVO für eine automatisierte Schadenentscheidung?
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
@@ -479,11 +475,11 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Eine Einschränkung vor den Einzelheiten. Die DSGVO ist nicht das einzige Datenschutzregime, dem eine europäische Schadenorganisation unterliegen kann. Welches Instrument Sie bindet, hängt davon ab, wo Sie ansässig sind und wessen Daten Sie verarbeiten. Was folgt, ist die Analyse der DSGVO. Lesen Sie sie als Muster, nicht als vollständige Karte, und prüfen Sie das Instrument, das für Ihr eigenes Portfolio gilt.
+                  Eine Einschränkung vor den Einzelheiten. Die DSGVO ist nicht das einzige Datenschutzregime, dem eine europäische Schadenorganisation unterliegen kann. Welches Instrument Sie bindet, hängt davon ab, wo Sie ansässig sind und wessen Daten Sie verarbeiten. Was folgt, ist die Analyse der DSGVO. Lesen Sie sie als Muster, nicht als vollständige Karte, und prüfen Sie das Instrument, das für Ihren eigenen Bestand gilt.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Artikel 22 beschränkt Entscheidungen, die ausschließlich auf automatisierter Verarbeitung beruhen und rechtliche oder ähnlich erhebliche Wirkung entfalten. Ein abgelehnter oder gekürzter Anspruch erreicht diese Schwelle.
+                  Artikel 22 beschränkt Entscheidungen, die ausschließlich auf automatisierter Verarbeitung beruhen und rechtliche oder ähnlich erhebliche Wirkung entfalten. Eine abgelehnte oder gekürzte Schadenleistung erreicht diese Schwelle.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-6">
@@ -536,11 +532,11 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 <p className="text-body leading-[1.6] mb-5">
                   Die{" "}
                   <em>Stellungnahme der EIOPA zu KI-Governance und Risikomanagement</em>{" "}
-                  (EIOPA-BoS-25-360, 6. August 2025) richtet sich an die nationalen Aufsichtsbehörden und befasst sich speziell mit KI-Systemen in der Versicherung, die nach dem AI Act weder verboten noch hochriskant sind. Sie baut auf der Versicherungsvertriebsrichtlinie, Solvency II, dem Digital Operational Resilience Act und den delegierten Verordnungen zu Solvency II und IDD auf, nicht auf dem AI Act.
+                  (EIOPA-BoS-25-360, 6. August 2025) richtet sich an die nationalen Aufsichtsbehörden und befasst sich speziell mit KI-Systemen in der Versicherung, die nach dem AI Act weder verboten noch hochriskant sind. Sie baut auf der Versicherungsvertriebsrichtlinie, Solvency II, der Verordnung über die digitale operationale Resilienz (DORA) und den delegierten Verordnungen zu Solvency II und IDD auf, nicht auf dem AI Act.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Ihre eigene Rahmung ist der Punkt, den es mitzunehmen gilt. Diese Systeme, so heißt es, „werden weiterhin unter dem bestehenden Sektorrecht ohne neue Anforderungen betrieben“, mit Ausnahme bestimmter Transparenzpflichten, der Förderung von KI-Kompetenz beim Personal und freiwilliger Verhaltenskodizes. Die EIOPA fügt kein Regime hinzu. Sie sagt den Aufsichtsbehörden, dass das bereits geltende Regime anwendbar ist.
+                  Ihre eigene Einordnung ist der entscheidende Punkt. Diese Systeme, so heißt es, „werden weiterhin unter dem bestehenden Sektorrecht ohne neue Anforderungen betrieben“, mit Ausnahme bestimmter Transparenzpflichten, der Förderung von KI-Kompetenz beim Personal und freiwilliger Verhaltenskodizes. Die EIOPA fügt kein Regime hinzu. Sie sagt den Aufsichtsbehörden, dass das bereits geltende Regime anwendbar ist.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
@@ -716,7 +712,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                         <strong className="text-strong">
                           Die Schadenbearbeitung steht nicht in Anhang III.
                         </strong>{" "}
-                        Nur Risikobewertung und Preisgestaltung in der Lebens- und Krankenversicherung erscheinen dort, unter Nummer 5 Buchstabe c. Die Entwurfsleitlinien der Kommission zur Einstufung vom 19. Mai 2026 nennen das Schadenmanagement als Beispiel für ein System außerhalb dieser Nummer, selbst in der Krankenversicherung.
+                        Nur Risikobewertung und Preisbildung in der Lebens- und Krankenversicherung erscheinen dort, unter Nummer 5 Buchstabe c. Die Entwurfsleitlinien der Kommission zur Einstufung vom 19. Mai 2026 nennen das Schadenmanagement als Beispiel für ein System außerhalb dieser Nummer, selbst in der Krankenversicherung.
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -738,9 +734,9 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                       />
                       <span className="text-sm text-body leading-[1.6]">
                         <strong className="text-strong">
-                          DSGVO Artikel 22 ist die bindende Vorgabe in der EU
+                          Art. 22 DSGVO ist die bindende Vorgabe in der EU
                         </strong>
-                        . Er gilt seit dem 25. Mai 2018. Ein abgelehnter oder gekürzter Anspruch fällt eindeutig darunter. Schweizer und britische Unternehmen unterliegen ihren eigenen Gegenstücken.
+                        . Er gilt seit dem 25. Mai 2018. Eine abgelehnte oder gekürzte Schadenleistung fällt eindeutig darunter. Schweizer und britische Unternehmen unterliegen ihren eigenen Gegenstücken.
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -764,7 +760,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                         <strong className="text-strong">
                           Richtlinien sind keine Nachweise.
                         </strong>{" "}
-                        61 % der Versicherer haben KI-Governance-Richtlinien auf Verwaltungsratsebene; 24 % glauben, in 90 Tagen eine Governance-Prüfung bestehen zu können.
+                        61 % der Versicherer haben KI-Governance-Richtlinien auf Vorstandsebene; 24 % glauben, in 90 Tagen eine Governance-Prüfung bestehen zu können.
                       </span>
                     </li>
                   </ul>

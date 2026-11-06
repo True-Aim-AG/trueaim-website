@@ -15,13 +15,13 @@ export default async function PAIAPage({ params }: { params: Promise<{ locale: s
 
           <div>
             <p className="text-sm text-muted italic">
-              Établi conformément au Promotion of Access to Information Act, 2 of 2000
+              Établi conformément au Promotion of Access to Information Act (loi n° 2 de 2000)
             </p>
 
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">1. Introduction</h2>
               <p className="text-body leading-[1.6]">
-                Le présent manuel PAIA a été établi conformément à la section 51 du Promotion of Access to Information Act, 2000 (« PAIA ») et intègre les exigences pertinentes du Protection of Personal Information Act, 2013 (« POPIA »). Il a pour objet de définir les procédures de demande d’accès aux documents détenus par <strong className="text-strong">True Aim AG</strong> et de fournir les informations exigées par le PAIA et le POPIA.
+                Le présent manuel PAIA a été établi conformément à l’article 51 du Promotion of Access to Information Act, 2000 (« PAIA ») et intègre les exigences pertinentes du Protection of Personal Information Act, 2013 (« POPIA »). Il a pour objet de définir les procédures de demande d’accès aux documents détenus par <strong className="text-strong">True Aim AG</strong> et de fournir les informations exigées par le PAIA et le POPIA.
               </p>
             </section>
 
@@ -29,7 +29,7 @@ export default async function PAIAPage({ params }: { params: Promise<{ locale: s
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">2. Coordonnées de la société</h2>
               <div className="space-y-2 text-body leading-[1.6]">
                 <p><span className="font-medium text-strong">Raison sociale :</span> True Aim AG</p>
-                <p><span className="font-medium text-strong">Numéro d’enregistrement :</span> CHE-325.128.066</p>
+                <p><span className="font-medium text-strong">Numéro d’immatriculation :</span> CHE-325.128.066</p>
                 <p><span className="font-medium text-strong">Siège social :</span> Zoug, Suisse</p>
                 <p><span className="font-medium text-strong">Adresse enregistrée :</span> c/o Yarowa AG, Metallstrasse 9, 6300 Zug, Suisse</p>
                 <p><span className="font-medium text-strong">E-mail de contact :</span>{" "}
@@ -68,7 +68,7 @@ export default async function PAIAPage({ params }: { params: Promise<{ locale: s
                 <li>Informations publiées sur le site web de True Aim</li>
                 <li>Supports marketing publics</li>
                 <li>Articles de blog et études de cas publiés</li>
-                <li>Communications publiques d’ordre corporatif ou réglementaire</li>
+                <li>Communications publiques d’ordre institutionnel ou réglementaire</li>
               </ul>
             </section>
 
@@ -82,7 +82,7 @@ export default async function PAIAPage({ params }: { params: Promise<{ locale: s
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">7. Documents relatifs aux informations personnelles (POPIA)</h2>
               <p className="text-body leading-[1.6] mb-4">
-                True Aim AG traite des informations personnelles à des fins commerciales légitimes, notamment :
+                True Aim AG traite des informations personnelles à des fins légitimes liées à son activité, notamment :
               </p>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2">
                 <li>Gestion des contacts et des demandes</li>
@@ -92,7 +92,7 @@ export default async function PAIAPage({ params }: { params: Promise<{ locale: s
                 <li>Conformité légale ou réglementaire</li>
               </ul>
               <p className="text-body leading-[1.6] mt-4">
-                Les informations personnelles sont traitées principalement en <strong className="text-strong">Suisse</strong>, avec des garanties techniques et organisationnelles appropriées. Lorsque des informations personnelles concernent des personnes en Afrique du Sud, le traitement est mené dans le respect des principes du POPIA.
+                Les informations personnelles sont traitées principalement en <strong className="text-strong">Suisse</strong>, avec des garanties techniques et organisationnelles appropriées. Lorsque des informations personnelles concernent des personnes concernées sud-africaines, le traitement est mené d’une manière alignée sur les principes du POPIA.
               </p>
             </section>
 
@@ -107,14 +107,14 @@ export default async function PAIAPage({ params }: { params: Promise<{ locale: s
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">9. Frais</h2>
               <p className="text-body leading-[1.6]">
-                Le cas échéant, des frais de demande peuvent être facturés conformément au PAIA. Tout frais applicable sera communiqué avant le traitement de la demande.
+                Le cas échéant, des frais de demande peuvent être facturés conformément au PAIA. Tous frais applicables seront communiqués avant le traitement de la demande.
               </p>
             </section>
 
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">10. Motifs de refus</h2>
               <p className="text-body leading-[1.6]">
-                L’accès aux documents peut être refusé pour les motifs prévus par le PAIA, notamment la protection des informations personnelles, des informations commerciales confidentielles, de la propriété intellectuelle et des secrets d’affaires, le secret professionnel juridique et des considérations de sécurité ou de sûreté.
+                L’accès aux documents peut être refusé pour les motifs prévus par le PAIA, notamment la protection des informations personnelles, des informations commerciales confidentielles, de la propriété intellectuelle et des secrets d’affaires, le secret professionnel de l’avocat et des considérations de sécurité ou de sûreté.
               </p>
             </section>
 

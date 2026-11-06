@@ -16,7 +16,7 @@ export default async function EthicsPage({ params }: { params: Promise<{ locale:
 
           <div>
             <p className="text-body leading-[1.6]">
-              Die True Aim AG verpflichtet sich zu integrem Handeln und bietet einen sicheren Kanal, um Bedenken wegen möglichen Fehlverhaltens, ethischer Verstöße, Sicherheits- oder Datenschutzproblemen oder Verstößen gegen Gesetze oder Unternehmensrichtlinien zu äußern.
+              Die True Aim AG verpflichtet sich zu integrem Handeln und bietet einen sicheren Kanal, um Bedenken wegen möglichen Fehlverhaltens, ethischer Verstöße, Sicherheits- oder Datenschutzprobleme oder Verstöße gegen Gesetze oder Unternehmensrichtlinien zu äußern.
             </p>
 
             <section>
@@ -44,12 +44,12 @@ export default async function EthicsPage({ params }: { params: Promise<{ locale:
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">So gehen wir mit Meldungen um</h2>
               <p className="text-body leading-[1.6]">
-                Meldungen werden vom CEO geprüft. Betrifft eine Meldung den CEO, ist sie an derselben Adresse an den Vorsitzenden des Verwaltungsrats zu richten, gekennzeichnet zu dessen Händen. Nicht anonyme Meldungen bestätigen wir innerhalb von fünf Werktagen. Untersuchungen werden so vertraulich wie möglich geführt, im Einklang mit unserer Pflicht, zu untersuchen und Abhilfe zu schaffen.
+                Meldungen werden vom CEO geprüft. Betrifft eine Meldung den CEO, ist sie an derselben Adresse an den Vorsitzenden des Verwaltungsrats zu richten, mit dem Vermerk „zu Händen des Vorsitzenden“. Nicht anonyme Meldungen bestätigen wir innerhalb von fünf Werktagen. Untersuchungen werden so vertraulich wie möglich geführt, im Einklang mit unserer Pflicht, zu untersuchen und Abhilfe zu schaffen.
               </p>
             </section>
 
             <section>
-              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Non-retaliation</h2>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Schutz vor Vergeltung</h2>
               <p className="text-body leading-[1.6]">
                 True Aim untersagt Vergeltungsmaßnahmen gegen jede Person, die in gutem Glauben über diesen Kanal ein Anliegen vorbringt oder an einer Untersuchung mitwirkt. Vergeltung ist selbst ein Grund für Disziplinarmaßnahmen bis hin zur Kündigung.
               </p>
@@ -58,7 +58,7 @@ export default async function EthicsPage({ params }: { params: Promise<{ locale:
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Verwandte Richtlinien</h2>
               <p className="text-body leading-[1.6]">
-                Dieser Kanal ist in unserem Verhaltenskodex und unserer Whistleblower-Richtlinie beschrieben, die Mitarbeitenden und Auftragnehmern zur Verfügung stehen und externen Parteien auf Anfrage an{" "}
+                Dieser Kanal ist in unserem Verhaltenskodex und unserer Whistleblower-Richtlinie beschrieben, die Mitarbeitenden und Auftragnehmern zur Verfügung stehen; externe Parteien erhalten sie auf Anfrage unter{" "}
                 <a href="mailto:ethics@trueaim.ai" className="text-link hover:underline">ethics@trueaim.ai</a>.
               </p>
             </section>

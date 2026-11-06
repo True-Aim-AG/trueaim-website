@@ -19,7 +19,7 @@ const RELEASES: Release[] = [
     date: "2026-05-20",
     groups: {
       Features: [
-        "Sitzungen laufen jetzt fortlaufend innerhalb eines Fensters von 24 Stunden Inaktivität bzw. maximal 7 Tagen, und Nutzer werden bei Authentifizierungsfehlern automatisch abgemeldet, um die Sitzungshygiene zu verbessern.",
+        "Sitzungen laufen jetzt fortlaufend mit 24 Stunden Inaktivitäts-Timeout und einer harten Obergrenze von 7 Tagen, und Nutzer werden bei Authentifizierungsfehlern automatisch abgemeldet, um die Sitzungshygiene zu verbessern.",
       ],
       Fixes: [
         "Content Security Policy: Die Richtlinie für Bildquellen wurde gelockert, sodass jede HTTPS-Quelle zulässig ist. Damit werden von Kunden bereitgestellte Bilder, die über externe CDNs ausgeliefert werden, wieder gerendert.",
@@ -31,9 +31,9 @@ const RELEASES: Release[] = [
     date: "2026-05-16",
     groups: {
       Features: [
-        "Ein Watchdog für hängende Schadenfälle bricht Läufe, die länger als 20 Minuten stocken, automatisch ab, sodass festhängende Schadenfälle für Operatoren sichtbar werden, statt unbegrenzt zu hängen.",
+        "Ein Watchdog für festhängende Schadenfälle bricht Läufe, die länger als 20 Minuten stocken, automatisch ab, sodass festhängende Schadenfälle für Operatoren sichtbar werden, statt unbegrenzt zu hängen.",
         "Strukturiertes Worker-Logging und Lifecycle-Ereignisse vor der Pipeline ermöglichen die durchgängige Nachverfolgung jedes Schadenfalls.",
-        "Die Workbench zeigt stockende Schadenfälle jetzt explizit an (anstelle des bisherigen Status „Unbekannt“), und das Dashboard aktualisiert sich live, während Läufe in Bearbeitung sind.",
+        "Die Workbench zeigt festhängende Schadenfälle jetzt explizit an (anstelle des bisherigen Status „Unbekannt“), und das Dashboard aktualisiert sich live, während Läufe in Bearbeitung sind.",
         "Super-Admins können Schadenfälle jetzt direkt im Dashboard löschen.",
       ],
       Improvements: [
@@ -50,10 +50,10 @@ const RELEASES: Release[] = [
     date: "2026-05-15",
     groups: {
       Features: [
-        "Release-Automatisierung: `release-please` übernimmt jetzt Versionserhöhungen und das Erstellen von GitHub-Releases und gibt der Plattform eine vollständig automatisierte, nachvollziehbare Release-Pipeline.",
+        "Release-Automatisierung: `release-please` übernimmt jetzt Versionserhöhungen und das Erstellen von GitHub-Releases und gibt der Plattform eine vollständig automatisierte, prüfbare Release-Pipeline.",
       ],
       Fixes: [
-        "Die Schadentabelle der Workbench zeigt das übersteuerte Ergebnis und die Auszahlung sofort nach dem Abschluss eines Schadenfalls an.",
+        "Die Schadentabelle der Workbench zeigt das manuell korrigierte Ergebnis und die Auszahlung sofort nach dem Abschluss eines Schadenfalls an.",
         "Die Frontend-CSP lässt SAS-Blob-Quellen zu, sodass Vorschauen von Kundendokumenten zuverlässig gerendert werden.",
         "Die release-please-Konfiguration wurde für eine deterministische Versionsberechnung gehärtet.",
       ],
@@ -66,7 +66,7 @@ const RELEASES: Release[] = [
     groups: {
       Features: [
         "Workbench: Die bisherige Workbench für Extraktionsprüfung und Seite-an-Seite-Vergleich wurde in die neue Plattform migriert.",
-        "Verarbeitungs-Dashboard: erweitert um KPI-Kacheln, Pipeline-Trichter und Volumendiagramm.",
+        "Verarbeitungs-Dashboard: erweitert um KPI-Kacheln, Pipeline-Funnel und Volumendiagramm.",
         "Fahrzeug-Endpunkt: neuer Lese-Endpunkt, der Fahrzeugdetails für nachgelagerte Systeme bereitstellt.",
         "Admin: Seite „Plattformstatus“ für einen schnellen Überblick über den Systemzustand.",
         "Theming & i18n: drei neue Themes sowie Bereinigung der Oberfläche über alle Kundenmandanten hinweg.",
@@ -83,7 +83,7 @@ const RELEASES: Release[] = [
         "Schwachstellenmanagement: P1-Rückstand an Befunden in Azure-Container-Images geschlossen; zentrale Python-Abhängigkeiten festgelegt, um HIGH-Befunde zu bereinigen.",
         "Abhängigkeitsmanagement: Dependabot-Konfiguration für routinemäßige Sicherheitsupdates ergänzt.",
         "Branch-Schutz: Regelsätze „require-last-push-approval“ und „dismiss-stale-reviews“ konfiguriert.",
-        "Dokumentation: SOC-2-Richtlinien und Runbooks der Stufe 2, Code-Review-Richtlinie und Vanta-Nachweiszusammenfassung veröffentlicht.",
+        "Dokumentation: SOC-2-Richtlinien und -Runbooks (Stage 2), Code-Review-Richtlinie und Vanta-Nachweiszusammenfassung veröffentlicht.",
       ],
       Fixes: [
         "Screening-Markenschlüssel an umbenannte kanonische Slugs angeglichen; Workbench auf Parität mit der bisherigen Version gebracht und den neuen Fahrzeug-Endpunkt angebunden; Retry-Budget des asynchronen KI-Clients an den synchronen Client angepasst.",

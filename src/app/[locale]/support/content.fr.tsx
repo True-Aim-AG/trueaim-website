@@ -27,7 +27,7 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Horaires et délais de réponse</h2>
               <p className="text-body leading-[1.6] mb-3">
-                Nos horaires sont du lundi au vendredi, de 9 h à 18 h, heure d’Europe centrale, hors jours fériés suisses. Nos délais de première réponse cibles sont :
+                Nos horaires sont du lundi au vendredi, de 9 h à 18 h, heure d’Europe centrale, hors jours fériés suisses. Nos délais cibles de première réponse sont :
               </p>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2">
                 <li><strong className="text-strong">Gravité 1 (panne de production ou perte de données) :</strong> sous 4 heures ouvrées.</li>

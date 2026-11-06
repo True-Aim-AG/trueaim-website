@@ -48,7 +48,7 @@ const MICROSOFT: SubProcessor = {
   service:
     "Cloud-Infrastruktur und Hosting (Microsoft Azure), bereitgestellt im Azure-Mandanten von True Aim. Dies umfasst Rechenleistung, Datenbank, Speicher, KI-Modellinferenz (Azure OpenAI), Dokumentenverarbeitung, Schlüsselverwaltung, Monitoring und Netzwerk.",
   data:
-    "Alle in Anhang 3 des Auftragsverarbeitungsvertrags aufgeführten Kategorien personenbezogener Daten: Identifikationsdaten, Policen- und Schadenreferenzen, schadenbezogene Daten (einschließlich besonders schützenswerter personenbezogener Daten, sofern der Schadenfall dies erfordert) und Finanzdaten. Außerdem Plattform-Telemetrie (Anfrage-Metadaten) und Kontodaten autorisierter Nutzer.",
+    "Alle in Anhang 3 des Auftragsverarbeitungsvertrags aufgeführten Kategorien personenbezogener Daten: Identifikationsdaten, Policen- und Schadennummern, schadenbezogene Daten (einschließlich sensibler personenbezogener Daten, sofern der Schadenfall dies erfordert) und Finanzdaten. Außerdem Plattform-Telemetrie (Anfrage-Metadaten) und Kontodaten autorisierter Nutzer.",
   location:
     "Alle ruhenden Daten werden in Switzerland North (Zürich) gespeichert, mit Backups in Switzerland West (Genf). Die Dokumentenverarbeitung läuft in Switzerland North. Die KI-Modellinferenz läuft über die Azure-OpenAI-Ressource von True Aim in Switzerland North. Die Inferenz kann in der Schweiz oder in der EU verarbeitet werden. Prompts und Ausgaben werden nicht außerhalb von Switzerland North gespeichert. Das Azure-OpenAI-Missbrauchsmonitoring ist eine Ausnahme hinsichtlich des Datenzugriffs; siehe unten.",
   access:
@@ -60,29 +60,21 @@ const MICROSOFT: SubProcessor = {
     body: (
       <>
         <p>
-          Microsoft runs abuse monitoring on Azure OpenAI, and it is on for the Company’s resource.
-          Microsoft can keep prompts and outputs that its systems flag for review. It stores them in
-          Switzerland North, the Azure region of the resource. Microsoft publishes no retention
-          period for this data.
+          Microsoft betreibt ein Missbrauchsmonitoring für Azure OpenAI, und es ist für die Ressource von True Aim aktiviert. Microsoft kann Prompts und Ausgaben aufbewahren, die seine Systeme zur Überprüfung markieren. Es speichert sie in Switzerland North, der Azure-Region der Ressource. Microsoft veröffentlicht keine Aufbewahrungsfrist für diese Daten.
         </p>
         <p className="mt-3">
-          Review is automated by default. Authorised Microsoft employees review flagged content
-          only when the automated review is not confident. Microsoft commits to
-          reviewers located in the EEA for deployments in the EEA only. It makes no such commitment
-          for Switzerland, so these reviewers can be located outside Switzerland, the EEA and the
-          UK. This is the exception to the Company’s commitment that hosting and inference stay in
-          Switzerland, the EEA or the UK.
+          Die Überprüfung erfolgt standardmäßig automatisiert. Autorisierte Microsoft-Mitarbeitende prüfen markierte Inhalte nur, wenn die automatisierte Prüfung kein sicheres Ergebnis liefert. Microsoft sichert im EWR ansässige Prüfer nur für Bereitstellungen im EWR zu. Für die Schweiz gibt es keine solche Zusage, sodass sich diese Prüfer außerhalb der Schweiz, des EWR und des Vereinigten Königreichs befinden können. Das ist die Ausnahme von der Zusage von True Aim, dass Hosting und Inferenz in der Schweiz, im EWR oder im Vereinigten Königreich bleiben.
         </p>
         <p className="mt-3">
-          Microsoft does not use this data to train models. Sources:{" "}
+          Microsoft verwendet diese Daten nicht zum Trainieren von Modellen. Quellen:{" "}
           <a href={MS_ABUSE_MONITORING} className="text-link hover:underline">
             Azure OpenAI abuse monitoring
           </a>{" "}
-          and{" "}
+          und{" "}
           <a href={MS_DATA_PRIVACY} className="text-link hover:underline">
             Data, privacy and security for Azure OpenAI
           </a>{" "}
-          (Microsoft Learn, May 2026).
+          (Microsoft Learn, Mai 2026).
         </p>
       </>
     ),
@@ -99,12 +91,11 @@ const GOOGLE_CLOUD: SubProcessor = {
   location: "Europäische Union. Google speichert und verarbeitet die Daten in der EU.",
   access: (
     <>
-      Google staff can access the data for maintenance and support from the countries listed at{" "}
+      Google-Personal kann zu Wartungs- und Supportzwecken aus den Ländern auf die Daten zugreifen, die aufgeführt sind unter{" "}
       <a href={GOOGLE_CLOUD_SUBPROCESSORS} className="text-link hover:underline">
         cloud.google.com/terms/subprocessors
       </a>
-      . External support companies see data only if True Aim shares it in a support case. Vertex AI
-      abuse monitoring is an exception for who can access data; see below.
+      . Externe Supportunternehmen sehen Daten nur, wenn True Aim sie in einem Supportfall weitergibt. Das Vertex-AI-Missbrauchsmonitoring ist eine Ausnahme hinsichtlich des Datenzugriffs; siehe unten.
     </>
   ),
   transfers:
@@ -114,23 +105,17 @@ const GOOGLE_CLOUD: SubProcessor = {
     body: (
       <>
         <p>
-          Google runs abuse monitoring on Gemini models in Vertex AI, and it is on for the Company’s
-          Google Cloud project. Google stores a prompt only when its automated safety classifiers
-          flag possible abuse. It keeps the prompt for up to 90 days, in the region selected for the
-          project, which is in the European Union.
+          Google betreibt ein Missbrauchsmonitoring für Gemini-Modelle in Vertex AI, und es ist für das Google-Cloud-Projekt von True Aim aktiviert. Google speichert einen Prompt nur, wenn seine automatisierten Sicherheitsklassifikatoren möglichen Missbrauch markieren. Es bewahrt den Prompt bis zu 90 Tage in der für das Projekt gewählten Region auf, die in der Europäischen Union liegt.
         </p>
         <p className="mt-3">
-          Authorised Google employees may review flagged prompts. Google does not state where these
-          reviewers are located, so they can be located outside Switzerland, the EEA and the UK.
-          This is the exception to the Company’s commitment that hosting and inference stay in
-          Switzerland, the EEA or the UK.
+          Autorisierte Google-Mitarbeitende können markierte Prompts prüfen. Google gibt nicht an, wo diese Prüfer ansässig sind, sodass sie sich außerhalb der Schweiz, des EWR und des Vereinigten Königreichs befinden können. Das ist die Ausnahme von der Zusage von True Aim, dass Hosting und Inferenz in der Schweiz, im EWR oder im Vereinigten Königreich bleiben.
         </p>
         <p className="mt-3">
-          Google does not use this data to train or fine-tune models. Source:{" "}
+          Google verwendet diese Daten nicht zum Trainieren oder Feinabstimmen von Modellen. Quelle:{" "}
           <a href={GOOGLE_ABUSE_MONITORING} className="text-link hover:underline">
             Vertex AI abuse monitoring
           </a>{" "}
-          (Google Cloud documentation, October 2026).
+          (Google-Cloud-Dokumentation, Oktober 2026).
         </p>
       </>
     ),

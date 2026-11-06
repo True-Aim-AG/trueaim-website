@@ -24,14 +24,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Pour tout sinistre clos, pouvez-vous retracer chaque valeur utilisée par la décision jusqu’au document et à la page dont elle provient ?",
     plainAnswer:
-      "La norme est un dossier dans lequel chaque valeur sur laquelle la décision s’est appuyée pointe vers sa source : le montant réclamé vers la ligne de facture, la date du sinistre vers le rapport, la position de couverture vers la clause. Affirmer que le système avait accès à tous les documents décrit une entrée. Cela ne décrit pas un dossier. True Aim trace une ligne visuelle de chaque donnée jusqu’à l’endroit exact du document source dont elle provient, de sorte qu’un gestionnaire valide au lieu de réenquêter. Les valeurs extraites portent cette provenance jusqu’à la page et à la zone de texte, et nous mesurons quelle part de chaque sinistre la porte au lieu de supposer que la couverture est complète.",
+      "La norme est un dossier dans lequel chaque valeur sur laquelle la décision s’est appuyée pointe vers sa source : le montant réclamé vers la ligne de facture, la date du sinistre vers le rapport, la position de couverture vers la clause. Affirmer que le système avait accès à tous les documents décrit une entrée. Cela ne décrit pas un dossier. True Aim trace une ligne visuelle de chaque donnée jusqu’à l’endroit exact du document source dont elle provient, de sorte qu’un gestionnaire valide au lieu de réenquêter. Les valeurs extraites portent cette provenance jusqu’à la page et à la zone de texte, et nous mesurons quelle part de chaque sinistre la porte au lieu de supposer qu’elle est complète.",
     body: (
       <>
         <p>
           La norme est un dossier dans lequel chaque valeur sur laquelle la décision s’est appuyée pointe vers sa source : le montant réclamé vers la ligne de facture, la date du sinistre vers le rapport, la position de couverture vers la clause. Affirmer que le système avait accès à tous les documents décrit une entrée. Cela ne décrit pas un dossier.
         </p>
         <p>
-          True Aim trace une ligne visuelle de chaque donnée jusqu’à l’endroit exact du document source dont elle provient, de sorte qu’un gestionnaire valide au lieu de réenquêter. Les valeurs extraites portent cette provenance jusqu’à la page et à la zone de texte, et nous mesurons quelle part de chaque sinistre la porte au lieu de supposer que la couverture est complète.
+          True Aim trace une ligne visuelle de chaque donnée jusqu’à l’endroit exact du document source dont elle provient, de sorte qu’un gestionnaire valide au lieu de réenquêter. Les valeurs extraites portent cette provenance jusqu’à la page et à la zone de texte, et nous mesurons quelle part de chaque sinistre la porte au lieu de supposer qu’elle est complète.
         </p>
       </>
     ),

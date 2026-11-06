@@ -22,21 +22,21 @@ export const faqs: Faq[] = [
   {
     question: 'Cosa significa «provenienza a livello di riga» nella pratica?',
     answer:
-      "Significa difendibilità fin dalla progettazione. Per ogni decisione il sistema scrive nel fascicolo quattro primitive: i fatti e i documenti di origine, il testo di polizza in vigore, il ragionamento in linguaggio semplice e l’attore responsabile (umano o IA). Se un liquidatore annulla una raccomandazione, la motivazione viene conservata. Non una scatola nera, ma una scatola di vetro.",
+      "Significa difendibilità fin dalla progettazione. Per ogni decisione il sistema scrive nel fascicolo quattro primitive: i fatti e i documenti di origine, il testo di polizza in vigore, il ragionamento in linguaggio semplice e l’attore responsabile (umano o IA). Se un liquidatore si discosta da una raccomandazione, la motivazione viene conservata. Non una scatola nera, ma una scatola di vetro.",
   },
   {
     question: "Gli assicuratori devono sostituire i loro sistemi core per i sinistri?",
     answer:
-      "No. Le sostituzioni di piattaforma pluriennali sono troppo lente e comportano rischi di consegna inaccettabili. Un sistema operativo agentico orchestra al di sopra dei vostri sistemi di riferimento esistenti tramite API standard. Potete iniziare con un singolo modulo ad alto attrito, come il confronto dei prezzi di riparazione o la verifica della copertura, ed espandervi man mano che il fascicolo dimostra il proprio valore.",
+      "No. Le sostituzioni di piattaforma pluriennali sono troppo lente e comportano rischi di realizzazione inaccettabili. Un sistema operativo agentico orchestra al di sopra dei vostri sistemi di riferimento esistenti tramite API standard. Potete iniziare con un singolo modulo ad alto attrito, come il confronto dei prezzi di riparazione o la verifica della copertura, ed espandervi man mano che il fascicolo dimostra il proprio valore.",
   },
   {
     question: "L’obiettivo è ridurre il personale sinistri?",
     answer:
-      "Il principio progettuale è la valorizzazione dell’umano, non la riduzione del lavoro. Eliminare l’amministrazione a basso rendimento (la lettura, la ridigitazione e gli inseguimenti telefonici) restituisce ore ai vostri specialisti. I liquidatori recuperano tempo per le decisioni ad alta posta: risolvere casi limite complessi, assistere assicurati in difficoltà e affinare le regole di sottoscrizione.",
+      "Il principio progettuale è la valorizzazione dell’umano, non la riduzione del personale. Eliminare l’amministrazione a basso rendimento (la lettura, la ridigitazione e gli inseguimenti telefonici) restituisce ore ai vostri specialisti. I liquidatori recuperano tempo per le decisioni ad alta posta in gioco: risolvere casi limite complessi, assistere assicurati in difficoltà e affinare le regole di sottoscrizione.",
   },
   {
     question: "Qual è il punto di partenza più pratico?",
     answer:
-      "Un pilota circoscritto. Portate una rete di partner e una linea di business su un fascicolo condiviso. In novanta giorni misurate i segnali reali: meno richieste di stato, tempi di gestione delle fatture più rapidi e un calo misurabile delle liquidazioni contestate.",
+      "Un progetto pilota circoscritto. Portate una rete di partner e una linea di business su un fascicolo condiviso. In novanta giorni misurate i segnali reali: meno richieste di aggiornamento sullo stato, tempi di gestione delle fatture più rapidi e un calo misurabile delle liquidazioni contestate.",
   },
 ];

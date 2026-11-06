@@ -19,7 +19,7 @@ export const faqs: Faq[] = [
     question:
       "Il differimento dell’AI Act europeo a dicembre 2027 cambia qualcosa per la gestione dei sinistri?",
     answer:
-      "No. Il regolamento (UE) 2026/1744 ha spostato al 2 dicembre 2027 la data da cui la maggior parte degli obblighi «alto rischio» si applica ai sistemi autonomi elencati nell’allegato III. La gestione dei sinistri non è elencata nell’allegato III, e i diritti di una persona soggetta a una decisione esclusivamente automatizzata si applicano ai sensi del GDPR dal 25 maggio 2018. Il differimento cambia il calendario per altri sistemi. Non cambia ciò che un’organizzazione sinistri deve alle persone sui cui sinistri decide.",
+      "No. Il regolamento (UE) 2026/1744 ha spostato al 2 dicembre 2027 la data da cui la maggior parte degli obblighi «alto rischio» si applica ai sistemi indipendenti elencati nell’allegato III. La gestione dei sinistri non è elencata nell’allegato III, e i diritti di una persona soggetta a una decisione esclusivamente automatizzata si applicano ai sensi del GDPR dal 25 maggio 2018. Il differimento cambia il calendario per altri sistemi. Non cambia ciò che un’organizzazione sinistri deve alle persone sui cui sinistri decide.",
   },
   {
     question: "Cosa rende verificabile una decisione di IA su un sinistro?",

@@ -43,7 +43,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
-        <TextureBackdrop texture={{ name: "circ", position: "50% 50%" }} />
+        <TextureBackdrop texture={{ name: "circ", position: "50 % 50 %" }} />
 
         <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
@@ -100,7 +100,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                 </div>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Dans les premiers pilotes, la précision annoncée est souvent calculée sur des données de développement. Ce sont des sinistres sur lesquels le système a déjà été ajusté pendant la configuration. Évaluée sur des données de production jamais vues, la précision tombe fréquemment dans les 70 %. L’écart entre ces deux chiffres détermine si un système peut être déployé en toute sécurité.
+                  Dans les premiers pilotes, la précision annoncée est souvent calculée sur des données de développement. Ce sont des sinistres sur lesquels le système a déjà été ajusté pendant la configuration. Évaluée sur des données de production jamais vues, la précision retombe fréquemment entre 70 et 80 %. L’écart entre ces deux chiffres détermine si un système peut être déployé en toute sécurité.
                 </p>
               </MotionDiv>
 
@@ -178,7 +178,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                       </div>
                     </div>
                     <p className="text-sm text-body leading-[1.6]">
-                      Nous avions d’abord modélisé moins de catégories de couverture que la production ne l’exigeait. Lorsque des catégories supplémentaires sont entrées dans le pipeline, le système a produit des résultats assurés mais erronés. Après extension de la logique de couverture, la précision s’est nettement améliorée en une seule itération.
+                      Nous avions d’abord modélisé moins de catégories de couverture que la production ne l’exigeait. Lorsque des catégories supplémentaires sont entrées dans le pipeline, le système a produit des résultats affirmés avec assurance mais erronés. Après extension de la logique de couverture, la précision s’est nettement améliorée en une seule itération.
                     </p>
                     <div className="mt-4 p-3 bg-lilac rounded-pill">
                       <p className="text-sm font-medium text-accent">
@@ -270,7 +270,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
 
                   <div className="bg-card shadow-card rounded-pill p-8">
                     <div className="mb-2">
-                      <StatusPill tone="progress" emphasis="light" size="sm">Taux de renvoi</StatusPill>
+                      <StatusPill tone="progress" emphasis="light" size="sm">Taux de transmission pour examen</StatusPill>
                     </div>
                     <p className="text-sm text-body">
                       Il mesure la profondeur de l’automatisation. Si une grande part des sinistres est renvoyée à des réviseurs humains, le système n’a pas réduit la charge de travail de façon significative.
@@ -369,7 +369,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                 <div className="space-y-3 mb-8">
                   {[
                     "Un jeu de test isolé correctement stratifié, issu de données de production réelles",
-                    "Une séparation claire entre fausses approbations, faux refus et renvois",
+                    "Une séparation claire entre fausses approbations, faux refus et transmissions pour examen",
                     "Une modélisation explicite de la couverture sur toutes les catégories de polices",
                     "Un vocabulaire conçu par langue",
                     "Des seuils de confiance alignés sur le risque financier et opérationnel",
@@ -408,7 +408,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                     {[
                       "La précision sur le jeu de développement masque les écarts en production",
                       "Les jeux de test isolés révèlent la performance réelle",
-                      "Suivre les fausses approbations, les faux refus et le taux de renvoi",
+                      "Suivre les fausses approbations, les faux refus et le taux de transmission pour examen",
                       "La modélisation du domaine apporte plus d’amélioration que les changements de modèle",
                       "Des seuils de confiance asymétriques protègent contre le risque financier",
                     ].map((item, index) => (
@@ -479,7 +479,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
                 Nous contacter
               </ButtonLink>
               <ButtonLink href="/case-studies/vehicle-warranty-claims" variant="on-dark" size="lg">
-                Voir en action
+                Découvrir en action
               </ButtonLink>
             </div>
           </MotionDiv>

@@ -17,12 +17,12 @@ export const faqs: Faq[] = [
   {
     question: "Un dossier partagé signifie-t-il que chaque partie voit tout ?",
     answer:
-      "Non. Chaque participant opère strictement dans le cadre de son habilitation définie. L’assureur configure les règles d’accès une fois, et des barrières informationnelles les appliquent sur tout le réseau. Les assurés suivent la vérification des documents, les intermédiaires surveillent les limites de binder et les prestataires reçoivent des validations ligne par ligne. Chaque partie travaille à partir de la même vérité sous-jacente sans exposer de données confidentielles.",
+      "Non. Chaque participant opère strictement dans le cadre de son habilitation définie. L’assureur configure les règles d’accès une fois, et des barrières informationnelles les appliquent sur tout le réseau. Les assurés suivent la vérification des documents, les intermédiaires surveillent les limites de délégation et les prestataires reçoivent des validations ligne par ligne. Chaque partie travaille à partir de la même vérité sous-jacente sans exposer de données confidentielles.",
   },
   {
     question: 'Que signifie « provenance au niveau de la ligne » en pratique ?',
     answer:
-      "Cela signifie une défendabilité par conception. Pour chaque décision, le système écrit quatre primitives dans le dossier : les faits et documents source, le libellé de police en vigueur, le raisonnement en langage clair et l’acteur responsable (humain ou IA). Si un gestionnaire passe outre une recommandation, la justification est conservée. Pas une boîte noire, mais une boîte de verre.",
+      "Cela signifie un caractère défendable dès la conception. Pour chaque décision, le système écrit quatre primitives dans le dossier : les faits et documents source, le libellé de police en vigueur, le raisonnement en langage clair et l’acteur responsable (humain ou IA). Si un gestionnaire passe outre une recommandation, la justification est conservée. Pas une boîte noire, mais une boîte de verre.",
   },
   {
     question: "Les assureurs doivent-ils remplacer leurs systèmes cœur de sinistres ?",
@@ -37,6 +37,6 @@ export const faqs: Faq[] = [
   {
     question: "Quel est le point de départ le plus pratique ?",
     answer:
-      "Un pilote borné. Placez un réseau de partenaires et une branche d’activité sur un dossier partagé. Sur quatre-vingt-dix jours, mesurez les vrais signaux : moins de demandes de statut, un traitement plus rapide des factures et une baisse mesurable des règlements contestés.",
+      "Un pilote à périmètre limité. Placez un réseau de partenaires et une branche d’activité sur un dossier partagé. Sur quatre-vingt-dix jours, mesurez les vrais signaux : moins de demandes de statut, un traitement plus rapide des factures et une baisse mesurable des règlements contestés.",
   },
 ];

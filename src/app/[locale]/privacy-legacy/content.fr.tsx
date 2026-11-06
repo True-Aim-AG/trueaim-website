@@ -28,14 +28,14 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">1. Qui nous sommes</h2>
               <p className="text-body leading-[1.6]">
-                Ce site web est exploité par <strong className="text-strong">True Aim AG</strong>, numéro d’immatriculation <strong className="text-strong">CHE-325.128.066</strong>, dont le siège social est situé à Zug, en Suisse. Adresse enregistrée : c/o Yarowa AG, Metallstrasse 9, 6300 Zug, Suisse. La présente politique de confidentialité explique comment nous collectons, utilisons et protégeons les données personnelles lorsque vous interagissez avec notre site web.
+                Ce site web est exploité par <strong className="text-strong">True Aim AG</strong>, numéro d’immatriculation <strong className="text-strong">CHE-325.128.066</strong>, dont le siège social est situé à Zoug, en Suisse. Adresse enregistrée : c/o Yarowa AG, Metallstrasse 9, 6300 Zug, Suisse. La présente politique de confidentialité explique comment nous collectons, utilisons et protégeons les données personnelles lorsque vous interagissez avec notre site web.
               </p>
             </section>
 
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">2. Champ d’application de la présente politique</h2>
               <p className="text-body leading-[1.6]">
-                La présente politique de confidentialité s’applique aux données personnelles collectées via notre site web public, y compris les formulaires de contact, les formulaires de demande de démonstration et les liens de prise de rendez-vous. Elle ne régit pas le traitement des données dans le cadre d’accords commerciaux ou de contrats clients, qui sont soumis à des conditions contractuelles distinctes.
+                La présente politique de confidentialité s’applique aux données personnelles collectées via notre site web public, y compris les formulaires de contact, les formulaires de demande de démo et les liens de prise de rendez-vous. Elle ne régit pas le traitement des données dans le cadre d’accords commerciaux ou de contrats clients, qui sont soumis à des conditions contractuelles distinctes.
               </p>
             </section>
 
@@ -49,7 +49,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">4. Comment nous utilisons les données personnelles</h2>
               <p className="text-body leading-[1.6]">
-                Nous utilisons les données personnelles pour répondre aux demandes, organiser des démonstrations ou des rendez-vous, communiquer avec des clients et partenaires potentiels, améliorer notre site web et comprendre comment il est utilisé. Lorsque vous y avez consenti, nous pouvons également utiliser vos coordonnées pour vous envoyer des communications pertinentes au sujet de True Aim et de nos services. Nous ne vendons pas de données personnelles et ne les utilisons pas à des fins de décisions automatisées concernant des personnes.
+                Nous utilisons les données personnelles pour répondre aux demandes, organiser des démos ou des rendez-vous, communiquer avec des clients et partenaires potentiels, améliorer notre site web et comprendre comment il est utilisé. Lorsque vous y avez consenti, nous pouvons également utiliser vos coordonnées pour vous envoyer des communications pertinentes au sujet de True Aim et de nos services. Nous ne vendons pas de données personnelles et ne les utilisons pas à des fins de prise de décision automatisée affectant des personnes.
               </p>
             </section>
 
@@ -63,7 +63,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">6. Hébergement des données et transferts internationaux</h2>
               <p className="text-body leading-[1.6]">
-                Notre infrastructure principale d’hébergement et de sécurité des données est située en <strong className="text-strong">Suisse</strong>. Les données personnelles peuvent être consultées ou traitées depuis d’autres juridictions lorsque cela est nécessaire pour exploiter notre site web ou soutenir nos activités. En cas de transfert international, nous prenons les mesures appropriées pour garantir une protection adéquate des données, conforme aux normes suisses et européennes.
+                Notre infrastructure principale d’hébergement et de sécurité des données est située en <strong className="text-strong">Suisse</strong>. Les données personnelles peuvent être consultées ou traitées depuis d’autres juridictions lorsque cela est nécessaire pour exploiter notre site web ou soutenir nos activités. En cas de transfert international, nous prenons les mesures appropriées pour assurer une protection adéquate des données, en accord avec les normes suisses et de l’UE.
               </p>
             </section>
 
@@ -77,7 +77,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">8. Sécurité des données</h2>
               <p className="text-body leading-[1.6]">
-                Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger les données personnelles contre l’accès non autorisé, la perte ou l’utilisation abusive. Bien qu’aucun système ne puisse être garanti totalement sûr, nous prenons la protection des données au sérieux et veillons à mettre en place les garanties appropriées.
+                Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger les données personnelles contre l’accès non autorisé, la perte ou l’utilisation abusive. Bien qu’aucun système ne puisse être garanti totalement sûr, nous prenons la protection des données au sérieux et nous efforçons de mettre en place les garanties appropriées.
               </p>
             </section>
 
@@ -94,7 +94,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">10. Afrique du Sud et POPIA</h2>
               <p className="text-body leading-[1.6]">
-                Lorsque des données personnelles sont traitées en Afrique du Sud ou depuis ce pays, nous prenons des mesures pour nous conformer au Protection of Personal Information Act (POPIA). Notre{" "}
+                Lorsque des données personnelles sont traitées en Afrique du Sud ou depuis ce pays, nous prenons des mesures pour nous aligner sur le Protection of Personal Information Act (POPIA). Notre{" "}
                 <Link href="/paia" className="text-link hover:underline">
                   manuel PAIA
                 </Link>{" "}
@@ -129,7 +129,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
               </p>
               <p className="text-body leading-[1.6] mt-2">
                 Société : True Aim AG<br />
-                Siège social : Zug, Suisse
+                Siège social : Zoug, Suisse
               </p>
             </section>
 

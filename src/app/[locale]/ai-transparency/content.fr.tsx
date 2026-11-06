@@ -7,7 +7,7 @@ export default async function AITransparencyPage({ params }: { params: Promise<{
   setRequestLocale(locale);
   return (
     <div className="min-h-screen">
-      <PageHero compact title="Transparence et supervision de l’IA" texture={{ name: "glass", position: "50% 50%" }}>
+      <PageHero compact title="Transparence et contrôle de l’IA" texture={{ name: "glass", position: "50% 50%" }}>
         <p className="mt-6 text-sm text-muted">Dernière mise à jour : 22 février 2026</p>
       </PageHero>
       <section className={SECTION}>
@@ -24,7 +24,7 @@ export default async function AITransparencyPage({ params }: { params: Promise<{
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Notre approche de conception</h2>
               <p className="text-body leading-[1.6]">
-                True Aim construit une infrastructure de décision assistée par l’IA pour les secteurs réglementés. Nos systèmes sont conçus pour soutenir l’analyse structurée, l’interprétation et l’exécution de flux de travail dans des limites de contrôle définies. Des composants d’IA servent à la compréhension de documents, à l’extraction de données, à la classification et au soutien analytique à différentes étapes de la chaîne de traitement. L’examen humain et le contrôle organisationnel restent au cœur des environnements de production. Les décisions et les résultats doivent pouvoir faire l’objet d’une explication et d’un examen structurés.
+                True Aim construit une infrastructure de décision assistée par l’IA pour les secteurs réglementés. Nos systèmes sont conçus pour soutenir l’analyse structurée, l’interprétation et l’exécution de flux de travail dans des limites de contrôle définies. Des composants d’IA contribuent à la compréhension de documents, à l’extraction de données, à la classification et au soutien analytique à différentes étapes de la chaîne de traitement. L’examen humain et le contrôle organisationnel restent au cœur des environnements de production. Les décisions et les résultats doivent pouvoir faire l’objet d’une explication et d’un examen structurés.
               </p>
             </section>
 
@@ -45,7 +45,7 @@ export default async function AITransparencyPage({ params }: { params: Promise<{
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Supervision et contrôle des flux de travail</h2>
               <p className="text-body leading-[1.6]">
-                Les systèmes de True Aim sont conçus pour soutenir la supervision humaine au sein des flux de travail de production. Les utilisateurs peuvent examiner les sorties du système, évaluer les informations à l’appui et appliquer leur propre jugement avant de finaliser les résultats. Des autorisations basées sur les rôles et des contrôles de flux de travail restreignent l’accès aux modifications de configuration et aux ajustements de la logique de décision. Les sorties du système ont un caractère consultatif, sauf définition contraire dans un accord écrit distinct.
+                Les systèmes de True Aim sont conçus pour soutenir la contrôle humain au sein des flux de travail de production. Les utilisateurs peuvent examiner les sorties du système, évaluer les informations à l’appui et appliquer leur propre jugement avant de finaliser les résultats. Des autorisations basées sur les rôles et des contrôles de flux de travail restreignent l’accès aux modifications de configuration et aux ajustements de la logique de décision. Les sorties du système ont un caractère consultatif, sauf définition contraire dans un accord écrit distinct.
               </p>
             </section>
 
@@ -66,7 +66,7 @@ export default async function AITransparencyPage({ params }: { params: Promise<{
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Conception fondée sur les risques</h2>
               <p className="text-body leading-[1.6]">
-                Nos systèmes sont développés en pensant aux cas d’usage réglementés. Des mesures architecturales soutiennent l’explicabilité, l’examen structuré, le contrôle d’accès et la transparence opérationnelle. Nous continuons d’affiner nos pratiques techniques et de gouvernance à mesure qu’évoluent les normes réglementaires et les attentes du secteur.
+                Nos systèmes sont développés en tenant compte des cas d’usage réglementés. Des mesures architecturales soutiennent l’explicabilité, l’examen structuré, le contrôle d’accès et la transparence opérationnelle. Nous continuons d’affiner nos pratiques techniques et de gouvernance à mesure qu’évoluent les normes réglementaires et les attentes du secteur.
               </p>
             </section>
 

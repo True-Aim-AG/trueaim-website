@@ -68,7 +68,7 @@ export default async function PAIAPage({ params }: { params: Promise<{ locale: s
                 <li>Auf der Website von True Aim veröffentlichte Informationen</li>
                 <li>Öffentliche Marketingmaterialien</li>
                 <li>Veröffentlichte Blog-Artikel und Fallstudien</li>
-                <li>Öffentliche Unternehmens- oder regulatorische Offenlegungen</li>
+                <li>Öffentliche unternehmensbezogene oder regulatorische Offenlegungen</li>
               </ul>
             </section>
 
@@ -92,7 +92,7 @@ export default async function PAIAPage({ params }: { params: Promise<{ locale: s
                 <li>Einhaltung rechtlicher oder regulatorischer Vorgaben</li>
               </ul>
               <p className="text-body leading-[1.6] mt-4">
-                Personenbezogene Informationen werden hauptsächlich in der <strong className="text-strong">Schweiz</strong>verarbeitet, mit angemessenen technischen und organisatorischen Schutzmaßnahmen. Soweit sich personenbezogene Informationen auf südafrikanische Betroffene beziehen, erfolgt die Verarbeitung in einer Weise, die den Grundsätzen des POPIA entspricht.
+                Personenbezogene Informationen werden hauptsächlich in der <strong className="text-strong">Schweiz</strong> verarbeitet, mit angemessenen technischen und organisatorischen Schutzmaßnahmen. Soweit sich personenbezogene Informationen auf südafrikanische Betroffene beziehen, erfolgt die Verarbeitung in einer Weise, die an den Grundsätzen des POPIA ausgerichtet ist.
               </p>
             </section>
 

@@ -31,7 +31,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
 
       <PageHero
         eyebrow="Blog"
-        title="Einblicke und technische Deep Dives"
+        title="Einblicke und technische Vertiefungen"
         summary="KI, Automatisierung, Regulatorik und die praktischen Herausforderungen des Arbeitens in regulierten Branchen."
         texture={{ name: "circ", position: "88% 78%" }}
       />

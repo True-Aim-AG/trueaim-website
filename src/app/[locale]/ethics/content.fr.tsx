@@ -23,14 +23,14 @@ export default async function EthicsPage({ params }: { params: Promise<{ locale:
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Comment signaler</h2>
               <p className="text-body leading-[1.6]">
                 Envoyez un e-mail à{" "}
-                <a href="mailto:ethics@trueaim.ai" className="text-link hover:underline">ethics@trueaim.ai</a>. Cette boîte est suivie par le CEO. Vous pouvez donner autant ou aussi peu de détails que vous le souhaitez.
+                <a href="mailto:ethics@trueaim.ai" className="text-link hover:underline">ethics@trueaim.ai</a>. Cette boîte de réception est consultée par le CEO. Vous pouvez donner autant ou aussi peu de détails que vous le souhaitez.
               </p>
             </section>
 
             <section>
-              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Signaler anonymement</h2>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Effectuer un signalement anonyme</h2>
               <p className="text-body leading-[1.6] mb-3">
-                Si vous préférez signaler anonymement, vous pouvez :
+                Si vous préférez effectuer un signalement anonyme, vous pouvez :
               </p>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2">
                 <li>Envoyer votre e-mail depuis un fournisseur de messagerie anonyme (par exemple un compte webmail gratuit qui ne vous identifie pas).</li>
@@ -44,14 +44,14 @@ export default async function EthicsPage({ params }: { params: Promise<{ locale:
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Comment nous traitons les signalements</h2>
               <p className="text-body leading-[1.6]">
-                Les signalements sont examinés par le CEO. Si un signalement concerne le CEO, il doit être adressé au président du conseil d’administration à la même adresse, à son attention. Nous accusons réception des signalements non anonymes sous cinq jours ouvrés. Les enquêtes sont menées de la façon la plus confidentielle possible, dans le respect de notre devoir d’enquêter et de remédier.
+                Les signalements sont examinés par le CEO. Si un signalement concerne le CEO, il doit être adressé au président du conseil d’administration à la même adresse, à son attention. Nous accusons réception des signalements non anonymes sous cinq jours ouvrés. Les enquêtes sont menées de la façon la plus confidentielle possible, dans le respect de notre devoir d’enquêter et d’y remédier.
               </p>
             </section>
 
             <section>
-              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Non-retaliation</h2>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Interdiction des représailles</h2>
               <p className="text-body leading-[1.6]">
-                True Aim interdit toute représaille à l’encontre de quiconque fait part de bonne foi d’une préoccupation par ce canal ou participe à une enquête. Les représailles constituent elles-mêmes un motif de sanction disciplinaire pouvant aller jusqu’au licenciement.
+                True Aim interdit toutes représailles à l’encontre de quiconque fait part de bonne foi d’une préoccupation par ce canal ou participe à une enquête. Les représailles constituent elles-mêmes un motif de sanction disciplinaire pouvant aller jusqu’au licenciement.
               </p>
             </section>
 

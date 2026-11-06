@@ -24,7 +24,7 @@ export const faqs: FaqItem[] = [
   {
     question: "Cosa ha cambiato il regolamento (UE) 2026/1744?",
     answer:
-      "Ha differito gli obblighi ad alto rischio dell’AI Act. I sistemi autonomi dell’allegato III passano dal 2 agosto 2026 al 2 dicembre 2027. L’IA integrata in prodotti regolamentati passa dal 2 agosto 2027 al 2 agosto 2028. È stato pubblicato il 24 luglio 2026 ed è entrato in vigore il 27 luglio 2026.",
+      "Ha differito gli obblighi ad alto rischio dell’AI Act. I sistemi indipendenti dell’allegato III passano dal 2 agosto 2026 al 2 dicembre 2027. L’IA integrata in prodotti regolamentati passa dal 2 agosto 2027 al 2 agosto 2028. È stato pubblicato il 24 luglio 2026 ed è entrato in vigore il 27 luglio 2026.",
   },
   {
     question: "L’articolo 22 del GDPR si applica a una decisione automatizzata su un sinistro?",

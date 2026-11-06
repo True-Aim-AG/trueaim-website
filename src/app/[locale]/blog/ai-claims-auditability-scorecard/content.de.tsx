@@ -82,7 +82,7 @@ export default async function AuditabilityScorecardBlogPost({
 
       {/* Hero Section */}
       <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
-        <TextureBackdrop texture={{ name: "circ", position: "72% 18%" }} />
+        <TextureBackdrop texture={{ name: "circ", position: "72 % 18 %" }} />
 
         <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
@@ -158,7 +158,7 @@ export default async function AuditabilityScorecardBlogPost({
                       <span aria-hidden="true" className="text-accent mt-1">&bull;</span>
                       <span>
                         <strong className="text-strong">
-                          Die Hochrisiko-Fristen des EU AI Act wurden auf Dezember 2027 verschoben.
+                          Die Hochrisiko-Fristen des EU AI Act (KI-Verordnung) wurden auf Dezember 2027 verschoben.
                         </strong>{" "}
                         Die Schadenbearbeitung stand nie auf dieser Liste, und die DSGVO regelt automatisierte Entscheidungen seit 2018.
                       </span>
@@ -214,11 +214,11 @@ export default async function AuditabilityScorecardBlogPost({
 
                 <p className="text-body leading-[1.6] mb-5">
                   Die AI Impact Survey 2026 von Grant Thornton, erhoben unter 950 Führungskräften, davon 100 aus der Versicherungsbranche, ergab, dass nur{" "}
-                  <strong className="text-strong">24%</strong> sehr zuversichtlich sind, in den nächsten 90 Tagen eine unabhängige Prüfung ihrer KI-Governance und -Kontrollen mit zentral vorliegenden Nachweisen zu bestehen. Bei dieser Stichprobengröße ist der Wert indikativ, aber die Richtung ist klar, und die Lücke ist zuerst ein Problem der Aufzeichnungen, bevor sie ein Problem der Modellierung ist.
+                  <strong className="text-strong">24 %</strong> sehr zuversichtlich sind, in den nächsten 90 Tagen eine unabhängige Prüfung ihrer KI-Governance und -Kontrollen mit zentral vorliegenden Nachweisen zu bestehen. Bei dieser Stichprobengröße ist der Wert indikativ, aber die Richtung ist klar, und die Lücke ist zuerst ein Problem der Aufzeichnungen, bevor sie ein Problem der Modellierung ist.
                 </p>
 
                 <p className="text-body leading-[1.6]">
-                  Die zwölf Fragen unten sind diejenigen, die unserer Überzeugung nach jede Führungskraft im Schadenbereich zu jeder KI beantworten können sollte, die in ihrem Namen arbeitet, ob selbst entwickelt oder eingekauft. Unter jeder Frage legen wir dar, wie gut aussieht und wie True Aim an sie herangeht. In den meisten Fällen ist das dieselbe Antwort, denn True Aim wurde um diese Fragen herum entworfen.
+                  Die zwölf Fragen unten sind diejenigen, die unserer Überzeugung nach jede Führungskraft im Schadenbereich zu jeder KI beantworten können sollte, die in ihrem Namen arbeitet, ob selbst entwickelt oder eingekauft. Unter jeder Frage legen wir dar, was eine gute Antwort auszeichnet und wie True Aim an sie herangeht. In den meisten Fällen ist das dieselbe Antwort, denn True Aim wurde um diese Fragen herum entworfen.
                 </p>
               </MotionDiv>
 
@@ -327,7 +327,7 @@ export default async function AuditabilityScorecardBlogPost({
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Der Test, den wir jedem Verwaltungsrat stellen würden, ist einfach. Wenn eine Aufsichtsbehörde morgen darum bäte, eine automatisierte Schadenentscheidung Zeile für Zeile durchzugehen: Könnten Sie das?
+                  Der Test, den wir jedem Vorstand stellen würden, ist einfach. Wenn eine Aufsichtsbehörde morgen darum bäte, eine automatisierte Schadenentscheidung Zeile für Zeile durchzugehen: Könnten Sie das?
                 </p>
 
                 <p className="text-body leading-[1.6]">
@@ -373,7 +373,7 @@ export default async function AuditabilityScorecardBlogPost({
                         <strong className="text-strong">
                           Berechnen Sie, was sich berechnen lässt.
                         </strong>{" "}
-                        Regeln, wo der Wortlaut die Fakten abdeckt, Modelle, wo die Nachweise unstrukturiert sind, und eine Akte, die zeigt, was wovon ist.
+                        Regeln, wo der Wortlaut die Fakten abdeckt, Modelle, wo die Nachweise unstrukturiert sind, und eine Akte, die beides auseinanderhält.
                       </span>
                     </li>
                     <li className="flex items-start gap-3">

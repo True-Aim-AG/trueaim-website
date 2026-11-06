@@ -23,7 +23,7 @@ export default async function EthicsPage({ params }: { params: Promise<{ locale:
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Come segnalare</h2>
               <p className="text-body leading-[1.6]">
                 Inviate un’e-mail a{" "}
-                <a href="mailto:ethics@trueaim.ai" className="text-link hover:underline">ethics@trueaim.ai</a>. Questa casella è presidiata dal CEO. Potete includere tutti i dettagli che desiderate, o anche pochi.
+                <a href="mailto:ethics@trueaim.ai" className="text-link hover:underline">ethics@trueaim.ai</a>. Questa casella è monitorata dal CEO. Potete includere tanti o pochi dettagli, a vostra scelta.
               </p>
             </section>
 
@@ -49,7 +49,7 @@ export default async function EthicsPage({ params }: { params: Promise<{ locale:
             </section>
 
             <section>
-              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Non-retaliation</h2>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Divieto di ritorsione</h2>
               <p className="text-body leading-[1.6]">
                 True Aim vieta ogni ritorsione contro chi, in buona fede, solleva una preoccupazione tramite questo canale o partecipa a un’indagine. La ritorsione è essa stessa motivo di provvedimento disciplinare, fino al licenziamento.
               </p>
@@ -58,7 +58,7 @@ export default async function EthicsPage({ params }: { params: Promise<{ locale:
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Politiche correlate</h2>
               <p className="text-body leading-[1.6]">
-                Questo canale è descritto nel nostro Codice di condotta e nella nostra Policy per i segnalanti, disponibili per dipendenti e collaboratori esterni e, su richiesta, per i terzi scrivendo a{" "}
+                Questo canale è descritto nel nostro Codice di condotta e nella nostra Policy sul whistleblowing, disponibili per dipendenti e collaboratori esterni e, su richiesta, per i terzi scrivendo a{" "}
                 <a href="mailto:ethics@trueaim.ai" className="text-link hover:underline">ethics@trueaim.ai</a>.
               </p>
             </section>

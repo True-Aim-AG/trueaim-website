@@ -28,7 +28,7 @@ export const faqs: Faq[] = [
   },
   {
     question:
-      "Reicht eine menschliche Freigabe, um eine automatisierte Schadenentscheidung verteidigbar zu machen?",
+      "Reicht eine menschliche Freigabe, um eine automatisierte Schadenentscheidung belastbar zu machen?",
     answer:
       "Nur wenn die Prüfung echt ist. Der Prüfer muss die Nachweise hinter der Empfehlung sehen und die Befugnis und Kompetenz haben, sie zu ändern. Eine Freigabe, die realistisch niemand verweigern könnte, lässt die Entscheidung in der Substanz ausschließlich automatisiert, und nach der DSGVO behält die betroffene Person die daraus folgenden Rechte.",
   },

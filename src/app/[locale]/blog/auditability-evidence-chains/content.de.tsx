@@ -46,7 +46,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
-        <TextureBackdrop texture={{ name: "circ", position: "50% 50%" }} />
+        <TextureBackdrop texture={{ name: "circ", position: "50 % 50 %" }} />
 
         <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
@@ -81,7 +81,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
               </div>
               <div className="flex items-center gap-2">
                 <BookOpen className="w-4 h-4" strokeWidth={1.5} />
-                Technischer Deep Dive
+                Technische Vertiefung
               </div>
             </div>
           </MotionDiv>
@@ -127,7 +127,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
                     FINMA-Aufsichtsmitteilung 08/2024 (Schweiz)
                   </h3>
                   <p className="text-body leading-[1.6] mb-4">
-                    Die Schweiz hat kein KI-spezifisches Gesetz. Stattdessen wendet die FINMA technologieneutrale Governance-Anforderungen auf KI-Systeme an und fasst KI-Risiken als{" "}
+                    Die Schweiz hat kein KI-spezifisches Gesetz. Stattdessen wendet die FINMA technologieneutrale Governance-Anforderungen auf KI-Systeme an und ordnet KI-Risiken ein als{" "}
                     <span className="font-semibold text-strong">
                       operationelle Risiken
                     </span>
@@ -163,7 +163,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
                     </li>
                   </ul>
                   <p className="text-sm text-muted mt-4 italic">
-                    Die FINMA hält ausdrücklich fest, dass KI-„Ergebnisse oft nicht verstanden, erklärt oder reproduziert werden können“. Das ist das Problem, das Sie lösen müssen.
+                    Die FINMA hält ausdrücklich fest, dass die Ergebnisse von KI „oft nicht verstanden, erklärt oder reproduziert werden können“. Das ist das Problem, das Sie lösen müssen.
                   </p>
                 </div>
 
@@ -174,7 +174,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
                     EU AI Act
                   </h3>
                   <p className="text-body leading-[1.6]">
-                    Nach dem EU AI Act (der KI-Verordnung) gelten Risikobewertung und Preisgestaltung in der Lebens- und Krankenversicherung als{" "}
+                    Nach dem EU AI Act (der KI-Verordnung) gelten Risikobewertung und Preisbildung in der Lebens- und Krankenversicherung als{" "}
                     <span className="font-semibold text-strong">
                       hochriskant
                     </span>
@@ -192,7 +192,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
                       "Jede Entscheidung muss eine nachvollziehbare Nachweiskette haben",
                       "Menschliche Übersteuerungen müssen mit Begründung erfasst werden",
                       "Sie müssen eine Entscheidung von vor 6 Monaten reproduzieren können",
-                      '"Das Modell hat es so gesagt" is not an acceptable explanation',
+                      '„Das Modell hat es so gesagt“ ist keine akzeptable Erklärung',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
@@ -446,7 +446,7 @@ Timestamp: [ISO timestamp]`}</pre>
                       title: "Standardmäßige Genehmigung",
                       symptom: "Insgesamt hohe Genauigkeit, aber aus den falschen Gründen richtig",
                       impact:
-                        'Can\'t explain why approved, just "keine Fehler gefunden"',
+                        'Warum genehmigt wurde, lässt sich nicht erklären, nur „keine Fehler gefunden“',
                       fix: "Explizite Deckungsbestätigung verlangen, nicht das Ausbleiben einer Ablehnung",
                     },
                   ].map((fm, idx) => (
@@ -564,7 +564,7 @@ Timestamp: [ISO timestamp]`}</pre>
                         ],
                         [
                           "Reproduzierbarkeit",
-                          '"Oft nicht reproduzierbar" (the problem)',
+                          '„Oft nicht reproduzierbar“ (das Problem)',
                           "Implizit",
                           "Eingabe-Hashing, Modellversionierung",
                         ],
@@ -583,7 +583,7 @@ Timestamp: [ISO timestamp]`}</pre>
                         [
                           "Risikoklassifizierung",
                           "Zentrales Inventar erwartet",
-                          "Hochrisiko für Lebens-/Kranken-Preisgestaltung",
+                          "Hochrisiko für Lebens-/Kranken-Preisbildung",
                           "Anwendungsfall-Register mit Risiko-Tags",
                         ],
                       ].map((row, idx) => (
@@ -722,7 +722,7 @@ Timestamp: [ISO timestamp]`}</pre>
 
                 <div className="mt-8 border-l-2 border-ta-blue pl-6">
                   <p className="text-body-lg text-strong">
-                    Das Ziel ist nicht perfekte KI. Es ist verteidigbare KI: Systeme, in denen jede Entscheidung erklärt, jedes Feld zurückverfolgt und jeder menschliche Eingriff dokumentiert werden kann. Das wollen Aufsichtsbehörden. Das akzeptieren Prüfer.
+                    Das Ziel ist nicht perfekte KI. Es ist belastbare KI: Systeme, in denen jede Entscheidung erklärt, jedes Feld zurückverfolgt und jeder menschliche Eingriff dokumentiert werden kann. Das wollen Aufsichtsbehörden. Das akzeptieren Prüfer.
                   </p>
                 </div>
 

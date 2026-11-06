@@ -51,7 +51,7 @@ const partyViews: BulletItem[] = [
     text: "L’assuré suit en temps réel l’ingestion des preuves et observe directement à l’écran quels documents sont vérifiés et quelles exigences restent en suspens.",
   },
   {
-    text: "L’intermédiaire surveille la consommation de capacité, les limites de son binder et les indicateurs de SLA en temps réel sans émettre de demande de statut.",
+    text: "L’intermédiaire surveille la consommation de capacité, les limites de sa délégation et les indicateurs de SLA en temps réel sans émettre de demande de statut.",
   },
   {
     text: "Le prestataire spécialisé soumet des devis ligne par ligne et reçoit une validation immédiate et déterministe au regard des conditions de couverture.",
@@ -125,7 +125,7 @@ const judgementWork: BulletItem[] = [
     text: "Mener des échanges nuancés et de haute confiance avec les demandeurs lorsque la couverture doit être modifiée ou refusée, armé de l’intégralité du raisonnement en langage clair qui fonde la décision.",
   },
   {
-    lead: "L’optimisation systémique des règles :",
+    lead: "L’amélioration systémique des règles :",
     text: "Agir en ingénieur des opérations internes, en analysant les schémas structurels d’intervention pour identifier où les directives de souscription ou les règles automatisées sont ambiguës, obsolètes ou trop restrictives.",
   },
 ];
@@ -145,21 +145,21 @@ const controls: BulletItem[] = [
   },
   {
     lead: "Souveraineté de l’autorité déléguée :",
-    text: "Un courtier opérant sous un binder autorisé détient des droits de décision distincts de ceux d’un intermédiaire non mandaté. La machine à états doit refléter en continu qui détient l’autorité de décision sur chaque poste, en parfait alignement avec le contrat de souscription sous-jacent.",
+    text: "Un courtier opérant sous une délégation autorisée détient des droits de décision distincts de ceux d’un intermédiaire non mandaté. La machine à états doit refléter en continu qui détient l’autorité de décision sur chaque poste, en parfait alignement avec le contrat de souscription sous-jacent.",
   },
 ];
 
 const roadmap: NumberedItem[] = [
   {
     title: "Isoler les lignes de fracture",
-    body: "Cartographier chaque entité juridique souveraine qui touche une même branche d’activité, commerciale ou particulière. Documenter précisément où le dossier de preuves se fracture et bascule dans la correspondance manuelle.",
+    body: "Cartographier chaque entité juridique souveraine qui touche une même branche, entreprises ou particuliers. Documenter précisément où le dossier de preuves se fracture et bascule dans la correspondance manuelle.",
   },
   {
     title: "Codifier la matrice des habilitations",
     body: "Formuler les politiques d’accès aux données pour chaque groupe de parties prenantes (assuré, courtier, gestionnaire et prestataire tiers) avant de déployer la moindre interface.",
   },
   {
-    title: "Déployer un pilote borné",
+    title: "Déployer un pilote à périmètre limité",
     body: "Intégrer un seul réseau de partenaires et une seule branche d’activité sur un dossier partagé. Mesurer sur quatre-vingt-dix jours le volume de demandes sortantes, les délais de traitement des factures et le taux de règlements contestés.",
   },
   {
@@ -336,7 +336,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                     Résumé
                   </h2>
                   <p className="text-body leading-[1.6]">
-                    Un sinistre n’a jamais existé dans les quatre murs d’une seule entreprise. L’assuré, le souscripteur, le délégataire, le réparateur spécialisé et l’expert en sinistres détiennent chacun des fragments souverains d’une vérité non partagée. L’automatisation historique s’arrêtait aux frontières internes, accélérant des postes isolés tout en laissant l’écosystème élargi dans l’immobilisme administratif. La voie à suivre n’est pas un nouveau chatbot ponctuel ni une boîte de réception automatisée. C’est un système d’exploitation agentique ancré à un dossier unifié, orchestrant l’exécution multipartite sous des habilitations mathématiques, chaque acte de discrétion étant journalisé avec une provenance au niveau de la ligne. La transparence cesse d’être une courtoisie. Elle devient une garantie architecturale.
+                    Un sinistre n’a jamais existé dans les quatre murs d’une seule entreprise. L’assuré, le souscripteur, le délégataire, le réparateur spécialisé et l’expert en sinistres détiennent chacun des fragments souverains d’une vérité non partagée. L’automatisation historique s’arrêtait aux frontières internes, accélérant des postes isolés tout en laissant l’écosystème élargi dans l’immobilisme administratif. La voie à suivre n’est pas un nouveau chatbot ponctuel ni une boîte de réception automatisée. C’est un système d’exploitation agentique ancré à un dossier unifié, orchestrant l’exécution multipartite sous des habilitations mathématiques, chaque décision discrétionnaire étant journalisée avec une provenance au niveau de la ligne. La transparence cesse d’être une courtoisie. Elle devient une garantie architecturale.
                   </p>
                 </div>
 
@@ -347,11 +347,11 @@ export default async function ArchitecturalTransparencyBlogPost({
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Un assureur peut déployer des modèles génératifs pour ingérer une déclaration de sinistre en quatre secondes et calculer la couverture ligne par ligne. Pourtant, ce même assureur passe quarante-huit heures à courir après la pièce jointe d’un réparateur régional, et trois semaines à assembler une piste d’audit forensique pour un régulateur.
+                  Un assureur peut déployer des modèles génératifs pour ingérer une déclaration de sinistre en quatre secondes et calculer la couverture ligne par ligne. Pourtant, ce même assureur passe quarante-huit heures à courir après la pièce jointe d’un réparateur régional, et trois semaines à assembler une piste d’audit d’investigation pour une autorité de contrôle.
                 </p>
 
                 <p className="text-body leading-[1.6]">
-                  Les heures rendues à un gestionnaire interne ont toujours été le moindre des gains. La vraie frontière, c’est ce que devient une organisation sinistres quand la taxe de navigation systémique, ce frottement manuel de la réconciliation des faits à travers les frontières d’entreprise, est éliminée par conception.
+                  Les heures rendues à un gestionnaire interne ont toujours été le moindre des gains. Le véritable enjeu, c’est ce que devient une organisation sinistres quand la taxe de navigation systémique, ce frottement manuel de la réconciliation des faits à travers les frontières d’entreprise, est éliminée par conception.
                 </p>
               </MotionDiv>
 
@@ -369,7 +369,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  L’assuré déclare un sinistre. Un intermédiaire valide la couverture sous un binder de délégation. L’assureur statue sur la responsabilité. Un prestataire chiffre la remise en état. Un expert vérifie les dommages matériels.
+                  L’assuré déclare un sinistre. Un intermédiaire valide la couverture sous une délégation de souscription. L’assureur statue sur la responsabilité. Un prestataire chiffre la remise en état. Un expert vérifie les dommages matériels.
                 </p>
 
                 <p className="text-body leading-[1.6]">
@@ -379,12 +379,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 <ClaimChainDiagram />
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Because no participant possesses the complete factual matrix,
-                  each organisation maintains its own defensive shadow file.
-                  The claim is dismantled, translated and reassembled at every
-                  border it crosses. Status is negotiated over telephone lines.
-                  Quotations cross corporate firewalls as static PDFs.
-                  Approvals return as unindexed correspondence.
+                  Parce qu’aucun participant ne possède la matrice factuelle complète, chaque organisation tient son propre dossier fantôme défensif. Le sinistre est démonté, traduit et réassemblé à chaque frontière qu’il franchit. Le statut se négocie par téléphone. Les devis traversent les pare-feux d’entreprise sous forme de PDF statiques. Les approbations reviennent en correspondance non indexée.
                 </p>
 
                 <p className="text-body leading-[1.6]">
@@ -418,7 +413,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Sous cette architecture se trouve une discipline stricte : chaque action discrète qui modifie un sinistre est calculée comme une décision formelle et enregistrée avec une provenance au niveau de la ligne. Qu’il s’agisse de vérifier la prise d’effet de la police, de confirmer l’applicabilité de la couverture, de comparer un taux horaire au marché ou d’orienter un sinistre anormal vers la lutte antifraude, le moteur enregistre :
+                  Sous cette architecture se trouve une discipline stricte : chaque action distincte qui modifie un sinistre est calculée comme une décision formelle et enregistrée avec une provenance au niveau de la ligne. Qu’il s’agisse de vérifier la prise d’effet de la police, de confirmer l’applicabilité de la couverture, de comparer un taux horaire au marché ou d’orienter un sinistre anormal vers la lutte antifraude, le moteur enregistre :
                 </p>
 
                 <NumberedList items={decisionRecord} className="mb-5" />
@@ -462,7 +457,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 <NumberedCards items={priceSteps} />
 
                 <p className="text-body leading-[1.6] mt-8 mb-5">
-                  Quand un prestataire peut valider un devis au regard du prix de référence du marché avant de l’envoyer, la nature de la relation change. Une demande de réémission n’est plus un litige conflictuel ; c’est une réconciliation objective et automatisée. Les modèles de distribution sous-jacents s’affinent dynamiquement à chaque règlement décidé.
+                  Quand un prestataire peut valider un devis au regard du prix de référence du marché avant de l’envoyer, la nature de la relation change. Une demande de nouveau devis n’est plus un litige conflictuel ; c’est une réconciliation objective et automatisée. Les modèles de distribution sous-jacents s’affinent dynamiquement à chaque règlement décidé.
                 </p>
 
                 <p className="text-body leading-[1.6]">
@@ -496,7 +491,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 </p>
 
                 <p className="text-body leading-[1.6]">
-                  C’est le modèle opérationnel de l’assureur de premier rang : les intermédiaires démontrent leur conformité au binder par des données en direct plutôt que par des audits annuels. Les réseaux de réparateurs échangent la friction contre la rapidité de paiement. Quand le régulateur de l’assurance adresse une demande formelle, l’assureur présente un dossier de décision complet généré en quelques secondes, pas une reconstruction forensique paniquée assemblée sur des mois.
+                  C’est le modèle opérationnel de l’assureur de premier rang : les intermédiaires démontrent leur conformité à la délégation par des données en direct plutôt que par des audits annuels. Les réseaux de réparateurs échangent la friction contre la rapidité de paiement. Quand l’autorité de contrôle de l’assurance adresse une demande formelle, l’assureur présente un dossier de décision complet généré en quelques secondes, pas une reconstruction d’investigation paniquée assemblée sur des mois.
                 </p>
 
                 <PullQuote>Décidé en quelques minutes. Défendu pendant des années.</PullQuote>

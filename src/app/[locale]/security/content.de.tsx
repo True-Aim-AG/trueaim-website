@@ -30,7 +30,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
 
           <div>
             <p className="text-body leading-[1.6]">
-              Die True Aim AG betreibt eine Plattform zur Schadenbearbeitung für Versicherer, Makler und jede Organisation in der Versicherungs-Wertschöpfungskette, die Schäden bearbeitet oder verarbeitet. Sicherheit ist eine Kernanforderung unseres Dienstes, und unsere Kunden vertrauen uns personenbezogene Daten ihrer Versicherungsnehmer an. Diese Seite beschreibt unser Sicherheitsprogramm auf hoher Ebene. Vollständige prüfungsfähige Nachweise (SOC 2 Type II Bericht nach Ausstellung, ISO 27001 Zertifikat, Liste der Unterauftragsverarbeiter, Auftragsverarbeitungsvertrag) erhalten Sie über{" "}
+              Die True Aim AG betreibt eine Plattform zur Schadenbearbeitung für Versicherer, Makler und jede Organisation in der Versicherungs-Wertschöpfungskette, die Schäden bearbeitet oder verarbeitet. Sicherheit ist eine Kernanforderung unseres Dienstes, und unsere Kunden vertrauen uns personenbezogene Daten ihrer Versicherungsnehmer an. Diese Seite beschreibt unser Sicherheitsprogramm im Überblick. Vollständige prüfungsfähige Nachweise (SOC-2-Type-II-Bericht nach Ausstellung, ISO-27001-Zertifikat, Liste der Unterauftragsverarbeiter, Auftragsverarbeitungsvertrag) erhalten Sie über{" "}
               <a href="mailto:security@trueaim.ai" className="text-link hover:underline">security@trueaim.ai</a>. Diese sind unter Vertraulichkeitsvereinbarung (NDA) erhältlich.
             </p>
 
@@ -39,7 +39,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2">
                 <li><strong className="text-strong">ISO/IEC 27001:2022</strong>: zertifiziert durch A-LIGN, Zertifikat ISMS-TR-090426, ausgestellt am 4. September 2026, gültig bis 4. September 2029.</li>
                 <li><strong className="text-strong">SOC 2 Type II</strong>: auditiert für den Prüfzeitraum vom 1. Mai bis 31. Juli 2026; der Abschlussbericht wurde ausgestellt.</li>
-                <li><strong className="text-strong">Schweizer DSG</strong> and <strong className="text-strong">GDPR</strong>: ausgerichtet als Auftragsverarbeiter für Kundendaten.</li>
+                <li><strong className="text-strong">Schweizer DSG</strong> und <strong className="text-strong">DSGVO</strong>: als Auftragsverarbeiter für Kundendaten daran ausgerichtet.</li>
                 <li><strong className="text-strong">EU AI Act</strong>: technische Dokumentation (AI Technical File) für den Automated Coverage Check wird geführt; der aktuelle Stand der Vorbereitung ist dokumentiert und wird nachverfolgt.</li>
               </ul>
             </section>
@@ -52,7 +52,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
             </section>
 
             <section>
-              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Sub-processors</h2>
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Unterauftragsverarbeiter</h2>
               <p className="text-body leading-[1.6]">
                 Wir nutzen eine begrenzte Auswahl von Microsoft-Azure-Diensten für Hosting, KI-Inferenz und Betriebstelemetrie sowie Google Cloud (Gemini-Modelle für KI-Inferenz in der EU), Google Workspace (für geschäftliche E-Mail), Slack (für die interne Teamkommunikation) und Sentry (ausschließlich technische Fehlerprotokolle). Die aktuelle Liste bildet Anhang 2 unseres Auftragsverarbeitungsvertrags und ist auf Anfrage erhältlich. Über Änderungen informieren wir Kunden im Voraus. Rein interne Werkzeuge (Quellcodeverwaltung, CI/CD, CRM), die keine Produktionsdaten von Mandanten verarbeiten, sind keine Unterauftragsverarbeiter für Kunden und nicht aufgeführt.
               </p>
@@ -68,14 +68,14 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Zugriffskontrolle</h2>
               <p className="text-body leading-[1.6]">
-                Der Zugriff auf Kundendaten ist auf befugtes Personal von True Aim beschränkt, nach dem Prinzip der geringsten Rechte und nur bei Bedarf, durchgesetzt über rollenbasierte Zugriffskontrollen und Azure Managed Identities. Multi-Faktor-Authentifizierung ist für alle Mitarbeiterkonten verpflichtend.
+                Der Zugriff auf Kundendaten ist auf befugtes Personal von True Aim beschränkt, nach dem Prinzip der geringsten Rechte und dem Need-to-know-Prinzip, durchgesetzt über rollenbasierte Zugriffskontrollen und Azure Managed Identities. Multi-Faktor-Authentifizierung ist für alle Mitarbeiterkonten verpflichtend.
               </p>
             </section>
 
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Monitoring und Incident Response</h2>
               <p className="text-body leading-[1.6]">
-                Wir betreiben kontinuierliches Logging, Alarmierung und Monitoring der Produktionsumgebung über Microsoft Defender for Cloud und Azure Monitor. Wir unterhalten ein dokumentiertes Verfahren für die Reaktion auf Sicherheitsvorfälle. Kunden werden über bestätigte Sicherheitsvorfälle, die ihre Daten betreffen, ohne unangemessene Verzögerung und gemäß unserem Auftragsverarbeitungsvertrag informiert.
+                Wir betreiben kontinuierliches Logging, Alarmierung und Monitoring der Produktionsumgebung über Microsoft Defender for Cloud und Azure Monitor. Wir unterhalten ein dokumentiertes Verfahren für die Reaktion auf Sicherheitsvorfälle. Kunden werden über bestätigte Sicherheitsvorfälle, die ihre Daten betreffen, unverzüglich und gemäß unserem Auftragsverarbeitungsvertrag informiert.
               </p>
             </section>
 
@@ -106,7 +106,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
                 Wenn Sie glauben, eine Sicherheitsschwachstelle in unserem Dienst oder auf dieser Website gefunden zu haben, melden Sie sie bitte an{" "}
                 <a href="mailto:security@trueaim.ai" className="text-link hover:underline">security@trueaim.ai</a>. Wir verpflichten uns, Ihre Meldung innerhalb von 5 Werktagen zu bestätigen und mit Ihnen in gutem Glauben zusammenzuarbeiten, um bestätigte Probleme zu untersuchen und zu beheben. Wir werden keine rechtlichen Schritte gegen Forschende einleiten, die diesem Offenlegungsprozess folgen, in gutem Glauben handeln und nicht über das zum Nachweis einer Schwachstelle Notwendige hinaus auf Daten zugreifen, sie verändern oder löschen. Siehe auch unseren Kanal{" "}
                 <Link href="/ethics" className="text-link hover:underline">Ethik &amp; Meldungen</Link>{" "}
-                für Fehlverhalten außerhalb der Sicherheit.
+                für Fehlverhalten ohne Sicherheitsbezug.
               </p>
             </section>
 
@@ -114,7 +114,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Kontakt</h2>
               <p className="text-body leading-[1.6]">
                 Für sicherheitsbezogene Fragen:{" "}
-                <a href="mailto:security@trueaim.ai" className="text-link hover:underline">security@trueaim.ai</a>. Für Anfragen zu Datenschutz:{" "}
+                <a href="mailto:security@trueaim.ai" className="text-link hover:underline">security@trueaim.ai</a>. Für Anfragen zum Datenschutz:{" "}
                 <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a>.
               </p>
             </section>

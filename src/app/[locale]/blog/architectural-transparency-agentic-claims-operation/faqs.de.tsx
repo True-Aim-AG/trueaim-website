@@ -22,12 +22,12 @@ export const faqs: Faq[] = [
   {
     question: 'Was bedeutet „Herkunftsnachweis auf Positionsebene“ in der Praxis?',
     answer:
-      "Es bedeutet Verteidigungsfähigkeit von Grund auf. Für jede Entscheidung schreibt das System vier Grundelemente in die Akte: die zugrunde liegenden Fakten und Dokumente, den geltenden Policenwortlaut, die Begründung in einfacher Sprache und den verantwortlichen Akteur (Mensch oder KI). Übersteuert ein Sachbearbeiter eine Empfehlung, bleibt die Begründung erhalten. Keine Blackbox, sondern eine Glasbox.",
+      "Es bedeutet Belastbarkeit von Grund auf. Für jede Entscheidung schreibt das System vier Grundelemente in die Akte: die zugrunde liegenden Fakten und Dokumente, den geltenden Policenwortlaut, die Begründung in einfacher Sprache und den verantwortlichen Akteur (Mensch oder KI). Übersteuert ein Sachbearbeiter eine Empfehlung, bleibt die Begründung erhalten. Keine Blackbox, sondern eine Glasbox.",
   },
   {
     question: "Müssen Versicherer ihre Kern-Schadensysteme ersetzen?",
     answer:
-      "Nein. Mehrjährige Plattformablösungen sind zu langsam und bergen untragbare Umsetzungsrisiken. Ein agentisches Betriebssystem orchestriert über Standard-APIs oberhalb Ihrer bestehenden Führungssysteme. Sie können mit einem einzelnen reibungsintensiven Modul beginnen, etwa dem Abgleich von Reparaturpreisen oder der Deckungsprüfung, und erweitern, sobald die Akte ihren Wert beweist.",
+      "Nein. Mehrjährige Plattformablösungen sind zu langsam und bergen untragbare Umsetzungsrisiken. Ein agentisches Betriebssystem orchestriert über Standard-APIs oberhalb Ihrer bestehenden datenführenden Systeme. Sie können mit einem einzelnen reibungsintensiven Modul beginnen, etwa dem Abgleich von Reparaturpreisen oder der Deckungsprüfung, und erweitern, sobald die Akte ihren Wert beweist.",
   },
   {
     question: "Ist das Ziel, Personal in der Schadenbearbeitung abzubauen?",

@@ -24,7 +24,7 @@ export default async function AITransparencyPage({ params }: { params: Promise<{
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Unser Gestaltungsansatz</h2>
               <p className="text-body leading-[1.6]">
-                True Aim baut KI-gestützte Entscheidungsinfrastruktur für regulierte Branchen. Unsere Systeme sind darauf ausgelegt, strukturierte Analyse, Interpretation und die Ausführung von Workflows innerhalb definierter Kontrollgrenzen zu unterstützen. KI-Komponenten werden eingesetzt, um das Verständnis von Dokumenten, die Datenextraktion, die Klassifizierung und die analytische Unterstützung in verschiedenen Stufen der Verarbeitungskette zu unterstützen. Menschliche Prüfung und organisatorische Kontrolle bleiben in Produktionsumgebungen zentral. Entscheidungen und Ergebnisse müssen strukturiert erklärbar und überprüfbar sein.
+                True Aim baut KI-gestützte Entscheidungsinfrastruktur für regulierte Branchen. Unsere Systeme sind darauf ausgelegt, strukturierte Analyse, Interpretation und die Ausführung von Workflows innerhalb definierter Kontrollgrenzen zu unterstützen. KI-Komponenten unterstützen das Verständnis von Dokumenten, die Datenextraktion, die Klassifizierung und die Analyse in verschiedenen Stufen der Verarbeitungskette. Menschliche Prüfung und organisatorische Kontrolle bleiben in Produktionsumgebungen zentral. Entscheidungen und Ergebnisse müssen strukturiert erklärbar und überprüfbar sein.
               </p>
             </section>
 
@@ -52,7 +52,7 @@ export default async function AITransparencyPage({ params }: { params: Promise<{
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Prüfbarkeit und Nachvollziehbarkeit</h2>
               <p className="text-body leading-[1.6]">
-                Die Systeme von True Aim sind darauf ausgelegt, Prüfbarkeit und nachträgliche Überprüfung zu unterstützen. Verarbeitungsschritte können so aufgezeichnet werden, dass sich Ergebnisse auf die Quellmaterialien, die angewandten Regeln und die zum Zeitpunkt der Verarbeitung geltenden Systemkonfigurationen zurückführen lassen. Diese strukturierte Protokollierung soll Überprüfung, Qualitätssicherung und Compliance-Analysen in regulierten Umgebungen unterstützen.
+                Die Systeme von True Aim sind darauf ausgelegt, Prüfbarkeit und nachträgliche Überprüfung zu unterstützen. Verarbeitungsschritte können so aufgezeichnet werden, dass sich Ergebnisse auf die Quellmaterialien, die angewandten Regeln und die zum Zeitpunkt der Verarbeitung geltenden relevanten Systemkonfigurationen zurückführen lassen. Diese strukturierte Protokollierung soll Überprüfung, Qualitätssicherung und Compliance-Analysen in regulierten Umgebungen unterstützen.
               </p>
             </section>
 
@@ -66,7 +66,7 @@ export default async function AITransparencyPage({ params }: { params: Promise<{
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Risikobasierte Gestaltung</h2>
               <p className="text-body leading-[1.6]">
-                Unsere Systeme werden mit Blick auf regulierte Anwendungsfälle entwickelt. Architektonische Maßnahmen unterstützen Erklärbarkeit, strukturierte Überprüfung, Zugriffskontrolle und operative Transparenz. Wir verfeinern unsere technische und Governance-Praxis weiter, während sich regulatorische Standards und die Erwartungen der Branche entwickeln.
+                Unsere Systeme werden mit Blick auf regulierte Anwendungsfälle entwickelt. Architektonische Maßnahmen unterstützen Erklärbarkeit, strukturierte Überprüfung, Zugriffskontrolle und operative Transparenz. Wir verfeinern unsere technische Praxis und unsere Governance-Praxis weiter, während sich regulatorische Standards und die Erwartungen der Branche entwickeln.
               </p>
             </section>
 

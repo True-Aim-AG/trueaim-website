@@ -33,7 +33,7 @@ const sections: { id: string; heading: string }[] = [
   { id: "when-to-build", heading: "Quand développer" },
   { id: "when-to-buy", heading: "Quand acheter" },
   { id: "the-vendor-evaluation-framework", heading: "Le cadre d’évaluation des fournisseurs" },
-  { id: "the-demo-checklist", heading: "La checklist de démo" },
+  { id: "the-demo-checklist", heading: "La liste de contrôle de la démo" },
   { id: "the-hybrid-path", heading: "La voie hybride" },
   { id: "next-steps", heading: "Prochaines étapes" },
   { id: "key-takeaways", heading: "Points clés" },
@@ -46,7 +46,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
-        <TextureBackdrop texture={{ name: "circ", position: "12% 88%" }} />
+        <TextureBackdrop texture={{ name: "circ", position: "12 % 88 %" }} />
 
         <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
@@ -164,7 +164,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                       },
                       {
                         title: "Les exigences réglementaires imposent un contrôle total",
-                        desc: "Localisation des données en Suisse et dans l’UE, pistes d’audit, explicabilité : certains régulateurs veulent tout en interne.",
+                        desc: "Localisation des données en Suisse et dans l’UE, pistes d’audit, explicabilité : certaines autorités de contrôle veulent tout en interne.",
                       },
                       {
                         title:
@@ -200,7 +200,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                           « On va simplement utiliser GPT-4. »
                         </span>
                         <p className="text-sm text-body mt-1">
-                          Vous atteindrez le même plafond de précision que tout le monde. Un modèle de langage généraliste n’appliquera pas vos conditions de police de façon fiable sans un ensemble de règles défini.
+                          Vous atteindrez le même plafond de précision que tout le monde. Un modèle de langage généraliste n’appliquera pas vos conditions de la police de façon fiable sans un ensemble de règles défini.
                         </p>
                       </div>
                     </div>
@@ -360,7 +360,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                     <li>
                       • Effort d’intégration (généralement 3 à 6 mois, pas 3 à 6 semaines)
                     </li>
-                    <li>• Optimisation continue (vous devrez encore ajuster)</li>
+                    <li>• Réglage continu (vous devrez encore ajuster)</li>
                     <li>
                       • Dépendance au fournisseur (et s’il pivote, échoue ou se fait racheter ?)
                     </li>
@@ -546,7 +546,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                         </tr>
                         <tr>
                           <td className="py-2 pr-4">
-                            Quel est votre workflow avec intervention humaine ?
+                            Quel est votre flux de travail avec intervention humaine ?
                           </td>
                           <td className="py-2">Console QA complète</td>
                         </tr>
@@ -566,7 +566,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                         Coûts et exploitation
                       </h4>
                       <span className="text-xs font-medium text-accent bg-accent-soft px-3 py-0.5 rounded-pill">
-                        15%
+                        15 %
                       </span>
                     </div>
                     <ul className="text-xs text-body space-y-1">
@@ -582,7 +582,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                         Risque et sécurité
                       </h4>
                       <span className="text-xs font-medium text-accent bg-accent-soft px-3 py-0.5 rounded-pill">
-                        10%
+                        10 %
                       </span>
                     </div>
                     <ul className="text-xs text-body space-y-1">
@@ -605,7 +605,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                     id="the-demo-checklist"
                     className="font-display text-[28px] md:text-[32px] font-bold text-strong scroll-mt-24"
                   >
-                    La checklist de démo
+                    La liste de contrôle de la démo
                   </h2>
                 </div>
 
@@ -727,7 +727,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                     {
                       num: "1",
                       title: "Distinguer l’indispensable du souhaitable",
-                      desc: "L’auditabilité n’est pas négociable. L’optimisation automatique, si.",
+                      desc: "L’auditabilité n’est pas négociable. Le réglage automatique, si.",
                     },
                     {
                       num: "2",
@@ -789,7 +789,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                       "Développer pour une capacité stratégique, pas pour des économies",
                       "Acheter pour la rapidité de mise sur le marché, pas pour la simplicité",
                       "Un cadre d’évaluation des fournisseurs en 5 catégories",
-                      "Checklist de démo : avant, pendant, après",
+                      "Liste de contrôle de démo : avant, pendant, après",
                       "La voie hybride : acheter le standard, développer la différenciation",
                       "L’auditabilité n’est pas négociable",
                     ].map((item, index) => (

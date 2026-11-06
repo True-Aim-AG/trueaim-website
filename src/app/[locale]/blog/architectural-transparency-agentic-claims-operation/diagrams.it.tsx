@@ -102,7 +102,7 @@ export function SharedRecordDiagram() {
 }
 
 const outcomes: { test: string; result: string; note?: string }[] = [
-  { test: "Entro il σ atteso", result: "Auto-Cleared" },
+  { test: "Entro il σ atteso", result: "Approvato automaticamente" },
   { test: "Scostamento positivo", result: "Segnalato con delta", note: "(motivo registrato)" },
   { test: "Dati non strutturati", result: "In attesa del giudizio di un liquidatore senior" },
 ];

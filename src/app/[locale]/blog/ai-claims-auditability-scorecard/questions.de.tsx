@@ -76,14 +76,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Wäre die Entscheidung bei demselben Schadenfall und denselben Dokumenten ein Jahr später dieselbe, und könnten Sie es beweisen?",
     plainAnswer:
-      "Der Maßstab ist ein Ja für jeden deterministischen Teil der Entscheidung, mit dem erneuten Durchlauf als Beweis, und eine genaue Aufstellung, welche Teile probabilistisch waren und daher nur unter der Modellversion und den Einstellungen reproduzierbar sind, die sie erzeugt haben. Ein System, das seine eigene Ausgabe nicht reproduzieren kann, kann sie nicht verteidigen. True Aim kann eine Entscheidungskette auf Abruf erneut validieren oder erneut ausführen. Regelbasierte Ergebnisse reproduzieren sich per Konstruktion. Für jeden Modellaufruf hält die Akte Modell, Prompt-Vorlage, Engine, Temperatur, Seed, Determinismus-Einstellung und Konfidenz fest, sodass ein probabilistischer Schritt unter den Bedingungen untersucht werden kann, die ihn erzeugt haben.",
+      "Der Maßstab ist ein Ja für jeden deterministischen Teil der Entscheidung, mit dem erneuten Durchlauf als Beweis, und eine genaue Aufstellung, welche Teile probabilistisch waren und daher nur unter der Modellversion und den Einstellungen reproduzierbar sind, die sie erzeugt haben. Ein System, das seine eigene Ausgabe nicht reproduzieren kann, kann sie nicht verteidigen. True Aim kann eine Entscheidungskette auf Abruf erneut validieren oder erneut ausführen. Regelbasierte Ergebnisse sind per Konstruktion reproduzierbar. Für jeden Modellaufruf hält die Akte Modell, Prompt-Vorlage, Engine, Temperatur, Seed, Determinismus-Einstellung und Konfidenz fest, sodass ein probabilistischer Schritt unter den Bedingungen untersucht werden kann, die ihn erzeugt haben.",
     body: (
       <>
         <p>
           Der Maßstab ist ein Ja für jeden deterministischen Teil der Entscheidung, mit dem erneuten Durchlauf als Beweis, und eine genaue Aufstellung, welche Teile probabilistisch waren und daher nur unter der Modellversion und den Einstellungen reproduzierbar sind, die sie erzeugt haben. Ein System, das seine eigene Ausgabe nicht reproduzieren kann, kann sie nicht verteidigen.
         </p>
         <p>
-          True Aim kann eine Entscheidungskette auf Abruf erneut validieren oder erneut ausführen. Regelbasierte Ergebnisse reproduzieren sich per Konstruktion. Für jeden Modellaufruf hält die Akte Modell, Prompt-Vorlage, Engine, Temperatur, Seed, Determinismus-Einstellung und Konfidenz fest, sodass ein probabilistischer Schritt unter den Bedingungen untersucht werden kann, die ihn erzeugt haben.
+          True Aim kann eine Entscheidungskette auf Abruf erneut validieren oder erneut ausführen. Regelbasierte Ergebnisse sind per Konstruktion reproduzierbar. Für jeden Modellaufruf hält die Akte Modell, Prompt-Vorlage, Engine, Temperatur, Seed, Determinismus-Einstellung und Konfidenz fest, sodass ein probabilistischer Schritt unter den Bedingungen untersucht werden kann, die ihn erzeugt haben.
         </p>
       </>
     ),
@@ -93,11 +93,11 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Sind der Policenwortlaut, die Regeln und das Modell, die eine Entscheidung erzeugt haben, auf der Entscheidung selbst festgehalten, in der damals geltenden Version?",
     plainAnswer:
-      "Auf der Akte selbst, nicht in einer Release Note. Eine anderswo geführte Versionshistorie ist ein anderes Dokument über einen anderen Tag. Der Maßstab ist eine Entscheidung, die die angewandte Klausel, den Katalogeintrag oder die Geschäftsregel benennt, in der in diesem Moment geltenden Version, zusammen mit dem beteiligten Modell und Prompt. True Aim schreibt jede Handlung, von einer Person oder einer Maschine, mit Modell, Prompt, Regelversion und Konfidenz in die Akte und hält fest, welche Version des Wortlauts, des Katalogs oder der Geschäftsregel zum Zeitpunkt der Entscheidung galt. Entscheidungen werden an den Regeln gemessen, die tatsächlich galten.",
+      "In der Akte selbst, nicht in einer Release Note. Eine anderswo geführte Versionshistorie ist ein anderes Dokument über einen anderen Tag. Der Maßstab ist eine Entscheidung, die die angewandte Klausel, den Katalogeintrag oder die Geschäftsregel benennt, in der in diesem Moment geltenden Version, zusammen mit dem beteiligten Modell und Prompt. True Aim schreibt jede Handlung, von einer Person oder einer Maschine, mit Modell, Prompt, Regelversion und Konfidenz in die Akte und hält fest, welche Version des Wortlauts, des Katalogs oder der Geschäftsregel zum Zeitpunkt der Entscheidung galt. Entscheidungen werden an den Regeln gemessen, die tatsächlich galten.",
     body: (
       <>
         <p>
-          Auf der Akte selbst, nicht in einer Release Note. Eine anderswo geführte Versionshistorie ist ein anderes Dokument über einen anderen Tag. Der Maßstab ist eine Entscheidung, die die angewandte Klausel, den Katalogeintrag oder die Geschäftsregel benennt, in der in diesem Moment geltenden Version, zusammen mit dem beteiligten Modell und Prompt.
+          In der Akte selbst, nicht in einer Release Note. Eine anderswo geführte Versionshistorie ist ein anderes Dokument über einen anderen Tag. Der Maßstab ist eine Entscheidung, die die angewandte Klausel, den Katalogeintrag oder die Geschäftsregel benennt, in der in diesem Moment geltenden Version, zusammen mit dem beteiligten Modell und Prompt.
         </p>
         <p>
           True Aim schreibt jede Handlung, von einer Person oder einer Maschine, mit Modell, Prompt, Regelversion und Konfidenz in die Akte und hält fest, welche Version des Wortlauts, des Katalogs oder der Geschäftsregel zum Zeitpunkt der Entscheidung galt. Entscheidungen werden an den Regeln gemessen, die tatsächlich galten.
@@ -110,14 +110,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Wer kann eine Entscheidungsakte ändern, wie würden Sie es merken, und wie lange wird die Akte aufbewahrt?",
     plainAnswer:
-      "Eine Akte, die sich spurlos ändern lässt, ist ein Entwurf. Der Maßstab ist eine manipulationserkennbare Akte und eine bewusst festgelegte Aufbewahrungsfrist, die den eigenen Pflichten der Organisation entspricht, die den Schadenfall meist um Jahre überdauern. Der Schadenfall, zu dem Sie befragt werden, ist oft älter als das Protokoll, das Sie aufbewahrt haben. True Aim hasht jeden aufgezeichneten Eintrag, sodass jede Änderung erkennbar ist und die Akte so gebaut ist, dass sie einer Anfechtung in Streitfall, Prüfung oder vor Gericht standhält. Die Aufbewahrung wird pro Kunde entsprechend dessen eigenen Aufbewahrungspflichten konfiguriert, und der Aufbewahrungsstatus jedes Schadenfalls steht in derselben Akte wie seine Dokumente, Ereignisse und Entscheidungen.",
+      "Eine Akte, die sich spurlos ändern lässt, ist ein Entwurf. Der Maßstab ist eine manipulationserkennbare Akte und eine bewusst festgelegte Aufbewahrungsfrist, die den eigenen Pflichten der Organisation entspricht, die den Schadenfall meist um Jahre überdauern. Der Schadenfall, zu dem Sie befragt werden, ist oft älter als das Protokoll, das Sie aufbewahrt haben. True Aim hasht jeden aufgezeichneten Eintrag, sodass jede Änderung erkennbar ist und die Akte so gebaut ist, dass sie einer Anfechtung im Streitfall, in der Prüfung oder vor Gericht standhält. Die Aufbewahrung wird pro Kunde entsprechend dessen eigenen Aufbewahrungspflichten konfiguriert, und der Aufbewahrungsstatus jedes Schadenfalls steht in derselben Akte wie seine Dokumente, Ereignisse und Entscheidungen.",
     body: (
       <>
         <p>
           Eine Akte, die sich spurlos ändern lässt, ist ein Entwurf. Der Maßstab ist eine manipulationserkennbare Akte und eine bewusst festgelegte Aufbewahrungsfrist, die den eigenen Pflichten der Organisation entspricht, die den Schadenfall meist um Jahre überdauern. Der Schadenfall, zu dem Sie befragt werden, ist oft älter als das Protokoll, das Sie aufbewahrt haben.
         </p>
         <p>
-          True Aim hasht jeden aufgezeichneten Eintrag, sodass jede Änderung erkennbar ist und die Akte so gebaut ist, dass sie einer Anfechtung in Streitfall, Prüfung oder vor Gericht standhält. Die Aufbewahrung wird pro Kunde entsprechend dessen eigenen Aufbewahrungspflichten konfiguriert, und der Aufbewahrungsstatus jedes Schadenfalls steht in derselben Akte wie seine Dokumente, Ereignisse und Entscheidungen.
+          True Aim hasht jeden aufgezeichneten Eintrag, sodass jede Änderung erkennbar ist und die Akte so gebaut ist, dass sie einer Anfechtung im Streitfall, in der Prüfung oder vor Gericht standhält. Die Aufbewahrung wird pro Kunde entsprechend dessen eigenen Aufbewahrungspflichten konfiguriert, und der Aufbewahrungsstatus jedes Schadenfalls steht in derselben Akte wie seine Dokumente, Ereignisse und Entscheidungen.
         </p>
       </>
     ),

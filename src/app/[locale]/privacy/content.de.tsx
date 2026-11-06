@@ -135,7 +135,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section id="retention" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">8. Aufbewahrung</h2>
               <p className="text-body leading-[1.6]">
-                We retain personal data only as long as necessary to deliver the Service and meet our legal obligations. Tenant data is retained for the duration of the Tenant&rsquo;s subscription plus the contractually agreed return/deletion period. Specific retention periods are documented in our internal data retention schedule and reflected in the Data Processing Agreement concluded with each Tenant.
+                Wir bewahren personenbezogene Daten nur so lange auf, wie es zur Erbringung des Dienstes und zur Erfüllung unserer rechtlichen Pflichten erforderlich ist. Mandantendaten werden für die Dauer des Abonnements des Mandanten zuzüglich der vertraglich vereinbarten Rückgabe-/Löschfrist aufbewahrt. Konkrete Aufbewahrungsfristen sind in unserem internen Aufbewahrungsplan dokumentiert und im mit jedem Mandanten geschlossenen Auftragsverarbeitungsvertrag abgebildet.
               </p>
             </section>
 

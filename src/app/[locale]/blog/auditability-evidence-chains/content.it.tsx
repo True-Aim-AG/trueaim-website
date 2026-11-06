@@ -192,7 +192,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
                       "Ogni decisione deve avere una catena delle prove tracciabile",
                       "Gli interventi umani devono essere registrati con motivazione",
                       "Dovete poter riprodurre una decisione di 6 mesi fa",
-                      '"Lo ha detto il modello" is not an acceptable explanation',
+                      '«Lo ha detto il modello» non è una spiegazione accettabile',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
@@ -439,14 +439,14 @@ Timestamp: [ISO timestamp]`}</pre>
                       symptom:
                         "Il sistema ha preso una decisione, ma un’informazione chiave non era nel set di documenti",
                       impact:
-                        "Il sistema aveva ragione dati i dati disponibili, ma il revisore non lo sa",
+                        "Il sistema aveva ragione sulla base dei dati disponibili, ma il revisore non lo sa",
                       fix: "Documentare quali informazioni erano disponibili al momento della decisione",
                     },
                     {
                       title: "Logica di approvazione per default",
                       symptom: "Accuratezza complessiva elevata, ma corretta per i motivi sbagliati",
                       impact:
-                        'Can\'t explain why approved, just "nessun errore trovato"',
+                        'Non si può spiegare perché è stato approvato, solo «nessun errore trovato»',
                       fix: "Richiedere una conferma esplicita della copertura, non l’assenza di un rifiuto",
                     },
                   ].map((fm, idx) => (
@@ -564,7 +564,7 @@ Timestamp: [ISO timestamp]`}</pre>
                         ],
                         [
                           "Riproducibilità",
-                          '"Spesso non riproducibili" (the problem)',
+                          '«Spesso non riproducibili» (il problema)',
                           "Implicita",
                           "Hashing degli input, versionamento dei modelli",
                         ],

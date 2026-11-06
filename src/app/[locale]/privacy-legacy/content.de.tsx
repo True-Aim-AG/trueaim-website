@@ -28,7 +28,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">1. Wer wir sind</h2>
               <p className="text-body leading-[1.6]">
-                Diese Website wird betrieben von <strong className="text-strong">True Aim AG</strong>, Handelsregisternummer <strong className="text-strong">CHE-325.128.066</strong>, mit Sitz in Zug, Schweiz. Eingetragene Adresse: c/o Yarowa AG, Metallstrasse 9, 6300 Zug, Schweiz. Diese Datenschutzerklärung erläutert, wie wir personenbezogene Daten erheben, verwenden und schützen, wenn Sie mit unserer Website interagieren.
+                Diese Website wird betrieben von der <strong className="text-strong">True Aim AG</strong>, Handelsregisternummer <strong className="text-strong">CHE-325.128.066</strong>, mit Sitz in Zug, Schweiz. Eingetragene Adresse: c/o Yarowa AG, Metallstrasse 9, 6300 Zug, Schweiz. Diese Datenschutzerklärung erläutert, wie wir personenbezogene Daten erheben, verwenden und schützen, wenn Sie mit unserer Website interagieren.
               </p>
             </section>
 
@@ -94,11 +94,11 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">10. Südafrika und POPIA</h2>
               <p className="text-body leading-[1.6]">
-                Soweit personenbezogene Daten in oder aus Südafrika verarbeitet werden, treffen wir Maßnahmen zur Einhaltung des Protection of Personal Information Act (POPIA). Unser{" "}
+                Soweit personenbezogene Daten in oder aus Südafrika verarbeitet werden, treffen wir Maßnahmen, um uns am Protection of Personal Information Act (POPIA) auszurichten. Unser{" "}
                 <Link href="/paia" className="text-link hover:underline">
                   PAIA-Handbuch
                 </Link>{" "}
-                enthält weitere Informationen zu Auskunftsersuchen nach südafrikanischem Recht.
+                enthält weitere Informationen zu Anträgen auf Informationszugang nach südafrikanischem Recht.
               </p>
             </section>
 
@@ -135,7 +135,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
 
             <div className="pt-4">
               <ButtonLink href="/contact" variant="primary" size="md">
-                Kontakt
+                Kontakt aufnehmen
               </ButtonLink>
             </div>
           </div>

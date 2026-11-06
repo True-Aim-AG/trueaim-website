@@ -10,7 +10,7 @@ export type Faq = {
 
 export const faqs: Faq[] = [
   {
-    question: "Un modèle de langage doit-il calculer le montant d’un sinistre ?",
+    question: "Un modèle de langage doit-il calculer l’indemnisation d’un sinistre ?",
     answer:
       "Non. Franchises, limites et partages de responsabilité ont une seule bonne réponse une fois les faits fixés. Ils relèvent de règles déterministes.",
   },

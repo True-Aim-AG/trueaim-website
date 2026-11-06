@@ -15,7 +15,7 @@ export default async function PAIAPage({ params }: { params: Promise<{ locale: s
 
           <div>
             <p className="text-sm text-muted italic">
-              Redatto in conformità al Promotion of Access to Information Act, 2 of 2000
+              Redatto in conformità al Promotion of Access to Information Act, n. 2 del 2000
             </p>
 
             <section>
@@ -31,7 +31,7 @@ export default async function PAIAPage({ params }: { params: Promise<{ locale: s
                 <p><span className="font-medium text-strong">Denominazione sociale:</span> True Aim AG</p>
                 <p><span className="font-medium text-strong">Numero di registrazione:</span> CHE-325.128.066</p>
                 <p><span className="font-medium text-strong">Sede legale:</span> Zugo, Svizzera</p>
-                <p><span className="font-medium text-strong">Indirizzo registrato:</span> c/o Yarowa AG, Metallstrasse 9, 6300 Zug, Svizzera</p>
+                <p><span className="font-medium text-strong">Indirizzo della sede legale:</span> c/o Yarowa AG, Metallstrasse 9, 6300 Zug, Svizzera</p>
                 <p><span className="font-medium text-strong">E-mail di contatto:</span>{" "}
                   <a href="mailto:info@trueaim.ai" className="text-link hover:underline">info@trueaim.ai</a>
                 </p>

@@ -372,7 +372,7 @@
       "description": "Jede Schadenentscheidung besteht aus Lesen, Rechnen und Urteilen. Wo ein Sprachmodell hingehört, wo Regeln gelten müssen und wie die Akte die Grenze zeigt.",
       "h1": "Wo das Sprachmodell nicht hingehört",
       "breadcrumb": "Wo das Sprachmodell nicht hingehört",
-      "ogTitle": "Wo das Sprachmodell nicht hingehört: Verteidigungsfähige KI für die Schadenbearbeitung gestalten",
+      "ogTitle": "Wo das Sprachmodell nicht hingehört: Belastbare KI für die Schadenbearbeitung gestalten",
       "ogDescription": "Jede Schadenentscheidung besteht aus Lesen, Rechnen und Urteilen. Wo ein Sprachmodell hingehört, wo Regeln gelten müssen und wie die Akte die Grenze zeigt.",
       "updated": "2026-11-05"
     },
@@ -415,11 +415,11 @@
     },
     "/blog/ai-claims-handling-eu-ai-act-high-risk": {
       "title": "Ist Schaden-KI nach dem EU AI Act hochriskant? | True Aim",
-      "description": "Schadenbearbeitung fehlt in Anhang III. DSGVO Artikel 22 bindet sie trotzdem. Nur 24 % der Versicherer trauen sich eine Governance-Prüfung in 90 Tagen zu.",
+      "description": "Schadenbearbeitung fehlt in Anhang III. Art. 22 DSGVO bindet sie trotzdem. Nur 24 % der Versicherer trauen sich eine Governance-Prüfung in 90 Tagen zu.",
       "h1": "KI in der Schadenbearbeitung ist nach dem EU AI Act nicht hochriskant. Das bindet sie stattdessen.",
       "breadcrumb": "KI in der Schadenbearbeitung und der EU AI Act",
       "ogTitle": "KI in der Schadenbearbeitung ist nach dem EU AI Act nicht hochriskant. Das bindet sie stattdessen.",
-      "ogDescription": "Schadenbearbeitung fehlt in Anhang III. DSGVO Artikel 22 bindet sie trotzdem. Nur 24 % der Versicherer trauen sich eine Governance-Prüfung in 90 Tagen zu.",
+      "ogDescription": "Schadenbearbeitung fehlt in Anhang III. Art. 22 DSGVO bindet sie trotzdem. Nur 24 % der Versicherer trauen sich eine Governance-Prüfung in 90 Tagen zu.",
       "updated": "2026-11-05"
     },
     "/blog/integration-playbook": {
@@ -435,7 +435,7 @@
     "/blog": {
       "title": "Blog: Prüfbare KI in der Schadenbearbeitung | True Aim",
       "description": "Artikel von True Aim über prüfbare KI, Schadenautomatisierung, KI-Regulatorik in der Versicherung und den Weg von Schaden-KI vom Piloten in die Produktion.",
-      "h1": "Einblicke und technische Deep Dives",
+      "h1": "Einblicke und technische Vertiefungen",
       "breadcrumb": "Blog",
       "ogTitle": "Der Blog von True Aim",
       "ogDescription": "Artikel über prüfbare KI, Schadenautomatisierung, KI-Regulatorik in der Versicherung und den Weg von Schaden-KI vom Piloten in die Produktion.",

@@ -10,7 +10,7 @@ export type Faq = {
 
 export const faqs: Faq[] = [
   {
-    question: "Un modello linguistico dovrebbe calcolare l’importo di un sinistro?",
+    question: "Un modello linguistico dovrebbe calcolare l’indennizzo di un sinistro?",
     answer:
       "No. Franchigie, limiti e ripartizioni di responsabilità hanno una sola risposta corretta una volta fissati i fatti. Spettano a regole deterministiche.",
   },
@@ -22,7 +22,7 @@ export const faqs: Faq[] = [
   {
     question: "Le regole possono gestire ogni sinistro?",
     answer:
-      "Non da sole. Non sono progettate per questo. Dove mancano prove, il sistema le richiede. Dove il testo è ambiguo, un modello abbina la voce sotto un’etichetta probabilistica. Dove un sinistro supera una soglia, un liquidatore lo esamina con tutti i fatti, le clausole e le ipotesi in vista.",
+      "Non da sole. Non sono progettate per questo. Dove mancano prove, il sistema le richiede. Dove il testo è ambiguo, un modello abbina la voce sotto un’etichetta probabilistica. Dove un sinistro supera una soglia, un liquidatore lo esamina con tutti i fatti, le clausole e le ipotesi sotto gli occhi.",
   },
   {
     question: "Come si verifica se un sistema rispetta il confine?",

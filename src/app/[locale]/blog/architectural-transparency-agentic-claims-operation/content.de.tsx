@@ -110,7 +110,7 @@ const pillars = [
     label: "Prüfung & Governance",
     cells: [
       "Kontinuierliche Protokollierung von Entscheidungen, Quellmaterial und aufsichtsrechtlichen Kriterien.",
-      "Erzeugt ein sofortiges, unveränderliches Prüfpaket. Verteidigungsfähig von Grund auf.",
+      "Erzeugt ein sofortiges, unveränderliches Prüfpaket. Belastbar von Grund auf.",
     ],
   },
 ];
@@ -164,7 +164,7 @@ const roadmap: NumberedItem[] = [
   },
   {
     title: "Begründungen in einfacher Sprache erzwingen",
-    body: "Die Aufzeichnung von Entscheidungen ohne klare Begründung in einfacher Sprache untersagen. Ein Systemprotokoll ohne explizite Begründung ist bloß digitaler Abgas, keine rechtliche Verteidigung.",
+    body: "Die Aufzeichnung von Entscheidungen ohne klare Begründung in einfacher Sprache untersagen. Ein Systemprotokoll ohne explizite Begründung ist bloß digitales Abgas, keine rechtliche Verteidigung.",
   },
   {
     title: "Die Urteilsdividende reinvestieren",
@@ -336,7 +336,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                     Zusammenfassung
                   </h2>
                   <p className="text-body leading-[1.6]">
-                    Ein Schadenfall existierte nie innerhalb der vier Wände eines einzelnen Unternehmens. Versicherungsnehmer, Underwriter, Zeichnungsbevollmächtigter, Fachreparaturbetrieb und forensischer Schadenregulierer halten jeweils souveräne Fragmente einer ungeteilten Wahrheit. Die bisherige Automatisierung endete an internen Grenzen, beschleunigte einzelne Arbeitsplätze und ließ das weitere Ökosystem im administrativen Stillstand zurück. Der Weg nach vorn ist kein weiterer Chatbot als Punktlösung und kein automatisierter Posteingang. Es ist ein agentisches Betriebssystem, verankert in einer einheitlichen Akte, das die Ausführung über mehrere Parteien unter mathematischen Berechtigungen orchestriert, wobei jeder Ermessensakt mit Herkunftsnachweis auf Positionsebene protokolliert wird. Transparenz ist dann keine Gefälligkeit mehr. Sie wird zur architektonischen Garantie.
+                    Ein Schadenfall existierte nie innerhalb der vier Wände eines einzelnen Unternehmens. Versicherungsnehmer, Underwriter, Zeichnungsbevollmächtigter, Fachreparaturbetrieb und forensischer Schadenregulierer halten jeweils souveräne Fragmente einer Wahrheit, die niemand teilt. Die bisherige Automatisierung endete an internen Grenzen, beschleunigte einzelne Arbeitsplätze und ließ das weitere Ökosystem im administrativen Stillstand zurück. Der Weg nach vorn ist kein weiterer Chatbot als Punktlösung und kein automatisierter Posteingang. Es ist ein agentisches Betriebssystem, verankert in einer einheitlichen Akte, das die Ausführung über mehrere Parteien unter mathematischen Berechtigungen orchestriert, wobei jeder Ermessensakt mit Herkunftsnachweis auf Positionsebene protokolliert wird. Transparenz ist dann keine Gefälligkeit mehr. Sie wird zur architektonischen Garantie.
                   </p>
                 </div>
 
@@ -351,7 +351,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 </p>
 
                 <p className="text-body leading-[1.6]">
-                  Die Stunden, die ein interner Sachbearbeiter zurückgewann, waren immer der kleinere Gewinn. Die eigentliche Grenze ist, was eine Schadenorganisation wird, wenn der systemische Navigationsaufwand, der manuelle Kraftakt, Fakten über Unternehmensgrenzen hinweg abzugleichen, konstruktiv aus der Welt geschafft wird.
+                  Die Stunden, die ein interner Sachbearbeiter zurückgewann, waren immer der kleinere Gewinn. Das eigentliche Neuland ist, was eine Schadenorganisation wird, wenn der systemische Navigationsaufwand, der manuelle Kraftakt, Fakten über Unternehmensgrenzen hinweg abzugleichen, konstruktiv aus der Welt geschafft wird.
                 </p>
               </MotionDiv>
 
@@ -379,12 +379,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 <ClaimChainDiagram />
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Because no participant possesses the complete factual matrix,
-                  each organisation maintains its own defensive shadow file.
-                  The claim is dismantled, translated and reassembled at every
-                  border it crosses. Status is negotiated over telephone lines.
-                  Quotations cross corporate firewalls as static PDFs.
-                  Approvals return as unindexed correspondence.
+                  Weil kein Beteiligter über die vollständige Faktenlage verfügt, führt jede Organisation ihre eigene defensive Schattenakte. Der Schadenfall wird an jeder Grenze, die er überquert, zerlegt, übersetzt und wieder zusammengesetzt. Der Status wird am Telefon ausgehandelt. Kostenvoranschläge passieren Unternehmens-Firewalls als statische PDFs. Freigaben kommen als unindexierte Korrespondenz zurück.
                 </p>
 
                 <p className="text-body leading-[1.6]">
@@ -462,7 +457,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 <NumberedCards items={priceSteps} />
 
                 <p className="text-body leading-[1.6] mt-8 mb-5">
-                  Wenn ein Dienstleister einen Kostenvoranschlag vor dem Versand am Marktreferenzpreis prüfen kann, verändert sich die Beziehung. Eine Bitte um Neuausstellung ist kein gegnerischer Streit mehr; sie ist ein objektiver, automatisierter Abgleich. Die zugrunde liegenden Verteilungsmodelle verfeinern sich dynamisch mit jeder entschiedenen Regulierung.
+                  Wenn ein Dienstleister einen Kostenvoranschlag vor dem Versand anhand des Marktreferenzpreises prüfen kann, verändert sich die Beziehung. Eine Bitte um Neuausstellung ist kein gegnerischer Streit mehr; sie ist ein objektiver, automatisierter Abgleich. Die zugrunde liegenden Verteilungsmodelle verfeinern sich dynamisch mit jeder entschiedenen Regulierung.
                 </p>
 
                 <p className="text-body leading-[1.6]">
@@ -499,7 +494,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                   Das ist das Betriebsmodell des Spitzenversicherers: Vermittler belegen die Einhaltung der Zeichnungsvollmacht über Live-Daten statt über Jahresprüfungen. Reparaturnetzwerke tauschen Reibung gegen Zahlungsgeschwindigkeit. Stellt die Versicherungsaufsicht eine förmliche Anfrage, legt der Versicherer in Sekunden eine vollständige Entscheidungsakte vor, statt in Panik über Monate eine forensische Rekonstruktion zusammenzustellen.
                 </p>
 
-                <PullQuote>In Minuten entschieden. Über Jahre verteidigt.</PullQuote>
+                <PullQuote>In Minuten entschieden. Über Jahre belastbar.</PullQuote>
               </MotionDiv>
 
               {/* The judgement dividend */}
@@ -594,7 +589,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 </div>
 
                 <p className="text-body-lg text-strong mt-8">
-                  Welche architektonischen Grenzen in Ihrer bestehenden Schadeninfrastruktur erzeugen heute den größten administrativen Aufwand? Lassen Sie uns in den Kommentaren austauschen.
+                  Welche architektonischen Grenzen in Ihrer bestehenden Schadeninfrastruktur erzeugen heute den größten administrativen Aufwand? Tauschen wir uns in den Kommentaren aus.
                 </p>
               </MotionDiv>
 
@@ -660,7 +655,7 @@ export default async function ArchitecturalTransparencyBlogPost({
               strokeWidth={1.5}
             />
             <h2 className="font-display text-3xl md:text-4xl font-bold text-strong mb-6">
-              In Minuten entschieden. Über Jahre verteidigt.
+              In Minuten entschieden. Über Jahre belastbar.
             </h2>
             <p className="text-lg text-body mb-10">
               Besprechen Sie mit uns, was eine gemeinsame Schadenakte in Ihrer Schadenbearbeitung verändern würde.

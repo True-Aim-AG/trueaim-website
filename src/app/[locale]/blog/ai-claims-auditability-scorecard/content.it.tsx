@@ -158,7 +158,7 @@ export default async function AuditabilityScorecardBlogPost({
                       <span aria-hidden="true" className="text-accent mt-1">&bull;</span>
                       <span>
                         <strong className="text-strong">
-                          Le scadenze «alto rischio» dell’AI Act europeo sono state spostate a dicembre 2027.
+                          Le scadenze «alto rischio» dell’AI Act europeo (regolamento europeo sull’IA) sono state spostate a dicembre 2027.
                         </strong>{" "}
                         La gestione dei sinistri non è mai stata in quell’elenco, e il GDPR disciplina le decisioni automatizzate dal 2018.
                       </span>
@@ -198,7 +198,7 @@ export default async function AuditabilityScorecardBlogPost({
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Il calendario normativo ha offerto di recente un pretesto per rimandarla. Nel luglio 2026 l’Unione europea ha differito la maggior parte degli obblighi «alto rischio» dell’AI Act, a dicembre 2027 per i sistemi autonomi. La gestione dei sinistri non è mai rientrata tra gli usi che il regolamento classifica ad alto rischio, e i diritti di una persona soggetta a una decisione esclusivamente automatizzata, compreso il diritto a informazioni significative sulla logica utilizzata, si applicano ai sensi del GDPR dal 2018. Il differimento cambia il calendario per altri sistemi. Non cambia ciò che un’organizzazione sinistri deve alle persone sui cui sinistri decide. Abbiamo esposto i dettagli separatamente nel{" "}
+                  Il calendario normativo ha offerto di recente un pretesto per rimandarla. Nel luglio 2026 l’Unione europea ha differito la maggior parte degli obblighi «alto rischio» dell’AI Act, a dicembre 2027 per i sistemi indipendenti. La gestione dei sinistri non è mai rientrata tra gli usi che il regolamento classifica ad alto rischio, e i diritti di una persona soggetta a una decisione esclusivamente automatizzata, compreso il diritto a informazioni significative sulla logica utilizzata, si applicano ai sensi del GDPR dal 2018. Il differimento cambia il calendario per altri sistemi. Non cambia ciò che un’organizzazione sinistri deve alle persone sui cui sinistri decide. Abbiamo esposto i dettagli separatamente nel{" "}
                   <Link
                     href="/blog/ai-claims-handling-eu-ai-act-high-risk"
                     className="text-link underline underline-offset-2"
@@ -308,7 +308,7 @@ export default async function AuditabilityScorecardBlogPost({
 
                 <div className="mt-6 border-l-2 border-ta-blue pl-6">
                   <p className="text-body-lg text-strong">
-                    Questo significa avere la conformità integrata dal primo sinistro. Il giudizio resta a voi. L’aritmetica, il testo e le prove non devono più restarvi.
+                    Questo significa avere la conformità integrata dal primo sinistro. Il giudizio resta a voi. L’aritmetica, il testo e le prove non devono più restare con voi.
                   </p>
                 </div>
               </MotionDiv>
@@ -471,10 +471,10 @@ export default async function AuditabilityScorecardBlogPost({
                       href="/blog/why-claims-ai-pilots-stall"
                       className="font-display font-medium text-link hover:underline"
                     >
-                      Perché i piloti di IA per i sinistri si bloccano prima di essere pronti per la produzione
+                      Perché i progetti pilota di IA per i sinistri si bloccano prima di essere pronti per la produzione
                     </Link>
                     <p className="text-sm text-subtle mt-1">
-                      Perché i test su sinistri mai visti decidono se un pilota arriva in produzione.
+                      Perché i test su sinistri mai visti decidono se un progetto pilota arriva in produzione.
                     </p>
                   </div>
                   <div className="bg-card shadow-card rounded-pill p-8">

@@ -66,22 +66,22 @@ const regimeRows: [string, string, string][] = [
 
 const governanceStats: { value: string; label: string }[] = [
   {
-    value: "61%",
+    value: "61 %",
     label:
       "des dirigeants d’assurance disent que leur conseil a établi des politiques de gouvernance de l’IA.",
   },
   {
-    value: "68%",
+    value: "68 %",
     label:
       "disent que leurs contrôles de l’IA existent, mais que les preuves sont fragmentées entre équipes et outils.",
   },
   {
-    value: "24%",
+    value: "24 %",
     label:
-      "sont très confiants de pouvoir passer une revue indépendante de la gouvernance de l’IA sous 90 jours.",
+      "sont très confiants de pouvoir réussir une revue indépendante de la gouvernance de l’IA sous 90 jours.",
   },
   {
-    value: "44%",
+    value: "44 %",
     label:
       "disent que des difficultés de gouvernance ou de conformité ont contribué à l’échec ou à la sous-performance de projets d’IA.",
   },
@@ -90,15 +90,15 @@ const governanceStats: { value: string; label: string }[] = [
 const faqs: { q: string; a: React.ReactNode }[] = [
   {
     q: "La gestion des sinistres par IA est-elle à haut risque au sens de l’AI Act européen ?",
-    a: "Non. L’annexe III ne mentionne pas la gestion des sinistres. Le point 5(c) ne couvre que l’évaluation des risques et la tarification en assurance vie et santé. Le projet de lignes directrices de la Commission sur la classification, du 19 mai 2026, cite la gestion des sinistres comme exemple de système sortant de ce point, même pour des produits d’assurance santé. Une activité de gestion de sinistres auto, habitation, garantie ou entreprises échappe au régime haut risque, tout en restant soumise au droit de la protection des données et au droit sectoriel de l’assurance.",
+    a: "Non. L’annexe III ne mentionne pas la gestion des sinistres. Le point 5, c) ne couvre que l’évaluation des risques et la tarification en assurance vie et santé. Le projet de lignes directrices de la Commission sur la classification, du 19 mai 2026, cite la gestion des sinistres comme exemple de système sortant de ce point, même pour des produits d’assurance santé. Une activité de gestion de sinistres auto, habitation, garantie ou entreprises échappe au régime haut risque, tout en restant soumise au droit de la protection des données et au droit sectoriel de l’assurance.",
   },
   {
     q: "La gestion des sinistres par IA est-elle à haut risque en assurance santé ?",
-    a: "Non. L’assurance santé est le test le plus exigeant de la règle, car la souscription dans cette branche est à haut risque. Le projet de lignes directrices de la Commission y place pourtant la gestion des sinistres hors du point 5(c), au motif que vérifier une demande au regard des conditions de la police ou déterminer le montant à payer est distinct de l’évaluation des risques ou de la tarification.",
+    a: "Non. L’assurance santé est le test le plus exigeant de la règle, car la souscription dans cette branche est à haut risque. Le projet de lignes directrices de la Commission y place pourtant la gestion des sinistres hors du point 5, c), au motif que vérifier une demande au regard des conditions de la police ou déterminer le montant à payer est distinct de l’évaluation des risques ou de la tarification.",
   },
   {
     q: "Le report à décembre 2027 s’applique-t-il à la gestion des sinistres ?",
-    a: "Il n’a aucun effet sur elle. L’omnibus numérique a reporté la date à laquelle les obligations haut risque commencent à s’appliquer. Il n’a pas changé quels systèmes sont à haut risque. La gestion des sinistres n’en faisait pas partie, ni avant ni après le report.",
+    a: "Il n’a aucun effet sur elle. L’omnibus numérique a reporté la date à laquelle les obligations haut risque commencent à s’appliquer. Il n’a pas modifié la liste des systèmes à haut risque. La gestion des sinistres n’en faisait pas partie, ni avant ni après le report.",
   },
   {
     q: "Qu’a changé le règlement (UE) 2026/1744 ?",
@@ -116,11 +116,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
     q: "Que devez-vous divulguer sur la logique d’une décision automatisée ?",
     a: (
       <>
-        In <em>Dun &amp; Bradstreet Austria</em> (C-203/22) the CJEU required the
-        procedure and principles actually applied, communicated concisely and
-        intelligibly, including how the outcome would differ had the data been
-        different. Supplying the algorithm itself does not discharge the duty. A
-        trade secret does not permit a blanket refusal.
+        Dans <em>Dun &amp; Bradstreet Austria</em> (C-203/22), la CJUE a exigé la procédure et les principes effectivement appliqués, communiqués de façon concise et intelligible, y compris la façon dont le résultat aurait différé si les données avaient été différentes. Fournir l’algorithme lui-même ne suffit pas à s’acquitter de l’obligation. Un secret d’affaires ne permet pas un refus général.
       </>
     ),
   },
@@ -150,7 +146,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
-        <TextureBackdrop texture={{ name: "circ", position: "88% 78%" }} />
+        <TextureBackdrop texture={{ name: "circ", position: "88 % 78 %" }} />
 
         <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
@@ -174,7 +170,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
             {/* Subtitle */}
             <p className="text-lede text-body mb-8">
-              La gestion des sinistres est absente de l’annexe III. L’article 22 du RGPD l’encadre quand même. Seuls 24 % des assureurs disent pouvoir passer une revue de gouvernance en 90 jours.
+              La gestion des sinistres est absente de l’annexe III. L’article 22 du RGPD l’encadre quand même. Seuls 24 % des assureurs disent pouvoir réussir une revue de gouvernance en 90 jours.
             </p>
 
             {/* Meta */}
@@ -211,7 +207,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                         <strong className="text-strong">
                           La gestion des sinistres n’est pas dans l’annexe III.
                         </strong>{" "}
-                        Le projet de lignes directrices de la Commission sur la classification cite lui-même la gestion des sinistres comme exemple de système sortant du point 5(c), et il prend l’assurance santé, la seule branche où la souscription{" "}
+                        Le projet de lignes directrices de la Commission sur la classification cite lui-même la gestion des sinistres comme exemple de système sortant du point 5, c), et il prend l’assurance santé, la seule branche où la souscription{" "}
                         <em>est</em> à haut risque, pour faire la démonstration.
                       </span>
                     </li>
@@ -230,7 +226,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                         <strong className="text-strong">
                           C’est l’article 22 du RGPD qui encadre
                         </strong>
-                        . Il s’applique depuis le 25 mai 2018. Un sinistre refusé ou réduit s’y trouve de plain-pied. Les opérations suisses et britanniques relèvent de leurs propres équivalents.
+                        . Il s’applique depuis le 25 mai 2018. Un sinistre refusé ou réduit en relève pleinement. Les opérations suisses et britanniques relèvent de leurs propres équivalents.
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -255,7 +251,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </div>
 
                 <p className="text-body-lg text-strong mb-6">
-                  Le 24 juillet 2026, l’omnibus numérique sur l’IA a été publié au Journal officiel sous la forme du règlement (UE) 2026/1744. Il est entré en vigueur trois jours plus tard. Les obligations haut risque pour les systèmes autonomes de l’annexe III passent du 2 août 2026 au 2 décembre 2027. Pour l’IA intégrée à des produits réglementés, du 2 août 2027 au 2 août 2028.
+                  Le 24 juillet 2026, l’omnibus numérique sur l’IA a été publié au Journal officiel sous la forme du règlement (UE) 2026/1744. Il est entré en vigueur trois jours plus tard. Les obligations haut risque de l’AI Act (règlement européen sur l’IA) pour les systèmes autonomes de l’annexe III passent du 2 août 2026 au 2 décembre 2027. Pour l’IA intégrée à des produits réglementés, du 2 août 2027 au 2 août 2028.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
@@ -293,22 +289,22 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </p>
 
                 <p className="text-body leading-[1.6] mb-6">
-                  La Commission le dit désormais elle-même. Son projet de lignes directrices sur la classification des systèmes d’IA à haut risque, publié le 19 mai 2026 et ouvert à consultation jusqu’au 23 juin, présente des exemples travaillés des deux côtés de la ligne.
+                  La Commission le dit désormais elle-même. Son projet de lignes directrices sur la classification des systèmes d’IA à haut risque, publié le 19 mai 2026 et ouvert à consultation jusqu’au 23 juin, présente des exemples détaillés des deux côtés de la ligne.
                 </p>
 
                 <div className="bg-card shadow-card rounded-pill p-8 mb-8">
                   <h3 className="text-caption-sm text-subtle mb-4">
-                    Annexe III, point 5(c) : les exemples travaillés de la Commission
+                    Annexe III, point 5, c) : les exemples détaillés de la Commission
                   </h3>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="border-b border-hairline">
                           <th className="text-left py-3 pr-4 font-display font-medium text-strong align-top">
-                            Dans le point 5(c) : haut risque
+                            Dans le point 5, c) : haut risque
                           </th>
                           <th className="text-left py-3 font-display font-medium text-strong align-top">
-                            Hors du point 5(c)
+                            Hors du point 5, c)
                           </th>
                         </tr>
                       </thead>
@@ -333,13 +329,13 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
 
                 <blockquote className="border-l-2 border-ta-blue pl-6 mb-6">
                   <p className="text-body-lg text-strong italic">
-                    Ces cas d’usage sont distincts de la réalisation d’une évaluation des risques ou d’une tarification, même si leur résultat peut affecter la jouissance de l’assurance santé.
+                    Ces cas d’usage sont distincts de la réalisation d’une évaluation des risques ou d’une tarification, même si leur résultat peut affecter le bénéfice de l’assurance santé.
                   </p>
                 </blockquote>
 
                 <p className="text-body leading-[1.6] mb-5">
                   Notez quelle branche cet exemple utilise. L’assurance santé est le seul endroit où la souscription <em>est</em>{" "}
-                  à haut risque. La gestion des sinistres sort du cas d’usage même là. Les lignes directrices sont un projet et ne sont pas contraignantes. La Commission dit explicitement que l’interprétation authentique de l’AI Act appartient à la Cour de justice. Mais elles sont la déclaration officielle la plus claire disponible et elles vont dans le même sens.
+                  à haut risque. La gestion des sinistres sort du cas d’usage même là. Les lignes directrices sont un projet et ne sont pas contraignantes. La Commission dit explicitement que l’interprétation qui fait autorité revient à la Cour de justice. Mais elles sont la déclaration officielle la plus claire disponible et elles vont dans le même sens.
                 </p>
 
                 <p className="text-body leading-[1.6]">
@@ -534,7 +530,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  L’{" "}
+                  L’
                   <em>avis de l’EIOPA sur la gouvernance et la gestion des risques de l’IA</em>{" "}
                   (EIOPA-BoS-25-360, 6 août 2025) s’adresse aux superviseurs nationaux et traite spécifiquement des systèmes d’IA en assurance qui ne sont ni interdits ni à haut risque au sens de l’AI Act. Il s’appuie sur la directive sur la distribution d’assurances, Solvabilité II, le règlement sur la résilience opérationnelle numérique et les règlements délégués Solvabilité II et DDA, pas sur l’AI Act.
                 </p>
@@ -544,7 +540,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Dans ce cadre, les entreprises doivent veiller à ce que les résultats des systèmes d’IA puissent être expliqués de façon utile et conserver des enregistrements appropriés des données d’entraînement et de test ainsi que des méthodologies de modélisation, afin de permettre la reproductibilité et la traçabilité. Les attentes sont proportionnées à l’impact : limitées pour les systèmes qui touchent à peine les clients, plus strictes pour ceux qui les touchent.
+                  Dans ce cadre, les entreprises devraient veiller à ce que les résultats des systèmes d’IA puissent être expliqués de façon utile et conserver des enregistrements appropriés des données d’entraînement et de test ainsi que des méthodologies de modélisation, afin de permettre la reproductibilité et la traçabilité. Les attentes sont proportionnées à l’impact : limitées pour les systèmes qui touchent à peine les clients, plus strictes pour ceux qui les touchent.
                 </p>
 
                 <p className="text-body leading-[1.6]">
@@ -562,7 +558,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  L’autorité de protection des données de Hambourg a infligé à un prestataire de services financiers une amende de 492 000 EUR, rapportée le 30 septembre 2025. L’entreprise rejetait automatiquement des demandes de carte de crédit, y compris de demandeurs à la solvabilité manifestement bonne, sans contrôle humain. Le constat du régulateur n’était pas que le modèle avait tort. C’était que l’entreprise n’expliquait pas correctement la logique de ses décisions algorithmiques et ne donnait pas un accès suffisant au raisonnement sous-jacent quand on le lui demandait.
+                  L’autorité de protection des données de Hambourg a infligé à un prestataire de services financiers une amende de 492 000 EUR, rapportée le 30 septembre 2025. L’entreprise rejetait automatiquement des demandes de carte de crédit, y compris de demandeurs à la solvabilité manifestement bonne, sans contrôle humain. Le constat de l’autorité de contrôle n’était pas que le modèle avait tort. C’était que l’entreprise n’expliquait pas correctement la logique de ses décisions algorithmiques et ne donnait pas un accès suffisant au raisonnement sous-jacent quand on le lui demandait.
                 </p>
 
                 <p className="text-body leading-[1.6]">
@@ -716,7 +712,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                         <strong className="text-strong">
                           La gestion des sinistres n’est pas listée à l’annexe III.
                         </strong>{" "}
-                        Seules l’évaluation des risques et la tarification vie et santé y figurent, au point 5(c). Le projet de lignes directrices de la Commission sur la classification, du 19 mai 2026, cite la gestion des sinistres comme exemple de système sortant de ce point, même en assurance santé.
+                        Seules l’évaluation des risques et la tarification vie et santé y figurent, au point 5, c). Le projet de lignes directrices de la Commission sur la classification, du 19 mai 2026, cite la gestion des sinistres comme exemple de système sortant de ce point, même en assurance santé.
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -740,7 +736,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                         <strong className="text-strong">
                           L’article 22 du RGPD est la contrainte qui s’impose dans l’UE
                         </strong>
-                        . Il s’applique depuis le 25 mai 2018. Un sinistre refusé ou réduit s’y trouve de plain-pied. Les opérations suisses et britanniques relèvent de leurs propres équivalents.
+                        . Il s’applique depuis le 25 mai 2018. Un sinistre refusé ou réduit en relève pleinement. Les opérations suisses et britanniques relèvent de leurs propres équivalents.
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -764,7 +760,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                         <strong className="text-strong">
                           Une politique n’est pas une preuve.
                         </strong>{" "}
-                        61 % des assureurs ont des politiques de gouvernance de l’IA au niveau du conseil ; 24 % pensent pouvoir passer une revue de gouvernance en 90 jours.
+                        61 % des assureurs ont des politiques de gouvernance de l’IA au niveau du conseil ; 24 % pensent pouvoir réussir une revue de gouvernance en 90 jours.
                       </span>
                     </li>
                   </ul>

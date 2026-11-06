@@ -19,7 +19,7 @@ const RELEASES: Release[] = [
     date: "2026-05-20",
     groups: {
       Features: [
-        "Le sessioni ora si rinnovano in modo continuo entro una finestra di 24 ore di inattività / 7 giorni massimi, e gli utenti vengono disconnessi automaticamente in caso di errori di autenticazione, per una migliore igiene delle sessioni.",
+        "Le sessioni ora si rinnovano in modo continuo entro una finestra di 24 ore di inattività / limite massimo di 7 giorni, e gli utenti vengono disconnessi automaticamente in caso di errori di autenticazione, per una migliore igiene delle sessioni.",
       ],
       Fixes: [
         "Content Security Policy: allentata la policy sulle origini delle immagini per consentire qualsiasi origine HTTPS, ripristinando il rendering delle risorse fornite dai clienti e servite da CDN esterne.",
@@ -32,7 +32,7 @@ const RELEASES: Release[] = [
     groups: {
       Features: [
         "Un watchdog per i sinistri bloccati fa fallire automaticamente le esecuzioni ferme da più di 20 minuti, così i sinistri bloccati emergono agli operatori invece di restare sospesi a tempo indeterminato.",
-        "Logging strutturato dei worker ed eventi di ciclo di vita a monte della pipeline garantiscono la tracciabilità end-to-end di ogni sinistro.",
+        "Logging strutturato dei worker ed eventi di ciclo di vita a monte della pipeline forniscono la tracciabilità end-to-end di ogni sinistro.",
         "Il Workbench ora evidenzia esplicitamente i sinistri bloccati (in sostituzione del precedente stato «Sconosciuto») e la dashboard si aggiorna in tempo reale mentre le esecuzioni sono in corso.",
         "I super-amministratori possono ora eliminare i sinistri direttamente dalla dashboard.",
       ],
@@ -53,7 +53,7 @@ const RELEASES: Release[] = [
         "Automazione delle release: `release-please` gestisce ora gli incrementi di versione e la creazione delle release su GitHub, dando alla piattaforma una pipeline di release completamente automatizzata e verificabile.",
       ],
       Fixes: [
-        "La tabella dei sinistri del Workbench riflette immediatamente l’esito modificato manualmente e l’importo liquidato subito dopo la finalizzazione di un sinistro.",
+        "La tabella dei sinistri del Workbench riflette l’esito modificato manualmente e l’importo liquidato subito dopo la finalizzazione di un sinistro.",
         "La CSP del frontend consente le origini dei blob SAS, così le anteprime dei documenti dei clienti vengono visualizzate in modo affidabile.",
         "Irrobustita la configurazione di release-please per un calcolo deterministico della versione.",
       ],
@@ -76,7 +76,7 @@ const RELEASES: Release[] = [
         "Irrobustimento delle sessioni: timeout delle sessioni ridotti a valori predefiniti conformi a SOC 2.",
         "Sicurezza del trasporto: fissato TLS 1.2 e aggiunto un middleware per gli header di sicurezza.",
         "Monitoraggio cloud: attivati i livelli Standard di Microsoft Defender for Cloud su tutti i tipi di risorsa rilevanti.",
-        "Audit logging e avvisi: aggiunti avvisi Activity Log, log diagnostici e Storage per gli ambienti di produzione.",
+        "Audit logging e avvisi: aggiunti avvisi su Activity Log, log diagnostici e Storage per gli ambienti di produzione.",
         "Capacità e operazioni: pubblicato un Azure Workbook che copre la pianificazione della capacità e le dashboard operative.",
         "Telemetria di rete: attivati i flow log VNet negli ambienti di produzione e demo.",
         "Sicurezza applicativa: aggiunto il workflow di analisi statica GitHub CodeQL.",

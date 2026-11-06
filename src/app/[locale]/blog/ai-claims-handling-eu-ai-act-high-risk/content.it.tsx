@@ -40,7 +40,7 @@ const regimeRows: [string, string, string][] = [
   [
     "AI Act europeo, capitolo alto rischio (allegato III)",
     "Valutazione del rischio e tariffazione vita e salute. Non la gestione dei sinistri.",
-    "Differito al 2 dicembre 2027 per i sistemi autonomi; 2 agosto 2028 per l’IA integrata in prodotti regolamentati",
+    "Differito al 2 dicembre 2027 per i sistemi indipendenti; 2 agosto 2028 per l’IA integrata in prodotti regolamentati",
   ],
   [
     "GDPR, articolo 22",
@@ -68,7 +68,7 @@ const governanceStats: { value: string; label: string }[] = [
   {
     value: "61%",
     label:
-      "dei dirigenti assicurativi afferma che i propri consigli hanno stabilito politiche di governance dell’IA.",
+      "dei dirigenti assicurativi afferma che i propri consigli di amministrazione hanno stabilito politiche di governance dell’IA.",
   },
   {
     value: "68%",
@@ -102,7 +102,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
   },
   {
     q: "Cosa ha cambiato il regolamento (UE) 2026/1744?",
-    a: "Ha differito gli obblighi ad alto rischio dell’AI Act. I sistemi autonomi dell’allegato III passano dal 2 agosto 2026 al 2 dicembre 2027. L’IA integrata in prodotti regolamentati passa dal 2 agosto 2027 al 2 agosto 2028. È stato pubblicato il 24 luglio 2026 ed è entrato in vigore il 27 luglio 2026.",
+    a: "Ha differito gli obblighi ad alto rischio dell’AI Act. I sistemi indipendenti dell’allegato III passano dal 2 agosto 2026 al 2 dicembre 2027. L’IA integrata in prodotti regolamentati passa dal 2 agosto 2027 al 2 agosto 2028. È stato pubblicato il 24 luglio 2026 ed è entrato in vigore il 27 luglio 2026.",
   },
   {
     q: "L’articolo 22 del GDPR si applica a una decisione automatizzata su un sinistro?",
@@ -116,11 +116,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
     q: "Cosa dovete rivelare sulla logica di una decisione automatizzata?",
     a: (
       <>
-        In <em>Dun &amp; Bradstreet Austria</em> (C-203/22) the CJEU required the
-        procedure and principles actually applied, communicated concisely and
-        intelligibly, including how the outcome would differ had the data been
-        different. Supplying the algorithm itself does not discharge the duty. A
-        trade secret does not permit a blanket refusal.
+        In <em>Dun &amp; Bradstreet Austria</em> (C-203/22) la CGUE ha richiesto la procedura e i principi effettivamente applicati, comunicati in modo conciso e intelligibile, incluso come l’esito sarebbe cambiato se i dati fossero stati diversi. Fornire l’algoritmo in sé non assolve l’obbligo. Un segreto commerciale non consente un rifiuto generalizzato.
       </>
     ),
   },
@@ -255,7 +251,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </div>
 
                 <p className="text-body-lg text-strong mb-6">
-                  Il 24 luglio 2026 l’omnibus digitale sull’IA è stato pubblicato nella Gazzetta ufficiale come regolamento (UE) 2026/1744. È entrato in vigore tre giorni dopo. Gli obblighi ad alto rischio per i sistemi autonomi dell’allegato III passano dal 2 agosto 2026 al 2 dicembre 2027. Per l’IA integrata in prodotti regolamentati, dal 2 agosto 2027 al 2 agosto 2028.
+                  Il 24 luglio 2026 l’omnibus digitale sull’IA è stato pubblicato nella Gazzetta ufficiale come regolamento (UE) 2026/1744. È entrato in vigore tre giorni dopo. Gli obblighi ad alto rischio dell’AI Act (regolamento europeo sull’IA) per i sistemi indipendenti (stand-alone) dell’allegato III passano dal 2 agosto 2026 al 2 dicembre 2027. Per l’IA integrata in prodotti regolamentati, dal 2 agosto 2027 al 2 agosto 2028.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
@@ -289,7 +285,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  La valutazione del rischio e la tariffazione vita e salute rientrano nel campo. La gestione dei sinistri auto, property, garanzia e rami commerciali no.
+                  La valutazione del rischio e la tariffazione vita e salute rientrano nell’ambito di applicazione. La gestione dei sinistri auto, property, garanzia e rami commerciali no.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-6">
@@ -410,7 +406,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </p>
 
                 <p className="text-body leading-[1.6]">
-                  L’articolo 6, paragrafo 4, chiude poi il cerchio. Un fornitore che ritiene un sistema dell’allegato III non ad alto rischio deve documentare tale valutazione prima che il sistema sia immesso sul mercato o messo in servizio, registrarlo comunque ai sensi dell’articolo 49, paragrafo 2, e fornire la documentazione alle autorità nazionali competenti su richiesta. «Non ad alto rischio» è un deposito, non un’assenza di adempimenti.
+                  L’articolo 6, paragrafo 4, chiude poi il cerchio. Un fornitore che ritiene un sistema dell’allegato III non ad alto rischio deve documentare tale valutazione prima che il sistema sia immesso sul mercato o messo in servizio, registrarlo comunque ai sensi dell’articolo 49, paragrafo 2, e fornire la documentazione alle autorità nazionali competenti su richiesta. «Non ad alto rischio» è una dichiarazione da depositare, non un’assenza di adempimenti.
                 </p>
               </MotionDiv>
 
@@ -600,16 +596,16 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </div>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  La lettura di Grant Thornton stessa: «La maggior parte degli assicuratori ha già politiche di governance dell’IA, ma non ha costruito l’infrastruttura operativa per dimostrarle e testarle.»
+                  La lettura di Grant Thornton stessa: «La maggior parte degli assicuratori ha già politiche di governance dell’IA, ma non ha costruito l’infrastruttura operativa per dimostrarle e testarle».
                 </p>
 
                 <p className="text-body leading-[1.6] mb-6">
-                  La distanza tra 61 e 24 è tutto il problema. La stessa frammentazione è ciò che lascia i piloti a un passo dalla produzione, per la stessa ragione: è strutturale e non un difetto di modellazione, e si scopre tardi. Abbiamo trattato quello schema in{" "}
+                  La distanza tra 61 e 24 è tutto il problema. La stessa frammentazione è ciò che lascia i progetti pilota a un passo dalla produzione, per la stessa ragione: è strutturale e non un difetto di modellazione, e si scopre tardi. Abbiamo trattato quello schema in{" "}
                   <Link
                     href="/blog/why-claims-ai-pilots-stall"
                     className="text-link hover:underline"
                   >
-                    perché i piloti di IA per i sinistri si bloccano prima di essere pronti per la produzione
+                    perché i progetti pilota di IA per i sinistri si bloccano prima di essere pronti per la produzione
                   </Link>
                   .
                 </p>
@@ -650,7 +646,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </p>
 
                 <p className="text-body leading-[1.6]">
-                  C’è una conseguenza progettuale che vale la pena di dichiarare chiaramente. Quanto più una decisione si basa su regole deterministiche anziché su un modello, tanto meno di essa va spiegato secondo uno standard comparativo, perché la regola <em>è</em> la spiegazione. In un programma europeo di garanzia auto applichiamo le regole di copertura del cliente a ogni voce di fattura e limitiamo il modello alla lettura dei documenti. È una scelta architetturale con un dividendo di conformità, non una misura di conformità avvitata a posteriori.
+                  C’è una conseguenza progettuale che vale la pena di dichiarare chiaramente. Quanto più una decisione si basa su regole deterministiche anziché su un modello, tanto meno di essa va spiegato secondo uno standard comparativo, perché la regola <em>è</em> la spiegazione. In un programma europeo di garanzia auto applichiamo le regole di copertura del cliente a ogni voce di fattura e limitiamo il modello alla lettura dei documenti. È una scelta architetturale con un dividendo di conformità, non una misura di conformità aggiunta a posteriori.
                 </p>
               </MotionDiv>
 
@@ -812,10 +808,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                       href="/blog/why-claims-ai-pilots-stall"
                       className="font-display font-medium text-link hover:underline"
                     >
-                      Perché i piloti di IA per i sinistri si bloccano prima di essere pronti per la produzione
+                      Perché i progetti pilota di IA per i sinistri si bloccano prima di essere pronti per la produzione
                     </Link>
                     <p className="text-sm text-subtle mt-1">
-                      Le ragioni strutturali per cui i piloti non arrivano in produzione.
+                      Le ragioni strutturali per cui i progetti pilota non arrivano in produzione.
                     </p>
                   </div>
                   <div className="bg-card shadow-card rounded-pill p-8">

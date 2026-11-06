@@ -28,7 +28,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">1. Chi siamo</h2>
               <p className="text-body leading-[1.6]">
-                Questo sito web è gestito da <strong className="text-strong">True Aim AG</strong>, numero di registrazione <strong className="text-strong">CHE-325.128.066</strong>, con sede legale a Zugo, Svizzera. Indirizzo registrato: c/o Yarowa AG, Metallstrasse 9, 6300 Zug, Svizzera. La presente informativa sulla privacy spiega come raccogliamo, utilizziamo e proteggiamo i dati personali quando interagite con il nostro sito web.
+                Questo sito web è gestito da <strong className="text-strong">True Aim AG</strong>, numero di registrazione <strong className="text-strong">CHE-325.128.066</strong>, con sede legale a Zugo, Svizzera. Indirizzo della sede legale: c/o Yarowa AG, Metallstrasse 9, 6300 Zug, Svizzera. La presente informativa sulla privacy spiega come raccogliamo, utilizziamo e proteggiamo i dati personali quando interagite con il nostro sito web.
               </p>
             </section>
 
@@ -77,14 +77,14 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">8. Sicurezza dei dati</h2>
               <p className="text-body leading-[1.6]">
-                Adottiamo misure tecniche e organizzative adeguate per proteggere i dati personali da accessi non autorizzati, perdita o uso improprio. Sebbene nessun sistema possa essere garantito come completamente sicuro, prendiamo sul serio la protezione dei dati e ci impegniamo a predisporre le salvaguardie appropriate.
+                Adottiamo misure tecniche e organizzative adeguate per proteggere i dati personali da accessi non autorizzati, perdita o uso improprio. Sebbene nessun sistema possa essere garantito come completamente sicuro, prendiamo sul serio la protezione dei dati e ci adoperiamo per predisporre le misure di salvaguardia appropriate.
               </p>
             </section>
 
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">9. I vostri diritti</h2>
               <p className="text-body leading-[1.6]">
-                A seconda del luogo in cui vi trovate e della legge applicabile, potete avere il diritto di richiedere l’accesso ai vostri dati personali, di chiederne la rettifica o la cancellazione, di opporvi al trattamento o di limitarlo, o di revocare il consenso. Le richieste possono essere inviate contattandoci a{" "}
+                A seconda del luogo in cui vi trovate e della legge applicabile, potreste avere il diritto di richiedere l’accesso ai vostri dati personali, di chiederne la rettifica o la cancellazione, di opporvi al trattamento o di limitarlo, o di revocare il consenso. Le richieste possono essere inviate contattandoci a{" "}
                 <a href="mailto:info@trueaim.ai" className="text-link hover:underline font-medium">
                   info@trueaim.ai
                 </a>.
@@ -94,9 +94,9 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">10. Sudafrica e POPIA</h2>
               <p className="text-body leading-[1.6]">
-                Quando i dati personali vengono trattati in Sudafrica o dal Sudafrica, adottiamo misure per conformarci al Protection of Personal Information Act (POPIA). Il nostro{" "}
+                Quando i dati personali vengono trattati in Sudafrica o dal Sudafrica, adottiamo misure per allinearci al Protection of Personal Information Act (POPIA). Il nostro{" "}
                 <Link href="/paia" className="text-link hover:underline">
-                  manuale PAIA
+                  Manuale PAIA
                 </Link>{" "}
                 fornisce ulteriori informazioni sulle richieste di accesso alle informazioni ai sensi del diritto sudafricano.
               </p>

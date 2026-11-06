@@ -12,7 +12,7 @@ export const faqs: Faq[] = [
   {
     question: "Sollte ein Sprachmodell eine Schadenzahlung berechnen?",
     answer:
-      "Nein. Selbstbeteiligungen, Limits und Haftungsquoten haben genau eine richtige Antwort, sobald die Fakten feststehen. Sie gehören zu deterministischen Regeln.",
+      "Nein. Selbstbeteiligungen, Limits und Haftungsquoten haben genau eine richtige Antwort, sobald die Fakten feststehen. Sie sind Sache deterministischer Regeln.",
   },
   {
     question: 'Was bedeutet „probabilistisch“ in einer Schadenakte?',

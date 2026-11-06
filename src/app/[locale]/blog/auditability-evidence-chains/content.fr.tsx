@@ -29,9 +29,9 @@ const fadeIn = {
 
 // Short labels for the "Sur cette page" panel; the H2s carry the full headings.
 const sections: { id: string; heading: string }[] = [
-  { id: "what-regulators-actually-want", heading: "Ce que veulent vraiment les régulateurs" },
+  { id: "what-regulators-actually-want", heading: "Ce que veulent vraiment les autorités de contrôle" },
   { id: "the-evidence-chain-architecture", heading: "L’architecture de la chaîne de preuves" },
-  { id: "quality-gates-the-audit-checkpoint", heading: "Portes de qualité : le point de contrôle d’audit" },
+  { id: "quality-gates-the-audit-checkpoint", heading: "Points de contrôle qualité : le point de contrôle d’audit" },
   { id: "failure-modes-that-break-audit-trails", heading: "Les modes de défaillance qui brisent les pistes d’audit" },
   { id: "regulatory-mapping-quick-reference", heading: "Correspondance réglementaire en bref" },
   { id: "core-principles-for-auditable-ai", heading: "Principes fondamentaux d’une IA auditable" },
@@ -46,7 +46,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
-        <TextureBackdrop texture={{ name: "circ", position: "50% 50%" }} />
+        <TextureBackdrop texture={{ name: "circ", position: "50 % 50 %" }} />
 
         <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
@@ -98,7 +98,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
               <MotionDiv {...fadeIn}>
                 <div className="border-l-2 border-ta-blue pl-6 mb-8">
                   <p className="text-body-lg text-strong">
-                    Quand les régulateurs demandent « pourquoi votre système a-t-il approuvé ce sinistre ? », ils ne veulent pas entendre parler de poids d’attention ou de valeurs SHAP. Ils veulent cliquer sur un champ et voir exactement d’où il vient. Ils veulent réexécuter une décision d’il y a six mois et obtenir la même réponse. Ils veulent savoir quand un humain est intervenu et pourquoi.
+                    Quand les autorités de contrôle demandent « pourquoi votre système a-t-il approuvé ce sinistre ? », ils ne veulent pas entendre parler de poids d’attention ou de valeurs SHAP. Ils veulent cliquer sur un champ et voir exactement d’où il vient. Ils veulent réexécuter une décision d’il y a six mois et obtenir la même réponse. Ils veulent savoir quand un humain est intervenu et pourquoi.
                   </p>
                 </div>
 
@@ -113,7 +113,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
                   id="what-regulators-actually-want"
                   className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
                 >
-                  Ce que veulent vraiment les régulateurs
+                  Ce que veulent vraiment les autorités de contrôle
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
@@ -192,7 +192,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
                       "Chaque décision doit avoir une chaîne de preuves traçable",
                       "Les interventions humaines doivent être consignées avec leur justification",
                       "Vous devez pouvoir reproduire une décision d’il y a 6 mois",
-                      '"Le modèle l’a dit" is not an acceptable explanation',
+                      '« Le modèle l’a dit » n’est pas une explication acceptable',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
@@ -206,7 +206,7 @@ export default async function AuditabilityBlogPost({ params }: { params: Promise
 
                 <div className="mt-6 bg-lilac rounded-pill px-8 py-6">
                   <p className="text-sm font-medium text-accent">
-                    Point clé : les régulateurs ne s’intéressent pas à l’architecture de votre modèle. Ils s’intéressent à votre chaîne de preuves.
+                    Point clé : les autorités de contrôle ne s’intéressent pas à l’architecture de votre modèle. Ils s’intéressent à votre chaîne de preuves.
                   </p>
                 </div>
               </MotionDiv>
@@ -301,7 +301,7 @@ Timestamp: [ISO timestamp]`}</pre>
                     </div>
                   </div>
                   <p className="text-sm text-body leading-[1.6] mb-4">
-                    Chaque intervention humaine doit capturer : décision initiale de l’IA, décision humaine, motif de l’intervention (champ obligatoire), identité du réviseur et horodatage.
+                    Chaque intervention humaine doit consigner : décision initiale de l’IA, décision humaine, motif de l’intervention (champ obligatoire), identité du réviseur et horodatage.
                   </p>
                   <div className="bg-surface-muted rounded-pill p-4 text-xs text-body overflow-x-auto">
                     <pre>{`Original decision: [AI decision with confidence]
@@ -322,11 +322,11 @@ Timestamp: [ISO timestamp]`}</pre>
                   id="quality-gates-the-audit-checkpoint"
                   className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4 scroll-mt-24"
                 >
-                  Portes de qualité : le point de contrôle d’audit
+                  Points de contrôle qualité : le point de contrôle d’audit
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Nous utilisons une porte de qualité à trois états qui détermine quand l’automatisation se poursuit et quand des humains doivent intervenir.
+                  Nous utilisons un point de contrôle qualité à trois états qui détermine quand l’automatisation se poursuit et quand des humains doivent intervenir.
                 </p>
 
                 <div className="space-y-4 mb-8">
@@ -421,7 +421,7 @@ Timestamp: [ISO timestamp]`}</pre>
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Les défaillances suivantes, identifiées lors de nos propres tests, sont celles que les régulateurs sont les plus susceptibles de détecter :
+                  Les défaillances suivantes, identifiées lors de nos propres tests, sont celles que les autorités de contrôle sont les plus susceptibles de détecter :
                 </p>
 
                 <div className="space-y-4 mb-8">
@@ -444,9 +444,9 @@ Timestamp: [ISO timestamp]`}</pre>
                     },
                     {
                       title: "Logique d’approbation par défaut",
-                      symptom: "Précision globale élevée, mais juste pour de mauvaises raisons",
+                      symptom: "Précision globale élevée, mais fausse pour de mauvaises raisons",
                       impact:
-                        'Can\'t explain why approved, just "aucune défaillance trouvée"',
+                        'Impossible d’expliquer l’approbation, juste « aucune défaillance trouvée »',
                       fix: "Exiger une confirmation explicite de couverture, pas l’absence de rejet",
                     },
                   ].map((fm, idx) => (
@@ -493,7 +493,7 @@ Timestamp: [ISO timestamp]`}</pre>
                   <ul className="space-y-3 text-sm text-body">
                     <li>
                       <strong className="text-denied-dark">Valeurs SHAP/LIME :</strong>{" "}
-                      Techniquement intéressantes, sans signification pour les gestionnaires. « La variable X a contribué à 0,3 à la décision » n’est pas une explication.
+                      Techniquement intéressantes, sans signification pour les gestionnaires. « La variable X a contribué pour 0,3 à la décision » n’est pas une explication.
                     </li>
                     <li>
                       <strong className="text-denied-dark">Poids d’attention :</strong>{" "}
@@ -564,7 +564,7 @@ Timestamp: [ISO timestamp]`}</pre>
                         ],
                         [
                           "Reproductibilité",
-                          '"Souvent impossible à reproduire" (the problem)',
+                          '« Souvent impossible à reproduire » (le problème)',
                           "Implicite",
                           "Hachage des entrées, versionnage des modèles",
                         ],
@@ -572,7 +572,7 @@ Timestamp: [ISO timestamp]`}</pre>
                           "Contrôle humain",
                           "Requis pour les décisions significatives",
                           "Requis pour le haut risque",
-                          "Portes de qualité, capture des interventions",
+                          "Points de contrôle qualité, capture des interventions",
                         ],
                         [
                           "Mécanismes de repli",
@@ -693,7 +693,7 @@ Timestamp: [ISO timestamp]`}</pre>
                     },
                     {
                       num: "3",
-                      title: "Documentez vos critères de porte de qualité",
+                      title: "Documentez vos critères de point de contrôle qualité",
                       desc: "Qu’est-ce qui déclenche une revue humaine ?",
                     },
                     {
@@ -722,7 +722,7 @@ Timestamp: [ISO timestamp]`}</pre>
 
                 <div className="mt-8 border-l-2 border-ta-blue pl-6">
                   <p className="text-body-lg text-strong">
-                    L’objectif n’est pas une IA parfaite. C’est une IA défendable : des systèmes où chaque décision peut être expliquée, chaque champ retracé et chaque intervention humaine documentée. C’est ce que veulent les régulateurs. C’est ce que les auditeurs acceptent.
+                    L’objectif n’est pas une IA parfaite. C’est une IA défendable : des systèmes où chaque décision peut être expliquée, chaque champ retracé et chaque intervention humaine documentée. C’est ce que veulent les autorités de contrôle. C’est ce que les auditeurs acceptent.
                   </p>
                 </div>
 
@@ -747,7 +747,7 @@ Timestamp: [ISO timestamp]`}</pre>
                       "Suivi de la provenance du champ à la source",
                       "Piste d’audit des décisions avec hachage des entrées",
                       "Capture des interventions humaines avec justification obligatoire",
-                      "Des portes de qualité qui satisfont les auditeurs",
+                      "Des points de contrôle qualité qui satisfont les auditeurs",
                       "Correspondance de conformité FINMA et AI Act",
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
@@ -810,14 +810,14 @@ Timestamp: [ISO timestamp]`}</pre>
               Vous construisez une IA auditable ?
             </h2>
             <p className="text-lg text-body mb-10">
-              Nous pouvons vous aider à concevoir des architectures de chaîne de preuves qui satisfont régulateurs et auditeurs.
+              Nous pouvons vous aider à concevoir des architectures de chaîne de preuves qui satisfont autorités de contrôle et auditeurs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <ButtonLink href="/contact" variant="primary" size="lg">
                 Nous contacter
               </ButtonLink>
               <ButtonLink href="/case-studies/vehicle-warranty-claims" variant="on-dark" size="lg">
-                Voir en action
+                Découvrir en action
               </ButtonLink>
             </div>
           </MotionDiv>

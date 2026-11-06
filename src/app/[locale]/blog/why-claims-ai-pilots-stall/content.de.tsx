@@ -43,7 +43,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
-        <TextureBackdrop texture={{ name: "circ", position: "50% 50%" }} />
+        <TextureBackdrop texture={{ name: "circ", position: "50 % 50 %" }} />
 
         <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
@@ -78,7 +78,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
               </div>
               <div className="flex items-center gap-2">
                 <BookOpen className="w-4 h-4" strokeWidth={1.5} />
-                Technischer Deep Dive
+                Technische Vertiefung
               </div>
             </div>
           </MotionDiv>
@@ -280,7 +280,7 @@ export default async function WhyClaimsAIPilotsStallBlogPost({ params }: { param
 
                 <div className="bg-lilac rounded-pill px-8 py-6">
                   <p className="text-sm text-body leading-[1.6]">
-                    Fragen Sie Anbieter vor Produktionsgesprächen nach diesen drei Kennzahlen, gemessen auf einem sauber definierten Holdout-Datensatz und aufgeschlüsselt nach Schadenart und Sprache. Können sie diesen Detailgrad nicht liefern, hat der Pilot die operative Reife noch nicht erreicht.
+                    Fragen Sie Anbieter vor Gesprächen über den Produktivbetrieb nach diesen drei Kennzahlen, gemessen auf einem sauber definierten Holdout-Datensatz und aufgeschlüsselt nach Schadenart und Sprache. Können sie diesen Detailgrad nicht liefern, hat der Pilot die operative Reife noch nicht erreicht.
                   </p>
                 </div>
               </MotionDiv>

@@ -43,7 +43,7 @@ function Figure({ label, children }: { label: string; children: React.ReactNode 
 const chain: { party: string; via?: string }[] = [
   { party: "Versicherungsnehmer", via: "Portal" },
   { party: "Makler/MGA", via: "Bordereaux" },
-  { party: "Kernsystem Versicherer", via: "E-Mail/Angebot" },
+  { party: "Kernsystem Versicherer", via: "E-Mail/Kostenvoranschlag" },
   { party: "Reparaturnetzwerk", via: "PDF-Bericht" },
   { party: "Schadenregulierer" },
 ];
@@ -102,7 +102,7 @@ export function SharedRecordDiagram() {
 }
 
 const outcomes: { test: string; result: string; note?: string }[] = [
-  { test: "Innerhalb erwartetem σ", result: "Auto-Cleared" },
+  { test: "Innerhalb des erwarteten σ", result: "Automatisch freigegeben" },
   { test: "Positive Abweichung", result: "Markiert mit Delta", note: "(Grund protokolliert)" },
   { test: "Unstrukturierte Daten", result: "Zurückgestellt für erfahrene Sachbearbeiter" },
 ];

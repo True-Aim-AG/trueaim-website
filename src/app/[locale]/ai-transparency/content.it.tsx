@@ -52,7 +52,7 @@ export default async function AITransparencyPage({ params }: { params: Promise<{
             <section>
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Verificabilità e tracciabilità</h2>
               <p className="text-body leading-[1.6]">
-                I sistemi di True Aim sono progettati per supportare la verificabilità e il riesame a posteriori. Le fasi di elaborazione possono essere registrate in modo da consentire la tracciabilità dagli esiti ai materiali di origine, alle regole applicate e alle configurazioni di sistema in vigore al momento dell’elaborazione. Questa registrazione strutturata è pensata per supportare revisione, garanzia della qualità e analisi di conformità negli ambienti regolamentati.
+                I sistemi di True Aim sono progettati per supportare la verificabilità e il riesame a posteriori. Le fasi di elaborazione possono essere registrate in modo da consentire la tracciabilità dagli esiti ai materiali di origine, alle regole applicate e alle configurazioni di sistema pertinenti in vigore al momento dell’elaborazione. Questa registrazione strutturata è pensata per supportare revisione, garanzia della qualità e analisi di conformità negli ambienti regolamentati.
               </p>
             </section>
 

@@ -46,7 +46,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden lg:flex lg:min-h-[560px] lg:items-center border-b border-hairline bg-page-tint">
-        <TextureBackdrop texture={{ name: "circ", position: "12% 88%" }} />
+        <TextureBackdrop texture={{ name: "circ", position: "12 % 88 %" }} />
 
         <div className="relative w-full max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16">
           <MotionDiv
@@ -287,7 +287,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                       },
                       {
                         title:
-                          "Ihre IT sich auf Integration konzentrieren soll, nicht auf Modellbau",
+                          "Ihre IT sich auf Integration konzentrieren soll, nicht auf Modellentwicklung",
                         desc: "Ihr Wettbewerbsvorteil liegt wahrscheinlich nicht in der KI-Forschung.",
                       },
                     ].map((item) => (
@@ -529,7 +529,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                             Welcher Anteil ist deterministisch, welcher ML?
                           </td>
                           <td className="py-2">
-                            Mehr Deterministik = weniger Risiko
+                            Höherer deterministischer Anteil = geringeres Risiko
                           </td>
                         </tr>
                         <tr className="border-b border-hairline">
@@ -566,7 +566,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                         Kosten & Betrieb
                       </h4>
                       <span className="text-xs font-medium text-accent bg-accent-soft px-3 py-0.5 rounded-pill">
-                        15%
+                        15 %
                       </span>
                     </div>
                     <ul className="text-xs text-body space-y-1">
@@ -582,7 +582,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                         Risiko & Sicherheit
                       </h4>
                       <span className="text-xs font-medium text-accent bg-accent-soft px-3 py-0.5 rounded-pill">
-                        10%
+                        10 %
                       </span>
                     </div>
                     <ul className="text-xs text-body space-y-1">
@@ -737,7 +737,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                     {
                       num: "3",
                       title: "Ihre Scorecard vor dem ersten Anbietergespräch erstellen",
-                      desc: "Lassen Sie Demos Ihre Bewertungskriterien nicht verankern.",
+                      desc: "Lassen Sie sich Ihre Bewertungskriterien nicht von Demos vorgeben.",
                     },
                     {
                       num: "4",
