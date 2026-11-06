@@ -357,6 +357,33 @@
       "ogDescription": "La versione precedente dell’informativa sulla privacy di True Aim AG, conservata per riferimento.",
       "updated": "2026-11-05",
       "robots": "noindex"
+    },
+    "/blog/why-claims-ai-pilots-stall": {
+      "title": "Perché i piloti di IA per i sinistri si bloccano | True Aim",
+      "description": "Molti piloti di IA per i sinistri riportano un’accuratezza elevata ma non arrivano mai in produzione. La causa: disciplina di misurazione e realismo produttivo.",
+      "h1": "Perché i piloti di IA per i sinistri si bloccano prima di essere pronti per la produzione",
+      "breadcrumb": "Perché i piloti di IA si bloccano",
+      "ogTitle": "Perché i piloti di IA per i sinistri si bloccano prima di essere pronti per la produzione",
+      "ogDescription": "Molti piloti di IA per i sinistri riportano un’accuratezza elevata ma non arrivano mai in produzione. La causa: disciplina di misurazione e realismo produttivo.",
+      "updated": "2026-11-05"
+    },
+    "/blog/where-the-language-model-does-not-belong": {
+      "title": "Regole o modello? Il posto dell’IA in un sinistro | True Aim",
+      "description": "Decidere un sinistro è leggere, calcolare e giudicare. Dove un modello linguistico ha posto, dove devono valere le regole e come il fascicolo mostra il confine.",
+      "h1": "Dove il modello linguistico non ha posto",
+      "breadcrumb": "Dove il modello linguistico non ha posto",
+      "ogTitle": "Dove il modello linguistico non ha posto: progettare un’IA difendibile per la gestione dei sinistri",
+      "ogDescription": "Decidere un sinistro è leggere, calcolare e giudicare. Dove un modello linguistico ha posto, dove devono valere le regole e come il fascicolo mostra il confine.",
+      "updated": "2026-11-05"
+    },
+    "/blog/build-vs-buy-idp-vendors": {
+      "title": "Sviluppare o acquistare: cosa esigere dai fornitori di IDP | True Aim",
+      "description": "Un quadro di valutazione per i team assicurativi: quando sviluppare l’automazione dei sinistri, quando acquistarla e come valutare i fornitori oggettivamente.",
+      "h1": "Sviluppare o acquistare: cosa esigere dai fornitori di IDP",
+      "breadcrumb": "Sviluppare o acquistare",
+      "ogTitle": "Sviluppare o acquistare: cosa esigere dai fornitori di IDP",
+      "ogDescription": "Un quadro di valutazione per i team assicurativi: quando sviluppare l’automazione dei sinistri, quando acquistarla e come valutare i fornitori oggettivamente.",
+      "updated": "2026-11-05"
     }
   }
 }

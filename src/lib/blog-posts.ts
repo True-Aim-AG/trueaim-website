@@ -94,3 +94,18 @@ export const blogPosts: BlogPost[] = [
     tags: ["Vendor Evaluation", "Build vs Buy", "IDP", "Claims AI"],
   },
 ];
+
+/** The card copy of a post in another language; anything left out falls back to English. */
+export type BlogPostCopy = Partial<Pick<BlogPost, "title" | "excerpt" | "displayDate" | "readTime" | "category">>;
+
+export const blogPostCopy: Record<string, Record<string, BlogPostCopy>> = {
+  de: {},
+  fr: {},
+  it: {},
+};
+
+/** The posts with their card copy in the given language, English where no translation exists. */
+export function localizedBlogPosts(locale: string): BlogPost[] {
+  const copy = blogPostCopy[locale] ?? {};
+  return blogPosts.map((post) => ({ ...post, ...copy[post.slug] }));
+}

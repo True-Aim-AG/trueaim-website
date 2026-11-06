@@ -357,6 +357,33 @@
       "ogDescription": "Die frühere Fassung der Datenschutzerklärung der True Aim AG, zur Referenz aufbewahrt.",
       "updated": "2026-11-05",
       "robots": "noindex"
+    },
+    "/blog/why-claims-ai-pilots-stall": {
+      "title": "Warum KI-Piloten in der Schadenbearbeitung stecken bleiben | True Aim",
+      "description": "Viele KI-Piloten in der Schadenbearbeitung melden hohe Genauigkeit und erreichen dennoch nie die Produktion. Ursache: Messdisziplin und Produktionsrealismus.",
+      "h1": "Warum KI-Piloten in der Schadenbearbeitung vor der Produktionsreife stecken bleiben",
+      "breadcrumb": "Warum KI-Piloten stecken bleiben",
+      "ogTitle": "Warum KI-Piloten in der Schadenbearbeitung vor der Produktionsreife stecken bleiben",
+      "ogDescription": "Viele KI-Piloten in der Schadenbearbeitung melden hohe Genauigkeit und erreichen dennoch nie die Produktion. Ursache: Messdisziplin und Produktionsrealismus.",
+      "updated": "2026-11-05"
+    },
+    "/blog/where-the-language-model-does-not-belong": {
+      "title": "Regeln oder Modell? Wo KI in eine Schadenentscheidung gehört | True Aim",
+      "description": "Jede Schadenentscheidung besteht aus Lesen, Rechnen und Urteilen. Wo ein Sprachmodell hingehört, wo Regeln gelten müssen und wie die Akte die Grenze zeigt.",
+      "h1": "Wo das Sprachmodell nicht hingehört",
+      "breadcrumb": "Wo das Sprachmodell nicht hingehört",
+      "ogTitle": "Wo das Sprachmodell nicht hingehört: Verteidigungsfähige KI für die Schadenbearbeitung gestalten",
+      "ogDescription": "Jede Schadenentscheidung besteht aus Lesen, Rechnen und Urteilen. Wo ein Sprachmodell hingehört, wo Regeln gelten müssen und wie die Akte die Grenze zeigt.",
+      "updated": "2026-11-05"
+    },
+    "/blog/build-vs-buy-idp-vendors": {
+      "title": "Build vs. Buy: Was Sie von IDP-Anbietern verlangen sollten | True Aim",
+      "description": "Ein Bewertungsraster für Versicherungsteams: wann Schadenautomatisierung selbst entwickeln, wann kaufen und wie Sie Anbieter objektiv beurteilen.",
+      "h1": "Build vs. Buy: Was Sie von IDP-Anbietern verlangen sollten",
+      "breadcrumb": "Build vs. Buy",
+      "ogTitle": "Build vs. Buy: Was Sie von IDP-Anbietern verlangen sollten",
+      "ogDescription": "Ein Bewertungsraster für Versicherungsteams: wann Schadenautomatisierung selbst entwickeln, wann kaufen und wie Sie Anbieter objektiv beurteilen.",
+      "updated": "2026-11-05"
     }
   }
 }

@@ -357,6 +357,33 @@
       "ogDescription": "La version précédente de la politique de confidentialité de True Aim AG, conservée pour référence.",
       "updated": "2026-11-05",
       "robots": "noindex"
+    },
+    "/blog/why-claims-ai-pilots-stall": {
+      "title": "Pourquoi les pilotes d’IA sinistres s’enlisent | True Aim",
+      "description": "Beaucoup de pilotes d’IA sinistres annoncent une précision élevée sans jamais atteindre la production. En cause : mesure et réalisme de production.",
+      "h1": "Pourquoi les pilotes d’IA sinistres s’enlisent avant d’être prêts pour la production",
+      "breadcrumb": "Pourquoi les pilotes d’IA s’enlisent",
+      "ogTitle": "Pourquoi les pilotes d’IA sinistres s’enlisent avant d’être prêts pour la production",
+      "ogDescription": "Beaucoup de pilotes d’IA sinistres annoncent une précision élevée sans jamais atteindre la production. En cause : mesure et réalisme de production.",
+      "updated": "2026-11-05"
+    },
+    "/blog/where-the-language-model-does-not-belong": {
+      "title": "Règles ou modèle ? La place de l’IA dans un sinistre | True Aim",
+      "description": "Décider un sinistre, c’est lire, calculer et juger. Où un modèle de langage a sa place, où les règles doivent tenir et comment le dossier montre la frontière.",
+      "h1": "Là où le modèle de langage n’a pas sa place",
+      "breadcrumb": "Là où le modèle de langage n’a pas sa place",
+      "ogTitle": "Là où le modèle de langage n’a pas sa place : concevoir une IA défendable pour la gestion des sinistres",
+      "ogDescription": "Décider un sinistre, c’est lire, calculer et juger. Où un modèle de langage a sa place, où les règles doivent tenir et comment le dossier montre la frontière.",
+      "updated": "2026-11-05"
+    },
+    "/blog/build-vs-buy-idp-vendors": {
+      "title": "Développer ou acheter : que demander aux fournisseurs d’IDP | True Aim",
+      "description": "Un cadre d’évaluation pour les assureurs : quand développer l’automatisation des sinistres, quand l’acheter et comment juger les fournisseurs objectivement.",
+      "h1": "Développer ou acheter : ce qu’il faut exiger des fournisseurs d’IDP",
+      "breadcrumb": "Développer ou acheter",
+      "ogTitle": "Développer ou acheter : ce qu’il faut exiger des fournisseurs d’IDP",
+      "ogDescription": "Un cadre d’évaluation pour les assureurs : quand développer l’automatisation des sinistres, quand l’acheter et comment juger les fournisseurs objectivement.",
+      "updated": "2026-11-05"
     }
   }
 }

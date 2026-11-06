@@ -5,7 +5,7 @@ import { EnglishOnlyBanner } from "@/components/layout/EnglishOnlyBanner";
 import { Eyebrow } from "@/components/brand/Eyebrow";
 import { ButtonLink } from "@/components/brand/Button";
 import { CARD, CARD_HOVER, PageHero, SECTION, SECTION_LILAC } from "@/components/content";
-import { blogPosts } from "@/lib/blog-posts";
+import { localizedBlogPosts } from "@/lib/blog-posts";
 import type { Metadata } from "next";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -22,8 +22,9 @@ const ARTICLE = cn(CARD, CARD_HOVER, "block h-full p-8");
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const featuredPost = blogPosts.find((post) => post.featured);
-  const otherPosts = blogPosts.filter((post) => !post.featured);
+  const posts = localizedBlogPosts(locale);
+  const featuredPost = posts.find((post) => post.featured);
+  const otherPosts = posts.filter((post) => !post.featured);
 
   return (
     <>
