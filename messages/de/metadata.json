@@ -404,14 +404,42 @@
       "updated": "2026-11-05"
     },
     "/blog/architectural-transparency-agentic-claims-operation": {
-      "title": "Transparenz als Architektur: die agentische Schadenorganisation | True Aim",
-      "description": "Ein Schadenfall existierte nie innerhalb eines einzelnen Unternehmens. Alte Automatisierung endete an internen Grenzen. Transparenz wird zur architektonischen Garantie.",
+      "title": "Transparenz als Architektur der Schadenorganisation | True Aim",
+      "description": "Ein Schadenfall existierte nie in nur einem Unternehmen. Alte Automatisierung endete an internen Grenzen. Transparenz wird zur architektonischen Garantie.",
       "h1": "Das Problem mit der Schadenautomatisierung in Silos",
       "breadcrumb": "Schadenautomatisierung in Silos",
       "ogTitle": "Das Problem mit der Schadenautomatisierung in Silos: Architektonische Transparenz und der Aufstieg der agentischen Schadenorganisation",
-      "ogDescription": "Ein Schadenfall existierte nie innerhalb eines einzelnen Unternehmens. Alte Automatisierung endete an internen Grenzen. Transparenz wird zur architektonischen Garantie.",
+      "ogDescription": "Ein Schadenfall existierte nie in nur einem Unternehmen. Alte Automatisierung endete an internen Grenzen. Transparenz wird zur architektonischen Garantie.",
       "updated": "2026-11-05",
       "ogImage": "https://trueaim.ai/en/blog/architectural-transparency-agentic-claims-operation/opengraph-image"
+    },
+    "/blog/ai-claims-handling-eu-ai-act-high-risk": {
+      "title": "Ist Schaden-KI nach dem EU AI Act hochriskant? | True Aim",
+      "description": "Schadenbearbeitung fehlt in Anhang III. DSGVO Artikel 22 bindet sie trotzdem. Nur 24 % der Versicherer trauen sich eine Governance-Prüfung in 90 Tagen zu.",
+      "h1": "KI in der Schadenbearbeitung ist nach dem EU AI Act nicht hochriskant. Das bindet sie stattdessen.",
+      "breadcrumb": "KI in der Schadenbearbeitung und der EU AI Act",
+      "ogTitle": "KI in der Schadenbearbeitung ist nach dem EU AI Act nicht hochriskant. Das bindet sie stattdessen.",
+      "ogDescription": "Schadenbearbeitung fehlt in Anhang III. DSGVO Artikel 22 bindet sie trotzdem. Nur 24 % der Versicherer trauen sich eine Governance-Prüfung in 90 Tagen zu.",
+      "updated": "2026-11-05"
+    },
+    "/blog/integration-playbook": {
+      "title": "Integrations-Playbook | True Aim",
+      "description": "Wie True Aim sich in bestehende Landschaften einfügt, welche Integrationsmuster wir verwenden und wie eine erste Integration in vier bis sechs Wochen abläuft.",
+      "h1": "Das Integrations-Playbook von True Aim.",
+      "breadcrumb": "Integrations-Playbook",
+      "ogTitle": "Das Integrations-Playbook von True Aim",
+      "ogDescription": "Wie True Aim sich in bestehende Landschaften einfügt und wie eine erste Integration in vier bis sechs Wochen abläuft.",
+      "updated": "2026-11-05",
+      "robots": "noindex, nofollow"
+    },
+    "/blog": {
+      "title": "Blog: Prüfbare KI in der Schadenbearbeitung | True Aim",
+      "description": "Artikel von True Aim über prüfbare KI, Schadenautomatisierung, KI-Regulatorik in der Versicherung und den Weg von Schaden-KI vom Piloten in die Produktion.",
+      "h1": "Einblicke und technische Deep Dives",
+      "breadcrumb": "Blog",
+      "ogTitle": "Der Blog von True Aim",
+      "ogDescription": "Artikel über prüfbare KI, Schadenautomatisierung, KI-Regulatorik in der Versicherung und den Weg von Schaden-KI vom Piloten in die Produktion.",
+      "updated": "2026-11-05"
     }
   }
 }

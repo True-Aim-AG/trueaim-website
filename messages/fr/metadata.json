@@ -404,14 +404,42 @@
       "updated": "2026-11-05"
     },
     "/blog/architectural-transparency-agentic-claims-operation": {
-      "title": "Transparence architecturale et organisation sinistres agentique | True Aim",
-      "description": "Un sinistre n’a jamais tenu dans une seule entreprise. L’automatisation d’hier s’arrêtait aux frontières internes. La transparence devient une garantie architecturale.",
+      "title": "Transparence architecturale des opérations sinistres | True Aim",
+      "description": "Un sinistre ne tient jamais dans une seule entreprise. L’automatisation d’hier s’arrêtait aux frontières internes. Transparence : une garantie architecturale.",
       "h1": "Le problème de l’automatisation des sinistres en silos",
       "breadcrumb": "L’automatisation des sinistres en silos",
       "ogTitle": "Le problème de l’automatisation des sinistres en silos : transparence architecturale et essor de l’organisation sinistres agentique",
-      "ogDescription": "Un sinistre n’a jamais tenu dans une seule entreprise. L’automatisation d’hier s’arrêtait aux frontières internes. La transparence devient une garantie architecturale.",
+      "ogDescription": "Un sinistre ne tient jamais dans une seule entreprise. L’automatisation d’hier s’arrêtait aux frontières internes. Transparence : une garantie architecturale.",
       "updated": "2026-11-05",
       "ogImage": "https://trueaim.ai/en/blog/architectural-transparency-agentic-claims-operation/opengraph-image"
+    },
+    "/blog/ai-claims-handling-eu-ai-act-high-risk": {
+      "title": "L’IA dans les sinistres est-elle à haut risque (AI Act) ? | True Aim",
+      "description": "Les sinistres sont absents de l’annexe III. L’article 22 du RGPD les encadre. Seuls 24 % des assureurs passeraient une revue de gouvernance en 90 jours.",
+      "h1": "La gestion des sinistres par IA n’est pas à haut risque au sens de l’AI Act européen. Voici ce qui l’encadre.",
+      "breadcrumb": "La gestion des sinistres par IA et l’AI Act",
+      "ogTitle": "La gestion des sinistres par IA n’est pas à haut risque au sens de l’AI Act européen. Voici ce qui l’encadre.",
+      "ogDescription": "Les sinistres sont absents de l’annexe III. L’article 22 du RGPD les encadre. Seuls 24 % des assureurs passeraient une revue de gouvernance en 90 jours.",
+      "updated": "2026-11-05"
+    },
+    "/blog/integration-playbook": {
+      "title": "Playbook d’intégration | True Aim",
+      "description": "Comment True Aim se branche sur les paysages existants, les schémas que nous utilisons et comment se déroule une première intégration en quatre à six semaines.",
+      "h1": "Le playbook d’intégration True Aim.",
+      "breadcrumb": "Playbook d’intégration",
+      "ogTitle": "Le playbook d’intégration True Aim",
+      "ogDescription": "Comment True Aim se branche sur les paysages existants et comment se déroule une première intégration en quatre à six semaines.",
+      "updated": "2026-11-05",
+      "robots": "noindex, nofollow"
+    },
+    "/blog": {
+      "title": "Blog : l’IA auditable dans les sinistres | True Aim",
+      "description": "Articles de True Aim sur l’IA auditable, l’automatisation des sinistres, la réglementation de l’IA en assurance et le passage du pilote à la production.",
+      "h1": "Analyses et plongées techniques",
+      "breadcrumb": "Blog",
+      "ogTitle": "Le blog True Aim",
+      "ogDescription": "Articles sur l’IA auditable, l’automatisation des sinistres, la réglementation de l’IA en assurance et le passage du pilote à la production.",
+      "updated": "2026-11-05"
     }
   }
 }

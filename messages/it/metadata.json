@@ -405,13 +405,41 @@
     },
     "/blog/architectural-transparency-agentic-claims-operation": {
       "title": "Trasparenza architetturale e gestione sinistri agentica | True Aim",
-      "description": "Un sinistro non è mai vissuto entro le mura di una sola impresa. L’automazione tradizionale si fermava ai confini interni. La trasparenza diventa garanzia architetturale.",
+      "description": "Un sinistro non vive mai dentro una sola impresa. L’automazione tradizionale si fermava ai confini interni. La trasparenza diventa garanzia architetturale.",
       "h1": "Il problema dell’automazione dei sinistri a compartimenti stagni",
       "breadcrumb": "L’automazione dei sinistri a compartimenti stagni",
       "ogTitle": "Il problema dell’automazione dei sinistri a compartimenti stagni: trasparenza architetturale e ascesa della gestione sinistri agentica",
-      "ogDescription": "Un sinistro non è mai vissuto entro le mura di una sola impresa. L’automazione tradizionale si fermava ai confini interni. La trasparenza diventa garanzia architetturale.",
+      "ogDescription": "Un sinistro non vive mai dentro una sola impresa. L’automazione tradizionale si fermava ai confini interni. La trasparenza diventa garanzia architetturale.",
       "updated": "2026-11-05",
       "ogImage": "https://trueaim.ai/en/blog/architectural-transparency-agentic-claims-operation/opengraph-image"
+    },
+    "/blog/ai-claims-handling-eu-ai-act-high-risk": {
+      "title": "L’IA nei sinistri è ad alto rischio secondo l’AI Act? | True Aim",
+      "description": "I sinistri sono assenti dall’allegato III. L’articolo 22 del GDPR li vincola. Solo il 24% degli assicuratori supererebbe un audit di governance in 90 giorni.",
+      "h1": "La gestione dei sinistri con IA non è ad alto rischio secondo l’AI Act europeo. Ecco cosa la vincola invece.",
+      "breadcrumb": "La gestione dei sinistri con IA e l’AI Act",
+      "ogTitle": "La gestione dei sinistri con IA non è ad alto rischio secondo l’AI Act europeo. Ecco cosa la vincola invece.",
+      "ogDescription": "I sinistri sono assenti dall’allegato III. L’articolo 22 del GDPR li vincola. Solo il 24% degli assicuratori supererebbe un audit di governance in 90 giorni.",
+      "updated": "2026-11-05"
+    },
+    "/blog/integration-playbook": {
+      "title": "Playbook di integrazione | True Aim",
+      "description": "Come True Aim si inserisce nei paesaggi esistenti, quali pattern di integrazione usiamo e come si svolge una prima integrazione in quattro-sei settimane.",
+      "h1": "Il playbook di integrazione True Aim.",
+      "breadcrumb": "Playbook di integrazione",
+      "ogTitle": "Il playbook di integrazione True Aim",
+      "ogDescription": "Come True Aim si inserisce nei paesaggi esistenti e come si svolge una prima integrazione in quattro-sei settimane.",
+      "updated": "2026-11-05",
+      "robots": "noindex, nofollow"
+    },
+    "/blog": {
+      "title": "Blog: IA verificabile nei sinistri | True Aim",
+      "description": "Articoli di True Aim su IA verificabile, automazione dei sinistri, regolamentazione dell’IA nelle assicurazioni e il passaggio dal pilota alla produzione.",
+      "h1": "Approfondimenti e analisi tecniche",
+      "breadcrumb": "Blog",
+      "ogTitle": "Il blog di True Aim",
+      "ogDescription": "Articoli su IA verificabile, automazione dei sinistri, regolamentazione dell’IA nelle assicurazioni e il passaggio dal pilota alla produzione.",
+      "updated": "2026-11-05"
     }
   }
 }
