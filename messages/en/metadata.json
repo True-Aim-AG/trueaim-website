@@ -40,7 +40,7 @@
       "ogDescription": "Claims information read from documents, photos, emails and legacy systems, put in context and stored as one searchable database your AI can use.",
       "updated": "2026-10-30"
     },
-    "/platform/claims-decisioning": {
+    "/platform/automated-coverage-check": {
       "title": "Automated Coverage Check: Claims Settled in Minutes | True Aim",
       "description": "True Aim's Automated Coverage Check checks every line of a claim against the policy wording, calculates the amount and records the reason. A full recommendation in minutes.",
       "h1": "Automated Coverage Check: claims settled in minutes, not weeks",

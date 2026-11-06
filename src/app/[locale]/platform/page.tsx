@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const outcomes = [
-  { key: "claimsDecisioning", href: "/platform/claims-decisioning" },
+  { key: "claimsDecisioning", href: "/platform/automated-coverage-check" },
   { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking" },
   { key: "damageReporting", href: "/platform/damage-reporting" },
 ] as const;

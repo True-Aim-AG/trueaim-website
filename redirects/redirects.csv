@@ -34,7 +34,7 @@ old_url,new_url,status,note
 /trust/,/en/trust/,301,English lived at the root until October 2026
 /product/,/en/platform/,301,Old root URL of a renamed page (URL-LIST section 2)
 /company/,/en/about/,301,Old root URL of a renamed page (URL-LIST section 2)
-/products/mira/,/en/platform/claims-decisioning/,301,Old root URL of a renamed page (URL-LIST section 2)
+/products/mira/,/en/platform/automated-coverage-check/,301,Old root URL of a renamed page (URL-LIST section 2)
 /products/contextbuilder/,/en/platform/,301,Old root URL of a retired page (URL-LIST section 3)
 /products/claimeval/,/en/platform/,301,Old root URL of a retired page (URL-LIST section 3)
 /products/claimeval/a/,/en/platform/,301,Old root URL of a retired demo variant (URL-LIST section 3)
@@ -47,10 +47,11 @@ old_url,new_url,status,note
 /de/company/,/en/about/,301,Company renamed About; English until the translation lands
 /fr/company/,/en/about/,301,Company renamed About; English until the translation lands
 /it/company/,/en/about/,301,Company renamed About; English until the translation lands
-/en/products/mira/,/en/platform/claims-decisioning/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
-/de/products/mira/,/en/platform/claims-decisioning/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
-/fr/products/mira/,/en/platform/claims-decisioning/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
-/it/products/mira/,/en/platform/claims-decisioning/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
+/en/products/mira/,/en/platform/automated-coverage-check/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
+/en/platform/claims-decisioning/,/en/platform/automated-coverage-check/,301,Claims Decisioning renamed Automated Coverage Check (November 2026)
+/de/products/mira/,/en/platform/automated-coverage-check/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
+/fr/products/mira/,/en/platform/automated-coverage-check/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
+/it/products/mira/,/en/platform/automated-coverage-check/,301,MIRA renamed Claims Decisioning; successor is English only (URL-LIST section 2)
 /en/products/contextbuilder/,/en/platform/,301,ContextBuilder retired; its function is part of the platform (URL-LIST section 3)
 /de/products/contextbuilder/,/en/platform/,301,ContextBuilder retired; its function is part of the platform (URL-LIST section 3)
 /fr/products/contextbuilder/,/en/platform/,301,ContextBuilder retired; its function is part of the platform (URL-LIST section 3)

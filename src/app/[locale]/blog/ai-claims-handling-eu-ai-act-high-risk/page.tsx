@@ -877,7 +877,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                   <p className="text-sm font-medium text-accent">
                     Reconstructing a decision on demand is what{" "}
                     <Link
-                      href="/platform/claims-decisioning"
+                      href="/platform/automated-coverage-check"
                       className="underline hover:no-underline"
                     >
                       Automated Coverage Check
@@ -1215,7 +1215,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
               <ButtonLink href="/contact" variant="primary" size="lg">
                 Get in Touch
               </ButtonLink>
-              <ButtonLink href="/platform/claims-decisioning" variant="on-dark" size="lg">
+              <ButtonLink href="/platform/automated-coverage-check" variant="on-dark" size="lg">
                 Explore Automated Coverage Check
               </ButtonLink>
             </div>

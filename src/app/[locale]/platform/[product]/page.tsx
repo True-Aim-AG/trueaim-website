@@ -290,7 +290,7 @@ export default async function ProductPage({ params }: Props) {
       : key === "otus"
         ? [
             { label: t("common.ctaDemo"), href: "/contact" },
-            { label: t(`${key}.cta.buttonClaims`), href: "/platform/claims-decisioning" },
+            { label: t(`${key}.cta.buttonClaims`), href: "/platform/automated-coverage-check" },
           ]
         : [{ label: t("common.ctaDemo"), href: "/contact" }];
 
