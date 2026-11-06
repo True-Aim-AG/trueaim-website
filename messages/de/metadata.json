@@ -283,6 +283,80 @@
       "ogTitle": "Cookie-Richtlinie",
       "ogDescription": "Welche Cookies die Website von True Aim verwendet, wofür jedes einzelne dient und wie Sie Ihre Cookie-Einstellungen verwalten.",
       "updated": "2026-11-05"
+    },
+    "/paia": {
+      "title": "PAIA-Handbuch | True Aim",
+      "description": "Das Handbuch der True Aim AG nach dem südafrikanischen Promotion of Access to Information Act (PAIA), mit der vom Gesetz verlangten Compliance-Dokumentation.",
+      "h1": "PAIA-Handbuch",
+      "breadcrumb": "PAIA-Handbuch",
+      "ogTitle": "PAIA-Handbuch",
+      "ogDescription": "Das Handbuch der True Aim AG nach dem südafrikanischen Promotion of Access to Information Act (PAIA), mit der vom Gesetz verlangten Compliance-Dokumentation.",
+      "updated": "2026-11-05"
+    },
+    "/security": {
+      "title": "Sicherheitsprogramm | True Aim",
+      "description": "Das Sicherheitsprogramm von True Aim: Compliance-Rahmenwerke, Datenresidenz, Verschlüsselung, Zugriffskontrolle, Monitoring und Responsible Disclosure.",
+      "h1": "Sicherheit bei True Aim",
+      "breadcrumb": "Sicherheit",
+      "ogTitle": "Sicherheit bei True Aim",
+      "ogDescription": "Das Sicherheitsprogramm von True Aim: Compliance-Rahmenwerke, Datenresidenz, Verschlüsselung, Zugriffskontrolle, Monitoring, Schwachstellenmanagement und Responsible Disclosure.",
+      "updated": "2026-11-05"
+    },
+    "/ai-transparency": {
+      "title": "KI-Transparenz und Aufsicht | True Aim",
+      "description": "Wie True Aim künstliche Intelligenz in seinen Produkten gestaltet und einsetzt, mit menschlicher Aufsicht und klaren Grundsätzen im Umgang mit Daten.",
+      "h1": "KI-Transparenz & Aufsicht",
+      "breadcrumb": "KI-Transparenz",
+      "ogTitle": "KI-Transparenz & Aufsicht",
+      "ogDescription": "Wie True Aim künstliche Intelligenz in seinen Produkten gestaltet und einsetzt, einschließlich der Mechanismen menschlicher Aufsicht und der Grundsätze im Umgang mit Daten.",
+      "updated": "2026-11-05"
+    },
+    "/ethics": {
+      "title": "Ethik und vertrauliche Meldungen | True Aim",
+      "description": "Ein vertraulicher Kanal, um ethische Bedenken, Fehlverhalten oder Sicherheitsprobleme an True Aim zu melden, anonym möglich und mit Schutz vor Vergeltung.",
+      "h1": "Ethik & vertrauliche Meldungen",
+      "breadcrumb": "Ethik",
+      "ogTitle": "Ethik & vertrauliche Meldungen",
+      "ogDescription": "Ein vertraulicher Kanal, um ethische Bedenken, Fehlverhalten oder Sicherheits- und Datenschutzprobleme an True Aim zu melden, mit anonymer Meldung und Schutz vor Vergeltung.",
+      "updated": "2026-11-05"
+    },
+    "/support": {
+      "title": "Kundensupport | True Aim",
+      "description": "So erreichen Sie den Kundensupport von True Aim: Geschäftszeiten, Reaktionszeiten nach Schweregrad und Kontaktkanäle für Vertrieb, Datenschutz und Ethik.",
+      "h1": "Kundensupport",
+      "breadcrumb": "Support",
+      "ogTitle": "Kundensupport",
+      "ogDescription": "So erreichen Sie den Kundensupport von True Aim: Geschäftszeiten, Reaktionszeiten nach Schweregrad und Kontaktkanäle für Vertrieb, Datenschutz, Sicherheit und Ethik.",
+      "updated": "2026-11-05"
+    },
+    "/sub-processors": {
+      "title": "Liste der Unterauftragsverarbeiter | True Aim",
+      "description": "Anhang 2 zum Auftragsverarbeitungsvertrag der True Aim AG: alle Unterauftragsverarbeiter mit Dienst, Datenkategorien und Standort.",
+      "h1": "Liste der Unterauftragsverarbeiter",
+      "breadcrumb": "Unterauftragsverarbeiter",
+      "ogTitle": "Liste der Unterauftragsverarbeiter von True Aim",
+      "ogDescription": "Anhang 2 zum Auftragsverarbeitungsvertrag der True Aim AG: alle Unterauftragsverarbeiter, die personenbezogene Daten verarbeiten.",
+      "updated": "2026-11-05",
+      "robots": "noindex"
+    },
+    "/changelog": {
+      "title": "Plattform-Changelog und Release-Historie | True Aim",
+      "description": "Öffentliche Release-Historie der Plattform von True Aim: neue Funktionen, Fehlerbehebungen und Sicherheitsverbesserungen, nach Release geordnet.",
+      "h1": "Changelog",
+      "breadcrumb": "Changelog",
+      "ogTitle": "Changelog der Plattform von True Aim",
+      "ogDescription": "Öffentliche Release-Historie der Plattform von True Aim: neue Funktionen, Fehlerbehebungen und Sicherheitsverbesserungen, nach Release geordnet.",
+      "updated": "2026-11-05"
+    },
+    "/privacy-legacy": {
+      "title": "Datenschutzerklärung, frühere Fassung | True Aim",
+      "description": "Die frühere Fassung der Datenschutzerklärung der True Aim AG, zur Referenz aufbewahrt. Die aktuelle Fassung finden Sie unter trueaim.ai/de/privacy/.",
+      "h1": "Datenschutzerklärung (frühere Fassung)",
+      "breadcrumb": "Datenschutzerklärung (frühere Fassung)",
+      "ogTitle": "Datenschutzerklärung von True Aim, frühere Fassung",
+      "ogDescription": "Die frühere Fassung der Datenschutzerklärung der True Aim AG, zur Referenz aufbewahrt.",
+      "updated": "2026-11-05",
+      "robots": "noindex"
     }
   }
 }

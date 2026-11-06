@@ -283,6 +283,80 @@
       "ogTitle": "Politique relative aux cookies",
       "ogDescription": "Quels cookies le site web de True Aim utilise, à quoi sert chacun d’eux et comment gérer vos préférences en matière de cookies.",
       "updated": "2026-11-05"
+    },
+    "/paia": {
+      "title": "Manuel PAIA | True Aim",
+      "description": "Le manuel de True Aim AG au titre du Promotion of Access to Information Act (PAIA) sud-africain, avec la documentation de conformité que la loi exige.",
+      "h1": "Manuel PAIA",
+      "breadcrumb": "Manuel PAIA",
+      "ogTitle": "Manuel PAIA",
+      "ogDescription": "Le manuel de True Aim AG au titre du Promotion of Access to Information Act (PAIA) sud-africain, avec la documentation de conformité que la loi exige.",
+      "updated": "2026-11-05"
+    },
+    "/security": {
+      "title": "Programme de sécurité | True Aim",
+      "description": "Le programme de sécurité de True Aim : cadres de conformité, localisation des données, chiffrement, contrôle d’accès et divulgation responsable.",
+      "h1": "La sécurité chez True Aim",
+      "breadcrumb": "Sécurité",
+      "ogTitle": "La sécurité chez True Aim",
+      "ogDescription": "Le programme de sécurité de True Aim : cadres de conformité, localisation des données, chiffrement, contrôle d’accès, surveillance, gestion des vulnérabilités et divulgation responsable.",
+      "updated": "2026-11-05"
+    },
+    "/ai-transparency": {
+      "title": "Transparence et supervision de l’IA | True Aim",
+      "description": "Comment True Aim conçoit et utilise l’intelligence artificielle dans ses produits, avec supervision humaine et principes de traitement des données.",
+      "h1": "Transparence et supervision de l’IA",
+      "breadcrumb": "Transparence de l’IA",
+      "ogTitle": "Transparence et supervision de l’IA",
+      "ogDescription": "Comment True Aim conçoit et utilise l’intelligence artificielle dans ses produits, y compris les mécanismes de supervision humaine et les principes de traitement des données.",
+      "updated": "2026-11-05"
+    },
+    "/ethics": {
+      "title": "Éthique et signalement confidentiel | True Aim",
+      "description": "Un canal confidentiel pour signaler à True Aim des préoccupations éthiques, des manquements ou des problèmes de sécurité, anonymement et sans représailles.",
+      "h1": "Éthique et signalement confidentiel",
+      "breadcrumb": "Éthique",
+      "ogTitle": "Éthique et signalement confidentiel",
+      "ogDescription": "Un canal confidentiel pour signaler à True Aim des préoccupations éthiques, des manquements ou des problèmes de sécurité et de confidentialité, avec signalement anonyme et protection contre les représailles.",
+      "updated": "2026-11-05"
+    },
+    "/support": {
+      "title": "Assistance client | True Aim",
+      "description": "Comment joindre l’assistance client de True Aim : horaires, délais de réponse par gravité et contacts pour les ventes, la confidentialité et l’éthique.",
+      "h1": "Assistance client",
+      "breadcrumb": "Assistance",
+      "ogTitle": "Assistance client",
+      "ogDescription": "Comment joindre l’assistance client de True Aim : horaires, délais de réponse par gravité et canaux de contact pour les ventes, la confidentialité, la sécurité et l’éthique.",
+      "updated": "2026-11-05"
+    },
+    "/sub-processors": {
+      "title": "Liste des sous-traitants ultérieurs | True Aim",
+      "description": "Annexe 2 de l’accord de traitement des données de True Aim AG : tous les sous-traitants ultérieurs, avec service, catégories de données et localisation.",
+      "h1": "Liste des sous-traitants ultérieurs",
+      "breadcrumb": "Sous-traitants ultérieurs",
+      "ogTitle": "Liste des sous-traitants ultérieurs de True Aim",
+      "ogDescription": "Annexe 2 de l’accord de traitement des données de True Aim AG : tous les sous-traitants ultérieurs qui traitent des données personnelles.",
+      "updated": "2026-11-05",
+      "robots": "noindex"
+    },
+    "/changelog": {
+      "title": "Changelog et historique des releases de la plateforme | True Aim",
+      "description": "Historique public des releases de la plateforme True Aim : nouvelles fonctionnalités, correctifs et améliorations de sécurité, release par release.",
+      "h1": "Changelog",
+      "breadcrumb": "Changelog",
+      "ogTitle": "Changelog de la plateforme True Aim",
+      "ogDescription": "Historique public des releases de la plateforme True Aim : nouvelles fonctionnalités, correctifs et améliorations de sécurité, release par release.",
+      "updated": "2026-11-05"
+    },
+    "/privacy-legacy": {
+      "title": "Politique de confidentialité, version précédente | True Aim",
+      "description": "La version précédente de la politique de confidentialité de True Aim AG, conservée pour référence. La politique en vigueur : trueaim.ai/fr/privacy/.",
+      "h1": "Politique de confidentialité (version précédente)",
+      "breadcrumb": "Politique de confidentialité (version précédente)",
+      "ogTitle": "Politique de confidentialité de True Aim, version précédente",
+      "ogDescription": "La version précédente de la politique de confidentialité de True Aim AG, conservée pour référence.",
+      "updated": "2026-11-05",
+      "robots": "noindex"
     }
   }
 }
