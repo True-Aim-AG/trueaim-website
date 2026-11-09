@@ -2,28 +2,28 @@
   "technology": {
     "hero": {
       "badge": "Unsere Technologie",
-      "titleLine1": "Neuro-symbolische AI: Die Architektur,",
+      "titleLine1": "Neurosymbolische KI: die Architektur,",
       "titleLine2": "der Aufsichtsbehörden vertrauen",
-      "description": "Nicht probabilistisch. Keine Black Box. Unser hybrider Ansatz kombiniert agentic AI-Ausführung mit deterministischer Entscheidungsfindung, speziell entwickelt für regulierte Branchen."
+      "description": "Nicht probabilistisch. Keine Blackbox. Unser hybrider Ansatz verbindet die Ausführung durch KI-Agenten mit deterministischer Entscheidungsfindung, eigens für regulierte Branchen gebaut."
     },
     "problem": {
-      "heading": "Die Grenzen probabilistischer AI bei regulierten Entscheidungen",
-      "description": "Grosse Sprachmodelle sind leistungsfähig, aber sie sind probabilistisch. Bei gleicher Eingabe können sie unterschiedliche Ergebnisse liefern. Sie können ihre Schlussfolgerungen nicht in einer Sprache erklären, die Aufsichtsbehörden verstehen.",
-      "emphasis": "Für Schadenentscheidungen ist das inakzeptabel."
+      "heading": "Die Grenzen probabilistischer KI bei regulierten Entscheidungen",
+      "description": "Große Sprachmodelle sind leistungsfähig, aber probabilistisch. Dieselbe Eingabe kann zweimal zu unterschiedlichen Ergebnissen führen. Ihre Begründung können sie nicht in Begriffen erklären, die Aufsichtsbehörden verstehen.",
+      "emphasis": "Für Schadenentscheidungen ist das nicht hinnehmbar."
     },
     "architecture": {
       "heading": "Trennung der Zuständigkeiten",
-      "subtitle": "Zwei Ebenen, jeweils optimiert für ihre Stärke",
+      "subtitle": "Zwei Schichten, jede gebaut für das, was sie am besten kann",
       "agentic": {
-        "title": "Agentic AI",
-        "subtitle": "Flexibel und adaptiv",
+        "title": "KI-Agenten",
+        "subtitle": "Flexibel und anpassungsfähig",
         "capabilities": {
           "docReading": "Dokumentenerfassung",
           "dataExtraction": "Datenextraktion",
           "classification": "Klassifizierung",
           "orchestration": "Orchestrierung"
         },
-        "description": "Nutzt maschinelles Lernen zur Verarbeitung unstrukturierter Daten, zum Kontextverständnis und zur Orchestrierung komplexer Workflows."
+        "description": "Nutzt maschinelles Lernen, um unstrukturierte Daten zu verarbeiten, Zusammenhänge zu verstehen und komplexe Workflows zu orchestrieren."
       },
       "deterministic": {
         "title": "Deterministische Entscheidungs-Engine",
@@ -32,71 +32,71 @@
           "coverageRules": "Deckungsregeln",
           "policyLogic": "Policenlogik",
           "costCalculation": "Kostenberechnung",
-          "decisionOutput": "Entscheidungsausgabe"
+          "decisionOutput": "Entscheidungsergebnis"
         },
-        "description": "Wendet kodierte Regeln an, um jedes Mal konsistente, nachvollziehbare Entscheidungen zu treffen."
+        "description": "Wendet kodierte Regeln an und liefert jedes Mal konsistente, erklärbare Entscheidungen."
       },
       "auditTrail": {
-        "title": "Vollständiger Audit-Trail",
-        "description": "Jedes Feld ist auf Quelldokumente rückverfolgbar. Jede Entscheidung ist auf Policenbedingungen rückverfolgbar. Volle Transparenz für Aufsichtsbehörden und Prüfer."
+        "title": "Vollständiger Prüfpfad",
+        "description": "Jedes Feld lässt sich auf die Quelldokumente zurückführen. Jede Entscheidung lässt sich auf die Versicherungsbedingungen zurückführen. Volle Transparenz für Aufsichtsbehörden und Prüfer."
       }
     },
     "control": {
-      "badge": "Enterprise-Kontrolle",
-      "heading": "Die Kontrollebene",
-      "subtitle": "Automatisierung mit Aufsicht. Jede Funktion ist darauf ausgelegt, Menschen dort die Kontrolle zu geben, wo es darauf ankommt.",
+      "badge": "Kontrolle für Unternehmen",
+      "heading": "Die Kontrollschicht",
+      "subtitle": "Automatisierung mit Aufsicht. Jede Funktion ist so gebaut, dass Menschen dort die Kontrolle behalten, wo es darauf ankommt.",
       "features": {
         "replayLogs": {
           "title": "Replay-Protokolle",
           "description": "Führen Sie jede Entscheidung mit denselben Eingaben erneut aus und erhalten Sie identische Ergebnisse. Jede Ausführung ist deterministisch und reproduzierbar."
         },
         "ruleTraceability": {
-          "title": "Regelverfolgbarkeit",
-          "description": "Jede Deckungsentscheidung ist auf bestimmte Policenklausel-IDs abgebildet. Sehen Sie genau, welche Regeln ausgelöst wurden und warum."
+          "title": "Nachvollziehbare Regeln",
+          "description": "Jede Deckungsentscheidung ist bestimmten Klausel-IDs der Police zugeordnet. Sie sehen genau, welche Regeln gegriffen haben und warum."
         },
         "approvalGates": {
-          "title": "Genehmigungsstufen",
-          "description": "Konfigurieren Sie Schwellenwerte für die Eskalation zur menschlichen Prüfung. Hochwertige oder Grenzfälle werden automatisch an Experten weitergeleitet."
+          "title": "Freigabeschwellen",
+          "description": "Legen Sie Schwellenwerte fest, ab denen eine menschliche Prüfung erfolgt. Fälle mit hohen Beträgen oder Grenzfälle gehen automatisch an Fachleute."
         },
         "exceptionRouting": {
-          "title": "Ausnahme-Routing",
-          "description": "Automatische Weiterleitung basierend auf dem Komplexitätsgrad des Schadenfalls. Ungewöhnliche Muster werden zur manuellen Inspektion markiert."
+          "title": "Weiterleitung von Ausnahmen",
+          "description": "Automatische Weiterleitung nach dem Komplexitätsgrad des Schadens. Ungewöhnliche Muster werden zur manuellen Prüfung markiert."
         },
         "confidenceScoring": {
           "title": "Konfidenzbewertung",
-          "description": "Feldbasierte Sicherheitsindikatoren zeigen, wo das System zuversichtlich ist und wo menschliche Prüfung Mehrwert bietet."
+          "description": "Konfidenzwerte auf Feldebene zeigen, wo das System sicher ist und wo eine menschliche Prüfung einen Mehrwert bringt."
         }
       },
-      "philosophy": "AI sollte die Schwerstarbeit übernehmen, aber Menschen müssen immer in der Lage sein, zu verstehen, zu verifizieren und zu übersteuern. Jede Kontrolle existiert, weil regulierte Branchen sie verlangen.",
+      "philosophy": "KI soll die schwere Arbeit übernehmen, aber Menschen müssen jederzeit verstehen, prüfen und außer Kraft setzen können. Jede Kontrolle existiert, weil regulierte Branchen sie verlangen.",
       "philosophyHeading": "Unsere Philosophie",
       "philosophyPrefix": "Unsere Philosophie:"
     },
     "comparison": {
-      "heading": "Keine weitere Black Box",
-      "subtitle": "Sehen Sie, wie True Aim im Vergleich zu traditionellen AI-Ansätzen abschneidet",
+      "heading": "Keine weitere Blackbox",
+      "subtitle": "So schneidet True Aim im Vergleich zu herkömmlichen KI-Ansätzen ab",
       "columns": {
-        "capability": "Fähigkeit",
-        "traditional": "Traditionelle AI",
+        "capability": "Kriterium",
+        "traditional": "Herkömmliche KI",
         "trueaim": "True Aim"
       },
       "rows": {
         "consistency": {
-          "capability": "Entscheidungskonsistenz",
-          "traditional": "Variabel",
+          "capability": "Konsistenz der Entscheidungen",
+          "traditional": "Schwankend",
           "trueaim": "Deterministisch"
         },
         "auditTrail": {
-          "capability": "Audit-Trail",
+          "capability": "Prüfpfad",
           "traditional": "Teilweise",
           "trueaim": "Vollständig"
         },
         "explainability": {
           "capability": "Erklärbarkeit",
-          "traditional": "\"Das Modell hat es gesagt\"",
-          "trueaim": "Rückverfolgbar zur Klausel"
+          "traditional": "„Das Modell hat es so gesagt“",
+          "trueaim": "Bis zur Klausel nachvollziehbar"
         },
         "euAiAct": {
-          "capability": "KI-Verordnung-konform",
+          "capability": "Bereit für den EU AI Act (KI-Verordnung)",
           "traditional": "Unklar",
           "trueaim": "Ja"
         }
@@ -104,16 +104,45 @@
     },
     "research": {
       "heading": "Forschungspartnerschaft",
-      "descriptionStart": "Teile unserer Technologie werden in Zusammenarbeit mit der",
+      "descriptionStart": "Teile unserer Technologie entstehen in Zusammenarbeit mit der",
       "zhawName": "ZHAW",
-      "descriptionMiddle": "(Zürcher Hochschule für Angewandte Wissenschaften) entwickelt und durch ein",
+      "descriptionMiddle": "(Zürcher Hochschule für Angewandte Wissenschaften) und werden in einem von",
       "innosuisseName": "Innosuisse",
-      "descriptionEnd": "-gefördertes Forschungsprogramm vorangetrieben, anerkannt durch das nationale Innovationsnetzwerk der Schweiz."
+      "descriptionEnd": " geförderten Forschungsprogramm weiterentwickelt, anerkannt im Rahmen der nationalen Innovationsförderung der Schweiz."
     },
     "cta": {
-      "heading": "Erleben Sie unsere Technologie in Aktion",
-      "description": "Buchen Sie eine Demo, um zu verstehen, wie unsere neuro-symbolische Architektur für Ihre Schadenregulierung arbeiten kann.",
+      "heading": "Sehen Sie unsere Technologie im Einsatz",
+      "description": "Buchen Sie eine Demo und erfahren Sie, wie unsere neurosymbolische Architektur in Ihrer Schadenbearbeitung arbeiten kann.",
       "button": "Demo buchen"
+    },
+    "faq": {
+      "heading": "Fragen zu unserer Technologie",
+      "items": [
+        {
+          "question": "Was bedeutet neurosymbolische KI bei True Aim?",
+          "answer": "True Aim verbindet zwei Schichten. KI-Agenten nutzen maschinelles Lernen, um Dokumente zu lesen, Daten zu extrahieren, zu klassifizieren und den Workflow zu orchestrieren. Eine deterministische Entscheidungs-Engine wendet dann kodierte Deckungsregeln, Policenlogik und Kostenberechnungen an und erzeugt die Entscheidung."
+        },
+        {
+          "question": "Warum trifft kein großes Sprachmodell die Schadenentscheidung?",
+          "answer": "Große Sprachmodelle sind probabilistisch: Dieselbe Eingabe kann unterschiedliche Ergebnisse liefern, und ihre Begründung lässt sich nicht in Begriffen erklären, die Aufsichtsbehörden verstehen. True Aim nutzt maschinelles Lernen, um die Dokumente zu lesen und zu strukturieren, und überlässt die Entscheidung kodierten Regeln."
+        },
+        {
+          "question": "Erhält derselbe Schaden immer dieselbe Entscheidung?",
+          "answer": "Ja. Die Entscheidungs-Engine ist deterministisch. Mit den Replay-Protokollen führen Sie jede Entscheidung mit denselben Eingaben erneut aus und erhalten identische Ergebnisse."
+        },
+        {
+          "question": "Wie wird eine Entscheidung einer Aufsichtsbehörde oder einem Prüfer erklärt?",
+          "answer": "Jedes Feld lässt sich auf sein Quelldokument zurückführen, und jede Deckungsentscheidung ist bestimmten Klausel-IDs der Police zugeordnet, so dass Sie genau sehen, welche Regeln angewandt wurden und warum."
+        },
+        {
+          "question": "Wann prüft eine Person einen Schaden?",
+          "answer": "Sie legen die Schwellenwerte fest. Fälle mit hohen Beträgen oder Grenzfälle gehen automatisch an Fachleute, ungewöhnliche Muster werden zur manuellen Prüfung markiert, und Konfidenzwerte auf Feldebene zeigen, wo eine menschliche Prüfung einen Mehrwert bringt."
+        },
+        {
+          "question": "Mit wem entwickelt True Aim seine Technologie?",
+          "answer": "Teile der Technologie entstehen mit der ZHAW (Zürcher Hochschule für Angewandte Wissenschaften) und werden in einem von Innosuisse geförderten Forschungsprogramm weiterentwickelt."
+        }
+      ]
     }
   }
 }

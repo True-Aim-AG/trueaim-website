@@ -171,7 +171,7 @@ export function ROICalculator() {
                       >
                         {selected && <span className="h-2 w-2 rounded-full bg-accent" />}
                       </span>
-                      <span className="text-sm text-strong">{option.label}</span>
+                      <span className="text-sm text-strong">{t(`calculator.inputPanel.automationOptions.${option.value}`)}</span>
                     </label>
                   );
                 })}

@@ -1,1 +1,149 @@
-{}
+{
+  "platform": {
+    "hero": {
+      "title": "So funktioniert unsere Plattform",
+      "summary": "Wir machen aus der Schadenakte das fertige Ergebnis: einen regulierten Schaden, eine mit Referenzpreisen abgeglichene Rechnung oder einen fertigen Schadenbericht. KI liest die Dokumente, die Entscheidung wird aus Ihren Versicherungsbedingungen berechnet, und jeder Schritt wird protokolliert. Das letzte Wort hat Ihr Team.",
+      "ctaDemo": "Demo buchen",
+      "scene": {
+        "alt": "Drei fertige Ergebnisse: ein regulierter Schaden, eine abgeglichene Rechnung und ein fertiger Schadenbericht",
+        "claimsDecisioning": "Ein regulierter Schaden",
+        "invoiceBenchmarking": "Eine abgeglichene Rechnung",
+        "damageReporting": "Ein fertiger Schadenbericht"
+      }
+    },
+    "outcomes": {
+      "heading": "Vier fertige Ergebnisse",
+      "items": {
+        "dataExtraction": {
+          "title": "Eine durchsuchbare Schadendatenbank",
+          "text": "Jedes Dokument gelesen, jeder Wert in seinen Zusammenhang gestellt und bis auf die Seite zurückverfolgbar, gespeichert als eine Datenbank, die Ihre Teams und Ihre KI nutzen können.",
+          "link": "Data Extraction"
+        },
+        "claimsDecisioning": {
+          "title": "Ein regulierter Schaden",
+          "text": "Jede Position anhand der Versicherungsbedingungen geprüft, der Betrag berechnet und die Begründung festgehalten, bereit zur Bestätigung durch Ihren Sachbearbeiter.",
+          "link": "Automated Coverage Check"
+        },
+        "invoiceBenchmarking": {
+          "title": "Eine abgeglichene Rechnung",
+          "text": "Jede Position mit Referenzpreisen abgeglichen, die zu hohen Positionen beim Dienstleister beanstandet und die Rechnung in korrekter Höhe neu ausgestellt.",
+          "link": "Invoice Benchmarking"
+        },
+        "damageReporting": {
+          "title": "Ein fertiger Schadenbericht",
+          "text": "Ein Kostenvoranschlag und der vollständige Reparaturumfang aus den Fotos und Dokumenten des Kunden, schon bei der Schadenmeldung.",
+          "link": "AI Damage Assessment & Reporting"
+        }
+      }
+    },
+    "technology": {
+      "heading": "Zwei Technologien, jede mit einer Aufgabe",
+      "paragraphs": [
+        "Berechnete Entscheidungen. Ihre Police, Ihr Katalog oder Ihr Regelwerk wird zu einem Entscheidungsbaum. Aus den Fakten wird das Ergebnis berechnet, nicht vorhergesagt.",
+        "Agenten, die lesen können. Schäden kommen als Fotos, PDFs, Handschrift und E-Mails an, und Software-Agenten machen daraus Fakten. Jeder Agent erledigt eine kleine Aufgabe, so dass an jeder Stelle des Prozesses Fachwissen am Werk ist."
+      ],
+      "imageAlt": "Ineinandergreifende Metallringe"
+    },
+    "diagram": {
+      "heading": "So fügen sich unsere Lösungen zusammen",
+      "intro": "Eine Schadenakte wird eingelesen. Ein auditierter Entscheidungsbaum entsteht. Unsere Lösungen erledigen die Arbeit, und zwei Plattformfunktionen halten sie in Bewegung und protokollieren jeden Schritt.",
+      "input": {
+        "name": "Die Schadenakte",
+        "text": "Fotos, Rechnungen, Kostenvoranschläge, Policendokumente und E-Mails, aus jedem Kanal."
+      },
+      "modules": {
+        "dataExtraction": {
+          "name": "Data Extraction",
+          "text": "Liest jedes Dokument und baut eine strukturierte, durchsuchbare Datenbank."
+        },
+        "claimsDecisioning": {
+          "name": "Automated Coverage Check",
+          "text": "Prüft jede Position anhand der Versicherungsbedingungen und berechnet den Betrag."
+        },
+        "invoiceBenchmarking": {
+          "name": "Invoice Benchmarking",
+          "text": "Gleicht jede Rechnung, jedes Angebot und jeden Kostenvoranschlag mit dem Referenzpreis ab."
+        },
+        "damageReporting": {
+          "name": "AI Damage Assessment & Reporting",
+          "text": "Macht aus Fotos und Dokumenten einen Kostenvoranschlag und einen Reparaturumfang."
+        },
+        "otus": {
+          "name": "Otus, der Schadenspezialist von True Aim",
+          "text": "Erklärt, fasst zusammen und entwirft Texte für Ihr Team, in jeder Lösung von True Aim."
+        }
+      },
+      "output": {
+        "name": "Eine auditierte Entscheidung",
+        "text": "Eine Empfehlung mit ihren Berechnungen, Nachweisen und Gründen, bestätigt von Ihrem Sachbearbeiter und in Ihre Systeme zurückgeschrieben."
+      },
+      "featuresHeading": "Plattformfunktionen",
+      "features": {
+        "orchestrate": {
+          "name": "Orchestrate",
+          "text": "Führt jeden Schaden in einer Akte zusammen und hält die Arbeit in Bewegung, von der Schadenmeldung bis zum Abschluss. Schäden werden nach Ihren Regeln und der aktuellen Auslastung zugewiesen, Erinnerungen gehen hinaus, wenn Ihre Auslöser es vorsehen, und alle Beteiligten sehen den aktuellen Status."
+        },
+        "prove": {
+          "name": "Prove",
+          "text": "Protokolliert jede Entscheidung mit ihren Nachweisen, der geltenden Regel und der Person, die sie getroffen hat. Jede Änderung an der Akte ist sichtbar. Ein Klick exportiert das vollständige Prüfpaket."
+        }
+      },
+      "callout": "Gleiche Eingaben. Gleiche Entscheidung. Jedes Mal."
+    },
+    "fit": {
+      "heading": "True Aim setzt auf Ihren bestehenden Systemen auf",
+      "paragraphs": [
+        "True Aim setzt auf Ihrem Schaden- oder ERP-System auf, liest daraus und schreibt die Ergebnisse zurück.",
+        "Ihre Schwellenwerte, Regeln, Zuweisungen und Limits bleiben in Ihrer Hand, und Sie ändern sie selbst."
+      ],
+      "imageAlt": "Ein Metallschloss mit dem Symbol von True Aim"
+    },
+    "faq": {
+      "heading": "Häufige Fragen",
+      "items": [
+        {
+          "question": "Wird das Ergebnis von KI vorhergesagt?",
+          "answer": "Nein. KI liest die Dokumente. Die Entscheidung selbst wird aus Ihren Bedingungen oder Regeln berechnet, so dass dieselben Fakten immer dieselbe Antwort ergeben."
+        },
+        {
+          "question": "Wer trifft die endgültige Entscheidung?",
+          "answer": "Ihr Team. True Aim bereitet die Empfehlung und die Begründung vor. Vollautomatisierung läuft nur dort, wo Sie und Ihre Aufsichtsbehörde es zulassen."
+        },
+        {
+          "question": "Ersetzt True Aim unser Schadensystem?",
+          "answer": "Nein. True Aim setzt auf dem Schaden- oder ERP-System auf, das Sie bereits betreiben, und schreibt seine Ergebnisse dorthin zurück. Die Masken können denen entsprechen, die Ihr Team kennt."
+        },
+        {
+          "question": "Welche Sparten deckt True Aim ab?",
+          "answer": "True Aim ist nicht an eine Sparte gebunden. Kfz-, Sach-, Garantie- und Haftpflichtschäden nutzen dieselben Bausteine."
+        },
+        {
+          "question": "Wie wird True Aim abgerechnet?",
+          "answer": "Pro Ergebnis, nicht pro Nutzer. Sie zahlen für jeden regulierten Schaden, jede abgeglichene Rechnung oder jeden fertigen Schadenbericht, so dass die Kosten mit dem Nutzen wachsen, den Sie erhalten."
+        },
+        {
+          "question": "Wie werden unsere Daten geschützt?",
+          "answer": "True Aim ist nach ISO 27001 zertifiziert und nach SOC 2 Type II auditiert. Hosting, Zertifizierung und Datenschutz sind im Trust Center beschrieben."
+        }
+      ]
+    },
+    "related": {
+      "heading": "Unsere Lösungen entdecken",
+      "dataExtraction": "Data Extraction",
+      "dataExtractionText": "Ihre Schadendaten, bereit für KI.",
+      "claimsDecisioning": "Automated Coverage Check",
+      "claimsDecisioningText": "Schäden in Minuten statt Wochen reguliert.",
+      "invoiceBenchmarking": "Invoice Benchmarking",
+      "invoiceBenchmarkingText": "Nie wieder zu viel für eine Rechnung zahlen.",
+      "damageReporting": "AI Damage Assessment & Reporting",
+      "damageReportingText": "Fertige Schadenberichte in Minuten.",
+      "otus": "Otus, der Schadenspezialist von True Aim",
+      "otusText": "Ein KI-gestützter Experte für jedes Teammitglied."
+    },
+    "cta": {
+      "heading": "Möchten Sie das fertige Ergebnis an Ihren eigenen Schadenfällen sehen?",
+      "lede": "Buchen Sie eine Demo, und wir zeigen Ihnen einen regulierten Schaden, eine abgeglichene Rechnung und einen fertigen Schadenbericht, jeweils mit dem Rechenweg dahinter.",
+      "button": "Demo buchen"
+    }
+  }
+}

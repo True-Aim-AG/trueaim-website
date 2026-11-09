@@ -13,11 +13,9 @@ import {
 } from "@/components/content";
 import { ClaimScene, productIcons, type ClaimSceneData } from "@/components/products";
 import { PageSeo } from "@/components/seo/PageSeo";
-import { englishOnlyStaticParams, pageLocales } from "@/i18n/page-locales";
+import { pageLocales } from "@/i18n/page-locales";
 import { pageMetadata } from "@/lib/seo/metadata";
 
-// English only until the translation lands; see src/i18n/page-locales.ts.
-export const generateStaticParams = englishOnlyStaticParams;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -25,9 +23,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const outcomes = [
-  { key: "claimsDecisioning", href: "/platform/claims-decisioning" },
+  { key: "claimsDecisioning", href: "/platform/automated-coverage-check" },
   { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking" },
-  { key: "damageReporting", href: "/platform/damage-reporting" },
+  { key: "damageReporting", href: "/platform/ai-damage-assessment-and-reporting" },
 ] as const;
 
 /** The organisers' marks for the awards, in the order of the copy. */
@@ -40,9 +38,9 @@ const awardMarks = [
 ] as const;
 
 const relatedPages = [
-  { key: "claimsDecisioning", href: "/platform/claims-decisioning", icon: productIcons.claimsDecisioning },
+  { key: "claimsDecisioning", href: "/platform/automated-coverage-check", icon: productIcons.claimsDecisioning },
   { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking", icon: productIcons.invoiceBenchmarking },
-  { key: "damageReporting", href: "/platform/damage-reporting", icon: productIcons.damageReporting },
+  { key: "damageReporting", href: "/platform/ai-damage-assessment-and-reporting", icon: productIcons.damageReporting },
   { key: "otus", href: "/platform/otus", icon: productIcons.otus },
 ] as const;
 

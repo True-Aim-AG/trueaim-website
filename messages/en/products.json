@@ -732,11 +732,11 @@
       }
     },
     "damageReporting": {
-      "name": "Damage Reporting",
-      "tagline": "Completed damage reports in minutes.",
+      "name": "AI Damage Assessment & Reporting",
+      "tagline": "From photos to complete damage reports in minutes.",
       "hero": {
-        "title": "Damage Reporting: completed damage reports in minutes",
-        "summary": "Produce a damage estimate and the full scope of work at first notification, from the photographs and documents your customer sends. Price the damage by region and list every trade and task in the order the work must run. Send assessors on site only where a visit changes the answer.",
+        "title": "AI Damage Assessment & Reporting: from photos to complete damage reports in minutes",
+        "summary": "Automatically analyse photos, videos and supporting documents to identify damage, assess its severity and generate detailed damage reports at first notification of loss. Produce region-specific repair cost estimates and a complete scope of work, including the required trades, tasks and repair sequence. Reduce on-site inspections by sending assessors only where human expertise is needed.",
         "scene": {
           "alt": "Four photographs become a priced damage report and scope of work on day one",
           "photosLabel": "4 photographs received",
@@ -810,7 +810,7 @@
       "faq": [
         {
           "question": "Does True Aim replace our assessors?",
-          "answer": "No. True Aim's Damage Reporting gives your assessors an estimate and a scope on day one, with a note of what still needs checking in person. Site visits go where they change the answer."
+          "answer": "No. True Aim's AI Damage Assessment & Reporting gives your assessors an estimate and a scope on day one, with a note of what still needs checking in person. Site visits go where they change the answer."
         },
         {
           "question": "What does the customer need to send?",
@@ -822,7 +822,7 @@
         },
         {
           "question": "Can True Aim start from an assessor's report?",
-          "answer": "Yes. A third-party report, cost estimate or appraisal can be the starting point. True Aim's Damage Reporting then works even where you do not run the customer journey yourself."
+          "answer": "Yes. A third-party report, cost estimate or appraisal can be the starting point. True Aim's AI Damage Assessment & Reporting then works even where you do not run the customer journey yourself."
         }
       ],
       "cta": {
@@ -947,7 +947,7 @@
         },
         {
           "question": "What does it need to work?",
-          "answer": "It works on top of Automated Coverage Check, Invoice Benchmarking and Damage Reporting, where it can explain each recommendation line by line."
+          "answer": "It works on top of Automated Coverage Check, Invoice Benchmarking and AI Damage Assessment & Reporting, where it can explain each recommendation line by line."
         },
         {
           "question": "Which languages does it speak?",

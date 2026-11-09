@@ -35,7 +35,7 @@ We turn the claim file into the finished piece of work: a settled claim, a bench
 
 ### Automated Coverage Check
 
-**URL:** https://trueaim.ai/en/platform/claims-decisioning/
+**URL:** https://trueaim.ai/en/platform/automated-coverage-check/
 
 True Aim checks the policy terms against the facts of the case and recommends whether the claim should be approved or denied. Where it is approved, the amount owed is calculated line by line, and the adjuster makes the final call. Each decision is recorded in the Decision Dossier: the inputs, the policy wording applied and the reasoning.
 
@@ -45,11 +45,11 @@ True Aim checks the policy terms against the facts of the case and recommends wh
 
 Every invoice, quote and estimate is checked against the benchmark, by business line and by region. The claims team sees which lines are too high, by how much and why, with the reissue request already drafted. Lower-value invoices no longer go unchecked, and every saving is recorded line by line.
 
-### Damage Reporting
+### AI Damage Assessment & Reporting
 
-**URL:** https://trueaim.ai/en/platform/damage-reporting/
+**URL:** https://trueaim.ai/en/platform/ai-damage-assessment-and-reporting/
 
-Damage Reporting produces a damage estimate and the full scope of work at first notification, from the photographs and documents the customer sends. It prices the damage by region and lists every trade and task in the order the work must run. Assessors go on site only where a visit changes the answer.
+AI Damage Assessment & Reporting analyses the photos, videos and supporting documents a customer sends to identify damage, assess its severity and generate a detailed damage report at first notification of loss. It produces region-specific repair cost estimates and a complete scope of work, including the required trades, tasks and repair sequence, and sends assessors on site only where human expertise is needed.
 
 ### Otus, True Aim's claims specialist
 
@@ -125,8 +125,8 @@ From the vehicle warranty case study with NSA Services SA (https://trueaim.ai/en
 - Products:
   - Platform overview: https://trueaim.ai/en/platform/
   - Invoice Benchmarking: https://trueaim.ai/en/platform/invoice-benchmarking/
-  - Automated Coverage Check: https://trueaim.ai/en/platform/claims-decisioning/
-  - Damage Reporting: https://trueaim.ai/en/platform/damage-reporting/
+  - Automated Coverage Check: https://trueaim.ai/en/platform/automated-coverage-check/
+  - AI Damage Assessment & Reporting: https://trueaim.ai/en/platform/ai-damage-assessment-and-reporting/
   - Otus, True Aim's claims specialist: https://trueaim.ai/en/platform/otus/
 - Technology: https://trueaim.ai/en/technology/
 - About: https://trueaim.ai/en/about/

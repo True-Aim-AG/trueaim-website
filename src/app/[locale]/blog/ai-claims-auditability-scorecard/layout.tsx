@@ -4,8 +4,12 @@ import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { article, list } from "./article";
 import { faqs } from "./faqs";
+import { faqs as faqsDe } from "./faqs.de";
+import { faqs as faqsFr } from "./faqs.fr";
+import { faqs as faqsIt } from "./faqs.it";
 
 const PATH = "/blog/ai-claims-auditability-scorecard";
+const FAQS: Record<string, typeof faqs> = { en: faqs, de: faqsDe, fr: faqsFr, it: faqsIt };
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -19,7 +23,7 @@ export default async function BlogPostLayout({ children, params }: Props & { chi
   setRequestLocale(locale);
   return (
     <>
-      <PageSeo locale={locale} path={PATH} template="blogPost" article={article} faqs={faqs} lists={[list]} />
+      <PageSeo locale={locale} path={PATH} template="blogPost" article={article} faqs={FAQS[locale] ?? faqs} lists={[list]} />
       {children}
     </>
   );

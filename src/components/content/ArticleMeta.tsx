@@ -1,3 +1,4 @@
+import { Link } from "@/i18n/navigation";
 import type { Author } from "./schema";
 
 /**
@@ -28,7 +29,14 @@ export function ArticleMeta({
   return (
     <p className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted">
       <span>
-        {labels.by} <span className="text-strong">{author.name}</span>
+        {labels.by}{" "}
+        {author.url ? (
+          <Link href={author.url} className="font-medium text-strong hover:underline">
+            {author.name}
+          </Link>
+        ) : (
+          <span className="text-strong">{author.name}</span>
+        )}
         {author.jobTitle && <>, {author.jobTitle}</>}
       </span>
       <span>

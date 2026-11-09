@@ -14,8 +14,8 @@ import {
   Search,
   Layers,
 } from "lucide-react";
-import { caseStudies } from "@/data/case-studies";
-import { productPillColors, productNames } from "@/lib/product-styles";
+import { caseStudies, localizeCaseStudy, type CaseStudyCopy } from "@/data/case-studies";
+import { productPillColors } from "@/lib/product-styles";
 import { ButtonLink } from "@/components/brand/Button";
 import { CARD, CtaBand, PageHero, SECTION_LILAC } from "@/components/content";
 import { cn } from "@/lib/utils";
@@ -23,12 +23,12 @@ import { cn } from "@/lib/utils";
 const ease = [0.4, 0, 0.2, 1] as const;
 
 const productLinks: Record<string, string> = {
-  mira: "/platform/claims-decisioning",
+  mira: "/platform/automated-coverage-check",
   contextbuilder: "/platform",
   claimeval: "/platform",
 };
 
-const study = caseStudies.find((cs) => cs.slug === "vehicle-warranty-claims")!;
+const baseStudy = caseStudies.find((cs) => cs.slug === "vehicle-warranty-claims")!;
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 } as const,
@@ -45,6 +45,11 @@ const bold = (chunks: React.ReactNode) => (
 
 export default function VehicleWarrantyCaseStudy() {
   const t = useTranslations("caseStudies");
+  // The locale's copy for the study lives under caseStudies.studies.<slug>; the data file keeps the English.
+  const study = localizeCaseStudy(
+    baseStudy,
+    t.has(`studies.${baseStudy.slug}`) ? (t.raw(`studies.${baseStudy.slug}`) as CaseStudyCopy) : undefined,
+  );
   const facts = t.raw("vehicleWarranty.facts") as { label: string; value: string }[];
   const solutionItems = t.raw("vehicleWarranty.solution.items") as { title: string; desc: string }[];
   const timeColumns = t.raw("vehicleWarranty.timeSaving.columns") as string[][];
@@ -91,7 +96,7 @@ export default function VehicleWarrantyCaseStudy() {
                 href={productLinks[product]}
                 className={`text-sm px-3 py-1.5 font-medium ${productPillColors[product]}`}
               >
-                {productNames[product]}
+                {t(`detail.productNames.${product}`)}
               </Link>
             ))}
             {study.timeline && (
@@ -337,7 +342,7 @@ export default function VehicleWarrantyCaseStudy() {
             </article>
 
             {/* Sidebar */}
-            <aside aria-label="Key highlights">
+            <aside aria-label={t("detail.keyHighlights")}>
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -369,7 +374,7 @@ export default function VehicleWarrantyCaseStudy() {
                         href={productLinks[product]}
                         className={`block text-sm px-3 py-2 font-medium ${productPillColors[product]} text-center`}
                       >
-                        {productNames[product]}
+                        {t(`detail.productNames.${product}`)}
                       </Link>
                     ))}
                   </div>

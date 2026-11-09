@@ -37,9 +37,9 @@ describe("pageMetadata", () => {
   });
 
   it("lists hreflang for the locales the page exists in, plus x-default", () => {
-    expect(Object.keys(pageMetadata("en", "/blog").alternates?.languages ?? {})).toEqual(["en", "x-default"]);
-    // Every page is English only until the translations land (src/i18n/page-locales.ts).
-    expect(Object.keys(pageMetadata("en", "/trust").alternates?.languages ?? {})).toEqual(["en", "x-default"]);
+    // Every page exists in all four languages since the translations landed (src/i18n/page-locales.ts).
+    expect(Object.keys(pageMetadata("en", "/blog").alternates?.languages ?? {})).toEqual(["en", "de", "fr", "it", "x-default"]);
+    expect(Object.keys(pageMetadata("en", "/trust").alternates?.languages ?? {})).toEqual(["en", "de", "fr", "it", "x-default"]);
   });
 
   it("indexes by default and honours noindex", () => {
@@ -77,6 +77,7 @@ describe("buildPageGraph", () => {
     ["caseStudy", "/case-studies/motor-claims-pilot", ["WebPage", "Article", "BreadcrumbList"]],
     ["collection", "/case-studies", ["CollectionPage", "ItemList", "BreadcrumbList"]],
     ["partner", "/partners/zhaw", ["WebPage", "BreadcrumbList"]],
+    ["person", "/authors/reuben-john", ["ProfilePage", "BreadcrumbList"]],
   ];
 
   it.each(cases)("%s emits its types", (template, path, expected) => {
@@ -114,7 +115,7 @@ describe("buildPageGraph", () => {
   });
 
   it("names each product with the True Aim brand as alternateName", () => {
-    const software = nodes(buildPageGraph({ locale: "en", path: "/platform/claims-decisioning", template: "product" })).find(
+    const software = nodes(buildPageGraph({ locale: "en", path: "/platform/automated-coverage-check", template: "product" })).find(
       (node) => node["@type"] === "SoftwareApplication",
     );
     expect(software?.name).toBe("Automated Coverage Check");
@@ -135,9 +136,9 @@ describe("buildPageGraph", () => {
     ) as { itemListElement: { item: { "@id": string } }[] };
     expect(list.itemListElement.map((element) => element.item["@id"])).toEqual([
       "https://trueaim.ai/en/platform/data-extraction/#software",
-      "https://trueaim.ai/en/platform/claims-decisioning/#software",
+      "https://trueaim.ai/en/platform/automated-coverage-check/#software",
       "https://trueaim.ai/en/platform/invoice-benchmarking/#software",
-      "https://trueaim.ai/en/platform/damage-reporting/#software",
+      "https://trueaim.ai/en/platform/ai-damage-assessment-and-reporting/#software",
       "https://trueaim.ai/en/platform/otus/#software",
     ]);
   });

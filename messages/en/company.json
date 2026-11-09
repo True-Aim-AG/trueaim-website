@@ -145,6 +145,14 @@
       "heading": "See True Aim on your own claims",
       "description": "Bring your own invoices, claims or damage reports and the demo shows the finished outcome.",
       "button": "Request a demo"
+    },
+    "authors": {
+      "eyebrow": "Author",
+      "readMore": "Read more",
+      "aboutHeading": "About {name}",
+      "articlesHeading": "Articles by {name}",
+      "blogLink": "Blogs",
+      "teamLink": "Meet the whole team"
     }
   }
 }

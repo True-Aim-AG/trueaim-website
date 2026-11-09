@@ -121,7 +121,7 @@ export default async function YarowaPage({ params }: { params: Promise<{ locale:
             {t("cta.description")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <ButtonLink href="/platform/claims-decisioning" variant="primary" size="lg">
+            <ButtonLink href="/platform/automated-coverage-check" variant="primary" size="lg">
               {t("cta.learnProducts")}
             </ButtonLink>
             <ButtonLink href="/contact" variant="on-dark" size="lg">

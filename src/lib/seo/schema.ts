@@ -20,7 +20,7 @@ import { childPages, findPageEntry, pageEntry, pageKey, siteText } from "./pages
  * SoftwareApplication; contact ContactPage; news NewsArticle; blogPost
  * BlogPosting; caseStudy Article; collection CollectionPage + ItemList of the
  * pages below it; partner WebPage about the partner; technology, trust and
- * page WebPage. Every page below home adds a BreadcrumbList, and FAQPage when
+ * page WebPage; person ProfilePage with the Person as mainEntity. Every page below home adds a BreadcrumbList, and FAQPage when
  * it renders an FAQ. No rating, review or price markup anywhere.
  */
 export type PageTemplate =
@@ -36,6 +36,7 @@ export type PageTemplate =
   | "caseStudy"
   | "collection"
   | "partner"
+  | "person"
   | "page";
 
 export type ArticleData = {
@@ -70,6 +71,8 @@ export type PageGraphInput = {
   lists?: ListData[];
   /** The partner a partner page is about. */
   partner?: { name: string; url?: string };
+  /** The person an author page is about; the portrait path is site-relative. */
+  person?: Author & { image?: string };
 };
 
 type Node = Record<string, unknown>;
@@ -103,7 +106,7 @@ function itemList(id: string, name: string | undefined, description: string | un
 
 /** One JSON-LD graph for the page; nodes link to each other by @id. */
 export function buildPageGraph(input: PageGraphInput) {
-  const { locale, path, template, faqs, article, lists, partner } = input;
+  const { locale, path, template, faqs, article, lists, partner, person } = input;
   const page = pageEntry(locale, path);
   const url = localeUrl(locale, path);
   const isHome = pageKey(path) === "/";
@@ -118,7 +121,7 @@ export function buildPageGraph(input: PageGraphInput) {
   const graph: Node[] = [];
 
   const pageType =
-    template === "about" ? "AboutPage" : template === "contact" ? "ContactPage" : template === "collection" ? "CollectionPage" : "WebPage";
+    template === "about" ? "AboutPage" : template === "contact" ? "ContactPage" : template === "collection" ? "CollectionPage" : template === "person" ? "ProfilePage" : "WebPage";
   const webPage: Node = {
     "@type": pageType,
     "@id": ids.page,
@@ -198,7 +201,15 @@ export function buildPageGraph(input: PageGraphInput) {
         mainEntityOfPage: ref(ids.page),
         ...(article?.datePublished ? { datePublished: article.datePublished } : {}),
         dateModified: page.updated,
-        author: article?.author ? { ...personSchema(article.author), worksFor: ref(ORGANIZATION_ID) } : ref(ORGANIZATION_ID),
+        author: article?.author
+          ? {
+              ...personSchema({
+                ...article.author,
+                url: article.author.url?.startsWith("/") ? localeUrl(locale, article.author.url) : article.author.url,
+              }),
+              worksFor: ref(ORGANIZATION_ID),
+            }
+          : ref(ORGANIZATION_ID),
         publisher: ref(ORGANIZATION_ID),
         ...(article?.section ? { articleSection: article.section } : {}),
         ...(article?.keywords?.length ? { keywords: article.keywords.join(", ") } : {}),
@@ -229,6 +240,19 @@ export function buildPageGraph(input: PageGraphInput) {
     }
     case "partner":
       if (partner) webPage.about = { "@type": "Organization", name: partner.name, ...(partner.url ? { url: partner.url } : {}) };
+      break;
+    case "person":
+      if (person) {
+        const personId = `${url}#person`;
+        graph.push({
+          ...personSchema(person),
+          "@id": personId,
+          url,
+          ...(person.image ? { image: `${SITE_URL}${person.image}` } : {}),
+          worksFor: ref(ORGANIZATION_ID),
+        });
+        webPage.mainEntity = ref(personId);
+      }
       break;
   }
 

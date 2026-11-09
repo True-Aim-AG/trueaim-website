@@ -3,11 +3,17 @@ import { setRequestLocale } from "next-intl/server";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { blogPosts } from "@/lib/blog-posts";
+import { articleAuthor } from "@/data/authors";
 import type { ArticleData } from "@/lib/seo/schema";
 
 const PATH = "/blog/auditability-evidence-chains";
 const post = blogPosts.find((entry) => entry.slug === PATH.split("/").pop())!;
-const article: ArticleData = { datePublished: post.publishedIso, section: post.category, keywords: post.tags };
+const article: ArticleData = {
+  datePublished: post.publishedIso,
+  author: articleAuthor("reuben-john", "CEO and Co-Founder"),
+  section: post.category,
+  keywords: post.tags,
+};
 
 type Props = { params: Promise<{ locale: string }> };
 

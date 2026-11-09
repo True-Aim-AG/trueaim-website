@@ -164,3 +164,31 @@ export function getCaseStudy(slug: string): CaseStudy | undefined {
 export function getAllCaseStudySlugs(): string[] {
   return caseStudies.map((cs) => cs.slug);
 }
+
+/** The translatable fields of a case study, as stored under caseStudies.studies.<slug> in messages/<locale>/caseStudies.json. */
+export interface CaseStudyCopy {
+  title?: string;
+  customer?: { name?: string; industry?: string; size?: string };
+  challenge?: string;
+  solution?: string;
+  metrics?: { label?: string; value?: string; improvement?: string }[];
+  timeline?: string;
+  quote?: { text?: string; author?: string; role?: string };
+  highlights?: string[];
+}
+
+/** Overlays the locale's copy on a case study; fields the copy leaves out keep the English from this file. */
+export function localizeCaseStudy(study: CaseStudy, copy: CaseStudyCopy | undefined): CaseStudy {
+  if (!copy) return study;
+  return {
+    ...study,
+    title: copy.title ?? study.title,
+    customer: { ...study.customer, ...(copy.customer ?? {}) },
+    challenge: copy.challenge ?? study.challenge,
+    solution: copy.solution ?? study.solution,
+    metrics: study.metrics.map((metric, i) => ({ ...metric, ...(copy.metrics?.[i] ?? {}) })),
+    timeline: copy.timeline ?? study.timeline,
+    quote: study.quote ? { ...study.quote, ...(copy.quote ?? {}) } : study.quote,
+    highlights: copy.highlights ?? study.highlights,
+  };
+}

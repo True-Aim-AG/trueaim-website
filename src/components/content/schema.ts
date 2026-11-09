@@ -19,6 +19,8 @@ export type BreadcrumbItem = {
 export type Author = {
   name: string;
   jobTitle?: string;
+  /** The author page on this site, locale-relative, for example /authors/frederic-brunner. */
+  url?: string;
   /** Profiles the person controls, for example a LinkedIn URL. */
   sameAs?: string[];
 };
@@ -54,6 +56,7 @@ export function personSchema(author: Author) {
     "@type": "Person",
     name: author.name,
     ...(author.jobTitle ? { jobTitle: author.jobTitle } : {}),
+    ...(author.url ? { url: author.url } : {}),
     ...(author.sameAs?.length ? { sameAs: author.sameAs } : {}),
   };
 }

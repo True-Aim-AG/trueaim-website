@@ -5,7 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { CARD, CARD_HOVER, CtaBand, PageHero, SCENE_CARD_HERO, SECTION } from "@/components/content";
 import { PageSeo } from "@/components/seo/PageSeo";
-import { caseStudies, type CaseStudy } from "@/data/case-studies";
+import { caseStudies, localizeCaseStudy, type CaseStudy, type CaseStudyCopy } from "@/data/case-studies";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { cn } from "@/lib/utils";
 
@@ -52,7 +52,11 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ lo
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("caseStudies");
-  const featured = published[0];
+  // The locale's copy for a study lives under caseStudies.studies.<slug>; the data file keeps the English.
+  const studies = published.map((cs) =>
+    localizeCaseStudy(cs, t.has(`studies.${cs.slug}`) ? (t.raw(`studies.${cs.slug}`) as CaseStudyCopy) : undefined),
+  );
+  const featured = studies[0];
   return (
     <>
       <PageSeo locale={locale} path="/case-studies" template="collection" />
@@ -69,7 +73,7 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ lo
       <section className={SECTION}>
         <div className="mx-auto max-w-7xl">
           <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3">
-            {published.map((study) => (
+            {studies.map((study) => (
               <li key={study.slug}>
                 <Link href={`/case-studies/${study.slug}`} className={cn(CARD, CARD_HOVER, "flex h-full flex-col overflow-hidden")}>
                   <div

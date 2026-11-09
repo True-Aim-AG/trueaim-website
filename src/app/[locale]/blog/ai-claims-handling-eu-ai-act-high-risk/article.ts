@@ -1,4 +1,5 @@
 import type { ArticleData } from "@/lib/seo/schema";
+import { articleAuthor } from "@/data/authors";
 
 /**
  * Schema data for this post, read by the page's JSON-LD graph (src/lib/seo/schema.ts).
@@ -6,6 +7,7 @@ import type { ArticleData } from "@/lib/seo/schema";
  */
 export const article: ArticleData = {
   datePublished: "2026-07-28T00:00:00.000Z",
+  author: articleAuthor("reuben-john", "CEO and Co-Founder"),
   section: "Regulatory",
   keywords: ["EU AI Act","Annex III","claims handling","GDPR Article 22","EIOPA","insurance AI governance"],
   wordCount: 3165,

@@ -5,15 +5,15 @@
     "technology": "Technologie",
     "company": "Unternehmen",
     "contact": "Kontakt",
-    "bookDemo": "Demo buchen",
-    "logoAlt": "True Aim Logo",
-    "toggleMenu": "Menü umschalten",
+    "bookDemo": "Demo anfragen",
+    "logoAlt": "Logo von True Aim",
+    "toggleMenu": "Menü öffnen oder schließen",
     "productsDropdown": {
       "invoiceBenchmarking": "Invoice Benchmarking",
       "invoiceBenchmarkingDesc": "Nie wieder zu viel für eine Rechnung zahlen",
-      "claimsDecisioning": "Claims Decisioning",
+      "claimsDecisioning": "Automated Coverage Check",
       "claimsDecisioningDesc": "Schäden in Minuten statt Wochen reguliert",
-      "damageReporting": "Damage Reporting",
+      "damageReporting": "AI Damage Assessment & Reporting",
       "damageReportingDesc": "Fertige Schadenberichte in Minuten",
       "otus": "Otus",
       "otusDesc": "Der Schadenspezialist von True Aim"
@@ -21,24 +21,24 @@
     "resourcesDropdown": {
       "caseStudies": "Fallstudien",
       "caseStudiesDesc": "Erfolgsgeschichten unserer Kunden",
-      "impactEstimator": "Impact Estimator",
-      "impactEstimatorDesc": "Potenzielle Wertschöpfung erkunden",
+      "impactEstimator": "Potenzialrechner",
+      "impactEstimatorDesc": "Potenzial entdecken",
       "trustCenter": "Trust Center",
       "trustCenterDesc": "Sicherheit & Compliance",
       "product": "Produktübersicht",
-      "productDesc": "Die True Aim Plattform",
+      "productDesc": "Die Plattform von True Aim",
       "blog": "Blog",
       "blogDesc": "Einblicke und Neuigkeiten"
     },
-    "platform": "Platform",
-    "solutions": "Solutions",
+    "platform": "Plattform",
+    "solutions": "Lösungen",
     "menu": {
       "dataExtraction": {
         "name": "Data Extraction",
         "desc": "Ihre Schadendaten, bereit für KI"
       },
       "claimsDecisioning": {
-        "name": "Claims Decisioning",
+        "name": "Automated Coverage Check",
         "desc": "Schäden in Minuten statt Wochen reguliert"
       },
       "invoiceBenchmarking": {
@@ -46,66 +46,66 @@
         "desc": "Nie wieder zu viel für eine Rechnung zahlen"
       },
       "damageReporting": {
-        "name": "Damage Reporting",
+        "name": "AI Damage Assessment & Reporting",
         "desc": "Fertige Schadenberichte in Minuten"
       },
       "otus": {
         "name": "Otus",
-        "desc": "Der Schadenspezialist von True Aim"
+        "desc": "Ein KI-gestützter Experte für jedes Teammitglied"
       },
       "insurers": {
-        "name": "Insurers",
-        "desc": "Property and casualty claims"
+        "name": "Versicherer",
+        "desc": "Sach-, Kfz- und Haftpflichtschäden"
       },
       "brokers": {
-        "name": "Brokers",
-        "desc": "Claims captured from the first call"
+        "name": "Makler",
+        "desc": "Schäden vom ersten Anruf an erfasst"
       },
       "tpas": {
-        "name": "Third-party administrators",
-        "desc": "More claims per adjuster, within mandate"
+        "name": "Schadendienstleister (TPA)",
+        "desc": "Mehr Schäden pro Sachbearbeiter, im Rahmen des Mandats"
       },
       "warranty": {
-        "name": "Warranty providers",
-        "desc": "Every invoice against the terms"
+        "name": "Garantieanbieter",
+        "desc": "Jede Rechnung anhand der Garantiebedingungen geprüft"
       },
       "claimsTech": {
-        "name": "Claims technology providers",
-        "desc": "Decisions inside your platform"
+        "name": "Anbieter von Schadensoftware",
+        "desc": "Entscheidungen in Ihrer Plattform"
       },
       "caseStudies": {
         "name": "Fallstudien",
-        "desc": "Erfolgsgeschichten unserer Kunden"
+        "desc": "Ergebnisse aus Schadenteams"
       },
       "blog": {
         "name": "Blog",
-        "desc": "Einblicke und Neuigkeiten"
+        "desc": "Schäden, Nachweise und Regulatorik"
       },
       "impactEstimator": {
-        "name": "Impact Estimator",
-        "desc": "Potenzielle Wertschöpfung erkunden"
+        "name": "Potenzialrechner",
+        "desc": "Einsparpotenzial berechnen"
       },
       "trustCenter": {
         "name": "Trust Center",
-        "desc": "Sicherheit & Compliance"
+        "desc": "Sicherheit, Zertifizierung und Daten"
       },
       "about": {
-        "name": "About",
-        "desc": "Who we are and who we work with"
+        "name": "Über uns",
+        "desc": "Wer wir sind und mit wem wir arbeiten"
       },
       "partners": {
-        "name": "Partners",
-        "desc": "Clients, partners and research"
+        "name": "Partner",
+        "desc": "Kunden, Partner und Forschung"
       },
       "contact": {
-        "name": "Contact",
-        "desc": "Request a demo or ask a question"
+        "name": "Kontakt",
+        "desc": "Demo anfragen oder eine Frage stellen"
       }
     },
     "languageLabel": "Sprache"
   },
   "footer": {
-    "logoAlt": "True Aim Logo",
+    "logoAlt": "Logo von True Aim",
     "company": "Unternehmen",
     "resources": "Ressourcen",
     "platform": "Plattform",
@@ -114,46 +114,44 @@
     "about": "Über uns",
     "contact": "Kontakt",
     "caseStudies": "Fallstudien",
-    "impactEstimator": "Impact Estimator",
+    "impactEstimator": "Potenzialrechner",
     "blog": "Blog",
     "platformOverview": "Plattformübersicht",
     "dataExtraction": "Data Extraction",
     "invoiceBenchmarking": "Invoice Benchmarking",
-    "claimsDecisioning": "Claims Decisioning",
-    "damageReporting": "Damage Reporting",
+    "claimsDecisioning": "Automated Coverage Check",
+    "damageReporting": "AI Damage Assessment & Reporting",
     "otus": "Otus",
     "security": "Sicherheit",
     "ethics": "Ethik & Meldungen",
-    "product": "Produktübersicht",
     "support": "Support",
-    "changelog": "Änderungsprotokoll",
+    "changelog": "Changelog",
     "privacy": "Datenschutzerklärung",
     "terms": "Nutzungsbedingungen",
-    "subProcessors": "Liste der Unterauftragsverarbeiter",
     "aiTransparency": "KI-Transparenz",
     "cookies": "Cookie-Richtlinie",
     "paia": "PAIA-Handbuch",
-    "copyright": "© {year} True Aim AG, Metallstrasse 9, 6300 Zug, Switzerland",
+    "copyright": "© {year} True Aim AG, Metallstrasse 9, 6300 Zug, Schweiz",
     "linkedin": "LinkedIn",
     "taglineLines": [
-      "Faster claims.",
-      "Smarter decisions.",
-      "Lower costs.",
-      "Auditable by design."
+      "Schnellere Schadenregulierung.",
+      "Klügere Entscheidungen.",
+      "Geringere Kosten.",
+      "Prüfbar von Grund auf."
     ],
     "followLinkedin": "Folgen Sie uns",
     "partners": "Partner"
   },
   "cookie": {
     "title": "Cookie-Einstellungen",
-    "description": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Essentielle Cookies sind immer aktiv. Sie können Analyse-Cookies aktivieren, um uns bei der Verbesserung unserer Website zu unterstützen.",
+    "description": "Wir verwenden Cookies, um Ihre Nutzung der Website zu verbessern. Notwendige Cookies sind immer aktiv. Analyse-Cookies können Sie aktivieren, um uns bei der Verbesserung unserer Website zu helfen.",
     "learnMore": "Mehr erfahren",
     "acceptAll": "Alle akzeptieren",
     "decline": "Ablehnen",
     "managePreferences": "Einstellungen verwalten",
     "savePreferences": "Einstellungen speichern",
-    "essential": "Essentiell",
-    "essentialDesc": "Erforderlich für die Funktion der Website",
+    "essential": "Notwendig",
+    "essentialDesc": "Erforderlich, damit die Website funktioniert",
     "analytics": "Analyse",
     "analyticsDesc": "Helfen uns zu verstehen, wie Besucher unsere Website nutzen"
   },

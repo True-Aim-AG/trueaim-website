@@ -11,13 +11,10 @@ export interface ROIInputs {
 }
 
 export const AUTOMATION_OPTIONS = [
-  { value: "none", label: "No current automation", factor: 0.80 },
-  { value: "some", label: "Basic rules or triage in place", factor: 0.7 },
-  {
-    value: "significant",
-    label: "Established workflow automation",
-    factor: 0.5,
-  },
+  // Labels live in messages/<locale>/impact.json (calculator.inputPanel.automationOptions).
+  { value: "none", factor: 0.80 },
+  { value: "some", factor: 0.7 },
+  { value: "significant", factor: 0.5 },
 ] as const;
 
 export const SALARY_BENCHMARKS: Record<string, number> = {
