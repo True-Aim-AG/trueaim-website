@@ -1,5 +1,41 @@
 # Changelog
 
+## [1.24.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.23.0...v1.24.0) (2026-11-09)
+
+
+### Features
+
+* **authors:** articles as a card grid under the bio ([932b778](https://github.com/True-Aim-AG/trueaim-website/commit/932b778abb1bf90d59cb1926e998e950d08434ff))
+* **authors:** Read more link with arrow on each article card ([4c86ae5](https://github.com/True-Aim-AG/trueaim-website/commit/4c86ae57947f1062b76aef8a74d24bd27cf389a4))
+* **authors:** short texture hero with round portrait, bio and article list below ([dc0d2f9](https://github.com/True-Aim-AG/trueaim-website/commit/dc0d2f983ca7239454b89d078bea998b62792979))
+* **authors:** standard compact hero with portrait, bio below, Blogs link ([a100f49](https://github.com/True-Aim-AG/trueaim-website/commit/a100f490bffd215cc4d4b419fa7d78b46cc89aba))
+* **blog:** About the author link on every post, comments call to action removed ([cf7350e](https://github.com/True-Aim-AG/trueaim-website/commit/cf7350e4af3f484a95d9175aeefa3cdb13c27bc1))
+* German, French and Italian site, Automated Coverage Check slug, AI Damage Assessment & Reporting, author pages ([#32](https://github.com/True-Aim-AG/trueaim-website/issues/32)) ([a96d27f](https://github.com/True-Aim-AG/trueaim-website/commit/a96d27f37c84cf19af8a2b4c32d5f206adb73215))
+* **i18n:** blog in German, French and Italian (remaining posts, index, integration playbook) and remove the last English-only overrides ([eb40c6a](https://github.com/True-Aim-AG/trueaim-website/commit/eb40c6af1b55996cad5790d01355e0a9b100d087))
+* **i18n:** blog posts batch 1 in German, French and Italian (pilots, build vs buy, language model boundary) ([6b3b996](https://github.com/True-Aim-AG/trueaim-website/commit/6b3b996dd045e88c080ad3e621510e13c2432270))
+* **i18n:** blog posts batch 2 (auditability scorecard, evidence chains, architectural transparency) ([3149635](https://github.com/True-Aim-AG/trueaim-website/commit/3149635747f773fbd7f5bdd6e1bb05367f92283e))
+* **i18n:** case studies, partners and solutions in three languages, batch 3 review fixes ([77a5565](https://github.com/True-Aim-AG/trueaim-website/commit/77a55656006e597bfac2045160a17168288a0eb7))
+* **i18n:** German, French and Italian home page ([9cde757](https://github.com/True-Aim-AG/trueaim-website/commit/9cde757ad3cd83e7e15d2619f450601631fe3b98))
+* **i18n:** German, French and Italian platform overview and product pages ([06c862f](https://github.com/True-Aim-AG/trueaim-website/commit/06c862f4d270dabac203eb35db420f345079f2c2))
+* **i18n:** legal pages batch 1 and review fixes for case studies, partners and solutions ([4ed13dd](https://github.com/True-Aim-AG/trueaim-website/commit/4ed13ddcc517eb979c244d3ac7ca6f376d20a226))
+* **i18n:** legal pages batch 2 (PAIA, security, AI transparency, ethics, support, sub-processors, changelog, previous privacy policy) ([43fe3c8](https://github.com/True-Aim-AG/trueaim-website/commit/43fe3c829730ad10c136ec2d850ab166128b93f6))
+* **i18n:** Technology, Trust Centre, About, Contact and Impact Estimator ([edfd6b3](https://github.com/True-Aim-AG/trueaim-website/commit/edfd6b3546810b0f47d72108cde9337951939542))
+* move the Automated Coverage Check page to /en/platform/automated-coverage-check/ ([2a33628](https://github.com/True-Aim-AG/trueaim-website/commit/2a336281b814103a62b7825634f2d77d77a0d604))
+* rename Damage Reporting to AI Damage Assessment & Reporting and add author pages ([f3c9df1](https://github.com/True-Aim-AG/trueaim-website/commit/f3c9df1d0f277a533822223b7278f6ec5ce7ec8d))
+
+
+### Bug Fixes
+
+* **authors:** About heading, first-name article heading, team link removed ([#35](https://github.com/True-Aim-AG/trueaim-website/issues/35)) ([31365f9](https://github.com/True-Aim-AG/trueaim-website/commit/31365f96d31b5e4a056478743365da4aa638c07e))
+* **authors:** article cards show the title only ([02fab19](https://github.com/True-Aim-AG/trueaim-website/commit/02fab19d3b683009ff94927fcdc8f0d9915a9e11))
+* **authors:** portrait follows the text column instead of hugging the right edge ([c477ed4](https://github.com/True-Aim-AG/trueaim-website/commit/c477ed42942f7bba3763d28d3199566d9ecc13a0))
+* **authors:** portrait right edge aligned with the header demo button ([8441bc4](https://github.com/True-Aim-AG/trueaim-website/commit/8441bc48ac8839238a82d90e7e88c2a253cbdb56))
+* **authors:** portrait right edge aligns with the header demo button ([f03042e](https://github.com/True-Aim-AG/trueaim-website/commit/f03042e4518ef476c262c8cbee45ef12a00d88f1))
+* **authors:** text column left, portrait right ([b550e5b](https://github.com/True-Aim-AG/trueaim-website/commit/b550e5b91212d1c5f15a2cd3678a4f45d175ef6b))
+* **i18n:** apply Edwige's review on PR 32 (meaning changes in FR and IT) ([3038d1f](https://github.com/True-Aim-AG/trueaim-website/commit/3038d1f83ba0fb2f4aa2e7a236839e96100f0dbc))
+* **i18n:** apply the six review passes on legal batch 2 and the blog; translate fragments the extractor skipped ([25007ef](https://github.com/True-Aim-AG/trueaim-website/commit/25007ef03c55cec3d49f140a6ca9c3fbfc755680))
+* **i18n:** apply the twelve must-fix findings from the independent audit ([46cdf90](https://github.com/True-Aim-AG/trueaim-website/commit/46cdf904872b4096610efc20ca382c16436e3c68))
+
 ## [1.23.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.22.4...v1.23.0) (2026-11-04)
 
 
