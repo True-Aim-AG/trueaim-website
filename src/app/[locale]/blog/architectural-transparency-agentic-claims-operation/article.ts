@@ -1,4 +1,5 @@
 import type { ArticleData } from "@/lib/seo/schema";
+import { articleAuthor } from "@/data/authors";
 
 /**
  * Schema data for this post, read by the page's JSON-LD graph (src/lib/seo/schema.ts).
@@ -6,7 +7,7 @@ import type { ArticleData } from "@/lib/seo/schema";
  */
 export const article: ArticleData = {
   datePublished: "2026-10-22T00:00:00.000Z",
-  author: { name: "Reuben John", jobTitle: "CEO and Co-Founder" },
+  author: articleAuthor("reuben-john", "CEO and Co-Founder"),
   section: "Operating Model",
   keywords: [
     "agentic claims operation",

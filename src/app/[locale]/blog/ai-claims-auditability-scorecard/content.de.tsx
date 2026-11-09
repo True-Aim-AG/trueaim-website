@@ -127,6 +127,10 @@ export default async function AuditabilityScorecardBlogPost({
                 <Clock aria-hidden="true" className="w-4 h-4" strokeWidth={1.5} />
                 14 Min. Lesezeit
               </div>
+              <Link href="/authors/reuben-john" className="inline-flex items-center gap-1.5 font-medium text-accent hover:underline">
+                Über den Autor
+                <ArrowRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.5} />
+              </Link>
             </div>
           </MotionDiv>
         </div>

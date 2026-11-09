@@ -1,4 +1,5 @@
 import type { ArticleData, ListData } from "@/lib/seo/schema";
+import { articleAuthor } from "@/data/authors";
 import { operations } from "./operations";
 
 /**
@@ -7,7 +8,7 @@ import { operations } from "./operations";
  */
 export const article: ArticleData = {
   datePublished: "2026-10-06T00:00:00.000Z",
-  author: { name: "Reuben John", jobTitle: "CEO and Co-Founder" },
+  author: articleAuthor("reuben-john", "CEO and Co-Founder"),
   section: "Technical Architecture",
   keywords: [
     "language models in claims",

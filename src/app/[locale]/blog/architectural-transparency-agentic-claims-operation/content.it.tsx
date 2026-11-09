@@ -318,6 +318,10 @@ export default async function ArchitecturalTransparencyBlogPost({
                 <Clock aria-hidden="true" className="w-4 h-4" strokeWidth={1.5} />
                 8 min di lettura
               </div>
+              <Link href="/authors/reuben-john" className="inline-flex items-center gap-1.5 font-medium text-accent hover:underline">
+                Sull’autore
+                <ArrowRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.5} />
+              </Link>
             </div>
           </MotionDiv>
         </div>
@@ -587,10 +591,6 @@ export default async function ArchitecturalTransparencyBlogPost({
                     ))}
                   </ul>
                 </div>
-
-                <p className="text-body-lg text-strong mt-8">
-                  Quali confini architetturali della vostra attuale infrastruttura sinistri generano oggi il maggiore attrito amministrativo? Parliamone nei commenti.
-                </p>
               </MotionDiv>
 
               {/* FAQ */}

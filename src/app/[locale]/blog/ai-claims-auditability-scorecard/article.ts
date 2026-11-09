@@ -1,4 +1,5 @@
 import type { ArticleData, ListData } from "@/lib/seo/schema";
+import { articleAuthor } from "@/data/authors";
 import { scorecardQuestions } from "./questions";
 
 /**
@@ -7,7 +8,7 @@ import { scorecardQuestions } from "./questions";
  */
 export const article: ArticleData = {
   datePublished: "2026-09-10T00:00:00.000Z",
-  author: { name: "Reuben John", jobTitle: "Chief Executive Officer" },
+  author: articleAuthor("reuben-john", "Chief Executive Officer"),
   section: "Best Practice",
   keywords: [
     "AI claims auditability",

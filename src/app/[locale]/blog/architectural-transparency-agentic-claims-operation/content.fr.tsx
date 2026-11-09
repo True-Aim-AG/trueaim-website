@@ -318,6 +318,10 @@ export default async function ArchitecturalTransparencyBlogPost({
                 <Clock aria-hidden="true" className="w-4 h-4" strokeWidth={1.5} />
                 8 min de lecture
               </div>
+              <Link href="/authors/reuben-john" className="inline-flex items-center gap-1.5 font-medium text-accent hover:underline">
+                À propos de l’auteur
+                <ArrowRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.5} />
+              </Link>
             </div>
           </MotionDiv>
         </div>
@@ -587,10 +591,6 @@ export default async function ArchitecturalTransparencyBlogPost({
                     ))}
                   </ul>
                 </div>
-
-                <p className="text-body-lg text-strong mt-8">
-                  Quelles frontières architecturales de votre infrastructure sinistres actuelle génèrent aujourd’hui le plus de frottement administratif ? Échangeons dans les commentaires.
-                </p>
               </MotionDiv>
 
               {/* FAQ */}

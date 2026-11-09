@@ -190,6 +190,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 <BookOpen className="w-4 h-4" strokeWidth={1.5} />
                 Regulatory Analysis
               </div>
+              <Link href="/authors/reuben-john" className="inline-flex items-center gap-1.5 font-medium text-accent hover:underline">
+                About the author
+                <ArrowRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.5} />
+              </Link>
             </div>
           </MotionDiv>
         </div>

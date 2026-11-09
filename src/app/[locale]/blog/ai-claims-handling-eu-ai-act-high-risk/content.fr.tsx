@@ -183,6 +183,10 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 <BookOpen className="w-4 h-4" strokeWidth={1.5} />
                 Analyse réglementaire
               </div>
+              <Link href="/authors/reuben-john" className="inline-flex items-center gap-1.5 font-medium text-accent hover:underline">
+                À propos de l’auteur
+                <ArrowRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.5} />
+              </Link>
             </div>
           </MotionDiv>
         </div>

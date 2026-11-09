@@ -320,6 +320,10 @@ export default async function ArchitecturalTransparencyBlogPost({
                 <Clock aria-hidden="true" className="w-4 h-4" strokeWidth={1.5} />
                 8 min read
               </div>
+              <Link href="/authors/reuben-john" className="inline-flex items-center gap-1.5 font-medium text-accent hover:underline">
+                About the author
+                <ArrowRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.5} />
+              </Link>
             </div>
           </MotionDiv>
         </div>
@@ -699,12 +703,6 @@ export default async function ArchitecturalTransparencyBlogPost({
                     ))}
                   </ul>
                 </div>
-
-                <p className="text-body-lg text-strong mt-8">
-                  What architectural boundaries in your existing claims
-                  infrastructure generate the highest administrative drag
-                  today? Let’s connect in the comments.
-                </p>
               </MotionDiv>
 
               {/* FAQ */}

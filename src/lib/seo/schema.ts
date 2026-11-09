@@ -201,7 +201,15 @@ export function buildPageGraph(input: PageGraphInput) {
         mainEntityOfPage: ref(ids.page),
         ...(article?.datePublished ? { datePublished: article.datePublished } : {}),
         dateModified: page.updated,
-        author: article?.author ? { ...personSchema(article.author), worksFor: ref(ORGANIZATION_ID) } : ref(ORGANIZATION_ID),
+        author: article?.author
+          ? {
+              ...personSchema({
+                ...article.author,
+                url: article.author.url?.startsWith("/") ? localeUrl(locale, article.author.url) : article.author.url,
+              }),
+              worksFor: ref(ORGANIZATION_ID),
+            }
+          : ref(ORGANIZATION_ID),
         publisher: ref(ORGANIZATION_ID),
         ...(article?.section ? { articleSection: article.section } : {}),
         ...(article?.keywords?.length ? { keywords: article.keywords.join(", ") } : {}),
