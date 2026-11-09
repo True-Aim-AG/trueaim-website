@@ -41,6 +41,7 @@ export default async function AuthorPage({ params }: Props) {
   const nav = await getTranslations("nav");
   const name = t(`team.members.${author.key}.name`);
   const jobTitle = t(`team.members.${author.key}.title`);
+  const firstName = name.split(" ")[0];
   const path = `/authors/${author.slug}`;
   const articles = localizedBlogPosts(locale).filter((post) => post.author === author.slug);
 
@@ -92,17 +93,13 @@ export default async function AuthorPage({ params }: Props) {
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="font-display text-[26px] font-bold leading-[1.2] text-strong md:text-[32px]">{t("authors.aboutHeading", { name })}</h2>
           <p className="mt-5 max-w-[72ch] text-[17px] leading-[1.65] text-body md:text-[18px]">{t(`team.members.${author.key}.bio`)}</p>
-          <Link href="/about" className={cn(LINK, "mt-6")}>
-            {t("authors.teamLink")}
-            <ArrowRight strokeWidth={1.5} className="h-4 w-4" />
-          </Link>
         </div>
       </section>
 
       {articles.length > 0 && (
         <section className="border-t border-hairline bg-page-tint py-16 md:py-20">
           <div className="mx-auto max-w-7xl px-6">
-            <h2 className="font-display text-[26px] font-bold leading-[1.2] text-strong md:text-[32px]">{t("authors.articlesHeading", { name })}</h2>
+            <h2 className="font-display text-[26px] font-bold leading-[1.2] text-strong md:text-[32px]">{t("authors.articlesHeading", { name: firstName })}</h2>
             <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {articles.map((post) => (
                 <li key={post.slug} className="h-full">
