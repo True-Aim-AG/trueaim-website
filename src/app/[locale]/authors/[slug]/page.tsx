@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowRight, Linkedin } from "lucide-react";
+import { buttonClasses } from "@/components/brand/Button";
 import { Link } from "@/i18n/navigation";
 import { authors, findAuthor } from "@/data/authors";
 import { localizedBlogPosts } from "@/lib/blog-posts";
@@ -36,6 +37,7 @@ export default async function AuthorPage({ params }: Props) {
   if (!author) notFound();
   setRequestLocale(locale);
   const t = await getTranslations("company");
+  const nav = await getTranslations("nav");
   const name = t(`team.members.${author.key}.name`);
   const jobTitle = t(`team.members.${author.key}.title`);
   const path = `/authors/${author.slug}`;
@@ -67,14 +69,21 @@ export default async function AuthorPage({ params }: Props) {
               </Link>
             </div>
           </div>
-          <Image
-            src={author.image}
-            alt={name}
-            width={240}
-            height={240}
-            priority
-            className="h-40 w-40 shrink-0 rounded-full bg-lilac object-cover md:h-60 md:w-60"
-          />
+          {/* The portrait's right edge lines up with the left edge of the header's demo button: an
+              invisible copy of that button (same classes, same text) reserves exactly its width. */}
+          <div className="flex shrink-0 items-center">
+            <Image
+              src={author.image}
+              alt={name}
+              width={240}
+              height={240}
+              priority
+              className="h-40 w-40 rounded-full bg-lilac object-cover md:h-60 md:w-60"
+            />
+            <span aria-hidden="true" className={buttonClasses("primary", "sm", "invisible hidden shrink-0 md:inline-flex")}>
+              {nav("bookDemo")}
+            </span>
+          </div>
         </div>
       </section>
 
