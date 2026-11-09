@@ -125,7 +125,7 @@
       "faq": [
         {
           "question": "Quelles branches True Aim prend-il en charge ?",
-          "answer": "True Aim n’est pas limité à une seule branche. Les sinistres auto, habitation, garantie et responsabilité civile sont construits à partir des mêmes composants, chacun fonctionnant avec ses propres conditions de police et ses propres règles."
+          "answer": "True Aim n’est pas limité à une seule branche. Les sinistres auto, dommages aux biens, garantie et responsabilité civile sont construits à partir des mêmes composants, chacun fonctionnant avec ses propres conditions de police et ses propres règles."
         },
         {
           "question": "Qui prend la décision finale ?",
@@ -261,7 +261,7 @@
             },
             {
               "reference": "CLM-02981",
-              "kind": "Habitation",
+              "kind": "Dommages aux biens",
               "status": "open",
               "label": "En cours",
               "sla": "2 j"

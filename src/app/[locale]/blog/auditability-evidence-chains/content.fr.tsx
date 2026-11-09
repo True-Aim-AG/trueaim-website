@@ -444,7 +444,7 @@ Timestamp: [ISO timestamp]`}</pre>
                     },
                     {
                       title: "Logique d’approbation par défaut",
-                      symptom: "Précision globale élevée, mais fausse pour de mauvaises raisons",
+                      symptom: "Précision globale élevée, mais des décisions erronées pour de mauvaises raisons",
                       impact:
                         'Impossible d’expliquer l’approbation, juste « aucune défaillance trouvée »',
                       fix: "Exiger une confirmation explicite de couverture, pas l’absence de rejet",

@@ -90,7 +90,7 @@ const governanceStats: { value: string; label: string }[] = [
 const faqs: { q: string; a: React.ReactNode }[] = [
   {
     q: "La gestion des sinistres par IA est-elle à haut risque au sens de l’AI Act européen ?",
-    a: "Non. L’annexe III ne mentionne pas la gestion des sinistres. Le point 5, c) ne couvre que l’évaluation des risques et la tarification en assurance vie et santé. Le projet de lignes directrices de la Commission sur la classification, du 19 mai 2026, cite la gestion des sinistres comme exemple de système sortant de ce point, même pour des produits d’assurance santé. Une activité de gestion de sinistres auto, habitation, garantie ou entreprises échappe au régime haut risque, tout en restant soumise au droit de la protection des données et au droit sectoriel de l’assurance.",
+    a: "Non. L’annexe III ne mentionne pas la gestion des sinistres. Le point 5, c) ne couvre que l’évaluation des risques et la tarification en assurance vie et santé. Le projet de lignes directrices de la Commission sur la classification, du 19 mai 2026, cite la gestion des sinistres comme exemple de système sortant de ce point, même pour des produits d’assurance santé. Une activité de gestion de sinistres auto, dommages aux biens, garantie ou entreprises échappe au régime haut risque, tout en restant soumise au droit de la protection des données et au droit sectoriel de l’assurance.",
   },
   {
     q: "La gestion des sinistres par IA est-elle à haut risque en assurance santé ?",
@@ -285,7 +285,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  L’évaluation des risques et la tarification vie et santé sont dans le champ. La gestion des sinistres auto, habitation, garantie et entreprises ne l’est pas.
+                  L’évaluation des risques et la tarification vie et santé sont dans le champ. La gestion des sinistres auto, dommages aux biens, garantie et entreprises ne l’est pas.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-6">

@@ -283,7 +283,7 @@ export default async function BuildVsBuyBlogPost({ params }: { params: Promise<{
                       },
                       {
                         title: "Vos types de sinistres sont relativement standards",
-                        desc: "Auto, habitation, santé : les fournisseurs ont déjà vu cela.",
+                        desc: "Auto, dommages aux biens, santé : les fournisseurs ont déjà vu cela.",
                       },
                       {
                         title:

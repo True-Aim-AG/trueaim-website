@@ -222,7 +222,7 @@ export default async function IntegrationPlaybookPage({ params }: { params: Prom
                 { label: "Schémas", value: "5" },
                 { label: "Phases", value: "3" },
                 { label: "Première intégration", value: "4–6 sem." },
-                { label: "Localisation des données", value: "Chez le client" },
+                { label: "Localisation des données", value: "Dans le tenant" },
               ].map((stat) => (
                 <div
                   key={stat.label}

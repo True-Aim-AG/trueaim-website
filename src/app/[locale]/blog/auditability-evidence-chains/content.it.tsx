@@ -444,7 +444,7 @@ Timestamp: [ISO timestamp]`}</pre>
                     },
                     {
                       title: "Logica di approvazione per default",
-                      symptom: "Accuratezza complessiva elevata, ma corretta per i motivi sbagliati",
+                      symptom: "Accuratezza complessiva elevata, ma decisioni sbagliate per i motivi sbagliati",
                       impact:
                         'Non si può spiegare perché è stato approvato, solo «nessun errore trovato»',
                       fix: "Richiedere una conferma esplicita della copertura, non l’assenza di un rifiuto",

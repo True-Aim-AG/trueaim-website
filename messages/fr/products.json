@@ -13,7 +13,7 @@
         "title": "Data Extraction : vos données sinistres, prêtes pour l’IA",
         "summary": "L’essentiel de ce qu’un assureur sait d’un sinistre se trouve dans des PDF, des scans, des photos, des e-mails et des systèmes historiques. True Aim les lit, en extrait l’information, la met en contexte et construit une base de données structurée unique. Vos équipes et votre IA peuvent ensuite interroger chaque sinistre, comparer chaque document et agir sur ce qu’elles trouvent.",
         "scene": {
-          "alt": "Un film en boucle d’un graphe de données sinistres synthétiques. Il s’ouvre sur un sinistre habitation et ses enregistrements liés, puis les dispose en colonnes autour du sinistre, de l’assureur et du bâtiment assuré tour à tour, montrant le preneur d’assurance, le courtier, la police, les évaluations du sinistre, les étendues des travaux par corps de métier, les factures, les documents et les photos de dommages que True Aim a extraits.",
+          "alt": "Un film en boucle d’un graphe de données sinistres synthétiques. Il s’ouvre sur un sinistre dommages aux biens et ses enregistrements liés, puis les dispose en colonnes autour du sinistre, de l’assureur et du bâtiment assuré tour à tour, montrant le preneur d’assurance, le courtier, la police, les évaluations du sinistre, les étendues des travaux par corps de métier, les factures, les documents et les photos de dommages que True Aim a extraits.",
           "types": {
             "claim": "Sinistre",
             "lossEvent": "Événement",
@@ -61,7 +61,7 @@
       "locked": {
         "heading": "Un savoir sinistres enfermé dans des fichiers statiques",
         "paragraphs": [
-          "Les équipes sinistres détiennent des années de preuves qu’aucun système ne peut interroger. Factures, rapports, devis et correspondance restent des fichiers, lus une fois puis archivés. L’IA ne peut travailler qu’avec ce qu’elle trouve. True Aim transforme ces archives en données, en assurance IARD et non-vie, auto, habitation, garantie et gestion déléguée."
+          "Les équipes sinistres détiennent des années de preuves qu’aucun système ne peut interroger. Factures, rapports, devis et correspondance restent des fichiers, lus une fois puis archivés. L’IA ne peut travailler qu’avec ce qu’elle trouve. True Aim transforme ces archives en données, en assurance IARD et non-vie, auto, dommages aux biens, garantie et gestion déléguée."
         ],
         "imageAlt": "Des documents sinistres archivés en fichiers statiques"
       },
@@ -259,7 +259,7 @@
           },
           {
             "title": "Les calculs effectués",
-            "text": "Franchise, plafonds, limites, responsabilité et vétusté, traités dans l’ordre."
+            "text": "Franchise, plafonds, limites, responsabilité et plus-value (betterment), traités dans l’ordre."
           },
           {
             "title": "Chaque chiffre tracé",
@@ -581,7 +581,7 @@
         "heading": "Nos données, ou un moteur construit à partir des vôtres",
         "paragraphs": [
           "Selon votre marché, True Aim fournit ses propres données de référence dès le premier jour ou construit un moteur de référence à partir de vos propres données.",
-          "En Suisse, la référence s’appuie sur plus de 100 000 factures de sinistres habitation. Sur d’autres marchés, True Aim la construit avec des partenaires locaux et à partir des données que vous détenez déjà.",
+          "En Suisse, la référence s’appuie sur plus de 100 000 factures de sinistres dommages aux biens. Sur d’autres marchés, True Aim la construit avec des partenaires locaux et à partir des données que vous détenez déjà.",
           "Dans les deux cas, chaque ligne est confrontée à ce que le travail devrait coûter pour ce corps de métier dans cette région. La référence continue d’apprendre des factures que vous acceptez."
         ],
         "imageAlt": "Une flèche au centre d’une cible en métal"
@@ -710,7 +710,7 @@
       "faq": [
         {
           "question": "D’où viennent les données de prix ?",
-          "answer": "En Suisse, de plus de 100 000 factures de sinistres habitation, groupées par corps de métier et par région. Sur d’autres marchés, True Aim travaille avec des partenaires pour construire la référence à partir de vos propres données."
+          "answer": "En Suisse, de plus de 100 000 factures de sinistres dommages aux biens, groupées par corps de métier et par région. Sur d’autres marchés, True Aim travaille avec des partenaires pour construire la référence à partir de vos propres données."
         },
         {
           "question": "Nous ne contrôlons que les factures au-dessus d’un certain montant. Pourquoi changer ?",
@@ -859,7 +859,7 @@
           {
             "id": "handover",
             "tab": "Transmettre un sinistre",
-            "prompt": "Rédige un e-mail de passation pour le sinistre 5964 à mon collègue du service habitation.",
+            "prompt": "Rédige un e-mail de passation pour le sinistre 5964 à mon collègue du service dommages aux biens.",
             "answer": [
               "Brouillon prêt. Objet : Passation, sinistre 5964, garantie auto, J. Odermatt. Ce qui s’est passé : déclaré le 3 octobre, cinq documents lus, turbocompresseur et main-d’œuvre acceptés, huile et filtre exclus au titre de la clause 2.4, véhicule de courtoisie mis de côté au plafond de cinq jours.",
               "Ce qui reste ouvert : la facture révisée du garage est attendue vendredi. Prochaine étape : confirmer les jours de courtoisie dès qu’elle arrive. Le dossier complet est lié."

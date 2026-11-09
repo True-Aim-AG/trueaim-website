@@ -365,7 +365,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Prenons un sinistre habitation standard ou un sinistre auto complexe.
+                  Prenons un sinistre dommages aux biens standard ou un sinistre auto complexe.
                 </p>
 
                 <p className="text-body leading-[1.6] mb-5">

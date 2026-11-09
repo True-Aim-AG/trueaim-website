@@ -444,7 +444,7 @@ Timestamp: [ISO timestamp]`}</pre>
                     },
                     {
                       title: "Standardmäßige Genehmigung",
-                      symptom: "Insgesamt hohe Genauigkeit, aber aus den falschen Gründen richtig",
+                      symptom: "Insgesamt hohe Genauigkeit, aber falsch aus den falschen Gründen",
                       impact:
                         'Warum genehmigt wurde, lässt sich nicht erklären, nur „keine Fehler gefunden“',
                       fix: "Explizite Deckungsbestätigung verlangen, nicht das Ausbleiben einer Ablehnung",

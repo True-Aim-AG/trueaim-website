@@ -333,7 +333,7 @@ export default async function LanguageModelBoundaryBlogPost({
                 </p>
 
                 <p className="text-body leading-[1.6]">
-                  Franchigie, scoperti, soglie, massimali, limiti, ripartizioni di responsabilità, coassicurazione e deprezzamento sono tutti calcolo. Nessuno di loro ha bisogno di un modello.
+                  Franchigie, scoperti, soglie, massimali, limiti, ripartizioni di responsabilità, coassicurazione e deduzione per miglioria (betterment) sono tutti calcolo. Nessuno di loro ha bisogno di un modello.
                 </p>
               </MotionDiv>
 
