@@ -8,7 +8,7 @@ import { Link } from "@/i18n/navigation";
 import { authors, findAuthor } from "@/data/authors";
 import { localizedBlogPosts } from "@/lib/blog-posts";
 import { CARD, CARD_HOVER, TextureBackdrop } from "@/components/content";
-import { CARD_TEXT, CARD_TITLE } from "@/components/content/surface";
+import { CARD_TITLE } from "@/components/content/surface";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { cn } from "@/lib/utils";
@@ -107,16 +107,7 @@ export default async function AuthorPage({ params }: Props) {
               {articles.map((post) => (
                 <li key={post.slug} className="h-full">
                   <Link href={`/blog/${post.slug}`} className={cn(CARD, CARD_HOVER, "group flex h-full flex-col p-7")}>
-                    <p className="text-[12px] font-medium uppercase tracking-[0.1em] text-accent">
-                      {post.displayDate} · {post.readTime}
-                    </p>
-                    <h3 className={cn(CARD_TITLE, "mt-3")}>{post.title}</h3>
-                    <p className={cn(CARD_TEXT, "mt-3 line-clamp-3")}>{post.excerpt}</p>
-                    <ArrowRight
-                      aria-hidden="true"
-                      strokeWidth={1.5}
-                      className="mt-auto h-5 w-5 self-end pt-0 text-accent transition-transform duration-150 ease-brand group-hover:translate-x-1"
-                    />
+                    <h3 className={cn(CARD_TITLE, "group-hover:text-accent")}>{post.title}</h3>
                   </Link>
                 </li>
               ))}
