@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowRight, Linkedin } from "lucide-react";
+import { buttonClasses } from "@/components/brand/Button";
 import { Link } from "@/i18n/navigation";
 import { authors, findAuthor } from "@/data/authors";
 import { PageSeo } from "@/components/seo/PageSeo";
@@ -32,6 +33,7 @@ export default async function AuthorPage({ params }: Props) {
   if (!author) notFound();
   setRequestLocale(locale);
   const t = await getTranslations("company");
+  const nav = await getTranslations("nav");
   const name = t(`team.members.${author.key}.name`);
   const jobTitle = t(`team.members.${author.key}.title`);
   const path = `/authors/${author.slug}`;
@@ -45,7 +47,7 @@ export default async function AuthorPage({ params }: Props) {
         person={{ name, jobTitle, image: author.image, sameAs: [author.linkedin] }}
       />
       <section className="px-6 py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[minmax(0,44rem)_280px] md:gap-16 md:items-start">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:gap-16 md:items-start">
           <div>
             <p className="text-[12px] font-medium uppercase tracking-[0.1em] text-accent">
               {t("authors.eyebrow")} · {jobTitle}
@@ -67,14 +69,21 @@ export default async function AuthorPage({ params }: Props) {
               </Link>
             </div>
           </div>
-          <Image
-            src={author.image}
-            alt={name}
-            width={280}
-            height={280}
-            priority
-            className="order-first h-56 w-56 bg-lilac object-cover md:order-none md:h-[280px] md:w-[280px]"
-          />
+          {/* The portrait's right edge lines up with the left edge of the header's demo button: an
+              invisible copy of that button (same classes, same text) reserves exactly its width. */}
+          <div className="order-first flex items-start gap-3 md:order-none">
+            <Image
+              src={author.image}
+              alt={name}
+              width={280}
+              height={280}
+              priority
+              className="h-56 w-56 bg-lilac object-cover md:h-[280px] md:w-[280px]"
+            />
+            <span aria-hidden="true" className={buttonClasses("primary", "sm", "invisible hidden shrink-0 md:inline-flex")}>
+              {nav("bookDemo")}
+            </span>
+          </div>
         </div>
       </section>
     </>
