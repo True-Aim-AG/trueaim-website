@@ -108,6 +108,14 @@ export default async function AuthorPage({ params }: Props) {
                 <li key={post.slug} className="h-full">
                   <Link href={`/blog/${post.slug}`} className={cn(CARD, CARD_HOVER, "group flex h-full flex-col p-7")}>
                     <h3 className={cn(CARD_TITLE, "group-hover:text-accent")}>{post.title}</h3>
+                    <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-medium text-accent">
+                      {t("authors.readMore")}
+                      <ArrowRight
+                        aria-hidden="true"
+                        strokeWidth={1.5}
+                        className="h-4 w-4 transition-transform duration-150 ease-brand group-hover:translate-x-1"
+                      />
+                    </span>
                   </Link>
                 </li>
               ))}

@@ -148,6 +148,7 @@
     },
     "authors": {
       "eyebrow": "Auteur",
+      "readMore": "Lire la suite",
       "aboutHeading": "À propos de {name}",
       "articlesHeading": "Articles de {name}",
       "blogLink": "Blogs",
