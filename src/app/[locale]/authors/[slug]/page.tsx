@@ -46,14 +46,6 @@ export default async function AuthorPage({ params }: Props) {
       />
       <section className="px-6 py-24">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[minmax(0,1fr)_280px] md:items-start">
-          <Image
-            src={author.image}
-            alt={name}
-            width={280}
-            height={280}
-            priority
-            className="order-first h-56 w-56 bg-lilac object-cover md:order-none md:h-[280px] md:w-[280px] md:justify-self-end"
-          />
           <div>
             <p className="text-[12px] font-medium uppercase tracking-[0.1em] text-accent">
               {t("authors.eyebrow")} · {jobTitle}
@@ -75,6 +67,14 @@ export default async function AuthorPage({ params }: Props) {
               </Link>
             </div>
           </div>
+          <Image
+            src={author.image}
+            alt={name}
+            width={280}
+            height={280}
+            priority
+            className="order-first h-56 w-56 bg-lilac object-cover md:order-none md:h-[280px] md:w-[280px] md:justify-self-end"
+          />
         </div>
       </section>
     </>
