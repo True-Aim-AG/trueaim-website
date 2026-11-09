@@ -145,6 +145,11 @@
       "heading": "Voyez True Aim sur vos propres sinistres",
       "description": "Apportez vos propres factures, sinistres ou rapports de dommages et la démo montre le résultat final.",
       "button": "Demander une démo"
+    },
+    "authors": {
+      "eyebrow": "Auteur",
+      "blogLink": "Voir le blog",
+      "teamLink": "Toute l’équipe"
     }
   }
 }

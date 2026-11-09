@@ -13,7 +13,7 @@
       "invoiceBenchmarkingDesc": "Ne plus jamais surpayer une facture",
       "claimsDecisioning": "Automated Coverage Check",
       "claimsDecisioningDesc": "Des sinistres réglés en minutes, pas en semaines",
-      "damageReporting": "Damage Reporting",
+      "damageReporting": "AI Damage Assessment & Reporting",
       "damageReportingDesc": "Des rapports de dommages complets en quelques minutes",
       "otus": "Otus",
       "otusDesc": "Le spécialiste sinistres de True Aim"
@@ -46,7 +46,7 @@
         "desc": "Ne plus jamais surpayer une facture"
       },
       "damageReporting": {
-        "name": "Damage Reporting",
+        "name": "AI Damage Assessment & Reporting",
         "desc": "Des rapports de dommages complets en quelques minutes"
       },
       "otus": {
@@ -120,7 +120,7 @@
     "dataExtraction": "Data Extraction",
     "invoiceBenchmarking": "Invoice Benchmarking",
     "claimsDecisioning": "Automated Coverage Check",
-    "damageReporting": "Damage Reporting",
+    "damageReporting": "AI Damage Assessment & Reporting",
     "otus": "Otus",
     "security": "Sécurité",
     "ethics": "Éthique et signalement",

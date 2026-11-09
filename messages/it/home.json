@@ -90,7 +90,7 @@
         "damageReporting": {
           "title": "Rapporti danni completi, preparati per voi",
           "text": "Già alla denuncia di sinistro, foto e documenti diventano un preventivo quantificato e l’ambito completo dei lavori, prima che qualcuno vada sul posto.",
-          "link": "Damage Reporting"
+          "link": "AI Damage Assessment & Reporting"
         }
       }
     },
@@ -120,7 +120,7 @@
       "claimsDecisioningText": "Ogni voce verificata rispetto alle condizioni di polizza, con tutti i calcoli visibili.",
       "invoiceBenchmarking": "Invoice Benchmarking",
       "invoiceBenchmarkingText": "Ogni fattura, preventivo e stima confrontato con il prezzo di riferimento.",
-      "damageReporting": "Damage Reporting",
+      "damageReporting": "AI Damage Assessment & Reporting",
       "damageReportingText": "Un preventivo quantificato e l’ambito completo dei lavori alla denuncia di sinistro.",
       "otus": "Otus, lo specialista sinistri di True Aim",
       "otusText": "Un esperto basato sull’IA per ogni membro del team, senza potere decisionale.",

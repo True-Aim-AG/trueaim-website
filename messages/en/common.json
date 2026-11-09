@@ -13,7 +13,7 @@
       "invoiceBenchmarkingDesc": "Never overpay on an invoice again",
       "claimsDecisioning": "Automated Coverage Check",
       "claimsDecisioningDesc": "Settled claims in minutes, not weeks",
-      "damageReporting": "Damage Reporting",
+      "damageReporting": "AI Damage Assessment & Reporting",
       "damageReportingDesc": "Completed damage reports in minutes",
       "otus": "Otus",
       "otusDesc": "True Aim's claims specialist"
@@ -46,7 +46,7 @@
         "desc": "Never overpay on an invoice again"
       },
       "damageReporting": {
-        "name": "Damage Reporting",
+        "name": "AI Damage Assessment & Reporting",
         "desc": "Completed damage reports in minutes"
       },
       "otus": {
@@ -120,7 +120,7 @@
     "dataExtraction": "Data Extraction",
     "invoiceBenchmarking": "Invoice Benchmarking",
     "claimsDecisioning": "Automated Coverage Check",
-    "damageReporting": "Damage Reporting",
+    "damageReporting": "AI Damage Assessment & Reporting",
     "otus": "Otus",
     "security": "Security",
     "ethics": "Ethics & Reporting",

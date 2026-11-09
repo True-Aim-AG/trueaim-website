@@ -69,7 +69,7 @@ Worked example of headline transcreation. Home H1 "Faster claims, smarter decisi
 | True Aim | Two words, in every language. Genitive in German: "von True Aim", never "True Aims". |
 | Automated Coverage Check | Product. Descriptive use in a sentence is translated: Deckungsprüfung / vérification de couverture / verifica della copertura. Never the old name Claims Decisioning, which the current de, fr and it files still carry seven times. |
 | Invoice Benchmarking | Product. Descriptive: Rechnungsabgleich gegen Referenzpreise / comparaison des factures aux prix de référence / confronto delle fatture con i prezzi di riferimento. |
-| Damage Reporting | Product. Descriptive: Schadenberichte / rapports de dommages / rapporti danni. |
+| AI Damage Assessment & Reporting | Product, renamed from AI Damage Assessment & Reporting on 9 November 2026. Descriptive: Schadenbewertung und Schadenberichte / évaluation des dommages et rapports de dommages / valutazione dei danni e rapporti danni. |
 | Data Extraction | Product (page merged 4 Nov). Descriptive: Datenextraktion / extraction de données / estrazione dei dati. |
 | Otus | Product. "Otus, our AI agent": Otus, unser KI-Agent / Otus, notre agent IA / Otus, il nostro agente IA. |
 | Decision Dossier | Feature name. Takes the native article: das Decision Dossier, le Decision Dossier, il Decision Dossier. |

@@ -145,6 +145,11 @@
       "heading": "Vedete True Aim all’opera sui vostri sinistri",
       "description": "Portate le vostre fatture, i vostri sinistri o i vostri rapporti danni e la demo mostra il risultato finale.",
       "button": "Richiedi una demo"
+    },
+    "authors": {
+      "eyebrow": "Autore",
+      "blogLink": "Vai al blog",
+      "teamLink": "Tutto il team"
     }
   }
 }

@@ -145,6 +145,11 @@
       "heading": "Erleben Sie True Aim an Ihren eigenen Schadenfällen",
       "description": "Bringen Sie Ihre eigenen Rechnungen, Schäden oder Schadenberichte mit, und die Demo zeigt das fertige Ergebnis.",
       "button": "Demo anfragen"
+    },
+    "authors": {
+      "eyebrow": "Autor",
+      "blogLink": "Zum Blog",
+      "teamLink": "Das ganze Team"
     }
   }
 }

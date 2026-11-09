@@ -14,7 +14,7 @@ const columns = [
       { nameKey: "dataExtraction", href: "/platform/data-extraction" },
       { nameKey: "claimsDecisioning", href: "/platform/automated-coverage-check" },
       { nameKey: "invoiceBenchmarking", href: "/platform/invoice-benchmarking" },
-      { nameKey: "damageReporting", href: "/platform/damage-reporting" },
+      { nameKey: "damageReporting", href: "/platform/ai-damage-assessment-and-reporting" },
       { nameKey: "otus", href: "/platform/otus" },
     ],
   },

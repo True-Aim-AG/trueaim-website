@@ -90,7 +90,7 @@
         "damageReporting": {
           "title": "Des rapports de dommages complets, préparés pour vous",
           "text": "Dès la déclaration de sinistre, les photos et les documents deviennent un devis chiffré et l’étendue complète des travaux, avant toute visite sur place.",
-          "link": "Damage Reporting"
+          "link": "AI Damage Assessment & Reporting"
         }
       }
     },
@@ -120,7 +120,7 @@
       "claimsDecisioningText": "Chaque ligne vérifiée au regard des conditions de la police, calculs à l’appui.",
       "invoiceBenchmarking": "Invoice Benchmarking",
       "invoiceBenchmarkingText": "Chaque facture, devis et chiffrage confronté aux prix de référence.",
-      "damageReporting": "Damage Reporting",
+      "damageReporting": "AI Damage Assessment & Reporting",
       "damageReportingText": "Un devis chiffré et l’étendue complète des travaux dès la déclaration de sinistre.",
       "otus": "Otus, le spécialiste sinistres de True Aim",
       "otusText": "Un expert IA pour chaque membre de l’équipe, sans pouvoir de décision.",

@@ -732,11 +732,11 @@
       }
     },
     "damageReporting": {
-      "name": "Damage Reporting",
-      "tagline": "Des rapports de dommages complets en quelques minutes.",
+      "name": "AI Damage Assessment & Reporting",
+      "tagline": "Des photos aux rapports de dommages complets en quelques minutes.",
       "hero": {
-        "title": "Damage Reporting : des rapports de dommages complets en quelques minutes",
-        "summary": "Produisez une estimation chiffrée des dommages et l’étendue complète des travaux dès la déclaration de sinistre, à partir des photos et des documents que votre client envoie. Chiffrez les dommages par région et listez chaque corps de métier et chaque tâche dans l’ordre où les travaux doivent s’enchaîner. N’envoyez des experts sur place que là où une visite change la réponse.",
+        "title": "AI Damage Assessment & Reporting : des photos aux rapports de dommages complets en quelques minutes",
+        "summary": "Analysez automatiquement photos, vidéos et pièces justificatives pour identifier les dommages, évaluer leur gravité et produire des rapports de dommages détaillés dès la déclaration de sinistre. Obtenez des estimations de coûts de réparation propres à chaque région et une étendue des travaux complète, avec les corps de métier, les tâches et l’ordre des réparations. Réduisez les visites sur site en n’envoyant des experts que là où l’expertise humaine est nécessaire.",
         "scene": {
           "alt": "Quatre photos deviennent un rapport de dommages chiffré et une étendue des travaux dès le premier jour",
           "photosLabel": "4 photos reçues",
@@ -810,7 +810,7 @@
       "faq": [
         {
           "question": "True Aim remplace-t-il nos experts ?",
-          "answer": "Non. Le Damage Reporting de True Aim donne à vos experts un devis et une étendue des travaux dès le premier jour, avec une note sur ce qui reste à vérifier sur place. Les visites vont là où elles changent la réponse."
+          "answer": "Non. L’AI Damage Assessment & Reporting de True Aim donne à vos experts un devis et une étendue des travaux dès le premier jour, avec une note sur ce qui reste à vérifier sur place. Les visites vont là où elles changent la réponse."
         },
         {
           "question": "Que doit envoyer le client ?",
@@ -822,7 +822,7 @@
         },
         {
           "question": "True Aim peut-il partir d’un rapport d’expert ?",
-          "answer": "Oui. Un rapport tiers, un devis ou une expertise peut servir de point de départ. Le Damage Reporting de True Aim fonctionne alors même là où vous ne gérez pas vous-même le parcours client."
+          "answer": "Oui. Un rapport tiers, un devis ou une expertise peut servir de point de départ. L’AI Damage Assessment & Reporting de True Aim fonctionne alors même là où vous ne gérez pas vous-même le parcours client."
         }
       ],
       "cta": {
@@ -947,7 +947,7 @@
         },
         {
           "question": "De quoi a-t-il besoin pour fonctionner ?",
-          "answer": "Il fonctionne par-dessus Automated Coverage Check, Invoice Benchmarking et Damage Reporting, où il peut expliquer chaque recommandation ligne par ligne."
+          "answer": "Il fonctionne par-dessus Automated Coverage Check, Invoice Benchmarking et AI Damage Assessment & Reporting, où il peut expliquer chaque recommandation ligne par ligne."
         },
         {
           "question": "Quelles langues parle-t-il ?",

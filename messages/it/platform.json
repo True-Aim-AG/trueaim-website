@@ -32,7 +32,7 @@
         "damageReporting": {
           "title": "Un rapporto danni completo",
           "text": "Un preventivo quantificato e l’ambito completo dei lavori dalle foto e dai documenti del cliente, già alla denuncia di sinistro.",
-          "link": "Damage Reporting"
+          "link": "AI Damage Assessment & Reporting"
         }
       }
     },
@@ -65,7 +65,7 @@
           "text": "Confronta ogni fattura, preventivo e stima con il prezzo di riferimento."
         },
         "damageReporting": {
-          "name": "Damage Reporting",
+          "name": "AI Damage Assessment & Reporting",
           "text": "Trasforma foto e documenti in un preventivo quantificato e in un ambito dei lavori."
         },
         "otus": {
@@ -135,7 +135,7 @@
       "claimsDecisioningText": "Sinistri liquidati in minuti, non in settimane.",
       "invoiceBenchmarking": "Invoice Benchmarking",
       "invoiceBenchmarkingText": "Mai più una fattura pagata troppo.",
-      "damageReporting": "Damage Reporting",
+      "damageReporting": "AI Damage Assessment & Reporting",
       "damageReportingText": "Rapporti danni completi in pochi minuti.",
       "otus": "Otus, lo specialista sinistri di True Aim",
       "otusText": "Un esperto basato sull’IA per ogni membro del team."

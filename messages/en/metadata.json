@@ -49,14 +49,14 @@
       "ogDescription": "Every line of a claim checked against the policy wording, the amount calculated and the reason recorded. A full recommendation in minutes.",
       "updated": "2026-10-17"
     },
-    "/platform/damage-reporting": {
-      "title": "Damage Reporting: Priced Estimates at First Notification | True Aim",
-      "description": "A damage estimate and the full scope of work at first notification, from the customer's photographs and documents. Assessors go on site only where a visit changes the answer.",
-      "h1": "Damage Reporting: completed damage reports in minutes",
-      "breadcrumb": "Damage Reporting",
-      "ogTitle": "Damage Reporting by True Aim",
-      "ogDescription": "A damage estimate and the full scope of work at first notification, from the customer's photographs and documents.",
-      "updated": "2026-10-17"
+    "/platform/ai-damage-assessment-and-reporting": {
+      "title": "AI Damage Assessment & Reporting: Reports in Minutes | True Aim",
+      "description": "Photos, videos and documents become a detailed damage report, a region-specific repair estimate and a full scope of work at first notification of loss.",
+      "h1": "AI Damage Assessment & Reporting: from photos to complete damage reports in minutes",
+      "breadcrumb": "AI Damage Assessment & Reporting",
+      "ogTitle": "AI Damage Assessment & Reporting by True Aim",
+      "ogDescription": "Photos, videos and documents become a damage report, a repair estimate and a scope of work at first notification. Assessors only where expertise is needed.",
+      "updated": "2026-11-09"
     },
     "/platform/otus": {
       "title": "Otus, True Aim's Claims Specialist | True Aim",
@@ -440,6 +440,33 @@
       "ogTitle": "True Aim PAIA manual",
       "ogDescription": "True Aim AG's manual under the Promotion of Access to Information Act (PAIA).",
       "updated": "2026-10-15"
+    },
+    "/authors/reuben-john": {
+      "title": "Reuben John, Co-founder and CEO | True Aim",
+      "description": "Reuben John leads True Aim’s strategy, commercial growth and investor relations. Previously DACH Managing Director in tax technology and a corporate lawyer.",
+      "h1": "Reuben John",
+      "breadcrumb": "Reuben John",
+      "ogTitle": "Reuben John, Co-founder and CEO of True Aim",
+      "ogDescription": "Reuben John leads True Aim’s strategy, commercial growth and investor relations. Previously DACH Managing Director in tax technology and a corporate lawyer.",
+      "updated": "2026-11-09"
+    },
+    "/authors/frederic-brunner": {
+      "title": "Frédéric Brunner, Co-founder and CTO | True Aim",
+      "description": "Frédéric Brunner, a software engineer for 25 years, built enterprise claims systems as an enterprise architect at Zurich Insurance and Guidewire.",
+      "h1": "Frédéric Brunner",
+      "breadcrumb": "Frédéric Brunner",
+      "ogTitle": "Frédéric Brunner, Co-founder and CTO of True Aim",
+      "ogDescription": "Frédéric Brunner, a software engineer for 25 years, built enterprise claims systems as an enterprise architect at Zurich Insurance and Guidewire.",
+      "updated": "2026-11-09"
+    },
+    "/authors/arnaud-terville": {
+      "title": "Arnaud Terville, Sales Director | True Aim",
+      "description": "Arnaud Terville leads True Aim’s enterprise sales and partnerships, with nearly twenty years in insurtech go-to-market at Solera, Tractable and Quantexa.",
+      "h1": "Arnaud Terville",
+      "breadcrumb": "Arnaud Terville",
+      "ogTitle": "Arnaud Terville, Sales Director at True Aim",
+      "ogDescription": "Arnaud Terville leads True Aim’s enterprise sales and partnerships, with nearly twenty years in insurtech go-to-market at Solera, Tractable and Quantexa.",
+      "updated": "2026-11-09"
     }
   }
 }

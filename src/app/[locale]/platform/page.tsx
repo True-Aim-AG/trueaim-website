@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 const outcomes = [
   { key: "claimsDecisioning", href: "/platform/automated-coverage-check" },
   { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking" },
-  { key: "damageReporting", href: "/platform/damage-reporting" },
+  { key: "damageReporting", href: "/platform/ai-damage-assessment-and-reporting" },
 ] as const;
 
 /** The outcome cards lead with Data Extraction; the hero scene keeps the three it was drawn with. */

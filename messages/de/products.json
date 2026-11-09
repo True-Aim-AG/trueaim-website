@@ -732,11 +732,11 @@
       }
     },
     "damageReporting": {
-      "name": "Damage Reporting",
-      "tagline": "Fertige Schadenberichte in Minuten.",
+      "name": "AI Damage Assessment & Reporting",
+      "tagline": "Von Fotos zu vollständigen Schadenberichten in Minuten.",
       "hero": {
-        "title": "Damage Reporting: fertige Schadenberichte in Minuten",
-        "summary": "Erstellen Sie schon bei der Schadenmeldung einen Kostenvoranschlag und den vollständigen Reparaturumfang, aus den Fotos und Dokumenten, die Ihr Kunde schickt. Bepreisen Sie den Schaden nach Region und listen Sie jedes Gewerk und jede Aufgabe in der Reihenfolge auf, in der die Arbeit laufen muss. Schicken Sie Gutachter nur dann vor Ort, wenn ein Besuch das Ergebnis verändert.",
+        "title": "AI Damage Assessment & Reporting: von Fotos zu vollständigen Schadenberichten in Minuten",
+        "summary": "Fotos, Videos und Belege werden automatisch ausgewertet, um Schäden zu erkennen, ihre Schwere zu bewerten und schon bei der Schadenmeldung detaillierte Schadenberichte zu erstellen. Dazu kommen regionale Reparaturkostenschätzungen und ein vollständiger Reparaturumfang mit den erforderlichen Gewerken, Arbeitsschritten und der Reparaturreihenfolge. Besichtigungen vor Ort werden seltener, weil Gutachter nur dort eingesetzt werden, wo menschliches Fachwissen gebraucht wird.",
         "scene": {
           "alt": "Vier Fotos werden am ersten Tag zu einem bepreisten Schadenbericht und Reparaturumfang",
           "photosLabel": "4 Fotos eingegangen",
@@ -810,7 +810,7 @@
       "faq": [
         {
           "question": "Ersetzt True Aim unsere Gutachter?",
-          "answer": "Nein. Damage Reporting von True Aim gibt Ihren Gutachtern am ersten Tag einen Kostenvoranschlag und einen Reparaturumfang, mit einem Hinweis darauf, was noch vor Ort geprüft werden muss. Ortsbesuche finden dort statt, wo sie das Ergebnis verändern."
+          "answer": "Nein. AI Damage Assessment & Reporting von True Aim gibt Ihren Gutachtern am ersten Tag einen Kostenvoranschlag und einen Reparaturumfang, mit einem Hinweis darauf, was noch vor Ort geprüft werden muss. Ortsbesuche finden dort statt, wo sie das Ergebnis verändern."
         },
         {
           "question": "Was muss der Kunde schicken?",
@@ -822,7 +822,7 @@
         },
         {
           "question": "Kann True Aim von einem Gutachterbericht ausgehen?",
-          "answer": "Ja. Ein Bericht Dritter, ein Kostenvoranschlag oder ein Gutachten kann der Ausgangspunkt sein. Damage Reporting von True Aim funktioniert dann auch dort, wo Sie den Kundenprozess nicht selbst betreiben."
+          "answer": "Ja. Ein Bericht Dritter, ein Kostenvoranschlag oder ein Gutachten kann der Ausgangspunkt sein. AI Damage Assessment & Reporting von True Aim funktioniert dann auch dort, wo Sie den Kundenprozess nicht selbst betreiben."
         }
       ],
       "cta": {
@@ -947,7 +947,7 @@
         },
         {
           "question": "Was braucht er, um zu arbeiten?",
-          "answer": "Er setzt auf Automated Coverage Check, Invoice Benchmarking und Damage Reporting auf und erklärt dort jede Empfehlung Position für Position."
+          "answer": "Er setzt auf Automated Coverage Check, Invoice Benchmarking und AI Damage Assessment & Reporting auf und erklärt dort jede Empfehlung Position für Position."
         },
         {
           "question": "Welche Sprachen spricht er?",

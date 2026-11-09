@@ -13,7 +13,7 @@
       "invoiceBenchmarkingDesc": "Mai più una fattura pagata troppo",
       "claimsDecisioning": "Automated Coverage Check",
       "claimsDecisioningDesc": "Sinistri liquidati in minuti, non in settimane",
-      "damageReporting": "Damage Reporting",
+      "damageReporting": "AI Damage Assessment & Reporting",
       "damageReportingDesc": "Rapporti danni completi in pochi minuti",
       "otus": "Otus",
       "otusDesc": "Lo specialista sinistri di True Aim"
@@ -46,7 +46,7 @@
         "desc": "Mai più una fattura pagata troppo"
       },
       "damageReporting": {
-        "name": "Damage Reporting",
+        "name": "AI Damage Assessment & Reporting",
         "desc": "Rapporti danni completi in pochi minuti"
       },
       "otus": {
@@ -120,7 +120,7 @@
     "dataExtraction": "Data Extraction",
     "invoiceBenchmarking": "Invoice Benchmarking",
     "claimsDecisioning": "Automated Coverage Check",
-    "damageReporting": "Damage Reporting",
+    "damageReporting": "AI Damage Assessment & Reporting",
     "otus": "Otus",
     "security": "Sicurezza",
     "ethics": "Etica e segnalazioni",

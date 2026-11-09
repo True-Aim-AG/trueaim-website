@@ -90,7 +90,7 @@
         "damageReporting": {
           "title": "Complete damage reports, prepared for you",
           "text": "Photographs and documents become a priced estimate and a full scope of work at first notification, before anyone visits the site.",
-          "link": "Damage Reporting"
+          "link": "AI Damage Assessment & Reporting"
         }
       }
     },
@@ -120,7 +120,7 @@
       "claimsDecisioningText": "Every line checked against the policy wording, with the calculations shown.",
       "invoiceBenchmarking": "Invoice Benchmarking",
       "invoiceBenchmarkingText": "Every invoice, quote and estimate checked against the benchmark.",
-      "damageReporting": "Damage Reporting",
+      "damageReporting": "AI Damage Assessment & Reporting",
       "damageReportingText": "A priced estimate and the full scope of work at first notification.",
       "otus": "Otus, True Aim's claims specialist",
       "otusText": "An AI-powered expert for every team member, with no decision rights.",

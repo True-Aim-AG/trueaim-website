@@ -23,7 +23,7 @@ const groups: Group[] = [
       { key: "dataExtraction", href: "/platform/data-extraction" },
       { key: "claimsDecisioning", href: "/platform/automated-coverage-check" },
       { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking" },
-      { key: "damageReporting", href: "/platform/damage-reporting" },
+      { key: "damageReporting", href: "/platform/ai-damage-assessment-and-reporting" },
       { key: "otus", href: "/platform/otus" },
     ],
   },

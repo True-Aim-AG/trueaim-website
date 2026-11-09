@@ -13,7 +13,7 @@
       "invoiceBenchmarkingDesc": "Nie wieder zu viel für eine Rechnung zahlen",
       "claimsDecisioning": "Automated Coverage Check",
       "claimsDecisioningDesc": "Schäden in Minuten statt Wochen reguliert",
-      "damageReporting": "Damage Reporting",
+      "damageReporting": "AI Damage Assessment & Reporting",
       "damageReportingDesc": "Fertige Schadenberichte in Minuten",
       "otus": "Otus",
       "otusDesc": "Der Schadenspezialist von True Aim"
@@ -46,7 +46,7 @@
         "desc": "Nie wieder zu viel für eine Rechnung zahlen"
       },
       "damageReporting": {
-        "name": "Damage Reporting",
+        "name": "AI Damage Assessment & Reporting",
         "desc": "Fertige Schadenberichte in Minuten"
       },
       "otus": {
@@ -120,7 +120,7 @@
     "dataExtraction": "Data Extraction",
     "invoiceBenchmarking": "Invoice Benchmarking",
     "claimsDecisioning": "Automated Coverage Check",
-    "damageReporting": "Damage Reporting",
+    "damageReporting": "AI Damage Assessment & Reporting",
     "otus": "Otus",
     "security": "Sicherheit",
     "ethics": "Ethik & Meldungen",

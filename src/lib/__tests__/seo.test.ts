@@ -77,6 +77,7 @@ describe("buildPageGraph", () => {
     ["caseStudy", "/case-studies/motor-claims-pilot", ["WebPage", "Article", "BreadcrumbList"]],
     ["collection", "/case-studies", ["CollectionPage", "ItemList", "BreadcrumbList"]],
     ["partner", "/partners/zhaw", ["WebPage", "BreadcrumbList"]],
+    ["person", "/authors/reuben-john", ["ProfilePage", "BreadcrumbList"]],
   ];
 
   it.each(cases)("%s emits its types", (template, path, expected) => {
@@ -137,7 +138,7 @@ describe("buildPageGraph", () => {
       "https://trueaim.ai/en/platform/data-extraction/#software",
       "https://trueaim.ai/en/platform/automated-coverage-check/#software",
       "https://trueaim.ai/en/platform/invoice-benchmarking/#software",
-      "https://trueaim.ai/en/platform/damage-reporting/#software",
+      "https://trueaim.ai/en/platform/ai-damage-assessment-and-reporting/#software",
       "https://trueaim.ai/en/platform/otus/#software",
     ]);
   });

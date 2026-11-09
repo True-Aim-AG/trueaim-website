@@ -49,14 +49,14 @@
       "ogDescription": "Jede Rechnung, jedes Angebot, jeder Kostenvoranschlag mit Referenzdaten je Gewerk und Region abgeglichen. Zu hohe Positionen, um wie viel und warum.",
       "updated": "2026-11-05"
     },
-    "/platform/damage-reporting": {
-      "title": "Damage Reporting: Schadenberichte bei der Schadenmeldung | True Aim",
-      "description": "Kostenvoranschlag und Reparaturumfang bei der Schadenmeldung, aus Fotos und Dokumenten des Kunden. Gutachter nur dort, wo ein Besuch das Ergebnis ändert.",
-      "h1": "Damage Reporting: fertige Schadenberichte in Minuten",
-      "breadcrumb": "Damage Reporting",
-      "ogTitle": "Damage Reporting von True Aim",
-      "ogDescription": "Kostenvoranschlag und Reparaturumfang bei der Schadenmeldung, aus Fotos und Dokumenten des Kunden. Gutachter nur dort, wo ein Besuch das Ergebnis ändert.",
-      "updated": "2026-11-05"
+    "/platform/ai-damage-assessment-and-reporting": {
+      "title": "AI Damage Assessment & Reporting: Berichte in Minuten | True Aim",
+      "description": "Aus Fotos, Videos und Dokumenten werden bei der Schadenmeldung Schadenbericht, regionale Reparaturkostenschätzung und vollständiger Reparaturumfang.",
+      "h1": "AI Damage Assessment & Reporting: von Fotos zu vollständigen Schadenberichten in Minuten",
+      "breadcrumb": "AI Damage Assessment & Reporting",
+      "ogTitle": "AI Damage Assessment & Reporting von True Aim",
+      "ogDescription": "Aus Fotos, Videos und Dokumenten werden bei der Schadenmeldung Schadenbericht, Kostenschätzung und Reparaturumfang. Gutachter nur, wo Fachwissen nötig ist.",
+      "updated": "2026-11-09"
     },
     "/platform/otus": {
       "title": "Otus, der Schadenspezialist von True Aim | True Aim",
@@ -440,6 +440,33 @@
       "ogTitle": "Der Blog von True Aim",
       "ogDescription": "Artikel über prüfbare KI, Schadenautomatisierung, KI-Regulatorik in der Versicherung und den Weg von Schaden-KI vom Piloten in die Produktion.",
       "updated": "2026-11-05"
+    },
+    "/authors/reuben-john": {
+      "title": "Reuben John, Mitgründer und CEO | True Aim",
+      "description": "Reuben John verantwortet Strategie, Wachstum und Investorenbeziehungen von True Aim. Zuvor Geschäftsführer DACH in der Steuertechnologie und Anwalt.",
+      "h1": "Reuben John",
+      "breadcrumb": "Reuben John",
+      "ogTitle": "Reuben John, Mitgründer und CEO von True Aim",
+      "ogDescription": "Reuben John verantwortet Strategie, Wachstum und Investorenbeziehungen von True Aim. Zuvor Geschäftsführer DACH in der Steuertechnologie und Anwalt.",
+      "updated": "2026-11-09"
+    },
+    "/authors/frederic-brunner": {
+      "title": "Frédéric Brunner, Mitgründer und CTO | True Aim",
+      "description": "Frédéric Brunner, seit 25 Jahren Softwareingenieur, hat als Enterprise Architect bei Zurich Insurance und Guidewire Schadensysteme für Großunternehmen gebaut.",
+      "h1": "Frédéric Brunner",
+      "breadcrumb": "Frédéric Brunner",
+      "ogTitle": "Frédéric Brunner, Mitgründer und CTO von True Aim",
+      "ogDescription": "Frédéric Brunner, seit 25 Jahren Softwareingenieur, hat als Enterprise Architect bei Zurich Insurance und Guidewire Schadensysteme für Großunternehmen gebaut.",
+      "updated": "2026-11-09"
+    },
+    "/authors/arnaud-terville": {
+      "title": "Arnaud Terville, Sales Director | True Aim",
+      "description": "Arnaud Terville leitet Enterprise-Vertrieb und Partnerschaften von True Aim, mit fast zwanzig Jahren Insurtech-Erfahrung bei Solera, Tractable und Quantexa.",
+      "h1": "Arnaud Terville",
+      "breadcrumb": "Arnaud Terville",
+      "ogTitle": "Arnaud Terville, Sales Director bei True Aim",
+      "ogDescription": "Arnaud Terville leitet Enterprise-Vertrieb und Partnerschaften von True Aim, mit fast zwanzig Jahren Insurtech-Erfahrung bei Solera, Tractable und Quantexa.",
+      "updated": "2026-11-09"
     }
   }
 }

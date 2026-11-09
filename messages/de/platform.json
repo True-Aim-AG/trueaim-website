@@ -32,7 +32,7 @@
         "damageReporting": {
           "title": "Ein fertiger Schadenbericht",
           "text": "Ein Kostenvoranschlag und der vollständige Reparaturumfang aus den Fotos und Dokumenten des Kunden, schon bei der Schadenmeldung.",
-          "link": "Damage Reporting"
+          "link": "AI Damage Assessment & Reporting"
         }
       }
     },
@@ -65,7 +65,7 @@
           "text": "Gleicht jede Rechnung, jedes Angebot und jeden Kostenvoranschlag mit dem Referenzpreis ab."
         },
         "damageReporting": {
-          "name": "Damage Reporting",
+          "name": "AI Damage Assessment & Reporting",
           "text": "Macht aus Fotos und Dokumenten einen Kostenvoranschlag und einen Reparaturumfang."
         },
         "otus": {
@@ -135,7 +135,7 @@
       "claimsDecisioningText": "Schäden in Minuten statt Wochen reguliert.",
       "invoiceBenchmarking": "Invoice Benchmarking",
       "invoiceBenchmarkingText": "Nie wieder zu viel für eine Rechnung zahlen.",
-      "damageReporting": "Damage Reporting",
+      "damageReporting": "AI Damage Assessment & Reporting",
       "damageReportingText": "Fertige Schadenberichte in Minuten.",
       "otus": "Otus, der Schadenspezialist von True Aim",
       "otusText": "Ein KI-gestützter Experte für jedes Teammitglied."
