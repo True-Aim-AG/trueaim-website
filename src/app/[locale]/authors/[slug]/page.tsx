@@ -3,9 +3,9 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowRight, Linkedin } from "lucide-react";
-import { buttonClasses } from "@/components/brand/Button";
 import { Link } from "@/i18n/navigation";
 import { authors, findAuthor } from "@/data/authors";
+import { PageHero, SECTION } from "@/components/content";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
 
@@ -24,8 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const LINK = "inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline";
 
 /**
- * An author page: the person's name, role and bio from the About page copy, a portrait
- * on the right, and the LinkedIn profile. Reached from an article byline only.
+ * An author page, reached from an article byline: the standard compact hero with the
+ * person's name and role and the portrait in the second column, then the About page
+ * bio with the LinkedIn profile, the blog and the team below it.
  */
 export default async function AuthorPage({ params }: Props) {
   const { locale, slug } = await params;
@@ -33,7 +34,6 @@ export default async function AuthorPage({ params }: Props) {
   if (!author) notFound();
   setRequestLocale(locale);
   const t = await getTranslations("company");
-  const nav = await getTranslations("nav");
   const name = t(`team.members.${author.key}.name`);
   const jobTitle = t(`team.members.${author.key}.title`);
   const path = `/authors/${author.slug}`;
@@ -46,43 +46,42 @@ export default async function AuthorPage({ params }: Props) {
         template="person"
         person={{ name, jobTitle, image: author.image, sameAs: [author.linkedin] }}
       />
-      <section className="px-6 py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:gap-16 md:items-start">
-          <div>
-            <p className="text-[12px] font-medium uppercase tracking-[0.1em] text-accent">
-              {t("authors.eyebrow")} · {jobTitle}
-            </p>
-            <h1 className="mt-3 font-display text-[40px] font-bold leading-[1.1] text-strong md:text-[56px]">{name}</h1>
-            <p className="mt-6 text-body leading-[1.6] text-muted">{t(`team.members.${author.key}.bio`)}</p>
-            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
-              <a href={author.linkedin} target="_blank" rel="noopener noreferrer" className={LINK}>
-                <Linkedin strokeWidth={1.5} className="h-4 w-4" />
-                {t("team.linkedin")}
-              </a>
-              <Link href="/blog" className={LINK}>
-                {t("authors.blogLink")}
-                <ArrowRight strokeWidth={1.5} className="h-4 w-4" />
-              </Link>
-              <Link href="/about" className={LINK}>
-                {t("authors.teamLink")}
-                <ArrowRight strokeWidth={1.5} className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-          {/* The portrait's right edge lines up with the left edge of the header's demo button: an
-              invisible copy of that button (same classes, same text) reserves exactly its width. */}
-          <div className="order-first flex items-start gap-3 md:order-none">
-            <Image
-              src={author.image}
-              alt={name}
-              width={280}
-              height={280}
-              priority
-              className="h-56 w-56 bg-lilac object-cover md:h-[280px] md:w-[280px]"
-            />
-            <span aria-hidden="true" className={buttonClasses("primary", "sm", "invisible hidden shrink-0 md:inline-flex")}>
-              {nav("bookDemo")}
-            </span>
+      <PageHero
+        compact
+        eyebrow={t("authors.eyebrow")}
+        title={name}
+        summary={jobTitle}
+        texture={{ name: "circ", position: "72% 18%" }}
+        visualWidth={320}
+        visual={
+          <Image
+            src={author.image}
+            alt={name}
+            width={320}
+            height={320}
+            priority
+            className="h-auto w-full bg-lilac object-cover shadow-[var(--shadow-card)]"
+          />
+        }
+      />
+      <section className={SECTION}>
+        <div className="mx-auto max-w-7xl">
+          <p className="max-w-[72ch] text-[18px] leading-[1.6] text-body md:text-[20px] md:leading-[1.5]">
+            {t(`team.members.${author.key}.bio`)}
+          </p>
+          <div className="mt-10 flex flex-wrap gap-x-10 gap-y-4">
+            <a href={author.linkedin} target="_blank" rel="noopener noreferrer" className={LINK}>
+              <Linkedin strokeWidth={1.5} className="h-4 w-4" />
+              {t("team.linkedin")}
+            </a>
+            <Link href="/blog" className={LINK}>
+              {t("authors.blogLink")}
+              <ArrowRight strokeWidth={1.5} className="h-4 w-4" />
+            </Link>
+            <Link href="/about" className={LINK}>
+              {t("authors.teamLink")}
+              <ArrowRight strokeWidth={1.5} className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
