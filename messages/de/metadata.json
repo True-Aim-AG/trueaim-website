@@ -31,7 +31,7 @@
       "ogDescription": "Schadendaten aus Dokumenten, Fotos, E-Mails und Altsystemen gelesen, in den Zusammenhang gestellt und als durchsuchbare Datenbank für Ihre KI gespeichert.",
       "updated": "2026-11-05"
     },
-    "/platform/claims-decisioning": {
+    "/platform/automated-coverage-check": {
       "title": "Automated Coverage Check: Schäden in Minuten reguliert | True Aim",
       "description": "Jede Position eines Schadens anhand der Versicherungsbedingungen geprüft, der Betrag berechnet, der Grund festgehalten. Eine vollständige Empfehlung in Minuten.",
       "h1": "Automated Coverage Check: Schäden in Minuten statt Wochen reguliert",

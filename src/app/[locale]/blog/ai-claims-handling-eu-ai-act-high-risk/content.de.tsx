@@ -682,7 +682,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                   <p className="text-sm font-medium text-accent">
                     Eine Entscheidung auf Abruf zu rekonstruieren, ist genau das, wofür{" "}
                     <Link
-                      href="/platform/claims-decisioning"
+                      href="/platform/automated-coverage-check"
                       className="underline hover:no-underline"
                     >
                       Automated Coverage Check
@@ -991,7 +991,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
               <ButtonLink href="/contact" variant="primary" size="lg">
                 Kontakt aufnehmen
               </ButtonLink>
-              <ButtonLink href="/platform/claims-decisioning" variant="on-dark" size="lg">
+              <ButtonLink href="/platform/automated-coverage-check" variant="on-dark" size="lg">
                 Automated Coverage Check
               </ButtonLink>
             </div>

@@ -114,7 +114,7 @@ describe("buildPageGraph", () => {
   });
 
   it("names each product with the True Aim brand as alternateName", () => {
-    const software = nodes(buildPageGraph({ locale: "en", path: "/platform/claims-decisioning", template: "product" })).find(
+    const software = nodes(buildPageGraph({ locale: "en", path: "/platform/automated-coverage-check", template: "product" })).find(
       (node) => node["@type"] === "SoftwareApplication",
     );
     expect(software?.name).toBe("Automated Coverage Check");
@@ -135,7 +135,7 @@ describe("buildPageGraph", () => {
     ) as { itemListElement: { item: { "@id": string } }[] };
     expect(list.itemListElement.map((element) => element.item["@id"])).toEqual([
       "https://trueaim.ai/en/platform/data-extraction/#software",
-      "https://trueaim.ai/en/platform/claims-decisioning/#software",
+      "https://trueaim.ai/en/platform/automated-coverage-check/#software",
       "https://trueaim.ai/en/platform/invoice-benchmarking/#software",
       "https://trueaim.ai/en/platform/damage-reporting/#software",
       "https://trueaim.ai/en/platform/otus/#software",

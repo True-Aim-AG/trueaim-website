@@ -21,7 +21,7 @@ import { GridPattern } from "@/components/brand/GridPattern";
 const ease = [0.4, 0, 0.2, 1] as const;
 
 const productLinks: Record<string, string> = {
-  mira: "/platform/claims-decisioning",
+  mira: "/platform/automated-coverage-check",
   contextbuilder: "/platform",
   claimeval: "/platform",
 };

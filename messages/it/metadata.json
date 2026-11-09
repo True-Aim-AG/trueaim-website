@@ -31,7 +31,7 @@
       "ogDescription": "Informazioni sui sinistri lette da documenti, foto, e-mail e sistemi legacy, messe in contesto e salvate in un database consultabile che la vostra IA può usare.",
       "updated": "2026-11-05"
     },
-    "/platform/claims-decisioning": {
+    "/platform/automated-coverage-check": {
       "title": "Automated Coverage Check: sinistri liquidati in minuti | True Aim",
       "description": "Ogni voce di un sinistro verificata rispetto alle condizioni di polizza, l’importo calcolato e la motivazione annotata. Una raccomandazione completa in minuti.",
       "h1": "Automated Coverage Check: sinistri liquidati in minuti, non in settimane",

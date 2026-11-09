@@ -7,7 +7,7 @@
  */
 export const products = [
   { slug: "data-extraction", key: "dataExtraction" },
-  { slug: "claims-decisioning", key: "claimsDecisioning" },
+  { slug: "automated-coverage-check", key: "claimsDecisioning" },
   { slug: "invoice-benchmarking", key: "invoiceBenchmarking" },
   { slug: "damage-reporting", key: "damageReporting" },
   { slug: "otus", key: "otus" },
