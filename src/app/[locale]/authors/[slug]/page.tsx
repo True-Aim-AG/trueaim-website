@@ -45,13 +45,13 @@ export default async function AuthorPage({ params }: Props) {
         person={{ name, jobTitle, image: author.image, sameAs: [author.linkedin] }}
       />
       <section className="px-6 py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[minmax(0,1fr)_280px] md:items-start">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[minmax(0,44rem)_280px] md:gap-16 md:items-start">
           <div>
             <p className="text-[12px] font-medium uppercase tracking-[0.1em] text-accent">
               {t("authors.eyebrow")} · {jobTitle}
             </p>
             <h1 className="mt-3 font-display text-[40px] font-bold leading-[1.1] text-strong md:text-[56px]">{name}</h1>
-            <p className="mt-6 max-w-2xl text-body leading-[1.6] text-muted">{t(`team.members.${author.key}.bio`)}</p>
+            <p className="mt-6 text-body leading-[1.6] text-muted">{t(`team.members.${author.key}.bio`)}</p>
             <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
               <a href={author.linkedin} target="_blank" rel="noopener noreferrer" className={LINK}>
                 <Linkedin strokeWidth={1.5} className="h-4 w-4" />
@@ -73,7 +73,7 @@ export default async function AuthorPage({ params }: Props) {
             width={280}
             height={280}
             priority
-            className="order-first h-56 w-56 bg-lilac object-cover md:order-none md:h-[280px] md:w-[280px] md:justify-self-end"
+            className="order-first h-56 w-56 bg-lilac object-cover md:order-none md:h-[280px] md:w-[280px]"
           />
         </div>
       </section>
