@@ -1,5 +1,7 @@
 export type BlogPost = {
   slug: string;
+  /** Slug of the author page under /authors/. */
+  author?: string;
   title: string;
   excerpt: string;
   publishedIso: string;
@@ -13,6 +15,7 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     slug: "architectural-transparency-agentic-claims-operation",
+    author: "reuben-john",
     title:
       "The Problem with Automating Claims in Silos: Architectural Transparency and the Rise of the Agentic Claims Operation",
     excerpt:
@@ -26,6 +29,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "where-the-language-model-does-not-belong",
+    author: "reuben-john",
     title:
       "Where the Language Model Does Not Belong: Designing Defensible AI in Claims Operations",
     excerpt:
@@ -38,6 +42,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "ai-claims-auditability-scorecard",
+    author: "reuben-john",
     title: "The AI Claims Auditability Scorecard",
     excerpt:
       "Twelve questions that show whether an AI claims system can account for every decision it makes, and how True Aim answers each one.",
@@ -49,6 +54,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "ai-claims-handling-eu-ai-act-high-risk",
+    author: "reuben-john",
     title:
       "AI Claims Handling Is Not High-Risk Under the EU AI Act. Here Is What Binds It Instead.",
     excerpt:
@@ -61,6 +67,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "why-claims-ai-pilots-stall",
+    author: "reuben-john",
     title: "Why Claims AI Pilots Stall Before Production Readiness",
     excerpt:
       "Many claims AI pilots report accuracy in the mid 90s. Yet months later they are still not live in production. The root cause is measurement discipline and production realism.",
@@ -72,6 +79,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "auditability-evidence-chains",
+    author: "reuben-john",
     title:
       "Auditability in Claims AI: Building Evidence Chains That Auditors Actually Accept",
     excerpt:
@@ -84,6 +92,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "build-vs-buy-idp-vendors",
+    author: "reuben-john",
     title: "Build vs Buy: What to Demand from IDP Vendors",
     excerpt:
       "A practical evaluation framework for insurance teams evaluating claims automation solutions. Learn when to build, when to buy, and how to evaluate vendors objectively.",

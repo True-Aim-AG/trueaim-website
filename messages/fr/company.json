@@ -148,6 +148,8 @@
     },
     "authors": {
       "eyebrow": "Auteur",
+      "aboutHeading": "À propos de {name}",
+      "articlesHeading": "Articles de {name}",
       "blogLink": "Blogs",
       "teamLink": "Toute l’équipe"
     }
