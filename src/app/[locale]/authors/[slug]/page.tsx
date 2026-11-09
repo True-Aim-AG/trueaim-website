@@ -7,7 +7,8 @@ import { buttonClasses } from "@/components/brand/Button";
 import { Link } from "@/i18n/navigation";
 import { authors, findAuthor } from "@/data/authors";
 import { localizedBlogPosts } from "@/lib/blog-posts";
-import { CARD, TextureBackdrop } from "@/components/content";
+import { CARD, CARD_HOVER, TextureBackdrop } from "@/components/content";
+import { CARD_TEXT, CARD_TITLE } from "@/components/content/surface";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { cn } from "@/lib/utils";
@@ -88,34 +89,41 @@ export default async function AuthorPage({ params }: Props) {
       </section>
 
       <section className="py-16 md:py-20">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-16">
-          <div>
-            <h2 className="font-display text-[26px] font-bold leading-[1.2] text-strong md:text-[32px]">{t("authors.aboutHeading", { name })}</h2>
-            <p className="mt-5 max-w-[68ch] text-[17px] leading-[1.65] text-body md:text-[18px]">{t(`team.members.${author.key}.bio`)}</p>
-            <Link href="/about" className={cn(LINK, "mt-6")}>
-              {t("authors.teamLink")}
-              <ArrowRight strokeWidth={1.5} className="h-4 w-4" />
-            </Link>
-          </div>
-          {articles.length > 0 && (
-            <aside className={cn(CARD, "h-fit p-7")}>
-              <h2 className="font-display text-[20px] font-semibold leading-[1.3] text-strong">{t("authors.articlesHeading", { name })}</h2>
-              <ul className="mt-4 divide-y divide-hairline">
-                {articles.map((post) => (
-                  <li key={post.slug} className="py-4 first:pt-0 last:pb-0">
-                    <Link href={`/blog/${post.slug}`} className="font-medium leading-[1.4] text-strong hover:text-accent">
-                      {post.title}
-                    </Link>
-                    <p className="mt-1 text-sm text-muted">
-                      {post.displayDate} · {post.readTime}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </aside>
-          )}
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="font-display text-[26px] font-bold leading-[1.2] text-strong md:text-[32px]">{t("authors.aboutHeading", { name })}</h2>
+          <p className="mt-5 max-w-[72ch] text-[17px] leading-[1.65] text-body md:text-[18px]">{t(`team.members.${author.key}.bio`)}</p>
+          <Link href="/about" className={cn(LINK, "mt-6")}>
+            {t("authors.teamLink")}
+            <ArrowRight strokeWidth={1.5} className="h-4 w-4" />
+          </Link>
         </div>
       </section>
+
+      {articles.length > 0 && (
+        <section className="border-t border-hairline bg-page-tint py-16 md:py-20">
+          <div className="mx-auto max-w-7xl px-6">
+            <h2 className="font-display text-[26px] font-bold leading-[1.2] text-strong md:text-[32px]">{t("authors.articlesHeading", { name })}</h2>
+            <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {articles.map((post) => (
+                <li key={post.slug} className="h-full">
+                  <Link href={`/blog/${post.slug}`} className={cn(CARD, CARD_HOVER, "group flex h-full flex-col p-7")}>
+                    <p className="text-[12px] font-medium uppercase tracking-[0.1em] text-accent">
+                      {post.displayDate} · {post.readTime}
+                    </p>
+                    <h3 className={cn(CARD_TITLE, "mt-3")}>{post.title}</h3>
+                    <p className={cn(CARD_TEXT, "mt-3 line-clamp-3")}>{post.excerpt}</p>
+                    <ArrowRight
+                      aria-hidden="true"
+                      strokeWidth={1.5}
+                      className="mt-auto h-5 w-5 self-end pt-0 text-accent transition-transform duration-150 ease-brand group-hover:translate-x-1"
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
     </>
   );
 }
