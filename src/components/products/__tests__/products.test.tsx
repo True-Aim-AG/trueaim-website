@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import {
   ClaimScene,
+  CoverageGlassScene,
   FlowScene,
   InvoiceScene,
   LineBenchScene,
@@ -94,6 +95,43 @@ describe("Product scenes", () => {
     expect(html).toContain('aria-label="A claim"');
     expect(html).toContain("Dishwasher");
     expect(html).toContain("Payout");
+  });
+
+  it("renders the coverage hero as one image, each line linked to its clause, with a pause control", () => {
+    const html = renderToStaticMarkup(
+      <CoverageGlassScene
+        data={{
+          alt: "A claim checked line by line",
+          title: "Water damage claim",
+          reference: "Claim 1",
+          columns: { description: "Description", quantity: "Qty", claimed: "Claimed", covered: "Covered" },
+          groups: [
+            { kind: "approved", label: "Covered", total: "10", lines: [{ description: "Floor", quantity: "1", claimed: "10", covered: "10" }] },
+            { kind: "denied", label: "Excluded", total: "0", lines: [{ description: "Dishwasher", quantity: "1", claimed: "5", covered: "0" }] },
+          ],
+          deductibleLabel: "Deductible",
+          deductible: "1",
+          payoutLabel: "Payout",
+          payout: "9",
+          policyLabel: "Policy wording",
+          clauseWord: "Clause",
+          clauses: [
+            { ref: "3.1", text: "Water damage is covered." },
+            { ref: "4.2", text: "Appliances are excluded." },
+          ],
+          adjuster: { label: "Your adjuster", action: "Approve payout" },
+          pause: "Pause animation",
+          play: "Play animation",
+        }}
+      />,
+    );
+    expect(html).toContain('aria-label="A claim checked line by line"');
+    // A desktop and a phone layout, each with one connector per line.
+    expect(html.match(/data-stage="/g)).toHaveLength(2);
+    expect(html.match(/<path [^>]*data-path=/g)).toHaveLength(4);
+    expect(html).toContain("Appliances are excluded.");
+    expect(html).toContain("Approve payout");
+    expect(html).toContain('aria-label="Pause animation"');
   });
 
   it("renders the invoice, report and outcomes scenes from their data", () => {

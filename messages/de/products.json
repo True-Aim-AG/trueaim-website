@@ -157,7 +157,7 @@
         "title": "Automated Coverage Check: Schäden in Minuten statt Wochen reguliert",
         "summary": "Wir prüfen die Versicherungsbedingungen anhand des Sachverhalts und empfehlen, ob der Schaden anerkannt oder abgelehnt werden sollte. Wird er anerkannt, berechnen wir den geschuldeten Betrag Position für Position, und Ihr Sachbearbeiter trifft die endgültige Entscheidung.",
         "scene": {
-          "alt": "Ein Schaden, wie der Sachbearbeiter ihn sieht: die Positionen nach Ergebnis gruppiert, jede mit ihrem gedeckten Betrag, und die Auszahlung",
+          "alt": "Ein Wasserschaden, Position für Position geprüft: Jede Position ist mit der Klausel der Police verknüpft, auf der sie beruht, die Auszahlung wird berechnet, und der Sachbearbeiter trifft die endgültige Entscheidung",
           "title": "Wasserschaden",
           "reference": "Schaden 62850",
           "columns": {
@@ -222,7 +222,29 @@
           "deductibleLabel": "Selbstbeteiligung",
           "deductible": "150,00",
           "payoutLabel": "Auszahlung",
-          "payout": "3.936,33"
+          "payout": "3.936,33",
+          "policyLabel": "Versicherungsbedingungen",
+          "clauseWord": "Klausel",
+          "clauses": [
+            {
+              "ref": "3.1",
+              "text": "Plötzlicher Wasserschaden am Gebäude ist gedeckt."
+            },
+            {
+              "ref": "4.2",
+              "text": "Haushaltsgeräte sind ausgeschlossen."
+            },
+            {
+              "ref": "5.4",
+              "text": "Hotelkosten sind bis zur Prüfung auf die Hälfte begrenzt."
+            }
+          ],
+          "adjuster": {
+            "label": "Ihr Sachbearbeiter",
+            "action": "Auszahlung freigeben"
+          },
+          "pause": "Animation anhalten",
+          "play": "Animation abspielen"
         }
       },
       "keys": {

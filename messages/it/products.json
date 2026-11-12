@@ -157,7 +157,7 @@
         "title": "Automated Coverage Check: sinistri liquidati in minuti, non in settimane",
         "summary": "Verifichiamo le condizioni di polizza rispetto ai fatti del caso e raccomandiamo se il sinistro vada accolto o respinto. Se viene accolto, l’importo dovuto viene calcolato voce per voce, e il vostro liquidatore prende la decisione finale.",
         "scene": {
-          "alt": "Un sinistro come lo vede il liquidatore: le voci raggruppate per esito, ciascuna con l’importo coperto, e l’indennizzo",
+          "alt": "Un sinistro danno da acqua verificato voce per voce: ogni voce è collegata alla clausola di polizza su cui si basa, l’indennizzo viene calcolato e il liquidatore prende la decisione finale",
           "title": "Sinistro danno da acqua",
           "reference": "Sinistro 62850",
           "columns": {
@@ -222,7 +222,29 @@
           "deductibleLabel": "Franchigia",
           "deductible": "150,00",
           "payoutLabel": "Indennizzo",
-          "payout": "3.936,33"
+          "payout": "3.936,33",
+          "policyLabel": "Condizioni di polizza",
+          "clauseWord": "Clausola",
+          "clauses": [
+            {
+              "ref": "3.1",
+              "text": "I danni improvvisi da acqua all’edificio sono coperti."
+            },
+            {
+              "ref": "4.2",
+              "text": "Gli elettrodomestici sono esclusi."
+            },
+            {
+              "ref": "5.4",
+              "text": "Le spese d’albergo sono limitate alla metà, in attesa di esame."
+            }
+          ],
+          "adjuster": {
+            "label": "Il vostro liquidatore",
+            "action": "Approva l’indennizzo"
+          },
+          "pause": "Metti in pausa l’animazione",
+          "play": "Avvia l’animazione"
         }
       },
       "keys": {

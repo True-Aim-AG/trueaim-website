@@ -17,7 +17,7 @@ import {
   type Tone,
 } from "@/components/content";
 import {
-  ClaimScene,
+  CoverageGlassScene,
   FlowScene,
   HeroLoop,
   InvoiceScene,
@@ -26,7 +26,7 @@ import {
   RecordScene,
   ReportScene,
   productIcons,
-  type ClaimSceneData,
+  type CoverageGlassData,
   type FlowSceneData,
   type HeroLoopData,
   type InvoiceSceneData,
@@ -112,7 +112,7 @@ function visual(product: Product, t: Translate) {
         />
       );
     case "claimsDecisioning":
-      return <ClaimScene data={t.raw(`${key}.hero.scene`) as ClaimSceneData} hero />;
+      return <CoverageGlassScene data={t.raw(`${key}.hero.scene`) as CoverageGlassData} />;
     case "invoiceBenchmarking":
       return <InvoiceScene data={t.raw(`${key}.hero.scene`) as InvoiceSceneData} hero />;
     case "damageReporting":
@@ -311,7 +311,7 @@ export default async function ProductPage({ params }: Props) {
           summary: t(`${key}.hero.summary`),
           buttons,
           visual: visual(product, t),
-          visualWidth: key === "dataExtraction" ? 680 : undefined,
+          visualWidth: key === "dataExtraction" || key === "claimsDecisioning" ? 680 : undefined,
           texture: textures[key],
         }}
         faq={{ heading: faqHeading, items: faqs }}

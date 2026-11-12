@@ -157,7 +157,7 @@
         "title": "Automated Coverage Check: claims settled in minutes, not weeks",
         "summary": "We check the policy terms against the facts of the case and recommend whether the claim should be approved or denied. Where it is approved, the amount owed is calculated line by line, and your adjuster makes the final call.",
         "scene": {
-          "alt": "A claim as the adjuster sees it: the lines grouped by outcome, each with its covered amount, and the payout",
+          "alt": "A water damage claim checked line by line: each line is linked to the policy clause it rests on, the payout is calculated, and the adjuster makes the final decision",
           "title": "Water damage claim",
           "reference": "Claim 62850",
           "columns": {
@@ -222,7 +222,29 @@
           "deductibleLabel": "Deductible",
           "deductible": "150.00",
           "payoutLabel": "Payout",
-          "payout": "3'936.33"
+          "payout": "3'936.33",
+          "policyLabel": "Policy wording",
+          "clauseWord": "Clause",
+          "clauses": [
+            {
+              "ref": "3.1",
+              "text": "Sudden water damage to the building is covered."
+            },
+            {
+              "ref": "4.2",
+              "text": "Household appliances are excluded."
+            },
+            {
+              "ref": "5.4",
+              "text": "Hotel costs are capped at half, pending review."
+            }
+          ],
+          "adjuster": {
+            "label": "Your adjuster",
+            "action": "Approve payout"
+          },
+          "pause": "Pause animation",
+          "play": "Play animation"
         }
       },
       "keys": {

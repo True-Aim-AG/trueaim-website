@@ -5,6 +5,7 @@ export { ModulesDiagram, type DiagramNode } from "./ModulesDiagram";
 export { OtusPrompts, type OtusPrompt } from "./OtusPrompts";
 export {
   ClaimScene,
+  CoverageGlassScene,
   FlowScene,
   InvoiceScene,
   LineBenchScene,
@@ -13,6 +14,7 @@ export {
   RecordScene,
   ReportScene,
   type ClaimSceneData,
+  type CoverageGlassData,
   type FlowSceneData,
   type InvoiceSceneData,
   type LineBenchSceneData,
