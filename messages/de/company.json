@@ -82,7 +82,21 @@
           "name": "Dr. Dandolo Flumini",
           "title": "Entscheidungslogik und Mathematik",
           "bio": "Mathematiker mit einem PhD summa cum laude der Universität Bern, spezialisiert auf Logik und theoretische Informatik. Forscher an der ZHAW und ursprünglicher Architekt von MIRA, der preisgekrönten Entscheidungstechnologie, die True Aim heute nutzt."
+        },
+        "ivo": {
+          "name": "Dr. Ivo Furrer",
+          "title": "Führung und Governance in der Versicherung",
+          "bio": "Vizepräsident des Verwaltungsrats von Helvetia Baloise, dem zweitgrößten Versicherer der Schweiz. Zuvor CEO von Swiss Life Schweiz, Verwaltungsratsmitglied von Julius Bär und Präsident von digitalswitzerland. Leitete die Kommission Leben des Schweizerischen Versicherungsverbands. 43 Jahre in der Versicherungsbranche."
+        },
+        "christoph": {
+          "name": "Dr. Christoph Nabholz",
+          "title": "KI-Forschung und Versicherung",
+          "bio": "War 23 Jahre bei Swiss Re, zuletzt als Managing Director des Swiss Re Institute, wo er weltweit 80 Fachleute leitete, die zu neu entstehenden Risiken, KI, digitalem Vertrauen und der Einführung von GenAI forschten. Ehemaliger Research Fellow in Harvard, berät heute zu KI-Strategie, Governance und neu entstehenden Risiken."
         }
+      },
+      "groups": {
+        "insurance": "Versicherung",
+        "techGrowth": "Technologie und Wachstum"
       }
     },
     "partners": {

@@ -82,7 +82,21 @@
           "name": "Dr. Dandolo Flumini",
           "title": "Logica decisionale e matematica",
           "bio": "Matematico con un dottorato summa cum laude all’Università di Berna, specializzato in logica e informatica teorica. Ricercatore alla ZHAW e primo architetto di MIRA, la premiata tecnologia decisionale oggi usata da True Aim."
+        },
+        "ivo": {
+          "name": "Dr. Ivo Furrer",
+          "title": "Leadership e governance assicurativa",
+          "bio": "Vicepresidente del consiglio di amministrazione di Helvetia Baloise, il secondo assicuratore della Svizzera. Ex CEO di Swiss Life Svizzera, membro del consiglio di amministrazione di Julius Baer e presidente di digitalswitzerland. Ha presieduto la commissione vita dell’Associazione Svizzera d’Assicurazioni. 43 anni nel settore assicurativo."
+        },
+        "christoph": {
+          "name": "Dr. Christoph Nabholz",
+          "title": "Ricerca sull’IA e assicurazioni",
+          "bio": "Ha trascorso 23 anni in Swiss Re, da ultimo come Managing Director dello Swiss Re Institute, dove guidava 80 esperti in tutto il mondo nella ricerca su rischi emergenti, IA, fiducia digitale e adozione della GenAI. Ex research fellow a Harvard, oggi è consulente su strategia dell’IA, governance e rischi emergenti."
         }
+      },
+      "groups": {
+        "insurance": "Assicurazioni",
+        "techGrowth": "Tecnologia e crescita"
       }
     },
     "partners": {

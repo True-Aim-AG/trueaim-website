@@ -13,7 +13,7 @@ export type HeroLoopData = {
 };
 
 export type HeroLoopFiles = {
-  /** Path without extension: `.webm` and `.mp4` are both served from it. */
+  /** Path without extension: the `.mp4` is served from it. */
   src: string;
   poster: string;
   width: number;
@@ -26,9 +26,9 @@ const noSubscription = () => () => undefined;
 const matchesDesktop = () => window.matchMedia(DESKTOP_QUERY).matches;
 
 /**
- * The Data Extraction hero: a silent, looping film of the claims graph, from
- * the ring around one claim into the Node view around the claim, the insurer
- * and an exposure, and back. It autoplays on
+ * The Data Extraction hero: a silent, looping film in the glass look of the
+ * platform demo. Documents are read, their details become one claim record,
+ * and the record opens into a tree. It autoplays on
  * landing; under reduced motion it stays on the poster until the visitor
  * presses play. The toggle lets anyone pause it (WCAG 2.2.2).
  *
@@ -103,7 +103,6 @@ export function HeroLoop({
             height={files.height}
             className="block h-auto w-full"
           >
-            <source src={`${files.src}.webm`} type="video/webm" />
             <source src={`${files.src}.mp4`} type="video/mp4" />
           </video>
         ) : (
