@@ -157,7 +157,7 @@
         "title": "Automated Coverage Check : des sinistres réglés en minutes, pas en semaines",
         "summary": "Nous confrontons les conditions de la police aux faits du dossier et recommandons d’accepter ou de refuser le sinistre. S’il est accepté, le montant dû est calculé ligne par ligne, et votre gestionnaire prend la décision finale.",
         "scene": {
-          "alt": "Un sinistre tel que le gestionnaire le voit : les lignes groupées par résultat, chacune avec son montant couvert, et l’indemnisation",
+          "alt": "Un sinistre dégât des eaux vérifié ligne par ligne : chaque ligne est reliée à la clause de la police sur laquelle elle repose, l’indemnisation est calculée et le gestionnaire prend la décision finale",
           "title": "Sinistre dégât des eaux",
           "reference": "Sinistre 62850",
           "columns": {
@@ -222,7 +222,29 @@
           "deductibleLabel": "Franchise",
           "deductible": "150,00",
           "payoutLabel": "Indemnisation",
-          "payout": "3 936,33"
+          "payout": "3 936,33",
+          "policyLabel": "Conditions de la police",
+          "clauseWord": "Clause",
+          "clauses": [
+            {
+              "ref": "3.1",
+              "text": "Les dégâts d’eau soudains au bâtiment sont couverts."
+            },
+            {
+              "ref": "4.2",
+              "text": "Les appareils ménagers sont exclus."
+            },
+            {
+              "ref": "5.4",
+              "text": "Les frais d’hôtel sont plafonnés à la moitié, en attente d’examen."
+            }
+          ],
+          "adjuster": {
+            "label": "Votre gestionnaire",
+            "action": "Valider l’indemnisation"
+          },
+          "pause": "Mettre l’animation en pause",
+          "play": "Lancer l’animation"
         }
       },
       "keys": {

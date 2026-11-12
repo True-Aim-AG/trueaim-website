@@ -2,6 +2,7 @@
 // from the site's tokens. Every string, number and label arrives as a prop
 // from messages/; the components hold no copy.
 export { ClaimScene, type ClaimLine, type ClaimSceneData } from "./ClaimScene";
+export { CoverageGlassScene, type CoverageGlassData } from "./CoverageGlassScene";
 export { InvoiceScene, type InvoiceSceneData } from "./InvoiceScene";
 export { ReportScene, type ReportSceneData } from "./ReportScene";
 export { OutcomesScene, type OutcomeItem } from "./OutcomesScene";
