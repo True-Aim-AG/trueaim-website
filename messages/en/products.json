@@ -13,7 +13,7 @@
         "title": "Data Extraction: your claims data, ready for AI",
         "summary": "Most of what an insurer knows about a claim sits in PDFs, scans, photographs, emails and legacy systems. True Aim reads it, extracts it, puts it in context and builds one structured database. Your teams and your AI can then search every claim, compare every document and act on what they find.",
         "scene": {
-          "alt": "A looping film of a graph of synthetic claims data. It opens on one property claim and its linked records, then lays them out in columns around the claim, the insurer and the building exposure in turn, showing the policyholder, broker, policy, loss assessments, scopes of works by trade, invoices, documents and damage photos True Aim has extracted.",
+          "alt": "A looping film of synthetic claims data. A claim form, an email, an invoice and a photo are read, their details become one claim record with its policyholder, insurer, broker, loss event, exposures and policy, and the record opens into a tree of loss assessments, scopes of works and the adjuster.",
           "types": {
             "claim": "Claim",
             "lossEvent": "Loss event",
