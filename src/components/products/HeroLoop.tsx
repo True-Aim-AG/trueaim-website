@@ -13,7 +13,7 @@ export type HeroLoopData = {
 };
 
 export type HeroLoopFiles = {
-  /** Path without extension: `.webm` and `.mp4` are both served from it. */
+  /** Path without extension: the `.mp4` is served from it. */
   src: string;
   poster: string;
   width: number;
@@ -103,7 +103,6 @@ export function HeroLoop({
             height={files.height}
             className="block h-auto w-full"
           >
-            <source src={`${files.src}.webm`} type="video/webm" />
             <source src={`${files.src}.mp4`} type="video/mp4" />
           </video>
         ) : (
