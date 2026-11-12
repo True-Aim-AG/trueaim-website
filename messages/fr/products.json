@@ -13,7 +13,7 @@
         "title": "Data Extraction : vos données sinistres, prêtes pour l’IA",
         "summary": "L’essentiel de ce qu’un assureur sait d’un sinistre se trouve dans des PDF, des scans, des photos, des e-mails et des systèmes historiques. True Aim les lit, en extrait l’information, la met en contexte et construit une base de données structurée unique. Vos équipes et votre IA peuvent ensuite interroger chaque sinistre, comparer chaque document et agir sur ce qu’elles trouvent.",
         "scene": {
-          "alt": "Un film en boucle d’un graphe de données sinistres synthétiques. Il s’ouvre sur un sinistre dommages aux biens et ses enregistrements liés, puis les dispose en colonnes autour du sinistre, de l’assureur et du bâtiment assuré tour à tour, montrant le preneur d’assurance, le courtier, la police, les évaluations du sinistre, les étendues des travaux par corps de métier, les factures, les documents et les photos de dommages que True Aim a extraits.",
+          "alt": "Un film en boucle de données sinistres synthétiques. Un formulaire de déclaration de sinistre, un e-mail, une facture et une photo sont lus, leurs informations forment un seul dossier sinistre avec l’assuré, l’assureur, le courtier, l’événement à l’origine du sinistre, les risques assurés et la police, puis le dossier s’ouvre en une arborescence d’évaluations du sinistre, d’étendues des travaux et du gestionnaire sinistres.",
           "types": {
             "claim": "Sinistre",
             "lossEvent": "Événement",

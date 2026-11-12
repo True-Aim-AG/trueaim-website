@@ -100,14 +100,14 @@ function visual(product: Product, t: Translate) {
           desktop={{
             src: "/media/data-extraction/hero-loop",
             poster: "/media/data-extraction/hero-poster.webp",
-            width: 1080,
-            height: 900,
+            width: 1620,
+            height: 1350,
           }}
           phone={{
             src: "/media/data-extraction/hero-loop-phone",
             poster: "/media/data-extraction/hero-poster-phone.webp",
-            width: 720,
-            height: 840,
+            width: 1080,
+            height: 1260,
           }}
         />
       );

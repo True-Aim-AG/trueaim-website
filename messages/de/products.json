@@ -13,7 +13,7 @@
         "title": "Data Extraction: Ihre Schadendaten, bereit für KI",
         "summary": "Das meiste, was ein Versicherer über einen Schaden weiß, steckt in PDFs, Scans, Fotos, E-Mails und Altsystemen. True Aim liest es, extrahiert es, stellt es in seinen Zusammenhang und baut daraus eine strukturierte Datenbank. Ihre Teams und Ihre KI können dann jeden Schaden durchsuchen, jedes Dokument vergleichen und nach dem handeln, was sie finden.",
         "scene": {
-          "alt": "Ein Film in Endlosschleife mit einem Graphen synthetischer Schadendaten. Er beginnt bei einem Gebäudeschaden und seinen verknüpften Datensätzen, ordnet sie dann nacheinander in Spalten um den Schaden, den Versicherer und das versicherte Gebäude an und zeigt Versicherungsnehmer, Makler, Police, Schadenbewertungen, Leistungsumfänge je Gewerk, Rechnungen, Dokumente und Schadenfotos, die True Aim extrahiert hat.",
+          "alt": "Ein Film in Endlosschleife mit synthetischen Schadendaten. Ein Schadenmeldeformular, eine E-Mail, eine Rechnung und ein Foto werden gelesen, ihre Angaben werden zu einer Schadenakte mit Versicherungsnehmer, Versicherer, Makler, Schadenereignis, versicherten Risiken und Police, und die Akte öffnet sich zu einem Baum aus Schadenbewertungen, Leistungsumfängen und Schadensachbearbeiter.",
           "types": {
             "claim": "Schaden",
             "lossEvent": "Schadenereignis",
