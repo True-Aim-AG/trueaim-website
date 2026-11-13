@@ -114,6 +114,18 @@ describe("buildPageGraph", () => {
     expect(software?.name).toBe("Otus, True Aim's claims specialist");
   });
 
+  it("gives the Organization its founding date and founders, tied to the author pages", () => {
+    const org = nodes(buildPageGraph({ locale: "de", path: "/", template: "home" })).find(
+      (node) => node["@type"] === "Organization",
+    ) as { foundingDate?: string; founder?: { "@id": string; name: string }[] } | undefined;
+    expect(org?.foundingDate).toBe("2026-01");
+    expect(org?.founder?.map((person) => person["@id"])).toEqual([
+      "https://trueaim.ai/en/authors/reuben-john/#person",
+      "https://trueaim.ai/en/authors/frederic-brunner/#person",
+    ]);
+    expect(org?.founder?.map((person) => person.name)).toEqual(["Reuben John", "Frédéric Brunner"]);
+  });
+
   it("names each product with the True Aim brand as alternateName", () => {
     const software = nodes(buildPageGraph({ locale: "en", path: "/platform/automated-coverage-check", template: "product" })).find(
       (node) => node["@type"] === "SoftwareApplication",
