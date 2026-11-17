@@ -306,7 +306,7 @@
         },
         {
           "question": "Wie beantworten wir ein Audit des Versicherers?",
-          "answer": "Aus der Akte. Jede Entscheidung trägt ihre Klausel, ihre Nachweise und ihren Bearbeiter, und die vollständige Historie eines Schadens wird als ein Prüfpaket exportiert."
+          "answer": "Aus der Akte. Jede Entscheidung trägt ihre Klausel, ihre Nachweise und ihren Bearbeiter, jede Änderung bleibt erhalten, und die Schadenprüfung lässt sich als PDF exportieren."
         },
         {
           "question": "Müssen wir unser Schadensystem wechseln?",
@@ -470,7 +470,7 @@
               "time": "09:21:41",
               "actor": "engine",
               "who": "Regel-Engine",
-              "text": "Akte versiegelt, Kette verifiziert",
+              "text": "Prüfung protokolliert",
               "hash": "c90d"
             }
           ],
@@ -483,7 +483,7 @@
             "one": "Aktion",
             "many": "Aktionen"
           },
-          "exportLabel": "Prüfpaket exportieren"
+          "exportLabel": "PDF exportieren"
         }
       },
       "team": {
@@ -499,7 +499,7 @@
             "text": "Versicherungsbedingungen, ein Branchenkatalog oder die eigenen Regeln eines Kunden."
           },
           {
-            "title": "Ein vollständiges Protokoll, per Klick",
+            "title": "Ein vollständiges Protokoll jeder Entscheidung",
             "text": "Jede Entscheidung trägt ihre Regelversion, ihre Begründung und ihren Bearbeiter."
           }
         ],
@@ -520,7 +520,7 @@
         },
         {
           "question": "Was können wir an unsere Kunden weitergeben?",
-          "answer": "Das vollständige Protokoll jeder Entscheidung: die Eingaben, die angewandten Klauseln, die Berechnung und wer das Ergebnis bestätigt hat, exportiert als ein Prüfpaket."
+          "answer": "Das vollständige Protokoll jeder Entscheidung: die Eingaben, die angewandten Klauseln, die Berechnung und wer das Ergebnis bestätigt hat, mit der Schadenprüfung als PDF-Export."
         }
       ]
     }

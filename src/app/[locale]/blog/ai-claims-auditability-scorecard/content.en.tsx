@@ -367,8 +367,7 @@ export default async function AuditabilityScorecardBlogPost({
                   before anything is decided, and anything that fails that gate
                   never reaches the decision stage. Each decision is computed
                   against the wording in force, with its reason attached. Every
-                  action, by a person or a machine, is written to a
-                  tamper-evident record that can be reconstructed, exported and
+                  action, by a person or a machine, is written to a record that can be reconstructed, exported and
                   explained for as long as it is kept. The architecture is
                   described in full in{" "}
                   <Link

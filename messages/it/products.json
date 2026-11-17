@@ -267,7 +267,7 @@
           },
           {
             "title": "Ogni modifica spiegata",
-            "text": "Quando un liquidatore modifica una voce, la motivazione viene registrata."
+            "text": "Quando un liquidatore modifica una voce, può registrarne la motivazione."
           }
         ]
       },
@@ -413,7 +413,7 @@
               "time": "09:21:41",
               "actor": "engine",
               "who": "Motore di regole",
-              "text": "Fascicolo sigillato, catena verificata",
+              "text": "Esame registrato",
               "hash": "c90d"
             }
           ],
@@ -426,8 +426,8 @@
             "one": "azione",
             "many": "azioni"
           },
-          "verified": "Catena verificata, 6 hash su 6 corrispondono",
-          "exportLabel": "Esporta dossier audit"
+          "verified": "6 azioni, ciascuna con autore e orario",
+          "exportLabel": "Esporta PDF"
         }
       },
       "otus": {
@@ -471,7 +471,7 @@
         },
         {
           "question": "Che cos’è il Decision Dossier?",
-          "answer": "Il registro di ogni decisione: gli input, le clausole applicate, la traccia del calcolo, i collegamenti alle prove e chi ha confermato l’esito. Si esporta come un unico dossier di audit."
+          "answer": "Il registro di ogni decisione: gli input, le clausole applicate, la traccia del calcolo, i collegamenti alle prove e chi ha confermato l’esito. L’esame del sinistro si esporta in PDF."
         }
       ],
       "cta": {

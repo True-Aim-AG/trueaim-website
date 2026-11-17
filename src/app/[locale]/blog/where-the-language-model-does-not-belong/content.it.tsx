@@ -65,7 +65,7 @@ const claimSteps: NumberedItem[] = [
   },
   {
     title: "Revisione umana",
-    body: "L’intero audit trail può essere esportato in qualsiasi momento. Un liquidatore esamina il sinistro. Ogni modifica che apporta richiede una motivazione registrata direttamente nel fascicolo.",
+    body: "L’esame del sinistro si esporta in PDF. Un liquidatore esamina il sinistro e può registrare una motivazione per ogni modifica direttamente nel fascicolo.",
   },
 ];
 
@@ -125,7 +125,7 @@ const engineParts: BulletItem[] = [
   },
   {
     lead: "Controllo human-in-the-loop:",
-    text: "Gli esiti di copertura risalgono alla clausola che li fonda. La revisione umana è attivata da soglie che l’assicuratore stabilisce. Ogni modifica apportata da una persona porta una motivazione.",
+    text: "Gli esiti di copertura risalgono alla clausola che li fonda. La revisione umana è attivata da soglie che l’assicuratore stabilisce. Per ogni modifica, la persona può registrare una motivazione.",
   },
 ];
 

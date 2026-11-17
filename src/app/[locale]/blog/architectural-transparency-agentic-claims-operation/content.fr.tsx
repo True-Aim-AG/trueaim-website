@@ -110,7 +110,7 @@ const pillars = [
     label: "Audit et gouvernance",
     cells: [
       "Journalisation continue des décisions, des documents source et des critères réglementaires.",
-      "Génère un dossier d’audit instantané et immuable. Défendable dès la conception.",
+      "Conserve chaque modification et exporte l’examen du sinistre en PDF. Défendable dès la conception.",
     ],
   },
 ];
@@ -431,7 +431,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 </p>
 
                 <PullQuote>
-                  Pas une boîte noire. Une boîte de verre : auditable dès la conception, vérifiable cryptographiquement et ouverte à chaque partie prenante légitime de la chaîne de valeur.
+                  Pas une boîte noire. Une boîte de verre : auditable dès la conception et ouverte à chaque partie prenante légitime de la chaîne de valeur.
                 </PullQuote>
               </MotionDiv>
 

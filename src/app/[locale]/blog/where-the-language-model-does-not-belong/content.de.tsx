@@ -65,7 +65,7 @@ const claimSteps: NumberedItem[] = [
   },
   {
     title: "Menschliche Prüfung",
-    body: "Der gesamte Prüfpfad kann jederzeit exportiert werden. Ein Sachbearbeiter prüft den Schadenfall. Jede Änderung, die er vornimmt, verlangt eine Begründung, die direkt in der Akte protokolliert wird.",
+    body: "Die Schadenprüfung lässt sich als PDF exportieren. Ein Sachbearbeiter prüft den Schadenfall und kann für jede Änderung eine Begründung direkt in der Akte festhalten.",
   },
 ];
 
@@ -125,7 +125,7 @@ const engineParts: BulletItem[] = [
   },
   {
     lead: "Human-in-the-Loop-Kontrolle:",
-    text: "Deckungsergebnisse lassen sich bis zur zugrunde liegenden Klausel zurückverfolgen. Die menschliche Prüfung wird durch Schwellenwerte ausgelöst, die der Versicherer festlegt. Jede Änderung durch eine Person trägt eine Begründung.",
+    text: "Deckungsergebnisse lassen sich bis zur zugrunde liegenden Klausel zurückverfolgen. Die menschliche Prüfung wird durch Schwellenwerte ausgelöst, die der Versicherer festlegt. Für jede Änderung kann die Person eine Begründung festhalten.",
   },
 ];
 

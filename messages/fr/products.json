@@ -267,7 +267,7 @@
           },
           {
             "title": "Chaque modification expliquée",
-            "text": "Quand un gestionnaire modifie une ligne, le motif est consigné."
+            "text": "Quand un gestionnaire modifie une ligne, il peut en consigner le motif."
           }
         ]
       },
@@ -413,7 +413,7 @@
               "time": "09:21:41",
               "actor": "engine",
               "who": "Moteur de règles",
-              "text": "Dossier scellé, chaîne vérifiée",
+              "text": "Examen consigné",
               "hash": "c90d"
             }
           ],
@@ -426,8 +426,8 @@
             "one": "action",
             "many": "actions"
           },
-          "verified": "Chaîne vérifiée, 6 hachages sur 6 concordent",
-          "exportLabel": "Exporter l’audit"
+          "verified": "6 actions, chacune avec son auteur et son heure",
+          "exportLabel": "Exporter en PDF"
         }
       },
       "otus": {
@@ -471,7 +471,7 @@
         },
         {
           "question": "Qu’est-ce que le Decision Dossier ?",
-          "answer": "Le dossier de chaque décision : les données d’entrée, les clauses appliquées, la trace du calcul, les liens vers les preuves et la personne qui a confirmé le résultat. Il s’exporte en un seul dossier d’audit."
+          "answer": "Le dossier de chaque décision : les données d’entrée, les clauses appliquées, la trace du calcul, les liens vers les preuves et la personne qui a confirmé le résultat. L’examen du sinistre s’exporte en PDF."
         }
       ],
       "cta": {
