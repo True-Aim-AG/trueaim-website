@@ -75,3 +75,6 @@ old_url,new_url,status,note
 /fr/dpa,/en/sub-processors/,301,Old DPA short link; the sub-processor list is English only
 /it/dpa,/en/sub-processors/,301,Old DPA short link; the sub-processor list is English only
 /contact-card.html,/contact-card/,301,Static contact card moved to a folder index
+/de/blog/insurance-claims-automation/,/en/blog/insurance-claims-automation/,301,English only until the translation lands
+/fr/blog/insurance-claims-automation/,/en/blog/insurance-claims-automation/,301,English only until the translation lands
+/it/blog/insurance-claims-automation/,/en/blog/insurance-claims-automation/,301,English only until the translation lands
