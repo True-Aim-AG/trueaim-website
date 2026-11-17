@@ -85,7 +85,7 @@
         },
         "prove": {
           "name": "Prove",
-          "text": "Consigne chaque décision avec ses preuves, la règle en vigueur et la personne qui l’a prise. Toute modification du dossier est visible. Un clic exporte le dossier d’audit complet."
+          "text": "Consigne chaque décision avec ses preuves, la règle en vigueur et la personne qui l’a prise. Chaque modification est conservée, avec son auteur et sa date. L’examen du sinistre s’exporte en PDF."
         }
       },
       "callout": "Mêmes données. Même décision. À chaque fois."

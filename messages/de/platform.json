@@ -85,7 +85,7 @@
         },
         "prove": {
           "name": "Prove",
-          "text": "Protokolliert jede Entscheidung mit ihren Nachweisen, der geltenden Regel und der Person, die sie getroffen hat. Jede Änderung an der Akte ist sichtbar. Ein Klick exportiert das vollständige Prüfpaket."
+          "text": "Protokolliert jede Entscheidung mit ihren Nachweisen, der geltenden Regel und der Person, die sie getroffen hat. Jede Änderung bleibt erhalten, mit der Person, die sie vorgenommen hat, und dem Zeitpunkt. Die Schadenprüfung lässt sich als PDF exportieren."
         }
       },
       "callout": "Gleiche Eingaben. Gleiche Entscheidung. Jedes Mal."
