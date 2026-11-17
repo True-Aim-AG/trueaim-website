@@ -70,11 +70,11 @@
     },
     "/technology": {
       "title": "Architettura di IA neuro-simbolica per i sinistri | True Aim",
-      "description": "True Aim unisce agenti IA a un processo decisionale deterministico, costruito per l’assicurazione regolamentata e l’AI Act. Non una scatola nera.",
+      "description": "True Aim unisce agenti IA a un processo decisionale deterministico, costruito per l’assicurazione regolamentata, con una registrazione di ogni decisione. Non una scatola nera.",
       "h1": "IA neuro-simbolica: l’architettura di cui le autorità di vigilanza si fidano",
       "breadcrumb": "Tecnologia",
       "ogTitle": "IA neuro-simbolica: l’architettura di cui le autorità di vigilanza si fidano",
-      "ogDescription": "True Aim unisce agenti IA a un processo decisionale deterministico, costruito per l’assicurazione regolamentata e l’AI Act. Non una scatola nera.",
+      "ogDescription": "True Aim unisce agenti IA a un processo decisionale deterministico, costruito per l’assicurazione regolamentata, con una registrazione di ogni decisione. Non una scatola nera.",
       "updated": "2026-11-05"
     },
     "/trust": {
