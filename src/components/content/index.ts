@@ -9,6 +9,7 @@ export { FeatureCards, type FeatureCard } from "./FeatureCards";
 export { KeyFacts, type KeyFact } from "./KeyFacts";
 export { Quote } from "./Quote";
 export { LogoStrip, type StripLogo } from "./LogoStrip";
+export { ExperienceMarquee, type ExperienceLogo } from "./ExperienceMarquee";
 export { LogoMarquee } from "./LogoMarquee";
 export { Awards, type Award } from "./Awards";
 export { BadgeRow, type BadgeItem } from "./BadgeRow";
