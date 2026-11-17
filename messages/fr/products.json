@@ -266,7 +266,7 @@
             "text": "Chaque nombre renvoie à l’endroit du document dont il provient."
           },
           {
-            "title": "Chaque modification expliquée",
+            "title": "Consigner le motif des modifications",
             "text": "Quand un gestionnaire modifie une ligne, il peut en consigner le motif."
           }
         ]
