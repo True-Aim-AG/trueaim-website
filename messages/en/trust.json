@@ -11,14 +11,14 @@
       "heading": "Certified and aligned",
       "items": {
         "iso27001": {
-          "name": "ISO 27001",
+          "name": "ISO/IEC 27001:2022",
           "status": "certified",
           "description": "Certified information security management: policies, controls and audits of how we protect your data."
         },
         "soc2": {
           "name": "SOC 2 Type II",
-          "status": "audited",
-          "description": "Independently audited security controls, tested over time rather than on one day."
+          "status": "nda",
+          "description": "Our SOC 2 Type II report (Security, 1 May to 31 July 2026) is available under NDA."
         },
         "gdpr": {
           "name": "GDPR",
@@ -38,7 +38,7 @@
       },
       "statusLabels": {
         "certified": "Certified",
-        "audited": "Audited",
+        "nda": "Report under NDA",
         "pending": "Audit window completed, report pending",
         "aligned": "Aligned"
       }
@@ -123,7 +123,7 @@
       "items": [
         {
           "question": "Which certifications does True Aim hold?",
-          "answer": "True Aim is certified to ISO/IEC 27001:2022 by A-LIGN (September 2026). True Aim has also completed its SOC 2 Type II audit, covering the audit window from 1 May to 31 July 2026, and holds the final report. Its controls are aligned with the GDPR, the Swiss FADP and DORA."
+          "answer": "True Aim is ISO/IEC 27001:2022 certified. Our SOC 2 Type II report (Security, 1 May to 31 July 2026) is available under NDA. Our controls are aligned with the GDPR, the Swiss FADP and DORA."
         },
         {
           "question": "Does True Aim decide claims without a person?",

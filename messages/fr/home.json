@@ -109,10 +109,10 @@
         "True Aim fonctionne aux côtés des systèmes que vous utilisez déjà. Vos données restent les vôtres, tout comme vos règles, vos limites et vos seuils."
       ],
       "imageAlt": "Un cadenas en métal portant le symbole True Aim",
-      "badgeIso": "ISO 27001",
+      "badgeIso": "ISO/IEC 27001:2022",
       "badgeSoc": "SOC 2 Type II",
       "badgeIsoStatus": "Certifié",
-      "badgeSocStatus": "Audité"
+      "badgeSocStatus": "Rapport sous NDA"
     },
     "related": {
       "heading": "Découvrez nos solutions",

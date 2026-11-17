@@ -30,7 +30,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
 
           <div>
             <p className="text-body leading-[1.6]">
-              True Aim AG operates a claims-processing platform for insurers, brokers, and any entity in the insurance value chain handling or processing claims. Security is a core requirement of our Service, and our customers entrust us with personal data of their policyholders. This page describes our security program at a high level. For full audit-grade evidence (SOC 2 Type II report once issued, ISO 27001 certificate, sub-processor list, Data Processing Agreement), contact{" "}
+              True Aim AG operates a claims-processing platform for insurers, brokers, and any entity in the insurance value chain handling or processing claims. Security is a core requirement of our Service, and our customers entrust us with personal data of their policyholders. This page describes our security program at a high level. For full audit-grade evidence (SOC 2 Type II report, ISO/IEC 27001:2022 certificate, sub-processor list, Data Processing Agreement), contact{" "}
               <a href="mailto:security@trueaim.ai" className="text-link hover:underline">security@trueaim.ai</a>. These are available under NDA.
             </p>
 
@@ -38,7 +38,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Compliance frameworks</h2>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2">
                 <li><strong className="text-strong">ISO/IEC 27001:2022</strong>: certified by A-LIGN, certificate ISMS-TR-090426, issued 4 September 2026, valid until 4 September 2029.</li>
-                <li><strong className="text-strong">SOC 2 Type II</strong>: audited, covering the audit window from 1 May to 31 July 2026; the final report has been issued.</li>
+                <li><strong className="text-strong">SOC 2 Type II</strong>: our report (Security, 1 May to 31 July 2026) is available under NDA.</li>
                 <li><strong className="text-strong">Swiss FADP</strong> and <strong className="text-strong">GDPR</strong>: aligned as data processor for customer data.</li>
                 <li><strong className="text-strong">EU AI Act</strong>: AI Technical File maintained for Automated Coverage Check; current readiness is documented and tracked.</li>
               </ul>

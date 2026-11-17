@@ -78,8 +78,8 @@ This combination ensures that while AI handles the messy, unstructured parts of 
 
 **URL:** https://trueaim.ai/en/trust/
 
-- ISO 27001: certified.
-- SOC 2 Type II: audited (audit window 1 May to 31 July 2026, final report issued).
+- ISO/IEC 27001:2022: certified.
+- SOC 2 Type II: report (Security, 1 May to 31 July 2026) available under NDA.
 - GDPR, Swiss FADP and DORA: aligned.
 - Every decision records the facts, the policy wording applied and the reasoning, so it can be reconstructed under audit, regulatory review or dispute.
 

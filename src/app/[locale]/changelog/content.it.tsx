@@ -73,7 +73,7 @@ const RELEASES: Release[] = [
         "Revisore di PR con IA: revisore automatico delle pull request con attivazione manuale tramite comandi, una coda CI e supporto alla revisione a blocchi per i diff oltre il budget di 200 KB per singola chiamata.",
       ],
       Security: [
-        "Irrobustimento delle sessioni: timeout delle sessioni ridotti a valori predefiniti conformi a SOC 2.",
+        "Irrobustimento delle sessioni: timeout delle sessioni ridotti a valori predefiniti più restrittivi.",
         "Sicurezza del trasporto: fissato TLS 1.2 e aggiunto un middleware per gli header di sicurezza.",
         "Monitoraggio cloud: attivati i livelli Standard di Microsoft Defender for Cloud su tutti i tipi di risorsa rilevanti.",
         "Audit logging e avvisi: aggiunti avvisi su Activity Log, log diagnostici e Storage per gli ambienti di produzione.",

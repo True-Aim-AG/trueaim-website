@@ -79,11 +79,11 @@
     },
     "/trust": {
       "title": "Trust Center: ISO 27001, SOC 2, DSGVO, DSG, DORA | True Aim",
-      "description": "Nach ISO 27001 zertifiziert, nach SOC 2 Type II auditiert, an DSGVO, Schweizer DSG und DORA ausgerichtet. Jede Schadenentscheidung mit Begründung protokolliert.",
+      "description": "True Aim ist nach ISO/IEC 27001:2022 zertifiziert. Unser Bericht nach SOC 2 Type II (Security, 1. Mai bis 31. Juli 2026) ist unter NDA erhältlich. Ausgerichtet an DSGVO, Schweizer DSG und DORA.",
       "h1": "Sicherheit und Compliance, eingebaut vom ersten Tag an",
       "breadcrumb": "Trust Center",
       "ogTitle": "Sicherheit und Compliance bei True Aim",
-      "ogDescription": "Nach ISO 27001 zertifiziert, nach SOC 2 Type II auditiert, an DSGVO, Schweizer DSG und DORA ausgerichtet. Jede Schadenentscheidung mit Begründung protokolliert.",
+      "ogDescription": "True Aim ist nach ISO/IEC 27001:2022 zertifiziert. Unser Bericht nach SOC 2 Type II (Security, 1. Mai bis 31. Juli 2026) ist unter NDA erhältlich. Ausgerichtet an DSGVO, Schweizer DSG und DORA.",
       "updated": "2026-11-05"
     },
     "/about": {
