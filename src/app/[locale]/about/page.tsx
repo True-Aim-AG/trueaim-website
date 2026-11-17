@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ArrowRight, Linkedin } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { BadgeRow, CARD, CARD_HOVER, CtaBand, PageHero, SECTION, SECTION_LILAC, SectionHead } from "@/components/content";
+import { BadgeRow, CARD, CARD_HOVER, CtaBand, ExperienceMarquee, type ExperienceLogo, PageHero, SECTION, SECTION_LILAC, SectionHead } from "@/components/content";
 import { cn } from "@/lib/utils";
 
 const team = ["reuben", "frederic", "arnaud", "alin", "kai", "henrique"] as const;
@@ -29,12 +29,60 @@ const adviserMeta: Record<Adviser, { image?: string; linkedin: string }> = {
   claudio: { image: "/team/claudio.png", linkedin: "https://www.linkedin.com/in/claudio-g-48073a/" },
   kevin: { image: "/team/kevin-sartori.webp", linkedin: "https://www.linkedin.com/in/sartorikevin/" },
   dave: { image: "/team/dave.png", linkedin: "https://www.linkedin.com/in/dave-stoll-07905967/" },
-  lukas: { image: "/team/lukas-lichtensteiger.jpg", linkedin: "https://www.linkedin.com/in/lukas-lichtensteiger-7b348a8/" },
+  lukas: { image: "/team/lukas-lichtensteiger.webp", linkedin: "https://www.linkedin.com/in/lukas-lichtensteiger-7b348a8/" },
   eric: { image: "/team/eric.png", linkedin: "https://www.linkedin.com/in/ericzielinski/" },
   dandolo: { image: "/team/dandolo-flumini.jpg", linkedin: "https://www.linkedin.com/in/dandolo-flumini-a7971157/" },
   ivo: { image: "/team/ivo-furrer.webp", linkedin: "https://www.linkedin.com/in/ivo-furrer-41511242/" },
   christoph: { image: "/team/christoph-nabholz.webp", linkedin: "https://www.linkedin.com/in/christophnabholz/" },
 };
+
+// Where the team and the advisers have worked and studied. Each logo is one
+// tone on a clear background, 200px high; the names are the same in every language.
+const experience = (name: string, alt: string, width: number, renderHeight: number): ExperienceLogo => ({
+  src: `/experience/${name}.webp`,
+  alt,
+  width,
+  height: 200,
+  renderHeight,
+});
+
+// Three rows that run in alternating directions: seven logos, then six, then six.
+const experienceRows: { direction: "left" | "right"; logos: ExperienceLogo[] }[] = [
+  {
+    direction: "right",
+    logos: [
+      experience("apple", "Apple", 163, 40),
+      experience("harvard", "Harvard University", 796, 34),
+      experience("mckinsey", "McKinsey & Company", 1817, 20),
+      experience("axa", "AXA", 200, 40),
+      experience("zurich", "Zurich Insurance", 866, 34),
+      experience("adobe", "Adobe", 758, 32),
+      experience("swiss-re", "Swiss Re", 850, 32),
+    ],
+  },
+  {
+    direction: "left",
+    logos: [
+      experience("accenture", "Accenture", 759, 34),
+      experience("bcg", "Boston Consulting Group", 491, 40),
+      experience("eth-zurich", "ETH Zurich", 1206, 26),
+      experience("bain", "Bain & Company", 1818, 20),
+      experience("wharton", "Wharton School", 792, 34),
+      experience("uc-berkeley", "UC Berkeley", 650, 36),
+    ],
+  },
+  {
+    direction: "right",
+    logos: [
+      experience("swiss-life", "Swiss Life", 287, 44),
+      experience("helvetia-baloise", "Helvetia Baloise", 852, 32),
+      experience("guidewire", "Guidewire", 1267, 26),
+      experience("solera", "Solera", 1639, 22),
+      experience("quantexa", "Quantexa", 1285, 26),
+      experience("tractable", "Tractable", 1178, 26),
+    ],
+  },
+];
 
 // Yarowa first: the hero names it as the company True Aim was spun out of.
 const partners = ["yarowa", "zhaw", "innosuisse", "swissInsurtechHub"] as const;
@@ -74,7 +122,8 @@ function Portrait({ src, name }: { src?: string; name: string }) {
 }
 
 const PERSON = cn(CARD, "flex h-full flex-col gap-2.5 p-7");
-const ROLE = "text-[12px] font-medium uppercase tracking-[0.1em] text-accent";
+// A line break in the copy is kept, so a row of titles can break the same way.
+const ROLE = "whitespace-pre-line text-[12px] font-medium uppercase tracking-[0.1em] text-accent";
 const NAME = "font-display text-[20px] font-semibold leading-[1.3] text-strong";
 const GRID = "grid auto-rows-fr grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-3";
 const ADVISER_GRID = "grid auto-rows-fr grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-4";
@@ -189,6 +238,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               </ul>
             </div>
           ))}
+
+          <SectionHead heading={t("experience.heading")} className="mb-10 mt-20" />
+          <ExperienceMarquee rows={experienceRows} />
         </div>
       </section>
 

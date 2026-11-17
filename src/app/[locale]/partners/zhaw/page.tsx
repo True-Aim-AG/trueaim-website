@@ -135,7 +135,7 @@ export default async function ZHAWPage({ params }: { params: Promise<{ locale: s
                 <div className="rounded-[12px] bg-surface-muted p-6 text-center">
                   <div className="flex justify-center mb-3">
                     <Image
-                      src="/team/lukas-lichtensteiger.jpg"
+                      src="/team/lukas-lichtensteiger.webp"
                       alt={t("researchGroup.lukas.name")}
                       width={80}
                       height={80}

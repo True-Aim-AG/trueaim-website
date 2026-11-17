@@ -55,7 +55,7 @@
     "members": {
       "claudio": {
         "name": "Claudio Gienal",
-        "title": "Insurance transformation",
+        "title": "Insurance\ntransformation",
         "bio": "Currently Chief Transformation Officer at AXA Group. Formerly CEO of AXA UK and Ireland, Group Chief Strategy Officer at Zurich and CEO of Zurich Life Switzerland. He began his career at Accenture and McKinsey before moving into the insurance industry."
       },
       "kevin": {
@@ -70,7 +70,7 @@
       },
       "lukas": {
         "name": "Dr Lukas Lichtensteiger",
-        "title": "Technology architecture and AI",
+        "title": "Technology architecture & AI",
         "bio": "Harvard graduate with an MSc in theoretical physics and a PhD in AI and robotics. Currently a lecturer at ZHAW, where he heads the Medical Complex Systems Group. A serial founder whose start-up Siltectra was sold to Infineon for EUR 124 million."
       },
       "eric": {
@@ -90,7 +90,7 @@
       },
       "christoph": {
         "name": "Dr Christoph Nabholz",
-        "title": "AI research and insurance",
+        "title": "AI research and\ninsurance",
         "bio": "Spent 23 years at Swiss Re, most recently as Managing Director of the Swiss Re Institute, leading 80 experts globally researching emerging risks, AI, digital trust and GenAI adoption. Former Harvard research fellow, now advising on AI strategy, governance and emerging risks."
       }
     },
@@ -98,6 +98,9 @@
       "insurance": "Insurance",
       "techGrowth": "Technology and Growth"
     }
+  },
+  "experience": {
+    "heading": "Our team’s experience"
   },
   "partners": {
       "heading": "Partners",
