@@ -276,6 +276,15 @@
       "ogDescription": "A claim has never existed within the four walls of a single enterprise. Legacy automation stopped at internal borders. Transparency becomes an architectural guarantee.",
       "updated": "2026-10-22"
     },
+    "/blog/insurance-claims-automation": {
+      "title": "Insurance Claims Automation: What to Automate First | True Aim",
+      "description": "Insurance claims automation starts with the data, not the decision. What to automate first, what an insurer provides and three measures that show it is working.",
+      "h1": "Insurance claims automation: what to automate first and how to measure it",
+      "breadcrumb": "Insurance claims automation",
+      "ogTitle": "Insurance claims automation: what to automate first and how to measure it",
+      "ogDescription": "Insurance claims automation starts with the data, not the decision. What to automate first, what an insurer provides and three measures that show it is working.",
+      "updated": "2026-11-17"
+    },
     "/blog/where-the-language-model-does-not-belong": {
       "title": "Rules or Model? Where AI Belongs in a Claim Decision | True Aim",
       "description": "Every claim decision is reading, computing and judging. Where a language model belongs, where rules must hold and how the record shows the line.",
