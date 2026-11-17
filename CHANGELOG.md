@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.24.1](https://github.com/True-Aim-AG/trueaim-website/compare/v1.24.0...v1.24.1) (2026-11-17)
+
+
+### Bug Fixes
+
+* **trust:** state ISO/IEC 27001:2022 and the SOC 2 Type II report under NDA ([#40](https://github.com/True-Aim-AG/trueaim-website/issues/40)) ([b2a5522](https://github.com/True-Aim-AG/trueaim-website/commit/b2a55221b2a2ea4d38704d5dbfdec47ea8f489a4))
+
 ## [1.24.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.23.0...v1.24.0) (2026-11-09)
 
 
