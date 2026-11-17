@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.25.1](https://github.com/True-Aim-AG/trueaim-website/compare/v1.25.0...v1.25.1) (2026-11-17)
+
+
+### Bug Fixes
+
+* **copy:** auditable by design, and the claim record described as the product keeps it ([#44](https://github.com/True-Aim-AG/trueaim-website/issues/44)) ([2afa950](https://github.com/True-Aim-AG/trueaim-website/commit/2afa950034edc0c6b401ee56a65caa5b39ace776))
+
 ## [1.25.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.24.1...v1.25.0) (2026-11-17)
 
 
