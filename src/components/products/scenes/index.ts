@@ -7,6 +7,7 @@ export { InvoiceScene, type InvoiceSceneData } from "./InvoiceScene";
 export { ReportScene, type ReportSceneData } from "./ReportScene";
 export { OutcomesScene, type OutcomeItem } from "./OutcomesScene";
 export { FlowScene, type FlowSceneData } from "./FlowScene";
+export { FlowGlassScene, type FlowGlassData } from "./FlowGlassScene";
 export { RecordScene, type RecordSceneData } from "./RecordScene";
 export { LineBenchScene, type LineBenchSceneData } from "./LineBenchScene";
 export { QueueScene, type QueueSceneData } from "./QueueScene";

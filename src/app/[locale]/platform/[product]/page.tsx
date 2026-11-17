@@ -18,7 +18,7 @@ import {
 } from "@/components/content";
 import {
   CoverageGlassScene,
-  FlowScene,
+  FlowGlassScene,
   HeroLoop,
   InvoiceScene,
   LineBenchScene,
@@ -27,7 +27,7 @@ import {
   ReportScene,
   productIcons,
   type CoverageGlassData,
-  type FlowSceneData,
+  type FlowGlassData,
   type HeroLoopData,
   type InvoiceSceneData,
   type LineBenchSceneData,
@@ -186,7 +186,7 @@ function sections(product: Product, t: Translate) {
             tone="white"
           />
           <FigureSection heading={t(`${key}.flow.heading`)} tone="tint">
-            <FlowScene data={t.raw(`${key}.flow.scene`) as FlowSceneData} />
+            <FlowGlassScene data={t.raw(`${key}.flow.scene`) as FlowGlassData} />
           </FigureSection>
           <SplitText heading={t(`${key}.routing.heading`)} paragraphs={[]} image={{ src: "/brand/3d/shield.webp", alt: t(`${key}.routing.heading`), width: 600, height: 600 }} imageSide="right" align="left" tone="white">
             <Points items={(t.raw(`${key}.routing.items`) as KeyFact[]).map((item) => ({ title: item.label, text: item.text }))} align="left" />

@@ -353,7 +353,9 @@
               "name": "Adjuster",
               "text": "Assigned, documents already read"
             }
-          ]
+          ],
+          "pause": "Pause animation",
+          "play": "Play animation"
         }
       },
       "routing": {

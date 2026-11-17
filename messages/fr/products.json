@@ -353,7 +353,9 @@
               "name": "Gestionnaire",
               "text": "Affecté, documents déjà lus"
             }
-          ]
+          ],
+          "pause": "Mettre l’animation en pause",
+          "play": "Lancer l’animation"
         }
       },
       "routing": {

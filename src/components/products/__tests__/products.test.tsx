@@ -3,6 +3,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import {
   ClaimScene,
   CoverageGlassScene,
+  FlowGlassScene,
   FlowScene,
   InvoiceScene,
   LineBenchScene,
@@ -131,6 +132,45 @@ describe("Product scenes", () => {
     expect(html.match(/<path [^>]*data-path=/g)).toHaveLength(4);
     expect(html).toContain("Appliances are excluded.");
     expect(html).toContain("Approve payout");
+    expect(html).toContain('aria-label="Pause animation"');
+  });
+
+  it("renders the claim flow as one image: channels, one record with True Aim, every party, and a pause control", () => {
+    const html = renderToStaticMarkup(
+      <FlowGlassScene
+        data={{
+          alt: "Claims arrive and every party is updated",
+          channelsLabel: "Arrives on any channel",
+          channels: ["WhatsApp", "Email", "Client portal", "Repairer"],
+          record: {
+            title: "One claim record",
+            fields: [
+              { label: "Claimant", value: "A. Meier" },
+              { label: "Policy", value: "P-1" },
+              { label: "Incident", value: "Water damage" },
+              { label: "Documents", value: "4 read" },
+            ],
+            status: "Contextualised",
+          },
+          partiesLabel: "Every party in the loop",
+          parties: [
+            { name: "Customer", text: "Reference sent" },
+            { name: "Broker", text: "Record shared" },
+            { name: "Repairer", text: "Estimate requested" },
+            { name: "Adjuster", text: "Assigned" },
+          ],
+          pause: "Pause animation",
+          play: "Play animation",
+        }}
+      />,
+    );
+    expect(html).toContain('aria-label="Claims arrive and every party is updated"');
+    // A desktop and a stacked layout, each with eight travelling items.
+    expect(html.match(/data-stage="/g)).toHaveLength(2);
+    expect(html.match(/data-item=/g)).toHaveLength(16);
+    expect(html).toContain("One claim record");
+    expect(html).toContain("Estimate requested");
+    expect(html).not.toContain("Contextualised");
     expect(html).toContain('aria-label="Pause animation"');
   });
 

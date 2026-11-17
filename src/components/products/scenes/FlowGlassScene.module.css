@@ -1,0 +1,408 @@
+/*
+ * "Every claim moving": channels, one claim record with True Aim on it, and
+ * every party, drawn straight on the section with no stage box. The glass is
+ * on each component. Sizes are in world units: --u is one unit, a fixed
+ * fraction of the width, so the figure scales as one picture.
+ */
+
+.scene {
+  position: relative;
+  container-type: inline-size;
+  --main: #24252b;
+  --second: #474853;
+  --muted: #8b8d9b;
+  --accent: #5151db;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-synthesis: none;
+  color: var(--second);
+  -webkit-font-smoothing: antialiased;
+}
+.scene * {
+  box-sizing: border-box;
+}
+.scene p {
+  margin: 0;
+}
+.desktop {
+  --u: calc(100cqw / 1240);
+}
+.phone {
+  --u: calc(100cqw / 720);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* light behind the glass: soft colour that the frosted components blur and tint, with no box around it */
+.atmo {
+  position: absolute;
+  /* the glows sit inside the width and fade out before its edges; their blur does not widen the page */
+  inset: -12% 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(calc(60 * var(--u)));
+}
+.blob:nth-child(1) {
+  left: 36%;
+  top: 22%;
+  width: 34%;
+  height: 62%;
+  background: radial-gradient(closest-side, rgba(81, 81, 219, 0.36), rgba(81, 81, 219, 0));
+}
+.blob:nth-child(2) {
+  left: 7%;
+  top: 18%;
+  width: 26%;
+  height: 66%;
+  background: radial-gradient(closest-side, rgba(139, 124, 246, 0.3), rgba(139, 124, 246, 0));
+}
+.blob:nth-child(3) {
+  left: 66%;
+  top: 14%;
+  width: 28%;
+  height: 74%;
+  background: radial-gradient(closest-side, rgba(110, 130, 235, 0.26), rgba(110, 130, 235, 0));
+}
+.phone .blob:nth-child(1) {
+  left: 12%;
+  top: 30%;
+  width: 80%;
+  height: 34%;
+}
+.phone .blob:nth-child(2) {
+  left: 8%;
+  top: 0;
+  width: 60%;
+  height: 30%;
+}
+.phone .blob:nth-child(3) {
+  left: 28%;
+  top: 62%;
+  width: 64%;
+  height: 40%;
+}
+
+/* the glass material: translucent and frosted, with a bright rim */
+.gl {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(120% 60% at 50% -20%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.35) 40%, rgba(255, 255, 255, 0) 64%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.46) 52%, rgba(240, 243, 255, 0.56) 100%);
+  -webkit-backdrop-filter: blur(calc(12 * var(--u))) saturate(140%);
+  backdrop-filter: blur(calc(12 * var(--u))) saturate(140%);
+  box-shadow:
+    0 calc(26 * var(--u)) calc(52 * var(--u)) rgba(44, 46, 110, 0.13),
+    0 calc(6 * var(--u)) calc(14 * var(--u)) rgba(44, 46, 110, 0.07),
+    inset 0 calc(1.5 * var(--u)) 0 rgba(255, 255, 255, 0.95),
+    inset 0 calc(-1.5 * var(--u)) 0 rgba(255, 255, 255, 0.5),
+    inset 0 0 calc(20 * var(--u)) rgba(255, 255, 255, 0.45),
+    inset 0 calc(-28 * var(--u)) calc(40 * var(--u)) calc(-30 * var(--u)) rgba(81, 81, 219, 0.1);
+}
+.gl::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  padding: calc(1.6 * var(--u));
+  background: linear-gradient(140deg, rgba(255, 255, 255, 1), rgba(222, 228, 255, 0.7) 30%, rgba(81, 81, 219, 0.18) 66%, rgba(255, 255, 255, 0.8));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.gl > * {
+  position: relative;
+  z-index: 2;
+}
+.icon {
+  flex: none;
+  width: calc(26 * var(--u));
+  height: calc(26 * var(--u));
+  color: var(--main);
+}
+
+/* composition */
+.grid {
+  position: relative;
+  display: grid;
+  align-items: center;
+}
+.desktop .grid {
+  grid-template-columns: calc(290 * var(--u)) calc(360 * var(--u)) calc(350 * var(--u));
+  justify-content: space-between;
+  padding: calc(64 * var(--u)) 0 calc(20 * var(--u));
+}
+.phone .grid {
+  grid-template-columns: 1fr;
+  row-gap: calc(64 * var(--u));
+  padding: calc(10 * var(--u)) 0;
+}
+.chans,
+.parts,
+.core {
+  position: relative;
+  z-index: 1;
+}
+.lab {
+  margin-bottom: calc(20 * var(--u)) !important;
+  font-size: calc(15 * var(--u));
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.phone .lab {
+  font-size: calc(21 * var(--u));
+}
+/* desktop: both column labels on one line, level with the top of the True Aim badge */
+.desktop .chans,
+.desktop .parts {
+  align-self: stretch;
+  justify-content: center;
+}
+.desktop .lab {
+  position: absolute;
+  left: 0;
+  top: calc(-46 * var(--u));
+  margin: 0 !important;
+}
+
+/* channels */
+.chans {
+  display: flex;
+  flex-direction: column;
+  gap: calc(30 * var(--u));
+}
+.phone .chans {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(22 * var(--u));
+}
+.phone .chans .lab {
+  grid-column: 1 / -1;
+  margin-bottom: 0 !important;
+}
+.chan {
+  display: flex;
+  align-items: center;
+  gap: calc(16 * var(--u));
+  width: max-content;
+  max-width: 100%;
+  height: calc(78 * var(--u));
+  padding: 0 calc(26 * var(--u)) 0 calc(14 * var(--u));
+  border-radius: 999px;
+  font-size: calc(22 * var(--u));
+  color: var(--main);
+  white-space: nowrap;
+}
+.phone .chan {
+  width: auto;
+  height: calc(88 * var(--u));
+  font-size: calc(28 * var(--u));
+}
+.desktop .chan:nth-of-type(2) {
+  margin-left: calc(34 * var(--u));
+}
+.desktop .chan:nth-of-type(4) {
+  margin-left: calc(20 * var(--u));
+}
+.disc {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: calc(52 * var(--u));
+  height: calc(52 * var(--u));
+  border-radius: 50%;
+}
+.phone .disc {
+  width: calc(56 * var(--u));
+  height: calc(56 * var(--u));
+}
+
+/* the centre: True Aim on the claim record */
+.core {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hub {
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: calc(112 * var(--u));
+  height: calc(112 * var(--u));
+  margin-bottom: calc(-56 * var(--u));
+  border-radius: calc(30 * var(--u));
+}
+.mark {
+  width: calc(52 * var(--u));
+  height: auto;
+}
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 calc(2 * var(--u)) rgba(81, 81, 219, 0.55);
+  opacity: 0;
+  pointer-events: none;
+}
+.record {
+  width: 100%;
+  padding: calc(78 * var(--u)) calc(30 * var(--u)) calc(26 * var(--u));
+  border-radius: calc(26 * var(--u));
+}
+.title {
+  margin-bottom: calc(10 * var(--u)) !important;
+  font-size: calc(25 * var(--u));
+  line-height: 1.3;
+  color: var(--main);
+  letter-spacing: -0.01em;
+}
+.phone .title {
+  font-size: calc(32 * var(--u));
+}
+.field {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: calc(16 * var(--u));
+  margin: 0 calc(-10 * var(--u)) !important;
+  padding: calc(11 * var(--u)) calc(10 * var(--u));
+  border-top: 1px solid rgba(40, 42, 80, 0.08);
+  font-size: calc(18 * var(--u));
+}
+.phone .field {
+  padding: calc(13 * var(--u)) calc(10 * var(--u));
+  font-size: calc(26 * var(--u));
+}
+.field span {
+  position: relative;
+}
+.field span:first-of-type {
+  color: var(--muted);
+}
+.field span:last-of-type {
+  font-weight: 600;
+  color: var(--main);
+  text-align: right;
+}
+.field i {
+  position: absolute;
+  inset: 0;
+  border-radius: calc(8 * var(--u));
+  background: rgba(81, 81, 219, 0.09);
+  opacity: 0;
+}
+
+/* parties */
+.parts {
+  display: flex;
+  flex-direction: column;
+  gap: calc(18 * var(--u));
+}
+.party {
+  display: flex;
+  align-items: center;
+  gap: calc(16 * var(--u));
+  padding: calc(14 * var(--u)) calc(22 * var(--u)) calc(14 * var(--u)) calc(14 * var(--u));
+  border-radius: calc(22 * var(--u));
+}
+.phone .party {
+  margin-left: calc(70 * var(--u));
+  padding: calc(16 * var(--u)) calc(24 * var(--u)) calc(16 * var(--u)) calc(16 * var(--u));
+}
+.phone .parts .lab {
+  margin-left: calc(70 * var(--u));
+}
+.name {
+  font-size: calc(20 * var(--u));
+  font-weight: 600;
+  color: var(--main);
+}
+.text {
+  margin-top: calc(2 * var(--u)) !important;
+  font-size: calc(16.5 * var(--u));
+  line-height: 1.3;
+  color: var(--second);
+}
+.phone .name {
+  font-size: calc(29 * var(--u));
+}
+.phone .text {
+  font-size: calc(25 * var(--u));
+}
+.tick {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: calc(28 * var(--u));
+  height: calc(28 * var(--u));
+  margin-left: auto;
+  border-radius: 50%;
+  background: rgba(27, 176, 55, 0.14);
+}
+.tick svg {
+  width: calc(16 * var(--u));
+  height: calc(16 * var(--u));
+  color: #0f7524;
+}
+.glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow:
+    0 0 0 calc(2 * var(--u)) rgba(81, 81, 219, 0.45),
+    0 calc(10 * var(--u)) calc(30 * var(--u)) rgba(81, 81, 219, 0.22);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* the lines and the items that travel them */
+.links {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.item {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: calc(46 * var(--u));
+  height: calc(46 * var(--u));
+  margin: calc(-23 * var(--u)) 0 0 calc(-23 * var(--u));
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+.phone .item {
+  width: calc(52 * var(--u));
+  height: calc(52 * var(--u));
+  margin: calc(-26 * var(--u)) 0 0 calc(-26 * var(--u));
+}
+.item {
+  background:
+    radial-gradient(60% 50% at 35% 25%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(214, 220, 255, 0.55));
+  box-shadow:
+    0 calc(10 * var(--u)) calc(22 * var(--u)) rgba(81, 81, 219, 0.28),
+    inset 0 0 0 calc(1.5 * var(--u)) rgba(255, 255, 255, 0.9),
+    inset 0 calc(-6 * var(--u)) calc(10 * var(--u)) rgba(81, 81, 219, 0.18);
+}
+.item svg {
+  width: calc(22 * var(--u));
+  height: calc(22 * var(--u));
+  color: var(--accent);
+}

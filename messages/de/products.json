@@ -353,7 +353,9 @@
               "name": "Sachbearbeiter",
               "text": "Zugewiesen, Dokumente bereits gelesen"
             }
-          ]
+          ],
+          "pause": "Animation anhalten",
+          "play": "Animation abspielen"
         }
       },
       "routing": {

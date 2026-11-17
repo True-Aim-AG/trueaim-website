@@ -353,7 +353,9 @@
               "name": "Liquidatore",
               "text": "Assegnato, documenti già letti"
             }
-          ]
+          ],
+          "pause": "Metti in pausa l’animazione",
+          "play": "Avvia l’animazione"
         }
       },
       "routing": {
