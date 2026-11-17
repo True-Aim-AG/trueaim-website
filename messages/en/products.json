@@ -266,8 +266,8 @@
             "text": "Each number links to the place in the document it came from."
           },
           {
-            "title": "Every change explained",
-            "text": "When an adjuster overrides a line, the reason is recorded."
+            "title": "Record override reasons",
+            "text": "When an adjuster overrides a line, they can record the reason."
           }
         ]
       },
@@ -413,7 +413,7 @@
               "time": "09:21:41",
               "actor": "engine",
               "who": "Rules engine",
-              "text": "Record sealed, chain verified",
+              "text": "Review recorded",
               "hash": "c90d"
             }
           ],
@@ -426,8 +426,8 @@
             "one": "action",
             "many": "actions"
           },
-          "verified": "Chain verified, 6 of 6 hashes match",
-          "exportLabel": "Export audit pack"
+          "verified": "6 actions, each with its author and time",
+          "exportLabel": "Export PDF"
         }
       },
       "otus": {
@@ -471,7 +471,7 @@
         },
         {
           "question": "What is the Decision Dossier?",
-          "answer": "The record of every decision: the inputs, the clauses applied, the calculation trace, the evidence links and who confirmed the outcome. It exports as one audit pack."
+          "answer": "The record of every decision: the inputs, the clauses applied, the calculation trace, the evidence links and who confirmed the outcome. The claim review exports as a PDF."
         }
       ],
       "cta": {

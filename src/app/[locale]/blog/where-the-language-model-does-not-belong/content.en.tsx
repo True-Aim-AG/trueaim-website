@@ -65,7 +65,7 @@ const claimSteps: NumberedItem[] = [
   },
   {
     title: "Human Review",
-    body: "The whole audit trail can be exported at any point. A handler reviews the claim. Any change they make requires a reason logged directly in the record.",
+    body: "The claim review can be exported as a PDF. A handler reviews the claim and can log a reason for any change directly in the record.",
   },
 ];
 
@@ -125,7 +125,7 @@ const engineParts: BulletItem[] = [
   },
   {
     lead: "Human-in-the-Loop Control:",
-    text: "Coverage outcomes trace back to the clause behind them. Human review is triggered by thresholds the insurer sets. Every change a person makes carries a reason.",
+    text: "Coverage outcomes trace back to the clause behind them. Human review is triggered by thresholds the insurer sets. A person can record a reason for each change.",
   },
 ];
 

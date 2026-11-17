@@ -110,7 +110,7 @@ const pillars = [
     label: "Audit e governance",
     cells: [
       "Registrazione continua di decisioni, materiali di origine e criteri normativi.",
-      "Genera un pacchetto di audit istantaneo e immutabile. Difendibile fin dalla progettazione.",
+      "Conserva ogni modifica ed esporta l’esame del sinistro in PDF. Difendibile fin dalla progettazione.",
     ],
   },
 ];
@@ -431,7 +431,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 </p>
 
                 <PullQuote>
-                  Non una scatola nera. Una scatola di vetro: verificabile fin dalla progettazione, dimostrabile crittograficamente e aperta a ogni stakeholder legittimo della catena del valore.
+                  Non una scatola nera. Una scatola di vetro: verificabile fin dalla progettazione e aperta a ogni stakeholder legittimo della catena del valore.
                 </PullQuote>
               </MotionDiv>
 

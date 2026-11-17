@@ -85,7 +85,7 @@
         },
         "prove": {
           "name": "Prove",
-          "text": "Registra ogni decisione con le sue prove, la regola in vigore e chi l’ha presa. Ogni modifica al fascicolo è visibile. Con un clic si esporta il dossier di audit completo."
+          "text": "Registra ogni decisione con le sue prove, la regola in vigore e chi l’ha presa. Ogni modifica viene conservata, con chi l’ha fatta e quando. L’esame del sinistro si esporta in PDF."
         }
       },
       "callout": "Stessi dati. Stessa decisione. Ogni volta."

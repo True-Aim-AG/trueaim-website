@@ -300,7 +300,7 @@ export default async function AuditabilityScorecardBlogPost({
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Alles, was True Aim tut, erzeugt entweder eine Entscheidung, speist eine Entscheidung oder belegt eine Entscheidung. Ein Schadenfall wird in eine einzige, vollständige Akte überführt. Die Nachweise werden auf Integrität geprüft, bevor irgendetwas entschieden wird, und was an diesem Tor scheitert, erreicht die Entscheidungsstufe nie. Jede Entscheidung wird anhand des geltenden Wortlauts berechnet, mit ihrer Begründung daran. Jede Handlung, von einer Person oder einer Maschine, wird in eine manipulationserkennbare Akte geschrieben, die so lange rekonstruiert, exportiert und erklärt werden kann, wie sie aufbewahrt wird. Die Architektur ist vollständig beschrieben in{" "}
+                  Alles, was True Aim tut, erzeugt entweder eine Entscheidung, speist eine Entscheidung oder belegt eine Entscheidung. Ein Schadenfall wird in eine einzige, vollständige Akte überführt. Die Nachweise werden auf Integrität geprüft, bevor irgendetwas entschieden wird, und was an diesem Tor scheitert, erreicht die Entscheidungsstufe nie. Jede Entscheidung wird anhand des geltenden Wortlauts berechnet, mit ihrer Begründung daran. Jede Handlung, von einer Person oder einer Maschine, wird in eine Akte geschrieben, die so lange rekonstruiert, exportiert und erklärt werden kann, wie sie aufbewahrt wird. Die Architektur ist vollständig beschrieben in{" "}
                   <Link
                     href="/blog/auditability-evidence-chains"
                     className="text-link underline underline-offset-2"

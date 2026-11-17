@@ -70,11 +70,11 @@
     },
     "/technology": {
       "title": "Neurosymbolische KI-Architektur für Schadenentscheidungen | True Aim",
-      "description": "True Aim verbindet KI-Agenten mit deterministischer Entscheidungsfindung, gebaut für regulierte Versicherer und den EU AI Act. Keine Blackbox.",
+      "description": "True Aim verbindet KI-Agenten mit deterministischer Entscheidungsfindung, gebaut für regulierte Versicherer, mit einem Protokoll jeder Entscheidung. Keine Blackbox.",
       "h1": "Neurosymbolische KI: die Architektur, der Aufsichtsbehörden vertrauen",
       "breadcrumb": "Technologie",
       "ogTitle": "Neurosymbolische KI: die Architektur, der Aufsichtsbehörden vertrauen",
-      "ogDescription": "True Aim verbindet KI-Agenten mit deterministischer Entscheidungsfindung, gebaut für regulierte Versicherer und den EU AI Act. Keine Blackbox.",
+      "ogDescription": "True Aim verbindet KI-Agenten mit deterministischer Entscheidungsfindung, gebaut für regulierte Versicherer, mit einem Protokoll jeder Entscheidung. Keine Blackbox.",
       "updated": "2026-11-05"
     },
     "/trust": {
@@ -396,11 +396,11 @@
     },
     "/blog/auditability-evidence-chains": {
       "title": "Prüfbarkeit von Schaden-KI: Nachweisketten | True Aim",
-      "description": "Schaden-KI mit Prüfpfaden, die FINMA und EU AI Act genügen: Herkunftsnachweis vom Feld zur Quelle, Entscheidungspfade und erfasste menschliche Übersteuerungen.",
+      "description": "Schaden-KI mit Prüfpfaden, ausgerichtet an den Anforderungen von FINMA und EU AI Act: Herkunftsnachweis vom Feld zur Quelle, Entscheidungspfade und erfasste menschliche Übersteuerungen.",
       "h1": "Prüfbarkeit von Schaden-KI: Nachweisketten, die Prüfer tatsächlich akzeptieren",
       "breadcrumb": "Nachweisketten, die Prüfer akzeptieren",
       "ogTitle": "Prüfbarkeit von Schaden-KI: Nachweisketten, die Prüfer tatsächlich akzeptieren",
-      "ogDescription": "Wie Sie Schaden-KI mit Prüfpfaden bauen, die FINMA und EU AI Act genügen.",
+      "ogDescription": "Wie Sie Schaden-KI mit Prüfpfaden bauen, ausgerichtet an den Anforderungen von FINMA und EU AI Act.",
       "updated": "2026-11-05"
     },
     "/blog/architectural-transparency-agentic-claims-operation": {

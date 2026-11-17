@@ -38,7 +38,6 @@ export const metadata: Metadata = {
     "AI claims automation",
     "neuro-symbolic AI",
     "insurance claims",
-    "EU AI Act compliance",
     "auditable AI",
     "automated coverage check",
   ],

@@ -266,8 +266,8 @@
             "text": "Jede Zahl verweist auf die Stelle im Dokument, aus der sie stammt."
           },
           {
-            "title": "Jede Änderung begründet",
-            "text": "Wenn ein Sachbearbeiter eine Position manuell ändert, wird der Grund festgehalten."
+            "title": "Gründe für Änderungen festhalten",
+            "text": "Wenn ein Sachbearbeiter eine Position manuell ändert, kann er den Grund festhalten."
           }
         ]
       },
@@ -413,7 +413,7 @@
               "time": "09:21:41",
               "actor": "engine",
               "who": "Regel-Engine",
-              "text": "Akte versiegelt, Kette verifiziert",
+              "text": "Prüfung protokolliert",
               "hash": "c90d"
             }
           ],
@@ -426,8 +426,8 @@
             "one": "Aktion",
             "many": "Aktionen"
           },
-          "verified": "Kette verifiziert, 6 von 6 Hashes stimmen überein",
-          "exportLabel": "Prüfpaket exportieren"
+          "verified": "6 Aktionen, jede mit Bearbeiter und Zeitpunkt",
+          "exportLabel": "PDF exportieren"
         }
       },
       "otus": {
@@ -471,7 +471,7 @@
         },
         {
           "question": "Was ist das Decision Dossier?",
-          "answer": "Das Protokoll jeder Entscheidung: die Eingaben, die angewandten Klauseln, der Rechenweg, die Nachweisverknüpfungen und wer das Ergebnis bestätigt hat. Es wird als ein Prüfpaket exportiert."
+          "answer": "Das Protokoll jeder Entscheidung: die Eingaben, die angewandten Klauseln, der Rechenweg, die Nachweisverknüpfungen und wer das Ergebnis bestätigt hat. Die Schadenprüfung lässt sich als PDF exportieren."
         }
       ],
       "cta": {

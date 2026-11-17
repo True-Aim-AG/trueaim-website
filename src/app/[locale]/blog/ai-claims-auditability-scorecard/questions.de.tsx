@@ -93,14 +93,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Sind der Policenwortlaut, die Regeln und das Modell, die eine Entscheidung erzeugt haben, auf der Entscheidung selbst festgehalten, in der damals geltenden Version?",
     plainAnswer:
-      "In der Akte selbst, nicht in einer Release Note. Eine anderswo geführte Versionshistorie ist ein anderes Dokument über einen anderen Tag. Der Maßstab ist eine Entscheidung, die die angewandte Klausel, den Katalogeintrag oder die Geschäftsregel benennt, in der in diesem Moment geltenden Version, zusammen mit dem beteiligten Modell und Prompt. True Aim schreibt jede Handlung, von einer Person oder einer Maschine, mit Modell, Prompt, Regelversion und Konfidenz in die Akte und hält fest, welche Version des Wortlauts, des Katalogs oder der Geschäftsregel zum Zeitpunkt der Entscheidung galt. Entscheidungen werden an den Regeln gemessen, die tatsächlich galten.",
+      "In der Akte selbst, nicht in einer Release Note. Eine anderswo geführte Versionshistorie ist ein anderes Dokument über einen anderen Tag. Der Maßstab ist eine Entscheidung, die die angewandte Klausel, den Katalogeintrag oder die Geschäftsregel benennt, in der in diesem Moment geltenden Version, zusammen mit dem beteiligten Modell und Prompt. True Aim schreibt jede Handlung, von einer Person oder einer Maschine, mit Modell, Prompt, Regelversion und Konfidenz in die Akte. Entscheidungen werden an den Regeln gemessen, die tatsächlich galten.",
     body: (
       <>
         <p>
           In der Akte selbst, nicht in einer Release Note. Eine anderswo geführte Versionshistorie ist ein anderes Dokument über einen anderen Tag. Der Maßstab ist eine Entscheidung, die die angewandte Klausel, den Katalogeintrag oder die Geschäftsregel benennt, in der in diesem Moment geltenden Version, zusammen mit dem beteiligten Modell und Prompt.
         </p>
         <p>
-          True Aim schreibt jede Handlung, von einer Person oder einer Maschine, mit Modell, Prompt, Regelversion und Konfidenz in die Akte und hält fest, welche Version des Wortlauts, des Katalogs oder der Geschäftsregel zum Zeitpunkt der Entscheidung galt. Entscheidungen werden an den Regeln gemessen, die tatsächlich galten.
+          True Aim schreibt jede Handlung, von einer Person oder einer Maschine, mit Modell, Prompt, Regelversion und Konfidenz in die Akte. Entscheidungen werden an den Regeln gemessen, die tatsächlich galten.
         </p>
       </>
     ),
@@ -110,14 +110,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Wer kann eine Entscheidungsakte ändern, wie würden Sie es merken, und wie lange wird die Akte aufbewahrt?",
     plainAnswer:
-      "Eine Akte, die sich spurlos ändern lässt, ist ein Entwurf. Der Maßstab ist eine manipulationserkennbare Akte und eine bewusst festgelegte Aufbewahrungsfrist, die den eigenen Pflichten der Organisation entspricht, die den Schadenfall meist um Jahre überdauern. Der Schadenfall, zu dem Sie befragt werden, ist oft älter als das Protokoll, das Sie aufbewahrt haben. True Aim hasht jeden aufgezeichneten Eintrag, sodass jede Änderung erkennbar ist und die Akte so gebaut ist, dass sie einer Anfechtung im Streitfall, in der Prüfung oder vor Gericht standhält. Die Aufbewahrung wird pro Kunde entsprechend dessen eigenen Aufbewahrungspflichten konfiguriert, und der Aufbewahrungsstatus jedes Schadenfalls steht in derselben Akte wie seine Dokumente, Ereignisse und Entscheidungen.",
+      "Eine Akte, die sich spurlos ändern lässt, ist ein Entwurf. Der Maßstab ist eine manipulationserkennbare Akte und eine bewusst festgelegte Aufbewahrungsfrist, die den eigenen Pflichten der Organisation entspricht, die den Schadenfall meist um Jahre überdauern. Der Schadenfall, zu dem Sie befragt werden, ist oft älter als das Protokoll, das Sie aufbewahrt haben. True Aim bewahrt jede Änderung an der Akte auf, mit der Person, die sie vorgenommen hat, und dem Zeitpunkt, und die Akte ist so gebaut, dass sie einer Anfechtung im Streitfall, in der Prüfung oder vor Gericht standhält. Die Aufbewahrung wird pro Kunde entsprechend dessen eigenen Aufbewahrungspflichten konfiguriert, und der Aufbewahrungsstatus jedes Schadenfalls steht in derselben Akte wie seine Dokumente, Ereignisse und Entscheidungen.",
     body: (
       <>
         <p>
           Eine Akte, die sich spurlos ändern lässt, ist ein Entwurf. Der Maßstab ist eine manipulationserkennbare Akte und eine bewusst festgelegte Aufbewahrungsfrist, die den eigenen Pflichten der Organisation entspricht, die den Schadenfall meist um Jahre überdauern. Der Schadenfall, zu dem Sie befragt werden, ist oft älter als das Protokoll, das Sie aufbewahrt haben.
         </p>
         <p>
-          True Aim hasht jeden aufgezeichneten Eintrag, sodass jede Änderung erkennbar ist und die Akte so gebaut ist, dass sie einer Anfechtung im Streitfall, in der Prüfung oder vor Gericht standhält. Die Aufbewahrung wird pro Kunde entsprechend dessen eigenen Aufbewahrungspflichten konfiguriert, und der Aufbewahrungsstatus jedes Schadenfalls steht in derselben Akte wie seine Dokumente, Ereignisse und Entscheidungen.
+          True Aim bewahrt jede Änderung an der Akte auf, mit der Person, die sie vorgenommen hat, und dem Zeitpunkt, und die Akte ist so gebaut, dass sie einer Anfechtung im Streitfall, in der Prüfung oder vor Gericht standhält. Die Aufbewahrung wird pro Kunde entsprechend dessen eigenen Aufbewahrungspflichten konfiguriert, und der Aufbewahrungsstatus jedes Schadenfalls steht in derselben Akte wie seine Dokumente, Ereignisse und Entscheidungen.
         </p>
       </>
     ),
@@ -144,14 +144,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Wenn ein Sachbearbeiter das System übersteuert, wird der Grund erfasst, und lernt jemand daraus?",
     plainAnswer:
-      "Übersteuerungen sind das wertvollste Qualitätssignal, das eine Schadenorganisation besitzt. Jede ist ein Fall, in dem eine erfahrene Person dem System widersprochen hat, und der Grund wird entweder erfasst und ausgewertet oder geht verloren. Der Maßstab ist eine Begründungspflicht bei jeder Übersteuerung und eine Routine, die sie auswertet. True Aim verlangt für jede menschliche Änderung eine Begründung und kennzeichnet Kulanz separat, sodass eine Zahlung außerhalb der Deckung nie das Modell trainiert. Menschliche und automatisierte Entscheidungen werden in der Schadenakte nebeneinander gezählt, was der Organisation zugleich einen sauberen Prüfpfad und saubere Trainingsdaten liefert.",
+      "Übersteuerungen sind das wertvollste Qualitätssignal, das eine Schadenorganisation besitzt. Jede ist ein Fall, in dem eine erfahrene Person dem System widersprochen hat, und der Grund wird entweder erfasst und ausgewertet oder geht verloren. Der Maßstab ist eine Begründungspflicht bei jeder Übersteuerung und eine Routine, die sie auswertet. Bei True Aim kann der Sachbearbeiter für jede menschliche Änderung eine Begründung festhalten, und Kulanz wird separat gekennzeichnet, sodass eine Zahlung außerhalb der Deckung nie das Modell trainiert. Menschliche und automatisierte Entscheidungen werden in der Schadenakte nebeneinander gezählt, was der Organisation zugleich einen sauberen Prüfpfad und saubere Trainingsdaten liefert.",
     body: (
       <>
         <p>
           Übersteuerungen sind das wertvollste Qualitätssignal, das eine Schadenorganisation besitzt. Jede ist ein Fall, in dem eine erfahrene Person dem System widersprochen hat, und der Grund wird entweder erfasst und ausgewertet oder geht verloren. Der Maßstab ist eine Begründungspflicht bei jeder Übersteuerung und eine Routine, die sie auswertet.
         </p>
         <p>
-          True Aim verlangt für jede menschliche Änderung eine Begründung und kennzeichnet Kulanz separat, sodass eine Zahlung außerhalb der Deckung nie das Modell trainiert. Menschliche und automatisierte Entscheidungen werden in der Schadenakte nebeneinander gezählt, was der Organisation zugleich einen sauberen Prüfpfad und saubere Trainingsdaten liefert.
+          Bei True Aim kann der Sachbearbeiter für jede menschliche Änderung eine Begründung festhalten, und Kulanz wird separat gekennzeichnet, sodass eine Zahlung außerhalb der Deckung nie das Modell trainiert. Menschliche und automatisierte Entscheidungen werden in der Schadenakte nebeneinander gezählt, was der Organisation zugleich einen sauberen Prüfpfad und saubere Trainingsdaten liefert.
         </p>
       </>
     ),
@@ -195,14 +195,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Wenn Sie das System wechseln, nehmen Sie die Entscheidungsakten in einer Form mit, die Sie ohne die Software lesen können?",
     plainAnswer:
-      "Entscheidungsakten gehören der Schadenorganisation, nicht der Software, die sie erzeugt hat. Der Maßstab ist ein Export, den ein Mensch ohne das System lesen kann: die Dokumente, die Entscheidungen, die Begründungen und die Versionen, in einem offenen Format. Ein Prüfpfad, der sich nur in dem System öffnen lässt, das ihn erzeugt hat, ist kein Prüfpfad. True Aim exportiert die vollständige Akte eines Schadenfalls, jede Handlung einer Person oder Maschine mit Modell, Prompt, Regelversion und Konfidenz, als ein einziges Prüfpaket mit einem Klick.",
+      "Entscheidungsakten gehören der Schadenorganisation, nicht der Software, die sie erzeugt hat. Der Maßstab ist ein Export, den ein Mensch ohne das System lesen kann: die Dokumente, die Entscheidungen, die Begründungen und die Versionen, in einem offenen Format. Ein Prüfpfad, der sich nur in dem System öffnen lässt, das ihn erzeugt hat, ist kein Prüfpfad. True Aim exportiert die Prüfung eines Schadenfalls als PDF, das eine Person ohne das System lesen kann.",
     body: (
       <>
         <p>
           Entscheidungsakten gehören der Schadenorganisation, nicht der Software, die sie erzeugt hat. Der Maßstab ist ein Export, den ein Mensch ohne das System lesen kann: die Dokumente, die Entscheidungen, die Begründungen und die Versionen, in einem offenen Format. Ein Prüfpfad, der sich nur in dem System öffnen lässt, das ihn erzeugt hat, ist kein Prüfpfad.
         </p>
         <p>
-          True Aim exportiert die vollständige Akte eines Schadenfalls, jede Handlung einer Person oder Maschine mit Modell, Prompt, Regelversion und Konfidenz, als ein einziges Prüfpaket mit einem Klick.
+          True Aim exportiert die Prüfung eines Schadenfalls als PDF, das eine Person ohne das System lesen kann.
         </p>
       </>
     ),

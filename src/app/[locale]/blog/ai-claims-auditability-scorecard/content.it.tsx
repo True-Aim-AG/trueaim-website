@@ -300,7 +300,7 @@ export default async function AuditabilityScorecardBlogPost({
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Tutto ciò che True Aim fa produce una decisione, alimenta una decisione o prova una decisione. Un sinistro viene riunito in un unico fascicolo completo. Le prove vengono verificate nella loro integrità prima che qualcosa venga deciso, e ciò che non supera quel controllo non raggiunge mai la fase decisionale. Ogni decisione è calcolata rispetto al testo in vigore, con la sua motivazione allegata. Ogni azione, di una persona o di una macchina, viene scritta in un fascicolo che rende rilevabile ogni manomissione, che può essere ricostruito, esportato e spiegato per tutto il tempo in cui è conservato. L’architettura è descritta per intero nel{" "}
+                  Tutto ciò che True Aim fa produce una decisione, alimenta una decisione o prova una decisione. Un sinistro viene riunito in un unico fascicolo completo. Le prove vengono verificate nella loro integrità prima che qualcosa venga deciso, e ciò che non supera quel controllo non raggiunge mai la fase decisionale. Ogni decisione è calcolata rispetto al testo in vigore, con la sua motivazione allegata. Ogni azione, di una persona o di una macchina, viene scritta in un fascicolo che può essere ricostruito, esportato e spiegato per tutto il tempo in cui è conservato. L’architettura è descritta per intero nel{" "}
                   <Link
                     href="/blog/auditability-evidence-chains"
                     className="text-link underline underline-offset-2"

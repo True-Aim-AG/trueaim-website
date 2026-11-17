@@ -70,11 +70,11 @@
     },
     "/technology": {
       "title": "Architecture d’IA neuro-symbolique pour les sinistres | True Aim",
-      "description": "True Aim associe des agents IA à une prise de décision déterministe, conçue pour l’assurance réglementée et la conformité à l’AI Act. Pas une boîte noire.",
+      "description": "True Aim associe des agents IA à une prise de décision déterministe, conçue pour l’assurance réglementée, avec une trace de chaque décision. Pas une boîte noire.",
       "h1": "IA neuro-symbolique : l’architecture qui inspire confiance aux autorités de contrôle",
       "breadcrumb": "Technologie",
       "ogTitle": "IA neuro-symbolique : l’architecture qui inspire confiance aux autorités de contrôle",
-      "ogDescription": "True Aim associe des agents IA à une prise de décision déterministe, conçue pour l’assurance réglementée et la conformité à l’AI Act. Pas une boîte noire.",
+      "ogDescription": "True Aim associe des agents IA à une prise de décision déterministe, conçue pour l’assurance réglementée, avec une trace de chaque décision. Pas une boîte noire.",
       "updated": "2026-11-05"
     },
     "/trust": {

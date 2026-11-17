@@ -85,7 +85,7 @@
         },
         "prove": {
           "name": "Prove",
-          "text": "Records every decision with its evidence, the rule in force and who made it. Any change to the record shows. One click exports the full audit pack."
+          "text": "Records every decision with its evidence, the rule in force and who made it. Every change is kept, with who made it and when. The claim review exports as a PDF."
         }
       },
       "callout": "Same inputs. Same decision. Every time."

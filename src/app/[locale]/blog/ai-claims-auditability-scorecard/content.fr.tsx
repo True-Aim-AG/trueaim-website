@@ -300,7 +300,7 @@ export default async function AuditabilityScorecardBlogPost({
                 </h2>
 
                 <p className="text-body leading-[1.6] mb-5">
-                  Tout ce que fait True Aim produit une décision, alimente une décision ou prouve une décision. Un sinistre est rassemblé dans un dossier unique et complet. Les preuves sont testées pour leur intégrité avant toute décision, et ce qui échoue à ce contrôle n’atteint jamais l’étape de décision. Chaque décision est calculée au regard du libellé en vigueur, avec sa justification attachée. Chaque action, d’une personne ou d’une machine, est écrite dans un dossier dont toute altération est détectable et qui peut être reconstruit, exporté et expliqué aussi longtemps qu’il est conservé. L’architecture est décrite en détail dans{" "}
+                  Tout ce que fait True Aim produit une décision, alimente une décision ou prouve une décision. Un sinistre est rassemblé dans un dossier unique et complet. Les preuves sont testées pour leur intégrité avant toute décision, et ce qui échoue à ce contrôle n’atteint jamais l’étape de décision. Chaque décision est calculée au regard du libellé en vigueur, avec sa justification attachée. Chaque action, d’une personne ou d’une machine, est écrite dans un dossier qui peut être reconstruit, exporté et expliqué aussi longtemps qu’il est conservé. L’architecture est décrite en détail dans{" "}
                   <Link
                     href="/blog/auditability-evidence-chains"
                     className="text-link underline underline-offset-2"
