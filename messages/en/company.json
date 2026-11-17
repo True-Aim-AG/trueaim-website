@@ -100,7 +100,9 @@
     }
   },
   "experience": {
-    "heading": "Our team’s experience"
+    "heading": "Our team’s experience",
+    "pause": "Pause animation",
+    "play": "Play animation"
   },
   "partners": {
       "heading": "Partners",

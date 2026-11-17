@@ -240,7 +240,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           ))}
 
           <SectionHead heading={t("experience.heading")} className="mb-10 mt-20" />
-          <ExperienceMarquee rows={experienceRows} />
+          <ExperienceMarquee rows={experienceRows} labels={{ pause: t("experience.pause"), play: t("experience.play") }} />
         </div>
       </section>
 

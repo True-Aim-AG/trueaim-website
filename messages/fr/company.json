@@ -100,7 +100,9 @@
       }
     },
     "experience": {
-      "heading": "L’expérience de notre équipe"
+      "heading": "L’expérience de notre équipe",
+      "pause": "Mettre l’animation en pause",
+      "play": "Lancer l’animation"
     },
     "partners": {
       "heading": "Partenaires",
