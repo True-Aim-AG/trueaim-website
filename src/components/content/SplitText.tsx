@@ -25,7 +25,7 @@ export function SplitText({
 }: {
   cap?: string;
   heading: string;
-  headingLevel?: "h2" | "h3";
+  headingLevel?: "h1" | "h2" | "h3";
   paragraphs: string[];
   image?: SplitImage;
   visual?: React.ReactNode;

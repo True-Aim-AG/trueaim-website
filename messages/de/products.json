@@ -1008,13 +1008,12 @@
         "summary": "Otus ist ein KI-gestützter Experte für jedes Teammitglied, in jeder Lösung von True Aim. Fragen Sie Otus alles zu einem Schaden, per Sprache oder Text, und die Antwort kommt aus dem Schaden, der Police und der Akte. Otus entwirft, erklärt und plant und hat keine Entscheidungsbefugnis: Ihr Team entscheidet.",
         "scene": {
           "alt": "Otus beantwortet nacheinander drei Fragen eines Sachbearbeiters: womit der Tag beginnt, eine Übergabe-E-Mail zu einem Schaden und warum eine Position ausgeschlossen wurde. Jede Antwort wird Zeile für Zeile geschrieben, mit den Aktionen, die Otus anbietet. Otus hat keine Entscheidungsbefugnis.",
-          "youLabel": "Sie",
           "otusLabel": "Otus",
+          "placeholder": "Fragen Sie Otus alles zu einem Schaden",
           "footer": "Otus hat keine Entscheidungsbefugnis. Ihr Team entscheidet.",
           "items": [
             {
               "id": "plan",
-              "tab": "Meinen Tag planen",
               "prompt": "Otus, ich muss heute meinen Rückstand abarbeiten. Wo fange ich an?",
               "lines": [
                 "Sie haben 14 offene Schäden.",
@@ -1029,7 +1028,6 @@
             },
             {
               "id": "handover",
-              "tab": "Einen Schaden übergeben",
               "prompt": "Entwirf eine Übergabe-E-Mail für Schaden 5964 an meinen Kollegen in der Sachsparte.",
               "lines": [
                 "Entwurf fertig: Übergabe von Schaden 5964, Kfz-Garantie.",
@@ -1044,7 +1042,6 @@
             },
             {
               "id": "explain",
-              "tab": "Eine Entscheidung erklären",
               "prompt": "Warum wurde Position 4 bei Schaden 62850 ausgeschlossen? Der Kunde fragt nach.",
               "lines": [
                 "Position 4 ist der Ersatz des Geschirrspülers, 1.126,30.",

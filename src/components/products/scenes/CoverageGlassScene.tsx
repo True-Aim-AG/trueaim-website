@@ -450,8 +450,8 @@ export function CoverageGlassScene({ data, still }: {
           aria-label={playing ? data.pause : data.play}
           className="group absolute inset-0 z-10 cursor-pointer rounded-[10px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus"
         >
-          <span aria-hidden className={cn("pointer-events-none absolute bottom-3 right-3 flex h-8 w-8 items-center justify-center rounded-pill bg-card/85 text-body shadow-[0_0_0_1px_rgba(44,43,42,.12)] transition-opacity duration-150 ease-brand group-hover:opacity-100 group-focus-visible:opacity-100", playing ? "opacity-0" : "opacity-100")}>
-            {playing ? <Pause size={14} /> : <Play size={14} />}
+          <span aria-hidden className={cn("pointer-events-none absolute bottom-2 right-2 flex h-4 w-4 items-center justify-center rounded-pill bg-card/70 text-muted transition-opacity duration-150 ease-brand group-focus-visible:opacity-80", playing ? "opacity-0" : "opacity-50")}>
+            {playing ? <Pause size={8} /> : <Play size={8} />}
           </span>
         </button>
       )}

@@ -20,6 +20,7 @@ import {
  */
 export function ProductTemplate({
   hero,
+  heroSlot,
   children,
   faq,
   related,
@@ -27,6 +28,8 @@ export function ProductTemplate({
   nextTone = "tint",
 }: {
   hero: { title: string; summary: string; buttons: HeroButton[]; visual?: React.ReactNode; visualWidth?: number; texture?: HeroTexture };
+  /** A hero drawn by the page itself, in place of the standard one; the page then carries the H1 in its first section. */
+  heroSlot?: React.ReactNode;
   children: React.ReactNode;
   faq: { heading: string; items: FaqItem[] };
   related: { heading: string; links: RelatedLink[] };
@@ -35,14 +38,16 @@ export function ProductTemplate({
 }) {
   return (
     <>
-      <PageHero
-        title={hero.title}
-        summary={hero.summary}
-        buttons={hero.buttons}
-        visual={hero.visual}
-        visualWidth={hero.visualWidth}
-        texture={hero.texture}
-      />
+      {heroSlot ?? (
+        <PageHero
+          title={hero.title}
+          summary={hero.summary}
+          buttons={hero.buttons}
+          visual={hero.visual}
+          visualWidth={hero.visualWidth}
+          texture={hero.texture}
+        />
+      )}
       {children}
       <RelatedLinks heading={related.heading} links={related.links} tone={nextTone} />
       <FaqSection heading={faq.heading} faqs={faq.items} tone={nextTone === "tint" ? "white" : "tint"} />

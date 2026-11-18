@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, ArrowUpRight, Pause, Play } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { type CSSProperties, type ReactNode, useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 
@@ -26,7 +26,7 @@ export type ProductRailItem = {
   linkLabel: string;
 };
 
-export type ProductRailLabels = { previous: string; next: string; pause: string; play: string };
+export type ProductRailLabels = { previous: string; next: string };
 
 /** How long a tile stays open before the row moves on by itself. */
 const TURN_MS = 5500;
@@ -39,8 +39,8 @@ const SWIPE = 40;
  * are small glass tiles with the product's icon and name. The row moves on by
  * itself, one tile at a time, and the arrows, a tile, the arrow keys or a
  * swipe move it by hand. The turn waits while the pointer or the keyboard
- * focus is on the row, the pause button stops it, and it does not start under
- * reduced motion (WCAG 2.2.2).
+ * focus is on the row, a tap on the picture stops and restarts it on a touch
+ * screen, and it does not start under reduced motion (WCAG 2.2.2).
  */
 export function ProductRail({
   heading,
@@ -55,11 +55,10 @@ export function ProductRail({
 }) {
   const reduced = useReducedMotion();
   const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
   const [held, setHeld] = useState(false);
   const dragFrom = useRef<number | null>(null);
   const count = items.length;
-  const turning = !paused && !held && !reduced && count > 1;
+  const turning = !held && !reduced && count > 1;
 
   useEffect(() => {
     if (!turning) return;
@@ -78,8 +77,8 @@ export function ProductRail({
           aria-roledescription="carousel"
           aria-label={heading}
           onPointerEnter={(event) => event.pointerType === "mouse" && setHeld(true)}
-          onPointerLeave={() => setHeld(false)}
-          onFocus={() => setHeld(true)}
+          onPointerLeave={(event) => event.pointerType === "mouse" && setHeld(false)}
+          onFocus={(event) => event.target.matches(":focus-visible") && setHeld(true)}
           onBlur={() => setHeld(false)}
           onKeyDown={(event) => {
             if (event.key === "ArrowRight") go(index + 1);
@@ -99,11 +98,6 @@ export function ProductRail({
               ))}
             </div>
             <div className={styles.right}>
-              {!reduced && (
-                <button type="button" className={styles.round} aria-label={paused ? labels.play : labels.pause} onClick={() => setPaused(!paused)}>
-                  {paused ? <Play aria-hidden strokeWidth={1.6} /> : <Pause aria-hidden strokeWidth={1.6} />}
-                </button>
-              )}
               <button type="button" className={styles.round} aria-label={labels.next} onClick={() => go(index + 1)}>
                 <ArrowRight aria-hidden strokeWidth={1.6} />
               </button>
@@ -122,6 +116,8 @@ export function ProductRail({
               const moved = event.clientX - from;
               if (moved < -SWIPE) go(index + 1);
               else if (moved > SWIPE) go(index - 1);
+              // A tap on the picture, not on a tile or a link, stops the turn and starts it again.
+              else if (Math.abs(moved) < 8 && !(event.target as HTMLElement).closest("button, a")) setHeld((value) => !value);
             }}
           >
             <ul className={styles.track} style={{ "--i": index } as CSSProperties}>

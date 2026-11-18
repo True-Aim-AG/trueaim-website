@@ -436,12 +436,12 @@ describe("Product scenes", () => {
       <OtusGlassScene
         data={{
           alt: "Otus answers an adjuster's questions",
-          youLabel: "You",
           otusLabel: "Otus",
+          placeholder: "Ask Otus anything about a claim",
           footer: "Otus has no decision rights. Your team decides.",
           items: [
-            { id: "plan", tab: "Help plan my day", prompt: "Where do I start?", lines: ["You have 14 open claims.", "Three need your judgement."], actions: ["Open 62850"] },
-            { id: "explain", tab: "Explain a decision", prompt: "Why was line 4 excluded?", lines: ["Clause 4.2 excludes the appliance."], actions: ["Open the draft", "Show clause 4.2"] },
+            { id: "plan", prompt: "Where do I start?", lines: ["You have 14 open claims.", "Three need your judgement."], actions: ["Open 62850"] },
+            { id: "explain", prompt: "Why was line 4 excluded?", lines: ["Clause 4.2 excludes the appliance."], actions: ["Open the draft", "Show clause 4.2"] },
           ],
           pause: "Pause animation",
           play: "Play animation",
@@ -453,15 +453,17 @@ describe("Product scenes", () => {
     expect(html.match(/data-turn/g)).toHaveLength(4);
     expect(html.match(/data-line/g)).toHaveLength(6);
     expect(html).toContain("Your team decides.");
+    expect(html).toContain("Ask Otus anything about a claim");
+    expect(html.match(/data-bar/g)).toHaveLength(2);
     expect(html).not.toContain('role="tab"');
     expect(html).toContain('aria-label="Pause animation"');
   });
 
-  it("renders the product row with one open tile, its copy and link, the arrows and a pause control", () => {
+  it("renders the product row with one open tile, its copy and link, the arrows and no pause button", () => {
     const html = renderToStaticMarkup(
       <ProductRail
         heading="What True Aim delivers"
-        labels={{ previous: "Previous", next: "Next", pause: "Pause animation", play: "Play animation" }}
+        labels={{ previous: "Previous", next: "Next" }}
         items={[
           { key: "a", name: "Data Extraction", icon: "extraction", still: <span>still a</span>, title: "Your claims data, ready for AI", text: "One structured database.", href: "/platform/data-extraction", linkLabel: "Data Extraction" },
           { key: "b", name: "Invoice Benchmarking", icon: "match", still: <span>still b</span>, title: "Never overpay", text: "Benchmarked line by line.", href: "/platform/invoice-benchmarking", linkLabel: "Invoice Benchmarking" },
@@ -472,7 +474,7 @@ describe("Product scenes", () => {
     expect(html.match(/aria-current="true"/g)).toHaveLength(1);
     expect(html).toContain('aria-label="Previous"');
     expect(html).toContain('aria-label="Next"');
-    expect(html).toContain('aria-label="Pause animation"');
+    expect(html).not.toContain("Pause");
     expect(html).toContain('href="/platform/invoice-benchmarking"');
     expect(html).toContain("still b");
   });

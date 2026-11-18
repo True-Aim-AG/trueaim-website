@@ -105,8 +105,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         labels={{
           previous: t("benefits.controls.previous"),
           next: t("benefits.controls.next"),
-          pause: scene("claimsDecisioning").pause,
-          play: scene("claimsDecisioning").play,
         }}
         tone="white"
       />

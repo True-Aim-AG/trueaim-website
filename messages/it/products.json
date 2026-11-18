@@ -1008,13 +1008,12 @@
         "summary": "Otus è un esperto basato sull’IA per ogni membro del team, in ogni soluzione True Aim. Chiedete a Otus qualsiasi cosa su un sinistro, a voce o per iscritto, e la risposta arriva dal sinistro, dalla polizza e dal fascicolo. Otus redige, spiega e pianifica, e non ha potere decisionale: decide il vostro team.",
         "scene": {
           "alt": "Otus risponde a turno a tre domande di un liquidatore: da dove iniziare la giornata, un’e-mail di passaggio di consegne per un sinistro e perché una voce è stata esclusa. Ogni risposta è scritta riga per riga, con le azioni che Otus propone. Otus non ha potere decisionale.",
-          "youLabel": "Tu",
           "otusLabel": "Otus",
+          "placeholder": "Chiedete a Otus qualsiasi cosa su un sinistro",
           "footer": "Otus non ha potere decisionale. Decide il vostro team.",
           "items": [
             {
               "id": "plan",
-              "tab": "Pianificare la giornata",
               "prompt": "Otus, oggi devo smaltire l’arretrato. Da dove comincio?",
               "lines": [
                 "Avete 14 sinistri aperti.",
@@ -1029,7 +1028,6 @@
             },
             {
               "id": "handover",
-              "tab": "Passare un sinistro",
               "prompt": "Redigi un’e-mail di passaggio di consegne per il sinistro 5964 al mio collega del ramo property.",
               "lines": [
                 "Bozza pronta: passaggio di consegne del sinistro 5964, garanzia auto.",
@@ -1044,7 +1042,6 @@
             },
             {
               "id": "explain",
-              "tab": "Spiegare una decisione",
               "prompt": "Perché la voce 4 del sinistro 62850 è stata esclusa? Il cliente lo chiede.",
               "lines": [
                 "La voce 4 è la sostituzione della lavastoviglie, 1.126,30.",

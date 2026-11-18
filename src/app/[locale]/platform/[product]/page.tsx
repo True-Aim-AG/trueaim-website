@@ -15,7 +15,10 @@ import {
   type HeroTexture,
   type KeyFact,
   type Tone,
+  TextureBackdrop,
+  type HeroButton,
 } from "@/components/content";
+import { ButtonLink } from "@/components/brand/Button";
 import {
   CoverageGlassScene,
   DamageGlassScene,
@@ -123,11 +126,12 @@ function visual(product: Product, t: Translate) {
     case "damageReporting":
       return <DamageGlassScene data={t.raw(`${key}.hero.scene`) as DamageGlassData} />;
     case "otus":
-      return <OtusGlassScene data={t.raw(`${key}.hero.scene`) as OtusGlassData} />;
+      // Otus has no side-by-side hero: its scene runs across the page (see the default export).
+      return null;
   }
 }
 
-function sections(product: Product, t: Translate) {
+function sections(product: Product, t: Translate, buttons: HeroButton[]) {
   const key = product.key;
   switch (key) {
     case "dataExtraction":
@@ -257,8 +261,15 @@ function sections(product: Product, t: Translate) {
     case "otus":
       return (
         <>
-          <SplitText heading={t(`${key}.keys.heading`)} paragraphs={[]} image={{ src: "/brand/3d/symbol.webp", alt: t(`${key}.features.imageAlt`), width: 420, height: 236 }} imageSide="right" align="left" tone="white">
+          <SplitText heading={t(`${key}.hero.title`)} headingLevel="h1" paragraphs={[t(`${key}.hero.summary`)]} image={{ src: "/brand/3d/symbol.webp", alt: t(`${key}.features.imageAlt`), width: 420, height: 236 }} imageSide="right" align="left" tone="white">
             <Points items={(t.raw(`${key}.keys.items`) as KeyFact[]).map((item) => ({ title: item.label, text: item.text }))} align="left" />
+            <div className="mt-10 flex flex-col gap-3.5 sm:flex-row sm:flex-wrap">
+              {buttons.map((button, index) => (
+                <ButtonLink key={button.href} href={button.href} variant={index === 0 ? "primary" : "secondary"} size="lg">
+                  {button.label}
+                </ButtonLink>
+              ))}
+            </div>
           </SplitText>
           <FeatureCards
             heading={t(`${key}.features.heading`)}
@@ -324,12 +335,22 @@ export default async function ProductPage({ params }: Props) {
           visualWidth: 620,
           texture: textures[key],
         }}
+        heroSlot={
+          key === "otus" ? (
+            <section className="relative overflow-hidden border-b border-hairline bg-page-tint">
+              <TextureBackdrop texture={textures[key]} />
+              <div className="relative mx-auto max-w-7xl px-6 py-12 md:py-16">
+                <OtusGlassScene data={t.raw(`${key}.hero.scene`) as OtusGlassData} />
+              </div>
+            </section>
+          ) : undefined
+        }
         faq={{ heading: faqHeading, items: faqs }}
         related={{ heading: t("common.relatedHeading"), links: related }}
         cta={{ heading: t(`${key}.cta.heading`), lede: t(`${key}.cta.lede`), buttons: ctaButtons }}
         nextTone={nextTone[key]}
       >
-        {sections(product, t)}
+        {sections(product, t, buttons)}
       </ProductTemplate>
     </>
   );

@@ -1008,13 +1008,12 @@
         "summary": "Otus is an AI-powered expert for every team member, in every True Aim solution. Ask Otus anything about a claim, by voice or text, and the answer comes from the claim, the policy and the record. Otus drafts, explains and plans, and has no decision rights: your team decides.",
         "scene": {
           "alt": "Otus answers three questions from an adjuster in turn: where to start the day, a handover email for a claim, and why a line was excluded. Each answer is written out line by line with the actions Otus offers. Otus has no decision rights.",
-          "youLabel": "You",
           "otusLabel": "Otus",
+          "placeholder": "Ask Otus anything about a claim",
           "footer": "Otus has no decision rights. Your team decides.",
           "items": [
             {
               "id": "plan",
-              "tab": "Help plan my day",
               "prompt": "Otus, I need to clear my backlog today. Where do I start?",
               "lines": [
                 "You have 14 open claims.",
@@ -1029,7 +1028,6 @@
             },
             {
               "id": "handover",
-              "tab": "Hand over a claim",
               "prompt": "Draft a handover email for claim 5964 to my colleague in property.",
               "lines": [
                 "Draft ready: handover of claim 5964, motor warranty.",
@@ -1044,7 +1042,6 @@
             },
             {
               "id": "explain",
-              "tab": "Explain a decision",
               "prompt": "Why was line 4 on claim 62850 excluded? The customer is asking.",
               "lines": [
                 "Line 4 is the dishwasher replacement, 1'126.30.",

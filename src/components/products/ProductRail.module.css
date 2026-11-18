@@ -6,6 +6,8 @@
 .section {
   /* the row runs off both edges of the page */
   overflow-x: clip;
+  /* the ground of the platform film: one soft gradient, nothing drawn on it */
+  background: radial-gradient(75% 65% at 50% 42%, #f2f4f8 0%, #e7eaf1 45%, #d7dbe5 78%, #cacfdb 100%);
   /* a closed tile, the open tile, and the space between tiles */
   --cw: 120px;
   --ch: 150px;
