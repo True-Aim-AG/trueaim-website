@@ -171,7 +171,7 @@ export function ScopeGlassScene({ data }: { data: ScopeGlassData }) {
           </div>
         ))}
       </div>
-      <GlassPause playing={playing} toggle={toggle} pause={data.pause} play={data.play} />
+      <GlassPause playing={playing} toggle={toggle} pause={data.pause} play={data.play} side="left" />
     </div>
   );
 }

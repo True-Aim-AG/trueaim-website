@@ -97,7 +97,20 @@ export function useGlassLoop(
 }
 
 /** The whole figure is the pause control (WCAG 2.2.2): click, tap, Enter or Space. Its icon shows on hover, on keyboard focus and while paused. */
-export function GlassPause({ playing, toggle, pause, play }: { playing: boolean; toggle: () => void; pause: string; play: string }) {
+export function GlassPause({
+  playing,
+  toggle,
+  pause,
+  play,
+  side = "right",
+}: {
+  playing: boolean;
+  toggle: () => void;
+  pause: string;
+  play: string;
+  /** The corner the icon sits in; left where an action sits in the bottom right corner. */
+  side?: "left" | "right";
+}) {
   return (
     <button
       type="button"
@@ -108,7 +121,8 @@ export function GlassPause({ playing, toggle, pause, play }: { playing: boolean;
       <span
         aria-hidden
         className={cn(
-          "pointer-events-none absolute bottom-3 right-3 flex h-8 w-8 items-center justify-center rounded-pill bg-card/85 text-body shadow-[0_0_0_1px_rgba(44,43,42,.12)] transition-opacity duration-150 ease-brand group-hover:opacity-100 group-focus-visible:opacity-100",
+          "pointer-events-none absolute bottom-3 flex h-8 w-8 items-center justify-center rounded-pill bg-card/85 text-body shadow-[0_0_0_1px_rgba(44,43,42,.12)] transition-opacity duration-150 ease-brand group-hover:opacity-100 group-focus-visible:opacity-100",
+          side === "left" ? "left-3" : "right-3",
           playing ? "opacity-0" : "opacity-100",
         )}
       >
