@@ -85,7 +85,8 @@ export function useGlassLoop(
     }
     const start = performance.now() - timeRef.current * 1000;
     let frame = requestAnimationFrame(function tick(now) {
-      timeRef.current = ((now - start) / 1000) % dur;
+      // The first frame can be stamped a moment before the clock was started.
+      timeRef.current = (Math.max(0, now - start) / 1000) % dur;
       if (visibleRef.current) drawRef.current(timeRef.current);
       frame = requestAnimationFrame(tick);
     });

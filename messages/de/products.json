@@ -916,37 +916,36 @@
       },
       "routing": {
         "heading": "Jeder Schadenfall an der richtigen Stelle",
-        "note": "Ein Beispiel. Jede Geschäftseinheit legt ihre eigenen Zuweisungsregeln fest.",
-        "claimLabel": "Schadenfall",
-        "rulesLabel": "Ihre Zuweisungsregeln",
-        "whenLabel": "Wann",
-        "receivesLabel": "Der Empfänger erhält",
-        "items": [
-          {
-            "id": "desk",
-            "tab": "Sachbearbeiter",
-            "when": "Der Bericht ist anhand der Fotos vollständig.",
-            "receives": "Den Schadenbericht, den Kostenvoranschlag und den Reparaturumfang."
-          },
-          {
-            "id": "next",
-            "tab": "Nächster freier Sachbearbeiter",
-            "when": "Der erste Sachbearbeiter ist ausgelastet.",
-            "receives": "Dieselbe Akte."
-          },
-          {
-            "id": "senior",
-            "tab": "Senior-Sachbearbeiter",
-            "when": "Eine Beurteilung ist nötig oder die Angaben widersprechen sich.",
-            "receives": "Die Akte."
-          },
-          {
-            "id": "site",
-            "tab": "Gutachter vor Ort",
-            "when": "Eine Besichtigung vor Ort ist erforderlich.",
-            "receives": "Den Bericht, mit einem Hinweis darauf, was noch vor Ort geprüft werden muss."
-          }
-        ]
+        "scene": {
+          "alt": "Ein Schadenfall wird nach den eigenen Regeln des Versicherers zugewiesen: an den Sachbearbeiter, an den nächsten freien Sachbearbeiter, wenn dieser ausgelastet ist, an einen Senior-Sachbearbeiter, wenn eine Beurteilung nötig ist, oder an einen Gutachter vor Ort, wenn eine Besichtigung erforderlich ist",
+          "note": "Ein Beispiel. Jede Geschäftseinheit legt ihre eigenen Zuweisungsregeln fest.",
+          "claimLabel": "Schadenfall",
+          "rulesLabel": "Ihre Zuweisungsregeln",
+          "items": [
+            {
+              "id": "desk",
+              "desk": "Sachbearbeiter",
+              "when": "Der Bericht ist anhand der Fotos vollständig."
+            },
+            {
+              "id": "next",
+              "desk": "Nächster freier Sachbearbeiter",
+              "when": "Der erste Sachbearbeiter ist ausgelastet."
+            },
+            {
+              "id": "senior",
+              "desk": "Senior-Sachbearbeiter",
+              "when": "Eine Beurteilung ist nötig oder die Angaben widersprechen sich."
+            },
+            {
+              "id": "site",
+              "desk": "Gutachter vor Ort",
+              "when": "Eine Besichtigung vor Ort ist erforderlich."
+            }
+          ],
+          "pause": "Animation anhalten",
+          "play": "Animation abspielen"
+        }
       },
       "features": {
         "heading": "Was das für Ihr Team bedeutet",

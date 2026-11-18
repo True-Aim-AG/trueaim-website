@@ -25,7 +25,7 @@ import {
   LineBenchGlassScene,
   OtusPrompts,
   RecordScene,
-  RoutingTabs,
+  RoutingGlassScene,
   ScopeGlassScene,
   productIcons,
   type CoverageGlassData,
@@ -36,7 +36,7 @@ import {
   type LineBenchGlassData,
   type OtusPrompt,
   type RecordSceneData,
-  type RoutingTabsData,
+  type RoutingGlassData,
   type ScopeGlassData,
 } from "@/components/products";
 import type { BrandIconName } from "@/components/brand/BrandIcon";
@@ -86,7 +86,7 @@ const nextTone: Record<Product["key"], Tone> = {
   dataExtraction: "white",
   claimsDecisioning: "tint",
   invoiceBenchmarking: "tint",
-  damageReporting: "tint",
+  damageReporting: "white",
   otus: "white",
 };
 
@@ -253,7 +253,7 @@ function sections(product: Product, t: Translate) {
             <ScopeGlassScene data={t.raw(`${key}.scope.scene`) as ScopeGlassData} />
           </FigureSection>
           <FigureSection heading={t(`${key}.routing.heading`)} tone="white">
-            <RoutingTabs data={t.raw(`${key}.routing`) as RoutingTabsData} />
+            <RoutingGlassScene data={t.raw(`${key}.routing.scene`) as RoutingGlassData} />
           </FigureSection>
           <FeatureCards
             heading={t(`${key}.features.heading`)}

@@ -916,37 +916,36 @@
       },
       "routing": {
         "heading": "Every claim to the right desk",
-        "note": "An example. Each business unit sets its own routing rules.",
-        "claimLabel": "Claim",
-        "rulesLabel": "Your routing rules",
-        "whenLabel": "When",
-        "receivesLabel": "The desk receives",
-        "items": [
-          {
-            "id": "desk",
-            "tab": "Adjuster's desk",
-            "when": "The report is complete from the photographs.",
-            "receives": "The damage report, the estimate and the scope of work."
-          },
-          {
-            "id": "next",
-            "tab": "Next available adjuster",
-            "when": "The first desk is at capacity.",
-            "receives": "The same file."
-          },
-          {
-            "id": "senior",
-            "tab": "Senior adjuster",
-            "when": "Judgement is needed or the information conflicts.",
-            "receives": "The file."
-          },
-          {
-            "id": "site",
-            "tab": "Assessor on site",
-            "when": "A site inspection is required.",
-            "receives": "The report, with a note of what still needs checking in person."
-          }
-        ]
+        "scene": {
+          "alt": "A claim is routed by the insurer's own rules: to the adjuster's desk, to the next available adjuster when that desk is at capacity, to a senior adjuster when judgement is needed, or to an assessor on site when an inspection is required",
+          "note": "An example. Each business unit sets its own routing rules.",
+          "claimLabel": "Claim",
+          "rulesLabel": "Your routing rules",
+          "items": [
+            {
+              "id": "desk",
+              "desk": "Adjuster's desk",
+              "when": "The report is complete from the photographs."
+            },
+            {
+              "id": "next",
+              "desk": "Next available adjuster",
+              "when": "The first desk is at capacity."
+            },
+            {
+              "id": "senior",
+              "desk": "Senior adjuster",
+              "when": "Judgement is needed or the information conflicts."
+            },
+            {
+              "id": "site",
+              "desk": "Assessor on site",
+              "when": "A site inspection is required."
+            }
+          ],
+          "pause": "Pause animation",
+          "play": "Play animation"
+        }
       },
       "features": {
         "heading": "What this means for your team",

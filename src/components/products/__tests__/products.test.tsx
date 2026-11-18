@@ -14,7 +14,7 @@ import {
   OtusPrompts,
   OutcomesScene,
   RecordScene,
-  RoutingTabs,
+  RoutingGlassScene,
   ScopeGlassScene,
   ReportScene,
 } from "@/components/products";
@@ -378,7 +378,7 @@ describe("Product scenes", () => {
     expect(html).toContain('aria-label="Pause animation"');
   });
 
-  it("renders the scope of work as one image with a bar per trade, and the routing as a stack of tabs", () => {
+  it("renders the scope of work as one image with a bar per trade, and the routing as one image with a route per desk", () => {
     const scope = renderToStaticMarkup(
       <ScopeGlassScene
         data={{
@@ -406,25 +406,26 @@ describe("Product scenes", () => {
     expect(scope).toContain('aria-label="Pause animation"');
 
     const routing = renderToStaticMarkup(
-      <RoutingTabs
+      <RoutingGlassScene
         data={{
-          heading: "Every claim to the right desk",
+          alt: "A claim is routed by the insurer's rules",
           note: "An example.",
           claimLabel: "Claim",
           rulesLabel: "Your routing rules",
-          whenLabel: "When",
-          receivesLabel: "The desk receives",
           items: [
-            { id: "desk", tab: "Adjuster's desk", when: "The report is complete.", receives: "The damage report." },
-            { id: "senior", tab: "Senior adjuster", when: "Judgement is needed.", receives: "The file." },
+            { id: "desk", desk: "Adjuster's desk", when: "The report is complete." },
+            { id: "senior", desk: "Senior adjuster", when: "Judgement is needed." },
           ],
+          pause: "Pause animation",
+          play: "Play animation",
         }}
       />,
     );
-    expect(routing).toContain('aria-orientation="vertical"');
-    expect(routing.match(/role="tab"/g)).toHaveLength(2);
-    expect(routing.match(/aria-selected="true"/g)).toHaveLength(1);
-    expect(routing).toContain("The report is complete.");
-    expect(routing).not.toContain("Judgement is needed.");
+    expect(routing.match(/role="img"/g)).toHaveLength(1);
+    // Desktop and phone stages each hold every desk and one route per desk.
+    expect(routing.match(/data-desk/g)).toHaveLength(4);
+    expect(routing.match(/data-route/g)).toHaveLength(4);
+    expect(routing).toContain("Judgement is needed.");
+    expect(routing).toContain('aria-label="Pause animation"');
   });
 });

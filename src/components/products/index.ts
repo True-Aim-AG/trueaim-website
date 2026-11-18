@@ -3,7 +3,6 @@ export { HeroLoop, type HeroLoopData } from "./HeroLoop";
 export { productIcons } from "./icons";
 export { ModulesDiagram, type DiagramNode } from "./ModulesDiagram";
 export { OtusPrompts, type OtusPrompt } from "./OtusPrompts";
-export { RoutingTabs, type RoutingTabsData } from "./RoutingTabs";
 export {
   ClaimScene,
   CoverageGlassScene,
@@ -17,6 +16,7 @@ export {
   OutcomesScene,
   QueueScene,
   RecordScene,
+  RoutingGlassScene,
   ScopeGlassScene,
   ReportScene,
   type ClaimSceneData,
@@ -31,6 +31,7 @@ export {
   type OutcomeItem,
   type QueueSceneData,
   type RecordSceneData,
+  type RoutingGlassData,
   type ScopeGlassData,
   type ReportSceneData,
 } from "./scenes";

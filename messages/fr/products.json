@@ -916,37 +916,36 @@
       },
       "routing": {
         "heading": "Chaque sinistre au bon endroit",
-        "note": "Un exemple. Chaque unité métier définit ses propres règles d’affectation.",
-        "claimLabel": "Sinistre",
-        "rulesLabel": "Vos règles d’affectation",
-        "whenLabel": "Quand",
-        "receivesLabel": "Le destinataire reçoit",
-        "items": [
-          {
-            "id": "desk",
-            "tab": "Gestionnaire",
-            "when": "Le rapport est complet à partir des photos.",
-            "receives": "Le rapport de dommages, le devis et l’étendue des travaux."
-          },
-          {
-            "id": "next",
-            "tab": "Prochain gestionnaire disponible",
-            "when": "Le premier gestionnaire est à pleine charge.",
-            "receives": "Le même dossier."
-          },
-          {
-            "id": "senior",
-            "tab": "Gestionnaire senior",
-            "when": "Une appréciation est nécessaire ou les informations se contredisent.",
-            "receives": "Le dossier."
-          },
-          {
-            "id": "site",
-            "tab": "Expert sur place",
-            "when": "Une visite sur site est nécessaire.",
-            "receives": "Le rapport, avec une note sur ce qui reste à vérifier sur place."
-          }
-        ]
+        "scene": {
+          "alt": "Un sinistre est affecté selon les règles propres à l’assureur : au gestionnaire, au prochain gestionnaire disponible si le premier est à pleine charge, à un gestionnaire senior si une appréciation est nécessaire, ou à un expert sur place si une visite est nécessaire",
+          "note": "Un exemple. Chaque unité métier définit ses propres règles d’affectation.",
+          "claimLabel": "Sinistre",
+          "rulesLabel": "Vos règles d’affectation",
+          "items": [
+            {
+              "id": "desk",
+              "desk": "Gestionnaire",
+              "when": "Le rapport est complet à partir des photos."
+            },
+            {
+              "id": "next",
+              "desk": "Prochain gestionnaire disponible",
+              "when": "Le premier gestionnaire est à pleine charge."
+            },
+            {
+              "id": "senior",
+              "desk": "Gestionnaire senior",
+              "when": "Une appréciation est nécessaire ou les informations se contredisent."
+            },
+            {
+              "id": "site",
+              "desk": "Expert sur place",
+              "when": "Une visite sur site est nécessaire."
+            }
+          ],
+          "pause": "Mettre l’animation en pause",
+          "play": "Lancer l’animation"
+        }
       },
       "features": {
         "heading": "Ce que cela change pour votre équipe",

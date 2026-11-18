@@ -28,14 +28,14 @@ export type ScopeGlassData = {
 };
 
 /** The one timing table, in seconds. The schedule draws at constant speed: DAY seconds per working day. */
-const DUR = 12;
+const DUR = 9.5;
 const START_T = 0.8;
-const DAY = 0.55;
+const DAY = 0.28;
 const SUMS_GAP = 0.4;
 const ADJUSTER_GAP = 1.1;
-const OUT = [11.0, 11.8];
+const OUT = [8.5, 9.3];
 /** The frame shown under reduced motion: the whole schedule, the total and the adjuster. */
-const STILL_T = 10;
+const STILL_T = 7;
 
 const LAYOUTS = ["desktop", "phone"] as const;
 

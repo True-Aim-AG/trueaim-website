@@ -916,37 +916,36 @@
       },
       "routing": {
         "heading": "Ogni sinistro al posto giusto",
-        "note": "Un esempio. Ogni unità aziendale definisce le proprie regole di assegnazione.",
-        "claimLabel": "Sinistro",
-        "rulesLabel": "Le vostre regole di assegnazione",
-        "whenLabel": "Quando",
-        "receivesLabel": "Il destinatario riceve",
-        "items": [
-          {
-            "id": "desk",
-            "tab": "Liquidatore",
-            "when": "Il rapporto è completo sulla base delle fotografie.",
-            "receives": "Il rapporto sui danni, la stima e l’ambito dei lavori."
-          },
-          {
-            "id": "next",
-            "tab": "Prossimo liquidatore disponibile",
-            "when": "Il primo liquidatore è a pieno carico.",
-            "receives": "Lo stesso fascicolo."
-          },
-          {
-            "id": "senior",
-            "tab": "Liquidatore senior",
-            "when": "Serve una valutazione o le informazioni sono in conflitto.",
-            "receives": "Il fascicolo."
-          },
-          {
-            "id": "site",
-            "tab": "Perito sul posto",
-            "when": "È necessario un sopralluogo.",
-            "receives": "Il rapporto, con una nota su ciò che va ancora verificato di persona."
-          }
-        ]
+        "scene": {
+          "alt": "Un sinistro viene assegnato secondo le regole dell’assicuratore: al liquidatore, al prossimo liquidatore disponibile se il primo è a pieno carico, a un liquidatore senior se serve una valutazione, oppure a un perito sul posto se è necessario un sopralluogo",
+          "note": "Un esempio. Ogni unità aziendale definisce le proprie regole di assegnazione.",
+          "claimLabel": "Sinistro",
+          "rulesLabel": "Le vostre regole di assegnazione",
+          "items": [
+            {
+              "id": "desk",
+              "desk": "Liquidatore",
+              "when": "Il rapporto è completo sulla base delle fotografie."
+            },
+            {
+              "id": "next",
+              "desk": "Prossimo liquidatore disponibile",
+              "when": "Il primo liquidatore è a pieno carico."
+            },
+            {
+              "id": "senior",
+              "desk": "Liquidatore senior",
+              "when": "Serve una valutazione o le informazioni sono in conflitto."
+            },
+            {
+              "id": "site",
+              "desk": "Perito sul posto",
+              "when": "È necessario un sopralluogo."
+            }
+          ],
+          "pause": "Metti in pausa l’animazione",
+          "play": "Avvia l’animazione"
+        }
       },
       "features": {
         "heading": "Cosa significa per il vostro team",
