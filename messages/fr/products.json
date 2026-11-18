@@ -627,7 +627,7 @@
         "imageAlt": "Une flèche au centre d’une cible en métal"
       },
       "lineBench": {
-        "heading": "Comment True Aim compare chaque ligne aux prix de référence",
+        "heading": "Comment nous comparons chaque ligne aux prix de référence",
         "scene": {
           "alt": "Trois lignes de facture comparées tour à tour aux prix comparables pour leur corps de métier et leur région : deux se situent dans la fourchette attendue, une la dépasse et une demande de facture rectificative est rédigée",
           "label": "Facture INV-2204",

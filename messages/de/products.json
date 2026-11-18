@@ -627,7 +627,7 @@
         "imageAlt": "Ein Pfeil in der Mitte einer Zielscheibe aus Metall"
       },
       "lineBench": {
-        "heading": "So gleicht True Aim Position für Position ab",
+        "heading": "So gleichen wir Position für Position ab",
         "scene": {
           "alt": "Drei Rechnungspositionen, nacheinander mit vergleichbaren Preisen für ihr Gewerk und ihre Region abgeglichen: Zwei liegen in der erwarteten Spanne, eine liegt darüber, und dafür ist eine Korrekturanfrage vorformuliert",
           "label": "Rechnung INV-2204",

@@ -627,7 +627,7 @@
         "imageAlt": "An arrow in the centre of a metal target"
       },
       "lineBench": {
-        "heading": "How True Aim benchmarks line by line",
+        "heading": "How we benchmark line by line",
         "scene": {
           "alt": "Three invoice lines shown in turn against comparable prices for their trade and region: two sit inside the expected range, one sits above it and has a reissue request drafted",
           "label": "Invoice INV-2204",
