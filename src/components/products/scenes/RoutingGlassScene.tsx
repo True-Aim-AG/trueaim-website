@@ -3,7 +3,6 @@
 import { FileText, HardHat, type LucideIcon, User, UserCheck, Users, Workflow } from "lucide-react";
 import { useCallback, useRef } from "react";
 
-import { SCENE_CARD } from "@/components/content/surface";
 import { cn } from "@/lib/utils";
 
 import { clamp01, easeOut, GlassPause, seg, u, useGlassLoop } from "./glass";
@@ -33,7 +32,7 @@ const STILL_T = 2.7;
 type Layout = { name: "desktop" | "phone"; ww: number; wh: number; speed: number; lane?: number };
 const LAYOUTS: Layout[] = [
   { name: "desktop", ww: 1500, wh: 620, speed: 400 },
-  { name: "phone", ww: 720, wh: 900, speed: 300, lane: 36 },
+  { name: "phone", ww: 720, wh: 900, speed: 300, lane: 22 },
 ];
 
 /** Collects one stage's elements, draws its routes, and returns the function that draws one frame. */
@@ -155,7 +154,7 @@ export function RoutingGlassScene({ data }: { data: RoutingGlassData }) {
   const { playing, toggle } = useGlassLoop(rootRef, CYCLE * count, STILL_T, prepare);
 
   return (
-    <div ref={rootRef} className={cn(SCENE_CARD, "@container relative rounded-[10px]")}>
+    <div ref={rootRef} className="@container relative">
       <div role="img" aria-label={data.alt}>
         {LAYOUTS.map((layout) => (
           <div
@@ -168,8 +167,6 @@ export function RoutingGlassScene({ data }: { data: RoutingGlassData }) {
               layout.name === "desktop" ? "@max-[480px]:hidden" : "hidden @max-[480px]:block",
             )}
           >
-            <div className={g.ground} />
-            <div className={g.floor} />
             <div className={styles.world}>
               <div data-claim className={cn(g.gloss, styles.tile, styles.claim)}>
                 <FileText aria-hidden strokeWidth={1.5} />
@@ -211,7 +208,6 @@ export function RoutingGlassScene({ data }: { data: RoutingGlassData }) {
             <span data-dot className={styles.dot}>
               <FileText aria-hidden strokeWidth={1.8} />
             </span>
-            <div className={g.vignette} />
           </div>
         ))}
       </div>

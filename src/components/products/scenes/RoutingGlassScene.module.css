@@ -3,12 +3,17 @@
 .desktop {
   --u: calc(100cqw / 1500);
   --fs: calc(25 * var(--u));
-  aspect-ratio: 1500 / 620;
 }
 .phone {
   /* the portrait stage takes the height its words need in each language */
   --u: calc(100cqw / 720);
   --fs: calc(28 * var(--u));
+}
+
+/* no stage: the tiles sit on the page section, so nothing is clipped and nothing is drawn behind them */
+.desktop,
+.phone {
+  overflow: visible;
 }
 
 .world {
@@ -19,7 +24,8 @@
 }
 .desktop .world {
   grid-template-columns: auto minmax(0, 1fr) calc(380 * var(--u)) minmax(0, 1fr) calc(400 * var(--u));
-  padding: 0 calc(70 * var(--u));
+  position: relative;
+  padding: calc(20 * var(--u)) 0 calc(10 * var(--u));
 }
 .desktop .middle {
   grid-column: 3;
@@ -32,7 +38,7 @@
   justify-items: stretch;
   row-gap: calc(40 * var(--u));
   /* the routes run down the left margin; the bottom strip keeps the pause button clear */
-  padding: calc(34 * var(--u)) calc(24 * var(--u)) calc(16 * var(--u) + 48px) calc(84 * var(--u));
+  padding: calc(10 * var(--u)) 0 48px calc(70 * var(--u));
 }
 
 /* a tile: the claim, the rules, a desk */
@@ -126,10 +132,8 @@
   color: var(--muted);
 }
 .desktop .note {
-  position: absolute;
-  left: calc(70 * var(--u));
-  bottom: calc(34 * var(--u));
-  max-width: calc(520 * var(--u));
+  grid-column: 1 / -1;
+  margin-top: calc(56 * var(--u));
 }
 
 /* the claim on its way */

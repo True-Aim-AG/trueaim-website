@@ -1,8 +1,8 @@
 /* The Invoice Benchmarking hero. The ground, the glass and the adjuster bar come from glass.module.css. */
 
 .desktop {
-  --u: calc(100cqw / 1200);
-  aspect-ratio: 1200 / 1000;
+  --u: calc(100cqw / 1300);
+  aspect-ratio: 1300 / 1000;
 }
 .phone {
   /* the portrait stage takes the height its words need in each language */
@@ -19,7 +19,7 @@
   align-content: center;
   grid-template-columns: calc(640 * var(--u)) calc(400 * var(--u));
   column-gap: calc(80 * var(--u));
-  padding-left: calc(40 * var(--u));
+  padding-left: calc(90 * var(--u));
 }
 .phone .world {
   position: relative;

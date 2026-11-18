@@ -5,7 +5,6 @@
   --fh: calc(16 * var(--u));
   --fs: calc(25 * var(--u));
   --fa: calc(22 * var(--u));
-  aspect-ratio: 1500 / 800;
 }
 .phone {
   /* the portrait stage takes the height its words need in each language */
@@ -13,6 +12,12 @@
   --fh: calc(17 * var(--u));
   --fs: calc(27 * var(--u));
   --fa: calc(24 * var(--u));
+}
+
+/* no stage: the tiles sit on the page section, so nothing is clipped and nothing is drawn behind them */
+.desktop,
+.phone {
+  overflow: visible;
 }
 
 .world {
@@ -23,13 +28,14 @@
   row-gap: calc(26 * var(--u));
 }
 .desktop .world {
-  padding: 0 calc(70 * var(--u));
+  position: relative;
+  padding: calc(10 * var(--u)) 0;
 }
 .phone .world {
   position: relative;
   row-gap: calc(22 * var(--u));
   /* the bottom strip keeps the pause button clear of the adjuster bar */
-  padding: calc(28 * var(--u)) calc(20 * var(--u)) calc(16 * var(--u) + 48px);
+  padding: calc(8 * var(--u)) 0 48px;
 }
 
 .panel {

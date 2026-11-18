@@ -59,7 +59,7 @@ type Layout = { name: "desktop" | "phone"; ww: number; wh: number; vars: Record<
 const LAYOUTS: Layout[] = [
   {
     name: "desktop",
-    ww: 1200,
+    ww: 1300,
     wh: 1000,
     vars: { pad: 40, gap: 18, cols: [26, 0, 130, 124], rh: 82, fs: 25, fb: 34, ft: 23, fa: 22, fh: 16, fti: 34 },
   },

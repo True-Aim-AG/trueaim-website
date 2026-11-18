@@ -3,7 +3,6 @@
 import { Check, User } from "lucide-react";
 import { useCallback, useRef } from "react";
 
-import { SCENE_CARD } from "@/components/content/surface";
 import { cn } from "@/lib/utils";
 
 import { clamp01, easeInOut, easeOut, GlassPause, lerp, seg, spring, u, useGlassLoop } from "./glass";
@@ -108,7 +107,7 @@ export function ScopeGlassScene({ data }: { data: ScopeGlassData }) {
   const dayNumbers = Array.from({ length: days }, (_, i) => i + 1);
 
   return (
-    <div ref={rootRef} className={cn(SCENE_CARD, "@container relative rounded-[10px]")}>
+    <div ref={rootRef} className="@container relative">
       <div role="img" aria-label={data.alt}>
         {LAYOUTS.map((name) => (
           <div
@@ -116,8 +115,6 @@ export function ScopeGlassScene({ data }: { data: ScopeGlassData }) {
             data-stage={name}
             className={cn(g.stage, g[name], styles[name], name === "desktop" ? "@max-[480px]:hidden" : "hidden @max-[480px]:block")}
           >
-            <div className={g.ground} />
-            <div className={g.floor} />
             <div className={styles.world}>
               <div className={cn(g.gloss, styles.panel)}>
                 <div className={cn(styles.grid, styles.headrow)}>
@@ -171,7 +168,6 @@ export function ScopeGlassScene({ data }: { data: ScopeGlassData }) {
                 </span>
               </div>
             </div>
-            <div className={g.vignette} />
           </div>
         ))}
       </div>

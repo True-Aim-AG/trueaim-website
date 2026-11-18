@@ -43,7 +43,7 @@ const LINK = "#5151DB";
 type Layout = { name: "desktop" | "phone"; ww: number; wh: number; vars: Record<string, number | number[]> };
 
 const LAYOUTS: Layout[] = [
-  { name: "desktop", ww: 1200, wh: 1000, vars: { pad: 40, gap: 18, cols: [0, 96, 110], rh: 98, fs: 25, fb: 34, ft: 22, fa: 22, fh: 16, fti: 34 } },
+  { name: "desktop", ww: 1300, wh: 1000, vars: { pad: 40, gap: 18, cols: [0, 96, 110], rh: 98, fs: 25, fb: 34, ft: 22, fa: 22, fh: 16, fti: 34 } },
   { name: "phone", ww: 720, wh: 1100, vars: { pad: 30, gap: 14, cols: [0, 104, 110], rh: 96, fs: 27, fb: 34, ft: 24, fa: 24, fh: 17, fti: 36 } },
 ];
 
