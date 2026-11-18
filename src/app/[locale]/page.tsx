@@ -14,6 +14,7 @@ import {
   ClaimScene,
   CoverageGlassScene,
   DamageGlassScene,
+  DataRecordStill,
   LineBenchGlassScene,
   OtusGlassScene,
   ProductRail,
@@ -21,6 +22,7 @@ import {
   type ClaimSceneData,
   type CoverageGlassData,
   type DamageGlassData,
+  type DataRecordStillData,
   type LineBenchGlassData,
   type OtusGlassData,
 } from "@/components/products";
@@ -59,9 +61,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const scene = (key: string) => p.raw(`${key}.hero.scene`);
   /** The picture each product's tile opens to: a still of its own scene. */
   const stills: Record<(typeof products)[number]["key"], React.ReactNode> = {
-    // The film's poster frame; the film itself plays on the product page.
-    // eslint-disable-next-line @next/next/no-img-element
-    dataExtraction: <img src="/media/data-extraction/hero-poster.webp" alt={scene("dataExtraction").alt} width={1620} height={1350} loading="lazy" />,
+    // The claim record and the parts read into it; the film itself plays on the product page.
+    dataExtraction: <DataRecordStill data={p.raw("dataExtraction.hero.record") as DataRecordStillData} />,
     claimsDecisioning: <CoverageGlassScene data={scene("claimsDecisioning") as CoverageGlassData} still />,
     // The benchmark itself: the line above the expected range, on the distribution of comparable prices.
     invoiceBenchmarking: <LineBenchGlassScene data={p.raw("invoiceBenchmarking.lineBench.scene") as LineBenchGlassData} still />,

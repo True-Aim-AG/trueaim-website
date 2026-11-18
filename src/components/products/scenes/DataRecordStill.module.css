@@ -1,0 +1,69 @@
+/* Data Extraction as one picture: a claim record and the parts read into it. The glass comes from glass.module.css. */
+
+.stage {
+  --u: calc(100cqw / 1300);
+  --fs: calc(25 * var(--u));
+  height: 100%;
+  overflow: visible;
+}
+
+.links {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.links line {
+  stroke: rgba(60, 62, 90, 0.3);
+  stroke-width: 1.2;
+}
+
+.node {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: calc(16 * var(--u));
+  transform: translate(-50%, -50%);
+  padding: calc(18 * var(--u)) calc(34 * var(--u)) calc(18 * var(--u)) calc(26 * var(--u));
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.node svg {
+  flex: none;
+  width: calc(30 * var(--u));
+  height: calc(30 * var(--u));
+  color: var(--second);
+}
+.node > span {
+  display: grid;
+}
+.node > span > span:first-child {
+  font-size: calc(var(--fs) - 10 * var(--u));
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.node > span > span + span {
+  font-size: var(--fs);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--main);
+}
+
+/* the claim record itself, in the brand blue */
+.claim {
+  padding: calc(22 * var(--u)) calc(40 * var(--u)) calc(22 * var(--u)) calc(30 * var(--u));
+  background: linear-gradient(180deg, rgba(118, 120, 240, 0.97), rgba(81, 81, 219, 0.95) 55%, rgba(66, 64, 196, 0.97));
+  box-shadow:
+    0 calc(16 * var(--u)) calc(36 * var(--u)) rgba(81, 81, 219, 0.32),
+    inset 0 calc(1.5 * var(--u)) 0 rgba(255, 255, 255, 0.55),
+    inset 0 calc(-1.5 * var(--u)) 0 rgba(0, 0, 40, 0.18);
+}
+.claim svg,
+.claim > span > span:first-child,
+.claim > span > span + span {
+  color: #fff;
+}
+.claim > span > span:first-child {
+  opacity: 0.8;
+}

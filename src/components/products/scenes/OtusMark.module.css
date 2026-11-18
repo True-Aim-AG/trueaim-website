@@ -4,20 +4,15 @@
   overflow: visible;
   fill: #5151db;
 }
-.body {
-  transform-box: fill-box;
+.whole {
+  transform-box: view-box;
   transform-origin: 50% 80%;
   animation: alive 9s ease-in-out infinite;
 }
-.lid {
-  transform-box: fill-box;
-  transform-origin: 50% 0;
-  transform: scaleY(0);
-}
-.left {
-  animation: wink 9s ease-in-out infinite;
-}
-.right {
+/* the slanted pieces of the face crimp in towards the seam, where they join the body */
+.face {
+  transform-box: view-box;
+  transform-origin: 50% 47.17%;
   animation: blink 9s ease-in-out infinite;
 }
 
@@ -56,44 +51,30 @@
     transform: none;
   }
 }
-/* the left eye winks once, and both eyes blink once */
-@keyframes wink {
-  0%,
-  54%,
-  61%,
-  68%,
-  72%,
-  100% {
-    transform: scaleY(0);
-  }
-  56%,
-  59% {
-    transform: scaleY(1);
-  }
-  70% {
-    transform: scaleY(1);
-  }
-}
+/* two quick blinks in the loop: the face crimps in a little and springs back */
 @keyframes blink {
   0%,
+  54%,
+  58.5%,
   68%,
-  72%,
+  72.5%,
   100% {
-    transform: scaleY(0);
+    transform: none;
   }
+  56%,
   70% {
-    transform: scaleY(1);
+    transform: scaleY(0.74);
   }
 }
 
 /* still while its scene is paused, and under reduced motion */
-[data-paused] .body,
-[data-paused] .lid {
+[data-paused] .whole,
+[data-paused] .face {
   animation-play-state: paused;
 }
 @media (prefers-reduced-motion: reduce) {
-  .body,
-  .lid {
+  .whole,
+  .face {
     animation: none;
   }
 }

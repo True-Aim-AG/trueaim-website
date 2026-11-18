@@ -199,7 +199,16 @@
   height: 48%;
 }
 
-/* as the whole hero: a wider, lower stage */
+/* as the whole hero: the stage fills the window under the navigation, and the bar floats clear of its foot */
 .desktop.bleed {
-  aspect-ratio: 1600 / 740;
+  --u: calc(min(100cqw, 1500px) / 1600);
+  --fs: calc(25 * var(--u));
+  aspect-ratio: auto;
+  height: clamp(580px, calc(100svh - 78px), 740px);
+}
+.desktop.bleed .world {
+  padding-bottom: calc(110 * var(--u));
+}
+.phone.bleed .world {
+  padding-bottom: calc(70 * var(--u) + 40px);
 }

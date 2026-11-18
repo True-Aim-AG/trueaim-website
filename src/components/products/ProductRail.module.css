@@ -132,7 +132,6 @@
 .tile {
   position: relative;
   height: var(--ch);
-  overflow: hidden;
   border-radius: 10px;
   transition: height var(--move);
 }
@@ -188,21 +187,43 @@
   width: var(--ow);
   height: var(--oh);
   opacity: 0;
-  transition: opacity 0.3s;
+  /* a closed tile shows none of its picture */
+  visibility: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0s 0.3s;
   pointer-events: none;
 }
 .open .still {
   opacity: 1;
-  transition-delay: 0.15s;
+  visibility: visible;
+  transition:
+    opacity 0.3s 0.15s,
+    visibility 0s;
 }
-/* the row has the ground already: a still brings its glass only, no ground and no card of its own */
+/* the row has the ground already: a still brings its glass only, no ground, no card and no edge of its own */
 .still {
   --ground: 0;
+}
+/* a soft shade under the picture, feathered to nothing, so it floats on the ground without a box */
+.still::before {
+  content: "";
+  position: absolute;
+  inset: 4% 2% 0;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(28, 30, 34, 0.13), rgba(28, 30, 34, 0.05) 60%, rgba(28, 30, 34, 0));
+  filter: blur(18px);
+  pointer-events: none;
+}
+.still > * {
+  position: relative;
 }
 .still > * {
   height: 100%;
   background: transparent;
   box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
 }
 .still img {
   width: 100%;

@@ -35,6 +35,39 @@
           "mismatch": "Segnalato per la revisione: stesso importo e stessa data di {other}",
           "pause": "Metti in pausa l’animazione",
           "play": "Avvia l’animazione"
+        },
+        "record": {
+          "alt": "Un fascicolo di sinistro al centro, in cui sono letti il contraente, il rischio, lo stato della polizza, l’evento, il broker e l’assicuratore",
+          "claim": {
+            "label": "Sinistro",
+            "value": "CL-04812"
+          },
+          "nodes": [
+            {
+              "label": "Contraente",
+              "value": "Lea Gerber"
+            },
+            {
+              "label": "Rischio assicurato",
+              "value": "Fabbricato"
+            },
+            {
+              "label": "Snapshot della polizza",
+              "value": "HB-418203"
+            },
+            {
+              "label": "Evento",
+              "value": "Tempesta, Thun"
+            },
+            {
+              "label": "Broker",
+              "value": "Reto Ammann"
+            },
+            {
+              "label": "Assicuratore",
+              "value": "Bergwald Insurance"
+            }
+          ]
         }
       },
       "keys": {

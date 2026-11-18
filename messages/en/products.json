@@ -35,6 +35,39 @@
           "mismatch": "Flagged for review: same amount and date as {other}",
           "pause": "Pause animation",
           "play": "Play animation"
+        },
+        "record": {
+          "alt": "A claim record at the centre, with the policyholder, the exposure, the policy snapshot, the loss event, the broker and the insurer read into it",
+          "claim": {
+            "label": "Claim",
+            "value": "CL-04812"
+          },
+          "nodes": [
+            {
+              "label": "Policyholder",
+              "value": "Lea Gerber"
+            },
+            {
+              "label": "Exposure",
+              "value": "Building"
+            },
+            {
+              "label": "Policy snapshot",
+              "value": "HB-418203"
+            },
+            {
+              "label": "Loss event",
+              "value": "Storm, Thun"
+            },
+            {
+              "label": "Broker",
+              "value": "Reto Ammann"
+            },
+            {
+              "label": "Insurer",
+              "value": "Bergwald Insurance"
+            }
+          ]
         }
       },
       "keys": {

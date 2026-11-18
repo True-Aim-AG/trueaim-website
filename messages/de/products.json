@@ -35,6 +35,39 @@
           "mismatch": "Zur Prüfung markiert: gleicher Betrag und gleiches Datum wie {other}",
           "pause": "Animation anhalten",
           "play": "Animation abspielen"
+        },
+        "record": {
+          "alt": "Eine Schadenakte in der Mitte, in die Versicherungsnehmer, Risiko, Policenstand, Schadenereignis, Makler und Versicherer eingelesen sind",
+          "claim": {
+            "label": "Schaden",
+            "value": "CL-04812"
+          },
+          "nodes": [
+            {
+              "label": "Versicherungsnehmer",
+              "value": "Lea Gerber"
+            },
+            {
+              "label": "Versichertes Risiko",
+              "value": "Gebäude"
+            },
+            {
+              "label": "Policenstand",
+              "value": "HB-418203"
+            },
+            {
+              "label": "Schadenereignis",
+              "value": "Sturm, Thun"
+            },
+            {
+              "label": "Makler",
+              "value": "Reto Ammann"
+            },
+            {
+              "label": "Versicherer",
+              "value": "Bergwald Insurance"
+            }
+          ]
         }
       },
       "keys": {

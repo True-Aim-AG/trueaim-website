@@ -35,6 +35,39 @@
           "mismatch": "Signalé pour examen : même montant et même date que {other}",
           "pause": "Mettre l’animation en pause",
           "play": "Lancer l’animation"
+        },
+        "record": {
+          "alt": "Un dossier de sinistre au centre, dans lequel sont lus le preneur d’assurance, le risque, l’état de la police, l’événement, le courtier et l’assureur",
+          "claim": {
+            "label": "Sinistre",
+            "value": "CL-04812"
+          },
+          "nodes": [
+            {
+              "label": "Preneur d’assurance",
+              "value": "Lea Gerber"
+            },
+            {
+              "label": "Risque assuré",
+              "value": "Bâtiment"
+            },
+            {
+              "label": "Instantané de la police",
+              "value": "HB-418203"
+            },
+            {
+              "label": "Événement",
+              "value": "Tempête, Thoune"
+            },
+            {
+              "label": "Courtier",
+              "value": "Reto Ammann"
+            },
+            {
+              "label": "Assureur",
+              "value": "Bergwald Insurance"
+            }
+          ]
         }
       },
       "keys": {
