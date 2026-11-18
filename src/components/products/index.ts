@@ -6,6 +6,7 @@ export { OtusPrompts, type OtusPrompt } from "./OtusPrompts";
 export {
   ClaimScene,
   CoverageGlassScene,
+  DamageGlassScene,
   FlowGlassScene,
   FlowScene,
   InvoiceGlassScene,
@@ -20,6 +21,7 @@ export {
   type CoverageGlassData,
   type FlowGlassData,
   type FlowSceneData,
+  type DamageGlassData,
   type InvoiceGlassData,
   type InvoiceSceneData,
   type LineBenchGlassData,

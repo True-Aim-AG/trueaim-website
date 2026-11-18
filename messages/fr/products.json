@@ -780,52 +780,67 @@
         "title": "AI Damage Assessment & Reporting : des photos aux rapports de dommages complets en quelques minutes",
         "summary": "Analysez automatiquement photos, vidéos et pièces justificatives pour identifier les dommages, évaluer leur gravité et produire des rapports de dommages détaillés dès la déclaration de sinistre. Obtenez des estimations de coûts de réparation propres à chaque région et une étendue des travaux complète, avec les corps de métier, les tâches et l’ordre des réparations. Réduisez les visites sur site en n’envoyant des experts que là où l’expertise humaine est nécessaire.",
         "scene": {
-          "alt": "Quatre photos deviennent un rapport de dommages chiffré et une étendue des travaux dès le premier jour",
+          "alt": "Quatre photos sont lues l’une après l’autre : chaque constat est inscrit dans le rapport de dommages, les travaux sont chiffrés et le gestionnaire vérifie le rapport",
           "photosLabel": "4 photos reçues",
           "files": [
             {
               "name": "kitchen_01.jpg",
-              "meta": "2,4 Mo, lue"
+              "size": "2,4 Mo"
             },
             {
               "name": "kitchen_02.jpg",
-              "meta": "2,1 Mo, lue"
+              "size": "2,1 Mo"
             },
             {
               "name": "floor_03.jpg",
-              "meta": "1,8 Mo, lue"
+              "size": "1,8 Mo"
             },
             {
               "name": "wall_04.jpg",
-              "meta": "2,6 Mo, lue"
+              "size": "2,6 Mo"
             }
           ],
           "title": "Rapport de dommages",
           "subtitle": "Dégât des eaux, cuisine. Étendue des travaux",
+          "columns": {
+            "item": "Ligne",
+            "quantity": "Qté",
+            "amount": "Montant"
+          },
           "lines": [
             {
               "item": "Revêtement de sol, stratifié",
+              "finding": "Infiltration d’eau, gonflement",
               "quantity": "14 m²",
               "amount": "1 260"
             },
             {
               "item": "Plinthes",
+              "finding": "Gonflées, décollées",
               "quantity": "9 m",
               "amount": "210"
             },
             {
               "item": "Matériel de séchage",
+              "finding": "Eau stagnante",
               "quantity": "5 jours",
               "amount": "640"
             },
             {
               "item": "Mur, remise en peinture",
+              "finding": "Tache d’humidité, 2 m²",
               "quantity": "12 m²",
               "amount": "340"
             }
           ],
           "estimateLabel": "Devis",
-          "estimate": "2 450"
+          "estimate": "2 450",
+          "adjuster": {
+            "label": "Votre gestionnaire",
+            "action": "Vérifier le rapport"
+          },
+          "pause": "Mettre l’animation en pause",
+          "play": "Lancer l’animation"
         }
       },
       "steps": {

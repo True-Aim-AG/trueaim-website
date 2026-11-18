@@ -780,52 +780,67 @@
         "title": "AI Damage Assessment & Reporting: dalle foto ai rapporti danni completi in pochi minuti",
         "summary": "Analizzate automaticamente foto, video e documenti a supporto per individuare i danni, valutarne la gravità e generare rapporti danni dettagliati fin dalla denuncia di sinistro. Ottenete stime dei costi di riparazione specifiche per regione e un ambito dei lavori completo, con categorie di lavori, attività e sequenza di riparazione. Riducete i sopralluoghi inviando i periti solo dove serve la competenza umana.",
         "scene": {
-          "alt": "Quattro foto diventano un rapporto danni quantificato e un ambito dei lavori il primo giorno",
+          "alt": "Quattro fotografie vengono lette una dopo l’altra: ogni riscontro è inserito nel rapporto sui danni, i lavori sono quantificati e il liquidatore verifica il rapporto",
           "photosLabel": "4 foto ricevute",
           "files": [
             {
               "name": "kitchen_01.jpg",
-              "meta": "2,4 MB, letta"
+              "size": "2,4 MB"
             },
             {
               "name": "kitchen_02.jpg",
-              "meta": "2,1 MB, letta"
+              "size": "2,1 MB"
             },
             {
               "name": "floor_03.jpg",
-              "meta": "1,8 MB, letta"
+              "size": "1,8 MB"
             },
             {
               "name": "wall_04.jpg",
-              "meta": "2,6 MB, letta"
+              "size": "2,6 MB"
             }
           ],
           "title": "Rapporto danni",
           "subtitle": "Danno da acqua, cucina. Ambito dei lavori",
+          "columns": {
+            "item": "Voce",
+            "quantity": "Q.tà",
+            "amount": "Importo"
+          },
           "lines": [
             {
               "item": "Pavimento, laminato",
+              "finding": "Infiltrazione d’acqua, rigonfiamento",
               "quantity": "14 m²",
               "amount": "1.260"
             },
             {
               "item": "Battiscopa",
+              "finding": "Rigonfi, staccati",
               "quantity": "9 m",
               "amount": "210"
             },
             {
               "item": "Attrezzatura di asciugatura",
+              "finding": "Acqua stagnante",
               "quantity": "5 giorni",
               "amount": "640"
             },
             {
               "item": "Parete, ritinteggiatura",
+              "finding": "Macchia di umidità, 2 m²",
               "quantity": "12 m²",
               "amount": "340"
             }
           ],
           "estimateLabel": "Preventivo",
-          "estimate": "2.450"
+          "estimate": "2.450",
+          "adjuster": {
+            "label": "Il vostro liquidatore",
+            "action": "Verifica il rapporto"
+          },
+          "pause": "Metti in pausa l’animazione",
+          "play": "Avvia l’animazione"
         }
       },
       "steps": {

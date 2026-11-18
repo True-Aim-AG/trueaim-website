@@ -3,6 +3,7 @@
 // from messages/; the components hold no copy.
 export { ClaimScene, type ClaimLine, type ClaimSceneData } from "./ClaimScene";
 export { CoverageGlassScene, type CoverageGlassData } from "./CoverageGlassScene";
+export { DamageGlassScene, type DamageGlassData } from "./DamageGlassScene";
 export { InvoiceGlassScene, type InvoiceGlassData } from "./InvoiceGlassScene";
 export { InvoiceScene, type InvoiceSceneData } from "./InvoiceScene";
 export { ReportScene, type ReportSceneData } from "./ReportScene";

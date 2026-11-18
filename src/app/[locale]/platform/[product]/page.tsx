@@ -18,22 +18,22 @@ import {
 } from "@/components/content";
 import {
   CoverageGlassScene,
+  DamageGlassScene,
   FlowGlassScene,
   HeroLoop,
   InvoiceGlassScene,
   LineBenchGlassScene,
   OtusPrompts,
   RecordScene,
-  ReportScene,
   productIcons,
   type CoverageGlassData,
+  type DamageGlassData,
   type FlowGlassData,
   type HeroLoopData,
   type InvoiceGlassData,
   type LineBenchGlassData,
   type OtusPrompt,
   type RecordSceneData,
-  type ReportSceneData,
 } from "@/components/products";
 import type { BrandIconName } from "@/components/brand/BrandIcon";
 import { PageSeo } from "@/components/seo/PageSeo";
@@ -116,7 +116,7 @@ function visual(product: Product, t: Translate) {
     case "invoiceBenchmarking":
       return <InvoiceGlassScene data={t.raw(`${key}.hero.scene`) as InvoiceGlassData} />;
     case "damageReporting":
-      return <ReportScene data={t.raw(`${key}.hero.scene`) as ReportSceneData} hero />;
+      return <DamageGlassScene data={t.raw(`${key}.hero.scene`) as DamageGlassData} />;
     case "otus":
       return (
         <OtusPrompts
@@ -311,7 +311,7 @@ export default async function ProductPage({ params }: Props) {
           summary: t(`${key}.hero.summary`),
           buttons,
           visual: visual(product, t),
-          visualWidth: key === "dataExtraction" || key === "claimsDecisioning" || key === "invoiceBenchmarking" ? 680 : undefined,
+          visualWidth: key === "otus" ? undefined : 680,
           texture: textures[key],
         }}
         faq={{ heading: faqHeading, items: faqs }}

@@ -3,6 +3,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import {
   ClaimScene,
   CoverageGlassScene,
+  DamageGlassScene,
   FlowGlassScene,
   FlowScene,
   InvoiceGlassScene,
@@ -337,6 +338,41 @@ describe("Product scenes", () => {
     expect(html).toContain("+39%");
     expect(html).toContain("Potential saving");
     expect(html).not.toContain("aria-pressed");
+    expect(html).toContain('aria-label="Pause animation"');
+  });
+
+  it("renders the damage hero as one image: each photograph, the report line written from it, the adjuster and a pause control", () => {
+    const html = renderToStaticMarkup(
+      <DamageGlassScene
+        data={{
+          alt: "Photographs become a damage report",
+          photosLabel: "2 photographs received",
+          files: [
+            { name: "kitchen_01.jpg", size: "2.4 MB" },
+            { name: "wall_04.jpg", size: "2.6 MB" },
+          ],
+          title: "Damage report",
+          subtitle: "Water damage, kitchen",
+          columns: { item: "Line", quantity: "Qty", amount: "Amount" },
+          lines: [
+            { item: "Flooring", finding: "Water ingress", quantity: "14 m²", amount: "1'260" },
+            { item: "Wall, repaint", finding: "Damp patch", quantity: "12 m²", amount: "340" },
+          ],
+          estimateLabel: "Estimate",
+          estimate: "1'600",
+          adjuster: { label: "Your adjuster", action: "Review report" },
+          pause: "Pause animation",
+          play: "Play animation",
+        }}
+      />,
+    );
+    expect(html.match(/role="img"/g)).toHaveLength(1);
+    // Desktop and phone stages each hold every photograph, every line and one connector per photograph.
+    expect(html.match(/data-file/g)).toHaveLength(4);
+    expect(html.match(/data-row/g)).toHaveLength(4);
+    expect(html.match(/data-path/g)).toHaveLength(4);
+    expect(html).toContain("Water ingress");
+    expect(html).toContain("Review report");
     expect(html).toContain('aria-label="Pause animation"');
   });
 });

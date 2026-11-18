@@ -780,52 +780,67 @@
         "title": "AI Damage Assessment & Reporting: von Fotos zu vollständigen Schadenberichten in Minuten",
         "summary": "Fotos, Videos und Belege werden automatisch ausgewertet, um Schäden zu erkennen, ihre Schwere zu bewerten und schon bei der Schadenmeldung detaillierte Schadenberichte zu erstellen. Dazu kommen regionale Reparaturkostenschätzungen und ein vollständiger Reparaturumfang mit den erforderlichen Gewerken, Arbeitsschritten und der Reparaturreihenfolge. Besichtigungen vor Ort werden seltener, weil Gutachter nur dort eingesetzt werden, wo menschliches Fachwissen gebraucht wird.",
         "scene": {
-          "alt": "Vier Fotos werden am ersten Tag zu einem bepreisten Schadenbericht und Reparaturumfang",
+          "alt": "Vier Fotos werden nacheinander gelesen: Jeder Befund wird in den Schadenbericht geschrieben, der Leistungsumfang wird kalkuliert, und der Sachbearbeiter prüft den Bericht",
           "photosLabel": "4 Fotos eingegangen",
           "files": [
             {
               "name": "kitchen_01.jpg",
-              "meta": "2,4 MB, gelesen"
+              "size": "2,4 MB"
             },
             {
               "name": "kitchen_02.jpg",
-              "meta": "2,1 MB, gelesen"
+              "size": "2,1 MB"
             },
             {
               "name": "floor_03.jpg",
-              "meta": "1,8 MB, gelesen"
+              "size": "1,8 MB"
             },
             {
               "name": "wall_04.jpg",
-              "meta": "2,6 MB, gelesen"
+              "size": "2,6 MB"
             }
           ],
           "title": "Schadenbericht",
           "subtitle": "Wasserschaden, Küche. Reparaturumfang",
+          "columns": {
+            "item": "Position",
+            "quantity": "Menge",
+            "amount": "Betrag"
+          },
           "lines": [
             {
               "item": "Bodenbelag, Laminat",
+              "finding": "Wassereintritt, aufgequollen",
               "quantity": "14 m²",
               "amount": "1.260"
             },
             {
               "item": "Sockelleisten",
+              "finding": "Aufgequollen, abgelöst",
               "quantity": "9 m",
               "amount": "210"
             },
             {
               "item": "Trocknungsgeräte",
+              "finding": "Stehendes Wasser",
               "quantity": "5 Tage",
               "amount": "640"
             },
             {
               "item": "Wand, Neuanstrich",
+              "finding": "Feuchter Fleck, 2 m²",
               "quantity": "12 m²",
               "amount": "340"
             }
           ],
           "estimateLabel": "Kostenvoranschlag",
-          "estimate": "2.450"
+          "estimate": "2.450",
+          "adjuster": {
+            "label": "Ihr Sachbearbeiter",
+            "action": "Bericht prüfen"
+          },
+          "pause": "Animation anhalten",
+          "play": "Animation abspielen"
         }
       },
       "steps": {
