@@ -865,6 +865,118 @@
           }
         ]
       },
+      "scope": {
+        "heading": "L’étendue des travaux, corps de métier par corps de métier",
+        "scene": {
+          "alt": "L’étendue des travaux sous forme de planning : l’assèchement d’abord, puis la peinture, la pose du sol et la menuiserie, chaque corps de métier commençant quand le précédent se termine, avec le montant par corps de métier et le devis total",
+          "title": "Étendue des travaux",
+          "dayLabel": "Jour ouvré",
+          "days": 11,
+          "trades": [
+            {
+              "name": "Assèchement",
+              "task": "Matériel de séchage, 5 jours",
+              "start": 1,
+              "length": 5,
+              "amount": "640"
+            },
+            {
+              "name": "Peinture",
+              "task": "Mur, remise en peinture, 12 m²",
+              "start": 6,
+              "length": 2,
+              "amount": "340"
+            },
+            {
+              "name": "Pose de sol",
+              "task": "Revêtement de sol, stratifié, 14 m²",
+              "start": 8,
+              "length": 3,
+              "amount": "1 260"
+            },
+            {
+              "name": "Menuiserie",
+              "task": "Plinthes, 9 m",
+              "start": 11,
+              "length": 1,
+              "amount": "210"
+            }
+          ],
+          "durationLabel": "Durée",
+          "duration": "11 jours ouvrés",
+          "totalLabel": "Devis",
+          "total": "2 450",
+          "adjuster": {
+            "label": "Votre gestionnaire",
+            "action": "Transmettre aux artisans"
+          },
+          "pause": "Mettre l’animation en pause",
+          "play": "Lancer l’animation"
+        }
+      },
+      "routing": {
+        "heading": "Chaque sinistre au bon endroit",
+        "note": "Un exemple. Chaque unité métier définit ses propres règles d’affectation.",
+        "claimLabel": "Sinistre",
+        "rulesLabel": "Vos règles d’affectation",
+        "whenLabel": "Quand",
+        "receivesLabel": "Le destinataire reçoit",
+        "items": [
+          {
+            "id": "desk",
+            "tab": "Gestionnaire",
+            "when": "Le rapport est complet à partir des photos.",
+            "receives": "Le rapport de dommages, le devis et l’étendue des travaux."
+          },
+          {
+            "id": "next",
+            "tab": "Prochain gestionnaire disponible",
+            "when": "Le premier gestionnaire est à pleine charge.",
+            "receives": "Le même dossier."
+          },
+          {
+            "id": "senior",
+            "tab": "Gestionnaire senior",
+            "when": "Une appréciation est nécessaire ou les informations se contredisent.",
+            "receives": "Le dossier."
+          },
+          {
+            "id": "site",
+            "tab": "Expert sur place",
+            "when": "Une visite sur site est nécessaire.",
+            "receives": "Le rapport, avec une note sur ce qui reste à vérifier sur place."
+          }
+        ]
+      },
+      "features": {
+        "heading": "Ce que cela change pour votre équipe",
+        "items": [
+          {
+            "title": "Un devis dès le premier jour",
+            "text": "Vos experts reçoivent un devis et une étendue des travaux dès la déclaration de sinistre."
+          },
+          {
+            "title": "Des visites là où elles comptent",
+            "text": "Chaque rapport indique ce qui reste à vérifier sur place."
+          },
+          {
+            "title": "Chiffré par région",
+            "text": "Chaque ligne est chiffrée selon ce que chaque corps de métier facture dans cette région."
+          },
+          {
+            "title": "L’ordre des réparations établi",
+            "text": "Chaque corps de métier nécessaire, dans l’ordre où les travaux doivent s’enchaîner."
+          },
+          {
+            "title": "Part de ce que vous avez",
+            "text": "Des photos, des documents, ou un rapport tiers, un devis ou une expertise."
+          },
+          {
+            "title": "Affecté selon vos règles",
+            "text": "Chaque sinistre va au gestionnaire prévu par vos règles métier, et à un gestionnaire senior lorsqu’une appréciation est nécessaire."
+          }
+        ]
+      },
       "faq": [
         {
           "question": "True Aim remplace-t-il nos experts ?",

@@ -25,6 +25,8 @@ import {
   LineBenchGlassScene,
   OtusPrompts,
   RecordScene,
+  RoutingTabs,
+  ScopeGlassScene,
   productIcons,
   type CoverageGlassData,
   type DamageGlassData,
@@ -34,6 +36,8 @@ import {
   type LineBenchGlassData,
   type OtusPrompt,
   type RecordSceneData,
+  type RoutingTabsData,
+  type ScopeGlassData,
 } from "@/components/products";
 import type { BrandIconName } from "@/components/brand/BrandIcon";
 import { PageSeo } from "@/components/seo/PageSeo";
@@ -65,6 +69,7 @@ const icons: Record<string, BrandIconName[]> = {
   invoiceFeatures: ["data", "structured-data", "match", "document", "control", "learning-loop"],
   otusFeatures: ["workflow", "process", "document", "decision", "learning-loop", "match", "extraction", "structure"],
   damageSteps: ["ingestion", "extraction", "process", "match"],
+  damageFeatures: ["document", "human-review", "data", "workflow", "upload", "rules"],
 };
 
 /** The brand texture and crop behind each hero, as the prototype assigns them. */
@@ -237,12 +242,25 @@ function sections(product: Product, t: Translate) {
       );
     case "damageReporting":
       return (
-        <FeatureCards
-          heading={t(`${key}.steps.heading`)}
-          columns={4}
-          items={withIcons(t.raw(`${key}.steps.items`) as FeatureCard[], icons.damageSteps)}
-          tone="white"
-        />
+        <>
+          <FeatureCards
+            heading={t(`${key}.steps.heading`)}
+            columns={4}
+            items={withIcons(t.raw(`${key}.steps.items`) as FeatureCard[], icons.damageSteps)}
+            tone="white"
+          />
+          <FigureSection heading={t(`${key}.scope.heading`)} tone="tint">
+            <ScopeGlassScene data={t.raw(`${key}.scope.scene`) as ScopeGlassData} />
+          </FigureSection>
+          <FigureSection heading={t(`${key}.routing.heading`)} tone="white">
+            <RoutingTabs data={t.raw(`${key}.routing`) as RoutingTabsData} />
+          </FigureSection>
+          <FeatureCards
+            heading={t(`${key}.features.heading`)}
+            items={withIcons(t.raw(`${key}.features.items`) as FeatureCard[], icons.damageFeatures)}
+            tone="tint"
+          />
+        </>
       );
     case "otus":
       return (

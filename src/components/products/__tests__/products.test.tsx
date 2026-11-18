@@ -14,6 +14,8 @@ import {
   OtusPrompts,
   OutcomesScene,
   RecordScene,
+  RoutingTabs,
+  ScopeGlassScene,
   ReportScene,
 } from "@/components/products";
 
@@ -374,5 +376,55 @@ describe("Product scenes", () => {
     expect(html).toContain("Water ingress");
     expect(html).toContain("Review report");
     expect(html).toContain('aria-label="Pause animation"');
+  });
+
+  it("renders the scope of work as one image with a bar per trade, and the routing as a stack of tabs", () => {
+    const scope = renderToStaticMarkup(
+      <ScopeGlassScene
+        data={{
+          alt: "The scope of work as a schedule",
+          title: "Scope of work",
+          dayLabel: "Working day",
+          days: 3,
+          trades: [
+            { name: "Drying", task: "Drying equipment, 2 days", start: 1, length: 2, amount: "640" },
+            { name: "Painting", task: "Wall, repaint", start: 3, length: 1, amount: "340" },
+          ],
+          durationLabel: "Duration",
+          duration: "3 working days",
+          totalLabel: "Estimate",
+          total: "980",
+          adjuster: { label: "Your adjuster", action: "Release to trades" },
+          pause: "Pause animation",
+          play: "Play animation",
+        }}
+      />,
+    );
+    expect(scope.match(/role="img"/g)).toHaveLength(1);
+    expect(scope.match(/data-bar/g)).toHaveLength(4);
+    expect(scope).toContain("Release to trades");
+    expect(scope).toContain('aria-label="Pause animation"');
+
+    const routing = renderToStaticMarkup(
+      <RoutingTabs
+        data={{
+          heading: "Every claim to the right desk",
+          note: "An example.",
+          claimLabel: "Claim",
+          rulesLabel: "Your routing rules",
+          whenLabel: "When",
+          receivesLabel: "The desk receives",
+          items: [
+            { id: "desk", tab: "Adjuster's desk", when: "The report is complete.", receives: "The damage report." },
+            { id: "senior", tab: "Senior adjuster", when: "Judgement is needed.", receives: "The file." },
+          ],
+        }}
+      />,
+    );
+    expect(routing).toContain('aria-orientation="vertical"');
+    expect(routing.match(/role="tab"/g)).toHaveLength(2);
+    expect(routing.match(/aria-selected="true"/g)).toHaveLength(1);
+    expect(routing).toContain("The report is complete.");
+    expect(routing).not.toContain("Judgement is needed.");
   });
 });

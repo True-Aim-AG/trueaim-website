@@ -865,6 +865,118 @@
           }
         ]
       },
+      "scope": {
+        "heading": "Der Reparaturumfang, Gewerk für Gewerk",
+        "scene": {
+          "alt": "Der Reparaturumfang als Ablaufplan: Zuerst läuft die Trocknung, dann folgen Maler, Bodenleger und Schreiner, jedes Gewerk beginnt, wenn das vorherige endet, mit dem Betrag je Gewerk und dem gesamten Kostenvoranschlag",
+          "title": "Reparaturumfang",
+          "dayLabel": "Arbeitstag",
+          "days": 11,
+          "trades": [
+            {
+              "name": "Trocknung",
+              "task": "Trocknungsgeräte, 5 Tage",
+              "start": 1,
+              "length": 5,
+              "amount": "640"
+            },
+            {
+              "name": "Maler",
+              "task": "Wand, Neuanstrich, 12 m²",
+              "start": 6,
+              "length": 2,
+              "amount": "340"
+            },
+            {
+              "name": "Bodenleger",
+              "task": "Bodenbelag, Laminat, 14 m²",
+              "start": 8,
+              "length": 3,
+              "amount": "1.260"
+            },
+            {
+              "name": "Schreiner",
+              "task": "Sockelleisten, 9 m",
+              "start": 11,
+              "length": 1,
+              "amount": "210"
+            }
+          ],
+          "durationLabel": "Dauer",
+          "duration": "11 Arbeitstage",
+          "totalLabel": "Kostenvoranschlag",
+          "total": "2.450",
+          "adjuster": {
+            "label": "Ihr Sachbearbeiter",
+            "action": "An Gewerke freigeben"
+          },
+          "pause": "Animation anhalten",
+          "play": "Animation abspielen"
+        }
+      },
+      "routing": {
+        "heading": "Jeder Schadenfall an der richtigen Stelle",
+        "note": "Ein Beispiel. Jede Geschäftseinheit legt ihre eigenen Zuweisungsregeln fest.",
+        "claimLabel": "Schadenfall",
+        "rulesLabel": "Ihre Zuweisungsregeln",
+        "whenLabel": "Wann",
+        "receivesLabel": "Der Empfänger erhält",
+        "items": [
+          {
+            "id": "desk",
+            "tab": "Sachbearbeiter",
+            "when": "Der Bericht ist anhand der Fotos vollständig.",
+            "receives": "Den Schadenbericht, den Kostenvoranschlag und den Reparaturumfang."
+          },
+          {
+            "id": "next",
+            "tab": "Nächster freier Sachbearbeiter",
+            "when": "Der erste Sachbearbeiter ist ausgelastet.",
+            "receives": "Dieselbe Akte."
+          },
+          {
+            "id": "senior",
+            "tab": "Senior-Sachbearbeiter",
+            "when": "Eine Beurteilung ist nötig oder die Angaben widersprechen sich.",
+            "receives": "Die Akte."
+          },
+          {
+            "id": "site",
+            "tab": "Gutachter vor Ort",
+            "when": "Eine Besichtigung vor Ort ist erforderlich.",
+            "receives": "Den Bericht, mit einem Hinweis darauf, was noch vor Ort geprüft werden muss."
+          }
+        ]
+      },
+      "features": {
+        "heading": "Was das für Ihr Team bedeutet",
+        "items": [
+          {
+            "title": "Ein Kostenvoranschlag am ersten Tag",
+            "text": "Ihre Gutachter erhalten bei der ersten Schadenmeldung einen Kostenvoranschlag und einen Reparaturumfang."
+          },
+          {
+            "title": "Ortsbesuche dort, wo sie zählen",
+            "text": "Jeder Bericht hält fest, was noch vor Ort geprüft werden muss."
+          },
+          {
+            "title": "Nach Region kalkuliert",
+            "text": "Jede Position wird anhand dessen kalkuliert, was jedes Gewerk in dieser Region verlangt."
+          },
+          {
+            "title": "Die Reparaturreihenfolge festgelegt",
+            "text": "Jedes benötigte Gewerk, in der Reihenfolge, in der die Arbeit laufen muss."
+          },
+          {
+            "title": "Beginnt mit dem, was Sie haben",
+            "text": "Fotos, Dokumente oder ein Bericht Dritter, ein Kostenvoranschlag oder ein Gutachten."
+          },
+          {
+            "title": "Zuweisung nach Ihren Regeln",
+            "text": "Jeder Schadenfall geht an den Sachbearbeiter, den Ihre Geschäftsregeln vorsehen, und an einen Senior-Sachbearbeiter, wo eine Beurteilung nötig ist."
+          }
+        ]
+      },
       "faq": [
         {
           "question": "Ersetzt True Aim unsere Gutachter?",

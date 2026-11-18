@@ -1,0 +1,170 @@
+/* The scope of work as a schedule. The ground, the glass and the adjuster bar come from glass.module.css. */
+
+.desktop {
+  --u: calc(100cqw / 1500);
+  --fh: calc(16 * var(--u));
+  --fs: calc(25 * var(--u));
+  --fa: calc(22 * var(--u));
+  aspect-ratio: 1500 / 800;
+}
+.phone {
+  /* the portrait stage takes the height its words need in each language */
+  --u: calc(100cqw / 720);
+  --fh: calc(17 * var(--u));
+  --fs: calc(27 * var(--u));
+  --fa: calc(24 * var(--u));
+}
+
+.world {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  row-gap: calc(26 * var(--u));
+}
+.desktop .world {
+  padding: 0 calc(70 * var(--u));
+}
+.phone .world {
+  position: relative;
+  row-gap: calc(22 * var(--u));
+  /* the bottom strip keeps the pause button clear of the adjuster bar */
+  padding: calc(28 * var(--u)) calc(20 * var(--u)) calc(16 * var(--u) + 48px);
+}
+
+.panel {
+  border-radius: calc(34 * var(--u));
+  padding: calc(40 * var(--u)) calc(46 * var(--u)) calc(36 * var(--u));
+}
+.phone .panel {
+  padding: calc(32 * var(--u)) calc(30 * var(--u)) calc(30 * var(--u));
+}
+
+/* what, the days, the amount; on a phone the days run under the words */
+.grid {
+  display: grid;
+  align-items: center;
+  column-gap: calc(34 * var(--u));
+}
+.desktop .grid {
+  grid-template-columns: calc(330 * var(--u)) minmax(0, 1fr) calc(120 * var(--u));
+}
+.phone .grid {
+  grid-template-columns: minmax(0, 1fr) auto;
+  row-gap: calc(14 * var(--u));
+}
+.phone .track {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+.headrow {
+  align-items: end;
+  padding-bottom: calc(14 * var(--u));
+}
+.title {
+  margin: 0;
+  font-size: calc(var(--fs) + 9 * var(--u));
+  line-height: 1.25;
+  color: var(--main);
+  letter-spacing: -0.02em;
+}
+.days {
+  display: flex;
+  margin-top: calc(8 * var(--u));
+  font-size: calc(var(--fs) - 6 * var(--u));
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.days span {
+  flex: 1;
+  text-align: center;
+}
+
+.row {
+  padding: calc(18 * var(--u)) 0;
+  border-top: 1px solid var(--hair);
+  font-size: var(--fs);
+  color: var(--main);
+}
+.what {
+  display: grid;
+  min-width: 0;
+  line-height: 1.2;
+  opacity: 0.45;
+}
+.what > span + span {
+  margin-top: calc(5 * var(--u));
+  font-size: calc(var(--fs) - 6 * var(--u));
+  line-height: 1.25;
+  color: var(--muted);
+}
+/* one column per working day, ruled lightly */
+.lane {
+  position: relative;
+  height: calc(46 * var(--u));
+  border-radius: calc(10 * var(--u));
+  background-image: linear-gradient(90deg, rgba(60, 62, 120, 0.1) 1px, transparent 1px);
+  box-shadow: inset -1px 0 0 rgba(60, 62, 120, 0.1);
+}
+.phone .lane {
+  height: calc(34 * var(--u));
+}
+.lane i {
+  position: absolute;
+  top: calc(5 * var(--u));
+  bottom: calc(5 * var(--u));
+  border-radius: calc(10 * var(--u));
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: linear-gradient(180deg, rgba(118, 120, 240, 0.92), rgba(81, 81, 219, 0.88) 55%, rgba(66, 64, 196, 0.92));
+  box-shadow:
+    0 calc(8 * var(--u)) calc(18 * var(--u)) rgba(81, 81, 219, 0.28),
+    inset 0 calc(1.5 * var(--u)) 0 rgba(255, 255, 255, 0.55),
+    inset 0 calc(-1.5 * var(--u)) 0 rgba(0, 0, 40, 0.16);
+}
+.amount {
+  opacity: 0;
+}
+
+.sums {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: calc(24 * var(--u));
+  padding-top: calc(24 * var(--u));
+  border-top: 1.5px solid rgba(40, 42, 80, 0.2);
+}
+.phone .sums {
+  flex-direction: column;
+  align-items: stretch;
+  gap: calc(8 * var(--u));
+}
+.sum {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: calc(24 * var(--u));
+  font-size: var(--fs);
+  color: var(--second);
+  opacity: 0;
+}
+.sum > span + span {
+  color: var(--main);
+}
+.big {
+  font-size: calc(var(--fs) + 9 * var(--u));
+  font-weight: 600;
+  color: var(--main);
+}
+
+/* the adjuster's action, one bar under the schedule */
+.desktop .world .adjuster {
+  justify-self: end;
+  flex-direction: row;
+  align-items: center;
+  gap: calc(20 * var(--u));
+  height: calc(84 * var(--u));
+  padding: 0 calc(16 * var(--u)) 0 calc(28 * var(--u));
+  border-radius: 999px;
+}

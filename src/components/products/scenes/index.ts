@@ -10,6 +10,7 @@ export { ReportScene, type ReportSceneData } from "./ReportScene";
 export { OutcomesScene, type OutcomeItem } from "./OutcomesScene";
 export { FlowScene, type FlowSceneData } from "./FlowScene";
 export { FlowGlassScene, type FlowGlassData } from "./FlowGlassScene";
+export { ScopeGlassScene, type ScopeGlassData } from "./ScopeGlassScene";
 export { RecordScene, type RecordSceneData } from "./RecordScene";
 export { LineBenchGlassScene, type LineBenchGlassData } from "./LineBenchGlassScene";
 export { LineBenchScene, type LineBenchSceneData } from "./LineBenchScene";

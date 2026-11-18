@@ -865,6 +865,118 @@
           }
         ]
       },
+      "scope": {
+        "heading": "The scope of work, trade by trade",
+        "scene": {
+          "alt": "The scope of work as a schedule: drying runs first, then painting, flooring and carpentry, each starting when the one before it ends, with the amount per trade and the total estimate",
+          "title": "Scope of work",
+          "dayLabel": "Working day",
+          "days": 11,
+          "trades": [
+            {
+              "name": "Drying",
+              "task": "Drying equipment, 5 days",
+              "start": 1,
+              "length": 5,
+              "amount": "640"
+            },
+            {
+              "name": "Painting",
+              "task": "Wall, repaint, 12 m²",
+              "start": 6,
+              "length": 2,
+              "amount": "340"
+            },
+            {
+              "name": "Flooring",
+              "task": "Flooring, laminate, 14 m²",
+              "start": 8,
+              "length": 3,
+              "amount": "1'260"
+            },
+            {
+              "name": "Carpentry",
+              "task": "Skirting boards, 9 m",
+              "start": 11,
+              "length": 1,
+              "amount": "210"
+            }
+          ],
+          "durationLabel": "Duration",
+          "duration": "11 working days",
+          "totalLabel": "Estimate",
+          "total": "2'450",
+          "adjuster": {
+            "label": "Your adjuster",
+            "action": "Release to trades"
+          },
+          "pause": "Pause animation",
+          "play": "Play animation"
+        }
+      },
+      "routing": {
+        "heading": "Every claim to the right desk",
+        "note": "An example. Each business unit sets its own routing rules.",
+        "claimLabel": "Claim",
+        "rulesLabel": "Your routing rules",
+        "whenLabel": "When",
+        "receivesLabel": "The desk receives",
+        "items": [
+          {
+            "id": "desk",
+            "tab": "Adjuster's desk",
+            "when": "The report is complete from the photographs.",
+            "receives": "The damage report, the estimate and the scope of work."
+          },
+          {
+            "id": "next",
+            "tab": "Next available adjuster",
+            "when": "The first desk is at capacity.",
+            "receives": "The same file."
+          },
+          {
+            "id": "senior",
+            "tab": "Senior adjuster",
+            "when": "Judgement is needed or the information conflicts.",
+            "receives": "The file."
+          },
+          {
+            "id": "site",
+            "tab": "Assessor on site",
+            "when": "A site inspection is required.",
+            "receives": "The report, with a note of what still needs checking in person."
+          }
+        ]
+      },
+      "features": {
+        "heading": "What this means for your team",
+        "items": [
+          {
+            "title": "An estimate on day one",
+            "text": "Your assessors get an estimate and a scope of work at first notification of loss."
+          },
+          {
+            "title": "Site visits where they count",
+            "text": "Each report notes what still needs checking in person."
+          },
+          {
+            "title": "Priced by region",
+            "text": "Every line is priced against what each trade charges in that region."
+          },
+          {
+            "title": "The repair sequence set out",
+            "text": "Every trade needed, in the order the work must run."
+          },
+          {
+            "title": "Starts from what you have",
+            "text": "Photographs, documents, or a third-party report, cost estimate or appraisal."
+          },
+          {
+            "title": "Routed by your rules",
+            "text": "Each claim goes to the desk your business rules name, with referral to a senior adjuster where judgement is needed."
+          }
+        ]
+      },
       "faq": [
         {
           "question": "Does True Aim replace our assessors?",

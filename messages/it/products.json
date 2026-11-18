@@ -865,6 +865,118 @@
           }
         ]
       },
+      "scope": {
+        "heading": "L’ambito dei lavori, categoria per categoria",
+        "scene": {
+          "alt": "L’ambito dei lavori come programma: prima l’asciugatura, poi tinteggiatura, posa del pavimento e falegnameria, ogni categoria inizia quando la precedente finisce, con l’importo per categoria e la stima totale",
+          "title": "Ambito dei lavori",
+          "dayLabel": "Giorno lavorativo",
+          "days": 11,
+          "trades": [
+            {
+              "name": "Asciugatura",
+              "task": "Attrezzatura di asciugatura, 5 giorni",
+              "start": 1,
+              "length": 5,
+              "amount": "640"
+            },
+            {
+              "name": "Tinteggiatura",
+              "task": "Parete, ritinteggiatura, 12 m²",
+              "start": 6,
+              "length": 2,
+              "amount": "340"
+            },
+            {
+              "name": "Posa pavimenti",
+              "task": "Pavimento, laminato, 14 m²",
+              "start": 8,
+              "length": 3,
+              "amount": "1.260"
+            },
+            {
+              "name": "Falegnameria",
+              "task": "Battiscopa, 9 m",
+              "start": 11,
+              "length": 1,
+              "amount": "210"
+            }
+          ],
+          "durationLabel": "Durata",
+          "duration": "11 giorni lavorativi",
+          "totalLabel": "Preventivo",
+          "total": "2.450",
+          "adjuster": {
+            "label": "Il vostro liquidatore",
+            "action": "Invia agli artigiani"
+          },
+          "pause": "Metti in pausa l’animazione",
+          "play": "Avvia l’animazione"
+        }
+      },
+      "routing": {
+        "heading": "Ogni sinistro al posto giusto",
+        "note": "Un esempio. Ogni unità aziendale definisce le proprie regole di assegnazione.",
+        "claimLabel": "Sinistro",
+        "rulesLabel": "Le vostre regole di assegnazione",
+        "whenLabel": "Quando",
+        "receivesLabel": "Il destinatario riceve",
+        "items": [
+          {
+            "id": "desk",
+            "tab": "Liquidatore",
+            "when": "Il rapporto è completo sulla base delle fotografie.",
+            "receives": "Il rapporto sui danni, la stima e l’ambito dei lavori."
+          },
+          {
+            "id": "next",
+            "tab": "Prossimo liquidatore disponibile",
+            "when": "Il primo liquidatore è a pieno carico.",
+            "receives": "Lo stesso fascicolo."
+          },
+          {
+            "id": "senior",
+            "tab": "Liquidatore senior",
+            "when": "Serve una valutazione o le informazioni sono in conflitto.",
+            "receives": "Il fascicolo."
+          },
+          {
+            "id": "site",
+            "tab": "Perito sul posto",
+            "when": "È necessario un sopralluogo.",
+            "receives": "Il rapporto, con una nota su ciò che va ancora verificato di persona."
+          }
+        ]
+      },
+      "features": {
+        "heading": "Cosa significa per il vostro team",
+        "items": [
+          {
+            "title": "Una stima il primo giorno",
+            "text": "I vostri periti ricevono una stima e un ambito dei lavori alla prima denuncia di sinistro."
+          },
+          {
+            "title": "Sopralluoghi dove contano",
+            "text": "Ogni rapporto indica ciò che va ancora verificato di persona."
+          },
+          {
+            "title": "Prezzi per regione",
+            "text": "Ogni voce è valutata in base alle tariffe praticate da ogni categoria di artigiani in quella regione."
+          },
+          {
+            "title": "La sequenza di riparazione definita",
+            "text": "Ogni categoria di lavori necessaria, nell’ordine in cui i lavori devono procedere."
+          },
+          {
+            "title": "Parte da ciò che avete",
+            "text": "Fotografie, documenti, oppure un rapporto di terzi, un preventivo o una perizia."
+          },
+          {
+            "title": "Assegnato secondo le vostre regole",
+            "text": "Ogni sinistro va al liquidatore previsto dalle vostre regole aziendali, e a un liquidatore senior dove serve una valutazione."
+          }
+        ]
+      },
       "faq": [
         {
           "question": "True Aim sostituisce i nostri periti?",
