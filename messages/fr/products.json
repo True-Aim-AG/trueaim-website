@@ -223,7 +223,7 @@
           "deductible": "150,00",
           "payoutLabel": "Indemnisation",
           "payout": "3 936,33",
-          "policyLabel": "Conditions de la police",
+          "policyLabel": "Police",
           "clauseWord": "Clause",
           "clauses": [
             {
@@ -1010,7 +1010,6 @@
           "alt": "Otus répond tour à tour à trois questions d’un gestionnaire : par où commencer la journée, un e-mail de passation pour un sinistre et pourquoi une ligne a été exclue. Chaque réponse s’écrit ligne par ligne, avec les actions qu’Otus propose. Otus n’a aucun pouvoir de décision.",
           "otusLabel": "Otus",
           "placeholder": "Posez à Otus n’importe quelle question sur un sinistre",
-          "footer": "Otus n’a aucun pouvoir de décision. Votre équipe décide.",
           "items": [
             {
               "id": "plan",

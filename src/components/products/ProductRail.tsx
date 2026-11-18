@@ -10,7 +10,6 @@ import { section, type Tone } from "@/components/content/surface";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
-import g from "./scenes/glass.module.css";
 import styles from "./ProductRail.module.css";
 
 export type ProductRailItem = {
@@ -128,8 +127,7 @@ export function ProductRail({
                     <div className={styles.tile}>
                       <button
                         type="button"
-                        className={cn(g.gloss, styles.face)}
-                        style={{ "--u": "1px" } as CSSProperties}
+                        className={styles.face}
                         aria-current={open ? "true" : undefined}
                         tabIndex={open ? -1 : 0}
                         onClick={() => go(i)}

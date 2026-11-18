@@ -431,14 +431,13 @@ describe("Product scenes", () => {
     expect(routing).toContain('aria-label="Pause animation"');
   });
 
-  it("renders the Otus hero as one image: each scenario's question, answer lines and actions, and the line on decision rights", () => {
+  it("renders the Otus hero as one image: each scenario's question, answer lines and actions, and the message bar", () => {
     const html = renderToStaticMarkup(
       <OtusGlassScene
         data={{
           alt: "Otus answers an adjuster's questions",
           otusLabel: "Otus",
           placeholder: "Ask Otus anything about a claim",
-          footer: "Otus has no decision rights. Your team decides.",
           items: [
             { id: "plan", prompt: "Where do I start?", lines: ["You have 14 open claims.", "Three need your judgement."], actions: ["Open 62850"] },
             { id: "explain", prompt: "Why was line 4 excluded?", lines: ["Clause 4.2 excludes the appliance."], actions: ["Open the draft", "Show clause 4.2"] },
@@ -452,7 +451,7 @@ describe("Product scenes", () => {
     // Desktop and phone stages each hold every scenario and every answer line.
     expect(html.match(/data-turn/g)).toHaveLength(4);
     expect(html.match(/data-line/g)).toHaveLength(6);
-    expect(html).toContain("Your team decides.");
+    expect(html).not.toContain("decision rights");
     expect(html).toContain("Ask Otus anything about a claim");
     expect(html.match(/data-bar/g)).toHaveLength(2);
     expect(html).not.toContain('role="tab"');

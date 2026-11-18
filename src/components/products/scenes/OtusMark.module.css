@@ -1,0 +1,99 @@
+/* Otus's mark: the brand symbol, with a slow loop of small movements. */
+
+.mark {
+  overflow: visible;
+  fill: #5151db;
+}
+.body {
+  transform-box: fill-box;
+  transform-origin: 50% 80%;
+  animation: alive 9s ease-in-out infinite;
+}
+.lid {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+  transform: scaleY(0);
+}
+.left {
+  animation: wink 9s ease-in-out infinite;
+}
+.right {
+  animation: blink 9s ease-in-out infinite;
+}
+
+/* looks left, looks right, settles, then ruffles near the end of the loop */
+@keyframes alive {
+  0%,
+  8% {
+    transform: none;
+  }
+  14%,
+  24% {
+    transform: translateX(-5%) rotate(-9deg);
+  }
+  32%,
+  42% {
+    transform: translateX(5%) rotate(9deg);
+  }
+  50%,
+  78% {
+    transform: none;
+  }
+  81% {
+    transform: rotate(-7deg) scale(1.06);
+  }
+  84% {
+    transform: rotate(6deg) scale(1.08);
+  }
+  87% {
+    transform: rotate(-4deg) scale(1.05);
+  }
+  90% {
+    transform: rotate(2deg) scale(1.02);
+  }
+  94%,
+  100% {
+    transform: none;
+  }
+}
+/* the left eye winks once, and both eyes blink once */
+@keyframes wink {
+  0%,
+  54%,
+  61%,
+  68%,
+  72%,
+  100% {
+    transform: scaleY(0);
+  }
+  56%,
+  59% {
+    transform: scaleY(1);
+  }
+  70% {
+    transform: scaleY(1);
+  }
+}
+@keyframes blink {
+  0%,
+  68%,
+  72%,
+  100% {
+    transform: scaleY(0);
+  }
+  70% {
+    transform: scaleY(1);
+  }
+}
+
+/* still while its scene is paused, and under reduced motion */
+[data-paused] .body,
+[data-paused] .lid {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .body,
+  .lid {
+    animation: none;
+  }
+}

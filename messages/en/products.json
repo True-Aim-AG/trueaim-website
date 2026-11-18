@@ -223,7 +223,7 @@
           "deductible": "150.00",
           "payoutLabel": "Payout",
           "payout": "3'936.33",
-          "policyLabel": "Policy wording",
+          "policyLabel": "Policy",
           "clauseWord": "Clause",
           "clauses": [
             {
@@ -1010,7 +1010,6 @@
           "alt": "Otus answers three questions from an adjuster in turn: where to start the day, a handover email for a claim, and why a line was excluded. Each answer is written out line by line with the actions Otus offers. Otus has no decision rights.",
           "otusLabel": "Otus",
           "placeholder": "Ask Otus anything about a claim",
-          "footer": "Otus has no decision rights. Your team decides.",
           "items": [
             {
               "id": "plan",

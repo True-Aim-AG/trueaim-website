@@ -223,7 +223,7 @@
           "deductible": "150,00",
           "payoutLabel": "Indennizzo",
           "payout": "3.936,33",
-          "policyLabel": "Condizioni di polizza",
+          "policyLabel": "Polizza",
           "clauseWord": "Clausola",
           "clauses": [
             {
@@ -1010,7 +1010,6 @@
           "alt": "Otus risponde a turno a tre domande di un liquidatore: da dove iniziare la giornata, un’e-mail di passaggio di consegne per un sinistro e perché una voce è stata esclusa. Ogni risposta è scritta riga per riga, con le azioni che Otus propone. Otus non ha potere decisionale.",
           "otusLabel": "Otus",
           "placeholder": "Chiedete a Otus qualsiasi cosa su un sinistro",
-          "footer": "Otus non ha potere decisionale. Decide il vostro team.",
           "items": [
             {
               "id": "plan",

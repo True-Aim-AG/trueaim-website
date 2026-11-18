@@ -241,3 +241,47 @@
   white-space: normal;
   max-width: calc(330 * var(--u));
 }
+
+/* as a picture in a tile: the graph alone, with the invoiced amount beside the line's name */
+.desktop.still {
+  --u: calc(100cqw / 1000);
+  aspect-ratio: auto;
+  height: 100%;
+}
+.still .lines {
+  display: none;
+}
+.desktop.still .world {
+  grid-template-columns: minmax(0, 1fr);
+  padding: calc(44 * var(--u)) calc(56 * var(--u));
+}
+.still .headline {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: calc(24 * var(--u));
+  align-items: start;
+}
+.still .headline > .title,
+.still .headline > .sub {
+  grid-column: 1;
+}
+.price {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: grid;
+  justify-items: end;
+  margin: 0;
+  line-height: 1.2;
+}
+.price > span:first-child {
+  font-size: calc(var(--fs) + 14 * var(--u));
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--main);
+}
+.price > span + span {
+  margin-top: calc(4 * var(--u));
+  font-size: calc(var(--fs) - 5 * var(--u));
+  font-weight: 600;
+  color: var(--ci);
+}

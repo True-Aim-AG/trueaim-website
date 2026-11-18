@@ -8,16 +8,14 @@ import { cn } from "@/lib/utils";
 
 import { clamp01, easeOut, GlassPause, lerp, seg, spring, u, useGlassLoop } from "./glass";
 import g from "./glass.module.css";
-import { HexDot } from "./marks";
 import styles from "./OtusGlassScene.module.css";
+import { OtusMark } from "./OtusMark";
 
 export type OtusGlassData = {
   alt: string;
   otusLabel: string;
   /** The words in the empty message bar. */
   placeholder: string;
-  /** The line on decision rights, under the message bar through every question. */
-  footer: string;
   /** One question each: what the adjuster types, the answer in short lines, and the actions Otus offers. */
   items: { id: string; prompt: string; lines: string[]; actions: string[] }[];
   pause: string;
@@ -112,8 +110,8 @@ function prepareStage(root: HTMLElement, ww: number, items: Item[]) {
  * across the scene, an adjuster's question is typed into it and sent, rises
  * into the conversation as a bubble on the right, and Otus answers on the
  * left in short lines with the actions it offers. The conversation then
- * clears and the next question is typed. The line on decision rights stays
- * under the bar: Otus drafts, explains and plans, and the team decides.
+ * clears and the next question is typed. Otus's mark is the brand symbol,
+ * alive in small ways.
  *
  * Live HTML in world units, as the other glass heroes: translated text, a
  * portrait layout below 480px, a still frame under reduced motion and the
@@ -122,10 +120,13 @@ function prepareStage(root: HTMLElement, ww: number, items: Item[]) {
 export function OtusGlassScene({
   data,
   still,
+  bleed,
 }: {
   data: OtusGlassData;
   /** A picture, not a film: the finished frame of the desktop layout at any width, with no pause control. */
   still?: boolean;
+  /** The scene is the whole hero: no card around it, edge to edge. */
+  bleed?: boolean;
 }) {
   const rootRef = useRef<HTMLDivElement>(null);
   const items = data.items;
@@ -140,7 +141,11 @@ export function OtusGlassScene({
   const { playing, toggle } = useGlassLoop(rootRef, STEP * items.length, STEP * items.length - 1, prepare, still);
 
   return (
-    <div ref={rootRef} className={cn(SCENE_CARD, SCENE_CARD_HERO, "@container relative rounded-[10px]")}>
+    <div
+      ref={rootRef}
+      data-paused={playing || still ? undefined : ""}
+      className={cn("@container relative", bleed ? "font-body" : cn(SCENE_CARD, SCENE_CARD_HERO, "rounded-[10px]"), still && "h-full")}
+    >
       <div role="img" aria-label={data.alt} className={cn(still && "h-full")}>
         {LAYOUTS.map(({ name }) => (
           <div
@@ -151,6 +156,7 @@ export function OtusGlassScene({
               g[name],
               styles[name],
               still && styles.still,
+              bleed && styles.bleed,
               still ? name !== "desktop" && "hidden" : name === "desktop" ? "@max-[480px]:hidden" : "hidden @max-[480px]:block",
             )}
           >
@@ -165,7 +171,7 @@ export function OtusGlassScene({
                     </p>
                     <div className={styles.reply}>
                       <p data-who className={styles.who}>
-                        <HexDot />
+                        <OtusMark />
                         {data.otusLabel}
                       </p>
                       {item.lines.map((line) => (
@@ -196,7 +202,6 @@ export function OtusGlassScene({
                   <ArrowUp aria-hidden strokeWidth={2.2} />
                 </span>
               </div>
-              <p className={styles.footer}>{data.footer}</p>
             </div>
             <div className={g.vignette} />
           </div>

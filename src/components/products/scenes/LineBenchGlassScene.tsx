@@ -70,7 +70,14 @@ function prepareStage(root: HTMLElement, count: number) {
  * motion it holds the line above the range; the figure itself is the pause
  * control (WCAG 2.2.2).
  */
-export function LineBenchGlassScene({ data }: { data: LineBenchGlassData }) {
+export function LineBenchGlassScene({
+  data,
+  still,
+}: {
+  data: LineBenchGlassData;
+  /** A picture, not a film: the line above the range against its comparable prices, with no pause control. */
+  still?: boolean;
+}) {
   const rootRef = useRef<HTMLDivElement>(null);
   const count = data.lines.length;
   const prepare = useCallback(
@@ -82,19 +89,25 @@ export function LineBenchGlassScene({ data }: { data: LineBenchGlassData }) {
   );
   // The still frame is the line over the benchmark, with every figure of it in view.
   const high = Math.max(0, data.lines.findIndex((line) => line.kind === "denied"));
-  const { playing, toggle } = useGlassLoop(rootRef, STEP * count, high * STEP + 3.6, prepare);
+  const { playing, toggle } = useGlassLoop(rootRef, STEP * count, high * STEP + 3.6, prepare, still);
 
   const bandStart = Math.floor((data.bars.length - BAND) / 2);
   const inBand = (index: number) => index >= bandStart && index < bandStart + BAND;
 
   return (
-    <div ref={rootRef} className={cn(SCENE_CARD, "@container relative rounded-[10px]")}>
-      <div role="img" aria-label={data.alt}>
+    <div ref={rootRef} className={cn(SCENE_CARD, "@container relative rounded-[10px]", still && "h-full")}>
+      <div role="img" aria-label={data.alt} className={cn(still && "h-full")}>
         {LAYOUTS.map((name) => (
           <div
             key={name}
             data-stage={name}
-            className={cn(g.stage, g[name], styles[name], name === "desktop" ? "@max-[480px]:hidden" : "hidden @max-[480px]:block")}
+            className={cn(
+              g.stage,
+              g[name],
+              styles[name],
+              still && styles.still,
+              still ? name !== "desktop" && "hidden" : name === "desktop" ? "@max-[480px]:hidden" : "hidden @max-[480px]:block",
+            )}
           >
             <div className={g.ground} />
             <div className={g.floor} />
@@ -119,6 +132,12 @@ export function LineBenchGlassScene({ data }: { data: LineBenchGlassData }) {
                     <div key={line.description} data-head className={styles.headline}>
                       <p className={styles.title}>{line.description}</p>
                       <p className={styles.sub}>{line.range}</p>
+                      {still && (
+                        <p className={cn(styles.price, g[line.kind])}>
+                          <span>{line.amount}</span>
+                          <span>{line.status}</span>
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -169,7 +188,7 @@ export function LineBenchGlassScene({ data }: { data: LineBenchGlassData }) {
           </div>
         ))}
       </div>
-      <GlassPause playing={playing} toggle={toggle} pause={data.pause} play={data.play} />
+      {!still && <GlassPause playing={playing} toggle={toggle} pause={data.pause} play={data.play} />}
     </div>
   );
 }

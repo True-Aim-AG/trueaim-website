@@ -223,7 +223,7 @@
           "deductible": "150,00",
           "payoutLabel": "Auszahlung",
           "payout": "3.936,33",
-          "policyLabel": "Versicherungsbedingungen",
+          "policyLabel": "Police",
           "clauseWord": "Klausel",
           "clauses": [
             {
@@ -1010,7 +1010,6 @@
           "alt": "Otus beantwortet nacheinander drei Fragen eines Sachbearbeiters: womit der Tag beginnt, eine Übergabe-E-Mail zu einem Schaden und warum eine Position ausgeschlossen wurde. Jede Antwort wird Zeile für Zeile geschrieben, mit den Aktionen, die Otus anbietet. Otus hat keine Entscheidungsbefugnis.",
           "otusLabel": "Otus",
           "placeholder": "Fragen Sie Otus alles zu einem Schaden",
-          "footer": "Otus hat keine Entscheidungsbefugnis. Ihr Team entscheidet.",
           "items": [
             {
               "id": "plan",

@@ -14,14 +14,14 @@ import {
   ClaimScene,
   CoverageGlassScene,
   DamageGlassScene,
-  InvoiceGlassScene,
+  LineBenchGlassScene,
   OtusGlassScene,
   ProductRail,
   productIcons,
   type ClaimSceneData,
   type CoverageGlassData,
   type DamageGlassData,
-  type InvoiceGlassData,
+  type LineBenchGlassData,
   type OtusGlassData,
 } from "@/components/products";
 import { products } from "@/data/products";
@@ -63,7 +63,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     // eslint-disable-next-line @next/next/no-img-element
     dataExtraction: <img src="/media/data-extraction/hero-poster.webp" alt={scene("dataExtraction").alt} width={1620} height={1350} loading="lazy" />,
     claimsDecisioning: <CoverageGlassScene data={scene("claimsDecisioning") as CoverageGlassData} still />,
-    invoiceBenchmarking: <InvoiceGlassScene data={scene("invoiceBenchmarking") as InvoiceGlassData} still />,
+    // The benchmark itself: the line above the expected range, on the distribution of comparable prices.
+    invoiceBenchmarking: <LineBenchGlassScene data={p.raw("invoiceBenchmarking.lineBench.scene") as LineBenchGlassData} still />,
     damageReporting: <DamageGlassScene data={scene("damageReporting") as DamageGlassData} still />,
     otus: <OtusGlassScene data={scene("otus") as OtusGlassData} still />,
   };

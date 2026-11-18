@@ -15,7 +15,6 @@ import {
   type HeroTexture,
   type KeyFact,
   type Tone,
-  TextureBackdrop,
   type HeroButton,
 } from "@/components/content";
 import { ButtonLink } from "@/components/brand/Button";
@@ -337,11 +336,8 @@ export default async function ProductPage({ params }: Props) {
         }}
         heroSlot={
           key === "otus" ? (
-            <section className="relative overflow-hidden border-b border-hairline bg-page-tint">
-              <TextureBackdrop texture={textures[key]} />
-              <div className="relative mx-auto max-w-7xl px-6 py-12 md:py-16">
-                <OtusGlassScene data={t.raw(`${key}.hero.scene`) as OtusGlassData} />
-              </div>
+            <section className="border-b border-hairline">
+              <OtusGlassScene data={t.raw(`${key}.hero.scene`) as OtusGlassData} bleed />
             </section>
           ) : undefined
         }
