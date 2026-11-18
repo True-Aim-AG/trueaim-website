@@ -258,3 +258,10 @@
   font-size: calc(var(--ft) + 6 * var(--u));
   color: #0f7524;
 }
+
+/* the blurred world behind stays well out of focus, so the invoice holds the eye */
+.desktop > [data-piece],
+.phone > [data-piece] {
+  filter: blur(calc(26 * var(--u)));
+  opacity: 0.45;
+}

@@ -311,7 +311,7 @@ export default async function ProductPage({ params }: Props) {
           summary: t(`${key}.hero.summary`),
           buttons,
           visual: visual(product, t),
-          visualWidth: key === "dataExtraction" || key === "claimsDecisioning" ? 680 : undefined,
+          visualWidth: key === "invoiceBenchmarking" ? 760 : key === "dataExtraction" || key === "claimsDecisioning" ? 680 : undefined,
           texture: textures[key],
         }}
         faq={{ heading: faqHeading, items: faqs }}

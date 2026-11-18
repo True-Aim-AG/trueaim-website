@@ -78,7 +78,7 @@ export function PageHero({
           wideCopy
             ? "lg:grid-cols-[minmax(0,1.5fr)_minmax(0,.5fr)] lg:gap-12"
             : visualWidth
-              ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,var(--hero-visual))] lg:gap-12"
+              ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,min(var(--hero-visual),60%))] lg:gap-12"
               : "lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)] lg:gap-20",
           compact ? "lg:min-h-[360px]" : "lg:min-h-[720px]",
         )}
