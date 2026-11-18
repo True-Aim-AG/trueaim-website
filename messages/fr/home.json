@@ -77,6 +77,11 @@
     "benefits": {
       "heading": "Ce que True Aim apporte",
       "items": {
+        "dataExtraction": {
+          "title": "Vos données sinistres, prêtes pour l’IA",
+          "text": "True Aim les lit, en extrait l’information, la met en contexte et construit une base de données structurée unique.",
+          "link": "Data Extraction"
+        },
         "claimsDecisioning": {
           "title": "Des sinistres réglés en minutes, pas en semaines",
           "text": "Chaque ligne est vérifiée au regard des conditions de la police, le montant calculé et le motif consigné, prêts à être confirmés par votre gestionnaire.",
@@ -91,7 +96,16 @@
           "title": "Des rapports de dommages complets, préparés pour vous",
           "text": "Dès la déclaration de sinistre, les photos et les documents deviennent un devis chiffré et l’étendue complète des travaux, avant toute visite sur place.",
           "link": "AI Damage Assessment & Reporting"
+        },
+        "otus": {
+          "title": "Un expert IA pour chaque membre de l’équipe",
+          "text": "Posez à Otus n’importe quelle question sur un sinistre, à la voix ou au clavier, et la réponse vient du sinistre, de la police et du dossier.",
+          "link": "Otus"
         }
+      },
+      "controls": {
+        "previous": "Précédent",
+        "next": "Suivant"
       }
     },
     "logos": {
@@ -157,7 +171,7 @@
           "alt": "Digitaler Leuchtturm Versicherungen",
           "label": "Lauréat",
           "name": "Digitaler Leuchtturm Versicherungen 2022",
-          "text": "Le prix allemand du «\u00a0phare numérique\u00a0» de l’assurance, décerné à la technologie sur laquelle True Aim s’appuie."
+          "text": "Le prix allemand du « phare numérique » de l’assurance, décerné à la technologie sur laquelle True Aim s’appuie."
         },
         "ikn": {
           "alt": "IKN Insurance Award, Miglior InsurTech",

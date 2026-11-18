@@ -77,6 +77,11 @@
     "benefits": {
       "heading": "Was True Aim liefert",
       "items": {
+        "dataExtraction": {
+          "title": "Ihre Schadendaten, bereit für KI",
+          "text": "True Aim liest es, extrahiert es, stellt es in seinen Zusammenhang und baut daraus eine strukturierte Datenbank.",
+          "link": "Data Extraction"
+        },
         "claimsDecisioning": {
           "title": "Schäden in Minuten statt Wochen reguliert",
           "text": "Jede Position wird anhand der Versicherungsbedingungen geprüft, der Betrag berechnet und die Begründung festgehalten, bereit zur Bestätigung durch Ihren Sachbearbeiter.",
@@ -91,7 +96,16 @@
           "title": "Vollständige Schadenberichte, für Sie vorbereitet",
           "text": "Aus Fotos und Dokumenten entstehen schon bei der Schadenmeldung ein Kostenvoranschlag und der vollständige Reparaturumfang, bevor jemand vor Ort war.",
           "link": "AI Damage Assessment & Reporting"
+        },
+        "otus": {
+          "title": "Ein KI-gestützter Experte für jedes Teammitglied",
+          "text": "Fragen Sie Otus alles zu einem Schaden, per Sprache oder Text, und die Antwort kommt aus dem Schaden, der Police und der Akte.",
+          "link": "Otus"
         }
+      },
+      "controls": {
+        "previous": "Zurück",
+        "next": "Weiter"
       }
     },
     "logos": {

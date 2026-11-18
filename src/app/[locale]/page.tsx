@@ -4,14 +4,27 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   Awards,
   CtaBand,
-  FeatureCards,
   LogoMarquee,
   PageHero,
   RelatedLinks,
   SplitText,
   type Award,
 } from "@/components/content";
-import { ClaimScene, productIcons, type ClaimSceneData } from "@/components/products";
+import {
+  ClaimScene,
+  CoverageGlassScene,
+  DamageGlassScene,
+  InvoiceGlassScene,
+  OtusGlassScene,
+  ProductRail,
+  productIcons,
+  type ClaimSceneData,
+  type CoverageGlassData,
+  type DamageGlassData,
+  type InvoiceGlassData,
+  type OtusGlassData,
+} from "@/components/products";
+import { products } from "@/data/products";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageLocales } from "@/i18n/page-locales";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -21,12 +34,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   return pageMetadata(locale, "/");
 }
-
-const outcomes = [
-  { key: "claimsDecisioning", href: "/platform/automated-coverage-check" },
-  { key: "invoiceBenchmarking", href: "/platform/invoice-benchmarking" },
-  { key: "damageReporting", href: "/platform/ai-damage-assessment-and-reporting" },
-] as const;
 
 /** The organisers' marks for the awards, in the order of the copy. */
 const awardMarks = [
@@ -48,6 +55,18 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "home" });
+  const p = await getTranslations({ locale, namespace: "productPages" });
+  const scene = (key: string) => p.raw(`${key}.hero.scene`);
+  /** The picture each product's tile opens to: a still of its own scene. */
+  const stills: Record<(typeof products)[number]["key"], React.ReactNode> = {
+    // The film's poster frame; the film itself plays on the product page.
+    // eslint-disable-next-line @next/next/no-img-element
+    dataExtraction: <img src="/media/data-extraction/hero-poster.webp" alt={scene("dataExtraction").alt} width={1620} height={1350} loading="lazy" />,
+    claimsDecisioning: <CoverageGlassScene data={scene("claimsDecisioning") as CoverageGlassData} still />,
+    invoiceBenchmarking: <InvoiceGlassScene data={scene("invoiceBenchmarking") as InvoiceGlassData} still />,
+    damageReporting: <DamageGlassScene data={scene("damageReporting") as DamageGlassData} still />,
+    otus: <OtusGlassScene data={scene("otus") as OtusGlassData} still />,
+  };
   // Final URLs for the related links: an English-only page is linked under /en/ from every locale.
   const href = (path: string) => `/${pageLocales(path).includes(locale) ? locale : "en"}${path}/`;
   const awards: Award[] = awardMarks.map((mark) => ({
@@ -71,15 +90,24 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         texture={{ name: "glass" }}
         visual={<ClaimScene data={t.raw("hero.scene") as ClaimSceneData} hero />}
       />
-      <FeatureCards
+      <ProductRail
         heading={t("benefits.heading")}
-        items={outcomes.map((outcome) => ({
-          title: t(`benefits.items.${outcome.key}.title`),
-          text: t(`benefits.items.${outcome.key}.text`),
-          icon: productIcons[outcome.key],
-          href: outcome.href,
-          linkLabel: t(`benefits.items.${outcome.key}.link`),
+        items={products.map((product) => ({
+          key: product.key,
+          name: t(`benefits.items.${product.key}.link`),
+          icon: productIcons[product.key],
+          still: stills[product.key],
+          title: t(`benefits.items.${product.key}.title`),
+          text: t(`benefits.items.${product.key}.text`),
+          href: `/platform/${product.slug}`,
+          linkLabel: t(`benefits.items.${product.key}.link`),
         }))}
+        labels={{
+          previous: t("benefits.controls.previous"),
+          next: t("benefits.controls.next"),
+          pause: scene("claimsDecisioning").pause,
+          play: scene("claimsDecisioning").play,
+        }}
         tone="white"
       />
       <Awards heading={t("awards.heading")} items={awards} tone="tint" />

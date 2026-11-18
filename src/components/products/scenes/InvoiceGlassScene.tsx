@@ -184,7 +184,11 @@ function prepareStage(root: HTMLElement, layout: Layout, lines: Line[], tally: I
  * portrait layout below 480px, a still frame under reduced motion and the
  * figure itself as the pause control (WCAG 2.2.2).
  */
-export function InvoiceGlassScene({ data }: { data: InvoiceGlassData }) {
+export function InvoiceGlassScene({ data, still }: {
+  data: InvoiceGlassData;
+  /** A picture, not a film: the finished frame of the desktop layout at any width, with no pause control. */
+  still?: boolean;
+}) {
   const rootRef = useRef<HTMLDivElement>(null);
   const { lines, tally } = data;
   const prepare = useCallback(
@@ -196,7 +200,7 @@ export function InvoiceGlassScene({ data }: { data: InvoiceGlassData }) {
     },
     [lines, tally],
   );
-  const { playing, toggle } = useGlassLoop(rootRef, DUR, STILL_T, prepare);
+  const { playing, toggle } = useGlassLoop(rootRef, DUR, STILL_T, prepare, still);
   const hot = lines.find((line) => line.kind === "denied");
 
   return (
@@ -210,7 +214,7 @@ export function InvoiceGlassScene({ data }: { data: InvoiceGlassData }) {
               g.stage,
               g[layout.name],
               styles[layout.name],
-              layout.name === "desktop" ? "@max-[480px]:hidden" : "hidden @max-[480px]:block",
+              still ? layout.name !== "desktop" && "hidden" : layout.name === "desktop" ? "@max-[480px]:hidden" : "hidden @max-[480px]:block",
             )}
             style={cssVars(layout.vars)}
           >
@@ -312,7 +316,7 @@ export function InvoiceGlassScene({ data }: { data: InvoiceGlassData }) {
           </div>
         ))}
       </div>
-      <GlassPause playing={playing} toggle={toggle} pause={data.pause} play={data.play} />
+      {!still && <GlassPause playing={playing} toggle={toggle} pause={data.pause} play={data.play} />}
     </div>
   );
 }

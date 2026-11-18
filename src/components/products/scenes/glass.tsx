@@ -40,12 +40,15 @@ const subscribeReduced = (onChange: () => void) => {
  * elements and returns the function that draws one frame at time t; it runs
  * again when the fonts arrive and whenever the scene is resized. Under reduced
  * motion the scene holds the `still` frame until the visitor presses play.
+ * `frozen` holds that frame for good: the scene is then a picture, as in the
+ * home page's product row.
  */
 export function useGlassLoop(
   rootRef: RefObject<HTMLElement | null>,
   dur: number,
   still: number,
   prepare: (root: HTMLElement) => (t: number) => void,
+  frozen = false,
 ) {
   const drawRef = useRef<(t: number) => void>(() => {});
   const timeRef = useRef(0);
@@ -53,7 +56,7 @@ export function useGlassLoop(
   const reduced = useSyncExternalStore(subscribeReduced, () => window.matchMedia(REDUCED).matches, () => false);
   // Null until the visitor presses the toggle; until then reduced motion decides.
   const [choice, setChoice] = useState<boolean | null>(null);
-  const playing = choice ?? !reduced;
+  const playing = frozen ? false : (choice ?? !reduced);
 
   useEffect(() => {
     const root = rootRef.current;

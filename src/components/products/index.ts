@@ -3,6 +3,7 @@ export { HeroLoop, type HeroLoopData } from "./HeroLoop";
 export { productIcons } from "./icons";
 export { ModulesDiagram, type DiagramNode } from "./ModulesDiagram";
 export { OtusPrompts, type OtusPrompt } from "./OtusPrompts";
+export { ProductRail, type ProductRailItem } from "./ProductRail";
 export {
   ClaimScene,
   CoverageGlassScene,

@@ -86,7 +86,11 @@ function prepareStage(root: HTMLElement, count: number) {
  * portrait layout below 480px, a still frame under reduced motion and the
  * figure itself as the pause control (WCAG 2.2.2).
  */
-export function OtusGlassScene({ data }: { data: OtusGlassData }) {
+export function OtusGlassScene({ data, still }: {
+  data: OtusGlassData;
+  /** A picture, not a film: the finished frame of the desktop layout at any width, with no pause control. */
+  still?: boolean;
+}) {
   const rootRef = useRef<HTMLDivElement>(null);
   const count = data.items.length;
   const prepare = useCallback(
@@ -97,7 +101,7 @@ export function OtusGlassScene({ data }: { data: OtusGlassData }) {
     [count],
   );
   // The still frame is the last scenario with its whole answer and its actions in view.
-  const { playing, toggle } = useGlassLoop(rootRef, STEP * count, STEP * count - 1.2, prepare);
+  const { playing, toggle } = useGlassLoop(rootRef, STEP * count, STEP * count - 1.2, prepare, still);
 
   return (
     <div ref={rootRef} className={cn(SCENE_CARD, SCENE_CARD_HERO, "@container relative rounded-[10px]")}>
@@ -106,7 +110,7 @@ export function OtusGlassScene({ data }: { data: OtusGlassData }) {
           <div
             key={name}
             data-stage={name}
-            className={cn(g.stage, g[name], styles[name], name === "desktop" ? "@max-[480px]:hidden" : "hidden @max-[480px]:block")}
+            className={cn(g.stage, g[name], styles[name], still ? name !== "desktop" && "hidden" : name === "desktop" ? "@max-[480px]:hidden" : "hidden @max-[480px]:block")}
           >
             <div className={g.ground} />
             <div className={g.floor} />
@@ -163,7 +167,7 @@ export function OtusGlassScene({ data }: { data: OtusGlassData }) {
           </div>
         ))}
       </div>
-      <GlassPause playing={playing} toggle={toggle} pause={data.pause} play={data.play} />
+      {!still && <GlassPause playing={playing} toggle={toggle} pause={data.pause} play={data.play} />}
     </div>
   );
 }

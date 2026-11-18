@@ -250,7 +250,11 @@ const subscribeReduced = (onChange: () => void) => {
  * margin. Under reduced motion it shows the finished frame until the visitor
  * presses play, and the toggle pauses it at any time (WCAG 2.2.2).
  */
-export function CoverageGlassScene({ data }: { data: CoverageGlassData }) {
+export function CoverageGlassScene({ data, still }: {
+  data: CoverageGlassData;
+  /** A picture, not a film: the finished frame of the desktop layout at any width, with no pause control. */
+  still?: boolean;
+}) {
   const rootRef = useRef<HTMLDivElement>(null);
   const stagesRef = useRef<Stage[]>([]);
   const timeRef = useRef(0);
@@ -258,7 +262,7 @@ export function CoverageGlassScene({ data }: { data: CoverageGlassData }) {
   const reduced = useSyncExternalStore(subscribeReduced, () => window.matchMedia(REDUCED).matches, () => false);
   // Null until the visitor presses the toggle; until then reduced motion decides.
   const [choice, setChoice] = useState<boolean | null>(null);
-  const playing = choice ?? !reduced;
+  const playing = still ? false : (choice ?? !reduced);
 
   const rows = useMemo<Row[]>(
     () =>
@@ -326,7 +330,7 @@ export function CoverageGlassScene({ data }: { data: CoverageGlassData }) {
             className={cn(
               styles.stage,
               styles[layout.name],
-              layout.name === "desktop" ? "@max-[480px]:hidden" : "hidden @max-[480px]:block",
+              still ? layout.name !== "desktop" && "hidden" : layout.name === "desktop" ? "@max-[480px]:hidden" : "hidden @max-[480px]:block",
             )}
             style={cssVars(layout.vars)}
           >
@@ -439,16 +443,18 @@ export function CoverageGlassScene({ data }: { data: CoverageGlassData }) {
         ))}
       </div>
       {/* The whole figure is the pause control (WCAG 2.2.2): click, tap, Enter or Space. Its icon shows on hover, on keyboard focus and while paused. */}
-      <button
-        type="button"
-        onClick={() => setChoice(!playing)}
-        aria-label={playing ? data.pause : data.play}
-        className="group absolute inset-0 z-10 cursor-pointer rounded-[10px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus"
-      >
-        <span aria-hidden className={cn("pointer-events-none absolute bottom-3 right-3 flex h-8 w-8 items-center justify-center rounded-pill bg-card/85 text-body shadow-[0_0_0_1px_rgba(44,43,42,.12)] transition-opacity duration-150 ease-brand group-hover:opacity-100 group-focus-visible:opacity-100", playing ? "opacity-0" : "opacity-100")}>
-          {playing ? <Pause size={14} /> : <Play size={14} />}
-        </span>
-      </button>
+      {!still && (
+        <button
+          type="button"
+          onClick={() => setChoice(!playing)}
+          aria-label={playing ? data.pause : data.play}
+          className="group absolute inset-0 z-10 cursor-pointer rounded-[10px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-focus"
+        >
+          <span aria-hidden className={cn("pointer-events-none absolute bottom-3 right-3 flex h-8 w-8 items-center justify-center rounded-pill bg-card/85 text-body shadow-[0_0_0_1px_rgba(44,43,42,.12)] transition-opacity duration-150 ease-brand group-hover:opacity-100 group-focus-visible:opacity-100", playing ? "opacity-0" : "opacity-100")}>
+            {playing ? <Pause size={14} /> : <Play size={14} />}
+          </span>
+        </button>
+      )}
     </div>
   );
 }

@@ -77,6 +77,11 @@
     "benefits": {
       "heading": "Cosa offre True Aim",
       "items": {
+        "dataExtraction": {
+          "title": "I vostri dati sinistri, pronti per l’IA",
+          "text": "True Aim li legge, ne estrae le informazioni, le mette in contesto e costruisce un unico database strutturato.",
+          "link": "Data Extraction"
+        },
         "claimsDecisioning": {
           "title": "Sinistri liquidati in minuti, non in settimane",
           "text": "Ogni voce viene verificata rispetto alle condizioni di polizza, l’importo calcolato e la motivazione messa per iscritto, pronti per la conferma del vostro liquidatore.",
@@ -91,7 +96,16 @@
           "title": "Rapporti danni completi, preparati per voi",
           "text": "Già alla denuncia di sinistro, foto e documenti diventano un preventivo quantificato e l’ambito completo dei lavori, prima che qualcuno vada sul posto.",
           "link": "AI Damage Assessment & Reporting"
+        },
+        "otus": {
+          "title": "Un esperto basato sull’IA per ogni membro del team",
+          "text": "Chiedete a Otus qualsiasi cosa su un sinistro, a voce o per iscritto, e la risposta arriva dal sinistro, dalla polizza e dal fascicolo.",
+          "link": "Otus"
         }
+      },
+      "controls": {
+        "previous": "Precedente",
+        "next": "Successivo"
       }
     },
     "logos": {

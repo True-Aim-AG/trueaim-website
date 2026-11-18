@@ -157,13 +157,17 @@ function prepareStage(root: HTMLElement, layout: Layout) {
  * portrait layout below 480px, a still frame under reduced motion and the
  * figure itself as the pause control (WCAG 2.2.2).
  */
-export function DamageGlassScene({ data }: { data: DamageGlassData }) {
+export function DamageGlassScene({ data, still }: {
+  data: DamageGlassData;
+  /** A picture, not a film: the finished frame of the desktop layout at any width, with no pause control. */
+  still?: boolean;
+}) {
   const rootRef = useRef<HTMLDivElement>(null);
   const prepare = useCallback((root: HTMLElement) => {
     const draws = LAYOUTS.map((layout) => prepareStage(root.querySelector<HTMLElement>(`[data-stage="${layout.name}"]`)!, layout));
     return (t: number) => draws.forEach((draw) => draw(t));
   }, []);
-  const { playing, toggle } = useGlassLoop(rootRef, DUR, STILL_T, prepare);
+  const { playing, toggle } = useGlassLoop(rootRef, DUR, STILL_T, prepare, still);
 
   return (
     <div ref={rootRef} className={cn(SCENE_CARD, SCENE_CARD_HERO, "@container relative rounded-[10px]")}>
@@ -176,7 +180,7 @@ export function DamageGlassScene({ data }: { data: DamageGlassData }) {
               g.stage,
               g[layout.name],
               styles[layout.name],
-              layout.name === "desktop" ? "@max-[480px]:hidden" : "hidden @max-[480px]:block",
+              still ? layout.name !== "desktop" && "hidden" : layout.name === "desktop" ? "@max-[480px]:hidden" : "hidden @max-[480px]:block",
             )}
             style={cssVars(layout.vars)}
           >
@@ -267,7 +271,7 @@ export function DamageGlassScene({ data }: { data: DamageGlassData }) {
           </div>
         ))}
       </div>
-      <GlassPause playing={playing} toggle={toggle} pause={data.pause} play={data.play} />
+      {!still && <GlassPause playing={playing} toggle={toggle} pause={data.pause} play={data.play} />}
     </div>
   );
 }

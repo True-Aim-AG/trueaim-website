@@ -77,6 +77,11 @@
     "benefits": {
       "heading": "What True Aim delivers",
       "items": {
+        "dataExtraction": {
+          "title": "Your claims data, ready for AI",
+          "text": "True Aim reads it, extracts it, puts it in context and builds one structured database.",
+          "link": "Data Extraction"
+        },
         "claimsDecisioning": {
           "title": "Claims settled in minutes, not weeks",
           "text": "Every line is checked against the policy wording, the amount calculated and the reason written down, ready for your adjuster to confirm.",
@@ -91,7 +96,16 @@
           "title": "Complete damage reports, prepared for you",
           "text": "Photographs and documents become a priced estimate and a full scope of work at first notification, before anyone visits the site.",
           "link": "AI Damage Assessment & Reporting"
+        },
+        "otus": {
+          "title": "An AI-powered expert for every team member",
+          "text": "Ask Otus anything about a claim, by voice or text, and the answer comes from the claim, the policy and the record.",
+          "link": "Otus"
         }
+      },
+      "controls": {
+        "previous": "Previous",
+        "next": "Next"
       }
     },
     "logos": {
