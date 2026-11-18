@@ -1005,53 +1005,62 @@
       "tagline": "Ein KI-gestützter Experte für jedes Teammitglied.",
       "hero": {
         "title": "Otus, der Schadenspezialist von True Aim",
-        "summary": "Otus ist ein KI-gestützter Experte für jedes Teammitglied, in jeder Lösung von True Aim. Fragen Sie Otus alles zu einem Schaden, per Sprache oder Text, und die Antwort kommt aus dem Schaden, der Police und der Akte. Otus entwirft, erklärt und plant und hat keine Entscheidungsbefugnis: Ihr Team entscheidet."
-      },
-      "prompts": {
-        "label": "Otus: wählen Sie ein Szenario und sehen Sie die Antwort",
-        "youLabel": "Sie",
-        "otusLabel": "Otus",
-        "items": [
-          {
-            "id": "plan",
-            "tab": "Meinen Tag planen",
-            "prompt": "Otus, ich muss heute meinen Rückstand abarbeiten. Wo fange ich an?",
-            "answer": [
-              "Sie haben 14 offene Schäden. Sechs sind bereit zur Bestätigung: Die Empfehlung ist vollständig und nichts fehlt, insgesamt etwa 20 Minuten. Drei warten auf Reparaturbetriebe, Erinnerungen gingen um 8:30 Uhr hinaus. Zwei brauchen Dokumente vom Kunden, heute Morgen nachgefasst.",
-              "Bleiben drei für Ihr Urteil: 62850 (Hotelnächte über der Höchstgrenze), 64812 (strittige Ursache) und 64799 (zwei Kostenvoranschläge weit auseinander). Beginnen Sie mit diesen drei, solange Sie frisch sind, und bestätigen Sie dann die sechs."
-            ],
-            "actions": [
-              "62850 öffnen",
-              "Die sechs anzeigen"
-            ]
-          },
-          {
-            "id": "handover",
-            "tab": "Einen Schaden übergeben",
-            "prompt": "Entwirf eine Übergabe-E-Mail für Schaden 5964 an meinen Kollegen in der Sachsparte.",
-            "answer": [
-              "Entwurf fertig. Betreff: Übergabe, Schaden 5964, Kfz-Garantie, J. Odermatt. Was bisher geschah: gemeldet am 3. Oktober, fünf Dokumente gelesen, Turbolader und Arbeitskosten anerkannt, Öl und Filter nach Klausel 2.4 ausgeschlossen, Ersatzfahrzeug an der Fünf-Tage-Grenze zurückgestellt.",
-              "Was offen ist: Die überarbeitete Rechnung der Werkstatt ist am Freitag fällig. Nächster Schritt: die Tage des Ersatzfahrzeugs bestätigen, sobald sie da ist. Die vollständige Akte ist verlinkt."
-            ],
-            "actions": [
-              "Aus Gmail senden",
-              "Kopieren"
-            ]
-          },
-          {
-            "id": "explain",
-            "tab": "Eine Entscheidung erklären",
-            "prompt": "Warum wurde Position 4 bei Schaden 62850 ausgeschlossen? Der Kunde fragt nach.",
-            "answer": [
-              "Position 4 ist der Ersatz des Geschirrspülers, 1.126,30. Die Police deckt den Schaden, den das Wasser verursacht hat, nicht das Gerät, das ihn verursacht hat: Klausel 4.2, ausgeschlossene Ursachen. Die Rechnung und der Bericht des Installateurs nennen beide den Geschirrspüler als Quelle des Lecks.",
-              "Hier ist eine Antwort an den Kunden in verständlicher Sprache, mit Zitat der Klausel. Nichts wird gesendet, bevor Sie es senden."
-            ],
-            "actions": [
-              "Entwurf öffnen",
-              "Klausel 4.2 anzeigen"
-            ]
-          }
-        ]
+        "summary": "Otus ist ein KI-gestützter Experte für jedes Teammitglied, in jeder Lösung von True Aim. Fragen Sie Otus alles zu einem Schaden, per Sprache oder Text, und die Antwort kommt aus dem Schaden, der Police und der Akte. Otus entwirft, erklärt und plant und hat keine Entscheidungsbefugnis: Ihr Team entscheidet.",
+        "scene": {
+          "alt": "Otus beantwortet nacheinander drei Fragen eines Sachbearbeiters: womit der Tag beginnt, eine Übergabe-E-Mail zu einem Schaden und warum eine Position ausgeschlossen wurde. Jede Antwort wird Zeile für Zeile geschrieben, mit den Aktionen, die Otus anbietet. Otus hat keine Entscheidungsbefugnis.",
+          "youLabel": "Sie",
+          "otusLabel": "Otus",
+          "footer": "Otus hat keine Entscheidungsbefugnis. Ihr Team entscheidet.",
+          "items": [
+            {
+              "id": "plan",
+              "tab": "Meinen Tag planen",
+              "prompt": "Otus, ich muss heute meinen Rückstand abarbeiten. Wo fange ich an?",
+              "lines": [
+                "Sie haben 14 offene Schäden.",
+                "Sechs sind bereit zur Bestätigung, insgesamt etwa 20 Minuten.",
+                "Fünf warten auf Reparaturbetriebe oder Kundenunterlagen. Erinnerungen sind verschickt.",
+                "Drei brauchen Ihr Urteil: 62850, 64812 und 64799. Beginnen Sie dort."
+              ],
+              "actions": [
+                "62850 öffnen",
+                "Die sechs anzeigen"
+              ]
+            },
+            {
+              "id": "handover",
+              "tab": "Einen Schaden übergeben",
+              "prompt": "Entwirf eine Übergabe-E-Mail für Schaden 5964 an meinen Kollegen in der Sachsparte.",
+              "lines": [
+                "Entwurf fertig: Übergabe von Schaden 5964, Kfz-Garantie.",
+                "Genehmigt: Turbolader und Arbeitszeit.",
+                "Ausgeschlossen nach Klausel 2.4: Öl und Filter.",
+                "Offen: die korrigierte Rechnung der Werkstatt. Die vollständige Akte ist verlinkt."
+              ],
+              "actions": [
+                "E-Mail senden",
+                "Kopieren"
+              ]
+            },
+            {
+              "id": "explain",
+              "tab": "Eine Entscheidung erklären",
+              "prompt": "Warum wurde Position 4 bei Schaden 62850 ausgeschlossen? Der Kunde fragt nach.",
+              "lines": [
+                "Position 4 ist der Ersatz des Geschirrspülers, 1.126,30.",
+                "Klausel 4.2 schließt das Gerät aus, das das Leck verursacht hat.",
+                "Der Bericht des Installateurs nennt den Geschirrspüler als Ursache.",
+                "Eine Antwort an den Kunden ist entworfen. Nichts wird gesendet, bevor Sie es senden."
+              ],
+              "actions": [
+                "Entwurf öffnen",
+                "Klausel 4.2 anzeigen"
+              ]
+            }
+          ],
+          "pause": "Animation anhalten",
+          "play": "Animation abspielen"
+        }
       },
       "keys": {
         "heading": "Ein Kollege für alle",

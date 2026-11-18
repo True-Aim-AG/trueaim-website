@@ -1005,53 +1005,62 @@
       "tagline": "An AI-powered expert for every team member.",
       "hero": {
         "title": "Otus, True Aim's claims specialist",
-        "summary": "Otus is an AI-powered expert for every team member, in every True Aim solution. Ask Otus anything about a claim, by voice or text, and the answer comes from the claim, the policy and the record. Otus drafts, explains and plans, and has no decision rights: your team decides."
-      },
-      "prompts": {
-        "label": "Otus: pick a scenario and see the answer",
-        "youLabel": "You",
-        "otusLabel": "Otus",
-        "items": [
-          {
-            "id": "plan",
-            "tab": "Help plan my day",
-            "prompt": "Otus, I need to clear my backlog today. Where do I start?",
-            "answer": [
-              "You have 14 open claims. Six are ready to confirm: the recommendation is complete and nothing is missing, about 20 minutes in total. Three are waiting on repairers, reminders went out at 08:30. Two need documents from the customer, chased this morning.",
-              "That leaves three for your judgement: 62850 (hotel nights above the cap), 64812 (disputed cause) and 64799 (two estimates far apart). Start with those three while you are fresh, then confirm the six."
-            ],
-            "actions": [
-              "Open 62850",
-              "Show the six"
-            ]
-          },
-          {
-            "id": "handover",
-            "tab": "Hand over a claim",
-            "prompt": "Draft a handover email for claim 5964 to my colleague in property.",
-            "answer": [
-              "Draft ready. Subject: Handover, claim 5964, motor warranty, J. Odermatt. What has happened: reported 3 October, five documents read, turbocharger and labour approved, oil and filter excluded under clause 2.4, courtesy vehicle set aside at the five-day cap.",
-              "What is open: the garage's revised invoice is due Friday. Next step: confirm the courtesy days once it is in. The full record is linked."
-            ],
-            "actions": [
-              "Send from Gmail",
-              "Copy"
-            ]
-          },
-          {
-            "id": "explain",
-            "tab": "Explain a decision",
-            "prompt": "Why was line 4 on claim 62850 excluded? The customer is asking.",
-            "answer": [
-              "Line 4 is the dishwasher replacement, 1'126.30. The policy covers the damage the water caused, not the appliance that caused it: clause 4.2, excluded causes. The invoice and the plumber's report both name the dishwasher as the source of the leak.",
-              "Here is a reply to the customer in plain language, quoting the clause. Nothing is sent until you send it."
-            ],
-            "actions": [
-              "Open the draft",
-              "Show clause 4.2"
-            ]
-          }
-        ]
+        "summary": "Otus is an AI-powered expert for every team member, in every True Aim solution. Ask Otus anything about a claim, by voice or text, and the answer comes from the claim, the policy and the record. Otus drafts, explains and plans, and has no decision rights: your team decides.",
+        "scene": {
+          "alt": "Otus answers three questions from an adjuster in turn: where to start the day, a handover email for a claim, and why a line was excluded. Each answer is written out line by line with the actions Otus offers. Otus has no decision rights.",
+          "youLabel": "You",
+          "otusLabel": "Otus",
+          "footer": "Otus has no decision rights. Your team decides.",
+          "items": [
+            {
+              "id": "plan",
+              "tab": "Help plan my day",
+              "prompt": "Otus, I need to clear my backlog today. Where do I start?",
+              "lines": [
+                "You have 14 open claims.",
+                "Six are ready to confirm, about 20 minutes in total.",
+                "Five are waiting on repairers or customer documents. Reminders are out.",
+                "Three need your judgement: 62850, 64812 and 64799. Start there."
+              ],
+              "actions": [
+                "Open 62850",
+                "Show the six"
+              ]
+            },
+            {
+              "id": "handover",
+              "tab": "Hand over a claim",
+              "prompt": "Draft a handover email for claim 5964 to my colleague in property.",
+              "lines": [
+                "Draft ready: handover of claim 5964, motor warranty.",
+                "Approved: turbocharger and labour.",
+                "Excluded under clause 2.4: oil and filter.",
+                "Open: the garage's revised invoice. The full record is linked."
+              ],
+              "actions": [
+                "Send email",
+                "Copy"
+              ]
+            },
+            {
+              "id": "explain",
+              "tab": "Explain a decision",
+              "prompt": "Why was line 4 on claim 62850 excluded? The customer is asking.",
+              "lines": [
+                "Line 4 is the dishwasher replacement, 1'126.30.",
+                "Clause 4.2 excludes the appliance that caused the leak.",
+                "The plumber's report names the dishwasher as the source.",
+                "A reply to the customer is drafted. Nothing is sent until you send it."
+              ],
+              "actions": [
+                "Open the draft",
+                "Show clause 4.2"
+              ]
+            }
+          ],
+          "pause": "Pause animation",
+          "play": "Play animation"
+        }
       },
       "keys": {
         "heading": "A teammate for everyone",

@@ -23,7 +23,7 @@ import {
   HeroLoop,
   InvoiceGlassScene,
   LineBenchGlassScene,
-  OtusPrompts,
+  OtusGlassScene,
   RecordScene,
   RoutingGlassScene,
   ScopeGlassScene,
@@ -34,7 +34,7 @@ import {
   type HeroLoopData,
   type InvoiceGlassData,
   type LineBenchGlassData,
-  type OtusPrompt,
+  type OtusGlassData,
   type RecordSceneData,
   type RoutingGlassData,
   type ScopeGlassData,
@@ -123,15 +123,7 @@ function visual(product: Product, t: Translate) {
     case "damageReporting":
       return <DamageGlassScene data={t.raw(`${key}.hero.scene`) as DamageGlassData} />;
     case "otus":
-      return (
-        <OtusPrompts
-          label={t("otus.prompts.label")}
-          youLabel={t("otus.prompts.youLabel")}
-          otusLabel={t("otus.prompts.otusLabel")}
-          prompts={t.raw("otus.prompts.items") as OtusPrompt[]}
-          hero
-        />
-      );
+      return <OtusGlassScene data={t.raw(`${key}.hero.scene`) as OtusGlassData} />;
   }
 }
 
@@ -329,7 +321,7 @@ export default async function ProductPage({ params }: Props) {
           summary: t(`${key}.hero.summary`),
           buttons,
           visual: visual(product, t),
-          visualWidth: key === "otus" ? undefined : 680,
+          visualWidth: 620,
           texture: textures[key],
         }}
         faq={{ heading: faqHeading, items: faqs }}

@@ -11,6 +11,7 @@ import {
   LineBenchGlassScene,
   LineBenchScene,
   ModulesDiagram,
+  OtusGlassScene,
   OtusPrompts,
   OutcomesScene,
   RecordScene,
@@ -427,5 +428,31 @@ describe("Product scenes", () => {
     expect(routing.match(/data-route/g)).toHaveLength(4);
     expect(routing).toContain("Judgement is needed.");
     expect(routing).toContain('aria-label="Pause animation"');
+  });
+
+  it("renders the Otus hero as one image: each scenario's question, answer lines and actions, and the line on decision rights", () => {
+    const html = renderToStaticMarkup(
+      <OtusGlassScene
+        data={{
+          alt: "Otus answers an adjuster's questions",
+          youLabel: "You",
+          otusLabel: "Otus",
+          footer: "Otus has no decision rights. Your team decides.",
+          items: [
+            { id: "plan", tab: "Help plan my day", prompt: "Where do I start?", lines: ["You have 14 open claims.", "Three need your judgement."], actions: ["Open 62850"] },
+            { id: "explain", tab: "Explain a decision", prompt: "Why was line 4 excluded?", lines: ["Clause 4.2 excludes the appliance."], actions: ["Open the draft", "Show clause 4.2"] },
+          ],
+          pause: "Pause animation",
+          play: "Play animation",
+        }}
+      />,
+    );
+    expect(html.match(/role="img"/g)).toHaveLength(1);
+    // Desktop and phone stages each hold every scenario and every answer line.
+    expect(html.match(/data-turn/g)).toHaveLength(4);
+    expect(html.match(/data-line/g)).toHaveLength(6);
+    expect(html).toContain("Your team decides.");
+    expect(html).not.toContain('role="tab"');
+    expect(html).toContain('aria-label="Pause animation"');
   });
 });

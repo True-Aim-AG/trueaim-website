@@ -1005,53 +1005,62 @@
       "tagline": "Un esperto basato sull’IA per ogni membro del team.",
       "hero": {
         "title": "Otus, lo specialista sinistri di True Aim",
-        "summary": "Otus è un esperto basato sull’IA per ogni membro del team, in ogni soluzione True Aim. Chiedete a Otus qualsiasi cosa su un sinistro, a voce o per iscritto, e la risposta arriva dal sinistro, dalla polizza e dal fascicolo. Otus redige, spiega e pianifica, e non ha potere decisionale: decide il vostro team."
-      },
-      "prompts": {
-        "label": "Otus: scegliete uno scenario e guardate la risposta",
-        "youLabel": "Tu",
-        "otusLabel": "Otus",
-        "items": [
-          {
-            "id": "plan",
-            "tab": "Pianificare la giornata",
-            "prompt": "Otus, oggi devo smaltire l’arretrato. Da dove comincio?",
-            "answer": [
-              "Hai 14 sinistri aperti. Sei sono pronti per la conferma: la raccomandazione è completa e non manca nulla, circa 20 minuti in totale. Tre aspettano i riparatori, i solleciti sono partiti alle 08:30. Due hanno bisogno di documenti dal cliente, sollecitati stamattina.",
-              "Ne restano tre per il tuo giudizio: 62850 (notti in hotel oltre il massimale), 64812 (causa contestata) e 64799 (due preventivi molto distanti). Inizia da questi tre finché sei fresco, poi conferma i sei."
-            ],
-            "actions": [
-              "Apri 62850",
-              "Mostra i sei"
-            ]
-          },
-          {
-            "id": "handover",
-            "tab": "Passare un sinistro",
-            "prompt": "Redigi un’e-mail di passaggio di consegne per il sinistro 5964 al mio collega del ramo property.",
-            "answer": [
-              "Bozza pronta. Oggetto: Passaggio di consegne, sinistro 5964, garanzia auto, J. Odermatt. Cosa è successo: denunciato il 3 ottobre, cinque documenti letti, turbocompressore e manodopera accolti, olio e filtro esclusi ai sensi della clausola 2.4, auto di cortesia messa in attesa al massimale di cinque giorni.",
-              "Cosa resta aperto: la fattura rivista dell’officina è attesa venerdì. Prossimo passo: confermare i giorni di cortesia appena arriva. Il fascicolo completo è collegato."
-            ],
-            "actions": [
-              "Invia da Gmail",
-              "Copia"
-            ]
-          },
-          {
-            "id": "explain",
-            "tab": "Spiegare una decisione",
-            "prompt": "Perché la voce 4 del sinistro 62850 è stata esclusa? Il cliente lo chiede.",
-            "answer": [
-              "La voce 4 è la sostituzione della lavastoviglie, 1.126,30. La polizza copre il danno causato dall’acqua, non l’apparecchio che lo ha causato: clausola 4.2, cause escluse. La fattura e il rapporto dell’idraulico indicano entrambi la lavastoviglie come origine della perdita.",
-              "Ecco una risposta al cliente in linguaggio semplice, con la citazione della clausola. Nulla viene inviato finché non lo invii tu."
-            ],
-            "actions": [
-              "Apri la bozza",
-              "Mostra la clausola 4.2"
-            ]
-          }
-        ]
+        "summary": "Otus è un esperto basato sull’IA per ogni membro del team, in ogni soluzione True Aim. Chiedete a Otus qualsiasi cosa su un sinistro, a voce o per iscritto, e la risposta arriva dal sinistro, dalla polizza e dal fascicolo. Otus redige, spiega e pianifica, e non ha potere decisionale: decide il vostro team.",
+        "scene": {
+          "alt": "Otus risponde a turno a tre domande di un liquidatore: da dove iniziare la giornata, un’e-mail di passaggio di consegne per un sinistro e perché una voce è stata esclusa. Ogni risposta è scritta riga per riga, con le azioni che Otus propone. Otus non ha potere decisionale.",
+          "youLabel": "Tu",
+          "otusLabel": "Otus",
+          "footer": "Otus non ha potere decisionale. Decide il vostro team.",
+          "items": [
+            {
+              "id": "plan",
+              "tab": "Pianificare la giornata",
+              "prompt": "Otus, oggi devo smaltire l’arretrato. Da dove comincio?",
+              "lines": [
+                "Avete 14 sinistri aperti.",
+                "Sei sono pronti da confermare, circa 20 minuti in totale.",
+                "Cinque attendono i riparatori o i documenti del cliente. I solleciti sono partiti.",
+                "Tre richiedono la vostra valutazione: 62850, 64812 e 64799. Iniziate da lì."
+              ],
+              "actions": [
+                "Apri 62850",
+                "Mostra i sei"
+              ]
+            },
+            {
+              "id": "handover",
+              "tab": "Passare un sinistro",
+              "prompt": "Redigi un’e-mail di passaggio di consegne per il sinistro 5964 al mio collega del ramo property.",
+              "lines": [
+                "Bozza pronta: passaggio di consegne del sinistro 5964, garanzia auto.",
+                "Approvato: turbocompressore e manodopera.",
+                "Escluso secondo la clausola 2.4: olio e filtro.",
+                "In sospeso: la fattura corretta dell’officina. Il fascicolo completo è collegato."
+              ],
+              "actions": [
+                "Invia e-mail",
+                "Copia"
+              ]
+            },
+            {
+              "id": "explain",
+              "tab": "Spiegare una decisione",
+              "prompt": "Perché la voce 4 del sinistro 62850 è stata esclusa? Il cliente lo chiede.",
+              "lines": [
+                "La voce 4 è la sostituzione della lavastoviglie, 1.126,30.",
+                "La clausola 4.2 esclude l’apparecchio che ha causato la perdita.",
+                "Il rapporto dell’idraulico indica la lavastoviglie come origine.",
+                "Una risposta al cliente è redatta. Nulla viene inviato finché non lo inviate voi."
+              ],
+              "actions": [
+                "Apri la bozza",
+                "Mostra la clausola 4.2"
+              ]
+            }
+          ],
+          "pause": "Metti in pausa l’animazione",
+          "play": "Avvia l’animazione"
+        }
       },
       "keys": {
         "heading": "Un collega per tutti",

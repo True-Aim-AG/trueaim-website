@@ -1005,53 +1005,62 @@
       "tagline": "Un expert IA pour chaque membre de l’équipe.",
       "hero": {
         "title": "Otus, le spécialiste sinistres de True Aim",
-        "summary": "Otus est un expert IA pour chaque membre de l’équipe, dans chaque solution True Aim. Posez à Otus n’importe quelle question sur un sinistre, à la voix ou au clavier, et la réponse vient du sinistre, de la police et du dossier. Otus rédige, explique et planifie, et n’a aucun pouvoir de décision : c’est votre équipe qui décide."
-      },
-      "prompts": {
-        "label": "Otus : choisissez un scénario et voyez la réponse",
-        "youLabel": "Vous",
-        "otusLabel": "Otus",
-        "items": [
-          {
-            "id": "plan",
-            "tab": "Planifier ma journée",
-            "prompt": "Otus, je dois résorber mon retard aujourd’hui. Par où commencer ?",
-            "answer": [
-              "Vous avez 14 sinistres ouverts. Six sont prêts à confirmer : la recommandation est complète et rien ne manque, environ 20 minutes au total. Trois attendent des réparateurs, les rappels sont partis à 8 h 30. Deux ont besoin de documents du client, relancés ce matin.",
-              "Il en reste trois pour votre jugement : 62850 (nuits d’hôtel au-dessus du plafond), 64812 (cause contestée) et 64799 (deux devis très éloignés). Commencez par ces trois tant que vous avez l’esprit clair, puis confirmez les six."
-            ],
-            "actions": [
-              "Ouvrir 62850",
-              "Afficher les six"
-            ]
-          },
-          {
-            "id": "handover",
-            "tab": "Transmettre un sinistre",
-            "prompt": "Rédige un e-mail de passation pour le sinistre 5964 à mon collègue du service dommages aux biens.",
-            "answer": [
-              "Brouillon prêt. Objet : Passation, sinistre 5964, garantie auto, J. Odermatt. Ce qui s’est passé : déclaré le 3 octobre, cinq documents lus, turbocompresseur et main-d’œuvre acceptés, huile et filtre exclus au titre de la clause 2.4, véhicule de courtoisie mis de côté au plafond de cinq jours.",
-              "Ce qui reste ouvert : la facture révisée du garage est attendue vendredi. Prochaine étape : confirmer les jours de courtoisie dès qu’elle arrive. Le dossier complet est lié."
-            ],
-            "actions": [
-              "Envoyer depuis Gmail",
-              "Copier"
-            ]
-          },
-          {
-            "id": "explain",
-            "tab": "Expliquer une décision",
-            "prompt": "Pourquoi la ligne 4 du sinistre 62850 a-t-elle été exclue ? Le client pose la question.",
-            "answer": [
-              "La ligne 4 est le remplacement du lave-vaisselle, 1 126,30. La police couvre les dommages causés par l’eau, pas l’appareil qui les a causés : clause 4.2, causes exclues. La facture et le rapport du plombier désignent tous deux le lave-vaisselle comme origine de la fuite.",
-              "Voici une réponse au client en langage courant, citant la clause. Rien n’est envoyé tant que vous ne l’envoyez pas."
-            ],
-            "actions": [
-              "Ouvrir le brouillon",
-              "Afficher la clause 4.2"
-            ]
-          }
-        ]
+        "summary": "Otus est un expert IA pour chaque membre de l’équipe, dans chaque solution True Aim. Posez à Otus n’importe quelle question sur un sinistre, à la voix ou au clavier, et la réponse vient du sinistre, de la police et du dossier. Otus rédige, explique et planifie, et n’a aucun pouvoir de décision : c’est votre équipe qui décide.",
+        "scene": {
+          "alt": "Otus répond tour à tour à trois questions d’un gestionnaire : par où commencer la journée, un e-mail de passation pour un sinistre et pourquoi une ligne a été exclue. Chaque réponse s’écrit ligne par ligne, avec les actions qu’Otus propose. Otus n’a aucun pouvoir de décision.",
+          "youLabel": "Vous",
+          "otusLabel": "Otus",
+          "footer": "Otus n’a aucun pouvoir de décision. Votre équipe décide.",
+          "items": [
+            {
+              "id": "plan",
+              "tab": "Planifier ma journée",
+              "prompt": "Otus, je dois résorber mon retard aujourd’hui. Par où commencer ?",
+              "lines": [
+                "Vous avez 14 sinistres ouverts.",
+                "Six sont prêts à être confirmés, environ 20 minutes au total.",
+                "Cinq attendent des réparateurs ou des documents du client. Les relances sont parties.",
+                "Trois demandent votre appréciation : 62850, 64812 et 64799. Commencez par ceux-là."
+              ],
+              "actions": [
+                "Ouvrir 62850",
+                "Afficher les six"
+              ]
+            },
+            {
+              "id": "handover",
+              "tab": "Transmettre un sinistre",
+              "prompt": "Rédige un e-mail de passation pour le sinistre 5964 à mon collègue du service dommages aux biens.",
+              "lines": [
+                "Brouillon prêt : passation du sinistre 5964, garantie automobile.",
+                "Accepté : turbocompresseur et main-d’œuvre.",
+                "Exclu selon la clause 2.4 : huile et filtre.",
+                "En attente : la facture rectifiée du garage. Le dossier complet est en lien."
+              ],
+              "actions": [
+                "Envoyer l’e-mail",
+                "Copier"
+              ]
+            },
+            {
+              "id": "explain",
+              "tab": "Expliquer une décision",
+              "prompt": "Pourquoi la ligne 4 du sinistre 62850 a-t-elle été exclue ? Le client pose la question.",
+              "lines": [
+                "La ligne 4 est le remplacement du lave-vaisselle, 1 126,30.",
+                "La clause 4.2 exclut l’appareil à l’origine de la fuite.",
+                "Le rapport du plombier désigne le lave-vaisselle comme origine.",
+                "Une réponse au client est rédigée. Rien n’est envoyé tant que vous ne l’envoyez pas."
+              ],
+              "actions": [
+                "Ouvrir le brouillon",
+                "Afficher la clause 4.2"
+              ]
+            }
+          ],
+          "pause": "Mettre l’animation en pause",
+          "play": "Lancer l’animation"
+        }
       },
       "keys": {
         "heading": "Un coéquipier pour tous",
