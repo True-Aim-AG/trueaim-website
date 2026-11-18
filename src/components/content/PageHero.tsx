@@ -78,7 +78,7 @@ export function PageHero({
           wideCopy
             ? "lg:grid-cols-[minmax(0,1.5fr)_minmax(0,.5fr)] lg:gap-12"
             : visualWidth
-              ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,min(var(--hero-visual),60%))] lg:gap-12"
+              ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,min(var(--hero-visual),54%))] lg:gap-14"
               : "lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)] lg:gap-20",
           compact ? "lg:min-h-[360px]" : "lg:min-h-[720px]",
         )}
@@ -88,7 +88,13 @@ export function PageHero({
           {eyebrow && (
             <p className="mb-5 font-body text-[14px] font-medium uppercase tracking-[0.16em] text-accent">{eyebrow}</p>
           )}
-          <h1 className="font-display text-[34px] font-bold leading-[1.15] text-strong text-balance sm:text-[40px] lg:text-[54px] lg:leading-[1.1]">
+          <h1
+            className={cn(
+              "font-display text-[34px] font-bold leading-[1.15] text-strong text-balance sm:text-[40px] lg:leading-[1.1]",
+              // Beside a wide figure the copy column is narrower, so the heading steps down to keep its lines whole.
+              visualWidth ? "lg:text-[46px]" : "lg:text-[54px]",
+            )}
+          >
             {title}
           </h1>
           {summary && (
