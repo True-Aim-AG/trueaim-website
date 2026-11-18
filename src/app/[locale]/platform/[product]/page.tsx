@@ -18,6 +18,7 @@ import {
   type HeroButton,
 } from "@/components/content";
 import { ButtonLink } from "@/components/brand/Button";
+import { section } from "@/components/content/surface";
 import {
   CoverageGlassScene,
   DamageGlassScene,
@@ -260,16 +261,29 @@ function sections(product: Product, t: Translate, buttons: HeroButton[]) {
     case "otus":
       return (
         <>
-          <SplitText heading={t(`${key}.hero.title`)} headingLevel="h1" paragraphs={[t(`${key}.hero.summary`)]} image={{ src: "/brand/3d/symbol.webp", alt: t(`${key}.features.imageAlt`), width: 420, height: 236 }} imageSide="right" align="left" tone="white">
-            <Points items={(t.raw(`${key}.keys.items`) as KeyFact[]).map((item) => ({ title: item.label, text: item.text }))} align="left" />
-            <div className="mt-10 flex flex-col gap-3.5 sm:flex-row sm:flex-wrap">
-              {buttons.map((button, index) => (
-                <ButtonLink key={button.href} href={button.href} variant={index === 0 ? "primary" : "secondary"} size="lg">
-                  {button.label}
-                </ButtonLink>
-              ))}
+          <section className={section("white")}>
+            <div className="mx-auto max-w-7xl">
+              <div className="mx-auto max-w-[70ch] text-center">
+                <h1 className="font-display text-[30px] font-bold leading-[1.15] text-strong text-balance md:text-[40px]">{t(`${key}.hero.title`)}</h1>
+                <p className="mt-6 text-[18px] leading-[30px] text-body">{t(`${key}.hero.summary`)}</p>
+              </div>
+              <ul className="mx-auto mt-14 grid max-w-5xl gap-10 md:grid-cols-3">
+                {(t.raw(`${key}.keys.items`) as KeyFact[]).map((item) => (
+                  <li key={item.label} className="border-l-2 border-ta-blue-200 pl-6">
+                    <p className="font-display text-[19px] font-semibold leading-[1.3] text-strong">{item.label}</p>
+                    <p className="mt-1 text-[16px] leading-[1.55] text-muted">{item.text}</p>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-12 flex flex-col items-center justify-center gap-3.5 sm:flex-row sm:flex-wrap">
+                {buttons.map((button, index) => (
+                  <ButtonLink key={button.href} href={button.href} variant={index === 0 ? "primary" : "secondary"} size="lg">
+                    {button.label}
+                  </ButtonLink>
+                ))}
+              </div>
             </div>
-          </SplitText>
+          </section>
           <FeatureCards
             heading={t(`${key}.features.heading`)}
             columns={4}

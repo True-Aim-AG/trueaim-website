@@ -6,8 +6,6 @@
 .section {
   /* the row runs off both edges of the page */
   overflow-x: clip;
-  /* the ground of the platform film: one soft gradient, nothing drawn on it */
-  background: radial-gradient(125% 95% at 50% 60%, #eff0f1 0%, #e1e2e4 40%, #c8cacd 76%, #aeb1b5 100%);
   /* a closed tile, the open tile, and the space between tiles */
   --cw: 120px;
   --ch: 150px;
@@ -201,9 +199,13 @@
     opacity 0.3s 0.15s,
     visibility 0s;
 }
-/* the row has the ground already: a still brings its glass only, no ground, no card and no edge of its own */
+/* a still brings its glass only: no ground, no card and no edge of its own */
 .still {
   --ground: 0;
+}
+/* a scene clips at its stage; here that would cut the cards' shadows off in a straight line, which reads as a box */
+.still [data-stage] {
+  overflow: visible;
 }
 /* a soft shade under the picture, feathered to nothing, so it floats on the ground without a box */
 .still::before {
@@ -211,8 +213,8 @@
   position: absolute;
   inset: 4% 2% 0;
   border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(28, 30, 34, 0.13), rgba(28, 30, 34, 0.05) 60%, rgba(28, 30, 34, 0));
-  filter: blur(18px);
+  background: radial-gradient(closest-side, rgba(44, 46, 110, 0.12), rgba(44, 46, 110, 0.05) 55%, rgba(44, 46, 110, 0));
+  filter: blur(24px);
   pointer-events: none;
 }
 .still > * {
