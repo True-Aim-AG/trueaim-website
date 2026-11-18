@@ -131,7 +131,7 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Are the policy wording, the rules and the model that produced a decision recorded on the decision itself, at the version in force?",
     plainAnswer:
-      "On the record itself, not in a release note. Version history kept elsewhere is a different document about a different day. The standard is a decision that names the clause, catalogue entry or business rule applied, at the version in force at that moment, together with the model and prompt that took part. True Aim writes every action, by a person or a machine, to the record with the model, prompt, rule version and confidence attached, and records which version of the wording, catalogue or business rule was in force when the decision was made. Decisions are judged against the rules that actually applied.",
+      "On the record itself, not in a release note. Version history kept elsewhere is a different document about a different day. The standard is a decision that names the clause, catalogue entry or business rule applied, at the version in force at that moment, together with the model and prompt that took part. True Aim writes every action, by a person or a machine, to the record with the model, prompt, rule version and confidence attached. Decisions are judged against the rules that actually applied.",
     body: (
       <>
         <p>
@@ -143,9 +143,7 @@ export const scorecardQuestions: ScorecardQuestion[] = [
         </p>
         <p>
           True Aim writes every action, by a person or a machine, to the record
-          with the model, prompt, rule version and confidence attached, and
-          records which version of the wording, catalogue or business rule was
-          in force when the decision was made. Decisions are judged against the
+          with the model, prompt, rule version and confidence attached. Decisions are judged against the
           rules that actually applied.
         </p>
       </>
@@ -156,7 +154,7 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Who can alter a decision record, how would you know, and how long is the record kept?",
     plainAnswer:
-      "A record that can be altered without trace is a draft. The standard is a tamper-evident record and a retention period set deliberately to match the operation's own obligations, which usually outlast the claim by years. The claim you are asked about is often older than the log you kept. True Aim hashes every recorded item, so any alteration is detectable and the record is built to withstand challenge in dispute, audit or court. Retention is configured per client to match its own record-keeping obligations, and the retention status of every claim sits in the same record as its documents, events and decisions.",
+      "A record that can be altered without trace is a draft. The standard is a tamper-evident record and a retention period set deliberately to match the operation's own obligations, which usually outlast the claim by years. The claim you are asked about is often older than the log you kept. True Aim keeps every change to the record, with who made it and when, and the record is built to withstand challenge in dispute, audit or court. Retention is configured per client to match its own record-keeping obligations, and the retention status of every claim sits in the same record as its documents, events and decisions.",
     body: (
       <>
         <p>
@@ -167,8 +165,7 @@ export const scorecardQuestions: ScorecardQuestion[] = [
           log you kept.
         </p>
         <p>
-          True Aim hashes every recorded item, so any alteration is detectable
-          and the record is built to withstand challenge in dispute, audit or
+          True Aim keeps every change to the record, with who made it and when, and the record is built to withstand challenge in dispute, audit or
           court. Retention is configured per client to match its own
           record-keeping obligations, and the retention status of every claim
           sits in the same record as its documents, events and decisions.
@@ -206,7 +203,7 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "When a handler overrides the system, is the reason captured, and does anyone learn from it?",
     plainAnswer:
-      "Overrides are the most valuable quality signal a claims operation owns. Each one is a case in which an experienced person disagreed with the system, and the reason is either captured and studied or lost. The standard is a mandatory reason on every override and a routine that reads them. True Aim requires a reason for every human change and flags goodwill separately, so that a payment made outside cover never trains the model. Human and automated decisions are counted side by side in the claim record, which gives the operation a clean audit trail and clean training data at the same time.",
+      "Overrides are the most valuable quality signal a claims operation owns. Each one is a case in which an experienced person disagreed with the system, and the reason is either captured and studied or lost. The standard is a mandatory reason on every override and a routine that reads them. True Aim lets the handler record a reason for every human change and flags goodwill separately, so that a payment made outside cover never trains the model. Human and automated decisions are counted side by side in the claim record, which gives the operation a clean audit trail and clean training data at the same time.",
     body: (
       <>
         <p>
@@ -217,7 +214,7 @@ export const scorecardQuestions: ScorecardQuestion[] = [
           routine that reads them.
         </p>
         <p>
-          True Aim requires a reason for every human change and flags goodwill
+          True Aim lets the handler record a reason for every human change and flags goodwill
           separately, so that a payment made outside cover never trains the
           model. Human and automated decisions are counted side by side in the
           claim record, which gives the operation a clean audit trail and clean
@@ -284,7 +281,7 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "If you change systems, do the decision records leave with you in a form you can read without the software?",
     plainAnswer:
-      "Decision records belong to the claims operation, not to the software that produced them. The standard is an export a person can read without the system: the documents, the decisions, the reasons and the versions, in an open format. An audit trail that only opens inside the system that produced it is not an audit trail. True Aim exports the complete record of a claim, every action by a person or a machine with its model, prompt, rule version and confidence attached, as a single audit pack in one click.",
+      "Decision records belong to the claims operation, not to the software that produced them. The standard is an export a person can read without the system: the documents, the decisions, the reasons and the versions, in an open format. An audit trail that only opens inside the system that produced it is not an audit trail. True Aim exports the review of a claim as a PDF that a person can read without the system.",
     body: (
       <>
         <p>
@@ -295,9 +292,7 @@ export const scorecardQuestions: ScorecardQuestion[] = [
           the system that produced it is not an audit trail.
         </p>
         <p>
-          True Aim exports the complete record of a claim, every action by a
-          person or a machine with its model, prompt, rule version and
-          confidence attached, as a single audit pack in one click.
+          True Aim exports the review of a claim as a PDF that a person can read without the system.
         </p>
       </>
     ),

@@ -30,7 +30,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
 
           <div>
             <p className="text-body leading-[1.6]">
-              Die True Aim AG betreibt eine Plattform zur Schadenbearbeitung für Versicherer, Makler und jede Organisation in der Versicherungs-Wertschöpfungskette, die Schäden bearbeitet oder verarbeitet. Sicherheit ist eine Kernanforderung unseres Dienstes, und unsere Kunden vertrauen uns personenbezogene Daten ihrer Versicherungsnehmer an. Diese Seite beschreibt unser Sicherheitsprogramm im Überblick. Vollständige prüfungsfähige Nachweise (SOC-2-Type-II-Bericht nach Ausstellung, ISO-27001-Zertifikat, Liste der Unterauftragsverarbeiter, Auftragsverarbeitungsvertrag) erhalten Sie über{" "}
+              Die True Aim AG betreibt eine Plattform zur Schadenbearbeitung für Versicherer, Makler und jede Organisation in der Versicherungs-Wertschöpfungskette, die Schäden bearbeitet oder verarbeitet. Sicherheit ist eine Kernanforderung unseres Dienstes, und unsere Kunden vertrauen uns personenbezogene Daten ihrer Versicherungsnehmer an. Diese Seite beschreibt unser Sicherheitsprogramm im Überblick. Vollständige prüfungsfähige Nachweise (Bericht nach SOC 2 Type II, Zertifikat nach ISO/IEC 27001:2022, Liste der Unterauftragsverarbeiter, Auftragsverarbeitungsvertrag) erhalten Sie über{" "}
               <a href="mailto:security@trueaim.ai" className="text-link hover:underline">security@trueaim.ai</a>. Diese sind unter Vertraulichkeitsvereinbarung (NDA) erhältlich.
             </p>
 
@@ -38,7 +38,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Compliance-Rahmenwerke</h2>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2">
                 <li><strong className="text-strong">ISO/IEC 27001:2022</strong>: zertifiziert durch A-LIGN, Zertifikat ISMS-TR-090426, ausgestellt am 4. September 2026, gültig bis 4. September 2029.</li>
-                <li><strong className="text-strong">SOC 2 Type II</strong>: auditiert für den Prüfzeitraum vom 1. Mai bis 31. Juli 2026; der Abschlussbericht wurde ausgestellt.</li>
+                <li><strong className="text-strong">SOC 2 Type II</strong>: unser Bericht (Security, 1. Mai bis 31. Juli 2026) ist unter NDA erhältlich.</li>
                 <li><strong className="text-strong">Schweizer DSG</strong> und <strong className="text-strong">DSGVO</strong>: als Auftragsverarbeiter für Kundendaten daran ausgerichtet.</li>
                 <li><strong className="text-strong">EU AI Act</strong>: technische Dokumentation (AI Technical File) für den Automated Coverage Check wird geführt; der aktuelle Stand der Vorbereitung ist dokumentiert und wird nachverfolgt.</li>
               </ul>

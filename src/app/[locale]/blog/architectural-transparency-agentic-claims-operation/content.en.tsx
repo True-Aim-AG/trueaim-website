@@ -110,7 +110,7 @@ const pillars = [
     label: "Audit & Governance",
     cells: [
       "Continuous logging of decisions, source materials and statutory criteria.",
-      "Generates an instantaneous, immutable audit pack. Defensible by design.",
+      "Keeps every change and exports the claim review as a PDF. Defensible by design.",
     ],
   },
 ];
@@ -491,8 +491,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 </p>
 
                 <PullQuote>
-                  Not a black box. A glass box: auditable by design,
-                  cryptographically verifiable and open to every legitimate
+                  Not a black box. A glass box: auditable by design and open to every legitimate
                   stakeholder in the value chain.
                 </PullQuote>
               </MotionDiv>

@@ -93,14 +93,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Le libellé de la police, les règles et le modèle qui ont produit une décision sont-ils consignés sur la décision elle-même, dans la version en vigueur ?",
     plainAnswer:
-      "Sur le dossier lui-même, pas dans une note de version. Un historique des versions tenu ailleurs est un autre document sur un autre jour. La norme est une décision qui nomme la clause, l’entrée de catalogue ou la règle métier appliquée, dans la version en vigueur à ce moment-là, ainsi que le modèle et le prompt qui y ont participé. True Aim écrit chaque action, d’une personne ou d’une machine, dans le dossier avec le modèle, le prompt, la version de la règle et la confiance attachés, et consigne quelle version du libellé, du catalogue ou de la règle métier était en vigueur au moment de la décision. Les décisions sont jugées au regard des règles qui s’appliquaient réellement.",
+      "Sur le dossier lui-même, pas dans une note de version. Un historique des versions tenu ailleurs est un autre document sur un autre jour. La norme est une décision qui nomme la clause, l’entrée de catalogue ou la règle métier appliquée, dans la version en vigueur à ce moment-là, ainsi que le modèle et le prompt qui y ont participé. True Aim écrit chaque action, d’une personne ou d’une machine, dans le dossier avec le modèle, le prompt, la version de la règle et la confiance attachés. Les décisions sont jugées au regard des règles qui s’appliquaient réellement.",
     body: (
       <>
         <p>
           Sur le dossier lui-même, pas dans une note de version. Un historique des versions tenu ailleurs est un autre document sur un autre jour. La norme est une décision qui nomme la clause, l’entrée de catalogue ou la règle métier appliquée, dans la version en vigueur à ce moment-là, ainsi que le modèle et le prompt qui y ont participé.
         </p>
         <p>
-          True Aim écrit chaque action, d’une personne ou d’une machine, dans le dossier avec le modèle, le prompt, la version de la règle et la confiance attachés, et consigne quelle version du libellé, du catalogue ou de la règle métier était en vigueur au moment de la décision. Les décisions sont jugées au regard des règles qui s’appliquaient réellement.
+          True Aim écrit chaque action, d’une personne ou d’une machine, dans le dossier avec le modèle, le prompt, la version de la règle et la confiance attachés. Les décisions sont jugées au regard des règles qui s’appliquaient réellement.
         </p>
       </>
     ),
@@ -110,14 +110,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Qui peut modifier un dossier de décision, comment le sauriez-vous, et combien de temps le dossier est-il conservé ?",
     plainAnswer:
-      "Un dossier qui peut être modifié sans trace est un brouillon. La norme est un dossier dont toute altération est détectable et une durée de conservation fixée délibérément pour correspondre aux obligations propres de l’organisation, qui dépassent généralement le sinistre de plusieurs années. Le sinistre sur lequel on vous interroge est souvent plus ancien que le journal que vous avez conservé. True Aim hache chaque élément enregistré, de sorte que toute altération est détectable et que le dossier est conçu pour résister à une contestation en litige, en audit ou devant un tribunal. La conservation est configurée par client pour correspondre à ses propres obligations de tenue de registres, et le statut de conservation de chaque sinistre figure dans le même dossier que ses documents, événements et décisions.",
+      "Un dossier qui peut être modifié sans trace est un brouillon. La norme est un dossier dont toute altération est détectable et une durée de conservation fixée délibérément pour correspondre aux obligations propres de l’organisation, qui dépassent généralement le sinistre de plusieurs années. Le sinistre sur lequel on vous interroge est souvent plus ancien que le journal que vous avez conservé. True Aim conserve chaque modification du dossier, avec son auteur et sa date, et le dossier est conçu pour résister à une contestation en litige, en audit ou devant un tribunal. La conservation est configurée par client pour correspondre à ses propres obligations de tenue de registres, et le statut de conservation de chaque sinistre figure dans le même dossier que ses documents, événements et décisions.",
     body: (
       <>
         <p>
           Un dossier qui peut être modifié sans trace est un brouillon. La norme est un dossier dont toute altération est détectable et une durée de conservation fixée délibérément pour correspondre aux obligations propres de l’organisation, qui dépassent généralement le sinistre de plusieurs années. Le sinistre sur lequel on vous interroge est souvent plus ancien que le journal que vous avez conservé.
         </p>
         <p>
-          True Aim hache chaque élément enregistré, de sorte que toute altération est détectable et que le dossier est conçu pour résister à une contestation en litige, en audit ou devant un tribunal. La conservation est configurée par client pour correspondre à ses propres obligations de tenue de registres, et le statut de conservation de chaque sinistre figure dans le même dossier que ses documents, événements et décisions.
+          True Aim conserve chaque modification du dossier, avec son auteur et sa date, et le dossier est conçu pour résister à une contestation en litige, en audit ou devant un tribunal. La conservation est configurée par client pour correspondre à ses propres obligations de tenue de registres, et le statut de conservation de chaque sinistre figure dans le même dossier que ses documents, événements et décisions.
         </p>
       </>
     ),
@@ -144,14 +144,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Lorsqu’un gestionnaire passe outre le système, le motif est-il consigné, et quelqu’un en tire-t-il des enseignements ?",
     plainAnswer:
-      "Les interventions humaines sont le signal de qualité le plus précieux que possède une organisation sinistres. Chacune est un cas où une personne expérimentée a été en désaccord avec le système, et le motif est soit consigné et étudié, soit perdu. La norme est un motif obligatoire à chaque intervention et une routine qui les lit. True Aim exige un motif pour chaque modification humaine et signale séparément les gestes commerciaux, de sorte qu’un paiement hors couverture n’entraîne jamais le modèle. Les décisions humaines et automatisées sont comptées côte à côte dans le dossier sinistre, ce qui donne à l’organisation une piste d’audit propre et des données d’entraînement propres en même temps.",
+      "Les interventions humaines sont le signal de qualité le plus précieux que possède une organisation sinistres. Chacune est un cas où une personne expérimentée a été en désaccord avec le système, et le motif est soit consigné et étudié, soit perdu. La norme est un motif obligatoire à chaque intervention et une routine qui les lit. True Aim permet au gestionnaire de consigner un motif pour chaque modification humaine et signale séparément les gestes commerciaux, de sorte qu’un paiement hors couverture n’entraîne jamais le modèle. Les décisions humaines et automatisées sont comptées côte à côte dans le dossier sinistre, ce qui donne à l’organisation une piste d’audit propre et des données d’entraînement propres en même temps.",
     body: (
       <>
         <p>
           Les interventions humaines sont le signal de qualité le plus précieux que possède une organisation sinistres. Chacune est un cas où une personne expérimentée a été en désaccord avec le système, et le motif est soit consigné et étudié, soit perdu. La norme est un motif obligatoire à chaque intervention et une routine qui les lit.
         </p>
         <p>
-          True Aim exige un motif pour chaque modification humaine et signale séparément les gestes commerciaux, de sorte qu’un paiement hors couverture n’entraîne jamais le modèle. Les décisions humaines et automatisées sont comptées côte à côte dans le dossier sinistre, ce qui donne à l’organisation une piste d’audit propre et des données d’entraînement propres en même temps.
+          True Aim permet au gestionnaire de consigner un motif pour chaque modification humaine et signale séparément les gestes commerciaux, de sorte qu’un paiement hors couverture n’entraîne jamais le modèle. Les décisions humaines et automatisées sont comptées côte à côte dans le dossier sinistre, ce qui donne à l’organisation une piste d’audit propre et des données d’entraînement propres en même temps.
         </p>
       </>
     ),
@@ -195,14 +195,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Si vous changez de système, les dossiers de décision partent-ils avec vous sous une forme lisible sans le logiciel ?",
     plainAnswer:
-      "Les dossiers de décision appartiennent à l’organisation sinistres, pas au logiciel qui les a produits. La norme est un export qu’une personne peut lire sans le système : les documents, les décisions, les motifs et les versions, dans un format ouvert. Une piste d’audit qui ne s’ouvre que dans le système qui l’a produite n’est pas une piste d’audit. True Aim exporte le dossier complet d’un sinistre, chaque action d’une personne ou d’une machine avec son modèle, son prompt, sa version de règle et sa confiance, en un seul dossier d’audit, en un clic.",
+      "Les dossiers de décision appartiennent à l’organisation sinistres, pas au logiciel qui les a produits. La norme est un export qu’une personne peut lire sans le système : les documents, les décisions, les motifs et les versions, dans un format ouvert. Une piste d’audit qui ne s’ouvre que dans le système qui l’a produite n’est pas une piste d’audit. True Aim exporte l’examen d’un sinistre en PDF, lisible par une personne sans le système.",
     body: (
       <>
         <p>
           Les dossiers de décision appartiennent à l’organisation sinistres, pas au logiciel qui les a produits. La norme est un export qu’une personne peut lire sans le système : les documents, les décisions, les motifs et les versions, dans un format ouvert. Une piste d’audit qui ne s’ouvre que dans le système qui l’a produite n’est pas une piste d’audit.
         </p>
         <p>
-          True Aim exporte le dossier complet d’un sinistre, chaque action d’une personne ou d’une machine avec son modèle, son prompt, sa version de règle et sa confiance, en un seul dossier d’audit, en un clic.
+          True Aim exporte l’examen d’un sinistre en PDF, lisible par une personne sans le système.
         </p>
       </>
     ),

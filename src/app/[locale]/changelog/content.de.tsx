@@ -73,7 +73,7 @@ const RELEASES: Release[] = [
         "KI-PR-Reviewer: automatisierter Pull-Request-Reviewer mit manuellen Befehlsauslösern, einer CI-Warteschlange und Unterstützung für die Prüfung in Teilstücken bei Diffs über dem Budget von 200 KB pro Aufruf.",
       ],
       Security: [
-        "Sitzungshärtung: Sitzungs-Timeouts auf SOC-2-konforme Standardwerte verschärft.",
+        "Sitzungshärtung: Sitzungs-Timeouts auf strengere Standardwerte verschärft.",
         "Transportsicherheit: TLS 1.2 festgelegt und eine Middleware für Sicherheits-Header ergänzt.",
         "Cloud-Monitoring: Microsoft Defender for Cloud in den Standard-Stufen für alle relevanten Ressourcentypen aktiviert.",
         "Audit-Logging & Alarmierung: Activity-Log-, Diagnose-Log- und Storage-Alarme für Produktionsumgebungen ergänzt.",

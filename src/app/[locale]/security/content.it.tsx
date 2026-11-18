@@ -30,7 +30,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
 
           <div>
             <p className="text-body leading-[1.6]">
-              True Aim AG opera una piattaforma per la gestione dei sinistri destinata ad assicuratori, broker e a qualsiasi soggetto della catena del valore assicurativa che gestisce o tratta sinistri. La sicurezza è un requisito fondamentale del nostro Servizio, e i nostri clienti ci affidano i dati personali dei loro assicurati. Questa pagina descrive il nostro programma di sicurezza a grandi linee. Per le evidenze complete a livello di audit (rapporto SOC 2 Type II una volta emesso, certificato ISO 27001, elenco dei sub-responsabili, accordo sul trattamento dei dati), contattate{" "}
+              True Aim AG opera una piattaforma per la gestione dei sinistri destinata ad assicuratori, broker e a qualsiasi soggetto della catena del valore assicurativa che gestisce o tratta sinistri. La sicurezza è un requisito fondamentale del nostro Servizio, e i nostri clienti ci affidano i dati personali dei loro assicurati. Questa pagina descrive il nostro programma di sicurezza a grandi linee. Per le evidenze complete a livello di audit (rapporto SOC 2 Type II, certificato ISO/IEC 27001:2022, elenco dei sub-responsabili, accordo sul trattamento dei dati), contattate{" "}
               <a href="mailto:security@trueaim.ai" className="text-link hover:underline">security@trueaim.ai</a>. Sono disponibili previo accordo di riservatezza (NDA).
             </p>
 
@@ -38,7 +38,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">Framework di conformità</h2>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2">
                 <li><strong className="text-strong">ISO/IEC 27001:2022</strong>: certificato da A-LIGN, certificato ISMS-TR-090426, rilasciato il 4 settembre 2026, valido fino al 4 settembre 2029.</li>
-                <li><strong className="text-strong">SOC 2 Type II</strong>: audit completato, relativo al periodo dal 1° maggio al 31 luglio 2026; il rapporto finale è stato emesso.</li>
+                <li><strong className="text-strong">SOC 2 Type II</strong>: il nostro rapporto (Security, dal 1° maggio al 31 luglio 2026) è disponibile previa NDA.</li>
                 <li><strong className="text-strong">LPD svizzera</strong> e <strong className="text-strong">GDPR</strong>: allineata come responsabile del trattamento per i dati dei clienti.</li>
                 <li><strong className="text-strong">AI Act</strong> (regolamento europeo sull’IA): documentazione tecnica IA (AI Technical File) mantenuta per Automated Coverage Check; lo stato di preparazione attuale è documentato e monitorato.</li>
               </ul>

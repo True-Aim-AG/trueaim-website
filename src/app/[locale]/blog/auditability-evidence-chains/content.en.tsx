@@ -804,7 +804,7 @@ Timestamp: [ISO timestamp]`}</pre>
                       "Decision audit trail with input hashing",
                       "Human override capture with required justification",
                       "Quality gates that satisfy auditors",
-                      "FINMA & EU AI Act compliance mapping",
+                      "Mapping to FINMA and EU AI Act requirements",
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <CheckCircle aria-hidden="true" className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />

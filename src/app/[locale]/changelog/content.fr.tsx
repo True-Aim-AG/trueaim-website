@@ -73,7 +73,7 @@ const RELEASES: Release[] = [
         "Relecteur de PR par IA : relecteur automatisé de pull requests avec déclenchement manuel par commande, file d’attente CI et prise en charge de la relecture par morceaux pour les diffs dépassant le budget de 200 Ko par appel.",
       ],
       Security: [
-        "Durcissement des sessions : délais d’expiration des sessions resserrés sur des valeurs par défaut conformes à SOC 2.",
+        "Durcissement des sessions : délais d’expiration des sessions resserrés sur des valeurs par défaut plus strictes.",
         "Sécurité du transport : TLS 1.2 imposé et ajout d’un middleware d’en-têtes de sécurité.",
         "Surveillance cloud : activation des niveaux Standard de Microsoft Defender for Cloud sur tous les types de ressources concernés.",
         "Journalisation d’audit et alertes : ajout d’alertes Activity Log, journaux de diagnostic et Storage pour les environnements de production.",

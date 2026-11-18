@@ -103,16 +103,16 @@
       "nortonRoseFulbright": "Norton Rose Fulbright"
     },
     "compliance": {
-      "heading": "Conforme fin dalla progettazione",
+      "heading": "Verificabile fin dalla progettazione",
       "paragraphs": [
-        "Ogni decisione rimanda alla clausola su cui si basa, alle prove che ha utilizzato e alla persona che l’ha presa. I vostri revisori, la vostra autorità di vigilanza e i vostri clienti possono richiedere l’audit trail completo con un clic.",
+        "Ogni decisione rimanda alla clausola su cui si basa, alle prove che ha utilizzato e alla persona che l’ha presa. I vostri revisori, la vostra autorità di vigilanza e i vostri clienti possono ricevere l’esame di ogni sinistro in PDF.",
         "True Aim lavora accanto ai sistemi che già utilizzate. I vostri dati restano vostri, e lo stesso vale per le vostre regole, i vostri limiti e le vostre soglie."
       ],
       "imageAlt": "Un lucchetto di metallo con il simbolo True Aim",
-      "badgeIso": "ISO 27001",
+      "badgeIso": "ISO/IEC 27001:2022",
       "badgeSoc": "SOC 2 Type II",
       "badgeIsoStatus": "Certificato",
-      "badgeSocStatus": "Audit completato"
+      "badgeSocStatus": "Rapporto previa NDA"
     },
     "related": {
       "heading": "Scoprite le nostre soluzioni",

@@ -73,7 +73,7 @@ const RELEASES: Release[] = [
         "AI PR reviewer: automated pull-request reviewer with manual command triggers, a CI queue, and chunked review support for diffs over the 200 KB single-call budget.",
       ],
       Security: [
-        "Session hardening: tightened session timeouts to SOC 2-compliant defaults.",
+        "Session hardening: tightened session timeouts to stricter defaults.",
         "Transport security: pinned TLS 1.2 and added a security-headers middleware.",
         "Cloud monitoring: enabled Microsoft Defender for Cloud Standard tiers across all relevant resource types.",
         "Audit logging & alerting: added Activity Log, diagnostic Log, and Storage alerts for production environments.",

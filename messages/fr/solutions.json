@@ -306,7 +306,7 @@
         },
         {
           "question": "Comment répondons-nous à l’audit d’un assureur ?",
-          "answer": "À partir du dossier. Chaque décision porte sa clause, ses preuves et son auteur, et l’historique complet d’un sinistre s’exporte en un seul dossier d’audit."
+          "answer": "À partir du dossier. Chaque décision porte sa clause, ses preuves et son auteur, chaque modification est conservée, et l’examen du sinistre s’exporte en PDF."
         },
         {
           "question": "Devons-nous changer de système de gestion des sinistres ?",
@@ -470,7 +470,7 @@
               "time": "09:21:41",
               "actor": "engine",
               "who": "Moteur de règles",
-              "text": "Dossier scellé, chaîne vérifiée",
+              "text": "Examen consigné",
               "hash": "c90d"
             }
           ],
@@ -483,7 +483,7 @@
             "one": "action",
             "many": "actions"
           },
-          "exportLabel": "Exporter l’audit"
+          "exportLabel": "Exporter en PDF"
         }
       },
       "team": {
@@ -499,7 +499,7 @@
             "text": "Conditions de police, catalogue du secteur ou règles propres à un client."
           },
           {
-            "title": "Un dossier complet, en un clic",
+            "title": "Un dossier complet de chaque décision",
             "text": "Chaque décision porte sa version de règle, son raisonnement et son auteur."
           }
         ],
@@ -520,7 +520,7 @@
         },
         {
           "question": "Que pouvons-nous transmettre à nos clients ?",
-          "answer": "Le dossier complet de chaque décision : les données d’entrée, les clauses appliquées, le calcul et la personne qui a confirmé le résultat, exporté en un seul dossier d’audit."
+          "answer": "Le dossier complet de chaque décision : les données d’entrée, les clauses appliquées, le calcul et la personne qui a confirmé le résultat, avec l’examen du sinistre exporté en PDF."
         }
       ]
     }

@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.25.1](https://github.com/True-Aim-AG/trueaim-website/compare/v1.25.0...v1.25.1) (2026-11-17)
+
+
+### Bug Fixes
+
+* **copy:** auditable by design, and the claim record described as the product keeps it ([#44](https://github.com/True-Aim-AG/trueaim-website/issues/44)) ([2afa950](https://github.com/True-Aim-AG/trueaim-website/commit/2afa950034edc0c6b401ee56a65caa5b39ace776))
+
+## [1.25.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.24.1...v1.25.0) (2026-11-17)
+
+
+### Features
+
+* **about:** split the Advisory Board into Insurance and Technology and Growth ([#37](https://github.com/True-Aim-AG/trueaim-website/issues/37)) ([e957b8b](https://github.com/True-Aim-AG/trueaim-website/commit/e957b8b37486d31782b0bd101a4bd2fee86e94d5))
+* **blog:** article 1, insurance claims automation ([#42](https://github.com/True-Aim-AG/trueaim-website/issues/42)) ([f69b090](https://github.com/True-Aim-AG/trueaim-website/commit/f69b090806e339241d0b45b0feed9260f54934bb))
+
+
+### Bug Fixes
+
+* **data-extraction:** remove the hero pink bar and rebuild the film in the glass look ([#36](https://github.com/True-Aim-AG/trueaim-website/issues/36)) ([7c415a1](https://github.com/True-Aim-AG/trueaim-website/commit/7c415a1e39a712ad08ae548401208b6e57e6fa0f))
+
+## [1.24.1](https://github.com/True-Aim-AG/trueaim-website/compare/v1.24.0...v1.24.1) (2026-11-17)
+
+
+### Bug Fixes
+
+* **trust:** state ISO/IEC 27001:2022 and the SOC 2 Type II report under NDA ([#40](https://github.com/True-Aim-AG/trueaim-website/issues/40)) ([b2a5522](https://github.com/True-Aim-AG/trueaim-website/commit/b2a55221b2a2ea4d38704d5dbfdec47ea8f489a4))
+
 ## [1.24.0](https://github.com/True-Aim-AG/trueaim-website/compare/v1.23.0...v1.24.0) (2026-11-09)
 
 

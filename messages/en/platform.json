@@ -85,7 +85,7 @@
         },
         "prove": {
           "name": "Prove",
-          "text": "Records every decision with its evidence, the rule in force and who made it. Any change to the record shows. One click exports the full audit pack."
+          "text": "Records every decision with its evidence, the rule in force and who made it. Every change is kept, with who made it and when. The claim review exports as a PDF."
         }
       },
       "callout": "Same inputs. Same decision. Every time."
@@ -123,7 +123,7 @@
         },
         {
           "question": "How is our data protected?",
-          "answer": "True Aim is certified to ISO 27001 and audited for SOC 2 Type II. Hosting, certification and data protection are set out in the Trust Centre."
+          "answer": "True Aim is ISO/IEC 27001:2022 certified. Our SOC 2 Type II report (Security, 1 May to 31 July 2026) is available under NDA. Hosting, certification and data protection are set out in the Trust Centre."
         }
       ]
     },

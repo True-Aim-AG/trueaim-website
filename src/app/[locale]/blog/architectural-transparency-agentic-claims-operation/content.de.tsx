@@ -110,7 +110,7 @@ const pillars = [
     label: "Prüfung & Governance",
     cells: [
       "Kontinuierliche Protokollierung von Entscheidungen, Quellmaterial und aufsichtsrechtlichen Kriterien.",
-      "Erzeugt ein sofortiges, unveränderliches Prüfpaket. Belastbar von Grund auf.",
+      "Bewahrt jede Änderung auf und exportiert die Schadenprüfung als PDF. Belastbar von Grund auf.",
     ],
   },
 ];
@@ -431,7 +431,7 @@ export default async function ArchitecturalTransparencyBlogPost({
                 </p>
 
                 <PullQuote>
-                  Keine Blackbox. Eine Glasbox: prüfbar von Grund auf, kryptografisch verifizierbar und offen für jeden legitimen Beteiligten in der Wertschöpfungskette.
+                  Keine Blackbox. Eine Glasbox: prüfbar von Grund auf und offen für jeden legitimen Beteiligten in der Wertschöpfungskette.
                 </PullQuote>
               </MotionDiv>
 

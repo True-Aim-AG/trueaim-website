@@ -306,7 +306,7 @@
         },
         {
           "question": "Come rispondiamo all’audit di un assicuratore?",
-          "answer": "Dal fascicolo. Ogni decisione porta la sua clausola, le sue prove e il suo autore, e la storia completa di un sinistro si esporta come un unico dossier di audit."
+          "answer": "Dal fascicolo. Ogni decisione porta la sua clausola, le sue prove e il suo autore, ogni modifica viene conservata e l’esame del sinistro si esporta in PDF."
         },
         {
           "question": "Dobbiamo cambiare il nostro sistema sinistri?",
@@ -470,7 +470,7 @@
               "time": "09:21:41",
               "actor": "engine",
               "who": "Motore di regole",
-              "text": "Fascicolo sigillato, catena verificata",
+              "text": "Esame registrato",
               "hash": "c90d"
             }
           ],
@@ -483,7 +483,7 @@
             "one": "azione",
             "many": "azioni"
           },
-          "exportLabel": "Esporta dossier audit"
+          "exportLabel": "Esporta PDF"
         }
       },
       "team": {
@@ -499,7 +499,7 @@
             "text": "Condizioni di polizza, un catalogo di settore o le regole proprie di un cliente."
           },
           {
-            "title": "Un registro completo, con un clic",
+            "title": "Un registro completo di ogni decisione",
             "text": "Ogni decisione porta la versione della regola, il suo ragionamento e il suo autore."
           }
         ],
@@ -520,7 +520,7 @@
         },
         {
           "question": "Cosa possiamo trasmettere ai nostri clienti?",
-          "answer": "Il registro completo di ogni decisione: gli input, le clausole applicate, il calcolo e chi ha confermato l’esito, esportato come un unico dossier di audit."
+          "answer": "Il registro completo di ogni decisione: gli input, le clausole applicate, il calcolo e chi ha confermato l’esito, con l’esame del sinistro esportato in PDF."
         }
       ]
     }

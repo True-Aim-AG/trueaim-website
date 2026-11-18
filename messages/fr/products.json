@@ -13,7 +13,7 @@
         "title": "Data Extraction : vos données sinistres, prêtes pour l’IA",
         "summary": "L’essentiel de ce qu’un assureur sait d’un sinistre se trouve dans des PDF, des scans, des photos, des e-mails et des systèmes historiques. True Aim les lit, en extrait l’information, la met en contexte et construit une base de données structurée unique. Vos équipes et votre IA peuvent ensuite interroger chaque sinistre, comparer chaque document et agir sur ce qu’elles trouvent.",
         "scene": {
-          "alt": "Un film en boucle d’un graphe de données sinistres synthétiques. Il s’ouvre sur un sinistre dommages aux biens et ses enregistrements liés, puis les dispose en colonnes autour du sinistre, de l’assureur et du bâtiment assuré tour à tour, montrant le preneur d’assurance, le courtier, la police, les évaluations du sinistre, les étendues des travaux par corps de métier, les factures, les documents et les photos de dommages que True Aim a extraits.",
+          "alt": "Un film en boucle de données sinistres synthétiques. Un formulaire de déclaration de sinistre, un e-mail, une facture et une photo sont lus, leurs informations forment un seul dossier sinistre avec l’assuré, l’assureur, le courtier, l’événement à l’origine du sinistre, les risques assurés et la police, puis le dossier s’ouvre en une arborescence d’évaluations du sinistre, d’étendues des travaux et du gestionnaire sinistres.",
           "types": {
             "claim": "Sinistre",
             "lossEvent": "Événement",
@@ -288,8 +288,8 @@
             "text": "Chaque nombre renvoie à l’endroit du document dont il provient."
           },
           {
-            "title": "Chaque modification expliquée",
-            "text": "Quand un gestionnaire modifie une ligne, le motif est consigné."
+            "title": "Consigner le motif des modifications",
+            "text": "Quand un gestionnaire modifie une ligne, il peut en consigner le motif."
           }
         ]
       },
@@ -437,7 +437,7 @@
               "time": "09:21:41",
               "actor": "engine",
               "who": "Moteur de règles",
-              "text": "Dossier scellé, chaîne vérifiée",
+              "text": "Examen consigné",
               "hash": "c90d"
             }
           ],
@@ -450,8 +450,8 @@
             "one": "action",
             "many": "actions"
           },
-          "verified": "Chaîne vérifiée, 6 hachages sur 6 concordent",
-          "exportLabel": "Exporter l’audit"
+          "verified": "6 actions, chacune avec son auteur et son heure",
+          "exportLabel": "Exporter en PDF"
         }
       },
       "otus": {
@@ -495,7 +495,7 @@
         },
         {
           "question": "Qu’est-ce que le Decision Dossier ?",
-          "answer": "Le dossier de chaque décision : les données d’entrée, les clauses appliquées, la trace du calcul, les liens vers les preuves et la personne qui a confirmé le résultat. Il s’exporte en un seul dossier d’audit."
+          "answer": "Le dossier de chaque décision : les données d’entrée, les clauses appliquées, la trace du calcul, les liens vers les preuves et la personne qui a confirmé le résultat. L’examen du sinistre s’exporte en PDF."
         }
       ],
       "cta": {

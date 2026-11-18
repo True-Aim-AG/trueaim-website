@@ -70,20 +70,20 @@
     },
     "/technology": {
       "title": "Architettura di IA neuro-simbolica per i sinistri | True Aim",
-      "description": "True Aim unisce agenti IA a un processo decisionale deterministico, costruito per l’assicurazione regolamentata e l’AI Act. Non una scatola nera.",
+      "description": "True Aim unisce agenti IA a un processo decisionale deterministico, costruito per l’assicurazione regolamentata, con una registrazione di ogni decisione. Non una scatola nera.",
       "h1": "IA neuro-simbolica: l’architettura di cui le autorità di vigilanza si fidano",
       "breadcrumb": "Tecnologia",
       "ogTitle": "IA neuro-simbolica: l’architettura di cui le autorità di vigilanza si fidano",
-      "ogDescription": "True Aim unisce agenti IA a un processo decisionale deterministico, costruito per l’assicurazione regolamentata e l’AI Act. Non una scatola nera.",
+      "ogDescription": "True Aim unisce agenti IA a un processo decisionale deterministico, costruito per l’assicurazione regolamentata, con una registrazione di ogni decisione. Non una scatola nera.",
       "updated": "2026-11-05"
     },
     "/trust": {
       "title": "Trust Center: ISO 27001, SOC 2, GDPR, LPD, DORA | True Aim",
-      "description": "True Aim: certificata ISO 27001, audit SOC 2 Type II, allineata a GDPR, LPD svizzera e DORA. Ogni decisione su un sinistro è registrata con il suo ragionamento.",
+      "description": "True Aim è certificato ISO/IEC 27001:2022. Il nostro rapporto SOC 2 Type II (Security, dal 1° maggio al 31 luglio 2026) è disponibile previa NDA. Allineato a GDPR, LPD svizzera e DORA.",
       "h1": "Sicurezza e conformità, integrate fin dal primo giorno",
       "breadcrumb": "Trust Center",
       "ogTitle": "Sicurezza e conformità in True Aim",
-      "ogDescription": "True Aim: certificata ISO 27001, audit SOC 2 Type II, allineata a GDPR, LPD svizzera e DORA. Ogni decisione su un sinistro è registrata con il suo ragionamento.",
+      "ogDescription": "True Aim è certificato ISO/IEC 27001:2022. Il nostro rapporto SOC 2 Type II (Security, dal 1° maggio al 31 luglio 2026) è disponibile previa NDA. Allineato a GDPR, LPD svizzera e DORA.",
       "updated": "2026-11-05"
     },
     "/about": {

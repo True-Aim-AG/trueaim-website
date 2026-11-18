@@ -65,7 +65,7 @@ const claimSteps: NumberedItem[] = [
   },
   {
     title: "Revue humaine",
-    body: "L’intégralité de la piste d’audit peut être exportée à tout moment. Un gestionnaire examine le sinistre. Toute modification qu’il apporte exige un motif consigné directement dans le dossier.",
+    body: "L’examen du sinistre s’exporte en PDF. Un gestionnaire examine le sinistre et peut consigner un motif pour toute modification directement dans le dossier.",
   },
 ];
 
@@ -125,7 +125,7 @@ const engineParts: BulletItem[] = [
   },
   {
     lead: "Contrôle avec intervention humaine :",
-    text: "Les résultats de couverture remontent à la clause qui les fonde. La revue humaine est déclenchée par des seuils fixés par l’assureur. Chaque modification apportée par une personne porte un motif.",
+    text: "Les résultats de couverture remontent à la clause qui les fonde. La revue humaine est déclenchée par des seuils fixés par l’assureur. Pour chaque modification, la personne peut consigner un motif.",
   },
 ];
 

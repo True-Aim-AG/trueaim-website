@@ -93,14 +93,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Il testo di polizza, le regole e il modello che hanno prodotto una decisione sono registrati sulla decisione stessa, nella versione in vigore?",
     plainAnswer:
-      "Sul fascicolo stesso, non in una nota di rilascio. Una cronologia delle versioni tenuta altrove è un altro documento su un altro giorno. Lo standard è una decisione che indica la clausola, la voce di catalogo o la regola di business applicata, nella versione in vigore in quel momento, insieme al modello e al prompt che vi hanno partecipato. True Aim scrive ogni azione, di una persona o di una macchina, nel fascicolo con modello, prompt, versione della regola e confidenza allegati, e registra quale versione del testo, del catalogo o della regola di business era in vigore quando la decisione è stata presa. Le decisioni sono giudicate rispetto alle regole che si applicavano davvero.",
+      "Sul fascicolo stesso, non in una nota di rilascio. Una cronologia delle versioni tenuta altrove è un altro documento su un altro giorno. Lo standard è una decisione che indica la clausola, la voce di catalogo o la regola di business applicata, nella versione in vigore in quel momento, insieme al modello e al prompt che vi hanno partecipato. True Aim scrive ogni azione, di una persona o di una macchina, nel fascicolo con modello, prompt, versione della regola e confidenza allegati. Le decisioni sono giudicate rispetto alle regole che si applicavano davvero.",
     body: (
       <>
         <p>
           Sul fascicolo stesso, non in una nota di rilascio. Una cronologia delle versioni tenuta altrove è un altro documento su un altro giorno. Lo standard è una decisione che indica la clausola, la voce di catalogo o la regola di business applicata, nella versione in vigore in quel momento, insieme al modello e al prompt che vi hanno partecipato.
         </p>
         <p>
-          True Aim scrive ogni azione, di una persona o di una macchina, nel fascicolo con modello, prompt, versione della regola e confidenza allegati, e registra quale versione del testo, del catalogo o della regola di business era in vigore quando la decisione è stata presa. Le decisioni sono giudicate rispetto alle regole che si applicavano davvero.
+          True Aim scrive ogni azione, di una persona o di una macchina, nel fascicolo con modello, prompt, versione della regola e confidenza allegati. Le decisioni sono giudicate rispetto alle regole che si applicavano davvero.
         </p>
       </>
     ),
@@ -110,14 +110,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Chi può modificare un fascicolo decisionale, come ve ne accorgereste, e per quanto tempo viene conservato il fascicolo?",
     plainAnswer:
-      "Un fascicolo che può essere modificato senza lasciare traccia è una bozza. Lo standard è un fascicolo che rende rilevabile ogni manomissione e un periodo di conservazione stabilito deliberatamente per corrispondere agli obblighi propri dell’organizzazione, che di solito superano il sinistro di anni. Il sinistro su cui vi interrogano è spesso più vecchio del registro che avete conservato. True Aim applica un hash a ogni elemento registrato, così ogni alterazione è rilevabile e il fascicolo è costruito per resistere a una contestazione in sede di controversia, audit o tribunale. La conservazione è configurata per ciascun cliente in base ai suoi obblighi di tenuta dei registri, e lo stato di conservazione di ogni sinistro si trova nello stesso fascicolo dei suoi documenti, eventi e decisioni.",
+      "Un fascicolo che può essere modificato senza lasciare traccia è una bozza. Lo standard è un fascicolo che rende rilevabile ogni manomissione e un periodo di conservazione stabilito deliberatamente per corrispondere agli obblighi propri dell’organizzazione, che di solito superano il sinistro di anni. Il sinistro su cui vi interrogano è spesso più vecchio del registro che avete conservato. True Aim conserva ogni modifica al fascicolo, con chi l’ha fatta e quando, e il fascicolo è costruito per resistere a una contestazione in sede di controversia, audit o tribunale. La conservazione è configurata per ciascun cliente in base ai suoi obblighi di tenuta dei registri, e lo stato di conservazione di ogni sinistro si trova nello stesso fascicolo dei suoi documenti, eventi e decisioni.",
     body: (
       <>
         <p>
           Un fascicolo che può essere modificato senza lasciare traccia è una bozza. Lo standard è un fascicolo che rende rilevabile ogni manomissione e un periodo di conservazione stabilito deliberatamente per corrispondere agli obblighi propri dell’organizzazione, che di solito superano il sinistro di anni. Il sinistro su cui vi interrogano è spesso più vecchio del registro che avete conservato.
         </p>
         <p>
-          True Aim applica un hash a ogni elemento registrato, così ogni alterazione è rilevabile e il fascicolo è costruito per resistere a una contestazione in sede di controversia, audit o tribunale. La conservazione è configurata per ciascun cliente in base ai suoi obblighi di tenuta dei registri, e lo stato di conservazione di ogni sinistro si trova nello stesso fascicolo dei suoi documenti, eventi e decisioni.
+          True Aim conserva ogni modifica al fascicolo, con chi l’ha fatta e quando, e il fascicolo è costruito per resistere a una contestazione in sede di controversia, audit o tribunale. La conservazione è configurata per ciascun cliente in base ai suoi obblighi di tenuta dei registri, e lo stato di conservazione di ogni sinistro si trova nello stesso fascicolo dei suoi documenti, eventi e decisioni.
         </p>
       </>
     ),
@@ -144,14 +144,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Quando un liquidatore si discosta dalla decisione del sistema, la motivazione viene registrata, e qualcuno ne trae insegnamento?",
     plainAnswer:
-      "Gli interventi umani sono il segnale di qualità più prezioso che un’organizzazione sinistri possiede. Ognuno è un caso in cui una persona esperta non era d’accordo con il sistema, e la motivazione viene registrata e studiata oppure va perduta. Lo standard è una motivazione obbligatoria per ogni intervento e una routine che la legge. True Aim richiede una motivazione per ogni modifica umana e segnala separatamente le liquidazioni per cortesia commerciale, così un pagamento fuori copertura non addestra mai il modello. Le decisioni umane e automatizzate sono conteggiate fianco a fianco nel fascicolo sinistro, il che dà all’organizzazione al tempo stesso un audit trail pulito e dati di addestramento puliti.",
+      "Gli interventi umani sono il segnale di qualità più prezioso che un’organizzazione sinistri possiede. Ognuno è un caso in cui una persona esperta non era d’accordo con il sistema, e la motivazione viene registrata e studiata oppure va perduta. Lo standard è una motivazione obbligatoria per ogni intervento e una routine che la legge. True Aim consente al liquidatore di registrare una motivazione per ogni modifica umana e segnala separatamente le liquidazioni per cortesia commerciale, così un pagamento fuori copertura non addestra mai il modello. Le decisioni umane e automatizzate sono conteggiate fianco a fianco nel fascicolo sinistro, il che dà all’organizzazione al tempo stesso un audit trail pulito e dati di addestramento puliti.",
     body: (
       <>
         <p>
           Gli interventi umani sono il segnale di qualità più prezioso che un’organizzazione sinistri possiede. Ognuno è un caso in cui una persona esperta non era d’accordo con il sistema, e la motivazione viene registrata e studiata oppure va perduta. Lo standard è una motivazione obbligatoria per ogni intervento e una routine che la legge.
         </p>
         <p>
-          True Aim richiede una motivazione per ogni modifica umana e segnala separatamente le liquidazioni per cortesia commerciale, così un pagamento fuori copertura non addestra mai il modello. Le decisioni umane e automatizzate sono conteggiate fianco a fianco nel fascicolo sinistro, il che dà all’organizzazione al tempo stesso un audit trail pulito e dati di addestramento puliti.
+          True Aim consente al liquidatore di registrare una motivazione per ogni modifica umana e segnala separatamente le liquidazioni per cortesia commerciale, così un pagamento fuori copertura non addestra mai il modello. Le decisioni umane e automatizzate sono conteggiate fianco a fianco nel fascicolo sinistro, il che dà all’organizzazione al tempo stesso un audit trail pulito e dati di addestramento puliti.
         </p>
       </>
     ),
@@ -195,14 +195,14 @@ export const scorecardQuestions: ScorecardQuestion[] = [
     question:
       "Se cambiate sistema, i fascicoli decisionali vi seguono in una forma leggibile senza il software?",
     plainAnswer:
-      "I fascicoli decisionali appartengono all’organizzazione sinistri, non al software che li ha prodotti. Lo standard è un’esportazione che una persona può leggere senza il sistema: i documenti, le decisioni, le motivazioni e le versioni, in un formato aperto. Un audit trail che si apre solo dentro il sistema che lo ha prodotto non è un audit trail. True Aim esporta il fascicolo completo di un sinistro, ogni azione di una persona o di una macchina con modello, prompt, versione della regola e confidenza allegati, come un unico pacchetto di audit con un clic.",
+      "I fascicoli decisionali appartengono all’organizzazione sinistri, non al software che li ha prodotti. Lo standard è un’esportazione che una persona può leggere senza il sistema: i documenti, le decisioni, le motivazioni e le versioni, in un formato aperto. Un audit trail che si apre solo dentro il sistema che lo ha prodotto non è un audit trail. True Aim esporta l’esame di un sinistro in PDF, leggibile da una persona senza il sistema.",
     body: (
       <>
         <p>
           I fascicoli decisionali appartengono all’organizzazione sinistri, non al software che li ha prodotti. Lo standard è un’esportazione che una persona può leggere senza il sistema: i documenti, le decisioni, le motivazioni e le versioni, in un formato aperto. Un audit trail che si apre solo dentro il sistema che lo ha prodotto non è un audit trail.
         </p>
         <p>
-          True Aim esporta il fascicolo completo di un sinistro, ogni azione di una persona o di una macchina con modello, prompt, versione della regola e confidenza allegati, come un unico pacchetto di audit con un clic.
+          True Aim esporta l’esame di un sinistro in PDF, leggibile da una persona senza il sistema.
         </p>
       </>
     ),

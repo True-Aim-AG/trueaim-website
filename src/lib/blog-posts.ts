@@ -14,6 +14,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "insurance-claims-automation",
+    author: "reuben-john",
+    title: "Insurance claims automation: what to automate first and how to measure it",
+    excerpt:
+      "Insurance claims automation at True Aim starts with the data rather than the decision. What to automate first, what an insurer needs to provide and the three measures that show whether it is working.",
+    publishedIso: "2026-11-17T00:00:00.000Z",
+    displayDate: "November 2026",
+    readTime: "8 min read",
+    category: "Claims Automation",
+    tags: ["Claims Automation", "Data Extraction", "Coverage Check", "Claims AI"],
+  },
+  {
     slug: "architectural-transparency-agentic-claims-operation",
     author: "reuben-john",
     title:
