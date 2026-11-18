@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Image as ImageIcon, User } from "lucide-react";
+import { Check, Image as ImageIcon, Play, User } from "lucide-react";
 import { type CSSProperties, useCallback, useRef } from "react";
 
 import { SCENE_CARD, SCENE_CARD_HERO } from "@/components/content/surface";
@@ -13,8 +13,8 @@ import styles from "./DamageGlassScene.module.css";
 export type DamageGlassData = {
   alt: string;
   photosLabel: string;
-  /** One photograph per report line, in the order of the lines. */
-  files: { name: string; size: string }[];
+  /** One photograph or video per report line, in the order of the lines. */
+  files: { name: string; size: string; kind?: "video" }[];
   title: string;
   subtitle: string;
   columns: { item: string; quantity: string; amount: string };
@@ -149,7 +149,7 @@ function prepareStage(root: HTMLElement, layout: Layout) {
 
 /**
  * The AI Damage Assessment and Reporting hero, in the glass look of the
- * platform demo: the customer's photographs are read one after the other,
+ * platform demo: the customer's photographs and video are read one after the other,
  * each finding is written into the damage report, the scope of work is
  * priced, and the adjuster reviews the report.
  *
@@ -200,7 +200,7 @@ export function DamageGlassScene({ data }: { data: DamageGlassData }) {
                   {data.files.map((file) => (
                     <div key={file.name} data-file className={styles.file}>
                       <span className={styles.thumb}>
-                        <ImageIcon aria-hidden strokeWidth={1.5} />
+                        {file.kind === "video" ? <Play aria-hidden strokeWidth={1.5} /> : <ImageIcon aria-hidden strokeWidth={1.5} />}
                       </span>
                       <span className={styles.name}>
                         <span>{file.name}</span>

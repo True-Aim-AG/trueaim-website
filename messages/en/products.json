@@ -780,8 +780,8 @@
         "title": "AI Damage Assessment & Reporting: from photos to complete damage reports in minutes",
         "summary": "Automatically analyse photos, videos and supporting documents to identify damage, assess its severity and generate detailed damage reports at first notification of loss. Produce region-specific repair cost estimates and a complete scope of work, including the required trades, tasks and repair sequence. Reduce on-site inspections by sending assessors only where human expertise is needed.",
         "scene": {
-          "alt": "Four photographs are read one after the other: each finding is written into the damage report, the scope of work is priced, and the adjuster reviews the report",
-          "photosLabel": "4 photographs received",
+          "alt": "Three photographs and a video are read one after the other: each finding is written into the damage report, the scope of work is priced, and the adjuster reviews the report",
+          "photosLabel": "3 photographs and 1 video received",
           "files": [
             {
               "name": "kitchen_01.jpg",
@@ -796,8 +796,9 @@
               "size": "1.8 MB"
             },
             {
-              "name": "wall_04.jpg",
-              "size": "2.6 MB"
+              "name": "wall_04.mp4",
+              "size": "18.4 MB",
+              "kind": "video"
             }
           ],
           "title": "Damage report",

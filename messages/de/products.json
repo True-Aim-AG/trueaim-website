@@ -780,8 +780,8 @@
         "title": "AI Damage Assessment & Reporting: von Fotos zu vollständigen Schadenberichten in Minuten",
         "summary": "Fotos, Videos und Belege werden automatisch ausgewertet, um Schäden zu erkennen, ihre Schwere zu bewerten und schon bei der Schadenmeldung detaillierte Schadenberichte zu erstellen. Dazu kommen regionale Reparaturkostenschätzungen und ein vollständiger Reparaturumfang mit den erforderlichen Gewerken, Arbeitsschritten und der Reparaturreihenfolge. Besichtigungen vor Ort werden seltener, weil Gutachter nur dort eingesetzt werden, wo menschliches Fachwissen gebraucht wird.",
         "scene": {
-          "alt": "Vier Fotos werden nacheinander gelesen: Jeder Befund wird in den Schadenbericht geschrieben, der Leistungsumfang wird kalkuliert, und der Sachbearbeiter prüft den Bericht",
-          "photosLabel": "4 Fotos eingegangen",
+          "alt": "Drei Fotos und ein Video werden nacheinander gelesen: Jeder Befund wird in den Schadenbericht geschrieben, der Leistungsumfang wird kalkuliert, und der Sachbearbeiter prüft den Bericht",
+          "photosLabel": "3 Fotos und 1 Video eingegangen",
           "files": [
             {
               "name": "kitchen_01.jpg",
@@ -796,8 +796,9 @@
               "size": "1,8 MB"
             },
             {
-              "name": "wall_04.jpg",
-              "size": "2,6 MB"
+              "name": "wall_04.mp4",
+              "size": "18,4 MB",
+              "kind": "video"
             }
           ],
           "title": "Schadenbericht",

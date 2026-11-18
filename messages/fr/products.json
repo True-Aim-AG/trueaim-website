@@ -780,8 +780,8 @@
         "title": "AI Damage Assessment & Reporting : des photos aux rapports de dommages complets en quelques minutes",
         "summary": "Analysez automatiquement photos, vidéos et pièces justificatives pour identifier les dommages, évaluer leur gravité et produire des rapports de dommages détaillés dès la déclaration de sinistre. Obtenez des estimations de coûts de réparation propres à chaque région et une étendue des travaux complète, avec les corps de métier, les tâches et l’ordre des réparations. Réduisez les visites sur site en n’envoyant des experts que là où l’expertise humaine est nécessaire.",
         "scene": {
-          "alt": "Quatre photos sont lues l’une après l’autre : chaque constat est inscrit dans le rapport de dommages, les travaux sont chiffrés et le gestionnaire vérifie le rapport",
-          "photosLabel": "4 photos reçues",
+          "alt": "Trois photos et une vidéo sont lues l’une après l’autre : chaque constat est inscrit dans le rapport de dommages, les travaux sont chiffrés et le gestionnaire vérifie le rapport",
+          "photosLabel": "3 photos et 1 vidéo reçues",
           "files": [
             {
               "name": "kitchen_01.jpg",
@@ -796,8 +796,9 @@
               "size": "1,8 Mo"
             },
             {
-              "name": "wall_04.jpg",
-              "size": "2,6 Mo"
+              "name": "wall_04.mp4",
+              "size": "18,4 Mo",
+              "kind": "video"
             }
           ],
           "title": "Rapport de dommages",

@@ -780,8 +780,8 @@
         "title": "AI Damage Assessment & Reporting: dalle foto ai rapporti danni completi in pochi minuti",
         "summary": "Analizzate automaticamente foto, video e documenti a supporto per individuare i danni, valutarne la gravità e generare rapporti danni dettagliati fin dalla denuncia di sinistro. Ottenete stime dei costi di riparazione specifiche per regione e un ambito dei lavori completo, con categorie di lavori, attività e sequenza di riparazione. Riducete i sopralluoghi inviando i periti solo dove serve la competenza umana.",
         "scene": {
-          "alt": "Quattro fotografie vengono lette una dopo l’altra: ogni riscontro è inserito nel rapporto sui danni, i lavori sono quantificati e il liquidatore verifica il rapporto",
-          "photosLabel": "4 foto ricevute",
+          "alt": "Tre fotografie e un video vengono letti uno dopo l’altro: ogni riscontro è inserito nel rapporto sui danni, i lavori sono quantificati e il liquidatore verifica il rapporto",
+          "photosLabel": "3 foto e 1 video ricevuti",
           "files": [
             {
               "name": "kitchen_01.jpg",
@@ -796,8 +796,9 @@
               "size": "1,8 MB"
             },
             {
-              "name": "wall_04.jpg",
-              "size": "2,6 MB"
+              "name": "wall_04.mp4",
+              "size": "18,4 MB",
+              "kind": "video"
             }
           ],
           "title": "Rapporto danni",
