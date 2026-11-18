@@ -3,12 +3,14 @@
 // from messages/; the components hold no copy.
 export { ClaimScene, type ClaimLine, type ClaimSceneData } from "./ClaimScene";
 export { CoverageGlassScene, type CoverageGlassData } from "./CoverageGlassScene";
+export { InvoiceGlassScene, type InvoiceGlassData } from "./InvoiceGlassScene";
 export { InvoiceScene, type InvoiceSceneData } from "./InvoiceScene";
 export { ReportScene, type ReportSceneData } from "./ReportScene";
 export { OutcomesScene, type OutcomeItem } from "./OutcomesScene";
 export { FlowScene, type FlowSceneData } from "./FlowScene";
 export { FlowGlassScene, type FlowGlassData } from "./FlowGlassScene";
 export { RecordScene, type RecordSceneData } from "./RecordScene";
+export { LineBenchGlassScene, type LineBenchGlassData } from "./LineBenchGlassScene";
 export { LineBenchScene, type LineBenchSceneData } from "./LineBenchScene";
 export { QueueScene, type QueueSceneData } from "./QueueScene";
 export { SceneCard } from "./SceneCard";

@@ -512,63 +512,79 @@
         "title": "Invoice Benchmarking : ne plus jamais surpayer une facture",
         "summary": "Chaque facture, devis et chiffrage est comparé aux prix de référence, par branche et par région. Votre équipe voit quelles lignes sont trop élevées, de combien et pourquoi, avec la demande de facture rectificative déjà rédigée. Les factures de faible montant ne passent plus sans contrôle, et chaque économie est consignée ligne par ligne.",
         "scene": {
-          "alt": "Une facture dont chaque ligne est colorée selon le prix de référence, et une demande de facture rectificative rédigée pour la ligne trop élevée",
+          "alt": "Une facture comparée ligne par ligne au prix de référence : une ligne dépasse la fourchette attendue, une demande de facture rectificative est rédigée et le gestionnaire l’envoie",
           "title": "Facture INV-2204",
-          "subtitle": "Carrosserie Nord, Lausanne",
-          "count": "5 lignes",
+          "supplier": "Rénovations du Lac, Lausanne",
+          "columns": {
+            "line": "Ligne",
+            "benchmark": "Référence",
+            "amount": "Montant"
+          },
           "lines": [
             {
-              "kind": "denied",
-              "description": "Remise en peinture complète",
-              "amount": "1 840,00"
+              "kind": "approved",
+              "description": "Sol stratifié",
+              "amount": "1 260,00",
+              "position": 52
             },
             {
               "kind": "referred",
-              "description": "Tôle, porte arrière",
-              "amount": "620,00"
+              "description": "Reprise d’enduit",
+              "amount": "285,00",
+              "position": 66
             },
             {
               "kind": "approved",
-              "description": "Main-d’œuvre, 6,5 h",
-              "amount": "715,00"
+              "description": "Peinture murale",
+              "amount": "340,00",
+              "position": 46
+            },
+            {
+              "kind": "denied",
+              "description": "Appareils de séchage",
+              "amount": "640,00",
+              "position": 88
             },
             {
               "kind": "approved",
-              "description": "Pièces, clips de pare-chocs",
-              "amount": "48,00"
-            },
-            {
-              "kind": "approved",
-              "description": "Produits de peinture",
-              "amount": "210,00"
+              "description": "Plinthes",
+              "amount": "210,00",
+              "position": 50
             }
           ],
           "totalLabel": "Total de la facture",
-          "total": "3 433,00",
+          "total": "2 735,00",
           "summaryLabel": "Par rapport au prix de référence",
-          "action": {
-            "title": "Demande de facture rectificative rédigée",
-            "text": "Remise en peinture complète : 1 840,00 contre 1 440,00 attendus",
-            "saveLabel": "Économie",
-            "save": "400"
-          },
-          "rows": [
+          "tally": [
             {
               "kind": "approved",
-              "label": "Dans la fourchette",
-              "count": "3 lignes"
+              "label": "Dans la fourchette"
             },
             {
               "kind": "referred",
-              "label": "À vérifier",
-              "count": "1 ligne"
+              "label": "À vérifier"
             },
             {
               "kind": "denied",
-              "label": "Au-dessus de la référence",
-              "count": "1 ligne"
+              "label": "Au-dessus de la référence"
             }
-          ]
+          ],
+          "reissue": {
+            "title": "Demande de facture rectificative rédigée",
+            "line": "Appareils de séchage",
+            "invoicedLabel": "Facturé",
+            "invoiced": "640,00",
+            "expectedLabel": "Attendu",
+            "expected": "460,00",
+            "saveLabel": "Économie possible",
+            "save": "180,00"
+          },
+          "adjuster": {
+            "label": "Votre gestionnaire",
+            "action": "Envoyer la demande"
+          },
+          "pause": "Mettre l’animation en pause",
+          "play": "Lancer l’animation"
         }
       },
       "keys": {
@@ -613,7 +629,7 @@
       "lineBench": {
         "heading": "Comment True Aim compare chaque ligne aux prix de référence",
         "scene": {
-          "alt": "Trois lignes de facture, dont une déployée pour montrer à quelle hauteur elle se situe au-dessus de la fourchette attendue pour son corps de métier et sa région",
+          "alt": "Trois lignes de facture comparées tour à tour aux prix comparables pour leur corps de métier et leur région : deux se situent dans la fourchette attendue, une la dépasse et une demande de facture rectificative est rédigée",
           "label": "Facture INV-2204",
           "rangeLabel": "Fourchette attendue",
           "axis": {
@@ -638,16 +654,16 @@
           "lines": [
             {
               "kind": "approved",
-              "description": "Main-d’œuvre, 6,5 h",
+              "description": "Sol stratifié",
               "status": "Dans la fourchette",
-              "amount": "715,00",
-              "range": "Attendu pour ce corps de métier dans cette région : de 650,00 à 780,00",
-              "position": 51,
+              "amount": "1 260,00",
+              "range": "Attendu pour ce corps de métier dans cette région : de 1 150,00 à 1 340,00",
+              "position": 52,
               "marker": "+1 %",
               "foot": [
                 {
                   "label": "Médiane",
-                  "value": "708,00"
+                  "value": "1 245,00"
                 },
                 {
                   "label": "Écart",
@@ -657,16 +673,16 @@
             },
             {
               "kind": "denied",
-              "description": "Remise en peinture complète",
-              "status": "28 % au-dessus du prix attendu",
-              "amount": "1 840,00",
-              "range": "Attendu pour ce corps de métier dans cette région : de 1 320,00 à 1 560,00",
-              "position": 76,
-              "marker": "+28 %",
+              "description": "Appareils de séchage",
+              "status": "39 % au-dessus du prix attendu",
+              "amount": "640,00",
+              "range": "Attendu pour ce corps de métier dans cette région : de 420,00 à 500,00",
+              "position": 80,
+              "marker": "+39 %",
               "foot": [
                 {
                   "label": "Médiane",
-                  "value": "1 440,00"
+                  "value": "460,00"
                 },
                 {
                   "label": "Facture rectificative",
@@ -674,24 +690,24 @@
                   "ok": true
                 },
                 {
-                  "label": "Économisé",
-                  "value": "400,00",
+                  "label": "Économie possible",
+                  "value": "180,00",
                   "ok": true
                 }
               ]
             },
             {
               "kind": "approved",
-              "description": "Produits de peinture",
+              "description": "Peinture murale",
               "status": "Dans la fourchette",
-              "amount": "210,00",
-              "range": "Attendu pour ce corps de métier dans cette région : de 190,00 à 230,00",
+              "amount": "340,00",
+              "range": "Attendu pour ce corps de métier dans cette région : de 310,00 à 390,00",
               "position": 46,
               "marker": "-3 %",
               "foot": [
                 {
                   "label": "Médiane",
-                  "value": "216,00"
+                  "value": "350,00"
                 },
                 {
                   "label": "Écart",
@@ -699,7 +715,9 @@
                 }
               ]
             }
-          ]
+          ],
+          "pause": "Mettre l’animation en pause",
+          "play": "Lancer l’animation"
         }
       },
       "features": {

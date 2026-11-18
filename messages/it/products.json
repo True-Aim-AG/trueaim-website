@@ -512,63 +512,79 @@
         "title": "Invoice Benchmarking: mai più una fattura pagata troppo",
         "summary": "Ogni fattura, preventivo e stima viene confrontato con il prezzo di riferimento, per ramo e per regione. Il vostro team vede quali voci sono troppo alte, di quanto e perché, con la richiesta di riemissione già redatta. Le fatture di importo minore non passano più senza controllo, e ogni risparmio viene registrato voce per voce.",
         "scene": {
-          "alt": "Una fattura con ogni voce colorata rispetto al prezzo di riferimento, e una richiesta di riemissione redatta per la voce troppo alta",
+          "alt": "Una fattura confrontata voce per voce con il prezzo di riferimento: una voce supera l’intervallo atteso, la richiesta di riemissione è redatta e il liquidatore la invia",
           "title": "Fattura INV-2204",
-          "subtitle": "Carrosserie Nord, Lausanne",
-          "count": "5 voci",
+          "supplier": "Rénovations du Lac, Lausanne",
+          "columns": {
+            "line": "Voce",
+            "benchmark": "Riferimento",
+            "amount": "Importo"
+          },
           "lines": [
             {
-              "kind": "denied",
-              "description": "Verniciatura completa",
-              "amount": "1.840,00"
+              "kind": "approved",
+              "description": "Pavimento in laminato",
+              "amount": "1.260,00",
+              "position": 52
             },
             {
               "kind": "referred",
-              "description": "Pannello, porta posteriore",
-              "amount": "620,00"
+              "description": "Ripristino intonaco",
+              "amount": "285,00",
+              "position": 66
             },
             {
               "kind": "approved",
-              "description": "Manodopera, 6,5 h",
-              "amount": "715,00"
+              "description": "Tinteggiatura parete",
+              "amount": "340,00",
+              "position": 46
+            },
+            {
+              "kind": "denied",
+              "description": "Apparecchi di asciugatura",
+              "amount": "640,00",
+              "position": 88
             },
             {
               "kind": "approved",
-              "description": "Ricambi, clip paraurti",
-              "amount": "48,00"
-            },
-            {
-              "kind": "approved",
-              "description": "Materiali di verniciatura",
-              "amount": "210,00"
+              "description": "Battiscopa",
+              "amount": "210,00",
+              "position": 50
             }
           ],
           "totalLabel": "Totale fattura",
-          "total": "3.433,00",
+          "total": "2.735,00",
           "summaryLabel": "Rispetto al riferimento",
-          "action": {
-            "title": "Richiesta di riemissione redatta",
-            "text": "Verniciatura completa: 1.840,00 contro 1.440,00 attesi",
-            "saveLabel": "Risparmio",
-            "save": "400"
-          },
-          "rows": [
+          "tally": [
             {
               "kind": "approved",
-              "label": "Nella norma",
-              "count": "3 voci"
+              "label": "Nella norma"
             },
             {
               "kind": "referred",
-              "label": "Da verificare",
-              "count": "1 voce"
+              "label": "Da verificare"
             },
             {
               "kind": "denied",
-              "label": "Sopra il riferimento",
-              "count": "1 voce"
+              "label": "Sopra il riferimento"
             }
-          ]
+          ],
+          "reissue": {
+            "title": "Richiesta di riemissione redatta",
+            "line": "Apparecchi di asciugatura",
+            "invoicedLabel": "Fatturato",
+            "invoiced": "640,00",
+            "expectedLabel": "Atteso",
+            "expected": "460,00",
+            "saveLabel": "Risparmio possibile",
+            "save": "180,00"
+          },
+          "adjuster": {
+            "label": "Il vostro liquidatore",
+            "action": "Invia la richiesta"
+          },
+          "pause": "Metti in pausa l’animazione",
+          "play": "Avvia l’animazione"
         }
       },
       "keys": {
@@ -613,7 +629,7 @@
       "lineBench": {
         "heading": "Come True Aim confronta voce per voce",
         "scene": {
-          "alt": "Tre voci di fattura, una espansa per mostrare quanto si colloca sopra l’intervallo atteso per la sua categoria e la sua regione",
+          "alt": "Tre voci di fattura confrontate una dopo l’altra con i prezzi comparabili per la loro categoria e la loro regione: due rientrano nell’intervallo atteso, una lo supera e la richiesta di riemissione è redatta",
           "label": "Fattura INV-2204",
           "rangeLabel": "Intervallo atteso",
           "axis": {
@@ -638,16 +654,16 @@
           "lines": [
             {
               "kind": "approved",
-              "description": "Manodopera, 6,5 h",
+              "description": "Pavimento in laminato",
               "status": "Nella norma",
-              "amount": "715,00",
-              "range": "Atteso per questa categoria in questa regione: da 650,00 a 780,00",
-              "position": 51,
+              "amount": "1.260,00",
+              "range": "Atteso per questa categoria in questa regione: da 1.150,00 a 1.340,00",
+              "position": 52,
               "marker": "+1%",
               "foot": [
                 {
                   "label": "Mediana",
-                  "value": "708,00"
+                  "value": "1.245,00"
                 },
                 {
                   "label": "Scostamento",
@@ -657,16 +673,16 @@
             },
             {
               "kind": "denied",
-              "description": "Verniciatura completa",
-              "status": "28% sopra il valore atteso",
-              "amount": "1.840,00",
-              "range": "Atteso per questa categoria in questa regione: da 1.320,00 a 1.560,00",
-              "position": 76,
-              "marker": "+28%",
+              "description": "Apparecchi di asciugatura",
+              "status": "39% sopra il valore atteso",
+              "amount": "640,00",
+              "range": "Atteso per questa categoria in questa regione: da 420,00 a 500,00",
+              "position": 80,
+              "marker": "+39%",
               "foot": [
                 {
                   "label": "Mediana",
-                  "value": "1.440,00"
+                  "value": "460,00"
                 },
                 {
                   "label": "Richiesta di riemissione",
@@ -674,24 +690,24 @@
                   "ok": true
                 },
                 {
-                  "label": "Risparmiato",
-                  "value": "400,00",
+                  "label": "Risparmio possibile",
+                  "value": "180,00",
                   "ok": true
                 }
               ]
             },
             {
               "kind": "approved",
-              "description": "Materiali di verniciatura",
+              "description": "Tinteggiatura parete",
               "status": "Nella norma",
-              "amount": "210,00",
-              "range": "Atteso per questa categoria in questa regione: da 190,00 a 230,00",
+              "amount": "340,00",
+              "range": "Atteso per questa categoria in questa regione: da 310,00 a 390,00",
               "position": 46,
               "marker": "-3%",
               "foot": [
                 {
                   "label": "Mediana",
-                  "value": "216,00"
+                  "value": "350,00"
                 },
                 {
                   "label": "Scostamento",
@@ -699,7 +715,9 @@
                 }
               ]
             }
-          ]
+          ],
+          "pause": "Metti in pausa l’animazione",
+          "play": "Avvia l’animazione"
         }
       },
       "features": {

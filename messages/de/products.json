@@ -512,63 +512,79 @@
         "title": "Invoice Benchmarking: nie wieder zu viel für eine Rechnung zahlen",
         "summary": "Jede Rechnung, jedes Angebot und jeder Kostenvoranschlag wird mit Referenzpreisen abgeglichen, nach Sparte und nach Region. Ihr Team sieht, welche Positionen zu hoch sind, um wie viel und warum. Die Aufforderung zur Neuausstellung ist bereits vorformuliert. Rechnungen mit niedrigeren Beträgen bleiben nicht länger ungeprüft, und jede Einsparung wird Position für Position festgehalten.",
         "scene": {
-          "alt": "Eine Rechnung, bei der jede Position im Vergleich zum Referenzpreis farblich markiert ist, und eine vorformulierte Aufforderung zur Neuausstellung für die zu hohe Position",
+          "alt": "Eine Rechnung, Position für Position mit dem Referenzpreis abgeglichen: Eine Position liegt über der erwarteten Spanne, dafür ist eine Korrekturanfrage entworfen, und der Sachbearbeiter sendet sie",
           "title": "Rechnung INV-2204",
-          "subtitle": "Carrosserie Nord, Lausanne",
-          "count": "5 Positionen",
+          "supplier": "Rénovations du Lac, Lausanne",
+          "columns": {
+            "line": "Position",
+            "benchmark": "Referenzpreis",
+            "amount": "Betrag"
+          },
           "lines": [
             {
-              "kind": "denied",
-              "description": "Komplettlackierung",
-              "amount": "1.840,00"
+              "kind": "approved",
+              "description": "Laminatboden",
+              "amount": "1.260,00",
+              "position": 52
             },
             {
               "kind": "referred",
-              "description": "Türblech hinten",
-              "amount": "620,00"
+              "description": "Putzausbesserung",
+              "amount": "285,00",
+              "position": 66
             },
             {
               "kind": "approved",
-              "description": "Arbeitskosten, 6,5 h",
-              "amount": "715,00"
+              "description": "Wandanstrich",
+              "amount": "340,00",
+              "position": 46
+            },
+            {
+              "kind": "denied",
+              "description": "Trocknungsgeräte",
+              "amount": "640,00",
+              "position": 88
             },
             {
               "kind": "approved",
-              "description": "Teile, Stoßfängerclips",
-              "amount": "48,00"
-            },
-            {
-              "kind": "approved",
-              "description": "Lackmaterial",
-              "amount": "210,00"
+              "description": "Sockelleisten",
+              "amount": "210,00",
+              "position": 50
             }
           ],
           "totalLabel": "Rechnungsbetrag",
-          "total": "3.433,00",
+          "total": "2.735,00",
           "summaryLabel": "Gegenüber dem Referenzpreis",
-          "action": {
-            "title": "Korrekturanfrage entworfen",
-            "text": "Komplettlackierung: 1.840,00 gegenüber 1.440,00 erwartet",
-            "saveLabel": "Einsparung",
-            "save": "400"
-          },
-          "rows": [
+          "tally": [
             {
               "kind": "approved",
-              "label": "Im Rahmen",
-              "count": "3 Positionen"
+              "label": "Im Rahmen"
             },
             {
               "kind": "referred",
-              "label": "Prüfen",
-              "count": "1 Position"
+              "label": "Prüfen"
             },
             {
               "kind": "denied",
-              "label": "Über Referenzpreis",
-              "count": "1 Position"
+              "label": "Über Referenzpreis"
             }
-          ]
+          ],
+          "reissue": {
+            "title": "Korrekturanfrage entworfen",
+            "line": "Trocknungsgeräte",
+            "invoicedLabel": "In Rechnung gestellt",
+            "invoiced": "640,00",
+            "expectedLabel": "Erwartet",
+            "expected": "460,00",
+            "saveLabel": "Mögliche Einsparung",
+            "save": "180,00"
+          },
+          "adjuster": {
+            "label": "Ihr Sachbearbeiter",
+            "action": "Anfrage senden"
+          },
+          "pause": "Animation anhalten",
+          "play": "Animation abspielen"
         }
       },
       "keys": {
@@ -613,7 +629,7 @@
       "lineBench": {
         "heading": "So gleicht True Aim Position für Position ab",
         "scene": {
-          "alt": "Drei Rechnungspositionen, eine davon aufgeklappt, um zu zeigen, wie weit sie über der erwarteten Spanne für ihr Gewerk und ihre Region liegt",
+          "alt": "Drei Rechnungspositionen, nacheinander mit vergleichbaren Preisen für ihr Gewerk und ihre Region abgeglichen: Zwei liegen in der erwarteten Spanne, eine liegt darüber, und dafür ist eine Korrekturanfrage vorformuliert",
           "label": "Rechnung INV-2204",
           "rangeLabel": "Erwartete Spanne",
           "axis": {
@@ -638,16 +654,16 @@
           "lines": [
             {
               "kind": "approved",
-              "description": "Arbeitskosten, 6,5 h",
+              "description": "Laminatboden",
               "status": "Im Rahmen",
-              "amount": "715,00",
-              "range": "Erwartet für dieses Gewerk in dieser Region: 650,00 bis 780,00",
-              "position": 51,
+              "amount": "1.260,00",
+              "range": "Erwartet für dieses Gewerk in dieser Region: 1.150,00 bis 1.340,00",
+              "position": 52,
               "marker": "+1 %",
               "foot": [
                 {
                   "label": "Median",
-                  "value": "708,00"
+                  "value": "1.245,00"
                 },
                 {
                   "label": "Abweichung",
@@ -657,16 +673,16 @@
             },
             {
               "kind": "denied",
-              "description": "Komplettlackierung",
-              "status": "28 % über dem Erwartungswert",
-              "amount": "1.840,00",
-              "range": "Erwartet für dieses Gewerk in dieser Region: 1.320,00 bis 1.560,00",
-              "position": 76,
-              "marker": "+28 %",
+              "description": "Trocknungsgeräte",
+              "status": "39 % über dem Erwartungswert",
+              "amount": "640,00",
+              "range": "Erwartet für dieses Gewerk in dieser Region: 420,00 bis 500,00",
+              "position": 80,
+              "marker": "+39 %",
               "foot": [
                 {
                   "label": "Median",
-                  "value": "1.440,00"
+                  "value": "460,00"
                 },
                 {
                   "label": "Korrekturanfrage",
@@ -674,24 +690,24 @@
                   "ok": true
                 },
                 {
-                  "label": "Eingespart",
-                  "value": "400,00",
+                  "label": "Mögliche Einsparung",
+                  "value": "180,00",
                   "ok": true
                 }
               ]
             },
             {
               "kind": "approved",
-              "description": "Lackmaterial",
+              "description": "Wandanstrich",
               "status": "Im Rahmen",
-              "amount": "210,00",
-              "range": "Erwartet für dieses Gewerk in dieser Region: 190,00 bis 230,00",
+              "amount": "340,00",
+              "range": "Erwartet für dieses Gewerk in dieser Region: 310,00 bis 390,00",
               "position": 46,
               "marker": "-3 %",
               "foot": [
                 {
                   "label": "Median",
-                  "value": "216,00"
+                  "value": "350,00"
                 },
                 {
                   "label": "Abweichung",
@@ -699,7 +715,9 @@
                 }
               ]
             }
-          ]
+          ],
+          "pause": "Animation anhalten",
+          "play": "Animation abspielen"
         }
       },
       "features": {

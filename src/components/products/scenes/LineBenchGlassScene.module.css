@@ -1,0 +1,243 @@
+/* The line benchmark section. The ground and the glass come from glass.module.css. */
+
+.desktop {
+  --u: calc(100cqw / 1500);
+  --fh: calc(16 * var(--u));
+  --fs: calc(24 * var(--u));
+  aspect-ratio: 1500 / 800;
+}
+.phone {
+  /* the portrait stage takes the height its words need in each language */
+  --u: calc(100cqw / 720);
+  --fh: calc(17 * var(--u));
+  --fs: calc(27 * var(--u));
+}
+
+.world {
+  position: absolute;
+  inset: 0;
+  display: grid;
+}
+.desktop .world {
+  grid-template-columns: calc(500 * var(--u)) minmax(0, 1fr);
+  column-gap: calc(44 * var(--u));
+  padding: calc(56 * var(--u)) calc(60 * var(--u));
+}
+.phone .world {
+  position: relative;
+  row-gap: calc(22 * var(--u));
+  /* the bottom strip keeps the pause button clear of the figures */
+  padding: calc(28 * var(--u)) calc(20 * var(--u)) calc(16 * var(--u) + 48px);
+}
+
+/* the invoice lines */
+.lines {
+  align-self: center;
+  border-radius: calc(30 * var(--u));
+  padding: calc(36 * var(--u)) calc(34 * var(--u)) calc(30 * var(--u));
+}
+.row {
+  position: relative;
+  display: grid;
+  grid-template-columns: calc(6 * var(--u)) minmax(0, 1fr) auto;
+  column-gap: calc(18 * var(--u));
+  align-items: center;
+  margin-top: calc(14 * var(--u));
+  padding: calc(18 * var(--u)) calc(20 * var(--u));
+  border-radius: calc(16 * var(--u));
+  font-size: var(--fs);
+  color: var(--main);
+}
+.row:first-of-type {
+  margin-top: calc(22 * var(--u));
+}
+/* the line the scene is on */
+.row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7));
+  box-shadow:
+    0 calc(10 * var(--u)) calc(24 * var(--u)) rgba(44, 46, 110, 0.14),
+    0 0 0 calc(2 * var(--u)) var(--c);
+  opacity: var(--on, 0);
+}
+.row > * {
+  position: relative;
+}
+.row > i {
+  align-self: stretch;
+  border-radius: calc(3 * var(--u));
+  background: var(--c);
+}
+.what {
+  display: grid;
+  min-width: 0;
+}
+.desc {
+  line-height: 1.2;
+}
+.status {
+  margin-top: calc(4 * var(--u));
+  font-size: calc(var(--fs) - 6 * var(--u));
+  line-height: 1.25;
+  color: var(--muted);
+}
+
+/* the line against comparable prices */
+.detail {
+  display: flex;
+  flex-direction: column;
+  border-radius: calc(34 * var(--u));
+  padding: calc(40 * var(--u)) calc(44 * var(--u)) calc(36 * var(--u));
+}
+.phone .detail {
+  padding: calc(30 * var(--u)) calc(30 * var(--u)) calc(28 * var(--u));
+}
+/* one per line in the same place; the stack is as tall as the tallest */
+.stack {
+  display: grid;
+}
+.stack > * {
+  grid-area: 1 / 1;
+}
+.headline {
+  opacity: 0;
+}
+.title {
+  margin: 0;
+  font-size: calc(var(--fs) + 9 * var(--u));
+  line-height: 1.25;
+  color: var(--main);
+  letter-spacing: -0.02em;
+}
+.sub {
+  margin: calc(6 * var(--u)) 0 0;
+  font-size: calc(var(--fs) - 4 * var(--u));
+  line-height: 1.3;
+  color: var(--muted);
+}
+.plot {
+  position: relative;
+  flex: 1;
+  margin: calc(64 * var(--u)) 0 calc(26 * var(--u));
+}
+.phone .plot {
+  flex: none;
+  height: calc(380 * var(--u));
+}
+.band {
+  position: absolute;
+  top: 0;
+  bottom: calc(44 * var(--u));
+  border-radius: calc(12 * var(--u));
+  background: linear-gradient(180deg, rgba(81, 81, 219, 0.13), rgba(81, 81, 219, 0.05));
+  border-left: 1px dashed rgba(81, 81, 219, 0.45);
+  border-right: 1px dashed rgba(81, 81, 219, 0.45);
+}
+.band span {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  margin-top: calc(14 * var(--u));
+  font-size: var(--fh);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #5151db;
+}
+.bars {
+  position: absolute;
+  inset: 0 0 calc(44 * var(--u));
+  display: flex;
+  align-items: flex-end;
+  gap: 1.2%;
+  padding: 0 0.6%;
+  border-bottom: 1px solid rgba(40, 42, 80, 0.2);
+}
+.bars i {
+  flex: 1;
+  border-radius: calc(7 * var(--u)) calc(7 * var(--u)) calc(2 * var(--u)) calc(2 * var(--u));
+  background: linear-gradient(180deg, rgba(120, 124, 170, 0.3), rgba(120, 124, 170, 0.16));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+.bars .inband {
+  background: linear-gradient(180deg, rgba(81, 81, 219, 0.46), rgba(81, 81, 219, 0.26));
+}
+.pin {
+  position: absolute;
+  top: calc(-30 * var(--u));
+  bottom: calc(44 * var(--u));
+  width: calc(3 * var(--u));
+  margin-left: calc(-1.5 * var(--u));
+  border-radius: calc(2 * var(--u));
+  background: var(--c);
+  opacity: 0;
+}
+.pin::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: calc(16 * var(--u));
+  height: calc(16 * var(--u));
+  margin: calc(-8 * var(--u)) 0 0 calc(-8 * var(--u));
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow:
+    0 0 0 calc(4 * var(--u)) #fff,
+    0 calc(4 * var(--u)) calc(10 * var(--u)) rgba(44, 46, 110, 0.3);
+}
+.marker {
+  position: absolute;
+  left: calc(22 * var(--u));
+  top: calc(-15 * var(--u));
+  font-size: calc(var(--fs) + 2 * var(--u));
+  font-weight: 600;
+  line-height: calc(30 * var(--u));
+  white-space: nowrap;
+  color: var(--ci);
+  opacity: 0;
+}
+.left .marker {
+  left: auto;
+  right: calc(22 * var(--u));
+}
+.axis {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(var(--fs) - 6 * var(--u));
+  line-height: calc(30 * var(--u));
+  color: var(--muted);
+}
+.foot {
+  padding-top: calc(18 * var(--u));
+  border-top: 1px solid var(--hair);
+}
+.footrow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: calc(20 * var(--u));
+  align-items: baseline;
+  font-size: calc(var(--fs) - 2 * var(--u));
+  line-height: 1.6;
+  color: var(--second);
+  opacity: 0;
+}
+.footrow > span + span {
+  font-weight: 600;
+  color: var(--main);
+}
+.ok > span + span {
+  color: #0f7524;
+}
+.phone .footrow > span + span {
+  white-space: normal;
+  max-width: calc(330 * var(--u));
+}

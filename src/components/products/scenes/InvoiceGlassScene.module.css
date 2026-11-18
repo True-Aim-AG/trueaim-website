@@ -1,0 +1,260 @@
+/* The Invoice Benchmarking hero. The ground, the glass and the adjuster bar come from glass.module.css. */
+
+.desktop {
+  --u: calc(100cqw / 1200);
+  aspect-ratio: 1200 / 1000;
+}
+.phone {
+  /* the portrait stage takes the height its words need in each language */
+  --u: calc(100cqw / 720);
+}
+
+.world {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-items: center;
+}
+.desktop .world {
+  align-content: center;
+  grid-template-columns: calc(640 * var(--u)) calc(400 * var(--u));
+  column-gap: calc(80 * var(--u));
+  padding-left: calc(40 * var(--u));
+}
+.phone .world {
+  position: relative;
+  grid-template-columns: 1fr;
+  row-gap: calc(22 * var(--u));
+  /* the bottom strip keeps the pause button clear of the adjuster bar */
+  padding: calc(28 * var(--u)) calc(20 * var(--u)) calc(16 * var(--u) + 48px);
+}
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: calc(26 * var(--u));
+  align-self: stretch;
+}
+.phone .side {
+  gap: calc(22 * var(--u));
+}
+
+/* the invoice */
+.invoice {
+  border-radius: calc(34 * var(--u));
+  padding: calc(40 * var(--u)) var(--pad) calc(40 * var(--u));
+}
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: calc(6 * var(--u));
+}
+.title {
+  margin: 0;
+  font-size: var(--fti);
+  line-height: 1.3;
+  color: var(--main);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.grid {
+  display: grid;
+  grid-template-columns: var(--cols);
+  column-gap: var(--gap);
+  align-items: center;
+}
+.colh {
+  margin-top: calc(30 * var(--u));
+  height: calc(40 * var(--u));
+}
+.colh span {
+  font-size: var(--fh);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.row {
+  position: relative;
+  height: var(--rh);
+  border-top: 1px solid var(--hair);
+  font-size: var(--fs);
+  color: var(--main);
+}
+/* the line over the benchmark is lit once every line is checked */
+.row::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(-18 * var(--u));
+  border-radius: calc(12 * var(--u));
+  background: linear-gradient(180deg, var(--cb), var(--cs));
+  box-shadow: inset calc(5 * var(--u)) 0 0 var(--c);
+  opacity: var(--hot, 0);
+}
+.row > * {
+  position: relative;
+}
+.desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.16;
+}
+.mark {
+  height: 100%;
+}
+.mark i {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: calc(11 * var(--u));
+  height: calc(11 * var(--u));
+  margin-top: calc(-5.5 * var(--u));
+  border-radius: 50%;
+  background: rgba(60, 62, 120, 0.22);
+}
+.mark i + i {
+  background: var(--c);
+  opacity: 0;
+}
+
+/* where the amount sits against comparable prices: the band is the expected range */
+.track {
+  height: calc(26 * var(--u));
+  opacity: 0.4;
+}
+.track::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: calc(2 * var(--u));
+  margin-top: calc(-1 * var(--u));
+  border-radius: calc(1 * var(--u));
+  background: rgba(60, 62, 120, 0.16);
+}
+.band {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: calc(7 * var(--u));
+  background: linear-gradient(180deg, rgba(81, 81, 219, 0.2), rgba(81, 81, 219, 0.1));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 0 0 1px rgba(81, 81, 219, 0.16);
+}
+.pin {
+  position: absolute;
+  top: 50%;
+  width: calc(14 * var(--u));
+  height: calc(14 * var(--u));
+  margin: calc(-7 * var(--u)) 0 0 calc(-7 * var(--u));
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow:
+    0 0 0 calc(3 * var(--u)) #fff,
+    0 calc(3 * var(--u)) calc(8 * var(--u)) rgba(44, 46, 110, 0.3);
+  opacity: 0;
+}
+.total {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  column-gap: calc(24 * var(--u));
+  padding-top: calc(26 * var(--u));
+  border-top: 1.5px solid rgba(40, 42, 80, 0.2);
+  font-size: var(--fb);
+  font-weight: 600;
+  color: var(--main);
+}
+
+/* the result against the benchmark, and the request drafted from it */
+.bench {
+  display: flex;
+  flex-direction: column;
+  border-radius: calc(24 * var(--u));
+  padding: calc(34 * var(--u)) calc(34 * var(--u)) calc(30 * var(--u));
+}
+.desktop .bench {
+  flex: 1;
+}
+.phone .bench {
+  padding: calc(26 * var(--u)) var(--pad);
+}
+.tally {
+  display: grid;
+  grid-template-columns: calc(11 * var(--u)) minmax(0, 1fr) auto;
+  column-gap: calc(14 * var(--u));
+  align-items: center;
+  margin-top: calc(18 * var(--u));
+  font-size: var(--ft);
+  line-height: 1.2;
+  color: var(--main);
+}
+.tally:first-of-type {
+  margin-top: calc(24 * var(--u));
+}
+.tally i {
+  width: calc(11 * var(--u));
+  height: calc(11 * var(--u));
+  border-radius: 50%;
+  background: var(--c);
+}
+.reissue {
+  margin-top: auto;
+  padding-top: calc(26 * var(--u));
+  border-top: 1px solid var(--hair);
+  opacity: 0;
+}
+.phone .reissue {
+  margin-top: calc(26 * var(--u));
+}
+.rtitle {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(10 * var(--u));
+  margin: 0;
+  font-size: var(--ft);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--main);
+  letter-spacing: -0.01em;
+}
+.rtitle svg {
+  flex: none;
+  width: calc(26 * var(--u));
+  height: calc(26 * var(--u));
+  color: #5151db;
+}
+.rline {
+  margin: calc(10 * var(--u)) 0 calc(12 * var(--u));
+  font-size: calc(var(--ft) - 2 * var(--u));
+  color: var(--second);
+}
+.pair,
+.saving {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: calc(16 * var(--u));
+  align-items: baseline;
+  font-size: calc(var(--ft) - 2 * var(--u));
+  line-height: 1.5;
+  color: var(--second);
+}
+.pair > span + span {
+  color: var(--main);
+}
+.saving {
+  margin-top: calc(14 * var(--u));
+  padding-top: calc(14 * var(--u));
+  border-top: 1px solid var(--hair);
+  font-size: var(--ft);
+  font-weight: 600;
+  color: var(--main);
+  opacity: 0;
+}
+.saving > span + span {
+  font-size: calc(var(--ft) + 6 * var(--u));
+  color: #0f7524;
+}

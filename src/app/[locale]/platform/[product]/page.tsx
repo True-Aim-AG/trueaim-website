@@ -20,8 +20,8 @@ import {
   CoverageGlassScene,
   FlowGlassScene,
   HeroLoop,
-  InvoiceScene,
-  LineBenchScene,
+  InvoiceGlassScene,
+  LineBenchGlassScene,
   OtusPrompts,
   RecordScene,
   ReportScene,
@@ -29,8 +29,8 @@ import {
   type CoverageGlassData,
   type FlowGlassData,
   type HeroLoopData,
-  type InvoiceSceneData,
-  type LineBenchSceneData,
+  type InvoiceGlassData,
+  type LineBenchGlassData,
   type OtusPrompt,
   type RecordSceneData,
   type ReportSceneData,
@@ -114,7 +114,7 @@ function visual(product: Product, t: Translate) {
     case "claimsDecisioning":
       return <CoverageGlassScene data={t.raw(`${key}.hero.scene`) as CoverageGlassData} />;
     case "invoiceBenchmarking":
-      return <InvoiceScene data={t.raw(`${key}.hero.scene`) as InvoiceSceneData} hero />;
+      return <InvoiceGlassScene data={t.raw(`${key}.hero.scene`) as InvoiceGlassData} />;
     case "damageReporting":
       return <ReportScene data={t.raw(`${key}.hero.scene`) as ReportSceneData} hero />;
     case "otus":
@@ -219,7 +219,7 @@ function sections(product: Product, t: Translate) {
             tone="tint"
           />
           <FigureSection heading={t(`${key}.lineBench.heading`)} tone="white">
-            <LineBenchScene data={t.raw(`${key}.lineBench.scene`) as LineBenchSceneData} />
+            <LineBenchGlassScene data={t.raw(`${key}.lineBench.scene`) as LineBenchGlassData} />
           </FigureSection>
           <SplitText
             cap={t(`${key}.benchmark.cap`)}

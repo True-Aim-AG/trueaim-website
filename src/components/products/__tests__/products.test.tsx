@@ -5,7 +5,9 @@ import {
   CoverageGlassScene,
   FlowGlassScene,
   FlowScene,
+  InvoiceGlassScene,
   InvoiceScene,
+  LineBenchGlassScene,
   LineBenchScene,
   ModulesDiagram,
   OtusPrompts,
@@ -274,5 +276,67 @@ describe("Product scenes", () => {
     expect(bench.match(/aria-pressed="true"/g)).toHaveLength(1);
     expect(bench).toContain("0%");
     expect(bench).not.toContain("+28%");
+  });
+
+  it("renders the invoice hero as one image with the reissue request, the adjuster and a pause control", () => {
+    const html = renderToStaticMarkup(
+      <InvoiceGlassScene
+        data={{
+          alt: "An invoice checked line by line",
+          title: "Invoice 1",
+          supplier: "Builder, Lausanne",
+          columns: { line: "Line", benchmark: "Benchmark", amount: "Amount" },
+          lines: [
+            { kind: "approved", description: "Flooring", amount: "100", position: 50 },
+            { kind: "denied", description: "Drying", amount: "64", position: 88 },
+          ],
+          totalLabel: "Total",
+          total: "164",
+          summaryLabel: "Against the benchmark",
+          tally: [
+            { kind: "approved", label: "In range" },
+            { kind: "denied", label: "Over benchmark" },
+          ],
+          reissue: { title: "Reissue request drafted", line: "Drying", invoicedLabel: "Invoiced", invoiced: "64", expectedLabel: "Expected", expected: "46", saveLabel: "Potential saving", save: "18" },
+          adjuster: { label: "Your adjuster", action: "Send request" },
+          pause: "Pause animation",
+          play: "Play animation",
+        }}
+      />,
+    );
+    expect(html.match(/role="img"/g)).toHaveLength(1);
+    expect(html).toContain('aria-label="An invoice checked line by line"');
+    // Desktop and phone stages each hold every line.
+    expect(html.match(/data-row/g)).toHaveLength(4);
+    expect(html).toContain("Reissue request drafted");
+    expect(html).toContain("Potential saving");
+    expect(html).toContain("Send request");
+    expect(html).toContain('aria-label="Pause animation"');
+  });
+
+  it("renders the line benchmark as one image with every line's figures and a pause control", () => {
+    const html = renderToStaticMarkup(
+      <LineBenchGlassScene
+        data={{
+          alt: "Bench",
+          label: "Invoice",
+          rangeLabel: "Expected range",
+          axis: { low: "Lower", high: "Higher" },
+          bars: [10, 50, 10],
+          lines: [
+            { kind: "approved", description: "Flooring", status: "In range", amount: "10", range: "r", position: 50, marker: "+1%", foot: [{ label: "Median", value: "9" }] },
+            { kind: "denied", description: "Drying", status: "39% above", amount: "64", range: "r", position: 80, marker: "+39%", foot: [{ label: "Potential saving", value: "18", ok: true }] },
+          ],
+          pause: "Pause animation",
+          play: "Play animation",
+        }}
+      />,
+    );
+    expect(html.match(/role="img"/g)).toHaveLength(1);
+    expect(html.match(/data-pin/g)).toHaveLength(4);
+    expect(html).toContain("+39%");
+    expect(html).toContain("Potential saving");
+    expect(html).not.toContain("aria-pressed");
+    expect(html).toContain('aria-label="Pause animation"');
   });
 });

@@ -512,63 +512,79 @@
         "title": "Invoice Benchmarking: never overpay on an invoice again",
         "summary": "Every invoice, quote and estimate is checked against the benchmark, by business line and by region. Your team sees which lines are too high, by how much and why, with the reissue request already drafted. Lower-value invoices no longer go unchecked, and every saving is recorded line by line.",
         "scene": {
-          "alt": "An invoice with every line coloured against the benchmark, and a reissue request drafted for the line that is too high",
+          "alt": "An invoice checked line by line against the benchmark: one line is above the expected range, a reissue request is drafted for it, and the adjuster sends it",
           "title": "Invoice INV-2204",
-          "subtitle": "Carrosserie Nord, Lausanne",
-          "count": "5 lines",
+          "supplier": "Rénovations du Lac, Lausanne",
+          "columns": {
+            "line": "Line",
+            "benchmark": "Benchmark",
+            "amount": "Amount"
+          },
           "lines": [
             {
-              "kind": "denied",
-              "description": "Paint, full respray",
-              "amount": "1'840.00"
+              "kind": "approved",
+              "description": "Flooring, laminate",
+              "amount": "1'260.00",
+              "position": 52
             },
             {
               "kind": "referred",
-              "description": "Panel, rear door",
-              "amount": "620.00"
+              "description": "Plaster repair",
+              "amount": "285.00",
+              "position": 66
             },
             {
               "kind": "approved",
-              "description": "Labour, 6.5 h",
-              "amount": "715.00"
+              "description": "Wall, repaint",
+              "amount": "340.00",
+              "position": 46
+            },
+            {
+              "kind": "denied",
+              "description": "Drying equipment",
+              "amount": "640.00",
+              "position": 88
             },
             {
               "kind": "approved",
-              "description": "Parts, bumper clips",
-              "amount": "48.00"
-            },
-            {
-              "kind": "approved",
-              "description": "Paint materials",
-              "amount": "210.00"
+              "description": "Skirting boards",
+              "amount": "210.00",
+              "position": 50
             }
           ],
           "totalLabel": "Invoice total",
-          "total": "3'433.00",
+          "total": "2'735.00",
           "summaryLabel": "Against the benchmark",
-          "action": {
-            "title": "Reissue request drafted",
-            "text": "Paint, full respray: 1'840.00 against 1'440.00 expected",
-            "saveLabel": "Save",
-            "save": "400"
-          },
-          "rows": [
+          "tally": [
             {
               "kind": "approved",
-              "label": "In range",
-              "count": "3 lines"
+              "label": "In range"
             },
             {
               "kind": "referred",
-              "label": "Check",
-              "count": "1 line"
+              "label": "Check"
             },
             {
               "kind": "denied",
-              "label": "Over benchmark",
-              "count": "1 line"
+              "label": "Over benchmark"
             }
-          ]
+          ],
+          "reissue": {
+            "title": "Reissue request drafted",
+            "line": "Drying equipment",
+            "invoicedLabel": "Invoiced",
+            "invoiced": "640.00",
+            "expectedLabel": "Expected",
+            "expected": "460.00",
+            "saveLabel": "Potential saving",
+            "save": "180.00"
+          },
+          "adjuster": {
+            "label": "Your adjuster",
+            "action": "Send request"
+          },
+          "pause": "Pause animation",
+          "play": "Play animation"
         }
       },
       "keys": {
@@ -613,7 +629,7 @@
       "lineBench": {
         "heading": "How True Aim benchmarks line by line",
         "scene": {
-          "alt": "Three invoice lines, one expanded to show how far it sits above the expected range for its trade and region",
+          "alt": "Three invoice lines shown in turn against comparable prices for their trade and region: two sit inside the expected range, one sits above it and has a reissue request drafted",
           "label": "Invoice INV-2204",
           "rangeLabel": "Expected range",
           "axis": {
@@ -638,16 +654,16 @@
           "lines": [
             {
               "kind": "approved",
-              "description": "Labour, 6.5 h",
+              "description": "Flooring, laminate",
               "status": "In range",
-              "amount": "715.00",
-              "range": "Expected for this trade in this region: 650.00 to 780.00",
-              "position": 51,
+              "amount": "1'260.00",
+              "range": "Expected for this trade in this region: 1'150.00 to 1'340.00",
+              "position": 52,
               "marker": "+1%",
               "foot": [
                 {
                   "label": "Median",
-                  "value": "708.00"
+                  "value": "1'245.00"
                 },
                 {
                   "label": "Deviation",
@@ -657,16 +673,16 @@
             },
             {
               "kind": "denied",
-              "description": "Paint, full respray",
-              "status": "28% above expected",
-              "amount": "1'840.00",
-              "range": "Expected for this trade in this region: 1'320.00 to 1'560.00",
-              "position": 76,
-              "marker": "+28%",
+              "description": "Drying equipment",
+              "status": "39% above expected",
+              "amount": "640.00",
+              "range": "Expected for this trade in this region: 420.00 to 500.00",
+              "position": 80,
+              "marker": "+39%",
               "foot": [
                 {
                   "label": "Median",
-                  "value": "1'440.00"
+                  "value": "460.00"
                 },
                 {
                   "label": "Reissue request",
@@ -674,24 +690,24 @@
                   "ok": true
                 },
                 {
-                  "label": "Saved",
-                  "value": "400.00",
+                  "label": "Potential saving",
+                  "value": "180.00",
                   "ok": true
                 }
               ]
             },
             {
               "kind": "approved",
-              "description": "Paint materials",
+              "description": "Wall, repaint",
               "status": "In range",
-              "amount": "210.00",
-              "range": "Expected for this trade in this region: 190.00 to 230.00",
+              "amount": "340.00",
+              "range": "Expected for this trade in this region: 310.00 to 390.00",
               "position": 46,
               "marker": "-3%",
               "foot": [
                 {
                   "label": "Median",
-                  "value": "216.00"
+                  "value": "350.00"
                 },
                 {
                   "label": "Deviation",
@@ -699,7 +715,9 @@
                 }
               ]
             }
-          ]
+          ],
+          "pause": "Pause animation",
+          "play": "Play animation"
         }
       },
       "features": {
