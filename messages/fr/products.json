@@ -484,7 +484,9 @@
             "many": "actions"
           },
           "verified": "6 actions, chacune avec son auteur et son heure",
-          "exportLabel": "Exporter en PDF"
+          "exportLabel": "Exporter en PDF",
+          "pause": "Mettre l’animation en pause",
+          "play": "Lancer l’animation"
         }
       },
       "otus": {

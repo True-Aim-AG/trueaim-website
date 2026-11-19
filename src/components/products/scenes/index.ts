@@ -14,6 +14,7 @@ export { DataRecordStill, type DataRecordStillData } from "./DataRecordStill";
 export { OtusGlassScene, type OtusGlassData } from "./OtusGlassScene";
 export { RoutingGlassScene, type RoutingGlassData } from "./RoutingGlassScene";
 export { ScopeGlassScene, type ScopeGlassData } from "./ScopeGlassScene";
+export { RecordGlassScene, type RecordGlassData } from "./RecordGlassScene";
 export { RecordScene, type RecordSceneData } from "./RecordScene";
 export { LineBenchGlassScene, type LineBenchGlassData } from "./LineBenchGlassScene";
 export { LineBenchScene, type LineBenchSceneData } from "./LineBenchScene";

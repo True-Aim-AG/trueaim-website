@@ -15,6 +15,7 @@ import {
   OtusPrompts,
   ProductRail,
   OutcomesScene,
+  RecordGlassScene,
   RecordScene,
   RoutingGlassScene,
   ScopeGlassScene,
@@ -263,6 +264,34 @@ describe("Product scenes", () => {
     expect(record.match(/aria-pressed="true"/g)).toHaveLength(1);
     expect(record).toContain("Confirmed");
     expect(record).toContain("Export audit pack");
+    const glassRecord = renderToStaticMarkup(
+      <RecordGlassScene
+        data={{
+          alt: "Record",
+          title: "Claim record",
+          subtitle: "Claim 1",
+          tabs: { timeline: "Timeline", forensic: "Forensic view" },
+          phases: ["Received", "Settled"],
+          rows: [
+            { time: "09:00", actor: "agent", who: "Agent", text: "Read", hash: "a1" },
+            { time: "09:01", actor: "human", who: "Adjuster", text: "Confirmed", hash: "b2" },
+          ],
+          groups: { agent: "Agents", engine: "Rules engine", human: "Adjuster" },
+          actions: { one: "action", many: "actions" },
+          verified: "Chain verified",
+          exportLabel: "Export audit pack",
+          pause: "Pause animation",
+          play: "Play animation",
+        }}
+      />,
+    );
+    // one image, drawn for desktop and for phone: each action once in the timeline and once under its actor
+    expect(glassRecord.match(/role="img"/g)).toHaveLength(1);
+    expect(glassRecord.match(/data-row/g)).toHaveLength(4);
+    expect(glassRecord.match(/data-slot/g)).toHaveLength(4);
+    expect(glassRecord).not.toContain("Rules engine");
+    expect(glassRecord).toContain("1 action");
+    expect(glassRecord).toContain("Pause animation");
     const bench = renderToStaticMarkup(
       <LineBenchScene
         data={{

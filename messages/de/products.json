@@ -484,7 +484,9 @@
             "many": "Aktionen"
           },
           "verified": "6 Aktionen, jede mit Bearbeiter und Zeitpunkt",
-          "exportLabel": "PDF exportieren"
+          "exportLabel": "PDF exportieren",
+          "pause": "Animation anhalten",
+          "play": "Animation abspielen"
         }
       },
       "otus": {

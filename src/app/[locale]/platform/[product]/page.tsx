@@ -27,7 +27,7 @@ import {
   InvoiceGlassScene,
   LineBenchGlassScene,
   OtusGlassScene,
-  RecordScene,
+  RecordGlassScene,
   RoutingGlassScene,
   ScopeGlassScene,
   productIcons,
@@ -38,7 +38,7 @@ import {
   type InvoiceGlassData,
   type LineBenchGlassData,
   type OtusGlassData,
-  type RecordSceneData,
+  type RecordGlassData,
   type RoutingGlassData,
   type ScopeGlassData,
 } from "@/components/products";
@@ -193,7 +193,7 @@ function sections(product: Product, t: Translate, buttons: HeroButton[]) {
             <Points items={(t.raw(`${key}.routing.items`) as KeyFact[]).map((item) => ({ title: item.label, text: item.text }))} align="left" />
           </SplitText>
           <FigureSection id="decision-dossier" heading={t(`${key}.record.heading`)} tone="tint">
-            <RecordScene data={t.raw(`${key}.record.scene`) as RecordSceneData} />
+            <RecordGlassScene data={t.raw(`${key}.record.scene`) as RecordGlassData} />
           </FigureSection>
           <SplitText
             cap={t(`${key}.otus.cap`)}
