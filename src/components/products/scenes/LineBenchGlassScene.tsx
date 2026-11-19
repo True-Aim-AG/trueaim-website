@@ -95,7 +95,7 @@ export function LineBenchGlassScene({
   const inBand = (index: number) => index >= bandStart && index < bandStart + BAND;
 
   return (
-    <div ref={rootRef} className={cn(SCENE_CARD, "@container relative rounded-[10px]", still && "h-full")}>
+    <div ref={rootRef} className={cn("@container relative", still && cn(SCENE_CARD, "rounded-[10px] h-full"))}>
       <div role="img" aria-label={data.alt} className={cn(still && "h-full")}>
         {LAYOUTS.map((name) => (
           <div
@@ -109,8 +109,6 @@ export function LineBenchGlassScene({
               still ? name !== "desktop" && "hidden" : name === "desktop" ? "@max-[480px]:hidden" : "hidden @max-[480px]:block",
             )}
           >
-            <div className={g.ground} />
-            <div className={g.floor} />
             <div className={styles.world}>
               <div className={cn(g.gloss, styles.lines)}>
                 <p className={g.lab}>{data.label}</p>
@@ -184,11 +182,10 @@ export function LineBenchGlassScene({
                 </div>
               </div>
             </div>
-            <div className={g.vignette} />
           </div>
         ))}
       </div>
-      {!still && <GlassPause playing={playing} toggle={toggle} pause={data.pause} play={data.play} />}
+      {!still && <GlassPause playing={playing} toggle={toggle} pause={data.pause} play={data.play} side="left" />}
     </div>
   );
 }
