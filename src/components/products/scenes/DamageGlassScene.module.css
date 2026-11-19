@@ -9,13 +9,6 @@
   --u: calc(100cqw / 720);
 }
 
-/* the blurred world behind stays well out of focus, so the report holds the eye */
-.desktop > [data-piece],
-.phone > [data-piece] {
-  filter: blur(calc(26 * var(--u)));
-  opacity: 0.45;
-}
-
 .world {
   position: absolute;
   inset: 0;

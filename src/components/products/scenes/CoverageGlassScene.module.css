@@ -37,7 +37,10 @@
   inset: 0;
   /* a scene shown as a picture on a ground of its own switches this one off */
   opacity: var(--ground, 1);
-  background: radial-gradient(125% 95% at 50% 60%, #eff0f1 0%, #e1e2e4 40%, #c8cacd 76%, #aeb1b5 100%);
+  /* the ground of the Data Extraction film, sampled from its poster */
+  background:
+    linear-gradient(0deg, rgba(160, 168, 208, 0.2) 0%, rgba(160, 168, 208, 0) 30%),
+    radial-gradient(75% 75% at 50% 48%, #eceef4 0%, #e8eaf1 40%, #dee1ea 65%, #c4c9d6 100%);
 }
 .floor {
   display: none;
@@ -51,17 +54,16 @@
   filter: blur(calc(10 * var(--u)));
 }
 .piece {
-  display: none;
   position: absolute;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: calc(24 * var(--u));
-  box-shadow: 0 calc(30 * var(--u)) calc(60 * var(--u)) rgba(44, 43, 80, 0.1);
-  filter: blur(calc(9 * var(--u)));
-  opacity: 0.8;
+  filter: blur(calc(22 * var(--u)));
+  /* soft out-of-focus panels, as in the film; off with the ground */
+  opacity: calc(var(--ground, 1) * 0.75);
 }
 .piece i {
   position: absolute;
-  display: block;
+  display: none;
   left: calc(40 * var(--u));
   background: rgba(81, 81, 219, 0.14);
   border-radius: calc(6 * var(--u));
@@ -70,7 +72,7 @@
   position: absolute;
   inset: 0;
   opacity: var(--ground, 1);
-  background: linear-gradient(180deg, rgba(28, 30, 34, 0.16) 0%, rgba(28, 30, 34, 0) 28%), radial-gradient(90% 90% at 50% 50%, transparent 62%, rgba(28, 30, 34, 0.09) 100%);
+  background: radial-gradient(90% 90% at 50% 50%, transparent 66%, rgba(60, 66, 100, 0.06) 100%);
   pointer-events: none;
 }
 
