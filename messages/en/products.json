@@ -878,7 +878,7 @@
         }
       },
       "steps": {
-        "heading": "From the first photo\nto a full report",
+        "heading": "From FNOL to a full report",
         "items": [
           {
             "title": "The claim comes in",
@@ -951,7 +951,6 @@
         "heading": "Every claim to the right desk",
         "scene": {
           "alt": "A claim is routed by the insurer's own rules: to the adjuster's desk, to the next available adjuster when that desk is at capacity, to a senior adjuster when judgement is needed, or to an assessor on site when an inspection is required",
-          "note": "An example. Each business unit sets its own routing rules.",
           "claimLabel": "Claim",
           "rulesLabel": "Your routing rules",
           "items": [

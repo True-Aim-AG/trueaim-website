@@ -411,7 +411,6 @@ describe("Product scenes", () => {
       <RoutingGlassScene
         data={{
           alt: "A claim is routed by the insurer's rules",
-          note: "An example.",
           claimLabel: "Claim",
           rulesLabel: "Your routing rules",
           items: [

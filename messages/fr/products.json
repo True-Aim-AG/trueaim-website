@@ -878,7 +878,7 @@
         }
       },
       "steps": {
-        "heading": "De la première photo\nau rapport complet",
+        "heading": "De la déclaration au rapport complet",
         "items": [
           {
             "title": "Le sinistre arrive",
@@ -951,7 +951,6 @@
         "heading": "Chaque sinistre au bon endroit",
         "scene": {
           "alt": "Un sinistre est affecté selon les règles propres à l’assureur : au gestionnaire, au prochain gestionnaire disponible si le premier est à pleine charge, à un gestionnaire senior si une appréciation est nécessaire, ou à un expert sur place si une visite est nécessaire",
-          "note": "Un exemple. Chaque unité métier définit ses propres règles d’affectation.",
           "claimLabel": "Sinistre",
           "rulesLabel": "Vos règles d’affectation",
           "items": [

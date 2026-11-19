@@ -241,11 +241,12 @@ function sections(product: Product, t: Translate, buttons: HeroButton[]) {
         <>
           <FeatureCards
             heading={t(`${key}.steps.heading`)}
+            oneLine
             columns={4}
             items={withIcons(t.raw(`${key}.steps.items`) as FeatureCard[], icons.damageSteps)}
             tone="white"
           />
-          <FigureSection heading={t(`${key}.scope.heading`)} tone="tint">
+          <FigureSection heading={t(`${key}.scope.heading`)} tone="tint" oneLine>
             <ScopeGlassScene data={t.raw(`${key}.scope.scene`) as ScopeGlassData} />
           </FigureSection>
           <FigureSection heading={t(`${key}.routing.heading`)} tone="white">

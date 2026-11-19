@@ -878,7 +878,7 @@
         }
       },
       "steps": {
-        "heading": "Vom ersten Foto\nzum vollständigen Bericht",
+        "heading": "Von der Schadenmeldung zum vollständigen Bericht",
         "items": [
           {
             "title": "Der Schaden kommt an",
@@ -951,7 +951,6 @@
         "heading": "Jeder Schadenfall an der richtigen Stelle",
         "scene": {
           "alt": "Ein Schadenfall wird nach den eigenen Regeln des Versicherers zugewiesen: an den Sachbearbeiter, an den nächsten freien Sachbearbeiter, wenn dieser ausgelastet ist, an einen Senior-Sachbearbeiter, wenn eine Beurteilung nötig ist, oder an einen Gutachter vor Ort, wenn eine Besichtigung erforderlich ist",
-          "note": "Ein Beispiel. Jede Geschäftseinheit legt ihre eigenen Zuweisungsregeln fest.",
           "claimLabel": "Schadenfall",
           "rulesLabel": "Ihre Zuweisungsregeln",
           "items": [

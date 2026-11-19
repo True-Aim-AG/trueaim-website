@@ -39,6 +39,7 @@ export function FeatureCards({
   columns = 3,
   items,
   tone = "white",
+  oneLine,
 }: {
   cap?: string;
   heading: string;
@@ -47,6 +48,7 @@ export function FeatureCards({
   columns?: 2 | 3 | 4;
   items: FeatureCard[];
   tone?: Tone;
+  oneLine?: boolean;
 }) {
   const ItemHeading = headingLevel === "h2" ? "h3" : "h4";
   const withIcons = items.some((item) => item.icon);
@@ -56,7 +58,7 @@ export function FeatureCards({
   return (
     <section className={section(tone)}>
       <div className="mx-auto max-w-7xl">
-        <SectionHead cap={cap} heading={heading} headingLevel={headingLevel} lede={intro} />
+        <SectionHead cap={cap} heading={heading} headingLevel={headingLevel} lede={intro} oneLine={oneLine} />
         <ul className={cn("grid grid-cols-1 gap-[29px]", COLS[columns])}>
           {items.map((item, index) => {
             const linked = Boolean(item.href);

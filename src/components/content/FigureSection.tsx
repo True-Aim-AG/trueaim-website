@@ -10,6 +10,7 @@ export function FigureSection({
   heading,
   headingLevel = "h2",
   tone = "white",
+  oneLine,
   children,
 }: {
   id?: string;
@@ -17,12 +18,13 @@ export function FigureSection({
   heading: string;
   headingLevel?: "h2" | "h3";
   tone?: Tone;
+  oneLine?: boolean;
   children: React.ReactNode;
 }) {
   return (
     <section id={id} className={cn(section(tone), id && "scroll-mt-24")}>
       <div className="mx-auto max-w-7xl">
-        <SectionHead cap={cap} heading={heading} headingLevel={headingLevel} />
+        <SectionHead cap={cap} heading={heading} headingLevel={headingLevel} oneLine={oneLine} />
         <Reveal delay={0.1}>{children}</Reveal>
       </div>
     </section>

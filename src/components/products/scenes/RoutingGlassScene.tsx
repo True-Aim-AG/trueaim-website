@@ -11,7 +11,6 @@ import styles from "./RoutingGlassScene.module.css";
 
 export type RoutingGlassData = {
   alt: string;
-  note: string;
   claimLabel: string;
   rulesLabel: string;
   /** One route per desk, in the order a claim is offered to them. `when` is the rule that sends a claim there. */
@@ -196,7 +195,6 @@ export function RoutingGlassScene({ data }: { data: RoutingGlassData }) {
                   );
                 })}
               </div>
-              <p className={styles.note}>{data.note}</p>
             </div>
 
             <svg data-links className={g.links} viewBox={`0 0 ${layout.ww} ${layout.wh}`} aria-hidden>
