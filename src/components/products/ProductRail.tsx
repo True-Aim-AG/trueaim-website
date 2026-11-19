@@ -59,13 +59,24 @@ export function ProductRail({
   const [held, setHeld] = useState(false);
   const dragFrom = useRef<number | null>(null);
   const rest = useRef<number | undefined>(undefined);
+  /** How much of the open tile's turn is still to run; a wait stops the clock and does not start it again. */
+  const left = useRef(TURN_MS);
   const count = items.length;
   const turning = !held && !reduced && count > 1;
 
+  // A new tile gets a full turn. Declared before the clock below, so it runs first when the tile changes.
+  useEffect(() => {
+    left.current = TURN_MS;
+  }, [index]);
+
   useEffect(() => {
     if (!turning) return;
-    const timer = window.setTimeout(() => setIndex((i) => (i + 1) % count), TURN_MS);
-    return () => window.clearTimeout(timer);
+    const started = performance.now();
+    const timer = window.setTimeout(() => setIndex((i) => (i + 1) % count), left.current);
+    return () => {
+      window.clearTimeout(timer);
+      left.current = Math.max(0, left.current - (performance.now() - started));
+    };
   }, [turning, index, count]);
 
   const go = (to: number) => setIndex((to + count) % count);
@@ -103,7 +114,13 @@ export function ProductRail({
               {items.map((item, i) => (
                 <span key={item.key} className={cn(i < index && styles.done)}>
                   {/* The open tile's mark fills while its turn runs, so the move to the next one is expected. */}
-                  {i === index && <i key={`${index}-${turning}`} className={turning ? styles.filling : styles.full} style={{ animationDuration: `${TURN_MS}ms` }} />}
+                  {i === index && (
+                    <i
+                      key={index}
+                      className={reduced ? styles.full : styles.filling}
+                      style={{ animationDuration: `${TURN_MS}ms`, animationPlayState: turning ? "running" : "paused" }}
+                    />
+                  )}
                 </span>
               ))}
             </div>

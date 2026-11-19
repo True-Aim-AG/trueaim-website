@@ -12,9 +12,16 @@
 }
 /* as a picture in a tile the stage is narrower and fills the tile */
 .desktop.still {
-  --u: calc(100cqw / 1300);
+  --u: calc(100cqw / 1080);
   aspect-ratio: auto;
   height: 100%;
+}
+/* in a tile the conversation sits in the middle, not on the foot of the stage */
+.desktop.still .world {
+  justify-content: center;
+}
+.desktop.still .thread {
+  padding-bottom: calc(26 * var(--u));
 }
 
 .world {

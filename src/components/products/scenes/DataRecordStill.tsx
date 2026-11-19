@@ -14,14 +14,14 @@ export type DataRecordStillData = {
 
 /** Where each part sits around the claim, as percentages of the picture, with its icon. */
 const PLACES: { x: number; y: number; icon: LucideIcon }[] = [
-  { x: 50, y: 13, icon: User },
-  { x: 80, y: 32, icon: Shield },
-  { x: 80, y: 71, icon: FileText },
-  { x: 50, y: 90, icon: CloudLightning },
-  { x: 20, y: 71, icon: Briefcase },
-  { x: 20, y: 32, icon: Building2 },
+  { x: 50, y: 15, icon: User },
+  { x: 74, y: 33, icon: Shield },
+  { x: 74, y: 69, icon: FileText },
+  { x: 50, y: 87, icon: CloudLightning },
+  { x: 26, y: 69, icon: Briefcase },
+  { x: 26, y: 33, icon: Building2 },
 ];
-const CENTRE = { x: 50, y: 51.5 };
+const CENTRE = { x: 50, y: 51 };
 
 /**
  * Data Extraction as one picture, for the home page's product row: the claim
