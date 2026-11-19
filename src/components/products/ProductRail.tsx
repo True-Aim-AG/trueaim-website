@@ -29,6 +29,8 @@ export type ProductRailLabels = { previous: string; next: string };
 
 /** How long a tile stays open before the row moves on by itself. */
 const TURN_MS = 5500;
+/** The turn waits only once the pointer has rested on the row this long; a pointer passing over does not stop it. */
+const REST_MS = 1500;
 /** A drag this far along the row, in pixels, moves it one tile. */
 const SWIPE = 40;
 
@@ -37,8 +39,8 @@ const SWIPE = 40;
  * of its product's scene, with the benefit and the link under it; the others
  * are small glass tiles with the product's icon and name. The row moves on by
  * itself, one tile at a time, and the arrows, a tile, the arrow keys or a
- * swipe move it by hand. The turn waits while the pointer or the keyboard
- * focus is on the row, a tap on the picture stops and restarts it on a touch
+ * swipe move it by hand. The turn waits once the pointer has rested on the
+ * row for a moment, and while the keyboard focus is on it, a tap on the picture stops and restarts it on a touch
  * screen, and it does not start under reduced motion (WCAG 2.2.2).
  */
 export function ProductRail({
@@ -56,6 +58,7 @@ export function ProductRail({
   const [index, setIndex] = useState(0);
   const [held, setHeld] = useState(false);
   const dragFrom = useRef<number | null>(null);
+  const rest = useRef<number | undefined>(undefined);
   const count = items.length;
   const turning = !held && !reduced && count > 1;
 
@@ -68,15 +71,23 @@ export function ProductRail({
   const go = (to: number) => setIndex((to + count) % count);
 
   return (
-    <section className={cn(section(tone), styles.section)}>
+    <section className={cn(section(tone), styles.section, "md:pt-20")}>
       <div className="mx-auto max-w-7xl">
-        <SectionHead heading={heading} center />
+        <SectionHead heading={heading} center className="mb-10" />
         <div
           role="group"
           aria-roledescription="carousel"
           aria-label={heading}
-          onPointerEnter={(event) => event.pointerType === "mouse" && setHeld(true)}
-          onPointerLeave={(event) => event.pointerType === "mouse" && setHeld(false)}
+          onPointerEnter={(event) => {
+            if (event.pointerType !== "mouse") return;
+            window.clearTimeout(rest.current);
+            rest.current = window.setTimeout(() => setHeld(true), REST_MS);
+          }}
+          onPointerLeave={(event) => {
+            if (event.pointerType !== "mouse") return;
+            window.clearTimeout(rest.current);
+            setHeld(false);
+          }}
           onFocus={(event) => event.target.matches(":focus-visible") && setHeld(true)}
           onBlur={() => setHeld(false)}
           onKeyDown={(event) => {
