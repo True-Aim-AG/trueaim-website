@@ -164,7 +164,7 @@ Product ↔ icon mapping: MIRA → `mira`; ContextBuilder → `extraction` (alt 
 ## 8. Copy rules for this brand
 
 British spelling is used in the brand source; the site uses US spelling today — keep the site consistent (US) and do not
-mass-convert. No dashes for rhythm (see CLAUDE.md). We say: "Auditable by design", "Explainable by default", "Defensible from
+mass-convert. No dashes for rhythm (see AGENTS.md). We say: "Auditable by design", "Explainable by default", "Defensible from
 day one", "Same inputs. Same decision. Every time.", "Not a black box. A glass box you can audit." We don't say:
 revolutionary, game-changing, streamline, optimise/optimize, leverage. Tagline: **"Auditable by design."**
 

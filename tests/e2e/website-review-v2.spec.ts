@@ -296,7 +296,7 @@ test.describe('Home Page - Awards Section', () => {
 
   test('AWARDS:AWARD_3 - Italian award name', async ({ page }) => {
     // Rendered as two stacked lines (no dash separator), per the "no dashes
-    // for rhythm" copy rule in CLAUDE.md, instead of one hyphenated string.
+    // for rhythm" copy rule in AGENTS.md, instead of one hyphenated string.
     await expect(page.getByText('Miglior InsurTech')).toBeVisible();
     await expect(page.getByText('IKN Awards')).toBeVisible();
   });
