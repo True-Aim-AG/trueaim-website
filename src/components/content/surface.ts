@@ -14,7 +14,8 @@ export const CARD_HOVER =
 /** Section backgrounds: white, or the mockup's lilac that alternates with it. */
 export type Tone = "white" | "tint";
 
-const TONES: Record<Tone, string> = { white: "bg-page", tint: "bg-lilac" };
+/** Sections are see-through: the page ground shows through every section. The tone is kept so pages can still say which sections belong together. */
+const TONES: Record<Tone, string> = { white: "bg-transparent", tint: "bg-transparent" };
 
 /** The section wrapper for a tone, at full or short height. */
 export function section(tone: Tone = "white", tight = false) {

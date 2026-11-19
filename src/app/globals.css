@@ -153,6 +153,28 @@
   --icon-accent: var(--ta-blue);
   --shadow-card: 0 9px 14.7px 0 rgba(0, 0, 0, .04);
   --shadow-swatch: 0 4px 7px 0 rgba(0, 0, 0, .10);
+  /* the page ground: the grey with depth of the Otus film, tinted about 2% towards True Aim Blue */
+  --ground-tint: var(--ta-blue);
+  --ground-1: color-mix(in oklab, #eff0f1 98%, var(--ground-tint));
+  --ground-2: color-mix(in oklab, #e1e2e4 98%, var(--ground-tint));
+  --ground-3: color-mix(in oklab, #c8cacd 98%, var(--ground-tint));
+  --ground-4: color-mix(in oklab, #aeb1b5 98%, var(--ground-tint));
+  --surface-ground: radial-gradient(125% 95% at 50% 60%, var(--ground-1) 0%, var(--ground-2) 40%, var(--ground-3) 76%, var(--ground-4) 100%);
+  /* the glass material for the page (taim-design-system glass-material, light tone, frost engine) */
+  --glass-fill: color-mix(in oklab, var(--ta-primary-light) 62%, transparent);
+  --glass-fill-dense: color-mix(in oklab, var(--ta-primary-light) 80%, transparent);
+  --glass-edge: color-mix(in oklab, var(--ta-primary-dark) 12%, transparent);
+  --glass-rim-hi: color-mix(in oklab, var(--ta-neutral-0) 95%, transparent);
+  --glass-rim-lo: color-mix(in oklab, var(--ta-neutral-0) 18%, transparent);
+  --glass-shade: var(--ta-primary-dark);
+  --glass-shadow:
+    0 0 0 0.5px var(--glass-edge),
+    0 12px 32px -6px color-mix(in oklab, var(--glass-shade) 14%, transparent),
+    0 1px 3px 0 color-mix(in oklab, var(--glass-shade) 10%, transparent);
+  --glass-bevel:
+    inset 0 1px 0.5px color-mix(in oklab, var(--ta-neutral-0) 85%, transparent),
+    inset 0 -1px 1px color-mix(in oklab, var(--ta-neutral-0) 35%, transparent),
+    inset 0 0 18px color-mix(in oklab, var(--ta-neutral-0) 22%, transparent);
   color: var(--text-body);
 }
 
@@ -226,6 +248,31 @@
 /* ===== Custom utilities ===== */
 @utility bg-page-tint { background: var(--surface-page-tint); }
 @utility bg-sweep { background: var(--ta-sweep); }
+/* The glass material on the page. A frosted surface, a bevel of light at the lips, a specular rim
+   aimed at the light from the top left, and a soft short shadow. Content sits on top; never glass on glass. */
+@utility glass {
+  position: relative;
+  background:
+    radial-gradient(120% 70% at 50% -20%, color-mix(in oklab, var(--ta-neutral-0) 70%, transparent), transparent 62%),
+    var(--glass-fill);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: var(--glass-bevel), var(--glass-shadow);
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.25px;
+    background: conic-gradient(from -35deg, var(--glass-rim-hi), var(--glass-rim-lo) 16%, color-mix(in oklab, var(--ta-neutral-0) 4%, transparent) 32%, color-mix(in oklab, var(--ta-neutral-0) 55%, transparent) 50%, color-mix(in oklab, var(--ta-neutral-0) 4%, transparent) 68%, var(--glass-rim-lo) 84%, var(--glass-rim-hi));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    pointer-events: none;
+  }
+}
+/* glass under dense text: the same material, a denser fill */
+@utility glass-dense { --glass-fill: var(--glass-fill-dense); }
 @utility text-caption {
   font-family: var(--font-body); font-weight: 500; font-size: 16px; line-height: 1.4;
   letter-spacing: 0.16em; text-transform: uppercase;
@@ -249,11 +296,12 @@
 /* ===== Base ===== */
 html {
   scroll-behavior: smooth;
-  background: var(--surface-page);
+  background: var(--ground-3);
 }
 
+/* One ground behind the whole page, fixed to the window, so sections carry no box of their own. */
 body {
-  background: var(--surface-page);
+  background: transparent;
   color: var(--text-body);
   font-family: var(--font-body);
   font-size: 16px;
@@ -272,6 +320,15 @@ h1, h2, h3 { font-weight: 700; }
 h4, h5, h6 { font-weight: 600; letter-spacing: 0.01em; }
 
 p { text-wrap: pretty; }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--surface-ground);
+  pointer-events: none;
+}
 
 a { color: inherit; }
 
