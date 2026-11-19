@@ -7,7 +7,7 @@ import {
   Clock,
   ScrollText,
   User, ArrowRight } from "lucide-react";
-import { TextureBackdrop } from "@/components/content";
+import { FaqBlock, TextureBackdrop } from "@/components/content";
 import { ButtonLink } from "@/components/brand/Button";
 import { scorecardQuestions, type ScorecardQuestion } from "./questions";
 import { faqs } from "./faqs";
@@ -519,21 +519,7 @@ export default async function AuditabilityScorecardBlogPost({
                   Frequently asked questions
                 </h2>
 
-                <div className="space-y-4">
-                  {faqs.map((faq) => (
-                    <div
-                      key={faq.question}
-                      className="bg-card shadow-card rounded-pill p-8"
-                    >
-                      <h3 className="font-display font-semibold text-strong mb-3">
-                        {faq.question}
-                      </h3>
-                      <p className="text-sm text-body leading-[1.6]">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                <FaqBlock faqs={faqs} />
               </MotionDiv>
 
               {/* Related reading */}

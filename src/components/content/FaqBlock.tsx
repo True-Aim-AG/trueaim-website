@@ -1,44 +1,43 @@
 import { useId } from "react";
 import { ChevronDown } from "lucide-react";
 import type { FaqItem } from "./schema";
+import styles from "./FaqBlock.module.css";
 
 export type { FaqItem };
 
+/** A question as the page shows it. The answer may carry links; the JSON-LD is built from the plain FaqItem array. */
+export type FaqEntry = { question: string; answer: React.ReactNode };
+
 /**
- * FAQ as click-to-open rows, drawn as the prototype does: a hairline between
- * questions, a blue disc on the right that turns and fills when the row is
- * open. Native <details>, so every answer is in the served HTML (readable by
- * crawlers and without JavaScript) and the rows are keyboard-operable with
- * no script; the rows share a name, so opening one closes the others. Each
- * question is a heading; pick the level that keeps the page outline in
- * order. Build the FAQPage JSON-LD from the same array with faqPageSchema()
- * so the markup always matches the page.
+ * FAQ as click-to-open tiles in the glass look of the product scenes: each
+ * question is a tile of glass with the chevron in a glass bead that turns and
+ * fills when the tile is open. Native <details>, so every answer is in the
+ * served HTML (readable by crawlers and without JavaScript) and the tiles are
+ * keyboard-operable with no script; the tiles share a name, so opening one
+ * closes the others. Each question is a heading; pick the level that keeps
+ * the page outline in order. Build the FAQPage JSON-LD from the same array
+ * with faqPageSchema() so the markup always matches the page.
  */
 export function FaqBlock({
   faqs,
   headingLevel = "h3",
 }: {
-  faqs: FaqItem[];
+  faqs: FaqEntry[];
   headingLevel?: "h2" | "h3" | "h4";
 }) {
   const Heading = headingLevel;
   const group = useId();
   return (
-    <div className="max-w-[86ch] border-t border-hairline">
+    <div className={styles.list}>
       {faqs.map((faq) => (
-        <details key={faq.question} name={group} className="group border-b border-hairline">
-          <summary className="flex cursor-pointer list-none items-center gap-5 py-[22px] [&::-webkit-details-marker]:hidden">
-            <Heading className="flex-1 font-display text-[19px] font-semibold leading-[1.35] text-strong transition-colors duration-150 ease-brand group-open:text-ta-blue-700 group-hover:text-ta-blue-700">
-              {faq.question}
-            </Heading>
-            <span
-              aria-hidden="true"
-              className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-ta-blue-50 text-ta-blue-700 transition-[background-color,color,transform] duration-300 ease-brand group-hover:bg-ta-blue-100 group-open:rotate-180 group-open:bg-accent group-open:text-on-brand"
-            >
-              <ChevronDown className="h-4 w-4" strokeWidth={1.5} />
+        <details key={faq.question} name={group} className={styles.tile}>
+          <summary className={styles.summary}>
+            <Heading className="flex-1 font-display text-[19px] font-semibold leading-[1.35] text-strong">{faq.question}</Heading>
+            <span aria-hidden="true" className={styles.disc}>
+              <ChevronDown className="h-[18px] w-[18px]" strokeWidth={1.75} />
             </span>
           </summary>
-          <p className="max-w-[74ch] pb-[26px] pr-14 text-body leading-[1.6]">{faq.answer}</p>
+          <p className={`${styles.answer} text-body leading-[1.6]`}>{faq.answer}</p>
         </details>
       ))}
     </div>

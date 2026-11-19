@@ -9,7 +9,7 @@ import {
   CheckCircle,
   Shield,
 } from "lucide-react";
-import { TextureBackdrop } from "@/components/content";
+import { FaqBlock, TextureBackdrop } from "@/components/content";
 import { ButtonLink } from "@/components/brand/Button";
 
 const ease = [0.4, 0, 0.2, 1] as const;
@@ -780,21 +780,7 @@ export default async function EUAIActClaimsBlogPost({ params }: { params: Promis
                   Domande frequenti
                 </h2>
 
-                <div className="space-y-4">
-                  {faqs.map((faq) => (
-                    <div
-                      key={faq.q}
-                      className="bg-card shadow-card rounded-pill p-8"
-                    >
-                      <h3 className="font-display font-semibold text-strong mb-3">
-                        {faq.q}
-                      </h3>
-                      <p className="text-sm text-body leading-[1.6]">
-                        {faq.a}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                <FaqBlock faqs={faqs.map(({ q, a }) => ({ question: q, answer: a }))} />
               </MotionDiv>
 
               {/* Related reading */}
