@@ -39,9 +39,12 @@ const SWIPE = 40;
  * of its product's scene, with the benefit and the link under it; the others
  * are small glass tiles with the product's icon and name. The row moves on by
  * itself, one tile at a time, and the arrows, a tile, the arrow keys or a
- * swipe move it by hand. The turn waits once the pointer has rested on the
- * row for a moment, and while the keyboard focus is on it, a tap on the picture stops and restarts it on a touch
- * screen, and it does not start under reduced motion (WCAG 2.2.2).
+ * swipe move it by hand. The turn waits while the pointer rests on the row
+ * (a pointer only passing over does not stop it) and while the keyboard focus
+ * is on it; a tap on the picture stops and restarts it on a touch screen, and
+ * it does not start under reduced motion (WCAG 2.2.2). The three holds are
+ * kept apart, so a click that moves the focus does not release the pointer's
+ * hold.
  */
 export function ProductRail({
   heading,
@@ -56,7 +59,14 @@ export function ProductRail({
 }) {
   const reduced = useReducedMotion();
   const [index, setIndex] = useState(0);
-  const [held, setHeld] = useState(false);
+  /** The pointer rests on the row. */
+  const [resting, setResting] = useState(false);
+  /** The keyboard focus is in the row. */
+  const [focused, setFocused] = useState(false);
+  /** A tap on the picture stopped the turn (touch screens). */
+  const [tapped, setTapped] = useState(false);
+  const held = resting || focused || tapped;
+  const groupRef = useRef<HTMLDivElement>(null);
   const dragFrom = useRef<number | null>(null);
   const rest = useRef<number | undefined>(undefined);
   /** How much of the open tile's turn is still to run; a wait stops the clock and does not start it again. */
@@ -72,12 +82,22 @@ export function ProductRail({
   useEffect(() => {
     if (!turning) return;
     const started = performance.now();
-    const timer = window.setTimeout(() => setIndex((i) => (i + 1) % count), left.current);
+    const timer = window.setTimeout(() => {
+      // A pointer that the page scrolled onto the row has sent no event yet; the row still knows it is there.
+      if (groupRef.current?.matches(":hover")) {
+        left.current = TURN_MS;
+        setResting(true);
+        return;
+      }
+      setIndex((i) => (i + 1) % count);
+    }, left.current);
     return () => {
       window.clearTimeout(timer);
       left.current = Math.max(0, left.current - (performance.now() - started));
     };
   }, [turning, index, count]);
+
+  useEffect(() => () => window.clearTimeout(rest.current), []);
 
   const go = (to: number) => setIndex((to + count) % count);
 
@@ -86,21 +106,26 @@ export function ProductRail({
       <div className="mx-auto max-w-7xl">
         <SectionHead heading={heading} center className="mb-10" />
         <div
+          ref={groupRef}
           role="group"
           aria-roledescription="carousel"
           aria-label={heading}
-          onPointerEnter={(event) => {
-            if (event.pointerType !== "mouse") return;
-            window.clearTimeout(rest.current);
-            rest.current = window.setTimeout(() => setHeld(true), REST_MS);
+          onPointerMove={(event) => {
+            // The wait starts once the pointer is on the row; moving on the row keeps it, leaving ends it.
+            if (event.pointerType !== "mouse" || resting || rest.current !== undefined) return;
+            rest.current = window.setTimeout(() => setResting(true), REST_MS);
           }}
           onPointerLeave={(event) => {
             if (event.pointerType !== "mouse") return;
             window.clearTimeout(rest.current);
-            setHeld(false);
+            rest.current = undefined;
+            setResting(false);
           }}
-          onFocus={(event) => event.target.matches(":focus-visible") && setHeld(true)}
-          onBlur={() => setHeld(false)}
+          onFocus={(event) => event.target.matches(":focus-visible") && setFocused(true)}
+          onBlur={(event) => {
+            // Only the keyboard's hold ends here, and only when the focus leaves the row.
+            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false);
+          }}
           onKeyDown={(event) => {
             if (event.key === "ArrowRight") go(index + 1);
             else if (event.key === "ArrowLeft") go(index - 1);
@@ -144,7 +169,7 @@ export function ProductRail({
               if (moved < -SWIPE) go(index + 1);
               else if (moved > SWIPE) go(index - 1);
               // A tap on the picture, not on a tile or a link, stops the turn and starts it again.
-              else if (Math.abs(moved) < 8 && !(event.target as HTMLElement).closest("button, a")) setHeld((value) => !value);
+              else if (Math.abs(moved) < 8 && !(event.target as HTMLElement).closest("button, a")) setTapped((value) => !value);
             }}
           >
             <ul className={styles.track} style={{ "--i": index } as CSSProperties}>

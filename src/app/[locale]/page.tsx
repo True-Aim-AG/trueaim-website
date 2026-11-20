@@ -53,6 +53,10 @@ const relatedPages = [
   { key: "otus", href: "/platform/otus", icon: productIcons.otus },
 ] as const;
 
+/** The order of the home row: damage reporting second, after the data it builds on. The product list elsewhere keeps its own order. */
+const HOME_ORDER = ["dataExtraction", "damageReporting", "claimsDecisioning", "invoiceBenchmarking", "otus"] as const;
+const homeProducts = HOME_ORDER.map((key) => products.find((product) => product.key === key)!);
+
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -94,7 +98,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       />
       <ProductRail
         heading={t("benefits.heading")}
-        items={products.map((product) => ({
+        items={homeProducts.map((product) => ({
           key: product.key,
           name: t(`benefits.items.${product.key}.link`),
           icon: productIcons[product.key],
