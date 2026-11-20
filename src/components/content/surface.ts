@@ -4,12 +4,12 @@
  * hero, then the mockup's lilac, then white again.
  */
 
-/** A card: 12px radius, 1px ring in the shadow, the brand card shadow. */
-export const CARD = "rounded-[12px] bg-card shadow-[0_0_0_1px_rgba(44,43,42,.06),var(--shadow-card)]";
+/** A card: a tile of the glass material (the `glass` utility in globals.css), 24px radius. */
+export const CARD = "glass rounded-[24px]";
 
-/** A clickable card lifts and its ring turns blue. */
+/** A clickable card lifts and a thin blue line draws round it. */
 export const CARD_HOVER =
-  "transition-[box-shadow,transform] duration-300 ease-brand hover:-translate-y-[3px] hover:shadow-[0_0_0_1px_rgba(81,81,219,.28),0_14px_28px_-12px_rgba(44,43,42,.18)] focus-within:shadow-[0_0_0_3px_var(--focus-ring)]";
+  "transition-[box-shadow,transform] duration-300 ease-brand hover:-translate-y-[3px] hover:shadow-[var(--glass-bevel),0_0_0_1px_rgba(81,81,219,.32),0_18px_36px_-14px_rgba(44,43,42,.22)] focus-within:shadow-[var(--glass-bevel),0_0_0_3px_var(--focus-ring)]";
 
 /** Section backgrounds: white, or the mockup's lilac that alternates with it. */
 export type Tone = "white" | "tint";

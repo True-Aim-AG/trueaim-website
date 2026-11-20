@@ -20,15 +20,14 @@ const TEXTURES: Record<HeroTexture["name"], string> = {
 export function TextureBackdrop({ texture }: { texture: HeroTexture }) {
   return (
     <>
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-cover bg-no-repeat"
-        style={{ backgroundImage: `url(${TEXTURES[texture.name]})`, backgroundPosition: texture.position ?? "50% 50%" }}
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,252,253,.96)_0%,rgba(251,252,253,.9)_55%,rgba(251,252,253,.7)_100%)] lg:bg-[linear-gradient(90deg,rgba(251,252,253,.97)_0%,rgba(251,252,253,.88)_38%,rgba(251,252,253,.46)_64%,rgba(251,252,253,.06)_100%)]"
-      />
+      {/* The texture and its veil fade out at the foot, so the hero runs into the page ground with no edge. */}
+      <div aria-hidden className="absolute inset-0 [mask-image:linear-gradient(180deg,#000_62%,transparent_100%)]">
+        <div
+          className="absolute inset-0 bg-cover bg-no-repeat"
+          style={{ backgroundImage: `url(${TEXTURES[texture.name]})`, backgroundPosition: texture.position ?? "50% 50%" }}
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--ground-1)_96%,transparent)_0%,color-mix(in_oklab,var(--ground-1)_90%,transparent)_55%,color-mix(in_oklab,var(--ground-1)_70%,transparent)_100%)] lg:bg-[linear-gradient(90deg,color-mix(in_oklab,var(--ground-1)_97%,transparent)_0%,color-mix(in_oklab,var(--ground-1)_88%,transparent)_38%,color-mix(in_oklab,var(--ground-1)_46%,transparent)_64%,color-mix(in_oklab,var(--ground-1)_6%,transparent)_100%)]" />
+      </div>
     </>
   );
 }
@@ -70,7 +69,7 @@ export function PageHero({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-hairline bg-page-tint">
+    <section className="relative overflow-hidden bg-page-tint">
       {texture && <TextureBackdrop texture={texture} />}
       <div
         className={cn(

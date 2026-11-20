@@ -119,13 +119,17 @@
 :root,
 [data-theme="light"] {
   --surface-page: var(--ta-primary-light);
-  --surface-page-tint: var(--ta-gradient-page);
-  --surface-card: var(--ta-neutral-50);
+  /* light bands are see-through: the page ground shows under them */
+  --surface-page-tint: transparent;
+  /* a plain card is frosted, so it reads as glass on the ground */
+  --surface-card: color-mix(in oklab, var(--ta-primary-light) 72%, transparent);
   --surface-card-accent: var(--ta-blue);
   --surface-dark: var(--ta-primary-dark);
   --surface-dark-2: var(--ta-charcoal);
-  --surface-lilac: var(--ta-lilac);
-  --surface-muted: var(--ta-neutral-100);
+  /* lilac survives only as a faint blue tint on small plates; blue is an accent */
+  --surface-lilac: color-mix(in oklab, var(--ta-blue) 8%, transparent);
+  /* a quiet plate on glass: a faint tint, never a solid grey block */
+  --surface-muted: color-mix(in oklab, var(--ta-primary-dark) 5%, transparent);
   --surface-elevated: var(--ta-neutral-0);
   --text-strong: var(--ta-primary-dark);
   --text-body: var(--ta-charcoal);
@@ -320,6 +324,20 @@ h1, h2, h3 { font-weight: 700; }
 h4, h5, h6 { font-weight: 600; letter-spacing: 0.01em; }
 
 p { text-wrap: pretty; }
+
+/* Plain white and lilac blocks are gone: a light section is see-through and shows the page ground.
+   Dark bands keep their own surface. */
+section:is(.bg-page, .bg-lilac, .bg-card):not([data-theme="dark"], [data-theme="dark"] *) {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+/* A plain card is frosted glass: its fill is translucent (--surface-card) and it blurs what lies behind it. */
+.bg-card {
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(16px) saturate(150%);
+}
 
 body::before {
   content: "";

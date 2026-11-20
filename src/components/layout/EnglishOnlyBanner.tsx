@@ -15,7 +15,7 @@ export function EnglishOnlyBanner() {
   };
 
   return (
-    <div className="border-b border-hairline bg-lilac px-6 py-2 text-center">
+    <div className="border-b border-hairline bg-card px-6 py-2 text-center">
       <p className="text-sm text-body">
         {messages[locale] || "This page is available in English only"}
       </p>

@@ -65,7 +65,7 @@ export function ModulesDiagram({
             })}
           </ol>
           <Arrow />
-          <div className="rounded-[12px] bg-accent-soft p-6">
+          <div className="glass rounded-[24px] p-6 shadow-[var(--glass-bevel),0_0_0_1px_rgba(81,81,219,.3),0_12px_32px_-6px_rgba(44,43,42,.14)]">
             <p className="font-display font-semibold text-strong">{output.name}</p>
             <p className="text-sm text-body">{output.text}</p>
           </div>
@@ -73,7 +73,7 @@ export function ModulesDiagram({
         <h3 className="sr-only">{featuresHeading}</h3>
         <ul className="mt-6 grid gap-4 md:grid-cols-2">
           {features.map((feature) => (
-            <li key={feature.name} className="rounded-[12px] bg-lilac px-8 py-6">
+            <li key={feature.name} className="glass rounded-[24px] px-8 py-6">
               <p className="font-display font-semibold text-strong">{feature.name}</p>
               <p className="text-sm text-body">{feature.text}</p>
             </li>

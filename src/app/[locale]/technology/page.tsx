@@ -170,7 +170,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-8 bg-accent-soft rounded-[12px] p-8 text-center"
+            className="glass mt-8 rounded-[28px] p-8 text-center"
           >
             <BrandIcon name="traceability" size={40} className="mx-auto mb-4" />
             <h3 className="font-display text-2xl font-bold mb-2 text-strong">{t("architecture.auditTrail.title")}</h3>

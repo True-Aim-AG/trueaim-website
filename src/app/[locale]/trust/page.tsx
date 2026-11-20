@@ -59,8 +59,8 @@ function ResidencyVisual({ label }: { label: string }) {
       <div aria-hidden className="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,252,253,.4)_0%,rgba(251,252,253,.1)_100%)]" />
       <div className="relative grid min-h-[340px] place-items-center">
         <div className="text-center">
-          <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-ta-blue shadow-[0_0_0_10px_rgba(81,81,219,.14)]">
-            <MapPin strokeWidth={1.5} className="h-7 w-7 text-on-brand" />
+          <div className="glass mx-auto grid h-16 w-16 place-items-center rounded-full">
+            <MapPin strokeWidth={1.5} className="relative h-7 w-7 text-accent" />
           </div>
           <p className="mt-6 inline-block rounded-pill bg-card px-4 py-1.5 font-display text-[15px] font-semibold text-strong shadow-swatch">
             {label}
