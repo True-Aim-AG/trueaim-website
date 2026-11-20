@@ -55,6 +55,13 @@ const partners: Partner[] = [
     height: 193,
     translationKey: "swissInsurtechHub",
   },
+  {
+    slug: "fif",
+    name: "FIF Portugal",
+    logo: "/awards/fif-portugal.png",
+    width: 518,
+    height: 231,
+  },
 ];
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -80,11 +87,10 @@ export default async function PartnersHubPage({
       <section className={SECTION}>
         <div className="mx-auto max-w-7xl">
           <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-6">
-            {partners.map((p, index) => {
+            {partners.map((p) => {
               const key = p.translationKey ?? p.slug;
-              // Three cards per row; with five partners the fourth starts one column in, so the last row sits centred.
               return (
-                <li key={p.slug} className={cn("lg:col-span-2", index === 3 && partners.length === 5 && "lg:col-start-2")}>
+                <li key={p.slug} className="lg:col-span-2">
                   <Link href={`/partners/${p.slug}`} className={cn(CARD, CARD_HOVER, "flex h-full flex-col gap-4 p-8")}>
                     <Image
                       src={p.logo}

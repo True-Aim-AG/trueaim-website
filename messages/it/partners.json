@@ -191,11 +191,54 @@
         "bookDemo": "Richiedi una demo"
       }
     },
+    "fif": {
+      "hero": {
+        "badge": "Partner dell’ecosistema",
+        "titleLine1": "FIF Portugal",
+        "titleLine2": "Rising Star of the Year 2026",
+        "description1": "FIF Portugal, il Fórum InsurTech e FinTech Portugal, è un’associazione senza scopo di lucro con sede a Lisbona che riunisce gli innovatori di assicurazioni, banche, pagamenti e sanità. Al suo 5° Forum ibero-americano dell’insurtech ha nominato True Aim Rising Star of the Year 2026.",
+        "description2": "FIF Portugal organizza il forum con MadFintech, la sua associazione partner a Madrid, e nel 2026 lo ha aperto alle insurtech di Portogallo, Spagna e America Latina. True Aim ha presentato la sua soluzione all’edizione di Lisbona ed è partner di FIF Portugal.",
+        "logoAlt": "FIF Portugal, Forum InsurTech e FinTech"
+      },
+      "keyPoints": {
+        "award": {
+          "title": "Rising Star of the Year 2026",
+          "description": "Assegnato a True Aim al 5° Forum ibero-americano dell’insurtech, organizzato da FIF Portugal a Lisbona il 22 settembre 2026."
+        },
+        "association": {
+          "title": "Un’associazione senza scopo di lucro",
+          "description": "FIF Portugal è un’associazione di diritto privato senza scopo di lucro. Il suo obiettivo è promuovere l’uso, la diffusione e lo sviluppo delle nuove tecnologie finanziarie in Portogallo."
+        },
+        "ecosystem": {
+          "title": "Assicurazioni, banche, pagamenti e sanità",
+          "description": "FIF Portugal riunisce l’ecosistema dell’innovazione in assicurazioni, banche, pagamenti e sanità, con forum tematici su insurtech, fintech e pagamenti digitali, e healthtech."
+        },
+        "reach": {
+          "title": "Da Lisbona all’America Latina",
+          "description": "Con MadFintech a Madrid, FIF Portugal organizza il Forum ibero-americano dell’insurtech. Nel 2026 il forum si è aperto alle insurtech di Portogallo, Spagna e America Latina."
+        }
+      },
+      "details": {
+        "label": "Partner",
+        "title": "Fórum InsurTech e FinTech Portugal",
+        "description": "FIF Portugal ha sede a Lisbona. Il suo sito presenta i forum, gli eventi e i membri.",
+        "visitLink": "Visita FIF Portugal"
+      },
+      "cta": {
+        "heading": "La tecnologia dietro il riconoscimento",
+        "description": "Scoprite come True Aim trasforma i dati dei sinistri in decisioni che il vostro team può verificare e spiegare.",
+        "exploreTech": "Esplora la nostra tecnologia",
+        "bookDemo": "Richiedi una demo"
+      }
+    },
     "hub": {
       "title": "Partner",
       "subtitle": "L’ecosistema innovativo dietro True Aim",
       "intro": "True Aim si fonda sui punti di forza del settore assicurativo svizzero, della ricerca e delle istituzioni federali per l’innovazione. Ogni partner contribuisce con competenza di settore, capitale o ricerca che plasmano il modo in cui costruiamo un’IA verificabile.",
       "viewPartner": "Vedi il partner",
+      "fif": {
+        "tagline": "Rising Star of the Year 2026, ecosistema insurtech in Portogallo e Spagna"
+      },
       "yarowa": {
         "tagline": "Partner strategico e casa madre di True Aim"
       },

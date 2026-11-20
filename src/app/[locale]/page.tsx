@@ -125,6 +125,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           { src: "/partners/core-group.webp", alt: t("logos.coreGroup"), width: 395, height: 225, renderHeight: 92 },
           { src: "/partners/zhaw-logo.png", alt: t("logos.zhaw"), width: 288, height: 302, renderHeight: 100, href: "/partners/zhaw" },
           { src: "/partners/swiss-insurtech-hub.png", alt: t("logos.swissInsurtechHub"), width: 376, height: 193, renderHeight: 104, href: "/partners/swissinsurtechhub" },
+          { src: "/awards/fif-portugal.png", alt: t("logos.fif"), width: 518, height: 231, renderHeight: 64, href: "/partners/fif" },
         ]}
       />
       <VisionSection
