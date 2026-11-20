@@ -351,7 +351,7 @@ export default async function ProductPage({ params }: Props) {
         }}
         heroSlot={
           key === "otus" ? (
-            <section className="border-b border-hairline">
+            <section>
               <OtusGlassScene data={t.raw(`${key}.hero.scene`) as OtusGlassData} bleed />
             </section>
           ) : undefined
