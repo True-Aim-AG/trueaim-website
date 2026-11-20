@@ -812,8 +812,8 @@
       "name": "AI Damage Assessment & Reporting",
       "tagline": "Von Fotos zu vollständigen Schadenberichten in Minuten.",
       "hero": {
-        "title": "AI Damage Assessment & Reporting: von Fotos zu vollständigen Schadenberichten in Minuten",
-        "summary": "Fotos, Videos und Belege werden automatisch ausgewertet, um Schäden zu erkennen, ihre Schwere zu bewerten und schon bei der Schadenmeldung detaillierte Schadenberichte zu erstellen. Dazu kommen regionale Reparaturkostenschätzungen und ein vollständiger Reparaturumfang mit den erforderlichen Gewerken, Arbeitsschritten und der Reparaturreihenfolge. Besichtigungen vor Ort werden seltener, weil Gutachter nur dort eingesetzt werden, wo menschliches Fachwissen gebraucht wird.",
+        "title": "AI Damage Assessment\n& Reporting",
+        "summary": "Fotos, Videos und Belege werden in Minuten automatisch ausgewertet, um Schäden zu erkennen, ihre Schwere zu bewerten und schon bei der Schadenmeldung detaillierte Schadenberichte zu erstellen. Dazu kommen regionale Reparaturkostenschätzungen und ein vollständiger Reparaturumfang mit den erforderlichen Gewerken, Arbeitsschritten und der Reparaturreihenfolge. Besichtigungen vor Ort werden seltener, weil Gutachter nur dort eingesetzt werden, wo menschliches Fachwissen gebraucht wird.",
         "scene": {
           "alt": "Drei Fotos und ein Video werden nacheinander gelesen: Jeder Befund wird in den Schadenbericht geschrieben, der Leistungsumfang wird kalkuliert, und der Sachbearbeiter prüft den Bericht",
           "photosLabel": "3 Fotos und 1 Video eingegangen",
@@ -952,18 +952,18 @@
       "routing": {
         "heading": "Jeder Schadenfall an der richtigen Stelle",
         "scene": {
-          "alt": "Ein Schadenfall wird nach den eigenen Regeln des Versicherers zugewiesen: an den Sachbearbeiter, an den nächsten freien Sachbearbeiter, wenn dieser ausgelastet ist, an einen Senior-Sachbearbeiter, wenn eine Beurteilung nötig ist, oder an einen Gutachter vor Ort, wenn eine Besichtigung erforderlich ist",
+          "alt": "Ein Schadenfall wird nach den eigenen Regeln des Versicherers zugewiesen: an Sachbearbeiter 1, an Sachbearbeiter 2, wenn der erste ausgelastet ist, an einen Senior-Sachbearbeiter, wenn eine Beurteilung nötig ist, oder an einen Gutachter vor Ort, wenn eine Besichtigung erforderlich ist",
           "claimLabel": "Schadenfall",
           "rulesLabel": "Ihre Zuweisungsregeln",
           "items": [
             {
               "id": "desk",
-              "desk": "Sachbearbeiter",
+              "desk": "Sachbearbeiter 1",
               "when": "Der Bericht ist anhand der Fotos vollständig."
             },
             {
               "id": "next",
-              "desk": "Nächster freier Sachbearbeiter",
+              "desk": "Sachbearbeiter 2",
               "when": "Der erste Sachbearbeiter ist ausgelastet."
             },
             {
@@ -1039,7 +1039,7 @@
       "tagline": "Ein KI-gestützter Experte für jedes Teammitglied.",
       "hero": {
         "title": "Otus, der Schadenspezialist von True Aim",
-        "summary": "Otus ist ein KI-gestützter Experte für jedes Teammitglied, in jeder Lösung von True Aim. Fragen Sie Otus alles zu einem Schaden, per Sprache oder Text, und die Antwort kommt aus dem Schaden, der Police und der Akte. Otus entwirft, erklärt und plant und hat keine Entscheidungsbefugnis: Ihr Team entscheidet.",
+        "summary": "Otus ist ein KI-gestützter Experte für jedes Teammitglied, in jeder Lösung von True Aim. Fragen Sie Otus alles zu einem Schaden, per Sprache oder Text, und die Belege kommen aus dem Schaden, der Police und der Akte, jeweils mit Link. Otus entwirft, erklärt und plant und hat keine Entscheidungsbefugnis: Ihr Team entscheidet.",
         "scene": {
           "alt": "Otus beantwortet nacheinander drei Fragen eines Sachbearbeiters: womit der Tag beginnt, eine Übergabe-E-Mail zu einem Schaden und warum eine Position ausgeschlossen wurde. Jede Antwort wird Zeile für Zeile geschrieben, mit den Aktionen, die Otus anbietet. Otus hat keine Entscheidungsbefugnis.",
           "otusLabel": "Otus",
@@ -1084,7 +1084,9 @@
               ],
               "actions": [
                 "Entwurf öffnen",
-                "Klausel 4.2 anzeigen"
+                "Klausel 4.2 anzeigen",
+                "Bericht anzeigen",
+                "Schaden 62850 anzeigen"
               ]
             }
           ],

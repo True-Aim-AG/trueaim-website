@@ -21,7 +21,7 @@
         },
         "claimsDecisioning": {
           "title": "Ein regulierter Schaden",
-          "text": "Jede Position anhand der Versicherungsbedingungen geprüft, der Betrag berechnet und die Begründung festgehalten, bereit zur Bestätigung durch Ihren Sachbearbeiter.",
+          "text": "Jede Position anhand der Versicherungsbedingungen geprüft, der Betrag berechnet und die Begründung festgehalten, bereit zur Prüfung durch Ihren Sachbearbeiter.",
           "link": "Automated Coverage Check"
         },
         "invoiceBenchmarking": {

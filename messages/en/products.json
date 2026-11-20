@@ -812,8 +812,8 @@
       "name": "AI Damage Assessment & Reporting",
       "tagline": "From photos to complete damage reports in minutes.",
       "hero": {
-        "title": "AI Damage Assessment & Reporting: from photos to complete damage reports in minutes",
-        "summary": "Automatically analyse photos, videos and supporting documents to identify damage, assess its severity and generate detailed damage reports at first notification of loss. Produce region-specific repair cost estimates and a complete scope of work, including the required trades, tasks and repair sequence. Reduce on-site inspections by sending assessors only where human expertise is needed.",
+        "title": "AI Damage Assessment\n& Reporting",
+        "summary": "Automatically analyse photos, videos and supporting documents in minutes to identify damage, assess its severity and generate detailed damage reports at first notification of loss. Produce region-specific repair cost estimates and a complete scope of work, including the required trades, tasks and repair sequence. Reduce on-site inspections by sending assessors only where human expertise is needed.",
         "scene": {
           "alt": "Three photographs and a video are read one after the other: each finding is written into the damage report, the scope of work is priced, and the adjuster reviews the report",
           "photosLabel": "3 photographs and 1 video received",
@@ -952,18 +952,18 @@
       "routing": {
         "heading": "Every claim to the right desk",
         "scene": {
-          "alt": "A claim is routed by the insurer's own rules: to the adjuster's desk, to the next available adjuster when that desk is at capacity, to a senior adjuster when judgement is needed, or to an assessor on site when an inspection is required",
+          "alt": "A claim is routed by the insurer's own rules: to adjuster 1, to adjuster 2 when the first desk is at capacity, to a senior adjuster when judgement is needed, or to an assessor on site when an inspection is required",
           "claimLabel": "Claim",
           "rulesLabel": "Your routing rules",
           "items": [
             {
               "id": "desk",
-              "desk": "Adjuster's desk",
+              "desk": "Adjuster 1",
               "when": "The report is complete from the photographs."
             },
             {
               "id": "next",
-              "desk": "Next available adjuster",
+              "desk": "Adjuster 2",
               "when": "The first desk is at capacity."
             },
             {
@@ -1039,7 +1039,7 @@
       "tagline": "An AI-powered expert for every team member.",
       "hero": {
         "title": "Otus, True Aim's claims specialist",
-        "summary": "Otus is an AI-powered expert for every team member, in every True Aim solution. Ask Otus anything about a claim, by voice or text, and the answer comes from the claim, the policy and the record. Otus drafts, explains and plans, and has no decision rights: your team decides.",
+        "summary": "Otus is an AI-powered expert for every team member, in every True Aim solution. Ask Otus anything about a claim, by voice or text, and the evidence comes from the claim, the policy and the record, with links to each. Otus drafts, explains and plans, and has no decision rights: your team decides.",
         "scene": {
           "alt": "Otus answers three questions from an adjuster in turn: where to start the day, a handover email for a claim, and why a line was excluded. Each answer is written out line by line with the actions Otus offers. Otus has no decision rights.",
           "otusLabel": "Otus",
@@ -1084,7 +1084,9 @@
               ],
               "actions": [
                 "Open the draft",
-                "Show clause 4.2"
+                "Show clause 4.2",
+                "Show report",
+                "Show claim 62850"
               ]
             }
           ],

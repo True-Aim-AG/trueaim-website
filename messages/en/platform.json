@@ -21,7 +21,7 @@
         },
         "claimsDecisioning": {
           "title": "A settled claim",
-          "text": "Every line checked against the policy wording, the amount calculated and the reasoning written down, ready for your adjuster to confirm.",
+          "text": "Every line checked against the policy wording, the amount calculated and the reasoning written down, ready for your adjuster to review.",
           "link": "Automated Coverage Check"
         },
         "invoiceBenchmarking": {

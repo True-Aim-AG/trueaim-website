@@ -21,7 +21,7 @@
         },
         "claimsDecisioning": {
           "title": "Un sinistre réglé",
-          "text": "Chaque ligne vérifiée au regard des conditions de la police, le montant calculé et le raisonnement consigné, prêts à être confirmés par votre gestionnaire.",
+          "text": "Chaque ligne vérifiée au regard des conditions de la police, le montant calculé et le raisonnement consigné, prêts à être examinés par votre gestionnaire.",
           "link": "Automated Coverage Check"
         },
         "invoiceBenchmarking": {

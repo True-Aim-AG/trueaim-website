@@ -79,17 +79,17 @@
       "items": {
         "dataExtraction": {
           "title": "Your claims data, ready for AI",
-          "text": "True Aim reads it, extracts it, puts it in context and builds one structured database.",
+          "text": "True Aim reads it, extracts it, contextualises it and builds an insurance-specific ontology, ready for agentic use cases.",
           "link": "Data Extraction"
         },
         "claimsDecisioning": {
           "title": "Claims settled in minutes, not weeks",
-          "text": "Every line is checked against the policy wording, the amount calculated and the reason written down, ready for your adjuster to confirm.",
+          "text": "Every line is checked against the policy wording, the amount is calculated and the reasoning is provided, ready for your adjuster to review.",
           "link": "Automated Coverage Check"
         },
         "invoiceBenchmarking": {
           "title": "Never overpay on an invoice again",
-          "text": "Every invoice, quote and estimate is benchmarked line by line, with a reissue request drafted for every line that is too high.",
+          "text": "Every invoice, quote and estimate is benchmarked line by line, with an automated reissue request drafted for every line that is overpriced.",
           "link": "Invoice Benchmarking"
         },
         "damageReporting": {
@@ -99,7 +99,7 @@
         },
         "otus": {
           "title": "An AI-powered expert for every team member",
-          "text": "Ask Otus anything about a claim, by voice or text, and the answer comes from the claim, the policy and the record.",
+          "text": "Ask Otus anything about a claim, by voice or text, and the evidence comes from the claim, the policy and the record, with links to each.",
           "link": "Otus"
         }
       },

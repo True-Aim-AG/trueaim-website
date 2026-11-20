@@ -90,7 +90,7 @@ export function PageHero({
           )}
           <h1
             className={cn(
-              "font-display text-[34px] font-bold leading-[1.15] text-strong text-balance sm:text-[40px] lg:leading-[1.1]",
+              "whitespace-pre-line font-display text-[34px] font-bold leading-[1.15] text-strong text-balance sm:text-[40px] lg:leading-[1.1]",
               // Beside a wide figure the copy column is narrower, so the heading steps down to keep its lines whole.
               visualWidth ? "lg:text-[46px]" : "lg:text-[54px]",
             )}

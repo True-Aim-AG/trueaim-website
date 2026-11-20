@@ -79,17 +79,17 @@
       "items": {
         "dataExtraction": {
           "title": "I vostri dati sinistri, pronti per l’IA",
-          "text": "True Aim li legge, ne estrae le informazioni, le mette in contesto e costruisce un unico database strutturato.",
+          "text": "True Aim li legge, ne estrae le informazioni, le mette in contesto e costruisce un’ontologia specifica per le assicurazioni, pronta per casi d’uso agentici.",
           "link": "Data Extraction"
         },
         "claimsDecisioning": {
           "title": "Sinistri liquidati in minuti, non in settimane",
-          "text": "Ogni voce viene verificata rispetto alle condizioni di polizza, l’importo calcolato e la motivazione messa per iscritto, pronti per la conferma del vostro liquidatore.",
+          "text": "Ogni voce viene verificata rispetto alle condizioni di polizza, l’importo viene calcolato e la motivazione viene fornita, pronti per la revisione del vostro liquidatore.",
           "link": "Automated Coverage Check"
         },
         "invoiceBenchmarking": {
           "title": "Mai più una fattura pagata troppo",
-          "text": "Ogni fattura, preventivo e stima viene confrontato voce per voce con i prezzi di riferimento, con una richiesta di riemissione già redatta per ogni voce troppo alta.",
+          "text": "Ogni fattura, preventivo e stima viene confrontato voce per voce con i prezzi di riferimento, con una richiesta di riemissione redatta automaticamente per ogni voce sovrapprezzata.",
           "link": "Invoice Benchmarking"
         },
         "damageReporting": {
@@ -99,7 +99,7 @@
         },
         "otus": {
           "title": "Un esperto basato sull’IA per ogni membro del team",
-          "text": "Chiedete a Otus qualsiasi cosa su un sinistro, a voce o per iscritto, e la risposta arriva dal sinistro, dalla polizza e dal fascicolo.",
+          "text": "Chiedete a Otus qualsiasi cosa su un sinistro, a voce o per iscritto, e le prove arrivano dal sinistro, dalla polizza e dal fascicolo, con un link a ciascuno.",
           "link": "Otus"
         }
       },

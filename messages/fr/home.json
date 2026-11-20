@@ -79,17 +79,17 @@
       "items": {
         "dataExtraction": {
           "title": "Vos données sinistres, prêtes pour l’IA",
-          "text": "True Aim les lit, en extrait l’information, la met en contexte et construit une base de données structurée unique.",
+          "text": "True Aim les lit, en extrait l’information, la met en contexte et construit une ontologie propre à l’assurance, prête pour des cas d’usage agentiques.",
           "link": "Data Extraction"
         },
         "claimsDecisioning": {
           "title": "Des sinistres réglés en minutes, pas en semaines",
-          "text": "Chaque ligne est vérifiée au regard des conditions de la police, le montant calculé et le motif consigné, prêts à être confirmés par votre gestionnaire.",
+          "text": "Chaque ligne est vérifiée au regard des conditions de la police, le montant est calculé et le raisonnement est fourni, prêts à être examinés par votre gestionnaire.",
           "link": "Automated Coverage Check"
         },
         "invoiceBenchmarking": {
           "title": "Ne plus jamais surpayer une facture",
-          "text": "Chaque facture, devis et chiffrage est comparé ligne par ligne aux prix de référence, avec une demande de facture rectificative rédigée pour chaque ligne trop élevée.",
+          "text": "Chaque facture, devis et chiffrage est comparé ligne par ligne aux prix de référence, avec une demande de facture rectificative rédigée automatiquement pour chaque ligne surévaluée.",
           "link": "Invoice Benchmarking"
         },
         "damageReporting": {
@@ -99,7 +99,7 @@
         },
         "otus": {
           "title": "Un expert IA pour chaque membre de l’équipe",
-          "text": "Posez à Otus n’importe quelle question sur un sinistre, à la voix ou au clavier, et la réponse vient du sinistre, de la police et du dossier.",
+          "text": "Posez à Otus n’importe quelle question sur un sinistre, à la voix ou au clavier, et les preuves viennent du sinistre, de la police et du dossier, avec un lien vers chacun.",
           "link": "Otus"
         }
       },

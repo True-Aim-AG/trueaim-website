@@ -812,8 +812,8 @@
       "name": "AI Damage Assessment & Reporting",
       "tagline": "Des photos aux rapports de dommages complets en quelques minutes.",
       "hero": {
-        "title": "AI Damage Assessment & Reporting : des photos aux rapports de dommages complets en quelques minutes",
-        "summary": "Analysez automatiquement photos, vidéos et pièces justificatives pour identifier les dommages, évaluer leur gravité et produire des rapports de dommages détaillés dès la déclaration de sinistre. Obtenez des estimations de coûts de réparation propres à chaque région et une étendue des travaux complète, avec les corps de métier, les tâches et l’ordre des réparations. Réduisez les visites sur site en n’envoyant des experts que là où l’expertise humaine est nécessaire.",
+        "title": "AI Damage Assessment\n& Reporting",
+        "summary": "Analysez automatiquement en quelques minutes photos, vidéos et pièces justificatives pour identifier les dommages, évaluer leur gravité et produire des rapports de dommages détaillés dès la déclaration de sinistre. Obtenez des estimations de coûts de réparation propres à chaque région et une étendue des travaux complète, avec les corps de métier, les tâches et l’ordre des réparations. Réduisez les visites sur site en n’envoyant des experts que là où l’expertise humaine est nécessaire.",
         "scene": {
           "alt": "Trois photos et une vidéo sont lues l’une après l’autre : chaque constat est inscrit dans le rapport de dommages, les travaux sont chiffrés et le gestionnaire vérifie le rapport",
           "photosLabel": "3 photos et 1 vidéo reçues",
@@ -952,18 +952,18 @@
       "routing": {
         "heading": "Chaque sinistre au bon endroit",
         "scene": {
-          "alt": "Un sinistre est affecté selon les règles propres à l’assureur : au gestionnaire, au prochain gestionnaire disponible si le premier est à pleine charge, à un gestionnaire senior si une appréciation est nécessaire, ou à un expert sur place si une visite est nécessaire",
+          "alt": "Un sinistre est affecté selon les règles propres à l’assureur : au gestionnaire 1, au gestionnaire 2 si le premier est à pleine charge, à un gestionnaire senior si une appréciation est nécessaire, ou à un expert sur place si une visite est nécessaire",
           "claimLabel": "Sinistre",
           "rulesLabel": "Vos règles d’affectation",
           "items": [
             {
               "id": "desk",
-              "desk": "Gestionnaire",
+              "desk": "Gestionnaire 1",
               "when": "Le rapport est complet à partir des photos."
             },
             {
               "id": "next",
-              "desk": "Prochain gestionnaire disponible",
+              "desk": "Gestionnaire 2",
               "when": "Le premier gestionnaire est à pleine charge."
             },
             {
@@ -1039,7 +1039,7 @@
       "tagline": "Un expert IA pour chaque membre de l’équipe.",
       "hero": {
         "title": "Otus, le spécialiste sinistres de True Aim",
-        "summary": "Otus est un expert IA pour chaque membre de l’équipe, dans chaque solution True Aim. Posez à Otus n’importe quelle question sur un sinistre, à la voix ou au clavier, et la réponse vient du sinistre, de la police et du dossier. Otus rédige, explique et planifie, et n’a aucun pouvoir de décision : c’est votre équipe qui décide.",
+        "summary": "Otus est un expert IA pour chaque membre de l’équipe, dans chaque solution True Aim. Posez à Otus n’importe quelle question sur un sinistre, à la voix ou au clavier, et les preuves viennent du sinistre, de la police et du dossier, avec un lien vers chacun. Otus rédige, explique et planifie, et n’a aucun pouvoir de décision : c’est votre équipe qui décide.",
         "scene": {
           "alt": "Otus répond tour à tour à trois questions d’un gestionnaire : par où commencer la journée, un e-mail de passation pour un sinistre et pourquoi une ligne a été exclue. Chaque réponse s’écrit ligne par ligne, avec les actions qu’Otus propose. Otus n’a aucun pouvoir de décision.",
           "otusLabel": "Otus",
@@ -1084,7 +1084,9 @@
               ],
               "actions": [
                 "Ouvrir le brouillon",
-                "Afficher la clause 4.2"
+                "Afficher la clause 4.2",
+                "Afficher le rapport",
+                "Afficher le sinistre 62850"
               ]
             }
           ],

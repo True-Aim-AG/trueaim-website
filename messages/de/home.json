@@ -79,17 +79,17 @@
       "items": {
         "dataExtraction": {
           "title": "Ihre Schadendaten, bereit für KI",
-          "text": "True Aim liest es, extrahiert es, stellt es in seinen Zusammenhang und baut daraus eine strukturierte Datenbank.",
+          "text": "True Aim liest es, extrahiert es, stellt es in seinen Zusammenhang und baut daraus eine versicherungsspezifische Ontologie, bereit für agentische Anwendungsfälle.",
           "link": "Data Extraction"
         },
         "claimsDecisioning": {
           "title": "Schäden in Minuten statt Wochen reguliert",
-          "text": "Jede Position wird anhand der Versicherungsbedingungen geprüft, der Betrag berechnet und die Begründung festgehalten, bereit zur Bestätigung durch Ihren Sachbearbeiter.",
+          "text": "Jede Position wird anhand der Versicherungsbedingungen geprüft, der Betrag wird berechnet und die Begründung geliefert, bereit zur Prüfung durch Ihren Sachbearbeiter.",
           "link": "Automated Coverage Check"
         },
         "invoiceBenchmarking": {
           "title": "Nie wieder zu viel für eine Rechnung zahlen",
-          "text": "Jede Rechnung, jedes Angebot und jeder Kostenvoranschlag wird Position für Position mit Referenzpreisen abgeglichen, mit einer vorformulierten Aufforderung zur Neuausstellung für jede zu hohe Position.",
+          "text": "Jede Rechnung, jedes Angebot und jeder Kostenvoranschlag wird Position für Position mit Referenzpreisen abgeglichen, mit einer automatisch vorformulierten Aufforderung zur Neuausstellung für jede überteuerte Position.",
           "link": "Invoice Benchmarking"
         },
         "damageReporting": {
@@ -99,7 +99,7 @@
         },
         "otus": {
           "title": "Ein KI-gestützter Experte für jedes Teammitglied",
-          "text": "Fragen Sie Otus alles zu einem Schaden, per Sprache oder Text, und die Antwort kommt aus dem Schaden, der Police und der Akte.",
+          "text": "Fragen Sie Otus alles zu einem Schaden, per Sprache oder Text, und die Belege kommen aus dem Schaden, der Police und der Akte, jeweils mit Link.",
           "link": "Otus"
         }
       },
