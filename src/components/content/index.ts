@@ -16,6 +16,7 @@ export { BadgeRow, type BadgeItem } from "./BadgeRow";
 export { Reveal } from "./Reveal";
 export { Points, type Point } from "./Points";
 export { SplitText, type SplitImage } from "./SplitText";
+export { VisionSection, type VisionPerson } from "./VisionSection";
 export { ComparisonTable, type ComparisonRow } from "./ComparisonTable";
 export { FaqBlock } from "./FaqBlock";
 export { FaqSection } from "./FaqSection";

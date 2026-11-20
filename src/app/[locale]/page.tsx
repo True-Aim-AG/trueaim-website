@@ -8,6 +8,7 @@ import {
   PageHero,
   RelatedLinks,
   SplitText,
+  VisionSection,
   type Award,
 } from "@/components/content";
 import {
@@ -125,6 +126,18 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           { src: "/partners/zhaw-logo.png", alt: t("logos.zhaw"), width: 288, height: 302, renderHeight: 100, href: "/partners/zhaw" },
           { src: "/partners/swiss-insurtech-hub.png", alt: t("logos.swissInsurtechHub"), width: 376, height: 193, renderHeight: 104, href: "/partners/swissinsurtechhub" },
         ]}
+      />
+      <VisionSection
+        heading={t("vision.heading")}
+        paragraphs={(t.raw("vision.paragraphs") as string[]).map((_, index) =>
+          t.rich(`vision.paragraphs.${index}`, { b: (chunks) => <strong>{chunks}</strong> }),
+        )}
+        people={[
+          { name: "Reuben John", role: t("vision.reuben.role"), alt: t("vision.reuben.alt"), photo: "/team/vision/reuben-john.webp" },
+          { name: "Frédéric Brunner", role: t("vision.frederic.role"), alt: t("vision.frederic.alt"), photo: "/team/vision/frederic-brunner.webp" },
+        ]}
+        link={{ href: "/about#team", label: t("vision.link") }}
+        tone="white"
       />
       <SplitText
         heading={t("compliance.heading")}

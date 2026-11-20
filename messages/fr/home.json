@@ -116,6 +116,26 @@
       "swissInsurtechHub": "Swiss InsurTech Hub",
       "nortonRoseFulbright": "Norton Rose Fulbright"
     },
+    "vision": {
+      "heading": "Notre vision",
+      "paragraphs": [
+        "L’assurance repose sur la confiance. La confiance que les sinistres sont traités équitablement, que les décisions sont cohérentes et que les résultats peuvent être expliqués et défendus. Alors que l’IA transforme le secteur, ces principes doivent rester fondamentaux.",
+        "Chez True Aim, nous associons l’expertise humaine à la rapidité et à la précision de l’IA, pour que les professionnels de l’assurance se concentrent là où leur jugement compte le plus.",
+        "Nous pensons qu’une IA utile commence par la compréhension. En transformant des informations fragmentées en un savoir connecté, contextualisé et prêt pour l’IA, nous posons les bases de meilleures décisions.",
+        "Mais l’efficacité seule ne suffit pas. Les décisions doivent reposer sur des preuves, suivre des règles claires et être entièrement traçables. C’est ce que nous appelons la <b>confiance à grande échelle</b> : des résultats exacts, explicables et défendables, quel que soit le volume.",
+        "Nous travaillons à une nouvelle norme pour la prise de décision en assurance. Une norme où la technologie renforce l’expertise humaine, où l’information devient une connaissance exploitable, où la responsabilité est intégrée à chaque processus et où les assureurs peuvent adopter l’IA en toute confiance.",
+        "Notre ambition est simple : rendre de meilleures décisions possibles pour tous, à grande échelle, sans compromettre la confiance sur laquelle repose l’assurance."
+      ],
+      "reuben": {
+        "role": "Cofondateur et CEO",
+        "alt": "Reuben John, cofondateur et CEO de True Aim"
+      },
+      "frederic": {
+        "role": "Cofondateur et CTO",
+        "alt": "Frédéric Brunner, cofondateur et CTO de True Aim"
+      },
+      "link": "Découvrir notre équipe"
+    },
     "compliance": {
       "heading": "Auditable dès la conception",
       "paragraphs": [

@@ -116,6 +116,26 @@
       "swissInsurtechHub": "Swiss InsurTech Hub",
       "nortonRoseFulbright": "Norton Rose Fulbright"
     },
+    "vision": {
+      "heading": "Unsere Vision",
+      "paragraphs": [
+        "Versicherung beruht auf Vertrauen. Vertrauen darauf, dass Schäden fair bearbeitet werden, Entscheidungen einheitlich sind und Ergebnisse erklärt und begründet werden können. Während KI die Branche verändert, müssen diese Grundsätze grundlegend bleiben.",
+        "Bei True Aim verbinden wir menschliches Fachwissen mit der Geschwindigkeit und Präzision von KI, damit sich Fachleute in der Versicherung auf das konzentrieren können, wo ihr Urteil am meisten zählt.",
+        "Wir sind überzeugt: Sinnvolle KI beginnt mit Verständnis. Indem wir verstreute Informationen in vernetztes, kontextbezogenes und KI-fähiges Wissen verwandeln, schaffen wir die Grundlage für bessere Entscheidungen.",
+        "Effizienz allein reicht jedoch nicht. Entscheidungen müssen auf Belegen beruhen, klaren Regeln folgen und vollständig nachvollziehbar sein. Das nennen wir <b>skalierbares Vertrauen</b>: genaue, erklärbare und belastbare Ergebnisse bei jedem Volumen.",
+        "Wir arbeiten an einem neuen Standard dafür, wie Versicherungsentscheidungen getroffen werden. Einem Standard, bei dem Technologie menschliches Fachwissen stärkt, Informationen zu verwertbarem Wissen werden, Verantwortlichkeit in jeden Prozess eingebaut ist und Versicherer KI mit Zuversicht einsetzen können.",
+        "Unser Anspruch ist einfach: bessere Entscheidungen für alle möglich zu machen, in großem Maßstab, ohne das Vertrauen zu gefährden, auf dem Versicherung beruht."
+      ],
+      "reuben": {
+        "role": "Mitgründer und CEO",
+        "alt": "Reuben John, Mitgründer und CEO von True Aim"
+      },
+      "frederic": {
+        "role": "Mitgründer und CTO",
+        "alt": "Frédéric Brunner, Mitgründer und CTO von True Aim"
+      },
+      "link": "Unser Team kennenlernen"
+    },
     "compliance": {
       "heading": "Prüfbar von Grund auf",
       "paragraphs": [

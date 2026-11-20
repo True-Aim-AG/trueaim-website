@@ -116,6 +116,26 @@
       "swissInsurtechHub": "Swiss InsurTech Hub",
       "nortonRoseFulbright": "Norton Rose Fulbright"
     },
+    "vision": {
+      "heading": "Our vision",
+      "paragraphs": [
+        "Insurance depends on trust. Trust that claims are handled fairly, decisions are consistent and outcomes can be explained and defended. As AI transforms the industry, these principles must remain fundamental.",
+        "At True Aim, we combine human expertise with the speed and precision of AI, enabling insurance professionals to focus on where their judgement matters most.",
+        "We believe meaningful AI starts with understanding. By transforming fragmented information into connected, contextual and AI-ready knowledge, we create the foundation for better decisions.",
+        "However, efficiency alone is not enough. Decisions must be grounded in evidence, guided by clear rules and fully traceable. This is what we call <b>scalable trust</b>: delivering accurate, explainable and defensible outcomes at any volume.",
+        "We're working towards a new standard for how insurance decisions are made. One where technology strengthens human expertise, information becomes actionable intelligence, accountability is built into every process and insurers can embrace AI with confidence.",
+        "Our ambition is simple: to make better decisions possible for everyone, at scale, without compromising the trust on which insurance is built."
+      ],
+      "reuben": {
+        "role": "Co-founder and CEO",
+        "alt": "Reuben John, co-founder and CEO of True Aim"
+      },
+      "frederic": {
+        "role": "Co-founder and CTO",
+        "alt": "Frédéric Brunner, co-founder and CTO of True Aim"
+      },
+      "link": "Meet our team"
+    },
     "compliance": {
       "heading": "Auditable by design",
       "paragraphs": [
