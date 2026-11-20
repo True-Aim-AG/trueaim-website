@@ -170,7 +170,9 @@
   --glass-edge: color-mix(in oklab, var(--ta-primary-dark) 12%, transparent);
   --glass-rim-hi: color-mix(in oklab, var(--ta-neutral-0) 95%, transparent);
   --glass-rim-lo: color-mix(in oklab, var(--ta-neutral-0) 18%, transparent);
-  --glass-shade: var(--ta-primary-dark);
+  /* FOR REVIEW (Henrique, 19 Nov): a very light blue shadow under glass on the grey ground, as under the Otus composer.
+     To drop it, set --glass-shade back to var(--ta-primary-dark). */
+  --glass-shade: color-mix(in oklab, var(--ta-blue) 62%, var(--ta-primary-dark));
   --glass-shadow:
     0 0 0 0.5px var(--glass-edge),
     0 12px 32px -6px color-mix(in oklab, var(--glass-shade) 14%, transparent),
