@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { CARD, CARD_HOVER, CtaBand, PageHero, SCENE_CARD_HERO, SECTION } from "@/components/content";
+import { CARD, CARD_HOVER, CtaBand, PageHero, SECTION } from "@/components/content";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { caseStudies, localizeCaseStudy, type CaseStudy, type CaseStudyCopy } from "@/data/case-studies";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -23,7 +23,7 @@ const READ_LINK = "inline-flex items-center gap-2 text-sm font-medium text-accen
 /** The first study as the hero graphic: the title with the client's logo beside it, the figures and the way in. */
 function ResultsCard({ study, readLabel }: { study: CaseStudy; readLabel: string }) {
   return (
-    <div className={cn(CARD, SCENE_CARD_HERO, "p-8")}>
+    <div className={cn(CARD, "p-8")}>
       <div className="flex items-start justify-between gap-6">
         <p className="font-display text-[22px] font-semibold leading-[1.3] tracking-[0.01em] text-strong text-balance">{study.title}</p>
         {study.customer.logo && (

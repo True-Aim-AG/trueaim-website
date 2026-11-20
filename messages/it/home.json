@@ -89,7 +89,7 @@
         },
         "invoiceBenchmarking": {
           "title": "Mai più una fattura pagata troppo",
-          "text": "Ogni fattura, preventivo e stima viene confrontato voce per voce con i prezzi di riferimento, con una richiesta di riemissione redatta automaticamente per ogni voce sovrapprezzata.",
+          "text": "Ogni fattura, ogni preventivo e ogni stima vengono confrontati voce per voce con i prezzi di riferimento, con una richiesta di riemissione redatta automaticamente per ogni voce con un prezzo eccessivo.",
           "link": "Invoice Benchmarking"
         },
         "damageReporting": {
@@ -122,7 +122,7 @@
       "paragraphs": [
         "L’assicurazione si fonda sulla fiducia. Fiducia che i sinistri siano gestiti in modo equo, che le decisioni siano coerenti e che i risultati possano essere spiegati e difesi. Mentre l’IA trasforma il settore, questi principi devono restare fondamentali.",
         "In True Aim uniamo la competenza umana alla velocità e alla precisione dell’IA, perché i professionisti assicurativi possano concentrarsi dove il loro giudizio conta di più.",
-        "Crediamo che un’IA significativa inizi dalla comprensione. Trasformando informazioni frammentate in conoscenza connessa, contestualizzata e pronta per l’IA, creiamo le basi per decisioni migliori.",
+        "Crediamo che un’IA davvero utile inizi dalla comprensione. Trasformando informazioni frammentate in conoscenza connessa, contestualizzata e pronta per l’IA, creiamo le basi per decisioni migliori.",
         "Tuttavia, l’efficienza da sola non basta. Le decisioni devono basarsi su prove, seguire regole chiare ed essere pienamente tracciabili. È ciò che chiamiamo <b>fiducia scalabile</b>: risultati accurati, spiegabili e difendibili per qualsiasi volume.",
         "Lavoriamo verso un nuovo standard per il modo in cui si prendono le decisioni assicurative. Uno standard in cui la tecnologia rafforza la competenza umana, le informazioni diventano conoscenza utilizzabile, la responsabilità è integrata in ogni processo e gli assicuratori possono adottare l’IA con fiducia.",
         "La nostra ambizione è semplice: rendere possibili decisioni migliori per tutti, su larga scala, senza compromettere la fiducia su cui si fonda l’assicurazione."
@@ -135,7 +135,7 @@
         "role": "Cofondatore e CTO",
         "alt": "Frédéric Brunner, cofondatore e CTO di True Aim"
       },
-      "link": "Conosci il nostro team"
+      "link": "Scoprite il nostro team"
     },
     "compliance": {
       "heading": "Verificabile fin dalla progettazione",

@@ -71,6 +71,10 @@ export function ProductRail({
   const rest = useRef<number | undefined>(undefined);
   /** How much of the open tile's turn is still to run; a wait stops the clock and does not start it again. */
   const left = useRef(TURN_MS);
+  /** Set when the turn was held at its very end: the clock's cleanup then gives the tile a full turn again. */
+  const renew = useRef(false);
+  /** The last pointer on the row was a mouse, and when it last moved (ms). Touch screens keep :hover after a tap. */
+  const mouse = useRef({ on: false, moved: 0 });
   const count = items.length;
   const turning = !held && !reduced && count > 1;
 
@@ -83,9 +87,11 @@ export function ProductRail({
     if (!turning) return;
     const started = performance.now();
     const timer = window.setTimeout(() => {
-      // A pointer that the page scrolled onto the row has sent no event yet; the row still knows it is there.
-      if (groupRef.current?.matches(":hover")) {
-        left.current = TURN_MS;
+      // A mouse the page scrolled onto the row has sent no event yet; if it rests there, the row still holds.
+      // A pointer only passing over is still moving, and the rest timer decides for it.
+      const still = performance.now() - mouse.current.moved > REST_MS;
+      if (mouse.current.on && still && window.matchMedia("(hover: hover)").matches && groupRef.current?.matches(":hover")) {
+        renew.current = true;
         setResting(true);
         return;
       }
@@ -93,7 +99,8 @@ export function ProductRail({
     }, left.current);
     return () => {
       window.clearTimeout(timer);
-      left.current = Math.max(0, left.current - (performance.now() - started));
+      left.current = renew.current ? TURN_MS : Math.max(0, left.current - (performance.now() - started));
+      renew.current = false;
     };
   }, [turning, index, count]);
 
@@ -111,11 +118,13 @@ export function ProductRail({
           aria-roledescription="carousel"
           aria-label={heading}
           onPointerMove={(event) => {
+            mouse.current = { on: event.pointerType === "mouse", moved: performance.now() };
             // The wait starts once the pointer is on the row; moving on the row keeps it, leaving ends it.
             if (event.pointerType !== "mouse" || resting || rest.current !== undefined) return;
             rest.current = window.setTimeout(() => setResting(true), REST_MS);
           }}
           onPointerLeave={(event) => {
+            mouse.current.on = false;
             if (event.pointerType !== "mouse") return;
             window.clearTimeout(rest.current);
             rest.current = undefined;

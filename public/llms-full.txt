@@ -24,6 +24,7 @@ True Aim works for insurers, brokers, third-party administrators, warranty provi
 - ZHAW, Zurich University of Applied Sciences: research partner
 - Norton Rose Fulbright: strategic partner; crowned True Aim the most innovative InsurTech in the world at the Insurathon 2026 (https://trueaim.ai/en/partners/nortonrosefulbright/)
 - Swiss InsurTech Hub
+- FIF Portugal (Fórum InsurTech e FinTech Portugal): partner; True Aim won Rising Star of the Year 2026 at its 5th Ibero-American Insurtech Forum in Lisbon (https://trueaim.ai/en/partners/fif/)
 
 ---
 

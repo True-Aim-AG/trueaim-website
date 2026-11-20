@@ -21,7 +21,7 @@ const currencyOptions = [
 
 const LABEL = "block text-sm font-medium text-strong";
 const FIGURE = "font-display font-semibold text-strong tabular-nums";
-const RANGE = "mt-3 h-2 w-full cursor-pointer appearance-none rounded-pill bg-surface-muted";
+const RANGE = "mt-3 h-2 w-full cursor-pointer appearance-none rounded-pill bg-[color-mix(in_oklab,var(--ta-primary-dark)_16%,transparent)]";
 const SCALE = "mt-1.5 flex justify-between text-xs text-muted";
 const FORMULA = "rounded-[8px] bg-surface-muted p-4";
 const FORMULA_LIVE = "mt-2 font-display text-sm font-semibold text-accent tabular-nums";

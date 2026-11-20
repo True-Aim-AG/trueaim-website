@@ -8,8 +8,8 @@ export type VisionPerson = { name: string; role: string; photo: string; alt: str
 
 /**
  * The founders' vision: the heading and the founders' portraits on the left,
- * the text in two columns on the right, as the Legora home page sets its
- * vision. The portraits are square, cropped the same way, and never shown
+ * the text in two columns on the right. The portraits are square, cropped
+ * the same way, and never shown
  * larger than their source stays sharp (about 400 px).
  */
 export function VisionSection({

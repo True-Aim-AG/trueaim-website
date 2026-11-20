@@ -195,9 +195,9 @@
     "hero": {
       "badge": "Ecosystem partner",
       "titleLine1": "FIF Portugal",
-      "titleLine2": "Rising Star of the Year 2026",
-      "description1": "FIF Portugal, the Fórum InsurTech e FinTech Portugal, is a non-profit association in Lisbon that brings together innovators in insurance, banking, payments and health. At its 5th Ibero-American Insurtech Forum, it named True Aim Rising Star of the Year 2026.",
-      "description2": "FIF Portugal runs the forum with MadFintech, its partner association in Madrid, and opened it in 2026 to insurtechs from Portugal, Spain and Latin America. True Aim pitched at the Lisbon edition and is a partner of FIF Portugal.",
+      "titleLine2": "True Aim, Rising Star of the Year 2026",
+      "description1": "FIF Portugal, the Fórum InsurTech e FinTech Portugal, is a non-profit association in Lisbon that brings together innovators in insurance, banking, payments and health. At its 5th Ibero-American Insurtech Forum, True Aim won Rising Star of the Year 2026.",
+      "description2": "FIF Portugal runs the forum with MadFintech, its counterpart and partner in Madrid, and opened it in 2026 to insurtechs from Portugal, Spain and Latin America. True Aim pitched at the forum in Lisbon and is a partner of FIF Portugal.",
       "logoAlt": "FIF Portugal, Forum InsurTech e FinTech"
     },
     "keyPoints": {
@@ -221,11 +221,11 @@
     "details": {
       "label": "Partner",
       "title": "Fórum InsurTech e FinTech Portugal",
-      "description": "FIF Portugal is based in Lisbon. Its website lists its forums, events and members.",
+      "description": "FIF Portugal is based in Lisbon. Its website has its forums and events.",
       "visitLink": "Visit FIF Portugal"
     },
     "cta": {
-      "heading": "See the technology behind the award",
+      "heading": "Learn More About Our Technology",
       "description": "Discover how True Aim turns claims data into decisions your team can review and explain.",
       "exploreTech": "Explore Our Technology",
       "bookDemo": "Request a demo"
@@ -237,7 +237,7 @@
       "intro": "True Aim is built on the strengths of Swiss insurance, research, and federal innovation institutions. Each partner contributes domain depth, capital, or research that shapes how we build auditable AI.",
       "viewPartner": "View partner",
       "fif": {
-        "tagline": "Rising Star of the Year 2026, insurtech ecosystem in Portugal and Spain"
+        "tagline": "Rising Star of the Year 2026 at its insurtech forum in Lisbon"
       },
       "yarowa": {
         "tagline": "Strategic partner and parent of True Aim"

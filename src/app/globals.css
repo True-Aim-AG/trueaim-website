@@ -133,16 +133,17 @@
   --surface-elevated: var(--ta-neutral-0);
   --text-strong: var(--ta-primary-dark);
   --text-body: var(--ta-charcoal);
-  --text-muted: var(--ta-neutral-600);
-  --text-subtle: var(--ta-neutral-500);
+  /* Text on the grey ground keeps WCAG AA (4.5:1) down to the darkest spot text can sit on: one step deeper than on white. */
+  --text-muted: #55565C;
+  --text-subtle: #57585E;
   --text-on-dark: var(--ta-primary-light);
   --text-on-brand: #FFFFFF;
-  --text-link: var(--ta-blue);
-  --accent: var(--ta-blue);
-  --accent-hover: var(--ta-blue-700);
-  --accent-active: var(--ta-blue-800);
+  --text-link: var(--ta-blue-700);
+  --accent: var(--ta-blue-700);
+  --accent-hover: var(--ta-blue-800);
+  --accent-active: var(--ta-blue-900);
   --accent-soft: var(--ta-blue-100);
-  --accent-text: var(--ta-blue);
+  --accent-text: var(--ta-blue-700);
   --focus-ring: var(--ta-blue-300);
   --border-subtle: var(--ta-neutral-200);
   --border-default: var(--ta-neutral-300);
@@ -166,11 +167,10 @@
   --surface-ground: radial-gradient(125% 95% at 50% 60%, var(--ground-1) 0%, var(--ground-2) 40%, var(--ground-3) 76%, var(--ground-4) 100%);
   /* the glass material for the page (taim-design-system glass-material, light tone, frost engine) */
   --glass-fill: color-mix(in oklab, var(--ta-primary-light) 62%, transparent);
-  --glass-fill-dense: color-mix(in oklab, var(--ta-primary-light) 80%, transparent);
   --glass-edge: color-mix(in oklab, var(--ta-primary-dark) 12%, transparent);
   --glass-rim-hi: color-mix(in oklab, var(--ta-neutral-0) 95%, transparent);
   --glass-rim-lo: color-mix(in oklab, var(--ta-neutral-0) 18%, transparent);
-  /* FOR REVIEW (Henrique, 19 Nov): a very light blue shadow under glass on the grey ground, as under the Otus composer.
+  /* For review: a very light blue shadow under glass on the grey ground, as under the Otus composer.
      To drop it, set --glass-shade back to var(--ta-primary-dark). */
   --glass-shade: color-mix(in oklab, var(--ta-blue) 62%, var(--ta-primary-dark));
   --glass-shadow:
@@ -277,8 +277,7 @@
     pointer-events: none;
   }
 }
-/* glass under dense text: the same material, a denser fill */
-@utility glass-dense { --glass-fill: var(--glass-fill-dense); }
+
 @utility text-caption {
   font-family: var(--font-body); font-weight: 500; font-size: 16px; line-height: 1.4;
   letter-spacing: 0.16em; text-transform: uppercase;

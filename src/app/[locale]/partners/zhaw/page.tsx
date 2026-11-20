@@ -4,7 +4,7 @@ import { ArrowRight, ExternalLink, GraduationCap, Brain, Users, FlaskConical } f
 import { PartnerOutboundLink } from "@/components/partners/PartnerOutboundLink";
 import { ButtonLink } from "@/components/brand/Button";
 import type { Metadata } from "next";
-import { CARD, PageHero, SCENE_CARD_HERO, SECTION, SECTION_LILAC } from "@/components/content";
+import { CARD, PageHero, SECTION, SECTION_LILAC } from "@/components/content";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { cn } from "@/lib/utils";
@@ -34,7 +34,7 @@ export default async function ZHAWPage({ params }: { params: Promise<{ locale: s
         summary={t("hero.description1")}
         texture={{ name: "circ", position: "12% 88%" }}
         visual={
-          <div className={cn(CARD, SCENE_CARD_HERO, "grid min-h-[260px] place-items-center p-10")}>
+          <div className={cn(CARD, "grid min-h-[260px] place-items-center rounded-[28px] p-10")}>
             <Image src="/partners/zhaw-logo.png" alt="ZHAW logo" width={160} height={120} className="h-auto w-full max-w-[280px] object-contain" />
           </div>
         }

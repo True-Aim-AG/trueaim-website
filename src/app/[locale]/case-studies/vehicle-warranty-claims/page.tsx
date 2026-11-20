@@ -200,7 +200,8 @@ export default function VehicleWarrantyCaseStudy() {
                 <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   {t("vehicleWarranty.timeSaving.heading")}
                 </h2>
-                <div className={cn(CARD, "overflow-hidden overflow-x-auto")}>
+                <div className={cn(CARD, "overflow-hidden")}>
+                  <div className="overflow-x-auto">
                   <table className="w-full text-sm min-w-[560px]">
                     <thead>
                       <tr className="border-b border-hairline">
@@ -234,6 +235,7 @@ export default function VehicleWarrantyCaseStudy() {
                       })}
                     </tbody>
                   </table>
+                  </div>
                 </div>
                 <p className="text-xs text-muted leading-[1.6] mt-3">
                   {t("vehicleWarranty.timeSaving.footnote")}
@@ -248,7 +250,8 @@ export default function VehicleWarrantyCaseStudy() {
                 <h2 className="font-display text-[28px] md:text-[32px] font-bold text-strong mt-14 mb-4">
                   {t("vehicleWarranty.book.heading")}
                 </h2>
-                <div className={cn(CARD, "overflow-hidden overflow-x-auto")}>
+                <div className={cn(CARD, "overflow-hidden")}>
+                  <div className="overflow-x-auto">
                   <table className="w-full text-sm min-w-[480px]">
                     <thead>
                       <tr className="border-b border-hairline">
@@ -281,6 +284,7 @@ export default function VehicleWarrantyCaseStudy() {
                       })}
                     </tbody>
                   </table>
+                  </div>
                 </div>
                 <p className="text-xs text-muted leading-[1.6] mt-3">
                   {t.rich("vehicleWarranty.book.basis", { b: bold })}
