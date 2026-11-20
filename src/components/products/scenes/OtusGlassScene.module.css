@@ -245,13 +245,16 @@
 }
 .desktop.bleed {
   --u: calc(min(100cqw, 1500px) / 1600);
-  --fs: calc(23 * var(--u));
+  --fs: calc(22 * var(--u));
   aspect-ratio: auto;
   height: clamp(560px, calc(100svh - 78px), 740px);
 }
 .desktop.bleed .world {
   justify-content: center;
-  padding: calc(28 * var(--u)) calc(40 * var(--u)) calc(48 * var(--u));
+  padding: calc(24 * var(--u)) calc(40 * var(--u));
+}
+.desktop.bleed .line {
+  padding: calc(5 * var(--u)) 0;
 }
 .phone.bleed .world {
   padding-bottom: calc(24 * var(--u) + 40px);
