@@ -447,7 +447,7 @@
         },
         {
           "question": "Where is AI used?",
-          "answer": "To read the claim. Agents turn photographs, PDFs, handwriting and emails into facts. Each agent is assigned one small task, so each step is clearly visible."
+          "answer": "In two places. Agents read the claim and turn photographs, PDFs, handwriting and emails into facts. A language model tests each line that needs judgement against the policy wording and cites the clause it used. Fixed rules in code apply the clear clauses, and code calculates the amount."
         },
         {
           "question": "Who makes the final decision?",

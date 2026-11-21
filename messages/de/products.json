@@ -447,7 +447,7 @@
         },
         {
           "question": "Wo kommt KI zum Einsatz?",
-          "answer": "Beim Lesen des Schadens. Agenten machen aus Fotos, PDFs, Handschrift und E-Mails Fakten. Jeder Agent hat eine kleine Aufgabe, so dass jeder Schritt klar sichtbar ist."
+          "answer": "An zwei Stellen. Agenten lesen den Schaden und machen aus Fotos, PDFs, Handschrift und E-Mails Fakten. Ein Sprachmodell prüft jede Position, die eine Abwägung braucht, gegen die Versicherungsbedingungen und nennt die angewandte Klausel. Feste Regeln im Code wenden die eindeutigen Klauseln an, und der Code berechnet den Betrag."
         },
         {
           "question": "Wer trifft die endgültige Entscheidung?",

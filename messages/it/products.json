@@ -447,7 +447,7 @@
         },
         {
           "question": "Dove viene usata l’IA?",
-          "answer": "Per leggere il sinistro. Gli agenti trasformano foto, PDF, scrittura a mano ed e-mail in fatti. A ogni agente è assegnato un piccolo compito, così ogni passaggio è chiaramente visibile."
+          "answer": "In due punti. Gli agenti leggono il sinistro e trasformano foto, PDF, scrittura a mano ed e-mail in fatti. Un modello linguistico verifica ogni voce che richiede giudizio rispetto alle condizioni di polizza e cita la clausola applicata. Regole fisse nel codice applicano le clausole chiare, e il codice calcola l’importo."
         },
         {
           "question": "Chi prende la decisione finale?",
