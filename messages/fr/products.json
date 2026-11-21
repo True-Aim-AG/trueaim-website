@@ -447,7 +447,7 @@
         },
         {
           "question": "Où l’IA intervient-elle ?",
-          "answer": "Pour lire le dossier sinistre. Des agents transforment photos, PDF, écriture manuscrite et e-mails en faits. Chaque agent se voit confier une petite tâche, ce qui rend chaque étape clairement visible."
+          "answer": "À deux endroits. Des agents lisent le dossier sinistre et transforment photos, PDF, écriture manuscrite et e-mails en faits. Un modèle de langage teste chaque ligne qui demande du jugement au regard des conditions de la police et cite la clause appliquée. Des règles fixes dans le code appliquent les clauses claires, et le code calcule le montant."
         },
         {
           "question": "Qui prend la décision finale ?",
