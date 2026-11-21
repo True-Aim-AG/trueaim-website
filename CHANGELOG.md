@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.25.2](https://github.com/True-Aim-AG/trueaim-website/compare/v1.25.1...v1.25.2) (2026-11-21)
+
+
+### Bug Fixes
+
+* **copy:** coverage check FAQ says where the language model is used, as in article 4 ([#47](https://github.com/True-Aim-AG/trueaim-website/issues/47)) ([2fe2816](https://github.com/True-Aim-AG/trueaim-website/commit/2fe28165f299941f68ccad65b40c80f60318e3d2))
+
 ## [1.25.1](https://github.com/True-Aim-AG/trueaim-website/compare/v1.25.0...v1.25.1) (2026-11-17)
 
 
