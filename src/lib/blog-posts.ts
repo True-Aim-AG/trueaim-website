@@ -14,6 +14,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "complete-claims-record",
+    author: "frederic-brunner",
+    title: "What a complete claims record contains",
+    excerpt:
+      "A claims decision can be questioned long after the file is closed. What a complete claims record contains, how it handles reopened claims and what supervisors in Switzerland, Europe and the US expect to see.",
+    publishedIso: "2026-11-24T00:00:00.000Z",
+    displayDate: "November 2026",
+    readTime: "6 min read",
+    category: "Compliance & Governance",
+    tags: ["AI Audit Trail", "Auditable AI", "Claims Record", "AI Governance"],
+  },
+  {
     slug: "insurance-claims-automation",
     author: "reuben-john",
     title: "Insurance claims automation: what to automate first and how to measure it",
