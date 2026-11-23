@@ -46,7 +46,7 @@ const experience = (name: string, alt: string, width: number, renderHeight: numb
   renderHeight,
 });
 
-// Three rows that run in alternating directions: seven logos, then six, then six.
+// Three rows that run in alternating directions: seven logos, then six, then seven.
 const experienceRows: { direction: "left" | "right"; logos: ExperienceLogo[] }[] = [
   {
     direction: "right",
@@ -80,6 +80,7 @@ const experienceRows: { direction: "left" | "right"; logos: ExperienceLogo[] }[]
       experience("solera", "Solera", 1639, 22),
       experience("quantexa", "Quantexa", 1285, 26),
       experience("tractable", "Tractable", 1178, 26),
+      experience("groupon", "Groupon", 1269, 22),
     ],
   },
 ];
