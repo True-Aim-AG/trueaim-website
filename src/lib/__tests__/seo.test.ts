@@ -93,6 +93,13 @@ describe("buildPageGraph", () => {
     }
   });
 
+  it("gives the ProfilePage a dateModified with a time, as Google's ProfilePage spec asks", () => {
+    const profile = nodes(buildPageGraph({ locale: "en", path: "/authors/reuben-john", template: "person" })).find(
+      (node) => node["@type"] === "ProfilePage",
+    );
+    expect(String(profile?.dateModified)).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(Z|[+-]\d{2}:\d{2})$/);
+  });
+
   it("never emits rating, review or price markup", () => {
     for (const [template, path] of cases) {
       const json = JSON.stringify(buildPageGraph({ locale: "en", path, template }));

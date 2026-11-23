@@ -130,7 +130,9 @@ export function buildPageGraph(input: PageGraphInput) {
     description: page.description,
     inLanguage: locale,
     isPartOf: ref(WEBSITE_ID),
-    dateModified: page.updated,
+    // Google's ProfilePage spec wants dateModified as a date and time; the
+    // other page types accept the bare ISO date the page entry holds.
+    dateModified: template === "person" && /^\d{4}-\d{2}-\d{2}$/.test(String(page.updated)) ? `${page.updated}T00:00:00Z` : page.updated,
     ...(isHome ? {} : { breadcrumb: ref(ids.breadcrumb) }),
   };
   graph.push(webPage);
