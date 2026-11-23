@@ -90,3 +90,6 @@ old_url,new_url,status,note
 /de/case-studies/swiss-travel-insurer/,/de/case-studies/,301,Out-of-date case study taken down in November 2026
 /fr/case-studies/swiss-travel-insurer/,/fr/case-studies/,301,Out-of-date case study taken down in November 2026
 /it/case-studies/swiss-travel-insurer/,/it/case-studies/,301,Out-of-date case study taken down in November 2026
+/de/blog/complete-claims-record/,/en/blog/complete-claims-record/,301,English only until the translation lands
+/fr/blog/complete-claims-record/,/en/blog/complete-claims-record/,301,English only until the translation lands
+/it/blog/complete-claims-record/,/en/blog/complete-claims-record/,301,English only until the translation lands
