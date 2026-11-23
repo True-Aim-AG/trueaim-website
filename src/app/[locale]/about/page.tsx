@@ -180,7 +180,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* Team and advisers */}
-      <section id="team" className={SECTION_LILAC}>
+      <section id="team" className={cn(SECTION_LILAC, "pb-0 md:pb-0")}>
         <div className="mx-auto max-w-7xl">
           <SectionHead heading={t("team.heading")} className="mb-10" />
           <ul className={GRID}>
@@ -239,13 +239,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             </div>
           ))}
 
-          <SectionHead heading={t("experience.heading")} className="mb-10 mt-20" />
+          {/* The logo rows sit midway between their heading and the Partners heading (measured on the visible text and logos, not the boxes). */}
+          <SectionHead heading={t("experience.heading")} className="mt-20 mb-[77px] md:mb-[102px]" />
           <ExperienceMarquee rows={experienceRows} labels={{ pause: t("experience.pause"), play: t("experience.play") }} />
         </div>
       </section>
 
       {/* Partners */}
-      <section className={SECTION}>
+      <section className={cn(SECTION, "pt-[23px] md:pt-[46px]")}>
         <div className="mx-auto max-w-7xl">
           <SectionHead heading={t("partners.heading")} className="mb-10" />
           <ul className="grid grid-cols-1 gap-[29px] md:grid-cols-2 lg:grid-cols-4">
