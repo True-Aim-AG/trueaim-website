@@ -246,6 +246,11 @@
   filter: blur(24px);
   pointer-events: none;
 }
+/* a picture with no cards (Otus) has no shade: behind bare text it reads as a dark patch, and the glass
+   message bar's blur turns it into a pale box once the tile has faded in */
+.flat::before {
+  display: none;
+}
 .still > * {
   position: relative;
 }

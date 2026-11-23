@@ -19,6 +19,8 @@ export type ProductRailItem = {
   icon: BrandIconName;
   /** The picture the open tile shows: a still of the product's scene. */
   still: ReactNode;
+  /** The picture has no cards, so it gets no shade under it: a shade would show bare behind it. */
+  flat?: boolean;
   title: string;
   text: string;
   href: string;
@@ -229,7 +231,7 @@ export function ProductRail({
                         <span>{item.name}</span>
                       </button>
                       {/* The still keeps the open tile's width, so the row's move never lays it out again. */}
-                      <div className={styles.still} inert={!open}>
+                      <div className={cn(styles.still, item.flat && styles.flat)} inert={!open}>
                         {item.still}
                       </div>
                     </div>

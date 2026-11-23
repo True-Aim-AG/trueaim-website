@@ -104,6 +104,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           name: t(`benefits.items.${product.key}.link`),
           icon: productIcons[product.key],
           still: stills[product.key],
+          // Otus's picture is a conversation on the ground, with no cards to float.
+          flat: product.key === "otus",
           title: t(`benefits.items.${product.key}.title`),
           text: t(`benefits.items.${product.key}.text`),
           href: `/platform/${product.slug}`,
