@@ -106,10 +106,10 @@ function prepareStage(root: HTMLElement, ww: number, items: Item[]) {
 }
 
 /**
- * The Otus hero, in the glass look of the platform demo: one pale glass sheet
- * holds the conversation and a composer at its foot. An adjuster's question
- * is typed into the composer and sent, rises into the conversation as a quiet
- * line on the right, and Otus writes its answer onto the sheet in short lines
+ * The Otus hero, in the glass look of the platform demo: the conversation sits
+ * on the page ground with no box round it, over a glass message bar. An
+ * adjuster's question is typed into the bar and sent, rises into the
+ * conversation as a quiet line on the right, and Otus writes its answer in short lines
  * with the actions it offers. No chat bubbles. The conversation then
  * clears and the next question is typed. Otus's mark is the brand symbol,
  * alive in small ways.
