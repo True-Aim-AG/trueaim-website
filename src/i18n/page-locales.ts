@@ -8,6 +8,7 @@ import { routing } from "./routing";
  * French and Italian URLs redirect to English (redirects/redirects.csv).
  */
 export const englishOnlyPaths = [
+  "/blog/complete-claims-record",
   "/blog/insurance-claims-automation",
 ];
 
