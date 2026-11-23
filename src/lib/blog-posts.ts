@@ -14,6 +14,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "automated-coverage-check",
+    author: "frederic-brunner",
+    title: "How an automated coverage check is completed in minutes",
+    excerpt:
+      "How True Aim's Automated Coverage Check tests each claim line against the policy wording, calculates the amount owed and leaves the decision with the adjuster, with the NSA Services SA figures.",
+    publishedIso: "2026-11-24T00:00:00.000Z",
+    displayDate: "November 2026",
+    readTime: "5 min read",
+    category: "Claims Automation",
+    tags: ["Coverage Check", "Claims Automation", "Policy Wording", "Claims AI"],
+  },
+  {
     slug: "complete-claims-record",
     author: "frederic-brunner",
     title: "What a complete claims record contains",
