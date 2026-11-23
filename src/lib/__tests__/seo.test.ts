@@ -93,6 +93,18 @@ describe("buildPageGraph", () => {
     }
   });
 
+  it("ties the Organization to its registered profiles through sameAs", () => {
+    const org = nodes(buildPageGraph({ locale: "en", path: "/", template: "home" })).find((node) => node["@type"] === "Organization");
+    expect(org?.sameAs).toEqual(
+      expect.arrayContaining([
+        "https://www.linkedin.com/company/true-aim-ag",
+        "https://www.crunchbase.com/organization/true-aim-ag",
+        "https://www.wikidata.org/wiki/Q140354092",
+        "https://app.dealroom.co/companies/true_aim_ag",
+      ]),
+    );
+  });
+
   it("never emits rating, review or price markup", () => {
     for (const [template, path] of cases) {
       const json = JSON.stringify(buildPageGraph({ locale: "en", path, template }));

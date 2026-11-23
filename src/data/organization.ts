@@ -34,7 +34,13 @@ export const organization = {
     addressLocality: "Zug",
     addressCountry: "CH",
   },
-  sameAs: ["https://www.linkedin.com/company/true-aim-ag"],
+  // Profiles True Aim registered (Kai Praschma, 20 Nov 2026); add each new one as it goes live.
+  sameAs: [
+    "https://www.linkedin.com/company/true-aim-ag",
+    "https://www.crunchbase.com/organization/true-aim-ag",
+    "https://www.wikidata.org/wiki/Q140354092",
+    "https://app.dealroom.co/companies/true_aim_ag",
+  ],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
