@@ -249,6 +249,15 @@
       "ogDescription": "A claim has never existed within the four walls of a single enterprise. Legacy automation stopped at internal borders. Transparency becomes an architectural guarantee.",
       "updated": "2026-10-22"
     },
+    "/blog/automated-coverage-check": {
+      "title": "Automated Coverage Check: How It Is Done in Minutes | True Aim",
+      "description": "How True Aim's Automated Coverage Check tests each claim line against the policy wording, calculates the amount and leaves the decision with the adjuster.",
+      "h1": "How an automated coverage check is completed in minutes",
+      "breadcrumb": "Automated coverage check",
+      "ogTitle": "How an automated coverage check is completed in minutes",
+      "ogDescription": "How True Aim's Automated Coverage Check tests each claim line against the policy wording, calculates the amount and leaves the decision with the adjuster.",
+      "updated": "2026-11-24"
+    },
     "/blog/complete-claims-record": {
       "title": "AI Audit Trail: What a Complete Claims Record Contains | True Aim",
       "description": "What a complete claims record contains: sources, clauses, rule versions, reopens and the handler's decision, and what FINMA, EIOPA and the NAIC expect to see.",
