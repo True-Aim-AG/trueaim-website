@@ -1,6 +1,7 @@
 /*
  * The home page's product row. One tile is open and large, the others are
- * small; the row slides so the open tile always sits in the same place.
+ * small; the row is a ring and slides so the open tile always sits in the
+ * middle, with tiles on both sides.
  */
 
 .section {
@@ -111,23 +112,43 @@
   touch-action: pan-y;
 }
 .track {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--gap);
-  width: max-content;
+  position: relative;
+  height: 100%;
   margin: 0;
-  /* the open tile sits in the middle of the page */
-  margin-left: calc(50% - var(--ow) / 2);
   padding: 0;
   list-style: none;
-  transform: translateX(calc(var(--i) * -1 * (var(--cw) + var(--gap))));
-  transition: transform var(--move);
 }
+/* each tile is placed from the middle of the row (--x, set per tile), so the open tile is always in the middle */
 .item {
-  position: relative;
-  flex: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
   width: var(--cw);
+  transform: translateX(var(--x));
+  transition:
+    transform var(--move),
+    width var(--move);
+}
+/* a tile that went round the ring: no slide across the row, it fades in at its new end (two names restart the fade) */
+.enterA,
+.enterB {
   transition: width var(--move);
+}
+.enterA {
+  animation: enterA 0.5s ease-out both;
+}
+.enterB {
+  animation: enterB 0.5s ease-out both;
+}
+@keyframes enterA {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes enterB {
+  from {
+    opacity: 0;
+  }
 }
 .open {
   width: var(--ow);
@@ -300,5 +321,9 @@
   .open .copy,
   .open .still {
     transition: none;
+  }
+  .enterA,
+  .enterB {
+    animation: none;
   }
 }

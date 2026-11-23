@@ -34,10 +34,27 @@ const REST_MS = 1500;
 /** A drag this far along the row, in pixels, moves it one tile. */
 const SWIPE = 40;
 
+/** Where a tile sits from the open one: 0 is open, negative to its left, positive to its right; the row is a ring. */
+const offset = (i: number, open: number, count: number) => {
+  const d = (((i - open) % count) + count) % count;
+  return d > count / 2 ? d - count : d;
+};
+
+/** The left edge of a tile at that place, measured from the middle of the row. */
+const place = (d: number) =>
+  d === 0
+    ? "calc(var(--ow) / -2)"
+    : d > 0
+      ? `calc(var(--ow) / 2 + var(--gap) + ${d - 1} * (var(--cw) + var(--gap)))`
+      : `calc(var(--ow) / -2 - ${-d} * (var(--cw) + var(--gap)))`;
+
 /**
  * The products as one row of tiles: the open tile is large and shows a still
  * of its product's scene, with the benefit and the link under it; the others
- * are small glass tiles with the product's icon and name. The row moves on by
+ * are small glass tiles with the product's icon and name. The open tile is
+ * always in the middle with tiles on both sides: the row is a ring, it opens
+ * on the middle product, and a tile that leaves one end fades in at the other.
+ * The row moves on by
  * itself, one tile at a time, and the arrows, a tile, the arrow keys or a
  * swipe move it by hand. The turn waits while the pointer rests on the row
  * (a pointer only passing over does not stop it) and while the keyboard focus
@@ -58,7 +75,9 @@ export function ProductRail({
   tone?: Tone;
 }) {
   const reduced = useReducedMotion();
-  const [index, setIndex] = useState(0);
+  /** The open tile, the step that opened it (to see which tile went round the ring) and the count of moves. */
+  const [ring, setRing] = useState({ index: Math.floor(items.length / 2), step: 0, moves: 0 });
+  const index = ring.index;
   /** The pointer rests on the row. */
   const [resting, setResting] = useState(false);
   /** The keyboard focus is in the row. */
@@ -95,7 +114,7 @@ export function ProductRail({
         setResting(true);
         return;
       }
-      setIndex((i) => (i + 1) % count);
+      setRing((r) => ({ index: (r.index + 1) % count, step: 1, moves: r.moves + 1 }));
     }, left.current);
     return () => {
       window.clearTimeout(timer);
@@ -106,7 +125,12 @@ export function ProductRail({
 
   useEffect(() => () => window.clearTimeout(rest.current), []);
 
-  const go = (to: number) => setIndex((to + count) % count);
+  const go = (to: number) =>
+    setRing((r) => {
+      const next = (to + count) % count;
+      return next === r.index ? r : { index: next, step: offset(next, r.index, count), moves: r.moves + 1 };
+    });
+  const before = (index - ring.step + count) % count;
 
   return (
     <section className={cn(section(tone), styles.section, "md:pt-20")}>
@@ -181,11 +205,18 @@ export function ProductRail({
               else if (Math.abs(moved) < 8 && !(event.target as HTMLElement).closest("button, a")) setTapped((value) => !value);
             }}
           >
-            <ul className={styles.track} style={{ "--i": index } as CSSProperties}>
+            <ul className={styles.track}>
               {items.map((item, i) => {
                 const open = i === index;
+                const d = offset(i, index, count);
+                // A tile that went round the ring jumps to the other end and fades in there; it does not cross the row.
+                const wrapped = ring.step !== 0 && d !== offset(i, before, count) - ring.step;
                 return (
-                  <li key={item.key} className={cn(styles.item, open && styles.open)}>
+                  <li
+                    key={item.key}
+                    className={cn(styles.item, open && styles.open, wrapped && (ring.moves % 2 ? styles.enterA : styles.enterB))}
+                    style={{ "--x": place(d) } as CSSProperties}
+                  >
                     <div className={styles.tile}>
                       <button
                         type="button"
