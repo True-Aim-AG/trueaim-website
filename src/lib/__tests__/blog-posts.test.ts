@@ -9,6 +9,7 @@ describe("blogPosts", () => {
       "architectural-transparency-agentic-claims-operation",
       "ai-claims-handling-eu-ai-act-high-risk",
       "auditability-evidence-chains",
+      "automated-coverage-check",
       "build-vs-buy-idp-vendors",
       "complete-claims-record",
       "insurance-claims-automation",
