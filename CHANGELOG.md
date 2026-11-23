@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.25.3](https://github.com/True-Aim-AG/trueaim-website/compare/v1.25.2...v1.25.3) (2026-11-23)
+
+
+### Bug Fixes
+
+* **case-studies:** take down the three out-of-date case studies ([#49](https://github.com/True-Aim-AG/trueaim-website/issues/49)) ([0c76407](https://github.com/True-Aim-AG/trueaim-website/commit/0c7640776927490b69afcbcf0e3054d02e43865f))
+
 ## [1.25.2](https://github.com/True-Aim-AG/trueaim-website/compare/v1.25.1...v1.25.2) (2026-11-21)
 
 
