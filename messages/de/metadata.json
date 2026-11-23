@@ -131,33 +131,6 @@
       "ogDescription": "Wie NSA die Entscheidungslogik seiner Schadenexperten in die Software von True Aim übertrug und den Aufwand für einen komplexen Schaden um 86 % senkte.",
       "updated": "2026-11-05"
     },
-    "/case-studies/swiss-travel-insurer": {
-      "title": "Schweizer Reiseversicherer bearbeitet Schäden 92 % schneller | True Aim",
-      "description": "Ein Schweizer Reiseversicherer verkürzte Schadenentscheidungen mit True Aim von 45 Minuten auf 2,3 Sekunden: 92 % schneller, mit 78 % Dunkelverarbeitung.",
-      "h1": "Schweizer Reiseversicherer bearbeitet Schäden 92 % schneller",
-      "breadcrumb": "Schweizer Reiseversicherer",
-      "ogTitle": "Schweizer Reiseversicherer bearbeitet Schäden 92 % schneller",
-      "ogDescription": "Schadenentscheidungen von 45 Minuten auf 2,3 Sekunden verkürzt, mit 78 % Dunkelverarbeitung.",
-      "updated": "2026-11-05"
-    },
-    "/case-studies/european-health-insurer": {
-      "title": "Krankenversicherer senkt Bearbeitungskosten um 71 % | True Aim",
-      "description": "Europäischer Krankenversicherer: Bearbeitungskosten mit True Aim um 71 % gesenkt, 65 % ohne manuellen Eingriff, 99,2 % Genauigkeit, Leakage aufgedeckt.",
-      "h1": "Europäischer Krankenversicherer senkt Bearbeitungskosten um 71 %",
-      "breadcrumb": "Europäischer Krankenversicherer",
-      "ogTitle": "Europäischer Krankenversicherer senkt Bearbeitungskosten um 71 %",
-      "ogDescription": "65 % ohne manuellen Eingriff, 99,2 % Entscheidungsgenauigkeit und bislang verborgenes Leakage aufgedeckt.",
-      "updated": "2026-11-05"
-    },
-    "/case-studies/motor-claims-pilot": {
-      "title": "Pilot Kfz-Schäden: vom Rückstand zur Echtzeit | True Aim",
-      "description": "Britischer Kfz-Versicherer: Rückstand mit True Aim komplett abgebaut, Entscheidung in unter 5 Minuten statt 2 Tagen, 45 % weniger Einsprüche, 100 % Konsistenz.",
-      "h1": "Pilot Kfz-Schäden: vom Rückstand zur Bearbeitung in Echtzeit",
-      "breadcrumb": "Pilot Kfz-Schäden",
-      "ogTitle": "Pilot Kfz-Schäden: vom Rückstand zur Bearbeitung in Echtzeit",
-      "ogDescription": "Entscheidungszeit von 2 Tagen auf unter 5 Minuten verkürzt, mit 45 % weniger Einsprüchen und 100 % Konsistenz.",
-      "updated": "2026-11-05"
-    },
     "/partners": {
       "title": "Unsere Partner in Forschung und Versicherung | True Aim",
       "description": "True Aim arbeitet mit Innosuisse, der ZHAW, der Yarowa AG und dem Swiss InsurTech Hub an Forschung, Förderung und Versicherungsinnovation in der Schweiz.",

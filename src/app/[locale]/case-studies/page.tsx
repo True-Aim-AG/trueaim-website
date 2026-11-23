@@ -9,10 +9,6 @@ import { caseStudies, localizeCaseStudy, type CaseStudy, type CaseStudyCopy } fr
 import { pageMetadata } from "@/lib/seo/metadata";
 import { cn } from "@/lib/utils";
 
-// Only finished case studies are listed. The three studies still marked as
-// work in progress keep their URLs but are not shown here (Reuben, 5 Oct 2026).
-const published = caseStudies.filter((cs) => !cs.wip);
-
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return pageMetadata(locale, "/case-studies");
@@ -53,7 +49,7 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ lo
   setRequestLocale(locale);
   const t = await getTranslations("caseStudies");
   // The locale's copy for a study lives under caseStudies.studies.<slug>; the data file keeps the English.
-  const studies = published.map((cs) =>
+  const studies = caseStudies.map((cs) =>
     localizeCaseStudy(cs, t.has(`studies.${cs.slug}`) ? (t.raw(`studies.${cs.slug}`) as CaseStudyCopy) : undefined),
   );
   const featured = studies[0];

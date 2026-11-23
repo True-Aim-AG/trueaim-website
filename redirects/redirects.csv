@@ -9,9 +9,9 @@ old_url,new_url,status,note
 /blog/where-the-language-model-does-not-belong/,/en/blog/where-the-language-model-does-not-belong/,301,English lived at the root until October 2026
 /blog/why-claims-ai-pilots-stall/,/en/blog/why-claims-ai-pilots-stall/,301,English lived at the root until October 2026
 /case-studies/,/en/case-studies/,301,English lived at the root until October 2026
-/case-studies/european-health-insurer/,/en/case-studies/european-health-insurer/,301,English lived at the root until October 2026
-/case-studies/motor-claims-pilot/,/en/case-studies/motor-claims-pilot/,301,English lived at the root until October 2026
-/case-studies/swiss-travel-insurer/,/en/case-studies/swiss-travel-insurer/,301,English lived at the root until October 2026
+/case-studies/european-health-insurer/,/en/case-studies/,301,Out-of-date case study taken down in November 2026
+/case-studies/motor-claims-pilot/,/en/case-studies/,301,Out-of-date case study taken down in November 2026
+/case-studies/swiss-travel-insurer/,/en/case-studies/,301,Out-of-date case study taken down in November 2026
 /case-studies/vehicle-warranty-claims/,/en/case-studies/vehicle-warranty-claims/,301,English lived at the root until October 2026
 /changelog/,/en/changelog/,301,English lived at the root until October 2026
 /contact/,/en/contact/,301,English lived at the root until October 2026
@@ -78,3 +78,15 @@ old_url,new_url,status,note
 /de/blog/insurance-claims-automation/,/en/blog/insurance-claims-automation/,301,English only until the translation lands
 /fr/blog/insurance-claims-automation/,/en/blog/insurance-claims-automation/,301,English only until the translation lands
 /it/blog/insurance-claims-automation/,/en/blog/insurance-claims-automation/,301,English only until the translation lands
+/en/case-studies/european-health-insurer/,/en/case-studies/,301,Out-of-date case study taken down in November 2026
+/de/case-studies/european-health-insurer/,/de/case-studies/,301,Out-of-date case study taken down in November 2026
+/fr/case-studies/european-health-insurer/,/fr/case-studies/,301,Out-of-date case study taken down in November 2026
+/it/case-studies/european-health-insurer/,/it/case-studies/,301,Out-of-date case study taken down in November 2026
+/en/case-studies/motor-claims-pilot/,/en/case-studies/,301,Out-of-date case study taken down in November 2026
+/de/case-studies/motor-claims-pilot/,/de/case-studies/,301,Out-of-date case study taken down in November 2026
+/fr/case-studies/motor-claims-pilot/,/fr/case-studies/,301,Out-of-date case study taken down in November 2026
+/it/case-studies/motor-claims-pilot/,/it/case-studies/,301,Out-of-date case study taken down in November 2026
+/en/case-studies/swiss-travel-insurer/,/en/case-studies/,301,Out-of-date case study taken down in November 2026
+/de/case-studies/swiss-travel-insurer/,/de/case-studies/,301,Out-of-date case study taken down in November 2026
+/fr/case-studies/swiss-travel-insurer/,/fr/case-studies/,301,Out-of-date case study taken down in November 2026
+/it/case-studies/swiss-travel-insurer/,/it/case-studies/,301,Out-of-date case study taken down in November 2026

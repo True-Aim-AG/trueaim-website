@@ -131,33 +131,6 @@
       "ogDescription": "Comment NSA a transféré le raisonnement et la prise de décision de ses spécialistes dans True Aim et réduit de 86 % le travail sur un sinistre complexe.",
       "updated": "2026-11-05"
     },
-    "/case-studies/swiss-travel-insurer": {
-      "title": "Assureur voyage suisse : sinistres traités 92 % plus vite | True Aim",
-      "description": "Un assureur voyage suisse a ramené ses décisions sur les sinistres de 45 minutes à 2,3 secondes avec True Aim : 92 % plus vite, 78 % de traitement automatique.",
-      "h1": "Un assureur voyage suisse traite ses sinistres 92 % plus vite",
-      "breadcrumb": "Assureur voyage suisse",
-      "ogTitle": "Un assureur voyage suisse traite ses sinistres 92 % plus vite",
-      "ogDescription": "Décisions sur les sinistres ramenées de 45 minutes à 2,3 secondes, avec 78 % de traitement automatique.",
-      "updated": "2026-11-05"
-    },
-    "/case-studies/european-health-insurer": {
-      "title": "Un assureur santé réduit ses coûts de traitement de 71 % | True Aim",
-      "description": "Un assureur santé européen a réduit ses coûts de traitement de 71 % avec True Aim : 65 % sans intervention, 99,2 % d’exactitude, surpaiements cachés détectés.",
-      "h1": "Un assureur santé européen réduit ses coûts de traitement de 71 %",
-      "breadcrumb": "Assureur santé européen",
-      "ogTitle": "Un assureur santé européen réduit ses coûts de traitement de 71 %",
-      "ogDescription": "65 % sans intervention, 99,2 % d’exactitude des décisions et des surpaiements jusque-là invisibles détectés.",
-      "updated": "2026-11-05"
-    },
-    "/case-studies/motor-claims-pilot": {
-      "title": "Sinistres auto : du retard au temps réel | True Aim",
-      "description": "Un assureur auto britannique a résorbé son retard avec True Aim : décision en moins de 5 minutes contre 2 jours, 45 % de litiges en moins, 100 % de cohérence.",
-      "h1": "Pilote sinistres auto : du retard au traitement en temps réel",
-      "breadcrumb": "Pilote sinistres auto",
-      "ogTitle": "Pilote sinistres auto : du retard au traitement en temps réel",
-      "ogDescription": "Décision en moins de 5 minutes au lieu de 2 jours, avec 45 % de litiges en moins et 100 % de cohérence.",
-      "updated": "2026-11-05"
-    },
     "/partners": {
       "title": "Nos partenaires en recherche et en assurance | True Aim",
       "description": "True Aim travaille avec Innosuisse, la ZHAW, Yarowa AG et le Swiss InsurTech Hub sur la recherche, le financement et l’innovation en assurance en Suisse.",

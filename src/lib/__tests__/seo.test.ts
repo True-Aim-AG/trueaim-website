@@ -74,7 +74,7 @@ describe("buildPageGraph", () => {
     ["contact", "/contact", ["ContactPage", "BreadcrumbList"]],
     ["news", "/blog/why-claims-ai-pilots-stall", ["WebPage", "NewsArticle", "BreadcrumbList"]],
     ["blogPost", "/blog/why-claims-ai-pilots-stall", ["WebPage", "BlogPosting", "BreadcrumbList"]],
-    ["caseStudy", "/case-studies/motor-claims-pilot", ["WebPage", "Article", "BreadcrumbList"]],
+    ["caseStudy", "/case-studies/vehicle-warranty-claims", ["WebPage", "Article", "BreadcrumbList"]],
     ["collection", "/case-studies", ["CollectionPage", "ItemList", "BreadcrumbList"]],
     ["partner", "/partners/zhaw", ["WebPage", "BreadcrumbList"]],
     ["person", "/authors/reuben-john", ["ProfilePage", "BreadcrumbList"]],
