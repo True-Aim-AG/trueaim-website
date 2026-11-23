@@ -9,6 +9,7 @@ import { routing } from "./routing";
  */
 export const englishOnlyPaths = [
   "/blog/complete-claims-record",
+  "/blog/automated-coverage-check",
   "/blog/insurance-claims-automation",
 ];
 
