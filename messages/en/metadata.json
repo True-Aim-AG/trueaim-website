@@ -249,6 +249,15 @@
       "ogDescription": "A claim has never existed within the four walls of a single enterprise. Legacy automation stopped at internal borders. Transparency becomes an architectural guarantee.",
       "updated": "2026-10-22"
     },
+    "/blog/complete-claims-record": {
+      "title": "AI Audit Trail: What a Complete Claims Record Contains | True Aim",
+      "description": "What a complete claims record contains: sources, clauses, rule versions, reopens and the handler's decision, and what FINMA, EIOPA and the NAIC expect to see.",
+      "h1": "What a complete claims record contains",
+      "breadcrumb": "Complete claims record",
+      "ogTitle": "What a complete claims record contains",
+      "ogDescription": "What a complete claims record contains: sources, clauses, rule versions, reopens and the handler's decision, and what FINMA, EIOPA and the NAIC expect to see.",
+      "updated": "2026-11-24"
+    },
     "/blog/insurance-claims-automation": {
       "title": "Insurance Claims Automation: What to Automate First | True Aim",
       "description": "Insurance claims automation starts with the data, not the decision. What to automate first, what an insurer provides and three measures that show it is working.",
