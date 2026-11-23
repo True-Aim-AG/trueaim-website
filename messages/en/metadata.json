@@ -167,33 +167,6 @@
       "ogDescription": "How claims teams use True Aim on their own claims, and what changed: volume, languages, time to results and measured accuracy.",
       "updated": "2026-10-17"
     },
-    "/case-studies/european-health-insurer": {
-      "title": "Health Insurer Cuts Claims Costs 71% | True Aim",
-      "description": "A European health insurer cut claims handling costs 71% with True Aim: 65% touchless processing, 99.2% decision accuracy and previously hidden leakage detected.",
-      "h1": "European Health Insurer Reduces Handling Costs by 71%",
-      "breadcrumb": "European health insurer",
-      "ogTitle": "European health insurer reduces handling costs by 71%",
-      "ogDescription": "65% touchless processing, 99.2% decision accuracy and previously hidden leakage detected with True Aim.",
-      "updated": "2026-10-15"
-    },
-    "/case-studies/motor-claims-pilot": {
-      "title": "UK Motor Claims: Backlog to Real-Time | True Aim",
-      "description": "A UK motor insurer cleared its entire claims backlog with True Aim: decision time cut from 2 days to under 5 minutes, 45% fewer appeals, 100% consistency.",
-      "h1": "Motor Claims Pilot: From Backlog to Real-Time Processing",
-      "breadcrumb": "Motor claims pilot",
-      "ogTitle": "Motor claims pilot: from backlog to real-time processing",
-      "ogDescription": "Decision time cut from 2 days to under 5 minutes, with 45% fewer appeals and 100% consistency.",
-      "updated": "2026-10-15"
-    },
-    "/case-studies/swiss-travel-insurer": {
-      "title": "Swiss Travel Insurer Cuts Claims Time 92% | True Aim",
-      "description": "A Swiss travel insurer cut claim decisions from 45 minutes to 2.3 seconds with True Aim: 92% faster, with 78% straight-through processing.",
-      "h1": "Swiss Travel Insurer Achieves 92% Faster Claims Processing",
-      "breadcrumb": "Swiss travel insurer",
-      "ogTitle": "Swiss travel insurer achieves 92% faster claims processing",
-      "ogDescription": "Claim decisions cut from 45 minutes to 2.3 seconds, with 78% straight-through processing.",
-      "updated": "2026-10-15"
-    },
     "/case-studies/vehicle-warranty-claims": {
       "title": "The same claim decisions, made in a fraction of the time. | True Aim",
       "description": "How NSA transferred the reasoning and decisioning of its claims experts into True Aim software and reduced the work on a complex claim by 86%.",

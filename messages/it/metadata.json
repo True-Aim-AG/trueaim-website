@@ -131,33 +131,6 @@
       "ogDescription": "Come NSA ha trasferito il ragionamento e il processo decisionale dei suoi esperti sinistri in True Aim e ha ridotto dell’86% il lavoro su un sinistro complesso.",
       "updated": "2026-11-05"
     },
-    "/case-studies/swiss-travel-insurer": {
-      "title": "Assicuratore viaggi: sinistri gestiti il 92% più rapidamente | True Aim",
-      "description": "Assicuratore viaggi svizzero: decisioni da 45 minuti a 2,3 secondi con True Aim, il 92% più rapidamente, 78% di elaborazione automatica.",
-      "h1": "Un assicuratore viaggi svizzero gestisce i sinistri il 92% più rapidamente",
-      "breadcrumb": "Assicuratore viaggi svizzero",
-      "ogTitle": "Un assicuratore viaggi svizzero gestisce i sinistri il 92% più rapidamente",
-      "ogDescription": "Assicuratore viaggi svizzero: decisioni da 45 minuti a 2,3 secondi con True Aim, il 92% più rapidamente, 78% di elaborazione automatica.",
-      "updated": "2026-11-05"
-    },
-    "/case-studies/european-health-insurer": {
-      "title": "Assicuratore sanitario: costi di gestione ridotti del 71% | True Aim",
-      "description": "Assicuratore sanitario europeo: costi di gestione ridotti del 71% con True Aim, 65% senza intervento, 99,2% di accuratezza e leakage prima nascosto individuato.",
-      "h1": "Un assicuratore sanitario europeo riduce i costi di gestione del 71%",
-      "breadcrumb": "Assicuratore sanitario europeo",
-      "ogTitle": "Un assicuratore sanitario europeo riduce i costi di gestione del 71%",
-      "ogDescription": "65% di elaborazione senza intervento, 99,2% di accuratezza delle decisioni e leakage prima nascosto individuato.",
-      "updated": "2026-11-05"
-    },
-    "/case-studies/motor-claims-pilot": {
-      "title": "Progetto pilota sinistri auto: dall’arretrato al tempo reale | True Aim",
-      "description": "Assicuratore auto britannico: intero arretrato smaltito con True Aim, decisione da 2 giorni a meno di 5 minuti, 45% di ricorsi in meno, 100% di coerenza.",
-      "h1": "Progetto pilota sinistri auto: dall’arretrato all’elaborazione in tempo reale",
-      "breadcrumb": "Progetto pilota sinistri auto",
-      "ogTitle": "Progetto pilota sinistri auto: dall’arretrato all’elaborazione in tempo reale",
-      "ogDescription": "Assicuratore auto britannico: intero arretrato smaltito con True Aim, decisione da 2 giorni a meno di 5 minuti, 45% di ricorsi in meno, 100% di coerenza.",
-      "updated": "2026-11-05"
-    },
     "/partners": {
       "title": "I nostri partner nella ricerca e nel settore assicurativo | True Aim",
       "description": "True Aim lavora con Innosuisse, la ZHAW, Yarowa AG e lo Swiss InsurTech Hub su ricerca, finanziamento e innovazione assicurativa in Svizzera.",
