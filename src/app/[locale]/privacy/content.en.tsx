@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { PageHero, SECTION } from "@/components/content";
 
 const PUBLISH_DATE = "2026-05-21";
-const LAST_UPDATED = "2026-10-19";
+const LAST_UPDATED = "2026-11-24";
 
 type TocItem = { id: string; label: string };
 
@@ -20,6 +20,7 @@ const TOC: TocItem[] = [
   { id: "automated", label: "10. Automated decision-making" },
   { id: "changes", label: "11. Changes to this policy" },
   { id: "contact", label: "12. Contact" },
+  { id: "business-contacts", label: "13. Business contacts we may approach" },
 ];
 
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -167,6 +168,24 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 True Aim AG, c/o Yarowa AG, Metallstrasse 9, 6300 Zug, Switzerland.<br />
                 Email:{" "}
                 <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a>.
+              </p>
+            </section>
+            <section id="business-contacts" className="scroll-mt-24">
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">13. Business contacts we may approach</h2>
+              <p className="text-body leading-[1.6]">
+                We keep a list of people we may approach for business, mostly people who work at insurers and related companies in Europe. True Aim AG is the controller of this list. This section applies to the people on it.
+              </p>
+              <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
+                <li><strong className="text-strong">Data:</strong> name, employer and job title and, where we have them, a work email address and the date of the network connection. We add our own notes on which of our people know you and who in our team will make contact.</li>
+                <li><strong className="text-strong">Source:</strong> the professional network connections of our team and our advisors, and our CRM, HubSpot (see section 5).</li>
+                <li><strong className="text-strong">Purpose:</strong> to find out whom we know at a company and to plan business contact. We do not sell this data.</li>
+                <li><strong className="text-strong">Lawful basis:</strong> our legitimate interest in finding the right business contacts.</li>
+                <li><strong className="text-strong">Recipients:</strong> our staff who work on sales.</li>
+                <li><strong className="text-strong">Storage:</strong> the list is hosted in Switzerland. Contacts that are also in our CRM are stored in HubSpot&rsquo;s EU data centre (see section 6).</li>
+                <li><strong className="text-strong">Retention:</strong> we delete a contact if we do not use it for 12 months.</li>
+              </ul>
+              <p className="text-body leading-[1.6] mt-3">
+                You can object at any time. Email <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a>, and we will delete your data from this list. You can also ask what data we hold about you. Section 9 describes your other rights.
               </p>
             </section>
           </div>

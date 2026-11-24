@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { PageHero, SECTION } from "@/components/content";
 
 const PUBLISH_DATE = "2026-05-21";
-const LAST_UPDATED = "2026-10-19";
+const LAST_UPDATED = "2026-11-24";
 
 type TocItem = { id: string; label: string };
 
@@ -20,6 +20,7 @@ const TOC: TocItem[] = [
   { id: "automated", label: "10. Décisions automatisées" },
   { id: "changes", label: "11. Modifications de cette politique" },
   { id: "contact", label: "12. Contact" },
+  { id: "business-contacts", label: "13. Contacts professionnels que nous pouvons solliciter" },
 ];
 
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -167,6 +168,24 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 True Aim AG, c/o Yarowa AG, Metallstrasse 9, 6300 Zug, Suisse.<br />
                 E-mail :{" "}
                 <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a>.
+              </p>
+            </section>
+            <section id="business-contacts" className="scroll-mt-24">
+              <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">13. Contacts professionnels que nous pouvons solliciter</h2>
+              <p className="text-body leading-[1.6]">
+                Nous tenons une liste de personnes que nous pouvons solliciter à titre professionnel, surtout des personnes qui travaillent chez des assureurs et des entreprises apparentées en Europe. True Aim AG est responsable du traitement de cette liste. Cette section s’applique aux personnes qui y figurent.
+              </p>
+              <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
+                <li><strong className="text-strong">Données:</strong> nom, employeur et fonction et, si nous les avons, une adresse e-mail professionnelle et la date de la connexion dans le réseau. Nous ajoutons nos propres notes sur les personnes de notre équipe qui vous connaissent et sur la personne qui prendra contact.</li>
+                <li><strong className="text-strong">Source:</strong> les connexions de réseau professionnel de notre équipe et de nos conseillers, et notre CRM, HubSpot (voir section 5).</li>
+                <li><strong className="text-strong">Finalité:</strong> savoir qui nous connaissons dans une entreprise et planifier un contact professionnel. Nous ne vendons pas ces données.</li>
+                <li><strong className="text-strong">Base juridique:</strong> notre intérêt légitime à trouver les bons contacts professionnels.</li>
+                <li><strong className="text-strong">Destinataires:</strong> nos collaborateurs chargés des ventes.</li>
+                <li><strong className="text-strong">Hébergement:</strong> la liste est hébergée en Suisse. Les contacts qui figurent aussi dans notre CRM sont stockés dans le centre de données européen de HubSpot (voir section 6).</li>
+                <li><strong className="text-strong">Conservation:</strong> nous supprimons un contact si nous ne l’utilisons pas pendant 12 mois.</li>
+              </ul>
+              <p className="text-body leading-[1.6] mt-3">
+                Vous pouvez vous opposer à tout moment. Écrivez à <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a> : nous supprimerons alors vos données de cette liste. Vous pouvez aussi demander quelles données nous détenons sur vous. La section 9 décrit vos autres droits.
               </p>
             </section>
           </div>
