@@ -180,12 +180,12 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 <li><strong className="text-strong">Fonte:</strong> i collegamenti di rete professionale del nostro team e dei nostri consulenti, e il nostro CRM, HubSpot (vedere sezione 5).</li>
                 <li><strong className="text-strong">Finalità:</strong> sapere chi conosciamo presso un’azienda e pianificare un contatto professionale. Non vendiamo questi dati.</li>
                 <li><strong className="text-strong">Base giuridica:</strong> il nostro legittimo interesse a trovare i giusti contatti professionali.</li>
-                <li><strong className="text-strong">Destinatari:</strong> il nostro personale addetto alle vendite e i nostri consulenti.</li>
+                <li><strong className="text-strong">Destinatari:</strong> il nostro personale addetto alle vendite.</li>
                 <li><strong className="text-strong">Ubicazione:</strong> l’elenco è ospitato in Svizzera. I contatti presenti anche nel nostro CRM sono conservati nel data centre UE di HubSpot (vedere sezione 6).</li>
                 <li><strong className="text-strong">Conservazione:</strong> cancelliamo un contatto se non lo utilizziamo per 12 mesi.</li>
               </ul>
               <p className="text-body leading-[1.6] mt-3">
-                Potete opporvi in qualsiasi momento. Scrivete a <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a>: cancelleremo i vostri dati da questo elenco e non vi contatteremo più. Potete anche chiedere quali dati abbiamo su di voi. La sezione 9 descrive gli altri vostri diritti.
+                Potete opporvi in qualsiasi momento. Scrivete a <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a>: cancelleremo i vostri dati da questo elenco. Potete anche chiedere quali dati abbiamo su di voi. La sezione 9 descrive gli altri vostri diritti.
               </p>
             </section>
           </div>

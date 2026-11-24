@@ -180,12 +180,12 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 <li><strong className="text-strong">Source:</strong> les connexions de réseau professionnel de notre équipe et de nos conseillers, et notre CRM, HubSpot (voir section 5).</li>
                 <li><strong className="text-strong">Finalité:</strong> savoir qui nous connaissons dans une entreprise et planifier un contact professionnel. Nous ne vendons pas ces données.</li>
                 <li><strong className="text-strong">Base juridique:</strong> notre intérêt légitime à trouver les bons contacts professionnels.</li>
-                <li><strong className="text-strong">Destinataires:</strong> nos collaborateurs chargés des ventes et nos conseillers.</li>
+                <li><strong className="text-strong">Destinataires:</strong> nos collaborateurs chargés des ventes.</li>
                 <li><strong className="text-strong">Hébergement:</strong> la liste est hébergée en Suisse. Les contacts qui figurent aussi dans notre CRM sont stockés dans le centre de données européen de HubSpot (voir section 6).</li>
                 <li><strong className="text-strong">Conservation:</strong> nous supprimons un contact si nous ne l’utilisons pas pendant 12 mois.</li>
               </ul>
               <p className="text-body leading-[1.6] mt-3">
-                Vous pouvez vous opposer à tout moment. Écrivez à <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a> : nous supprimerons alors vos données de cette liste et ne vous contacterons plus. Vous pouvez aussi demander quelles données nous détenons sur vous. La section 9 décrit vos autres droits.
+                Vous pouvez vous opposer à tout moment. Écrivez à <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a> : nous supprimerons alors vos données de cette liste. Vous pouvez aussi demander quelles données nous détenons sur vous. La section 9 décrit vos autres droits.
               </p>
             </section>
           </div>

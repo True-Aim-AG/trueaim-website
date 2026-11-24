@@ -180,12 +180,12 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 <li><strong className="text-strong">Herkunft:</strong> die beruflichen Netzwerkkontakte unseres Teams und unserer Beraterinnen und Berater sowie unser CRM, HubSpot (siehe Abschnitt 5).</li>
                 <li><strong className="text-strong">Zweck:</strong> herauszufinden, wen wir bei einem Unternehmen kennen, und geschäftliche Kontakte zu planen. Wir verkaufen diese Daten nicht.</li>
                 <li><strong className="text-strong">Rechtsgrundlage:</strong> unser berechtigtes Interesse, die richtigen Geschäftskontakte zu finden.</li>
-                <li><strong className="text-strong">Empfänger:</strong> unsere Mitarbeitenden im Vertrieb sowie unsere Beraterinnen und Berater.</li>
+                <li><strong className="text-strong">Empfänger:</strong> unsere Mitarbeitenden im Vertrieb.</li>
                 <li><strong className="text-strong">Speicherort:</strong> die Liste wird in der Schweiz gehostet. Kontakte, die auch in unserem CRM sind, werden im EU-Rechenzentrum von HubSpot gespeichert (siehe Abschnitt 6).</li>
                 <li><strong className="text-strong">Aufbewahrung:</strong> wir löschen einen Kontakt, wenn wir ihn 12 Monate lang nicht verwenden.</li>
               </ul>
               <p className="text-body leading-[1.6] mt-3">
-                Sie können jederzeit widersprechen. Schreiben Sie an <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a>; wir löschen dann Ihre Daten aus dieser Liste und kontaktieren Sie nicht mehr. Sie können auch Auskunft darüber verlangen, welche Daten wir über Sie haben. Abschnitt 9 beschreibt Ihre weiteren Rechte.
+                Sie können jederzeit widersprechen. Schreiben Sie an <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a>; wir löschen dann Ihre Daten aus dieser Liste. Sie können auch Auskunft darüber verlangen, welche Daten wir über Sie haben. Abschnitt 9 beschreibt Ihre weiteren Rechte.
               </p>
             </section>
           </div>

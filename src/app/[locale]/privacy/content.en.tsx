@@ -180,12 +180,12 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 <li><strong className="text-strong">Source:</strong> the professional network connections of our team and our advisors, and our CRM, HubSpot (see section 5).</li>
                 <li><strong className="text-strong">Purpose:</strong> to find out whom we know at a company and to plan business contact. We do not sell this data.</li>
                 <li><strong className="text-strong">Lawful basis:</strong> our legitimate interest in finding the right business contacts.</li>
-                <li><strong className="text-strong">Recipients:</strong> our staff who work on sales, and our advisors.</li>
+                <li><strong className="text-strong">Recipients:</strong> our staff who work on sales.</li>
                 <li><strong className="text-strong">Storage:</strong> the list is hosted in Switzerland. Contacts that are also in our CRM are stored in HubSpot&rsquo;s EU data centre (see section 6).</li>
                 <li><strong className="text-strong">Retention:</strong> we delete a contact if we do not use it for 12 months.</li>
               </ul>
               <p className="text-body leading-[1.6] mt-3">
-                You can object at any time. Email <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a>, and we will delete your data from this list and not contact you again. You can also ask what data we hold about you. Section 9 describes your other rights.
+                You can object at any time. Email <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a>, and we will delete your data from this list. You can also ask what data we hold about you. Section 9 describes your other rights.
               </p>
             </section>
           </div>
