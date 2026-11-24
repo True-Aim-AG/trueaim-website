@@ -144,7 +144,7 @@
   },
   "cookie": {
     "title": "Cookie-Einstellungen",
-    "description": "Wir verwenden Cookies, um Ihre Nutzung der Website zu verbessern. Notwendige Cookies sind immer aktiv. Analyse-Cookies können Sie aktivieren, um uns bei der Verbesserung unserer Website zu helfen.",
+    "description": "Wir verwenden Cookies, um Ihre Nutzung der Website zu verbessern. Notwendige Cookies sind immer aktiv. Sie können Analyse-Cookies erlauben, die uns zusammengefasste Statistiken liefern, und HubSpot-Tracking, das Ihre wiederholten Besuche erkennt. Nach 6 Monaten fragen wir erneut.",
     "learnMore": "Mehr erfahren",
     "acceptAll": "Alle akzeptieren",
     "decline": "Ablehnen",
@@ -153,7 +153,9 @@
     "essential": "Notwendig",
     "essentialDesc": "Erforderlich, damit die Website funktioniert",
     "analytics": "Analyse",
-    "analyticsDesc": "Helfen uns zu verstehen, wie Besucher unsere Website nutzen"
+    "analyticsDesc": "Google Analytics 4: zusammengefasste Statistiken darüber, wie Besucher unsere Website nutzen",
+    "hubspot": "HubSpot-Tracking",
+    "hubspotDesc": "Erkennt Ihre wiederholten Besuche und verknüpft sie mit einer Demo-Anfrage, die Sie uns senden"
   },
   "skipToContent": "Zum Hauptinhalt springen"
 }

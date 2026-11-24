@@ -15,7 +15,7 @@
       "leadSource": "How did you hear about us?",
       "claimsVolume": "Annual claims volume",
       "message": "Anything you would like us to know?",
-      "consent": "I agree that True Aim may contact me about this request. See our <privacy>privacy policy</privacy>.",
+      "consent": "I have read the <privacy>privacy policy</privacy>, which explains how True Aim uses my details to answer this request.",
       "required": "*",
       "optional": "(optional)",
       "selectCountry": "Select a country",
@@ -67,8 +67,7 @@
         "jobTitleRequired": "Job title is required",
         "countryRequired": "Please select a country",
         "interestRequired": "Please select a topic",
-        "consentRequired": "Please agree so that True Aim may contact you",
-        "heardAboutRequired": "Please tell us how you heard about us"
+        "consentRequired": "Please confirm that you have read the privacy policy"
       },
       "submit": "Request a demo",
       "submitting": "Sending",

@@ -9,7 +9,9 @@ import { Button } from "@/components/brand/Button";
 import {
   CONSENT_UPDATED_EVENT,
   OPEN_COOKIE_SETTINGS_EVENT,
+  clearConsent,
   consentChangeFromStorage,
+  hasExpiredConsent,
   readConsent,
   revokeTracking,
   saveConsent,
@@ -26,11 +28,20 @@ export function CookieBanner() {
   const [preferences, setPreferences] = useState<ConsentPreferences>({
     essential: true,
     analytics: false,
+    hubspot: false,
   });
   const [reopened, setReopened] = useState(false);
   const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // A choice older than six months, or saved before HubSpot had its own
+    // category, is no longer valid: drop it with the tracking cookies it
+    // allowed, then ask again. No tag has loaded yet, so no reload is needed.
+    if (hasExpiredConsent()) {
+      clearConsent();
+      revokeTracking();
+      clearFirstTouch();
+    }
     if (readConsent() === null) {
       // Read browser-only state after hydration, preserving the server render.
       // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -39,7 +50,8 @@ export function CookieBanner() {
     // The footer's cookie settings control reopens the banner with the
     // stored choice preselected, so consent can be changed at any time.
     const reopen = () => {
-      setPreferences({ essential: true, analytics: readConsent()?.analytics === true });
+      const stored = readConsent();
+      setPreferences({ essential: true, analytics: stored?.analytics === true, hubspot: stored?.hubspot === true });
       setShowPreferences(true);
       setReopened(true);
       setVisible(true);
@@ -76,21 +88,23 @@ export function CookieBanner() {
     saveConsent(prefs);
     setVisible(false);
     setReopened(false);
-    if (previous?.analytics && !prefs.analytics) {
-      // Withdrawn: deny, drop the tracking cookies, and reload so no tag
-      // that was already loaded keeps running.
-      revokeTracking();
-      clearFirstTouch();
+    const analyticsWithdrawn = Boolean(previous?.analytics && !prefs.analytics);
+    const hubspotWithdrawn = Boolean(previous?.hubspot && !prefs.hubspot);
+    if (analyticsWithdrawn || hubspotWithdrawn) {
+      // Withdrawn: undo each category no longer accepted, and reload so no
+      // tag that was already loaded keeps running.
+      revokeTracking(prefs);
+      if (analyticsWithdrawn) clearFirstTouch();
       window.location.reload();
     }
   };
 
   const handleAcceptAll = () => {
-    savePreferences({ essential: true, analytics: true });
+    savePreferences({ essential: true, analytics: true, hubspot: true });
   };
 
   const handleDecline = () => {
-    savePreferences({ essential: true, analytics: false });
+    savePreferences({ essential: true, analytics: false, hubspot: false });
   };
 
   const handleSavePreferences = () => {
@@ -159,6 +173,19 @@ export function CookieBanner() {
                             checked={preferences.analytics}
                             onChange={() => setPreferences((prev) => ({ ...prev, analytics: !prev.analytics }))}
                             aria-label={t("analytics")}
+                            className="h-5 w-5 cursor-pointer"
+                          />
+                        </label>
+                        <label className="flex cursor-pointer items-center justify-between gap-4 px-2">
+                          <div>
+                            <span className="text-sm font-medium text-strong">{t("hubspot")}</span>
+                            <p className="text-xs text-muted">{t("hubspotDesc")}</p>
+                          </div>
+                          <input
+                            type="checkbox"
+                            checked={preferences.hubspot}
+                            onChange={() => setPreferences((prev) => ({ ...prev, hubspot: !prev.hubspot }))}
+                            aria-label={t("hubspot")}
                             className="h-5 w-5 cursor-pointer"
                           />
                         </label>

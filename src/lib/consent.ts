@@ -1,8 +1,19 @@
 /**
  * Cookie consent state, shared by the banner and every tracker. Strict
  * (basic) Consent Mode: nothing is loaded from Google or HubSpot until the
- * visitor accepts analytics cookies. The choice lives in localStorage
- * under "cookie-consent" as { essential: true, analytics: boolean }.
+ * visitor accepts the matching category. The choice lives in localStorage
+ * under "cookie-consent" as { essential, analytics, hubspot, savedAt }.
+ *
+ * Two optional categories, each with its own consent:
+ * - analytics: Google Tag Manager and Google Analytics 4, aggregated statistics.
+ * - hubspot: the HubSpot tracker, which recognises a returning visitor and
+ *   links their visits to a demo request in our CRM. That is tracking of one
+ *   person, so it is never filed under analytics.
+ *
+ * A choice expires CONSENT_MAX_AGE_MS after it was saved, and the banner asks
+ * again. A choice without savedAt (stored before expiry existed, when HubSpot
+ * still sat under analytics) counts as expired, so every visitor is asked once
+ * for the separate HubSpot choice.
  */
 
 export const CONSENT_STORAGE_KEY = "cookie-consent";
@@ -10,21 +21,58 @@ export const CONSENT_STORAGE_KEY = "cookie-consent";
 export const CONSENT_UPDATED_EVENT = "cookie-consent-update";
 /** Fire on window to reopen the banner so the visitor can change the choice. */
 export const OPEN_COOKIE_SETTINGS_EVENT = "open-cookie-settings";
+/** Six months, as the CNIL recommends; the cookie policy states the same period. */
+export const CONSENT_MAX_AGE_DAYS = 182;
+export const CONSENT_MAX_AGE_MS = CONSENT_MAX_AGE_DAYS * 24 * 60 * 60 * 1000;
 
 export type ConsentPreferences = {
   essential: true;
   analytics: boolean;
+  hubspot: boolean;
 };
 
-/** The stored choice, or null when the visitor has not chosen yet. */
-export function readConsent(): ConsentPreferences | null {
+type StoredConsent = ConsentPreferences & { savedAt: number };
+
+function parseStored(raw: string | null, now = Date.now()): ConsentPreferences | null {
+  if (!raw) return null;
   try {
-    const stored = localStorage.getItem(CONSENT_STORAGE_KEY);
-    if (!stored) return null;
-    const parsed = JSON.parse(stored) as { analytics?: unknown };
-    return { essential: true, analytics: parsed.analytics === true };
+    const parsed = JSON.parse(raw) as { analytics?: unknown; hubspot?: unknown; savedAt?: unknown };
+    if (typeof parsed.savedAt !== "number" || !Number.isFinite(parsed.savedAt)) return null;
+    if (now - parsed.savedAt > CONSENT_MAX_AGE_MS || parsed.savedAt > now + 60_000) return null;
+    return { essential: true, analytics: parsed.analytics === true, hubspot: parsed.hubspot === true };
   } catch {
     return null;
+  }
+}
+
+/** The stored choice, or null when the visitor has not chosen yet or the choice expired. */
+export function readConsent(): ConsentPreferences | null {
+  try {
+    return parseStored(localStorage.getItem(CONSENT_STORAGE_KEY));
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * True when a choice is stored but no longer valid (expired or from before
+ * the HubSpot category). The banner then deletes it and the tracking cookies.
+ */
+export function hasExpiredConsent(): boolean {
+  try {
+    const raw = localStorage.getItem(CONSENT_STORAGE_KEY);
+    return raw !== null && parseStored(raw) === null;
+  } catch {
+    return false;
+  }
+}
+
+/** Deletes the stored choice, so the banner asks again. */
+export function clearConsent(): void {
+  try {
+    localStorage.removeItem(CONSENT_STORAGE_KEY);
+  } catch {
+    // Nothing stored.
   }
 }
 
@@ -32,19 +80,16 @@ export function hasAnalyticsConsent(): boolean {
   return readConsent()?.analytics === true;
 }
 
-function analyticsIn(raw: string | null): boolean {
-  try {
-    return raw !== null && (JSON.parse(raw) as { analytics?: unknown }).analytics === true;
-  } catch {
-    return false;
-  }
+export function hasHubSpotConsent(): boolean {
+  return readConsent()?.hubspot === true;
 }
 
 /**
  * What a `storage` event from another tab means for this tab: "withdrawn"
- * (analytics was granted and no longer is), "granted" (newly granted), or
- * "decided" (a choice was stored with no change to analytics). null when
- * the event is not about consent. localStorage.clear() has a null key.
+ * (a category was granted and no longer is), "granted" (a category is newly
+ * granted and none was withdrawn), or "decided" (a choice was stored with no
+ * change to any category). null when the event is not about consent.
+ * localStorage.clear() has a null key.
  */
 export function consentChangeFromStorage(event: {
   key: string | null;
@@ -52,19 +97,28 @@ export function consentChangeFromStorage(event: {
   newValue: string | null;
 }): "withdrawn" | "granted" | "decided" | null {
   if (event.key !== null && event.key !== CONSENT_STORAGE_KEY) return null;
-  const before = analyticsIn(event.oldValue);
-  const after = analyticsIn(event.newValue);
-  if (before && !after) return "withdrawn";
-  if (!before && after) return "granted";
+  const before = parseStored(event.oldValue);
+  const after = parseStored(event.newValue);
+  const categories = ["analytics", "hubspot"] as const;
+  if (categories.some((c) => before?.[c] && !after?.[c])) return "withdrawn";
+  if (categories.some((c) => !before?.[c] && after?.[c])) return "granted";
   return event.newValue !== null ? "decided" : null;
 }
 
 export function saveConsent(preferences: ConsentPreferences): void {
+  const stored: StoredConsent = { ...preferences, savedAt: Date.now() };
   try {
-    localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(preferences));
+    localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(stored));
   } catch {
     // Storage blocked: the choice holds for this page view only.
   }
+  // Tells a GTM trigger which categories are granted, so a tag in the
+  // container can follow the HubSpot choice too. No personal data.
+  pushDataLayer({
+    event: "cookie_consent_update",
+    consent_analytics: preferences.analytics ? "granted" : "denied",
+    consent_hubspot: preferences.hubspot ? "granted" : "denied",
+  });
   window.dispatchEvent(new Event(CONSENT_UPDATED_EVENT));
 }
 
@@ -96,24 +150,29 @@ export function pushDataLayer(event: Record<string, string | number>): void {
   w.dataLayer.push(event);
 }
 
-const TRACKING_COOKIE = /^(_ga|_gid|_gat|hubspotutk|__hs|messagesUtk)/;
+const ANALYTICS_COOKIE = /^(_ga|_gid|_gat)/;
+const HUBSPOT_COOKIE = /^(hubspotutk|__hs|messagesUtk)/;
 
 /**
- * Undoes analytics after the visitor withdraws consent: denies analytics
- * storage, tells HubSpot to drop its cookies, and deletes the GA and
- * HubSpot cookies on this host and its parent domain. The caller reloads
- * the page afterwards so no loaded tag keeps running.
+ * Undoes each category the visitor no longer accepts: for analytics, denies
+ * analytics storage and deletes the GA cookies; for HubSpot, tells HubSpot to
+ * drop its cookies and deletes them. Cookies are deleted on this host and its
+ * parent domain. With no argument, both categories are undone. The caller
+ * reloads the page afterwards so no loaded tag keeps running.
  */
-export function revokeTracking(): void {
-  gtag("consent", "update", { analytics_storage: "denied" });
-  const w = window as unknown as { _hsq?: unknown[] };
-  w._hsq = w._hsq || [];
-  w._hsq.push(["revokeCookieConsent"]);
+export function revokeTracking(keep: { analytics: boolean; hubspot: boolean } = { analytics: false, hubspot: false }): void {
+  if (!keep.analytics) gtag("consent", "update", { analytics_storage: "denied" });
+  if (!keep.hubspot) {
+    const w = window as unknown as { _hsq?: unknown[] };
+    w._hsq = w._hsq || [];
+    w._hsq.push(["revokeCookieConsent"]);
+  }
   const host = window.location.hostname;
   const domains = ["", host, `.${host}`, `.${host.split(".").slice(-2).join(".")}`];
   for (const cookie of document.cookie.split(";")) {
     const name = cookie.split("=")[0].trim();
-    if (!TRACKING_COOKIE.test(name)) continue;
+    const drop = (!keep.analytics && ANALYTICS_COOKIE.test(name)) || (!keep.hubspot && HUBSPOT_COOKIE.test(name));
+    if (!drop) continue;
     for (const domain of domains) {
       document.cookie = `${name}=; Max-Age=0; path=/${domain ? `; domain=${domain}` : ""}`;
     }

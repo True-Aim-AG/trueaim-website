@@ -19,14 +19,14 @@ describe("trackOutboundClick", () => {
   });
 
   it("is a no-op when analytics consent is false", () => {
-    localStorage.setItem("cookie-consent", JSON.stringify({ analytics: false }));
+    localStorage.setItem("cookie-consent", JSON.stringify({ analytics: false, savedAt: Date.now() }));
     trackOutboundClick("https://example.com", "example");
     const hsq = (window as unknown as { _hsq: unknown[] })._hsq;
     expect(hsq).toEqual([]);
   });
 
   it("pushes a HubSpot custom event when analytics consent is true", () => {
-    localStorage.setItem("cookie-consent", JSON.stringify({ analytics: true }));
+    localStorage.setItem("cookie-consent", JSON.stringify({ analytics: true, savedAt: Date.now() }));
     trackOutboundClick("https://example.com", "example");
     const hsq = (window as unknown as { _hsq: unknown[][] })._hsq;
     expect(hsq).toHaveLength(1);

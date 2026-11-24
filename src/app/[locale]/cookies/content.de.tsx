@@ -9,7 +9,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       <PageHero compact title="Cookie-Richtlinie" texture={{ name: "circ", position: "88% 78%" }}>
-        <p className="mt-6 text-sm text-muted">Zuletzt aktualisiert: 19. Oktober 2026</p>
+        <p className="mt-6 text-sm text-muted">Zuletzt aktualisiert: 24. November 2026</p>
       </PageHero>
       <section className={SECTION}>
         <div className="mx-auto max-w-[1232px] [&>*]:max-w-3xl [&>div>section:first-child>h2]:mt-0">
@@ -32,20 +32,43 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
           <section>
             <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">3. Wie wir Cookies verwenden</h2>
             <p className="text-body leading-[1.6]">
-              Wir verwenden Cookies für die folgenden Zwecke. Notwendige Cookies sind erforderlich, damit die Website richtig funktioniert, und können nicht deaktiviert werden. Sie unterstützen Kernfunktionen wie die Seitennavigation, das Absenden von Formularen und die Sicherheit. Analyse-Cookies helfen uns zu verstehen, wie Besucher unsere Website nutzen, etwa welche Seiten am häufigsten aufgerufen werden und wie sich Nutzer durch die Website bewegen. Diese Informationen dienen dazu, Leistung und Benutzerfreundlichkeit der Website zu verbessern. Analysedaten werden aggregiert und identifizieren keine einzelnen Nutzer direkt. Wir setzen keine Marketing- oder Werbe-Cookies.
+              Wir verwenden drei Kategorien von Cookies und ähnlichen Technologien.
+            </p>
+            <p className="text-body leading-[1.6] mt-3">
+              <strong className="text-strong">Notwendig</strong> umfasst nur die Speicherung Ihrer Cookie-Auswahl. Diese Kategorie ist immer aktiv, denn wir brauchen sie, um Ihre Auswahl zu respektieren.
+            </p>
+            <p className="text-body leading-[1.6] mt-3">
+              <strong className="text-strong">Analyse</strong> umfasst Google Analytics 4, geladen über Google Tag Manager. Es zeigt uns, wie Besucher die Website nutzen, etwa welche Seiten am häufigsten besucht werden. Wir sehen diese Statistiken in zusammengefasster Form und nutzen sie, um die Website zu verbessern.
+            </p>
+            <p className="text-body leading-[1.6] mt-3">
+              <strong className="text-strong">HubSpot-Tracking</strong> umfasst den HubSpot-Tracker. Er erkennt Ihren Browser, wenn Sie zurückkehren, erfasst Ihre Besuche und verknüpft sie mit einer Demo-Anfrage, die Sie senden. So erscheinen die Besuche in Ihrem Kontaktdatensatz in unserem CRM. Sobald Sie eine Anfrage senden, beziehen sich diese Daten auf Sie als Person. Deshalb hat HubSpot-Tracking im Cookie-Banner eine eigene Auswahl.
+            </p>
+            <p className="text-body leading-[1.6] mt-3">
+              Wir setzen keine Werbe-Cookies.
             </p>
           </section>
 
           <section>
             <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">4. Auf dieser Website verwendete Cookies</h2>
             <p className="text-body leading-[1.6]">
-              Bevor Sie im Cookie-Banner eine Wahl getroffen haben, wird kein Cookie gesetzt. Die Cookies und ähnlichen Technologien auf dieser Website sind:
+              Vor Ihrer Auswahl im Cookie-Banner wird kein Cookie gesetzt. Die Speicherdauer ist die Frist, nach der der Eintrag abläuft. Ihr Browser kann ihn früher löschen.
             </p>
-            <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
-              <li><strong className="text-strong">Einwilligungsentscheidung</strong> (von dieser Website im lokalen Speicher Ihres Browsers abgelegt, kein Cookie): merkt sich, ob Sie Analyse-Cookies akzeptiert oder abgelehnt haben.</li>
-              <li><strong className="text-strong">Google Analytics 4, geladen über Google Tag Manager</strong> (<code>_ga</code>, <code>_ga_*</code>): werden erst gesetzt, nachdem Sie Analyse-Cookies akzeptiert haben; messen Seitenaufrufe und Interaktionen.</li>
-              <li><strong className="text-strong">HubSpot</strong> (<code>hubspotutk</code>, <code>__hstc</code>, <code>__hssc</code>, <code>__hssrc</code>): werden erst gesetzt, nachdem Sie Analyse-Cookies akzeptiert haben; erkennen wiederkehrende Besucher und verknüpfen Übermittlungen aus dem Kontaktformular mit Besuchen.</li>
-            </ul>
+            <div className="mt-4 overflow-x-auto">
+              <table className="w-full min-w-[640px] border-collapse text-left text-sm leading-[1.5] text-body">
+                <thead>
+                  <tr className="border-b border-line-strong"><th scope="col" className="py-3 pr-4 font-semibold text-strong">Name</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Gesetzt von</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Kategorie</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Funktion</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Speicherdauer</th></tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>cookie-consent</code> (lokaler Speicher, kein Cookie)</th><td className="py-3 pr-4">True Aim</td><td className="py-3 pr-4">Notwendig</td><td className="py-3 pr-4">Speichert Ihre Auswahl für jede Kategorie</td><td className="py-3 pr-4">6 Monate, danach fragt das Banner erneut</td></tr>
+                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>ta-first-touch</code> (lokaler Speicher, kein Cookie)</th><td className="py-3 pr-4">True Aim</td><td className="py-3 pr-4">Analyse</td><td className="py-3 pr-4">Speichert die Einstiegsseite, die verweisende Website und Kampagnenparameter, die mit einer Demo-Anfrage gesendet werden</td><td className="py-3 pr-4">90 Tage</td></tr>
+                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>_ga</code>, <code>_ga_*</code></th><td className="py-3 pr-4">Google Analytics 4, über Google Tag Manager</td><td className="py-3 pr-4">Analyse</td><td className="py-3 pr-4">Messen Seitenaufrufe und Interaktionen</td><td className="py-3 pr-4">400 Tage</td></tr>
+                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>hubspotutk</code>, <code>__hstc</code></th><td className="py-3 pr-4">HubSpot</td><td className="py-3 pr-4">HubSpot-Tracking</td><td className="py-3 pr-4">Erkennen wiederkehrende Besucher und verknüpfen Übermittlungen aus dem Kontaktformular mit Besuchen</td><td className="py-3 pr-4">180 Tage</td></tr>
+                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>__hssc</code></th><td className="py-3 pr-4">HubSpot</td><td className="py-3 pr-4">HubSpot-Tracking</td><td className="py-3 pr-4">Zählt die Seiten eines Besuchs</td><td className="py-3 pr-4">30 Minuten</td></tr>
+                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>__hssrc</code></th><td className="py-3 pr-4">HubSpot</td><td className="py-3 pr-4">HubSpot-Tracking</td><td className="py-3 pr-4">Erkennt eine neue Browsersitzung</td><td className="py-3 pr-4">Bis Sie den Browser schliessen</td></tr>
+                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>__cf_bm</code></th><td className="py-3 pr-4">HubSpot (auf den eigenen Domains von HubSpot)</td><td className="py-3 pr-4">HubSpot-Tracking</td><td className="py-3 pr-4">Schützt die Dienste von HubSpot vor Bots</td><td className="py-3 pr-4">30 Minuten</td></tr>
+                </tbody>
+              </table>
+            </div>
             <p className="text-body leading-[1.6] mt-3">
               Firon Marketing LLC, die Agentur, die an der Leistung unserer Website arbeitet, hat Zugriff auf unsere Google-Tag-Manager- und Google-Analytics-Konten und setzt keine eigenen Cookies. Diese Liste wird aktualisiert, wenn wir einen Dienst hinzufügen oder entfernen.
             </p>
@@ -54,7 +77,10 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
           <section>
             <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">5. Ihre Cookie-Einstellungen verwalten</h2>
             <p className="text-body leading-[1.6]">
-              Beim Besuch unserer Website haben Sie die Möglichkeit, nicht notwendige Cookies zu akzeptieren oder abzulehnen. Sie können Cookies außerdem jederzeit über Ihre Browser-Einstellungen verwalten oder löschen. Bitte beachten Sie, dass das Deaktivieren notwendiger Cookies die Funktion der Website beeinträchtigen kann.
+              Bei Ihrem ersten Besuch fragt das Cookie-Banner nach Ihrer Auswahl. &bdquo;Alle akzeptieren&ldquo; erlaubt Analyse und HubSpot-Tracking, &bdquo;Ablehnen&ldquo; erlaubt keines von beiden, und unter &bdquo;Einstellungen verwalten&ldquo; wählen Sie jede Kategorie einzeln.
+            </p>
+            <p className="text-body leading-[1.6] mt-3">
+              Sie können Ihre Auswahl jederzeit über &bdquo;Cookie-Einstellungen&ldquo; in der Fusszeile jeder Seite ändern oder widerrufen. Wenn Sie eine Kategorie widerrufen, löschen wir ihre Cookies. Wir speichern Ihre Auswahl 6 Monate; danach fragt das Banner erneut. Sie können Cookies auch in den Einstellungen Ihres Browsers löschen.
             </p>
           </section>
 

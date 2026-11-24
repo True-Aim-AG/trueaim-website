@@ -3,7 +3,11 @@ import { Link } from "@/i18n/navigation";
 import { PageHero, SECTION } from "@/components/content";
 
 const PUBLISH_DATE = "2026-05-21";
-const LAST_UPDATED = "2026-10-19";
+const LAST_UPDATED = "2026-11-24";
+
+// Open facts, to be confirmed before release (see the PR for GDPR gaps 2 to 7).
+const FIRON_COUNTRY = "[country to be confirmed]";
+const SERVER_LOGS = "[period to be confirmed]";
 
 type TocItem = { id: string; label: string };
 
@@ -76,16 +80,36 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 <li><strong className="text-strong">Claims data submitted by Tenants:</strong> claim narratives, claimant identifiers, dates of loss, policy numbers, uploaded documents.</li>
                 <li><strong className="text-strong">Derived data:</strong> structured data extracted from uploaded documents by our document intelligence and language model components.</li>
                 <li><strong className="text-strong">Usage and telemetry:</strong> application logs, audit trail entries, request metadata, operational metrics.</li>
-                <li><strong className="text-strong">Website data:</strong> IP address, browser metadata and pages visited, collected through standard server logs and, only after you accept analytics cookies, through Google Tag Manager and Google Analytics 4 as described in our Cookie Policy.</li>
-                <li><strong className="text-strong">Contact form data:</strong> the details you enter in the form, together with attribution fields the website records with your submission: the page you first landed on, the referring site, campaign parameters (UTM) and your answer to &ldquo;how did you hear about us&rdquo;. This data is sent to HubSpot, our CRM, and a copy is written to a spreadsheet in our Google Workspace, which notifies our team by email (see section 5).</li>
+                <li><strong className="text-strong">Website data:</strong> IP address, browser metadata and pages visited, collected through standard server logs. Only after you accept analytics cookies, Google Tag Manager and Google Analytics 4 also collect this data. Only after you accept HubSpot tracking, the HubSpot tracker recognises your browser on later visits and links your visits to a demo request you send. Our <Link href="/cookies" className="text-link hover:underline">Cookie Policy</Link> lists each cookie and its lifetime.</li>
+                <li><strong className="text-strong">Contact form data:</strong> the details you enter in the form, together with attribution fields the website records with your submission: the page you first landed on, the referring site and campaign parameters (UTM), and your answer to &ldquo;how did you hear about us&rdquo; if you give one. This data is sent to HubSpot, our CRM, and a copy is written to a spreadsheet in our Google Workspace, which notifies our team by email (see section 5). First name, last name, work email, company, job title, country and area of interest are required: we need them to know who is asking, for which company and market, and which product to show you. Without them we cannot answer your request. How you heard about us, your claims volume and your message are optional.</li>
               </ul>
             </section>
 
             <section id="lawful-bases" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">3. Lawful bases for processing (GDPR / Swiss FADP)</h2>
               <p className="text-body leading-[1.6]">
-                Contract performance, legitimate interest in operating and securing the Service, consent where required, and legal obligation.
+                This table links each purpose to the data we use and to its legal basis under the GDPR. Where the Swiss FADP requires a justification, we rely on the same ground.
               </p>
+              <div className="mt-4 overflow-x-auto">
+                <table className="w-full min-w-[640px] border-collapse text-left text-sm leading-[1.5] text-body">
+                  <thead>
+                    <tr className="border-b border-line-strong"><th scope="col" className="py-3 pr-4 font-semibold text-strong">Purpose</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Data</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Legal basis</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Our legitimate interest</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Answer your demo or contact request</th><td className="py-3 pr-4">Contact form data</td><td className="py-3 pr-4">Steps taken at your request before a contract (art. 6(1)(b))</td><td className="py-3 pr-4">None needed</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Record how you found us</th><td className="py-3 pr-4">Attribution fields: landing page, referring site, UTM parameters, how you heard about us</td><td className="py-3 pr-4">Legitimate interest (art. 6(1)(f))</td><td className="py-3 pr-4">Knowing which channels bring requests, so that we spend our marketing budget well</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Follow up with you as a business prospect</th><td className="py-3 pr-4">Contact form data in our CRM</td><td className="py-3 pr-4">Legitimate interest (art. 6(1)(f))</td><td className="py-3 pr-4">Selling our Service to insurers and their staff. You can object at any time.</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Run and secure this website</th><td className="py-3 pr-4">Website data from server logs</td><td className="py-3 pr-4">Legitimate interest (art. 6(1)(f))</td><td className="py-3 pr-4">Keeping the website available and secure</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Website statistics</th><td className="py-3 pr-4">Google Analytics 4 data</td><td className="py-3 pr-4">Your consent (art. 6(1)(a))</td><td className="py-3 pr-4">None needed</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Link your visits to your demo request</th><td className="py-3 pr-4">HubSpot tracking data</td><td className="py-3 pr-4">Your consent (art. 6(1)(a))</td><td className="py-3 pr-4">None needed</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Keep a record of your cookie choice</th><td className="py-3 pr-4">Your consent choice</td><td className="py-3 pr-4">Legal obligation to show consent (art. 6(1)(c) and art. 7(1))</td><td className="py-3 pr-4">None needed</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Provide the Service to Tenants</th><td className="py-3 pr-4">Claims data and derived data</td><td className="py-3 pr-4">We process this data for the Tenant, on its instructions and under the Data Processing Agreement. The Tenant sets the legal basis.</td><td className="py-3 pr-4">Not applicable</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Manage Tenant user accounts and access</th><td className="py-3 pr-4">Account data</td><td className="py-3 pr-4">Legitimate interest (art. 6(1)(f))</td><td className="py-3 pr-4">Providing the Service that your organisation ordered</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Detect and prevent security incidents</th><td className="py-3 pr-4">Usage and telemetry data, audit trail</td><td className="py-3 pr-4">Legitimate interest (art. 6(1)(f))</td><td className="py-3 pr-4">Protecting the Service and Tenant data</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Meet our legal obligations, such as bookkeeping</th><td className="py-3 pr-4">The data the law requires</td><td className="py-3 pr-4">Legal obligation (art. 6(1)(c))</td><td className="py-3 pr-4">None needed</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </section>
 
             <section id="use" className="scroll-mt-24">
@@ -108,9 +132,9 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
               </p>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
                 <li><strong className="text-strong">Google Tag Manager and Google Analytics 4</strong> (Google Ireland Limited): loaded only after you accept analytics cookies; measure page views and interactions; GA4 does not log or store IP addresses; no personal data is placed in the data layer.</li>
-                <li><strong className="text-strong">HubSpot</strong> (HubSpot Ireland Limited, hosted in HubSpot&rsquo;s EU data centre in Germany): receives contact form submissions, including the attribution fields listed in section 2, and, only after you accept analytics cookies, records your visits to this website.</li>
+                <li><strong className="text-strong">HubSpot</strong> (HubSpot Ireland Limited, hosted in HubSpot&rsquo;s EU data centre in Germany): receives contact form submissions, including the attribution fields listed in section 2. Only after you accept HubSpot tracking, it also records your visits to this website and links them to your submission. HubSpot tracking has its own choice in the cookie banner, separate from analytics.</li>
                 <li><strong className="text-strong">Google Workspace</strong> (Google Ireland Limited): a spreadsheet in our Google Workspace receives a copy of each contact form submission and sends an email notification to our team.</li>
-                <li><strong className="text-strong">Firon Marketing LLC</strong>: the agency that works on our website performance, with access to Google Tag Manager, Google Analytics and Google Search Console; it has no access to customer or Tenant data.</li>
+                <li><strong className="text-strong">Firon Marketing LLC</strong> ({FIRON_COUNTRY}): the agency that works on our website performance, with access to Google Tag Manager, Google Analytics and Google Search Console; it has no access to customer or Tenant data.</li>
               </ul>
             </section>
 
@@ -135,7 +159,20 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section id="retention" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">8. Retention</h2>
               <p className="text-body leading-[1.6]">
-                We retain personal data only as long as necessary to deliver the Service and meet our legal obligations. Tenant data is retained for the duration of the Tenant&rsquo;s subscription plus the contractually agreed return/deletion period. Specific retention periods are documented in our internal data retention schedule and reflected in the Data Processing Agreement concluded with each Tenant.
+                We keep personal data only as long as we need it for the purposes in section 3, or as long as the law requires. These periods apply:
+              </p>
+              <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
+                <li><strong className="text-strong">Contact form data and prospect records:</strong> in HubSpot and in our Google Workspace: deleted when not used for 12 months.</li>
+                <li><strong className="text-strong">Google Analytics 4:</strong> event data 2 months, user data 14 months.</li>
+                <li><strong className="text-strong">Website server logs:</strong> {SERVER_LOGS}.</li>
+                <li><strong className="text-strong">Cookies and your consent choice:</strong> as listed in our <Link href="/cookies" className="text-link hover:underline">Cookie Policy</Link>. We ask for your cookie choice again after 6 months.</li>
+                <li><strong className="text-strong">Tenant data in the Service:</strong> deleted or returned up to 90 days after the Tenant&rsquo;s contract ends. Claim documents: 7 years after claim closure, or at contract end if earlier. Personal data in the audit trail: deleted or anonymised at contract end at the latest. The process record without personal data: 7 years, as set in the client agreement.</li>
+                <li><strong className="text-strong">Account data:</strong> user invitations 30 days after acceptance or expiry; user and membership records 90 days after deletion.</li>
+                <li><strong className="text-strong">Security logs of the Service:</strong> 365 days. Entries that identify Tenant users: 365 days, or contract end if earlier.</li>
+                <li><strong className="text-strong">Accounting records:</strong> 10 years, as Swiss law requires (art. 958f CO).</li>
+              </ul>
+              <p className="text-body leading-[1.6] mt-3">
+                The Data Processing Agreement with each Tenant sets the binding periods for Tenant data.
               </p>
             </section>
 
@@ -144,6 +181,9 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
               <p className="text-body leading-[1.6]">
                 Subject to applicable law (including GDPR and Swiss FADP), you have rights of access, rectification, erasure, restriction, portability, and objection. If you are an end user of a Tenant, please contact the Tenant first; we will support the Tenant in fulfilling your request. To contact us directly, email{" "}
                 <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a>. You also have the right to lodge a complaint with a supervisory authority. In Switzerland, the Federal Data Protection and Information Commissioner (FDPIC); in the EU, your local data protection authority.
+              </p>
+              <p className="text-body leading-[1.6] mt-3">
+                You can object at any time to processing based on our legitimate interest. Where we rely on your consent (analytics cookies and HubSpot tracking), you can withdraw it at any time, as easily as you gave it: open &ldquo;Cookie Preferences&rdquo; in the footer of any page. Withdrawal does not affect processing that took place before it.
               </p>
             </section>
 

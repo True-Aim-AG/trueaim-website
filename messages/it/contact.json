@@ -15,7 +15,7 @@
       "leadSource": "Come avete saputo di noi?",
       "claimsVolume": "Volume annuo di sinistri",
       "message": "C’è qualcosa che volete farci sapere?",
-      "consent": "Accetto che True Aim mi contatti in merito a questa richiesta. Consultate la nostra <privacy>informativa sulla privacy</privacy>.",
+      "consent": "Ho letto l’<privacy>informativa sulla privacy</privacy>, che spiega come True Aim usa i miei dati per rispondere a questa richiesta.",
       "required": "*",
       "optional": "(facoltativo)",
       "selectCountry": "Seleziona un paese",
@@ -67,8 +67,7 @@
         "jobTitleRequired": "Il ruolo è obbligatorio",
         "countryRequired": "Selezionate un paese",
         "interestRequired": "Selezionate un argomento",
-        "consentRequired": "Date il vostro consenso perché True Aim possa contattarvi",
-        "heardAboutRequired": "Diteci come avete saputo di noi"
+        "consentRequired": "Confermate di aver letto l’informativa sulla privacy"
       },
       "submit": "Richiedi una demo",
       "submitting": "Invio in corso",
