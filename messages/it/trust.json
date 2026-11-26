@@ -13,12 +13,12 @@
         "iso27001": {
           "name": "ISO/IEC 27001:2022",
           "status": "certified",
-          "description": "Gestione certificata della sicurezza delle informazioni: politiche, controlli e audit su come proteggiamo i vostri dati."
+          "description": "Gestione certificata della sicurezza delle informazioni."
         },
         "soc2": {
           "name": "SOC 2 Type II",
           "status": "nda",
-          "description": "Il nostro rapporto SOC 2 Type II (Security, dal 1° maggio al 31 luglio 2026) è disponibile previa NDA."
+          "description": "Il nostro rapporto SOC 2 Type II è disponibile previa NDA."
         },
         "gdpr": {
           "name": "GDPR",
@@ -38,7 +38,7 @@
       },
       "statusLabels": {
         "certified": "Certificato",
-        "nda": "Rapporto previa NDA",
+        "nda": "Verificato",
         "pending": "Periodo di audit concluso, in attesa del rapporto",
         "aligned": "Allineato"
       }

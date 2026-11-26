@@ -13,12 +13,12 @@
         "iso27001": {
           "name": "ISO/IEC 27001:2022",
           "status": "certified",
-          "description": "Certified information security management: policies, controls and audits of how we protect your data."
+          "description": "Certified information security management."
         },
         "soc2": {
           "name": "SOC 2 Type II",
           "status": "nda",
-          "description": "Our SOC 2 Type II report (Security, 1 May to 31 July 2026) is available under NDA."
+          "description": "Our SOC 2 Type II report is available under NDA."
         },
         "gdpr": {
           "name": "GDPR",
@@ -38,7 +38,7 @@
       },
       "statusLabels": {
         "certified": "Certified",
-        "nda": "Report under NDA",
+        "nda": "Audited",
         "pending": "Audit window completed, report pending",
         "aligned": "Aligned"
       }
