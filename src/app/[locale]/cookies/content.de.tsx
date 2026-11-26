@@ -9,7 +9,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       <PageHero compact title="Cookie-Richtlinie" texture={{ name: "circ", position: "88% 78%" }}>
-        <p className="mt-6 text-sm text-muted">Zuletzt aktualisiert: 24. November 2026</p>
+        <p className="mt-6 text-sm text-muted">Zuletzt aktualisiert: 26. November 2026</p>
       </PageHero>
       <section className={SECTION}>
         <div className="mx-auto max-w-[1232px] [&>*]:max-w-3xl [&>div>section:first-child>h2]:mt-0">
@@ -59,7 +59,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
                   <tr className="border-b border-line-strong"><th scope="col" className="py-3 pr-4 font-semibold text-strong">Name</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Gesetzt von</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Kategorie</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Funktion</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Speicherdauer</th></tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>cookie-consent</code> (lokaler Speicher, kein Cookie)</th><td className="py-3 pr-4">True Aim</td><td className="py-3 pr-4">Notwendig</td><td className="py-3 pr-4">Speichert Ihre Auswahl für jede Kategorie</td><td className="py-3 pr-4">6 Monate, danach fragt das Banner erneut</td></tr>
+                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>cookie-consent</code> (lokaler Speicher, kein Cookie)</th><td className="py-3 pr-4">True Aim</td><td className="py-3 pr-4">Notwendig</td><td className="py-3 pr-4">Speichert Ihre Auswahl für jede Kategorie</td><td className="py-3 pr-4">Bis Sie Ihre Auswahl ändern</td></tr>
                   <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>ta-first-touch</code> (lokaler Speicher, kein Cookie)</th><td className="py-3 pr-4">True Aim</td><td className="py-3 pr-4">Analyse</td><td className="py-3 pr-4">Speichert die Einstiegsseite, die verweisende Website und Kampagnenparameter, die mit einer Demo-Anfrage gesendet werden</td><td className="py-3 pr-4">90 Tage</td></tr>
                   <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>_ga</code>, <code>_ga_*</code></th><td className="py-3 pr-4">Google Analytics 4, über Google Tag Manager</td><td className="py-3 pr-4">Analyse</td><td className="py-3 pr-4">Messen Seitenaufrufe und Interaktionen</td><td className="py-3 pr-4">400 Tage</td></tr>
                   <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>hubspotutk</code>, <code>__hstc</code></th><td className="py-3 pr-4">HubSpot</td><td className="py-3 pr-4">HubSpot-Tracking</td><td className="py-3 pr-4">Erkennen wiederkehrende Besucher und verknüpfen Übermittlungen aus dem Kontaktformular mit Besuchen</td><td className="py-3 pr-4">180 Tage</td></tr>
@@ -80,7 +80,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
               Bei Ihrem ersten Besuch fragt das Cookie-Banner nach Ihrer Auswahl. &bdquo;Alle akzeptieren&ldquo; erlaubt Analyse und HubSpot-Tracking, &bdquo;Ablehnen&ldquo; erlaubt keines von beiden, und unter &bdquo;Einstellungen verwalten&ldquo; wählen Sie jede Kategorie einzeln.
             </p>
             <p className="text-body leading-[1.6] mt-3">
-              Sie können Ihre Auswahl jederzeit über &bdquo;Cookie-Einstellungen&ldquo; in der Fusszeile jeder Seite ändern oder widerrufen. Wenn Sie eine Kategorie widerrufen, löschen wir ihre Cookies. Wir speichern Ihre Auswahl 6 Monate; danach fragt das Banner erneut. Sie können Cookies auch in den Einstellungen Ihres Browsers löschen.
+              Sie können Ihre Auswahl jederzeit über &bdquo;Cookie-Einstellungen&ldquo; in der Fusszeile jeder Seite ändern oder widerrufen. Wenn Sie eine Kategorie widerrufen, löschen wir ihre Cookies. Sie können Cookies auch in den Einstellungen Ihres Browsers löschen.
             </p>
           </section>
 

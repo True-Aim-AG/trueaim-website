@@ -9,7 +9,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       <PageHero compact title="Cookie Policy" texture={{ name: "circ", position: "88% 78%" }}>
-        <p className="mt-6 text-sm text-muted">Last updated: 24 November 2026</p>
+        <p className="mt-6 text-sm text-muted">Last updated: 26 November 2026</p>
       </PageHero>
       <section className={SECTION}>
         <div className="mx-auto max-w-[1232px] [&>*]:max-w-3xl [&>div>section:first-child>h2]:mt-0">
@@ -59,7 +59,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
                   <tr className="border-b border-line-strong"><th scope="col" className="py-3 pr-4 font-semibold text-strong">Name</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Set by</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Category</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">What it does</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Lifetime</th></tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>cookie-consent</code> (local storage, not a cookie)</th><td className="py-3 pr-4">True Aim</td><td className="py-3 pr-4">Essential</td><td className="py-3 pr-4">Stores your choice for each category</td><td className="py-3 pr-4">6 months, then the banner asks again</td></tr>
+                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>cookie-consent</code> (local storage, not a cookie)</th><td className="py-3 pr-4">True Aim</td><td className="py-3 pr-4">Essential</td><td className="py-3 pr-4">Stores your choice for each category</td><td className="py-3 pr-4">Until you change your choice</td></tr>
                   <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>ta-first-touch</code> (local storage, not a cookie)</th><td className="py-3 pr-4">True Aim</td><td className="py-3 pr-4">Analytics</td><td className="py-3 pr-4">Stores the page you first landed on, the referring site and campaign parameters, sent with a demo request</td><td className="py-3 pr-4">90 days</td></tr>
                   <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>_ga</code>, <code>_ga_*</code></th><td className="py-3 pr-4">Google Analytics 4, through Google Tag Manager</td><td className="py-3 pr-4">Analytics</td><td className="py-3 pr-4">Measure page views and interactions</td><td className="py-3 pr-4">400 days</td></tr>
                   <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>hubspotutk</code>, <code>__hstc</code></th><td className="py-3 pr-4">HubSpot</td><td className="py-3 pr-4">HubSpot tracking</td><td className="py-3 pr-4">Recognise returning visitors and link contact form submissions to visits</td><td className="py-3 pr-4">180 days</td></tr>
@@ -80,7 +80,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
               When you first visit, the cookie banner asks for your choice. &ldquo;Accept All&rdquo; allows analytics and HubSpot tracking, &ldquo;Decline&rdquo; allows neither, and &ldquo;Manage Preferences&rdquo; lets you choose each category on its own.
             </p>
             <p className="text-body leading-[1.6] mt-3">
-              You can change or withdraw your choice at any time with &ldquo;Cookie Preferences&rdquo; in the footer of every page. When you withdraw a category, we delete its cookies. We keep your choice for 6 months; after that, the banner asks again. You can also delete cookies in your browser settings.
+              You can change or withdraw your choice at any time with &ldquo;Cookie Preferences&rdquo; in the footer of every page. When you withdraw a category, we delete its cookies. You can also delete cookies in your browser settings.
             </p>
           </section>
 

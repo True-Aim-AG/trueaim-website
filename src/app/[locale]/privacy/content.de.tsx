@@ -3,11 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { PageHero, SECTION } from "@/components/content";
 
 const PUBLISH_DATE = "2026-05-21";
-const LAST_UPDATED = "2026-11-24";
-
-// Open facts, to be confirmed before release (see the PR for GDPR gaps 2 to 7).
-const FIRON_COUNTRY = "[Land noch zu bestätigen]";
-const SERVER_LOGS = "[Frist noch zu bestätigen]";
+const LAST_UPDATED = "2026-11-26";
 
 type TocItem = { id: string; label: string };
 
@@ -134,14 +130,14 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 <li><strong className="text-strong">Google Tag Manager und Google Analytics 4</strong> (Google Ireland Limited): werden erst geladen, nachdem Sie Analyse-Cookies akzeptiert haben; messen Seitenaufrufe und Interaktionen; GA4 protokolliert und speichert keine IP-Adressen; es werden keine personenbezogenen Daten in den Data Layer geschrieben.</li>
                 <li><strong className="text-strong">HubSpot</strong> (HubSpot Ireland Limited, gehostet im EU-Rechenzentrum von HubSpot in Deutschland): erhält Übermittlungen aus dem Kontaktformular, einschliesslich der in Abschnitt 2 genannten Attributionsfelder. Erst nachdem Sie HubSpot-Tracking akzeptiert haben, erfasst HubSpot auch Ihre Besuche auf dieser Website und verknüpft sie mit Ihrer Übermittlung. HubSpot-Tracking hat im Cookie-Banner eine eigene Auswahl, getrennt von der Analyse.</li>
                 <li><strong className="text-strong">Google Workspace</strong> (Google Ireland Limited): Eine Tabelle in unserem Google Workspace erhält eine Kopie jeder Übermittlung aus dem Kontaktformular und sendet eine E-Mail-Benachrichtigung an unser Team.</li>
-                <li><strong className="text-strong">Firon Marketing LLC</strong> ({FIRON_COUNTRY}): die Agentur, die an der Leistung unserer Website arbeitet, mit Zugriff auf Google Tag Manager, Google Analytics und Google Search Console; sie hat keinen Zugriff auf Kunden- oder Mandantendaten.</li>
+                <li><strong className="text-strong">Firon Marketing LLC</strong> (Vereinigte Staaten): die Agentur, die an der Leistung unserer Website arbeitet, mit Zugriff auf Google Tag Manager, Google Analytics und Google Search Console; sie hat keinen Zugriff auf Kunden- oder Mandantendaten.</li>
               </ul>
             </section>
 
             <section id="transfers" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">6. Internationale Übermittlungen</h2>
               <p className="text-body leading-[1.6]">
-                Im Dienst verarbeitete personenbezogene Daten werden in der Schweiz gespeichert. Daten aus dem Kontaktformular werden in der Europäischen Union gespeichert, im EU-Rechenzentrum von HubSpot und in unserem Google Workspace. Findet eine Verarbeitung außerhalb der Schweiz, der EU oder des EWR statt, einschließlich Übermittlungen in die Vereinigten Staaten, stützen wir uns auf das EU-U.S. und das Swiss-U.S. Data Privacy Framework oder auf Standardvertragsklauseln. Unsere Liste der Unterauftragsverarbeiter nennt für jeden Anbieter den Ort und die Übermittlungsgrundlage.
+                Im Dienst verarbeitete personenbezogene Daten werden in der Schweiz gespeichert. Daten aus dem Kontaktformular werden in der Europäischen Union gespeichert, im EU-Rechenzentrum von HubSpot und in unserem Google Workspace. Firon Marketing LLC, unsere Website-Agentur, hat ihren Sitz in den Vereinigten Staaten und hat Zugriff auf Google Tag Manager und Google Analytics. Findet eine Verarbeitung außerhalb der Schweiz, der EU oder des EWR statt, einschließlich Übermittlungen in die Vereinigten Staaten, stützen wir uns auf das EU-U.S. und das Swiss-U.S. Data Privacy Framework oder auf Standardvertragsklauseln. Unsere Liste der Unterauftragsverarbeiter nennt für jeden Anbieter den Ort und die Übermittlungsgrundlage.
               </p>
             </section>
 
@@ -162,10 +158,10 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 Wir bewahren personenbezogene Daten nur so lange auf, wie wir sie für die Zwecke in Abschnitt 3 brauchen oder wie das Gesetz es verlangt. Es gelten diese Fristen:
               </p>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
-                <li><strong className="text-strong">Daten aus dem Kontaktformular und Interessentendaten:</strong> in HubSpot und in unserem Google Workspace: gelöscht, wenn sie 12 Monate nicht genutzt wurden.</li>
+                <li><strong className="text-strong">Daten aus dem Kontaktformular und Interessentendaten:</strong> in HubSpot und in unserem Google Workspace: aufbewahrt, solange der geschäftliche Kontakt aktiv ist, und gelöscht, wenn wir sie nicht mehr benötigen.</li>
                 <li><strong className="text-strong">Google Analytics 4:</strong> Ereignisdaten 2 Monate, Nutzerdaten 14 Monate.</li>
-                <li><strong className="text-strong">Server-Protokolle der Website:</strong> {SERVER_LOGS}.</li>
-                <li><strong className="text-strong">Cookies und Ihre Einwilligungsauswahl:</strong> wie in unserer <Link href="/cookies" className="text-link hover:underline">Cookie-Richtlinie</Link> angegeben. Nach 6 Monaten fragen wir Ihre Cookie-Auswahl erneut ab.</li>
+                <li><strong className="text-strong">Server-Protokolle der Website:</strong> wir führen keine eigenen Server-Protokolle. Microsoft Azure, unser Hoster, verarbeitet Zugriffsdaten, um die Website auszuliefern, und bewahrt sie nach eigenen Regeln auf.</li>
+                <li><strong className="text-strong">Cookies und Ihre Einwilligungsauswahl:</strong> wie in unserer <Link href="/cookies" className="text-link hover:underline">Cookie-Richtlinie</Link> angegeben.</li>
                 <li><strong className="text-strong">Mandantendaten im Service:</strong> gelöscht oder zurückgegeben bis 90 Tage nach Vertragsende des Mandanten. Schadendokumente: 7 Jahre nach Abschluss des Schadenfalls, oder bei Vertragsende, falls früher. Personenbezogene Daten im Prüfpfad: spätestens bei Vertragsende gelöscht oder anonymisiert. Der Prozessnachweis ohne personenbezogene Daten: 7 Jahre, wie im Kundenvertrag festgelegt.</li>
                 <li><strong className="text-strong">Kontodaten:</strong> Benutzereinladungen 30 Tage nach Annahme oder Ablauf; Benutzer- und Mitgliedschaftsdaten 90 Tage nach Löschung.</li>
                 <li><strong className="text-strong">Sicherheitsprotokolle des Service:</strong> 365 Tage. Einträge, die Benutzer eines Mandanten identifizieren: 365 Tage, oder bis Vertragsende, falls früher.</li>

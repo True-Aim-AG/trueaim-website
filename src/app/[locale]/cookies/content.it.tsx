@@ -9,7 +9,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       <PageHero compact title="Informativa sui cookie" texture={{ name: "circ", position: "88% 78%" }}>
-        <p className="mt-6 text-sm text-muted">Ultimo aggiornamento: 24 novembre 2026</p>
+        <p className="mt-6 text-sm text-muted">Ultimo aggiornamento: 26 novembre 2026</p>
       </PageHero>
       <section className={SECTION}>
         <div className="mx-auto max-w-[1232px] [&>*]:max-w-3xl [&>div>section:first-child>h2]:mt-0">
@@ -59,7 +59,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
                   <tr className="border-b border-line-strong"><th scope="col" className="py-3 pr-4 font-semibold text-strong">Nome</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Impostato da</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Categoria</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Funzione</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Durata</th></tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>cookie-consent</code> (archiviazione locale, non un cookie)</th><td className="py-3 pr-4">True Aim</td><td className="py-3 pr-4">Essenziali</td><td className="py-3 pr-4">Registra la vostra scelta per ogni categoria</td><td className="py-3 pr-4">6 mesi, poi il banner chiede di nuovo</td></tr>
+                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>cookie-consent</code> (archiviazione locale, non un cookie)</th><td className="py-3 pr-4">True Aim</td><td className="py-3 pr-4">Essenziali</td><td className="py-3 pr-4">Registra la vostra scelta per ogni categoria</td><td className="py-3 pr-4">Finché non modificate la vostra scelta</td></tr>
                   <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>ta-first-touch</code> (archiviazione locale, non un cookie)</th><td className="py-3 pr-4">True Aim</td><td className="py-3 pr-4">Analitici</td><td className="py-3 pr-4">Registra la pagina di arrivo, il sito di provenienza e i parametri di campagna, inviati con una richiesta di demo</td><td className="py-3 pr-4">90 giorni</td></tr>
                   <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>_ga</code>, <code>_ga_*</code></th><td className="py-3 pr-4">Google Analytics 4, tramite Google Tag Manager</td><td className="py-3 pr-4">Analitici</td><td className="py-3 pr-4">Misurano le pagine visualizzate e le interazioni</td><td className="py-3 pr-4">400 giorni</td></tr>
                   <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>hubspotutk</code>, <code>__hstc</code></th><td className="py-3 pr-4">HubSpot</td><td className="py-3 pr-4">Tracciamento HubSpot</td><td className="py-3 pr-4">Riconoscono i visitatori che tornano e collegano gli invii del modulo di contatto alle visite</td><td className="py-3 pr-4">180 giorni</td></tr>
@@ -80,7 +80,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
               Alla vostra prima visita, il banner dei cookie vi chiede la vostra scelta. &laquo;Accetta tutti&raquo; consente gli analitici e il tracciamento HubSpot, &laquo;Rifiuta&raquo; non consente nessuno dei due, e &laquo;Gestisci le preferenze&raquo; vi permette di scegliere ogni categoria separatamente.
             </p>
             <p className="text-body leading-[1.6] mt-3">
-              Potete modificare o revocare la vostra scelta in qualsiasi momento con &laquo;Preferenze cookie&raquo; nel piè di pagina di ogni pagina. Quando revocate una categoria, cancelliamo i suoi cookie. Conserviamo la vostra scelta per 6 mesi; dopo, il banner chiede di nuovo. Potete anche cancellare i cookie nelle impostazioni del browser.
+              Potete modificare o revocare la vostra scelta in qualsiasi momento con &laquo;Preferenze cookie&raquo; nel piè di pagina di ogni pagina. Quando revocate una categoria, cancelliamo i suoi cookie. Potete anche cancellare i cookie nelle impostazioni del browser.
             </p>
           </section>
 

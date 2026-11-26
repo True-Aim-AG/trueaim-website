@@ -11,7 +11,7 @@ import {
   OPEN_COOKIE_SETTINGS_EVENT,
   clearConsent,
   consentChangeFromStorage,
-  hasExpiredConsent,
+  hasOutdatedConsent,
   readConsent,
   revokeTracking,
   saveConsent,
@@ -34,10 +34,10 @@ export function CookieBanner() {
   const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // A choice older than six months, or saved before HubSpot had its own
-    // category, is no longer valid: drop it with the tracking cookies it
-    // allowed, then ask again. No tag has loaded yet, so no reload is needed.
-    if (hasExpiredConsent()) {
+    // A choice saved before HubSpot had its own category is no longer valid:
+    // drop it with the tracking cookies it allowed, then ask once again.
+    // No tag has loaded yet, so no reload is needed.
+    if (hasOutdatedConsent()) {
       clearConsent();
       revokeTracking();
       clearFirstTouch();

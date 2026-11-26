@@ -10,10 +10,9 @@
  *   links their visits to a demo request in our CRM. That is tracking of one
  *   person, so it is never filed under analytics.
  *
- * A choice expires CONSENT_MAX_AGE_MS after it was saved, and the banner asks
- * again. A choice without savedAt (stored before expiry existed, when HubSpot
- * still sat under analytics) counts as expired, so every visitor is asked once
- * for the separate HubSpot choice.
+ * A stored choice stays valid until the visitor changes it. A choice without
+ * savedAt was stored when HubSpot still sat under analytics: it counts as
+ * outdated, so every visitor is asked once for the separate HubSpot choice.
  */
 
 export const CONSENT_STORAGE_KEY = "cookie-consent";
@@ -21,9 +20,6 @@ export const CONSENT_STORAGE_KEY = "cookie-consent";
 export const CONSENT_UPDATED_EVENT = "cookie-consent-update";
 /** Fire on window to reopen the banner so the visitor can change the choice. */
 export const OPEN_COOKIE_SETTINGS_EVENT = "open-cookie-settings";
-/** Six months, as the CNIL recommends; the cookie policy states the same period. */
-export const CONSENT_MAX_AGE_DAYS = 182;
-export const CONSENT_MAX_AGE_MS = CONSENT_MAX_AGE_DAYS * 24 * 60 * 60 * 1000;
 
 export type ConsentPreferences = {
   essential: true;
@@ -33,19 +29,18 @@ export type ConsentPreferences = {
 
 type StoredConsent = ConsentPreferences & { savedAt: number };
 
-function parseStored(raw: string | null, now = Date.now()): ConsentPreferences | null {
+function parseStored(raw: string | null): ConsentPreferences | null {
   if (!raw) return null;
   try {
     const parsed = JSON.parse(raw) as { analytics?: unknown; hubspot?: unknown; savedAt?: unknown };
     if (typeof parsed.savedAt !== "number" || !Number.isFinite(parsed.savedAt)) return null;
-    if (now - parsed.savedAt > CONSENT_MAX_AGE_MS || parsed.savedAt > now + 60_000) return null;
     return { essential: true, analytics: parsed.analytics === true, hubspot: parsed.hubspot === true };
   } catch {
     return null;
   }
 }
 
-/** The stored choice, or null when the visitor has not chosen yet or the choice expired. */
+/** The stored choice, or null when the visitor has not chosen yet or the choice is outdated. */
 export function readConsent(): ConsentPreferences | null {
   try {
     return parseStored(localStorage.getItem(CONSENT_STORAGE_KEY));
@@ -55,10 +50,10 @@ export function readConsent(): ConsentPreferences | null {
 }
 
 /**
- * True when a choice is stored but no longer valid (expired or from before
- * the HubSpot category). The banner then deletes it and the tracking cookies.
+ * True when a choice is stored but no longer valid (saved before HubSpot had
+ * its own category). The banner then deletes it and the tracking cookies.
  */
-export function hasExpiredConsent(): boolean {
+export function hasOutdatedConsent(): boolean {
   try {
     const raw = localStorage.getItem(CONSENT_STORAGE_KEY);
     return raw !== null && parseStored(raw) === null;

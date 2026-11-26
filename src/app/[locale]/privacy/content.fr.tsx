@@ -3,11 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { PageHero, SECTION } from "@/components/content";
 
 const PUBLISH_DATE = "2026-05-21";
-const LAST_UPDATED = "2026-11-24";
-
-// Open facts, to be confirmed before release (see the PR for GDPR gaps 2 to 7).
-const FIRON_COUNTRY = "[pays à confirmer]";
-const SERVER_LOGS = "[durée à confirmer]";
+const LAST_UPDATED = "2026-11-26";
 
 type TocItem = { id: string; label: string };
 
@@ -134,14 +130,14 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 <li><strong className="text-strong">Google Tag Manager et Google Analytics 4</strong> (Google Ireland Limited) : chargés uniquement après votre acceptation des cookies d’analyse ; mesurent les pages vues et les interactions ; GA4 n’enregistre ni ne conserve les adresses IP ; aucune donnée personnelle n’est placée dans la couche de données.</li>
                 <li><strong className="text-strong">HubSpot</strong> (HubSpot Ireland Limited, hébergé dans le centre de données européen de HubSpot en Allemagne) : reçoit les envois du formulaire de contact, y compris les champs d’attribution indiqués à la section 2. Uniquement après votre acceptation du suivi HubSpot, il enregistre aussi vos visites sur ce site et les relie à votre envoi. Le suivi HubSpot a son propre choix dans le bandeau cookies, distinct de l’analyse.</li>
                 <li><strong className="text-strong">Google Workspace</strong> (Google Ireland Limited) : une feuille de calcul de notre Google Workspace reçoit une copie de chaque envoi du formulaire de contact et adresse une notification par e-mail à notre équipe.</li>
-                <li><strong className="text-strong">Firon Marketing LLC</strong> ({FIRON_COUNTRY}) : l’agence qui travaille sur la performance de notre site, avec un accès à Google Tag Manager, Google Analytics et Google Search Console ; elle n’a aucun accès aux données des clients ou des Tenants.</li>
+                <li><strong className="text-strong">Firon Marketing LLC</strong> (États-Unis) : l’agence qui travaille sur la performance de notre site, avec un accès à Google Tag Manager, Google Analytics et Google Search Console ; elle n’a aucun accès aux données des clients ou des Tenants.</li>
               </ul>
             </section>
 
             <section id="transfers" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">6. Transferts internationaux</h2>
               <p className="text-body leading-[1.6]">
-                Les données personnelles traitées dans le Service sont stockées en Suisse. Les données du formulaire de contact sont stockées dans l’Union européenne, dans le centre de données européen de HubSpot et dans notre Google Workspace. Lorsqu’un traitement a lieu hors de Suisse, de l’UE ou de l’EEE, y compris des transferts vers les États-Unis, nous nous appuyons sur les cadres EU-U.S. et Swiss-U.S. Data Privacy Framework ou sur les clauses contractuelles types. Notre liste des sous-traitants ultérieurs indique le lieu et la base du transfert pour chaque prestataire.
+                Les données personnelles traitées dans le Service sont stockées en Suisse. Les données du formulaire de contact sont stockées dans l’Union européenne, dans le centre de données européen de HubSpot et dans notre Google Workspace. Firon Marketing LLC, notre agence web, est établie aux États-Unis et a accès à Google Tag Manager et à Google Analytics. Lorsqu’un traitement a lieu hors de Suisse, de l’UE ou de l’EEE, y compris des transferts vers les États-Unis, nous nous appuyons sur les cadres EU-U.S. et Swiss-U.S. Data Privacy Framework ou sur les clauses contractuelles types. Notre liste des sous-traitants ultérieurs indique le lieu et la base du transfert pour chaque prestataire.
               </p>
             </section>
 
@@ -162,10 +158,10 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 Nous conservons les données personnelles uniquement le temps nécessaire aux finalités de la section 3, ou le temps exigé par la loi. Ces durées s’appliquent :
               </p>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
-                <li><strong className="text-strong">Données du formulaire de contact et données des prospects:</strong> dans HubSpot et dans notre Google Workspace : supprimées lorsqu’elles ne sont pas utilisées pendant 12 mois.</li>
+                <li><strong className="text-strong">Données du formulaire de contact et données des prospects:</strong> dans HubSpot et dans notre Google Workspace : conservées tant que la relation d’affaires est active, et supprimées lorsque nous n’en avons plus besoin.</li>
                 <li><strong className="text-strong">Google Analytics 4:</strong> données d’événements 2 mois, données utilisateur 14 mois.</li>
-                <li><strong className="text-strong">Journaux serveur du site:</strong> {SERVER_LOGS}.</li>
-                <li><strong className="text-strong">Cookies et votre choix de consentement:</strong> comme indiqué dans notre <Link href="/cookies" className="text-link hover:underline">politique de cookies</Link>. Nous vous redemandons votre choix sur les cookies après 6 mois.</li>
+                <li><strong className="text-strong">Journaux serveur du site:</strong> nous ne conservons aucun journal serveur propre. Microsoft Azure, notre hébergeur, traite les données d’accès pour diffuser le site et les conserve selon ses propres règles.</li>
+                <li><strong className="text-strong">Cookies et votre choix de consentement:</strong> comme indiqué dans notre <Link href="/cookies" className="text-link hover:underline">politique de cookies</Link>.</li>
                 <li><strong className="text-strong">Données des Tenants dans le Service:</strong> supprimées ou restituées au plus tard 90 jours après la fin du contrat du Tenant. Documents de sinistre : 7 ans après la clôture du sinistre, ou à la fin du contrat si elle intervient avant. Données personnelles de la piste d’audit : supprimées ou anonymisées au plus tard à la fin du contrat. L’enregistrement du processus sans données personnelles : 7 ans, comme prévu dans le contrat client.</li>
                 <li><strong className="text-strong">Données de compte:</strong> invitations d’utilisateurs 30 jours après acceptation ou expiration ; données des utilisateurs et des adhésions 90 jours après suppression.</li>
                 <li><strong className="text-strong">Journaux de sécurité du Service:</strong> 365 jours. Entrées qui identifient des utilisateurs d’un Tenant : 365 jours, ou jusqu’à la fin du contrat si elle intervient avant.</li>

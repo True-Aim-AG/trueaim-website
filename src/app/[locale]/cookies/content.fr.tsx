@@ -9,7 +9,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       <PageHero compact title="Politique relative aux cookies" texture={{ name: "circ", position: "88% 78%" }}>
-        <p className="mt-6 text-sm text-muted">Dernière mise à jour : 24 novembre 2026</p>
+        <p className="mt-6 text-sm text-muted">Dernière mise à jour : 26 novembre 2026</p>
       </PageHero>
       <section className={SECTION}>
         <div className="mx-auto max-w-[1232px] [&>*]:max-w-3xl [&>div>section:first-child>h2]:mt-0">
@@ -59,7 +59,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
                   <tr className="border-b border-line-strong"><th scope="col" className="py-3 pr-4 font-semibold text-strong">Nom</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Déposé par</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Catégorie</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Rôle</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Durée de vie</th></tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>cookie-consent</code> (stockage local, pas un cookie)</th><td className="py-3 pr-4">True Aim</td><td className="py-3 pr-4">Essentiels</td><td className="py-3 pr-4">Enregistre votre choix pour chaque catégorie</td><td className="py-3 pr-4">6 mois, puis le bandeau vous redemande votre choix</td></tr>
+                  <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>cookie-consent</code> (stockage local, pas un cookie)</th><td className="py-3 pr-4">True Aim</td><td className="py-3 pr-4">Essentiels</td><td className="py-3 pr-4">Enregistre votre choix pour chaque catégorie</td><td className="py-3 pr-4">Jusqu’à ce que vous modifiiez votre choix</td></tr>
                   <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>ta-first-touch</code> (stockage local, pas un cookie)</th><td className="py-3 pr-4">True Aim</td><td className="py-3 pr-4">Analyse</td><td className="py-3 pr-4">Enregistre la page d’arrivée, le site d’origine et les paramètres de campagne, envoyés avec une demande de démo</td><td className="py-3 pr-4">90 jours</td></tr>
                   <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>_ga</code>, <code>_ga_*</code></th><td className="py-3 pr-4">Google Analytics 4, via Google Tag Manager</td><td className="py-3 pr-4">Analyse</td><td className="py-3 pr-4">Mesurent les pages vues et les interactions</td><td className="py-3 pr-4">400 jours</td></tr>
                   <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong"><code>hubspotutk</code>, <code>__hstc</code></th><td className="py-3 pr-4">HubSpot</td><td className="py-3 pr-4">Suivi HubSpot</td><td className="py-3 pr-4">Reconnaissent les visiteurs qui reviennent et relient les envois du formulaire de contact aux visites</td><td className="py-3 pr-4">180 jours</td></tr>
@@ -80,7 +80,7 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
               Lors de votre première visite, le bandeau cookies vous demande votre choix. « Tout accepter » autorise l’analyse et le suivi HubSpot, « Refuser » n’autorise ni l’un ni l’autre, et « Gérer les préférences » vous permet de choisir chaque catégorie séparément.
             </p>
             <p className="text-body leading-[1.6] mt-3">
-              Vous pouvez modifier ou retirer votre choix à tout moment avec « Préférences en matière de cookies » dans le pied de chaque page. Lorsque vous retirez une catégorie, nous supprimons ses cookies. Nous conservons votre choix 6 mois ; ensuite, le bandeau vous le redemande. Vous pouvez aussi supprimer les cookies dans les réglages de votre navigateur.
+              Vous pouvez modifier ou retirer votre choix à tout moment avec « Préférences en matière de cookies » dans le pied de chaque page. Lorsque vous retirez une catégorie, nous supprimons ses cookies. Vous pouvez aussi supprimer les cookies dans les réglages de votre navigateur.
             </p>
           </section>
 

@@ -3,11 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { PageHero, SECTION } from "@/components/content";
 
 const PUBLISH_DATE = "2026-05-21";
-const LAST_UPDATED = "2026-11-24";
-
-// Open facts, to be confirmed before release (see the PR for GDPR gaps 2 to 7).
-const FIRON_COUNTRY = "[paese da confermare]";
-const SERVER_LOGS = "[durata da confermare]";
+const LAST_UPDATED = "2026-11-26";
 
 type TocItem = { id: string; label: string };
 
@@ -134,14 +130,14 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 <li><strong className="text-strong">Google Tag Manager e Google Analytics 4</strong> (Google Ireland Limited): caricati solo dopo che avete accettato i cookie analitici; misurano le visualizzazioni di pagina e le interazioni; GA4 non registra né conserva gli indirizzi IP; nessun dato personale viene inserito nel data layer.</li>
                 <li><strong className="text-strong">HubSpot</strong> (HubSpot Ireland Limited, ospitato nel data center europeo di HubSpot in Germania): riceve gli invii del modulo di contatto, compresi i campi di attribuzione indicati nella sezione 2. Solo dopo che avete accettato il tracciamento HubSpot, registra anche le vostre visite a questo sito e le collega al vostro invio. Il tracciamento HubSpot ha una propria scelta nel banner dei cookie, separata dagli analitici.</li>
                 <li><strong className="text-strong">Google Workspace</strong> (Google Ireland Limited): un foglio di calcolo nel nostro Google Workspace riceve una copia di ogni invio del modulo di contatto e invia una notifica e-mail al nostro team.</li>
-                <li><strong className="text-strong">Firon Marketing LLC</strong> ({FIRON_COUNTRY}): l’agenzia che lavora sulle prestazioni del nostro sito, con accesso a Google Tag Manager, Google Analytics e Google Search Console; non ha accesso ai dati dei clienti o dei Tenant.</li>
+                <li><strong className="text-strong">Firon Marketing LLC</strong> (Stati Uniti): l’agenzia che lavora sulle prestazioni del nostro sito, con accesso a Google Tag Manager, Google Analytics e Google Search Console; non ha accesso ai dati dei clienti o dei Tenant.</li>
               </ul>
             </section>
 
             <section id="transfers" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">6. Trasferimenti internazionali</h2>
               <p className="text-body leading-[1.6]">
-                I dati personali trattati nel Servizio sono conservati in Svizzera. I dati del modulo di contatto sono conservati nell’Unione europea, nel data center europeo di HubSpot e nel nostro Google Workspace. Quando il trattamento avviene al di fuori di Svizzera, UE o SEE, compresi i trasferimenti verso gli Stati Uniti, ci basiamo sull’EU-U.S. e sullo Swiss-U.S. Data Privacy Framework o sulle clausole contrattuali standard. Il nostro elenco dei sub-responsabili indica il luogo e la base del trasferimento per ciascun fornitore.
+                I dati personali trattati nel Servizio sono conservati in Svizzera. I dati del modulo di contatto sono conservati nell’Unione europea, nel data center europeo di HubSpot e nel nostro Google Workspace. Firon Marketing LLC, la nostra agenzia web, ha sede negli Stati Uniti e ha accesso a Google Tag Manager e Google Analytics. Quando il trattamento avviene al di fuori di Svizzera, UE o SEE, compresi i trasferimenti verso gli Stati Uniti, ci basiamo sull’EU-U.S. e sullo Swiss-U.S. Data Privacy Framework o sulle clausole contrattuali standard. Il nostro elenco dei sub-responsabili indica il luogo e la base del trasferimento per ciascun fornitore.
               </p>
             </section>
 
@@ -162,10 +158,10 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 Conserviamo i dati personali solo per il tempo necessario alle finalità della sezione 3, o per il tempo richiesto dalla legge. Valgono questi periodi:
               </p>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
-                <li><strong className="text-strong">Dati del modulo di contatto e dati dei potenziali clienti:</strong> in HubSpot e nel nostro Google Workspace: cancellati se non utilizzati per 12 mesi.</li>
+                <li><strong className="text-strong">Dati del modulo di contatto e dati dei potenziali clienti:</strong> in HubSpot e nel nostro Google Workspace: conservati finché il rapporto commerciale è attivo, e cancellati quando non ci servono più.</li>
                 <li><strong className="text-strong">Google Analytics 4:</strong> dati sugli eventi 2 mesi, dati utente 14 mesi.</li>
-                <li><strong className="text-strong">Log del server del sito:</strong> {SERVER_LOGS}.</li>
-                <li><strong className="text-strong">Cookie e la vostra scelta di consenso:</strong> come indicato nella nostra <Link href="/cookies" className="text-link hover:underline">cookie policy</Link>. Vi chiediamo di nuovo la vostra scelta sui cookie dopo 6 mesi.</li>
+                <li><strong className="text-strong">Log del server del sito:</strong> non conserviamo log del server propri. Microsoft Azure, il nostro hosting, tratta i dati di accesso per servire il sito e li conserva secondo le proprie regole.</li>
+                <li><strong className="text-strong">Cookie e la vostra scelta di consenso:</strong> come indicato nella nostra <Link href="/cookies" className="text-link hover:underline">cookie policy</Link>.</li>
                 <li><strong className="text-strong">Dati dei Tenant nel Servizio:</strong> cancellati o restituiti entro 90 giorni dalla fine del contratto del Tenant. Documenti dei sinistri: 7 anni dalla chiusura del sinistro, o alla fine del contratto se precedente. Dati personali nell’audit trail: cancellati o anonimizzati al più tardi alla fine del contratto. La registrazione del processo senza dati personali: 7 anni, come previsto dal contratto con il cliente.</li>
                 <li><strong className="text-strong">Dati dell’account:</strong> inviti utente 30 giorni dopo l’accettazione o la scadenza; dati di utenti e appartenenze 90 giorni dopo la cancellazione.</li>
                 <li><strong className="text-strong">Log di sicurezza del Servizio:</strong> 365 giorni. Voci che identificano utenti di un Tenant: 365 giorni, o fino alla fine del contratto se precedente.</li>

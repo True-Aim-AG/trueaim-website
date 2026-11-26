@@ -3,11 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { PageHero, SECTION } from "@/components/content";
 
 const PUBLISH_DATE = "2026-05-21";
-const LAST_UPDATED = "2026-11-24";
-
-// Open facts, to be confirmed before release (see the PR for GDPR gaps 2 to 7).
-const FIRON_COUNTRY = "[country to be confirmed]";
-const SERVER_LOGS = "[period to be confirmed]";
+const LAST_UPDATED = "2026-11-26";
 
 type TocItem = { id: string; label: string };
 
@@ -134,14 +130,14 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 <li><strong className="text-strong">Google Tag Manager and Google Analytics 4</strong> (Google Ireland Limited): loaded only after you accept analytics cookies; measure page views and interactions; GA4 does not log or store IP addresses; no personal data is placed in the data layer.</li>
                 <li><strong className="text-strong">HubSpot</strong> (HubSpot Ireland Limited, hosted in HubSpot&rsquo;s EU data centre in Germany): receives contact form submissions, including the attribution fields listed in section 2. Only after you accept HubSpot tracking, it also records your visits to this website and links them to your submission. HubSpot tracking has its own choice in the cookie banner, separate from analytics.</li>
                 <li><strong className="text-strong">Google Workspace</strong> (Google Ireland Limited): a spreadsheet in our Google Workspace receives a copy of each contact form submission and sends an email notification to our team.</li>
-                <li><strong className="text-strong">Firon Marketing LLC</strong> ({FIRON_COUNTRY}): the agency that works on our website performance, with access to Google Tag Manager, Google Analytics and Google Search Console; it has no access to customer or Tenant data.</li>
+                <li><strong className="text-strong">Firon Marketing LLC</strong> (United States): the agency that works on our website performance, with access to Google Tag Manager, Google Analytics and Google Search Console; it has no access to customer or Tenant data.</li>
               </ul>
             </section>
 
             <section id="transfers" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">6. International transfers</h2>
               <p className="text-body leading-[1.6]">
-                Personal data processed in the Service is stored in Switzerland. Contact form data is stored in the European Union, in HubSpot&rsquo;s EU data centre and in our Google Workspace. Where processing occurs outside Switzerland, the EU or the EEA, including transfers to the United States, we rely on the EU-U.S. and Swiss-U.S. Data Privacy Frameworks or on Standard Contractual Clauses. Our sub-processor list states the location and transfer basis for each provider.
+                Personal data processed in the Service is stored in Switzerland. Contact form data is stored in the European Union, in HubSpot&rsquo;s EU data centre and in our Google Workspace. Firon Marketing LLC, our website agency, is based in the United States and has access to Google Tag Manager and Google Analytics. Where processing occurs outside Switzerland, the EU or the EEA, including transfers to the United States, we rely on the EU-U.S. and Swiss-U.S. Data Privacy Frameworks or on Standard Contractual Clauses. Our sub-processor list states the location and transfer basis for each provider.
               </p>
             </section>
 
@@ -162,10 +158,10 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 We keep personal data only as long as we need it for the purposes in section 3, or as long as the law requires. These periods apply:
               </p>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
-                <li><strong className="text-strong">Contact form data and prospect records:</strong> in HubSpot and in our Google Workspace: deleted when not used for 12 months.</li>
+                <li><strong className="text-strong">Contact form data and prospect records:</strong> in HubSpot and in our Google Workspace: kept while the business contact is active, and deleted when we no longer need it.</li>
                 <li><strong className="text-strong">Google Analytics 4:</strong> event data 2 months, user data 14 months.</li>
-                <li><strong className="text-strong">Website server logs:</strong> {SERVER_LOGS}.</li>
-                <li><strong className="text-strong">Cookies and your consent choice:</strong> as listed in our <Link href="/cookies" className="text-link hover:underline">Cookie Policy</Link>. We ask for your cookie choice again after 6 months.</li>
+                <li><strong className="text-strong">Website server logs:</strong> we keep no server logs of our own. Microsoft Azure, our host, processes access data to deliver the website and keeps it under its own rules.</li>
+                <li><strong className="text-strong">Cookies and your consent choice:</strong> as listed in our <Link href="/cookies" className="text-link hover:underline">Cookie Policy</Link>.</li>
                 <li><strong className="text-strong">Tenant data in the Service:</strong> deleted or returned up to 90 days after the Tenant&rsquo;s contract ends. Claim documents: 7 years after claim closure, or at contract end if earlier. Personal data in the audit trail: deleted or anonymised at contract end at the latest. The process record without personal data: 7 years, as set in the client agreement.</li>
                 <li><strong className="text-strong">Account data:</strong> user invitations 30 days after acceptance or expiry; user and membership records 90 days after deletion.</li>
                 <li><strong className="text-strong">Security logs of the Service:</strong> 365 days. Entries that identify Tenant users: 365 days, or contract end if earlier.</li>

@@ -144,7 +144,7 @@
   },
   "cookie": {
     "title": "Préférences en matière de cookies",
-    "description": "Nous utilisons des cookies pour améliorer votre expérience. Les cookies essentiels sont toujours actifs. Vous pouvez autoriser les cookies d’analyse, qui nous donnent des statistiques agrégées, et le suivi HubSpot, qui reconnaît vos visites suivantes. Nous vous redemandons votre choix après 6 mois.",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience. Les cookies essentiels sont toujours actifs. Vous pouvez autoriser les cookies d’analyse, qui nous donnent des statistiques agrégées, et le suivi HubSpot, qui reconnaît vos visites suivantes.",
     "learnMore": "En savoir plus",
     "acceptAll": "Tout accepter",
     "decline": "Refuser",

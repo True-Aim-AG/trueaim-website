@@ -1,14 +1,13 @@
 // @vitest-environment jsdom
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
-  CONSENT_MAX_AGE_MS,
   CONSENT_STORAGE_KEY,
   CONSENT_UPDATED_EVENT,
   clearConsent,
   consentChangeFromStorage,
   consentDefaultScript,
   hasAnalyticsConsent,
-  hasExpiredConsent,
+  hasOutdatedConsent,
   hasHubSpotConsent,
   readConsent,
   revokeTracking,
@@ -64,27 +63,23 @@ describe("consent state", () => {
   });
 });
 
-describe("consent expiry", () => {
-  it("expires the choice after six months", () => {
+describe("consent lifetime", () => {
+  it("keeps the choice until the visitor changes it", () => {
     vi.useFakeTimers();
     vi.setSystemTime(new Date("2026-01-01T00:00:00Z"));
     saveConsent({ essential: true, analytics: true, hubspot: true });
-    vi.setSystemTime(Date.now() + CONSENT_MAX_AGE_MS - 1000);
+    vi.setSystemTime(new Date("2029-01-01T00:00:00Z"));
     expect(hasAnalyticsConsent()).toBe(true);
-    expect(hasExpiredConsent()).toBe(false);
-    vi.setSystemTime(Date.now() + 2000);
-    expect(readConsent()).toBeNull();
-    expect(hasAnalyticsConsent()).toBe(false);
-    expect(hasHubSpotConsent()).toBe(false);
-    expect(hasExpiredConsent()).toBe(true);
+    expect(hasHubSpotConsent()).toBe(true);
+    expect(hasOutdatedConsent()).toBe(false);
   });
 
-  it("treats a choice saved before expiry existed as expired", () => {
+  it("treats a choice saved before the HubSpot category as outdated", () => {
     localStorage.setItem(CONSENT_STORAGE_KEY, stored({ essential: true, analytics: true }));
     expect(readConsent()).toBeNull();
-    expect(hasExpiredConsent()).toBe(true);
+    expect(hasOutdatedConsent()).toBe(true);
     clearConsent();
-    expect(hasExpiredConsent()).toBe(false);
+    expect(hasOutdatedConsent()).toBe(false);
     expect(localStorage.getItem(CONSENT_STORAGE_KEY)).toBeNull();
   });
 });
