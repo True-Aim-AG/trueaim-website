@@ -10,7 +10,7 @@ import { Button } from "@/components/brand/Button";
 import { CARD } from "@/components/content/surface";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { hasAnalyticsConsent, pushDataLayer } from "@/lib/consent";
+import { hasHubSpotConsent, pushDataLayer } from "@/lib/consent";
 import { getFirstTouch } from "@/lib/tracking/first-touch";
 
 type ContactFormData = {
@@ -21,9 +21,12 @@ type ContactFormData = {
   jobTitle: string;
   country: string;
   interest: string;
-  heard_about: string;
+  heard_about?: string;
   claimsVolume?: string;
   message?: string;
+  // Sent as "consent" because the sheet script reads that key; the box is an
+  // acknowledgement of the privacy policy, not consent: a demo request rests
+  // on steps taken at the visitor's request before a contract.
   consent: boolean;
 };
 
@@ -62,9 +65,9 @@ const heardAboutValues: Record<(typeof heardAboutKeys)[number], string> = {
   other: "other",
 };
 
-/** HubSpot's visitor cookie, readable only once analytics consent loaded its script. */
+/** HubSpot's visitor cookie, sent only with HubSpot consent, which loads its script. */
 function hubspotUserToken(): string {
-  if (!hasAnalyticsConsent()) return "";
+  if (!hasHubSpotConsent()) return "";
   const match = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
   return match ? decodeURIComponent(match[1]) : "";
 }
@@ -78,7 +81,7 @@ function createContactSchema(t: (key: string) => string) {
     jobTitle: z.string().min(1, t("form.validation.jobTitleRequired")),
     country: z.string().min(1, t("form.validation.countryRequired")),
     interest: z.string().min(1, t("form.validation.interestRequired")),
-    heard_about: z.string().min(1, t("form.validation.heardAboutRequired")),
+    heard_about: z.string().optional(),
     claimsVolume: z.string().optional(),
     message: z.string().optional(),
     consent: z.boolean().refine((val) => val === true, t("form.validation.consentRequired")),
@@ -156,7 +159,7 @@ export function ContactForm() {
         event: "form_submit_success",
         form_name: "demo_request",
         page_locale: locale,
-        heard_about: data.heard_about,
+        heard_about: data.heard_about ?? "",
       });
       setIsSubmitted(true);
       reset();
@@ -292,7 +295,7 @@ export function ContactForm() {
 
               <div className="sm:col-span-2">
                 <label htmlFor="contact-heard_about" className={LABEL}>
-                  {t("form.leadSource")} <span aria-hidden="true">{t("form.required")}</span>
+                  {t("form.leadSource")} <span className="font-normal text-subtle">{t("form.optional")}</span>
                 </label>
                 <div className="relative">
                   <select {...register("heard_about")} id="contact-heard_about" className={SELECT}>
@@ -305,7 +308,6 @@ export function ContactForm() {
                   </select>
                   <ChevronDown strokeWidth={1.5} className={CHEVRON} />
                 </div>
-                <FieldError message={errors.heard_about?.message} />
               </div>
 
               <div className="sm:col-span-2">

@@ -46,7 +46,7 @@ describe("first-touch attribution", () => {
 
   it("stores the first touch once consent is given and never overwrites it", () => {
     captureFirstTouch();
-    localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify({ essential: true, analytics: true }));
+    localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify({ essential: true, analytics: true, hubspot: false, savedAt: Date.now() }));
     persistFirstTouch();
     expect(JSON.parse(localStorage.getItem(FIRST_TOUCH_STORAGE_KEY)!).utm_source).toBe("linkedin");
 

@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { PageHero, SECTION } from "@/components/content";
 
 const PUBLISH_DATE = "2026-05-21";
-const LAST_UPDATED = "2026-10-19";
+const LAST_UPDATED = "2026-11-26";
 
 type TocItem = { id: string; label: string };
 
@@ -76,16 +76,36 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                 <li><strong className="text-strong">Dati sui sinistri trasmessi dai Tenant:</strong> descrizioni dei sinistri, identificativi dei richiedenti, date del danno, numeri di polizza, documenti caricati.</li>
                 <li><strong className="text-strong">Dati derivati:</strong> dati strutturati estratti dai documenti caricati dai nostri componenti di analisi documentale e di modelli linguistici.</li>
                 <li><strong className="text-strong">Dati di utilizzo e telemetria:</strong> log applicativi, voci dell’audit trail, metadati delle richieste, metriche operative.</li>
-                <li><strong className="text-strong">Dati del sito web:</strong> indirizzo IP, metadati del browser e pagine visitate, raccolti tramite i normali log del server e, solo dopo che avete accettato i cookie analitici, tramite Google Tag Manager e Google Analytics 4 come descritto nella nostra informativa sui cookie.</li>
-                <li><strong className="text-strong">Dati del modulo di contatto:</strong> i dati che inserite nel modulo, insieme ai campi di attribuzione che il sito registra con il vostro invio: la pagina su cui siete arrivati per prima, il sito di provenienza, i parametri della campagna (UTM) e la vostra risposta a «Come avete saputo di noi?». Questi dati vengono inviati a HubSpot, il nostro CRM, e una copia viene scritta in un foglio di calcolo nel nostro Google Workspace, che avvisa il nostro team via e-mail (vedi sezione 5).</li>
+                <li><strong className="text-strong">Dati del sito web:</strong> indirizzo IP, metadati del browser e pagine visitate, raccolti tramite i normali log del server. Solo dopo che avete accettato i cookie analitici, anche Google Tag Manager e Google Analytics 4 raccolgono questi dati. Solo dopo che avete accettato il tracciamento HubSpot, il tracker HubSpot riconosce il vostro browser nelle visite successive e collega le vostre visite a una richiesta di demo che inviate. La nostra <Link href="/cookies" className="text-link hover:underline">cookie policy</Link> elenca ogni cookie e la sua durata.</li>
+                <li><strong className="text-strong">Dati del modulo di contatto:</strong> i dati che inserite nel modulo, insieme ai campi di attribuzione che il sito registra con il vostro invio: la prima pagina su cui siete arrivati, il sito di provenienza e i parametri di campagna (UTM), e la vostra risposta a &laquo;Come avete saputo di noi?&raquo; se la date. Questi dati sono inviati a HubSpot, il nostro CRM, e una copia è scritta in un foglio di calcolo nel nostro Google Workspace, che avvisa il nostro team via e-mail (vedi sezione 5). Nome, cognome, e-mail aziendale, azienda, ruolo, paese e area di interesse sono obbligatori: ci servono per sapere chi ci scrive, per quale azienda e mercato, e quale prodotto mostrarvi. Senza questi dati non possiamo rispondere alla vostra richiesta. Come avete saputo di noi, il volume di sinistri e il vostro messaggio sono facoltativi.</li>
               </ul>
             </section>
 
             <section id="lawful-bases" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">3. Basi giuridiche del trattamento (GDPR / LPD svizzera)</h2>
               <p className="text-body leading-[1.6]">
-                Esecuzione del contratto, legittimo interesse a gestire e proteggere il Servizio, consenso ove richiesto e obbligo di legge.
+                Questa tabella collega ogni finalità ai dati utilizzati e alla sua base giuridica secondo il GDPR. Dove la LPD svizzera richiede un motivo giustificativo, ci basiamo sullo stesso motivo.
               </p>
+              <div className="mt-4 overflow-x-auto">
+                <table className="w-full min-w-[640px] border-collapse text-left text-sm leading-[1.5] text-body">
+                  <thead>
+                    <tr className="border-b border-line-strong"><th scope="col" className="py-3 pr-4 font-semibold text-strong">Finalità</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Dati</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Base giuridica</th><th scope="col" className="py-3 pr-4 font-semibold text-strong">Il nostro interesse legittimo</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Rispondere alla vostra richiesta di demo o di contatto</th><td className="py-3 pr-4">Dati del modulo di contatto</td><td className="py-3 pr-4">Misure precontrattuali adottate su vostra richiesta (art. 6, par. 1, lett. b)</td><td className="py-3 pr-4">Non necessario</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Registrare come ci avete trovati</th><td className="py-3 pr-4">Campi di attribuzione: pagina di arrivo, sito di provenienza, parametri UTM, come avete saputo di noi</td><td className="py-3 pr-4">Interesse legittimo (art. 6, par. 1, lett. f)</td><td className="py-3 pr-4">Sapere quali canali portano richieste, per usare bene il nostro budget di marketing</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Seguire la vostra richiesta come potenziale cliente aziendale</th><td className="py-3 pr-4">Dati del modulo di contatto nel nostro CRM</td><td className="py-3 pr-4">Interesse legittimo (art. 6, par. 1, lett. f)</td><td className="py-3 pr-4">Vendere il nostro Servizio agli assicuratori e al loro personale. Potete opporvi in qualsiasi momento.</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Gestire e proteggere questo sito</th><td className="py-3 pr-4">Dati del sito dai log del server</td><td className="py-3 pr-4">Interesse legittimo (art. 6, par. 1, lett. f)</td><td className="py-3 pr-4">Mantenere il sito disponibile e sicuro</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Statistiche del sito</th><td className="py-3 pr-4">Dati di Google Analytics 4</td><td className="py-3 pr-4">Il vostro consenso (art. 6, par. 1, lett. a)</td><td className="py-3 pr-4">Non necessario</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Collegare le vostre visite alla vostra richiesta di demo</th><td className="py-3 pr-4">Dati del tracciamento HubSpot</td><td className="py-3 pr-4">Il vostro consenso (art. 6, par. 1, lett. a)</td><td className="py-3 pr-4">Non necessario</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Conservare la vostra scelta sui cookie</th><td className="py-3 pr-4">La vostra scelta di consenso</td><td className="py-3 pr-4">Obbligo legale di dimostrare il consenso (art. 6, par. 1, lett. c, e art. 7, par. 1)</td><td className="py-3 pr-4">Non necessario</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Fornire il Servizio ai Tenant</th><td className="py-3 pr-4">Dati sui sinistri e dati derivati</td><td className="py-3 pr-4">Trattiamo questi dati per il Tenant, secondo le sue istruzioni e l’accordo sul trattamento dei dati. Il Tenant stabilisce la base giuridica.</td><td className="py-3 pr-4">Non applicabile</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Gestire gli account utente e gli accessi dei Tenant</th><td className="py-3 pr-4">Dati dell’account</td><td className="py-3 pr-4">Interesse legittimo (art. 6, par. 1, lett. f)</td><td className="py-3 pr-4">Fornire il Servizio che la vostra organizzazione ha ordinato</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Rilevare e prevenire incidenti di sicurezza</th><td className="py-3 pr-4">Dati di utilizzo e telemetria, audit trail</td><td className="py-3 pr-4">Interesse legittimo (art. 6, par. 1, lett. f)</td><td className="py-3 pr-4">Proteggere il Servizio e i dati dei Tenant</td></tr>
+                    <tr className="border-b border-line align-top"><th scope="row" className="py-3 pr-4 font-medium text-strong">Adempiere ai nostri obblighi legali, ad esempio contabili</th><td className="py-3 pr-4">I dati che la legge richiede</td><td className="py-3 pr-4">Obbligo legale (art. 6, par. 1, lett. c)</td><td className="py-3 pr-4">Non necessario</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </section>
 
             <section id="use" className="scroll-mt-24">
@@ -108,16 +128,16 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
               </p>
               <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
                 <li><strong className="text-strong">Google Tag Manager e Google Analytics 4</strong> (Google Ireland Limited): caricati solo dopo che avete accettato i cookie analitici; misurano le visualizzazioni di pagina e le interazioni; GA4 non registra né conserva gli indirizzi IP; nessun dato personale viene inserito nel data layer.</li>
-                <li><strong className="text-strong">HubSpot</strong> (HubSpot Ireland Limited, ospitato nel data center europeo di HubSpot in Germania): riceve gli invii del modulo di contatto, compresi i campi di attribuzione elencati nella sezione 2, e, solo dopo che avete accettato i cookie analitici, registra le vostre visite a questo sito.</li>
+                <li><strong className="text-strong">HubSpot</strong> (HubSpot Ireland Limited, ospitato nel data center europeo di HubSpot in Germania): riceve gli invii del modulo di contatto, compresi i campi di attribuzione indicati nella sezione 2. Solo dopo che avete accettato il tracciamento HubSpot, registra anche le vostre visite a questo sito e le collega al vostro invio. Il tracciamento HubSpot ha una propria scelta nel banner dei cookie, separata dagli analitici.</li>
                 <li><strong className="text-strong">Google Workspace</strong> (Google Ireland Limited): un foglio di calcolo nel nostro Google Workspace riceve una copia di ogni invio del modulo di contatto e invia una notifica e-mail al nostro team.</li>
-                <li><strong className="text-strong">Firon Marketing LLC</strong>: l’agenzia che lavora sulle prestazioni del nostro sito, con accesso a Google Tag Manager, Google Analytics e Google Search Console; non ha accesso ai dati dei clienti o dei Tenant.</li>
+                <li><strong className="text-strong">Firon Marketing LLC</strong> (Stati Uniti): l’agenzia che lavora sulle prestazioni del nostro sito, con accesso a Google Tag Manager, Google Analytics e Google Search Console; non ha accesso ai dati dei clienti o dei Tenant.</li>
               </ul>
             </section>
 
             <section id="transfers" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">6. Trasferimenti internazionali</h2>
               <p className="text-body leading-[1.6]">
-                I dati personali trattati nel Servizio sono conservati in Svizzera. I dati del modulo di contatto sono conservati nell’Unione europea, nel data center europeo di HubSpot e nel nostro Google Workspace. Quando il trattamento avviene al di fuori di Svizzera, UE o SEE, compresi i trasferimenti verso gli Stati Uniti, ci basiamo sull’EU-U.S. e sullo Swiss-U.S. Data Privacy Framework o sulle clausole contrattuali standard. Il nostro elenco dei sub-responsabili indica il luogo e la base del trasferimento per ciascun fornitore.
+                I dati personali trattati nel Servizio sono conservati in Svizzera. I dati del modulo di contatto sono conservati nell’Unione europea, nel data center europeo di HubSpot e nel nostro Google Workspace. Firon Marketing LLC, la nostra agenzia web, ha sede negli Stati Uniti e ha accesso a Google Tag Manager e Google Analytics. Quando Google, HubSpot o un fornitore del nostro elenco dei sub-responsabili trattano dati personali al di fuori di Svizzera, UE o SEE, compresi gli Stati Uniti, ci basiamo sull’EU-U.S. e sullo Swiss-U.S. Data Privacy Framework o sulle clausole contrattuali standard. Il nostro elenco dei sub-responsabili indica il luogo e la base del trasferimento per ciascun fornitore.
               </p>
             </section>
 
@@ -135,7 +155,20 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section id="retention" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">8. Conservazione</h2>
               <p className="text-body leading-[1.6]">
-                Conserviamo i dati personali solo per il tempo necessario a fornire il Servizio e ad adempiere ai nostri obblighi legali. I dati del Tenant sono conservati per la durata dell’abbonamento del Tenant più il periodo di restituzione/cancellazione concordato contrattualmente. I periodi di conservazione specifici sono documentati nel nostro piano interno di conservazione dei dati e riflessi nell’accordo sul trattamento dei dati concluso con ciascun Tenant.
+                Conserviamo i dati personali solo per il tempo necessario alle finalità della sezione 3, o per il tempo richiesto dalla legge. Valgono questi periodi:
+              </p>
+              <ul className="list-disc pl-6 marker:text-accent text-body leading-[1.6] space-y-2 mt-3">
+                <li><strong className="text-strong">Dati del modulo di contatto e dati dei potenziali clienti:</strong> in HubSpot e nel nostro Google Workspace: conservati finché il rapporto commerciale è attivo, e cancellati quando non ci servono più.</li>
+                <li><strong className="text-strong">Google Analytics 4:</strong> dati sugli eventi 2 mesi, dati utente 14 mesi.</li>
+                <li><strong className="text-strong">Log del server del sito:</strong> non conserviamo log del server propri. Microsoft Azure, il nostro hosting, tratta i dati di accesso per servire il sito e li conserva secondo le proprie regole.</li>
+                <li><strong className="text-strong">Cookie e la vostra scelta di consenso:</strong> come indicato nella nostra <Link href="/cookies" className="text-link hover:underline">cookie policy</Link>.</li>
+                <li><strong className="text-strong">Dati dei Tenant nel Servizio:</strong> cancellati o restituiti entro 90 giorni dalla fine del contratto del Tenant. Documenti dei sinistri: 7 anni dalla chiusura del sinistro, o alla fine del contratto se precedente. Dati personali nell’audit trail: cancellati o anonimizzati al più tardi alla fine del contratto. La registrazione del processo senza dati personali: 7 anni, come previsto dal contratto con il cliente.</li>
+                <li><strong className="text-strong">Dati dell’account:</strong> inviti utente 30 giorni dopo l’accettazione o la scadenza; dati di utenti e appartenenze 90 giorni dopo la cancellazione.</li>
+                <li><strong className="text-strong">Log di sicurezza del Servizio:</strong> 365 giorni. Voci che identificano utenti di un Tenant: 365 giorni, o fino alla fine del contratto se precedente.</li>
+                <li><strong className="text-strong">Documenti contabili:</strong> 10 anni, come richiede il diritto svizzero (art. 958f CO).</li>
+              </ul>
+              <p className="text-body leading-[1.6] mt-3">
+                L’accordo sul trattamento dei dati con ogni Tenant stabilisce i periodi vincolanti per i dati dei Tenant.
               </p>
             </section>
 
@@ -144,6 +177,9 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
               <p className="text-body leading-[1.6]">
                 Nei limiti della legge applicabile (compresi GDPR e LPD svizzera), avete il diritto di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione. Se siete utenti finali di un Tenant, rivolgetevi prima al Tenant; aiuteremo il Tenant a soddisfare la vostra richiesta. Per contattarci direttamente, scrivete a{" "}
                 <a href="mailto:privacy@trueaim.ai" className="text-link hover:underline">privacy@trueaim.ai</a>. Avete inoltre il diritto di presentare reclamo a un’autorità di controllo. In Svizzera, l’Incaricato federale della protezione dei dati e della trasparenza (IFPDT); nell’UE, la vostra autorità locale per la protezione dei dati.
+              </p>
+              <p className="text-body leading-[1.6] mt-3">
+                Potete opporvi in qualsiasi momento al trattamento basato sul nostro interesse legittimo. Quando ci basiamo sul vostro consenso (cookie analitici e tracciamento HubSpot), potete revocarlo in qualsiasi momento, con la stessa facilità con cui lo avete dato: aprite &laquo;Preferenze cookie&raquo; nel piè di pagina di ogni pagina. La revoca non pregiudica il trattamento effettuato prima di essa.
               </p>
             </section>
 

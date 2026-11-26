@@ -9,13 +9,17 @@ import { Button } from "@/components/brand/Button";
 import {
   CONSENT_UPDATED_EVENT,
   OPEN_COOKIE_SETTINGS_EVENT,
+  clearConsent,
   consentChangeFromStorage,
+  hasOutdatedConsent,
+  parseStored,
   readConsent,
   revokeTracking,
   saveConsent,
   type ConsentPreferences,
 } from "@/lib/consent";
 import { clearFirstTouch } from "@/lib/tracking/first-touch";
+import { withdrawConsent } from "@/lib/tracking/withdraw-consent";
 
 const ease = [0.4, 0, 0.2, 1] as const;
 
@@ -26,11 +30,20 @@ export function CookieBanner() {
   const [preferences, setPreferences] = useState<ConsentPreferences>({
     essential: true,
     analytics: false,
+    hubspot: false,
   });
   const [reopened, setReopened] = useState(false);
   const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // A choice saved before HubSpot had its own category is no longer valid:
+    // drop it with the tracking cookies it allowed, then ask once again.
+    // No tag has loaded yet, so no reload is needed.
+    if (hasOutdatedConsent()) {
+      clearConsent();
+      revokeTracking();
+      clearFirstTouch();
+    }
     if (readConsent() === null) {
       // Read browser-only state after hydration, preserving the server render.
       // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -39,7 +52,8 @@ export function CookieBanner() {
     // The footer's cookie settings control reopens the banner with the
     // stored choice preselected, so consent can be changed at any time.
     const reopen = () => {
-      setPreferences({ essential: true, analytics: readConsent()?.analytics === true });
+      const stored = readConsent();
+      setPreferences({ essential: true, analytics: stored?.analytics === true, hubspot: stored?.hubspot === true });
       setShowPreferences(true);
       setReopened(true);
       setVisible(true);
@@ -52,8 +66,8 @@ export function CookieBanner() {
       if (!change) return;
       setVisible(false);
       if (change === "withdrawn") {
-        revokeTracking();
-        clearFirstTouch();
+        // Undo only what the other tab withdrew; keep what is still granted.
+        withdrawConsent(parseStored(event.oldValue), parseStored(event.newValue));
         window.location.reload();
       } else {
         window.dispatchEvent(new Event(CONSENT_UPDATED_EVENT));
@@ -76,21 +90,17 @@ export function CookieBanner() {
     saveConsent(prefs);
     setVisible(false);
     setReopened(false);
-    if (previous?.analytics && !prefs.analytics) {
-      // Withdrawn: deny, drop the tracking cookies, and reload so no tag
-      // that was already loaded keeps running.
-      revokeTracking();
-      clearFirstTouch();
-      window.location.reload();
-    }
+    // Withdrawn: undo each category no longer accepted, and reload so no
+    // tag that was already loaded keeps running.
+    if (withdrawConsent(previous, prefs)) window.location.reload();
   };
 
   const handleAcceptAll = () => {
-    savePreferences({ essential: true, analytics: true });
+    savePreferences({ essential: true, analytics: true, hubspot: true });
   };
 
   const handleDecline = () => {
-    savePreferences({ essential: true, analytics: false });
+    savePreferences({ essential: true, analytics: false, hubspot: false });
   };
 
   const handleSavePreferences = () => {
@@ -159,6 +169,19 @@ export function CookieBanner() {
                             checked={preferences.analytics}
                             onChange={() => setPreferences((prev) => ({ ...prev, analytics: !prev.analytics }))}
                             aria-label={t("analytics")}
+                            className="h-5 w-5 cursor-pointer"
+                          />
+                        </label>
+                        <label className="flex cursor-pointer items-center justify-between gap-4 px-2">
+                          <div>
+                            <span className="text-sm font-medium text-strong">{t("hubspot")}</span>
+                            <p className="text-xs text-muted">{t("hubspotDesc")}</p>
+                          </div>
+                          <input
+                            type="checkbox"
+                            checked={preferences.hubspot}
+                            onChange={() => setPreferences((prev) => ({ ...prev, hubspot: !prev.hubspot }))}
+                            aria-label={t("hubspot")}
                             className="h-5 w-5 cursor-pointer"
                           />
                         </label>
