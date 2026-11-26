@@ -12,12 +12,14 @@ import {
   clearConsent,
   consentChangeFromStorage,
   hasOutdatedConsent,
+  parseStored,
   readConsent,
   revokeTracking,
   saveConsent,
   type ConsentPreferences,
 } from "@/lib/consent";
 import { clearFirstTouch } from "@/lib/tracking/first-touch";
+import { withdrawConsent } from "@/lib/tracking/withdraw-consent";
 
 const ease = [0.4, 0, 0.2, 1] as const;
 
@@ -64,8 +66,8 @@ export function CookieBanner() {
       if (!change) return;
       setVisible(false);
       if (change === "withdrawn") {
-        revokeTracking();
-        clearFirstTouch();
+        // Undo only what the other tab withdrew; keep what is still granted.
+        withdrawConsent(parseStored(event.oldValue), parseStored(event.newValue));
         window.location.reload();
       } else {
         window.dispatchEvent(new Event(CONSENT_UPDATED_EVENT));
@@ -88,15 +90,9 @@ export function CookieBanner() {
     saveConsent(prefs);
     setVisible(false);
     setReopened(false);
-    const analyticsWithdrawn = Boolean(previous?.analytics && !prefs.analytics);
-    const hubspotWithdrawn = Boolean(previous?.hubspot && !prefs.hubspot);
-    if (analyticsWithdrawn || hubspotWithdrawn) {
-      // Withdrawn: undo each category no longer accepted, and reload so no
-      // tag that was already loaded keeps running.
-      revokeTracking(prefs);
-      if (analyticsWithdrawn) clearFirstTouch();
-      window.location.reload();
-    }
+    // Withdrawn: undo each category no longer accepted, and reload so no
+    // tag that was already loaded keeps running.
+    if (withdrawConsent(previous, prefs)) window.location.reload();
   };
 
   const handleAcceptAll = () => {

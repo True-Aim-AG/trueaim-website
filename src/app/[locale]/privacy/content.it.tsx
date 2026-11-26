@@ -137,7 +137,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section id="transfers" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">6. Trasferimenti internazionali</h2>
               <p className="text-body leading-[1.6]">
-                I dati personali trattati nel Servizio sono conservati in Svizzera. I dati del modulo di contatto sono conservati nell’Unione europea, nel data center europeo di HubSpot e nel nostro Google Workspace. Firon Marketing LLC, la nostra agenzia web, ha sede negli Stati Uniti e ha accesso a Google Tag Manager e Google Analytics. Quando il trattamento avviene al di fuori di Svizzera, UE o SEE, compresi i trasferimenti verso gli Stati Uniti, ci basiamo sull’EU-U.S. e sullo Swiss-U.S. Data Privacy Framework o sulle clausole contrattuali standard. Il nostro elenco dei sub-responsabili indica il luogo e la base del trasferimento per ciascun fornitore.
+                I dati personali trattati nel Servizio sono conservati in Svizzera. I dati del modulo di contatto sono conservati nell’Unione europea, nel data center europeo di HubSpot e nel nostro Google Workspace. Firon Marketing LLC, la nostra agenzia web, ha sede negli Stati Uniti e ha accesso a Google Tag Manager e Google Analytics. Quando Google, HubSpot o un fornitore del nostro elenco dei sub-responsabili trattano dati personali al di fuori di Svizzera, UE o SEE, compresi gli Stati Uniti, ci basiamo sull’EU-U.S. e sullo Swiss-U.S. Data Privacy Framework o sulle clausole contrattuali standard. Il nostro elenco dei sub-responsabili indica il luogo e la base del trasferimento per ciascun fornitore.
               </p>
             </section>
 

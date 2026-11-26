@@ -29,7 +29,8 @@ export type ConsentPreferences = {
 
 type StoredConsent = ConsentPreferences & { savedAt: number };
 
-function parseStored(raw: string | null): ConsentPreferences | null {
+/** Reads a stored choice (localStorage value or storage event value); null when absent or invalid. */
+export function parseStored(raw: string | null): ConsentPreferences | null {
   if (!raw) return null;
   try {
     const parsed = JSON.parse(raw) as { analytics?: unknown; hubspot?: unknown; savedAt?: unknown };

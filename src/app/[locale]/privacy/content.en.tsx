@@ -137,7 +137,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <section id="transfers" className="scroll-mt-24">
               <h2 className="font-display text-[28px] font-bold text-strong mt-14 mb-4">6. International transfers</h2>
               <p className="text-body leading-[1.6]">
-                Personal data processed in the Service is stored in Switzerland. Contact form data is stored in the European Union, in HubSpot&rsquo;s EU data centre and in our Google Workspace. Firon Marketing LLC, our website agency, is based in the United States and has access to Google Tag Manager and Google Analytics. Where processing occurs outside Switzerland, the EU or the EEA, including transfers to the United States, we rely on the EU-U.S. and Swiss-U.S. Data Privacy Frameworks or on Standard Contractual Clauses. Our sub-processor list states the location and transfer basis for each provider.
+                Personal data processed in the Service is stored in Switzerland. Contact form data is stored in the European Union, in HubSpot&rsquo;s EU data centre and in our Google Workspace. Firon Marketing LLC, our website agency, is based in the United States and has access to Google Tag Manager and Google Analytics. Where Google, HubSpot or a provider on our sub-processor list processes personal data outside Switzerland, the EU or the EEA, including in the United States, we rely on the EU-U.S. and Swiss-U.S. Data Privacy Frameworks or on Standard Contractual Clauses. Our sub-processor list states the location and transfer basis for each provider.
               </p>
             </section>
 
