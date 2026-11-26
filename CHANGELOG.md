@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.25.4](https://github.com/True-Aim-AG/trueaim-website/compare/v1.25.3...v1.25.4) (2026-11-26)
+
+
+### Bug Fixes
+
+* **privacy:** close GDPR gaps 2 to 7 from the 14 Nov outside check ([#56](https://github.com/True-Aim-AG/trueaim-website/issues/56)) ([364116c](https://github.com/True-Aim-AG/trueaim-website/commit/364116c335f8b47c147176114b2187f13f73789a))
+* **trust:** shorten the ISO badge text and mark SOC 2 Type II as audited ([#57](https://github.com/True-Aim-AG/trueaim-website/issues/57)) ([7af3c11](https://github.com/True-Aim-AG/trueaim-website/commit/7af3c11ce950796e3971d44b413d960c78cc8ae4))
+
 ## [1.25.3](https://github.com/True-Aim-AG/trueaim-website/compare/v1.25.2...v1.25.3) (2026-11-23)
 
 
